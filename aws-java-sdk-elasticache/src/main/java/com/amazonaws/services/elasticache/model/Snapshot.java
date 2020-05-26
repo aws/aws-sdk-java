@@ -378,6 +378,12 @@ public class Snapshot implements Serializable, Cloneable {
      * </p>
      */
     private String kmsKeyId;
+    /**
+     * <p>
+     * The ARN (Amazon Resource Name) of the snapshot.
+     * </p>
+     */
+    private String aRN;
 
     /**
      * <p>
@@ -2757,6 +2763,46 @@ public class Snapshot implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ARN (Amazon Resource Name) of the snapshot.
+     * </p>
+     * 
+     * @param aRN
+     *        The ARN (Amazon Resource Name) of the snapshot.
+     */
+
+    public void setARN(String aRN) {
+        this.aRN = aRN;
+    }
+
+    /**
+     * <p>
+     * The ARN (Amazon Resource Name) of the snapshot.
+     * </p>
+     * 
+     * @return The ARN (Amazon Resource Name) of the snapshot.
+     */
+
+    public String getARN() {
+        return this.aRN;
+    }
+
+    /**
+     * <p>
+     * The ARN (Amazon Resource Name) of the snapshot.
+     * </p>
+     * 
+     * @param aRN
+     *        The ARN (Amazon Resource Name) of the snapshot.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Snapshot withARN(String aRN) {
+        setARN(aRN);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2817,7 +2863,9 @@ public class Snapshot implements Serializable, Cloneable {
         if (getNodeSnapshots() != null)
             sb.append("NodeSnapshots: ").append(getNodeSnapshots()).append(",");
         if (getKmsKeyId() != null)
-            sb.append("KmsKeyId: ").append(getKmsKeyId());
+            sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
+        if (getARN() != null)
+            sb.append("ARN: ").append(getARN());
         sb.append("}");
         return sb.toString();
     }
@@ -2932,6 +2980,10 @@ public class Snapshot implements Serializable, Cloneable {
             return false;
         if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
             return false;
+        if (other.getARN() == null ^ this.getARN() == null)
+            return false;
+        if (other.getARN() != null && other.getARN().equals(this.getARN()) == false)
+            return false;
         return true;
     }
 
@@ -2965,6 +3017,7 @@ public class Snapshot implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getAutomaticFailover() == null) ? 0 : getAutomaticFailover().hashCode());
         hashCode = prime * hashCode + ((getNodeSnapshots() == null) ? 0 : getNodeSnapshots().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
+        hashCode = prime * hashCode + ((getARN() == null) ? 0 : getARN().hashCode());
         return hashCode;
     }
 

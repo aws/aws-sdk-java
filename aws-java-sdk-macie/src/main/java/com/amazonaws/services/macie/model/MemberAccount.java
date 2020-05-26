@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains information about the Amazon Macie member account.
+ * Contains information about the Amazon Macie Classic member account.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/MemberAccount" target="_top">AWS API
@@ -30,18 +30,18 @@ public class MemberAccount implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account ID of the Amazon Macie member account.
+     * The AWS account ID of the Amazon Macie Classic member account.
      * </p>
      */
     private String accountId;
 
     /**
      * <p>
-     * The AWS account ID of the Amazon Macie member account.
+     * The AWS account ID of the Amazon Macie Classic member account.
      * </p>
      * 
      * @param accountId
-     *        The AWS account ID of the Amazon Macie member account.
+     *        The AWS account ID of the Amazon Macie Classic member account.
      */
 
     public void setAccountId(String accountId) {
@@ -50,10 +50,10 @@ public class MemberAccount implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account ID of the Amazon Macie member account.
+     * The AWS account ID of the Amazon Macie Classic member account.
      * </p>
      * 
-     * @return The AWS account ID of the Amazon Macie member account.
+     * @return The AWS account ID of the Amazon Macie Classic member account.
      */
 
     public String getAccountId() {
@@ -62,11 +62,11 @@ public class MemberAccount implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account ID of the Amazon Macie member account.
+     * The AWS account ID of the Amazon Macie Classic member account.
      * </p>
      * 
      * @param accountId
-     *        The AWS account ID of the Amazon Macie member account.
+     *        The AWS account ID of the Amazon Macie Classic member account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

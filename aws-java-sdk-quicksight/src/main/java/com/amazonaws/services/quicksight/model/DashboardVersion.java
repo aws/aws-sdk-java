@@ -66,6 +66,12 @@ public class DashboardVersion implements Serializable, Cloneable, StructuredPojo
     private String sourceEntityArn;
     /**
      * <p>
+     * The Amazon Resource Numbers (ARNs) for the datasets that are associated with a version of the dashboard.
+     * </p>
+     */
+    private java.util.List<String> dataSetArns;
+    /**
+     * <p>
      * Description.
      * </p>
      */
@@ -362,6 +368,76 @@ public class DashboardVersion implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
+     * The Amazon Resource Numbers (ARNs) for the datasets that are associated with a version of the dashboard.
+     * </p>
+     * 
+     * @return The Amazon Resource Numbers (ARNs) for the datasets that are associated with a version of the dashboard.
+     */
+
+    public java.util.List<String> getDataSetArns() {
+        return dataSetArns;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Numbers (ARNs) for the datasets that are associated with a version of the dashboard.
+     * </p>
+     * 
+     * @param dataSetArns
+     *        The Amazon Resource Numbers (ARNs) for the datasets that are associated with a version of the dashboard.
+     */
+
+    public void setDataSetArns(java.util.Collection<String> dataSetArns) {
+        if (dataSetArns == null) {
+            this.dataSetArns = null;
+            return;
+        }
+
+        this.dataSetArns = new java.util.ArrayList<String>(dataSetArns);
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Numbers (ARNs) for the datasets that are associated with a version of the dashboard.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDataSetArns(java.util.Collection)} or {@link #withDataSetArns(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param dataSetArns
+     *        The Amazon Resource Numbers (ARNs) for the datasets that are associated with a version of the dashboard.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DashboardVersion withDataSetArns(String... dataSetArns) {
+        if (this.dataSetArns == null) {
+            setDataSetArns(new java.util.ArrayList<String>(dataSetArns.length));
+        }
+        for (String ele : dataSetArns) {
+            this.dataSetArns.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Numbers (ARNs) for the datasets that are associated with a version of the dashboard.
+     * </p>
+     * 
+     * @param dataSetArns
+     *        The Amazon Resource Numbers (ARNs) for the datasets that are associated with a version of the dashboard.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DashboardVersion withDataSetArns(java.util.Collection<String> dataSetArns) {
+        setDataSetArns(dataSetArns);
+        return this;
+    }
+
+    /**
+     * <p>
      * Description.
      * </p>
      * 
@@ -424,6 +500,8 @@ public class DashboardVersion implements Serializable, Cloneable, StructuredPojo
             sb.append("Arn: ").append(getArn()).append(",");
         if (getSourceEntityArn() != null)
             sb.append("SourceEntityArn: ").append(getSourceEntityArn()).append(",");
+        if (getDataSetArns() != null)
+            sb.append("DataSetArns: ").append(getDataSetArns()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription());
         sb.append("}");
@@ -464,6 +542,10 @@ public class DashboardVersion implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getSourceEntityArn() != null && other.getSourceEntityArn().equals(this.getSourceEntityArn()) == false)
             return false;
+        if (other.getDataSetArns() == null ^ this.getDataSetArns() == null)
+            return false;
+        if (other.getDataSetArns() != null && other.getDataSetArns().equals(this.getDataSetArns()) == false)
+            return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
@@ -482,6 +564,7 @@ public class DashboardVersion implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getSourceEntityArn() == null) ? 0 : getSourceEntityArn().hashCode());
+        hashCode = prime * hashCode + ((getDataSetArns() == null) ? 0 : getDataSetArns().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         return hashCode;
     }

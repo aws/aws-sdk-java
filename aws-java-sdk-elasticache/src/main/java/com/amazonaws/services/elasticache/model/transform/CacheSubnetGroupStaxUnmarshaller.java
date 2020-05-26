@@ -70,6 +70,10 @@ public class CacheSubnetGroupStaxUnmarshaller implements Unmarshaller<CacheSubne
                     continue;
                 }
 
+                if (context.testExpression("ARN", targetDepth)) {
+                    cacheSubnetGroup.setARN(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return cacheSubnetGroup;

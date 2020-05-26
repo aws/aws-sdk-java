@@ -43,7 +43,7 @@ public class S3ResourceClassificationUpdate implements Serializable, Cloneable, 
     private String prefix;
     /**
      * <p>
-     * The classification type that you want to update for the resource associated with Amazon Macie.
+     * The classification type that you want to update for the resource associated with Amazon Macie Classic.
      * </p>
      */
     private ClassificationTypeUpdate classificationTypeUpdate;
@@ -130,11 +130,11 @@ public class S3ResourceClassificationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The classification type that you want to update for the resource associated with Amazon Macie.
+     * The classification type that you want to update for the resource associated with Amazon Macie Classic.
      * </p>
      * 
      * @param classificationTypeUpdate
-     *        The classification type that you want to update for the resource associated with Amazon Macie.
+     *        The classification type that you want to update for the resource associated with Amazon Macie Classic.
      */
 
     public void setClassificationTypeUpdate(ClassificationTypeUpdate classificationTypeUpdate) {
@@ -143,10 +143,10 @@ public class S3ResourceClassificationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The classification type that you want to update for the resource associated with Amazon Macie.
+     * The classification type that you want to update for the resource associated with Amazon Macie Classic.
      * </p>
      * 
-     * @return The classification type that you want to update for the resource associated with Amazon Macie.
+     * @return The classification type that you want to update for the resource associated with Amazon Macie Classic.
      */
 
     public ClassificationTypeUpdate getClassificationTypeUpdate() {
@@ -155,11 +155,11 @@ public class S3ResourceClassificationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The classification type that you want to update for the resource associated with Amazon Macie.
+     * The classification type that you want to update for the resource associated with Amazon Macie Classic.
      * </p>
      * 
      * @param classificationTypeUpdate
-     *        The classification type that you want to update for the resource associated with Amazon Macie.
+     *        The classification type that you want to update for the resource associated with Amazon Macie Classic.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

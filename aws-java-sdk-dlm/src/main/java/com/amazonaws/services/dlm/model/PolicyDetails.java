@@ -36,7 +36,8 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
     private String policyType;
     /**
      * <p>
-     * The resource type.
+     * The resource type. Use VOLUME to create snapshots of individual volumes or use INSTANCE to create multi-volume
+     * snapshots from the volumes for an instance.
      * </p>
      */
     private java.util.List<String> resourceTypes;
@@ -120,10 +121,12 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The resource type.
+     * The resource type. Use VOLUME to create snapshots of individual volumes or use INSTANCE to create multi-volume
+     * snapshots from the volumes for an instance.
      * </p>
      * 
-     * @return The resource type.
+     * @return The resource type. Use VOLUME to create snapshots of individual volumes or use INSTANCE to create
+     *         multi-volume snapshots from the volumes for an instance.
      * @see ResourceTypeValues
      */
 
@@ -133,11 +136,13 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The resource type.
+     * The resource type. Use VOLUME to create snapshots of individual volumes or use INSTANCE to create multi-volume
+     * snapshots from the volumes for an instance.
      * </p>
      * 
      * @param resourceTypes
-     *        The resource type.
+     *        The resource type. Use VOLUME to create snapshots of individual volumes or use INSTANCE to create
+     *        multi-volume snapshots from the volumes for an instance.
      * @see ResourceTypeValues
      */
 
@@ -152,7 +157,8 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The resource type.
+     * The resource type. Use VOLUME to create snapshots of individual volumes or use INSTANCE to create multi-volume
+     * snapshots from the volumes for an instance.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -161,7 +167,8 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param resourceTypes
-     *        The resource type.
+     *        The resource type. Use VOLUME to create snapshots of individual volumes or use INSTANCE to create
+     *        multi-volume snapshots from the volumes for an instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceTypeValues
      */
@@ -178,11 +185,13 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The resource type.
+     * The resource type. Use VOLUME to create snapshots of individual volumes or use INSTANCE to create multi-volume
+     * snapshots from the volumes for an instance.
      * </p>
      * 
      * @param resourceTypes
-     *        The resource type.
+     *        The resource type. Use VOLUME to create snapshots of individual volumes or use INSTANCE to create
+     *        multi-volume snapshots from the volumes for an instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceTypeValues
      */
@@ -194,11 +203,13 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The resource type.
+     * The resource type. Use VOLUME to create snapshots of individual volumes or use INSTANCE to create multi-volume
+     * snapshots from the volumes for an instance.
      * </p>
      * 
      * @param resourceTypes
-     *        The resource type.
+     *        The resource type. Use VOLUME to create snapshots of individual volumes or use INSTANCE to create
+     *        multi-volume snapshots from the volumes for an instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceTypeValues
      */

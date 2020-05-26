@@ -25,20 +25,20 @@ public class DisassociateS3ResourcesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * S3 resources that couldn't be removed from being monitored and classified by Amazon Macie. An error code and an
-     * error message are provided for each failed item.
+     * S3 resources that couldn't be removed from being monitored and classified by Amazon Macie Classic. An error code
+     * and an error message are provided for each failed item.
      * </p>
      */
     private java.util.List<FailedS3Resource> failedS3Resources;
 
     /**
      * <p>
-     * S3 resources that couldn't be removed from being monitored and classified by Amazon Macie. An error code and an
-     * error message are provided for each failed item.
+     * S3 resources that couldn't be removed from being monitored and classified by Amazon Macie Classic. An error code
+     * and an error message are provided for each failed item.
      * </p>
      * 
-     * @return S3 resources that couldn't be removed from being monitored and classified by Amazon Macie. An error code
-     *         and an error message are provided for each failed item.
+     * @return S3 resources that couldn't be removed from being monitored and classified by Amazon Macie Classic. An
+     *         error code and an error message are provided for each failed item.
      */
 
     public java.util.List<FailedS3Resource> getFailedS3Resources() {
@@ -47,13 +47,13 @@ public class DisassociateS3ResourcesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * S3 resources that couldn't be removed from being monitored and classified by Amazon Macie. An error code and an
-     * error message are provided for each failed item.
+     * S3 resources that couldn't be removed from being monitored and classified by Amazon Macie Classic. An error code
+     * and an error message are provided for each failed item.
      * </p>
      * 
      * @param failedS3Resources
-     *        S3 resources that couldn't be removed from being monitored and classified by Amazon Macie. An error code
-     *        and an error message are provided for each failed item.
+     *        S3 resources that couldn't be removed from being monitored and classified by Amazon Macie Classic. An
+     *        error code and an error message are provided for each failed item.
      */
 
     public void setFailedS3Resources(java.util.Collection<FailedS3Resource> failedS3Resources) {
@@ -67,8 +67,8 @@ public class DisassociateS3ResourcesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * S3 resources that couldn't be removed from being monitored and classified by Amazon Macie. An error code and an
-     * error message are provided for each failed item.
+     * S3 resources that couldn't be removed from being monitored and classified by Amazon Macie Classic. An error code
+     * and an error message are provided for each failed item.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,8 +77,8 @@ public class DisassociateS3ResourcesResult extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param failedS3Resources
-     *        S3 resources that couldn't be removed from being monitored and classified by Amazon Macie. An error code
-     *        and an error message are provided for each failed item.
+     *        S3 resources that couldn't be removed from being monitored and classified by Amazon Macie Classic. An
+     *        error code and an error message are provided for each failed item.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,13 +94,13 @@ public class DisassociateS3ResourcesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * S3 resources that couldn't be removed from being monitored and classified by Amazon Macie. An error code and an
-     * error message are provided for each failed item.
+     * S3 resources that couldn't be removed from being monitored and classified by Amazon Macie Classic. An error code
+     * and an error message are provided for each failed item.
      * </p>
      * 
      * @param failedS3Resources
-     *        S3 resources that couldn't be removed from being monitored and classified by Amazon Macie. An error code
-     *        and an error message are provided for each failed item.
+     *        S3 resources that couldn't be removed from being monitored and classified by Amazon Macie Classic. An
+     *        error code and an error message are provided for each failed item.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -60,6 +60,12 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<String> supportedRootDeviceTypes;
     /**
      * <p>
+     * The supported virtualization types.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> supportedVirtualizationTypes;
+    /**
+     * <p>
      * Indicates whether the instance is bare metal.
      * </p>
      */
@@ -540,6 +546,108 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
             setSupportedRootDeviceTypes(supportedRootDeviceTypesCopy);
         } else {
             getSupportedRootDeviceTypes().addAll(supportedRootDeviceTypesCopy);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The supported virtualization types.
+     * </p>
+     * 
+     * @return The supported virtualization types.
+     * @see VirtualizationType
+     */
+
+    public java.util.List<String> getSupportedVirtualizationTypes() {
+        if (supportedVirtualizationTypes == null) {
+            supportedVirtualizationTypes = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return supportedVirtualizationTypes;
+    }
+
+    /**
+     * <p>
+     * The supported virtualization types.
+     * </p>
+     * 
+     * @param supportedVirtualizationTypes
+     *        The supported virtualization types.
+     * @see VirtualizationType
+     */
+
+    public void setSupportedVirtualizationTypes(java.util.Collection<String> supportedVirtualizationTypes) {
+        if (supportedVirtualizationTypes == null) {
+            this.supportedVirtualizationTypes = null;
+            return;
+        }
+
+        this.supportedVirtualizationTypes = new com.amazonaws.internal.SdkInternalList<String>(supportedVirtualizationTypes);
+    }
+
+    /**
+     * <p>
+     * The supported virtualization types.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSupportedVirtualizationTypes(java.util.Collection)} or
+     * {@link #withSupportedVirtualizationTypes(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param supportedVirtualizationTypes
+     *        The supported virtualization types.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see VirtualizationType
+     */
+
+    public InstanceTypeInfo withSupportedVirtualizationTypes(String... supportedVirtualizationTypes) {
+        if (this.supportedVirtualizationTypes == null) {
+            setSupportedVirtualizationTypes(new com.amazonaws.internal.SdkInternalList<String>(supportedVirtualizationTypes.length));
+        }
+        for (String ele : supportedVirtualizationTypes) {
+            this.supportedVirtualizationTypes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The supported virtualization types.
+     * </p>
+     * 
+     * @param supportedVirtualizationTypes
+     *        The supported virtualization types.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see VirtualizationType
+     */
+
+    public InstanceTypeInfo withSupportedVirtualizationTypes(java.util.Collection<String> supportedVirtualizationTypes) {
+        setSupportedVirtualizationTypes(supportedVirtualizationTypes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The supported virtualization types.
+     * </p>
+     * 
+     * @param supportedVirtualizationTypes
+     *        The supported virtualization types.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see VirtualizationType
+     */
+
+    public InstanceTypeInfo withSupportedVirtualizationTypes(VirtualizationType... supportedVirtualizationTypes) {
+        com.amazonaws.internal.SdkInternalList<String> supportedVirtualizationTypesCopy = new com.amazonaws.internal.SdkInternalList<String>(
+                supportedVirtualizationTypes.length);
+        for (VirtualizationType value : supportedVirtualizationTypes) {
+            supportedVirtualizationTypesCopy.add(value.toString());
+        }
+        if (getSupportedVirtualizationTypes() == null) {
+            setSupportedVirtualizationTypes(supportedVirtualizationTypesCopy);
+        } else {
+            getSupportedVirtualizationTypes().addAll(supportedVirtualizationTypesCopy);
         }
         return this;
     }
@@ -1337,6 +1445,8 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
             sb.append("SupportedUsageClasses: ").append(getSupportedUsageClasses()).append(",");
         if (getSupportedRootDeviceTypes() != null)
             sb.append("SupportedRootDeviceTypes: ").append(getSupportedRootDeviceTypes()).append(",");
+        if (getSupportedVirtualizationTypes() != null)
+            sb.append("SupportedVirtualizationTypes: ").append(getSupportedVirtualizationTypes()).append(",");
         if (getBareMetal() != null)
             sb.append("BareMetal: ").append(getBareMetal()).append(",");
         if (getHypervisor() != null)
@@ -1404,6 +1514,10 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
         if (other.getSupportedRootDeviceTypes() == null ^ this.getSupportedRootDeviceTypes() == null)
             return false;
         if (other.getSupportedRootDeviceTypes() != null && other.getSupportedRootDeviceTypes().equals(this.getSupportedRootDeviceTypes()) == false)
+            return false;
+        if (other.getSupportedVirtualizationTypes() == null ^ this.getSupportedVirtualizationTypes() == null)
+            return false;
+        if (other.getSupportedVirtualizationTypes() != null && other.getSupportedVirtualizationTypes().equals(this.getSupportedVirtualizationTypes()) == false)
             return false;
         if (other.getBareMetal() == null ^ this.getBareMetal() == null)
             return false;
@@ -1487,6 +1601,7 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getFreeTierEligible() == null) ? 0 : getFreeTierEligible().hashCode());
         hashCode = prime * hashCode + ((getSupportedUsageClasses() == null) ? 0 : getSupportedUsageClasses().hashCode());
         hashCode = prime * hashCode + ((getSupportedRootDeviceTypes() == null) ? 0 : getSupportedRootDeviceTypes().hashCode());
+        hashCode = prime * hashCode + ((getSupportedVirtualizationTypes() == null) ? 0 : getSupportedVirtualizationTypes().hashCode());
         hashCode = prime * hashCode + ((getBareMetal() == null) ? 0 : getBareMetal().hashCode());
         hashCode = prime * hashCode + ((getHypervisor() == null) ? 0 : getHypervisor().hashCode());
         hashCode = prime * hashCode + ((getProcessorInfo() == null) ? 0 : getProcessorInfo().hashCode());

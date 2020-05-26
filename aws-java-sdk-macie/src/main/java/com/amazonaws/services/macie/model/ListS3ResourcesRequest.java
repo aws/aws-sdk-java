@@ -27,7 +27,7 @@ public class ListS3ResourcesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The Amazon Macie member account ID whose associated S3 resources you want to list.
+     * The Amazon Macie Classic member account ID whose associated S3 resources you want to list.
      * </p>
      */
     private String memberAccountId;
@@ -49,11 +49,11 @@ public class ListS3ResourcesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The Amazon Macie member account ID whose associated S3 resources you want to list.
+     * The Amazon Macie Classic member account ID whose associated S3 resources you want to list.
      * </p>
      * 
      * @param memberAccountId
-     *        The Amazon Macie member account ID whose associated S3 resources you want to list.
+     *        The Amazon Macie Classic member account ID whose associated S3 resources you want to list.
      */
 
     public void setMemberAccountId(String memberAccountId) {
@@ -62,10 +62,10 @@ public class ListS3ResourcesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The Amazon Macie member account ID whose associated S3 resources you want to list.
+     * The Amazon Macie Classic member account ID whose associated S3 resources you want to list.
      * </p>
      * 
-     * @return The Amazon Macie member account ID whose associated S3 resources you want to list.
+     * @return The Amazon Macie Classic member account ID whose associated S3 resources you want to list.
      */
 
     public String getMemberAccountId() {
@@ -74,11 +74,11 @@ public class ListS3ResourcesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The Amazon Macie member account ID whose associated S3 resources you want to list.
+     * The Amazon Macie Classic member account ID whose associated S3 resources you want to list.
      * </p>
      * 
      * @param memberAccountId
-     *        The Amazon Macie member account ID whose associated S3 resources you want to list.
+     *        The Amazon Macie Classic member account ID whose associated S3 resources you want to list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

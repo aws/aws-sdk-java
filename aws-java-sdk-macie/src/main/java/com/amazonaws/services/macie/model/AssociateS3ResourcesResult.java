@@ -25,20 +25,20 @@ public class AssociateS3ResourcesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * S3 resources that couldn't be associated with Amazon Macie. An error code and an error message are provided for
-     * each failed item.
+     * S3 resources that couldn't be associated with Amazon Macie Classic. An error code and an error message are
+     * provided for each failed item.
      * </p>
      */
     private java.util.List<FailedS3Resource> failedS3Resources;
 
     /**
      * <p>
-     * S3 resources that couldn't be associated with Amazon Macie. An error code and an error message are provided for
-     * each failed item.
+     * S3 resources that couldn't be associated with Amazon Macie Classic. An error code and an error message are
+     * provided for each failed item.
      * </p>
      * 
-     * @return S3 resources that couldn't be associated with Amazon Macie. An error code and an error message are
-     *         provided for each failed item.
+     * @return S3 resources that couldn't be associated with Amazon Macie Classic. An error code and an error message
+     *         are provided for each failed item.
      */
 
     public java.util.List<FailedS3Resource> getFailedS3Resources() {
@@ -47,12 +47,12 @@ public class AssociateS3ResourcesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * S3 resources that couldn't be associated with Amazon Macie. An error code and an error message are provided for
-     * each failed item.
+     * S3 resources that couldn't be associated with Amazon Macie Classic. An error code and an error message are
+     * provided for each failed item.
      * </p>
      * 
      * @param failedS3Resources
-     *        S3 resources that couldn't be associated with Amazon Macie. An error code and an error message are
+     *        S3 resources that couldn't be associated with Amazon Macie Classic. An error code and an error message are
      *        provided for each failed item.
      */
 
@@ -67,8 +67,8 @@ public class AssociateS3ResourcesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * S3 resources that couldn't be associated with Amazon Macie. An error code and an error message are provided for
-     * each failed item.
+     * S3 resources that couldn't be associated with Amazon Macie Classic. An error code and an error message are
+     * provided for each failed item.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class AssociateS3ResourcesResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param failedS3Resources
-     *        S3 resources that couldn't be associated with Amazon Macie. An error code and an error message are
+     *        S3 resources that couldn't be associated with Amazon Macie Classic. An error code and an error message are
      *        provided for each failed item.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -94,12 +94,12 @@ public class AssociateS3ResourcesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * S3 resources that couldn't be associated with Amazon Macie. An error code and an error message are provided for
-     * each failed item.
+     * S3 resources that couldn't be associated with Amazon Macie Classic. An error code and an error message are
+     * provided for each failed item.
      * </p>
      * 
      * @param failedS3Resources
-     *        S3 resources that couldn't be associated with Amazon Macie. An error code and an error message are
+     *        S3 resources that couldn't be associated with Amazon Macie Classic. An error code and an error message are
      *        provided for each failed item.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

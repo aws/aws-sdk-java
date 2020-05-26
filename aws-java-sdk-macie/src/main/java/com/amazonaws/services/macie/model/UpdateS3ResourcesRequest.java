@@ -27,7 +27,8 @@ public class UpdateS3ResourcesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The AWS ID of the Amazon Macie member account whose S3 resources' classification types you want to update.
+     * The AWS ID of the Amazon Macie Classic member account whose S3 resources' classification types you want to
+     * update.
      * </p>
      */
     private String memberAccountId;
@@ -40,11 +41,13 @@ public class UpdateS3ResourcesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The AWS ID of the Amazon Macie member account whose S3 resources' classification types you want to update.
+     * The AWS ID of the Amazon Macie Classic member account whose S3 resources' classification types you want to
+     * update.
      * </p>
      * 
      * @param memberAccountId
-     *        The AWS ID of the Amazon Macie member account whose S3 resources' classification types you want to update.
+     *        The AWS ID of the Amazon Macie Classic member account whose S3 resources' classification types you want to
+     *        update.
      */
 
     public void setMemberAccountId(String memberAccountId) {
@@ -53,11 +56,12 @@ public class UpdateS3ResourcesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The AWS ID of the Amazon Macie member account whose S3 resources' classification types you want to update.
+     * The AWS ID of the Amazon Macie Classic member account whose S3 resources' classification types you want to
+     * update.
      * </p>
      * 
-     * @return The AWS ID of the Amazon Macie member account whose S3 resources' classification types you want to
-     *         update.
+     * @return The AWS ID of the Amazon Macie Classic member account whose S3 resources' classification types you want
+     *         to update.
      */
 
     public String getMemberAccountId() {
@@ -66,11 +70,13 @@ public class UpdateS3ResourcesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The AWS ID of the Amazon Macie member account whose S3 resources' classification types you want to update.
+     * The AWS ID of the Amazon Macie Classic member account whose S3 resources' classification types you want to
+     * update.
      * </p>
      * 
      * @param memberAccountId
-     *        The AWS ID of the Amazon Macie member account whose S3 resources' classification types you want to update.
+     *        The AWS ID of the Amazon Macie Classic member account whose S3 resources' classification types you want to
+     *        update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

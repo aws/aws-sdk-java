@@ -189,6 +189,11 @@ public class CacheClusterStaxUnmarshaller implements Unmarshaller<CacheCluster, 
                     cacheCluster.setAtRestEncryptionEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("ARN", targetDepth)) {
+                    cacheCluster.setARN(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return cacheCluster;

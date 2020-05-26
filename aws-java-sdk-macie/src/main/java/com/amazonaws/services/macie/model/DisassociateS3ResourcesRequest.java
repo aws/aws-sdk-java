@@ -27,28 +27,28 @@ public class DisassociateS3ResourcesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The ID of the Amazon Macie member account whose resources you want to remove from being monitored by Amazon
-     * Macie.
+     * The ID of the Amazon Macie Classic member account whose resources you want to remove from being monitored by
+     * Amazon Macie Classic.
      * </p>
      */
     private String memberAccountId;
     /**
      * <p>
      * The S3 resources (buckets or prefixes) that you want to remove from being monitored and classified by Amazon
-     * Macie.
+     * Macie Classic.
      * </p>
      */
     private java.util.List<S3Resource> associatedS3Resources;
 
     /**
      * <p>
-     * The ID of the Amazon Macie member account whose resources you want to remove from being monitored by Amazon
-     * Macie.
+     * The ID of the Amazon Macie Classic member account whose resources you want to remove from being monitored by
+     * Amazon Macie Classic.
      * </p>
      * 
      * @param memberAccountId
-     *        The ID of the Amazon Macie member account whose resources you want to remove from being monitored by
-     *        Amazon Macie.
+     *        The ID of the Amazon Macie Classic member account whose resources you want to remove from being monitored
+     *        by Amazon Macie Classic.
      */
 
     public void setMemberAccountId(String memberAccountId) {
@@ -57,12 +57,12 @@ public class DisassociateS3ResourcesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The ID of the Amazon Macie member account whose resources you want to remove from being monitored by Amazon
-     * Macie.
+     * The ID of the Amazon Macie Classic member account whose resources you want to remove from being monitored by
+     * Amazon Macie Classic.
      * </p>
      * 
-     * @return The ID of the Amazon Macie member account whose resources you want to remove from being monitored by
-     *         Amazon Macie.
+     * @return The ID of the Amazon Macie Classic member account whose resources you want to remove from being monitored
+     *         by Amazon Macie Classic.
      */
 
     public String getMemberAccountId() {
@@ -71,13 +71,13 @@ public class DisassociateS3ResourcesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The ID of the Amazon Macie member account whose resources you want to remove from being monitored by Amazon
-     * Macie.
+     * The ID of the Amazon Macie Classic member account whose resources you want to remove from being monitored by
+     * Amazon Macie Classic.
      * </p>
      * 
      * @param memberAccountId
-     *        The ID of the Amazon Macie member account whose resources you want to remove from being monitored by
-     *        Amazon Macie.
+     *        The ID of the Amazon Macie Classic member account whose resources you want to remove from being monitored
+     *        by Amazon Macie Classic.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class DisassociateS3ResourcesRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The S3 resources (buckets or prefixes) that you want to remove from being monitored and classified by Amazon
-     * Macie.
+     * Macie Classic.
      * </p>
      * 
      * @return The S3 resources (buckets or prefixes) that you want to remove from being monitored and classified by
-     *         Amazon Macie.
+     *         Amazon Macie Classic.
      */
 
     public java.util.List<S3Resource> getAssociatedS3Resources() {
@@ -103,12 +103,12 @@ public class DisassociateS3ResourcesRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The S3 resources (buckets or prefixes) that you want to remove from being monitored and classified by Amazon
-     * Macie.
+     * Macie Classic.
      * </p>
      * 
      * @param associatedS3Resources
      *        The S3 resources (buckets or prefixes) that you want to remove from being monitored and classified by
-     *        Amazon Macie.
+     *        Amazon Macie Classic.
      */
 
     public void setAssociatedS3Resources(java.util.Collection<S3Resource> associatedS3Resources) {
@@ -123,7 +123,7 @@ public class DisassociateS3ResourcesRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The S3 resources (buckets or prefixes) that you want to remove from being monitored and classified by Amazon
-     * Macie.
+     * Macie Classic.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -133,7 +133,7 @@ public class DisassociateS3ResourcesRequest extends com.amazonaws.AmazonWebServi
      * 
      * @param associatedS3Resources
      *        The S3 resources (buckets or prefixes) that you want to remove from being monitored and classified by
-     *        Amazon Macie.
+     *        Amazon Macie Classic.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -150,12 +150,12 @@ public class DisassociateS3ResourcesRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The S3 resources (buckets or prefixes) that you want to remove from being monitored and classified by Amazon
-     * Macie.
+     * Macie Classic.
      * </p>
      * 
      * @param associatedS3Resources
      *        The S3 resources (buckets or prefixes) that you want to remove from being monitored and classified by
-     *        Amazon Macie.
+     *        Amazon Macie Classic.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

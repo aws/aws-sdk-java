@@ -25,7 +25,7 @@ public class ListDashboardsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A structure that contains all of the dashboards shared with the user. This structure provides basic information
+     * A structure that contains all of the dashboards in your AWS account. This structure provides basic information
      * about the dashboards.
      * </p>
      */
@@ -51,11 +51,11 @@ public class ListDashboardsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A structure that contains all of the dashboards shared with the user. This structure provides basic information
+     * A structure that contains all of the dashboards in your AWS account. This structure provides basic information
      * about the dashboards.
      * </p>
      * 
-     * @return A structure that contains all of the dashboards shared with the user. This structure provides basic
+     * @return A structure that contains all of the dashboards in your AWS account. This structure provides basic
      *         information about the dashboards.
      */
 
@@ -65,12 +65,12 @@ public class ListDashboardsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A structure that contains all of the dashboards shared with the user. This structure provides basic information
+     * A structure that contains all of the dashboards in your AWS account. This structure provides basic information
      * about the dashboards.
      * </p>
      * 
      * @param dashboardSummaryList
-     *        A structure that contains all of the dashboards shared with the user. This structure provides basic
+     *        A structure that contains all of the dashboards in your AWS account. This structure provides basic
      *        information about the dashboards.
      */
 
@@ -85,7 +85,7 @@ public class ListDashboardsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A structure that contains all of the dashboards shared with the user. This structure provides basic information
+     * A structure that contains all of the dashboards in your AWS account. This structure provides basic information
      * about the dashboards.
      * </p>
      * <p>
@@ -95,7 +95,7 @@ public class ListDashboardsResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param dashboardSummaryList
-     *        A structure that contains all of the dashboards shared with the user. This structure provides basic
+     *        A structure that contains all of the dashboards in your AWS account. This structure provides basic
      *        information about the dashboards.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -112,12 +112,12 @@ public class ListDashboardsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A structure that contains all of the dashboards shared with the user. This structure provides basic information
+     * A structure that contains all of the dashboards in your AWS account. This structure provides basic information
      * about the dashboards.
      * </p>
      * 
      * @param dashboardSummaryList
-     *        A structure that contains all of the dashboards shared with the user. This structure provides basic
+     *        A structure that contains all of the dashboards in your AWS account. This structure provides basic
      *        information about the dashboards.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -30,7 +30,7 @@ public class TemplateVersionSummary implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The ARN of the template version.
+     * The Amazon Resource Name (ARN) of the template version.
      * </p>
      */
     private String arn;
@@ -61,11 +61,11 @@ public class TemplateVersionSummary implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The ARN of the template version.
+     * The Amazon Resource Name (ARN) of the template version.
      * </p>
      * 
      * @param arn
-     *        The ARN of the template version.
+     *        The Amazon Resource Name (ARN) of the template version.
      */
 
     public void setArn(String arn) {
@@ -74,10 +74,10 @@ public class TemplateVersionSummary implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The ARN of the template version.
+     * The Amazon Resource Name (ARN) of the template version.
      * </p>
      * 
-     * @return The ARN of the template version.
+     * @return The Amazon Resource Name (ARN) of the template version.
      */
 
     public String getArn() {
@@ -86,11 +86,11 @@ public class TemplateVersionSummary implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The ARN of the template version.
+     * The Amazon Resource Name (ARN) of the template version.
      * </p>
      * 
      * @param arn
-     *        The ARN of the template version.
+     *        The Amazon Resource Name (ARN) of the template version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

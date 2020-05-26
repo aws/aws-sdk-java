@@ -307,7 +307,8 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String policies;
     /**
      * <p>
-     * The data type for a String parameter. Supported data types include plain text and Amazon Machine Image IDs.
+     * The data type for a <code>String</code> parameter. Supported data types include plain text and Amazon Machine
+     * Image IDs.
      * </p>
      * <p>
      * <b>The following data type values are supported.</b>
@@ -325,9 +326,9 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * </ul>
      * <p>
-     * When you create a String parameter and specify <code>aws:ec2:image</code>, Systems Manager validates the
-     * parameter value you provide against that data type. The required format is <code>ami-12345abcdeEXAMPLE</code>.
-     * For more information, see <a
+     * When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>, Systems Manager validates
+     * the parameter value is in the required format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified
+     * AMI is available in your AWS account. For more information, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
      * parameter support for Amazon Machine Image IDs</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
@@ -2583,7 +2584,8 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The data type for a String parameter. Supported data types include plain text and Amazon Machine Image IDs.
+     * The data type for a <code>String</code> parameter. Supported data types include plain text and Amazon Machine
+     * Image IDs.
      * </p>
      * <p>
      * <b>The following data type values are supported.</b>
@@ -2601,16 +2603,16 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * </ul>
      * <p>
-     * When you create a String parameter and specify <code>aws:ec2:image</code>, Systems Manager validates the
-     * parameter value you provide against that data type. The required format is <code>ami-12345abcdeEXAMPLE</code>.
-     * For more information, see <a
+     * When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>, Systems Manager validates
+     * the parameter value is in the required format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified
+     * AMI is available in your AWS account. For more information, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
      * parameter support for Amazon Machine Image IDs</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @param dataType
-     *        The data type for a String parameter. Supported data types include plain text and Amazon Machine Image
-     *        IDs.</p>
+     *        The data type for a <code>String</code> parameter. Supported data types include plain text and Amazon
+     *        Machine Image IDs.</p>
      *        <p>
      *        <b>The following data type values are supported.</b>
      *        </p>
@@ -2627,9 +2629,9 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        </ul>
      *        <p>
-     *        When you create a String parameter and specify <code>aws:ec2:image</code>, Systems Manager validates the
-     *        parameter value you provide against that data type. The required format is
-     *        <code>ami-12345abcdeEXAMPLE</code>. For more information, see <a
+     *        When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>, Systems Manager
+     *        validates the parameter value is in the required format, such as <code>ami-12345abcdeEXAMPLE</code>, and
+     *        that the specified AMI is available in your AWS account. For more information, see <a
      *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
      *        parameter support for Amazon Machine Image IDs</a> in the <i>AWS Systems Manager User Guide</i>.
      */
@@ -2640,7 +2642,8 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The data type for a String parameter. Supported data types include plain text and Amazon Machine Image IDs.
+     * The data type for a <code>String</code> parameter. Supported data types include plain text and Amazon Machine
+     * Image IDs.
      * </p>
      * <p>
      * <b>The following data type values are supported.</b>
@@ -2658,15 +2661,15 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * </ul>
      * <p>
-     * When you create a String parameter and specify <code>aws:ec2:image</code>, Systems Manager validates the
-     * parameter value you provide against that data type. The required format is <code>ami-12345abcdeEXAMPLE</code>.
-     * For more information, see <a
+     * When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>, Systems Manager validates
+     * the parameter value is in the required format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified
+     * AMI is available in your AWS account. For more information, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
      * parameter support for Amazon Machine Image IDs</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
-     * @return The data type for a String parameter. Supported data types include plain text and Amazon Machine Image
-     *         IDs.</p>
+     * @return The data type for a <code>String</code> parameter. Supported data types include plain text and Amazon
+     *         Machine Image IDs.</p>
      *         <p>
      *         <b>The following data type values are supported.</b>
      *         </p>
@@ -2683,9 +2686,9 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         </li>
      *         </ul>
      *         <p>
-     *         When you create a String parameter and specify <code>aws:ec2:image</code>, Systems Manager validates the
-     *         parameter value you provide against that data type. The required format is
-     *         <code>ami-12345abcdeEXAMPLE</code>. For more information, see <a
+     *         When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>, Systems Manager
+     *         validates the parameter value is in the required format, such as <code>ami-12345abcdeEXAMPLE</code>, and
+     *         that the specified AMI is available in your AWS account. For more information, see <a
      *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html"
      *         >Native parameter support for Amazon Machine Image IDs</a> in the <i>AWS Systems Manager User Guide</i>.
      */
@@ -2696,7 +2699,8 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The data type for a String parameter. Supported data types include plain text and Amazon Machine Image IDs.
+     * The data type for a <code>String</code> parameter. Supported data types include plain text and Amazon Machine
+     * Image IDs.
      * </p>
      * <p>
      * <b>The following data type values are supported.</b>
@@ -2714,16 +2718,16 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * </ul>
      * <p>
-     * When you create a String parameter and specify <code>aws:ec2:image</code>, Systems Manager validates the
-     * parameter value you provide against that data type. The required format is <code>ami-12345abcdeEXAMPLE</code>.
-     * For more information, see <a
+     * When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>, Systems Manager validates
+     * the parameter value is in the required format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified
+     * AMI is available in your AWS account. For more information, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
      * parameter support for Amazon Machine Image IDs</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @param dataType
-     *        The data type for a String parameter. Supported data types include plain text and Amazon Machine Image
-     *        IDs.</p>
+     *        The data type for a <code>String</code> parameter. Supported data types include plain text and Amazon
+     *        Machine Image IDs.</p>
      *        <p>
      *        <b>The following data type values are supported.</b>
      *        </p>
@@ -2740,9 +2744,9 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        </ul>
      *        <p>
-     *        When you create a String parameter and specify <code>aws:ec2:image</code>, Systems Manager validates the
-     *        parameter value you provide against that data type. The required format is
-     *        <code>ami-12345abcdeEXAMPLE</code>. For more information, see <a
+     *        When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>, Systems Manager
+     *        validates the parameter value is in the required format, such as <code>ami-12345abcdeEXAMPLE</code>, and
+     *        that the specified AMI is available in your AWS account. For more information, see <a
      *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
      *        parameter support for Amazon Machine Image IDs</a> in the <i>AWS Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.

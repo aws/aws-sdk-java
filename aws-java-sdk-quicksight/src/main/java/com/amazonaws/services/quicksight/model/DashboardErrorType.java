@@ -20,6 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum DashboardErrorType {
 
+    ACCESS_DENIED("ACCESS_DENIED"),
+    SOURCE_NOT_FOUND("SOURCE_NOT_FOUND"),
     DATA_SET_NOT_FOUND("DATA_SET_NOT_FOUND"),
     INTERNAL_FAILURE("INTERNAL_FAILURE"),
     PARAMETER_VALUE_INCOMPATIBLE("PARAMETER_VALUE_INCOMPATIBLE"),

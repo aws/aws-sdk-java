@@ -65,6 +65,42 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
+     * <code>ebs-info.ebs-optimized-info.baseline-bandwidth-in-mbps</code> - The baseline bandwidth performance for an
+     * EBS-optimized instance type, in Mbps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ebs-info.ebs-optimized-info.baseline-throughput-in-mbps</code> - The baseline throughput performance for an
+     * EBS-optimized instance type, in MBps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ebs-info.ebs-optimized-info.baseline-iops</code> - The baseline input/output storage operations per second
+     * for an EBS-optimized instance type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ebs-info.ebs-optimized-info.maximum-bandwidth-in-mbps</code> - The maximum bandwidth performance for an
+     * EBS-optimized instance type, in Mbps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ebs-info.ebs-optimized-info.maximum-throughput-in-mbps</code> - The maximum throughput performance for an
+     * EBS-optimized instance type, in MBps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ebs-info.ebs-optimized-info.maximum-iops</code> - The maximum input/output storage operations per second
+     * for an EBS-optimized instance type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>ebs-info.ebs-optimized-support</code> - Indicates whether the instance type is EBS-optimized. (
      * <code>supported</code> | <code>unsupported</code> | <code>default</code>)
      * </p>
@@ -129,6 +165,12 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * <p>
      * <code>network-info.ena-support</code> - Indicates whether Elastic Network Adapter (ENA) is supported or required.
      * (<code>required</code> | <code>supported</code> | <code>unsupported</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-info.efa-supported</code> - Indicates whether the instance type supports Elastic Fabric Adapter
+     * (EFA). (<code>true</code> | <code>false</code>)
      * </p>
      * </li>
      * <li>
@@ -348,6 +390,42 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
+     * <code>ebs-info.ebs-optimized-info.baseline-bandwidth-in-mbps</code> - The baseline bandwidth performance for an
+     * EBS-optimized instance type, in Mbps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ebs-info.ebs-optimized-info.baseline-throughput-in-mbps</code> - The baseline throughput performance for an
+     * EBS-optimized instance type, in MBps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ebs-info.ebs-optimized-info.baseline-iops</code> - The baseline input/output storage operations per second
+     * for an EBS-optimized instance type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ebs-info.ebs-optimized-info.maximum-bandwidth-in-mbps</code> - The maximum bandwidth performance for an
+     * EBS-optimized instance type, in Mbps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ebs-info.ebs-optimized-info.maximum-throughput-in-mbps</code> - The maximum throughput performance for an
+     * EBS-optimized instance type, in MBps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ebs-info.ebs-optimized-info.maximum-iops</code> - The maximum input/output storage operations per second
+     * for an EBS-optimized instance type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>ebs-info.ebs-optimized-support</code> - Indicates whether the instance type is EBS-optimized. (
      * <code>supported</code> | <code>unsupported</code> | <code>default</code>)
      * </p>
@@ -412,6 +490,12 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * <p>
      * <code>network-info.ena-support</code> - Indicates whether Elastic Network Adapter (ENA) is supported or required.
      * (<code>required</code> | <code>supported</code> | <code>unsupported</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-info.efa-supported</code> - Indicates whether the instance type supports Elastic Fabric Adapter
+     * (EFA). (<code>true</code> | <code>false</code>)
      * </p>
      * </li>
      * <li>
@@ -492,6 +576,42 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *         </li>
      *         <li>
      *         <p>
+     *         <code>ebs-info.ebs-optimized-info.baseline-bandwidth-in-mbps</code> - The baseline bandwidth performance
+     *         for an EBS-optimized instance type, in Mbps.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ebs-info.ebs-optimized-info.baseline-throughput-in-mbps</code> - The baseline throughput
+     *         performance for an EBS-optimized instance type, in MBps.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ebs-info.ebs-optimized-info.baseline-iops</code> - The baseline input/output storage operations per
+     *         second for an EBS-optimized instance type.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ebs-info.ebs-optimized-info.maximum-bandwidth-in-mbps</code> - The maximum bandwidth performance
+     *         for an EBS-optimized instance type, in Mbps.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ebs-info.ebs-optimized-info.maximum-throughput-in-mbps</code> - The maximum throughput performance
+     *         for an EBS-optimized instance type, in MBps.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ebs-info.ebs-optimized-info.maximum-iops</code> - The maximum input/output storage operations per
+     *         second for an EBS-optimized instance type.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>ebs-info.ebs-optimized-support</code> - Indicates whether the instance type is EBS-optimized. (
      *         <code>supported</code> | <code>unsupported</code> | <code>default</code>)
      *         </p>
@@ -557,6 +677,12 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *         <p>
      *         <code>network-info.ena-support</code> - Indicates whether Elastic Network Adapter (ENA) is supported or
      *         required. (<code>required</code> | <code>supported</code> | <code>unsupported</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>network-info.efa-supported</code> - Indicates whether the instance type supports Elastic Fabric
+     *         Adapter (EFA). (<code>true</code> | <code>false</code>)
      *         </p>
      *         </li>
      *         <li>
@@ -649,6 +775,42 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
+     * <code>ebs-info.ebs-optimized-info.baseline-bandwidth-in-mbps</code> - The baseline bandwidth performance for an
+     * EBS-optimized instance type, in Mbps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ebs-info.ebs-optimized-info.baseline-throughput-in-mbps</code> - The baseline throughput performance for an
+     * EBS-optimized instance type, in MBps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ebs-info.ebs-optimized-info.baseline-iops</code> - The baseline input/output storage operations per second
+     * for an EBS-optimized instance type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ebs-info.ebs-optimized-info.maximum-bandwidth-in-mbps</code> - The maximum bandwidth performance for an
+     * EBS-optimized instance type, in Mbps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ebs-info.ebs-optimized-info.maximum-throughput-in-mbps</code> - The maximum throughput performance for an
+     * EBS-optimized instance type, in MBps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ebs-info.ebs-optimized-info.maximum-iops</code> - The maximum input/output storage operations per second
+     * for an EBS-optimized instance type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>ebs-info.ebs-optimized-support</code> - Indicates whether the instance type is EBS-optimized. (
      * <code>supported</code> | <code>unsupported</code> | <code>default</code>)
      * </p>
@@ -713,6 +875,12 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * <p>
      * <code>network-info.ena-support</code> - Indicates whether Elastic Network Adapter (ENA) is supported or required.
      * (<code>required</code> | <code>supported</code> | <code>unsupported</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-info.efa-supported</code> - Indicates whether the instance type supports Elastic Fabric Adapter
+     * (EFA). (<code>true</code> | <code>false</code>)
      * </p>
      * </li>
      * <li>
@@ -794,6 +962,42 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        </li>
      *        <li>
      *        <p>
+     *        <code>ebs-info.ebs-optimized-info.baseline-bandwidth-in-mbps</code> - The baseline bandwidth performance
+     *        for an EBS-optimized instance type, in Mbps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ebs-info.ebs-optimized-info.baseline-throughput-in-mbps</code> - The baseline throughput performance
+     *        for an EBS-optimized instance type, in MBps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ebs-info.ebs-optimized-info.baseline-iops</code> - The baseline input/output storage operations per
+     *        second for an EBS-optimized instance type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ebs-info.ebs-optimized-info.maximum-bandwidth-in-mbps</code> - The maximum bandwidth performance for
+     *        an EBS-optimized instance type, in Mbps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ebs-info.ebs-optimized-info.maximum-throughput-in-mbps</code> - The maximum throughput performance
+     *        for an EBS-optimized instance type, in MBps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ebs-info.ebs-optimized-info.maximum-iops</code> - The maximum input/output storage operations per
+     *        second for an EBS-optimized instance type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>ebs-info.ebs-optimized-support</code> - Indicates whether the instance type is EBS-optimized. (
      *        <code>supported</code> | <code>unsupported</code> | <code>default</code>)
      *        </p>
@@ -859,6 +1063,12 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        <p>
      *        <code>network-info.ena-support</code> - Indicates whether Elastic Network Adapter (ENA) is supported or
      *        required. (<code>required</code> | <code>supported</code> | <code>unsupported</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-info.efa-supported</code> - Indicates whether the instance type supports Elastic Fabric
+     *        Adapter (EFA). (<code>true</code> | <code>false</code>)
      *        </p>
      *        </li>
      *        <li>
@@ -953,6 +1163,42 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
+     * <code>ebs-info.ebs-optimized-info.baseline-bandwidth-in-mbps</code> - The baseline bandwidth performance for an
+     * EBS-optimized instance type, in Mbps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ebs-info.ebs-optimized-info.baseline-throughput-in-mbps</code> - The baseline throughput performance for an
+     * EBS-optimized instance type, in MBps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ebs-info.ebs-optimized-info.baseline-iops</code> - The baseline input/output storage operations per second
+     * for an EBS-optimized instance type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ebs-info.ebs-optimized-info.maximum-bandwidth-in-mbps</code> - The maximum bandwidth performance for an
+     * EBS-optimized instance type, in Mbps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ebs-info.ebs-optimized-info.maximum-throughput-in-mbps</code> - The maximum throughput performance for an
+     * EBS-optimized instance type, in MBps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ebs-info.ebs-optimized-info.maximum-iops</code> - The maximum input/output storage operations per second
+     * for an EBS-optimized instance type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>ebs-info.ebs-optimized-support</code> - Indicates whether the instance type is EBS-optimized. (
      * <code>supported</code> | <code>unsupported</code> | <code>default</code>)
      * </p>
@@ -1017,6 +1263,12 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * <p>
      * <code>network-info.ena-support</code> - Indicates whether Elastic Network Adapter (ENA) is supported or required.
      * (<code>required</code> | <code>supported</code> | <code>unsupported</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-info.efa-supported</code> - Indicates whether the instance type supports Elastic Fabric Adapter
+     * (EFA). (<code>true</code> | <code>false</code>)
      * </p>
      * </li>
      * <li>
@@ -1103,6 +1355,42 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        </li>
      *        <li>
      *        <p>
+     *        <code>ebs-info.ebs-optimized-info.baseline-bandwidth-in-mbps</code> - The baseline bandwidth performance
+     *        for an EBS-optimized instance type, in Mbps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ebs-info.ebs-optimized-info.baseline-throughput-in-mbps</code> - The baseline throughput performance
+     *        for an EBS-optimized instance type, in MBps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ebs-info.ebs-optimized-info.baseline-iops</code> - The baseline input/output storage operations per
+     *        second for an EBS-optimized instance type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ebs-info.ebs-optimized-info.maximum-bandwidth-in-mbps</code> - The maximum bandwidth performance for
+     *        an EBS-optimized instance type, in Mbps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ebs-info.ebs-optimized-info.maximum-throughput-in-mbps</code> - The maximum throughput performance
+     *        for an EBS-optimized instance type, in MBps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ebs-info.ebs-optimized-info.maximum-iops</code> - The maximum input/output storage operations per
+     *        second for an EBS-optimized instance type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>ebs-info.ebs-optimized-support</code> - Indicates whether the instance type is EBS-optimized. (
      *        <code>supported</code> | <code>unsupported</code> | <code>default</code>)
      *        </p>
@@ -1168,6 +1456,12 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        <p>
      *        <code>network-info.ena-support</code> - Indicates whether Elastic Network Adapter (ENA) is supported or
      *        required. (<code>required</code> | <code>supported</code> | <code>unsupported</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-info.efa-supported</code> - Indicates whether the instance type supports Elastic Fabric
+     *        Adapter (EFA). (<code>true</code> | <code>false</code>)
      *        </p>
      *        </li>
      *        <li>
@@ -1264,6 +1558,42 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
+     * <code>ebs-info.ebs-optimized-info.baseline-bandwidth-in-mbps</code> - The baseline bandwidth performance for an
+     * EBS-optimized instance type, in Mbps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ebs-info.ebs-optimized-info.baseline-throughput-in-mbps</code> - The baseline throughput performance for an
+     * EBS-optimized instance type, in MBps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ebs-info.ebs-optimized-info.baseline-iops</code> - The baseline input/output storage operations per second
+     * for an EBS-optimized instance type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ebs-info.ebs-optimized-info.maximum-bandwidth-in-mbps</code> - The maximum bandwidth performance for an
+     * EBS-optimized instance type, in Mbps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ebs-info.ebs-optimized-info.maximum-throughput-in-mbps</code> - The maximum throughput performance for an
+     * EBS-optimized instance type, in MBps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ebs-info.ebs-optimized-info.maximum-iops</code> - The maximum input/output storage operations per second
+     * for an EBS-optimized instance type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>ebs-info.ebs-optimized-support</code> - Indicates whether the instance type is EBS-optimized. (
      * <code>supported</code> | <code>unsupported</code> | <code>default</code>)
      * </p>
@@ -1328,6 +1658,12 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * <p>
      * <code>network-info.ena-support</code> - Indicates whether Elastic Network Adapter (ENA) is supported or required.
      * (<code>required</code> | <code>supported</code> | <code>unsupported</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-info.efa-supported</code> - Indicates whether the instance type supports Elastic Fabric Adapter
+     * (EFA). (<code>true</code> | <code>false</code>)
      * </p>
      * </li>
      * <li>
@@ -1409,6 +1745,42 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        </li>
      *        <li>
      *        <p>
+     *        <code>ebs-info.ebs-optimized-info.baseline-bandwidth-in-mbps</code> - The baseline bandwidth performance
+     *        for an EBS-optimized instance type, in Mbps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ebs-info.ebs-optimized-info.baseline-throughput-in-mbps</code> - The baseline throughput performance
+     *        for an EBS-optimized instance type, in MBps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ebs-info.ebs-optimized-info.baseline-iops</code> - The baseline input/output storage operations per
+     *        second for an EBS-optimized instance type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ebs-info.ebs-optimized-info.maximum-bandwidth-in-mbps</code> - The maximum bandwidth performance for
+     *        an EBS-optimized instance type, in Mbps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ebs-info.ebs-optimized-info.maximum-throughput-in-mbps</code> - The maximum throughput performance
+     *        for an EBS-optimized instance type, in MBps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ebs-info.ebs-optimized-info.maximum-iops</code> - The maximum input/output storage operations per
+     *        second for an EBS-optimized instance type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>ebs-info.ebs-optimized-support</code> - Indicates whether the instance type is EBS-optimized. (
      *        <code>supported</code> | <code>unsupported</code> | <code>default</code>)
      *        </p>
@@ -1474,6 +1846,12 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        <p>
      *        <code>network-info.ena-support</code> - Indicates whether Elastic Network Adapter (ENA) is supported or
      *        required. (<code>required</code> | <code>supported</code> | <code>unsupported</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-info.efa-supported</code> - Indicates whether the instance type supports Elastic Fabric
+     *        Adapter (EFA). (<code>true</code> | <code>false</code>)
      *        </p>
      *        </li>
      *        <li>

@@ -52,6 +52,11 @@ public class EbsInfoStaxUnmarshaller implements Unmarshaller<EbsInfo, StaxUnmars
                     ebsInfo.setEncryptionSupport(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("ebsOptimizedInfo", targetDepth)) {
+                    ebsInfo.setEbsOptimizedInfo(EbsOptimizedInfoStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return ebsInfo;

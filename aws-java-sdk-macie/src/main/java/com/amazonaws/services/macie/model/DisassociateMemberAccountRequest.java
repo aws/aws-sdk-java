@@ -27,18 +27,18 @@ public class DisassociateMemberAccountRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The ID of the member account that you want to remove from Amazon Macie.
+     * The ID of the member account that you want to remove from Amazon Macie Classic.
      * </p>
      */
     private String memberAccountId;
 
     /**
      * <p>
-     * The ID of the member account that you want to remove from Amazon Macie.
+     * The ID of the member account that you want to remove from Amazon Macie Classic.
      * </p>
      * 
      * @param memberAccountId
-     *        The ID of the member account that you want to remove from Amazon Macie.
+     *        The ID of the member account that you want to remove from Amazon Macie Classic.
      */
 
     public void setMemberAccountId(String memberAccountId) {
@@ -47,10 +47,10 @@ public class DisassociateMemberAccountRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The ID of the member account that you want to remove from Amazon Macie.
+     * The ID of the member account that you want to remove from Amazon Macie Classic.
      * </p>
      * 
-     * @return The ID of the member account that you want to remove from Amazon Macie.
+     * @return The ID of the member account that you want to remove from Amazon Macie Classic.
      */
 
     public String getMemberAccountId() {
@@ -59,11 +59,11 @@ public class DisassociateMemberAccountRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The ID of the member account that you want to remove from Amazon Macie.
+     * The ID of the member account that you want to remove from Amazon Macie Classic.
      * </p>
      * 
      * @param memberAccountId
-     *        The ID of the member account that you want to remove from Amazon Macie.
+     *        The ID of the member account that you want to remove from Amazon Macie Classic.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

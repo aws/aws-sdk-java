@@ -294,6 +294,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a resource
      * you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference workloads.
      * </p>
+     * <p>
+     * You cannot specify accelerators from different generations in the same request.
+     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ElasticInferenceAccelerator> elasticInferenceAccelerators;
     /**
@@ -2459,10 +2462,15 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a resource
      * you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference workloads.
      * </p>
+     * <p>
+     * You cannot specify accelerators from different generations in the same request.
+     * </p>
      * 
      * @return An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a
      *         resource you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference
-     *         workloads.
+     *         workloads.</p>
+     *         <p>
+     *         You cannot specify accelerators from different generations in the same request.
      */
 
     public java.util.List<ElasticInferenceAccelerator> getElasticInferenceAccelerators() {
@@ -2477,11 +2485,16 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a resource
      * you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference workloads.
      * </p>
+     * <p>
+     * You cannot specify accelerators from different generations in the same request.
+     * </p>
      * 
      * @param elasticInferenceAccelerators
      *        An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a
      *        resource you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference
-     *        workloads.
+     *        workloads.</p>
+     *        <p>
+     *        You cannot specify accelerators from different generations in the same request.
      */
 
     public void setElasticInferenceAccelerators(java.util.Collection<ElasticInferenceAccelerator> elasticInferenceAccelerators) {
@@ -2499,6 +2512,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference workloads.
      * </p>
      * <p>
+     * You cannot specify accelerators from different generations in the same request.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setElasticInferenceAccelerators(java.util.Collection)} or
      * {@link #withElasticInferenceAccelerators(java.util.Collection)} if you want to override the existing values.
@@ -2507,7 +2523,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * @param elasticInferenceAccelerators
      *        An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a
      *        resource you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference
-     *        workloads.
+     *        workloads.</p>
+     *        <p>
+     *        You cannot specify accelerators from different generations in the same request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2526,11 +2544,16 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a resource
      * you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference workloads.
      * </p>
+     * <p>
+     * You cannot specify accelerators from different generations in the same request.
+     * </p>
      * 
      * @param elasticInferenceAccelerators
      *        An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a
      *        resource you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference
-     *        workloads.
+     *        workloads.</p>
+     *        <p>
+     *        You cannot specify accelerators from different generations in the same request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

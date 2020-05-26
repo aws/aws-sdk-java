@@ -114,6 +114,11 @@ public class GlobalReplicationGroupStaxUnmarshaller implements Unmarshaller<Glob
                     globalReplicationGroup.setAtRestEncryptionEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("ARN", targetDepth)) {
+                    globalReplicationGroup.setARN(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return globalReplicationGroup;

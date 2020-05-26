@@ -116,7 +116,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
     private Boolean automaticFailoverEnabled;
     /**
      * <p>
-     * The number of clusters this replication group initially has.
+     * The number of nodes in the cluster.
      * </p>
      * <p>
      * This parameter is not used if there is more than one node group (shard). You should use
@@ -1229,7 +1229,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The number of clusters this replication group initially has.
+     * The number of nodes in the cluster.
      * </p>
      * <p>
      * This parameter is not used if there is more than one node group (shard). You should use
@@ -1245,7 +1245,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param numCacheClusters
-     *        The number of clusters this replication group initially has.</p>
+     *        The number of nodes in the cluster.</p>
      *        <p>
      *        This parameter is not used if there is more than one node group (shard). You should use
      *        <code>ReplicasPerNodeGroup</code> instead.
@@ -1265,7 +1265,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The number of clusters this replication group initially has.
+     * The number of nodes in the cluster.
      * </p>
      * <p>
      * This parameter is not used if there is more than one node group (shard). You should use
@@ -1280,7 +1280,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * The maximum permitted value for <code>NumCacheClusters</code> is 6 (1 primary plus 5 replicas).
      * </p>
      * 
-     * @return The number of clusters this replication group initially has.</p>
+     * @return The number of nodes in the cluster.</p>
      *         <p>
      *         This parameter is not used if there is more than one node group (shard). You should use
      *         <code>ReplicasPerNodeGroup</code> instead.
@@ -1300,7 +1300,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The number of clusters this replication group initially has.
+     * The number of nodes in the cluster.
      * </p>
      * <p>
      * This parameter is not used if there is more than one node group (shard). You should use
@@ -1316,7 +1316,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param numCacheClusters
-     *        The number of clusters this replication group initially has.</p>
+     *        The number of nodes in the cluster.</p>
      *        <p>
      *        This parameter is not used if there is more than one node group (shard). You should use
      *        <code>ReplicasPerNodeGroup</code> instead.

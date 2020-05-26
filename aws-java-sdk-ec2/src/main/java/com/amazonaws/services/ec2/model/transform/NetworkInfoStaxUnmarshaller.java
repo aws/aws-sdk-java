@@ -72,6 +72,11 @@ public class NetworkInfoStaxUnmarshaller implements Unmarshaller<NetworkInfo, St
                     networkInfo.setEnaSupport(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("efaSupported", targetDepth)) {
+                    networkInfo.setEfaSupported(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return networkInfo;

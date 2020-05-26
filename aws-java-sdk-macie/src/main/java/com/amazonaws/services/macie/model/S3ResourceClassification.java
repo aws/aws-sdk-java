@@ -19,9 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The S3 resources that you want to associate with Amazon Macie for monitoring and data classification. This data type
- * is used as a request parameter in the AssociateS3Resources action and a response parameter in the ListS3Resources
- * action.
+ * The S3 resources that you want to associate with Amazon Macie Classic for monitoring and data classification. This
+ * data type is used as a request parameter in the AssociateS3Resources action and a response parameter in the
+ * ListS3Resources action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/S3ResourceClassification" target="_top">AWS API
@@ -32,30 +32,30 @@ public class S3ResourceClassification implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The name of the S3 bucket that you want to associate with Amazon Macie.
+     * The name of the S3 bucket that you want to associate with Amazon Macie Classic.
      * </p>
      */
     private String bucketName;
     /**
      * <p>
-     * The prefix of the S3 bucket that you want to associate with Amazon Macie.
+     * The prefix of the S3 bucket that you want to associate with Amazon Macie Classic.
      * </p>
      */
     private String prefix;
     /**
      * <p>
-     * The classification type that you want to specify for the resource associated with Amazon Macie.
+     * The classification type that you want to specify for the resource associated with Amazon Macie Classic.
      * </p>
      */
     private ClassificationType classificationType;
 
     /**
      * <p>
-     * The name of the S3 bucket that you want to associate with Amazon Macie.
+     * The name of the S3 bucket that you want to associate with Amazon Macie Classic.
      * </p>
      * 
      * @param bucketName
-     *        The name of the S3 bucket that you want to associate with Amazon Macie.
+     *        The name of the S3 bucket that you want to associate with Amazon Macie Classic.
      */
 
     public void setBucketName(String bucketName) {
@@ -64,10 +64,10 @@ public class S3ResourceClassification implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The name of the S3 bucket that you want to associate with Amazon Macie.
+     * The name of the S3 bucket that you want to associate with Amazon Macie Classic.
      * </p>
      * 
-     * @return The name of the S3 bucket that you want to associate with Amazon Macie.
+     * @return The name of the S3 bucket that you want to associate with Amazon Macie Classic.
      */
 
     public String getBucketName() {
@@ -76,11 +76,11 @@ public class S3ResourceClassification implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The name of the S3 bucket that you want to associate with Amazon Macie.
+     * The name of the S3 bucket that you want to associate with Amazon Macie Classic.
      * </p>
      * 
      * @param bucketName
-     *        The name of the S3 bucket that you want to associate with Amazon Macie.
+     *        The name of the S3 bucket that you want to associate with Amazon Macie Classic.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -91,11 +91,11 @@ public class S3ResourceClassification implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The prefix of the S3 bucket that you want to associate with Amazon Macie.
+     * The prefix of the S3 bucket that you want to associate with Amazon Macie Classic.
      * </p>
      * 
      * @param prefix
-     *        The prefix of the S3 bucket that you want to associate with Amazon Macie.
+     *        The prefix of the S3 bucket that you want to associate with Amazon Macie Classic.
      */
 
     public void setPrefix(String prefix) {
@@ -104,10 +104,10 @@ public class S3ResourceClassification implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The prefix of the S3 bucket that you want to associate with Amazon Macie.
+     * The prefix of the S3 bucket that you want to associate with Amazon Macie Classic.
      * </p>
      * 
-     * @return The prefix of the S3 bucket that you want to associate with Amazon Macie.
+     * @return The prefix of the S3 bucket that you want to associate with Amazon Macie Classic.
      */
 
     public String getPrefix() {
@@ -116,11 +116,11 @@ public class S3ResourceClassification implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The prefix of the S3 bucket that you want to associate with Amazon Macie.
+     * The prefix of the S3 bucket that you want to associate with Amazon Macie Classic.
      * </p>
      * 
      * @param prefix
-     *        The prefix of the S3 bucket that you want to associate with Amazon Macie.
+     *        The prefix of the S3 bucket that you want to associate with Amazon Macie Classic.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -131,11 +131,11 @@ public class S3ResourceClassification implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The classification type that you want to specify for the resource associated with Amazon Macie.
+     * The classification type that you want to specify for the resource associated with Amazon Macie Classic.
      * </p>
      * 
      * @param classificationType
-     *        The classification type that you want to specify for the resource associated with Amazon Macie.
+     *        The classification type that you want to specify for the resource associated with Amazon Macie Classic.
      */
 
     public void setClassificationType(ClassificationType classificationType) {
@@ -144,10 +144,10 @@ public class S3ResourceClassification implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The classification type that you want to specify for the resource associated with Amazon Macie.
+     * The classification type that you want to specify for the resource associated with Amazon Macie Classic.
      * </p>
      * 
-     * @return The classification type that you want to specify for the resource associated with Amazon Macie.
+     * @return The classification type that you want to specify for the resource associated with Amazon Macie Classic.
      */
 
     public ClassificationType getClassificationType() {
@@ -156,11 +156,11 @@ public class S3ResourceClassification implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The classification type that you want to specify for the resource associated with Amazon Macie.
+     * The classification type that you want to specify for the resource associated with Amazon Macie Classic.
      * </p>
      * 
      * @param classificationType
-     *        The classification type that you want to specify for the resource associated with Amazon Macie.
+     *        The classification type that you want to specify for the resource associated with Amazon Macie Classic.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -149,6 +149,11 @@ public class ReplicationGroupStaxUnmarshaller implements Unmarshaller<Replicatio
                     replicationGroup.setKmsKeyId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("ARN", targetDepth)) {
+                    replicationGroup.setARN(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return replicationGroup;

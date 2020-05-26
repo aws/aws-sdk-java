@@ -80,6 +80,16 @@ public class InstanceTypeInfoStaxUnmarshaller implements Unmarshaller<InstanceTy
                     continue;
                 }
 
+                if (context.testExpression("supportedVirtualizationTypes", targetDepth)) {
+                    instanceTypeInfo.withSupportedVirtualizationTypes(new ArrayList<String>());
+                    continue;
+                }
+
+                if (context.testExpression("supportedVirtualizationTypes/item", targetDepth)) {
+                    instanceTypeInfo.withSupportedVirtualizationTypes(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("bareMetal", targetDepth)) {
                     instanceTypeInfo.setBareMetal(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

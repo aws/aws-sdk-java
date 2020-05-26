@@ -27,18 +27,18 @@ public class AssociateMemberAccountRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ID of the AWS account that you want to associate with Amazon Macie as a member account.
+     * The ID of the AWS account that you want to associate with Amazon Macie Classic as a member account.
      * </p>
      */
     private String memberAccountId;
 
     /**
      * <p>
-     * The ID of the AWS account that you want to associate with Amazon Macie as a member account.
+     * The ID of the AWS account that you want to associate with Amazon Macie Classic as a member account.
      * </p>
      * 
      * @param memberAccountId
-     *        The ID of the AWS account that you want to associate with Amazon Macie as a member account.
+     *        The ID of the AWS account that you want to associate with Amazon Macie Classic as a member account.
      */
 
     public void setMemberAccountId(String memberAccountId) {
@@ -47,10 +47,10 @@ public class AssociateMemberAccountRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ID of the AWS account that you want to associate with Amazon Macie as a member account.
+     * The ID of the AWS account that you want to associate with Amazon Macie Classic as a member account.
      * </p>
      * 
-     * @return The ID of the AWS account that you want to associate with Amazon Macie as a member account.
+     * @return The ID of the AWS account that you want to associate with Amazon Macie Classic as a member account.
      */
 
     public String getMemberAccountId() {
@@ -59,11 +59,11 @@ public class AssociateMemberAccountRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ID of the AWS account that you want to associate with Amazon Macie as a member account.
+     * The ID of the AWS account that you want to associate with Amazon Macie Classic as a member account.
      * </p>
      * 
      * @param memberAccountId
-     *        The ID of the AWS account that you want to associate with Amazon Macie as a member account.
+     *        The ID of the AWS account that you want to associate with Amazon Macie Classic as a member account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

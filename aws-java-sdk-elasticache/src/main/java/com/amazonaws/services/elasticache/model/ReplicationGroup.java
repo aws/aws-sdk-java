@@ -214,6 +214,12 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * </p>
      */
     private String kmsKeyId;
+    /**
+     * <p>
+     * The ARN (Amazon Resource Name) of the replication group.
+     * </p>
+     */
+    private String aRN;
 
     /**
      * <p>
@@ -1686,6 +1692,46 @@ public class ReplicationGroup implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ARN (Amazon Resource Name) of the replication group.
+     * </p>
+     * 
+     * @param aRN
+     *        The ARN (Amazon Resource Name) of the replication group.
+     */
+
+    public void setARN(String aRN) {
+        this.aRN = aRN;
+    }
+
+    /**
+     * <p>
+     * The ARN (Amazon Resource Name) of the replication group.
+     * </p>
+     * 
+     * @return The ARN (Amazon Resource Name) of the replication group.
+     */
+
+    public String getARN() {
+        return this.aRN;
+    }
+
+    /**
+     * <p>
+     * The ARN (Amazon Resource Name) of the replication group.
+     * </p>
+     * 
+     * @param aRN
+     *        The ARN (Amazon Resource Name) of the replication group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplicationGroup withARN(String aRN) {
+        setARN(aRN);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1734,7 +1780,9 @@ public class ReplicationGroup implements Serializable, Cloneable {
         if (getAtRestEncryptionEnabled() != null)
             sb.append("AtRestEncryptionEnabled: ").append(getAtRestEncryptionEnabled()).append(",");
         if (getKmsKeyId() != null)
-            sb.append("KmsKeyId: ").append(getKmsKeyId());
+            sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
+        if (getARN() != null)
+            sb.append("ARN: ").append(getARN());
         sb.append("}");
         return sb.toString();
     }
@@ -1825,6 +1873,10 @@ public class ReplicationGroup implements Serializable, Cloneable {
             return false;
         if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
             return false;
+        if (other.getARN() == null ^ this.getARN() == null)
+            return false;
+        if (other.getARN() != null && other.getARN().equals(this.getARN()) == false)
+            return false;
         return true;
     }
 
@@ -1852,6 +1904,7 @@ public class ReplicationGroup implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getTransitEncryptionEnabled() == null) ? 0 : getTransitEncryptionEnabled().hashCode());
         hashCode = prime * hashCode + ((getAtRestEncryptionEnabled() == null) ? 0 : getAtRestEncryptionEnabled().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
+        hashCode = prime * hashCode + ((getARN() == null) ? 0 : getARN().hashCode());
         return hashCode;
     }
 

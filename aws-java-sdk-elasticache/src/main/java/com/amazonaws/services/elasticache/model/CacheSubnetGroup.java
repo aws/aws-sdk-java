@@ -62,6 +62,12 @@ public class CacheSubnetGroup implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Subnet> subnets;
+    /**
+     * <p>
+     * The ARN (Amazon Resource Name) of the cache subnet group.
+     * </p>
+     */
+    private String aRN;
 
     /**
      * <p>
@@ -257,6 +263,46 @@ public class CacheSubnetGroup implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ARN (Amazon Resource Name) of the cache subnet group.
+     * </p>
+     * 
+     * @param aRN
+     *        The ARN (Amazon Resource Name) of the cache subnet group.
+     */
+
+    public void setARN(String aRN) {
+        this.aRN = aRN;
+    }
+
+    /**
+     * <p>
+     * The ARN (Amazon Resource Name) of the cache subnet group.
+     * </p>
+     * 
+     * @return The ARN (Amazon Resource Name) of the cache subnet group.
+     */
+
+    public String getARN() {
+        return this.aRN;
+    }
+
+    /**
+     * <p>
+     * The ARN (Amazon Resource Name) of the cache subnet group.
+     * </p>
+     * 
+     * @param aRN
+     *        The ARN (Amazon Resource Name) of the cache subnet group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CacheSubnetGroup withARN(String aRN) {
+        setARN(aRN);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -275,7 +321,9 @@ public class CacheSubnetGroup implements Serializable, Cloneable {
         if (getVpcId() != null)
             sb.append("VpcId: ").append(getVpcId()).append(",");
         if (getSubnets() != null)
-            sb.append("Subnets: ").append(getSubnets());
+            sb.append("Subnets: ").append(getSubnets()).append(",");
+        if (getARN() != null)
+            sb.append("ARN: ").append(getARN());
         sb.append("}");
         return sb.toString();
     }
@@ -306,6 +354,10 @@ public class CacheSubnetGroup implements Serializable, Cloneable {
             return false;
         if (other.getSubnets() != null && other.getSubnets().equals(this.getSubnets()) == false)
             return false;
+        if (other.getARN() == null ^ this.getARN() == null)
+            return false;
+        if (other.getARN() != null && other.getARN().equals(this.getARN()) == false)
+            return false;
         return true;
     }
 
@@ -318,6 +370,7 @@ public class CacheSubnetGroup implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCacheSubnetGroupDescription() == null) ? 0 : getCacheSubnetGroupDescription().hashCode());
         hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
         hashCode = prime * hashCode + ((getSubnets() == null) ? 0 : getSubnets().hashCode());
+        hashCode = prime * hashCode + ((getARN() == null) ? 0 : getARN().hashCode());
         return hashCode;
     }
 

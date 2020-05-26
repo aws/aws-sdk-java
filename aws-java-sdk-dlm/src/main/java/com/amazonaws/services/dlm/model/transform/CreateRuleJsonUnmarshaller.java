@@ -60,6 +60,10 @@ public class CreateRuleJsonUnmarshaller implements Unmarshaller<CreateRule, Json
                     context.nextToken();
                     createRule.setTimes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
                 }
+                if (context.testExpression("CronExpression", targetDepth)) {
+                    context.nextToken();
+                    createRule.setCronExpression(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

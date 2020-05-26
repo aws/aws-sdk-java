@@ -54,6 +54,12 @@ public class CacheParameterGroup implements Serializable, Cloneable {
      * </p>
      */
     private Boolean isGlobal;
+    /**
+     * <p>
+     * The ARN (Amazon Resource Name) of the cache parameter group.
+     * </p>
+     */
+    private String aRN;
 
     /**
      * <p>
@@ -249,6 +255,46 @@ public class CacheParameterGroup implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ARN (Amazon Resource Name) of the cache parameter group.
+     * </p>
+     * 
+     * @param aRN
+     *        The ARN (Amazon Resource Name) of the cache parameter group.
+     */
+
+    public void setARN(String aRN) {
+        this.aRN = aRN;
+    }
+
+    /**
+     * <p>
+     * The ARN (Amazon Resource Name) of the cache parameter group.
+     * </p>
+     * 
+     * @return The ARN (Amazon Resource Name) of the cache parameter group.
+     */
+
+    public String getARN() {
+        return this.aRN;
+    }
+
+    /**
+     * <p>
+     * The ARN (Amazon Resource Name) of the cache parameter group.
+     * </p>
+     * 
+     * @param aRN
+     *        The ARN (Amazon Resource Name) of the cache parameter group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CacheParameterGroup withARN(String aRN) {
+        setARN(aRN);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -267,7 +313,9 @@ public class CacheParameterGroup implements Serializable, Cloneable {
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getIsGlobal() != null)
-            sb.append("IsGlobal: ").append(getIsGlobal());
+            sb.append("IsGlobal: ").append(getIsGlobal()).append(",");
+        if (getARN() != null)
+            sb.append("ARN: ").append(getARN());
         sb.append("}");
         return sb.toString();
     }
@@ -298,6 +346,10 @@ public class CacheParameterGroup implements Serializable, Cloneable {
             return false;
         if (other.getIsGlobal() != null && other.getIsGlobal().equals(this.getIsGlobal()) == false)
             return false;
+        if (other.getARN() == null ^ this.getARN() == null)
+            return false;
+        if (other.getARN() != null && other.getARN().equals(this.getARN()) == false)
+            return false;
         return true;
     }
 
@@ -310,6 +362,7 @@ public class CacheParameterGroup implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCacheParameterGroupFamily() == null) ? 0 : getCacheParameterGroupFamily().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getIsGlobal() == null) ? 0 : getIsGlobal().hashCode());
+        hashCode = prime * hashCode + ((getARN() == null) ? 0 : getARN().hashCode());
         return hashCode;
     }
 

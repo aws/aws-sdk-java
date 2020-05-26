@@ -39,6 +39,12 @@ public class EbsInfo implements Serializable, Cloneable {
      * </p>
      */
     private String encryptionSupport;
+    /**
+     * <p>
+     * Describes the optimized EBS performance for the instance type.
+     * </p>
+     */
+    private EbsOptimizedInfo ebsOptimizedInfo;
 
     /**
      * <p>
@@ -175,6 +181,46 @@ public class EbsInfo implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Describes the optimized EBS performance for the instance type.
+     * </p>
+     * 
+     * @param ebsOptimizedInfo
+     *        Describes the optimized EBS performance for the instance type.
+     */
+
+    public void setEbsOptimizedInfo(EbsOptimizedInfo ebsOptimizedInfo) {
+        this.ebsOptimizedInfo = ebsOptimizedInfo;
+    }
+
+    /**
+     * <p>
+     * Describes the optimized EBS performance for the instance type.
+     * </p>
+     * 
+     * @return Describes the optimized EBS performance for the instance type.
+     */
+
+    public EbsOptimizedInfo getEbsOptimizedInfo() {
+        return this.ebsOptimizedInfo;
+    }
+
+    /**
+     * <p>
+     * Describes the optimized EBS performance for the instance type.
+     * </p>
+     * 
+     * @param ebsOptimizedInfo
+     *        Describes the optimized EBS performance for the instance type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EbsInfo withEbsOptimizedInfo(EbsOptimizedInfo ebsOptimizedInfo) {
+        setEbsOptimizedInfo(ebsOptimizedInfo);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -189,7 +235,9 @@ public class EbsInfo implements Serializable, Cloneable {
         if (getEbsOptimizedSupport() != null)
             sb.append("EbsOptimizedSupport: ").append(getEbsOptimizedSupport()).append(",");
         if (getEncryptionSupport() != null)
-            sb.append("EncryptionSupport: ").append(getEncryptionSupport());
+            sb.append("EncryptionSupport: ").append(getEncryptionSupport()).append(",");
+        if (getEbsOptimizedInfo() != null)
+            sb.append("EbsOptimizedInfo: ").append(getEbsOptimizedInfo());
         sb.append("}");
         return sb.toString();
     }
@@ -212,6 +260,10 @@ public class EbsInfo implements Serializable, Cloneable {
             return false;
         if (other.getEncryptionSupport() != null && other.getEncryptionSupport().equals(this.getEncryptionSupport()) == false)
             return false;
+        if (other.getEbsOptimizedInfo() == null ^ this.getEbsOptimizedInfo() == null)
+            return false;
+        if (other.getEbsOptimizedInfo() != null && other.getEbsOptimizedInfo().equals(this.getEbsOptimizedInfo()) == false)
+            return false;
         return true;
     }
 
@@ -222,6 +274,7 @@ public class EbsInfo implements Serializable, Cloneable {
 
         hashCode = prime * hashCode + ((getEbsOptimizedSupport() == null) ? 0 : getEbsOptimizedSupport().hashCode());
         hashCode = prime * hashCode + ((getEncryptionSupport() == null) ? 0 : getEncryptionSupport().hashCode());
+        hashCode = prime * hashCode + ((getEbsOptimizedInfo() == null) ? 0 : getEbsOptimizedInfo().hashCode());
         return hashCode;
     }
 

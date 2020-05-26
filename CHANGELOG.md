@@ -1,3 +1,28 @@
+# __1.11.790__ __2020-05-26__
+## __Amazon Data Lifecycle Manager__
+  - ### Features
+    - Allowing cron expression in the DLM policy creation schedule. 
+
+## __Amazon ElastiCache__
+  - ### Features
+    - Amazon ElastiCache now allows you to use resource based policies to manage access to operations performed on ElastiCache resources. Also, Amazon ElastiCache now exposes ARN (Amazon Resource Names) for ElastiCache resources such as Cache Clusters and Parameter Groups. ARNs can be used to apply IAM policies to ElastiCache resources.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - ebsOptimizedInfo, efaSupported and supportedVirtualizationTypes added to DescribeInstanceTypes API
+
+## __Amazon Macie__
+  - ### Features
+    - This is a documentation-only update to the Amazon Macie Classic API. This update corrects out-of-date references to the service name.
+
+## __Amazon QuickSight__
+  - ### Features
+    - Add DataSetArns to QuickSight DescribeDashboard API response.
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - The AWS Systems Manager GetOpsSummary API action now supports multiple OpsResultAttributes in the request. Currently, this feature only supports OpsResultAttributes with the following TypeNames: [AWS:EC2InstanceComputeOptimizer] or [AWS:EC2InstanceInformation, AWS:EC2InstanceComputeOptimizer]. These TypeNames can be used along with either or both of the following: [AWS:EC2InstanceRecommendation, AWS:RecommendationSource]
+
 # __1.11.789__ __2020-05-22__
 ## __AWS IoT SiteWise__
   - ### Features

@@ -62,6 +62,12 @@ public class NetworkInfo implements Serializable, Cloneable {
      * </p>
      */
     private String enaSupport;
+    /**
+     * <p>
+     * Indicates whether Elastic Fabric Adapter (EFA) is supported.
+     * </p>
+     */
+    private Boolean efaSupported;
 
     /**
      * <p>
@@ -335,6 +341,58 @@ public class NetworkInfo implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Indicates whether Elastic Fabric Adapter (EFA) is supported.
+     * </p>
+     * 
+     * @param efaSupported
+     *        Indicates whether Elastic Fabric Adapter (EFA) is supported.
+     */
+
+    public void setEfaSupported(Boolean efaSupported) {
+        this.efaSupported = efaSupported;
+    }
+
+    /**
+     * <p>
+     * Indicates whether Elastic Fabric Adapter (EFA) is supported.
+     * </p>
+     * 
+     * @return Indicates whether Elastic Fabric Adapter (EFA) is supported.
+     */
+
+    public Boolean getEfaSupported() {
+        return this.efaSupported;
+    }
+
+    /**
+     * <p>
+     * Indicates whether Elastic Fabric Adapter (EFA) is supported.
+     * </p>
+     * 
+     * @param efaSupported
+     *        Indicates whether Elastic Fabric Adapter (EFA) is supported.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetworkInfo withEfaSupported(Boolean efaSupported) {
+        setEfaSupported(efaSupported);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether Elastic Fabric Adapter (EFA) is supported.
+     * </p>
+     * 
+     * @return Indicates whether Elastic Fabric Adapter (EFA) is supported.
+     */
+
+    public Boolean isEfaSupported() {
+        return this.efaSupported;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -357,7 +415,9 @@ public class NetworkInfo implements Serializable, Cloneable {
         if (getIpv6Supported() != null)
             sb.append("Ipv6Supported: ").append(getIpv6Supported()).append(",");
         if (getEnaSupport() != null)
-            sb.append("EnaSupport: ").append(getEnaSupport());
+            sb.append("EnaSupport: ").append(getEnaSupport()).append(",");
+        if (getEfaSupported() != null)
+            sb.append("EfaSupported: ").append(getEfaSupported());
         sb.append("}");
         return sb.toString();
     }
@@ -396,6 +456,10 @@ public class NetworkInfo implements Serializable, Cloneable {
             return false;
         if (other.getEnaSupport() != null && other.getEnaSupport().equals(this.getEnaSupport()) == false)
             return false;
+        if (other.getEfaSupported() == null ^ this.getEfaSupported() == null)
+            return false;
+        if (other.getEfaSupported() != null && other.getEfaSupported().equals(this.getEfaSupported()) == false)
+            return false;
         return true;
     }
 
@@ -410,6 +474,7 @@ public class NetworkInfo implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getIpv6AddressesPerInterface() == null) ? 0 : getIpv6AddressesPerInterface().hashCode());
         hashCode = prime * hashCode + ((getIpv6Supported() == null) ? 0 : getIpv6Supported().hashCode());
         hashCode = prime * hashCode + ((getEnaSupport() == null) ? 0 : getEnaSupport().hashCode());
+        hashCode = prime * hashCode + ((getEfaSupported() == null) ? 0 : getEfaSupported().hashCode());
         return hashCode;
     }
 

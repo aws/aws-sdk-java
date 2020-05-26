@@ -42,7 +42,7 @@ public class Dashboard implements Serializable, Cloneable, StructuredPojo {
     private String arn;
     /**
      * <p>
-     * A display name for the dataset.
+     * A display name for the dashboard.
      * </p>
      */
     private String name;
@@ -153,11 +153,11 @@ public class Dashboard implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A display name for the dataset.
+     * A display name for the dashboard.
      * </p>
      * 
      * @param name
-     *        A display name for the dataset.
+     *        A display name for the dashboard.
      */
 
     public void setName(String name) {
@@ -166,10 +166,10 @@ public class Dashboard implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A display name for the dataset.
+     * A display name for the dashboard.
      * </p>
      * 
-     * @return A display name for the dataset.
+     * @return A display name for the dashboard.
      */
 
     public String getName() {
@@ -178,11 +178,11 @@ public class Dashboard implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A display name for the dataset.
+     * A display name for the dashboard.
      * </p>
      * 
      * @param name
-     *        A display name for the dataset.
+     *        A display name for the dashboard.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

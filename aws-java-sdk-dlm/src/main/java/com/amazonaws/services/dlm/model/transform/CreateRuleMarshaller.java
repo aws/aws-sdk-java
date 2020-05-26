@@ -34,6 +34,8 @@ public class CreateRuleMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IntervalUnit").build();
     private static final MarshallingInfo<List> TIMES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Times").build();
+    private static final MarshallingInfo<String> CRONEXPRESSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CronExpression").build();
 
     private static final CreateRuleMarshaller instance = new CreateRuleMarshaller();
 
@@ -54,6 +56,7 @@ public class CreateRuleMarshaller {
             protocolMarshaller.marshall(createRule.getInterval(), INTERVAL_BINDING);
             protocolMarshaller.marshall(createRule.getIntervalUnit(), INTERVALUNIT_BINDING);
             protocolMarshaller.marshall(createRule.getTimes(), TIMES_BINDING);
+            protocolMarshaller.marshall(createRule.getCronExpression(), CRONEXPRESSION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

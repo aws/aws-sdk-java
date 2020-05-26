@@ -70,6 +70,10 @@ public class CacheSecurityGroupStaxUnmarshaller implements Unmarshaller<CacheSec
                     continue;
                 }
 
+                if (context.testExpression("ARN", targetDepth)) {
+                    cacheSecurityGroup.setARN(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return cacheSecurityGroup;

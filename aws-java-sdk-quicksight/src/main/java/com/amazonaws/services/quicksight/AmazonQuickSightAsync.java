@@ -296,7 +296,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * </p>
      * <p>
      * Any ingestions operating on tagged datasets inherit the same tags automatically for use in access control. For an
-     * example, see <a href="https://aws.example.com/premiumsupport/knowledge-center/iam-ec2-resource-tags/">How do I
+     * example, see <a href="https://aws.amazon.com/premiumsupport/knowledge-center/iam-ec2-resource-tags/">How do I
      * create an IAM policy to control access to Amazon EC2 resources using tags?</a> in the AWS Knowledge Center. Tags
      * are visible on the tagged dataset, but not on the ingestion resource.
      * </p>
@@ -315,7 +315,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * </p>
      * <p>
      * Any ingestions operating on tagged datasets inherit the same tags automatically for use in access control. For an
-     * example, see <a href="https://aws.example.com/premiumsupport/knowledge-center/iam-ec2-resource-tags/">How do I
+     * example, see <a href="https://aws.amazon.com/premiumsupport/knowledge-center/iam-ec2-resource-tags/">How do I
      * create an IAM policy to control access to Amazon EC2 resources using tags?</a> in the AWS Knowledge Center. Tags
      * are visible on the tagged dataset, but not on the ingestion resource.
      * </p>

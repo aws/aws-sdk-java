@@ -21,6 +21,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Specifies when to create snapshots of EBS volumes.
  * </p>
+ * <p>
+ * You must specify either a Cron expression or an interval, interval unit, and start time. You cannot specify both.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/CreateRule" target="_top">AWS API
  *      Documentation</a>
@@ -45,10 +48,20 @@ public class CreateRule implements Serializable, Cloneable, StructuredPojo {
      * The time, in UTC, to start the operation. The supported format is hh:mm.
      * </p>
      * <p>
-     * The operation occurs within a one-hour window following the specified time.
+     * The operation occurs within a one-hour window following the specified time. If you do not specify a time, Amazon
+     * DLM selects a time within the next 24 hours.
      * </p>
      */
     private java.util.List<String> times;
+    /**
+     * <p>
+     * The schedule, as a Cron expression. The schedule interval must be between 1 hour and 1 year. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
+     * expressions</a> in the <i>Amazon CloudWatch User Guide</i>.
+     * </p>
+     */
+    private String cronExpression;
 
     /**
      * <p>
@@ -154,12 +167,14 @@ public class CreateRule implements Serializable, Cloneable, StructuredPojo {
      * The time, in UTC, to start the operation. The supported format is hh:mm.
      * </p>
      * <p>
-     * The operation occurs within a one-hour window following the specified time.
+     * The operation occurs within a one-hour window following the specified time. If you do not specify a time, Amazon
+     * DLM selects a time within the next 24 hours.
      * </p>
      * 
      * @return The time, in UTC, to start the operation. The supported format is hh:mm.</p>
      *         <p>
-     *         The operation occurs within a one-hour window following the specified time.
+     *         The operation occurs within a one-hour window following the specified time. If you do not specify a time,
+     *         Amazon DLM selects a time within the next 24 hours.
      */
 
     public java.util.List<String> getTimes() {
@@ -171,13 +186,15 @@ public class CreateRule implements Serializable, Cloneable, StructuredPojo {
      * The time, in UTC, to start the operation. The supported format is hh:mm.
      * </p>
      * <p>
-     * The operation occurs within a one-hour window following the specified time.
+     * The operation occurs within a one-hour window following the specified time. If you do not specify a time, Amazon
+     * DLM selects a time within the next 24 hours.
      * </p>
      * 
      * @param times
      *        The time, in UTC, to start the operation. The supported format is hh:mm.</p>
      *        <p>
-     *        The operation occurs within a one-hour window following the specified time.
+     *        The operation occurs within a one-hour window following the specified time. If you do not specify a time,
+     *        Amazon DLM selects a time within the next 24 hours.
      */
 
     public void setTimes(java.util.Collection<String> times) {
@@ -194,7 +211,8 @@ public class CreateRule implements Serializable, Cloneable, StructuredPojo {
      * The time, in UTC, to start the operation. The supported format is hh:mm.
      * </p>
      * <p>
-     * The operation occurs within a one-hour window following the specified time.
+     * The operation occurs within a one-hour window following the specified time. If you do not specify a time, Amazon
+     * DLM selects a time within the next 24 hours.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -205,7 +223,8 @@ public class CreateRule implements Serializable, Cloneable, StructuredPojo {
      * @param times
      *        The time, in UTC, to start the operation. The supported format is hh:mm.</p>
      *        <p>
-     *        The operation occurs within a one-hour window following the specified time.
+     *        The operation occurs within a one-hour window following the specified time. If you do not specify a time,
+     *        Amazon DLM selects a time within the next 24 hours.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -224,18 +243,78 @@ public class CreateRule implements Serializable, Cloneable, StructuredPojo {
      * The time, in UTC, to start the operation. The supported format is hh:mm.
      * </p>
      * <p>
-     * The operation occurs within a one-hour window following the specified time.
+     * The operation occurs within a one-hour window following the specified time. If you do not specify a time, Amazon
+     * DLM selects a time within the next 24 hours.
      * </p>
      * 
      * @param times
      *        The time, in UTC, to start the operation. The supported format is hh:mm.</p>
      *        <p>
-     *        The operation occurs within a one-hour window following the specified time.
+     *        The operation occurs within a one-hour window following the specified time. If you do not specify a time,
+     *        Amazon DLM selects a time within the next 24 hours.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateRule withTimes(java.util.Collection<String> times) {
         setTimes(times);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The schedule, as a Cron expression. The schedule interval must be between 1 hour and 1 year. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
+     * expressions</a> in the <i>Amazon CloudWatch User Guide</i>.
+     * </p>
+     * 
+     * @param cronExpression
+     *        The schedule, as a Cron expression. The schedule interval must be between 1 hour and 1 year. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions"
+     *        >Cron expressions</a> in the <i>Amazon CloudWatch User Guide</i>.
+     */
+
+    public void setCronExpression(String cronExpression) {
+        this.cronExpression = cronExpression;
+    }
+
+    /**
+     * <p>
+     * The schedule, as a Cron expression. The schedule interval must be between 1 hour and 1 year. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
+     * expressions</a> in the <i>Amazon CloudWatch User Guide</i>.
+     * </p>
+     * 
+     * @return The schedule, as a Cron expression. The schedule interval must be between 1 hour and 1 year. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions"
+     *         >Cron expressions</a> in the <i>Amazon CloudWatch User Guide</i>.
+     */
+
+    public String getCronExpression() {
+        return this.cronExpression;
+    }
+
+    /**
+     * <p>
+     * The schedule, as a Cron expression. The schedule interval must be between 1 hour and 1 year. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
+     * expressions</a> in the <i>Amazon CloudWatch User Guide</i>.
+     * </p>
+     * 
+     * @param cronExpression
+     *        The schedule, as a Cron expression. The schedule interval must be between 1 hour and 1 year. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions"
+     *        >Cron expressions</a> in the <i>Amazon CloudWatch User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRule withCronExpression(String cronExpression) {
+        setCronExpression(cronExpression);
         return this;
     }
 
@@ -256,7 +335,9 @@ public class CreateRule implements Serializable, Cloneable, StructuredPojo {
         if (getIntervalUnit() != null)
             sb.append("IntervalUnit: ").append(getIntervalUnit()).append(",");
         if (getTimes() != null)
-            sb.append("Times: ").append(getTimes());
+            sb.append("Times: ").append(getTimes()).append(",");
+        if (getCronExpression() != null)
+            sb.append("CronExpression: ").append(getCronExpression());
         sb.append("}");
         return sb.toString();
     }
@@ -283,6 +364,10 @@ public class CreateRule implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTimes() != null && other.getTimes().equals(this.getTimes()) == false)
             return false;
+        if (other.getCronExpression() == null ^ this.getCronExpression() == null)
+            return false;
+        if (other.getCronExpression() != null && other.getCronExpression().equals(this.getCronExpression()) == false)
+            return false;
         return true;
     }
 
@@ -294,6 +379,7 @@ public class CreateRule implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getInterval() == null) ? 0 : getInterval().hashCode());
         hashCode = prime * hashCode + ((getIntervalUnit() == null) ? 0 : getIntervalUnit().hashCode());
         hashCode = prime * hashCode + ((getTimes() == null) ? 0 : getTimes().hashCode());
+        hashCode = prime * hashCode + ((getCronExpression() == null) ? 0 : getCronExpression().hashCode());
         return hashCode;
     }
 

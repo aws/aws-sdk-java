@@ -67,6 +67,12 @@ public class CacheSecurityGroup implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<EC2SecurityGroup> eC2SecurityGroups;
+    /**
+     * <p>
+     * The ARN (Amazon Resource Name) of the cache security group.
+     * </p>
+     */
+    private String aRN;
 
     /**
      * <p>
@@ -262,6 +268,46 @@ public class CacheSecurityGroup implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ARN (Amazon Resource Name) of the cache security group.
+     * </p>
+     * 
+     * @param aRN
+     *        The ARN (Amazon Resource Name) of the cache security group.
+     */
+
+    public void setARN(String aRN) {
+        this.aRN = aRN;
+    }
+
+    /**
+     * <p>
+     * The ARN (Amazon Resource Name) of the cache security group.
+     * </p>
+     * 
+     * @return The ARN (Amazon Resource Name) of the cache security group.
+     */
+
+    public String getARN() {
+        return this.aRN;
+    }
+
+    /**
+     * <p>
+     * The ARN (Amazon Resource Name) of the cache security group.
+     * </p>
+     * 
+     * @param aRN
+     *        The ARN (Amazon Resource Name) of the cache security group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CacheSecurityGroup withARN(String aRN) {
+        setARN(aRN);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -280,7 +326,9 @@ public class CacheSecurityGroup implements Serializable, Cloneable {
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getEC2SecurityGroups() != null)
-            sb.append("EC2SecurityGroups: ").append(getEC2SecurityGroups());
+            sb.append("EC2SecurityGroups: ").append(getEC2SecurityGroups()).append(",");
+        if (getARN() != null)
+            sb.append("ARN: ").append(getARN());
         sb.append("}");
         return sb.toString();
     }
@@ -311,6 +359,10 @@ public class CacheSecurityGroup implements Serializable, Cloneable {
             return false;
         if (other.getEC2SecurityGroups() != null && other.getEC2SecurityGroups().equals(this.getEC2SecurityGroups()) == false)
             return false;
+        if (other.getARN() == null ^ this.getARN() == null)
+            return false;
+        if (other.getARN() != null && other.getARN().equals(this.getARN()) == false)
+            return false;
         return true;
     }
 
@@ -323,6 +375,7 @@ public class CacheSecurityGroup implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCacheSecurityGroupName() == null) ? 0 : getCacheSecurityGroupName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getEC2SecurityGroups() == null) ? 0 : getEC2SecurityGroups().hashCode());
+        hashCode = prime * hashCode + ((getARN() == null) ? 0 : getARN().hashCode());
         return hashCode;
     }
 
