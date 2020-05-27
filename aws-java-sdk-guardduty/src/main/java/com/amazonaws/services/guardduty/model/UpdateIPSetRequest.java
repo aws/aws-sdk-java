@@ -45,7 +45,7 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String name;
     /**
      * <p>
-     * The updated URI of the file that contains the IPSet. For example: .
+     * The updated URI of the file that contains the IPSet.
      * </p>
      */
     private String location;
@@ -178,11 +178,11 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The updated URI of the file that contains the IPSet. For example: .
+     * The updated URI of the file that contains the IPSet.
      * </p>
      * 
      * @param location
-     *        The updated URI of the file that contains the IPSet. For example: .
+     *        The updated URI of the file that contains the IPSet.
      */
 
     public void setLocation(String location) {
@@ -191,10 +191,10 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The updated URI of the file that contains the IPSet. For example: .
+     * The updated URI of the file that contains the IPSet.
      * </p>
      * 
-     * @return The updated URI of the file that contains the IPSet. For example: .
+     * @return The updated URI of the file that contains the IPSet.
      */
 
     public String getLocation() {
@@ -203,11 +203,11 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The updated URI of the file that contains the IPSet. For example: .
+     * The updated URI of the file that contains the IPSet.
      * </p>
      * 
      * @param location
-     *        The updated URI of the file that contains the IPSet. For example: .
+     *        The updated URI of the file that contains the IPSet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

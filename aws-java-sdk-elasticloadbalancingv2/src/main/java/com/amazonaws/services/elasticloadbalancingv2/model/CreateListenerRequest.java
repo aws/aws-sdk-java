@@ -142,6 +142,45 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private java.util.List<Action> defaultActions;
+    /**
+     * <p>
+     * [TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy
+     * name. The following are the possible values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>HTTP1Only</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>HTTP2Only</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>HTTP2Optional</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>HTTP2Preferred</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>None</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies"
+     * >ALPN Policies</a> in the <i>Network Load Balancers Guide</i>.
+     * </p>
+     */
+    private java.util.List<String> alpnPolicy;
 
     /**
      * <p>
@@ -1019,6 +1058,336 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * [TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy
+     * name. The following are the possible values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>HTTP1Only</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>HTTP2Only</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>HTTP2Optional</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>HTTP2Preferred</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>None</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies"
+     * >ALPN Policies</a> in the <i>Network Load Balancers Guide</i>.
+     * </p>
+     * 
+     * @return [TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one
+     *         policy name. The following are the possible values:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>HTTP1Only</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>HTTP2Only</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>HTTP2Optional</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>HTTP2Preferred</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>None</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For more information, see <a href=
+     *         "https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies"
+     *         >ALPN Policies</a> in the <i>Network Load Balancers Guide</i>.
+     */
+
+    public java.util.List<String> getAlpnPolicy() {
+        return alpnPolicy;
+    }
+
+    /**
+     * <p>
+     * [TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy
+     * name. The following are the possible values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>HTTP1Only</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>HTTP2Only</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>HTTP2Optional</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>HTTP2Preferred</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>None</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies"
+     * >ALPN Policies</a> in the <i>Network Load Balancers Guide</i>.
+     * </p>
+     * 
+     * @param alpnPolicy
+     *        [TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one
+     *        policy name. The following are the possible values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>HTTP1Only</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>HTTP2Only</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>HTTP2Optional</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>HTTP2Preferred</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>None</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies"
+     *        >ALPN Policies</a> in the <i>Network Load Balancers Guide</i>.
+     */
+
+    public void setAlpnPolicy(java.util.Collection<String> alpnPolicy) {
+        if (alpnPolicy == null) {
+            this.alpnPolicy = null;
+            return;
+        }
+
+        this.alpnPolicy = new java.util.ArrayList<String>(alpnPolicy);
+    }
+
+    /**
+     * <p>
+     * [TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy
+     * name. The following are the possible values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>HTTP1Only</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>HTTP2Only</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>HTTP2Optional</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>HTTP2Preferred</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>None</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies"
+     * >ALPN Policies</a> in the <i>Network Load Balancers Guide</i>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAlpnPolicy(java.util.Collection)} or {@link #withAlpnPolicy(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param alpnPolicy
+     *        [TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one
+     *        policy name. The following are the possible values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>HTTP1Only</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>HTTP2Only</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>HTTP2Optional</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>HTTP2Preferred</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>None</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies"
+     *        >ALPN Policies</a> in the <i>Network Load Balancers Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateListenerRequest withAlpnPolicy(String... alpnPolicy) {
+        if (this.alpnPolicy == null) {
+            setAlpnPolicy(new java.util.ArrayList<String>(alpnPolicy.length));
+        }
+        for (String ele : alpnPolicy) {
+            this.alpnPolicy.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * [TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy
+     * name. The following are the possible values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>HTTP1Only</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>HTTP2Only</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>HTTP2Optional</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>HTTP2Preferred</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>None</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies"
+     * >ALPN Policies</a> in the <i>Network Load Balancers Guide</i>.
+     * </p>
+     * 
+     * @param alpnPolicy
+     *        [TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one
+     *        policy name. The following are the possible values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>HTTP1Only</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>HTTP2Only</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>HTTP2Optional</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>HTTP2Preferred</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>None</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies"
+     *        >ALPN Policies</a> in the <i>Network Load Balancers Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateListenerRequest withAlpnPolicy(java.util.Collection<String> alpnPolicy) {
+        setAlpnPolicy(alpnPolicy);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1041,7 +1410,9 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getCertificates() != null)
             sb.append("Certificates: ").append(getCertificates()).append(",");
         if (getDefaultActions() != null)
-            sb.append("DefaultActions: ").append(getDefaultActions());
+            sb.append("DefaultActions: ").append(getDefaultActions()).append(",");
+        if (getAlpnPolicy() != null)
+            sb.append("AlpnPolicy: ").append(getAlpnPolicy());
         sb.append("}");
         return sb.toString();
     }
@@ -1080,6 +1451,10 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getDefaultActions() != null && other.getDefaultActions().equals(this.getDefaultActions()) == false)
             return false;
+        if (other.getAlpnPolicy() == null ^ this.getAlpnPolicy() == null)
+            return false;
+        if (other.getAlpnPolicy() != null && other.getAlpnPolicy().equals(this.getAlpnPolicy()) == false)
+            return false;
         return true;
     }
 
@@ -1094,6 +1469,7 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getSslPolicy() == null) ? 0 : getSslPolicy().hashCode());
         hashCode = prime * hashCode + ((getCertificates() == null) ? 0 : getCertificates().hashCode());
         hashCode = prime * hashCode + ((getDefaultActions() == null) ? 0 : getDefaultActions().hashCode());
+        hashCode = prime * hashCode + ((getAlpnPolicy() == null) ? 0 : getAlpnPolicy().hashCode());
         return hashCode;
     }
 

@@ -1307,7 +1307,7 @@
         },
         "Location":{
           "shape":"Location",
-          "documentation":"<p>The URI of the file that contains the IPSet. For example: .</p>",
+          "documentation":"<p>The URI of the file that contains the IPSet.</p>",
           "locationName":"location"
         },
         "Activate":{
@@ -1463,7 +1463,7 @@
         },
         "Location":{
           "shape":"Location",
-          "documentation":"<p>The URI of the file that contains the ThreatIntelSet. For example: .</p>",
+          "documentation":"<p>The URI of the file that contains the ThreatIntelSet.</p>",
           "locationName":"location"
         },
         "Activate":{
@@ -2422,7 +2422,7 @@
         },
         "Location":{
           "shape":"Location",
-          "documentation":"<p>The URI of the file that contains the IPSet. For example: .</p>",
+          "documentation":"<p>The URI of the file that contains the IPSet.</p>",
           "locationName":"location"
         },
         "Status":{
@@ -2556,7 +2556,7 @@
         },
         "Location":{
           "shape":"Location",
-          "documentation":"<p>The URI of the file that contains the ThreatIntelSet. For example: .</p>",
+          "documentation":"<p>The URI of the file that contains the ThreatIntelSet.</p>",
           "locationName":"location"
         },
         "Status":{
@@ -4086,7 +4086,7 @@
         },
         "Location":{
           "shape":"Location",
-          "documentation":"<p>The updated URI of the file that contains the IPSet. For example: .</p>",
+          "documentation":"<p>The updated URI of the file that contains the IPSet.</p>",
           "locationName":"location"
         },
         "Activate":{
@@ -4183,7 +4183,7 @@
         },
         "Location":{
           "shape":"Location",
-          "documentation":"<p>The updated URI of the file that contains the ThreateIntelSet. For example: .</p>",
+          "documentation":"<p>The updated URI of the file that contains the ThreateIntelSet.</p>",
           "locationName":"location"
         },
         "Activate":{

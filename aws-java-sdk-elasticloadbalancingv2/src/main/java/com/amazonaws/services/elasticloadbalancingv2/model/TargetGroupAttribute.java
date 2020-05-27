@@ -56,7 +56,8 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * The following attributes are supported by Application Load Balancers if the target is not a Lambda function:
+     * The following attributes are supported only if the load balancer is an Application Load Balancer and the target
+     * is an instance or an IP address:
      * </p>
      * <ul>
      * <li>
@@ -69,9 +70,8 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * <li>
      * <p>
      * <code>slow_start.duration_seconds</code> - The time period, in seconds, during which a newly registered target
-     * receives a linearly increasing share of the traffic to the target group. After this time period ends, the target
-     * receives its full share of traffic. The range is 30-900 seconds (15 minutes). Slow start mode is disabled by
-     * default.
+     * receives an increasing share of the traffic to the target group. After this time period ends, the target receives
+     * its full share of traffic. The range is 30-900 seconds (15 minutes). Slow start mode is disabled by default.
      * </p>
      * </li>
      * <li>
@@ -83,13 +83,14 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * The following attribute is supported only if the target is a Lambda function.
+     * The following attribute is supported only if the load balancer is an Application Load Balancer and the target is
+     * a Lambda function:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>lambda.multi_value_headers.enabled</code> - Indicates whether the request and response headers exchanged
-     * between the load balancer and the Lambda function include arrays of values or strings. The value is
+     * <code>lambda.multi_value_headers.enabled</code> - Indicates whether the request and response headers that are
+     * exchanged between the load balancer and the Lambda function include arrays of values or strings. The value is
      * <code>true</code> or <code>false</code>. The default is <code>false</code>. If the value is <code>false</code>
      * and the request contains a duplicate header field name or query parameter key, the load balancer uses the last
      * value sent by the client.
@@ -146,7 +147,8 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * The following attributes are supported by Application Load Balancers if the target is not a Lambda function:
+     * The following attributes are supported only if the load balancer is an Application Load Balancer and the target
+     * is an instance or an IP address:
      * </p>
      * <ul>
      * <li>
@@ -159,9 +161,8 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * <li>
      * <p>
      * <code>slow_start.duration_seconds</code> - The time period, in seconds, during which a newly registered target
-     * receives a linearly increasing share of the traffic to the target group. After this time period ends, the target
-     * receives its full share of traffic. The range is 30-900 seconds (15 minutes). Slow start mode is disabled by
-     * default.
+     * receives an increasing share of the traffic to the target group. After this time period ends, the target receives
+     * its full share of traffic. The range is 30-900 seconds (15 minutes). Slow start mode is disabled by default.
      * </p>
      * </li>
      * <li>
@@ -173,13 +174,14 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * The following attribute is supported only if the target is a Lambda function.
+     * The following attribute is supported only if the load balancer is an Application Load Balancer and the target is
+     * a Lambda function:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>lambda.multi_value_headers.enabled</code> - Indicates whether the request and response headers exchanged
-     * between the load balancer and the Lambda function include arrays of values or strings. The value is
+     * <code>lambda.multi_value_headers.enabled</code> - Indicates whether the request and response headers that are
+     * exchanged between the load balancer and the Lambda function include arrays of values or strings. The value is
      * <code>true</code> or <code>false</code>. The default is <code>false</code>. If the value is <code>false</code>
      * and the request contains a duplicate header field name or query parameter key, the load balancer uses the last
      * value sent by the client.
@@ -226,8 +228,8 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        <p>
-     *        The following attributes are supported by Application Load Balancers if the target is not a Lambda
-     *        function:
+     *        The following attributes are supported only if the load balancer is an Application Load Balancer and the
+     *        target is an instance or an IP address:
      *        </p>
      *        <ul>
      *        <li>
@@ -240,9 +242,9 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <code>slow_start.duration_seconds</code> - The time period, in seconds, during which a newly registered
-     *        target receives a linearly increasing share of the traffic to the target group. After this time period
-     *        ends, the target receives its full share of traffic. The range is 30-900 seconds (15 minutes). Slow start
-     *        mode is disabled by default.
+     *        target receives an increasing share of the traffic to the target group. After this time period ends, the
+     *        target receives its full share of traffic. The range is 30-900 seconds (15 minutes). Slow start mode is
+     *        disabled by default.
      *        </p>
      *        </li>
      *        <li>
@@ -255,14 +257,15 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        <p>
-     *        The following attribute is supported only if the target is a Lambda function.
+     *        The following attribute is supported only if the load balancer is an Application Load Balancer and the
+     *        target is a Lambda function:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>lambda.multi_value_headers.enabled</code> - Indicates whether the request and response headers
-     *        exchanged between the load balancer and the Lambda function include arrays of values or strings. The value
-     *        is <code>true</code> or <code>false</code>. The default is <code>false</code>. If the value is
+     *        <code>lambda.multi_value_headers.enabled</code> - Indicates whether the request and response headers that
+     *        are exchanged between the load balancer and the Lambda function include arrays of values or strings. The
+     *        value is <code>true</code> or <code>false</code>. The default is <code>false</code>. If the value is
      *        <code>false</code> and the request contains a duplicate header field name or query parameter key, the load
      *        balancer uses the last value sent by the client.
      *        </p>
@@ -314,7 +317,8 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * The following attributes are supported by Application Load Balancers if the target is not a Lambda function:
+     * The following attributes are supported only if the load balancer is an Application Load Balancer and the target
+     * is an instance or an IP address:
      * </p>
      * <ul>
      * <li>
@@ -327,9 +331,8 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * <li>
      * <p>
      * <code>slow_start.duration_seconds</code> - The time period, in seconds, during which a newly registered target
-     * receives a linearly increasing share of the traffic to the target group. After this time period ends, the target
-     * receives its full share of traffic. The range is 30-900 seconds (15 minutes). Slow start mode is disabled by
-     * default.
+     * receives an increasing share of the traffic to the target group. After this time period ends, the target receives
+     * its full share of traffic. The range is 30-900 seconds (15 minutes). Slow start mode is disabled by default.
      * </p>
      * </li>
      * <li>
@@ -341,13 +344,14 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * The following attribute is supported only if the target is a Lambda function.
+     * The following attribute is supported only if the load balancer is an Application Load Balancer and the target is
+     * a Lambda function:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>lambda.multi_value_headers.enabled</code> - Indicates whether the request and response headers exchanged
-     * between the load balancer and the Lambda function include arrays of values or strings. The value is
+     * <code>lambda.multi_value_headers.enabled</code> - Indicates whether the request and response headers that are
+     * exchanged between the load balancer and the Lambda function include arrays of values or strings. The value is
      * <code>true</code> or <code>false</code>. The default is <code>false</code>. If the value is <code>false</code>
      * and the request contains a duplicate header field name or query parameter key, the load balancer uses the last
      * value sent by the client.
@@ -394,8 +398,8 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *         </li>
      *         </ul>
      *         <p>
-     *         The following attributes are supported by Application Load Balancers if the target is not a Lambda
-     *         function:
+     *         The following attributes are supported only if the load balancer is an Application Load Balancer and the
+     *         target is an instance or an IP address:
      *         </p>
      *         <ul>
      *         <li>
@@ -408,9 +412,9 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *         <li>
      *         <p>
      *         <code>slow_start.duration_seconds</code> - The time period, in seconds, during which a newly registered
-     *         target receives a linearly increasing share of the traffic to the target group. After this time period
-     *         ends, the target receives its full share of traffic. The range is 30-900 seconds (15 minutes). Slow start
-     *         mode is disabled by default.
+     *         target receives an increasing share of the traffic to the target group. After this time period ends, the
+     *         target receives its full share of traffic. The range is 30-900 seconds (15 minutes). Slow start mode is
+     *         disabled by default.
      *         </p>
      *         </li>
      *         <li>
@@ -423,13 +427,14 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *         </li>
      *         </ul>
      *         <p>
-     *         The following attribute is supported only if the target is a Lambda function.
+     *         The following attribute is supported only if the load balancer is an Application Load Balancer and the
+     *         target is a Lambda function:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>lambda.multi_value_headers.enabled</code> - Indicates whether the request and response headers
-     *         exchanged between the load balancer and the Lambda function include arrays of values or strings. The
+     *         <code>lambda.multi_value_headers.enabled</code> - Indicates whether the request and response headers that
+     *         are exchanged between the load balancer and the Lambda function include arrays of values or strings. The
      *         value is <code>true</code> or <code>false</code>. The default is <code>false</code>. If the value is
      *         <code>false</code> and the request contains a duplicate header field name or query parameter key, the
      *         load balancer uses the last value sent by the client.
@@ -482,7 +487,8 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * The following attributes are supported by Application Load Balancers if the target is not a Lambda function:
+     * The following attributes are supported only if the load balancer is an Application Load Balancer and the target
+     * is an instance or an IP address:
      * </p>
      * <ul>
      * <li>
@@ -495,9 +501,8 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * <li>
      * <p>
      * <code>slow_start.duration_seconds</code> - The time period, in seconds, during which a newly registered target
-     * receives a linearly increasing share of the traffic to the target group. After this time period ends, the target
-     * receives its full share of traffic. The range is 30-900 seconds (15 minutes). Slow start mode is disabled by
-     * default.
+     * receives an increasing share of the traffic to the target group. After this time period ends, the target receives
+     * its full share of traffic. The range is 30-900 seconds (15 minutes). Slow start mode is disabled by default.
      * </p>
      * </li>
      * <li>
@@ -509,13 +514,14 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * The following attribute is supported only if the target is a Lambda function.
+     * The following attribute is supported only if the load balancer is an Application Load Balancer and the target is
+     * a Lambda function:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>lambda.multi_value_headers.enabled</code> - Indicates whether the request and response headers exchanged
-     * between the load balancer and the Lambda function include arrays of values or strings. The value is
+     * <code>lambda.multi_value_headers.enabled</code> - Indicates whether the request and response headers that are
+     * exchanged between the load balancer and the Lambda function include arrays of values or strings. The value is
      * <code>true</code> or <code>false</code>. The default is <code>false</code>. If the value is <code>false</code>
      * and the request contains a duplicate header field name or query parameter key, the load balancer uses the last
      * value sent by the client.
@@ -562,8 +568,8 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        <p>
-     *        The following attributes are supported by Application Load Balancers if the target is not a Lambda
-     *        function:
+     *        The following attributes are supported only if the load balancer is an Application Load Balancer and the
+     *        target is an instance or an IP address:
      *        </p>
      *        <ul>
      *        <li>
@@ -576,9 +582,9 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <code>slow_start.duration_seconds</code> - The time period, in seconds, during which a newly registered
-     *        target receives a linearly increasing share of the traffic to the target group. After this time period
-     *        ends, the target receives its full share of traffic. The range is 30-900 seconds (15 minutes). Slow start
-     *        mode is disabled by default.
+     *        target receives an increasing share of the traffic to the target group. After this time period ends, the
+     *        target receives its full share of traffic. The range is 30-900 seconds (15 minutes). Slow start mode is
+     *        disabled by default.
      *        </p>
      *        </li>
      *        <li>
@@ -591,14 +597,15 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        <p>
-     *        The following attribute is supported only if the target is a Lambda function.
+     *        The following attribute is supported only if the load balancer is an Application Load Balancer and the
+     *        target is a Lambda function:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>lambda.multi_value_headers.enabled</code> - Indicates whether the request and response headers
-     *        exchanged between the load balancer and the Lambda function include arrays of values or strings. The value
-     *        is <code>true</code> or <code>false</code>. The default is <code>false</code>. If the value is
+     *        <code>lambda.multi_value_headers.enabled</code> - Indicates whether the request and response headers that
+     *        are exchanged between the load balancer and the Lambda function include arrays of values or strings. The
+     *        value is <code>true</code> or <code>false</code>. The default is <code>false</code>. If the value is
      *        <code>false</code> and the request contains a duplicate header field name or query parameter key, the load
      *        balancer uses the last value sent by the client.
      *        </p>

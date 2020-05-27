@@ -45,7 +45,7 @@ public class UpdateThreatIntelSetRequest extends com.amazonaws.AmazonWebServiceR
     private String name;
     /**
      * <p>
-     * The updated URI of the file that contains the ThreateIntelSet. For example: .
+     * The updated URI of the file that contains the ThreateIntelSet.
      * </p>
      */
     private String location;
@@ -178,11 +178,11 @@ public class UpdateThreatIntelSetRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The updated URI of the file that contains the ThreateIntelSet. For example: .
+     * The updated URI of the file that contains the ThreateIntelSet.
      * </p>
      * 
      * @param location
-     *        The updated URI of the file that contains the ThreateIntelSet. For example: .
+     *        The updated URI of the file that contains the ThreateIntelSet.
      */
 
     public void setLocation(String location) {
@@ -191,10 +191,10 @@ public class UpdateThreatIntelSetRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The updated URI of the file that contains the ThreateIntelSet. For example: .
+     * The updated URI of the file that contains the ThreateIntelSet.
      * </p>
      * 
-     * @return The updated URI of the file that contains the ThreateIntelSet. For example: .
+     * @return The updated URI of the file that contains the ThreateIntelSet.
      */
 
     public String getLocation() {
@@ -203,11 +203,11 @@ public class UpdateThreatIntelSetRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The updated URI of the file that contains the ThreateIntelSet. For example: .
+     * The updated URI of the file that contains the ThreateIntelSet.
      * </p>
      * 
      * @param location
-     *        The updated URI of the file that contains the ThreateIntelSet. For example: .
+     *        The updated URI of the file that contains the ThreateIntelSet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

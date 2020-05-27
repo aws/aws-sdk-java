@@ -353,6 +353,22 @@ public class CreateListenerRequestMarshaller implements Marshaller<Request<Creat
             }
         }
 
+        if (createListenerRequest.getAlpnPolicy() != null) {
+            java.util.List<String> alpnPolicyList = createListenerRequest.getAlpnPolicy();
+            if (alpnPolicyList.isEmpty()) {
+                request.addParameter("AlpnPolicy", "");
+            } else {
+                int alpnPolicyListIndex = 1;
+
+                for (String alpnPolicyListValue : alpnPolicyList) {
+                    if (alpnPolicyListValue != null) {
+                        request.addParameter("AlpnPolicy.member." + alpnPolicyListIndex, StringUtils.fromString(alpnPolicyListValue));
+                    }
+                    alpnPolicyListIndex++;
+                }
+            }
+        }
+
         return request;
     }
 

@@ -68,6 +68,12 @@ public class Listener implements Serializable, Cloneable {
      * </p>
      */
     private java.util.List<Action> defaultActions;
+    /**
+     * <p>
+     * [TLS listener] The name of the Application-Layer Protocol Negotiation (ALPN) policy.
+     * </p>
+     */
+    private java.util.List<String> alpnPolicy;
 
     /**
      * <p>
@@ -443,6 +449,76 @@ public class Listener implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * [TLS listener] The name of the Application-Layer Protocol Negotiation (ALPN) policy.
+     * </p>
+     * 
+     * @return [TLS listener] The name of the Application-Layer Protocol Negotiation (ALPN) policy.
+     */
+
+    public java.util.List<String> getAlpnPolicy() {
+        return alpnPolicy;
+    }
+
+    /**
+     * <p>
+     * [TLS listener] The name of the Application-Layer Protocol Negotiation (ALPN) policy.
+     * </p>
+     * 
+     * @param alpnPolicy
+     *        [TLS listener] The name of the Application-Layer Protocol Negotiation (ALPN) policy.
+     */
+
+    public void setAlpnPolicy(java.util.Collection<String> alpnPolicy) {
+        if (alpnPolicy == null) {
+            this.alpnPolicy = null;
+            return;
+        }
+
+        this.alpnPolicy = new java.util.ArrayList<String>(alpnPolicy);
+    }
+
+    /**
+     * <p>
+     * [TLS listener] The name of the Application-Layer Protocol Negotiation (ALPN) policy.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAlpnPolicy(java.util.Collection)} or {@link #withAlpnPolicy(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param alpnPolicy
+     *        [TLS listener] The name of the Application-Layer Protocol Negotiation (ALPN) policy.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Listener withAlpnPolicy(String... alpnPolicy) {
+        if (this.alpnPolicy == null) {
+            setAlpnPolicy(new java.util.ArrayList<String>(alpnPolicy.length));
+        }
+        for (String ele : alpnPolicy) {
+            this.alpnPolicy.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * [TLS listener] The name of the Application-Layer Protocol Negotiation (ALPN) policy.
+     * </p>
+     * 
+     * @param alpnPolicy
+     *        [TLS listener] The name of the Application-Layer Protocol Negotiation (ALPN) policy.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Listener withAlpnPolicy(java.util.Collection<String> alpnPolicy) {
+        setAlpnPolicy(alpnPolicy);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -467,7 +543,9 @@ public class Listener implements Serializable, Cloneable {
         if (getSslPolicy() != null)
             sb.append("SslPolicy: ").append(getSslPolicy()).append(",");
         if (getDefaultActions() != null)
-            sb.append("DefaultActions: ").append(getDefaultActions());
+            sb.append("DefaultActions: ").append(getDefaultActions()).append(",");
+        if (getAlpnPolicy() != null)
+            sb.append("AlpnPolicy: ").append(getAlpnPolicy());
         sb.append("}");
         return sb.toString();
     }
@@ -510,6 +588,10 @@ public class Listener implements Serializable, Cloneable {
             return false;
         if (other.getDefaultActions() != null && other.getDefaultActions().equals(this.getDefaultActions()) == false)
             return false;
+        if (other.getAlpnPolicy() == null ^ this.getAlpnPolicy() == null)
+            return false;
+        if (other.getAlpnPolicy() != null && other.getAlpnPolicy().equals(this.getAlpnPolicy()) == false)
+            return false;
         return true;
     }
 
@@ -525,6 +607,7 @@ public class Listener implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCertificates() == null) ? 0 : getCertificates().hashCode());
         hashCode = prime * hashCode + ((getSslPolicy() == null) ? 0 : getSslPolicy().hashCode());
         hashCode = prime * hashCode + ((getDefaultActions() == null) ? 0 : getDefaultActions().hashCode());
+        hashCode = prime * hashCode + ((getAlpnPolicy() == null) ? 0 : getAlpnPolicy().hashCode());
         return hashCode;
     }
 

@@ -1,3 +1,12 @@
+# __1.11.791__ __2020-05-27__
+## __Amazon GuardDuty__
+  - ### Features
+    - Documentation updates for GuardDuty
+
+## __Elastic Load Balancing__
+  - ### Features
+    - This release added support for HTTP/2 ALPN preference lists for Network Load Balancers
+
 # __1.11.790__ __2020-05-26__
 ## __Amazon Data Lifecycle Manager__
   - ### Features

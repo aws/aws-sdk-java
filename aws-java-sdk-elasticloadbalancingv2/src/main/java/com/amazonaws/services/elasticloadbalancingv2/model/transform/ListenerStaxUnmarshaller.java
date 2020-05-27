@@ -90,6 +90,16 @@ public class ListenerStaxUnmarshaller implements Unmarshaller<Listener, StaxUnma
                     continue;
                 }
 
+                if (context.testExpression("AlpnPolicy", targetDepth)) {
+                    listener.withAlpnPolicy(new ArrayList<String>());
+                    continue;
+                }
+
+                if (context.testExpression("AlpnPolicy/member", targetDepth)) {
+                    listener.withAlpnPolicy(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return listener;

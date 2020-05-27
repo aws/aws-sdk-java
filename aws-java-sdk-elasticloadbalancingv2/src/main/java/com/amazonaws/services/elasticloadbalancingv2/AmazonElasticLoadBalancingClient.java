@@ -309,6 +309,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
         exceptionUnmarshallers.add(new TooManyActionsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyListenersExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DuplicateLoadBalancerNameExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ALPNPolicyNotSupportedExceptionUnmarshaller());
         exceptionUnmarshallers.add(new OperationNotPermittedExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidLoadBalancerActionExceptionUnmarshaller());
         exceptionUnmarshallers.add(new CertificateNotFoundExceptionUnmarshaller());
@@ -539,6 +540,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * @throws TooManyUniqueTargetGroupsPerLoadBalancerException
      *         You've reached the limit on the number of unique target groups per load balancer across all listeners. If
      *         a target group is used by multiple actions for a load balancer, it is counted as only one use.
+     * @throws ALPNPolicyNotSupportedException
+     *         The specified ALPN policy is not supported.
      * @sample AmazonElasticLoadBalancing.CreateListener
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateListener"
      *      target="_top">AWS API Documentation</a>
@@ -1894,6 +1897,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * @throws TooManyUniqueTargetGroupsPerLoadBalancerException
      *         You've reached the limit on the number of unique target groups per load balancer across all listeners. If
      *         a target group is used by multiple actions for a load balancer, it is counted as only one use.
+     * @throws ALPNPolicyNotSupportedException
+     *         The specified ALPN policy is not supported.
      * @sample AmazonElasticLoadBalancing.ModifyListener
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyListener"
      *      target="_top">AWS API Documentation</a>
