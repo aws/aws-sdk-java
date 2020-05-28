@@ -69,6 +69,10 @@ public class MutableClusterInfoJsonUnmarshaller implements Unmarshaller<MutableC
                     context.nextToken();
                     mutableClusterInfo.setOpenMonitoring(OpenMonitoringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("kafkaVersion", targetDepth)) {
+                    context.nextToken();
+                    mutableClusterInfo.setKafkaVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("loggingInfo", targetDepth)) {
                     context.nextToken();
                     mutableClusterInfo.setLoggingInfo(LoggingInfoJsonUnmarshaller.getInstance().unmarshall(context));

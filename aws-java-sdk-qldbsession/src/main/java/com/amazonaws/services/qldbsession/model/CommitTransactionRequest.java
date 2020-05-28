@@ -30,7 +30,7 @@ public class CommitTransactionRequest implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Specifies the transaction id of the transaction to commit.
+     * Specifies the transaction ID of the transaction to commit.
      * </p>
      */
     private String transactionId;
@@ -45,11 +45,11 @@ public class CommitTransactionRequest implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Specifies the transaction id of the transaction to commit.
+     * Specifies the transaction ID of the transaction to commit.
      * </p>
      * 
      * @param transactionId
-     *        Specifies the transaction id of the transaction to commit.
+     *        Specifies the transaction ID of the transaction to commit.
      */
 
     public void setTransactionId(String transactionId) {
@@ -58,10 +58,10 @@ public class CommitTransactionRequest implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Specifies the transaction id of the transaction to commit.
+     * Specifies the transaction ID of the transaction to commit.
      * </p>
      * 
-     * @return Specifies the transaction id of the transaction to commit.
+     * @return Specifies the transaction ID of the transaction to commit.
      */
 
     public String getTransactionId() {
@@ -70,11 +70,11 @@ public class CommitTransactionRequest implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Specifies the transaction id of the transaction to commit.
+     * Specifies the transaction ID of the transaction to commit.
      * </p>
      * 
      * @param transactionId
-     *        Specifies the transaction id of the transaction to commit.
+     *        Specifies the transaction ID of the transaction to commit.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

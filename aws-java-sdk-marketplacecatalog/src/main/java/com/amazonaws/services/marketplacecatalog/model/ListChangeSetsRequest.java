@@ -39,7 +39,7 @@ public class ListChangeSetsRequest extends com.amazonaws.AmazonWebServiceRequest
     private java.util.List<Filter> filterList;
     /**
      * <p>
-     * An object that contains two attributes, <code>sortBy</code> and <code>sortOrder</code>.
+     * An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.
      * </p>
      */
     private Sort sort;
@@ -169,11 +169,11 @@ public class ListChangeSetsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * An object that contains two attributes, <code>sortBy</code> and <code>sortOrder</code>.
+     * An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.
      * </p>
      * 
      * @param sort
-     *        An object that contains two attributes, <code>sortBy</code> and <code>sortOrder</code>.
+     *        An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.
      */
 
     public void setSort(Sort sort) {
@@ -182,10 +182,10 @@ public class ListChangeSetsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * An object that contains two attributes, <code>sortBy</code> and <code>sortOrder</code>.
+     * An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.
      * </p>
      * 
-     * @return An object that contains two attributes, <code>sortBy</code> and <code>sortOrder</code>.
+     * @return An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.
      */
 
     public Sort getSort() {
@@ -194,11 +194,11 @@ public class ListChangeSetsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * An object that contains two attributes, <code>sortBy</code> and <code>sortOrder</code>.
+     * An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.
      * </p>
      * 
      * @param sort
-     *        An object that contains two attributes, <code>sortBy</code> and <code>sortOrder</code>.
+     *        An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

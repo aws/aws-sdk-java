@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object that contains two attributes, <code>sortBy</code> and <code>sortOrder</code>.
+ * An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/Sort" target="_top">AWS API

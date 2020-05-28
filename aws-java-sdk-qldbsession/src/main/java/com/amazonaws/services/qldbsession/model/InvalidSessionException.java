@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Returned if the session doesn't exist anymore because it timed-out or expired.
+ * Returned if the session doesn't exist anymore because it timed out or expired.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

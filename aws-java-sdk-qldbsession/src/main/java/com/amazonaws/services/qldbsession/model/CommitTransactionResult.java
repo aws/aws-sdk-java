@@ -30,7 +30,7 @@ public class CommitTransactionResult implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The transaction id of the committed transaction.
+     * The transaction ID of the committed transaction.
      * </p>
      */
     private String transactionId;
@@ -43,11 +43,11 @@ public class CommitTransactionResult implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The transaction id of the committed transaction.
+     * The transaction ID of the committed transaction.
      * </p>
      * 
      * @param transactionId
-     *        The transaction id of the committed transaction.
+     *        The transaction ID of the committed transaction.
      */
 
     public void setTransactionId(String transactionId) {
@@ -56,10 +56,10 @@ public class CommitTransactionResult implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The transaction id of the committed transaction.
+     * The transaction ID of the committed transaction.
      * </p>
      * 
-     * @return The transaction id of the committed transaction.
+     * @return The transaction ID of the committed transaction.
      */
 
     public String getTransactionId() {
@@ -68,11 +68,11 @@ public class CommitTransactionResult implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The transaction id of the committed transaction.
+     * The transaction ID of the committed transaction.
      * </p>
      * 
      * @param transactionId
-     *        The transaction id of the committed transaction.
+     *        The transaction ID of the committed transaction.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

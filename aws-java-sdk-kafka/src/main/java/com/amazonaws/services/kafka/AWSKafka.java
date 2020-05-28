@@ -328,6 +328,61 @@ public interface AWSKafka {
 
     /**
      * <p>
+     * Gets the Apache Kafka versions to which you can update the MSK cluster.
+     * </p>
+     * 
+     * @param getCompatibleKafkaVersionsRequest
+     * @return Result of the GetCompatibleKafkaVersions operation returned by the service.
+     * @throws BadRequestException
+     *         n
+     *         <p>
+     *         The request isn't valid because the input is incorrect. Correct your input and then submit it again.
+     *         </p>
+     *         n
+     * @throws UnauthorizedException
+     *         n
+     *         <p>
+     *         The request is not authorized. The provided credentials couldn't be validated.
+     *         </p>
+     *         n
+     * @throws InternalServerErrorException
+     *         n
+     *         <p>
+     *         There was an unexpected internal server error. Retrying your request might resolve the issue.
+     *         </p>
+     *         n
+     * @throws ForbiddenException
+     *         n
+     *         <p>
+     *         Access forbidden. Check your credentials and then retry your request.
+     *         </p>
+     *         n
+     * @throws NotFoundException
+     *         n
+     *         <p>
+     *         The resource could not be found due to incorrect input. Correct the input, then retry the request.
+     *         </p>
+     *         n
+     * @throws ServiceUnavailableException
+     *         n
+     *         <p>
+     *         503 response
+     *         </p>
+     *         n
+     * @throws TooManyRequestsException
+     *         n
+     *         <p>
+     *         429 response
+     *         </p>
+     *         n
+     * @sample AWSKafka.GetCompatibleKafkaVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/GetCompatibleKafkaVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetCompatibleKafkaVersionsResult getCompatibleKafkaVersions(GetCompatibleKafkaVersionsRequest getCompatibleKafkaVersionsRequest);
+
+    /**
+     * <p>
      * Returns a list of all the operations that have been performed on the specified MSK cluster.
      * </p>
      * 
@@ -689,6 +744,47 @@ public interface AWSKafka {
      *      target="_top">AWS API Documentation</a>
      */
     UpdateClusterConfigurationResult updateClusterConfiguration(UpdateClusterConfigurationRequest updateClusterConfigurationRequest);
+
+    /**
+     * <p>
+     * Updates the Apache Kafka version for the cluster.
+     * </p>
+     * 
+     * @param updateClusterKafkaVersionRequest
+     * @return Result of the UpdateClusterKafkaVersion operation returned by the service.
+     * @throws BadRequestException
+     *         <p>
+     *         The request isn't valid because the input is incorrect. Correct your input and then submit it again.
+     *         </p>
+     * @throws UnauthorizedException
+     *         <p>
+     *         The request is not authorized. The provided credentials couldn't be validated.
+     *         </p>
+     * @throws InternalServerErrorException
+     *         <p>
+     *         There was an unexpected internal server error. Retrying your request might resolve the issue.
+     *         </p>
+     * @throws ForbiddenException
+     *         <p>
+     *         Access forbidden. Check your credentials and then retry your request.
+     *         </p>
+     * @throws NotFoundException
+     *         <p>
+     *         The resource could not be found due to incorrect input. Correct the input, then retry the request.
+     *         </p>
+     * @throws ServiceUnavailableException
+     *         <p>
+     *         503 response
+     *         </p>
+     * @throws TooManyRequestsException
+     *         <p>
+     *         429 response
+     *         </p>
+     * @sample AWSKafka.UpdateClusterKafkaVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateClusterKafkaVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateClusterKafkaVersionResult updateClusterKafkaVersion(UpdateClusterKafkaVersionRequest updateClusterKafkaVersionRequest);
 
     /**
      * <p>

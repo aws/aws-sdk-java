@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Returned when a transaction cannot be written to the journal due to a failure in the verification phase of Optimistic
- * Concurrency Control.
+ * Returned when a transaction cannot be written to the journal due to a failure in the verification phase of
+ * <i>optimistic concurrency control</i> (OCC).
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

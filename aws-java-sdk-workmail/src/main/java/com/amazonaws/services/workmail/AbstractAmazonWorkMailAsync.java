@@ -171,6 +171,19 @@ public class AbstractAmazonWorkMailAsync extends AbstractAmazonWorkMail implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteRetentionPolicyResult> deleteRetentionPolicyAsync(DeleteRetentionPolicyRequest request) {
+
+        return deleteRetentionPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRetentionPolicyResult> deleteRetentionPolicyAsync(DeleteRetentionPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteRetentionPolicyRequest, DeleteRetentionPolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteUserResult> deleteUserAsync(DeleteUserRequest request) {
 
         return deleteUserAsync(request, null);
@@ -285,6 +298,19 @@ public class AbstractAmazonWorkMailAsync extends AbstractAmazonWorkMail implemen
     @Override
     public java.util.concurrent.Future<GetAccessControlEffectResult> getAccessControlEffectAsync(GetAccessControlEffectRequest request,
             com.amazonaws.handlers.AsyncHandler<GetAccessControlEffectRequest, GetAccessControlEffectResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDefaultRetentionPolicyResult> getDefaultRetentionPolicyAsync(GetDefaultRetentionPolicyRequest request) {
+
+        return getDefaultRetentionPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDefaultRetentionPolicyResult> getDefaultRetentionPolicyAsync(GetDefaultRetentionPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetDefaultRetentionPolicyRequest, GetDefaultRetentionPolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -454,6 +480,19 @@ public class AbstractAmazonWorkMailAsync extends AbstractAmazonWorkMail implemen
     @Override
     public java.util.concurrent.Future<PutMailboxPermissionsResult> putMailboxPermissionsAsync(PutMailboxPermissionsRequest request,
             com.amazonaws.handlers.AsyncHandler<PutMailboxPermissionsRequest, PutMailboxPermissionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutRetentionPolicyResult> putRetentionPolicyAsync(PutRetentionPolicyRequest request) {
+
+        return putRetentionPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutRetentionPolicyResult> putRetentionPolicyAsync(PutRetentionPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutRetentionPolicyRequest, PutRetentionPolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -131,6 +131,19 @@ public class AbstractAWSKafkaAsync extends AbstractAWSKafka implements AWSKafkaA
     }
 
     @Override
+    public java.util.concurrent.Future<GetCompatibleKafkaVersionsResult> getCompatibleKafkaVersionsAsync(GetCompatibleKafkaVersionsRequest request) {
+
+        return getCompatibleKafkaVersionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCompatibleKafkaVersionsResult> getCompatibleKafkaVersionsAsync(GetCompatibleKafkaVersionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetCompatibleKafkaVersionsRequest, GetCompatibleKafkaVersionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListClusterOperationsResult> listClusterOperationsAsync(ListClusterOperationsRequest request) {
 
         return listClusterOperationsAsync(request, null);
@@ -282,6 +295,19 @@ public class AbstractAWSKafkaAsync extends AbstractAWSKafka implements AWSKafkaA
     @Override
     public java.util.concurrent.Future<UpdateClusterConfigurationResult> updateClusterConfigurationAsync(UpdateClusterConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateClusterConfigurationRequest, UpdateClusterConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateClusterKafkaVersionResult> updateClusterKafkaVersionAsync(UpdateClusterKafkaVersionRequest request) {
+
+        return updateClusterKafkaVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateClusterKafkaVersionResult> updateClusterKafkaVersionAsync(UpdateClusterKafkaVersionRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateClusterKafkaVersionRequest, UpdateClusterKafkaVersionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

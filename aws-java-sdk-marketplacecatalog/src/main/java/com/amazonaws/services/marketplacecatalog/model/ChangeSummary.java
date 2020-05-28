@@ -43,6 +43,12 @@ public class ChangeSummary implements Serializable, Cloneable, StructuredPojo {
     private Entity entity;
     /**
      * <p>
+     * This object contains details specific to the change type of the requested change.
+     * </p>
+     */
+    private String details;
+    /**
+     * <p>
      * An array of <code>ErrorDetail</code> objects associated with the change.
      * </p>
      */
@@ -125,6 +131,46 @@ public class ChangeSummary implements Serializable, Cloneable, StructuredPojo {
 
     public ChangeSummary withEntity(Entity entity) {
         setEntity(entity);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This object contains details specific to the change type of the requested change.
+     * </p>
+     * 
+     * @param details
+     *        This object contains details specific to the change type of the requested change.
+     */
+
+    public void setDetails(String details) {
+        this.details = details;
+    }
+
+    /**
+     * <p>
+     * This object contains details specific to the change type of the requested change.
+     * </p>
+     * 
+     * @return This object contains details specific to the change type of the requested change.
+     */
+
+    public String getDetails() {
+        return this.details;
+    }
+
+    /**
+     * <p>
+     * This object contains details specific to the change type of the requested change.
+     * </p>
+     * 
+     * @param details
+     *        This object contains details specific to the change type of the requested change.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ChangeSummary withDetails(String details) {
+        setDetails(details);
         return this;
     }
 
@@ -214,6 +260,8 @@ public class ChangeSummary implements Serializable, Cloneable, StructuredPojo {
             sb.append("ChangeType: ").append(getChangeType()).append(",");
         if (getEntity() != null)
             sb.append("Entity: ").append(getEntity()).append(",");
+        if (getDetails() != null)
+            sb.append("Details: ").append(getDetails()).append(",");
         if (getErrorDetailList() != null)
             sb.append("ErrorDetailList: ").append(getErrorDetailList());
         sb.append("}");
@@ -238,6 +286,10 @@ public class ChangeSummary implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getEntity() != null && other.getEntity().equals(this.getEntity()) == false)
             return false;
+        if (other.getDetails() == null ^ this.getDetails() == null)
+            return false;
+        if (other.getDetails() != null && other.getDetails().equals(this.getDetails()) == false)
+            return false;
         if (other.getErrorDetailList() == null ^ this.getErrorDetailList() == null)
             return false;
         if (other.getErrorDetailList() != null && other.getErrorDetailList().equals(this.getErrorDetailList()) == false)
@@ -252,6 +304,7 @@ public class ChangeSummary implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getChangeType() == null) ? 0 : getChangeType().hashCode());
         hashCode = prime * hashCode + ((getEntity() == null) ? 0 : getEntity().hashCode());
+        hashCode = prime * hashCode + ((getDetails() == null) ? 0 : getDetails().hashCode());
         hashCode = prime * hashCode + ((getErrorDetailList() == null) ? 0 : getErrorDetailList().hashCode());
         return hashCode;
     }

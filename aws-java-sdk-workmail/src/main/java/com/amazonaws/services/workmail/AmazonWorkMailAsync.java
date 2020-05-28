@@ -420,6 +420,37 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
+     * Deletes the specified retention policy from the specified organization.
+     * </p>
+     * 
+     * @param deleteRetentionPolicyRequest
+     * @return A Java Future containing the result of the DeleteRetentionPolicy operation returned by the service.
+     * @sample AmazonWorkMailAsync.DeleteRetentionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteRetentionPolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRetentionPolicyResult> deleteRetentionPolicyAsync(DeleteRetentionPolicyRequest deleteRetentionPolicyRequest);
+
+    /**
+     * <p>
+     * Deletes the specified retention policy from the specified organization.
+     * </p>
+     * 
+     * @param deleteRetentionPolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteRetentionPolicy operation returned by the service.
+     * @sample AmazonWorkMailAsyncHandler.DeleteRetentionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteRetentionPolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRetentionPolicyResult> deleteRetentionPolicyAsync(DeleteRetentionPolicyRequest deleteRetentionPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteRetentionPolicyRequest, DeleteRetentionPolicyResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes a user from Amazon WorkMail and all subsequent systems. Before you can delete a user, the user state must
      * be <code>DISABLED</code>. Use the <a>DescribeUser</a> action to confirm the user state.
      * </p>
@@ -718,6 +749,39 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
      */
     java.util.concurrent.Future<GetAccessControlEffectResult> getAccessControlEffectAsync(GetAccessControlEffectRequest getAccessControlEffectRequest,
             com.amazonaws.handlers.AsyncHandler<GetAccessControlEffectRequest, GetAccessControlEffectResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets the default retention policy details for the specified organization.
+     * </p>
+     * 
+     * @param getDefaultRetentionPolicyRequest
+     * @return A Java Future containing the result of the GetDefaultRetentionPolicy operation returned by the service.
+     * @sample AmazonWorkMailAsync.GetDefaultRetentionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetDefaultRetentionPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetDefaultRetentionPolicyResult> getDefaultRetentionPolicyAsync(
+            GetDefaultRetentionPolicyRequest getDefaultRetentionPolicyRequest);
+
+    /**
+     * <p>
+     * Gets the default retention policy details for the specified organization.
+     * </p>
+     * 
+     * @param getDefaultRetentionPolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetDefaultRetentionPolicy operation returned by the service.
+     * @sample AmazonWorkMailAsyncHandler.GetDefaultRetentionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetDefaultRetentionPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetDefaultRetentionPolicyResult> getDefaultRetentionPolicyAsync(
+            GetDefaultRetentionPolicyRequest getDefaultRetentionPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<GetDefaultRetentionPolicyRequest, GetDefaultRetentionPolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -1127,6 +1191,37 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
      */
     java.util.concurrent.Future<PutMailboxPermissionsResult> putMailboxPermissionsAsync(PutMailboxPermissionsRequest putMailboxPermissionsRequest,
             com.amazonaws.handlers.AsyncHandler<PutMailboxPermissionsRequest, PutMailboxPermissionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Puts a retention policy to the specified organization.
+     * </p>
+     * 
+     * @param putRetentionPolicyRequest
+     * @return A Java Future containing the result of the PutRetentionPolicy operation returned by the service.
+     * @sample AmazonWorkMailAsync.PutRetentionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutRetentionPolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutRetentionPolicyResult> putRetentionPolicyAsync(PutRetentionPolicyRequest putRetentionPolicyRequest);
+
+    /**
+     * <p>
+     * Puts a retention policy to the specified organization.
+     * </p>
+     * 
+     * @param putRetentionPolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutRetentionPolicy operation returned by the service.
+     * @sample AmazonWorkMailAsyncHandler.PutRetentionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutRetentionPolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutRetentionPolicyResult> putRetentionPolicyAsync(PutRetentionPolicyRequest putRetentionPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<PutRetentionPolicyRequest, PutRetentionPolicyResult> asyncHandler);
 
     /**
      * <p>

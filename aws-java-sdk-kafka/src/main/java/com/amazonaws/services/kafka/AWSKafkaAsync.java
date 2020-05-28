@@ -287,6 +287,39 @@ public interface AWSKafkaAsync extends AWSKafka {
 
     /**
      * <p>
+     * Gets the Apache Kafka versions to which you can update the MSK cluster.
+     * </p>
+     * 
+     * @param getCompatibleKafkaVersionsRequest
+     * @return A Java Future containing the result of the GetCompatibleKafkaVersions operation returned by the service.
+     * @sample AWSKafkaAsync.GetCompatibleKafkaVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/GetCompatibleKafkaVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCompatibleKafkaVersionsResult> getCompatibleKafkaVersionsAsync(
+            GetCompatibleKafkaVersionsRequest getCompatibleKafkaVersionsRequest);
+
+    /**
+     * <p>
+     * Gets the Apache Kafka versions to which you can update the MSK cluster.
+     * </p>
+     * 
+     * @param getCompatibleKafkaVersionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetCompatibleKafkaVersions operation returned by the service.
+     * @sample AWSKafkaAsyncHandler.GetCompatibleKafkaVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/GetCompatibleKafkaVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCompatibleKafkaVersionsResult> getCompatibleKafkaVersionsAsync(
+            GetCompatibleKafkaVersionsRequest getCompatibleKafkaVersionsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetCompatibleKafkaVersionsRequest, GetCompatibleKafkaVersionsResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns a list of all the operations that have been performed on the specified MSK cluster.
      * </p>
      * 
@@ -660,6 +693,39 @@ public interface AWSKafkaAsync extends AWSKafka {
     java.util.concurrent.Future<UpdateClusterConfigurationResult> updateClusterConfigurationAsync(
             UpdateClusterConfigurationRequest updateClusterConfigurationRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateClusterConfigurationRequest, UpdateClusterConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the Apache Kafka version for the cluster.
+     * </p>
+     * 
+     * @param updateClusterKafkaVersionRequest
+     * @return A Java Future containing the result of the UpdateClusterKafkaVersion operation returned by the service.
+     * @sample AWSKafkaAsync.UpdateClusterKafkaVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateClusterKafkaVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateClusterKafkaVersionResult> updateClusterKafkaVersionAsync(
+            UpdateClusterKafkaVersionRequest updateClusterKafkaVersionRequest);
+
+    /**
+     * <p>
+     * Updates the Apache Kafka version for the cluster.
+     * </p>
+     * 
+     * @param updateClusterKafkaVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateClusterKafkaVersion operation returned by the service.
+     * @sample AWSKafkaAsyncHandler.UpdateClusterKafkaVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateClusterKafkaVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateClusterKafkaVersionResult> updateClusterKafkaVersionAsync(
+            UpdateClusterKafkaVersionRequest updateClusterKafkaVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateClusterKafkaVersionRequest, UpdateClusterKafkaVersionResult> asyncHandler);
 
     /**
      * <p>

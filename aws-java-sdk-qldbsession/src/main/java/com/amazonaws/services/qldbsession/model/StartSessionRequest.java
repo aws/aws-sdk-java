@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies a request to start a a new session.
+ * Specifies a request to start a new session.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/qldb-session-2019-07-11/StartSessionRequest" target="_top">AWS

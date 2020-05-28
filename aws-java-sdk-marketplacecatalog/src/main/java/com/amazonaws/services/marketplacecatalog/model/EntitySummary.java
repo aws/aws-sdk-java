@@ -31,7 +31,7 @@ public class EntitySummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name for the entity. This value is not unique. It is defined by the provider.
+     * The name for the entity. This value is not unique. It is defined by the seller.
      * </p>
      */
     private String name;
@@ -61,20 +61,20 @@ public class EntitySummary implements Serializable, Cloneable, StructuredPojo {
     private String lastModifiedDate;
     /**
      * <p>
-     * The visibility status of the entity to subscribers. This value can be <code>Public</code> (everyone can view the
+     * The visibility status of the entity to buyers. This value can be <code>Public</code> (everyone can view the
      * entity), <code>Limited</code> (the entity is visible to limited accounts only), or <code>Restricted</code> (the
-     * entity was published and then unpublished and only existing subscribers can view it).
+     * entity was published and then unpublished and only existing buyers can view it).
      * </p>
      */
     private String visibility;
 
     /**
      * <p>
-     * The name for the entity. This value is not unique. It is defined by the provider.
+     * The name for the entity. This value is not unique. It is defined by the seller.
      * </p>
      * 
      * @param name
-     *        The name for the entity. This value is not unique. It is defined by the provider.
+     *        The name for the entity. This value is not unique. It is defined by the seller.
      */
 
     public void setName(String name) {
@@ -83,10 +83,10 @@ public class EntitySummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name for the entity. This value is not unique. It is defined by the provider.
+     * The name for the entity. This value is not unique. It is defined by the seller.
      * </p>
      * 
-     * @return The name for the entity. This value is not unique. It is defined by the provider.
+     * @return The name for the entity. This value is not unique. It is defined by the seller.
      */
 
     public String getName() {
@@ -95,11 +95,11 @@ public class EntitySummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name for the entity. This value is not unique. It is defined by the provider.
+     * The name for the entity. This value is not unique. It is defined by the seller.
      * </p>
      * 
      * @param name
-     *        The name for the entity. This value is not unique. It is defined by the provider.
+     *        The name for the entity. This value is not unique. It is defined by the seller.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -270,16 +270,16 @@ public class EntitySummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The visibility status of the entity to subscribers. This value can be <code>Public</code> (everyone can view the
+     * The visibility status of the entity to buyers. This value can be <code>Public</code> (everyone can view the
      * entity), <code>Limited</code> (the entity is visible to limited accounts only), or <code>Restricted</code> (the
-     * entity was published and then unpublished and only existing subscribers can view it).
+     * entity was published and then unpublished and only existing buyers can view it).
      * </p>
      * 
      * @param visibility
-     *        The visibility status of the entity to subscribers. This value can be <code>Public</code> (everyone can
-     *        view the entity), <code>Limited</code> (the entity is visible to limited accounts only), or
-     *        <code>Restricted</code> (the entity was published and then unpublished and only existing subscribers can
-     *        view it).
+     *        The visibility status of the entity to buyers. This value can be <code>Public</code> (everyone can view
+     *        the entity), <code>Limited</code> (the entity is visible to limited accounts only), or
+     *        <code>Restricted</code> (the entity was published and then unpublished and only existing buyers can view
+     *        it).
      */
 
     public void setVisibility(String visibility) {
@@ -288,15 +288,15 @@ public class EntitySummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The visibility status of the entity to subscribers. This value can be <code>Public</code> (everyone can view the
+     * The visibility status of the entity to buyers. This value can be <code>Public</code> (everyone can view the
      * entity), <code>Limited</code> (the entity is visible to limited accounts only), or <code>Restricted</code> (the
-     * entity was published and then unpublished and only existing subscribers can view it).
+     * entity was published and then unpublished and only existing buyers can view it).
      * </p>
      * 
-     * @return The visibility status of the entity to subscribers. This value can be <code>Public</code> (everyone can
-     *         view the entity), <code>Limited</code> (the entity is visible to limited accounts only), or
-     *         <code>Restricted</code> (the entity was published and then unpublished and only existing subscribers can
-     *         view it).
+     * @return The visibility status of the entity to buyers. This value can be <code>Public</code> (everyone can view
+     *         the entity), <code>Limited</code> (the entity is visible to limited accounts only), or
+     *         <code>Restricted</code> (the entity was published and then unpublished and only existing buyers can view
+     *         it).
      */
 
     public String getVisibility() {
@@ -305,16 +305,16 @@ public class EntitySummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The visibility status of the entity to subscribers. This value can be <code>Public</code> (everyone can view the
+     * The visibility status of the entity to buyers. This value can be <code>Public</code> (everyone can view the
      * entity), <code>Limited</code> (the entity is visible to limited accounts only), or <code>Restricted</code> (the
-     * entity was published and then unpublished and only existing subscribers can view it).
+     * entity was published and then unpublished and only existing buyers can view it).
      * </p>
      * 
      * @param visibility
-     *        The visibility status of the entity to subscribers. This value can be <code>Public</code> (everyone can
-     *        view the entity), <code>Limited</code> (the entity is visible to limited accounts only), or
-     *        <code>Restricted</code> (the entity was published and then unpublished and only existing subscribers can
-     *        view it).
+     *        The visibility status of the entity to buyers. This value can be <code>Public</code> (everyone can view
+     *        the entity), <code>Limited</code> (the entity is visible to limited accounts only), or
+     *        <code>Restricted</code> (the entity was published and then unpublished and only existing buyers can view
+     *        it).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -79,17 +79,17 @@ public class AWSKafkaClient extends AmazonWebServiceClient implements AWSKafka {
                     .withSupportsIon(false)
                     .withContentTypeOverride("")
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.kafka.model.transform.ConflictExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kafka.model.transform.NotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.kafka.model.transform.ServiceUnavailableExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("UnauthorizedException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kafka.model.transform.UnauthorizedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kafka.model.transform.ConflictExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kafka.model.transform.ServiceUnavailableExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ForbiddenException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kafka.model.transform.ForbiddenExceptionUnmarshaller.getInstance()))
@@ -749,6 +749,103 @@ public class AWSKafkaClient extends AmazonWebServiceClient implements AWSKafka {
 
             HttpResponseHandler<AmazonWebServiceResponse<GetBootstrapBrokersResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetBootstrapBrokersResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets the Apache Kafka versions to which you can update the MSK cluster.
+     * </p>
+     * 
+     * @param getCompatibleKafkaVersionsRequest
+     * @return Result of the GetCompatibleKafkaVersions operation returned by the service.
+     * @throws BadRequestException
+     *         n
+     *         <p>
+     *         The request isn't valid because the input is incorrect. Correct your input and then submit it again.
+     *         </p>
+     *         n
+     * @throws UnauthorizedException
+     *         n
+     *         <p>
+     *         The request is not authorized. The provided credentials couldn't be validated.
+     *         </p>
+     *         n
+     * @throws InternalServerErrorException
+     *         n
+     *         <p>
+     *         There was an unexpected internal server error. Retrying your request might resolve the issue.
+     *         </p>
+     *         n
+     * @throws ForbiddenException
+     *         n
+     *         <p>
+     *         Access forbidden. Check your credentials and then retry your request.
+     *         </p>
+     *         n
+     * @throws NotFoundException
+     *         n
+     *         <p>
+     *         The resource could not be found due to incorrect input. Correct the input, then retry the request.
+     *         </p>
+     *         n
+     * @throws ServiceUnavailableException
+     *         n
+     *         <p>
+     *         503 response
+     *         </p>
+     *         n
+     * @throws TooManyRequestsException
+     *         n
+     *         <p>
+     *         429 response
+     *         </p>
+     *         n
+     * @sample AWSKafka.GetCompatibleKafkaVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/GetCompatibleKafkaVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetCompatibleKafkaVersionsResult getCompatibleKafkaVersions(GetCompatibleKafkaVersionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCompatibleKafkaVersions(request);
+    }
+
+    @SdkInternalApi
+    final GetCompatibleKafkaVersionsResult executeGetCompatibleKafkaVersions(GetCompatibleKafkaVersionsRequest getCompatibleKafkaVersionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getCompatibleKafkaVersionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetCompatibleKafkaVersionsRequest> request = null;
+        Response<GetCompatibleKafkaVersionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetCompatibleKafkaVersionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getCompatibleKafkaVersionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kafka");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCompatibleKafkaVersions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetCompatibleKafkaVersionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetCompatibleKafkaVersionsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1598,6 +1695,89 @@ public class AWSKafkaClient extends AmazonWebServiceClient implements AWSKafka {
             HttpResponseHandler<AmazonWebServiceResponse<UpdateClusterConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdateClusterConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the Apache Kafka version for the cluster.
+     * </p>
+     * 
+     * @param updateClusterKafkaVersionRequest
+     * @return Result of the UpdateClusterKafkaVersion operation returned by the service.
+     * @throws BadRequestException
+     *         <p>
+     *         The request isn't valid because the input is incorrect. Correct your input and then submit it again.
+     *         </p>
+     * @throws UnauthorizedException
+     *         <p>
+     *         The request is not authorized. The provided credentials couldn't be validated.
+     *         </p>
+     * @throws InternalServerErrorException
+     *         <p>
+     *         There was an unexpected internal server error. Retrying your request might resolve the issue.
+     *         </p>
+     * @throws ForbiddenException
+     *         <p>
+     *         Access forbidden. Check your credentials and then retry your request.
+     *         </p>
+     * @throws NotFoundException
+     *         <p>
+     *         The resource could not be found due to incorrect input. Correct the input, then retry the request.
+     *         </p>
+     * @throws ServiceUnavailableException
+     *         <p>
+     *         503 response
+     *         </p>
+     * @throws TooManyRequestsException
+     *         <p>
+     *         429 response
+     *         </p>
+     * @sample AWSKafka.UpdateClusterKafkaVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateClusterKafkaVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateClusterKafkaVersionResult updateClusterKafkaVersion(UpdateClusterKafkaVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateClusterKafkaVersion(request);
+    }
+
+    @SdkInternalApi
+    final UpdateClusterKafkaVersionResult executeUpdateClusterKafkaVersion(UpdateClusterKafkaVersionRequest updateClusterKafkaVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateClusterKafkaVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateClusterKafkaVersionRequest> request = null;
+        Response<UpdateClusterKafkaVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateClusterKafkaVersionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateClusterKafkaVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kafka");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateClusterKafkaVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateClusterKafkaVersionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateClusterKafkaVersionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

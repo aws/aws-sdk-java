@@ -32,6 +32,8 @@ public class ChangeSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ChangeType").build();
     private static final MarshallingInfo<StructuredPojo> ENTITY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Entity").build();
+    private static final MarshallingInfo<String> DETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Details").build();
     private static final MarshallingInfo<List> ERRORDETAILLIST_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ErrorDetailList").build();
 
@@ -53,6 +55,7 @@ public class ChangeSummaryMarshaller {
         try {
             protocolMarshaller.marshall(changeSummary.getChangeType(), CHANGETYPE_BINDING);
             protocolMarshaller.marshall(changeSummary.getEntity(), ENTITY_BINDING);
+            protocolMarshaller.marshall(changeSummary.getDetails(), DETAILS_BINDING);
             protocolMarshaller.marshall(changeSummary.getErrorDetailList(), ERRORDETAILLIST_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

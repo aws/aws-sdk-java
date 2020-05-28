@@ -30,7 +30,7 @@ public class FetchPageRequest implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specifies the transaction id of the page to be fetched.
+     * Specifies the transaction ID of the page to be fetched.
      * </p>
      */
     private String transactionId;
@@ -43,11 +43,11 @@ public class FetchPageRequest implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specifies the transaction id of the page to be fetched.
+     * Specifies the transaction ID of the page to be fetched.
      * </p>
      * 
      * @param transactionId
-     *        Specifies the transaction id of the page to be fetched.
+     *        Specifies the transaction ID of the page to be fetched.
      */
 
     public void setTransactionId(String transactionId) {
@@ -56,10 +56,10 @@ public class FetchPageRequest implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specifies the transaction id of the page to be fetched.
+     * Specifies the transaction ID of the page to be fetched.
      * </p>
      * 
-     * @return Specifies the transaction id of the page to be fetched.
+     * @return Specifies the transaction ID of the page to be fetched.
      */
 
     public String getTransactionId() {
@@ -68,11 +68,11 @@ public class FetchPageRequest implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specifies the transaction id of the page to be fetched.
+     * Specifies the transaction ID of the page to be fetched.
      * </p>
      * 
      * @param transactionId
-     *        Specifies the transaction id of the page to be fetched.
+     *        Specifies the transaction ID of the page to be fetched.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

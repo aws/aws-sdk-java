@@ -340,6 +340,39 @@ public class AWSKafkaAsyncClient extends AWSKafkaClient implements AWSKafkaAsync
     }
 
     @Override
+    public java.util.concurrent.Future<GetCompatibleKafkaVersionsResult> getCompatibleKafkaVersionsAsync(GetCompatibleKafkaVersionsRequest request) {
+
+        return getCompatibleKafkaVersionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCompatibleKafkaVersionsResult> getCompatibleKafkaVersionsAsync(final GetCompatibleKafkaVersionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetCompatibleKafkaVersionsRequest, GetCompatibleKafkaVersionsResult> asyncHandler) {
+        final GetCompatibleKafkaVersionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetCompatibleKafkaVersionsResult>() {
+            @Override
+            public GetCompatibleKafkaVersionsResult call() throws Exception {
+                GetCompatibleKafkaVersionsResult result = null;
+
+                try {
+                    result = executeGetCompatibleKafkaVersions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListClusterOperationsResult> listClusterOperationsAsync(ListClusterOperationsRequest request) {
 
         return listClusterOperationsAsync(request, null);
@@ -720,6 +753,39 @@ public class AWSKafkaAsyncClient extends AWSKafkaClient implements AWSKafkaAsync
 
                 try {
                     result = executeUpdateClusterConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateClusterKafkaVersionResult> updateClusterKafkaVersionAsync(UpdateClusterKafkaVersionRequest request) {
+
+        return updateClusterKafkaVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateClusterKafkaVersionResult> updateClusterKafkaVersionAsync(final UpdateClusterKafkaVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateClusterKafkaVersionRequest, UpdateClusterKafkaVersionResult> asyncHandler) {
+        final UpdateClusterKafkaVersionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateClusterKafkaVersionResult>() {
+            @Override
+            public UpdateClusterKafkaVersionResult call() throws Exception {
+                UpdateClusterKafkaVersionResult result = null;
+
+                try {
+                    result = executeUpdateClusterKafkaVersion(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

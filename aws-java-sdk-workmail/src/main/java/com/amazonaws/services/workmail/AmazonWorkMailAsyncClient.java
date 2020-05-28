@@ -480,6 +480,39 @@ public class AmazonWorkMailAsyncClient extends AmazonWorkMailClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteRetentionPolicyResult> deleteRetentionPolicyAsync(DeleteRetentionPolicyRequest request) {
+
+        return deleteRetentionPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRetentionPolicyResult> deleteRetentionPolicyAsync(final DeleteRetentionPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteRetentionPolicyRequest, DeleteRetentionPolicyResult> asyncHandler) {
+        final DeleteRetentionPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteRetentionPolicyResult>() {
+            @Override
+            public DeleteRetentionPolicyResult call() throws Exception {
+                DeleteRetentionPolicyResult result = null;
+
+                try {
+                    result = executeDeleteRetentionPolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteUserResult> deleteUserAsync(DeleteUserRequest request) {
 
         return deleteUserAsync(request, null);
@@ -763,6 +796,39 @@ public class AmazonWorkMailAsyncClient extends AmazonWorkMailClient implements A
 
                 try {
                     result = executeGetAccessControlEffect(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDefaultRetentionPolicyResult> getDefaultRetentionPolicyAsync(GetDefaultRetentionPolicyRequest request) {
+
+        return getDefaultRetentionPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDefaultRetentionPolicyResult> getDefaultRetentionPolicyAsync(final GetDefaultRetentionPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetDefaultRetentionPolicyRequest, GetDefaultRetentionPolicyResult> asyncHandler) {
+        final GetDefaultRetentionPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetDefaultRetentionPolicyResult>() {
+            @Override
+            public GetDefaultRetentionPolicyResult call() throws Exception {
+                GetDefaultRetentionPolicyResult result = null;
+
+                try {
+                    result = executeGetDefaultRetentionPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1192,6 +1258,39 @@ public class AmazonWorkMailAsyncClient extends AmazonWorkMailClient implements A
 
                 try {
                     result = executePutMailboxPermissions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutRetentionPolicyResult> putRetentionPolicyAsync(PutRetentionPolicyRequest request) {
+
+        return putRetentionPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutRetentionPolicyResult> putRetentionPolicyAsync(final PutRetentionPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutRetentionPolicyRequest, PutRetentionPolicyResult> asyncHandler) {
+        final PutRetentionPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutRetentionPolicyResult>() {
+            @Override
+            public PutRetentionPolicyResult call() throws Exception {
+                PutRetentionPolicyResult result = null;
+
+                try {
+                    result = executePutRetentionPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

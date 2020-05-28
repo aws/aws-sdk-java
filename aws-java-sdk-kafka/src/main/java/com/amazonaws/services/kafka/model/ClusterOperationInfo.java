@@ -73,6 +73,12 @@ public class ClusterOperationInfo implements Serializable, Cloneable, Structured
     private String operationState;
     /**
      * <p>
+     * Steps completed during the operation.
+     * </p>
+     */
+    private java.util.List<ClusterOperationStep> operationSteps;
+    /**
+     * <p>
      * Type of the cluster operation.
      * </p>
      */
@@ -414,6 +420,85 @@ public class ClusterOperationInfo implements Serializable, Cloneable, Structured
 
     /**
      * <p>
+     * Steps completed during the operation.
+     * </p>
+     * 
+     * @return <p>
+     *         Steps completed during the operation.
+     *         </p>
+     */
+
+    public java.util.List<ClusterOperationStep> getOperationSteps() {
+        return operationSteps;
+    }
+
+    /**
+     * <p>
+     * Steps completed during the operation.
+     * </p>
+     * 
+     * @param operationSteps
+     *        <p>
+     *        Steps completed during the operation.
+     *        </p>
+     */
+
+    public void setOperationSteps(java.util.Collection<ClusterOperationStep> operationSteps) {
+        if (operationSteps == null) {
+            this.operationSteps = null;
+            return;
+        }
+
+        this.operationSteps = new java.util.ArrayList<ClusterOperationStep>(operationSteps);
+    }
+
+    /**
+     * <p>
+     * Steps completed during the operation.
+     * </p>
+     * 
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setOperationSteps(java.util.Collection)} or {@link #withOperationSteps(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param operationSteps
+     *        <p>
+     *        Steps completed during the operation.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ClusterOperationInfo withOperationSteps(ClusterOperationStep... operationSteps) {
+        if (this.operationSteps == null) {
+            setOperationSteps(new java.util.ArrayList<ClusterOperationStep>(operationSteps.length));
+        }
+        for (ClusterOperationStep ele : operationSteps) {
+            this.operationSteps.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Steps completed during the operation.
+     * </p>
+     * 
+     * @param operationSteps
+     *        <p>
+     *        Steps completed during the operation.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ClusterOperationInfo withOperationSteps(java.util.Collection<ClusterOperationStep> operationSteps) {
+        setOperationSteps(operationSteps);
+        return this;
+    }
+
+    /**
+     * <p>
      * Type of the cluster operation.
      * </p>
      * 
@@ -576,6 +661,8 @@ public class ClusterOperationInfo implements Serializable, Cloneable, Structured
             sb.append("OperationArn: ").append(getOperationArn()).append(",");
         if (getOperationState() != null)
             sb.append("OperationState: ").append(getOperationState()).append(",");
+        if (getOperationSteps() != null)
+            sb.append("OperationSteps: ").append(getOperationSteps()).append(",");
         if (getOperationType() != null)
             sb.append("OperationType: ").append(getOperationType()).append(",");
         if (getSourceClusterInfo() != null)
@@ -624,6 +711,10 @@ public class ClusterOperationInfo implements Serializable, Cloneable, Structured
             return false;
         if (other.getOperationState() != null && other.getOperationState().equals(this.getOperationState()) == false)
             return false;
+        if (other.getOperationSteps() == null ^ this.getOperationSteps() == null)
+            return false;
+        if (other.getOperationSteps() != null && other.getOperationSteps().equals(this.getOperationSteps()) == false)
+            return false;
         if (other.getOperationType() == null ^ this.getOperationType() == null)
             return false;
         if (other.getOperationType() != null && other.getOperationType().equals(this.getOperationType()) == false)
@@ -651,6 +742,7 @@ public class ClusterOperationInfo implements Serializable, Cloneable, Structured
         hashCode = prime * hashCode + ((getErrorInfo() == null) ? 0 : getErrorInfo().hashCode());
         hashCode = prime * hashCode + ((getOperationArn() == null) ? 0 : getOperationArn().hashCode());
         hashCode = prime * hashCode + ((getOperationState() == null) ? 0 : getOperationState().hashCode());
+        hashCode = prime * hashCode + ((getOperationSteps() == null) ? 0 : getOperationSteps().hashCode());
         hashCode = prime * hashCode + ((getOperationType() == null) ? 0 : getOperationType().hashCode());
         hashCode = prime * hashCode + ((getSourceClusterInfo() == null) ? 0 : getSourceClusterInfo().hashCode());
         hashCode = prime * hashCode + ((getTargetClusterInfo() == null) ? 0 : getTargetClusterInfo().hashCode());

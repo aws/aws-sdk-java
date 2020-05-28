@@ -30,18 +30,18 @@ public class StartTransactionResult implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The transaction id of the started transaction.
+     * The transaction ID of the started transaction.
      * </p>
      */
     private String transactionId;
 
     /**
      * <p>
-     * The transaction id of the started transaction.
+     * The transaction ID of the started transaction.
      * </p>
      * 
      * @param transactionId
-     *        The transaction id of the started transaction.
+     *        The transaction ID of the started transaction.
      */
 
     public void setTransactionId(String transactionId) {
@@ -50,10 +50,10 @@ public class StartTransactionResult implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The transaction id of the started transaction.
+     * The transaction ID of the started transaction.
      * </p>
      * 
-     * @return The transaction id of the started transaction.
+     * @return The transaction ID of the started transaction.
      */
 
     public String getTransactionId() {
@@ -62,11 +62,11 @@ public class StartTransactionResult implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The transaction id of the started transaction.
+     * The transaction ID of the started transaction.
      * </p>
      * 
      * @param transactionId
-     *        The transaction id of the started transaction.
+     *        The transaction ID of the started transaction.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

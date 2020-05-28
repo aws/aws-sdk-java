@@ -68,6 +68,11 @@ public class AbstractAWSKafka implements AWSKafka {
     }
 
     @Override
+    public GetCompatibleKafkaVersionsResult getCompatibleKafkaVersions(GetCompatibleKafkaVersionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListClusterOperationsResult listClusterOperations(ListClusterOperationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -124,6 +129,11 @@ public class AbstractAWSKafka implements AWSKafka {
 
     @Override
     public UpdateClusterConfigurationResult updateClusterConfiguration(UpdateClusterConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateClusterKafkaVersionResult updateClusterKafkaVersion(UpdateClusterKafkaVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

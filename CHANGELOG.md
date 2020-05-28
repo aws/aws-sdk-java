@@ -1,3 +1,20 @@
+# __1.11.792__ __2020-05-28__
+## __AWS Marketplace Catalog Service__
+  - ### Features
+    - AWS Marketplace Catalog now supports accessing initial change payloads with DescribeChangeSet operation.
+
+## __Amazon QLDB Session__
+  - ### Features
+    - Documentation updates for Amazon QLDB Session
+
+## __Amazon WorkMail__
+  - ### Features
+    - This release adds support for Amazon WorkMail organization-level retention policies.
+
+## __Managed Streaming for Kafka__
+  - ### Features
+    - New APIs for upgrading the Apache Kafka version of a cluster and to find out compatible upgrade paths
+
 # __1.11.791__ __2020-05-27__
 ## __Amazon GuardDuty__
   - ### Features

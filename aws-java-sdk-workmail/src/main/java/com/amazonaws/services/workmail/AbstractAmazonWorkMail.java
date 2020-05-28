@@ -83,6 +83,11 @@ public class AbstractAmazonWorkMail implements AmazonWorkMail {
     }
 
     @Override
+    public DeleteRetentionPolicyResult deleteRetentionPolicy(DeleteRetentionPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteUserResult deleteUser(DeleteUserRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -124,6 +129,11 @@ public class AbstractAmazonWorkMail implements AmazonWorkMail {
 
     @Override
     public GetAccessControlEffectResult getAccessControlEffect(GetAccessControlEffectRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetDefaultRetentionPolicyResult getDefaultRetentionPolicy(GetDefaultRetentionPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -189,6 +199,11 @@ public class AbstractAmazonWorkMail implements AmazonWorkMail {
 
     @Override
     public PutMailboxPermissionsResult putMailboxPermissions(PutMailboxPermissionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutRetentionPolicyResult putRetentionPolicy(PutRetentionPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

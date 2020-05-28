@@ -27,8 +27,8 @@ import com.amazonaws.services.marketplacecatalog.model.*;
  * </p>
  * <p>
  * <p>
- * Catalog API actions allow you to create, describe, list, and delete changes to your published entities. An entity is
- * a product or an offer on AWS Marketplace.
+ * Catalog API actions allow you to manage your entities through list, describe, and update capabilities. An entity can
+ * be a product or an offer on AWS Marketplace.
  * </p>
  * <p>
  * You can automate your entity update process by integrating the AWS Marketplace Catalog API with your AWS Marketplace
@@ -173,7 +173,17 @@ public interface AWSMarketplaceCatalog {
 
     /**
      * <p>
-     * This operation allows you to request changes in your entities.
+     * This operation allows you to request changes for your entities. Within a single ChangeSet, you cannot start the
+     * same change type against the same entity multiple times. Additionally, when a ChangeSet is running, all the
+     * entities targeted by the different changes are locked until the ChangeSet has completed (either succeeded,
+     * cancelled, or failed). If you try to start a ChangeSet containing a change against an entity that is already
+     * locked, you will receive a <code>ResourceInUseException</code>.
+     * </p>
+     * <p>
+     * For example, you cannot start the ChangeSet described in the <a href=
+     * "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_StartChangeSet.html#API_StartChangeSet_Examples"
+     * >example</a> below because it contains two changes to execute the same change type (<code>AddRevisions</code>)
+     * against the same entity (<code>entity-id@1)</code>.
      * </p>
      * 
      * @param startChangeSetRequest

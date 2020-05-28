@@ -76,6 +76,11 @@ public class ClusterOperationInfoJsonUnmarshaller implements Unmarshaller<Cluste
                     context.nextToken();
                     clusterOperationInfo.setOperationState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("operationSteps", targetDepth)) {
+                    context.nextToken();
+                    clusterOperationInfo.setOperationSteps(new ListUnmarshaller<ClusterOperationStep>(ClusterOperationStepJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
+                }
                 if (context.testExpression("operationType", targetDepth)) {
                     context.nextToken();
                     clusterOperationInfo.setOperationType(context.getUnmarshaller(String.class).unmarshall(context));

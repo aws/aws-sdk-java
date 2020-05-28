@@ -59,6 +59,12 @@ public class MutableClusterInfo implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private OpenMonitoring openMonitoring;
+    /**
+     * <p>
+     * The Kafka version.
+     * </p>
+     */
+    private String kafkaVersion;
 
     private LoggingInfo loggingInfo;
 
@@ -347,6 +353,52 @@ public class MutableClusterInfo implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The Kafka version.
+     * </p>
+     * 
+     * @param kafkaVersion
+     *        <p>
+     *        The Kafka version.
+     *        </p>
+     */
+
+    public void setKafkaVersion(String kafkaVersion) {
+        this.kafkaVersion = kafkaVersion;
+    }
+
+    /**
+     * <p>
+     * The Kafka version.
+     * </p>
+     * 
+     * @return <p>
+     *         The Kafka version.
+     *         </p>
+     */
+
+    public String getKafkaVersion() {
+        return this.kafkaVersion;
+    }
+
+    /**
+     * <p>
+     * The Kafka version.
+     * </p>
+     * 
+     * @param kafkaVersion
+     *        <p>
+     *        The Kafka version.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MutableClusterInfo withKafkaVersion(String kafkaVersion) {
+        setKafkaVersion(kafkaVersion);
+        return this;
+    }
+
+    /**
      * @param loggingInfo
      */
 
@@ -394,6 +446,8 @@ public class MutableClusterInfo implements Serializable, Cloneable, StructuredPo
             sb.append("EnhancedMonitoring: ").append(getEnhancedMonitoring()).append(",");
         if (getOpenMonitoring() != null)
             sb.append("OpenMonitoring: ").append(getOpenMonitoring()).append(",");
+        if (getKafkaVersion() != null)
+            sb.append("KafkaVersion: ").append(getKafkaVersion()).append(",");
         if (getLoggingInfo() != null)
             sb.append("LoggingInfo: ").append(getLoggingInfo());
         sb.append("}");
@@ -430,6 +484,10 @@ public class MutableClusterInfo implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getOpenMonitoring() != null && other.getOpenMonitoring().equals(this.getOpenMonitoring()) == false)
             return false;
+        if (other.getKafkaVersion() == null ^ this.getKafkaVersion() == null)
+            return false;
+        if (other.getKafkaVersion() != null && other.getKafkaVersion().equals(this.getKafkaVersion()) == false)
+            return false;
         if (other.getLoggingInfo() == null ^ this.getLoggingInfo() == null)
             return false;
         if (other.getLoggingInfo() != null && other.getLoggingInfo().equals(this.getLoggingInfo()) == false)
@@ -447,6 +505,7 @@ public class MutableClusterInfo implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getNumberOfBrokerNodes() == null) ? 0 : getNumberOfBrokerNodes().hashCode());
         hashCode = prime * hashCode + ((getEnhancedMonitoring() == null) ? 0 : getEnhancedMonitoring().hashCode());
         hashCode = prime * hashCode + ((getOpenMonitoring() == null) ? 0 : getOpenMonitoring().hashCode());
+        hashCode = prime * hashCode + ((getKafkaVersion() == null) ? 0 : getKafkaVersion().hashCode());
         hashCode = prime * hashCode + ((getLoggingInfo() == null) ? 0 : getLoggingInfo().hashCode());
         return hashCode;
     }

@@ -975,6 +975,67 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Deletes the specified retention policy from the specified organization.
+     * </p>
+     * 
+     * @param deleteRetentionPolicyRequest
+     * @return Result of the DeleteRetentionPolicy operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
+     *         organization or its members.
+     * @sample AmazonWorkMail.DeleteRetentionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteRetentionPolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteRetentionPolicyResult deleteRetentionPolicy(DeleteRetentionPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteRetentionPolicy(request);
+    }
+
+    @SdkInternalApi
+    final DeleteRetentionPolicyResult executeDeleteRetentionPolicy(DeleteRetentionPolicyRequest deleteRetentionPolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteRetentionPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteRetentionPolicyRequest> request = null;
+        Response<DeleteRetentionPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteRetentionPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteRetentionPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRetentionPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteRetentionPolicyResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DeleteRetentionPolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes a user from Amazon WorkMail and all subsequent systems. Before you can delete a user, the user state must
      * be <code>DISABLED</code>. Use the <a>DescribeUser</a> action to confirm the user state.
      * </p>
@@ -1553,6 +1614,70 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
             HttpResponseHandler<AmazonWebServiceResponse<GetAccessControlEffectResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetAccessControlEffectResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets the default retention policy details for the specified organization.
+     * </p>
+     * 
+     * @param getDefaultRetentionPolicyRequest
+     * @return Result of the GetDefaultRetentionPolicy operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
+     *         organization or its members.
+     * @throws EntityNotFoundException
+     *         The identifier supplied for the user, group, or resource does not exist in your organization.
+     * @sample AmazonWorkMail.GetDefaultRetentionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetDefaultRetentionPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetDefaultRetentionPolicyResult getDefaultRetentionPolicy(GetDefaultRetentionPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDefaultRetentionPolicy(request);
+    }
+
+    @SdkInternalApi
+    final GetDefaultRetentionPolicyResult executeGetDefaultRetentionPolicy(GetDefaultRetentionPolicyRequest getDefaultRetentionPolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getDefaultRetentionPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetDefaultRetentionPolicyRequest> request = null;
+        Response<GetDefaultRetentionPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetDefaultRetentionPolicyRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getDefaultRetentionPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDefaultRetentionPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetDefaultRetentionPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetDefaultRetentionPolicyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2356,6 +2481,68 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
             HttpResponseHandler<AmazonWebServiceResponse<PutMailboxPermissionsResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new PutMailboxPermissionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Puts a retention policy to the specified organization.
+     * </p>
+     * 
+     * @param putRetentionPolicyRequest
+     * @return Result of the PutRetentionPolicy operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
+     *         organization or its members.
+     * @throws LimitExceededException
+     *         The request exceeds the limit of the resource.
+     * @sample AmazonWorkMail.PutRetentionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutRetentionPolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public PutRetentionPolicyResult putRetentionPolicy(PutRetentionPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executePutRetentionPolicy(request);
+    }
+
+    @SdkInternalApi
+    final PutRetentionPolicyResult executePutRetentionPolicy(PutRetentionPolicyRequest putRetentionPolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putRetentionPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutRetentionPolicyRequest> request = null;
+        Response<PutRetentionPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutRetentionPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putRetentionPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutRetentionPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutRetentionPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutRetentionPolicyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

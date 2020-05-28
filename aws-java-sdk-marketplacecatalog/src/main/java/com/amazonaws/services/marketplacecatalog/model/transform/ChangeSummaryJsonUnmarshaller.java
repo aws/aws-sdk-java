@@ -56,6 +56,10 @@ public class ChangeSummaryJsonUnmarshaller implements Unmarshaller<ChangeSummary
                     context.nextToken();
                     changeSummary.setEntity(EntityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Details", targetDepth)) {
+                    context.nextToken();
+                    changeSummary.setDetails(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("ErrorDetailList", targetDepth)) {
                     context.nextToken();
                     changeSummary.setErrorDetailList(new ListUnmarshaller<ErrorDetail>(ErrorDetailJsonUnmarshaller.getInstance()).unmarshall(context));

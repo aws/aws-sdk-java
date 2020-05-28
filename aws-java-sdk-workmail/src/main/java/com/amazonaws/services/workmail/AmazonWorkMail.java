@@ -388,6 +388,26 @@ public interface AmazonWorkMail {
 
     /**
      * <p>
+     * Deletes the specified retention policy from the specified organization.
+     * </p>
+     * 
+     * @param deleteRetentionPolicyRequest
+     * @return Result of the DeleteRetentionPolicy operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
+     *         organization or its members.
+     * @sample AmazonWorkMail.DeleteRetentionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteRetentionPolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteRetentionPolicyResult deleteRetentionPolicy(DeleteRetentionPolicyRequest deleteRetentionPolicyRequest);
+
+    /**
+     * <p>
      * Deletes a user from Amazon WorkMail and all subsequent systems. Before you can delete a user, the user state must
      * be <code>DISABLED</code>. Use the <a>DescribeUser</a> action to confirm the user state.
      * </p>
@@ -608,6 +628,28 @@ public interface AmazonWorkMail {
      *      target="_top">AWS API Documentation</a>
      */
     GetAccessControlEffectResult getAccessControlEffect(GetAccessControlEffectRequest getAccessControlEffectRequest);
+
+    /**
+     * <p>
+     * Gets the default retention policy details for the specified organization.
+     * </p>
+     * 
+     * @param getDefaultRetentionPolicyRequest
+     * @return Result of the GetDefaultRetentionPolicy operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
+     *         organization or its members.
+     * @throws EntityNotFoundException
+     *         The identifier supplied for the user, group, or resource does not exist in your organization.
+     * @sample AmazonWorkMail.GetDefaultRetentionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetDefaultRetentionPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetDefaultRetentionPolicyResult getDefaultRetentionPolicy(GetDefaultRetentionPolicyRequest getDefaultRetentionPolicyRequest);
 
     /**
      * <p>
@@ -887,6 +929,28 @@ public interface AmazonWorkMail {
      *      API Documentation</a>
      */
     PutMailboxPermissionsResult putMailboxPermissions(PutMailboxPermissionsRequest putMailboxPermissionsRequest);
+
+    /**
+     * <p>
+     * Puts a retention policy to the specified organization.
+     * </p>
+     * 
+     * @param putRetentionPolicyRequest
+     * @return Result of the PutRetentionPolicy operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
+     *         organization or its members.
+     * @throws LimitExceededException
+     *         The request exceeds the limit of the resource.
+     * @sample AmazonWorkMail.PutRetentionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutRetentionPolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    PutRetentionPolicyResult putRetentionPolicy(PutRetentionPolicyRequest putRetentionPolicyRequest);
 
     /**
      * <p>

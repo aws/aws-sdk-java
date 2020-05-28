@@ -30,7 +30,7 @@ public class ExecuteStatementRequest implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Specifies the transaction id of the request.
+     * Specifies the transaction ID of the request.
      * </p>
      */
     private String transactionId;
@@ -49,11 +49,11 @@ public class ExecuteStatementRequest implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Specifies the transaction id of the request.
+     * Specifies the transaction ID of the request.
      * </p>
      * 
      * @param transactionId
-     *        Specifies the transaction id of the request.
+     *        Specifies the transaction ID of the request.
      */
 
     public void setTransactionId(String transactionId) {
@@ -62,10 +62,10 @@ public class ExecuteStatementRequest implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Specifies the transaction id of the request.
+     * Specifies the transaction ID of the request.
      * </p>
      * 
-     * @return Specifies the transaction id of the request.
+     * @return Specifies the transaction ID of the request.
      */
 
     public String getTransactionId() {
@@ -74,11 +74,11 @@ public class ExecuteStatementRequest implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Specifies the transaction id of the request.
+     * Specifies the transaction ID of the request.
      * </p>
      * 
      * @param transactionId
-     *        Specifies the transaction id of the request.
+     *        Specifies the transaction ID of the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
