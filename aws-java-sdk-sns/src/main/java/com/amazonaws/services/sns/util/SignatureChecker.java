@@ -24,6 +24,7 @@ import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonToken;
 import java.io.IOException;
+import java.nio.charset.Charset;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.security.PublicKey;
@@ -147,10 +148,10 @@ public class SignatureChecker {
     public boolean verifySignature(String message, String signature, PublicKey publicKey){
         boolean result = false;
         try {
-            byte[] sigbytes = Base64.decode(signature.getBytes());
+            byte[] sigbytes = Base64.decode(signature.getBytes(Charset.forName("UTF-8")));
             Signature sigChecker = SIG_CHECKER.get();
             sigChecker.initVerify(publicKey);
-            sigChecker.update(message.getBytes());
+            sigChecker.update(message.getBytes(Charset.forName("UTF-8")));
             result = sigChecker.verify(sigbytes);
         } catch (InvalidKeyException e) {
             // Rare exception: The private key was incorrectly formatted
