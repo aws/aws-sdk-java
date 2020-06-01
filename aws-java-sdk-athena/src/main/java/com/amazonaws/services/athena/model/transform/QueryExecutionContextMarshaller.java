@@ -29,6 +29,8 @@ public class QueryExecutionContextMarshaller {
 
     private static final MarshallingInfo<String> DATABASE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Database").build();
+    private static final MarshallingInfo<String> CATALOG_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Catalog").build();
 
     private static final QueryExecutionContextMarshaller instance = new QueryExecutionContextMarshaller();
 
@@ -47,6 +49,7 @@ public class QueryExecutionContextMarshaller {
 
         try {
             protocolMarshaller.marshall(queryExecutionContext.getDatabase(), DATABASE_BINDING);
+            protocolMarshaller.marshall(queryExecutionContext.getCatalog(), CATALOG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

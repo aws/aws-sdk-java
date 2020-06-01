@@ -27,31 +27,31 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Lists the tags for the workgroup resource with the specified ARN.
+     * Lists the tags for the resource with the specified ARN.
      * </p>
      */
     private String resourceARN;
     /**
      * <p>
      * The token for the next set of results, or null if there are no additional results for this request, where the
-     * request lists the tags for the workgroup resource with the specified ARN.
+     * request lists the tags for the resource with the specified ARN.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * The maximum number of results to be returned per request that lists the tags for the workgroup resource.
+     * The maximum number of results to be returned per request that lists the tags for the resource.
      * </p>
      */
     private Integer maxResults;
 
     /**
      * <p>
-     * Lists the tags for the workgroup resource with the specified ARN.
+     * Lists the tags for the resource with the specified ARN.
      * </p>
      * 
      * @param resourceARN
-     *        Lists the tags for the workgroup resource with the specified ARN.
+     *        Lists the tags for the resource with the specified ARN.
      */
 
     public void setResourceARN(String resourceARN) {
@@ -60,10 +60,10 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Lists the tags for the workgroup resource with the specified ARN.
+     * Lists the tags for the resource with the specified ARN.
      * </p>
      * 
-     * @return Lists the tags for the workgroup resource with the specified ARN.
+     * @return Lists the tags for the resource with the specified ARN.
      */
 
     public String getResourceARN() {
@@ -72,11 +72,11 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Lists the tags for the workgroup resource with the specified ARN.
+     * Lists the tags for the resource with the specified ARN.
      * </p>
      * 
      * @param resourceARN
-     *        Lists the tags for the workgroup resource with the specified ARN.
+     *        Lists the tags for the resource with the specified ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -88,12 +88,12 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The token for the next set of results, or null if there are no additional results for this request, where the
-     * request lists the tags for the workgroup resource with the specified ARN.
+     * request lists the tags for the resource with the specified ARN.
      * </p>
      * 
      * @param nextToken
      *        The token for the next set of results, or null if there are no additional results for this request, where
-     *        the request lists the tags for the workgroup resource with the specified ARN.
+     *        the request lists the tags for the resource with the specified ARN.
      */
 
     public void setNextToken(String nextToken) {
@@ -103,11 +103,11 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The token for the next set of results, or null if there are no additional results for this request, where the
-     * request lists the tags for the workgroup resource with the specified ARN.
+     * request lists the tags for the resource with the specified ARN.
      * </p>
      * 
      * @return The token for the next set of results, or null if there are no additional results for this request, where
-     *         the request lists the tags for the workgroup resource with the specified ARN.
+     *         the request lists the tags for the resource with the specified ARN.
      */
 
     public String getNextToken() {
@@ -117,12 +117,12 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The token for the next set of results, or null if there are no additional results for this request, where the
-     * request lists the tags for the workgroup resource with the specified ARN.
+     * request lists the tags for the resource with the specified ARN.
      * </p>
      * 
      * @param nextToken
      *        The token for the next set of results, or null if there are no additional results for this request, where
-     *        the request lists the tags for the workgroup resource with the specified ARN.
+     *        the request lists the tags for the resource with the specified ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -133,11 +133,11 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The maximum number of results to be returned per request that lists the tags for the workgroup resource.
+     * The maximum number of results to be returned per request that lists the tags for the resource.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to be returned per request that lists the tags for the workgroup resource.
+     *        The maximum number of results to be returned per request that lists the tags for the resource.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -146,10 +146,10 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The maximum number of results to be returned per request that lists the tags for the workgroup resource.
+     * The maximum number of results to be returned per request that lists the tags for the resource.
      * </p>
      * 
-     * @return The maximum number of results to be returned per request that lists the tags for the workgroup resource.
+     * @return The maximum number of results to be returned per request that lists the tags for the resource.
      */
 
     public Integer getMaxResults() {
@@ -158,11 +158,11 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The maximum number of results to be returned per request that lists the tags for the workgroup resource.
+     * The maximum number of results to be returned per request that lists the tags for the resource.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to be returned per request that lists the tags for the workgroup resource.
+     *        The maximum number of results to be returned per request that lists the tags for the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

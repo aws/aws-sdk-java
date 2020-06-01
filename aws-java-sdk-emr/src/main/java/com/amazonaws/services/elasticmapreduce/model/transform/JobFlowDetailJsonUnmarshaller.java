@@ -60,6 +60,10 @@ public class JobFlowDetailJsonUnmarshaller implements Unmarshaller<JobFlowDetail
                     context.nextToken();
                     jobFlowDetail.setLogUri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("LogEncryptionKmsKeyId", targetDepth)) {
+                    context.nextToken();
+                    jobFlowDetail.setLogEncryptionKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("AmiVersion", targetDepth)) {
                     context.nextToken();
                     jobFlowDetail.setAmiVersion(context.getUnmarshaller(String.class).unmarshall(context));

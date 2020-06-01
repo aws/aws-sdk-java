@@ -996,7 +996,44 @@ public interface AmazonFSxAsync extends AmazonFSx {
 
     /**
      * <p>
-     * Updates a file system configuration.
+     * Use this operation to update the configuration of an existing Amazon FSx file system. For an Amazon FSx for
+     * Lustre file system, you can update only the WeeklyMaintenanceStartTime. For an Amazon for Windows File Server
+     * file system, you can update the following properties:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * AutomaticBackupRetentionDays
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DailyAutomaticBackupStartTime
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SelfManagedActiveDirectoryConfiguration
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * StorageCapacity
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ThroughputCapacity
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * WeeklyMaintenanceStartTime
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can update multiple properties in a single request.
      * </p>
      * 
      * @param updateFileSystemRequest
@@ -1010,7 +1047,44 @@ public interface AmazonFSxAsync extends AmazonFSx {
 
     /**
      * <p>
-     * Updates a file system configuration.
+     * Use this operation to update the configuration of an existing Amazon FSx file system. For an Amazon FSx for
+     * Lustre file system, you can update only the WeeklyMaintenanceStartTime. For an Amazon for Windows File Server
+     * file system, you can update the following properties:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * AutomaticBackupRetentionDays
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DailyAutomaticBackupStartTime
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SelfManagedActiveDirectoryConfiguration
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * StorageCapacity
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ThroughputCapacity
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * WeeklyMaintenanceStartTime
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can update multiple properties in a single request.
      * </p>
      * 
      * @param updateFileSystemRequest

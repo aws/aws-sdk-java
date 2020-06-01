@@ -28,18 +28,35 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateFileSystemRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * Identifies the file system that you are updating.
+     * </p>
+     */
     private String fileSystemId;
     /**
      * <p>
-     * (Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent updates. This string
-     * is automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.
+     * A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent updates. This string is
+     * automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.
      * </p>
      */
     private String clientRequestToken;
     /**
      * <p>
-     * The configuration update for this Microsoft Windows file system. The only supported options are for backup and
-     * maintenance and for self-managed Active Directory configuration.
+     * Use this parameter to increase the storage capacity of an Amazon FSx for Windows File Server file system.
+     * Specifies the storage capacity target value, GiB, for the file system you're updating. The storage capacity
+     * target value must be at least 10 percent (%) greater than the current storage capacity value. In order to
+     * increase storage capacity, the file system needs to have at least 16 MB/s of throughput capacity. You cannot make
+     * a storage capacity increase request if there is an existing storage capacity increase request in progress. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing Storage
+     * Capacity</a>.
+     * </p>
+     */
+    private Integer storageCapacity;
+    /**
+     * <p>
+     * The configuration updates for an Amazon FSx for Windows File Server file system.
      * </p>
      */
     private UpdateFileSystemWindowsConfiguration windowsConfiguration;
@@ -47,7 +64,12 @@ public class UpdateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
     private UpdateFileSystemLustreConfiguration lustreConfiguration;
 
     /**
+     * <p>
+     * Identifies the file system that you are updating.
+     * </p>
+     * 
      * @param fileSystemId
+     *        Identifies the file system that you are updating.
      */
 
     public void setFileSystemId(String fileSystemId) {
@@ -55,7 +77,11 @@ public class UpdateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * @return
+     * <p>
+     * Identifies the file system that you are updating.
+     * </p>
+     * 
+     * @return Identifies the file system that you are updating.
      */
 
     public String getFileSystemId() {
@@ -63,7 +89,12 @@ public class UpdateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * Identifies the file system that you are updating.
+     * </p>
+     * 
      * @param fileSystemId
+     *        Identifies the file system that you are updating.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -74,14 +105,13 @@ public class UpdateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * (Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent updates. This string
-     * is automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.
+     * A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent updates. This string is
+     * automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.
      * </p>
      * 
      * @param clientRequestToken
-     *        (Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent updates. This
-     *        string is automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an
-     *        AWS SDK.
+     *        A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent updates. This string is
+     *        automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.
      */
 
     public void setClientRequestToken(String clientRequestToken) {
@@ -90,13 +120,12 @@ public class UpdateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * (Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent updates. This string
-     * is automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.
+     * A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent updates. This string is
+     * automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.
      * </p>
      * 
-     * @return (Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent updates. This
-     *         string is automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an
-     *         AWS SDK.
+     * @return A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent updates. This string is
+     *         automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.
      */
 
     public String getClientRequestToken() {
@@ -105,14 +134,13 @@ public class UpdateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * (Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent updates. This string
-     * is automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.
+     * A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent updates. This string is
+     * automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.
      * </p>
      * 
      * @param clientRequestToken
-     *        (Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent updates. This
-     *        string is automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an
-     *        AWS SDK.
+     *        A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent updates. This string is
+     *        automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -123,13 +151,93 @@ public class UpdateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The configuration update for this Microsoft Windows file system. The only supported options are for backup and
-     * maintenance and for self-managed Active Directory configuration.
+     * Use this parameter to increase the storage capacity of an Amazon FSx for Windows File Server file system.
+     * Specifies the storage capacity target value, GiB, for the file system you're updating. The storage capacity
+     * target value must be at least 10 percent (%) greater than the current storage capacity value. In order to
+     * increase storage capacity, the file system needs to have at least 16 MB/s of throughput capacity. You cannot make
+     * a storage capacity increase request if there is an existing storage capacity increase request in progress. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing Storage
+     * Capacity</a>.
+     * </p>
+     * 
+     * @param storageCapacity
+     *        Use this parameter to increase the storage capacity of an Amazon FSx for Windows File Server file system.
+     *        Specifies the storage capacity target value, GiB, for the file system you're updating. The storage
+     *        capacity target value must be at least 10 percent (%) greater than the current storage capacity value. In
+     *        order to increase storage capacity, the file system needs to have at least 16 MB/s of throughput capacity.
+     *        You cannot make a storage capacity increase request if there is an existing storage capacity increase
+     *        request in progress. For more information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing Storage
+     *        Capacity</a>.
+     */
+
+    public void setStorageCapacity(Integer storageCapacity) {
+        this.storageCapacity = storageCapacity;
+    }
+
+    /**
+     * <p>
+     * Use this parameter to increase the storage capacity of an Amazon FSx for Windows File Server file system.
+     * Specifies the storage capacity target value, GiB, for the file system you're updating. The storage capacity
+     * target value must be at least 10 percent (%) greater than the current storage capacity value. In order to
+     * increase storage capacity, the file system needs to have at least 16 MB/s of throughput capacity. You cannot make
+     * a storage capacity increase request if there is an existing storage capacity increase request in progress. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing Storage
+     * Capacity</a>.
+     * </p>
+     * 
+     * @return Use this parameter to increase the storage capacity of an Amazon FSx for Windows File Server file system.
+     *         Specifies the storage capacity target value, GiB, for the file system you're updating. The storage
+     *         capacity target value must be at least 10 percent (%) greater than the current storage capacity value. In
+     *         order to increase storage capacity, the file system needs to have at least 16 MB/s of throughput
+     *         capacity. You cannot make a storage capacity increase request if there is an existing storage capacity
+     *         increase request in progress. For more information, see <a
+     *         href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing
+     *         Storage Capacity</a>.
+     */
+
+    public Integer getStorageCapacity() {
+        return this.storageCapacity;
+    }
+
+    /**
+     * <p>
+     * Use this parameter to increase the storage capacity of an Amazon FSx for Windows File Server file system.
+     * Specifies the storage capacity target value, GiB, for the file system you're updating. The storage capacity
+     * target value must be at least 10 percent (%) greater than the current storage capacity value. In order to
+     * increase storage capacity, the file system needs to have at least 16 MB/s of throughput capacity. You cannot make
+     * a storage capacity increase request if there is an existing storage capacity increase request in progress. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing Storage
+     * Capacity</a>.
+     * </p>
+     * 
+     * @param storageCapacity
+     *        Use this parameter to increase the storage capacity of an Amazon FSx for Windows File Server file system.
+     *        Specifies the storage capacity target value, GiB, for the file system you're updating. The storage
+     *        capacity target value must be at least 10 percent (%) greater than the current storage capacity value. In
+     *        order to increase storage capacity, the file system needs to have at least 16 MB/s of throughput capacity.
+     *        You cannot make a storage capacity increase request if there is an existing storage capacity increase
+     *        request in progress. For more information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing Storage
+     *        Capacity</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFileSystemRequest withStorageCapacity(Integer storageCapacity) {
+        setStorageCapacity(storageCapacity);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The configuration updates for an Amazon FSx for Windows File Server file system.
      * </p>
      * 
      * @param windowsConfiguration
-     *        The configuration update for this Microsoft Windows file system. The only supported options are for backup
-     *        and maintenance and for self-managed Active Directory configuration.
+     *        The configuration updates for an Amazon FSx for Windows File Server file system.
      */
 
     public void setWindowsConfiguration(UpdateFileSystemWindowsConfiguration windowsConfiguration) {
@@ -138,12 +246,10 @@ public class UpdateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The configuration update for this Microsoft Windows file system. The only supported options are for backup and
-     * maintenance and for self-managed Active Directory configuration.
+     * The configuration updates for an Amazon FSx for Windows File Server file system.
      * </p>
      * 
-     * @return The configuration update for this Microsoft Windows file system. The only supported options are for
-     *         backup and maintenance and for self-managed Active Directory configuration.
+     * @return The configuration updates for an Amazon FSx for Windows File Server file system.
      */
 
     public UpdateFileSystemWindowsConfiguration getWindowsConfiguration() {
@@ -152,13 +258,11 @@ public class UpdateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The configuration update for this Microsoft Windows file system. The only supported options are for backup and
-     * maintenance and for self-managed Active Directory configuration.
+     * The configuration updates for an Amazon FSx for Windows File Server file system.
      * </p>
      * 
      * @param windowsConfiguration
-     *        The configuration update for this Microsoft Windows file system. The only supported options are for backup
-     *        and maintenance and for self-managed Active Directory configuration.
+     *        The configuration updates for an Amazon FSx for Windows File Server file system.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -209,6 +313,8 @@ public class UpdateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
             sb.append("FileSystemId: ").append(getFileSystemId()).append(",");
         if (getClientRequestToken() != null)
             sb.append("ClientRequestToken: ").append(getClientRequestToken()).append(",");
+        if (getStorageCapacity() != null)
+            sb.append("StorageCapacity: ").append(getStorageCapacity()).append(",");
         if (getWindowsConfiguration() != null)
             sb.append("WindowsConfiguration: ").append(getWindowsConfiguration()).append(",");
         if (getLustreConfiguration() != null)
@@ -235,6 +341,10 @@ public class UpdateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getClientRequestToken() != null && other.getClientRequestToken().equals(this.getClientRequestToken()) == false)
             return false;
+        if (other.getStorageCapacity() == null ^ this.getStorageCapacity() == null)
+            return false;
+        if (other.getStorageCapacity() != null && other.getStorageCapacity().equals(this.getStorageCapacity()) == false)
+            return false;
         if (other.getWindowsConfiguration() == null ^ this.getWindowsConfiguration() == null)
             return false;
         if (other.getWindowsConfiguration() != null && other.getWindowsConfiguration().equals(this.getWindowsConfiguration()) == false)
@@ -253,6 +363,7 @@ public class UpdateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
         hashCode = prime * hashCode + ((getFileSystemId() == null) ? 0 : getFileSystemId().hashCode());
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
+        hashCode = prime * hashCode + ((getStorageCapacity() == null) ? 0 : getStorageCapacity().hashCode());
         hashCode = prime * hashCode + ((getWindowsConfiguration() == null) ? 0 : getWindowsConfiguration().hashCode());
         hashCode = prime * hashCode + ((getLustreConfiguration() == null) ? 0 : getLustreConfiguration().hashCode());
         return hashCode;

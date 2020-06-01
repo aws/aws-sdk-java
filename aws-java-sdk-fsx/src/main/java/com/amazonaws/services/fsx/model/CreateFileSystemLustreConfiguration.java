@@ -30,7 +30,8 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
 
     /**
      * <p>
-     * The preferred time to perform weekly maintenance, in the UTC time zone.
+     * The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone, where d is the
+     * weekday number, from 1 through 7, beginning with Monday and ending with Sunday.
      * </p>
      */
     private String weeklyMaintenanceStartTime;
@@ -115,11 +116,13 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
 
     /**
      * <p>
-     * The preferred time to perform weekly maintenance, in the UTC time zone.
+     * The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone, where d is the
+     * weekday number, from 1 through 7, beginning with Monday and ending with Sunday.
      * </p>
      * 
      * @param weeklyMaintenanceStartTime
-     *        The preferred time to perform weekly maintenance, in the UTC time zone.
+     *        The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone, where d is
+     *        the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.
      */
 
     public void setWeeklyMaintenanceStartTime(String weeklyMaintenanceStartTime) {
@@ -128,10 +131,12 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
 
     /**
      * <p>
-     * The preferred time to perform weekly maintenance, in the UTC time zone.
+     * The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone, where d is the
+     * weekday number, from 1 through 7, beginning with Monday and ending with Sunday.
      * </p>
      * 
-     * @return The preferred time to perform weekly maintenance, in the UTC time zone.
+     * @return The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone, where d
+     *         is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.
      */
 
     public String getWeeklyMaintenanceStartTime() {
@@ -140,11 +145,13 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
 
     /**
      * <p>
-     * The preferred time to perform weekly maintenance, in the UTC time zone.
+     * The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone, where d is the
+     * weekday number, from 1 through 7, beginning with Monday and ending with Sunday.
      * </p>
      * 
      * @param weeklyMaintenanceStartTime
-     *        The preferred time to perform weekly maintenance, in the UTC time zone.
+     *        The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone, where d is
+     *        the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

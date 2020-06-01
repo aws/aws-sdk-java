@@ -24,7 +24,9 @@ public class DecryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * The ARN of the customer master key that was used to perform the decryption.
+     * The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the CMK
+     * that was used to decrypt the ciphertext.
      * </p>
      */
     private String keyId;
@@ -44,11 +46,15 @@ public class DecryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * The ARN of the customer master key that was used to perform the decryption.
+     * The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the CMK
+     * that was used to decrypt the ciphertext.
      * </p>
      * 
      * @param keyId
-     *        The ARN of the customer master key that was used to perform the decryption.
+     *        The Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of
+     *        the CMK that was used to decrypt the ciphertext.
      */
 
     public void setKeyId(String keyId) {
@@ -57,10 +63,14 @@ public class DecryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * The ARN of the customer master key that was used to perform the decryption.
+     * The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the CMK
+     * that was used to decrypt the ciphertext.
      * </p>
      * 
-     * @return The ARN of the customer master key that was used to perform the decryption.
+     * @return The Amazon Resource Name (<a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of
+     *         the CMK that was used to decrypt the ciphertext.
      */
 
     public String getKeyId() {
@@ -69,11 +79,15 @@ public class DecryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * The ARN of the customer master key that was used to perform the decryption.
+     * The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the CMK
+     * that was used to decrypt the ciphertext.
      * </p>
      * 
      * @param keyId
-     *        The ARN of the customer master key that was used to perform the decryption.
+     *        The Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of
+     *        the CMK that was used to decrypt the ciphertext.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

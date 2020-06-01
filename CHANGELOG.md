@@ -1,3 +1,33 @@
+# __1.11.793__ __2020-06-01__
+## __AWS Key Management Service__
+  - ### Features
+    - AWS Key Management Service (AWS KMS): If the GenerateDataKeyPair or GenerateDataKeyPairWithoutPlaintext APIs are called on a CMK in a custom key store (origin == AWS_CLOUDHSM), they return an UnsupportedOperationException. If a call to UpdateAlias causes a customer to exceed the Alias resource quota, the UpdateAlias API returns a LimitExceededException.
+
+## __AWS SDK for Java__
+  - ### Bugfixes
+    - Do not purge IMDS credentials if async credential refresh fails.
+    - Fall back to cached credentials when calling IMDS fails after the refresh threshold has passed (assuming credentials have not expired).
+
+## __Amazon Athena__
+  - ### Features
+    - This release adds support for connecting Athena to your own Apache Hive Metastores in addition to the AWS Glue Data Catalog. For more information, please see https://docs.aws.amazon.com/athena/latest/ug/connect-to-data-source-hive.html
+
+## __Amazon Elastic MapReduce__
+  - ### Features
+    - Amazon EMR now supports encrypting log files with AWS Key Management Service (KMS) customer managed keys.
+
+## __Amazon FSx__
+  - ### Features
+    - New capabilities to update storage capacity and throughput capacity of your file systems, providing the flexibility to grow file storage and to scale up or down the available performance as needed to meet evolving storage needs over time.
+
+## __Amazon SageMaker Service__
+  - ### Features
+    - We are releasing HumanTaskUiArn as a new parameter in CreateLabelingJob and RenderUiTemplate which can take an ARN for a system managed UI to render a task. 
+
+## __Amazon WorkLink__
+  - ### Features
+    - Amazon WorkLink now supports resource tagging for fleets.
+
 # __1.11.792__ __2020-05-28__
 ## __AWS Marketplace Catalog Service__
   - ### Features

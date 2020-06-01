@@ -51,7 +51,11 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
      * </p>
      */
     private HyperParameterTrainingJobDefinition trainingJobDefinition;
-    /** <p/> */
+    /**
+     * <p>
+     * A list of the <a>HyperParameterTrainingJobDefinition</a> objects launched for this tuning job.
+     * </p>
+     */
     private java.util.List<HyperParameterTrainingJobDefinition> trainingJobDefinitions;
     /**
      * <p>
@@ -258,9 +262,11 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
     }
 
     /**
-     * <p/>
+     * <p>
+     * A list of the <a>HyperParameterTrainingJobDefinition</a> objects launched for this tuning job.
+     * </p>
      * 
-     * @return
+     * @return A list of the <a>HyperParameterTrainingJobDefinition</a> objects launched for this tuning job.
      */
 
     public java.util.List<HyperParameterTrainingJobDefinition> getTrainingJobDefinitions() {
@@ -268,9 +274,12 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
     }
 
     /**
-     * <p/>
+     * <p>
+     * A list of the <a>HyperParameterTrainingJobDefinition</a> objects launched for this tuning job.
+     * </p>
      * 
      * @param trainingJobDefinitions
+     *        A list of the <a>HyperParameterTrainingJobDefinition</a> objects launched for this tuning job.
      */
 
     public void setTrainingJobDefinitions(java.util.Collection<HyperParameterTrainingJobDefinition> trainingJobDefinitions) {
@@ -283,7 +292,9 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
     }
 
     /**
-     * <p/>
+     * <p>
+     * A list of the <a>HyperParameterTrainingJobDefinition</a> objects launched for this tuning job.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTrainingJobDefinitions(java.util.Collection)} or
@@ -291,6 +302,7 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param trainingJobDefinitions
+     *        A list of the <a>HyperParameterTrainingJobDefinition</a> objects launched for this tuning job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -305,9 +317,12 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
     }
 
     /**
-     * <p/>
+     * <p>
+     * A list of the <a>HyperParameterTrainingJobDefinition</a> objects launched for this tuning job.
+     * </p>
      * 
      * @param trainingJobDefinitions
+     *        A list of the <a>HyperParameterTrainingJobDefinition</a> objects launched for this tuning job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

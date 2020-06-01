@@ -48,6 +48,13 @@ public class JobFlowDetail implements Serializable, Cloneable, StructuredPojo {
     private String logUri;
     /**
      * <p>
+     * The AWS KMS customer master key (CMK) used for encrypting log files. This attribute is only available with EMR
+     * version 5.30.0 and later, excluding EMR 6.0.0.
+     * </p>
+     */
+    private String logEncryptionKmsKeyId;
+    /**
+     * <p>
      * Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and later,
      * <code>ReleaseLabel</code> is used. To specify a custom AMI, use <code>CustomAmiID</code>.
      * </p>
@@ -275,6 +282,52 @@ public class JobFlowDetail implements Serializable, Cloneable, StructuredPojo {
 
     public JobFlowDetail withLogUri(String logUri) {
         setLogUri(logUri);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The AWS KMS customer master key (CMK) used for encrypting log files. This attribute is only available with EMR
+     * version 5.30.0 and later, excluding EMR 6.0.0.
+     * </p>
+     * 
+     * @param logEncryptionKmsKeyId
+     *        The AWS KMS customer master key (CMK) used for encrypting log files. This attribute is only available with
+     *        EMR version 5.30.0 and later, excluding EMR 6.0.0.
+     */
+
+    public void setLogEncryptionKmsKeyId(String logEncryptionKmsKeyId) {
+        this.logEncryptionKmsKeyId = logEncryptionKmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The AWS KMS customer master key (CMK) used for encrypting log files. This attribute is only available with EMR
+     * version 5.30.0 and later, excluding EMR 6.0.0.
+     * </p>
+     * 
+     * @return The AWS KMS customer master key (CMK) used for encrypting log files. This attribute is only available
+     *         with EMR version 5.30.0 and later, excluding EMR 6.0.0.
+     */
+
+    public String getLogEncryptionKmsKeyId() {
+        return this.logEncryptionKmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The AWS KMS customer master key (CMK) used for encrypting log files. This attribute is only available with EMR
+     * version 5.30.0 and later, excluding EMR 6.0.0.
+     * </p>
+     * 
+     * @param logEncryptionKmsKeyId
+     *        The AWS KMS customer master key (CMK) used for encrypting log files. This attribute is only available with
+     *        EMR version 5.30.0 and later, excluding EMR 6.0.0.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobFlowDetail withLogEncryptionKmsKeyId(String logEncryptionKmsKeyId) {
+        setLogEncryptionKmsKeyId(logEncryptionKmsKeyId);
         return this;
     }
 
@@ -1037,6 +1090,8 @@ public class JobFlowDetail implements Serializable, Cloneable, StructuredPojo {
             sb.append("Name: ").append(getName()).append(",");
         if (getLogUri() != null)
             sb.append("LogUri: ").append(getLogUri()).append(",");
+        if (getLogEncryptionKmsKeyId() != null)
+            sb.append("LogEncryptionKmsKeyId: ").append(getLogEncryptionKmsKeyId()).append(",");
         if (getAmiVersion() != null)
             sb.append("AmiVersion: ").append(getAmiVersion()).append(",");
         if (getExecutionStatusDetail() != null)
@@ -1084,6 +1139,10 @@ public class JobFlowDetail implements Serializable, Cloneable, StructuredPojo {
         if (other.getLogUri() == null ^ this.getLogUri() == null)
             return false;
         if (other.getLogUri() != null && other.getLogUri().equals(this.getLogUri()) == false)
+            return false;
+        if (other.getLogEncryptionKmsKeyId() == null ^ this.getLogEncryptionKmsKeyId() == null)
+            return false;
+        if (other.getLogEncryptionKmsKeyId() != null && other.getLogEncryptionKmsKeyId().equals(this.getLogEncryptionKmsKeyId()) == false)
             return false;
         if (other.getAmiVersion() == null ^ this.getAmiVersion() == null)
             return false;
@@ -1140,6 +1199,7 @@ public class JobFlowDetail implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getJobFlowId() == null) ? 0 : getJobFlowId().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getLogUri() == null) ? 0 : getLogUri().hashCode());
+        hashCode = prime * hashCode + ((getLogEncryptionKmsKeyId() == null) ? 0 : getLogEncryptionKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getAmiVersion() == null) ? 0 : getAmiVersion().hashCode());
         hashCode = prime * hashCode + ((getExecutionStatusDetail() == null) ? 0 : getExecutionStatusDetail().hashCode());
         hashCode = prime * hashCode + ((getInstances() == null) ? 0 : getInstances().hashCode());

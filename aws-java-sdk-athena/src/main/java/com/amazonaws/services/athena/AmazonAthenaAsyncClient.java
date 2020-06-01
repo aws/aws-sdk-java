@@ -155,6 +155,39 @@ public class AmazonAthenaAsyncClient extends AmazonAthenaClient implements Amazo
     }
 
     @Override
+    public java.util.concurrent.Future<CreateDataCatalogResult> createDataCatalogAsync(CreateDataCatalogRequest request) {
+
+        return createDataCatalogAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDataCatalogResult> createDataCatalogAsync(final CreateDataCatalogRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateDataCatalogRequest, CreateDataCatalogResult> asyncHandler) {
+        final CreateDataCatalogRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateDataCatalogResult>() {
+            @Override
+            public CreateDataCatalogResult call() throws Exception {
+                CreateDataCatalogResult result = null;
+
+                try {
+                    result = executeCreateDataCatalog(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateNamedQueryResult> createNamedQueryAsync(CreateNamedQueryRequest request) {
 
         return createNamedQueryAsync(request, null);
@@ -221,6 +254,39 @@ public class AmazonAthenaAsyncClient extends AmazonAthenaClient implements Amazo
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteDataCatalogResult> deleteDataCatalogAsync(DeleteDataCatalogRequest request) {
+
+        return deleteDataCatalogAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDataCatalogResult> deleteDataCatalogAsync(final DeleteDataCatalogRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteDataCatalogRequest, DeleteDataCatalogResult> asyncHandler) {
+        final DeleteDataCatalogRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteDataCatalogResult>() {
+            @Override
+            public DeleteDataCatalogResult call() throws Exception {
+                DeleteDataCatalogResult result = null;
+
+                try {
+                    result = executeDeleteDataCatalog(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteNamedQueryResult> deleteNamedQueryAsync(DeleteNamedQueryRequest request) {
 
         return deleteNamedQueryAsync(request, null);
@@ -271,6 +337,72 @@ public class AmazonAthenaAsyncClient extends AmazonAthenaClient implements Amazo
 
                 try {
                     result = executeDeleteWorkGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDataCatalogResult> getDataCatalogAsync(GetDataCatalogRequest request) {
+
+        return getDataCatalogAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDataCatalogResult> getDataCatalogAsync(final GetDataCatalogRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetDataCatalogRequest, GetDataCatalogResult> asyncHandler) {
+        final GetDataCatalogRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetDataCatalogResult>() {
+            @Override
+            public GetDataCatalogResult call() throws Exception {
+                GetDataCatalogResult result = null;
+
+                try {
+                    result = executeGetDataCatalog(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDatabaseResult> getDatabaseAsync(GetDatabaseRequest request) {
+
+        return getDatabaseAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDatabaseResult> getDatabaseAsync(final GetDatabaseRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetDatabaseRequest, GetDatabaseResult> asyncHandler) {
+        final GetDatabaseRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetDatabaseResult>() {
+            @Override
+            public GetDatabaseResult call() throws Exception {
+                GetDatabaseResult result = null;
+
+                try {
+                    result = executeGetDatabase(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -386,6 +518,39 @@ public class AmazonAthenaAsyncClient extends AmazonAthenaClient implements Amazo
     }
 
     @Override
+    public java.util.concurrent.Future<GetTableMetadataResult> getTableMetadataAsync(GetTableMetadataRequest request) {
+
+        return getTableMetadataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTableMetadataResult> getTableMetadataAsync(final GetTableMetadataRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetTableMetadataRequest, GetTableMetadataResult> asyncHandler) {
+        final GetTableMetadataRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetTableMetadataResult>() {
+            @Override
+            public GetTableMetadataResult call() throws Exception {
+                GetTableMetadataResult result = null;
+
+                try {
+                    result = executeGetTableMetadata(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetWorkGroupResult> getWorkGroupAsync(GetWorkGroupRequest request) {
 
         return getWorkGroupAsync(request, null);
@@ -403,6 +568,72 @@ public class AmazonAthenaAsyncClient extends AmazonAthenaClient implements Amazo
 
                 try {
                     result = executeGetWorkGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDataCatalogsResult> listDataCatalogsAsync(ListDataCatalogsRequest request) {
+
+        return listDataCatalogsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDataCatalogsResult> listDataCatalogsAsync(final ListDataCatalogsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListDataCatalogsRequest, ListDataCatalogsResult> asyncHandler) {
+        final ListDataCatalogsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListDataCatalogsResult>() {
+            @Override
+            public ListDataCatalogsResult call() throws Exception {
+                ListDataCatalogsResult result = null;
+
+                try {
+                    result = executeListDataCatalogs(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDatabasesResult> listDatabasesAsync(ListDatabasesRequest request) {
+
+        return listDatabasesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDatabasesResult> listDatabasesAsync(final ListDatabasesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListDatabasesRequest, ListDatabasesResult> asyncHandler) {
+        final ListDatabasesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListDatabasesResult>() {
+            @Override
+            public ListDatabasesResult call() throws Exception {
+                ListDatabasesResult result = null;
+
+                try {
+                    result = executeListDatabases(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -469,6 +700,39 @@ public class AmazonAthenaAsyncClient extends AmazonAthenaClient implements Amazo
 
                 try {
                     result = executeListQueryExecutions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTableMetadataResult> listTableMetadataAsync(ListTableMetadataRequest request) {
+
+        return listTableMetadataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTableMetadataResult> listTableMetadataAsync(final ListTableMetadataRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListTableMetadataRequest, ListTableMetadataResult> asyncHandler) {
+        final ListTableMetadataRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListTableMetadataResult>() {
+            @Override
+            public ListTableMetadataResult call() throws Exception {
+                ListTableMetadataResult result = null;
+
+                try {
+                    result = executeListTableMetadata(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -667,6 +931,39 @@ public class AmazonAthenaAsyncClient extends AmazonAthenaClient implements Amazo
 
                 try {
                     result = executeUntagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDataCatalogResult> updateDataCatalogAsync(UpdateDataCatalogRequest request) {
+
+        return updateDataCatalogAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDataCatalogResult> updateDataCatalogAsync(final UpdateDataCatalogRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateDataCatalogRequest, UpdateDataCatalogResult> asyncHandler) {
+        final UpdateDataCatalogRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateDataCatalogResult>() {
+            @Override
+            public UpdateDataCatalogResult call() throws Exception {
+                UpdateDataCatalogResult result = null;
+
+                try {
+                    result = executeUpdateDataCatalog(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

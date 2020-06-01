@@ -30,22 +30,32 @@ public class UiConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon S3 bucket location of the UI template. For more information about the contents of a UI template, see
-     * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step2.html"> Creating Your Custom
+     * The Amazon S3 bucket location of the UI template, or worker task template. This is the template used to render
+     * the worker UI and tools for labeling job tasks. For more information about the contents of a UI template, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step2.html"> Creating Your Custom
      * Labeling Task Template</a>.
      * </p>
      */
     private String uiTemplateS3Uri;
+    /**
+     * <p>
+     * The ARN of the worker task template used to render the worker UI and tools for labeling job tasks. Do not use
+     * this parameter if you use UiTemplateS3Uri.
+     * </p>
+     */
+    private String humanTaskUiArn;
 
     /**
      * <p>
-     * The Amazon S3 bucket location of the UI template. For more information about the contents of a UI template, see
-     * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step2.html"> Creating Your Custom
+     * The Amazon S3 bucket location of the UI template, or worker task template. This is the template used to render
+     * the worker UI and tools for labeling job tasks. For more information about the contents of a UI template, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step2.html"> Creating Your Custom
      * Labeling Task Template</a>.
      * </p>
      * 
      * @param uiTemplateS3Uri
-     *        The Amazon S3 bucket location of the UI template. For more information about the contents of a UI
+     *        The Amazon S3 bucket location of the UI template, or worker task template. This is the template used to
+     *        render the worker UI and tools for labeling job tasks. For more information about the contents of a UI
      *        template, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step2.html">
      *        Creating Your Custom Labeling Task Template</a>.
      */
@@ -56,12 +66,14 @@ public class UiConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon S3 bucket location of the UI template. For more information about the contents of a UI template, see
-     * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step2.html"> Creating Your Custom
+     * The Amazon S3 bucket location of the UI template, or worker task template. This is the template used to render
+     * the worker UI and tools for labeling job tasks. For more information about the contents of a UI template, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step2.html"> Creating Your Custom
      * Labeling Task Template</a>.
      * </p>
      * 
-     * @return The Amazon S3 bucket location of the UI template. For more information about the contents of a UI
+     * @return The Amazon S3 bucket location of the UI template, or worker task template. This is the template used to
+     *         render the worker UI and tools for labeling job tasks. For more information about the contents of a UI
      *         template, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step2.html">
      *         Creating Your Custom Labeling Task Template</a>.
      */
@@ -72,13 +84,15 @@ public class UiConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon S3 bucket location of the UI template. For more information about the contents of a UI template, see
-     * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step2.html"> Creating Your Custom
+     * The Amazon S3 bucket location of the UI template, or worker task template. This is the template used to render
+     * the worker UI and tools for labeling job tasks. For more information about the contents of a UI template, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step2.html"> Creating Your Custom
      * Labeling Task Template</a>.
      * </p>
      * 
      * @param uiTemplateS3Uri
-     *        The Amazon S3 bucket location of the UI template. For more information about the contents of a UI
+     *        The Amazon S3 bucket location of the UI template, or worker task template. This is the template used to
+     *        render the worker UI and tools for labeling job tasks. For more information about the contents of a UI
      *        template, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step2.html">
      *        Creating Your Custom Labeling Task Template</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -86,6 +100,52 @@ public class UiConfig implements Serializable, Cloneable, StructuredPojo {
 
     public UiConfig withUiTemplateS3Uri(String uiTemplateS3Uri) {
         setUiTemplateS3Uri(uiTemplateS3Uri);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN of the worker task template used to render the worker UI and tools for labeling job tasks. Do not use
+     * this parameter if you use UiTemplateS3Uri.
+     * </p>
+     * 
+     * @param humanTaskUiArn
+     *        The ARN of the worker task template used to render the worker UI and tools for labeling job tasks. Do not
+     *        use this parameter if you use UiTemplateS3Uri.
+     */
+
+    public void setHumanTaskUiArn(String humanTaskUiArn) {
+        this.humanTaskUiArn = humanTaskUiArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the worker task template used to render the worker UI and tools for labeling job tasks. Do not use
+     * this parameter if you use UiTemplateS3Uri.
+     * </p>
+     * 
+     * @return The ARN of the worker task template used to render the worker UI and tools for labeling job tasks. Do not
+     *         use this parameter if you use UiTemplateS3Uri.
+     */
+
+    public String getHumanTaskUiArn() {
+        return this.humanTaskUiArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the worker task template used to render the worker UI and tools for labeling job tasks. Do not use
+     * this parameter if you use UiTemplateS3Uri.
+     * </p>
+     * 
+     * @param humanTaskUiArn
+     *        The ARN of the worker task template used to render the worker UI and tools for labeling job tasks. Do not
+     *        use this parameter if you use UiTemplateS3Uri.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UiConfig withHumanTaskUiArn(String humanTaskUiArn) {
+        setHumanTaskUiArn(humanTaskUiArn);
         return this;
     }
 
@@ -102,7 +162,9 @@ public class UiConfig implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUiTemplateS3Uri() != null)
-            sb.append("UiTemplateS3Uri: ").append(getUiTemplateS3Uri());
+            sb.append("UiTemplateS3Uri: ").append(getUiTemplateS3Uri()).append(",");
+        if (getHumanTaskUiArn() != null)
+            sb.append("HumanTaskUiArn: ").append(getHumanTaskUiArn());
         sb.append("}");
         return sb.toString();
     }
@@ -121,6 +183,10 @@ public class UiConfig implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getUiTemplateS3Uri() != null && other.getUiTemplateS3Uri().equals(this.getUiTemplateS3Uri()) == false)
             return false;
+        if (other.getHumanTaskUiArn() == null ^ this.getHumanTaskUiArn() == null)
+            return false;
+        if (other.getHumanTaskUiArn() != null && other.getHumanTaskUiArn().equals(this.getHumanTaskUiArn()) == false)
+            return false;
         return true;
     }
 
@@ -130,6 +196,7 @@ public class UiConfig implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getUiTemplateS3Uri() == null) ? 0 : getUiTemplateS3Uri().hashCode());
+        hashCode = prime * hashCode + ((getHumanTaskUiArn() == null) ? 0 : getHumanTaskUiArn().hashCode());
         return hashCode;
     }
 

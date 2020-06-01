@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.worklink.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -33,6 +35,8 @@ public class CreateFleetRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DisplayName").build();
     private static final MarshallingInfo<Boolean> OPTIMIZEFORENDUSERLOCATION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OptimizeForEndUserLocation").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateFleetRequestMarshaller instance = new CreateFleetRequestMarshaller();
 
@@ -53,6 +57,7 @@ public class CreateFleetRequestMarshaller {
             protocolMarshaller.marshall(createFleetRequest.getFleetName(), FLEETNAME_BINDING);
             protocolMarshaller.marshall(createFleetRequest.getDisplayName(), DISPLAYNAME_BINDING);
             protocolMarshaller.marshall(createFleetRequest.getOptimizeForEndUserLocation(), OPTIMIZEFORENDUSERLOCATION_BINDING);
+            protocolMarshaller.marshall(createFleetRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

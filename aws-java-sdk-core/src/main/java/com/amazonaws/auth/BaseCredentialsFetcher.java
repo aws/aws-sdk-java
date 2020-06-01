@@ -117,7 +117,7 @@ abstract class BaseCredentialsFetcher {
             token = node.get(TOKEN);
 
             if (null == accessKey || null == secretKey) {
-                throw new SdkClientException("Unable to load credentials.");
+                throw new SdkClientException("Unable to load credentials. Access key or secret key are null.");
             }
 
             if (null != token) {
@@ -162,13 +162,13 @@ abstract class BaseCredentialsFetcher {
      *            The error that occurred.
      */
     private void handleError(String errorMessage, Exception e) {
-        if (e instanceof SdkClientException) {
-            throw (SdkClientException) e;
-        }
-
         // If we don't have any valid credentials to fall back on, then throw an exception
-        if (credentials == null || expired())
+        if (credentials == null || expired()) {
+            if (e instanceof SdkClientException) {
+                throw (SdkClientException) e;
+            }
             throw new SdkClientException(errorMessage, e);
+        }
 
         // Otherwise, just log the error and continuing using the current credentials
         LOG.debug(errorMessage, e);

@@ -38,6 +38,11 @@ public class AbstractAmazonAthena implements AmazonAthena {
     }
 
     @Override
+    public CreateDataCatalogResult createDataCatalog(CreateDataCatalogRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateNamedQueryResult createNamedQuery(CreateNamedQueryRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -48,12 +53,27 @@ public class AbstractAmazonAthena implements AmazonAthena {
     }
 
     @Override
+    public DeleteDataCatalogResult deleteDataCatalog(DeleteDataCatalogRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteNamedQueryResult deleteNamedQuery(DeleteNamedQueryRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public DeleteWorkGroupResult deleteWorkGroup(DeleteWorkGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetDataCatalogResult getDataCatalog(GetDataCatalogRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetDatabaseResult getDatabase(GetDatabaseRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -73,7 +93,22 @@ public class AbstractAmazonAthena implements AmazonAthena {
     }
 
     @Override
+    public GetTableMetadataResult getTableMetadata(GetTableMetadataRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetWorkGroupResult getWorkGroup(GetWorkGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListDataCatalogsResult listDataCatalogs(ListDataCatalogsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListDatabasesResult listDatabases(ListDatabasesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -84,6 +119,11 @@ public class AbstractAmazonAthena implements AmazonAthena {
 
     @Override
     public ListQueryExecutionsResult listQueryExecutions(ListQueryExecutionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListTableMetadataResult listTableMetadata(ListTableMetadataRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -114,6 +154,11 @@ public class AbstractAmazonAthena implements AmazonAthena {
 
     @Override
     public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateDataCatalogResult updateDataCatalog(UpdateDataCatalogRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -27,24 +27,25 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Requests that one or more tags are added to the resource (such as a workgroup) for the specified ARN.
+     * Specifies the ARN of the Athena resource (workgroup or data catalog) to which tags are to be added.
      * </p>
      */
     private String resourceARN;
     /**
      * <p>
-     * One or more tags, separated by commas, to be added to the resource, such as a workgroup.
+     * A collection of one or more tags, separated by commas, to be added to an Athena workgroup or data catalog
+     * resource.
      * </p>
      */
     private java.util.List<Tag> tags;
 
     /**
      * <p>
-     * Requests that one or more tags are added to the resource (such as a workgroup) for the specified ARN.
+     * Specifies the ARN of the Athena resource (workgroup or data catalog) to which tags are to be added.
      * </p>
      * 
      * @param resourceARN
-     *        Requests that one or more tags are added to the resource (such as a workgroup) for the specified ARN.
+     *        Specifies the ARN of the Athena resource (workgroup or data catalog) to which tags are to be added.
      */
 
     public void setResourceARN(String resourceARN) {
@@ -53,10 +54,10 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Requests that one or more tags are added to the resource (such as a workgroup) for the specified ARN.
+     * Specifies the ARN of the Athena resource (workgroup or data catalog) to which tags are to be added.
      * </p>
      * 
-     * @return Requests that one or more tags are added to the resource (such as a workgroup) for the specified ARN.
+     * @return Specifies the ARN of the Athena resource (workgroup or data catalog) to which tags are to be added.
      */
 
     public String getResourceARN() {
@@ -65,11 +66,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Requests that one or more tags are added to the resource (such as a workgroup) for the specified ARN.
+     * Specifies the ARN of the Athena resource (workgroup or data catalog) to which tags are to be added.
      * </p>
      * 
      * @param resourceARN
-     *        Requests that one or more tags are added to the resource (such as a workgroup) for the specified ARN.
+     *        Specifies the ARN of the Athena resource (workgroup or data catalog) to which tags are to be added.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,10 +81,12 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * One or more tags, separated by commas, to be added to the resource, such as a workgroup.
+     * A collection of one or more tags, separated by commas, to be added to an Athena workgroup or data catalog
+     * resource.
      * </p>
      * 
-     * @return One or more tags, separated by commas, to be added to the resource, such as a workgroup.
+     * @return A collection of one or more tags, separated by commas, to be added to an Athena workgroup or data catalog
+     *         resource.
      */
 
     public java.util.List<Tag> getTags() {
@@ -92,11 +95,13 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * One or more tags, separated by commas, to be added to the resource, such as a workgroup.
+     * A collection of one or more tags, separated by commas, to be added to an Athena workgroup or data catalog
+     * resource.
      * </p>
      * 
      * @param tags
-     *        One or more tags, separated by commas, to be added to the resource, such as a workgroup.
+     *        A collection of one or more tags, separated by commas, to be added to an Athena workgroup or data catalog
+     *        resource.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -110,7 +115,8 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * One or more tags, separated by commas, to be added to the resource, such as a workgroup.
+     * A collection of one or more tags, separated by commas, to be added to an Athena workgroup or data catalog
+     * resource.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -119,7 +125,8 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param tags
-     *        One or more tags, separated by commas, to be added to the resource, such as a workgroup.
+     *        A collection of one or more tags, separated by commas, to be added to an Athena workgroup or data catalog
+     *        resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +142,13 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * One or more tags, separated by commas, to be added to the resource, such as a workgroup.
+     * A collection of one or more tags, separated by commas, to be added to an Athena workgroup or data catalog
+     * resource.
      * </p>
      * 
      * @param tags
-     *        One or more tags, separated by commas, to be added to the resource, such as a workgroup.
+     *        A collection of one or more tags, separated by commas, to be added to an Athena workgroup or data catalog
+     *        resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

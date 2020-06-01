@@ -117,10 +117,14 @@ public class InstanceProfileCredentialsProvider implements AWSCredentialsProvide
                         try {
                             if (shouldRefresh) credentialsFetcher.getCredentials();
                         } catch (AmazonClientException ace) {
-                            handleError(ace);
+                            handleAsyncRefreshError(ace);
                         } catch (RuntimeException re) {
-                            handleError(re);
+                            handleAsyncRefreshError(re);
                         }
+                    }
+
+                    private void handleAsyncRefreshError(Exception e) {
+                        LOG.warn("Failed when refreshing credentials asynchronously.", e);
                     }
                 }, 0, ASYNC_REFRESH_INTERVAL_TIME_MINUTES, TimeUnit.MINUTES);
             }
@@ -137,11 +141,6 @@ public class InstanceProfileCredentialsProvider implements AWSCredentialsProvide
      */
     public static InstanceProfileCredentialsProvider getInstance() {
         return INSTANCE;
-    }
-
-    private void handleError(Throwable t) {
-        refresh();
-        LOG.error(t.getMessage(), t);
     }
 
     @Override

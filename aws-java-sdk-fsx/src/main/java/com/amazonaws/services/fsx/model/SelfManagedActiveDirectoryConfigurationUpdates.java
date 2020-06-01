@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The configuration that Amazon FSx uses to join the Windows File Server instance to the self-managed Microsoft Active
+ * The configuration that Amazon FSx uses to join the Windows File Server instance to a self-managed Microsoft Active
  * Directory (AD) directory.
  * </p>
  * 

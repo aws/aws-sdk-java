@@ -33,7 +33,7 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String domainName;
     /**
      * <p>
-     * The mode of authentication that member use to access the domain.
+     * The mode of authentication that members use to access the domain.
      * </p>
      */
     private String authMode;
@@ -45,19 +45,20 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
     private UserSettings defaultUserSettings;
     /**
      * <p>
-     * Security setting to limit to a set of subnets.
+     * The VPC subnets to use for communication with the EFS volume.
      * </p>
      */
     private java.util.List<String> subnetIds;
     /**
      * <p>
-     * Security setting to limit the domain's communication to a Amazon Virtual Private Cloud.
+     * The ID of the Amazon Virtual Private Cloud (VPC) to use for communication with the EFS volume.
      * </p>
      */
     private String vpcId;
     /**
      * <p>
-     * Each tag consists of a key and an optional value. Tag keys must be unique per resource.
+     * Tags to associated with the Domain. Each tag consists of a key and an optional value. Tag keys must be unique per
+     * resource. Tags are searchable using the <a>Search</a> API.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -111,11 +112,11 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The mode of authentication that member use to access the domain.
+     * The mode of authentication that members use to access the domain.
      * </p>
      * 
      * @param authMode
-     *        The mode of authentication that member use to access the domain.
+     *        The mode of authentication that members use to access the domain.
      * @see AuthMode
      */
 
@@ -125,10 +126,10 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The mode of authentication that member use to access the domain.
+     * The mode of authentication that members use to access the domain.
      * </p>
      * 
-     * @return The mode of authentication that member use to access the domain.
+     * @return The mode of authentication that members use to access the domain.
      * @see AuthMode
      */
 
@@ -138,11 +139,11 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The mode of authentication that member use to access the domain.
+     * The mode of authentication that members use to access the domain.
      * </p>
      * 
      * @param authMode
-     *        The mode of authentication that member use to access the domain.
+     *        The mode of authentication that members use to access the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthMode
      */
@@ -154,11 +155,11 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The mode of authentication that member use to access the domain.
+     * The mode of authentication that members use to access the domain.
      * </p>
      * 
      * @param authMode
-     *        The mode of authentication that member use to access the domain.
+     *        The mode of authentication that members use to access the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthMode
      */
@@ -210,10 +211,10 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Security setting to limit to a set of subnets.
+     * The VPC subnets to use for communication with the EFS volume.
      * </p>
      * 
-     * @return Security setting to limit to a set of subnets.
+     * @return The VPC subnets to use for communication with the EFS volume.
      */
 
     public java.util.List<String> getSubnetIds() {
@@ -222,11 +223,11 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Security setting to limit to a set of subnets.
+     * The VPC subnets to use for communication with the EFS volume.
      * </p>
      * 
      * @param subnetIds
-     *        Security setting to limit to a set of subnets.
+     *        The VPC subnets to use for communication with the EFS volume.
      */
 
     public void setSubnetIds(java.util.Collection<String> subnetIds) {
@@ -240,7 +241,7 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Security setting to limit to a set of subnets.
+     * The VPC subnets to use for communication with the EFS volume.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -249,7 +250,7 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * 
      * @param subnetIds
-     *        Security setting to limit to a set of subnets.
+     *        The VPC subnets to use for communication with the EFS volume.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -265,11 +266,11 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Security setting to limit to a set of subnets.
+     * The VPC subnets to use for communication with the EFS volume.
      * </p>
      * 
      * @param subnetIds
-     *        Security setting to limit to a set of subnets.
+     *        The VPC subnets to use for communication with the EFS volume.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -280,11 +281,11 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Security setting to limit the domain's communication to a Amazon Virtual Private Cloud.
+     * The ID of the Amazon Virtual Private Cloud (VPC) to use for communication with the EFS volume.
      * </p>
      * 
      * @param vpcId
-     *        Security setting to limit the domain's communication to a Amazon Virtual Private Cloud.
+     *        The ID of the Amazon Virtual Private Cloud (VPC) to use for communication with the EFS volume.
      */
 
     public void setVpcId(String vpcId) {
@@ -293,10 +294,10 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Security setting to limit the domain's communication to a Amazon Virtual Private Cloud.
+     * The ID of the Amazon Virtual Private Cloud (VPC) to use for communication with the EFS volume.
      * </p>
      * 
-     * @return Security setting to limit the domain's communication to a Amazon Virtual Private Cloud.
+     * @return The ID of the Amazon Virtual Private Cloud (VPC) to use for communication with the EFS volume.
      */
 
     public String getVpcId() {
@@ -305,11 +306,11 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Security setting to limit the domain's communication to a Amazon Virtual Private Cloud.
+     * The ID of the Amazon Virtual Private Cloud (VPC) to use for communication with the EFS volume.
      * </p>
      * 
      * @param vpcId
-     *        Security setting to limit the domain's communication to a Amazon Virtual Private Cloud.
+     *        The ID of the Amazon Virtual Private Cloud (VPC) to use for communication with the EFS volume.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -320,10 +321,12 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Each tag consists of a key and an optional value. Tag keys must be unique per resource.
+     * Tags to associated with the Domain. Each tag consists of a key and an optional value. Tag keys must be unique per
+     * resource. Tags are searchable using the <a>Search</a> API.
      * </p>
      * 
-     * @return Each tag consists of a key and an optional value. Tag keys must be unique per resource.
+     * @return Tags to associated with the Domain. Each tag consists of a key and an optional value. Tag keys must be
+     *         unique per resource. Tags are searchable using the <a>Search</a> API.
      */
 
     public java.util.List<Tag> getTags() {
@@ -332,11 +335,13 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Each tag consists of a key and an optional value. Tag keys must be unique per resource.
+     * Tags to associated with the Domain. Each tag consists of a key and an optional value. Tag keys must be unique per
+     * resource. Tags are searchable using the <a>Search</a> API.
      * </p>
      * 
      * @param tags
-     *        Each tag consists of a key and an optional value. Tag keys must be unique per resource.
+     *        Tags to associated with the Domain. Each tag consists of a key and an optional value. Tag keys must be
+     *        unique per resource. Tags are searchable using the <a>Search</a> API.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -350,7 +355,8 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Each tag consists of a key and an optional value. Tag keys must be unique per resource.
+     * Tags to associated with the Domain. Each tag consists of a key and an optional value. Tag keys must be unique per
+     * resource. Tags are searchable using the <a>Search</a> API.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -359,7 +365,8 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * 
      * @param tags
-     *        Each tag consists of a key and an optional value. Tag keys must be unique per resource.
+     *        Tags to associated with the Domain. Each tag consists of a key and an optional value. Tag keys must be
+     *        unique per resource. Tags are searchable using the <a>Search</a> API.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -375,11 +382,13 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Each tag consists of a key and an optional value. Tag keys must be unique per resource.
+     * Tags to associated with the Domain. Each tag consists of a key and an optional value. Tag keys must be unique per
+     * resource. Tags are searchable using the <a>Search</a> API.
      * </p>
      * 
      * @param tags
-     *        Each tag consists of a key and an optional value. Tag keys must be unique per resource.
+     *        Tags to associated with the Domain. Each tag consists of a key and an optional value. Tag keys must be
+     *        unique per resource. Tags are searchable using the <a>Search</a> API.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -26,12 +26,12 @@ import com.amazonaws.services.worklink.model.*;
  * </p>
  * <p>
  * <p>
- * Amazon WorkLink is a cloud-based service that provides secure access to internal websites and web apps from iOS
- * phones. In a single step, your users, such as employees, can access internal websites as efficiently as they access
- * any other public website. They enter a URL in their web browser, or choose a link to an internal website in an email.
- * Amazon WorkLink authenticates the user's access and securely renders authorized internal web content in a secure
- * rendering service in the AWS cloud. Amazon WorkLink doesn't download or store any internal web content on mobile
- * devices.
+ * Amazon WorkLink is a cloud-based service that provides secure access to internal websites and web apps from iOS and
+ * Android phones. In a single step, your users, such as employees, can access internal websites as efficiently as they
+ * access any other public website. They enter a URL in their web browser, or choose a link to an internal website in an
+ * email. Amazon WorkLink authenticates the user's access and securely renders authorized internal web content in a
+ * secure rendering service in the AWS cloud. Amazon WorkLink doesn't download or store any internal web content on
+ * mobile devices.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -678,6 +678,37 @@ public interface AmazonWorkLinkAsync extends AmazonWorkLink {
 
     /**
      * <p>
+     * Retrieves a list of tags for the specified resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AmazonWorkLinkAsync.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Retrieves a list of tags for the specified resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AmazonWorkLinkAsyncHandler.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves a list of website authorization providers associated with a specified fleet.
      * </p>
      * 
@@ -838,6 +869,70 @@ public interface AmazonWorkLinkAsync extends AmazonWorkLink {
      */
     java.util.concurrent.Future<SignOutUserResult> signOutUserAsync(SignOutUserRequest signOutUserRequest,
             com.amazonaws.handlers.AsyncHandler<SignOutUserRequest, SignOutUserResult> asyncHandler);
+
+    /**
+     * <p>
+     * Adds or overwrites one or more tags for the specified resource, such as a fleet. Each tag consists of a key and
+     * an optional value. If a resource already has a tag with the same key, this operation updates its value.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonWorkLinkAsync.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Adds or overwrites one or more tags for the specified resource, such as a fleet. Each tag consists of a key and
+     * an optional value. If a resource already has a tag with the same key, this operation updates its value.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonWorkLinkAsyncHandler.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes one or more tags from the specified resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonWorkLinkAsync.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Removes one or more tags from the specified resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonWorkLinkAsyncHandler.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
 
     /**
      * <p>

@@ -21,6 +21,7 @@ import static com.github.tomakehurst.wiremock.client.WireMock.urlPathEqualTo;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
@@ -112,7 +113,7 @@ public class ContainerCredentialsFetcherTest {
             credentialsProvider.getCredentials();
             fail("Expected an AmazonClientException");
         } catch (AmazonClientException ace) {
-            assertEquals("Unable to load credentials.", ace.getMessage());
+            assertEquals("Unable to load credentials. Access key or secret key are null.", ace.getMessage());
         }
     }
 
@@ -135,17 +136,15 @@ public class ContainerCredentialsFetcherTest {
         }
 
         // When there are valid credentials (but need to be refreshed) and the endpoint returns 404 status,
-        // the provider should throw an exception.
+        // the provider should still return credentials.
         stubForSuccessResonseWithCustomExpirationDate(200, new Date(System.currentTimeMillis() + ONE_MINUTE * 4).toString());
-        credentialsProvider.getCredentials(); // loads the credentials that will be expired soon
+        AWSCredentials firstCredentials = credentialsProvider.getCredentials(); // loads the credentials that will be expired soon
+
         credentialsProvider.setLastInstanceProfileCheck(new Date(System.currentTimeMillis() - (ONE_MINUTE * 61)));
         stubForErrorResponse();  // Behaves as if server is unavailable.
-        try {
-            credentialsProvider.getCredentials();
-            fail("Expected an AmazonClientException, but wasn't thrown");
-        } catch (AmazonClientException ace) {
-            assertNotNull(ace.getMessage());
-        }
+        AWSCredentials secondCredentials = credentialsProvider.getCredentials();
+
+        assertSame(firstCredentials, secondCredentials);
     }
 
     private void stubForSuccessResponseWithCustomBody(int statusCode, String body) {

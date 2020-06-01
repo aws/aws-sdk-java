@@ -27,7 +27,7 @@ public class UpdateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The domain ID.
+     * The ID of the domain to be updated.
      * </p>
      */
     private String domainId;
@@ -40,11 +40,11 @@ public class UpdateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The domain ID.
+     * The ID of the domain to be updated.
      * </p>
      * 
      * @param domainId
-     *        The domain ID.
+     *        The ID of the domain to be updated.
      */
 
     public void setDomainId(String domainId) {
@@ -53,10 +53,10 @@ public class UpdateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The domain ID.
+     * The ID of the domain to be updated.
      * </p>
      * 
-     * @return The domain ID.
+     * @return The ID of the domain to be updated.
      */
 
     public String getDomainId() {
@@ -65,11 +65,11 @@ public class UpdateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The domain ID.
+     * The ID of the domain to be updated.
      * </p>
      * 
      * @param domainId
-     *        The domain ID.
+     *        The ID of the domain to be updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

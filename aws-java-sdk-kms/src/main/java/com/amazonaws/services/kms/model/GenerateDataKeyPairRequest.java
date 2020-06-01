@@ -45,7 +45,7 @@ public class GenerateDataKeyPairRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * Specifies the symmetric CMK that encrypts the private key in the data key pair. You cannot specify an asymmetric
-     * CMKs.
+     * CMK or a CMK in a custom key store. To get the type and origin of your CMK, use the <a>DescribeKey</a> operation.
      * </p>
      * <p>
      * To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
@@ -246,7 +246,7 @@ public class GenerateDataKeyPairRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * Specifies the symmetric CMK that encrypts the private key in the data key pair. You cannot specify an asymmetric
-     * CMKs.
+     * CMK or a CMK in a custom key store. To get the type and origin of your CMK, use the <a>DescribeKey</a> operation.
      * </p>
      * <p>
      * To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
@@ -285,7 +285,8 @@ public class GenerateDataKeyPairRequest extends com.amazonaws.AmazonWebServiceRe
      * 
      * @param keyId
      *        Specifies the symmetric CMK that encrypts the private key in the data key pair. You cannot specify an
-     *        asymmetric CMKs.</p>
+     *        asymmetric CMK or a CMK in a custom key store. To get the type and origin of your CMK, use the
+     *        <a>DescribeKey</a> operation.</p>
      *        <p>
      *        To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an
      *        alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must
@@ -328,7 +329,7 @@ public class GenerateDataKeyPairRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * Specifies the symmetric CMK that encrypts the private key in the data key pair. You cannot specify an asymmetric
-     * CMKs.
+     * CMK or a CMK in a custom key store. To get the type and origin of your CMK, use the <a>DescribeKey</a> operation.
      * </p>
      * <p>
      * To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
@@ -366,7 +367,8 @@ public class GenerateDataKeyPairRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @return Specifies the symmetric CMK that encrypts the private key in the data key pair. You cannot specify an
-     *         asymmetric CMKs.</p>
+     *         asymmetric CMK or a CMK in a custom key store. To get the type and origin of your CMK, use the
+     *         <a>DescribeKey</a> operation.</p>
      *         <p>
      *         To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an
      *         alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must
@@ -409,7 +411,7 @@ public class GenerateDataKeyPairRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * Specifies the symmetric CMK that encrypts the private key in the data key pair. You cannot specify an asymmetric
-     * CMKs.
+     * CMK or a CMK in a custom key store. To get the type and origin of your CMK, use the <a>DescribeKey</a> operation.
      * </p>
      * <p>
      * To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
@@ -448,7 +450,8 @@ public class GenerateDataKeyPairRequest extends com.amazonaws.AmazonWebServiceRe
      * 
      * @param keyId
      *        Specifies the symmetric CMK that encrypts the private key in the data key pair. You cannot specify an
-     *        asymmetric CMKs.</p>
+     *        asymmetric CMK or a CMK in a custom key store. To get the type and origin of your CMK, use the
+     *        <a>DescribeKey</a> operation.</p>
      *        <p>
      *        To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an
      *        alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must

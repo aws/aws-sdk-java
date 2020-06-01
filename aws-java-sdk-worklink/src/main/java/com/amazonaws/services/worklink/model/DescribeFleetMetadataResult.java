@@ -66,6 +66,12 @@ public class DescribeFleetMetadataResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private String fleetStatus;
+    /**
+     * <p>
+     * The tags attached to the resource. A tag is a key-value pair.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
 
     /**
      * <p>
@@ -387,6 +393,74 @@ public class DescribeFleetMetadataResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The tags attached to the resource. A tag is a key-value pair.
+     * </p>
+     * 
+     * @return The tags attached to the resource. A tag is a key-value pair.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags attached to the resource. A tag is a key-value pair.
+     * </p>
+     * 
+     * @param tags
+     *        The tags attached to the resource. A tag is a key-value pair.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * The tags attached to the resource. A tag is a key-value pair.
+     * </p>
+     * 
+     * @param tags
+     *        The tags attached to the resource. A tag is a key-value pair.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeFleetMetadataResult withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Add a single Tags entry
+     *
+     * @see DescribeFleetMetadataResult#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeFleetMetadataResult addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeFleetMetadataResult clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -411,7 +485,9 @@ public class DescribeFleetMetadataResult extends com.amazonaws.AmazonWebServiceR
         if (getCompanyCode() != null)
             sb.append("CompanyCode: ").append(getCompanyCode()).append(",");
         if (getFleetStatus() != null)
-            sb.append("FleetStatus: ").append(getFleetStatus());
+            sb.append("FleetStatus: ").append(getFleetStatus()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -454,6 +530,10 @@ public class DescribeFleetMetadataResult extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getFleetStatus() != null && other.getFleetStatus().equals(this.getFleetStatus()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -469,6 +549,7 @@ public class DescribeFleetMetadataResult extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getOptimizeForEndUserLocation() == null) ? 0 : getOptimizeForEndUserLocation().hashCode());
         hashCode = prime * hashCode + ((getCompanyCode() == null) ? 0 : getCompanyCode().hashCode());
         hashCode = prime * hashCode + ((getFleetStatus() == null) ? 0 : getFleetStatus().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

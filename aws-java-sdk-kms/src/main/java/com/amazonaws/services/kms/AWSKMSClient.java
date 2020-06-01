@@ -738,8 +738,9 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
     /**
      * <p>
      * Creates a display name for a customer managed customer master key (CMK). You can use an alias to identify a CMK
-     * in cryptographic operations, such as <a>Encrypt</a> and <a>GenerateDataKey</a>. You can change the CMK associated
-     * with the alias at any time.
+     * in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">
+     * cryptographic operations</a>, such as <a>Encrypt</a> and <a>GenerateDataKey</a>. You can change the CMK
+     * associated with the alias at any time.
      * </p>
      * <p>
      * Aliases are easier to remember than key IDs. They can also help to simplify your applications. For example, if
@@ -804,11 +805,12 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </li>
      * <li>
      * <p>
-     * You can use an alias name or alias ARN to identify a CMK in AWS KMS cryptographic operations and in the
-     * <a>DescribeKey</a> operation. However, you cannot use alias names or alias ARNs in API operations that manage
-     * CMKs, such as <a>DisableKey</a> or <a>GetKeyPolicy</a>. For information about the valid CMK identifiers for each
-     * AWS KMS API operation, see the descriptions of the <code>KeyId</code> parameter in the API operation
-     * documentation.
+     * You can use an alias name or alias ARN to identify a CMK in AWS KMS <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operations</a> and in the <a>DescribeKey</a> operation. However, you cannot use alias names or alias ARNs in API
+     * operations that manage CMKs, such as <a>DisableKey</a> or <a>GetKeyPolicy</a>. For information about the valid
+     * CMK identifiers for each AWS KMS API operation, see the descriptions of the <code>KeyId</code> parameter in the
+     * API operation documentation.
      * </p>
      * </li>
      * </ul>
@@ -1054,7 +1056,9 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * conditions specified in the grant are met. When setting permissions, grants are an alternative to key policies.
      * </p>
      * <p>
-     * To create a grant that allows a cryptographic operation only when the request includes a particular <a
+     * To create a grant that allows a <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operation</a> only when the request includes a particular <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption
      * context</a>, use the <code>Constraints</code> parameter. For details, see <a>GrantConstraints</a>.
      * </p>
@@ -1674,10 +1678,12 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * The custom key store that you delete cannot contain any AWS KMS <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">customer master keys
      * (CMKs)</a>. Before deleting the key store, verify that you will never need to use any of the CMKs in the key
-     * store for any cryptographic operations. Then, use <a>ScheduleKeyDeletion</a> to delete the AWS KMS customer
-     * master keys (CMKs) from the key store. When the scheduled waiting period expires, the
-     * <code>ScheduleKeyDeletion</code> operation deletes the CMKs. Then it makes a best effort to delete the key
-     * material from the associated cluster. However, you might need to manually <a
+     * store for any <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operations</a>. Then, use <a>ScheduleKeyDeletion</a> to delete the AWS KMS customer master keys (CMKs) from the
+     * key store. When the scheduled waiting period expires, the <code>ScheduleKeyDeletion</code> operation deletes the
+     * CMKs. Then it makes a best effort to delete the key material from the associated cluster. However, you might need
+     * to manually <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-orphaned-key">delete
      * the orphaned key material</a> from the cluster and its backups.
      * </p>
@@ -2078,8 +2084,9 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
 
     /**
      * <p>
-     * Sets the state of a customer master key (CMK) to disabled, thereby preventing its use for cryptographic
-     * operations. You cannot perform this operation on a CMK in a different AWS account.
+     * Sets the state of a customer master key (CMK) to disabled, thereby preventing its use for <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operations</a>. You cannot perform this operation on a CMK in a different AWS account.
      * </p>
      * <p>
      * For more information about how key state affects the use of a CMK, see <a
@@ -2248,8 +2255,9 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * <note>
      * <p>
      * While a custom key store is disconnected, all attempts to create customer master keys (CMKs) in the custom key
-     * store or to use existing CMKs in cryptographic operations will fail. This action can prevent users from storing
-     * and accessing sensitive data.
+     * store or to use existing CMKs in <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operations</a> will fail. This action can prevent users from storing and accessing sensitive data.
      * </p>
      * </note>
      * <p/>
@@ -2352,8 +2360,9 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
 
     /**
      * <p>
-     * Sets the key state of a customer master key (CMK) to enabled. This allows you to use the CMK for cryptographic
-     * operations. You cannot perform this operation on a CMK in a different AWS account.
+     * Sets the key state of a customer master key (CMK) to enabled. This allows you to use the CMK for <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operations</a>. You cannot perform this operation on a CMK in a different AWS account.
      * </p>
      * <p>
      * The CMK that you use for this operation must be in a compatible key state. For details, see <a
@@ -2524,10 +2533,11 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </li>
      * <li>
      * <p>
-     * You can use the <code>Encrypt</code> operation to move encrypted data from one AWS region to another. In the
-     * first region, generate a data key and use the plaintext key to encrypt the data. Then, in the new region, call
-     * the <code>Encrypt</code> method on same plaintext data key. Now, you can safely move the encrypted data and
-     * encrypted data key to the new region, and decrypt in the new region when necessary.
+     * You can use the <code>Encrypt</code> operation to move encrypted data from one AWS Region to another. For
+     * example, in Region A, generate a data key and use the plaintext key to encrypt your data. Then, in Region A, use
+     * the <code>Encrypt</code> operation to encrypt the plaintext data key under a CMK in Region B. Now, you can move
+     * the encrypted data and the encrypted data key to Region B. When necessary, you can decrypt the encrypted data key
+     * and the encrypted data entirely within in Region B.
      * </p>
      * </li>
      * </ul>
@@ -2736,26 +2746,19 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
 
     /**
      * <p>
-     * Generates a unique symmetric data key. This operation returns a plaintext copy of the data key and a copy that is
-     * encrypted under a customer master key (CMK) that you specify. You can use the plaintext key to encrypt your data
-     * outside of AWS KMS and store the encrypted data key with the encrypted data.
+     * Generates a unique symmetric data key for client-side encryption. This operation returns a plaintext copy of the
+     * data key and a copy that is encrypted under a customer master key (CMK) that you specify. You can use the
+     * plaintext key to encrypt your data outside of AWS KMS and store the encrypted data key with the encrypted data.
      * </p>
      * <p>
-     * <code>GenerateDataKey</code> returns a unique data key for each request. The bytes in the key are not related to
-     * the caller or CMK that is used to encrypt the data key.
+     * <code>GenerateDataKey</code> returns a unique data key for each request. The bytes in the plaintext key are not
+     * related to the caller or the CMK.
      * </p>
      * <p>
      * To generate a data key, specify the symmetric CMK that will be used to encrypt the data key. You cannot use an
-     * asymmetric CMK to generate data keys. To get the type of your CMK, use the <a>DescribeKey</a> operation.
-     * </p>
-     * <p>
-     * You must also specify the length of the data key. Use either the <code>KeySpec</code> or
-     * <code>NumberOfBytes</code> parameters (but not both). For 128-bit and 256-bit data keys, use the
-     * <code>KeySpec</code> parameter.
-     * </p>
-     * <p>
-     * If the operation succeeds, the plaintext copy of the data key is in the <code>Plaintext</code> field of the
-     * response, and the encrypted copy of the data key in the <code>CiphertextBlob</code> field.
+     * asymmetric CMK to generate data keys. To get the type of your CMK, use the <a>DescribeKey</a> operation. You must
+     * also specify the length of the data key. Use either the <code>KeySpec</code> or <code>NumberOfBytes</code>
+     * parameters (but not both). For 128-bit and 256-bit data keys, use the <code>KeySpec</code> parameter.
      * </p>
      * <p>
      * To get only an encrypted copy of the data key, use <a>GenerateDataKeyWithoutPlaintext</a>. To generate an
@@ -2766,7 +2769,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * You can use the optional encryption context to add additional security to the encryption operation. If you
      * specify an <code>EncryptionContext</code>, you must specify the same encryption context (a case-sensitive exact
      * match) when decrypting the encrypted data key. Otherwise, the request to decrypt fails with an
-     * InvalidCiphertextException. For more information, see <a
+     * <code>InvalidCiphertextException</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption Context</a>
      * in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
@@ -2776,29 +2779,39 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * <p>
-     * We recommend that you use the following pattern to encrypt data locally in your application:
+     * <b>How to use your data key</b>
+     * </p>
+     * <p>
+     * We recommend that you use the following pattern to encrypt data locally in your application. You can write your
+     * own code or use a client-side encryption library, such as the <a
+     * href="https://docs.aws.amazon.com/encryption-sdk/latest/developer-guide/">AWS Encryption SDK</a>, the <a
+     * href="https://docs.aws.amazon.com/dynamodb-encryption-client/latest/devguide/">Amazon DynamoDB Encryption
+     * Client</a>, or <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon S3
+     * client-side encryption</a> to do these tasks for you.
+     * </p>
+     * <p>
+     * To encrypt data outside of AWS KMS:
      * </p>
      * <ol>
      * <li>
      * <p>
-     * Use the <code>GenerateDataKey</code> operation to get a data encryption key.
+     * Use the <code>GenerateDataKey</code> operation to get a data key.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Use the plaintext data key (returned in the <code>Plaintext</code> field of the response) to encrypt data
-     * locally, then erase the plaintext data key from memory.
+     * Use the plaintext data key (in the <code>Plaintext</code> field of the response) to encrypt your data outside of
+     * AWS KMS. Then erase the plaintext data key from memory.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Store the encrypted data key (returned in the <code>CiphertextBlob</code> field of the response) alongside the
-     * locally encrypted data.
+     * Store the encrypted data key (in the <code>CiphertextBlob</code> field of the response) with the encrypted data.
      * </p>
      * </li>
      * </ol>
      * <p>
-     * To decrypt data locally:
+     * To decrypt data outside of AWS KMS:
      * </p>
      * <ol>
      * <li>
@@ -2809,7 +2822,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </li>
      * <li>
      * <p>
-     * Use the plaintext data key to decrypt data locally, then erase the plaintext data key from memory.
+     * Use the plaintext data key to decrypt data outside of AWS KMS, then erase the plaintext data key from memory.
      * </p>
      * </li>
      * </ol>
@@ -2922,8 +2935,8 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * <p>
      * To generate a data key pair, you must specify a symmetric customer master key (CMK) to encrypt the private key in
-     * a data key pair. You cannot use an asymmetric CMK. To get the type of your CMK, use the <a>DescribeKey</a>
-     * operation.
+     * a data key pair. You cannot use an asymmetric CMK or a CMK in a custom key store. To get the type and origin of
+     * your CMK, use the <a>DescribeKey</a> operation.
      * </p>
      * <p>
      * If you are using the data key pair to encrypt data, or for any operation where you don't immediately need a
@@ -2937,7 +2950,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * You can use the optional encryption context to add additional security to the encryption operation. If you
      * specify an <code>EncryptionContext</code>, you must specify the same encryption context (a case-sensitive exact
      * match) when decrypting the encrypted data key. Otherwise, the request to decrypt fails with an
-     * InvalidCiphertextException. For more information, see <a
+     * <code>InvalidCiphertextException</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption Context</a>
      * in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
@@ -2992,6 +3005,9 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         For more information about how key state affects the use of a CMK, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of
      *         a Customer Master Key</a> in the <i> <i>AWS Key Management Service Developer Guide</i> </i>.
+     * @throws UnsupportedOperationException
+     *         The request was rejected because a specified parameter is not supported or a specified resource is not
+     *         valid for this operation.
      * @sample AWSKMS.GenerateDataKeyPair
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateDataKeyPair" target="_top">AWS API
      *      Documentation</a>
@@ -3046,8 +3062,8 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * <p>
      * To generate a data key pair, you must specify a symmetric customer master key (CMK) to encrypt the private key in
-     * the data key pair. You cannot use an asymmetric CMK. To get the type of your CMK, use the <code>KeySpec</code>
-     * field in the <a>DescribeKey</a> response.
+     * the data key pair. You cannot use an asymmetric CMK or a CMK in a custom key store. To get the type and origin of
+     * your CMK, use the <code>KeySpec</code> field in the <a>DescribeKey</a> response.
      * </p>
      * <p>
      * You can use the public key that <code>GenerateDataKeyPairWithoutPlaintext</code> returns to encrypt data or
@@ -3062,7 +3078,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * You can use the optional encryption context to add additional security to the encryption operation. If you
      * specify an <code>EncryptionContext</code>, you must specify the same encryption context (a case-sensitive exact
      * match) when decrypting the encrypted data key. Otherwise, the request to decrypt fails with an
-     * InvalidCiphertextException. For more information, see <a
+     * <code>InvalidCiphertextException</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption Context</a>
      * in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
@@ -3117,6 +3133,9 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         For more information about how key state affects the use of a CMK, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of
      *         a Customer Master Key</a> in the <i> <i>AWS Key Management Service Developer Guide</i> </i>.
+     * @throws UnsupportedOperationException
+     *         The request was rejected because a specified parameter is not supported or a specified resource is not
+     *         valid for this operation.
      * @sample AWSKMS.GenerateDataKeyPairWithoutPlaintext
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateDataKeyPairWithoutPlaintext"
      *      target="_top">AWS API Documentation</a>
@@ -3203,7 +3222,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * You can use the optional encryption context to add additional security to the encryption operation. If you
      * specify an <code>EncryptionContext</code>, you must specify the same encryption context (a case-sensitive exact
      * match) when decrypting the encrypted data key. Otherwise, the request to decrypt fails with an
-     * InvalidCiphertextException. For more information, see <a
+     * <code>InvalidCiphertextException</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption Context</a>
      * in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
@@ -4077,6 +4096,15 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * To perform this operation on a CMK in a different AWS account, specify the key ARN in the value of the
      * <code>KeyId</code> parameter.
      * </p>
+     * <note>
+     * <p>
+     * The <code>GranteePrincipal</code> field in the <code>ListGrants</code> response usually contains the user or role
+     * designated as the grantee principal in the grant. However, when the grantee principal in the grant is an AWS
+     * service, the <code>GranteePrincipal</code> field contains the <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services"
+     * >service principal</a>, which might represent several different grantee principals.
+     * </p>
+     * </note>
      * 
      * @param listGrantsRequest
      * @return Result of the ListGrants operation returned by the service.
@@ -4497,13 +4525,16 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * customer master key (CMK) under which data is encrypted, such as when you <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html#rotate-keys-manually">manually
      * rotate</a> a CMK or change the CMK that protects a ciphertext. You can also use it to reencrypt ciphertext under
-     * the same CMK, such as to change the encryption context of a ciphertext.
+     * the same CMK, such as to change the <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption context</a>
+     * of a ciphertext.
      * </p>
      * <p>
      * The <code>ReEncrypt</code> operation can decrypt ciphertext that was encrypted by using an AWS KMS CMK in an AWS
      * KMS operation, such as <a>Encrypt</a> or <a>GenerateDataKey</a>. It can also decrypt ciphertext that was
-     * encrypted by using the public key of an asymmetric CMK outside of AWS KMS. However, it cannot decrypt ciphertext
-     * produced by other libraries, such as the <a
+     * encrypted by using the public key of an <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html#asymmetric-cmks">asymmetric
+     * CMK</a> outside of AWS KMS. However, it cannot decrypt ciphertext produced by other libraries, such as the <a
      * href="https://docs.aws.amazon.com/encryption-sdk/latest/developer-guide/">AWS Encryption SDK</a> or <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon S3 client-side
      * encryption</a>. These libraries return a ciphertext format that is incompatible with AWS KMS.
@@ -4552,23 +4583,20 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * <ul>
      * <li>
      * <p>
-     * <code>kms:EncryptFrom</code> permission on the source CMK
+     * <code>kms:ReEncryptFrom</code> permission on the source CMK
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>kms:EncryptTo</code> permission on the destination CMK
+     * <code>kms:ReEncryptTo</code> permission on the destination CMK
      * </p>
      * </li>
      * </ul>
      * <p>
-     * To permit reencryption from
-     * </p>
-     * <p>
-     * or to a CMK, include the <code>"kms:ReEncrypt*"</code> permission in your <a
+     * To permit reencryption from or to a CMK, include the <code>"kms:ReEncrypt*"</code> permission in your <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">key policy</a>. This permission is
      * automatically included in the key policy when you use the console to create a CMK. But you must include it
-     * manually when you create a CMK programmatically or when you use the <a>PutKeyPolicy</a> operation set a key
+     * manually when you create a CMK programmatically or when you use the <a>PutKeyPolicy</a> operation to set a key
      * policy.
      * </p>
      * <p>
@@ -5300,6 +5328,10 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         The request was rejected because the specified entity or resource could not be found.
      * @throws KMSInternalException
      *         The request was rejected because an internal exception occurred. The request can be retried.
+     * @throws LimitExceededException
+     *         The request was rejected because a quota was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a> in the <i>AWS Key
+     *         Management Service Developer Guide</i>.
      * @throws KMSInvalidStateException
      *         The request was rejected because the state of the specified resource is not valid for this request.</p>
      *         <p>

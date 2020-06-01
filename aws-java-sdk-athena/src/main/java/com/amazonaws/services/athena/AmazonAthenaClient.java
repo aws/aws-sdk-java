@@ -92,6 +92,9 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("MetadataException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.athena.model.transform.MetadataExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidRequestException").withExceptionUnmarshaller(
                                     com.amazonaws.services.athena.model.transform.InvalidRequestExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -279,6 +282,65 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
+     * Creates (registers) a data catalog with the specified name and properties. Catalogs created are visible to all
+     * users of the same AWS account.
+     * </p>
+     * 
+     * @param createDataCatalogRequest
+     * @return Result of the CreateDataCatalog operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @sample AmazonAthena.CreateDataCatalog
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateDataCatalog" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateDataCatalogResult createDataCatalog(CreateDataCatalogRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateDataCatalog(request);
+    }
+
+    @SdkInternalApi
+    final CreateDataCatalogResult executeCreateDataCatalog(CreateDataCatalogRequest createDataCatalogRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createDataCatalogRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateDataCatalogRequest> request = null;
+        Response<CreateDataCatalogResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateDataCatalogRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDataCatalogRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDataCatalog");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateDataCatalogResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateDataCatalogResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a named query in the specified workgroup. Requires that you have access to the workgroup.
      * </p>
      * <p>
@@ -400,6 +462,64 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
+     * Deletes a data catalog.
+     * </p>
+     * 
+     * @param deleteDataCatalogRequest
+     * @return Result of the DeleteDataCatalog operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @sample AmazonAthena.DeleteDataCatalog
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteDataCatalog" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteDataCatalogResult deleteDataCatalog(DeleteDataCatalogRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteDataCatalog(request);
+    }
+
+    @SdkInternalApi
+    final DeleteDataCatalogResult executeDeleteDataCatalog(DeleteDataCatalogRequest deleteDataCatalogRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteDataCatalogRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteDataCatalogRequest> request = null;
+        Response<DeleteDataCatalogResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteDataCatalogRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDataCatalogRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDataCatalog");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteDataCatalogResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteDataCatalogResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes the named query if you have access to the workgroup in which the query was saved.
      * </p>
      * <p>
@@ -509,6 +629,127 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteWorkGroupResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteWorkGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the specified data catalog.
+     * </p>
+     * 
+     * @param getDataCatalogRequest
+     * @return Result of the GetDataCatalog operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @sample AmazonAthena.GetDataCatalog
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetDataCatalog" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetDataCatalogResult getDataCatalog(GetDataCatalogRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDataCatalog(request);
+    }
+
+    @SdkInternalApi
+    final GetDataCatalogResult executeGetDataCatalog(GetDataCatalogRequest getDataCatalogRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getDataCatalogRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetDataCatalogRequest> request = null;
+        Response<GetDataCatalogResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetDataCatalogRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDataCatalogRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDataCatalog");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetDataCatalogResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetDataCatalogResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a database object for the specfied database and data catalog.
+     * </p>
+     * 
+     * @param getDatabaseRequest
+     * @return Result of the GetDatabase operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws MetadataException
+     *         An exception that Athena received when it called a custom metastore. Occurs if the error is not caused by
+     *         user input (<code>InvalidRequestException</code>) or from the Athena platform (
+     *         <code>InternalServerException</code>). For example, if a user-created Lambda function is missing
+     *         permissions, the Lambda <code>4XX</code> exception is returned in a <code>MetadataException</code>.
+     * @sample AmazonAthena.GetDatabase
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetDatabase" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetDatabaseResult getDatabase(GetDatabaseRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDatabase(request);
+    }
+
+    @SdkInternalApi
+    final GetDatabaseResult executeGetDatabase(GetDatabaseRequest getDatabaseRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getDatabaseRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetDatabaseRequest> request = null;
+        Response<GetDatabaseResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetDatabaseRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDatabaseRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDatabase");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetDatabaseResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetDatabaseResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -713,6 +954,69 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
+     * Returns table metadata for the specified catalog, database, and table.
+     * </p>
+     * 
+     * @param getTableMetadataRequest
+     * @return Result of the GetTableMetadata operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws MetadataException
+     *         An exception that Athena received when it called a custom metastore. Occurs if the error is not caused by
+     *         user input (<code>InvalidRequestException</code>) or from the Athena platform (
+     *         <code>InternalServerException</code>). For example, if a user-created Lambda function is missing
+     *         permissions, the Lambda <code>4XX</code> exception is returned in a <code>MetadataException</code>.
+     * @sample AmazonAthena.GetTableMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetTableMetadata" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetTableMetadataResult getTableMetadata(GetTableMetadataRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetTableMetadata(request);
+    }
+
+    @SdkInternalApi
+    final GetTableMetadataResult executeGetTableMetadata(GetTableMetadataRequest getTableMetadataRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getTableMetadataRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetTableMetadataRequest> request = null;
+        Response<GetTableMetadataResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetTableMetadataRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getTableMetadataRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTableMetadata");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetTableMetadataResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetTableMetadataResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns information about the workgroup with the specified name.
      * </p>
      * 
@@ -771,8 +1075,130 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
+     * Lists the data catalogs in the current AWS account.
+     * </p>
+     * 
+     * @param listDataCatalogsRequest
+     * @return Result of the ListDataCatalogs operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @sample AmazonAthena.ListDataCatalogs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListDataCatalogs" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListDataCatalogsResult listDataCatalogs(ListDataCatalogsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDataCatalogs(request);
+    }
+
+    @SdkInternalApi
+    final ListDataCatalogsResult executeListDataCatalogs(ListDataCatalogsRequest listDataCatalogsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listDataCatalogsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListDataCatalogsRequest> request = null;
+        Response<ListDataCatalogsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListDataCatalogsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDataCatalogsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDataCatalogs");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListDataCatalogsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListDataCatalogsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the databases in the specified data catalog.
+     * </p>
+     * 
+     * @param listDatabasesRequest
+     * @return Result of the ListDatabases operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws MetadataException
+     *         An exception that Athena received when it called a custom metastore. Occurs if the error is not caused by
+     *         user input (<code>InvalidRequestException</code>) or from the Athena platform (
+     *         <code>InternalServerException</code>). For example, if a user-created Lambda function is missing
+     *         permissions, the Lambda <code>4XX</code> exception is returned in a <code>MetadataException</code>.
+     * @sample AmazonAthena.ListDatabases
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListDatabases" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListDatabasesResult listDatabases(ListDatabasesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDatabases(request);
+    }
+
+    @SdkInternalApi
+    final ListDatabasesResult executeListDatabases(ListDatabasesRequest listDatabasesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listDatabasesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListDatabasesRequest> request = null;
+        Response<ListDatabasesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListDatabasesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDatabasesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDatabases");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListDatabasesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListDatabasesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Provides a list of available query IDs only for queries saved in the specified workgroup. Requires that you have
-     * access to the workgroup. If a workgroup is not specified, lists the saved queries for the primary workgroup.
+     * access to the specified workgroup. If a workgroup is not specified, lists the saved queries for the primary
+     * workgroup.
      * </p>
      * <p>
      * For code samples using the AWS SDK for Java, see <a
@@ -900,7 +1326,70 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Lists the tags associated with this workgroup.
+     * Lists the metadata for the tables in the specified data catalog database.
+     * </p>
+     * 
+     * @param listTableMetadataRequest
+     * @return Result of the ListTableMetadata operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws MetadataException
+     *         An exception that Athena received when it called a custom metastore. Occurs if the error is not caused by
+     *         user input (<code>InvalidRequestException</code>) or from the Athena platform (
+     *         <code>InternalServerException</code>). For example, if a user-created Lambda function is missing
+     *         permissions, the Lambda <code>4XX</code> exception is returned in a <code>MetadataException</code>.
+     * @sample AmazonAthena.ListTableMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListTableMetadata" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListTableMetadataResult listTableMetadata(ListTableMetadataRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTableMetadata(request);
+    }
+
+    @SdkInternalApi
+    final ListTableMetadataResult executeListTableMetadata(ListTableMetadataRequest listTableMetadataRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTableMetadataRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTableMetadataRequest> request = null;
+        Response<ListTableMetadataResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTableMetadataRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTableMetadataRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTableMetadata");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTableMetadataResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTableMetadataResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the tags associated with an Athena workgroup or data catalog resource.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -1019,10 +1508,8 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
     /**
      * <p>
      * Runs the SQL query statements contained in the <code>Query</code>. Requires you to have access to the workgroup
-     * in which the query ran.
-     * </p>
-     * <p>
-     * For code samples using the AWS SDK for Java, see <a
+     * in which the query ran. Running queries against an external catalog requires <a>GetDataCatalog</a> permission to
+     * the catalog. For code samples using the AWS SDK for Java, see <a
      * href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and Code Samples</a> in the
      * <i>Amazon Athena User Guide</i>.
      * </p>
@@ -1147,15 +1634,16 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Adds one or more tags to the resource, such as a workgroup. A tag is a label that you assign to an AWS Athena
-     * resource (a workgroup). Each tag consists of a key and an optional value, both of which you define. Tags enable
-     * you to categorize resources (workgroups) in Athena, for example, by purpose, owner, or environment. Use a
-     * consistent set of tag keys to make it easier to search and filter workgroups in your account. For best practices,
-     * see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging
-     * Strategies</a>. The key length is from 1 (minimum) to 128 (maximum) Unicode characters in UTF-8. The tag value
-     * length is from 0 (minimum) to 256 (maximum) Unicode characters in UTF-8. You can use letters and numbers
-     * representable in UTF-8, and the following characters: + - = . _ : / @. Tag keys and values are case-sensitive.
-     * Tag keys must be unique per resource. If you specify more than one, separate them by commas.
+     * Adds one or more tags to an Athena resource. A tag is a label that you assign to a resource. In Athena, a
+     * resource can be a workgroup or data catalog. Each tag consists of a key and an optional value, both of which you
+     * define. For example, you can use tags to categorize Athena workgroups or data catalogs by purpose, owner, or
+     * environment. Use a consistent set of tag keys to make it easier to search and filter workgroups or data catalogs
+     * in your account. For best practices, see <a
+     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">Tagging Best Practices</a>. Tag
+     * keys can be from 1 to 128 UTF-8 Unicode characters, and tag values can be from 0 to 256 UTF-8 Unicode characters.
+     * Tags can use letters and numbers representable in UTF-8, and the following characters: + - = . _ : / @. Tag keys
+     * and values are case-sensitive. Tag keys must be unique per resource. If you specify more than one tag, separate
+     * them by commas.
      * </p>
      * 
      * @param tagResourceRequest
@@ -1215,8 +1703,7 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Removes one or more tags from the workgroup resource. Takes as an input a list of TagKey Strings separated by
-     * commas, and removes their tags at the same time.
+     * Removes one or more tags from a data catalog or workgroup resource.
      * </p>
      * 
      * @param untagResourceRequest
@@ -1264,6 +1751,64 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
 
             HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the data catalog that has the specified name.
+     * </p>
+     * 
+     * @param updateDataCatalogRequest
+     * @return Result of the UpdateDataCatalog operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @sample AmazonAthena.UpdateDataCatalog
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateDataCatalog" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateDataCatalogResult updateDataCatalog(UpdateDataCatalogRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateDataCatalog(request);
+    }
+
+    @SdkInternalApi
+    final UpdateDataCatalogResult executeUpdateDataCatalog(UpdateDataCatalogRequest updateDataCatalogRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateDataCatalogRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateDataCatalogRequest> request = null;
+        Response<UpdateDataCatalogResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateDataCatalogRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDataCatalogRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDataCatalog");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateDataCatalogResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateDataCatalogResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

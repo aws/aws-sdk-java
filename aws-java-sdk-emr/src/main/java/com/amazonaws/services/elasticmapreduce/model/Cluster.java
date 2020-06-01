@@ -74,6 +74,13 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     private String logUri;
     /**
      * <p>
+     * The AWS KMS customer master key (CMK) used for encrypting log files. This attribute is only available with EMR
+     * version 5.30.0 and later, excluding EMR 6.0.0.
+     * </p>
+     */
+    private String logEncryptionKmsKeyId;
+    /**
+     * <p>
      * The AMI version requested for this cluster.
      * </p>
      */
@@ -587,6 +594,52 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     public Cluster withLogUri(String logUri) {
         setLogUri(logUri);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The AWS KMS customer master key (CMK) used for encrypting log files. This attribute is only available with EMR
+     * version 5.30.0 and later, excluding EMR 6.0.0.
+     * </p>
+     * 
+     * @param logEncryptionKmsKeyId
+     *        The AWS KMS customer master key (CMK) used for encrypting log files. This attribute is only available with
+     *        EMR version 5.30.0 and later, excluding EMR 6.0.0.
+     */
+
+    public void setLogEncryptionKmsKeyId(String logEncryptionKmsKeyId) {
+        this.logEncryptionKmsKeyId = logEncryptionKmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The AWS KMS customer master key (CMK) used for encrypting log files. This attribute is only available with EMR
+     * version 5.30.0 and later, excluding EMR 6.0.0.
+     * </p>
+     * 
+     * @return The AWS KMS customer master key (CMK) used for encrypting log files. This attribute is only available
+     *         with EMR version 5.30.0 and later, excluding EMR 6.0.0.
+     */
+
+    public String getLogEncryptionKmsKeyId() {
+        return this.logEncryptionKmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The AWS KMS customer master key (CMK) used for encrypting log files. This attribute is only available with EMR
+     * version 5.30.0 and later, excluding EMR 6.0.0.
+     * </p>
+     * 
+     * @param logEncryptionKmsKeyId
+     *        The AWS KMS customer master key (CMK) used for encrypting log files. This attribute is only available with
+     *        EMR version 5.30.0 and later, excluding EMR 6.0.0.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withLogEncryptionKmsKeyId(String logEncryptionKmsKeyId) {
+        setLogEncryptionKmsKeyId(logEncryptionKmsKeyId);
         return this;
     }
 
@@ -1942,6 +1995,8 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
             sb.append("InstanceCollectionType: ").append(getInstanceCollectionType()).append(",");
         if (getLogUri() != null)
             sb.append("LogUri: ").append(getLogUri()).append(",");
+        if (getLogEncryptionKmsKeyId() != null)
+            sb.append("LogEncryptionKmsKeyId: ").append(getLogEncryptionKmsKeyId()).append(",");
         if (getRequestedAmiVersion() != null)
             sb.append("RequestedAmiVersion: ").append(getRequestedAmiVersion()).append(",");
         if (getRunningAmiVersion() != null)
@@ -2023,6 +2078,10 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
         if (other.getLogUri() == null ^ this.getLogUri() == null)
             return false;
         if (other.getLogUri() != null && other.getLogUri().equals(this.getLogUri()) == false)
+            return false;
+        if (other.getLogEncryptionKmsKeyId() == null ^ this.getLogEncryptionKmsKeyId() == null)
+            return false;
+        if (other.getLogEncryptionKmsKeyId() != null && other.getLogEncryptionKmsKeyId().equals(this.getLogEncryptionKmsKeyId()) == false)
             return false;
         if (other.getRequestedAmiVersion() == null ^ this.getRequestedAmiVersion() == null)
             return false;
@@ -2126,6 +2185,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getEc2InstanceAttributes() == null) ? 0 : getEc2InstanceAttributes().hashCode());
         hashCode = prime * hashCode + ((getInstanceCollectionType() == null) ? 0 : getInstanceCollectionType().hashCode());
         hashCode = prime * hashCode + ((getLogUri() == null) ? 0 : getLogUri().hashCode());
+        hashCode = prime * hashCode + ((getLogEncryptionKmsKeyId() == null) ? 0 : getLogEncryptionKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getRequestedAmiVersion() == null) ? 0 : getRequestedAmiVersion().hashCode());
         hashCode = prime * hashCode + ((getRunningAmiVersion() == null) ? 0 : getRunningAmiVersion().hashCode());
         hashCode = prime * hashCode + ((getReleaseLabel() == null) ? 0 : getReleaseLabel().hashCode());

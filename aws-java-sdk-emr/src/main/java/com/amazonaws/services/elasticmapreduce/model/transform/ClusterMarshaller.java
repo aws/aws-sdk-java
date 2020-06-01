@@ -40,6 +40,8 @@ public class ClusterMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceCollectionType").build();
     private static final MarshallingInfo<String> LOGURI_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("LogUri").build();
+    private static final MarshallingInfo<String> LOGENCRYPTIONKMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LogEncryptionKmsKeyId").build();
     private static final MarshallingInfo<String> REQUESTEDAMIVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RequestedAmiVersion").build();
     private static final MarshallingInfo<String> RUNNINGAMIVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -107,6 +109,7 @@ public class ClusterMarshaller {
             protocolMarshaller.marshall(cluster.getEc2InstanceAttributes(), EC2INSTANCEATTRIBUTES_BINDING);
             protocolMarshaller.marshall(cluster.getInstanceCollectionType(), INSTANCECOLLECTIONTYPE_BINDING);
             protocolMarshaller.marshall(cluster.getLogUri(), LOGURI_BINDING);
+            protocolMarshaller.marshall(cluster.getLogEncryptionKmsKeyId(), LOGENCRYPTIONKMSKEYID_BINDING);
             protocolMarshaller.marshall(cluster.getRequestedAmiVersion(), REQUESTEDAMIVERSION_BINDING);
             protocolMarshaller.marshall(cluster.getRunningAmiVersion(), RUNNINGAMIVERSION_BINDING);
             protocolMarshaller.marshall(cluster.getReleaseLabel(), RELEASELABEL_BINDING);

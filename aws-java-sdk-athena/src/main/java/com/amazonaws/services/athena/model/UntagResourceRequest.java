@@ -27,24 +27,24 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Removes one or more tags from the workgroup resource for the specified ARN.
+     * Specifies the ARN of the resource from which tags are to be removed.
      * </p>
      */
     private String resourceARN;
     /**
      * <p>
-     * Removes the tags associated with one or more tag keys from the workgroup resource.
+     * A comma-separated list of one or more tag keys whose tags are to be removed from the specified resource.
      * </p>
      */
     private java.util.List<String> tagKeys;
 
     /**
      * <p>
-     * Removes one or more tags from the workgroup resource for the specified ARN.
+     * Specifies the ARN of the resource from which tags are to be removed.
      * </p>
      * 
      * @param resourceARN
-     *        Removes one or more tags from the workgroup resource for the specified ARN.
+     *        Specifies the ARN of the resource from which tags are to be removed.
      */
 
     public void setResourceARN(String resourceARN) {
@@ -53,10 +53,10 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Removes one or more tags from the workgroup resource for the specified ARN.
+     * Specifies the ARN of the resource from which tags are to be removed.
      * </p>
      * 
-     * @return Removes one or more tags from the workgroup resource for the specified ARN.
+     * @return Specifies the ARN of the resource from which tags are to be removed.
      */
 
     public String getResourceARN() {
@@ -65,11 +65,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Removes one or more tags from the workgroup resource for the specified ARN.
+     * Specifies the ARN of the resource from which tags are to be removed.
      * </p>
      * 
      * @param resourceARN
-     *        Removes one or more tags from the workgroup resource for the specified ARN.
+     *        Specifies the ARN of the resource from which tags are to be removed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,10 +80,10 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Removes the tags associated with one or more tag keys from the workgroup resource.
+     * A comma-separated list of one or more tag keys whose tags are to be removed from the specified resource.
      * </p>
      * 
-     * @return Removes the tags associated with one or more tag keys from the workgroup resource.
+     * @return A comma-separated list of one or more tag keys whose tags are to be removed from the specified resource.
      */
 
     public java.util.List<String> getTagKeys() {
@@ -92,11 +92,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Removes the tags associated with one or more tag keys from the workgroup resource.
+     * A comma-separated list of one or more tag keys whose tags are to be removed from the specified resource.
      * </p>
      * 
      * @param tagKeys
-     *        Removes the tags associated with one or more tag keys from the workgroup resource.
+     *        A comma-separated list of one or more tag keys whose tags are to be removed from the specified resource.
      */
 
     public void setTagKeys(java.util.Collection<String> tagKeys) {
@@ -110,7 +110,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Removes the tags associated with one or more tag keys from the workgroup resource.
+     * A comma-separated list of one or more tag keys whose tags are to be removed from the specified resource.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -119,7 +119,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param tagKeys
-     *        Removes the tags associated with one or more tag keys from the workgroup resource.
+     *        A comma-separated list of one or more tag keys whose tags are to be removed from the specified resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +135,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Removes the tags associated with one or more tag keys from the workgroup resource.
+     * A comma-separated list of one or more tag keys whose tags are to be removed from the specified resource.
      * </p>
      * 
      * @param tagKeys
-     *        Removes the tags associated with one or more tag keys from the workgroup resource.
+     *        A comma-separated list of one or more tag keys whose tags are to be removed from the specified resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

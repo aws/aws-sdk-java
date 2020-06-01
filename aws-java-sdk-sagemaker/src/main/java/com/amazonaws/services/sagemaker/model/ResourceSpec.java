@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance. The ARN is
- * stored as metadata in Amazon SageMaker Studio notebooks.
+ * stored as metadata in SageMaker Studio notebooks.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ResourceSpec" target="_top">AWS API

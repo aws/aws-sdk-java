@@ -123,6 +123,11 @@ public class AbstractAmazonWorkLink implements AmazonWorkLink {
     }
 
     @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListWebsiteAuthorizationProvidersResult listWebsiteAuthorizationProviders(ListWebsiteAuthorizationProvidersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -144,6 +149,16 @@ public class AbstractAmazonWorkLink implements AmazonWorkLink {
 
     @Override
     public SignOutUserResult signOutUser(SignOutUserRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

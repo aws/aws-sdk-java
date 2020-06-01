@@ -98,7 +98,7 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * <p>
      * Default value is <code>SSD</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-tco.html#saz-maz-storage-type"> Storage
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options"> Storage
      * Type Options</a> in the <i>Amazon FSx for Windows User Guide</i>.
      * </p>
      */
@@ -492,7 +492,7 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * <p>
      * Default value is <code>SSD</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-tco.html#saz-maz-storage-type"> Storage
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options"> Storage
      * Type Options</a> in the <i>Amazon FSx for Windows User Guide</i>.
      * </p>
      * 
@@ -515,7 +515,7 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      *        </ul>
      *        <p>
      *        Default value is <code>SSD</code>. For more information, see <a
-     *        href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-tco.html#saz-maz-storage-type">
+     *        href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options">
      *        Storage Type Options</a> in the <i>Amazon FSx for Windows User Guide</i>.
      * @see StorageType
      */
@@ -544,7 +544,7 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * <p>
      * Default value is <code>SSD</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-tco.html#saz-maz-storage-type"> Storage
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options"> Storage
      * Type Options</a> in the <i>Amazon FSx for Windows User Guide</i>.
      * </p>
      * 
@@ -566,7 +566,7 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      *         </ul>
      *         <p>
      *         Default value is <code>SSD</code>. For more information, see <a
-     *         href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-tco.html#saz-maz-storage-type">
+     *         href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options">
      *         Storage Type Options</a> in the <i>Amazon FSx for Windows User Guide</i>.
      * @see StorageType
      */
@@ -595,7 +595,7 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * <p>
      * Default value is <code>SSD</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-tco.html#saz-maz-storage-type"> Storage
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options"> Storage
      * Type Options</a> in the <i>Amazon FSx for Windows User Guide</i>.
      * </p>
      * 
@@ -618,7 +618,7 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      *        </ul>
      *        <p>
      *        Default value is <code>SSD</code>. For more information, see <a
-     *        href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-tco.html#saz-maz-storage-type">
+     *        href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options">
      *        Storage Type Options</a> in the <i>Amazon FSx for Windows User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StorageType
@@ -649,7 +649,7 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * <p>
      * Default value is <code>SSD</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-tco.html#saz-maz-storage-type"> Storage
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options"> Storage
      * Type Options</a> in the <i>Amazon FSx for Windows User Guide</i>.
      * </p>
      * 
@@ -672,7 +672,7 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      *        </ul>
      *        <p>
      *        Default value is <code>SSD</code>. For more information, see <a
-     *        href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-tco.html#saz-maz-storage-type">
+     *        href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options">
      *        Storage Type Options</a> in the <i>Amazon FSx for Windows User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StorageType

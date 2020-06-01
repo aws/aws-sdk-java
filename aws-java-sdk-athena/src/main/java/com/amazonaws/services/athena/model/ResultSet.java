@@ -20,6 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * The metadata and rows that comprise a query result set. The metadata describes the column structure and data types.
+ * To return a <code>ResultSet</code> object, use <a>GetQueryResults</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ResultSet" target="_top">AWS API

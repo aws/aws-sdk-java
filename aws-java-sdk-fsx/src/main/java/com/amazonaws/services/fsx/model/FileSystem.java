@@ -180,6 +180,14 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
     private WindowsFileSystemConfiguration windowsConfiguration;
 
     private LustreFileSystemConfiguration lustreConfiguration;
+    /**
+     * <p>
+     * A list of administrative actions for the file system that are in process or waiting to be processed.
+     * Administrative actions describe changes to the Windows file system that you have initiated using the
+     * <code>UpdateFileSystem</code> action.
+     * </p>
+     */
+    private java.util.List<AdministrativeAction> administrativeActions;
 
     /**
      * <p>
@@ -1428,6 +1436,92 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A list of administrative actions for the file system that are in process or waiting to be processed.
+     * Administrative actions describe changes to the Windows file system that you have initiated using the
+     * <code>UpdateFileSystem</code> action.
+     * </p>
+     * 
+     * @return A list of administrative actions for the file system that are in process or waiting to be processed.
+     *         Administrative actions describe changes to the Windows file system that you have initiated using the
+     *         <code>UpdateFileSystem</code> action.
+     */
+
+    public java.util.List<AdministrativeAction> getAdministrativeActions() {
+        return administrativeActions;
+    }
+
+    /**
+     * <p>
+     * A list of administrative actions for the file system that are in process or waiting to be processed.
+     * Administrative actions describe changes to the Windows file system that you have initiated using the
+     * <code>UpdateFileSystem</code> action.
+     * </p>
+     * 
+     * @param administrativeActions
+     *        A list of administrative actions for the file system that are in process or waiting to be processed.
+     *        Administrative actions describe changes to the Windows file system that you have initiated using the
+     *        <code>UpdateFileSystem</code> action.
+     */
+
+    public void setAdministrativeActions(java.util.Collection<AdministrativeAction> administrativeActions) {
+        if (administrativeActions == null) {
+            this.administrativeActions = null;
+            return;
+        }
+
+        this.administrativeActions = new java.util.ArrayList<AdministrativeAction>(administrativeActions);
+    }
+
+    /**
+     * <p>
+     * A list of administrative actions for the file system that are in process or waiting to be processed.
+     * Administrative actions describe changes to the Windows file system that you have initiated using the
+     * <code>UpdateFileSystem</code> action.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAdministrativeActions(java.util.Collection)} or
+     * {@link #withAdministrativeActions(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param administrativeActions
+     *        A list of administrative actions for the file system that are in process or waiting to be processed.
+     *        Administrative actions describe changes to the Windows file system that you have initiated using the
+     *        <code>UpdateFileSystem</code> action.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FileSystem withAdministrativeActions(AdministrativeAction... administrativeActions) {
+        if (this.administrativeActions == null) {
+            setAdministrativeActions(new java.util.ArrayList<AdministrativeAction>(administrativeActions.length));
+        }
+        for (AdministrativeAction ele : administrativeActions) {
+            this.administrativeActions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of administrative actions for the file system that are in process or waiting to be processed.
+     * Administrative actions describe changes to the Windows file system that you have initiated using the
+     * <code>UpdateFileSystem</code> action.
+     * </p>
+     * 
+     * @param administrativeActions
+     *        A list of administrative actions for the file system that are in process or waiting to be processed.
+     *        Administrative actions describe changes to the Windows file system that you have initiated using the
+     *        <code>UpdateFileSystem</code> action.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FileSystem withAdministrativeActions(java.util.Collection<AdministrativeAction> administrativeActions) {
+        setAdministrativeActions(administrativeActions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1472,7 +1566,9 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
         if (getWindowsConfiguration() != null)
             sb.append("WindowsConfiguration: ").append(getWindowsConfiguration()).append(",");
         if (getLustreConfiguration() != null)
-            sb.append("LustreConfiguration: ").append(getLustreConfiguration());
+            sb.append("LustreConfiguration: ").append(getLustreConfiguration()).append(",");
+        if (getAdministrativeActions() != null)
+            sb.append("AdministrativeActions: ").append(getAdministrativeActions());
         sb.append("}");
         return sb.toString();
     }
@@ -1555,6 +1651,10 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getLustreConfiguration() != null && other.getLustreConfiguration().equals(this.getLustreConfiguration()) == false)
             return false;
+        if (other.getAdministrativeActions() == null ^ this.getAdministrativeActions() == null)
+            return false;
+        if (other.getAdministrativeActions() != null && other.getAdministrativeActions().equals(this.getAdministrativeActions()) == false)
+            return false;
         return true;
     }
 
@@ -1580,6 +1680,7 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getWindowsConfiguration() == null) ? 0 : getWindowsConfiguration().hashCode());
         hashCode = prime * hashCode + ((getLustreConfiguration() == null) ? 0 : getLustreConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getAdministrativeActions() == null) ? 0 : getAdministrativeActions().hashCode());
         return hashCode;
     }
 

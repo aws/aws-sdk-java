@@ -31,7 +31,9 @@ public class EncryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
     private java.nio.ByteBuffer ciphertextBlob;
     /**
      * <p>
-     * The ID of the key used during encryption.
+     * The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the CMK
+     * that was used to encrypt the plaintext.
      * </p>
      */
     private String keyId;
@@ -117,11 +119,15 @@ public class EncryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * The ID of the key used during encryption.
+     * The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the CMK
+     * that was used to encrypt the plaintext.
      * </p>
      * 
      * @param keyId
-     *        The ID of the key used during encryption.
+     *        The Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of
+     *        the CMK that was used to encrypt the plaintext.
      */
 
     public void setKeyId(String keyId) {
@@ -130,10 +136,14 @@ public class EncryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * The ID of the key used during encryption.
+     * The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the CMK
+     * that was used to encrypt the plaintext.
      * </p>
      * 
-     * @return The ID of the key used during encryption.
+     * @return The Amazon Resource Name (<a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of
+     *         the CMK that was used to encrypt the plaintext.
      */
 
     public String getKeyId() {
@@ -142,11 +152,15 @@ public class EncryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * The ID of the key used during encryption.
+     * The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the CMK
+     * that was used to encrypt the plaintext.
      * </p>
      * 
      * @param keyId
-     *        The ID of the key used during encryption.
+     *        The Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of
+     *        the CMK that was used to encrypt the plaintext.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

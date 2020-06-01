@@ -25,7 +25,9 @@ public class GetPublicKeyResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The identifier of the asymmetric CMK from which the public key was downloaded.
+     * The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the
+     * asymmetric CMK from which the public key was downloaded.
      * </p>
      */
     private String keyId;
@@ -84,11 +86,15 @@ public class GetPublicKeyResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The identifier of the asymmetric CMK from which the public key was downloaded.
+     * The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the
+     * asymmetric CMK from which the public key was downloaded.
      * </p>
      * 
      * @param keyId
-     *        The identifier of the asymmetric CMK from which the public key was downloaded.
+     *        The Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of
+     *        the asymmetric CMK from which the public key was downloaded.
      */
 
     public void setKeyId(String keyId) {
@@ -97,10 +103,14 @@ public class GetPublicKeyResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The identifier of the asymmetric CMK from which the public key was downloaded.
+     * The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the
+     * asymmetric CMK from which the public key was downloaded.
      * </p>
      * 
-     * @return The identifier of the asymmetric CMK from which the public key was downloaded.
+     * @return The Amazon Resource Name (<a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of
+     *         the asymmetric CMK from which the public key was downloaded.
      */
 
     public String getKeyId() {
@@ -109,11 +119,15 @@ public class GetPublicKeyResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The identifier of the asymmetric CMK from which the public key was downloaded.
+     * The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the
+     * asymmetric CMK from which the public key was downloaded.
      * </p>
      * 
      * @param keyId
-     *        The identifier of the asymmetric CMK from which the public key was downloaded.
+     *        The Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of
+     *        the asymmetric CMK from which the public key was downloaded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

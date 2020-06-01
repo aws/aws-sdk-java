@@ -43,6 +43,14 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String logUri;
     /**
      * <p>
+     * The AWS KMS customer master key (CMK) used for encrypting log files. If a value is not provided, the logs will
+     * remain encrypted by AES-256. This attribute is only available with EMR version 5.30.0 and later, excluding EMR
+     * 6.0.0.
+     * </p>
+     */
+    private String logEncryptionKmsKeyId;
+    /**
+     * <p>
      * A JSON string for selecting additional features.
      * </p>
      */
@@ -397,6 +405,58 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     public RunJobFlowRequest withLogUri(String logUri) {
         setLogUri(logUri);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The AWS KMS customer master key (CMK) used for encrypting log files. If a value is not provided, the logs will
+     * remain encrypted by AES-256. This attribute is only available with EMR version 5.30.0 and later, excluding EMR
+     * 6.0.0.
+     * </p>
+     * 
+     * @param logEncryptionKmsKeyId
+     *        The AWS KMS customer master key (CMK) used for encrypting log files. If a value is not provided, the logs
+     *        will remain encrypted by AES-256. This attribute is only available with EMR version 5.30.0 and later,
+     *        excluding EMR 6.0.0.
+     */
+
+    public void setLogEncryptionKmsKeyId(String logEncryptionKmsKeyId) {
+        this.logEncryptionKmsKeyId = logEncryptionKmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The AWS KMS customer master key (CMK) used for encrypting log files. If a value is not provided, the logs will
+     * remain encrypted by AES-256. This attribute is only available with EMR version 5.30.0 and later, excluding EMR
+     * 6.0.0.
+     * </p>
+     * 
+     * @return The AWS KMS customer master key (CMK) used for encrypting log files. If a value is not provided, the logs
+     *         will remain encrypted by AES-256. This attribute is only available with EMR version 5.30.0 and later,
+     *         excluding EMR 6.0.0.
+     */
+
+    public String getLogEncryptionKmsKeyId() {
+        return this.logEncryptionKmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The AWS KMS customer master key (CMK) used for encrypting log files. If a value is not provided, the logs will
+     * remain encrypted by AES-256. This attribute is only available with EMR version 5.30.0 and later, excluding EMR
+     * 6.0.0.
+     * </p>
+     * 
+     * @param logEncryptionKmsKeyId
+     *        The AWS KMS customer master key (CMK) used for encrypting log files. If a value is not provided, the logs
+     *        will remain encrypted by AES-256. This attribute is only available with EMR version 5.30.0 and later,
+     *        excluding EMR 6.0.0.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RunJobFlowRequest withLogEncryptionKmsKeyId(String logEncryptionKmsKeyId) {
+        setLogEncryptionKmsKeyId(logEncryptionKmsKeyId);
         return this;
     }
 
@@ -2537,6 +2597,8 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
             sb.append("Name: ").append(getName()).append(",");
         if (getLogUri() != null)
             sb.append("LogUri: ").append(getLogUri()).append(",");
+        if (getLogEncryptionKmsKeyId() != null)
+            sb.append("LogEncryptionKmsKeyId: ").append(getLogEncryptionKmsKeyId()).append(",");
         if (getAdditionalInfo() != null)
             sb.append("AdditionalInfo: ").append(getAdditionalInfo()).append(",");
         if (getAmiVersion() != null)
@@ -2604,6 +2666,10 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (other.getLogUri() == null ^ this.getLogUri() == null)
             return false;
         if (other.getLogUri() != null && other.getLogUri().equals(this.getLogUri()) == false)
+            return false;
+        if (other.getLogEncryptionKmsKeyId() == null ^ this.getLogEncryptionKmsKeyId() == null)
+            return false;
+        if (other.getLogEncryptionKmsKeyId() != null && other.getLogEncryptionKmsKeyId().equals(this.getLogEncryptionKmsKeyId()) == false)
             return false;
         if (other.getAdditionalInfo() == null ^ this.getAdditionalInfo() == null)
             return false;
@@ -2707,6 +2773,7 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getLogUri() == null) ? 0 : getLogUri().hashCode());
+        hashCode = prime * hashCode + ((getLogEncryptionKmsKeyId() == null) ? 0 : getLogEncryptionKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getAdditionalInfo() == null) ? 0 : getAdditionalInfo().hashCode());
         hashCode = prime * hashCode + ((getAmiVersion() == null) ? 0 : getAmiVersion().hashCode());
         hashCode = prime * hashCode + ((getReleaseLabel() == null) ? 0 : getReleaseLabel().hashCode());

@@ -32,6 +32,8 @@ public class RunJobFlowRequestMarshaller {
             .marshallLocationName("Name").build();
     private static final MarshallingInfo<String> LOGURI_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("LogUri").build();
+    private static final MarshallingInfo<String> LOGENCRYPTIONKMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LogEncryptionKmsKeyId").build();
     private static final MarshallingInfo<String> ADDITIONALINFO_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AdditionalInfo").build();
     private static final MarshallingInfo<String> AMIVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -97,6 +99,7 @@ public class RunJobFlowRequestMarshaller {
         try {
             protocolMarshaller.marshall(runJobFlowRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(runJobFlowRequest.getLogUri(), LOGURI_BINDING);
+            protocolMarshaller.marshall(runJobFlowRequest.getLogEncryptionKmsKeyId(), LOGENCRYPTIONKMSKEYID_BINDING);
             protocolMarshaller.marshall(runJobFlowRequest.getAdditionalInfo(), ADDITIONALINFO_BINDING);
             protocolMarshaller.marshall(runJobFlowRequest.getAmiVersion(), AMIVERSION_BINDING);
             protocolMarshaller.marshall(runJobFlowRequest.getReleaseLabel(), RELEASELABEL_BINDING);

@@ -32,9 +32,10 @@ public class DecryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
     private java.nio.ByteBuffer ciphertextBlob;
     /**
      * <p>
-     * Specifies the encryption context to use when decrypting the data. An encryption context is valid only for
-     * cryptographic operations with a symmetric CMK. The standard asymmetric encryption algorithms that AWS KMS uses do
-     * not support an encryption context.
+     * Specifies the encryption context to use when decrypting the data. An encryption context is valid only for <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operations</a> with a symmetric CMK. The standard asymmetric encryption algorithms that AWS KMS uses do not
+     * support an encryption context.
      * </p>
      * <p>
      * An <i>encryption context</i> is a collection of non-secret key-value pairs that represents additional
@@ -191,9 +192,10 @@ public class DecryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * Specifies the encryption context to use when decrypting the data. An encryption context is valid only for
-     * cryptographic operations with a symmetric CMK. The standard asymmetric encryption algorithms that AWS KMS uses do
-     * not support an encryption context.
+     * Specifies the encryption context to use when decrypting the data. An encryption context is valid only for <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operations</a> with a symmetric CMK. The standard asymmetric encryption algorithms that AWS KMS uses do not
+     * support an encryption context.
      * </p>
      * <p>
      * An <i>encryption context</i> is a collection of non-secret key-value pairs that represents additional
@@ -208,8 +210,9 @@ public class DecryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      * 
      * @return Specifies the encryption context to use when decrypting the data. An encryption context is valid only for
-     *         cryptographic operations with a symmetric CMK. The standard asymmetric encryption algorithms that AWS KMS
-     *         uses do not support an encryption context.</p>
+     *         <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">
+     *         cryptographic operations</a> with a symmetric CMK. The standard asymmetric encryption algorithms that AWS
+     *         KMS uses do not support an encryption context.</p>
      *         <p>
      *         An <i>encryption context</i> is a collection of non-secret key-value pairs that represents additional
      *         authenticated data. When you use an encryption context to encrypt data, you must specify the same (an
@@ -231,9 +234,10 @@ public class DecryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * Specifies the encryption context to use when decrypting the data. An encryption context is valid only for
-     * cryptographic operations with a symmetric CMK. The standard asymmetric encryption algorithms that AWS KMS uses do
-     * not support an encryption context.
+     * Specifies the encryption context to use when decrypting the data. An encryption context is valid only for <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operations</a> with a symmetric CMK. The standard asymmetric encryption algorithms that AWS KMS uses do not
+     * support an encryption context.
      * </p>
      * <p>
      * An <i>encryption context</i> is a collection of non-secret key-value pairs that represents additional
@@ -249,8 +253,9 @@ public class DecryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * 
      * @param encryptionContext
      *        Specifies the encryption context to use when decrypting the data. An encryption context is valid only for
-     *        cryptographic operations with a symmetric CMK. The standard asymmetric encryption algorithms that AWS KMS
-     *        uses do not support an encryption context.</p>
+     *        <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">
+     *        cryptographic operations</a> with a symmetric CMK. The standard asymmetric encryption algorithms that AWS
+     *        KMS uses do not support an encryption context.</p>
      *        <p>
      *        An <i>encryption context</i> is a collection of non-secret key-value pairs that represents additional
      *        authenticated data. When you use an encryption context to encrypt data, you must specify the same (an
@@ -269,9 +274,10 @@ public class DecryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * Specifies the encryption context to use when decrypting the data. An encryption context is valid only for
-     * cryptographic operations with a symmetric CMK. The standard asymmetric encryption algorithms that AWS KMS uses do
-     * not support an encryption context.
+     * Specifies the encryption context to use when decrypting the data. An encryption context is valid only for <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operations</a> with a symmetric CMK. The standard asymmetric encryption algorithms that AWS KMS uses do not
+     * support an encryption context.
      * </p>
      * <p>
      * An <i>encryption context</i> is a collection of non-secret key-value pairs that represents additional
@@ -287,8 +293,9 @@ public class DecryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * 
      * @param encryptionContext
      *        Specifies the encryption context to use when decrypting the data. An encryption context is valid only for
-     *        cryptographic operations with a symmetric CMK. The standard asymmetric encryption algorithms that AWS KMS
-     *        uses do not support an encryption context.</p>
+     *        <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">
+     *        cryptographic operations</a> with a symmetric CMK. The standard asymmetric encryption algorithms that AWS
+     *        KMS uses do not support an encryption context.</p>
      *        <p>
      *        An <i>encryption context</i> is a collection of non-secret key-value pairs that represents additional
      *        authenticated data. When you use an encryption context to encrypt data, you must specify the same (an

@@ -72,6 +72,10 @@ public class ClusterJsonUnmarshaller implements Unmarshaller<Cluster, JsonUnmars
                     context.nextToken();
                     cluster.setLogUri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("LogEncryptionKmsKeyId", targetDepth)) {
+                    context.nextToken();
+                    cluster.setLogEncryptionKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("RequestedAmiVersion", targetDepth)) {
                     context.nextToken();
                     cluster.setRequestedAmiVersion(context.getUnmarshaller(String.class).unmarshall(context));

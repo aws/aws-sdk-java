@@ -60,6 +60,10 @@ public class UpdateFileSystemWindowsConfigurationJsonUnmarshaller implements Unm
                     context.nextToken();
                     updateFileSystemWindowsConfiguration.setAutomaticBackupRetentionDays(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("ThroughputCapacity", targetDepth)) {
+                    context.nextToken();
+                    updateFileSystemWindowsConfiguration.setThroughputCapacity(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("SelfManagedActiveDirectoryConfiguration", targetDepth)) {
                     context.nextToken();
                     updateFileSystemWindowsConfiguration

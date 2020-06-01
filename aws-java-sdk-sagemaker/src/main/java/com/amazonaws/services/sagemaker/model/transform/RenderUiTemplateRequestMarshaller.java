@@ -33,6 +33,8 @@ public class RenderUiTemplateRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Task").build();
     private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("RoleArn").build();
+    private static final MarshallingInfo<String> HUMANTASKUIARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HumanTaskUiArn").build();
 
     private static final RenderUiTemplateRequestMarshaller instance = new RenderUiTemplateRequestMarshaller();
 
@@ -53,6 +55,7 @@ public class RenderUiTemplateRequestMarshaller {
             protocolMarshaller.marshall(renderUiTemplateRequest.getUiTemplate(), UITEMPLATE_BINDING);
             protocolMarshaller.marshall(renderUiTemplateRequest.getTask(), TASK_BINDING);
             protocolMarshaller.marshall(renderUiTemplateRequest.getRoleArn(), ROLEARN_BINDING);
+            protocolMarshaller.marshall(renderUiTemplateRequest.getHumanTaskUiArn(), HUMANTASKUIARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

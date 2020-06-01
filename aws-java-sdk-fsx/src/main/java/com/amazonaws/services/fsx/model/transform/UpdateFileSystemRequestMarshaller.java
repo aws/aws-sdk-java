@@ -34,6 +34,8 @@ public class UpdateFileSystemRequestMarshaller {
     private static final MarshallingInfo<String> CLIENTREQUESTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClientRequestToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
+    private static final MarshallingInfo<Integer> STORAGECAPACITY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StorageCapacity").build();
     private static final MarshallingInfo<StructuredPojo> WINDOWSCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WindowsConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> LUSTRECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -57,6 +59,7 @@ public class UpdateFileSystemRequestMarshaller {
         try {
             protocolMarshaller.marshall(updateFileSystemRequest.getFileSystemId(), FILESYSTEMID_BINDING);
             protocolMarshaller.marshall(updateFileSystemRequest.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
+            protocolMarshaller.marshall(updateFileSystemRequest.getStorageCapacity(), STORAGECAPACITY_BINDING);
             protocolMarshaller.marshall(updateFileSystemRequest.getWindowsConfiguration(), WINDOWSCONFIGURATION_BINDING);
             protocolMarshaller.marshall(updateFileSystemRequest.getLustreConfiguration(), LUSTRECONFIGURATION_BINDING);
         } catch (Exception e) {

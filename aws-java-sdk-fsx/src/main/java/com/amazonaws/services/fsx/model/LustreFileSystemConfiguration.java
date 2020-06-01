@@ -30,7 +30,8 @@ public class LustreFileSystemConfiguration implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The UTC time that you want to begin your weekly maintenance window.
+     * The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. d is the weekday
+     * number, from 1 through 7, beginning with Monday and ending with Sunday.
      * </p>
      */
     private String weeklyMaintenanceStartTime;
@@ -65,11 +66,13 @@ public class LustreFileSystemConfiguration implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The UTC time that you want to begin your weekly maintenance window.
+     * The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. d is the weekday
+     * number, from 1 through 7, beginning with Monday and ending with Sunday.
      * </p>
      * 
      * @param weeklyMaintenanceStartTime
-     *        The UTC time that you want to begin your weekly maintenance window.
+     *        The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. d is the
+     *        weekday number, from 1 through 7, beginning with Monday and ending with Sunday.
      */
 
     public void setWeeklyMaintenanceStartTime(String weeklyMaintenanceStartTime) {
@@ -78,10 +81,12 @@ public class LustreFileSystemConfiguration implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The UTC time that you want to begin your weekly maintenance window.
+     * The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. d is the weekday
+     * number, from 1 through 7, beginning with Monday and ending with Sunday.
      * </p>
      * 
-     * @return The UTC time that you want to begin your weekly maintenance window.
+     * @return The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. d is the
+     *         weekday number, from 1 through 7, beginning with Monday and ending with Sunday.
      */
 
     public String getWeeklyMaintenanceStartTime() {
@@ -90,11 +95,13 @@ public class LustreFileSystemConfiguration implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The UTC time that you want to begin your weekly maintenance window.
+     * The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. d is the weekday
+     * number, from 1 through 7, beginning with Monday and ending with Sunday.
      * </p>
      * 
      * @param weeklyMaintenanceStartTime
-     *        The UTC time that you want to begin your weekly maintenance window.
+     *        The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. d is the
+     *        weekday number, from 1 through 7, beginning with Monday and ending with Sunday.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -24,7 +24,9 @@ public class SignResult extends com.amazonaws.AmazonWebServiceResult<com.amazona
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the asymmetric CMK that was used to sign the message.
+     * The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the
+     * asymmetric CMK that was used to sign the message.
      * </p>
      */
     private String keyId;
@@ -62,11 +64,15 @@ public class SignResult extends com.amazonaws.AmazonWebServiceResult<com.amazona
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the asymmetric CMK that was used to sign the message.
+     * The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the
+     * asymmetric CMK that was used to sign the message.
      * </p>
      * 
      * @param keyId
-     *        The Amazon Resource Name (ARN) of the asymmetric CMK that was used to sign the message.
+     *        The Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of
+     *        the asymmetric CMK that was used to sign the message.
      */
 
     public void setKeyId(String keyId) {
@@ -75,10 +81,14 @@ public class SignResult extends com.amazonaws.AmazonWebServiceResult<com.amazona
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the asymmetric CMK that was used to sign the message.
+     * The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the
+     * asymmetric CMK that was used to sign the message.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the asymmetric CMK that was used to sign the message.
+     * @return The Amazon Resource Name (<a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of
+     *         the asymmetric CMK that was used to sign the message.
      */
 
     public String getKeyId() {
@@ -87,11 +97,15 @@ public class SignResult extends com.amazonaws.AmazonWebServiceResult<com.amazona
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the asymmetric CMK that was used to sign the message.
+     * The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the
+     * asymmetric CMK that was used to sign the message.
      * </p>
      * 
      * @param keyId
-     *        The Amazon Resource Name (ARN) of the asymmetric CMK that was used to sign the message.
+     *        The Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of
+     *        the asymmetric CMK that was used to sign the message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

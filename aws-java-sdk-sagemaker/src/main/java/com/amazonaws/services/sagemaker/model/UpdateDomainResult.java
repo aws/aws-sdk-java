@@ -25,18 +25,18 @@ public class UpdateDomainResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The domain Amazon Resource Name (ARN).
+     * The Amazon Resource Name (ARN) of the domain.
      * </p>
      */
     private String domainArn;
 
     /**
      * <p>
-     * The domain Amazon Resource Name (ARN).
+     * The Amazon Resource Name (ARN) of the domain.
      * </p>
      * 
      * @param domainArn
-     *        The domain Amazon Resource Name (ARN).
+     *        The Amazon Resource Name (ARN) of the domain.
      */
 
     public void setDomainArn(String domainArn) {
@@ -45,10 +45,10 @@ public class UpdateDomainResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The domain Amazon Resource Name (ARN).
+     * The Amazon Resource Name (ARN) of the domain.
      * </p>
      * 
-     * @return The domain Amazon Resource Name (ARN).
+     * @return The Amazon Resource Name (ARN) of the domain.
      */
 
     public String getDomainArn() {
@@ -57,11 +57,11 @@ public class UpdateDomainResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The domain Amazon Resource Name (ARN).
+     * The Amazon Resource Name (ARN) of the domain.
      * </p>
      * 
      * @param domainArn
-     *        The domain Amazon Resource Name (ARN).
+     *        The Amazon Resource Name (ARN) of the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

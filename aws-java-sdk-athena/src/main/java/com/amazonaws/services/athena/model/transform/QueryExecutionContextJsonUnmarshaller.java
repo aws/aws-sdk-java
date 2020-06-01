@@ -52,6 +52,10 @@ public class QueryExecutionContextJsonUnmarshaller implements Unmarshaller<Query
                     context.nextToken();
                     queryExecutionContext.setDatabase(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Catalog", targetDepth)) {
+                    context.nextToken();
+                    queryExecutionContext.setCatalog(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

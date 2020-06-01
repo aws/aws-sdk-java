@@ -89,8 +89,9 @@ public class CreateGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
     private com.amazonaws.internal.SdkInternalList<String> operations;
     /**
      * <p>
-     * Allows a cryptographic operation only when the encryption context matches or includes the encryption context
-     * specified in this structure. For more information about encryption context, see <a
+     * Allows a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">
+     * cryptographic operation</a> only when the encryption context matches or includes the encryption context specified
+     * in this structure. For more information about encryption context, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption Context</a>
      * in the <i> <i>AWS Key Management Service Developer Guide</i> </i>.
      * </p>
@@ -571,15 +572,18 @@ public class CreateGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Allows a cryptographic operation only when the encryption context matches or includes the encryption context
-     * specified in this structure. For more information about encryption context, see <a
+     * Allows a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">
+     * cryptographic operation</a> only when the encryption context matches or includes the encryption context specified
+     * in this structure. For more information about encryption context, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption Context</a>
      * in the <i> <i>AWS Key Management Service Developer Guide</i> </i>.
      * </p>
      * 
      * @param constraints
-     *        Allows a cryptographic operation only when the encryption context matches or includes the encryption
-     *        context specified in this structure. For more information about encryption context, see <a
+     *        Allows a <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations"
+     *        >cryptographic operation</a> only when the encryption context matches or includes the encryption context
+     *        specified in this structure. For more information about encryption context, see <a
      *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      *        Context</a> in the <i> <i>AWS Key Management Service Developer Guide</i> </i>.
      */
@@ -590,14 +594,17 @@ public class CreateGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Allows a cryptographic operation only when the encryption context matches or includes the encryption context
-     * specified in this structure. For more information about encryption context, see <a
+     * Allows a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">
+     * cryptographic operation</a> only when the encryption context matches or includes the encryption context specified
+     * in this structure. For more information about encryption context, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption Context</a>
      * in the <i> <i>AWS Key Management Service Developer Guide</i> </i>.
      * </p>
      * 
-     * @return Allows a cryptographic operation only when the encryption context matches or includes the encryption
-     *         context specified in this structure. For more information about encryption context, see <a
+     * @return Allows a <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations"
+     *         >cryptographic operation</a> only when the encryption context matches or includes the encryption context
+     *         specified in this structure. For more information about encryption context, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      *         Context</a> in the <i> <i>AWS Key Management Service Developer Guide</i> </i>.
      */
@@ -608,15 +615,18 @@ public class CreateGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Allows a cryptographic operation only when the encryption context matches or includes the encryption context
-     * specified in this structure. For more information about encryption context, see <a
+     * Allows a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">
+     * cryptographic operation</a> only when the encryption context matches or includes the encryption context specified
+     * in this structure. For more information about encryption context, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption Context</a>
      * in the <i> <i>AWS Key Management Service Developer Guide</i> </i>.
      * </p>
      * 
      * @param constraints
-     *        Allows a cryptographic operation only when the encryption context matches or includes the encryption
-     *        context specified in this structure. For more information about encryption context, see <a
+     *        Allows a <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations"
+     *        >cryptographic operation</a> only when the encryption context matches or includes the encryption context
+     *        specified in this structure. For more information about encryption context, see <a
      *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      *        Context</a> in the <i> <i>AWS Key Management Service Developer Guide</i> </i>.
      * @return Returns a reference to this object so that method calls can be chained together.

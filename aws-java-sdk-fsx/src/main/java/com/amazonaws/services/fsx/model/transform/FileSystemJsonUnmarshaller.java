@@ -116,6 +116,11 @@ public class FileSystemJsonUnmarshaller implements Unmarshaller<FileSystem, Json
                     context.nextToken();
                     fileSystem.setLustreConfiguration(LustreFileSystemConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("AdministrativeActions", targetDepth)) {
+                    context.nextToken();
+                    fileSystem.setAdministrativeActions(new ListUnmarshaller<AdministrativeAction>(AdministrativeActionJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

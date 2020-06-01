@@ -36,12 +36,12 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * For the built-in bounding box, image classification, semantic segmentation, and text classification task types,
      * Amazon SageMaker Ground Truth provides the following Lambda functions:
      * </p>
-     * <ul>
-     * <li>
      * <p>
-     * <i>Bounding box</i> - Finds the most similar boxes from different workers based on the Jaccard index of the
+     * <b>Bounding box</b> - Finds the most similar boxes from different workers based on the Jaccard index of the
      * boxes.
      * </p>
+     * <ul>
+     * <li>
      * <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-BoundingBox</code>
      * </p>
@@ -79,11 +79,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-BoundingBox</code>
      * </p>
      * </li>
-     * <li>
+     * </ul>
      * <p>
-     * <i>Image classification</i> - Uses a variant of the Expectation Maximization approach to estimate the true class
+     * <b>Image classification</b> - Uses a variant of the Expectation Maximization approach to estimate the true class
      * of an image based on annotations from individual workers.
      * </p>
+     * <ul>
+     * <li>
      * <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-ImageMultiClass</code>
      * </p>
@@ -121,11 +123,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-ImageMultiClass</code>
      * </p>
      * </li>
-     * <li>
+     * </ul>
      * <p>
-     * <i>Multi-label image classification</i> - Uses a variant of the Expectation Maximization approach to estimate the
+     * <b>Multi-label image classification</b> - Uses a variant of the Expectation Maximization approach to estimate the
      * true classes of an image based on annotations from individual workers.
      * </p>
+     * <ul>
+     * <li>
      * <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-ImageMultiClassMultiLabel</code>
      * </p>
@@ -163,11 +167,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-ImageMultiClassMultiLabel</code>
      * </p>
      * </li>
-     * <li>
+     * </ul>
      * <p>
-     * <i>Semantic segmentation</i> - Treats each pixel in an image as a multi-class classification and treats pixel
+     * <b>Semantic segmentation</b> - Treats each pixel in an image as a multi-class classification and treats pixel
      * annotations from workers as "votes" for the correct label.
      * </p>
+     * <ul>
+     * <li>
      * <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-SemanticSegmentation</code>
      * </p>
@@ -205,11 +211,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-SemanticSegmentation</code>
      * </p>
      * </li>
-     * <li>
+     * </ul>
      * <p>
-     * <i>Text classification</i> - Uses a variant of the Expectation Maximization approach to estimate the true class
+     * <b>Text classification</b> - Uses a variant of the Expectation Maximization approach to estimate the true class
      * of text based on annotations from individual workers.
      * </p>
+     * <ul>
+     * <li>
      * <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClass</code>
      * </p>
@@ -247,11 +255,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-TextMultiClass</code>
      * </p>
      * </li>
-     * <li>
+     * </ul>
      * <p>
-     * <i>Multi-label text classification</i> - Uses a variant of the Expectation Maximization approach to estimate the
+     * <b>Multi-label text classification</b> - Uses a variant of the Expectation Maximization approach to estimate the
      * true classes of text based on annotations from individual workers.
      * </p>
+     * <ul>
+     * <li>
      * <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClassMultiLabel</code>
      * </p>
@@ -289,11 +299,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-TextMultiClassMultiLabel</code>
      * </p>
      * </li>
-     * <li>
+     * </ul>
      * <p>
-     * <i>Named entity recognition</i> - Groups similar selections and calculates aggregate boundaries, resolving to
+     * <b>Named entity recognition</b> - Groups similar selections and calculates aggregate boundaries, resolving to
      * most-assigned label.
      * </p>
+     * <ul>
+     * <li>
      * <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-NamedEntityRecognition</code>
      * </p>
@@ -331,11 +343,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-NamedEntityRecognition</code>
      * </p>
      * </li>
-     * <li>
+     * </ul>
      * <p>
-     * <i>Bounding box verification</i> - Uses a variant of the Expectation Maximization approach to estimate the true
+     * <b>Bounding box verification</b> - Uses a variant of the Expectation Maximization approach to estimate the true
      * class of verification judgement for bounding box labels based on annotations from individual workers.
      * </p>
+     * <ul>
+     * <li>
      * <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VerificationBoundingBox</code>
      * </p>
@@ -373,12 +387,14 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationBoundingBox</code>
      * </p>
      * </li>
-     * <li>
+     * </ul>
      * <p>
-     * <i>Semantic segmentation verification</i> - Uses a variant of the Expectation Maximization approach to estimate
+     * <b>Semantic segmentation verification</b> - Uses a variant of the Expectation Maximization approach to estimate
      * the true class of verification judgment for semantic segmentation labels based on annotations from individual
      * workers.
      * </p>
+     * <ul>
+     * <li>
      * <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VerificationSemanticSegmentation</code>
      * </p>
@@ -416,11 +432,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationSemanticSegmentation</code>
      * </p>
      * </li>
-     * <li>
+     * </ul>
      * <p>
-     * <i>Bounding box adjustment</i> - Finds the most similar boxes from different workers based on the Jaccard index
+     * <b>Bounding box adjustment</b> - Finds the most similar boxes from different workers based on the Jaccard index
      * of the adjusted annotations.
      * </p>
+     * <ul>
+     * <li>
      * <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentBoundingBox</code>
      * </p>
@@ -458,11 +476,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentBoundingBox</code>
      * </p>
      * </li>
-     * <li>
+     * </ul>
      * <p>
-     * <i>Semantic segmentation adjustment</i> - Treats each pixel in an image as a multi-class classification and
+     * <b>Semantic segmentation adjustment</b> - Treats each pixel in an image as a multi-class classification and
      * treats pixel adjusted annotations from workers as "votes" for the correct label.
      * </p>
+     * <ul>
+     * <li>
      * <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentSemanticSegmentation</code>
      * </p>
@@ -517,12 +537,12 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * For the built-in bounding box, image classification, semantic segmentation, and text classification task types,
      * Amazon SageMaker Ground Truth provides the following Lambda functions:
      * </p>
-     * <ul>
-     * <li>
      * <p>
-     * <i>Bounding box</i> - Finds the most similar boxes from different workers based on the Jaccard index of the
+     * <b>Bounding box</b> - Finds the most similar boxes from different workers based on the Jaccard index of the
      * boxes.
      * </p>
+     * <ul>
+     * <li>
      * <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-BoundingBox</code>
      * </p>
@@ -560,11 +580,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-BoundingBox</code>
      * </p>
      * </li>
-     * <li>
+     * </ul>
      * <p>
-     * <i>Image classification</i> - Uses a variant of the Expectation Maximization approach to estimate the true class
+     * <b>Image classification</b> - Uses a variant of the Expectation Maximization approach to estimate the true class
      * of an image based on annotations from individual workers.
      * </p>
+     * <ul>
+     * <li>
      * <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-ImageMultiClass</code>
      * </p>
@@ -602,11 +624,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-ImageMultiClass</code>
      * </p>
      * </li>
-     * <li>
+     * </ul>
      * <p>
-     * <i>Multi-label image classification</i> - Uses a variant of the Expectation Maximization approach to estimate the
+     * <b>Multi-label image classification</b> - Uses a variant of the Expectation Maximization approach to estimate the
      * true classes of an image based on annotations from individual workers.
      * </p>
+     * <ul>
+     * <li>
      * <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-ImageMultiClassMultiLabel</code>
      * </p>
@@ -644,11 +668,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-ImageMultiClassMultiLabel</code>
      * </p>
      * </li>
-     * <li>
+     * </ul>
      * <p>
-     * <i>Semantic segmentation</i> - Treats each pixel in an image as a multi-class classification and treats pixel
+     * <b>Semantic segmentation</b> - Treats each pixel in an image as a multi-class classification and treats pixel
      * annotations from workers as "votes" for the correct label.
      * </p>
+     * <ul>
+     * <li>
      * <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-SemanticSegmentation</code>
      * </p>
@@ -686,11 +712,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-SemanticSegmentation</code>
      * </p>
      * </li>
-     * <li>
+     * </ul>
      * <p>
-     * <i>Text classification</i> - Uses a variant of the Expectation Maximization approach to estimate the true class
+     * <b>Text classification</b> - Uses a variant of the Expectation Maximization approach to estimate the true class
      * of text based on annotations from individual workers.
      * </p>
+     * <ul>
+     * <li>
      * <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClass</code>
      * </p>
@@ -728,11 +756,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-TextMultiClass</code>
      * </p>
      * </li>
-     * <li>
+     * </ul>
      * <p>
-     * <i>Multi-label text classification</i> - Uses a variant of the Expectation Maximization approach to estimate the
+     * <b>Multi-label text classification</b> - Uses a variant of the Expectation Maximization approach to estimate the
      * true classes of text based on annotations from individual workers.
      * </p>
+     * <ul>
+     * <li>
      * <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClassMultiLabel</code>
      * </p>
@@ -770,11 +800,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-TextMultiClassMultiLabel</code>
      * </p>
      * </li>
-     * <li>
+     * </ul>
      * <p>
-     * <i>Named entity recognition</i> - Groups similar selections and calculates aggregate boundaries, resolving to
+     * <b>Named entity recognition</b> - Groups similar selections and calculates aggregate boundaries, resolving to
      * most-assigned label.
      * </p>
+     * <ul>
+     * <li>
      * <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-NamedEntityRecognition</code>
      * </p>
@@ -812,11 +844,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-NamedEntityRecognition</code>
      * </p>
      * </li>
-     * <li>
+     * </ul>
      * <p>
-     * <i>Bounding box verification</i> - Uses a variant of the Expectation Maximization approach to estimate the true
+     * <b>Bounding box verification</b> - Uses a variant of the Expectation Maximization approach to estimate the true
      * class of verification judgement for bounding box labels based on annotations from individual workers.
      * </p>
+     * <ul>
+     * <li>
      * <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VerificationBoundingBox</code>
      * </p>
@@ -854,12 +888,14 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationBoundingBox</code>
      * </p>
      * </li>
-     * <li>
+     * </ul>
      * <p>
-     * <i>Semantic segmentation verification</i> - Uses a variant of the Expectation Maximization approach to estimate
+     * <b>Semantic segmentation verification</b> - Uses a variant of the Expectation Maximization approach to estimate
      * the true class of verification judgment for semantic segmentation labels based on annotations from individual
      * workers.
      * </p>
+     * <ul>
+     * <li>
      * <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VerificationSemanticSegmentation</code>
      * </p>
@@ -897,11 +933,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationSemanticSegmentation</code>
      * </p>
      * </li>
-     * <li>
+     * </ul>
      * <p>
-     * <i>Bounding box adjustment</i> - Finds the most similar boxes from different workers based on the Jaccard index
+     * <b>Bounding box adjustment</b> - Finds the most similar boxes from different workers based on the Jaccard index
      * of the adjusted annotations.
      * </p>
+     * <ul>
+     * <li>
      * <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentBoundingBox</code>
      * </p>
@@ -939,11 +977,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentBoundingBox</code>
      * </p>
      * </li>
-     * <li>
+     * </ul>
      * <p>
-     * <i>Semantic segmentation adjustment</i> - Treats each pixel in an image as a multi-class classification and
+     * <b>Semantic segmentation adjustment</b> - Treats each pixel in an image as a multi-class classification and
      * treats pixel adjusted annotations from workers as "votes" for the correct label.
      * </p>
+     * <ul>
+     * <li>
      * <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentSemanticSegmentation</code>
      * </p>
@@ -994,12 +1034,12 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *        For the built-in bounding box, image classification, semantic segmentation, and text classification task
      *        types, Amazon SageMaker Ground Truth provides the following Lambda functions:
      *        </p>
-     *        <ul>
-     *        <li>
      *        <p>
-     *        <i>Bounding box</i> - Finds the most similar boxes from different workers based on the Jaccard index of
+     *        <b>Bounding box</b> - Finds the most similar boxes from different workers based on the Jaccard index of
      *        the boxes.
      *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
      *        <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-BoundingBox</code>
      *        </p>
@@ -1037,11 +1077,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *        <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-BoundingBox</code>
      *        </p>
      *        </li>
-     *        <li>
+     *        </ul>
      *        <p>
-     *        <i>Image classification</i> - Uses a variant of the Expectation Maximization approach to estimate the true
+     *        <b>Image classification</b> - Uses a variant of the Expectation Maximization approach to estimate the true
      *        class of an image based on annotations from individual workers.
      *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
      *        <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-ImageMultiClass</code>
      *        </p>
@@ -1079,11 +1121,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *        <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-ImageMultiClass</code>
      *        </p>
      *        </li>
-     *        <li>
+     *        </ul>
      *        <p>
-     *        <i>Multi-label image classification</i> - Uses a variant of the Expectation Maximization approach to
+     *        <b>Multi-label image classification</b> - Uses a variant of the Expectation Maximization approach to
      *        estimate the true classes of an image based on annotations from individual workers.
      *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
      *        <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-ImageMultiClassMultiLabel</code>
      *        </p>
@@ -1121,11 +1165,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *        <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-ImageMultiClassMultiLabel</code>
      *        </p>
      *        </li>
-     *        <li>
+     *        </ul>
      *        <p>
-     *        <i>Semantic segmentation</i> - Treats each pixel in an image as a multi-class classification and treats
+     *        <b>Semantic segmentation</b> - Treats each pixel in an image as a multi-class classification and treats
      *        pixel annotations from workers as "votes" for the correct label.
      *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
      *        <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-SemanticSegmentation</code>
      *        </p>
@@ -1163,11 +1209,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *        <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-SemanticSegmentation</code>
      *        </p>
      *        </li>
-     *        <li>
+     *        </ul>
      *        <p>
-     *        <i>Text classification</i> - Uses a variant of the Expectation Maximization approach to estimate the true
+     *        <b>Text classification</b> - Uses a variant of the Expectation Maximization approach to estimate the true
      *        class of text based on annotations from individual workers.
      *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
      *        <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClass</code>
      *        </p>
@@ -1205,11 +1253,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *        <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-TextMultiClass</code>
      *        </p>
      *        </li>
-     *        <li>
+     *        </ul>
      *        <p>
-     *        <i>Multi-label text classification</i> - Uses a variant of the Expectation Maximization approach to
+     *        <b>Multi-label text classification</b> - Uses a variant of the Expectation Maximization approach to
      *        estimate the true classes of text based on annotations from individual workers.
      *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
      *        <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClassMultiLabel</code>
      *        </p>
@@ -1247,11 +1297,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *        <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-TextMultiClassMultiLabel</code>
      *        </p>
      *        </li>
-     *        <li>
+     *        </ul>
      *        <p>
-     *        <i>Named entity recognition</i> - Groups similar selections and calculates aggregate boundaries, resolving
+     *        <b>Named entity recognition</b> - Groups similar selections and calculates aggregate boundaries, resolving
      *        to most-assigned label.
      *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
      *        <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-NamedEntityRecognition</code>
      *        </p>
@@ -1289,11 +1341,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *        <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-NamedEntityRecognition</code>
      *        </p>
      *        </li>
-     *        <li>
+     *        </ul>
      *        <p>
-     *        <i>Bounding box verification</i> - Uses a variant of the Expectation Maximization approach to estimate the
+     *        <b>Bounding box verification</b> - Uses a variant of the Expectation Maximization approach to estimate the
      *        true class of verification judgement for bounding box labels based on annotations from individual workers.
      *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
      *        <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VerificationBoundingBox</code>
      *        </p>
@@ -1331,12 +1385,14 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *        <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationBoundingBox</code>
      *        </p>
      *        </li>
-     *        <li>
+     *        </ul>
      *        <p>
-     *        <i>Semantic segmentation verification</i> - Uses a variant of the Expectation Maximization approach to
+     *        <b>Semantic segmentation verification</b> - Uses a variant of the Expectation Maximization approach to
      *        estimate the true class of verification judgment for semantic segmentation labels based on annotations
      *        from individual workers.
      *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
      *        <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VerificationSemanticSegmentation</code>
      *        </p>
@@ -1374,11 +1430,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *        <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationSemanticSegmentation</code>
      *        </p>
      *        </li>
-     *        <li>
+     *        </ul>
      *        <p>
-     *        <i>Bounding box adjustment</i> - Finds the most similar boxes from different workers based on the Jaccard
+     *        <b>Bounding box adjustment</b> - Finds the most similar boxes from different workers based on the Jaccard
      *        index of the adjusted annotations.
      *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
      *        <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentBoundingBox</code>
      *        </p>
@@ -1416,11 +1474,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *        <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentBoundingBox</code>
      *        </p>
      *        </li>
-     *        <li>
+     *        </ul>
      *        <p>
-     *        <i>Semantic segmentation adjustment</i> - Treats each pixel in an image as a multi-class classification
+     *        <b>Semantic segmentation adjustment</b> - Treats each pixel in an image as a multi-class classification
      *        and treats pixel adjusted annotations from workers as "votes" for the correct label.
      *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
      *        <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentSemanticSegmentation</code>
      *        </p>
@@ -1477,12 +1537,12 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * For the built-in bounding box, image classification, semantic segmentation, and text classification task types,
      * Amazon SageMaker Ground Truth provides the following Lambda functions:
      * </p>
-     * <ul>
-     * <li>
      * <p>
-     * <i>Bounding box</i> - Finds the most similar boxes from different workers based on the Jaccard index of the
+     * <b>Bounding box</b> - Finds the most similar boxes from different workers based on the Jaccard index of the
      * boxes.
      * </p>
+     * <ul>
+     * <li>
      * <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-BoundingBox</code>
      * </p>
@@ -1520,11 +1580,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-BoundingBox</code>
      * </p>
      * </li>
-     * <li>
+     * </ul>
      * <p>
-     * <i>Image classification</i> - Uses a variant of the Expectation Maximization approach to estimate the true class
+     * <b>Image classification</b> - Uses a variant of the Expectation Maximization approach to estimate the true class
      * of an image based on annotations from individual workers.
      * </p>
+     * <ul>
+     * <li>
      * <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-ImageMultiClass</code>
      * </p>
@@ -1562,11 +1624,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-ImageMultiClass</code>
      * </p>
      * </li>
-     * <li>
+     * </ul>
      * <p>
-     * <i>Multi-label image classification</i> - Uses a variant of the Expectation Maximization approach to estimate the
+     * <b>Multi-label image classification</b> - Uses a variant of the Expectation Maximization approach to estimate the
      * true classes of an image based on annotations from individual workers.
      * </p>
+     * <ul>
+     * <li>
      * <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-ImageMultiClassMultiLabel</code>
      * </p>
@@ -1604,11 +1668,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-ImageMultiClassMultiLabel</code>
      * </p>
      * </li>
-     * <li>
+     * </ul>
      * <p>
-     * <i>Semantic segmentation</i> - Treats each pixel in an image as a multi-class classification and treats pixel
+     * <b>Semantic segmentation</b> - Treats each pixel in an image as a multi-class classification and treats pixel
      * annotations from workers as "votes" for the correct label.
      * </p>
+     * <ul>
+     * <li>
      * <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-SemanticSegmentation</code>
      * </p>
@@ -1646,11 +1712,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-SemanticSegmentation</code>
      * </p>
      * </li>
-     * <li>
+     * </ul>
      * <p>
-     * <i>Text classification</i> - Uses a variant of the Expectation Maximization approach to estimate the true class
+     * <b>Text classification</b> - Uses a variant of the Expectation Maximization approach to estimate the true class
      * of text based on annotations from individual workers.
      * </p>
+     * <ul>
+     * <li>
      * <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClass</code>
      * </p>
@@ -1688,11 +1756,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-TextMultiClass</code>
      * </p>
      * </li>
-     * <li>
+     * </ul>
      * <p>
-     * <i>Multi-label text classification</i> - Uses a variant of the Expectation Maximization approach to estimate the
+     * <b>Multi-label text classification</b> - Uses a variant of the Expectation Maximization approach to estimate the
      * true classes of text based on annotations from individual workers.
      * </p>
+     * <ul>
+     * <li>
      * <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClassMultiLabel</code>
      * </p>
@@ -1730,11 +1800,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-TextMultiClassMultiLabel</code>
      * </p>
      * </li>
-     * <li>
+     * </ul>
      * <p>
-     * <i>Named entity recognition</i> - Groups similar selections and calculates aggregate boundaries, resolving to
+     * <b>Named entity recognition</b> - Groups similar selections and calculates aggregate boundaries, resolving to
      * most-assigned label.
      * </p>
+     * <ul>
+     * <li>
      * <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-NamedEntityRecognition</code>
      * </p>
@@ -1772,11 +1844,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-NamedEntityRecognition</code>
      * </p>
      * </li>
-     * <li>
+     * </ul>
      * <p>
-     * <i>Bounding box verification</i> - Uses a variant of the Expectation Maximization approach to estimate the true
+     * <b>Bounding box verification</b> - Uses a variant of the Expectation Maximization approach to estimate the true
      * class of verification judgement for bounding box labels based on annotations from individual workers.
      * </p>
+     * <ul>
+     * <li>
      * <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VerificationBoundingBox</code>
      * </p>
@@ -1814,12 +1888,14 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationBoundingBox</code>
      * </p>
      * </li>
-     * <li>
+     * </ul>
      * <p>
-     * <i>Semantic segmentation verification</i> - Uses a variant of the Expectation Maximization approach to estimate
+     * <b>Semantic segmentation verification</b> - Uses a variant of the Expectation Maximization approach to estimate
      * the true class of verification judgment for semantic segmentation labels based on annotations from individual
      * workers.
      * </p>
+     * <ul>
+     * <li>
      * <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VerificationSemanticSegmentation</code>
      * </p>
@@ -1857,11 +1933,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationSemanticSegmentation</code>
      * </p>
      * </li>
-     * <li>
+     * </ul>
      * <p>
-     * <i>Bounding box adjustment</i> - Finds the most similar boxes from different workers based on the Jaccard index
+     * <b>Bounding box adjustment</b> - Finds the most similar boxes from different workers based on the Jaccard index
      * of the adjusted annotations.
      * </p>
+     * <ul>
+     * <li>
      * <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentBoundingBox</code>
      * </p>
@@ -1899,11 +1977,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentBoundingBox</code>
      * </p>
      * </li>
-     * <li>
+     * </ul>
      * <p>
-     * <i>Semantic segmentation adjustment</i> - Treats each pixel in an image as a multi-class classification and
+     * <b>Semantic segmentation adjustment</b> - Treats each pixel in an image as a multi-class classification and
      * treats pixel adjusted annotations from workers as "votes" for the correct label.
      * </p>
+     * <ul>
+     * <li>
      * <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentSemanticSegmentation</code>
      * </p>
@@ -1954,12 +2034,12 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *         For the built-in bounding box, image classification, semantic segmentation, and text classification task
      *         types, Amazon SageMaker Ground Truth provides the following Lambda functions:
      *         </p>
-     *         <ul>
-     *         <li>
      *         <p>
-     *         <i>Bounding box</i> - Finds the most similar boxes from different workers based on the Jaccard index of
+     *         <b>Bounding box</b> - Finds the most similar boxes from different workers based on the Jaccard index of
      *         the boxes.
      *         </p>
+     *         <ul>
+     *         <li>
      *         <p>
      *         <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-BoundingBox</code>
      *         </p>
@@ -1997,11 +2077,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *         <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-BoundingBox</code>
      *         </p>
      *         </li>
-     *         <li>
+     *         </ul>
      *         <p>
-     *         <i>Image classification</i> - Uses a variant of the Expectation Maximization approach to estimate the
+     *         <b>Image classification</b> - Uses a variant of the Expectation Maximization approach to estimate the
      *         true class of an image based on annotations from individual workers.
      *         </p>
+     *         <ul>
+     *         <li>
      *         <p>
      *         <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-ImageMultiClass</code>
      *         </p>
@@ -2039,11 +2121,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *         <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-ImageMultiClass</code>
      *         </p>
      *         </li>
-     *         <li>
+     *         </ul>
      *         <p>
-     *         <i>Multi-label image classification</i> - Uses a variant of the Expectation Maximization approach to
+     *         <b>Multi-label image classification</b> - Uses a variant of the Expectation Maximization approach to
      *         estimate the true classes of an image based on annotations from individual workers.
      *         </p>
+     *         <ul>
+     *         <li>
      *         <p>
      *         <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-ImageMultiClassMultiLabel</code>
      *         </p>
@@ -2081,11 +2165,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *         <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-ImageMultiClassMultiLabel</code>
      *         </p>
      *         </li>
-     *         <li>
+     *         </ul>
      *         <p>
-     *         <i>Semantic segmentation</i> - Treats each pixel in an image as a multi-class classification and treats
+     *         <b>Semantic segmentation</b> - Treats each pixel in an image as a multi-class classification and treats
      *         pixel annotations from workers as "votes" for the correct label.
      *         </p>
+     *         <ul>
+     *         <li>
      *         <p>
      *         <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-SemanticSegmentation</code>
      *         </p>
@@ -2123,11 +2209,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *         <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-SemanticSegmentation</code>
      *         </p>
      *         </li>
-     *         <li>
+     *         </ul>
      *         <p>
-     *         <i>Text classification</i> - Uses a variant of the Expectation Maximization approach to estimate the true
+     *         <b>Text classification</b> - Uses a variant of the Expectation Maximization approach to estimate the true
      *         class of text based on annotations from individual workers.
      *         </p>
+     *         <ul>
+     *         <li>
      *         <p>
      *         <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClass</code>
      *         </p>
@@ -2165,11 +2253,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *         <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-TextMultiClass</code>
      *         </p>
      *         </li>
-     *         <li>
+     *         </ul>
      *         <p>
-     *         <i>Multi-label text classification</i> - Uses a variant of the Expectation Maximization approach to
+     *         <b>Multi-label text classification</b> - Uses a variant of the Expectation Maximization approach to
      *         estimate the true classes of text based on annotations from individual workers.
      *         </p>
+     *         <ul>
+     *         <li>
      *         <p>
      *         <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClassMultiLabel</code>
      *         </p>
@@ -2207,11 +2297,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *         <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-TextMultiClassMultiLabel</code>
      *         </p>
      *         </li>
-     *         <li>
+     *         </ul>
      *         <p>
-     *         <i>Named entity recognition</i> - Groups similar selections and calculates aggregate boundaries,
+     *         <b>Named entity recognition</b> - Groups similar selections and calculates aggregate boundaries,
      *         resolving to most-assigned label.
      *         </p>
+     *         <ul>
+     *         <li>
      *         <p>
      *         <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-NamedEntityRecognition</code>
      *         </p>
@@ -2249,12 +2341,14 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *         <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-NamedEntityRecognition</code>
      *         </p>
      *         </li>
-     *         <li>
+     *         </ul>
      *         <p>
-     *         <i>Bounding box verification</i> - Uses a variant of the Expectation Maximization approach to estimate
+     *         <b>Bounding box verification</b> - Uses a variant of the Expectation Maximization approach to estimate
      *         the true class of verification judgement for bounding box labels based on annotations from individual
      *         workers.
      *         </p>
+     *         <ul>
+     *         <li>
      *         <p>
      *         <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VerificationBoundingBox</code>
      *         </p>
@@ -2292,12 +2386,14 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *         <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationBoundingBox</code>
      *         </p>
      *         </li>
-     *         <li>
+     *         </ul>
      *         <p>
-     *         <i>Semantic segmentation verification</i> - Uses a variant of the Expectation Maximization approach to
+     *         <b>Semantic segmentation verification</b> - Uses a variant of the Expectation Maximization approach to
      *         estimate the true class of verification judgment for semantic segmentation labels based on annotations
      *         from individual workers.
      *         </p>
+     *         <ul>
+     *         <li>
      *         <p>
      *         <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VerificationSemanticSegmentation</code>
      *         </p>
@@ -2335,11 +2431,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *         <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationSemanticSegmentation</code>
      *         </p>
      *         </li>
-     *         <li>
+     *         </ul>
      *         <p>
-     *         <i>Bounding box adjustment</i> - Finds the most similar boxes from different workers based on the Jaccard
+     *         <b>Bounding box adjustment</b> - Finds the most similar boxes from different workers based on the Jaccard
      *         index of the adjusted annotations.
      *         </p>
+     *         <ul>
+     *         <li>
      *         <p>
      *         <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentBoundingBox</code>
      *         </p>
@@ -2377,11 +2475,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *         <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentBoundingBox</code>
      *         </p>
      *         </li>
-     *         <li>
+     *         </ul>
      *         <p>
-     *         <i>Semantic segmentation adjustment</i> - Treats each pixel in an image as a multi-class classification
+     *         <b>Semantic segmentation adjustment</b> - Treats each pixel in an image as a multi-class classification
      *         and treats pixel adjusted annotations from workers as "votes" for the correct label.
      *         </p>
+     *         <ul>
+     *         <li>
      *         <p>
      *         <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentSemanticSegmentation</code>
      *         </p>
@@ -2438,12 +2538,12 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * For the built-in bounding box, image classification, semantic segmentation, and text classification task types,
      * Amazon SageMaker Ground Truth provides the following Lambda functions:
      * </p>
-     * <ul>
-     * <li>
      * <p>
-     * <i>Bounding box</i> - Finds the most similar boxes from different workers based on the Jaccard index of the
+     * <b>Bounding box</b> - Finds the most similar boxes from different workers based on the Jaccard index of the
      * boxes.
      * </p>
+     * <ul>
+     * <li>
      * <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-BoundingBox</code>
      * </p>
@@ -2481,11 +2581,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-BoundingBox</code>
      * </p>
      * </li>
-     * <li>
+     * </ul>
      * <p>
-     * <i>Image classification</i> - Uses a variant of the Expectation Maximization approach to estimate the true class
+     * <b>Image classification</b> - Uses a variant of the Expectation Maximization approach to estimate the true class
      * of an image based on annotations from individual workers.
      * </p>
+     * <ul>
+     * <li>
      * <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-ImageMultiClass</code>
      * </p>
@@ -2523,11 +2625,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-ImageMultiClass</code>
      * </p>
      * </li>
-     * <li>
+     * </ul>
      * <p>
-     * <i>Multi-label image classification</i> - Uses a variant of the Expectation Maximization approach to estimate the
+     * <b>Multi-label image classification</b> - Uses a variant of the Expectation Maximization approach to estimate the
      * true classes of an image based on annotations from individual workers.
      * </p>
+     * <ul>
+     * <li>
      * <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-ImageMultiClassMultiLabel</code>
      * </p>
@@ -2565,11 +2669,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-ImageMultiClassMultiLabel</code>
      * </p>
      * </li>
-     * <li>
+     * </ul>
      * <p>
-     * <i>Semantic segmentation</i> - Treats each pixel in an image as a multi-class classification and treats pixel
+     * <b>Semantic segmentation</b> - Treats each pixel in an image as a multi-class classification and treats pixel
      * annotations from workers as "votes" for the correct label.
      * </p>
+     * <ul>
+     * <li>
      * <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-SemanticSegmentation</code>
      * </p>
@@ -2607,11 +2713,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-SemanticSegmentation</code>
      * </p>
      * </li>
-     * <li>
+     * </ul>
      * <p>
-     * <i>Text classification</i> - Uses a variant of the Expectation Maximization approach to estimate the true class
+     * <b>Text classification</b> - Uses a variant of the Expectation Maximization approach to estimate the true class
      * of text based on annotations from individual workers.
      * </p>
+     * <ul>
+     * <li>
      * <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClass</code>
      * </p>
@@ -2649,11 +2757,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-TextMultiClass</code>
      * </p>
      * </li>
-     * <li>
+     * </ul>
      * <p>
-     * <i>Multi-label text classification</i> - Uses a variant of the Expectation Maximization approach to estimate the
+     * <b>Multi-label text classification</b> - Uses a variant of the Expectation Maximization approach to estimate the
      * true classes of text based on annotations from individual workers.
      * </p>
+     * <ul>
+     * <li>
      * <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClassMultiLabel</code>
      * </p>
@@ -2691,11 +2801,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-TextMultiClassMultiLabel</code>
      * </p>
      * </li>
-     * <li>
+     * </ul>
      * <p>
-     * <i>Named entity recognition</i> - Groups similar selections and calculates aggregate boundaries, resolving to
+     * <b>Named entity recognition</b> - Groups similar selections and calculates aggregate boundaries, resolving to
      * most-assigned label.
      * </p>
+     * <ul>
+     * <li>
      * <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-NamedEntityRecognition</code>
      * </p>
@@ -2733,11 +2845,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-NamedEntityRecognition</code>
      * </p>
      * </li>
-     * <li>
+     * </ul>
      * <p>
-     * <i>Bounding box verification</i> - Uses a variant of the Expectation Maximization approach to estimate the true
+     * <b>Bounding box verification</b> - Uses a variant of the Expectation Maximization approach to estimate the true
      * class of verification judgement for bounding box labels based on annotations from individual workers.
      * </p>
+     * <ul>
+     * <li>
      * <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VerificationBoundingBox</code>
      * </p>
@@ -2775,12 +2889,14 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationBoundingBox</code>
      * </p>
      * </li>
-     * <li>
+     * </ul>
      * <p>
-     * <i>Semantic segmentation verification</i> - Uses a variant of the Expectation Maximization approach to estimate
+     * <b>Semantic segmentation verification</b> - Uses a variant of the Expectation Maximization approach to estimate
      * the true class of verification judgment for semantic segmentation labels based on annotations from individual
      * workers.
      * </p>
+     * <ul>
+     * <li>
      * <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VerificationSemanticSegmentation</code>
      * </p>
@@ -2818,11 +2934,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationSemanticSegmentation</code>
      * </p>
      * </li>
-     * <li>
+     * </ul>
      * <p>
-     * <i>Bounding box adjustment</i> - Finds the most similar boxes from different workers based on the Jaccard index
+     * <b>Bounding box adjustment</b> - Finds the most similar boxes from different workers based on the Jaccard index
      * of the adjusted annotations.
      * </p>
+     * <ul>
+     * <li>
      * <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentBoundingBox</code>
      * </p>
@@ -2860,11 +2978,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentBoundingBox</code>
      * </p>
      * </li>
-     * <li>
+     * </ul>
      * <p>
-     * <i>Semantic segmentation adjustment</i> - Treats each pixel in an image as a multi-class classification and
+     * <b>Semantic segmentation adjustment</b> - Treats each pixel in an image as a multi-class classification and
      * treats pixel adjusted annotations from workers as "votes" for the correct label.
      * </p>
+     * <ul>
+     * <li>
      * <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentSemanticSegmentation</code>
      * </p>
@@ -2915,12 +3035,12 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *        For the built-in bounding box, image classification, semantic segmentation, and text classification task
      *        types, Amazon SageMaker Ground Truth provides the following Lambda functions:
      *        </p>
-     *        <ul>
-     *        <li>
      *        <p>
-     *        <i>Bounding box</i> - Finds the most similar boxes from different workers based on the Jaccard index of
+     *        <b>Bounding box</b> - Finds the most similar boxes from different workers based on the Jaccard index of
      *        the boxes.
      *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
      *        <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-BoundingBox</code>
      *        </p>
@@ -2958,11 +3078,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *        <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-BoundingBox</code>
      *        </p>
      *        </li>
-     *        <li>
+     *        </ul>
      *        <p>
-     *        <i>Image classification</i> - Uses a variant of the Expectation Maximization approach to estimate the true
+     *        <b>Image classification</b> - Uses a variant of the Expectation Maximization approach to estimate the true
      *        class of an image based on annotations from individual workers.
      *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
      *        <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-ImageMultiClass</code>
      *        </p>
@@ -3000,11 +3122,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *        <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-ImageMultiClass</code>
      *        </p>
      *        </li>
-     *        <li>
+     *        </ul>
      *        <p>
-     *        <i>Multi-label image classification</i> - Uses a variant of the Expectation Maximization approach to
+     *        <b>Multi-label image classification</b> - Uses a variant of the Expectation Maximization approach to
      *        estimate the true classes of an image based on annotations from individual workers.
      *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
      *        <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-ImageMultiClassMultiLabel</code>
      *        </p>
@@ -3042,11 +3166,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *        <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-ImageMultiClassMultiLabel</code>
      *        </p>
      *        </li>
-     *        <li>
+     *        </ul>
      *        <p>
-     *        <i>Semantic segmentation</i> - Treats each pixel in an image as a multi-class classification and treats
+     *        <b>Semantic segmentation</b> - Treats each pixel in an image as a multi-class classification and treats
      *        pixel annotations from workers as "votes" for the correct label.
      *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
      *        <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-SemanticSegmentation</code>
      *        </p>
@@ -3084,11 +3210,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *        <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-SemanticSegmentation</code>
      *        </p>
      *        </li>
-     *        <li>
+     *        </ul>
      *        <p>
-     *        <i>Text classification</i> - Uses a variant of the Expectation Maximization approach to estimate the true
+     *        <b>Text classification</b> - Uses a variant of the Expectation Maximization approach to estimate the true
      *        class of text based on annotations from individual workers.
      *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
      *        <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClass</code>
      *        </p>
@@ -3126,11 +3254,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *        <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-TextMultiClass</code>
      *        </p>
      *        </li>
-     *        <li>
+     *        </ul>
      *        <p>
-     *        <i>Multi-label text classification</i> - Uses a variant of the Expectation Maximization approach to
+     *        <b>Multi-label text classification</b> - Uses a variant of the Expectation Maximization approach to
      *        estimate the true classes of text based on annotations from individual workers.
      *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
      *        <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClassMultiLabel</code>
      *        </p>
@@ -3168,11 +3298,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *        <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-TextMultiClassMultiLabel</code>
      *        </p>
      *        </li>
-     *        <li>
+     *        </ul>
      *        <p>
-     *        <i>Named entity recognition</i> - Groups similar selections and calculates aggregate boundaries, resolving
+     *        <b>Named entity recognition</b> - Groups similar selections and calculates aggregate boundaries, resolving
      *        to most-assigned label.
      *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
      *        <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-NamedEntityRecognition</code>
      *        </p>
@@ -3210,11 +3342,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *        <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-NamedEntityRecognition</code>
      *        </p>
      *        </li>
-     *        <li>
+     *        </ul>
      *        <p>
-     *        <i>Bounding box verification</i> - Uses a variant of the Expectation Maximization approach to estimate the
+     *        <b>Bounding box verification</b> - Uses a variant of the Expectation Maximization approach to estimate the
      *        true class of verification judgement for bounding box labels based on annotations from individual workers.
      *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
      *        <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VerificationBoundingBox</code>
      *        </p>
@@ -3252,12 +3386,14 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *        <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationBoundingBox</code>
      *        </p>
      *        </li>
-     *        <li>
+     *        </ul>
      *        <p>
-     *        <i>Semantic segmentation verification</i> - Uses a variant of the Expectation Maximization approach to
+     *        <b>Semantic segmentation verification</b> - Uses a variant of the Expectation Maximization approach to
      *        estimate the true class of verification judgment for semantic segmentation labels based on annotations
      *        from individual workers.
      *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
      *        <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VerificationSemanticSegmentation</code>
      *        </p>
@@ -3295,11 +3431,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *        <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationSemanticSegmentation</code>
      *        </p>
      *        </li>
-     *        <li>
+     *        </ul>
      *        <p>
-     *        <i>Bounding box adjustment</i> - Finds the most similar boxes from different workers based on the Jaccard
+     *        <b>Bounding box adjustment</b> - Finds the most similar boxes from different workers based on the Jaccard
      *        index of the adjusted annotations.
      *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
      *        <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentBoundingBox</code>
      *        </p>
@@ -3337,11 +3475,13 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *        <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentBoundingBox</code>
      *        </p>
      *        </li>
-     *        <li>
+     *        </ul>
      *        <p>
-     *        <i>Semantic segmentation adjustment</i> - Treats each pixel in an image as a multi-class classification
+     *        <b>Semantic segmentation adjustment</b> - Treats each pixel in an image as a multi-class classification
      *        and treats pixel adjusted annotations from workers as "votes" for the correct label.
      *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
      *        <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentSemanticSegmentation</code>
      *        </p>

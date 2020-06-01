@@ -30,7 +30,7 @@ public class FleetSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the fleet.
+     * The Amazon Resource Name (ARN) of the fleet.
      * </p>
      */
     private String fleetArn;
@@ -54,7 +54,7 @@ public class FleetSummary implements Serializable, Cloneable, StructuredPojo {
     private String fleetName;
     /**
      * <p>
-     * The name to display.
+     * The name of the fleet to display.
      * </p>
      */
     private String displayName;
@@ -70,14 +70,20 @@ public class FleetSummary implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String fleetStatus;
+    /**
+     * <p>
+     * The tags attached to the resource. A tag is a key-value pair.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
 
     /**
      * <p>
-     * The ARN of the fleet.
+     * The Amazon Resource Name (ARN) of the fleet.
      * </p>
      * 
      * @param fleetArn
-     *        The ARN of the fleet.
+     *        The Amazon Resource Name (ARN) of the fleet.
      */
 
     public void setFleetArn(String fleetArn) {
@@ -86,10 +92,10 @@ public class FleetSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the fleet.
+     * The Amazon Resource Name (ARN) of the fleet.
      * </p>
      * 
-     * @return The ARN of the fleet.
+     * @return The Amazon Resource Name (ARN) of the fleet.
      */
 
     public String getFleetArn() {
@@ -98,11 +104,11 @@ public class FleetSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the fleet.
+     * The Amazon Resource Name (ARN) of the fleet.
      * </p>
      * 
      * @param fleetArn
-     *        The ARN of the fleet.
+     *        The Amazon Resource Name (ARN) of the fleet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -233,11 +239,11 @@ public class FleetSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name to display.
+     * The name of the fleet to display.
      * </p>
      * 
      * @param displayName
-     *        The name to display.
+     *        The name of the fleet to display.
      */
 
     public void setDisplayName(String displayName) {
@@ -246,10 +252,10 @@ public class FleetSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name to display.
+     * The name of the fleet to display.
      * </p>
      * 
-     * @return The name to display.
+     * @return The name of the fleet to display.
      */
 
     public String getDisplayName() {
@@ -258,11 +264,11 @@ public class FleetSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name to display.
+     * The name of the fleet to display.
      * </p>
      * 
      * @param displayName
-     *        The name to display.
+     *        The name of the fleet to display.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -371,6 +377,74 @@ public class FleetSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The tags attached to the resource. A tag is a key-value pair.
+     * </p>
+     * 
+     * @return The tags attached to the resource. A tag is a key-value pair.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags attached to the resource. A tag is a key-value pair.
+     * </p>
+     * 
+     * @param tags
+     *        The tags attached to the resource. A tag is a key-value pair.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * The tags attached to the resource. A tag is a key-value pair.
+     * </p>
+     * 
+     * @param tags
+     *        The tags attached to the resource. A tag is a key-value pair.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FleetSummary withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Add a single Tags entry
+     *
+     * @see FleetSummary#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FleetSummary addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FleetSummary clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -395,7 +469,9 @@ public class FleetSummary implements Serializable, Cloneable, StructuredPojo {
         if (getCompanyCode() != null)
             sb.append("CompanyCode: ").append(getCompanyCode()).append(",");
         if (getFleetStatus() != null)
-            sb.append("FleetStatus: ").append(getFleetStatus());
+            sb.append("FleetStatus: ").append(getFleetStatus()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -438,6 +514,10 @@ public class FleetSummary implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getFleetStatus() != null && other.getFleetStatus().equals(this.getFleetStatus()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -453,6 +533,7 @@ public class FleetSummary implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
         hashCode = prime * hashCode + ((getCompanyCode() == null) ? 0 : getCompanyCode().hashCode());
         hashCode = prime * hashCode + ((getFleetStatus() == null) ? 0 : getFleetStatus().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.worklink.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -41,6 +43,8 @@ public class FleetSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CompanyCode").build();
     private static final MarshallingInfo<String> FLEETSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FleetStatus").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final FleetSummaryMarshaller instance = new FleetSummaryMarshaller();
 
@@ -65,6 +69,7 @@ public class FleetSummaryMarshaller {
             protocolMarshaller.marshall(fleetSummary.getDisplayName(), DISPLAYNAME_BINDING);
             protocolMarshaller.marshall(fleetSummary.getCompanyCode(), COMPANYCODE_BINDING);
             protocolMarshaller.marshall(fleetSummary.getFleetStatus(), FLEETSTATUS_BINDING);
+            protocolMarshaller.marshall(fleetSummary.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
