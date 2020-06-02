@@ -98,11 +98,6 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * resource.instanceDetails.outpostArn
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * resource.instanceDetails.networkInterfaces.ipv6Addresses
      * </p>
      * </li>
@@ -224,11 +219,6 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <li>
      * <p>
      * service.action.networkConnectionAction.protocol
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.networkConnectionAction.localIpDetails.ipAddressV4
      * </p>
      * </li>
      * <li>
@@ -430,11 +420,6 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * resource.instanceDetails.outpostArn
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * resource.instanceDetails.networkInterfaces.ipv6Addresses
      * </p>
      * </li>
@@ -556,11 +541,6 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <li>
      * <p>
      * service.action.networkConnectionAction.protocol
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.networkConnectionAction.localIpDetails.ipAddressV4
      * </p>
      * </li>
      * <li>
@@ -697,11 +677,6 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        resource.instanceDetails.outpostArn
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        resource.instanceDetails.networkInterfaces.ipv6Addresses
      *        </p>
      *        </li>
@@ -823,11 +798,6 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <li>
      *        <p>
      *        service.action.networkConnectionAction.protocol
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        service.action.networkConnectionAction.localIpDetails.ipAddressV4
      *        </p>
      *        </li>
      *        <li>
@@ -970,11 +940,6 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * resource.instanceDetails.outpostArn
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * resource.instanceDetails.networkInterfaces.ipv6Addresses
      * </p>
      * </li>
@@ -1096,11 +1061,6 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <li>
      * <p>
      * service.action.networkConnectionAction.protocol
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.networkConnectionAction.localIpDetails.ipAddressV4
      * </p>
      * </li>
      * <li>
@@ -1236,11 +1196,6 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         </li>
      *         <li>
      *         <p>
-     *         resource.instanceDetails.outpostArn
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
      *         resource.instanceDetails.networkInterfaces.ipv6Addresses
      *         </p>
      *         </li>
@@ -1362,11 +1317,6 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <li>
      *         <p>
      *         service.action.networkConnectionAction.protocol
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         service.action.networkConnectionAction.localIpDetails.ipAddressV4
      *         </p>
      *         </li>
      *         <li>
@@ -1509,11 +1459,6 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * resource.instanceDetails.outpostArn
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * resource.instanceDetails.networkInterfaces.ipv6Addresses
      * </p>
      * </li>
@@ -1635,11 +1580,6 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <li>
      * <p>
      * service.action.networkConnectionAction.protocol
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.networkConnectionAction.localIpDetails.ipAddressV4
      * </p>
      * </li>
      * <li>
@@ -1776,11 +1716,6 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        resource.instanceDetails.outpostArn
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        resource.instanceDetails.networkInterfaces.ipv6Addresses
      *        </p>
      *        </li>
@@ -1902,11 +1837,6 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <li>
      *        <p>
      *        service.action.networkConnectionAction.protocol
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        service.action.networkConnectionAction.localIpDetails.ipAddressV4
      *        </p>
      *        </li>
      *        <li>

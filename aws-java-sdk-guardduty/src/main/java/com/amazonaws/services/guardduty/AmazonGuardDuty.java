@@ -724,7 +724,7 @@ public interface AmazonGuardDuty {
 
     /**
      * <p>
-     * Lists details about associated member accounts for the current GuardDuty master account.
+     * Lists details about all member accounts for the current GuardDuty master account.
      * </p>
      * 
      * @param listMembersRequest

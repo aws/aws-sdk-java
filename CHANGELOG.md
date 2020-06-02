@@ -1,3 +1,8 @@
+# __1.11.794__ __2020-06-02__
+## __Amazon GuardDuty__
+  - ### Features
+    - Amazon GuardDuty findings now include S3 bucket details under the resource section if an S3 Bucket was one of the affected resources
+
 # __1.11.793__ __2020-06-01__
 ## __AWS Key Management Service__
   - ### Features
