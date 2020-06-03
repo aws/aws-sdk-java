@@ -60,6 +60,10 @@ public class CreateReplicationGroupRequestMarshaller implements Marshaller<Reque
             request.addParameter("AutomaticFailoverEnabled", StringUtils.fromBoolean(createReplicationGroupRequest.getAutomaticFailoverEnabled()));
         }
 
+        if (createReplicationGroupRequest.getMultiAZEnabled() != null) {
+            request.addParameter("MultiAZEnabled", StringUtils.fromBoolean(createReplicationGroupRequest.getMultiAZEnabled()));
+        }
+
         if (createReplicationGroupRequest.getNumCacheClusters() != null) {
             request.addParameter("NumCacheClusters", StringUtils.fromInteger(createReplicationGroupRequest.getNumCacheClusters()));
         }

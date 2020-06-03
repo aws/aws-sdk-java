@@ -36,6 +36,12 @@ public class UserDefinedFunction implements Serializable, Cloneable, StructuredP
     private String functionName;
     /**
      * <p>
+     * The name of the database where the function resides.
+     * </p>
+     */
+    private String databaseName;
+    /**
+     * <p>
      * The Java class that contains the function code.
      * </p>
      */
@@ -102,6 +108,46 @@ public class UserDefinedFunction implements Serializable, Cloneable, StructuredP
 
     public UserDefinedFunction withFunctionName(String functionName) {
         setFunctionName(functionName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the database where the function resides.
+     * </p>
+     * 
+     * @param databaseName
+     *        The name of the database where the function resides.
+     */
+
+    public void setDatabaseName(String databaseName) {
+        this.databaseName = databaseName;
+    }
+
+    /**
+     * <p>
+     * The name of the database where the function resides.
+     * </p>
+     * 
+     * @return The name of the database where the function resides.
+     */
+
+    public String getDatabaseName() {
+        return this.databaseName;
+    }
+
+    /**
+     * <p>
+     * The name of the database where the function resides.
+     * </p>
+     * 
+     * @param databaseName
+     *        The name of the database where the function resides.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UserDefinedFunction withDatabaseName(String databaseName) {
+        setDatabaseName(databaseName);
         return this;
     }
 
@@ -368,6 +414,8 @@ public class UserDefinedFunction implements Serializable, Cloneable, StructuredP
         sb.append("{");
         if (getFunctionName() != null)
             sb.append("FunctionName: ").append(getFunctionName()).append(",");
+        if (getDatabaseName() != null)
+            sb.append("DatabaseName: ").append(getDatabaseName()).append(",");
         if (getClassName() != null)
             sb.append("ClassName: ").append(getClassName()).append(",");
         if (getOwnerName() != null)
@@ -395,6 +443,10 @@ public class UserDefinedFunction implements Serializable, Cloneable, StructuredP
         if (other.getFunctionName() == null ^ this.getFunctionName() == null)
             return false;
         if (other.getFunctionName() != null && other.getFunctionName().equals(this.getFunctionName()) == false)
+            return false;
+        if (other.getDatabaseName() == null ^ this.getDatabaseName() == null)
+            return false;
+        if (other.getDatabaseName() != null && other.getDatabaseName().equals(this.getDatabaseName()) == false)
             return false;
         if (other.getClassName() == null ^ this.getClassName() == null)
             return false;
@@ -425,6 +477,7 @@ public class UserDefinedFunction implements Serializable, Cloneable, StructuredP
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getFunctionName() == null) ? 0 : getFunctionName().hashCode());
+        hashCode = prime * hashCode + ((getDatabaseName() == null) ? 0 : getDatabaseName().hashCode());
         hashCode = prime * hashCode + ((getClassName() == null) ? 0 : getClassName().hashCode());
         hashCode = prime * hashCode + ((getOwnerName() == null) ? 0 : getOwnerName().hashCode());
         hashCode = prime * hashCode + ((getOwnerType() == null) ? 0 : getOwnerType().hashCode());

@@ -28,6 +28,8 @@ public enum AudioCodec {
     AC3("AC3"),
     EAC3("EAC3"),
     EAC3_ATMOS("EAC3_ATMOS"),
+    VORBIS("VORBIS"),
+    OPUS("OPUS"),
     PASSTHROUGH("PASSTHROUGH");
 
     private String value;

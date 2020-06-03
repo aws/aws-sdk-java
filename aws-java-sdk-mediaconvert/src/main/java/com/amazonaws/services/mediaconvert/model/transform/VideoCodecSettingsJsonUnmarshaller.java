@@ -76,6 +76,14 @@ public class VideoCodecSettingsJsonUnmarshaller implements Unmarshaller<VideoCod
                     context.nextToken();
                     videoCodecSettings.setProresSettings(ProresSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("vp8Settings", targetDepth)) {
+                    context.nextToken();
+                    videoCodecSettings.setVp8Settings(Vp8SettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("vp9Settings", targetDepth)) {
+                    context.nextToken();
+                    videoCodecSettings.setVp9Settings(Vp9SettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

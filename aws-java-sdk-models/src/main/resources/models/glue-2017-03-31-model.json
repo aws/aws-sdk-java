@@ -6159,7 +6159,7 @@
         },
         "DatabaseName":{
           "shape":"NameString",
-          "documentation":"<p>The name of the catalog database where the functions are located.</p>"
+          "documentation":"<p>The name of the catalog database where the functions are located. If none is provided, functions from all the databases across the catalog will be returned.</p>"
         },
         "Pattern":{
           "shape":"NameString",
@@ -9738,6 +9738,10 @@
         "FunctionName":{
           "shape":"NameString",
           "documentation":"<p>The name of the function.</p>"
+        },
+        "DatabaseName":{
+          "shape":"NameString",
+          "documentation":"<p>The name of the database where the function resides.</p>"
         },
         "ClassName":{
           "shape":"NameString",

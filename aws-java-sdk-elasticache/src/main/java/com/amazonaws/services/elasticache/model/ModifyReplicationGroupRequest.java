@@ -85,6 +85,8 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </ul>
      */
     private Boolean automaticFailoverEnabled;
+
+    private Boolean multiAZEnabled;
     /**
      * <p>
      * Deprecated. This parameter is not used.
@@ -730,6 +732,40 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     public Boolean isAutomaticFailoverEnabled() {
         return this.automaticFailoverEnabled;
+    }
+
+    /**
+     * @param multiAZEnabled
+     */
+
+    public void setMultiAZEnabled(Boolean multiAZEnabled) {
+        this.multiAZEnabled = multiAZEnabled;
+    }
+
+    /**
+     * @return
+     */
+
+    public Boolean getMultiAZEnabled() {
+        return this.multiAZEnabled;
+    }
+
+    /**
+     * @param multiAZEnabled
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyReplicationGroupRequest withMultiAZEnabled(Boolean multiAZEnabled) {
+        setMultiAZEnabled(multiAZEnabled);
+        return this;
+    }
+
+    /**
+     * @return
+     */
+
+    public Boolean isMultiAZEnabled() {
+        return this.multiAZEnabled;
     }
 
     /**
@@ -2332,6 +2368,8 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
             sb.append("SnapshottingClusterId: ").append(getSnapshottingClusterId()).append(",");
         if (getAutomaticFailoverEnabled() != null)
             sb.append("AutomaticFailoverEnabled: ").append(getAutomaticFailoverEnabled()).append(",");
+        if (getMultiAZEnabled() != null)
+            sb.append("MultiAZEnabled: ").append(getMultiAZEnabled()).append(",");
         if (getNodeGroupId() != null)
             sb.append("NodeGroupId: ").append(getNodeGroupId()).append(",");
         if (getCacheSecurityGroupNames() != null)
@@ -2395,6 +2433,10 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
         if (other.getAutomaticFailoverEnabled() == null ^ this.getAutomaticFailoverEnabled() == null)
             return false;
         if (other.getAutomaticFailoverEnabled() != null && other.getAutomaticFailoverEnabled().equals(this.getAutomaticFailoverEnabled()) == false)
+            return false;
+        if (other.getMultiAZEnabled() == null ^ this.getMultiAZEnabled() == null)
+            return false;
+        if (other.getMultiAZEnabled() != null && other.getMultiAZEnabled().equals(this.getMultiAZEnabled()) == false)
             return false;
         if (other.getNodeGroupId() == null ^ this.getNodeGroupId() == null)
             return false;
@@ -2469,6 +2511,7 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getPrimaryClusterId() == null) ? 0 : getPrimaryClusterId().hashCode());
         hashCode = prime * hashCode + ((getSnapshottingClusterId() == null) ? 0 : getSnapshottingClusterId().hashCode());
         hashCode = prime * hashCode + ((getAutomaticFailoverEnabled() == null) ? 0 : getAutomaticFailoverEnabled().hashCode());
+        hashCode = prime * hashCode + ((getMultiAZEnabled() == null) ? 0 : getMultiAZEnabled().hashCode());
         hashCode = prime * hashCode + ((getNodeGroupId() == null) ? 0 : getNodeGroupId().hashCode());
         hashCode = prime * hashCode + ((getCacheSecurityGroupNames() == null) ? 0 : getCacheSecurityGroupNames().hashCode());
         hashCode = prime * hashCode + ((getSecurityGroupIds() == null) ? 0 : getSecurityGroupIds().hashCode());

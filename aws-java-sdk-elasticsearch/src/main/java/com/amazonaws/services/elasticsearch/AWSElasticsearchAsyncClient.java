@@ -272,6 +272,41 @@ public class AWSElasticsearchAsyncClient extends AWSElasticsearchClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<AcceptInboundCrossClusterSearchConnectionResult> acceptInboundCrossClusterSearchConnectionAsync(
+            AcceptInboundCrossClusterSearchConnectionRequest request) {
+
+        return acceptInboundCrossClusterSearchConnectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AcceptInboundCrossClusterSearchConnectionResult> acceptInboundCrossClusterSearchConnectionAsync(
+            final AcceptInboundCrossClusterSearchConnectionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AcceptInboundCrossClusterSearchConnectionRequest, AcceptInboundCrossClusterSearchConnectionResult> asyncHandler) {
+        final AcceptInboundCrossClusterSearchConnectionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AcceptInboundCrossClusterSearchConnectionResult>() {
+            @Override
+            public AcceptInboundCrossClusterSearchConnectionResult call() throws Exception {
+                AcceptInboundCrossClusterSearchConnectionResult result = null;
+
+                try {
+                    result = executeAcceptInboundCrossClusterSearchConnection(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<AddTagsResult> addTagsAsync(AddTagsRequest request) {
 
         return addTagsAsync(request, null);
@@ -406,6 +441,41 @@ public class AWSElasticsearchAsyncClient extends AWSElasticsearchClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<CreateOutboundCrossClusterSearchConnectionResult> createOutboundCrossClusterSearchConnectionAsync(
+            CreateOutboundCrossClusterSearchConnectionRequest request) {
+
+        return createOutboundCrossClusterSearchConnectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateOutboundCrossClusterSearchConnectionResult> createOutboundCrossClusterSearchConnectionAsync(
+            final CreateOutboundCrossClusterSearchConnectionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateOutboundCrossClusterSearchConnectionRequest, CreateOutboundCrossClusterSearchConnectionResult> asyncHandler) {
+        final CreateOutboundCrossClusterSearchConnectionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateOutboundCrossClusterSearchConnectionResult>() {
+            @Override
+            public CreateOutboundCrossClusterSearchConnectionResult call() throws Exception {
+                CreateOutboundCrossClusterSearchConnectionResult result = null;
+
+                try {
+                    result = executeCreateOutboundCrossClusterSearchConnection(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreatePackageResult> createPackageAsync(CreatePackageRequest request) {
 
         return createPackageAsync(request, null);
@@ -490,6 +560,76 @@ public class AWSElasticsearchAsyncClient extends AWSElasticsearchClient implemen
 
                 try {
                     result = executeDeleteElasticsearchServiceRole(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteInboundCrossClusterSearchConnectionResult> deleteInboundCrossClusterSearchConnectionAsync(
+            DeleteInboundCrossClusterSearchConnectionRequest request) {
+
+        return deleteInboundCrossClusterSearchConnectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteInboundCrossClusterSearchConnectionResult> deleteInboundCrossClusterSearchConnectionAsync(
+            final DeleteInboundCrossClusterSearchConnectionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteInboundCrossClusterSearchConnectionRequest, DeleteInboundCrossClusterSearchConnectionResult> asyncHandler) {
+        final DeleteInboundCrossClusterSearchConnectionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteInboundCrossClusterSearchConnectionResult>() {
+            @Override
+            public DeleteInboundCrossClusterSearchConnectionResult call() throws Exception {
+                DeleteInboundCrossClusterSearchConnectionResult result = null;
+
+                try {
+                    result = executeDeleteInboundCrossClusterSearchConnection(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteOutboundCrossClusterSearchConnectionResult> deleteOutboundCrossClusterSearchConnectionAsync(
+            DeleteOutboundCrossClusterSearchConnectionRequest request) {
+
+        return deleteOutboundCrossClusterSearchConnectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteOutboundCrossClusterSearchConnectionResult> deleteOutboundCrossClusterSearchConnectionAsync(
+            final DeleteOutboundCrossClusterSearchConnectionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteOutboundCrossClusterSearchConnectionRequest, DeleteOutboundCrossClusterSearchConnectionResult> asyncHandler) {
+        final DeleteOutboundCrossClusterSearchConnectionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteOutboundCrossClusterSearchConnectionResult>() {
+            @Override
+            public DeleteOutboundCrossClusterSearchConnectionResult call() throws Exception {
+                DeleteOutboundCrossClusterSearchConnectionResult result = null;
+
+                try {
+                    result = executeDeleteOutboundCrossClusterSearchConnection(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -659,6 +799,76 @@ public class AWSElasticsearchAsyncClient extends AWSElasticsearchClient implemen
 
                 try {
                     result = executeDescribeElasticsearchInstanceTypeLimits(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeInboundCrossClusterSearchConnectionsResult> describeInboundCrossClusterSearchConnectionsAsync(
+            DescribeInboundCrossClusterSearchConnectionsRequest request) {
+
+        return describeInboundCrossClusterSearchConnectionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeInboundCrossClusterSearchConnectionsResult> describeInboundCrossClusterSearchConnectionsAsync(
+            final DescribeInboundCrossClusterSearchConnectionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeInboundCrossClusterSearchConnectionsRequest, DescribeInboundCrossClusterSearchConnectionsResult> asyncHandler) {
+        final DescribeInboundCrossClusterSearchConnectionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeInboundCrossClusterSearchConnectionsResult>() {
+            @Override
+            public DescribeInboundCrossClusterSearchConnectionsResult call() throws Exception {
+                DescribeInboundCrossClusterSearchConnectionsResult result = null;
+
+                try {
+                    result = executeDescribeInboundCrossClusterSearchConnections(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeOutboundCrossClusterSearchConnectionsResult> describeOutboundCrossClusterSearchConnectionsAsync(
+            DescribeOutboundCrossClusterSearchConnectionsRequest request) {
+
+        return describeOutboundCrossClusterSearchConnectionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeOutboundCrossClusterSearchConnectionsResult> describeOutboundCrossClusterSearchConnectionsAsync(
+            final DescribeOutboundCrossClusterSearchConnectionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeOutboundCrossClusterSearchConnectionsRequest, DescribeOutboundCrossClusterSearchConnectionsResult> asyncHandler) {
+        final DescribeOutboundCrossClusterSearchConnectionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeOutboundCrossClusterSearchConnectionsResult>() {
+            @Override
+            public DescribeOutboundCrossClusterSearchConnectionsResult call() throws Exception {
+                DescribeOutboundCrossClusterSearchConnectionsResult result = null;
+
+                try {
+                    result = executeDescribeOutboundCrossClusterSearchConnections(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1130,6 +1340,41 @@ public class AWSElasticsearchAsyncClient extends AWSElasticsearchClient implemen
 
                 try {
                     result = executePurchaseReservedElasticsearchInstanceOffering(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<RejectInboundCrossClusterSearchConnectionResult> rejectInboundCrossClusterSearchConnectionAsync(
+            RejectInboundCrossClusterSearchConnectionRequest request) {
+
+        return rejectInboundCrossClusterSearchConnectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RejectInboundCrossClusterSearchConnectionResult> rejectInboundCrossClusterSearchConnectionAsync(
+            final RejectInboundCrossClusterSearchConnectionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RejectInboundCrossClusterSearchConnectionRequest, RejectInboundCrossClusterSearchConnectionResult> asyncHandler) {
+        final RejectInboundCrossClusterSearchConnectionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RejectInboundCrossClusterSearchConnectionResult>() {
+            @Override
+            public RejectInboundCrossClusterSearchConnectionResult call() throws Exception {
+                RejectInboundCrossClusterSearchConnectionResult result = null;
+
+                try {
+                    result = executeRejectInboundCrossClusterSearchConnection(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

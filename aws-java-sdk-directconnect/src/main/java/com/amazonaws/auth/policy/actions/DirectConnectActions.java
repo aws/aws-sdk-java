@@ -121,6 +121,12 @@ public enum DirectConnectActions implements Action {
     DescribeVirtualInterfaces("directconnect:DescribeVirtualInterfaces"),
     /** Action for the DisassociateConnectionFromLag operation. */
     DisassociateConnectionFromLag("directconnect:DisassociateConnectionFromLag"),
+    /** Action for the ListVirtualInterfaceTestHistory operation. */
+    ListVirtualInterfaceTestHistory("directconnect:ListVirtualInterfaceTestHistory"),
+    /** Action for the StartBgpFailoverTest operation. */
+    StartBgpFailoverTest("directconnect:StartBgpFailoverTest"),
+    /** Action for the StopBgpFailoverTest operation. */
+    StopBgpFailoverTest("directconnect:StopBgpFailoverTest"),
     /** Action for the TagResource operation. */
     TagResource("directconnect:TagResource"),
     /** Action for the UntagResource operation. */

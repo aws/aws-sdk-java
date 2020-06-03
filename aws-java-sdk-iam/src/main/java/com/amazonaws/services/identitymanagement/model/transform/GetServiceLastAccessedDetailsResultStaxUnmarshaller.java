@@ -50,6 +50,11 @@ public class GetServiceLastAccessedDetailsResultStaxUnmarshaller implements Unma
                     continue;
                 }
 
+                if (context.testExpression("JobType", targetDepth)) {
+                    getServiceLastAccessedDetailsResult.setJobType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("JobCreationDate", targetDepth)) {
                     getServiceLastAccessedDetailsResult.setJobCreationDate(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;

@@ -29,6 +29,8 @@ public class NoiseReducerTemporalFilterSettingsMarshaller {
 
     private static final MarshallingInfo<Integer> AGGRESSIVEMODE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("aggressiveMode").build();
+    private static final MarshallingInfo<String> POSTTEMPORALSHARPENING_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("postTemporalSharpening").build();
     private static final MarshallingInfo<Integer> SPEED_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("speed").build();
     private static final MarshallingInfo<Integer> STRENGTH_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -51,6 +53,7 @@ public class NoiseReducerTemporalFilterSettingsMarshaller {
 
         try {
             protocolMarshaller.marshall(noiseReducerTemporalFilterSettings.getAggressiveMode(), AGGRESSIVEMODE_BINDING);
+            protocolMarshaller.marshall(noiseReducerTemporalFilterSettings.getPostTemporalSharpening(), POSTTEMPORALSHARPENING_BINDING);
             protocolMarshaller.marshall(noiseReducerTemporalFilterSettings.getSpeed(), SPEED_BINDING);
             protocolMarshaller.marshall(noiseReducerTemporalFilterSettings.getStrength(), STRENGTH_BINDING);
         } catch (Exception e) {

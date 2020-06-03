@@ -48,6 +48,41 @@ public interface AWSElasticsearchAsync extends AWSElasticsearch {
 
     /**
      * <p>
+     * Allows the destination domain owner to accept an inbound cross-cluster search connection request.
+     * </p>
+     * 
+     * @param acceptInboundCrossClusterSearchConnectionRequest
+     *        Container for the parameters to the <code><a>AcceptInboundCrossClusterSearchConnection</a></code>
+     *        operation.
+     * @return A Java Future containing the result of the AcceptInboundCrossClusterSearchConnection operation returned
+     *         by the service.
+     * @sample AWSElasticsearchAsync.AcceptInboundCrossClusterSearchConnection
+     */
+    java.util.concurrent.Future<AcceptInboundCrossClusterSearchConnectionResult> acceptInboundCrossClusterSearchConnectionAsync(
+            AcceptInboundCrossClusterSearchConnectionRequest acceptInboundCrossClusterSearchConnectionRequest);
+
+    /**
+     * <p>
+     * Allows the destination domain owner to accept an inbound cross-cluster search connection request.
+     * </p>
+     * 
+     * @param acceptInboundCrossClusterSearchConnectionRequest
+     *        Container for the parameters to the <code><a>AcceptInboundCrossClusterSearchConnection</a></code>
+     *        operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AcceptInboundCrossClusterSearchConnection operation returned
+     *         by the service.
+     * @sample AWSElasticsearchAsyncHandler.AcceptInboundCrossClusterSearchConnection
+     */
+    java.util.concurrent.Future<AcceptInboundCrossClusterSearchConnectionResult> acceptInboundCrossClusterSearchConnectionAsync(
+            AcceptInboundCrossClusterSearchConnectionRequest acceptInboundCrossClusterSearchConnectionRequest,
+            com.amazonaws.handlers.AsyncHandler<AcceptInboundCrossClusterSearchConnectionRequest, AcceptInboundCrossClusterSearchConnectionResult> asyncHandler);
+
+    /**
+     * <p>
      * Attaches tags to an existing Elasticsearch domain. Tags are a set of case-sensitive key value pairs. An
      * Elasticsearch domain may have up to 10 tags. See <a href=
      * "http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-awsresorcetagging"
@@ -188,6 +223,41 @@ public interface AWSElasticsearchAsync extends AWSElasticsearch {
 
     /**
      * <p>
+     * Creates a new cross-cluster search connection from a source domain to a destination domain.
+     * </p>
+     * 
+     * @param createOutboundCrossClusterSearchConnectionRequest
+     *        Container for the parameters to the <code><a>CreateOutboundCrossClusterSearchConnection</a></code>
+     *        operation.
+     * @return A Java Future containing the result of the CreateOutboundCrossClusterSearchConnection operation returned
+     *         by the service.
+     * @sample AWSElasticsearchAsync.CreateOutboundCrossClusterSearchConnection
+     */
+    java.util.concurrent.Future<CreateOutboundCrossClusterSearchConnectionResult> createOutboundCrossClusterSearchConnectionAsync(
+            CreateOutboundCrossClusterSearchConnectionRequest createOutboundCrossClusterSearchConnectionRequest);
+
+    /**
+     * <p>
+     * Creates a new cross-cluster search connection from a source domain to a destination domain.
+     * </p>
+     * 
+     * @param createOutboundCrossClusterSearchConnectionRequest
+     *        Container for the parameters to the <code><a>CreateOutboundCrossClusterSearchConnection</a></code>
+     *        operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateOutboundCrossClusterSearchConnection operation returned
+     *         by the service.
+     * @sample AWSElasticsearchAsyncHandler.CreateOutboundCrossClusterSearchConnection
+     */
+    java.util.concurrent.Future<CreateOutboundCrossClusterSearchConnectionResult> createOutboundCrossClusterSearchConnectionAsync(
+            CreateOutboundCrossClusterSearchConnectionRequest createOutboundCrossClusterSearchConnectionRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateOutboundCrossClusterSearchConnectionRequest, CreateOutboundCrossClusterSearchConnectionResult> asyncHandler);
+
+    /**
+     * <p>
      * Create a package for use with Amazon ES domains.
      * </p>
      * 
@@ -290,6 +360,76 @@ public interface AWSElasticsearchAsync extends AWSElasticsearch {
     java.util.concurrent.Future<DeleteElasticsearchServiceRoleResult> deleteElasticsearchServiceRoleAsync(
             DeleteElasticsearchServiceRoleRequest deleteElasticsearchServiceRoleRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteElasticsearchServiceRoleRequest, DeleteElasticsearchServiceRoleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Allows the destination domain owner to delete an existing inbound cross-cluster search connection.
+     * </p>
+     * 
+     * @param deleteInboundCrossClusterSearchConnectionRequest
+     *        Container for the parameters to the <code><a>DeleteInboundCrossClusterSearchConnection</a></code>
+     *        operation.
+     * @return A Java Future containing the result of the DeleteInboundCrossClusterSearchConnection operation returned
+     *         by the service.
+     * @sample AWSElasticsearchAsync.DeleteInboundCrossClusterSearchConnection
+     */
+    java.util.concurrent.Future<DeleteInboundCrossClusterSearchConnectionResult> deleteInboundCrossClusterSearchConnectionAsync(
+            DeleteInboundCrossClusterSearchConnectionRequest deleteInboundCrossClusterSearchConnectionRequest);
+
+    /**
+     * <p>
+     * Allows the destination domain owner to delete an existing inbound cross-cluster search connection.
+     * </p>
+     * 
+     * @param deleteInboundCrossClusterSearchConnectionRequest
+     *        Container for the parameters to the <code><a>DeleteInboundCrossClusterSearchConnection</a></code>
+     *        operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteInboundCrossClusterSearchConnection operation returned
+     *         by the service.
+     * @sample AWSElasticsearchAsyncHandler.DeleteInboundCrossClusterSearchConnection
+     */
+    java.util.concurrent.Future<DeleteInboundCrossClusterSearchConnectionResult> deleteInboundCrossClusterSearchConnectionAsync(
+            DeleteInboundCrossClusterSearchConnectionRequest deleteInboundCrossClusterSearchConnectionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteInboundCrossClusterSearchConnectionRequest, DeleteInboundCrossClusterSearchConnectionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Allows the source domain owner to delete an existing outbound cross-cluster search connection.
+     * </p>
+     * 
+     * @param deleteOutboundCrossClusterSearchConnectionRequest
+     *        Container for the parameters to the <code><a>DeleteOutboundCrossClusterSearchConnection</a></code>
+     *        operation.
+     * @return A Java Future containing the result of the DeleteOutboundCrossClusterSearchConnection operation returned
+     *         by the service.
+     * @sample AWSElasticsearchAsync.DeleteOutboundCrossClusterSearchConnection
+     */
+    java.util.concurrent.Future<DeleteOutboundCrossClusterSearchConnectionResult> deleteOutboundCrossClusterSearchConnectionAsync(
+            DeleteOutboundCrossClusterSearchConnectionRequest deleteOutboundCrossClusterSearchConnectionRequest);
+
+    /**
+     * <p>
+     * Allows the source domain owner to delete an existing outbound cross-cluster search connection.
+     * </p>
+     * 
+     * @param deleteOutboundCrossClusterSearchConnectionRequest
+     *        Container for the parameters to the <code><a>DeleteOutboundCrossClusterSearchConnection</a></code>
+     *        operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteOutboundCrossClusterSearchConnection operation returned
+     *         by the service.
+     * @sample AWSElasticsearchAsyncHandler.DeleteOutboundCrossClusterSearchConnection
+     */
+    java.util.concurrent.Future<DeleteOutboundCrossClusterSearchConnectionResult> deleteOutboundCrossClusterSearchConnectionAsync(
+            DeleteOutboundCrossClusterSearchConnectionRequest deleteOutboundCrossClusterSearchConnectionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteOutboundCrossClusterSearchConnectionRequest, DeleteOutboundCrossClusterSearchConnectionResult> asyncHandler);
 
     /**
      * <p>
@@ -461,6 +601,76 @@ public interface AWSElasticsearchAsync extends AWSElasticsearch {
     java.util.concurrent.Future<DescribeElasticsearchInstanceTypeLimitsResult> describeElasticsearchInstanceTypeLimitsAsync(
             DescribeElasticsearchInstanceTypeLimitsRequest describeElasticsearchInstanceTypeLimitsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeElasticsearchInstanceTypeLimitsRequest, DescribeElasticsearchInstanceTypeLimitsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists all the inbound cross-cluster search connections for a destination domain.
+     * </p>
+     * 
+     * @param describeInboundCrossClusterSearchConnectionsRequest
+     *        Container for the parameters to the <code><a>DescribeInboundCrossClusterSearchConnections</a></code>
+     *        operation.
+     * @return A Java Future containing the result of the DescribeInboundCrossClusterSearchConnections operation
+     *         returned by the service.
+     * @sample AWSElasticsearchAsync.DescribeInboundCrossClusterSearchConnections
+     */
+    java.util.concurrent.Future<DescribeInboundCrossClusterSearchConnectionsResult> describeInboundCrossClusterSearchConnectionsAsync(
+            DescribeInboundCrossClusterSearchConnectionsRequest describeInboundCrossClusterSearchConnectionsRequest);
+
+    /**
+     * <p>
+     * Lists all the inbound cross-cluster search connections for a destination domain.
+     * </p>
+     * 
+     * @param describeInboundCrossClusterSearchConnectionsRequest
+     *        Container for the parameters to the <code><a>DescribeInboundCrossClusterSearchConnections</a></code>
+     *        operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeInboundCrossClusterSearchConnections operation
+     *         returned by the service.
+     * @sample AWSElasticsearchAsyncHandler.DescribeInboundCrossClusterSearchConnections
+     */
+    java.util.concurrent.Future<DescribeInboundCrossClusterSearchConnectionsResult> describeInboundCrossClusterSearchConnectionsAsync(
+            DescribeInboundCrossClusterSearchConnectionsRequest describeInboundCrossClusterSearchConnectionsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeInboundCrossClusterSearchConnectionsRequest, DescribeInboundCrossClusterSearchConnectionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists all the outbound cross-cluster search connections for a source domain.
+     * </p>
+     * 
+     * @param describeOutboundCrossClusterSearchConnectionsRequest
+     *        Container for the parameters to the <code><a>DescribeOutboundCrossClusterSearchConnections</a></code>
+     *        operation.
+     * @return A Java Future containing the result of the DescribeOutboundCrossClusterSearchConnections operation
+     *         returned by the service.
+     * @sample AWSElasticsearchAsync.DescribeOutboundCrossClusterSearchConnections
+     */
+    java.util.concurrent.Future<DescribeOutboundCrossClusterSearchConnectionsResult> describeOutboundCrossClusterSearchConnectionsAsync(
+            DescribeOutboundCrossClusterSearchConnectionsRequest describeOutboundCrossClusterSearchConnectionsRequest);
+
+    /**
+     * <p>
+     * Lists all the outbound cross-cluster search connections for a source domain.
+     * </p>
+     * 
+     * @param describeOutboundCrossClusterSearchConnectionsRequest
+     *        Container for the parameters to the <code><a>DescribeOutboundCrossClusterSearchConnections</a></code>
+     *        operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeOutboundCrossClusterSearchConnections operation
+     *         returned by the service.
+     * @sample AWSElasticsearchAsyncHandler.DescribeOutboundCrossClusterSearchConnections
+     */
+    java.util.concurrent.Future<DescribeOutboundCrossClusterSearchConnectionsResult> describeOutboundCrossClusterSearchConnectionsAsync(
+            DescribeOutboundCrossClusterSearchConnectionsRequest describeOutboundCrossClusterSearchConnectionsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeOutboundCrossClusterSearchConnectionsRequest, DescribeOutboundCrossClusterSearchConnectionsResult> asyncHandler);
 
     /**
      * <p>
@@ -909,6 +1119,41 @@ public interface AWSElasticsearchAsync extends AWSElasticsearch {
     java.util.concurrent.Future<PurchaseReservedElasticsearchInstanceOfferingResult> purchaseReservedElasticsearchInstanceOfferingAsync(
             PurchaseReservedElasticsearchInstanceOfferingRequest purchaseReservedElasticsearchInstanceOfferingRequest,
             com.amazonaws.handlers.AsyncHandler<PurchaseReservedElasticsearchInstanceOfferingRequest, PurchaseReservedElasticsearchInstanceOfferingResult> asyncHandler);
+
+    /**
+     * <p>
+     * Allows the destination domain owner to reject an inbound cross-cluster search connection request.
+     * </p>
+     * 
+     * @param rejectInboundCrossClusterSearchConnectionRequest
+     *        Container for the parameters to the <code><a>RejectInboundCrossClusterSearchConnection</a></code>
+     *        operation.
+     * @return A Java Future containing the result of the RejectInboundCrossClusterSearchConnection operation returned
+     *         by the service.
+     * @sample AWSElasticsearchAsync.RejectInboundCrossClusterSearchConnection
+     */
+    java.util.concurrent.Future<RejectInboundCrossClusterSearchConnectionResult> rejectInboundCrossClusterSearchConnectionAsync(
+            RejectInboundCrossClusterSearchConnectionRequest rejectInboundCrossClusterSearchConnectionRequest);
+
+    /**
+     * <p>
+     * Allows the destination domain owner to reject an inbound cross-cluster search connection request.
+     * </p>
+     * 
+     * @param rejectInboundCrossClusterSearchConnectionRequest
+     *        Container for the parameters to the <code><a>RejectInboundCrossClusterSearchConnection</a></code>
+     *        operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RejectInboundCrossClusterSearchConnection operation returned
+     *         by the service.
+     * @sample AWSElasticsearchAsyncHandler.RejectInboundCrossClusterSearchConnection
+     */
+    java.util.concurrent.Future<RejectInboundCrossClusterSearchConnectionResult> rejectInboundCrossClusterSearchConnectionAsync(
+            RejectInboundCrossClusterSearchConnectionRequest rejectInboundCrossClusterSearchConnectionRequest,
+            com.amazonaws.handlers.AsyncHandler<RejectInboundCrossClusterSearchConnectionRequest, RejectInboundCrossClusterSearchConnectionResult> asyncHandler);
 
     /**
      * <p>

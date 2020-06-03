@@ -2003,6 +2003,107 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient im
     }
 
     @Override
+    public java.util.concurrent.Future<ListVirtualInterfaceTestHistoryResult> listVirtualInterfaceTestHistoryAsync(
+            ListVirtualInterfaceTestHistoryRequest request) {
+
+        return listVirtualInterfaceTestHistoryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListVirtualInterfaceTestHistoryResult> listVirtualInterfaceTestHistoryAsync(
+            final ListVirtualInterfaceTestHistoryRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListVirtualInterfaceTestHistoryRequest, ListVirtualInterfaceTestHistoryResult> asyncHandler) {
+        final ListVirtualInterfaceTestHistoryRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListVirtualInterfaceTestHistoryResult>() {
+            @Override
+            public ListVirtualInterfaceTestHistoryResult call() throws Exception {
+                ListVirtualInterfaceTestHistoryResult result = null;
+
+                try {
+                    result = executeListVirtualInterfaceTestHistory(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartBgpFailoverTestResult> startBgpFailoverTestAsync(StartBgpFailoverTestRequest request) {
+
+        return startBgpFailoverTestAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartBgpFailoverTestResult> startBgpFailoverTestAsync(final StartBgpFailoverTestRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartBgpFailoverTestRequest, StartBgpFailoverTestResult> asyncHandler) {
+        final StartBgpFailoverTestRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartBgpFailoverTestResult>() {
+            @Override
+            public StartBgpFailoverTestResult call() throws Exception {
+                StartBgpFailoverTestResult result = null;
+
+                try {
+                    result = executeStartBgpFailoverTest(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopBgpFailoverTestResult> stopBgpFailoverTestAsync(StopBgpFailoverTestRequest request) {
+
+        return stopBgpFailoverTestAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopBgpFailoverTestResult> stopBgpFailoverTestAsync(final StopBgpFailoverTestRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopBgpFailoverTestRequest, StopBgpFailoverTestResult> asyncHandler) {
+        final StopBgpFailoverTestRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StopBgpFailoverTestResult>() {
+            @Override
+            public StopBgpFailoverTestResult call() throws Exception {
+                StopBgpFailoverTestResult result = null;
+
+                try {
+                    result = executeStopBgpFailoverTest(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
 
         return tagResourceAsync(request, null);

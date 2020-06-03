@@ -30,6 +30,8 @@ public class UserDefinedFunctionMarshaller {
 
     private static final MarshallingInfo<String> FUNCTIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FunctionName").build();
+    private static final MarshallingInfo<String> DATABASENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DatabaseName").build();
     private static final MarshallingInfo<String> CLASSNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ClassName").build();
     private static final MarshallingInfo<String> OWNERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -58,6 +60,7 @@ public class UserDefinedFunctionMarshaller {
 
         try {
             protocolMarshaller.marshall(userDefinedFunction.getFunctionName(), FUNCTIONNAME_BINDING);
+            protocolMarshaller.marshall(userDefinedFunction.getDatabaseName(), DATABASENAME_BINDING);
             protocolMarshaller.marshall(userDefinedFunction.getClassName(), CLASSNAME_BINDING);
             protocolMarshaller.marshall(userDefinedFunction.getOwnerName(), OWNERNAME_BINDING);
             protocolMarshaller.marshall(userDefinedFunction.getOwnerType(), OWNERTYPE_BINDING);

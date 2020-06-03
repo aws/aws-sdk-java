@@ -41,6 +41,10 @@ public class VideoCodecSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("mpeg2Settings").build();
     private static final MarshallingInfo<StructuredPojo> PRORESSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("proresSettings").build();
+    private static final MarshallingInfo<StructuredPojo> VP8SETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("vp8Settings").build();
+    private static final MarshallingInfo<StructuredPojo> VP9SETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("vp9Settings").build();
 
     private static final VideoCodecSettingsMarshaller instance = new VideoCodecSettingsMarshaller();
 
@@ -65,6 +69,8 @@ public class VideoCodecSettingsMarshaller {
             protocolMarshaller.marshall(videoCodecSettings.getH265Settings(), H265SETTINGS_BINDING);
             protocolMarshaller.marshall(videoCodecSettings.getMpeg2Settings(), MPEG2SETTINGS_BINDING);
             protocolMarshaller.marshall(videoCodecSettings.getProresSettings(), PRORESSETTINGS_BINDING);
+            protocolMarshaller.marshall(videoCodecSettings.getVp8Settings(), VP8SETTINGS_BINDING);
+            protocolMarshaller.marshall(videoCodecSettings.getVp9Settings(), VP9SETTINGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

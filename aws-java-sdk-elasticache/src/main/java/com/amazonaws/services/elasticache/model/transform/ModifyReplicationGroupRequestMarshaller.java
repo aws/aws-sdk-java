@@ -60,6 +60,10 @@ public class ModifyReplicationGroupRequestMarshaller implements Marshaller<Reque
             request.addParameter("AutomaticFailoverEnabled", StringUtils.fromBoolean(modifyReplicationGroupRequest.getAutomaticFailoverEnabled()));
         }
 
+        if (modifyReplicationGroupRequest.getMultiAZEnabled() != null) {
+            request.addParameter("MultiAZEnabled", StringUtils.fromBoolean(modifyReplicationGroupRequest.getMultiAZEnabled()));
+        }
+
         if (modifyReplicationGroupRequest.getNodeGroupId() != null) {
             request.addParameter("NodeGroupId", StringUtils.fromString(modifyReplicationGroupRequest.getNodeGroupId()));
         }

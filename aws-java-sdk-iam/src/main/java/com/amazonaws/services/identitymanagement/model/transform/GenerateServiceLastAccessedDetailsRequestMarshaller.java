@@ -46,6 +46,10 @@ public class GenerateServiceLastAccessedDetailsRequestMarshaller implements
             request.addParameter("Arn", StringUtils.fromString(generateServiceLastAccessedDetailsRequest.getArn()));
         }
 
+        if (generateServiceLastAccessedDetailsRequest.getGranularity() != null) {
+            request.addParameter("Granularity", StringUtils.fromString(generateServiceLastAccessedDetailsRequest.getGranularity()));
+        }
+
         return request;
     }
 

@@ -32,6 +32,13 @@ public class GetServiceLastAccessedDetailsResult extends com.amazonaws.AmazonWeb
     private String jobStatus;
     /**
      * <p>
+     * The type of job. Service jobs return information about when each service was last accessed. Action jobs also
+     * include information about when tracked actions within the service were last accessed.
+     * </p>
+     */
+    private String jobType;
+    /**
+     * <p>
      * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the report job
      * was created.
      * </p>
@@ -56,7 +63,6 @@ public class GetServiceLastAccessedDetailsResult extends com.amazonaws.AmazonWeb
      */
     private java.util.Date jobCompletionDate;
     /**
-     * <p/>
      * <p>
      * A flag that indicates whether there are more items to return. If your results were truncated, you can make a
      * subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that
@@ -136,6 +142,73 @@ public class GetServiceLastAccessedDetailsResult extends com.amazonaws.AmazonWeb
 
     public GetServiceLastAccessedDetailsResult withJobStatus(JobStatusType jobStatus) {
         this.jobStatus = jobStatus.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of job. Service jobs return information about when each service was last accessed. Action jobs also
+     * include information about when tracked actions within the service were last accessed.
+     * </p>
+     * 
+     * @param jobType
+     *        The type of job. Service jobs return information about when each service was last accessed. Action jobs
+     *        also include information about when tracked actions within the service were last accessed.
+     * @see AccessAdvisorUsageGranularityType
+     */
+
+    public void setJobType(String jobType) {
+        this.jobType = jobType;
+    }
+
+    /**
+     * <p>
+     * The type of job. Service jobs return information about when each service was last accessed. Action jobs also
+     * include information about when tracked actions within the service were last accessed.
+     * </p>
+     * 
+     * @return The type of job. Service jobs return information about when each service was last accessed. Action jobs
+     *         also include information about when tracked actions within the service were last accessed.
+     * @see AccessAdvisorUsageGranularityType
+     */
+
+    public String getJobType() {
+        return this.jobType;
+    }
+
+    /**
+     * <p>
+     * The type of job. Service jobs return information about when each service was last accessed. Action jobs also
+     * include information about when tracked actions within the service were last accessed.
+     * </p>
+     * 
+     * @param jobType
+     *        The type of job. Service jobs return information about when each service was last accessed. Action jobs
+     *        also include information about when tracked actions within the service were last accessed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AccessAdvisorUsageGranularityType
+     */
+
+    public GetServiceLastAccessedDetailsResult withJobType(String jobType) {
+        setJobType(jobType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of job. Service jobs return information about when each service was last accessed. Action jobs also
+     * include information about when tracked actions within the service were last accessed.
+     * </p>
+     * 
+     * @param jobType
+     *        The type of job. Service jobs return information about when each service was last accessed. Action jobs
+     *        also include information about when tracked actions within the service were last accessed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AccessAdvisorUsageGranularityType
+     */
+
+    public GetServiceLastAccessedDetailsResult withJobType(AccessAdvisorUsageGranularityType jobType) {
+        this.jobType = jobType.toString();
         return this;
     }
 
@@ -334,7 +407,6 @@ public class GetServiceLastAccessedDetailsResult extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * <p/>
      * <p>
      * A flag that indicates whether there are more items to return. If your results were truncated, you can make a
      * subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that
@@ -344,7 +416,6 @@ public class GetServiceLastAccessedDetailsResult extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param isTruncated
-     *        <p>
      *        A flag that indicates whether there are more items to return. If your results were truncated, you can make
      *        a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.
      *        Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more
@@ -357,7 +428,6 @@ public class GetServiceLastAccessedDetailsResult extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * <p/>
      * <p>
      * A flag that indicates whether there are more items to return. If your results were truncated, you can make a
      * subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that
@@ -366,8 +436,7 @@ public class GetServiceLastAccessedDetailsResult extends com.amazonaws.AmazonWeb
      * your results.
      * </p>
      * 
-     * @return <p>
-     *         A flag that indicates whether there are more items to return. If your results were truncated, you can
+     * @return A flag that indicates whether there are more items to return. If your results were truncated, you can
      *         make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more
      *         items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there
      *         are more results available. We recommend that you check <code>IsTruncated</code> after every call to
@@ -379,7 +448,6 @@ public class GetServiceLastAccessedDetailsResult extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * <p/>
      * <p>
      * A flag that indicates whether there are more items to return. If your results were truncated, you can make a
      * subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that
@@ -389,7 +457,6 @@ public class GetServiceLastAccessedDetailsResult extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param isTruncated
-     *        <p>
      *        A flag that indicates whether there are more items to return. If your results were truncated, you can make
      *        a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.
      *        Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more
@@ -404,7 +471,6 @@ public class GetServiceLastAccessedDetailsResult extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * <p/>
      * <p>
      * A flag that indicates whether there are more items to return. If your results were truncated, you can make a
      * subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that
@@ -413,8 +479,7 @@ public class GetServiceLastAccessedDetailsResult extends com.amazonaws.AmazonWeb
      * your results.
      * </p>
      * 
-     * @return <p>
-     *         A flag that indicates whether there are more items to return. If your results were truncated, you can
+     * @return A flag that indicates whether there are more items to return. If your results were truncated, you can
      *         make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more
      *         items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there
      *         are more results available. We recommend that you check <code>IsTruncated</code> after every call to
@@ -525,6 +590,8 @@ public class GetServiceLastAccessedDetailsResult extends com.amazonaws.AmazonWeb
         sb.append("{");
         if (getJobStatus() != null)
             sb.append("JobStatus: ").append(getJobStatus()).append(",");
+        if (getJobType() != null)
+            sb.append("JobType: ").append(getJobType()).append(",");
         if (getJobCreationDate() != null)
             sb.append("JobCreationDate: ").append(getJobCreationDate()).append(",");
         if (getServicesLastAccessed() != null)
@@ -554,6 +621,10 @@ public class GetServiceLastAccessedDetailsResult extends com.amazonaws.AmazonWeb
         if (other.getJobStatus() == null ^ this.getJobStatus() == null)
             return false;
         if (other.getJobStatus() != null && other.getJobStatus().equals(this.getJobStatus()) == false)
+            return false;
+        if (other.getJobType() == null ^ this.getJobType() == null)
+            return false;
+        if (other.getJobType() != null && other.getJobType().equals(this.getJobType()) == false)
             return false;
         if (other.getJobCreationDate() == null ^ this.getJobCreationDate() == null)
             return false;
@@ -588,6 +659,7 @@ public class GetServiceLastAccessedDetailsResult extends com.amazonaws.AmazonWeb
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getJobStatus() == null) ? 0 : getJobStatus().hashCode());
+        hashCode = prime * hashCode + ((getJobType() == null) ? 0 : getJobType().hashCode());
         hashCode = prime * hashCode + ((getJobCreationDate() == null) ? 0 : getJobCreationDate().hashCode());
         hashCode = prime * hashCode + ((getServicesLastAccessed() == null) ? 0 : getServicesLastAccessed().hashCode());
         hashCode = prime * hashCode + ((getJobCompletionDate() == null) ? 0 : getJobCompletionDate().hashCode());

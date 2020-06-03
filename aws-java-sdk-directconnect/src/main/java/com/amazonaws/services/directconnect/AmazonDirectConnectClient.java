@@ -1696,6 +1696,13 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * connecting to multiple VPCs, including VPCs in different AWS Regions. Connecting the private virtual interface to
      * a VGW only provides access to a single VPC within the same Region.
      * </p>
+     * <p>
+     * Setting the MTU of a virtual interface to 9001 (jumbo frames) can cause an update to the underlying physical
+     * connection if it wasn't updated to support jumbo frames. Updating the connection disrupts network connectivity
+     * for all virtual interfaces associated with the connection for up to 30 seconds. To check whether your connection
+     * supports jumbo frames, call <a>DescribeConnections</a>. To check whether your virtual interface supports jumbo
+     * frames, call <a>DescribeVirtualInterfaces</a>.
+     * </p>
      * 
      * @param createPrivateVirtualInterfaceRequest
      * @return Result of the CreatePrivateVirtualInterface operation returned by the service.
@@ -1837,6 +1844,13 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * default ASN 64512 for both your the transit gateway and Direct Connect gateway, the association request fails.
      * </p>
      * </important>
+     * <p>
+     * Setting the MTU of a virtual interface to 8500 (jumbo frames) can cause an update to the underlying physical
+     * connection if it wasn't updated to support jumbo frames. Updating the connection disrupts network connectivity
+     * for all virtual interfaces associated with the connection for up to 30 seconds. To check whether your connection
+     * supports jumbo frames, call <a>DescribeConnections</a>. To check whether your virtual interface supports jumbo
+     * frames, call <a>DescribeVirtualInterfaces</a>.
+     * </p>
      * 
      * @param createTransitVirtualInterfaceRequest
      * @return Result of the CreateTransitVirtualInterface operation returned by the service.
@@ -3484,6 +3498,194 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Lists the virtual interface failover test history.
+     * </p>
+     * 
+     * @param listVirtualInterfaceTestHistoryRequest
+     * @return Result of the ListVirtualInterfaceTestHistory operation returned by the service.
+     * @throws DirectConnectServerException
+     *         A server-side error occurred.
+     * @throws DirectConnectClientException
+     *         One or more parameters are not valid.
+     * @sample AmazonDirectConnect.ListVirtualInterfaceTestHistory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ListVirtualInterfaceTestHistory"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListVirtualInterfaceTestHistoryResult listVirtualInterfaceTestHistory(ListVirtualInterfaceTestHistoryRequest request) {
+        request = beforeClientExecution(request);
+        return executeListVirtualInterfaceTestHistory(request);
+    }
+
+    @SdkInternalApi
+    final ListVirtualInterfaceTestHistoryResult executeListVirtualInterfaceTestHistory(
+            ListVirtualInterfaceTestHistoryRequest listVirtualInterfaceTestHistoryRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listVirtualInterfaceTestHistoryRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListVirtualInterfaceTestHistoryRequest> request = null;
+        Response<ListVirtualInterfaceTestHistoryResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListVirtualInterfaceTestHistoryRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listVirtualInterfaceTestHistoryRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListVirtualInterfaceTestHistory");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListVirtualInterfaceTestHistoryResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListVirtualInterfaceTestHistoryResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Starts the virtual interface failover test that verifies your configuration meets your resiliency requirements by
+     * placing the BGP peering session in the DOWN state. You can then send traffic to verify that there are no outages.
+     * </p>
+     * <p>
+     * You can run the test on public, private, transit, and hosted virtual interfaces.
+     * </p>
+     * <p>
+     * You can use <a
+     * href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_ListVirtualInterfaceTestHistory.html"
+     * >ListVirtualInterfaceTestHistory</a> to view the virtual interface test history.
+     * </p>
+     * <p>
+     * If you need to stop the test before the test interval completes, use <a
+     * href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_StopBgpFailoverTest.html"
+     * >StopBgpFailoverTest</a>.
+     * </p>
+     * 
+     * @param startBgpFailoverTestRequest
+     * @return Result of the StartBgpFailoverTest operation returned by the service.
+     * @throws DirectConnectServerException
+     *         A server-side error occurred.
+     * @throws DirectConnectClientException
+     *         One or more parameters are not valid.
+     * @sample AmazonDirectConnect.StartBgpFailoverTest
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/StartBgpFailoverTest"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StartBgpFailoverTestResult startBgpFailoverTest(StartBgpFailoverTestRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartBgpFailoverTest(request);
+    }
+
+    @SdkInternalApi
+    final StartBgpFailoverTestResult executeStartBgpFailoverTest(StartBgpFailoverTestRequest startBgpFailoverTestRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startBgpFailoverTestRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartBgpFailoverTestRequest> request = null;
+        Response<StartBgpFailoverTestResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartBgpFailoverTestRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startBgpFailoverTestRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartBgpFailoverTest");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartBgpFailoverTestResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartBgpFailoverTestResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Stops the virtual interface failover test.
+     * </p>
+     * 
+     * @param stopBgpFailoverTestRequest
+     * @return Result of the StopBgpFailoverTest operation returned by the service.
+     * @throws DirectConnectServerException
+     *         A server-side error occurred.
+     * @throws DirectConnectClientException
+     *         One or more parameters are not valid.
+     * @sample AmazonDirectConnect.StopBgpFailoverTest
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/StopBgpFailoverTest"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StopBgpFailoverTestResult stopBgpFailoverTest(StopBgpFailoverTestRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopBgpFailoverTest(request);
+    }
+
+    @SdkInternalApi
+    final StopBgpFailoverTestResult executeStopBgpFailoverTest(StopBgpFailoverTestRequest stopBgpFailoverTestRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(stopBgpFailoverTestRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StopBgpFailoverTestRequest> request = null;
+        Response<StopBgpFailoverTestResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StopBgpFailoverTestRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopBgpFailoverTestRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopBgpFailoverTest");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StopBgpFailoverTestResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StopBgpFailoverTestResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Adds the specified tags to the specified AWS Direct Connect resource. Each resource can have a maximum of 50
      * tags.
      * </p>
@@ -3755,7 +3957,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * Setting the MTU of a virtual interface to 9001 (jumbo frames) can cause an update to the underlying physical
      * connection if it wasn't updated to support jumbo frames. Updating the connection disrupts network connectivity
      * for all virtual interfaces associated with the connection for up to 30 seconds. To check whether your connection
-     * supports jumbo frames, call <a>DescribeConnections</a>. To check whether your virtual interface supports jumbo
+     * supports jumbo frames, call <a>DescribeConnections</a>. To check whether your virtual q interface supports jumbo
      * frames, call <a>DescribeVirtualInterfaces</a>.
      * </p>
      * 

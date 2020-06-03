@@ -52,6 +52,10 @@ public class NoiseReducerTemporalFilterSettingsJsonUnmarshaller implements Unmar
                     context.nextToken();
                     noiseReducerTemporalFilterSettings.setAggressiveMode(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("postTemporalSharpening", targetDepth)) {
+                    context.nextToken();
+                    noiseReducerTemporalFilterSettings.setPostTemporalSharpening(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("speed", targetDepth)) {
                     context.nextToken();
                     noiseReducerTemporalFilterSettings.setSpeed(context.getUnmarshaller(Integer.class).unmarshall(context));

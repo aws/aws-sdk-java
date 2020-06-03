@@ -59,7 +59,8 @@ public class CreatePrivateVirtualInterfaceResult extends com.amazonaws.AmazonWeb
     private String virtualInterfaceType;
     /**
      * <p>
-     * The name of the virtual interface assigned by the customer network.
+     * The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The
+     * following are valid characters: a-z, 0-9 and a hyphen (-).
      * </p>
      */
     private String virtualInterfaceName;
@@ -433,11 +434,13 @@ public class CreatePrivateVirtualInterfaceResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The name of the virtual interface assigned by the customer network.
+     * The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The
+     * following are valid characters: a-z, 0-9 and a hyphen (-).
      * </p>
      * 
      * @param virtualInterfaceName
-     *        The name of the virtual interface assigned by the customer network.
+     *        The name of the virtual interface assigned by the customer network. The name has a maximum of 100
+     *        characters. The following are valid characters: a-z, 0-9 and a hyphen (-).
      */
 
     public void setVirtualInterfaceName(String virtualInterfaceName) {
@@ -446,10 +449,12 @@ public class CreatePrivateVirtualInterfaceResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The name of the virtual interface assigned by the customer network.
+     * The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The
+     * following are valid characters: a-z, 0-9 and a hyphen (-).
      * </p>
      * 
-     * @return The name of the virtual interface assigned by the customer network.
+     * @return The name of the virtual interface assigned by the customer network. The name has a maximum of 100
+     *         characters. The following are valid characters: a-z, 0-9 and a hyphen (-).
      */
 
     public String getVirtualInterfaceName() {
@@ -458,11 +463,13 @@ public class CreatePrivateVirtualInterfaceResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The name of the virtual interface assigned by the customer network.
+     * The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The
+     * following are valid characters: a-z, 0-9 and a hyphen (-).
      * </p>
      * 
      * @param virtualInterfaceName
-     *        The name of the virtual interface assigned by the customer network.
+     *        The name of the virtual interface assigned by the customer network. The name has a maximum of 100
+     *        characters. The following are valid characters: a-z, 0-9 and a hyphen (-).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

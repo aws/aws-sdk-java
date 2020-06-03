@@ -15,10 +15,10 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Use (ProresParControl) to specify how the service determines the pixel aspect ratio. Set to Follow source
- * (INITIALIZE_FROM_SOURCE) to use the pixel aspect ratio from the input. To specify a different pixel aspect ratio:
- * Using the console, choose it from the dropdown menu. Using the API, set ProresParControl to (SPECIFIED) and provide
- * for (ParNumerator) and (ParDenominator).
+ * Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior,
+ * Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To use a different PAR,
+ * choose (SPECIFIED). In the console, SPECIFIED corresponds to any value other than Follow source. When you choose
+ * SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ProresParControl {

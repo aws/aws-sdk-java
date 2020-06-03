@@ -64,7 +64,10 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
      * settings FramerateNumerator and FramerateDenominator.
      */
     private String framerateControl;
-    /** When set to INTERPOLATE, produces smoother motion during frame rate conversion. */
+    /**
+     * Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use duplicate drop
+     * conversion.
+     */
     private String framerateConversionAlgorithm;
     /**
      * When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For
@@ -126,8 +129,10 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
      */
     private Integer numberReferenceFrames;
     /**
-     * Using the API, enable ParFollowSource if you want the service to use the pixel aspect ratio from the input. Using
-     * the console, do this by choosing Follow source for Pixel aspect ratio.
+     * Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior,
+     * Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To use a different
+     * PAR, choose (SPECIFIED). In the console, SPECIFIED corresponds to any value other than Follow source. When you
+     * choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
      */
     private String parControl;
     /** Pixel Aspect Ratio denominator. */
@@ -135,8 +140,8 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     /** Pixel Aspect Ratio numerator. */
     private Integer parNumerator;
     /**
-     * Use Quality tuning level (H264QualityTuningLevel) to specifiy whether to use fast single-pass, high-quality
-     * singlepass, or high-quality multipass video encoding.
+     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for
+     * output video quality. The default behavior is faster, lower quality, single-pass encoding.
      */
     private String qualityTuningLevel;
     /**
@@ -729,10 +734,12 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use duplicate drop
+     * conversion.
      * 
      * @param framerateConversionAlgorithm
-     *        When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     *        Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use
+     *        duplicate drop conversion.
      * @see H264FramerateConversionAlgorithm
      */
 
@@ -741,9 +748,11 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use duplicate drop
+     * conversion.
      * 
-     * @return When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * @return Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use
+     *         duplicate drop conversion.
      * @see H264FramerateConversionAlgorithm
      */
 
@@ -752,10 +761,12 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use duplicate drop
+     * conversion.
      * 
      * @param framerateConversionAlgorithm
-     *        When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     *        Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use
+     *        duplicate drop conversion.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see H264FramerateConversionAlgorithm
      */
@@ -766,10 +777,12 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use duplicate drop
+     * conversion.
      * 
      * @param framerateConversionAlgorithm
-     *        When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     *        Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use
+     *        duplicate drop conversion.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see H264FramerateConversionAlgorithm
      */
@@ -1410,12 +1423,17 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Using the API, enable ParFollowSource if you want the service to use the pixel aspect ratio from the input. Using
-     * the console, do this by choosing Follow source for Pixel aspect ratio.
+     * Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior,
+     * Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To use a different
+     * PAR, choose (SPECIFIED). In the console, SPECIFIED corresponds to any value other than Follow source. When you
+     * choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
      * 
      * @param parControl
-     *        Using the API, enable ParFollowSource if you want the service to use the pixel aspect ratio from the
-     *        input. Using the console, do this by choosing Follow source for Pixel aspect ratio.
+     *        Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default
+     *        behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To
+     *        use a different PAR, choose (SPECIFIED). In the console, SPECIFIED corresponds to any value other than
+     *        Follow source. When you choose SPECIFIED for this setting, you must also specify values for the
+     *        parNumerator and parDenominator settings.
      * @see H264ParControl
      */
 
@@ -1424,11 +1442,16 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Using the API, enable ParFollowSource if you want the service to use the pixel aspect ratio from the input. Using
-     * the console, do this by choosing Follow source for Pixel aspect ratio.
+     * Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior,
+     * Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To use a different
+     * PAR, choose (SPECIFIED). In the console, SPECIFIED corresponds to any value other than Follow source. When you
+     * choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
      * 
-     * @return Using the API, enable ParFollowSource if you want the service to use the pixel aspect ratio from the
-     *         input. Using the console, do this by choosing Follow source for Pixel aspect ratio.
+     * @return Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default
+     *         behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To
+     *         use a different PAR, choose (SPECIFIED). In the console, SPECIFIED corresponds to any value other than
+     *         Follow source. When you choose SPECIFIED for this setting, you must also specify values for the
+     *         parNumerator and parDenominator settings.
      * @see H264ParControl
      */
 
@@ -1437,12 +1460,17 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Using the API, enable ParFollowSource if you want the service to use the pixel aspect ratio from the input. Using
-     * the console, do this by choosing Follow source for Pixel aspect ratio.
+     * Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior,
+     * Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To use a different
+     * PAR, choose (SPECIFIED). In the console, SPECIFIED corresponds to any value other than Follow source. When you
+     * choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
      * 
      * @param parControl
-     *        Using the API, enable ParFollowSource if you want the service to use the pixel aspect ratio from the
-     *        input. Using the console, do this by choosing Follow source for Pixel aspect ratio.
+     *        Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default
+     *        behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To
+     *        use a different PAR, choose (SPECIFIED). In the console, SPECIFIED corresponds to any value other than
+     *        Follow source. When you choose SPECIFIED for this setting, you must also specify values for the
+     *        parNumerator and parDenominator settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see H264ParControl
      */
@@ -1453,12 +1481,17 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Using the API, enable ParFollowSource if you want the service to use the pixel aspect ratio from the input. Using
-     * the console, do this by choosing Follow source for Pixel aspect ratio.
+     * Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior,
+     * Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To use a different
+     * PAR, choose (SPECIFIED). In the console, SPECIFIED corresponds to any value other than Follow source. When you
+     * choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
      * 
      * @param parControl
-     *        Using the API, enable ParFollowSource if you want the service to use the pixel aspect ratio from the
-     *        input. Using the console, do this by choosing Follow source for Pixel aspect ratio.
+     *        Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default
+     *        behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To
+     *        use a different PAR, choose (SPECIFIED). In the console, SPECIFIED corresponds to any value other than
+     *        Follow source. When you choose SPECIFIED for this setting, you must also specify values for the
+     *        parNumerator and parDenominator settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see H264ParControl
      */
@@ -1537,12 +1570,12 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Quality tuning level (H264QualityTuningLevel) to specifiy whether to use fast single-pass, high-quality
-     * singlepass, or high-quality multipass video encoding.
+     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for
+     * output video quality. The default behavior is faster, lower quality, single-pass encoding.
      * 
      * @param qualityTuningLevel
-     *        Use Quality tuning level (H264QualityTuningLevel) to specifiy whether to use fast single-pass,
-     *        high-quality singlepass, or high-quality multipass video encoding.
+     *        Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed
+     *        for output video quality. The default behavior is faster, lower quality, single-pass encoding.
      * @see H264QualityTuningLevel
      */
 
@@ -1551,11 +1584,11 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Quality tuning level (H264QualityTuningLevel) to specifiy whether to use fast single-pass, high-quality
-     * singlepass, or high-quality multipass video encoding.
+     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for
+     * output video quality. The default behavior is faster, lower quality, single-pass encoding.
      * 
-     * @return Use Quality tuning level (H264QualityTuningLevel) to specifiy whether to use fast single-pass,
-     *         high-quality singlepass, or high-quality multipass video encoding.
+     * @return Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding
+     *         speed for output video quality. The default behavior is faster, lower quality, single-pass encoding.
      * @see H264QualityTuningLevel
      */
 
@@ -1564,12 +1597,12 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Quality tuning level (H264QualityTuningLevel) to specifiy whether to use fast single-pass, high-quality
-     * singlepass, or high-quality multipass video encoding.
+     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for
+     * output video quality. The default behavior is faster, lower quality, single-pass encoding.
      * 
      * @param qualityTuningLevel
-     *        Use Quality tuning level (H264QualityTuningLevel) to specifiy whether to use fast single-pass,
-     *        high-quality singlepass, or high-quality multipass video encoding.
+     *        Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed
+     *        for output video quality. The default behavior is faster, lower quality, single-pass encoding.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see H264QualityTuningLevel
      */
@@ -1580,12 +1613,12 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Quality tuning level (H264QualityTuningLevel) to specifiy whether to use fast single-pass, high-quality
-     * singlepass, or high-quality multipass video encoding.
+     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for
+     * output video quality. The default behavior is faster, lower quality, single-pass encoding.
      * 
      * @param qualityTuningLevel
-     *        Use Quality tuning level (H264QualityTuningLevel) to specifiy whether to use fast single-pass,
-     *        high-quality singlepass, or high-quality multipass video encoding.
+     *        Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed
+     *        for output video quality. The default behavior is faster, lower quality, single-pass encoding.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see H264QualityTuningLevel
      */

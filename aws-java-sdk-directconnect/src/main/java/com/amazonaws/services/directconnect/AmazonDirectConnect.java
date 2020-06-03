@@ -664,6 +664,13 @@ public interface AmazonDirectConnect {
      * connecting to multiple VPCs, including VPCs in different AWS Regions. Connecting the private virtual interface to
      * a VGW only provides access to a single VPC within the same Region.
      * </p>
+     * <p>
+     * Setting the MTU of a virtual interface to 9001 (jumbo frames) can cause an update to the underlying physical
+     * connection if it wasn't updated to support jumbo frames. Updating the connection disrupts network connectivity
+     * for all virtual interfaces associated with the connection for up to 30 seconds. To check whether your connection
+     * supports jumbo frames, call <a>DescribeConnections</a>. To check whether your virtual interface supports jumbo
+     * frames, call <a>DescribeVirtualInterfaces</a>.
+     * </p>
      * 
      * @param createPrivateVirtualInterfaceRequest
      * @return Result of the CreatePrivateVirtualInterface operation returned by the service.
@@ -721,6 +728,13 @@ public interface AmazonDirectConnect {
      * default ASN 64512 for both your the transit gateway and Direct Connect gateway, the association request fails.
      * </p>
      * </important>
+     * <p>
+     * Setting the MTU of a virtual interface to 8500 (jumbo frames) can cause an update to the underlying physical
+     * connection if it wasn't updated to support jumbo frames. Updating the connection disrupts network connectivity
+     * for all virtual interfaces associated with the connection for up to 30 seconds. To check whether your connection
+     * supports jumbo frames, call <a>DescribeConnections</a>. To check whether your virtual interface supports jumbo
+     * frames, call <a>DescribeVirtualInterfaces</a>.
+     * </p>
      * 
      * @param createTransitVirtualInterfaceRequest
      * @return Result of the CreateTransitVirtualInterface operation returned by the service.
@@ -1304,6 +1318,71 @@ public interface AmazonDirectConnect {
 
     /**
      * <p>
+     * Lists the virtual interface failover test history.
+     * </p>
+     * 
+     * @param listVirtualInterfaceTestHistoryRequest
+     * @return Result of the ListVirtualInterfaceTestHistory operation returned by the service.
+     * @throws DirectConnectServerException
+     *         A server-side error occurred.
+     * @throws DirectConnectClientException
+     *         One or more parameters are not valid.
+     * @sample AmazonDirectConnect.ListVirtualInterfaceTestHistory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ListVirtualInterfaceTestHistory"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListVirtualInterfaceTestHistoryResult listVirtualInterfaceTestHistory(ListVirtualInterfaceTestHistoryRequest listVirtualInterfaceTestHistoryRequest);
+
+    /**
+     * <p>
+     * Starts the virtual interface failover test that verifies your configuration meets your resiliency requirements by
+     * placing the BGP peering session in the DOWN state. You can then send traffic to verify that there are no outages.
+     * </p>
+     * <p>
+     * You can run the test on public, private, transit, and hosted virtual interfaces.
+     * </p>
+     * <p>
+     * You can use <a
+     * href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_ListVirtualInterfaceTestHistory.html"
+     * >ListVirtualInterfaceTestHistory</a> to view the virtual interface test history.
+     * </p>
+     * <p>
+     * If you need to stop the test before the test interval completes, use <a
+     * href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_StopBgpFailoverTest.html"
+     * >StopBgpFailoverTest</a>.
+     * </p>
+     * 
+     * @param startBgpFailoverTestRequest
+     * @return Result of the StartBgpFailoverTest operation returned by the service.
+     * @throws DirectConnectServerException
+     *         A server-side error occurred.
+     * @throws DirectConnectClientException
+     *         One or more parameters are not valid.
+     * @sample AmazonDirectConnect.StartBgpFailoverTest
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/StartBgpFailoverTest"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartBgpFailoverTestResult startBgpFailoverTest(StartBgpFailoverTestRequest startBgpFailoverTestRequest);
+
+    /**
+     * <p>
+     * Stops the virtual interface failover test.
+     * </p>
+     * 
+     * @param stopBgpFailoverTestRequest
+     * @return Result of the StopBgpFailoverTest operation returned by the service.
+     * @throws DirectConnectServerException
+     *         A server-side error occurred.
+     * @throws DirectConnectClientException
+     *         One or more parameters are not valid.
+     * @sample AmazonDirectConnect.StopBgpFailoverTest
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/StopBgpFailoverTest"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StopBgpFailoverTestResult stopBgpFailoverTest(StopBgpFailoverTestRequest stopBgpFailoverTestRequest);
+
+    /**
+     * <p>
      * Adds the specified tags to the specified AWS Direct Connect resource. Each resource can have a maximum of 50
      * tags.
      * </p>
@@ -1413,7 +1492,7 @@ public interface AmazonDirectConnect {
      * Setting the MTU of a virtual interface to 9001 (jumbo frames) can cause an update to the underlying physical
      * connection if it wasn't updated to support jumbo frames. Updating the connection disrupts network connectivity
      * for all virtual interfaces associated with the connection for up to 30 seconds. To check whether your connection
-     * supports jumbo frames, call <a>DescribeConnections</a>. To check whether your virtual interface supports jumbo
+     * supports jumbo frames, call <a>DescribeConnections</a>. To check whether your virtual q interface supports jumbo
      * frames, call <a>DescribeVirtualInterfaces</a>.
      * </p>
      * 

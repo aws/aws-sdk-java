@@ -1087,6 +1087,13 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * connecting to multiple VPCs, including VPCs in different AWS Regions. Connecting the private virtual interface to
      * a VGW only provides access to a single VPC within the same Region.
      * </p>
+     * <p>
+     * Setting the MTU of a virtual interface to 9001 (jumbo frames) can cause an update to the underlying physical
+     * connection if it wasn't updated to support jumbo frames. Updating the connection disrupts network connectivity
+     * for all virtual interfaces associated with the connection for up to 30 seconds. To check whether your connection
+     * supports jumbo frames, call <a>DescribeConnections</a>. To check whether your virtual interface supports jumbo
+     * frames, call <a>DescribeVirtualInterfaces</a>.
+     * </p>
      * 
      * @param createPrivateVirtualInterfaceRequest
      * @return A Java Future containing the result of the CreatePrivateVirtualInterface operation returned by the
@@ -1105,6 +1112,13 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * (VGW). Connecting the private virtual interface to a Direct Connect gateway enables the possibility for
      * connecting to multiple VPCs, including VPCs in different AWS Regions. Connecting the private virtual interface to
      * a VGW only provides access to a single VPC within the same Region.
+     * </p>
+     * <p>
+     * Setting the MTU of a virtual interface to 9001 (jumbo frames) can cause an update to the underlying physical
+     * connection if it wasn't updated to support jumbo frames. Updating the connection disrupts network connectivity
+     * for all virtual interfaces associated with the connection for up to 30 seconds. To check whether your connection
+     * supports jumbo frames, call <a>DescribeConnections</a>. To check whether your virtual interface supports jumbo
+     * frames, call <a>DescribeVirtualInterfaces</a>.
      * </p>
      * 
      * @param createPrivateVirtualInterfaceRequest
@@ -1182,6 +1196,13 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * default ASN 64512 for both your the transit gateway and Direct Connect gateway, the association request fails.
      * </p>
      * </important>
+     * <p>
+     * Setting the MTU of a virtual interface to 8500 (jumbo frames) can cause an update to the underlying physical
+     * connection if it wasn't updated to support jumbo frames. Updating the connection disrupts network connectivity
+     * for all virtual interfaces associated with the connection for up to 30 seconds. To check whether your connection
+     * supports jumbo frames, call <a>DescribeConnections</a>. To check whether your virtual interface supports jumbo
+     * frames, call <a>DescribeVirtualInterfaces</a>.
+     * </p>
      * 
      * @param createTransitVirtualInterfaceRequest
      * @return A Java Future containing the result of the CreateTransitVirtualInterface operation returned by the
@@ -1206,6 +1227,13 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * default ASN 64512 for both your the transit gateway and Direct Connect gateway, the association request fails.
      * </p>
      * </important>
+     * <p>
+     * Setting the MTU of a virtual interface to 8500 (jumbo frames) can cause an update to the underlying physical
+     * connection if it wasn't updated to support jumbo frames. Updating the connection disrupts network connectivity
+     * for all virtual interfaces associated with the connection for up to 30 seconds. To check whether your connection
+     * supports jumbo frames, call <a>DescribeConnections</a>. To check whether your virtual interface supports jumbo
+     * frames, call <a>DescribeVirtualInterfaces</a>.
+     * </p>
      * 
      * @param createTransitVirtualInterfaceRequest
      * @param asyncHandler
@@ -2310,6 +2338,131 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
 
     /**
      * <p>
+     * Lists the virtual interface failover test history.
+     * </p>
+     * 
+     * @param listVirtualInterfaceTestHistoryRequest
+     * @return A Java Future containing the result of the ListVirtualInterfaceTestHistory operation returned by the
+     *         service.
+     * @sample AmazonDirectConnectAsync.ListVirtualInterfaceTestHistory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ListVirtualInterfaceTestHistory"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListVirtualInterfaceTestHistoryResult> listVirtualInterfaceTestHistoryAsync(
+            ListVirtualInterfaceTestHistoryRequest listVirtualInterfaceTestHistoryRequest);
+
+    /**
+     * <p>
+     * Lists the virtual interface failover test history.
+     * </p>
+     * 
+     * @param listVirtualInterfaceTestHistoryRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListVirtualInterfaceTestHistory operation returned by the
+     *         service.
+     * @sample AmazonDirectConnectAsyncHandler.ListVirtualInterfaceTestHistory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ListVirtualInterfaceTestHistory"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListVirtualInterfaceTestHistoryResult> listVirtualInterfaceTestHistoryAsync(
+            ListVirtualInterfaceTestHistoryRequest listVirtualInterfaceTestHistoryRequest,
+            com.amazonaws.handlers.AsyncHandler<ListVirtualInterfaceTestHistoryRequest, ListVirtualInterfaceTestHistoryResult> asyncHandler);
+
+    /**
+     * <p>
+     * Starts the virtual interface failover test that verifies your configuration meets your resiliency requirements by
+     * placing the BGP peering session in the DOWN state. You can then send traffic to verify that there are no outages.
+     * </p>
+     * <p>
+     * You can run the test on public, private, transit, and hosted virtual interfaces.
+     * </p>
+     * <p>
+     * You can use <a
+     * href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_ListVirtualInterfaceTestHistory.html"
+     * >ListVirtualInterfaceTestHistory</a> to view the virtual interface test history.
+     * </p>
+     * <p>
+     * If you need to stop the test before the test interval completes, use <a
+     * href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_StopBgpFailoverTest.html"
+     * >StopBgpFailoverTest</a>.
+     * </p>
+     * 
+     * @param startBgpFailoverTestRequest
+     * @return A Java Future containing the result of the StartBgpFailoverTest operation returned by the service.
+     * @sample AmazonDirectConnectAsync.StartBgpFailoverTest
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/StartBgpFailoverTest"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartBgpFailoverTestResult> startBgpFailoverTestAsync(StartBgpFailoverTestRequest startBgpFailoverTestRequest);
+
+    /**
+     * <p>
+     * Starts the virtual interface failover test that verifies your configuration meets your resiliency requirements by
+     * placing the BGP peering session in the DOWN state. You can then send traffic to verify that there are no outages.
+     * </p>
+     * <p>
+     * You can run the test on public, private, transit, and hosted virtual interfaces.
+     * </p>
+     * <p>
+     * You can use <a
+     * href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_ListVirtualInterfaceTestHistory.html"
+     * >ListVirtualInterfaceTestHistory</a> to view the virtual interface test history.
+     * </p>
+     * <p>
+     * If you need to stop the test before the test interval completes, use <a
+     * href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_StopBgpFailoverTest.html"
+     * >StopBgpFailoverTest</a>.
+     * </p>
+     * 
+     * @param startBgpFailoverTestRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartBgpFailoverTest operation returned by the service.
+     * @sample AmazonDirectConnectAsyncHandler.StartBgpFailoverTest
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/StartBgpFailoverTest"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartBgpFailoverTestResult> startBgpFailoverTestAsync(StartBgpFailoverTestRequest startBgpFailoverTestRequest,
+            com.amazonaws.handlers.AsyncHandler<StartBgpFailoverTestRequest, StartBgpFailoverTestResult> asyncHandler);
+
+    /**
+     * <p>
+     * Stops the virtual interface failover test.
+     * </p>
+     * 
+     * @param stopBgpFailoverTestRequest
+     * @return A Java Future containing the result of the StopBgpFailoverTest operation returned by the service.
+     * @sample AmazonDirectConnectAsync.StopBgpFailoverTest
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/StopBgpFailoverTest"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StopBgpFailoverTestResult> stopBgpFailoverTestAsync(StopBgpFailoverTestRequest stopBgpFailoverTestRequest);
+
+    /**
+     * <p>
+     * Stops the virtual interface failover test.
+     * </p>
+     * 
+     * @param stopBgpFailoverTestRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StopBgpFailoverTest operation returned by the service.
+     * @sample AmazonDirectConnectAsyncHandler.StopBgpFailoverTest
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/StopBgpFailoverTest"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StopBgpFailoverTestResult> stopBgpFailoverTestAsync(StopBgpFailoverTestRequest stopBgpFailoverTestRequest,
+            com.amazonaws.handlers.AsyncHandler<StopBgpFailoverTestRequest, StopBgpFailoverTestResult> asyncHandler);
+
+    /**
+     * <p>
      * Adds the specified tags to the specified AWS Direct Connect resource. Each resource can have a maximum of 50
      * tags.
      * </p>
@@ -2504,7 +2657,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * Setting the MTU of a virtual interface to 9001 (jumbo frames) can cause an update to the underlying physical
      * connection if it wasn't updated to support jumbo frames. Updating the connection disrupts network connectivity
      * for all virtual interfaces associated with the connection for up to 30 seconds. To check whether your connection
-     * supports jumbo frames, call <a>DescribeConnections</a>. To check whether your virtual interface supports jumbo
+     * supports jumbo frames, call <a>DescribeConnections</a>. To check whether your virtual q interface supports jumbo
      * frames, call <a>DescribeVirtualInterfaces</a>.
      * </p>
      * 
@@ -2526,7 +2679,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * Setting the MTU of a virtual interface to 9001 (jumbo frames) can cause an update to the underlying physical
      * connection if it wasn't updated to support jumbo frames. Updating the connection disrupts network connectivity
      * for all virtual interfaces associated with the connection for up to 30 seconds. To check whether your connection
-     * supports jumbo frames, call <a>DescribeConnections</a>. To check whether your virtual interface supports jumbo
+     * supports jumbo frames, call <a>DescribeConnections</a>. To check whether your virtual q interface supports jumbo
      * frames, call <a>DescribeVirtualInterfaces</a>.
      * </p>
      * 

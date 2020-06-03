@@ -311,6 +311,21 @@ public class AbstractAmazonDirectConnect implements AmazonDirectConnect {
     }
 
     @Override
+    public ListVirtualInterfaceTestHistoryResult listVirtualInterfaceTestHistory(ListVirtualInterfaceTestHistoryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartBgpFailoverTestResult startBgpFailoverTest(StartBgpFailoverTestRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopBgpFailoverTestResult stopBgpFailoverTest(StopBgpFailoverTestRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public TagResourceResult tagResource(TagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

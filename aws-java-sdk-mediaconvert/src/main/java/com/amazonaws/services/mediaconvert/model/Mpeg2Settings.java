@@ -49,13 +49,16 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
      * keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion,
      * choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal
      * approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your
-     * transcoding job sepecification as a JSON file without the console, use FramerateControl to specify which value the
+     * transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the
      * service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the
      * frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the
      * settings FramerateNumerator and FramerateDenominator.
      */
     private String framerateControl;
-    /** When set to INTERPOLATE, produces smoother motion during frame rate conversion. */
+    /**
+     * Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use duplicate drop
+     * conversion.
+     */
     private String framerateConversionAlgorithm;
     /** Frame rate denominator. */
     private Integer framerateDenominator;
@@ -108,8 +111,10 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
     /** Number of B-frames between reference frames. */
     private Integer numberBFramesBetweenReferenceFrames;
     /**
-     * Using the API, enable ParFollowSource if you want the service to use the pixel aspect ratio from the input. Using
-     * the console, do this by choosing Follow source for Pixel aspect ratio.
+     * Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior,
+     * Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To use a different
+     * PAR, choose (SPECIFIED). In the console, SPECIFIED corresponds to any value other than Follow source. When you
+     * choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
      */
     private String parControl;
     /** Pixel Aspect Ratio denominator. */
@@ -117,8 +122,8 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
     /** Pixel Aspect Ratio numerator. */
     private Integer parNumerator;
     /**
-     * Use Quality tuning level (Mpeg2QualityTuningLevel) to specifiy whether to use single-pass or multipass video
-     * encoding.
+     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for
+     * output video quality. The default behavior is faster, lower quality, single-pass encoding.
      */
     private String qualityTuningLevel;
     /**
@@ -423,7 +428,7 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
      * keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion,
      * choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal
      * approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your
-     * transcoding job sepecification as a JSON file without the console, use FramerateControl to specify which value the
+     * transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the
      * service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the
      * frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the
      * settings FramerateNumerator and FramerateDenominator.
@@ -433,7 +438,7 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
      *        want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate
      *        conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the
      *        dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a
-     *        fraction. If you are creating your transcoding job sepecification as a JSON file without the console, use
+     *        fraction. If you are creating your transcoding job specification as a JSON file without the console, use
      *        FramerateControl to specify which value the service uses for the frame rate for this output. Choose
      *        INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if
      *        you want the service to use the frame rate you specify in the settings FramerateNumerator and
@@ -450,7 +455,7 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
      * keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion,
      * choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal
      * approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your
-     * transcoding job sepecification as a JSON file without the console, use FramerateControl to specify which value the
+     * transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the
      * service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the
      * frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the
      * settings FramerateNumerator and FramerateDenominator.
@@ -459,7 +464,7 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
      *         want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate
      *         conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the
      *         dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a
-     *         fraction. If you are creating your transcoding job sepecification as a JSON file without the console, use
+     *         fraction. If you are creating your transcoding job specification as a JSON file without the console, use
      *         FramerateControl to specify which value the service uses for the frame rate for this output. Choose
      *         INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if
      *         you want the service to use the frame rate you specify in the settings FramerateNumerator and
@@ -476,7 +481,7 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
      * keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion,
      * choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal
      * approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your
-     * transcoding job sepecification as a JSON file without the console, use FramerateControl to specify which value the
+     * transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the
      * service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the
      * frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the
      * settings FramerateNumerator and FramerateDenominator.
@@ -486,7 +491,7 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
      *        want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate
      *        conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the
      *        dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a
-     *        fraction. If you are creating your transcoding job sepecification as a JSON file without the console, use
+     *        fraction. If you are creating your transcoding job specification as a JSON file without the console, use
      *        FramerateControl to specify which value the service uses for the frame rate for this output. Choose
      *        INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if
      *        you want the service to use the frame rate you specify in the settings FramerateNumerator and
@@ -505,7 +510,7 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
      * keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion,
      * choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal
      * approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your
-     * transcoding job sepecification as a JSON file without the console, use FramerateControl to specify which value the
+     * transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the
      * service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the
      * frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the
      * settings FramerateNumerator and FramerateDenominator.
@@ -515,7 +520,7 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
      *        want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate
      *        conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the
      *        dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a
-     *        fraction. If you are creating your transcoding job sepecification as a JSON file without the console, use
+     *        fraction. If you are creating your transcoding job specification as a JSON file without the console, use
      *        FramerateControl to specify which value the service uses for the frame rate for this output. Choose
      *        INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if
      *        you want the service to use the frame rate you specify in the settings FramerateNumerator and
@@ -530,10 +535,12 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use duplicate drop
+     * conversion.
      * 
      * @param framerateConversionAlgorithm
-     *        When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     *        Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use
+     *        duplicate drop conversion.
      * @see Mpeg2FramerateConversionAlgorithm
      */
 
@@ -542,9 +549,11 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use duplicate drop
+     * conversion.
      * 
-     * @return When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * @return Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use
+     *         duplicate drop conversion.
      * @see Mpeg2FramerateConversionAlgorithm
      */
 
@@ -553,10 +562,12 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use duplicate drop
+     * conversion.
      * 
      * @param framerateConversionAlgorithm
-     *        When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     *        Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use
+     *        duplicate drop conversion.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Mpeg2FramerateConversionAlgorithm
      */
@@ -567,10 +578,12 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use duplicate drop
+     * conversion.
      * 
      * @param framerateConversionAlgorithm
-     *        When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     *        Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use
+     *        duplicate drop conversion.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Mpeg2FramerateConversionAlgorithm
      */
@@ -1160,12 +1173,17 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Using the API, enable ParFollowSource if you want the service to use the pixel aspect ratio from the input. Using
-     * the console, do this by choosing Follow source for Pixel aspect ratio.
+     * Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior,
+     * Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To use a different
+     * PAR, choose (SPECIFIED). In the console, SPECIFIED corresponds to any value other than Follow source. When you
+     * choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
      * 
      * @param parControl
-     *        Using the API, enable ParFollowSource if you want the service to use the pixel aspect ratio from the
-     *        input. Using the console, do this by choosing Follow source for Pixel aspect ratio.
+     *        Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default
+     *        behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To
+     *        use a different PAR, choose (SPECIFIED). In the console, SPECIFIED corresponds to any value other than
+     *        Follow source. When you choose SPECIFIED for this setting, you must also specify values for the
+     *        parNumerator and parDenominator settings.
      * @see Mpeg2ParControl
      */
 
@@ -1174,11 +1192,16 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Using the API, enable ParFollowSource if you want the service to use the pixel aspect ratio from the input. Using
-     * the console, do this by choosing Follow source for Pixel aspect ratio.
+     * Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior,
+     * Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To use a different
+     * PAR, choose (SPECIFIED). In the console, SPECIFIED corresponds to any value other than Follow source. When you
+     * choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
      * 
-     * @return Using the API, enable ParFollowSource if you want the service to use the pixel aspect ratio from the
-     *         input. Using the console, do this by choosing Follow source for Pixel aspect ratio.
+     * @return Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default
+     *         behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To
+     *         use a different PAR, choose (SPECIFIED). In the console, SPECIFIED corresponds to any value other than
+     *         Follow source. When you choose SPECIFIED for this setting, you must also specify values for the
+     *         parNumerator and parDenominator settings.
      * @see Mpeg2ParControl
      */
 
@@ -1187,12 +1210,17 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Using the API, enable ParFollowSource if you want the service to use the pixel aspect ratio from the input. Using
-     * the console, do this by choosing Follow source for Pixel aspect ratio.
+     * Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior,
+     * Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To use a different
+     * PAR, choose (SPECIFIED). In the console, SPECIFIED corresponds to any value other than Follow source. When you
+     * choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
      * 
      * @param parControl
-     *        Using the API, enable ParFollowSource if you want the service to use the pixel aspect ratio from the
-     *        input. Using the console, do this by choosing Follow source for Pixel aspect ratio.
+     *        Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default
+     *        behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To
+     *        use a different PAR, choose (SPECIFIED). In the console, SPECIFIED corresponds to any value other than
+     *        Follow source. When you choose SPECIFIED for this setting, you must also specify values for the
+     *        parNumerator and parDenominator settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Mpeg2ParControl
      */
@@ -1203,12 +1231,17 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Using the API, enable ParFollowSource if you want the service to use the pixel aspect ratio from the input. Using
-     * the console, do this by choosing Follow source for Pixel aspect ratio.
+     * Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior,
+     * Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To use a different
+     * PAR, choose (SPECIFIED). In the console, SPECIFIED corresponds to any value other than Follow source. When you
+     * choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
      * 
      * @param parControl
-     *        Using the API, enable ParFollowSource if you want the service to use the pixel aspect ratio from the
-     *        input. Using the console, do this by choosing Follow source for Pixel aspect ratio.
+     *        Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default
+     *        behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To
+     *        use a different PAR, choose (SPECIFIED). In the console, SPECIFIED corresponds to any value other than
+     *        Follow source. When you choose SPECIFIED for this setting, you must also specify values for the
+     *        parNumerator and parDenominator settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Mpeg2ParControl
      */
@@ -1287,12 +1320,12 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Quality tuning level (Mpeg2QualityTuningLevel) to specifiy whether to use single-pass or multipass video
-     * encoding.
+     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for
+     * output video quality. The default behavior is faster, lower quality, single-pass encoding.
      * 
      * @param qualityTuningLevel
-     *        Use Quality tuning level (Mpeg2QualityTuningLevel) to specifiy whether to use single-pass or multipass
-     *        video encoding.
+     *        Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed
+     *        for output video quality. The default behavior is faster, lower quality, single-pass encoding.
      * @see Mpeg2QualityTuningLevel
      */
 
@@ -1301,11 +1334,11 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Quality tuning level (Mpeg2QualityTuningLevel) to specifiy whether to use single-pass or multipass video
-     * encoding.
+     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for
+     * output video quality. The default behavior is faster, lower quality, single-pass encoding.
      * 
-     * @return Use Quality tuning level (Mpeg2QualityTuningLevel) to specifiy whether to use single-pass or multipass
-     *         video encoding.
+     * @return Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding
+     *         speed for output video quality. The default behavior is faster, lower quality, single-pass encoding.
      * @see Mpeg2QualityTuningLevel
      */
 
@@ -1314,12 +1347,12 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Quality tuning level (Mpeg2QualityTuningLevel) to specifiy whether to use single-pass or multipass video
-     * encoding.
+     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for
+     * output video quality. The default behavior is faster, lower quality, single-pass encoding.
      * 
      * @param qualityTuningLevel
-     *        Use Quality tuning level (Mpeg2QualityTuningLevel) to specifiy whether to use single-pass or multipass
-     *        video encoding.
+     *        Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed
+     *        for output video quality. The default behavior is faster, lower quality, single-pass encoding.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Mpeg2QualityTuningLevel
      */
@@ -1330,12 +1363,12 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Quality tuning level (Mpeg2QualityTuningLevel) to specifiy whether to use single-pass or multipass video
-     * encoding.
+     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for
+     * output video quality. The default behavior is faster, lower quality, single-pass encoding.
      * 
      * @param qualityTuningLevel
-     *        Use Quality tuning level (Mpeg2QualityTuningLevel) to specifiy whether to use single-pass or multipass
-     *        video encoding.
+     *        Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed
+     *        for output video quality. The default behavior is faster, lower quality, single-pass encoding.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Mpeg2QualityTuningLevel
      */

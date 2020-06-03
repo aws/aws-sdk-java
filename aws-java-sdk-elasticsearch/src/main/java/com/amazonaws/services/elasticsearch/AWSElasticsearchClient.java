@@ -121,6 +121,9 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalException").withExceptionUnmarshaller(
                                     com.amazonaws.services.elasticsearch.model.transform.InternalExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidPaginationTokenException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.elasticsearch.model.transform.InvalidPaginationTokenExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.elasticsearch.model.AWSElasticsearchException.class));
 
     /**
@@ -321,6 +324,70 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
         requestHandler2s.addAll(chainFactory.newRequestHandlerChain("/com/amazonaws/services/elasticsearch/request.handlers"));
         requestHandler2s.addAll(chainFactory.newRequestHandler2Chain("/com/amazonaws/services/elasticsearch/request.handler2s"));
         requestHandler2s.addAll(chainFactory.getGlobalHandlers());
+    }
+
+    /**
+     * <p>
+     * Allows the destination domain owner to accept an inbound cross-cluster search connection request.
+     * </p>
+     * 
+     * @param acceptInboundCrossClusterSearchConnectionRequest
+     *        Container for the parameters to the <code><a>AcceptInboundCrossClusterSearchConnection</a></code>
+     *        operation.
+     * @return Result of the AcceptInboundCrossClusterSearchConnection operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws LimitExceededException
+     *         An exception for trying to create more than allowed resources or sub-resources. Gives http status code of
+     *         409.
+     * @throws DisabledOperationException
+     *         An error occured because the client wanted to access a not supported operation. Gives http status code of
+     *         409.
+     * @sample AWSElasticsearch.AcceptInboundCrossClusterSearchConnection
+     */
+    @Override
+    public AcceptInboundCrossClusterSearchConnectionResult acceptInboundCrossClusterSearchConnection(AcceptInboundCrossClusterSearchConnectionRequest request) {
+        request = beforeClientExecution(request);
+        return executeAcceptInboundCrossClusterSearchConnection(request);
+    }
+
+    @SdkInternalApi
+    final AcceptInboundCrossClusterSearchConnectionResult executeAcceptInboundCrossClusterSearchConnection(
+            AcceptInboundCrossClusterSearchConnectionRequest acceptInboundCrossClusterSearchConnectionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(acceptInboundCrossClusterSearchConnectionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AcceptInboundCrossClusterSearchConnectionRequest> request = null;
+        Response<AcceptInboundCrossClusterSearchConnectionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AcceptInboundCrossClusterSearchConnectionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(acceptInboundCrossClusterSearchConnectionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elasticsearch Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AcceptInboundCrossClusterSearchConnection");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AcceptInboundCrossClusterSearchConnectionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new AcceptInboundCrossClusterSearchConnectionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -599,6 +666,73 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
+     * Creates a new cross-cluster search connection from a source domain to a destination domain.
+     * </p>
+     * 
+     * @param createOutboundCrossClusterSearchConnectionRequest
+     *        Container for the parameters to the <code><a>CreateOutboundCrossClusterSearchConnection</a></code>
+     *        operation.
+     * @return Result of the CreateOutboundCrossClusterSearchConnection operation returned by the service.
+     * @throws LimitExceededException
+     *         An exception for trying to create more than allowed resources or sub-resources. Gives http status code of
+     *         409.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @throws ResourceAlreadyExistsException
+     *         An exception for creating a resource that already exists. Gives http status code of 400.
+     * @throws DisabledOperationException
+     *         An error occured because the client wanted to access a not supported operation. Gives http status code of
+     *         409.
+     * @sample AWSElasticsearch.CreateOutboundCrossClusterSearchConnection
+     */
+    @Override
+    public CreateOutboundCrossClusterSearchConnectionResult createOutboundCrossClusterSearchConnection(CreateOutboundCrossClusterSearchConnectionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateOutboundCrossClusterSearchConnection(request);
+    }
+
+    @SdkInternalApi
+    final CreateOutboundCrossClusterSearchConnectionResult executeCreateOutboundCrossClusterSearchConnection(
+            CreateOutboundCrossClusterSearchConnectionRequest createOutboundCrossClusterSearchConnectionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createOutboundCrossClusterSearchConnectionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateOutboundCrossClusterSearchConnectionRequest> request = null;
+        Response<CreateOutboundCrossClusterSearchConnectionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateOutboundCrossClusterSearchConnectionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createOutboundCrossClusterSearchConnectionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elasticsearch Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateOutboundCrossClusterSearchConnection");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateOutboundCrossClusterSearchConnectionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new CreateOutboundCrossClusterSearchConnectionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Create a package for use with Amazon ES domains.
      * </p>
      * 
@@ -787,6 +921,128 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
             HttpResponseHandler<AmazonWebServiceResponse<DeleteElasticsearchServiceRoleResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DeleteElasticsearchServiceRoleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Allows the destination domain owner to delete an existing inbound cross-cluster search connection.
+     * </p>
+     * 
+     * @param deleteInboundCrossClusterSearchConnectionRequest
+     *        Container for the parameters to the <code><a>DeleteInboundCrossClusterSearchConnection</a></code>
+     *        operation.
+     * @return Result of the DeleteInboundCrossClusterSearchConnection operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws DisabledOperationException
+     *         An error occured because the client wanted to access a not supported operation. Gives http status code of
+     *         409.
+     * @sample AWSElasticsearch.DeleteInboundCrossClusterSearchConnection
+     */
+    @Override
+    public DeleteInboundCrossClusterSearchConnectionResult deleteInboundCrossClusterSearchConnection(DeleteInboundCrossClusterSearchConnectionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteInboundCrossClusterSearchConnection(request);
+    }
+
+    @SdkInternalApi
+    final DeleteInboundCrossClusterSearchConnectionResult executeDeleteInboundCrossClusterSearchConnection(
+            DeleteInboundCrossClusterSearchConnectionRequest deleteInboundCrossClusterSearchConnectionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteInboundCrossClusterSearchConnectionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteInboundCrossClusterSearchConnectionRequest> request = null;
+        Response<DeleteInboundCrossClusterSearchConnectionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteInboundCrossClusterSearchConnectionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteInboundCrossClusterSearchConnectionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elasticsearch Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteInboundCrossClusterSearchConnection");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteInboundCrossClusterSearchConnectionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DeleteInboundCrossClusterSearchConnectionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Allows the source domain owner to delete an existing outbound cross-cluster search connection.
+     * </p>
+     * 
+     * @param deleteOutboundCrossClusterSearchConnectionRequest
+     *        Container for the parameters to the <code><a>DeleteOutboundCrossClusterSearchConnection</a></code>
+     *        operation.
+     * @return Result of the DeleteOutboundCrossClusterSearchConnection operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws DisabledOperationException
+     *         An error occured because the client wanted to access a not supported operation. Gives http status code of
+     *         409.
+     * @sample AWSElasticsearch.DeleteOutboundCrossClusterSearchConnection
+     */
+    @Override
+    public DeleteOutboundCrossClusterSearchConnectionResult deleteOutboundCrossClusterSearchConnection(DeleteOutboundCrossClusterSearchConnectionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteOutboundCrossClusterSearchConnection(request);
+    }
+
+    @SdkInternalApi
+    final DeleteOutboundCrossClusterSearchConnectionResult executeDeleteOutboundCrossClusterSearchConnection(
+            DeleteOutboundCrossClusterSearchConnectionRequest deleteOutboundCrossClusterSearchConnectionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteOutboundCrossClusterSearchConnectionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteOutboundCrossClusterSearchConnectionRequest> request = null;
+        Response<DeleteOutboundCrossClusterSearchConnectionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteOutboundCrossClusterSearchConnectionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteOutboundCrossClusterSearchConnectionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elasticsearch Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteOutboundCrossClusterSearchConnection");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteOutboundCrossClusterSearchConnectionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DeleteOutboundCrossClusterSearchConnectionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1118,6 +1374,132 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
             HttpResponseHandler<AmazonWebServiceResponse<DescribeElasticsearchInstanceTypeLimitsResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new DescribeElasticsearchInstanceTypeLimitsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists all the inbound cross-cluster search connections for a destination domain.
+     * </p>
+     * 
+     * @param describeInboundCrossClusterSearchConnectionsRequest
+     *        Container for the parameters to the <code><a>DescribeInboundCrossClusterSearchConnections</a></code>
+     *        operation.
+     * @return Result of the DescribeInboundCrossClusterSearchConnections operation returned by the service.
+     * @throws InvalidPaginationTokenException
+     *         The request processing has failed because of invalid pagination token provided by customer. Returns an
+     *         HTTP status code of 400.
+     * @throws DisabledOperationException
+     *         An error occured because the client wanted to access a not supported operation. Gives http status code of
+     *         409.
+     * @sample AWSElasticsearch.DescribeInboundCrossClusterSearchConnections
+     */
+    @Override
+    public DescribeInboundCrossClusterSearchConnectionsResult describeInboundCrossClusterSearchConnections(
+            DescribeInboundCrossClusterSearchConnectionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeInboundCrossClusterSearchConnections(request);
+    }
+
+    @SdkInternalApi
+    final DescribeInboundCrossClusterSearchConnectionsResult executeDescribeInboundCrossClusterSearchConnections(
+            DescribeInboundCrossClusterSearchConnectionsRequest describeInboundCrossClusterSearchConnectionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeInboundCrossClusterSearchConnectionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeInboundCrossClusterSearchConnectionsRequest> request = null;
+        Response<DescribeInboundCrossClusterSearchConnectionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeInboundCrossClusterSearchConnectionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeInboundCrossClusterSearchConnectionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elasticsearch Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeInboundCrossClusterSearchConnections");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeInboundCrossClusterSearchConnectionsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DescribeInboundCrossClusterSearchConnectionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists all the outbound cross-cluster search connections for a source domain.
+     * </p>
+     * 
+     * @param describeOutboundCrossClusterSearchConnectionsRequest
+     *        Container for the parameters to the <code><a>DescribeOutboundCrossClusterSearchConnections</a></code>
+     *        operation.
+     * @return Result of the DescribeOutboundCrossClusterSearchConnections operation returned by the service.
+     * @throws InvalidPaginationTokenException
+     *         The request processing has failed because of invalid pagination token provided by customer. Returns an
+     *         HTTP status code of 400.
+     * @throws DisabledOperationException
+     *         An error occured because the client wanted to access a not supported operation. Gives http status code of
+     *         409.
+     * @sample AWSElasticsearch.DescribeOutboundCrossClusterSearchConnections
+     */
+    @Override
+    public DescribeOutboundCrossClusterSearchConnectionsResult describeOutboundCrossClusterSearchConnections(
+            DescribeOutboundCrossClusterSearchConnectionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeOutboundCrossClusterSearchConnections(request);
+    }
+
+    @SdkInternalApi
+    final DescribeOutboundCrossClusterSearchConnectionsResult executeDescribeOutboundCrossClusterSearchConnections(
+            DescribeOutboundCrossClusterSearchConnectionsRequest describeOutboundCrossClusterSearchConnectionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeOutboundCrossClusterSearchConnectionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeOutboundCrossClusterSearchConnectionsRequest> request = null;
+        Response<DescribeOutboundCrossClusterSearchConnectionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeOutboundCrossClusterSearchConnectionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeOutboundCrossClusterSearchConnectionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elasticsearch Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeOutboundCrossClusterSearchConnections");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeOutboundCrossClusterSearchConnectionsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DescribeOutboundCrossClusterSearchConnectionsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2029,6 +2411,67 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
             HttpResponseHandler<AmazonWebServiceResponse<PurchaseReservedElasticsearchInstanceOfferingResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new PurchaseReservedElasticsearchInstanceOfferingResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Allows the destination domain owner to reject an inbound cross-cluster search connection request.
+     * </p>
+     * 
+     * @param rejectInboundCrossClusterSearchConnectionRequest
+     *        Container for the parameters to the <code><a>RejectInboundCrossClusterSearchConnection</a></code>
+     *        operation.
+     * @return Result of the RejectInboundCrossClusterSearchConnection operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws DisabledOperationException
+     *         An error occured because the client wanted to access a not supported operation. Gives http status code of
+     *         409.
+     * @sample AWSElasticsearch.RejectInboundCrossClusterSearchConnection
+     */
+    @Override
+    public RejectInboundCrossClusterSearchConnectionResult rejectInboundCrossClusterSearchConnection(RejectInboundCrossClusterSearchConnectionRequest request) {
+        request = beforeClientExecution(request);
+        return executeRejectInboundCrossClusterSearchConnection(request);
+    }
+
+    @SdkInternalApi
+    final RejectInboundCrossClusterSearchConnectionResult executeRejectInboundCrossClusterSearchConnection(
+            RejectInboundCrossClusterSearchConnectionRequest rejectInboundCrossClusterSearchConnectionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(rejectInboundCrossClusterSearchConnectionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RejectInboundCrossClusterSearchConnectionRequest> request = null;
+        Response<RejectInboundCrossClusterSearchConnectionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RejectInboundCrossClusterSearchConnectionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(rejectInboundCrossClusterSearchConnectionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elasticsearch Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RejectInboundCrossClusterSearchConnection");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RejectInboundCrossClusterSearchConnectionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new RejectInboundCrossClusterSearchConnectionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

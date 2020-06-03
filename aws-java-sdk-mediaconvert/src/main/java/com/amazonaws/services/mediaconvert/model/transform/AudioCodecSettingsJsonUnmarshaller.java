@@ -80,6 +80,14 @@ public class AudioCodecSettingsJsonUnmarshaller implements Unmarshaller<AudioCod
                     context.nextToken();
                     audioCodecSettings.setMp3Settings(Mp3SettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("opusSettings", targetDepth)) {
+                    context.nextToken();
+                    audioCodecSettings.setOpusSettings(OpusSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("vorbisSettings", targetDepth)) {
+                    context.nextToken();
+                    audioCodecSettings.setVorbisSettings(VorbisSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("wavSettings", targetDepth)) {
                     context.nextToken();
                     audioCodecSettings.setWavSettings(WavSettingsJsonUnmarshaller.getInstance().unmarshall(context));

@@ -799,6 +799,47 @@ public class AbstractAmazonDirectConnectAsync extends AbstractAmazonDirectConnec
     }
 
     @Override
+    public java.util.concurrent.Future<ListVirtualInterfaceTestHistoryResult> listVirtualInterfaceTestHistoryAsync(
+            ListVirtualInterfaceTestHistoryRequest request) {
+
+        return listVirtualInterfaceTestHistoryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListVirtualInterfaceTestHistoryResult> listVirtualInterfaceTestHistoryAsync(
+            ListVirtualInterfaceTestHistoryRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListVirtualInterfaceTestHistoryRequest, ListVirtualInterfaceTestHistoryResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartBgpFailoverTestResult> startBgpFailoverTestAsync(StartBgpFailoverTestRequest request) {
+
+        return startBgpFailoverTestAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartBgpFailoverTestResult> startBgpFailoverTestAsync(StartBgpFailoverTestRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartBgpFailoverTestRequest, StartBgpFailoverTestResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopBgpFailoverTestResult> stopBgpFailoverTestAsync(StopBgpFailoverTestRequest request) {
+
+        return stopBgpFailoverTestAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopBgpFailoverTestResult> stopBgpFailoverTestAsync(StopBgpFailoverTestRequest request,
+            com.amazonaws.handlers.AsyncHandler<StopBgpFailoverTestRequest, StopBgpFailoverTestResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
 
         return tagResourceAsync(request, null);

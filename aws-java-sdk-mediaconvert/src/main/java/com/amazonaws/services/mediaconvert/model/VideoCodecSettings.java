@@ -22,7 +22,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * encoding. The settings in this group vary depending on the value that you choose for Video codec (Codec). For each
  * codec enum that you choose, define the corresponding settings object. The following lists the codec enum, settings
  * object pairs. * FRAME_CAPTURE, FrameCaptureSettings * AV1, Av1Settings * H_264, H264Settings * H_265, H265Settings *
- * MPEG2, Mpeg2Settings * PRORES, ProresSettings
+ * MPEG2, Mpeg2Settings * PRORES, ProresSettings * VP8, Vp8Settings * VP9, Vp9Settings
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/VideoCodecSettings" target="_top">AWS
  *      API Documentation</a>
@@ -44,6 +44,10 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     private Mpeg2Settings mpeg2Settings;
     /** Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value PRORES. */
     private ProresSettings proresSettings;
+    /** Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VP8. */
+    private Vp8Settings vp8Settings;
+    /** Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VP9. */
+    private Vp9Settings vp9Settings;
 
     /**
      * Required when you set Codec, under VideoDescription>CodecSettings to the value AV1.
@@ -301,6 +305,74 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VP8.
+     * 
+     * @param vp8Settings
+     *        Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VP8.
+     */
+
+    public void setVp8Settings(Vp8Settings vp8Settings) {
+        this.vp8Settings = vp8Settings;
+    }
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VP8.
+     * 
+     * @return Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VP8.
+     */
+
+    public Vp8Settings getVp8Settings() {
+        return this.vp8Settings;
+    }
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VP8.
+     * 
+     * @param vp8Settings
+     *        Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VP8.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VideoCodecSettings withVp8Settings(Vp8Settings vp8Settings) {
+        setVp8Settings(vp8Settings);
+        return this;
+    }
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VP9.
+     * 
+     * @param vp9Settings
+     *        Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VP9.
+     */
+
+    public void setVp9Settings(Vp9Settings vp9Settings) {
+        this.vp9Settings = vp9Settings;
+    }
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VP9.
+     * 
+     * @return Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VP9.
+     */
+
+    public Vp9Settings getVp9Settings() {
+        return this.vp9Settings;
+    }
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VP9.
+     * 
+     * @param vp9Settings
+     *        Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VP9.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VideoCodecSettings withVp9Settings(Vp9Settings vp9Settings) {
+        setVp9Settings(vp9Settings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -325,7 +397,11 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
         if (getMpeg2Settings() != null)
             sb.append("Mpeg2Settings: ").append(getMpeg2Settings()).append(",");
         if (getProresSettings() != null)
-            sb.append("ProresSettings: ").append(getProresSettings());
+            sb.append("ProresSettings: ").append(getProresSettings()).append(",");
+        if (getVp8Settings() != null)
+            sb.append("Vp8Settings: ").append(getVp8Settings()).append(",");
+        if (getVp9Settings() != null)
+            sb.append("Vp9Settings: ").append(getVp9Settings());
         sb.append("}");
         return sb.toString();
     }
@@ -368,6 +444,14 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getProresSettings() != null && other.getProresSettings().equals(this.getProresSettings()) == false)
             return false;
+        if (other.getVp8Settings() == null ^ this.getVp8Settings() == null)
+            return false;
+        if (other.getVp8Settings() != null && other.getVp8Settings().equals(this.getVp8Settings()) == false)
+            return false;
+        if (other.getVp9Settings() == null ^ this.getVp9Settings() == null)
+            return false;
+        if (other.getVp9Settings() != null && other.getVp9Settings().equals(this.getVp9Settings()) == false)
+            return false;
         return true;
     }
 
@@ -383,6 +467,8 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getH265Settings() == null) ? 0 : getH265Settings().hashCode());
         hashCode = prime * hashCode + ((getMpeg2Settings() == null) ? 0 : getMpeg2Settings().hashCode());
         hashCode = prime * hashCode + ((getProresSettings() == null) ? 0 : getProresSettings().hashCode());
+        hashCode = prime * hashCode + ((getVp8Settings() == null) ? 0 : getVp8Settings().hashCode());
+        hashCode = prime * hashCode + ((getVp9Settings() == null) ? 0 : getVp9Settings().hashCode());
         return hashCode;
     }
 

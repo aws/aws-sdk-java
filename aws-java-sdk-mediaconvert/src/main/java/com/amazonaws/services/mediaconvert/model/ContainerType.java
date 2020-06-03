@@ -30,6 +30,7 @@ public enum ContainerType {
     MP4("MP4"),
     MPD("MPD"),
     MXF("MXF"),
+    WEBM("WEBM"),
     RAW("RAW");
 
     private String value;

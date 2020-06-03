@@ -104,6 +104,8 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * </ul>
      */
     private String automaticFailover;
+
+    private String multiAZ;
     /**
      * <p>
      * The configuration endpoint for this replication group. Use the configuration endpoint to connect to this
@@ -900,6 +902,55 @@ public class ReplicationGroup implements Serializable, Cloneable {
 
     public ReplicationGroup withAutomaticFailover(AutomaticFailoverStatus automaticFailover) {
         this.automaticFailover = automaticFailover.toString();
+        return this;
+    }
+
+    /**
+     * @param multiAZ
+     * @see MultiAZStatus
+     */
+
+    public void setMultiAZ(String multiAZ) {
+        this.multiAZ = multiAZ;
+    }
+
+    /**
+     * @return
+     * @see MultiAZStatus
+     */
+
+    public String getMultiAZ() {
+        return this.multiAZ;
+    }
+
+    /**
+     * @param multiAZ
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see MultiAZStatus
+     */
+
+    public ReplicationGroup withMultiAZ(String multiAZ) {
+        setMultiAZ(multiAZ);
+        return this;
+    }
+
+    /**
+     * @param multiAZ
+     * @see MultiAZStatus
+     */
+
+    public void setMultiAZ(MultiAZStatus multiAZ) {
+        withMultiAZ(multiAZ);
+    }
+
+    /**
+     * @param multiAZ
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see MultiAZStatus
+     */
+
+    public ReplicationGroup withMultiAZ(MultiAZStatus multiAZ) {
+        this.multiAZ = multiAZ.toString();
         return this;
     }
 
@@ -1761,6 +1812,8 @@ public class ReplicationGroup implements Serializable, Cloneable {
             sb.append("SnapshottingClusterId: ").append(getSnapshottingClusterId()).append(",");
         if (getAutomaticFailover() != null)
             sb.append("AutomaticFailover: ").append(getAutomaticFailover()).append(",");
+        if (getMultiAZ() != null)
+            sb.append("MultiAZ: ").append(getMultiAZ()).append(",");
         if (getConfigurationEndpoint() != null)
             sb.append("ConfigurationEndpoint: ").append(getConfigurationEndpoint()).append(",");
         if (getSnapshotRetentionLimit() != null)
@@ -1833,6 +1886,10 @@ public class ReplicationGroup implements Serializable, Cloneable {
             return false;
         if (other.getAutomaticFailover() != null && other.getAutomaticFailover().equals(this.getAutomaticFailover()) == false)
             return false;
+        if (other.getMultiAZ() == null ^ this.getMultiAZ() == null)
+            return false;
+        if (other.getMultiAZ() != null && other.getMultiAZ().equals(this.getMultiAZ()) == false)
+            return false;
         if (other.getConfigurationEndpoint() == null ^ this.getConfigurationEndpoint() == null)
             return false;
         if (other.getConfigurationEndpoint() != null && other.getConfigurationEndpoint().equals(this.getConfigurationEndpoint()) == false)
@@ -1894,6 +1951,7 @@ public class ReplicationGroup implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getNodeGroups() == null) ? 0 : getNodeGroups().hashCode());
         hashCode = prime * hashCode + ((getSnapshottingClusterId() == null) ? 0 : getSnapshottingClusterId().hashCode());
         hashCode = prime * hashCode + ((getAutomaticFailover() == null) ? 0 : getAutomaticFailover().hashCode());
+        hashCode = prime * hashCode + ((getMultiAZ() == null) ? 0 : getMultiAZ().hashCode());
         hashCode = prime * hashCode + ((getConfigurationEndpoint() == null) ? 0 : getConfigurationEndpoint().hashCode());
         hashCode = prime * hashCode + ((getSnapshotRetentionLimit() == null) ? 0 : getSnapshotRetentionLimit().hashCode());
         hashCode = prime * hashCode + ((getSnapshotWindow() == null) ? 0 : getSnapshotWindow().hashCode());

@@ -114,6 +114,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </ul>
      */
     private Boolean automaticFailoverEnabled;
+
+    private Boolean multiAZEnabled;
     /**
      * <p>
      * The number of nodes in the cluster.
@@ -1225,6 +1227,40 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     public Boolean isAutomaticFailoverEnabled() {
         return this.automaticFailoverEnabled;
+    }
+
+    /**
+     * @param multiAZEnabled
+     */
+
+    public void setMultiAZEnabled(Boolean multiAZEnabled) {
+        this.multiAZEnabled = multiAZEnabled;
+    }
+
+    /**
+     * @return
+     */
+
+    public Boolean getMultiAZEnabled() {
+        return this.multiAZEnabled;
+    }
+
+    /**
+     * @param multiAZEnabled
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateReplicationGroupRequest withMultiAZEnabled(Boolean multiAZEnabled) {
+        setMultiAZEnabled(multiAZEnabled);
+        return this;
+    }
+
+    /**
+     * @return
+     */
+
+    public Boolean isMultiAZEnabled() {
+        return this.multiAZEnabled;
     }
 
     /**
@@ -4764,6 +4800,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
             sb.append("PrimaryClusterId: ").append(getPrimaryClusterId()).append(",");
         if (getAutomaticFailoverEnabled() != null)
             sb.append("AutomaticFailoverEnabled: ").append(getAutomaticFailoverEnabled()).append(",");
+        if (getMultiAZEnabled() != null)
+            sb.append("MultiAZEnabled: ").append(getMultiAZEnabled()).append(",");
         if (getNumCacheClusters() != null)
             sb.append("NumCacheClusters: ").append(getNumCacheClusters()).append(",");
         if (getPreferredCacheClusterAZs() != null)
@@ -4847,6 +4885,10 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
         if (other.getAutomaticFailoverEnabled() == null ^ this.getAutomaticFailoverEnabled() == null)
             return false;
         if (other.getAutomaticFailoverEnabled() != null && other.getAutomaticFailoverEnabled().equals(this.getAutomaticFailoverEnabled()) == false)
+            return false;
+        if (other.getMultiAZEnabled() == null ^ this.getMultiAZEnabled() == null)
+            return false;
+        if (other.getMultiAZEnabled() != null && other.getMultiAZEnabled().equals(this.getMultiAZEnabled()) == false)
             return false;
         if (other.getNumCacheClusters() == null ^ this.getNumCacheClusters() == null)
             return false;
@@ -4961,6 +5003,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getGlobalReplicationGroupId() == null) ? 0 : getGlobalReplicationGroupId().hashCode());
         hashCode = prime * hashCode + ((getPrimaryClusterId() == null) ? 0 : getPrimaryClusterId().hashCode());
         hashCode = prime * hashCode + ((getAutomaticFailoverEnabled() == null) ? 0 : getAutomaticFailoverEnabled().hashCode());
+        hashCode = prime * hashCode + ((getMultiAZEnabled() == null) ? 0 : getMultiAZEnabled().hashCode());
         hashCode = prime * hashCode + ((getNumCacheClusters() == null) ? 0 : getNumCacheClusters().hashCode());
         hashCode = prime * hashCode + ((getPreferredCacheClusterAZs() == null) ? 0 : getPreferredCacheClusterAZs().hashCode());
         hashCode = prime * hashCode + ((getNumNodeGroups() == null) ? 0 : getNumNodeGroups().hashCode());

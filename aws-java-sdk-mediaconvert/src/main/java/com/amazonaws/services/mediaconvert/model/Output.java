@@ -41,8 +41,8 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
     /**
      * Use Extension (Extension) to specify the file extension for outputs in File output groups. If you do not specify
      * a value, the service will use default extensions by container type as follows * MPEG-2 transport stream, m2ts *
-     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * No Container, the service will use codec extensions
-     * (e.g. AAC, H265, H265, AC3)
+     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * WebM container, webm * No Container, the service
+     * will use codec extensions (e.g. AAC, H265, H265, AC3)
      */
     private String extension;
     /**
@@ -249,14 +249,14 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
     /**
      * Use Extension (Extension) to specify the file extension for outputs in File output groups. If you do not specify
      * a value, the service will use default extensions by container type as follows * MPEG-2 transport stream, m2ts *
-     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * No Container, the service will use codec extensions
-     * (e.g. AAC, H265, H265, AC3)
+     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * WebM container, webm * No Container, the service
+     * will use codec extensions (e.g. AAC, H265, H265, AC3)
      * 
      * @param extension
      *        Use Extension (Extension) to specify the file extension for outputs in File output groups. If you do not
      *        specify a value, the service will use default extensions by container type as follows * MPEG-2 transport
-     *        stream, m2ts * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * No Container, the service
-     *        will use codec extensions (e.g. AAC, H265, H265, AC3)
+     *        stream, m2ts * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * WebM container, webm * No
+     *        Container, the service will use codec extensions (e.g. AAC, H265, H265, AC3)
      */
 
     public void setExtension(String extension) {
@@ -266,13 +266,13 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
     /**
      * Use Extension (Extension) to specify the file extension for outputs in File output groups. If you do not specify
      * a value, the service will use default extensions by container type as follows * MPEG-2 transport stream, m2ts *
-     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * No Container, the service will use codec extensions
-     * (e.g. AAC, H265, H265, AC3)
+     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * WebM container, webm * No Container, the service
+     * will use codec extensions (e.g. AAC, H265, H265, AC3)
      * 
      * @return Use Extension (Extension) to specify the file extension for outputs in File output groups. If you do not
      *         specify a value, the service will use default extensions by container type as follows * MPEG-2 transport
-     *         stream, m2ts * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * No Container, the service
-     *         will use codec extensions (e.g. AAC, H265, H265, AC3)
+     *         stream, m2ts * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * WebM container, webm * No
+     *         Container, the service will use codec extensions (e.g. AAC, H265, H265, AC3)
      */
 
     public String getExtension() {
@@ -282,14 +282,14 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
     /**
      * Use Extension (Extension) to specify the file extension for outputs in File output groups. If you do not specify
      * a value, the service will use default extensions by container type as follows * MPEG-2 transport stream, m2ts *
-     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * No Container, the service will use codec extensions
-     * (e.g. AAC, H265, H265, AC3)
+     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * WebM container, webm * No Container, the service
+     * will use codec extensions (e.g. AAC, H265, H265, AC3)
      * 
      * @param extension
      *        Use Extension (Extension) to specify the file extension for outputs in File output groups. If you do not
      *        specify a value, the service will use default extensions by container type as follows * MPEG-2 transport
-     *        stream, m2ts * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * No Container, the service
-     *        will use codec extensions (e.g. AAC, H265, H265, AC3)
+     *        stream, m2ts * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * WebM container, webm * No
+     *        Container, the service will use codec extensions (e.g. AAC, H265, H265, AC3)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

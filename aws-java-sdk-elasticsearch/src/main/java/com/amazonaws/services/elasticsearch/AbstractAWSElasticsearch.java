@@ -38,6 +38,11 @@ public class AbstractAWSElasticsearch implements AWSElasticsearch {
     }
 
     @Override
+    public AcceptInboundCrossClusterSearchConnectionResult acceptInboundCrossClusterSearchConnection(AcceptInboundCrossClusterSearchConnectionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public AddTagsResult addTags(AddTagsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -58,6 +63,11 @@ public class AbstractAWSElasticsearch implements AWSElasticsearch {
     }
 
     @Override
+    public CreateOutboundCrossClusterSearchConnectionResult createOutboundCrossClusterSearchConnection(CreateOutboundCrossClusterSearchConnectionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreatePackageResult createPackage(CreatePackageRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -69,6 +79,16 @@ public class AbstractAWSElasticsearch implements AWSElasticsearch {
 
     @Override
     public DeleteElasticsearchServiceRoleResult deleteElasticsearchServiceRole(DeleteElasticsearchServiceRoleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteInboundCrossClusterSearchConnectionResult deleteInboundCrossClusterSearchConnection(DeleteInboundCrossClusterSearchConnectionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteOutboundCrossClusterSearchConnectionResult deleteOutboundCrossClusterSearchConnection(DeleteOutboundCrossClusterSearchConnectionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -94,6 +114,18 @@ public class AbstractAWSElasticsearch implements AWSElasticsearch {
 
     @Override
     public DescribeElasticsearchInstanceTypeLimitsResult describeElasticsearchInstanceTypeLimits(DescribeElasticsearchInstanceTypeLimitsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeInboundCrossClusterSearchConnectionsResult describeInboundCrossClusterSearchConnections(
+            DescribeInboundCrossClusterSearchConnectionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeOutboundCrossClusterSearchConnectionsResult describeOutboundCrossClusterSearchConnections(
+            DescribeOutboundCrossClusterSearchConnectionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -166,6 +198,11 @@ public class AbstractAWSElasticsearch implements AWSElasticsearch {
     @Override
     public PurchaseReservedElasticsearchInstanceOfferingResult purchaseReservedElasticsearchInstanceOffering(
             PurchaseReservedElasticsearchInstanceOfferingRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RejectInboundCrossClusterSearchConnectionResult rejectInboundCrossClusterSearchConnection(RejectInboundCrossClusterSearchConnectionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

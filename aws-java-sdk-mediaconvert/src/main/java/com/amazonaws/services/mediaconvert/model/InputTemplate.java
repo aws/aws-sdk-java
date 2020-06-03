@@ -33,12 +33,12 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
     private java.util.Map<String, AudioSelectorGroup> audioSelectorGroups;
     /**
      * Use Audio selectors (AudioSelectors) to specify a track or set of tracks from the input that you will use in your
-     * outputs. You can use mutiple Audio selectors per input.
+     * outputs. You can use multiple Audio selectors per input.
      */
     private java.util.Map<String, AudioSelector> audioSelectors;
     /**
      * Use Captions selectors (CaptionSelectors) to specify the captions data from the input that you will use in your
-     * outputs. You can use mutiple captions selectors per input.
+     * outputs. You can use multiple captions selectors per input.
      */
     private java.util.Map<String, CaptionSelector> captionSelectors;
     /**
@@ -48,7 +48,7 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
      */
     private Rectangle crop;
     /**
-     * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only manaully
+     * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only manually
      * controllable for MPEG2 and uncompressed video inputs.
      */
     private String deblockFilter;
@@ -192,10 +192,10 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Use Audio selectors (AudioSelectors) to specify a track or set of tracks from the input that you will use in your
-     * outputs. You can use mutiple Audio selectors per input.
+     * outputs. You can use multiple Audio selectors per input.
      * 
      * @return Use Audio selectors (AudioSelectors) to specify a track or set of tracks from the input that you will use
-     *         in your outputs. You can use mutiple Audio selectors per input.
+     *         in your outputs. You can use multiple Audio selectors per input.
      */
 
     public java.util.Map<String, AudioSelector> getAudioSelectors() {
@@ -204,11 +204,11 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Use Audio selectors (AudioSelectors) to specify a track or set of tracks from the input that you will use in your
-     * outputs. You can use mutiple Audio selectors per input.
+     * outputs. You can use multiple Audio selectors per input.
      * 
      * @param audioSelectors
      *        Use Audio selectors (AudioSelectors) to specify a track or set of tracks from the input that you will use
-     *        in your outputs. You can use mutiple Audio selectors per input.
+     *        in your outputs. You can use multiple Audio selectors per input.
      */
 
     public void setAudioSelectors(java.util.Map<String, AudioSelector> audioSelectors) {
@@ -217,11 +217,11 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Use Audio selectors (AudioSelectors) to specify a track or set of tracks from the input that you will use in your
-     * outputs. You can use mutiple Audio selectors per input.
+     * outputs. You can use multiple Audio selectors per input.
      * 
      * @param audioSelectors
      *        Use Audio selectors (AudioSelectors) to specify a track or set of tracks from the input that you will use
-     *        in your outputs. You can use mutiple Audio selectors per input.
+     *        in your outputs. You can use multiple Audio selectors per input.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -260,10 +260,10 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Use Captions selectors (CaptionSelectors) to specify the captions data from the input that you will use in your
-     * outputs. You can use mutiple captions selectors per input.
+     * outputs. You can use multiple captions selectors per input.
      * 
      * @return Use Captions selectors (CaptionSelectors) to specify the captions data from the input that you will use
-     *         in your outputs. You can use mutiple captions selectors per input.
+     *         in your outputs. You can use multiple captions selectors per input.
      */
 
     public java.util.Map<String, CaptionSelector> getCaptionSelectors() {
@@ -272,11 +272,11 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Use Captions selectors (CaptionSelectors) to specify the captions data from the input that you will use in your
-     * outputs. You can use mutiple captions selectors per input.
+     * outputs. You can use multiple captions selectors per input.
      * 
      * @param captionSelectors
      *        Use Captions selectors (CaptionSelectors) to specify the captions data from the input that you will use in
-     *        your outputs. You can use mutiple captions selectors per input.
+     *        your outputs. You can use multiple captions selectors per input.
      */
 
     public void setCaptionSelectors(java.util.Map<String, CaptionSelector> captionSelectors) {
@@ -285,11 +285,11 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Use Captions selectors (CaptionSelectors) to specify the captions data from the input that you will use in your
-     * outputs. You can use mutiple captions selectors per input.
+     * outputs. You can use multiple captions selectors per input.
      * 
      * @param captionSelectors
      *        Use Captions selectors (CaptionSelectors) to specify the captions data from the input that you will use in
-     *        your outputs. You can use mutiple captions selectors per input.
+     *        your outputs. You can use multiple captions selectors per input.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -373,12 +373,12 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only manaully
+     * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only manually
      * controllable for MPEG2 and uncompressed video inputs.
      * 
      * @param deblockFilter
      *        Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only
-     *        manaully controllable for MPEG2 and uncompressed video inputs.
+     *        manually controllable for MPEG2 and uncompressed video inputs.
      * @see InputDeblockFilter
      */
 
@@ -387,11 +387,11 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only manaully
+     * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only manually
      * controllable for MPEG2 and uncompressed video inputs.
      * 
      * @return Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only
-     *         manaully controllable for MPEG2 and uncompressed video inputs.
+     *         manually controllable for MPEG2 and uncompressed video inputs.
      * @see InputDeblockFilter
      */
 
@@ -400,12 +400,12 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only manaully
+     * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only manually
      * controllable for MPEG2 and uncompressed video inputs.
      * 
      * @param deblockFilter
      *        Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only
-     *        manaully controllable for MPEG2 and uncompressed video inputs.
+     *        manually controllable for MPEG2 and uncompressed video inputs.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InputDeblockFilter
      */
@@ -416,12 +416,12 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only manaully
+     * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only manually
      * controllable for MPEG2 and uncompressed video inputs.
      * 
      * @param deblockFilter
      *        Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only
-     *        manaully controllable for MPEG2 and uncompressed video inputs.
+     *        manually controllable for MPEG2 and uncompressed video inputs.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InputDeblockFilter
      */

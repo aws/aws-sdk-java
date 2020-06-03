@@ -52,6 +52,10 @@ public class UserDefinedFunctionJsonUnmarshaller implements Unmarshaller<UserDef
                     context.nextToken();
                     userDefinedFunction.setFunctionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("DatabaseName", targetDepth)) {
+                    context.nextToken();
+                    userDefinedFunction.setDatabaseName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("ClassName", targetDepth)) {
                     context.nextToken();
                     userDefinedFunction.setClassName(context.getUnmarshaller(String.class).unmarshall(context));

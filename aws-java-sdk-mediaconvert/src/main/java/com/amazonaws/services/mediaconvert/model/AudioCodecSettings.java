@@ -22,7 +22,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * encoding. The settings in this group vary depending on the value that you choose for Audio codec (Codec). For each
  * codec enum that you choose, define the corresponding settings object. The following lists the codec enum, settings
  * object pairs. * AAC, AacSettings * MP2, Mp2Settings * MP3, Mp3Settings * WAV, WavSettings * AIFF, AiffSettings * AC3,
- * Ac3Settings * EAC3, Eac3Settings * EAC3_ATMOS, Eac3AtmosSettings
+ * Ac3Settings * EAC3, Eac3Settings * EAC3_ATMOS, Eac3AtmosSettings * VORBIS, VorbisSettings * OPUS, OpusSettings
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/AudioCodecSettings" target="_top">AWS
  *      API Documentation</a>
@@ -52,6 +52,10 @@ public class AudioCodecSettings implements Serializable, Cloneable, StructuredPo
     private Mp2Settings mp2Settings;
     /** Required when you set Codec, under AudioDescriptions>CodecSettings, to the value MP3. */
     private Mp3Settings mp3Settings;
+    /** Required when you set Codec, under AudioDescriptions>CodecSettings, to the value OPUS. */
+    private OpusSettings opusSettings;
+    /** Required when you set Codec, under AudioDescriptions>CodecSettings, to the value Vorbis. */
+    private VorbisSettings vorbisSettings;
     /** Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value WAV. */
     private WavSettings wavSettings;
 
@@ -369,6 +373,74 @@ public class AudioCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * Required when you set Codec, under AudioDescriptions>CodecSettings, to the value OPUS.
+     * 
+     * @param opusSettings
+     *        Required when you set Codec, under AudioDescriptions>CodecSettings, to the value OPUS.
+     */
+
+    public void setOpusSettings(OpusSettings opusSettings) {
+        this.opusSettings = opusSettings;
+    }
+
+    /**
+     * Required when you set Codec, under AudioDescriptions>CodecSettings, to the value OPUS.
+     * 
+     * @return Required when you set Codec, under AudioDescriptions>CodecSettings, to the value OPUS.
+     */
+
+    public OpusSettings getOpusSettings() {
+        return this.opusSettings;
+    }
+
+    /**
+     * Required when you set Codec, under AudioDescriptions>CodecSettings, to the value OPUS.
+     * 
+     * @param opusSettings
+     *        Required when you set Codec, under AudioDescriptions>CodecSettings, to the value OPUS.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AudioCodecSettings withOpusSettings(OpusSettings opusSettings) {
+        setOpusSettings(opusSettings);
+        return this;
+    }
+
+    /**
+     * Required when you set Codec, under AudioDescriptions>CodecSettings, to the value Vorbis.
+     * 
+     * @param vorbisSettings
+     *        Required when you set Codec, under AudioDescriptions>CodecSettings, to the value Vorbis.
+     */
+
+    public void setVorbisSettings(VorbisSettings vorbisSettings) {
+        this.vorbisSettings = vorbisSettings;
+    }
+
+    /**
+     * Required when you set Codec, under AudioDescriptions>CodecSettings, to the value Vorbis.
+     * 
+     * @return Required when you set Codec, under AudioDescriptions>CodecSettings, to the value Vorbis.
+     */
+
+    public VorbisSettings getVorbisSettings() {
+        return this.vorbisSettings;
+    }
+
+    /**
+     * Required when you set Codec, under AudioDescriptions>CodecSettings, to the value Vorbis.
+     * 
+     * @param vorbisSettings
+     *        Required when you set Codec, under AudioDescriptions>CodecSettings, to the value Vorbis.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AudioCodecSettings withVorbisSettings(VorbisSettings vorbisSettings) {
+        setVorbisSettings(vorbisSettings);
+        return this;
+    }
+
+    /**
      * Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value WAV.
      * 
      * @param wavSettings
@@ -430,6 +502,10 @@ public class AudioCodecSettings implements Serializable, Cloneable, StructuredPo
             sb.append("Mp2Settings: ").append(getMp2Settings()).append(",");
         if (getMp3Settings() != null)
             sb.append("Mp3Settings: ").append(getMp3Settings()).append(",");
+        if (getOpusSettings() != null)
+            sb.append("OpusSettings: ").append(getOpusSettings()).append(",");
+        if (getVorbisSettings() != null)
+            sb.append("VorbisSettings: ").append(getVorbisSettings()).append(",");
         if (getWavSettings() != null)
             sb.append("WavSettings: ").append(getWavSettings());
         sb.append("}");
@@ -478,6 +554,14 @@ public class AudioCodecSettings implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getMp3Settings() != null && other.getMp3Settings().equals(this.getMp3Settings()) == false)
             return false;
+        if (other.getOpusSettings() == null ^ this.getOpusSettings() == null)
+            return false;
+        if (other.getOpusSettings() != null && other.getOpusSettings().equals(this.getOpusSettings()) == false)
+            return false;
+        if (other.getVorbisSettings() == null ^ this.getVorbisSettings() == null)
+            return false;
+        if (other.getVorbisSettings() != null && other.getVorbisSettings().equals(this.getVorbisSettings()) == false)
+            return false;
         if (other.getWavSettings() == null ^ this.getWavSettings() == null)
             return false;
         if (other.getWavSettings() != null && other.getWavSettings().equals(this.getWavSettings()) == false)
@@ -498,6 +582,8 @@ public class AudioCodecSettings implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getEac3Settings() == null) ? 0 : getEac3Settings().hashCode());
         hashCode = prime * hashCode + ((getMp2Settings() == null) ? 0 : getMp2Settings().hashCode());
         hashCode = prime * hashCode + ((getMp3Settings() == null) ? 0 : getMp3Settings().hashCode());
+        hashCode = prime * hashCode + ((getOpusSettings() == null) ? 0 : getOpusSettings().hashCode());
+        hashCode = prime * hashCode + ((getVorbisSettings() == null) ? 0 : getVorbisSettings().hashCode());
         hashCode = prime * hashCode + ((getWavSettings() == null) ? 0 : getWavSettings().hashCode());
         return hashCode;
     }

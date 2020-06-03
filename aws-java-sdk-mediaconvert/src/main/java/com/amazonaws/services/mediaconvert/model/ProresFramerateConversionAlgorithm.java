@@ -15,7 +15,8 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+ * Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use duplicate drop
+ * conversion.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ProresFramerateConversionAlgorithm {

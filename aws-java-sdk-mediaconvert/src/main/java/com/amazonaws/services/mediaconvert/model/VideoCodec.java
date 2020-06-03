@@ -25,7 +25,9 @@ public enum VideoCodec {
     H_264("H_264"),
     H_265("H_265"),
     MPEG2("MPEG2"),
-    PRORES("PRORES");
+    PRORES("PRORES"),
+    VP8("VP8"),
+    VP9("VP9");
 
     private String value;
 

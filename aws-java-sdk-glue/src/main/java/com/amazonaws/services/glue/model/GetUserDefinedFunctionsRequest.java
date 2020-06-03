@@ -34,7 +34,8 @@ public class GetUserDefinedFunctionsRequest extends com.amazonaws.AmazonWebServi
     private String catalogId;
     /**
      * <p>
-     * The name of the catalog database where the functions are located.
+     * The name of the catalog database where the functions are located. If none is provided, functions from all the
+     * databases across the catalog will be returned.
      * </p>
      */
     private String databaseName;
@@ -105,11 +106,13 @@ public class GetUserDefinedFunctionsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the catalog database where the functions are located.
+     * The name of the catalog database where the functions are located. If none is provided, functions from all the
+     * databases across the catalog will be returned.
      * </p>
      * 
      * @param databaseName
-     *        The name of the catalog database where the functions are located.
+     *        The name of the catalog database where the functions are located. If none is provided, functions from all
+     *        the databases across the catalog will be returned.
      */
 
     public void setDatabaseName(String databaseName) {
@@ -118,10 +121,12 @@ public class GetUserDefinedFunctionsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the catalog database where the functions are located.
+     * The name of the catalog database where the functions are located. If none is provided, functions from all the
+     * databases across the catalog will be returned.
      * </p>
      * 
-     * @return The name of the catalog database where the functions are located.
+     * @return The name of the catalog database where the functions are located. If none is provided, functions from all
+     *         the databases across the catalog will be returned.
      */
 
     public String getDatabaseName() {
@@ -130,11 +135,13 @@ public class GetUserDefinedFunctionsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the catalog database where the functions are located.
+     * The name of the catalog database where the functions are located. If none is provided, functions from all the
+     * databases across the catalog will be returned.
      * </p>
      * 
      * @param databaseName
-     *        The name of the catalog database where the functions are located.
+     *        The name of the catalog database where the functions are located. If none is provided, functions from all
+     *        the databases across the catalog will be returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

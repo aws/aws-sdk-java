@@ -100,6 +100,11 @@ public class ReplicationGroupStaxUnmarshaller implements Unmarshaller<Replicatio
                     continue;
                 }
 
+                if (context.testExpression("MultiAZ", targetDepth)) {
+                    replicationGroup.setMultiAZ(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("ConfigurationEndpoint", targetDepth)) {
                     replicationGroup.setConfigurationEndpoint(EndpointStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
