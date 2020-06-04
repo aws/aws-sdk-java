@@ -55,6 +55,8 @@ public class CreateAssociationRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ComplianceSeverity").build();
     private static final MarshallingInfo<String> SYNCCOMPLIANCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SyncCompliance").build();
+    private static final MarshallingInfo<Boolean> APPLYONLYATCRONINTERVAL_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApplyOnlyAtCronInterval").build();
 
     private static final CreateAssociationRequestMarshaller instance = new CreateAssociationRequestMarshaller();
 
@@ -85,6 +87,7 @@ public class CreateAssociationRequestMarshaller {
             protocolMarshaller.marshall(createAssociationRequest.getMaxConcurrency(), MAXCONCURRENCY_BINDING);
             protocolMarshaller.marshall(createAssociationRequest.getComplianceSeverity(), COMPLIANCESEVERITY_BINDING);
             protocolMarshaller.marshall(createAssociationRequest.getSyncCompliance(), SYNCCOMPLIANCE_BINDING);
+            protocolMarshaller.marshall(createAssociationRequest.getApplyOnlyAtCronInterval(), APPLYONLYATCRONINTERVAL_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -143,7 +143,7 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
     private Boolean isAttached;
     /**
      * <p>
-     * The status of the SSL/TLS certificate. Valid values are below.
+     * The validation status of the SSL/TLS certificate. Valid values are below.
      * </p>
      */
     private String status;
@@ -1108,11 +1108,11 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The status of the SSL/TLS certificate. Valid values are below.
+     * The validation status of the SSL/TLS certificate. Valid values are below.
      * </p>
      * 
      * @param status
-     *        The status of the SSL/TLS certificate. Valid values are below.
+     *        The validation status of the SSL/TLS certificate. Valid values are below.
      * @see LoadBalancerTlsCertificateStatus
      */
 
@@ -1122,10 +1122,10 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The status of the SSL/TLS certificate. Valid values are below.
+     * The validation status of the SSL/TLS certificate. Valid values are below.
      * </p>
      * 
-     * @return The status of the SSL/TLS certificate. Valid values are below.
+     * @return The validation status of the SSL/TLS certificate. Valid values are below.
      * @see LoadBalancerTlsCertificateStatus
      */
 
@@ -1135,11 +1135,11 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The status of the SSL/TLS certificate. Valid values are below.
+     * The validation status of the SSL/TLS certificate. Valid values are below.
      * </p>
      * 
      * @param status
-     *        The status of the SSL/TLS certificate. Valid values are below.
+     *        The validation status of the SSL/TLS certificate. Valid values are below.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LoadBalancerTlsCertificateStatus
      */
@@ -1151,11 +1151,11 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The status of the SSL/TLS certificate. Valid values are below.
+     * The validation status of the SSL/TLS certificate. Valid values are below.
      * </p>
      * 
      * @param status
-     *        The status of the SSL/TLS certificate. Valid values are below.
+     *        The validation status of the SSL/TLS certificate. Valid values are below.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LoadBalancerTlsCertificateStatus
      */

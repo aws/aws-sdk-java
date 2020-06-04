@@ -23,10 +23,13 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /** A collection of tags associated with a resource */
     private java.util.Map<String, String> tags;
 
     /**
-     * @return
+     * A collection of tags associated with a resource
+     * 
+     * @return A collection of tags associated with a resource
      */
 
     public java.util.Map<String, String> getTags() {
@@ -34,7 +37,10 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * A collection of tags associated with a resource
+     * 
      * @param tags
+     *        A collection of tags associated with a resource
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -42,7 +48,10 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * A collection of tags associated with a resource
+     * 
      * @param tags
+     *        A collection of tags associated with a resource
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

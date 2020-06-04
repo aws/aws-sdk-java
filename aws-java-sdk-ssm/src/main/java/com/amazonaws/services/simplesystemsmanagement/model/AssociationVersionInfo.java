@@ -140,6 +140,14 @@ public class AssociationVersionInfo implements Serializable, Cloneable, Structur
      * </p>
      */
     private String syncCompliance;
+    /**
+     * <p>
+     * By default, when you create a new associations, the system runs it immediately after it is created and then
+     * according to the schedule you specified. Specify this option if you don't want an association to run immediately
+     * after you create it.
+     * </p>
+     */
+    private Boolean applyOnlyAtCronInterval;
 
     /**
      * <p>
@@ -985,6 +993,74 @@ public class AssociationVersionInfo implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * By default, when you create a new associations, the system runs it immediately after it is created and then
+     * according to the schedule you specified. Specify this option if you don't want an association to run immediately
+     * after you create it.
+     * </p>
+     * 
+     * @param applyOnlyAtCronInterval
+     *        By default, when you create a new associations, the system runs it immediately after it is created and
+     *        then according to the schedule you specified. Specify this option if you don't want an association to run
+     *        immediately after you create it.
+     */
+
+    public void setApplyOnlyAtCronInterval(Boolean applyOnlyAtCronInterval) {
+        this.applyOnlyAtCronInterval = applyOnlyAtCronInterval;
+    }
+
+    /**
+     * <p>
+     * By default, when you create a new associations, the system runs it immediately after it is created and then
+     * according to the schedule you specified. Specify this option if you don't want an association to run immediately
+     * after you create it.
+     * </p>
+     * 
+     * @return By default, when you create a new associations, the system runs it immediately after it is created and
+     *         then according to the schedule you specified. Specify this option if you don't want an association to run
+     *         immediately after you create it.
+     */
+
+    public Boolean getApplyOnlyAtCronInterval() {
+        return this.applyOnlyAtCronInterval;
+    }
+
+    /**
+     * <p>
+     * By default, when you create a new associations, the system runs it immediately after it is created and then
+     * according to the schedule you specified. Specify this option if you don't want an association to run immediately
+     * after you create it.
+     * </p>
+     * 
+     * @param applyOnlyAtCronInterval
+     *        By default, when you create a new associations, the system runs it immediately after it is created and
+     *        then according to the schedule you specified. Specify this option if you don't want an association to run
+     *        immediately after you create it.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssociationVersionInfo withApplyOnlyAtCronInterval(Boolean applyOnlyAtCronInterval) {
+        setApplyOnlyAtCronInterval(applyOnlyAtCronInterval);
+        return this;
+    }
+
+    /**
+     * <p>
+     * By default, when you create a new associations, the system runs it immediately after it is created and then
+     * according to the schedule you specified. Specify this option if you don't want an association to run immediately
+     * after you create it.
+     * </p>
+     * 
+     * @return By default, when you create a new associations, the system runs it immediately after it is created and
+     *         then according to the schedule you specified. Specify this option if you don't want an association to run
+     *         immediately after you create it.
+     */
+
+    public Boolean isApplyOnlyAtCronInterval() {
+        return this.applyOnlyAtCronInterval;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1023,7 +1099,9 @@ public class AssociationVersionInfo implements Serializable, Cloneable, Structur
         if (getComplianceSeverity() != null)
             sb.append("ComplianceSeverity: ").append(getComplianceSeverity()).append(",");
         if (getSyncCompliance() != null)
-            sb.append("SyncCompliance: ").append(getSyncCompliance());
+            sb.append("SyncCompliance: ").append(getSyncCompliance()).append(",");
+        if (getApplyOnlyAtCronInterval() != null)
+            sb.append("ApplyOnlyAtCronInterval: ").append(getApplyOnlyAtCronInterval());
         sb.append("}");
         return sb.toString();
     }
@@ -1094,6 +1172,10 @@ public class AssociationVersionInfo implements Serializable, Cloneable, Structur
             return false;
         if (other.getSyncCompliance() != null && other.getSyncCompliance().equals(this.getSyncCompliance()) == false)
             return false;
+        if (other.getApplyOnlyAtCronInterval() == null ^ this.getApplyOnlyAtCronInterval() == null)
+            return false;
+        if (other.getApplyOnlyAtCronInterval() != null && other.getApplyOnlyAtCronInterval().equals(this.getApplyOnlyAtCronInterval()) == false)
+            return false;
         return true;
     }
 
@@ -1116,6 +1198,7 @@ public class AssociationVersionInfo implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getMaxConcurrency() == null) ? 0 : getMaxConcurrency().hashCode());
         hashCode = prime * hashCode + ((getComplianceSeverity() == null) ? 0 : getComplianceSeverity().hashCode());
         hashCode = prime * hashCode + ((getSyncCompliance() == null) ? 0 : getSyncCompliance().hashCode());
+        hashCode = prime * hashCode + ((getApplyOnlyAtCronInterval() == null) ? 0 : getApplyOnlyAtCronInterval().hashCode());
         return hashCode;
     }
 

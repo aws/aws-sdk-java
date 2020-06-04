@@ -58,6 +58,11 @@ import com.amazonaws.services.marketplacemetering.model.transform.*;
  * AWS Marketplace sellers can use this API to submit usage data for custom usage dimensions.
  * </p>
  * <p>
+ * For information on the permissions you need to use this API, see <a
+ * href="https://docs.aws.amazon.com/marketplace/latest/userguide/iam-user-policy-for-aws-marketplace-actions.html">AWS
+ * Marketing metering and entitlement API permissions</a> in the <i>AWS Marketplace Seller Guide.</i>
+ * </p>
+ * <p>
  * <b>Submitting Metering Records</b>
  * </p>
  * <ul>

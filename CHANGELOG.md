@@ -1,3 +1,24 @@
+# __1.11.796__ __2020-06-04__
+## __AWS Elemental MediaPackage VOD__
+  - ### Features
+    - You can now restrict direct access to AWS Elemental MediaPackage by securing requests for VOD content using CDN authorization. With CDN authorization, content requests require a specific HTTP header and authorization code.
+
+## __AWSMarketplace Metering__
+  - ### Features
+    - Documentation updates for meteringmarketplace
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - New C5a instances, the latest generation of EC2's compute-optimized instances featuring AMD's 2nd Generation EPYC processors. C5a instances offer up to 96 vCPUs, 192 GiB of instance memory, 20 Gbps in Network bandwidth; New G4dn.metal bare metal instance with 8 NVIDIA T4 GPUs.
+
+## __Amazon Lightsail__
+  - ### Features
+    - This release adds the BurstCapacityPercentage and BurstCapacityTime instance metrics, which allow you to track the burst capacity available to your instance.
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - SSM State Manager support for executing an association only at specified CRON schedule after creating/updating an association.
+
 # __1.11.795__ __2020-06-03__
 ## __AWS Direct Connect__
   - ### Features

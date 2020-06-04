@@ -569,6 +569,39 @@ public class AWSMediaPackageVodAsyncClient extends AWSMediaPackageVodClient impl
         });
     }
 
+    @Override
+    public java.util.concurrent.Future<UpdatePackagingGroupResult> updatePackagingGroupAsync(UpdatePackagingGroupRequest request) {
+
+        return updatePackagingGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePackagingGroupResult> updatePackagingGroupAsync(final UpdatePackagingGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdatePackagingGroupRequest, UpdatePackagingGroupResult> asyncHandler) {
+        final UpdatePackagingGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdatePackagingGroupResult>() {
+            @Override
+            public UpdatePackagingGroupResult call() throws Exception {
+                UpdatePackagingGroupResult result = null;
+
+                try {
+                    result = executeUpdatePackagingGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
     /**
      * Shuts down the client, releasing all managed resources. This includes forcibly terminating all pending
      * asynchronous service calls. Clients who wish to give pending asynchronous service calls time to complete should

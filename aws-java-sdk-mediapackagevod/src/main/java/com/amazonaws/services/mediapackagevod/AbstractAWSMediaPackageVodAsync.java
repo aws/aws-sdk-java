@@ -222,4 +222,17 @@ public class AbstractAWSMediaPackageVodAsync extends AbstractAWSMediaPackageVod 
         throw new java.lang.UnsupportedOperationException();
     }
 
+    @Override
+    public java.util.concurrent.Future<UpdatePackagingGroupResult> updatePackagingGroupAsync(UpdatePackagingGroupRequest request) {
+
+        return updatePackagingGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePackagingGroupResult> updatePackagingGroupAsync(UpdatePackagingGroupRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdatePackagingGroupRequest, UpdatePackagingGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
 }

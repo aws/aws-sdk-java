@@ -26,10 +26,37 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreatePackagingGroupRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    private Authorization authorization;
     /** The ID of the PackagingGroup. */
     private String id;
 
     private java.util.Map<String, String> tags;
+
+    /**
+     * @param authorization
+     */
+
+    public void setAuthorization(Authorization authorization) {
+        this.authorization = authorization;
+    }
+
+    /**
+     * @return
+     */
+
+    public Authorization getAuthorization() {
+        return this.authorization;
+    }
+
+    /**
+     * @param authorization
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreatePackagingGroupRequest withAuthorization(Authorization authorization) {
+        setAuthorization(authorization);
+        return this;
+    }
 
     /**
      * The ID of the PackagingGroup.
@@ -131,6 +158,8 @@ public class CreatePackagingGroupRequest extends com.amazonaws.AmazonWebServiceR
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAuthorization() != null)
+            sb.append("Authorization: ").append(getAuthorization()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
         if (getTags() != null)
@@ -149,6 +178,10 @@ public class CreatePackagingGroupRequest extends com.amazonaws.AmazonWebServiceR
         if (obj instanceof CreatePackagingGroupRequest == false)
             return false;
         CreatePackagingGroupRequest other = (CreatePackagingGroupRequest) obj;
+        if (other.getAuthorization() == null ^ this.getAuthorization() == null)
+            return false;
+        if (other.getAuthorization() != null && other.getAuthorization().equals(this.getAuthorization()) == false)
+            return false;
         if (other.getId() == null ^ this.getId() == null)
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
@@ -165,6 +198,7 @@ public class CreatePackagingGroupRequest extends com.amazonaws.AmazonWebServiceR
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAuthorization() == null) ? 0 : getAuthorization().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;

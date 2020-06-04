@@ -28,6 +28,8 @@ public class PackagingGroup implements Serializable, Cloneable, StructuredPojo {
 
     /** The ARN of the PackagingGroup. */
     private String arn;
+
+    private Authorization authorization;
     /** The fully qualified domain name for Assets in the PackagingGroup. */
     private String domainName;
     /** The ID of the PackagingGroup. */
@@ -66,6 +68,32 @@ public class PackagingGroup implements Serializable, Cloneable, StructuredPojo {
 
     public PackagingGroup withArn(String arn) {
         setArn(arn);
+        return this;
+    }
+
+    /**
+     * @param authorization
+     */
+
+    public void setAuthorization(Authorization authorization) {
+        this.authorization = authorization;
+    }
+
+    /**
+     * @return
+     */
+
+    public Authorization getAuthorization() {
+        return this.authorization;
+    }
+
+    /**
+     * @param authorization
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PackagingGroup withAuthorization(Authorization authorization) {
+        setAuthorization(authorization);
         return this;
     }
 
@@ -205,6 +233,8 @@ public class PackagingGroup implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
+        if (getAuthorization() != null)
+            sb.append("Authorization: ").append(getAuthorization()).append(",");
         if (getDomainName() != null)
             sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getId() != null)
@@ -229,6 +259,10 @@ public class PackagingGroup implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
+        if (other.getAuthorization() == null ^ this.getAuthorization() == null)
+            return false;
+        if (other.getAuthorization() != null && other.getAuthorization().equals(this.getAuthorization()) == false)
+            return false;
         if (other.getDomainName() == null ^ this.getDomainName() == null)
             return false;
         if (other.getDomainName() != null && other.getDomainName().equals(this.getDomainName()) == false)
@@ -250,6 +284,7 @@ public class PackagingGroup implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getAuthorization() == null) ? 0 : getAuthorization().hashCode());
         hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());

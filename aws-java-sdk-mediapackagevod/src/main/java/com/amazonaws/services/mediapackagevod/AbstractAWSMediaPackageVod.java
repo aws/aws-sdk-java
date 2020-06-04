@@ -103,6 +103,11 @@ public class AbstractAWSMediaPackageVod implements AWSMediaPackageVod {
     }
 
     @Override
+    public UpdatePackagingGroupResult updatePackagingGroup(UpdatePackagingGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public void shutdown() {
         throw new java.lang.UnsupportedOperationException();
     }

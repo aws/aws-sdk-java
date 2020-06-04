@@ -163,6 +163,19 @@ public class UpdateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private String syncCompliance;
+    /**
+     * <p>
+     * By default, when you update an association, the system runs it immediately after it is updated and then according
+     * to the schedule you specified. Specify this option if you don't want an association to run immediately after you
+     * update it.
+     * </p>
+     * <p>
+     * Also, if you specified this option when you created the association, you can reset it. To do so, specify the
+     * <code>no-apply-only-at-cron-interval</code> parameter when you update the association from the command line. This
+     * parameter forces the association to run immediately after updating it and according to the interval specified.
+     * </p>
+     */
+    private Boolean applyOnlyAtCronInterval;
 
     /**
      * <p>
@@ -1161,6 +1174,114 @@ public class UpdateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * By default, when you update an association, the system runs it immediately after it is updated and then according
+     * to the schedule you specified. Specify this option if you don't want an association to run immediately after you
+     * update it.
+     * </p>
+     * <p>
+     * Also, if you specified this option when you created the association, you can reset it. To do so, specify the
+     * <code>no-apply-only-at-cron-interval</code> parameter when you update the association from the command line. This
+     * parameter forces the association to run immediately after updating it and according to the interval specified.
+     * </p>
+     * 
+     * @param applyOnlyAtCronInterval
+     *        By default, when you update an association, the system runs it immediately after it is updated and then
+     *        according to the schedule you specified. Specify this option if you don't want an association to run
+     *        immediately after you update it.</p>
+     *        <p>
+     *        Also, if you specified this option when you created the association, you can reset it. To do so, specify
+     *        the <code>no-apply-only-at-cron-interval</code> parameter when you update the association from the command
+     *        line. This parameter forces the association to run immediately after updating it and according to the
+     *        interval specified.
+     */
+
+    public void setApplyOnlyAtCronInterval(Boolean applyOnlyAtCronInterval) {
+        this.applyOnlyAtCronInterval = applyOnlyAtCronInterval;
+    }
+
+    /**
+     * <p>
+     * By default, when you update an association, the system runs it immediately after it is updated and then according
+     * to the schedule you specified. Specify this option if you don't want an association to run immediately after you
+     * update it.
+     * </p>
+     * <p>
+     * Also, if you specified this option when you created the association, you can reset it. To do so, specify the
+     * <code>no-apply-only-at-cron-interval</code> parameter when you update the association from the command line. This
+     * parameter forces the association to run immediately after updating it and according to the interval specified.
+     * </p>
+     * 
+     * @return By default, when you update an association, the system runs it immediately after it is updated and then
+     *         according to the schedule you specified. Specify this option if you don't want an association to run
+     *         immediately after you update it.</p>
+     *         <p>
+     *         Also, if you specified this option when you created the association, you can reset it. To do so, specify
+     *         the <code>no-apply-only-at-cron-interval</code> parameter when you update the association from the
+     *         command line. This parameter forces the association to run immediately after updating it and according to
+     *         the interval specified.
+     */
+
+    public Boolean getApplyOnlyAtCronInterval() {
+        return this.applyOnlyAtCronInterval;
+    }
+
+    /**
+     * <p>
+     * By default, when you update an association, the system runs it immediately after it is updated and then according
+     * to the schedule you specified. Specify this option if you don't want an association to run immediately after you
+     * update it.
+     * </p>
+     * <p>
+     * Also, if you specified this option when you created the association, you can reset it. To do so, specify the
+     * <code>no-apply-only-at-cron-interval</code> parameter when you update the association from the command line. This
+     * parameter forces the association to run immediately after updating it and according to the interval specified.
+     * </p>
+     * 
+     * @param applyOnlyAtCronInterval
+     *        By default, when you update an association, the system runs it immediately after it is updated and then
+     *        according to the schedule you specified. Specify this option if you don't want an association to run
+     *        immediately after you update it.</p>
+     *        <p>
+     *        Also, if you specified this option when you created the association, you can reset it. To do so, specify
+     *        the <code>no-apply-only-at-cron-interval</code> parameter when you update the association from the command
+     *        line. This parameter forces the association to run immediately after updating it and according to the
+     *        interval specified.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateAssociationRequest withApplyOnlyAtCronInterval(Boolean applyOnlyAtCronInterval) {
+        setApplyOnlyAtCronInterval(applyOnlyAtCronInterval);
+        return this;
+    }
+
+    /**
+     * <p>
+     * By default, when you update an association, the system runs it immediately after it is updated and then according
+     * to the schedule you specified. Specify this option if you don't want an association to run immediately after you
+     * update it.
+     * </p>
+     * <p>
+     * Also, if you specified this option when you created the association, you can reset it. To do so, specify the
+     * <code>no-apply-only-at-cron-interval</code> parameter when you update the association from the command line. This
+     * parameter forces the association to run immediately after updating it and according to the interval specified.
+     * </p>
+     * 
+     * @return By default, when you update an association, the system runs it immediately after it is updated and then
+     *         according to the schedule you specified. Specify this option if you don't want an association to run
+     *         immediately after you update it.</p>
+     *         <p>
+     *         Also, if you specified this option when you created the association, you can reset it. To do so, specify
+     *         the <code>no-apply-only-at-cron-interval</code> parameter when you update the association from the
+     *         command line. This parameter forces the association to run immediately after updating it and according to
+     *         the interval specified.
+     */
+
+    public Boolean isApplyOnlyAtCronInterval() {
+        return this.applyOnlyAtCronInterval;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1199,7 +1320,9 @@ public class UpdateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getComplianceSeverity() != null)
             sb.append("ComplianceSeverity: ").append(getComplianceSeverity()).append(",");
         if (getSyncCompliance() != null)
-            sb.append("SyncCompliance: ").append(getSyncCompliance());
+            sb.append("SyncCompliance: ").append(getSyncCompliance()).append(",");
+        if (getApplyOnlyAtCronInterval() != null)
+            sb.append("ApplyOnlyAtCronInterval: ").append(getApplyOnlyAtCronInterval());
         sb.append("}");
         return sb.toString();
     }
@@ -1271,6 +1394,10 @@ public class UpdateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getSyncCompliance() != null && other.getSyncCompliance().equals(this.getSyncCompliance()) == false)
             return false;
+        if (other.getApplyOnlyAtCronInterval() == null ^ this.getApplyOnlyAtCronInterval() == null)
+            return false;
+        if (other.getApplyOnlyAtCronInterval() != null && other.getApplyOnlyAtCronInterval().equals(this.getApplyOnlyAtCronInterval()) == false)
+            return false;
         return true;
     }
 
@@ -1293,6 +1420,7 @@ public class UpdateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getMaxConcurrency() == null) ? 0 : getMaxConcurrency().hashCode());
         hashCode = prime * hashCode + ((getComplianceSeverity() == null) ? 0 : getComplianceSeverity().hashCode());
         hashCode = prime * hashCode + ((getSyncCompliance() == null) ? 0 : getSyncCompliance().hashCode());
+        hashCode = prime * hashCode + ((getApplyOnlyAtCronInterval() == null) ? 0 : getApplyOnlyAtCronInterval().hashCode());
         return hashCode;
     }
 

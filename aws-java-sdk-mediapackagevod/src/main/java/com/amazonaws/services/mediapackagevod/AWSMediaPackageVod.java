@@ -319,7 +319,7 @@ public interface AWSMediaPackageVod {
     ListPackagingGroupsResult listPackagingGroups(ListPackagingGroupsRequest listPackagingGroupsRequest);
 
     /**
-     * List tags for a given MediaPackage VOD resource
+     * Returns a list of the tags assigned to the specified resource.
      * 
      * @param listTagsForResourceRequest
      * @return Result of the ListTagsForResource operation returned by the service.
@@ -330,7 +330,7 @@ public interface AWSMediaPackageVod {
     ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
 
     /**
-     * Set tags for a given MediaPackage VOD resource
+     * Adds tags to the specified resource. You can specify one or more tags to add.
      * 
      * @param tagResourceRequest
      * @return Result of the TagResource operation returned by the service.
@@ -341,7 +341,7 @@ public interface AWSMediaPackageVod {
     TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
 
     /**
-     * Delete tags for a given MediaPackage VOD resource
+     * Removes tags from the specified resource. You can specify one or more tags to remove.
      * 
      * @param untagResourceRequest
      * @return Result of the UntagResource operation returned by the service.
@@ -350,6 +350,30 @@ public interface AWSMediaPackageVod {
      *      API Documentation</a>
      */
     UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * Updates a specific packaging group. You can't change the id attribute or any other system-generated attributes.
+     * 
+     * @param updatePackagingGroupRequest
+     *        A MediaPackage VOD PackagingGroup resource configuration.
+     * @return Result of the UpdatePackagingGroup operation returned by the service.
+     * @throws UnprocessableEntityException
+     *         The parameters sent in the request are not valid.
+     * @throws InternalServerErrorException
+     *         An unexpected error occurred.
+     * @throws ForbiddenException
+     *         The client is not authorized to access the requested resource.
+     * @throws NotFoundException
+     *         The requested resource does not exist.
+     * @throws ServiceUnavailableException
+     *         An unexpected error occurred.
+     * @throws TooManyRequestsException
+     *         The client has exceeded their resource or throttling limits.
+     * @sample AWSMediaPackageVod.UpdatePackagingGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/UpdatePackagingGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdatePackagingGroupResult updatePackagingGroup(UpdatePackagingGroupRequest updatePackagingGroupRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

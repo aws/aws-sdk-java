@@ -31,6 +31,8 @@ public class PackagingGroupMarshaller {
 
     private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("arn").build();
+    private static final MarshallingInfo<StructuredPojo> AUTHORIZATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("authorization").build();
     private static final MarshallingInfo<String> DOMAINNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("domainName").build();
     private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -55,6 +57,7 @@ public class PackagingGroupMarshaller {
 
         try {
             protocolMarshaller.marshall(packagingGroup.getArn(), ARN_BINDING);
+            protocolMarshaller.marshall(packagingGroup.getAuthorization(), AUTHORIZATION_BINDING);
             protocolMarshaller.marshall(packagingGroup.getDomainName(), DOMAINNAME_BINDING);
             protocolMarshaller.marshall(packagingGroup.getId(), ID_BINDING);
             protocolMarshaller.marshall(packagingGroup.getTags(), TAGS_BINDING);

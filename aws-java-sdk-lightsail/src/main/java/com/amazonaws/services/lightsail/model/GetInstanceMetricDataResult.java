@@ -25,24 +25,24 @@ public class GetInstanceMetricDataResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The metric name to return data for.
+     * The name of the metric returned.
      * </p>
      */
     private String metricName;
     /**
      * <p>
-     * An array of key-value pairs containing information about the results of your get instance metric data request.
+     * An array of objects that describe the metric data returned.
      * </p>
      */
     private java.util.List<MetricDatapoint> metricData;
 
     /**
      * <p>
-     * The metric name to return data for.
+     * The name of the metric returned.
      * </p>
      * 
      * @param metricName
-     *        The metric name to return data for.
+     *        The name of the metric returned.
      * @see InstanceMetricName
      */
 
@@ -52,10 +52,10 @@ public class GetInstanceMetricDataResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The metric name to return data for.
+     * The name of the metric returned.
      * </p>
      * 
-     * @return The metric name to return data for.
+     * @return The name of the metric returned.
      * @see InstanceMetricName
      */
 
@@ -65,11 +65,11 @@ public class GetInstanceMetricDataResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The metric name to return data for.
+     * The name of the metric returned.
      * </p>
      * 
      * @param metricName
-     *        The metric name to return data for.
+     *        The name of the metric returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceMetricName
      */
@@ -81,11 +81,11 @@ public class GetInstanceMetricDataResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The metric name to return data for.
+     * The name of the metric returned.
      * </p>
      * 
      * @param metricName
-     *        The metric name to return data for.
+     *        The name of the metric returned.
      * @see InstanceMetricName
      */
 
@@ -95,11 +95,11 @@ public class GetInstanceMetricDataResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The metric name to return data for.
+     * The name of the metric returned.
      * </p>
      * 
      * @param metricName
-     *        The metric name to return data for.
+     *        The name of the metric returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceMetricName
      */
@@ -111,11 +111,10 @@ public class GetInstanceMetricDataResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * An array of key-value pairs containing information about the results of your get instance metric data request.
+     * An array of objects that describe the metric data returned.
      * </p>
      * 
-     * @return An array of key-value pairs containing information about the results of your get instance metric data
-     *         request.
+     * @return An array of objects that describe the metric data returned.
      */
 
     public java.util.List<MetricDatapoint> getMetricData() {
@@ -124,12 +123,11 @@ public class GetInstanceMetricDataResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * An array of key-value pairs containing information about the results of your get instance metric data request.
+     * An array of objects that describe the metric data returned.
      * </p>
      * 
      * @param metricData
-     *        An array of key-value pairs containing information about the results of your get instance metric data
-     *        request.
+     *        An array of objects that describe the metric data returned.
      */
 
     public void setMetricData(java.util.Collection<MetricDatapoint> metricData) {
@@ -143,7 +141,7 @@ public class GetInstanceMetricDataResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * An array of key-value pairs containing information about the results of your get instance metric data request.
+     * An array of objects that describe the metric data returned.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -152,8 +150,7 @@ public class GetInstanceMetricDataResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param metricData
-     *        An array of key-value pairs containing information about the results of your get instance metric data
-     *        request.
+     *        An array of objects that describe the metric data returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -169,12 +166,11 @@ public class GetInstanceMetricDataResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * An array of key-value pairs containing information about the results of your get instance metric data request.
+     * An array of objects that describe the metric data returned.
      * </p>
      * 
      * @param metricData
-     *        An array of key-value pairs containing information about the results of your get instance metric data
-     *        request.
+     *        An array of objects that describe the metric data returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

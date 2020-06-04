@@ -25,12 +25,21 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the
+     * resource.
+     */
     private String resourceArn;
-
+    /** A collection of tags associated with a resource */
     private java.util.Map<String, String> tags;
 
     /**
+     * The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the
+     * resource.
+     * 
      * @param resourceArn
+     *        The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the
+     *        resource.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -38,7 +47,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * @return
+     * The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the
+     * resource.
+     * 
+     * @return The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the
+     *         resource.
      */
 
     public String getResourceArn() {
@@ -46,7 +59,12 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the
+     * resource.
+     * 
      * @param resourceArn
+     *        The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the
+     *        resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -56,7 +74,9 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * @return
+     * A collection of tags associated with a resource
+     * 
+     * @return A collection of tags associated with a resource
      */
 
     public java.util.Map<String, String> getTags() {
@@ -64,7 +84,10 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * A collection of tags associated with a resource
+     * 
      * @param tags
+     *        A collection of tags associated with a resource
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -72,7 +95,10 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * A collection of tags associated with a resource
+     * 
      * @param tags
+     *        A collection of tags associated with a resource
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -25,7 +25,9 @@ public enum InstanceMetricName {
     NetworkOut("NetworkOut"),
     StatusCheckFailed("StatusCheckFailed"),
     StatusCheckFailed_Instance("StatusCheckFailed_Instance"),
-    StatusCheckFailed_System("StatusCheckFailed_System");
+    StatusCheckFailed_System("StatusCheckFailed_System"),
+    BurstCapacityTime("BurstCapacityTime"),
+    BurstCapacityPercentage("BurstCapacityPercentage");
 
     private String value;
 

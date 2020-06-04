@@ -910,7 +910,7 @@ public class AWSMediaPackageVodClient extends AmazonWebServiceClient implements 
     }
 
     /**
-     * List tags for a given MediaPackage VOD resource
+     * Returns a list of the tags assigned to the specified resource.
      * 
      * @param listTagsForResourceRequest
      * @return Result of the ListTagsForResource operation returned by the service.
@@ -961,7 +961,7 @@ public class AWSMediaPackageVodClient extends AmazonWebServiceClient implements 
     }
 
     /**
-     * Set tags for a given MediaPackage VOD resource
+     * Adds tags to the specified resource. You can specify one or more tags to add.
      * 
      * @param tagResourceRequest
      * @return Result of the TagResource operation returned by the service.
@@ -1012,7 +1012,7 @@ public class AWSMediaPackageVodClient extends AmazonWebServiceClient implements 
     }
 
     /**
-     * Delete tags for a given MediaPackage VOD resource
+     * Removes tags from the specified resource. You can specify one or more tags to remove.
      * 
      * @param untagResourceRequest
      * @return Result of the UntagResource operation returned by the service.
@@ -1052,6 +1052,70 @@ public class AWSMediaPackageVodClient extends AmazonWebServiceClient implements 
 
             HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Updates a specific packaging group. You can't change the id attribute or any other system-generated attributes.
+     * 
+     * @param updatePackagingGroupRequest
+     *        A MediaPackage VOD PackagingGroup resource configuration.
+     * @return Result of the UpdatePackagingGroup operation returned by the service.
+     * @throws UnprocessableEntityException
+     *         The parameters sent in the request are not valid.
+     * @throws InternalServerErrorException
+     *         An unexpected error occurred.
+     * @throws ForbiddenException
+     *         The client is not authorized to access the requested resource.
+     * @throws NotFoundException
+     *         The requested resource does not exist.
+     * @throws ServiceUnavailableException
+     *         An unexpected error occurred.
+     * @throws TooManyRequestsException
+     *         The client has exceeded their resource or throttling limits.
+     * @sample AWSMediaPackageVod.UpdatePackagingGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/UpdatePackagingGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdatePackagingGroupResult updatePackagingGroup(UpdatePackagingGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdatePackagingGroup(request);
+    }
+
+    @SdkInternalApi
+    final UpdatePackagingGroupResult executeUpdatePackagingGroup(UpdatePackagingGroupRequest updatePackagingGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updatePackagingGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdatePackagingGroupRequest> request = null;
+        Response<UpdatePackagingGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdatePackagingGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updatePackagingGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage Vod");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdatePackagingGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdatePackagingGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdatePackagingGroupResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

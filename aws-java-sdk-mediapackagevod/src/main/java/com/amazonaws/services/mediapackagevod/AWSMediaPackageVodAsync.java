@@ -375,7 +375,7 @@ public interface AWSMediaPackageVodAsync extends AWSMediaPackageVod {
             com.amazonaws.handlers.AsyncHandler<ListPackagingGroupsRequest, ListPackagingGroupsResult> asyncHandler);
 
     /**
-     * List tags for a given MediaPackage VOD resource
+     * Returns a list of the tags assigned to the specified resource.
      * 
      * @param listTagsForResourceRequest
      * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
@@ -386,7 +386,7 @@ public interface AWSMediaPackageVodAsync extends AWSMediaPackageVod {
     java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
 
     /**
-     * List tags for a given MediaPackage VOD resource
+     * Returns a list of the tags assigned to the specified resource.
      * 
      * @param listTagsForResourceRequest
      * @param asyncHandler
@@ -402,7 +402,7 @@ public interface AWSMediaPackageVodAsync extends AWSMediaPackageVod {
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
 
     /**
-     * Set tags for a given MediaPackage VOD resource
+     * Adds tags to the specified resource. You can specify one or more tags to add.
      * 
      * @param tagResourceRequest
      * @return A Java Future containing the result of the TagResource operation returned by the service.
@@ -413,7 +413,7 @@ public interface AWSMediaPackageVodAsync extends AWSMediaPackageVod {
     java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
 
     /**
-     * Set tags for a given MediaPackage VOD resource
+     * Adds tags to the specified resource. You can specify one or more tags to add.
      * 
      * @param tagResourceRequest
      * @param asyncHandler
@@ -429,7 +429,7 @@ public interface AWSMediaPackageVodAsync extends AWSMediaPackageVod {
             com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
 
     /**
-     * Delete tags for a given MediaPackage VOD resource
+     * Removes tags from the specified resource. You can specify one or more tags to remove.
      * 
      * @param untagResourceRequest
      * @return A Java Future containing the result of the UntagResource operation returned by the service.
@@ -440,7 +440,7 @@ public interface AWSMediaPackageVodAsync extends AWSMediaPackageVod {
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
 
     /**
-     * Delete tags for a given MediaPackage VOD resource
+     * Removes tags from the specified resource. You can specify one or more tags to remove.
      * 
      * @param untagResourceRequest
      * @param asyncHandler
@@ -454,5 +454,34 @@ public interface AWSMediaPackageVodAsync extends AWSMediaPackageVod {
      */
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
+
+    /**
+     * Updates a specific packaging group. You can't change the id attribute or any other system-generated attributes.
+     * 
+     * @param updatePackagingGroupRequest
+     *        A MediaPackage VOD PackagingGroup resource configuration.
+     * @return A Java Future containing the result of the UpdatePackagingGroup operation returned by the service.
+     * @sample AWSMediaPackageVodAsync.UpdatePackagingGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/UpdatePackagingGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdatePackagingGroupResult> updatePackagingGroupAsync(UpdatePackagingGroupRequest updatePackagingGroupRequest);
+
+    /**
+     * Updates a specific packaging group. You can't change the id attribute or any other system-generated attributes.
+     * 
+     * @param updatePackagingGroupRequest
+     *        A MediaPackage VOD PackagingGroup resource configuration.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdatePackagingGroup operation returned by the service.
+     * @sample AWSMediaPackageVodAsyncHandler.UpdatePackagingGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/UpdatePackagingGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdatePackagingGroupResult> updatePackagingGroupAsync(UpdatePackagingGroupRequest updatePackagingGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdatePackagingGroupRequest, UpdatePackagingGroupResult> asyncHandler);
 
 }

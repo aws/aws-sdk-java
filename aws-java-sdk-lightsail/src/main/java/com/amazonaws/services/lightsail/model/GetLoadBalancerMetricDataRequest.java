@@ -218,7 +218,7 @@ public class GetLoadBalancerMetricDataRequest extends com.amazonaws.AmazonWebSer
     private java.util.Date endTime;
     /**
      * <p>
-     * The unit for the metric data request. Valid units depend on the metric data being required. For the valid units
+     * The unit for the metric data request. Valid units depend on the metric data being requested. For the valid units
      * with each available metric, see the <code>metricName</code> parameter.
      * </p>
      */
@@ -1775,12 +1775,12 @@ public class GetLoadBalancerMetricDataRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The unit for the metric data request. Valid units depend on the metric data being required. For the valid units
+     * The unit for the metric data request. Valid units depend on the metric data being requested. For the valid units
      * with each available metric, see the <code>metricName</code> parameter.
      * </p>
      * 
      * @param unit
-     *        The unit for the metric data request. Valid units depend on the metric data being required. For the valid
+     *        The unit for the metric data request. Valid units depend on the metric data being requested. For the valid
      *        units with each available metric, see the <code>metricName</code> parameter.
      * @see MetricUnit
      */
@@ -1791,12 +1791,12 @@ public class GetLoadBalancerMetricDataRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The unit for the metric data request. Valid units depend on the metric data being required. For the valid units
+     * The unit for the metric data request. Valid units depend on the metric data being requested. For the valid units
      * with each available metric, see the <code>metricName</code> parameter.
      * </p>
      * 
-     * @return The unit for the metric data request. Valid units depend on the metric data being required. For the valid
-     *         units with each available metric, see the <code>metricName</code> parameter.
+     * @return The unit for the metric data request. Valid units depend on the metric data being requested. For the
+     *         valid units with each available metric, see the <code>metricName</code> parameter.
      * @see MetricUnit
      */
 
@@ -1806,12 +1806,12 @@ public class GetLoadBalancerMetricDataRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The unit for the metric data request. Valid units depend on the metric data being required. For the valid units
+     * The unit for the metric data request. Valid units depend on the metric data being requested. For the valid units
      * with each available metric, see the <code>metricName</code> parameter.
      * </p>
      * 
      * @param unit
-     *        The unit for the metric data request. Valid units depend on the metric data being required. For the valid
+     *        The unit for the metric data request. Valid units depend on the metric data being requested. For the valid
      *        units with each available metric, see the <code>metricName</code> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MetricUnit
@@ -1824,12 +1824,12 @@ public class GetLoadBalancerMetricDataRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The unit for the metric data request. Valid units depend on the metric data being required. For the valid units
+     * The unit for the metric data request. Valid units depend on the metric data being requested. For the valid units
      * with each available metric, see the <code>metricName</code> parameter.
      * </p>
      * 
      * @param unit
-     *        The unit for the metric data request. Valid units depend on the metric data being required. For the valid
+     *        The unit for the metric data request. Valid units depend on the metric data being requested. For the valid
      *        units with each available metric, see the <code>metricName</code> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MetricUnit

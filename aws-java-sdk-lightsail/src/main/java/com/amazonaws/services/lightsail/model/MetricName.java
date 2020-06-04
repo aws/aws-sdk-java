@@ -42,7 +42,9 @@ public enum MetricName {
     DiskQueueDepth("DiskQueueDepth"),
     FreeStorageSpace("FreeStorageSpace"),
     NetworkReceiveThroughput("NetworkReceiveThroughput"),
-    NetworkTransmitThroughput("NetworkTransmitThroughput");
+    NetworkTransmitThroughput("NetworkTransmitThroughput"),
+    BurstCapacityTime("BurstCapacityTime"),
+    BurstCapacityPercentage("BurstCapacityPercentage");
 
     private String value;
 
