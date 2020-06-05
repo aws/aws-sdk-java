@@ -58,8 +58,8 @@ import com.amazonaws.services.elasticbeanstalk.model.transform.*;
  * <p>
  * For more information about this product, go to the <a href="http://aws.amazon.com/elasticbeanstalk/">AWS Elastic
  * Beanstalk</a> details page. The location of the latest AWS Elastic Beanstalk WSDL is <a
- * href="http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl"
- * >http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl</a>. To install the Software
+ * href="https://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl"
+ * >https://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl</a>. To install the Software
  * Development Kits (SDKs), Integrated Development Environment (IDE) Toolkits, and command line tools that enable you to
  * access the API, go to <a href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.
  * </p>
@@ -425,6 +425,69 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
             StaxResponseHandler<ApplyEnvironmentManagedActionResult> responseHandler = new StaxResponseHandler<ApplyEnvironmentManagedActionResult>(
                     new ApplyEnvironmentManagedActionResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Add or change the operations role used by an environment. After this call is made, Elastic Beanstalk uses the
+     * associated operations role for permissions to downstream services during subsequent calls acting on this
+     * environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the
+     * <i>AWS Elastic Beanstalk Developer Guide</i>.
+     * </p>
+     * 
+     * @param associateEnvironmentOperationsRoleRequest
+     *        Request to add or change the operations role used by an environment.
+     * @return Result of the AssociateEnvironmentOperationsRole operation returned by the service.
+     * @throws InsufficientPrivilegesException
+     *         The specified account does not have sufficient privileges for one or more AWS services.
+     * @sample AWSElasticBeanstalk.AssociateEnvironmentOperationsRole
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/AssociateEnvironmentOperationsRole"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AssociateEnvironmentOperationsRoleResult associateEnvironmentOperationsRole(AssociateEnvironmentOperationsRoleRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateEnvironmentOperationsRole(request);
+    }
+
+    @SdkInternalApi
+    final AssociateEnvironmentOperationsRoleResult executeAssociateEnvironmentOperationsRole(
+            AssociateEnvironmentOperationsRoleRequest associateEnvironmentOperationsRoleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(associateEnvironmentOperationsRoleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AssociateEnvironmentOperationsRoleRequest> request = null;
+        Response<AssociateEnvironmentOperationsRoleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AssociateEnvironmentOperationsRoleRequestMarshaller()
+                        .marshall(super.beforeMarshalling(associateEnvironmentOperationsRoleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Beanstalk");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateEnvironmentOperationsRole");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<AssociateEnvironmentOperationsRoleResult> responseHandler = new StaxResponseHandler<AssociateEnvironmentOperationsRoleResult>(
+                    new AssociateEnvironmentOperationsRoleResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2091,6 +2154,69 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
             StaxResponseHandler<DescribePlatformVersionResult> responseHandler = new StaxResponseHandler<DescribePlatformVersionResult>(
                     new DescribePlatformVersionResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Disassociate the operations role from an environment. After this call is made, Elastic Beanstalk uses the
+     * caller's permissions for permissions to downstream services during subsequent calls acting on this environment.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the
+     * <i>AWS Elastic Beanstalk Developer Guide</i>.
+     * </p>
+     * 
+     * @param disassociateEnvironmentOperationsRoleRequest
+     *        Request to disassociate the operations role from an environment.
+     * @return Result of the DisassociateEnvironmentOperationsRole operation returned by the service.
+     * @throws InsufficientPrivilegesException
+     *         The specified account does not have sufficient privileges for one or more AWS services.
+     * @sample AWSElasticBeanstalk.DisassociateEnvironmentOperationsRole
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DisassociateEnvironmentOperationsRole"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DisassociateEnvironmentOperationsRoleResult disassociateEnvironmentOperationsRole(DisassociateEnvironmentOperationsRoleRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateEnvironmentOperationsRole(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateEnvironmentOperationsRoleResult executeDisassociateEnvironmentOperationsRole(
+            DisassociateEnvironmentOperationsRoleRequest disassociateEnvironmentOperationsRoleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disassociateEnvironmentOperationsRoleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisassociateEnvironmentOperationsRoleRequest> request = null;
+        Response<DisassociateEnvironmentOperationsRoleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisassociateEnvironmentOperationsRoleRequestMarshaller().marshall(super
+                        .beforeMarshalling(disassociateEnvironmentOperationsRoleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Beanstalk");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateEnvironmentOperationsRole");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DisassociateEnvironmentOperationsRoleResult> responseHandler = new StaxResponseHandler<DisassociateEnvironmentOperationsRoleResult>(
+                    new DisassociateEnvironmentOperationsRoleResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

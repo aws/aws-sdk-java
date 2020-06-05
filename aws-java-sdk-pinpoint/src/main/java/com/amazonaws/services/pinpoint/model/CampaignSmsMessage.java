@@ -36,9 +36,9 @@ public class CampaignSmsMessage implements Serializable, Cloneable, StructuredPo
     private String body;
     /**
      * <p>
-     * The type of SMS message. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such as a
-     * one-time password that supports a customer transaction; and, PROMOTIONAL, the message isn't critical or
-     * time-sensitive, such as a marketing message.
+     * The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive, such as a
+     * one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such as marketing
+     * messages).
      * </p>
      */
     private String messageType;
@@ -91,15 +91,15 @@ public class CampaignSmsMessage implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The type of SMS message. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such as a
-     * one-time password that supports a customer transaction; and, PROMOTIONAL, the message isn't critical or
-     * time-sensitive, such as a marketing message.
+     * The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive, such as a
+     * one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such as marketing
+     * messages).
      * </p>
      * 
      * @param messageType
-     *        The type of SMS message. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such
-     *        as a one-time password that supports a customer transaction; and, PROMOTIONAL, the message isn't critical
-     *        or time-sensitive, such as a marketing message.
+     *        The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive,
+     *        such as a one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such
+     *        as marketing messages).
      * @see MessageType
      */
 
@@ -109,14 +109,14 @@ public class CampaignSmsMessage implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The type of SMS message. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such as a
-     * one-time password that supports a customer transaction; and, PROMOTIONAL, the message isn't critical or
-     * time-sensitive, such as a marketing message.
+     * The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive, such as a
+     * one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such as marketing
+     * messages).
      * </p>
      * 
-     * @return The type of SMS message. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such
-     *         as a one-time password that supports a customer transaction; and, PROMOTIONAL, the message isn't critical
-     *         or time-sensitive, such as a marketing message.
+     * @return The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive,
+     *         such as a one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such
+     *         as marketing messages).
      * @see MessageType
      */
 
@@ -126,15 +126,15 @@ public class CampaignSmsMessage implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The type of SMS message. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such as a
-     * one-time password that supports a customer transaction; and, PROMOTIONAL, the message isn't critical or
-     * time-sensitive, such as a marketing message.
+     * The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive, such as a
+     * one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such as marketing
+     * messages).
      * </p>
      * 
      * @param messageType
-     *        The type of SMS message. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such
-     *        as a one-time password that supports a customer transaction; and, PROMOTIONAL, the message isn't critical
-     *        or time-sensitive, such as a marketing message.
+     *        The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive,
+     *        such as a one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such
+     *        as marketing messages).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MessageType
      */
@@ -146,15 +146,15 @@ public class CampaignSmsMessage implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The type of SMS message. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such as a
-     * one-time password that supports a customer transaction; and, PROMOTIONAL, the message isn't critical or
-     * time-sensitive, such as a marketing message.
+     * The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive, such as a
+     * one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such as marketing
+     * messages).
      * </p>
      * 
      * @param messageType
-     *        The type of SMS message. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such
-     *        as a one-time password that supports a customer transaction; and, PROMOTIONAL, the message isn't critical
-     *        or time-sensitive, such as a marketing message.
+     *        The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive,
+     *        such as a one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such
+     *        as marketing messages).
      * @see MessageType
      */
 
@@ -164,15 +164,15 @@ public class CampaignSmsMessage implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The type of SMS message. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such as a
-     * one-time password that supports a customer transaction; and, PROMOTIONAL, the message isn't critical or
-     * time-sensitive, such as a marketing message.
+     * The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive, such as a
+     * one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such as marketing
+     * messages).
      * </p>
      * 
      * @param messageType
-     *        The type of SMS message. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such
-     *        as a one-time password that supports a customer transaction; and, PROMOTIONAL, the message isn't critical
-     *        or time-sensitive, such as a marketing message.
+     *        The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive,
+     *        such as a one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such
+     *        as marketing messages).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MessageType
      */

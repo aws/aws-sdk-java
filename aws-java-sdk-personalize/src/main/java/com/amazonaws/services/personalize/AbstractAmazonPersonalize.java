@@ -58,6 +58,11 @@ public class AbstractAmazonPersonalize implements AmazonPersonalize {
     }
 
     @Override
+    public CreateFilterResult createFilter(CreateFilterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateSchemaResult createSchema(CreateSchemaRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -89,6 +94,11 @@ public class AbstractAmazonPersonalize implements AmazonPersonalize {
 
     @Override
     public DeleteEventTrackerResult deleteEventTracker(DeleteEventTrackerRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteFilterResult deleteFilter(DeleteFilterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -139,6 +149,11 @@ public class AbstractAmazonPersonalize implements AmazonPersonalize {
 
     @Override
     public DescribeFeatureTransformationResult describeFeatureTransformation(DescribeFeatureTransformationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeFilterResult describeFilter(DescribeFilterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -194,6 +209,11 @@ public class AbstractAmazonPersonalize implements AmazonPersonalize {
 
     @Override
     public ListEventTrackersResult listEventTrackers(ListEventTrackersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListFiltersResult listFilters(ListFiltersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

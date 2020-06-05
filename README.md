@@ -12,6 +12,9 @@ started in minutes using ***Maven*** or by downloading a [single zip file][insta
 * [SDK Blog][blog]
 * [Getting Help](#getting-help)
 
+Note: A version 2.x of the SDK is available, see the [AWS SDK for Java 2.x](#AWS-SDK-for-Java-2.x) section for more information.
+
+
 ## Release Notes ##
 Beginning with 1.11.82 changes to the SDK are tracked in the [CHANGELOG.md][changes-file] file.
 Release notes for versions prior to 1.11.82 can still be found on the [AWS Release Notes
@@ -45,7 +48,7 @@ dependencies.
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-bom</artifactId>
-      <version>1.11.796</version>
+      <version>1.11.797</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -133,6 +136,11 @@ The AWS SDK for Java is not directly affected by these findings. The SDKs own us
 
 A good explanation of this type of exploit can be found [here][jackson-deserialization-gadget].
 
+## AWS SDK for Java 2.x
+A version 2.x of the SDK is generally available. It is a major rewrite of the 1.x code base, built on top of Java 8+ and adds several frequently requested features. These include support for non-blocking I/O, improved start-up performance, automatic iteration over paginated responses and the ability to plug in a different HTTP implementation at run time.
+
+For more information see the [AWS SDK for Java 2.x Developer Guide][sdk-v2-dev-guide] or check the project repository in https://github.com/aws/aws-sdk-java-v2.
+
 [aws-iam-credentials]: http://docs.aws.amazon.com/java-sdk/v1/developer-guide/java-dg-roles.html
 [aws]: http://aws.amazon.com/
 [blog]: https://aws.amazon.com/blogs/developer/category/java/
@@ -156,3 +164,4 @@ A good explanation of this type of exploit can be found [here][jackson-deseriali
 [support-center]: https://console.aws.amazon.com/support/
 [console]: https://console.aws.amazon.com
 [jackson-deserialization-gadget]: https://medium.com/@cowtowncoder/on-jackson-cves-dont-panic-here-is-what-you-need-to-know-54cd0d6e8062
+[sdk-v2-dev-guide]: https://docs.aws.amazon.com/sdk-for-java/v2/developer-guide/welcome.html

@@ -17,8 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A complex type that contains information about the Amazon S3 origin. If the origin is a custom origin, use the
- * <code>CustomOriginConfig</code> element instead.
+ * A complex type that contains information about the Amazon S3 origin. If the origin is a custom origin or an S3 bucket
+ * that is configured as a website endpoint, use the <code>CustomOriginConfig</code> element instead.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/S3OriginConfig" target="_top">AWS API

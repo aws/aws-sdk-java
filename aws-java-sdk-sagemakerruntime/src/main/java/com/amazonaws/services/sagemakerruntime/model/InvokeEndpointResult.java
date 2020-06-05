@@ -29,7 +29,7 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * <p>
      * For information about the format of the response body, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats—Inference</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats-Inference</a>.
      * </p>
      */
     private java.nio.ByteBuffer body;
@@ -67,7 +67,7 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * <p>
      * For information about the format of the response body, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats—Inference</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats-Inference</a>.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -85,7 +85,7 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
      *        <p>
      *        For information about the format of the response body, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data
-     *        Formats—Inference</a>.
+     *        Formats-Inference</a>.
      */
 
     public void setBody(java.nio.ByteBuffer body) {
@@ -98,7 +98,7 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * <p>
      * For information about the format of the response body, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats—Inference</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats-Inference</a>.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -112,7 +112,7 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
      *         <p>
      *         For information about the format of the response body, see <a
      *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data
-     *         Formats—Inference</a>.
+     *         Formats-Inference</a>.
      */
 
     public java.nio.ByteBuffer getBody() {
@@ -125,7 +125,7 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * <p>
      * For information about the format of the response body, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats—Inference</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats-Inference</a>.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -143,7 +143,7 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
      *        <p>
      *        For information about the format of the response body, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data
-     *        Formats—Inference</a>.
+     *        Formats-Inference</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

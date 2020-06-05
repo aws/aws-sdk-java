@@ -203,6 +203,8 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
      */
     private Integer timeoutInMillis;
 
+    private TlsConfig tlsConfig;
+
     /**
      * <p>
      * [Required] The string identifier of the associated <a>RestApi</a>.
@@ -1600,6 +1602,32 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * @param tlsConfig
+     */
+
+    public void setTlsConfig(TlsConfig tlsConfig) {
+        this.tlsConfig = tlsConfig;
+    }
+
+    /**
+     * @return
+     */
+
+    public TlsConfig getTlsConfig() {
+        return this.tlsConfig;
+    }
+
+    /**
+     * @param tlsConfig
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutIntegrationRequest withTlsConfig(TlsConfig tlsConfig) {
+        setTlsConfig(tlsConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1642,7 +1670,9 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getContentHandling() != null)
             sb.append("ContentHandling: ").append(getContentHandling()).append(",");
         if (getTimeoutInMillis() != null)
-            sb.append("TimeoutInMillis: ").append(getTimeoutInMillis());
+            sb.append("TimeoutInMillis: ").append(getTimeoutInMillis()).append(",");
+        if (getTlsConfig() != null)
+            sb.append("TlsConfig: ").append(getTlsConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -1721,6 +1751,10 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getTimeoutInMillis() != null && other.getTimeoutInMillis().equals(this.getTimeoutInMillis()) == false)
             return false;
+        if (other.getTlsConfig() == null ^ this.getTlsConfig() == null)
+            return false;
+        if (other.getTlsConfig() != null && other.getTlsConfig().equals(this.getTlsConfig()) == false)
+            return false;
         return true;
     }
 
@@ -1745,6 +1779,7 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getCacheKeyParameters() == null) ? 0 : getCacheKeyParameters().hashCode());
         hashCode = prime * hashCode + ((getContentHandling() == null) ? 0 : getContentHandling().hashCode());
         hashCode = prime * hashCode + ((getTimeoutInMillis() == null) ? 0 : getTimeoutInMillis().hashCode());
+        hashCode = prime * hashCode + ((getTlsConfig() == null) ? 0 : getTlsConfig().hashCode());
         return hashCode;
     }
 

@@ -169,6 +169,10 @@ public class CreateEnvironmentRequestMarshaller implements Marshaller<Request<Cr
             }
         }
 
+        if (createEnvironmentRequest.getOperationsRole() != null) {
+            request.addParameter("OperationsRole", StringUtils.fromString(createEnvironmentRequest.getOperationsRole()));
+        }
+
         return request;
     }
 

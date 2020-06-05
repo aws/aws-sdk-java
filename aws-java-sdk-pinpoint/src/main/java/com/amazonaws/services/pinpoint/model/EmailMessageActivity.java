@@ -31,7 +31,7 @@ public class EmailMessageActivity implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The "From" address to use for the message.
+     * Specifies the sender address for an email message that's sent to participants in the journey.
      * </p>
      */
     private JourneyEmailMessage messageConfig;
@@ -43,7 +43,8 @@ public class EmailMessageActivity implements Serializable, Cloneable, Structured
     private String nextActivity;
     /**
      * <p>
-     * The name of the email template to use for the message.
+     * The name of the email message template to use for the message. If specified, this value must match the name of an
+     * existing message template.
      * </p>
      */
     private String templateName;
@@ -64,11 +65,11 @@ public class EmailMessageActivity implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The "From" address to use for the message.
+     * Specifies the sender address for an email message that's sent to participants in the journey.
      * </p>
      * 
      * @param messageConfig
-     *        The "From" address to use for the message.
+     *        Specifies the sender address for an email message that's sent to participants in the journey.
      */
 
     public void setMessageConfig(JourneyEmailMessage messageConfig) {
@@ -77,10 +78,10 @@ public class EmailMessageActivity implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The "From" address to use for the message.
+     * Specifies the sender address for an email message that's sent to participants in the journey.
      * </p>
      * 
-     * @return The "From" address to use for the message.
+     * @return Specifies the sender address for an email message that's sent to participants in the journey.
      */
 
     public JourneyEmailMessage getMessageConfig() {
@@ -89,11 +90,11 @@ public class EmailMessageActivity implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The "From" address to use for the message.
+     * Specifies the sender address for an email message that's sent to participants in the journey.
      * </p>
      * 
      * @param messageConfig
-     *        The "From" address to use for the message.
+     *        Specifies the sender address for an email message that's sent to participants in the journey.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -144,11 +145,13 @@ public class EmailMessageActivity implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The name of the email template to use for the message.
+     * The name of the email message template to use for the message. If specified, this value must match the name of an
+     * existing message template.
      * </p>
      * 
      * @param templateName
-     *        The name of the email template to use for the message.
+     *        The name of the email message template to use for the message. If specified, this value must match the
+     *        name of an existing message template.
      */
 
     public void setTemplateName(String templateName) {
@@ -157,10 +160,12 @@ public class EmailMessageActivity implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The name of the email template to use for the message.
+     * The name of the email message template to use for the message. If specified, this value must match the name of an
+     * existing message template.
      * </p>
      * 
-     * @return The name of the email template to use for the message.
+     * @return The name of the email message template to use for the message. If specified, this value must match the
+     *         name of an existing message template.
      */
 
     public String getTemplateName() {
@@ -169,11 +174,13 @@ public class EmailMessageActivity implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The name of the email template to use for the message.
+     * The name of the email message template to use for the message. If specified, this value must match the name of an
+     * existing message template.
      * </p>
      * 
      * @param templateName
-     *        The name of the email template to use for the message.
+     *        The name of the email message template to use for the message. If specified, this value must match the
+     *        name of an existing message template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

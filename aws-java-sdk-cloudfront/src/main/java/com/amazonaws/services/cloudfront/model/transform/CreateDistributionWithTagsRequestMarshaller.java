@@ -228,6 +228,14 @@ public class CreateDistributionWithTagsRequestMarshaller implements Marshaller<R
                                                 xmlWriter.endElement();
                                             }
                                         }
+
+                                        if (originsItemsListValue.getConnectionAttempts() != null) {
+                                            xmlWriter.startElement("ConnectionAttempts").value(originsItemsListValue.getConnectionAttempts()).endElement();
+                                        }
+
+                                        if (originsItemsListValue.getConnectionTimeout() != null) {
+                                            xmlWriter.startElement("ConnectionTimeout").value(originsItemsListValue.getConnectionTimeout()).endElement();
+                                        }
                                         xmlWriter.endElement();
                                     }
                                     xmlWriter.endElement();

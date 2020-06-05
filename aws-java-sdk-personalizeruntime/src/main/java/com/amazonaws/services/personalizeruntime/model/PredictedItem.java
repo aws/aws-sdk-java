@@ -39,8 +39,8 @@ public class PredictedItem implements Serializable, Cloneable, StructuredPojo {
     private String itemId;
     /**
      * <p>
-     * A numeric representation of the model's certainty in the item's suitability. For more information on scoring
-     * logic, see <a>how-scores-work</a>.
+     * A numeric representation of the model's certainty that the item will be the next user selection. For more
+     * information on scoring logic, see <a>how-scores-work</a>.
      * </p>
      */
     private Double score;
@@ -87,13 +87,13 @@ public class PredictedItem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A numeric representation of the model's certainty in the item's suitability. For more information on scoring
-     * logic, see <a>how-scores-work</a>.
+     * A numeric representation of the model's certainty that the item will be the next user selection. For more
+     * information on scoring logic, see <a>how-scores-work</a>.
      * </p>
      * 
      * @param score
-     *        A numeric representation of the model's certainty in the item's suitability. For more information on
-     *        scoring logic, see <a>how-scores-work</a>.
+     *        A numeric representation of the model's certainty that the item will be the next user selection. For more
+     *        information on scoring logic, see <a>how-scores-work</a>.
      */
 
     public void setScore(Double score) {
@@ -102,12 +102,12 @@ public class PredictedItem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A numeric representation of the model's certainty in the item's suitability. For more information on scoring
-     * logic, see <a>how-scores-work</a>.
+     * A numeric representation of the model's certainty that the item will be the next user selection. For more
+     * information on scoring logic, see <a>how-scores-work</a>.
      * </p>
      * 
-     * @return A numeric representation of the model's certainty in the item's suitability. For more information on
-     *         scoring logic, see <a>how-scores-work</a>.
+     * @return A numeric representation of the model's certainty that the item will be the next user selection. For more
+     *         information on scoring logic, see <a>how-scores-work</a>.
      */
 
     public Double getScore() {
@@ -116,13 +116,13 @@ public class PredictedItem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A numeric representation of the model's certainty in the item's suitability. For more information on scoring
-     * logic, see <a>how-scores-work</a>.
+     * A numeric representation of the model's certainty that the item will be the next user selection. For more
+     * information on scoring logic, see <a>how-scores-work</a>.
      * </p>
      * 
      * @param score
-     *        A numeric representation of the model's certainty in the item's suitability. For more information on
-     *        scoring logic, see <a>how-scores-work</a>.
+     *        A numeric representation of the model's certainty that the item will be the next user selection. For more
+     *        information on scoring logic, see <a>how-scores-work</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

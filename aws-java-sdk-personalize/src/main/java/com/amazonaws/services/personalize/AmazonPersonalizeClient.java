@@ -857,6 +857,67 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Creates a recommendation filter. For more information, see Using Filters with Amazon Personalize.
+     * </p>
+     * 
+     * @param createFilterRequest
+     * @return Result of the CreateFilter operation returned by the service.
+     * @throws InvalidInputException
+     *         Provide a valid value for the field or parameter.
+     * @throws ResourceAlreadyExistsException
+     *         The specified resource already exists.
+     * @throws ResourceNotFoundException
+     *         Could not find the specified resource.
+     * @throws LimitExceededException
+     *         The limit on the number of requests per second has been exceeded.
+     * @sample AmazonPersonalize.CreateFilter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateFilter" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateFilterResult createFilter(CreateFilterRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateFilter(request);
+    }
+
+    @SdkInternalApi
+    final CreateFilterResult executeCreateFilter(CreateFilterRequest createFilterRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createFilterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateFilterRequest> request = null;
+        Response<CreateFilterResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateFilterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createFilterRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateFilter");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateFilterResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateFilterResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates an Amazon Personalize schema from the specified schema string. The schema you create must be in Avro JSON
      * format.
      * </p>
@@ -1446,6 +1507,63 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteEventTrackerResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteEventTrackerResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a filter.
+     * </p>
+     * 
+     * @param deleteFilterRequest
+     * @return Result of the DeleteFilter operation returned by the service.
+     * @throws InvalidInputException
+     *         Provide a valid value for the field or parameter.
+     * @throws ResourceNotFoundException
+     *         Could not find the specified resource.
+     * @sample AmazonPersonalize.DeleteFilter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DeleteFilter" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteFilterResult deleteFilter(DeleteFilterRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteFilter(request);
+    }
+
+    @SdkInternalApi
+    final DeleteFilterResult executeDeleteFilter(DeleteFilterRequest deleteFilterRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteFilterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteFilterRequest> request = null;
+        Response<DeleteFilterResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteFilterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteFilterRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFilter");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteFilterResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteFilterResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2055,6 +2173,63 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
             HttpResponseHandler<AmazonWebServiceResponse<DescribeFeatureTransformationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeFeatureTransformationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes a filter's properties.
+     * </p>
+     * 
+     * @param describeFilterRequest
+     * @return Result of the DescribeFilter operation returned by the service.
+     * @throws InvalidInputException
+     *         Provide a valid value for the field or parameter.
+     * @throws ResourceNotFoundException
+     *         Could not find the specified resource.
+     * @sample AmazonPersonalize.DescribeFilter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeFilter" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeFilterResult describeFilter(DescribeFilterRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeFilter(request);
+    }
+
+    @SdkInternalApi
+    final DescribeFilterResult executeDescribeFilter(DescribeFilterRequest describeFilterRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeFilterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeFilterRequest> request = null;
+        Response<DescribeFilterResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeFilterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeFilterRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeFilter");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeFilterResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeFilterResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2722,6 +2897,63 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<ListEventTrackersResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListEventTrackersResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists all filters that belong to a given dataset group.
+     * </p>
+     * 
+     * @param listFiltersRequest
+     * @return Result of the ListFilters operation returned by the service.
+     * @throws InvalidInputException
+     *         Provide a valid value for the field or parameter.
+     * @throws InvalidNextTokenException
+     *         The token is not valid.
+     * @sample AmazonPersonalize.ListFilters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListFilters" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListFiltersResult listFilters(ListFiltersRequest request) {
+        request = beforeClientExecution(request);
+        return executeListFilters(request);
+    }
+
+    @SdkInternalApi
+    final ListFiltersResult executeListFilters(ListFiltersRequest listFiltersRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listFiltersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListFiltersRequest> request = null;
+        Response<ListFiltersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListFiltersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listFiltersRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListFilters");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListFiltersResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListFiltersResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

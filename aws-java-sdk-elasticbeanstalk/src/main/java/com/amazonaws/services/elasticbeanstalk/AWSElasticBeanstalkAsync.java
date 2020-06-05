@@ -33,8 +33,8 @@ import com.amazonaws.services.elasticbeanstalk.model.*;
  * <p>
  * For more information about this product, go to the <a href="http://aws.amazon.com/elasticbeanstalk/">AWS Elastic
  * Beanstalk</a> details page. The location of the latest AWS Elastic Beanstalk WSDL is <a
- * href="http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl"
- * >http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl</a>. To install the Software
+ * href="https://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl"
+ * >https://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl</a>. To install the Software
  * Development Kits (SDKs), Integrated Development Environment (IDE) Toolkits, and command line tools that enable you to
  * access the API, go to <a href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.
  * </p>
@@ -136,6 +136,53 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
     java.util.concurrent.Future<ApplyEnvironmentManagedActionResult> applyEnvironmentManagedActionAsync(
             ApplyEnvironmentManagedActionRequest applyEnvironmentManagedActionRequest,
             com.amazonaws.handlers.AsyncHandler<ApplyEnvironmentManagedActionRequest, ApplyEnvironmentManagedActionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Add or change the operations role used by an environment. After this call is made, Elastic Beanstalk uses the
+     * associated operations role for permissions to downstream services during subsequent calls acting on this
+     * environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the
+     * <i>AWS Elastic Beanstalk Developer Guide</i>.
+     * </p>
+     * 
+     * @param associateEnvironmentOperationsRoleRequest
+     *        Request to add or change the operations role used by an environment.
+     * @return A Java Future containing the result of the AssociateEnvironmentOperationsRole operation returned by the
+     *         service.
+     * @sample AWSElasticBeanstalkAsync.AssociateEnvironmentOperationsRole
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/AssociateEnvironmentOperationsRole"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateEnvironmentOperationsRoleResult> associateEnvironmentOperationsRoleAsync(
+            AssociateEnvironmentOperationsRoleRequest associateEnvironmentOperationsRoleRequest);
+
+    /**
+     * <p>
+     * Add or change the operations role used by an environment. After this call is made, Elastic Beanstalk uses the
+     * associated operations role for permissions to downstream services during subsequent calls acting on this
+     * environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the
+     * <i>AWS Elastic Beanstalk Developer Guide</i>.
+     * </p>
+     * 
+     * @param associateEnvironmentOperationsRoleRequest
+     *        Request to add or change the operations role used by an environment.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateEnvironmentOperationsRole operation returned by the
+     *         service.
+     * @sample AWSElasticBeanstalkAsyncHandler.AssociateEnvironmentOperationsRole
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/AssociateEnvironmentOperationsRole"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateEnvironmentOperationsRoleResult> associateEnvironmentOperationsRoleAsync(
+            AssociateEnvironmentOperationsRoleRequest associateEnvironmentOperationsRoleRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateEnvironmentOperationsRoleRequest, AssociateEnvironmentOperationsRoleResult> asyncHandler);
 
     /**
      * <p>
@@ -1325,6 +1372,53 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      */
     java.util.concurrent.Future<DescribePlatformVersionResult> describePlatformVersionAsync(DescribePlatformVersionRequest describePlatformVersionRequest,
             com.amazonaws.handlers.AsyncHandler<DescribePlatformVersionRequest, DescribePlatformVersionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Disassociate the operations role from an environment. After this call is made, Elastic Beanstalk uses the
+     * caller's permissions for permissions to downstream services during subsequent calls acting on this environment.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the
+     * <i>AWS Elastic Beanstalk Developer Guide</i>.
+     * </p>
+     * 
+     * @param disassociateEnvironmentOperationsRoleRequest
+     *        Request to disassociate the operations role from an environment.
+     * @return A Java Future containing the result of the DisassociateEnvironmentOperationsRole operation returned by
+     *         the service.
+     * @sample AWSElasticBeanstalkAsync.DisassociateEnvironmentOperationsRole
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DisassociateEnvironmentOperationsRole"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateEnvironmentOperationsRoleResult> disassociateEnvironmentOperationsRoleAsync(
+            DisassociateEnvironmentOperationsRoleRequest disassociateEnvironmentOperationsRoleRequest);
+
+    /**
+     * <p>
+     * Disassociate the operations role from an environment. After this call is made, Elastic Beanstalk uses the
+     * caller's permissions for permissions to downstream services during subsequent calls acting on this environment.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the
+     * <i>AWS Elastic Beanstalk Developer Guide</i>.
+     * </p>
+     * 
+     * @param disassociateEnvironmentOperationsRoleRequest
+     *        Request to disassociate the operations role from an environment.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociateEnvironmentOperationsRole operation returned by
+     *         the service.
+     * @sample AWSElasticBeanstalkAsyncHandler.DisassociateEnvironmentOperationsRole
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DisassociateEnvironmentOperationsRole"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateEnvironmentOperationsRoleResult> disassociateEnvironmentOperationsRoleAsync(
+            DisassociateEnvironmentOperationsRoleRequest disassociateEnvironmentOperationsRoleRequest,
+            com.amazonaws.handlers.AsyncHandler<DisassociateEnvironmentOperationsRoleRequest, DisassociateEnvironmentOperationsRoleResult> asyncHandler);
 
     /**
      * <p>

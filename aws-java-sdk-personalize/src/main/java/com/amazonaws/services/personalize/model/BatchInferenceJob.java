@@ -42,6 +42,12 @@ public class BatchInferenceJob implements Serializable, Cloneable, StructuredPoj
     private String batchInferenceJobArn;
     /**
      * <p>
+     * The ARN of the filter used on the batch inference job.
+     * </p>
+     */
+    private String filterArn;
+    /**
+     * <p>
      * If the batch inference job failed, the reason for the failure.
      * </p>
      */
@@ -195,6 +201,46 @@ public class BatchInferenceJob implements Serializable, Cloneable, StructuredPoj
 
     public BatchInferenceJob withBatchInferenceJobArn(String batchInferenceJobArn) {
         setBatchInferenceJobArn(batchInferenceJobArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN of the filter used on the batch inference job.
+     * </p>
+     * 
+     * @param filterArn
+     *        The ARN of the filter used on the batch inference job.
+     */
+
+    public void setFilterArn(String filterArn) {
+        this.filterArn = filterArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the filter used on the batch inference job.
+     * </p>
+     * 
+     * @return The ARN of the filter used on the batch inference job.
+     */
+
+    public String getFilterArn() {
+        return this.filterArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the filter used on the batch inference job.
+     * </p>
+     * 
+     * @param filterArn
+     *        The ARN of the filter used on the batch inference job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BatchInferenceJob withFilterArn(String filterArn) {
+        setFilterArn(filterArn);
         return this;
     }
 
@@ -709,6 +755,8 @@ public class BatchInferenceJob implements Serializable, Cloneable, StructuredPoj
             sb.append("JobName: ").append(getJobName()).append(",");
         if (getBatchInferenceJobArn() != null)
             sb.append("BatchInferenceJobArn: ").append(getBatchInferenceJobArn()).append(",");
+        if (getFilterArn() != null)
+            sb.append("FilterArn: ").append(getFilterArn()).append(",");
         if (getFailureReason() != null)
             sb.append("FailureReason: ").append(getFailureReason()).append(",");
         if (getSolutionVersionArn() != null)
@@ -748,6 +796,10 @@ public class BatchInferenceJob implements Serializable, Cloneable, StructuredPoj
         if (other.getBatchInferenceJobArn() == null ^ this.getBatchInferenceJobArn() == null)
             return false;
         if (other.getBatchInferenceJobArn() != null && other.getBatchInferenceJobArn().equals(this.getBatchInferenceJobArn()) == false)
+            return false;
+        if (other.getFilterArn() == null ^ this.getFilterArn() == null)
+            return false;
+        if (other.getFilterArn() != null && other.getFilterArn().equals(this.getFilterArn()) == false)
             return false;
         if (other.getFailureReason() == null ^ this.getFailureReason() == null)
             return false;
@@ -795,6 +847,7 @@ public class BatchInferenceJob implements Serializable, Cloneable, StructuredPoj
 
         hashCode = prime * hashCode + ((getJobName() == null) ? 0 : getJobName().hashCode());
         hashCode = prime * hashCode + ((getBatchInferenceJobArn() == null) ? 0 : getBatchInferenceJobArn().hashCode());
+        hashCode = prime * hashCode + ((getFilterArn() == null) ? 0 : getFilterArn().hashCode());
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
         hashCode = prime * hashCode + ((getSolutionVersionArn() == null) ? 0 : getSolutionVersionArn().hashCode());
         hashCode = prime * hashCode + ((getNumResults() == null) ? 0 : getNumResults().hashCode());

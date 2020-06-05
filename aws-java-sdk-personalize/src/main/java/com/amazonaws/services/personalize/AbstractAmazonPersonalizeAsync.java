@@ -106,6 +106,19 @@ public class AbstractAmazonPersonalizeAsync extends AbstractAmazonPersonalize im
     }
 
     @Override
+    public java.util.concurrent.Future<CreateFilterResult> createFilterAsync(CreateFilterRequest request) {
+
+        return createFilterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateFilterResult> createFilterAsync(CreateFilterRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateFilterRequest, CreateFilterResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateSchemaResult> createSchemaAsync(CreateSchemaRequest request) {
 
         return createSchemaAsync(request, null);
@@ -192,6 +205,19 @@ public class AbstractAmazonPersonalizeAsync extends AbstractAmazonPersonalize im
     @Override
     public java.util.concurrent.Future<DeleteEventTrackerResult> deleteEventTrackerAsync(DeleteEventTrackerRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteEventTrackerRequest, DeleteEventTrackerResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteFilterResult> deleteFilterAsync(DeleteFilterRequest request) {
+
+        return deleteFilterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteFilterResult> deleteFilterAsync(DeleteFilterRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteFilterRequest, DeleteFilterResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -322,6 +348,19 @@ public class AbstractAmazonPersonalizeAsync extends AbstractAmazonPersonalize im
     @Override
     public java.util.concurrent.Future<DescribeFeatureTransformationResult> describeFeatureTransformationAsync(DescribeFeatureTransformationRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeFeatureTransformationRequest, DescribeFeatureTransformationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFilterResult> describeFilterAsync(DescribeFilterRequest request) {
+
+        return describeFilterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFilterResult> describeFilterAsync(DescribeFilterRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeFilterRequest, DescribeFilterResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -465,6 +504,19 @@ public class AbstractAmazonPersonalizeAsync extends AbstractAmazonPersonalize im
     @Override
     public java.util.concurrent.Future<ListEventTrackersResult> listEventTrackersAsync(ListEventTrackersRequest request,
             com.amazonaws.handlers.AsyncHandler<ListEventTrackersRequest, ListEventTrackersResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFiltersResult> listFiltersAsync(ListFiltersRequest request) {
+
+        return listFiltersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFiltersResult> listFiltersAsync(ListFiltersRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListFiltersRequest, ListFiltersResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

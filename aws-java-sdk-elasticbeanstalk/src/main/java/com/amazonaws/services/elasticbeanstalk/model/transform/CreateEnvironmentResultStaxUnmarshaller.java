@@ -149,6 +149,11 @@ public class CreateEnvironmentResultStaxUnmarshaller implements Unmarshaller<Cre
                     createEnvironmentResult.setEnvironmentArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("OperationsRole", targetDepth)) {
+                    createEnvironmentResult.setOperationsRole(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return createEnvironmentResult;

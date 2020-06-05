@@ -29,6 +29,8 @@ public enum ElasticBeanstalkActions implements Action {
     AbortEnvironmentUpdate("elasticbeanstalk:AbortEnvironmentUpdate"),
     /** Action for the ApplyEnvironmentManagedAction operation. */
     ApplyEnvironmentManagedAction("elasticbeanstalk:ApplyEnvironmentManagedAction"),
+    /** Action for the AssociateEnvironmentOperationsRole operation. */
+    AssociateEnvironmentOperationsRole("elasticbeanstalk:AssociateEnvironmentOperationsRole"),
     /** Action for the CheckDNSAvailability operation. */
     CheckDNSAvailability("elasticbeanstalk:CheckDNSAvailability"),
     /** Action for the ComposeEnvironments operation. */
@@ -81,6 +83,8 @@ public enum ElasticBeanstalkActions implements Action {
     DescribeInstancesHealth("elasticbeanstalk:DescribeInstancesHealth"),
     /** Action for the DescribePlatformVersion operation. */
     DescribePlatformVersion("elasticbeanstalk:DescribePlatformVersion"),
+    /** Action for the DisassociateEnvironmentOperationsRole operation. */
+    DisassociateEnvironmentOperationsRole("elasticbeanstalk:DisassociateEnvironmentOperationsRole"),
     /** Action for the ListAvailableSolutionStacks operation. */
     ListAvailableSolutionStacks("elasticbeanstalk:ListAvailableSolutionStacks"),
     /** Action for the ListPlatformBranches operation. */

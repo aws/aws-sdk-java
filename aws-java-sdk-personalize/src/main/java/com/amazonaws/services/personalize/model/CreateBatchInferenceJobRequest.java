@@ -40,6 +40,13 @@ public class CreateBatchInferenceJobRequest extends com.amazonaws.AmazonWebServi
     private String solutionVersionArn;
     /**
      * <p>
+     * The ARN of the filter to apply to the batch inference job. For more information on using filters, see Using
+     * Filters with Amazon Personalize.
+     * </p>
+     */
+    private String filterArn;
+    /**
+     * <p>
      * The number of recommendations to retreive.
      * </p>
      */
@@ -148,6 +155,52 @@ public class CreateBatchInferenceJobRequest extends com.amazonaws.AmazonWebServi
 
     public CreateBatchInferenceJobRequest withSolutionVersionArn(String solutionVersionArn) {
         setSolutionVersionArn(solutionVersionArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN of the filter to apply to the batch inference job. For more information on using filters, see Using
+     * Filters with Amazon Personalize.
+     * </p>
+     * 
+     * @param filterArn
+     *        The ARN of the filter to apply to the batch inference job. For more information on using filters, see
+     *        Using Filters with Amazon Personalize.
+     */
+
+    public void setFilterArn(String filterArn) {
+        this.filterArn = filterArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the filter to apply to the batch inference job. For more information on using filters, see Using
+     * Filters with Amazon Personalize.
+     * </p>
+     * 
+     * @return The ARN of the filter to apply to the batch inference job. For more information on using filters, see
+     *         Using Filters with Amazon Personalize.
+     */
+
+    public String getFilterArn() {
+        return this.filterArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the filter to apply to the batch inference job. For more information on using filters, see Using
+     * Filters with Amazon Personalize.
+     * </p>
+     * 
+     * @param filterArn
+     *        The ARN of the filter to apply to the batch inference job. For more information on using filters, see
+     *        Using Filters with Amazon Personalize.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateBatchInferenceJobRequest withFilterArn(String filterArn) {
+        setFilterArn(filterArn);
         return this;
     }
 
@@ -339,6 +392,8 @@ public class CreateBatchInferenceJobRequest extends com.amazonaws.AmazonWebServi
             sb.append("JobName: ").append(getJobName()).append(",");
         if (getSolutionVersionArn() != null)
             sb.append("SolutionVersionArn: ").append(getSolutionVersionArn()).append(",");
+        if (getFilterArn() != null)
+            sb.append("FilterArn: ").append(getFilterArn()).append(",");
         if (getNumResults() != null)
             sb.append("NumResults: ").append(getNumResults()).append(",");
         if (getJobInput() != null)
@@ -369,6 +424,10 @@ public class CreateBatchInferenceJobRequest extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getSolutionVersionArn() != null && other.getSolutionVersionArn().equals(this.getSolutionVersionArn()) == false)
             return false;
+        if (other.getFilterArn() == null ^ this.getFilterArn() == null)
+            return false;
+        if (other.getFilterArn() != null && other.getFilterArn().equals(this.getFilterArn()) == false)
+            return false;
         if (other.getNumResults() == null ^ this.getNumResults() == null)
             return false;
         if (other.getNumResults() != null && other.getNumResults().equals(this.getNumResults()) == false)
@@ -395,6 +454,7 @@ public class CreateBatchInferenceJobRequest extends com.amazonaws.AmazonWebServi
 
         hashCode = prime * hashCode + ((getJobName() == null) ? 0 : getJobName().hashCode());
         hashCode = prime * hashCode + ((getSolutionVersionArn() == null) ? 0 : getSolutionVersionArn().hashCode());
+        hashCode = prime * hashCode + ((getFilterArn() == null) ? 0 : getFilterArn().hashCode());
         hashCode = prime * hashCode + ((getNumResults() == null) ? 0 : getNumResults().hashCode());
         hashCode = prime * hashCode + ((getJobInput() == null) ? 0 : getJobInput().hashCode());
         hashCode = prime * hashCode + ((getJobOutput() == null) ? 0 : getJobOutput().hashCode());

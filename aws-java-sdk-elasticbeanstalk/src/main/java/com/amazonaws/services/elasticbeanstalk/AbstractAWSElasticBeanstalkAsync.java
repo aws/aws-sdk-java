@@ -77,6 +77,21 @@ public class AbstractAWSElasticBeanstalkAsync extends AbstractAWSElasticBeanstal
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateEnvironmentOperationsRoleResult> associateEnvironmentOperationsRoleAsync(
+            AssociateEnvironmentOperationsRoleRequest request) {
+
+        return associateEnvironmentOperationsRoleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateEnvironmentOperationsRoleResult> associateEnvironmentOperationsRoleAsync(
+            AssociateEnvironmentOperationsRoleRequest request,
+            com.amazonaws.handlers.AsyncHandler<AssociateEnvironmentOperationsRoleRequest, AssociateEnvironmentOperationsRoleResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CheckDNSAvailabilityResult> checkDNSAvailabilityAsync(CheckDNSAvailabilityRequest request) {
 
         return checkDNSAvailabilityAsync(request, null);
@@ -529,6 +544,21 @@ public class AbstractAWSElasticBeanstalkAsync extends AbstractAWSElasticBeanstal
     @Override
     public java.util.concurrent.Future<DescribePlatformVersionResult> describePlatformVersionAsync(DescribePlatformVersionRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribePlatformVersionRequest, DescribePlatformVersionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateEnvironmentOperationsRoleResult> disassociateEnvironmentOperationsRoleAsync(
+            DisassociateEnvironmentOperationsRoleRequest request) {
+
+        return disassociateEnvironmentOperationsRoleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateEnvironmentOperationsRoleResult> disassociateEnvironmentOperationsRoleAsync(
+            DisassociateEnvironmentOperationsRoleRequest request,
+            com.amazonaws.handlers.AsyncHandler<DisassociateEnvironmentOperationsRoleRequest, DisassociateEnvironmentOperationsRoleResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

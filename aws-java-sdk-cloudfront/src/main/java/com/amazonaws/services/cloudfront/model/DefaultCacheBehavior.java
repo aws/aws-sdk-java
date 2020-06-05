@@ -17,9 +17,9 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A complex type that describes the default cache behavior if you don't specify a <code>CacheBehavior</code> element or
- * if files don't match any of the values of <code>PathPattern</code> in <code>CacheBehavior</code> elements. You must
- * create exactly one default cache behavior.
+ * A complex type that describes the default cache behavior if you don’t specify a <code>CacheBehavior</code> element or
+ * if request URLs don’t match any of the values of <code>PathPattern</code> in <code>CacheBehavior</code> elements. You
+ * must create exactly one default cache behavior.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DefaultCacheBehavior" target="_top">AWS
@@ -30,8 +30,8 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value of <code>ID</code> for the origin that you want CloudFront to route requests to when a request matches
-     * the path pattern either for a cache behavior or for the default cache behavior in your distribution.
+     * The value of <code>ID</code> for the origin that you want CloudFront to route requests to when they use the
+     * default cache behavior.
      * </p>
      */
     private String targetOriginId;
@@ -51,15 +51,15 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      * <code>PathPattern</code> for this cache behavior, specify <code>true</code> for <code>Enabled</code>, and specify
      * the applicable values for <code>Quantity</code> and <code>Items</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private
-     * Content through CloudFront</a> in the <i> Amazon CloudFront Developer Guide</i>.
+     * Content with Signed URLs and Signed Cookies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
-     * If you don't want to require signed URLs in requests for objects that match <code>PathPattern</code>, specify
+     * If you don’t want to require signed URLs in requests for objects that match <code>PathPattern</code>, specify
      * <code>false</code> for <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit <code>Items</code>
      * .
      * </p>
      * <p>
-     * To add, change, or remove one or more trusted signers, change <code>Enabled</code> to <code>true</code> (if it's
+     * To add, change, or remove one or more trusted signers, change <code>Enabled</code> to <code>true</code> (if it’s
      * currently <code>false</code>), change <code>Quantity</code> as applicable, and specify all of the trusted signers
      * that you want to include in the updated distribution.
      * </p>
@@ -91,19 +91,19 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * For more information about requiring the HTTPS protocol, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html">Using an HTTPS
-     * Connection to Access Your Objects</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * For more information about requiring the HTTPS protocol, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-viewers-to-cloudfront.html"
+     * >Requiring HTTPS Between Viewers and CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <note>
      * <p>
      * The only way to guarantee that viewers retrieve an object that was fetched from the origin using HTTPS is never
      * to use any other protocol to fetch the object. If you have recently changed from HTTP to HTTPS, we recommend that
-     * you clear your objects' cache because cached objects are protocol agnostic. That means that an edge location will
+     * you clear your objects’ cache because cached objects are protocol agnostic. That means that an edge location will
      * return an object from the cache regardless of whether the current request protocol matches the protocol used
      * previously. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long
-     * Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing Cache
+     * Expiration</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * </note>
      */
@@ -173,21 +173,20 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
     /**
      * <p>
      * The value of <code>ID</code> for the field-level encryption configuration that you want CloudFront to use for
-     * encrypting specific fields of data for a cache behavior or for the default cache behavior in your distribution.
+     * encrypting specific fields of data for the default cache behavior.
      * </p>
      */
     private String fieldLevelEncryptionId;
 
     /**
      * <p>
-     * The value of <code>ID</code> for the origin that you want CloudFront to route requests to when a request matches
-     * the path pattern either for a cache behavior or for the default cache behavior in your distribution.
+     * The value of <code>ID</code> for the origin that you want CloudFront to route requests to when they use the
+     * default cache behavior.
      * </p>
      * 
      * @param targetOriginId
-     *        The value of <code>ID</code> for the origin that you want CloudFront to route requests to when a request
-     *        matches the path pattern either for a cache behavior or for the default cache behavior in your
-     *        distribution.
+     *        The value of <code>ID</code> for the origin that you want CloudFront to route requests to when they use
+     *        the default cache behavior.
      */
 
     public void setTargetOriginId(String targetOriginId) {
@@ -196,13 +195,12 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value of <code>ID</code> for the origin that you want CloudFront to route requests to when a request matches
-     * the path pattern either for a cache behavior or for the default cache behavior in your distribution.
+     * The value of <code>ID</code> for the origin that you want CloudFront to route requests to when they use the
+     * default cache behavior.
      * </p>
      * 
-     * @return The value of <code>ID</code> for the origin that you want CloudFront to route requests to when a request
-     *         matches the path pattern either for a cache behavior or for the default cache behavior in your
-     *         distribution.
+     * @return The value of <code>ID</code> for the origin that you want CloudFront to route requests to when they use
+     *         the default cache behavior.
      */
 
     public String getTargetOriginId() {
@@ -211,14 +209,13 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value of <code>ID</code> for the origin that you want CloudFront to route requests to when a request matches
-     * the path pattern either for a cache behavior or for the default cache behavior in your distribution.
+     * The value of <code>ID</code> for the origin that you want CloudFront to route requests to when they use the
+     * default cache behavior.
      * </p>
      * 
      * @param targetOriginId
-     *        The value of <code>ID</code> for the origin that you want CloudFront to route requests to when a request
-     *        matches the path pattern either for a cache behavior or for the default cache behavior in your
-     *        distribution.
+     *        The value of <code>ID</code> for the origin that you want CloudFront to route requests to when they use
+     *        the default cache behavior.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -277,15 +274,15 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      * <code>PathPattern</code> for this cache behavior, specify <code>true</code> for <code>Enabled</code>, and specify
      * the applicable values for <code>Quantity</code> and <code>Items</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private
-     * Content through CloudFront</a> in the <i> Amazon CloudFront Developer Guide</i>.
+     * Content with Signed URLs and Signed Cookies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
-     * If you don't want to require signed URLs in requests for objects that match <code>PathPattern</code>, specify
+     * If you don’t want to require signed URLs in requests for objects that match <code>PathPattern</code>, specify
      * <code>false</code> for <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit <code>Items</code>
      * .
      * </p>
      * <p>
-     * To add, change, or remove one or more trusted signers, change <code>Enabled</code> to <code>true</code> (if it's
+     * To add, change, or remove one or more trusted signers, change <code>Enabled</code> to <code>true</code> (if it’s
      * currently <code>false</code>), change <code>Quantity</code> as applicable, and specify all of the trusted signers
      * that you want to include in the updated distribution.
      * </p>
@@ -298,16 +295,16 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      *        <code>PathPattern</code> for this cache behavior, specify <code>true</code> for <code>Enabled</code>, and
      *        specify the applicable values for <code>Quantity</code> and <code>Items</code>. For more information, see
      *        <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
-     *        Private Content through CloudFront</a> in the <i> Amazon CloudFront Developer Guide</i>.
+     *        Private Content with Signed URLs and Signed Cookies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      *        </p>
      *        <p>
-     *        If you don't want to require signed URLs in requests for objects that match <code>PathPattern</code>,
+     *        If you don’t want to require signed URLs in requests for objects that match <code>PathPattern</code>,
      *        specify <code>false</code> for <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit
      *        <code>Items</code>.
      *        </p>
      *        <p>
      *        To add, change, or remove one or more trusted signers, change <code>Enabled</code> to <code>true</code>
-     *        (if it's currently <code>false</code>), change <code>Quantity</code> as applicable, and specify all of the
+     *        (if it’s currently <code>false</code>), change <code>Quantity</code> as applicable, and specify all of the
      *        trusted signers that you want to include in the updated distribution.
      */
 
@@ -325,15 +322,15 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      * <code>PathPattern</code> for this cache behavior, specify <code>true</code> for <code>Enabled</code>, and specify
      * the applicable values for <code>Quantity</code> and <code>Items</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private
-     * Content through CloudFront</a> in the <i> Amazon CloudFront Developer Guide</i>.
+     * Content with Signed URLs and Signed Cookies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
-     * If you don't want to require signed URLs in requests for objects that match <code>PathPattern</code>, specify
+     * If you don’t want to require signed URLs in requests for objects that match <code>PathPattern</code>, specify
      * <code>false</code> for <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit <code>Items</code>
      * .
      * </p>
      * <p>
-     * To add, change, or remove one or more trusted signers, change <code>Enabled</code> to <code>true</code> (if it's
+     * To add, change, or remove one or more trusted signers, change <code>Enabled</code> to <code>true</code> (if it’s
      * currently <code>false</code>), change <code>Quantity</code> as applicable, and specify all of the trusted signers
      * that you want to include in the updated distribution.
      * </p>
@@ -345,16 +342,16 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      *         <code>PathPattern</code> for this cache behavior, specify <code>true</code> for <code>Enabled</code>, and
      *         specify the applicable values for <code>Quantity</code> and <code>Items</code>. For more information, see
      *         <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
-     *         Private Content through CloudFront</a> in the <i> Amazon CloudFront Developer Guide</i>.
+     *         Private Content with Signed URLs and Signed Cookies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      *         </p>
      *         <p>
-     *         If you don't want to require signed URLs in requests for objects that match <code>PathPattern</code>,
+     *         If you don’t want to require signed URLs in requests for objects that match <code>PathPattern</code>,
      *         specify <code>false</code> for <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit
      *         <code>Items</code>.
      *         </p>
      *         <p>
      *         To add, change, or remove one or more trusted signers, change <code>Enabled</code> to <code>true</code>
-     *         (if it's currently <code>false</code>), change <code>Quantity</code> as applicable, and specify all of
+     *         (if it’s currently <code>false</code>), change <code>Quantity</code> as applicable, and specify all of
      *         the trusted signers that you want to include in the updated distribution.
      */
 
@@ -372,15 +369,15 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      * <code>PathPattern</code> for this cache behavior, specify <code>true</code> for <code>Enabled</code>, and specify
      * the applicable values for <code>Quantity</code> and <code>Items</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private
-     * Content through CloudFront</a> in the <i> Amazon CloudFront Developer Guide</i>.
+     * Content with Signed URLs and Signed Cookies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
-     * If you don't want to require signed URLs in requests for objects that match <code>PathPattern</code>, specify
+     * If you don’t want to require signed URLs in requests for objects that match <code>PathPattern</code>, specify
      * <code>false</code> for <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit <code>Items</code>
      * .
      * </p>
      * <p>
-     * To add, change, or remove one or more trusted signers, change <code>Enabled</code> to <code>true</code> (if it's
+     * To add, change, or remove one or more trusted signers, change <code>Enabled</code> to <code>true</code> (if it’s
      * currently <code>false</code>), change <code>Quantity</code> as applicable, and specify all of the trusted signers
      * that you want to include in the updated distribution.
      * </p>
@@ -393,16 +390,16 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      *        <code>PathPattern</code> for this cache behavior, specify <code>true</code> for <code>Enabled</code>, and
      *        specify the applicable values for <code>Quantity</code> and <code>Items</code>. For more information, see
      *        <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
-     *        Private Content through CloudFront</a> in the <i> Amazon CloudFront Developer Guide</i>.
+     *        Private Content with Signed URLs and Signed Cookies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      *        </p>
      *        <p>
-     *        If you don't want to require signed URLs in requests for objects that match <code>PathPattern</code>,
+     *        If you don’t want to require signed URLs in requests for objects that match <code>PathPattern</code>,
      *        specify <code>false</code> for <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit
      *        <code>Items</code>.
      *        </p>
      *        <p>
      *        To add, change, or remove one or more trusted signers, change <code>Enabled</code> to <code>true</code>
-     *        (if it's currently <code>false</code>), change <code>Quantity</code> as applicable, and specify all of the
+     *        (if it’s currently <code>false</code>), change <code>Quantity</code> as applicable, and specify all of the
      *        trusted signers that you want to include in the updated distribution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -438,19 +435,19 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * For more information about requiring the HTTPS protocol, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html">Using an HTTPS
-     * Connection to Access Your Objects</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * For more information about requiring the HTTPS protocol, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-viewers-to-cloudfront.html"
+     * >Requiring HTTPS Between Viewers and CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <note>
      * <p>
      * The only way to guarantee that viewers retrieve an object that was fetched from the origin using HTTPS is never
      * to use any other protocol to fetch the object. If you have recently changed from HTTP to HTTPS, we recommend that
-     * you clear your objects' cache because cached objects are protocol agnostic. That means that an edge location will
+     * you clear your objects’ cache because cached objects are protocol agnostic. That means that an edge location will
      * return an object from the cache regardless of whether the current request protocol matches the protocol used
      * previously. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long
-     * Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing Cache
+     * Expiration</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * </note>
      * 
@@ -479,19 +476,19 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        <p>
-     *        For more information about requiring the HTTPS protocol, see <a
-     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html">Using an
-     *        HTTPS Connection to Access Your Objects</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     *        For more information about requiring the HTTPS protocol, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-viewers-to-cloudfront.html"
+     *        >Requiring HTTPS Between Viewers and CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
      *        </p>
      *        <note>
      *        <p>
      *        The only way to guarantee that viewers retrieve an object that was fetched from the origin using HTTPS is
      *        never to use any other protocol to fetch the object. If you have recently changed from HTTP to HTTPS, we
-     *        recommend that you clear your objects' cache because cached objects are protocol agnostic. That means that
+     *        recommend that you clear your objects’ cache because cached objects are protocol agnostic. That means that
      *        an edge location will return an object from the cache regardless of whether the current request protocol
      *        matches the protocol used previously. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How
-     *        Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing Cache
+     *        Expiration</a> in the <i>Amazon CloudFront Developer Guide</i>.
      *        </p>
      * @see ViewerProtocolPolicy
      */
@@ -526,19 +523,19 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * For more information about requiring the HTTPS protocol, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html">Using an HTTPS
-     * Connection to Access Your Objects</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * For more information about requiring the HTTPS protocol, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-viewers-to-cloudfront.html"
+     * >Requiring HTTPS Between Viewers and CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <note>
      * <p>
      * The only way to guarantee that viewers retrieve an object that was fetched from the origin using HTTPS is never
      * to use any other protocol to fetch the object. If you have recently changed from HTTP to HTTPS, we recommend that
-     * you clear your objects' cache because cached objects are protocol agnostic. That means that an edge location will
+     * you clear your objects’ cache because cached objects are protocol agnostic. That means that an edge location will
      * return an object from the cache regardless of whether the current request protocol matches the protocol used
      * previously. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long
-     * Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing Cache
+     * Expiration</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * </note>
      * 
@@ -566,19 +563,19 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      *         </li>
      *         </ul>
      *         <p>
-     *         For more information about requiring the HTTPS protocol, see <a
-     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html">Using an
-     *         HTTPS Connection to Access Your Objects</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     *         For more information about requiring the HTTPS protocol, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-viewers-to-cloudfront.html"
+     *         >Requiring HTTPS Between Viewers and CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
      *         </p>
      *         <note>
      *         <p>
      *         The only way to guarantee that viewers retrieve an object that was fetched from the origin using HTTPS is
      *         never to use any other protocol to fetch the object. If you have recently changed from HTTP to HTTPS, we
-     *         recommend that you clear your objects' cache because cached objects are protocol agnostic. That means
+     *         recommend that you clear your objects’ cache because cached objects are protocol agnostic. That means
      *         that an edge location will return an object from the cache regardless of whether the current request
      *         protocol matches the protocol used previously. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How
-     *         Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing Cache
+     *         Expiration</a> in the <i>Amazon CloudFront Developer Guide</i>.
      *         </p>
      * @see ViewerProtocolPolicy
      */
@@ -613,19 +610,19 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * For more information about requiring the HTTPS protocol, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html">Using an HTTPS
-     * Connection to Access Your Objects</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * For more information about requiring the HTTPS protocol, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-viewers-to-cloudfront.html"
+     * >Requiring HTTPS Between Viewers and CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <note>
      * <p>
      * The only way to guarantee that viewers retrieve an object that was fetched from the origin using HTTPS is never
      * to use any other protocol to fetch the object. If you have recently changed from HTTP to HTTPS, we recommend that
-     * you clear your objects' cache because cached objects are protocol agnostic. That means that an edge location will
+     * you clear your objects’ cache because cached objects are protocol agnostic. That means that an edge location will
      * return an object from the cache regardless of whether the current request protocol matches the protocol used
      * previously. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long
-     * Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing Cache
+     * Expiration</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * </note>
      * 
@@ -654,19 +651,19 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        <p>
-     *        For more information about requiring the HTTPS protocol, see <a
-     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html">Using an
-     *        HTTPS Connection to Access Your Objects</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     *        For more information about requiring the HTTPS protocol, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-viewers-to-cloudfront.html"
+     *        >Requiring HTTPS Between Viewers and CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
      *        </p>
      *        <note>
      *        <p>
      *        The only way to guarantee that viewers retrieve an object that was fetched from the origin using HTTPS is
      *        never to use any other protocol to fetch the object. If you have recently changed from HTTP to HTTPS, we
-     *        recommend that you clear your objects' cache because cached objects are protocol agnostic. That means that
+     *        recommend that you clear your objects’ cache because cached objects are protocol agnostic. That means that
      *        an edge location will return an object from the cache regardless of whether the current request protocol
      *        matches the protocol used previously. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How
-     *        Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing Cache
+     *        Expiration</a> in the <i>Amazon CloudFront Developer Guide</i>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ViewerProtocolPolicy
@@ -703,19 +700,19 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * For more information about requiring the HTTPS protocol, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html">Using an HTTPS
-     * Connection to Access Your Objects</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * For more information about requiring the HTTPS protocol, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-viewers-to-cloudfront.html"
+     * >Requiring HTTPS Between Viewers and CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <note>
      * <p>
      * The only way to guarantee that viewers retrieve an object that was fetched from the origin using HTTPS is never
      * to use any other protocol to fetch the object. If you have recently changed from HTTP to HTTPS, we recommend that
-     * you clear your objects' cache because cached objects are protocol agnostic. That means that an edge location will
+     * you clear your objects’ cache because cached objects are protocol agnostic. That means that an edge location will
      * return an object from the cache regardless of whether the current request protocol matches the protocol used
      * previously. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long
-     * Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing Cache
+     * Expiration</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * </note>
      * 
@@ -744,19 +741,19 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        <p>
-     *        For more information about requiring the HTTPS protocol, see <a
-     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html">Using an
-     *        HTTPS Connection to Access Your Objects</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     *        For more information about requiring the HTTPS protocol, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-viewers-to-cloudfront.html"
+     *        >Requiring HTTPS Between Viewers and CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
      *        </p>
      *        <note>
      *        <p>
      *        The only way to guarantee that viewers retrieve an object that was fetched from the origin using HTTPS is
      *        never to use any other protocol to fetch the object. If you have recently changed from HTTP to HTTPS, we
-     *        recommend that you clear your objects' cache because cached objects are protocol agnostic. That means that
+     *        recommend that you clear your objects’ cache because cached objects are protocol agnostic. That means that
      *        an edge location will return an object from the cache regardless of whether the current request protocol
      *        matches the protocol used previously. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How
-     *        Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing Cache
+     *        Expiration</a> in the <i>Amazon CloudFront Developer Guide</i>.
      *        </p>
      * @see ViewerProtocolPolicy
      */
@@ -791,19 +788,19 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * For more information about requiring the HTTPS protocol, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html">Using an HTTPS
-     * Connection to Access Your Objects</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * For more information about requiring the HTTPS protocol, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-viewers-to-cloudfront.html"
+     * >Requiring HTTPS Between Viewers and CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <note>
      * <p>
      * The only way to guarantee that viewers retrieve an object that was fetched from the origin using HTTPS is never
      * to use any other protocol to fetch the object. If you have recently changed from HTTP to HTTPS, we recommend that
-     * you clear your objects' cache because cached objects are protocol agnostic. That means that an edge location will
+     * you clear your objects’ cache because cached objects are protocol agnostic. That means that an edge location will
      * return an object from the cache regardless of whether the current request protocol matches the protocol used
      * previously. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long
-     * Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing Cache
+     * Expiration</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * </note>
      * 
@@ -832,19 +829,19 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        <p>
-     *        For more information about requiring the HTTPS protocol, see <a
-     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html">Using an
-     *        HTTPS Connection to Access Your Objects</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     *        For more information about requiring the HTTPS protocol, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-viewers-to-cloudfront.html"
+     *        >Requiring HTTPS Between Viewers and CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
      *        </p>
      *        <note>
      *        <p>
      *        The only way to guarantee that viewers retrieve an object that was fetched from the origin using HTTPS is
      *        never to use any other protocol to fetch the object. If you have recently changed from HTTP to HTTPS, we
-     *        recommend that you clear your objects' cache because cached objects are protocol agnostic. That means that
+     *        recommend that you clear your objects’ cache because cached objects are protocol agnostic. That means that
      *        an edge location will return an object from the cache regardless of whether the current request protocol
      *        matches the protocol used previously. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How
-     *        Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing Cache
+     *        Expiration</a> in the <i>Amazon CloudFront Developer Guide</i>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ViewerProtocolPolicy
@@ -1307,13 +1304,12 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
     /**
      * <p>
      * The value of <code>ID</code> for the field-level encryption configuration that you want CloudFront to use for
-     * encrypting specific fields of data for a cache behavior or for the default cache behavior in your distribution.
+     * encrypting specific fields of data for the default cache behavior.
      * </p>
      * 
      * @param fieldLevelEncryptionId
      *        The value of <code>ID</code> for the field-level encryption configuration that you want CloudFront to use
-     *        for encrypting specific fields of data for a cache behavior or for the default cache behavior in your
-     *        distribution.
+     *        for encrypting specific fields of data for the default cache behavior.
      */
 
     public void setFieldLevelEncryptionId(String fieldLevelEncryptionId) {
@@ -1323,12 +1319,11 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
     /**
      * <p>
      * The value of <code>ID</code> for the field-level encryption configuration that you want CloudFront to use for
-     * encrypting specific fields of data for a cache behavior or for the default cache behavior in your distribution.
+     * encrypting specific fields of data for the default cache behavior.
      * </p>
      * 
      * @return The value of <code>ID</code> for the field-level encryption configuration that you want CloudFront to use
-     *         for encrypting specific fields of data for a cache behavior or for the default cache behavior in your
-     *         distribution.
+     *         for encrypting specific fields of data for the default cache behavior.
      */
 
     public String getFieldLevelEncryptionId() {
@@ -1338,13 +1333,12 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
     /**
      * <p>
      * The value of <code>ID</code> for the field-level encryption configuration that you want CloudFront to use for
-     * encrypting specific fields of data for a cache behavior or for the default cache behavior in your distribution.
+     * encrypting specific fields of data for the default cache behavior.
      * </p>
      * 
      * @param fieldLevelEncryptionId
      *        The value of <code>ID</code> for the field-level encryption configuration that you want CloudFront to use
-     *        for encrypting specific fields of data for a cache behavior or for the default cache behavior in your
-     *        distribution.
+     *        for encrypting specific fields of data for the default cache behavior.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

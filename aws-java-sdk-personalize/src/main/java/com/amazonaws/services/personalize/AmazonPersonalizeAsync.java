@@ -891,6 +891,37 @@ public interface AmazonPersonalizeAsync extends AmazonPersonalize {
 
     /**
      * <p>
+     * Creates a recommendation filter. For more information, see Using Filters with Amazon Personalize.
+     * </p>
+     * 
+     * @param createFilterRequest
+     * @return A Java Future containing the result of the CreateFilter operation returned by the service.
+     * @sample AmazonPersonalizeAsync.CreateFilter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateFilter" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateFilterResult> createFilterAsync(CreateFilterRequest createFilterRequest);
+
+    /**
+     * <p>
+     * Creates a recommendation filter. For more information, see Using Filters with Amazon Personalize.
+     * </p>
+     * 
+     * @param createFilterRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateFilter operation returned by the service.
+     * @sample AmazonPersonalizeAsyncHandler.CreateFilter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateFilter" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateFilterResult> createFilterAsync(CreateFilterRequest createFilterRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateFilterRequest, CreateFilterResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates an Amazon Personalize schema from the specified schema string. The schema you create must be in Avro JSON
      * format.
      * </p>
@@ -1474,6 +1505,37 @@ public interface AmazonPersonalizeAsync extends AmazonPersonalize {
 
     /**
      * <p>
+     * Deletes a filter.
+     * </p>
+     * 
+     * @param deleteFilterRequest
+     * @return A Java Future containing the result of the DeleteFilter operation returned by the service.
+     * @sample AmazonPersonalizeAsync.DeleteFilter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DeleteFilter" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteFilterResult> deleteFilterAsync(DeleteFilterRequest deleteFilterRequest);
+
+    /**
+     * <p>
+     * Deletes a filter.
+     * </p>
+     * 
+     * @param deleteFilterRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteFilter operation returned by the service.
+     * @sample AmazonPersonalizeAsyncHandler.DeleteFilter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DeleteFilter" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteFilterResult> deleteFilterAsync(DeleteFilterRequest deleteFilterRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteFilterRequest, DeleteFilterResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes a schema. Before deleting a schema, you must delete all datasets referencing the schema. For more
      * information on schemas, see <a>CreateSchema</a>.
      * </p>
@@ -1845,6 +1907,37 @@ public interface AmazonPersonalizeAsync extends AmazonPersonalize {
     java.util.concurrent.Future<DescribeFeatureTransformationResult> describeFeatureTransformationAsync(
             DescribeFeatureTransformationRequest describeFeatureTransformationRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeFeatureTransformationRequest, DescribeFeatureTransformationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes a filter's properties.
+     * </p>
+     * 
+     * @param describeFilterRequest
+     * @return A Java Future containing the result of the DescribeFilter operation returned by the service.
+     * @sample AmazonPersonalizeAsync.DescribeFilter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeFilter" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeFilterResult> describeFilterAsync(DescribeFilterRequest describeFilterRequest);
+
+    /**
+     * <p>
+     * Describes a filter's properties.
+     * </p>
+     * 
+     * @param describeFilterRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeFilter operation returned by the service.
+     * @sample AmazonPersonalizeAsyncHandler.DescribeFilter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeFilter" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeFilterResult> describeFilterAsync(DescribeFilterRequest describeFilterRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeFilterRequest, DescribeFilterResult> asyncHandler);
 
     /**
      * <p>
@@ -2258,6 +2351,37 @@ public interface AmazonPersonalizeAsync extends AmazonPersonalize {
      */
     java.util.concurrent.Future<ListEventTrackersResult> listEventTrackersAsync(ListEventTrackersRequest listEventTrackersRequest,
             com.amazonaws.handlers.AsyncHandler<ListEventTrackersRequest, ListEventTrackersResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists all filters that belong to a given dataset group.
+     * </p>
+     * 
+     * @param listFiltersRequest
+     * @return A Java Future containing the result of the ListFilters operation returned by the service.
+     * @sample AmazonPersonalizeAsync.ListFilters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListFilters" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListFiltersResult> listFiltersAsync(ListFiltersRequest listFiltersRequest);
+
+    /**
+     * <p>
+     * Lists all filters that belong to a given dataset group.
+     * </p>
+     * 
+     * @param listFiltersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListFilters operation returned by the service.
+     * @sample AmazonPersonalizeAsyncHandler.ListFilters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListFilters" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListFiltersResult> listFiltersAsync(ListFiltersRequest listFiltersRequest,
+            com.amazonaws.handlers.AsyncHandler<ListFiltersRequest, ListFiltersResult> asyncHandler);
 
     /**
      * <p>

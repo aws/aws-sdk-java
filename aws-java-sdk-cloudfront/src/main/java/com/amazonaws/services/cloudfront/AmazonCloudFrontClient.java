@@ -391,7 +391,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws TooManyCloudFrontOriginAccessIdentitiesException
      *         Processing your request would cause you to exceed the maximum number of origin access identities allowed.
      * @throws InvalidArgumentException
-     *         The argument is invalid.
+     *         An argument is invalid.
      * @throws InconsistentQuantitiesException
      *         The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
      * @sample AmazonCloudFront.CreateCloudFrontOriginAccessIdentity
@@ -500,7 +500,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InvalidResponseCodeException
      *         A response code is not valid.
      * @throws InvalidArgumentException
-     *         The argument is invalid.
+     *         An argument is invalid.
      * @throws InvalidRequiredProtocolException
      *         This operation requires the HTTPS protocol. Ensure that you specify the HTTPS protocol in your request,
      *         or omit the <code>RequiredProtocols</code> element from your distribution configuration.
@@ -655,7 +655,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InvalidResponseCodeException
      *         A response code is not valid.
      * @throws InvalidArgumentException
-     *         The argument is invalid.
+     *         An argument is invalid.
      * @throws InvalidRequiredProtocolException
      *         This operation requires the HTTPS protocol. Ensure that you specify the HTTPS protocol in your request,
      *         or omit the <code>RequiredProtocols</code> element from your distribution configuration.
@@ -779,7 +779,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InconsistentQuantitiesException
      *         The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
      * @throws InvalidArgumentException
-     *         The argument is invalid.
+     *         An argument is invalid.
      * @throws NoSuchFieldLevelEncryptionProfileException
      *         The specified profile for field-level encryption doesn't exist.
      * @throws FieldLevelEncryptionConfigAlreadyExistsException
@@ -849,7 +849,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InconsistentQuantitiesException
      *         The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
      * @throws InvalidArgumentException
-     *         The argument is invalid.
+     *         An argument is invalid.
      * @throws NoSuchPublicKeyException
      *         The specified public key doesn't exist.
      * @throws FieldLevelEncryptionProfileAlreadyExistsException
@@ -923,7 +923,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         This operation requires a body. Ensure that the body is present and the <code>Content-Type</code> header
      *         is set.
      * @throws InvalidArgumentException
-     *         The argument is invalid.
+     *         An argument is invalid.
      * @throws NoSuchDistributionException
      *         The specified distribution does not exist.
      * @throws BatchTooLargeException
@@ -990,7 +990,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws PublicKeyAlreadyExistsException
      *         The specified public key already exists.
      * @throws InvalidArgumentException
-     *         The argument is invalid.
+     *         An argument is invalid.
      * @throws TooManyPublicKeysException
      *         The maximum number of public keys for field-level encryption have been created. To create a new public
      *         key, delete one of the existing keys.
@@ -1099,7 +1099,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws TooManyStreamingDistributionsException
      *         Processing your request would cause you to exceed the maximum number of streaming distributions allowed.
      * @throws InvalidArgumentException
-     *         The argument is invalid.
+     *         An argument is invalid.
      * @throws InconsistentQuantitiesException
      *         The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
      * @sample AmazonCloudFront.CreateStreamingDistribution
@@ -1179,7 +1179,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws TooManyStreamingDistributionsException
      *         Processing your request would cause you to exceed the maximum number of streaming distributions allowed.
      * @throws InvalidArgumentException
-     *         The argument is invalid.
+     *         An argument is invalid.
      * @throws InconsistentQuantitiesException
      *         The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
      * @throws InvalidTaggingException
@@ -1247,7 +1247,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws NoSuchCloudFrontOriginAccessIdentityException
      *         The specified origin access identity does not exist.
      * @throws PreconditionFailedException
-     *         The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+     *         The precondition given in one or more of the request header fields evaluated to <code>false</code>.
      * @throws CloudFrontOriginAccessIdentityInUseException
      *         The Origin Access Identity specified is already in use.
      * @sample AmazonCloudFront.DeleteCloudFrontOriginAccessIdentity
@@ -1376,7 +1376,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws NoSuchDistributionException
      *         The specified distribution does not exist.
      * @throws PreconditionFailedException
-     *         The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+     *         The precondition given in one or more of the request header fields evaluated to <code>false</code>.
      * @sample AmazonCloudFront.DeleteDistribution
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DeleteDistribution" target="_top">AWS
      *      API Documentation</a>
@@ -1437,7 +1437,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws NoSuchFieldLevelEncryptionConfigException
      *         The specified configuration for field-level encryption doesn't exist.
      * @throws PreconditionFailedException
-     *         The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+     *         The precondition given in one or more of the request header fields evaluated to <code>false</code>.
      * @throws FieldLevelEncryptionConfigInUseException
      *         The specified configuration for field-level encryption is in use.
      * @sample AmazonCloudFront.DeleteFieldLevelEncryptionConfig
@@ -1501,7 +1501,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws NoSuchFieldLevelEncryptionProfileException
      *         The specified profile for field-level encryption doesn't exist.
      * @throws PreconditionFailedException
-     *         The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+     *         The precondition given in one or more of the request header fields evaluated to <code>false</code>.
      * @throws FieldLevelEncryptionProfileInUseException
      *         The specified profile for field-level encryption is in use.
      * @sample AmazonCloudFront.DeleteFieldLevelEncryptionProfile
@@ -1567,7 +1567,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws NoSuchPublicKeyException
      *         The specified public key doesn't exist.
      * @throws PreconditionFailedException
-     *         The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+     *         The precondition given in one or more of the request header fields evaluated to <code>false</code>.
      * @sample AmazonCloudFront.DeletePublicKey
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DeletePublicKey" target="_top">AWS API
      *      Documentation</a>
@@ -1693,7 +1693,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws NoSuchStreamingDistributionException
      *         The specified streaming distribution does not exist.
      * @throws PreconditionFailedException
-     *         The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+     *         The precondition given in one or more of the request header fields evaluated to <code>false</code>.
      * @sample AmazonCloudFront.DeleteStreamingDistribution
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DeleteStreamingDistribution"
      *      target="_top">AWS API Documentation</a>
@@ -2506,7 +2506,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *        The request to list origin access identities.
      * @return Result of the ListCloudFrontOriginAccessIdentities operation returned by the service.
      * @throws InvalidArgumentException
-     *         The argument is invalid.
+     *         An argument is invalid.
      * @sample AmazonCloudFront.ListCloudFrontOriginAccessIdentities
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListCloudFrontOriginAccessIdentities"
      *      target="_top">AWS API Documentation</a>
@@ -2564,7 +2564,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *        The request to list your distributions.
      * @return Result of the ListDistributions operation returned by the service.
      * @throws InvalidArgumentException
-     *         The argument is invalid.
+     *         An argument is invalid.
      * @sample AmazonCloudFront.ListDistributions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListDistributions" target="_top">AWS
      *      API Documentation</a>
@@ -2620,7 +2620,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *        The request to list distributions that are associated with a specified AWS WAF web ACL.
      * @return Result of the ListDistributionsByWebACLId operation returned by the service.
      * @throws InvalidArgumentException
-     *         The argument is invalid.
+     *         An argument is invalid.
      * @throws InvalidWebACLIdException
      *         A web ACL ID specified is not valid. To specify a web ACL created using the latest version of AWS WAF,
      *         use the ACL ARN, for example
@@ -2681,7 +2681,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @param listFieldLevelEncryptionConfigsRequest
      * @return Result of the ListFieldLevelEncryptionConfigs operation returned by the service.
      * @throws InvalidArgumentException
-     *         The argument is invalid.
+     *         An argument is invalid.
      * @sample AmazonCloudFront.ListFieldLevelEncryptionConfigs
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListFieldLevelEncryptionConfigs"
      *      target="_top">AWS API Documentation</a>
@@ -2737,7 +2737,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @param listFieldLevelEncryptionProfilesRequest
      * @return Result of the ListFieldLevelEncryptionProfiles operation returned by the service.
      * @throws InvalidArgumentException
-     *         The argument is invalid.
+     *         An argument is invalid.
      * @sample AmazonCloudFront.ListFieldLevelEncryptionProfiles
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListFieldLevelEncryptionProfiles"
      *      target="_top">AWS API Documentation</a>
@@ -2794,7 +2794,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *        The request to list invalidations.
      * @return Result of the ListInvalidations operation returned by the service.
      * @throws InvalidArgumentException
-     *         The argument is invalid.
+     *         An argument is invalid.
      * @throws NoSuchDistributionException
      *         The specified distribution does not exist.
      * @throws AccessDeniedException
@@ -2853,7 +2853,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @param listPublicKeysRequest
      * @return Result of the ListPublicKeys operation returned by the service.
      * @throws InvalidArgumentException
-     *         The argument is invalid.
+     *         An argument is invalid.
      * @sample AmazonCloudFront.ListPublicKeys
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListPublicKeys" target="_top">AWS API
      *      Documentation</a>
@@ -2909,7 +2909,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *        The request to list your streaming distributions.
      * @return Result of the ListStreamingDistributions operation returned by the service.
      * @throws InvalidArgumentException
-     *         The argument is invalid.
+     *         An argument is invalid.
      * @sample AmazonCloudFront.ListStreamingDistributions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListStreamingDistributions"
      *      target="_top">AWS API Documentation</a>
@@ -2967,7 +2967,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws AccessDeniedException
      *         Access denied.
      * @throws InvalidArgumentException
-     *         The argument is invalid.
+     *         An argument is invalid.
      * @throws InvalidTaggingException
      *         The tagging specified is not valid.
      * @throws NoSuchResourceException
@@ -3029,7 +3029,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws AccessDeniedException
      *         Access denied.
      * @throws InvalidArgumentException
-     *         The argument is invalid.
+     *         An argument is invalid.
      * @throws InvalidTaggingException
      *         The tagging specified is not valid.
      * @throws NoSuchResourceException
@@ -3090,7 +3090,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws AccessDeniedException
      *         Access denied.
      * @throws InvalidArgumentException
-     *         The argument is invalid.
+     *         An argument is invalid.
      * @throws InvalidTaggingException
      *         The tagging specified is not valid.
      * @throws NoSuchResourceException
@@ -3160,9 +3160,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws NoSuchCloudFrontOriginAccessIdentityException
      *         The specified origin access identity does not exist.
      * @throws PreconditionFailedException
-     *         The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+     *         The precondition given in one or more of the request header fields evaluated to <code>false</code>.
      * @throws InvalidArgumentException
-     *         The argument is invalid.
+     *         An argument is invalid.
      * @throws InconsistentQuantitiesException
      *         The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
      * @sample AmazonCloudFront.UpdateCloudFrontOriginAccessIdentity
@@ -3343,7 +3343,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws NoSuchDistributionException
      *         The specified distribution does not exist.
      * @throws PreconditionFailedException
-     *         The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+     *         The precondition given in one or more of the request header fields evaluated to <code>false</code>.
      * @throws TooManyDistributionCNAMEsException
      *         Your request contains more CNAMEs than are allowed per distribution.
      * @throws InvalidDefaultRootObjectException
@@ -3355,7 +3355,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InvalidResponseCodeException
      *         A response code is not valid.
      * @throws InvalidArgumentException
-     *         The argument is invalid.
+     *         An argument is invalid.
      * @throws InvalidOriginAccessIdentityException
      *         The origin access identity is not valid or doesn't exist.
      * @throws TooManyTrustedSignersException
@@ -3488,7 +3488,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InconsistentQuantitiesException
      *         The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
      * @throws InvalidArgumentException
-     *         The argument is invalid.
+     *         An argument is invalid.
      * @throws InvalidIfMatchVersionException
      *         The <code>If-Match</code> version is missing or not valid for the distribution.
      * @throws NoSuchFieldLevelEncryptionProfileException
@@ -3496,7 +3496,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws NoSuchFieldLevelEncryptionConfigException
      *         The specified configuration for field-level encryption doesn't exist.
      * @throws PreconditionFailedException
-     *         The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+     *         The precondition given in one or more of the request header fields evaluated to <code>false</code>.
      * @throws TooManyFieldLevelEncryptionQueryArgProfilesException
      *         The maximum number of query arg profiles for field-level encryption have been created.
      * @throws TooManyFieldLevelEncryptionContentTypeProfilesException
@@ -3566,7 +3566,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InconsistentQuantitiesException
      *         The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
      * @throws InvalidArgumentException
-     *         The argument is invalid.
+     *         An argument is invalid.
      * @throws InvalidIfMatchVersionException
      *         The <code>If-Match</code> version is missing or not valid for the distribution.
      * @throws NoSuchPublicKeyException
@@ -3574,7 +3574,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws NoSuchFieldLevelEncryptionProfileException
      *         The specified profile for field-level encryption doesn't exist.
      * @throws PreconditionFailedException
-     *         The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+     *         The precondition given in one or more of the request header fields evaluated to <code>false</code>.
      * @throws FieldLevelEncryptionProfileSizeExceededException
      *         The maximum size of a profile for field-level encryption was exceeded.
      * @throws TooManyFieldLevelEncryptionEncryptionEntitiesException
@@ -3640,7 +3640,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws CannotChangeImmutablePublicKeyFieldsException
      *         You can't change the value of a public key.
      * @throws InvalidArgumentException
-     *         The argument is invalid.
+     *         An argument is invalid.
      * @throws InvalidIfMatchVersionException
      *         The <code>If-Match</code> version is missing or not valid for the distribution.
      * @throws IllegalUpdateException
@@ -3648,7 +3648,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws NoSuchPublicKeyException
      *         The specified public key doesn't exist.
      * @throws PreconditionFailedException
-     *         The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+     *         The precondition given in one or more of the request header fields evaluated to <code>false</code>.
      * @sample AmazonCloudFront.UpdatePublicKey
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/UpdatePublicKey" target="_top">AWS API
      *      Documentation</a>
@@ -3717,11 +3717,11 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws NoSuchStreamingDistributionException
      *         The specified streaming distribution does not exist.
      * @throws PreconditionFailedException
-     *         The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+     *         The precondition given in one or more of the request header fields evaluated to <code>false</code>.
      * @throws TooManyStreamingDistributionCNAMEsException
      *         Your request contains more CNAMEs than are allowed per distribution.
      * @throws InvalidArgumentException
-     *         The argument is invalid.
+     *         An argument is invalid.
      * @throws InvalidOriginAccessIdentityException
      *         The origin access identity is not valid or doesn't exist.
      * @throws TooManyTrustedSignersException

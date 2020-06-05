@@ -235,6 +235,12 @@ public class Integration implements Serializable, Cloneable, StructuredPojo {
      * </div>
      */
     private java.util.Map<String, IntegrationResponse> integrationResponses;
+    /**
+     * <p>
+     * Specifies the TLS configuration for an integration.
+     * </p>
+     */
+    private TlsConfig tlsConfig;
 
     /**
      * <p>
@@ -1932,6 +1938,46 @@ public class Integration implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Specifies the TLS configuration for an integration.
+     * </p>
+     * 
+     * @param tlsConfig
+     *        Specifies the TLS configuration for an integration.
+     */
+
+    public void setTlsConfig(TlsConfig tlsConfig) {
+        this.tlsConfig = tlsConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies the TLS configuration for an integration.
+     * </p>
+     * 
+     * @return Specifies the TLS configuration for an integration.
+     */
+
+    public TlsConfig getTlsConfig() {
+        return this.tlsConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies the TLS configuration for an integration.
+     * </p>
+     * 
+     * @param tlsConfig
+     *        Specifies the TLS configuration for an integration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Integration withTlsConfig(TlsConfig tlsConfig) {
+        setTlsConfig(tlsConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1970,7 +2016,9 @@ public class Integration implements Serializable, Cloneable, StructuredPojo {
         if (getCacheKeyParameters() != null)
             sb.append("CacheKeyParameters: ").append(getCacheKeyParameters()).append(",");
         if (getIntegrationResponses() != null)
-            sb.append("IntegrationResponses: ").append(getIntegrationResponses());
+            sb.append("IntegrationResponses: ").append(getIntegrationResponses()).append(",");
+        if (getTlsConfig() != null)
+            sb.append("TlsConfig: ").append(getTlsConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -2041,6 +2089,10 @@ public class Integration implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getIntegrationResponses() != null && other.getIntegrationResponses().equals(this.getIntegrationResponses()) == false)
             return false;
+        if (other.getTlsConfig() == null ^ this.getTlsConfig() == null)
+            return false;
+        if (other.getTlsConfig() != null && other.getTlsConfig().equals(this.getTlsConfig()) == false)
+            return false;
         return true;
     }
 
@@ -2063,6 +2115,7 @@ public class Integration implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCacheNamespace() == null) ? 0 : getCacheNamespace().hashCode());
         hashCode = prime * hashCode + ((getCacheKeyParameters() == null) ? 0 : getCacheKeyParameters().hashCode());
         hashCode = prime * hashCode + ((getIntegrationResponses() == null) ? 0 : getIntegrationResponses().hashCode());
+        hashCode = prime * hashCode + ((getTlsConfig() == null) ? 0 : getTlsConfig().hashCode());
         return hashCode;
     }
 

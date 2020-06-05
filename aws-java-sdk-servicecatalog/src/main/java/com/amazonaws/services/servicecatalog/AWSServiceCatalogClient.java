@@ -2179,6 +2179,8 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      * @return Result of the DescribeProductAsAdmin operation returned by the service.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are not valid.
      * @sample AWSServiceCatalog.DescribeProductAsAdmin
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProductAsAdmin"
      *      target="_top">AWS API Documentation</a>
@@ -2408,6 +2410,8 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      * @return Result of the DescribeProvisioningArtifact operation returned by the service.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are not valid.
      * @sample AWSServiceCatalog.DescribeProvisioningArtifact
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisioningArtifact"
      *      target="_top">AWS API Documentation</a>

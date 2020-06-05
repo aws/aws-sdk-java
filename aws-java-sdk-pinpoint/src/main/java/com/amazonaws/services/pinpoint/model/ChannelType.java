@@ -20,6 +20,7 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ChannelType {
 
+    PUSH("PUSH"),
     GCM("GCM"),
     APNS("APNS"),
     APNS_SANDBOX("APNS_SANDBOX"),

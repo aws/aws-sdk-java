@@ -33,6 +33,10 @@ public class DescribeProvisioningArtifactRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProvisioningArtifactId").build();
     private static final MarshallingInfo<String> PRODUCTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ProductId").build();
+    private static final MarshallingInfo<String> PROVISIONINGARTIFACTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProvisioningArtifactName").build();
+    private static final MarshallingInfo<String> PRODUCTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProductName").build();
     private static final MarshallingInfo<Boolean> VERBOSE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Verbose").build();
 
@@ -55,6 +59,8 @@ public class DescribeProvisioningArtifactRequestMarshaller {
             protocolMarshaller.marshall(describeProvisioningArtifactRequest.getAcceptLanguage(), ACCEPTLANGUAGE_BINDING);
             protocolMarshaller.marshall(describeProvisioningArtifactRequest.getProvisioningArtifactId(), PROVISIONINGARTIFACTID_BINDING);
             protocolMarshaller.marshall(describeProvisioningArtifactRequest.getProductId(), PRODUCTID_BINDING);
+            protocolMarshaller.marshall(describeProvisioningArtifactRequest.getProvisioningArtifactName(), PROVISIONINGARTIFACTNAME_BINDING);
+            protocolMarshaller.marshall(describeProvisioningArtifactRequest.getProductName(), PRODUCTNAME_BINDING);
             protocolMarshaller.marshall(describeProvisioningArtifactRequest.getVerbose(), VERBOSE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

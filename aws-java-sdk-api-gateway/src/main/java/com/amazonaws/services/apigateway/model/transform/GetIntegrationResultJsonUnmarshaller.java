@@ -107,6 +107,10 @@ public class GetIntegrationResultJsonUnmarshaller implements Unmarshaller<GetInt
                     getIntegrationResult.setIntegrationResponses(new MapUnmarshaller<String, IntegrationResponse>(context.getUnmarshaller(String.class),
                             IntegrationResponseJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("tlsConfig", targetDepth)) {
+                    context.nextToken();
+                    getIntegrationResult.setTlsConfig(TlsConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

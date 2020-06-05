@@ -214,6 +214,14 @@ public class UpdateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      */
     private String environmentArn;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the environment's operations role. For more information, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the
+     * <i>AWS Elastic Beanstalk Developer Guide</i>.
+     * </p>
+     */
+    private String operationsRole;
 
     /**
      * <p>
@@ -1814,6 +1822,58 @@ public class UpdateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the environment's operations role. For more information, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the
+     * <i>AWS Elastic Beanstalk Developer Guide</i>.
+     * </p>
+     * 
+     * @param operationsRole
+     *        The Amazon Resource Name (ARN) of the environment's operations role. For more information, see <a
+     *        href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a>
+     *        in the <i>AWS Elastic Beanstalk Developer Guide</i>.
+     */
+
+    public void setOperationsRole(String operationsRole) {
+        this.operationsRole = operationsRole;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the environment's operations role. For more information, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the
+     * <i>AWS Elastic Beanstalk Developer Guide</i>.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the environment's operations role. For more information, see <a
+     *         href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations
+     *         roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
+     */
+
+    public String getOperationsRole() {
+        return this.operationsRole;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the environment's operations role. For more information, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the
+     * <i>AWS Elastic Beanstalk Developer Guide</i>.
+     * </p>
+     * 
+     * @param operationsRole
+     *        The Amazon Resource Name (ARN) of the environment's operations role. For more information, see <a
+     *        href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a>
+     *        in the <i>AWS Elastic Beanstalk Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateEnvironmentResult withOperationsRole(String operationsRole) {
+        setOperationsRole(operationsRole);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1864,7 +1924,9 @@ public class UpdateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
         if (getEnvironmentLinks() != null)
             sb.append("EnvironmentLinks: ").append(getEnvironmentLinks()).append(",");
         if (getEnvironmentArn() != null)
-            sb.append("EnvironmentArn: ").append(getEnvironmentArn());
+            sb.append("EnvironmentArn: ").append(getEnvironmentArn()).append(",");
+        if (getOperationsRole() != null)
+            sb.append("OperationsRole: ").append(getOperationsRole());
         sb.append("}");
         return sb.toString();
     }
@@ -1959,6 +2021,10 @@ public class UpdateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
             return false;
         if (other.getEnvironmentArn() != null && other.getEnvironmentArn().equals(this.getEnvironmentArn()) == false)
             return false;
+        if (other.getOperationsRole() == null ^ this.getOperationsRole() == null)
+            return false;
+        if (other.getOperationsRole() != null && other.getOperationsRole().equals(this.getOperationsRole()) == false)
+            return false;
         return true;
     }
 
@@ -1987,6 +2053,7 @@ public class UpdateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
         hashCode = prime * hashCode + ((getTier() == null) ? 0 : getTier().hashCode());
         hashCode = prime * hashCode + ((getEnvironmentLinks() == null) ? 0 : getEnvironmentLinks().hashCode());
         hashCode = prime * hashCode + ((getEnvironmentArn() == null) ? 0 : getEnvironmentArn().hashCode());
+        hashCode = prime * hashCode + ((getOperationsRole() == null) ? 0 : getOperationsRole().hashCode());
         return hashCode;
     }
 

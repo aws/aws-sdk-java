@@ -31,6 +31,8 @@ public class CreateBatchInferenceJobRequestMarshaller {
             .marshallLocationName("jobName").build();
     private static final MarshallingInfo<String> SOLUTIONVERSIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("solutionVersionArn").build();
+    private static final MarshallingInfo<String> FILTERARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("filterArn").build();
     private static final MarshallingInfo<Integer> NUMRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("numResults").build();
     private static final MarshallingInfo<StructuredPojo> JOBINPUT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -58,6 +60,7 @@ public class CreateBatchInferenceJobRequestMarshaller {
         try {
             protocolMarshaller.marshall(createBatchInferenceJobRequest.getJobName(), JOBNAME_BINDING);
             protocolMarshaller.marshall(createBatchInferenceJobRequest.getSolutionVersionArn(), SOLUTIONVERSIONARN_BINDING);
+            protocolMarshaller.marshall(createBatchInferenceJobRequest.getFilterArn(), FILTERARN_BINDING);
             protocolMarshaller.marshall(createBatchInferenceJobRequest.getNumResults(), NUMRESULTS_BINDING);
             protocolMarshaller.marshall(createBatchInferenceJobRequest.getJobInput(), JOBINPUT_BINDING);
             protocolMarshaller.marshall(createBatchInferenceJobRequest.getJobOutput(), JOBOUTPUT_BINDING);

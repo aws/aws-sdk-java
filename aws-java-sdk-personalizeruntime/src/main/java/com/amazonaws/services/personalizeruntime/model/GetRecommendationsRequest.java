@@ -63,6 +63,13 @@ public class GetRecommendationsRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private java.util.Map<String, String> context;
+    /**
+     * <p>
+     * The ARN of the filter to apply to the returned recommendations. For more information, see Using Filters with
+     * Amazon Personalize.
+     * </p>
+     */
+    private String filterArn;
 
     /**
      * <p>
@@ -335,6 +342,52 @@ public class GetRecommendationsRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The ARN of the filter to apply to the returned recommendations. For more information, see Using Filters with
+     * Amazon Personalize.
+     * </p>
+     * 
+     * @param filterArn
+     *        The ARN of the filter to apply to the returned recommendations. For more information, see Using Filters
+     *        with Amazon Personalize.
+     */
+
+    public void setFilterArn(String filterArn) {
+        this.filterArn = filterArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the filter to apply to the returned recommendations. For more information, see Using Filters with
+     * Amazon Personalize.
+     * </p>
+     * 
+     * @return The ARN of the filter to apply to the returned recommendations. For more information, see Using Filters
+     *         with Amazon Personalize.
+     */
+
+    public String getFilterArn() {
+        return this.filterArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the filter to apply to the returned recommendations. For more information, see Using Filters with
+     * Amazon Personalize.
+     * </p>
+     * 
+     * @param filterArn
+     *        The ARN of the filter to apply to the returned recommendations. For more information, see Using Filters
+     *        with Amazon Personalize.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetRecommendationsRequest withFilterArn(String filterArn) {
+        setFilterArn(filterArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -355,7 +408,9 @@ public class GetRecommendationsRequest extends com.amazonaws.AmazonWebServiceReq
         if (getNumResults() != null)
             sb.append("NumResults: ").append(getNumResults()).append(",");
         if (getContext() != null)
-            sb.append("Context: ").append("***Sensitive Data Redacted***");
+            sb.append("Context: ").append("***Sensitive Data Redacted***").append(",");
+        if (getFilterArn() != null)
+            sb.append("FilterArn: ").append(getFilterArn());
         sb.append("}");
         return sb.toString();
     }
@@ -390,6 +445,10 @@ public class GetRecommendationsRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getContext() != null && other.getContext().equals(this.getContext()) == false)
             return false;
+        if (other.getFilterArn() == null ^ this.getFilterArn() == null)
+            return false;
+        if (other.getFilterArn() != null && other.getFilterArn().equals(this.getFilterArn()) == false)
+            return false;
         return true;
     }
 
@@ -403,6 +462,7 @@ public class GetRecommendationsRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getUserId() == null) ? 0 : getUserId().hashCode());
         hashCode = prime * hashCode + ((getNumResults() == null) ? 0 : getNumResults().hashCode());
         hashCode = prime * hashCode + ((getContext() == null) ? 0 : getContext().hashCode());
+        hashCode = prime * hashCode + ((getFilterArn() == null) ? 0 : getFilterArn().hashCode());
         return hashCode;
     }
 

@@ -17,14 +17,58 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A complex type that describes the Amazon S3 bucket, HTTP server (for example, a web server), Amazon MediaStore, or
- * other server from which CloudFront gets your files. This can also be an origin group, if you've created an origin
- * group. You must specify at least one origin or origin group.
+ * An origin.
  * </p>
  * <p>
- * For the current limit on the number of origins or origin groups that you can specify for a distribution, see <a
- * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_cloudfront">Amazon CloudFront
- * Limits</a> in the <i>AWS General Reference</i>.
+ * An origin is the location where content is stored, and from which CloudFront gets content to serve to viewers. To
+ * specify an origin:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * Use the <code>S3OriginConfig</code> type to specify an Amazon S3 bucket that is <i> <b>not</b> </i> configured with
+ * static website hosting.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Use the <code>CustomOriginConfig</code> type to specify various other kinds of content containers or HTTP servers,
+ * including:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * An Amazon S3 bucket that is configured with static website hosting
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * An Elastic Load Balancing load balancer
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * An AWS Elemental MediaPackage origin
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * An AWS Elemental MediaStore container
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Any other HTTP server, running on an Amazon EC2 instance or any other kind of host
+ * </p>
+ * </li>
+ * </ul>
+ * </li>
+ * </ul>
+ * <p>
+ * For the current maximum number of origins that you can specify per distribution, see <a href=
+ * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html#limits-web-distributions"
+ * >General Quotas on Web Distributions</a> in the <i>Amazon CloudFront Developer Guide</i> (quotas were formerly
+ * referred to as limits).
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/Origin" target="_top">AWS API
@@ -35,161 +79,103 @@ public class Origin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unique identifier for the origin or origin group. The value of <code>Id</code> must be unique within the
-     * distribution.
+     * A unique identifier for the origin. This value must be unique within the distribution.
      * </p>
      * <p>
-     * When you specify the value of <code>TargetOriginId</code> for the default cache behavior or for another cache
-     * behavior, you indicate the origin to which you want the cache behavior to route requests by specifying the value
-     * of the <code>Id</code> element for that origin. When a request matches the path pattern for that cache behavior,
-     * CloudFront routes the request to the specified origin. For more information, see <a href=
-     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior"
-     * >Cache Behavior Settings</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * Use this value to specify the <code>TargetOriginId</code> in a <a>CacheBehavior</a> or
+     * <a>DefaultCacheBehavior</a>.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * <b>Amazon S3 origins</b>: The DNS name of the Amazon S3 bucket from which you want CloudFront to get objects for
-     * this origin, for example, <code>myawsbucket.s3.amazonaws.com</code>. If you set up your bucket to be configured
-     * as a website endpoint, enter the Amazon S3 static website hosting endpoint for the bucket.
+     * The domain name for the origin.
      * </p>
      * <p>
-     * For more information about specifying this value for different types of origins, see <a href=
+     * For more information, see <a href=
      * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName"
      * >Origin Domain Name</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
-     * <p>
-     * Constraints for Amazon S3 origins:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * If you configured Amazon S3 Transfer Acceleration for your bucket, don't specify the <code>s3-accelerate</code>
-     * endpoint for <code>DomainName</code>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * The bucket name must be between 3 and 63 characters long (inclusive).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * The bucket name must contain only lowercase characters, numbers, periods, underscores, and dashes.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * The bucket name must not contain adjacent periods.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * <b>Custom Origins</b>: The DNS domain name for the HTTP server from which you want CloudFront to get objects for
-     * this origin, for example, <code>www.example.com</code>.
-     * </p>
-     * <p>
-     * Constraints for custom origins:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>DomainName</code> must be a valid DNS name that contains only a-z, A-Z, 0-9, dot (.), hyphen (-), or
-     * underscore (_) characters.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * The name cannot exceed 128 characters.
-     * </p>
-     * </li>
-     * </ul>
      */
     private String domainName;
     /**
      * <p>
-     * An optional element that causes CloudFront to request your content from a directory in your Amazon S3 bucket or
-     * your custom origin. When you include the <code>OriginPath</code> element, specify the directory name, beginning
-     * with a <code>/</code>. CloudFront appends the directory name to the value of <code>DomainName</code>, for
-     * example, <code>example.com/production</code>. Do not include a <code>/</code> at the end of the directory name.
+     * An optional path that CloudFront appends to the origin domain name when CloudFront requests content from the
+     * origin.
      * </p>
      * <p>
-     * For example, suppose you've specified the following values for your distribution:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>DomainName</code>: An Amazon S3 bucket named <code>myawsbucket</code>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>OriginPath</code>: <code>/production</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>CNAME</code>: <code>example.com</code>
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * When a user enters <code>example.com/index.html</code> in a browser, CloudFront sends a request to Amazon S3 for
-     * <code>myawsbucket/production/index.html</code>.
-     * </p>
-     * <p>
-     * When a user enters <code>example.com/acme/index.html</code> in a browser, CloudFront sends a request to Amazon S3
-     * for <code>myawsbucket/production/acme/index.html</code>.
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginPath"
+     * >Origin Path</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      */
     private String originPath;
     /**
      * <p>
-     * A complex type that contains names and values for the custom headers that you want.
+     * A list of HTTP header names and values that CloudFront adds to requests it sends to the origin.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/add-origin-custom-headers.html">Adding
+     * Custom Headers to Origin Requests</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      */
     private CustomHeaders customHeaders;
     /**
      * <p>
-     * A complex type that contains information about the Amazon S3 origin. If the origin is a custom origin, use the
-     * <code>CustomOriginConfig</code> element instead.
+     * Use this type to specify an origin that is an Amazon S3 bucket that is <i> <b>not</b> </i> configured with static
+     * website hosting. To specify any other type of origin, including an Amazon S3 bucket that is configured with
+     * static website hosting, use the <code>CustomOriginConfig</code> type instead.
      * </p>
      */
     private S3OriginConfig s3OriginConfig;
     /**
      * <p>
-     * A complex type that contains information about a custom origin. If the origin is an Amazon S3 bucket, use the
-     * <code>S3OriginConfig</code> element instead.
+     * Use this type to specify an origin that is a content container or HTTP server, including an Amazon S3 bucket that
+     * is configured with static website hosting. To specify an Amazon S3 bucket that is <i> <b>not</b> </i> configured
+     * with static website hosting, use the <code>S3OriginConfig</code> type instead.
      * </p>
      */
     private CustomOriginConfig customOriginConfig;
+    /**
+     * <p>
+     * The number of times that CloudFront attempts to connect to the origin. The minimum number is 1, the maximum is 3,
+     * and the default (if you don’t specify otherwise) is 3.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#origin-connection-attempts"
+     * >Origin Connection Attempts</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     */
+    private Integer connectionAttempts;
+    /**
+     * <p>
+     * The number of seconds that CloudFront waits when trying to establish a connection to the origin. The minimum
+     * timeout is 1 second, the maximum is 10 seconds, and the default (if you don’t specify otherwise) is 10 seconds.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#origin-connection-timeout"
+     * >Origin Connection Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     */
+    private Integer connectionTimeout;
 
     /**
      * <p>
-     * A unique identifier for the origin or origin group. The value of <code>Id</code> must be unique within the
-     * distribution.
+     * A unique identifier for the origin. This value must be unique within the distribution.
      * </p>
      * <p>
-     * When you specify the value of <code>TargetOriginId</code> for the default cache behavior or for another cache
-     * behavior, you indicate the origin to which you want the cache behavior to route requests by specifying the value
-     * of the <code>Id</code> element for that origin. When a request matches the path pattern for that cache behavior,
-     * CloudFront routes the request to the specified origin. For more information, see <a href=
-     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior"
-     * >Cache Behavior Settings</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * Use this value to specify the <code>TargetOriginId</code> in a <a>CacheBehavior</a> or
+     * <a>DefaultCacheBehavior</a>.
      * </p>
      * 
      * @param id
-     *        A unique identifier for the origin or origin group. The value of <code>Id</code> must be unique within the
-     *        distribution.</p>
+     *        A unique identifier for the origin. This value must be unique within the distribution.</p>
      *        <p>
-     *        When you specify the value of <code>TargetOriginId</code> for the default cache behavior or for another
-     *        cache behavior, you indicate the origin to which you want the cache behavior to route requests by
-     *        specifying the value of the <code>Id</code> element for that origin. When a request matches the path
-     *        pattern for that cache behavior, CloudFront routes the request to the specified origin. For more
-     *        information, see <a href=
-     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior"
-     *        >Cache Behavior Settings</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     *        Use this value to specify the <code>TargetOriginId</code> in a <a>CacheBehavior</a> or
+     *        <a>DefaultCacheBehavior</a>.
      */
 
     public void setId(String id) {
@@ -198,28 +184,17 @@ public class Origin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unique identifier for the origin or origin group. The value of <code>Id</code> must be unique within the
-     * distribution.
+     * A unique identifier for the origin. This value must be unique within the distribution.
      * </p>
      * <p>
-     * When you specify the value of <code>TargetOriginId</code> for the default cache behavior or for another cache
-     * behavior, you indicate the origin to which you want the cache behavior to route requests by specifying the value
-     * of the <code>Id</code> element for that origin. When a request matches the path pattern for that cache behavior,
-     * CloudFront routes the request to the specified origin. For more information, see <a href=
-     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior"
-     * >Cache Behavior Settings</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * Use this value to specify the <code>TargetOriginId</code> in a <a>CacheBehavior</a> or
+     * <a>DefaultCacheBehavior</a>.
      * </p>
      * 
-     * @return A unique identifier for the origin or origin group. The value of <code>Id</code> must be unique within
-     *         the distribution.</p>
+     * @return A unique identifier for the origin. This value must be unique within the distribution.</p>
      *         <p>
-     *         When you specify the value of <code>TargetOriginId</code> for the default cache behavior or for another
-     *         cache behavior, you indicate the origin to which you want the cache behavior to route requests by
-     *         specifying the value of the <code>Id</code> element for that origin. When a request matches the path
-     *         pattern for that cache behavior, CloudFront routes the request to the specified origin. For more
-     *         information, see <a href=
-     *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior"
-     *         >Cache Behavior Settings</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     *         Use this value to specify the <code>TargetOriginId</code> in a <a>CacheBehavior</a> or
+     *         <a>DefaultCacheBehavior</a>.
      */
 
     public String getId() {
@@ -228,29 +203,18 @@ public class Origin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unique identifier for the origin or origin group. The value of <code>Id</code> must be unique within the
-     * distribution.
+     * A unique identifier for the origin. This value must be unique within the distribution.
      * </p>
      * <p>
-     * When you specify the value of <code>TargetOriginId</code> for the default cache behavior or for another cache
-     * behavior, you indicate the origin to which you want the cache behavior to route requests by specifying the value
-     * of the <code>Id</code> element for that origin. When a request matches the path pattern for that cache behavior,
-     * CloudFront routes the request to the specified origin. For more information, see <a href=
-     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior"
-     * >Cache Behavior Settings</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * Use this value to specify the <code>TargetOriginId</code> in a <a>CacheBehavior</a> or
+     * <a>DefaultCacheBehavior</a>.
      * </p>
      * 
      * @param id
-     *        A unique identifier for the origin or origin group. The value of <code>Id</code> must be unique within the
-     *        distribution.</p>
+     *        A unique identifier for the origin. This value must be unique within the distribution.</p>
      *        <p>
-     *        When you specify the value of <code>TargetOriginId</code> for the default cache behavior or for another
-     *        cache behavior, you indicate the origin to which you want the cache behavior to route requests by
-     *        specifying the value of the <code>Id</code> element for that origin. When a request matches the path
-     *        pattern for that cache behavior, CloudFront routes the request to the specified origin. For more
-     *        information, see <a href=
-     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior"
-     *        >Cache Behavior Settings</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     *        Use this value to specify the <code>TargetOriginId</code> in a <a>CacheBehavior</a> or
+     *        <a>DefaultCacheBehavior</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -261,117 +225,20 @@ public class Origin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>Amazon S3 origins</b>: The DNS name of the Amazon S3 bucket from which you want CloudFront to get objects for
-     * this origin, for example, <code>myawsbucket.s3.amazonaws.com</code>. If you set up your bucket to be configured
-     * as a website endpoint, enter the Amazon S3 static website hosting endpoint for the bucket.
+     * The domain name for the origin.
      * </p>
      * <p>
-     * For more information about specifying this value for different types of origins, see <a href=
+     * For more information, see <a href=
      * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName"
      * >Origin Domain Name</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
-     * <p>
-     * Constraints for Amazon S3 origins:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * If you configured Amazon S3 Transfer Acceleration for your bucket, don't specify the <code>s3-accelerate</code>
-     * endpoint for <code>DomainName</code>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * The bucket name must be between 3 and 63 characters long (inclusive).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * The bucket name must contain only lowercase characters, numbers, periods, underscores, and dashes.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * The bucket name must not contain adjacent periods.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * <b>Custom Origins</b>: The DNS domain name for the HTTP server from which you want CloudFront to get objects for
-     * this origin, for example, <code>www.example.com</code>.
-     * </p>
-     * <p>
-     * Constraints for custom origins:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>DomainName</code> must be a valid DNS name that contains only a-z, A-Z, 0-9, dot (.), hyphen (-), or
-     * underscore (_) characters.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * The name cannot exceed 128 characters.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param domainName
-     *        <b>Amazon S3 origins</b>: The DNS name of the Amazon S3 bucket from which you want CloudFront to get
-     *        objects for this origin, for example, <code>myawsbucket.s3.amazonaws.com</code>. If you set up your bucket
-     *        to be configured as a website endpoint, enter the Amazon S3 static website hosting endpoint for the
-     *        bucket.</p>
+     *        The domain name for the origin.</p>
      *        <p>
-     *        For more information about specifying this value for different types of origins, see <a href=
+     *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName"
      *        >Origin Domain Name</a> in the <i>Amazon CloudFront Developer Guide</i>.
-     *        </p>
-     *        <p>
-     *        Constraints for Amazon S3 origins:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        If you configured Amazon S3 Transfer Acceleration for your bucket, don't specify the
-     *        <code>s3-accelerate</code> endpoint for <code>DomainName</code>.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        The bucket name must be between 3 and 63 characters long (inclusive).
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        The bucket name must contain only lowercase characters, numbers, periods, underscores, and dashes.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        The bucket name must not contain adjacent periods.
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        <b>Custom Origins</b>: The DNS domain name for the HTTP server from which you want CloudFront to get
-     *        objects for this origin, for example, <code>www.example.com</code>.
-     *        </p>
-     *        <p>
-     *        Constraints for custom origins:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>DomainName</code> must be a valid DNS name that contains only a-z, A-Z, 0-9, dot (.), hyphen (-), or
-     *        underscore (_) characters.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        The name cannot exceed 128 characters.
-     *        </p>
-     *        </li>
      */
 
     public void setDomainName(String domainName) {
@@ -380,116 +247,19 @@ public class Origin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>Amazon S3 origins</b>: The DNS name of the Amazon S3 bucket from which you want CloudFront to get objects for
-     * this origin, for example, <code>myawsbucket.s3.amazonaws.com</code>. If you set up your bucket to be configured
-     * as a website endpoint, enter the Amazon S3 static website hosting endpoint for the bucket.
+     * The domain name for the origin.
      * </p>
      * <p>
-     * For more information about specifying this value for different types of origins, see <a href=
+     * For more information, see <a href=
      * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName"
      * >Origin Domain Name</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
-     * <p>
-     * Constraints for Amazon S3 origins:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * If you configured Amazon S3 Transfer Acceleration for your bucket, don't specify the <code>s3-accelerate</code>
-     * endpoint for <code>DomainName</code>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * The bucket name must be between 3 and 63 characters long (inclusive).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * The bucket name must contain only lowercase characters, numbers, periods, underscores, and dashes.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * The bucket name must not contain adjacent periods.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * <b>Custom Origins</b>: The DNS domain name for the HTTP server from which you want CloudFront to get objects for
-     * this origin, for example, <code>www.example.com</code>.
-     * </p>
-     * <p>
-     * Constraints for custom origins:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>DomainName</code> must be a valid DNS name that contains only a-z, A-Z, 0-9, dot (.), hyphen (-), or
-     * underscore (_) characters.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * The name cannot exceed 128 characters.
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return <b>Amazon S3 origins</b>: The DNS name of the Amazon S3 bucket from which you want CloudFront to get
-     *         objects for this origin, for example, <code>myawsbucket.s3.amazonaws.com</code>. If you set up your
-     *         bucket to be configured as a website endpoint, enter the Amazon S3 static website hosting endpoint for
-     *         the bucket.</p>
+     * @return The domain name for the origin.</p>
      *         <p>
-     *         For more information about specifying this value for different types of origins, see <a href=
+     *         For more information, see <a href=
      *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName"
      *         >Origin Domain Name</a> in the <i>Amazon CloudFront Developer Guide</i>.
-     *         </p>
-     *         <p>
-     *         Constraints for Amazon S3 origins:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         If you configured Amazon S3 Transfer Acceleration for your bucket, don't specify the
-     *         <code>s3-accelerate</code> endpoint for <code>DomainName</code>.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         The bucket name must be between 3 and 63 characters long (inclusive).
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         The bucket name must contain only lowercase characters, numbers, periods, underscores, and dashes.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         The bucket name must not contain adjacent periods.
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         <b>Custom Origins</b>: The DNS domain name for the HTTP server from which you want CloudFront to get
-     *         objects for this origin, for example, <code>www.example.com</code>.
-     *         </p>
-     *         <p>
-     *         Constraints for custom origins:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>DomainName</code> must be a valid DNS name that contains only a-z, A-Z, 0-9, dot (.), hyphen (-),
-     *         or underscore (_) characters.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         The name cannot exceed 128 characters.
-     *         </p>
-     *         </li>
      */
 
     public String getDomainName() {
@@ -498,117 +268,20 @@ public class Origin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>Amazon S3 origins</b>: The DNS name of the Amazon S3 bucket from which you want CloudFront to get objects for
-     * this origin, for example, <code>myawsbucket.s3.amazonaws.com</code>. If you set up your bucket to be configured
-     * as a website endpoint, enter the Amazon S3 static website hosting endpoint for the bucket.
+     * The domain name for the origin.
      * </p>
      * <p>
-     * For more information about specifying this value for different types of origins, see <a href=
+     * For more information, see <a href=
      * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName"
      * >Origin Domain Name</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
-     * <p>
-     * Constraints for Amazon S3 origins:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * If you configured Amazon S3 Transfer Acceleration for your bucket, don't specify the <code>s3-accelerate</code>
-     * endpoint for <code>DomainName</code>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * The bucket name must be between 3 and 63 characters long (inclusive).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * The bucket name must contain only lowercase characters, numbers, periods, underscores, and dashes.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * The bucket name must not contain adjacent periods.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * <b>Custom Origins</b>: The DNS domain name for the HTTP server from which you want CloudFront to get objects for
-     * this origin, for example, <code>www.example.com</code>.
-     * </p>
-     * <p>
-     * Constraints for custom origins:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>DomainName</code> must be a valid DNS name that contains only a-z, A-Z, 0-9, dot (.), hyphen (-), or
-     * underscore (_) characters.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * The name cannot exceed 128 characters.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param domainName
-     *        <b>Amazon S3 origins</b>: The DNS name of the Amazon S3 bucket from which you want CloudFront to get
-     *        objects for this origin, for example, <code>myawsbucket.s3.amazonaws.com</code>. If you set up your bucket
-     *        to be configured as a website endpoint, enter the Amazon S3 static website hosting endpoint for the
-     *        bucket.</p>
+     *        The domain name for the origin.</p>
      *        <p>
-     *        For more information about specifying this value for different types of origins, see <a href=
+     *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName"
      *        >Origin Domain Name</a> in the <i>Amazon CloudFront Developer Guide</i>.
-     *        </p>
-     *        <p>
-     *        Constraints for Amazon S3 origins:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        If you configured Amazon S3 Transfer Acceleration for your bucket, don't specify the
-     *        <code>s3-accelerate</code> endpoint for <code>DomainName</code>.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        The bucket name must be between 3 and 63 characters long (inclusive).
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        The bucket name must contain only lowercase characters, numbers, periods, underscores, and dashes.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        The bucket name must not contain adjacent periods.
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        <b>Custom Origins</b>: The DNS domain name for the HTTP server from which you want CloudFront to get
-     *        objects for this origin, for example, <code>www.example.com</code>.
-     *        </p>
-     *        <p>
-     *        Constraints for custom origins:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>DomainName</code> must be a valid DNS name that contains only a-z, A-Z, 0-9, dot (.), hyphen (-), or
-     *        underscore (_) characters.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        The name cannot exceed 128 characters.
-     *        </p>
-     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -619,73 +292,22 @@ public class Origin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An optional element that causes CloudFront to request your content from a directory in your Amazon S3 bucket or
-     * your custom origin. When you include the <code>OriginPath</code> element, specify the directory name, beginning
-     * with a <code>/</code>. CloudFront appends the directory name to the value of <code>DomainName</code>, for
-     * example, <code>example.com/production</code>. Do not include a <code>/</code> at the end of the directory name.
+     * An optional path that CloudFront appends to the origin domain name when CloudFront requests content from the
+     * origin.
      * </p>
      * <p>
-     * For example, suppose you've specified the following values for your distribution:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>DomainName</code>: An Amazon S3 bucket named <code>myawsbucket</code>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>OriginPath</code>: <code>/production</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>CNAME</code>: <code>example.com</code>
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * When a user enters <code>example.com/index.html</code> in a browser, CloudFront sends a request to Amazon S3 for
-     * <code>myawsbucket/production/index.html</code>.
-     * </p>
-     * <p>
-     * When a user enters <code>example.com/acme/index.html</code> in a browser, CloudFront sends a request to Amazon S3
-     * for <code>myawsbucket/production/acme/index.html</code>.
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginPath"
+     * >Origin Path</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
      * @param originPath
-     *        An optional element that causes CloudFront to request your content from a directory in your Amazon S3
-     *        bucket or your custom origin. When you include the <code>OriginPath</code> element, specify the directory
-     *        name, beginning with a <code>/</code>. CloudFront appends the directory name to the value of
-     *        <code>DomainName</code>, for example, <code>example.com/production</code>. Do not include a <code>/</code>
-     *        at the end of the directory name.</p>
+     *        An optional path that CloudFront appends to the origin domain name when CloudFront requests content from
+     *        the origin.</p>
      *        <p>
-     *        For example, suppose you've specified the following values for your distribution:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>DomainName</code>: An Amazon S3 bucket named <code>myawsbucket</code>.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>OriginPath</code>: <code>/production</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>CNAME</code>: <code>example.com</code>
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        When a user enters <code>example.com/index.html</code> in a browser, CloudFront sends a request to Amazon
-     *        S3 for <code>myawsbucket/production/index.html</code>.
-     *        </p>
-     *        <p>
-     *        When a user enters <code>example.com/acme/index.html</code> in a browser, CloudFront sends a request to
-     *        Amazon S3 for <code>myawsbucket/production/acme/index.html</code>.
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginPath"
+     *        >Origin Path</a> in the <i>Amazon CloudFront Developer Guide</i>.
      */
 
     public void setOriginPath(String originPath) {
@@ -694,72 +316,21 @@ public class Origin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An optional element that causes CloudFront to request your content from a directory in your Amazon S3 bucket or
-     * your custom origin. When you include the <code>OriginPath</code> element, specify the directory name, beginning
-     * with a <code>/</code>. CloudFront appends the directory name to the value of <code>DomainName</code>, for
-     * example, <code>example.com/production</code>. Do not include a <code>/</code> at the end of the directory name.
+     * An optional path that CloudFront appends to the origin domain name when CloudFront requests content from the
+     * origin.
      * </p>
      * <p>
-     * For example, suppose you've specified the following values for your distribution:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>DomainName</code>: An Amazon S3 bucket named <code>myawsbucket</code>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>OriginPath</code>: <code>/production</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>CNAME</code>: <code>example.com</code>
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * When a user enters <code>example.com/index.html</code> in a browser, CloudFront sends a request to Amazon S3 for
-     * <code>myawsbucket/production/index.html</code>.
-     * </p>
-     * <p>
-     * When a user enters <code>example.com/acme/index.html</code> in a browser, CloudFront sends a request to Amazon S3
-     * for <code>myawsbucket/production/acme/index.html</code>.
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginPath"
+     * >Origin Path</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
-     * @return An optional element that causes CloudFront to request your content from a directory in your Amazon S3
-     *         bucket or your custom origin. When you include the <code>OriginPath</code> element, specify the directory
-     *         name, beginning with a <code>/</code>. CloudFront appends the directory name to the value of
-     *         <code>DomainName</code>, for example, <code>example.com/production</code>. Do not include a
-     *         <code>/</code> at the end of the directory name.</p>
+     * @return An optional path that CloudFront appends to the origin domain name when CloudFront requests content from
+     *         the origin.</p>
      *         <p>
-     *         For example, suppose you've specified the following values for your distribution:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>DomainName</code>: An Amazon S3 bucket named <code>myawsbucket</code>.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>OriginPath</code>: <code>/production</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>CNAME</code>: <code>example.com</code>
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         When a user enters <code>example.com/index.html</code> in a browser, CloudFront sends a request to Amazon
-     *         S3 for <code>myawsbucket/production/index.html</code>.
-     *         </p>
-     *         <p>
-     *         When a user enters <code>example.com/acme/index.html</code> in a browser, CloudFront sends a request to
-     *         Amazon S3 for <code>myawsbucket/production/acme/index.html</code>.
+     *         For more information, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginPath"
+     *         >Origin Path</a> in the <i>Amazon CloudFront Developer Guide</i>.
      */
 
     public String getOriginPath() {
@@ -768,73 +339,22 @@ public class Origin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An optional element that causes CloudFront to request your content from a directory in your Amazon S3 bucket or
-     * your custom origin. When you include the <code>OriginPath</code> element, specify the directory name, beginning
-     * with a <code>/</code>. CloudFront appends the directory name to the value of <code>DomainName</code>, for
-     * example, <code>example.com/production</code>. Do not include a <code>/</code> at the end of the directory name.
+     * An optional path that CloudFront appends to the origin domain name when CloudFront requests content from the
+     * origin.
      * </p>
      * <p>
-     * For example, suppose you've specified the following values for your distribution:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>DomainName</code>: An Amazon S3 bucket named <code>myawsbucket</code>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>OriginPath</code>: <code>/production</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>CNAME</code>: <code>example.com</code>
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * When a user enters <code>example.com/index.html</code> in a browser, CloudFront sends a request to Amazon S3 for
-     * <code>myawsbucket/production/index.html</code>.
-     * </p>
-     * <p>
-     * When a user enters <code>example.com/acme/index.html</code> in a browser, CloudFront sends a request to Amazon S3
-     * for <code>myawsbucket/production/acme/index.html</code>.
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginPath"
+     * >Origin Path</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
      * @param originPath
-     *        An optional element that causes CloudFront to request your content from a directory in your Amazon S3
-     *        bucket or your custom origin. When you include the <code>OriginPath</code> element, specify the directory
-     *        name, beginning with a <code>/</code>. CloudFront appends the directory name to the value of
-     *        <code>DomainName</code>, for example, <code>example.com/production</code>. Do not include a <code>/</code>
-     *        at the end of the directory name.</p>
+     *        An optional path that CloudFront appends to the origin domain name when CloudFront requests content from
+     *        the origin.</p>
      *        <p>
-     *        For example, suppose you've specified the following values for your distribution:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>DomainName</code>: An Amazon S3 bucket named <code>myawsbucket</code>.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>OriginPath</code>: <code>/production</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>CNAME</code>: <code>example.com</code>
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        When a user enters <code>example.com/index.html</code> in a browser, CloudFront sends a request to Amazon
-     *        S3 for <code>myawsbucket/production/index.html</code>.
-     *        </p>
-     *        <p>
-     *        When a user enters <code>example.com/acme/index.html</code> in a browser, CloudFront sends a request to
-     *        Amazon S3 for <code>myawsbucket/production/acme/index.html</code>.
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginPath"
+     *        >Origin Path</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -845,11 +365,20 @@ public class Origin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains names and values for the custom headers that you want.
+     * A list of HTTP header names and values that CloudFront adds to requests it sends to the origin.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/add-origin-custom-headers.html">Adding
+     * Custom Headers to Origin Requests</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
      * @param customHeaders
-     *        A complex type that contains names and values for the custom headers that you want.
+     *        A list of HTTP header names and values that CloudFront adds to requests it sends to the origin.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/add-origin-custom-headers.html"
+     *        >Adding Custom Headers to Origin Requests</a> in the <i>Amazon CloudFront Developer Guide</i>.
      */
 
     public void setCustomHeaders(CustomHeaders customHeaders) {
@@ -858,10 +387,19 @@ public class Origin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains names and values for the custom headers that you want.
+     * A list of HTTP header names and values that CloudFront adds to requests it sends to the origin.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/add-origin-custom-headers.html">Adding
+     * Custom Headers to Origin Requests</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
-     * @return A complex type that contains names and values for the custom headers that you want.
+     * @return A list of HTTP header names and values that CloudFront adds to requests it sends to the origin.</p>
+     *         <p>
+     *         For more information, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/add-origin-custom-headers.html"
+     *         >Adding Custom Headers to Origin Requests</a> in the <i>Amazon CloudFront Developer Guide</i>.
      */
 
     public CustomHeaders getCustomHeaders() {
@@ -870,11 +408,20 @@ public class Origin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains names and values for the custom headers that you want.
+     * A list of HTTP header names and values that CloudFront adds to requests it sends to the origin.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/add-origin-custom-headers.html">Adding
+     * Custom Headers to Origin Requests</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
      * @param customHeaders
-     *        A complex type that contains names and values for the custom headers that you want.
+     *        A list of HTTP header names and values that CloudFront adds to requests it sends to the origin.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/add-origin-custom-headers.html"
+     *        >Adding Custom Headers to Origin Requests</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -885,13 +432,15 @@ public class Origin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains information about the Amazon S3 origin. If the origin is a custom origin, use the
-     * <code>CustomOriginConfig</code> element instead.
+     * Use this type to specify an origin that is an Amazon S3 bucket that is <i> <b>not</b> </i> configured with static
+     * website hosting. To specify any other type of origin, including an Amazon S3 bucket that is configured with
+     * static website hosting, use the <code>CustomOriginConfig</code> type instead.
      * </p>
      * 
      * @param s3OriginConfig
-     *        A complex type that contains information about the Amazon S3 origin. If the origin is a custom origin, use
-     *        the <code>CustomOriginConfig</code> element instead.
+     *        Use this type to specify an origin that is an Amazon S3 bucket that is <i> <b>not</b> </i> configured with
+     *        static website hosting. To specify any other type of origin, including an Amazon S3 bucket that is
+     *        configured with static website hosting, use the <code>CustomOriginConfig</code> type instead.
      */
 
     public void setS3OriginConfig(S3OriginConfig s3OriginConfig) {
@@ -900,12 +449,14 @@ public class Origin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains information about the Amazon S3 origin. If the origin is a custom origin, use the
-     * <code>CustomOriginConfig</code> element instead.
+     * Use this type to specify an origin that is an Amazon S3 bucket that is <i> <b>not</b> </i> configured with static
+     * website hosting. To specify any other type of origin, including an Amazon S3 bucket that is configured with
+     * static website hosting, use the <code>CustomOriginConfig</code> type instead.
      * </p>
      * 
-     * @return A complex type that contains information about the Amazon S3 origin. If the origin is a custom origin,
-     *         use the <code>CustomOriginConfig</code> element instead.
+     * @return Use this type to specify an origin that is an Amazon S3 bucket that is <i> <b>not</b> </i> configured
+     *         with static website hosting. To specify any other type of origin, including an Amazon S3 bucket that is
+     *         configured with static website hosting, use the <code>CustomOriginConfig</code> type instead.
      */
 
     public S3OriginConfig getS3OriginConfig() {
@@ -914,13 +465,15 @@ public class Origin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains information about the Amazon S3 origin. If the origin is a custom origin, use the
-     * <code>CustomOriginConfig</code> element instead.
+     * Use this type to specify an origin that is an Amazon S3 bucket that is <i> <b>not</b> </i> configured with static
+     * website hosting. To specify any other type of origin, including an Amazon S3 bucket that is configured with
+     * static website hosting, use the <code>CustomOriginConfig</code> type instead.
      * </p>
      * 
      * @param s3OriginConfig
-     *        A complex type that contains information about the Amazon S3 origin. If the origin is a custom origin, use
-     *        the <code>CustomOriginConfig</code> element instead.
+     *        Use this type to specify an origin that is an Amazon S3 bucket that is <i> <b>not</b> </i> configured with
+     *        static website hosting. To specify any other type of origin, including an Amazon S3 bucket that is
+     *        configured with static website hosting, use the <code>CustomOriginConfig</code> type instead.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -931,13 +484,15 @@ public class Origin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains information about a custom origin. If the origin is an Amazon S3 bucket, use the
-     * <code>S3OriginConfig</code> element instead.
+     * Use this type to specify an origin that is a content container or HTTP server, including an Amazon S3 bucket that
+     * is configured with static website hosting. To specify an Amazon S3 bucket that is <i> <b>not</b> </i> configured
+     * with static website hosting, use the <code>S3OriginConfig</code> type instead.
      * </p>
      * 
      * @param customOriginConfig
-     *        A complex type that contains information about a custom origin. If the origin is an Amazon S3 bucket, use
-     *        the <code>S3OriginConfig</code> element instead.
+     *        Use this type to specify an origin that is a content container or HTTP server, including an Amazon S3
+     *        bucket that is configured with static website hosting. To specify an Amazon S3 bucket that is <i>
+     *        <b>not</b> </i> configured with static website hosting, use the <code>S3OriginConfig</code> type instead.
      */
 
     public void setCustomOriginConfig(CustomOriginConfig customOriginConfig) {
@@ -946,12 +501,14 @@ public class Origin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains information about a custom origin. If the origin is an Amazon S3 bucket, use the
-     * <code>S3OriginConfig</code> element instead.
+     * Use this type to specify an origin that is a content container or HTTP server, including an Amazon S3 bucket that
+     * is configured with static website hosting. To specify an Amazon S3 bucket that is <i> <b>not</b> </i> configured
+     * with static website hosting, use the <code>S3OriginConfig</code> type instead.
      * </p>
      * 
-     * @return A complex type that contains information about a custom origin. If the origin is an Amazon S3 bucket, use
-     *         the <code>S3OriginConfig</code> element instead.
+     * @return Use this type to specify an origin that is a content container or HTTP server, including an Amazon S3
+     *         bucket that is configured with static website hosting. To specify an Amazon S3 bucket that is <i>
+     *         <b>not</b> </i> configured with static website hosting, use the <code>S3OriginConfig</code> type instead.
      */
 
     public CustomOriginConfig getCustomOriginConfig() {
@@ -960,18 +517,169 @@ public class Origin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains information about a custom origin. If the origin is an Amazon S3 bucket, use the
-     * <code>S3OriginConfig</code> element instead.
+     * Use this type to specify an origin that is a content container or HTTP server, including an Amazon S3 bucket that
+     * is configured with static website hosting. To specify an Amazon S3 bucket that is <i> <b>not</b> </i> configured
+     * with static website hosting, use the <code>S3OriginConfig</code> type instead.
      * </p>
      * 
      * @param customOriginConfig
-     *        A complex type that contains information about a custom origin. If the origin is an Amazon S3 bucket, use
-     *        the <code>S3OriginConfig</code> element instead.
+     *        Use this type to specify an origin that is a content container or HTTP server, including an Amazon S3
+     *        bucket that is configured with static website hosting. To specify an Amazon S3 bucket that is <i>
+     *        <b>not</b> </i> configured with static website hosting, use the <code>S3OriginConfig</code> type instead.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Origin withCustomOriginConfig(CustomOriginConfig customOriginConfig) {
         setCustomOriginConfig(customOriginConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of times that CloudFront attempts to connect to the origin. The minimum number is 1, the maximum is 3,
+     * and the default (if you don’t specify otherwise) is 3.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#origin-connection-attempts"
+     * >Origin Connection Attempts</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * 
+     * @param connectionAttempts
+     *        The number of times that CloudFront attempts to connect to the origin. The minimum number is 1, the
+     *        maximum is 3, and the default (if you don’t specify otherwise) is 3.</p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#origin-connection-attempts"
+     *        >Origin Connection Attempts</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     */
+
+    public void setConnectionAttempts(Integer connectionAttempts) {
+        this.connectionAttempts = connectionAttempts;
+    }
+
+    /**
+     * <p>
+     * The number of times that CloudFront attempts to connect to the origin. The minimum number is 1, the maximum is 3,
+     * and the default (if you don’t specify otherwise) is 3.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#origin-connection-attempts"
+     * >Origin Connection Attempts</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * 
+     * @return The number of times that CloudFront attempts to connect to the origin. The minimum number is 1, the
+     *         maximum is 3, and the default (if you don’t specify otherwise) is 3.</p>
+     *         <p>
+     *         For more information, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#origin-connection-attempts"
+     *         >Origin Connection Attempts</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     */
+
+    public Integer getConnectionAttempts() {
+        return this.connectionAttempts;
+    }
+
+    /**
+     * <p>
+     * The number of times that CloudFront attempts to connect to the origin. The minimum number is 1, the maximum is 3,
+     * and the default (if you don’t specify otherwise) is 3.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#origin-connection-attempts"
+     * >Origin Connection Attempts</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * 
+     * @param connectionAttempts
+     *        The number of times that CloudFront attempts to connect to the origin. The minimum number is 1, the
+     *        maximum is 3, and the default (if you don’t specify otherwise) is 3.</p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#origin-connection-attempts"
+     *        >Origin Connection Attempts</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Origin withConnectionAttempts(Integer connectionAttempts) {
+        setConnectionAttempts(connectionAttempts);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of seconds that CloudFront waits when trying to establish a connection to the origin. The minimum
+     * timeout is 1 second, the maximum is 10 seconds, and the default (if you don’t specify otherwise) is 10 seconds.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#origin-connection-timeout"
+     * >Origin Connection Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * 
+     * @param connectionTimeout
+     *        The number of seconds that CloudFront waits when trying to establish a connection to the origin. The
+     *        minimum timeout is 1 second, the maximum is 10 seconds, and the default (if you don’t specify otherwise)
+     *        is 10 seconds.</p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#origin-connection-timeout"
+     *        >Origin Connection Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     */
+
+    public void setConnectionTimeout(Integer connectionTimeout) {
+        this.connectionTimeout = connectionTimeout;
+    }
+
+    /**
+     * <p>
+     * The number of seconds that CloudFront waits when trying to establish a connection to the origin. The minimum
+     * timeout is 1 second, the maximum is 10 seconds, and the default (if you don’t specify otherwise) is 10 seconds.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#origin-connection-timeout"
+     * >Origin Connection Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * 
+     * @return The number of seconds that CloudFront waits when trying to establish a connection to the origin. The
+     *         minimum timeout is 1 second, the maximum is 10 seconds, and the default (if you don’t specify otherwise)
+     *         is 10 seconds.</p>
+     *         <p>
+     *         For more information, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#origin-connection-timeout"
+     *         >Origin Connection Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     */
+
+    public Integer getConnectionTimeout() {
+        return this.connectionTimeout;
+    }
+
+    /**
+     * <p>
+     * The number of seconds that CloudFront waits when trying to establish a connection to the origin. The minimum
+     * timeout is 1 second, the maximum is 10 seconds, and the default (if you don’t specify otherwise) is 10 seconds.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#origin-connection-timeout"
+     * >Origin Connection Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * 
+     * @param connectionTimeout
+     *        The number of seconds that CloudFront waits when trying to establish a connection to the origin. The
+     *        minimum timeout is 1 second, the maximum is 10 seconds, and the default (if you don’t specify otherwise)
+     *        is 10 seconds.</p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#origin-connection-timeout"
+     *        >Origin Connection Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Origin withConnectionTimeout(Integer connectionTimeout) {
+        setConnectionTimeout(connectionTimeout);
         return this;
     }
 
@@ -998,7 +706,11 @@ public class Origin implements Serializable, Cloneable {
         if (getS3OriginConfig() != null)
             sb.append("S3OriginConfig: ").append(getS3OriginConfig()).append(",");
         if (getCustomOriginConfig() != null)
-            sb.append("CustomOriginConfig: ").append(getCustomOriginConfig());
+            sb.append("CustomOriginConfig: ").append(getCustomOriginConfig()).append(",");
+        if (getConnectionAttempts() != null)
+            sb.append("ConnectionAttempts: ").append(getConnectionAttempts()).append(",");
+        if (getConnectionTimeout() != null)
+            sb.append("ConnectionTimeout: ").append(getConnectionTimeout());
         sb.append("}");
         return sb.toString();
     }
@@ -1037,6 +749,14 @@ public class Origin implements Serializable, Cloneable {
             return false;
         if (other.getCustomOriginConfig() != null && other.getCustomOriginConfig().equals(this.getCustomOriginConfig()) == false)
             return false;
+        if (other.getConnectionAttempts() == null ^ this.getConnectionAttempts() == null)
+            return false;
+        if (other.getConnectionAttempts() != null && other.getConnectionAttempts().equals(this.getConnectionAttempts()) == false)
+            return false;
+        if (other.getConnectionTimeout() == null ^ this.getConnectionTimeout() == null)
+            return false;
+        if (other.getConnectionTimeout() != null && other.getConnectionTimeout().equals(this.getConnectionTimeout()) == false)
+            return false;
         return true;
     }
 
@@ -1051,6 +771,8 @@ public class Origin implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCustomHeaders() == null) ? 0 : getCustomHeaders().hashCode());
         hashCode = prime * hashCode + ((getS3OriginConfig() == null) ? 0 : getS3OriginConfig().hashCode());
         hashCode = prime * hashCode + ((getCustomOriginConfig() == null) ? 0 : getCustomOriginConfig().hashCode());
+        hashCode = prime * hashCode + ((getConnectionAttempts() == null) ? 0 : getConnectionAttempts().hashCode());
+        hashCode = prime * hashCode + ((getConnectionTimeout() == null) ? 0 : getConnectionTimeout().hashCode());
         return hashCode;
     }
 

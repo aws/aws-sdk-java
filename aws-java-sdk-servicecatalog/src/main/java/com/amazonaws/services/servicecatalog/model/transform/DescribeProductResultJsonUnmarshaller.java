@@ -61,6 +61,10 @@ public class DescribeProductResultJsonUnmarshaller implements Unmarshaller<Descr
                     context.nextToken();
                     describeProductResult.setBudgets(new ListUnmarshaller<BudgetDetail>(BudgetDetailJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("LaunchPaths", targetDepth)) {
+                    context.nextToken();
+                    describeProductResult.setLaunchPaths(new ListUnmarshaller<LaunchPath>(LaunchPathJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

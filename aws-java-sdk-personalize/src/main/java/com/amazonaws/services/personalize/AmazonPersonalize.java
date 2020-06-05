@@ -513,6 +513,27 @@ public interface AmazonPersonalize {
 
     /**
      * <p>
+     * Creates a recommendation filter. For more information, see Using Filters with Amazon Personalize.
+     * </p>
+     * 
+     * @param createFilterRequest
+     * @return Result of the CreateFilter operation returned by the service.
+     * @throws InvalidInputException
+     *         Provide a valid value for the field or parameter.
+     * @throws ResourceAlreadyExistsException
+     *         The specified resource already exists.
+     * @throws ResourceNotFoundException
+     *         Could not find the specified resource.
+     * @throws LimitExceededException
+     *         The limit on the number of requests per second has been exceeded.
+     * @sample AmazonPersonalize.CreateFilter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateFilter" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateFilterResult createFilter(CreateFilterRequest createFilterRequest);
+
+    /**
+     * <p>
      * Creates an Amazon Personalize schema from the specified schema string. The schema you create must be in Avro JSON
      * format.
      * </p>
@@ -833,6 +854,23 @@ public interface AmazonPersonalize {
 
     /**
      * <p>
+     * Deletes a filter.
+     * </p>
+     * 
+     * @param deleteFilterRequest
+     * @return Result of the DeleteFilter operation returned by the service.
+     * @throws InvalidInputException
+     *         Provide a valid value for the field or parameter.
+     * @throws ResourceNotFoundException
+     *         Could not find the specified resource.
+     * @sample AmazonPersonalize.DeleteFilter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DeleteFilter" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteFilterResult deleteFilter(DeleteFilterRequest deleteFilterRequest);
+
+    /**
+     * <p>
      * Deletes a schema. Before deleting a schema, you must delete all datasets referencing the schema. For more
      * information on schemas, see <a>CreateSchema</a>.
      * </p>
@@ -1033,6 +1071,23 @@ public interface AmazonPersonalize {
      *      target="_top">AWS API Documentation</a>
      */
     DescribeFeatureTransformationResult describeFeatureTransformation(DescribeFeatureTransformationRequest describeFeatureTransformationRequest);
+
+    /**
+     * <p>
+     * Describes a filter's properties.
+     * </p>
+     * 
+     * @param describeFilterRequest
+     * @return Result of the DescribeFilter operation returned by the service.
+     * @throws InvalidInputException
+     *         Provide a valid value for the field or parameter.
+     * @throws ResourceNotFoundException
+     *         Could not find the specified resource.
+     * @sample AmazonPersonalize.DescribeFilter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeFilter" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeFilterResult describeFilter(DescribeFilterRequest describeFilterRequest);
 
     /**
      * <p>
@@ -1256,6 +1311,23 @@ public interface AmazonPersonalize {
      *      API Documentation</a>
      */
     ListEventTrackersResult listEventTrackers(ListEventTrackersRequest listEventTrackersRequest);
+
+    /**
+     * <p>
+     * Lists all filters that belong to a given dataset group.
+     * </p>
+     * 
+     * @param listFiltersRequest
+     * @return Result of the ListFilters operation returned by the service.
+     * @throws InvalidInputException
+     *         Provide a valid value for the field or parameter.
+     * @throws InvalidNextTokenException
+     *         The token is not valid.
+     * @sample AmazonPersonalize.ListFilters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListFilters" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListFiltersResult listFilters(ListFiltersRequest listFiltersRequest);
 
     /**
      * <p>

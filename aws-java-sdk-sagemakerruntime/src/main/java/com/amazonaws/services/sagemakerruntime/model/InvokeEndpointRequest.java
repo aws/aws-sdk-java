@@ -39,7 +39,7 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * For information about the format of the request body, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats—Inference</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats-Inference</a>.
      * </p>
      */
     private java.nio.ByteBuffer body;
@@ -69,10 +69,18 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     private String customAttributes;
     /**
      * <p>
-     * Specifies the model to be requested for an inference when invoking a multi-model endpoint.
+     * The model to request for inference when invoking a multi-model endpoint.
      * </p>
      */
     private String targetModel;
+    /**
+     * <p>
+     * Specify the production variant to send the inference request to when invoking an endpoint that is running two or
+     * more variants. Note that this parameter overrides the default behavior for the endpoint, which is to distribute
+     * the invocation traffic based on the variant weights.
+     * </p>
+     */
+    private String targetVariant;
 
     /**
      * <p>
@@ -127,7 +135,7 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * For information about the format of the request body, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats—Inference</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats-Inference</a>.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -146,7 +154,7 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <p>
      *        For information about the format of the request body, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data
-     *        Formats—Inference</a>.
+     *        Formats-Inference</a>.
      */
 
     public void setBody(java.nio.ByteBuffer body) {
@@ -160,7 +168,7 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * For information about the format of the request body, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats—Inference</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats-Inference</a>.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -175,7 +183,7 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <p>
      *         For information about the format of the request body, see <a
      *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data
-     *         Formats—Inference</a>.
+     *         Formats-Inference</a>.
      */
 
     public java.nio.ByteBuffer getBody() {
@@ -189,7 +197,7 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * For information about the format of the request body, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats—Inference</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats-Inference</a>.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -208,7 +216,7 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <p>
      *        For information about the format of the request body, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data
-     *        Formats—Inference</a>.
+     *        Formats-Inference</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -375,11 +383,11 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies the model to be requested for an inference when invoking a multi-model endpoint.
+     * The model to request for inference when invoking a multi-model endpoint.
      * </p>
      * 
      * @param targetModel
-     *        Specifies the model to be requested for an inference when invoking a multi-model endpoint.
+     *        The model to request for inference when invoking a multi-model endpoint.
      */
 
     public void setTargetModel(String targetModel) {
@@ -388,10 +396,10 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies the model to be requested for an inference when invoking a multi-model endpoint.
+     * The model to request for inference when invoking a multi-model endpoint.
      * </p>
      * 
-     * @return Specifies the model to be requested for an inference when invoking a multi-model endpoint.
+     * @return The model to request for inference when invoking a multi-model endpoint.
      */
 
     public String getTargetModel() {
@@ -400,16 +408,68 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies the model to be requested for an inference when invoking a multi-model endpoint.
+     * The model to request for inference when invoking a multi-model endpoint.
      * </p>
      * 
      * @param targetModel
-     *        Specifies the model to be requested for an inference when invoking a multi-model endpoint.
+     *        The model to request for inference when invoking a multi-model endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InvokeEndpointRequest withTargetModel(String targetModel) {
         setTargetModel(targetModel);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specify the production variant to send the inference request to when invoking an endpoint that is running two or
+     * more variants. Note that this parameter overrides the default behavior for the endpoint, which is to distribute
+     * the invocation traffic based on the variant weights.
+     * </p>
+     * 
+     * @param targetVariant
+     *        Specify the production variant to send the inference request to when invoking an endpoint that is running
+     *        two or more variants. Note that this parameter overrides the default behavior for the endpoint, which is
+     *        to distribute the invocation traffic based on the variant weights.
+     */
+
+    public void setTargetVariant(String targetVariant) {
+        this.targetVariant = targetVariant;
+    }
+
+    /**
+     * <p>
+     * Specify the production variant to send the inference request to when invoking an endpoint that is running two or
+     * more variants. Note that this parameter overrides the default behavior for the endpoint, which is to distribute
+     * the invocation traffic based on the variant weights.
+     * </p>
+     * 
+     * @return Specify the production variant to send the inference request to when invoking an endpoint that is running
+     *         two or more variants. Note that this parameter overrides the default behavior for the endpoint, which is
+     *         to distribute the invocation traffic based on the variant weights.
+     */
+
+    public String getTargetVariant() {
+        return this.targetVariant;
+    }
+
+    /**
+     * <p>
+     * Specify the production variant to send the inference request to when invoking an endpoint that is running two or
+     * more variants. Note that this parameter overrides the default behavior for the endpoint, which is to distribute
+     * the invocation traffic based on the variant weights.
+     * </p>
+     * 
+     * @param targetVariant
+     *        Specify the production variant to send the inference request to when invoking an endpoint that is running
+     *        two or more variants. Note that this parameter overrides the default behavior for the endpoint, which is
+     *        to distribute the invocation traffic based on the variant weights.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InvokeEndpointRequest withTargetVariant(String targetVariant) {
+        setTargetVariant(targetVariant);
         return this;
     }
 
@@ -436,7 +496,9 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getCustomAttributes() != null)
             sb.append("CustomAttributes: ").append("***Sensitive Data Redacted***").append(",");
         if (getTargetModel() != null)
-            sb.append("TargetModel: ").append(getTargetModel());
+            sb.append("TargetModel: ").append(getTargetModel()).append(",");
+        if (getTargetVariant() != null)
+            sb.append("TargetVariant: ").append(getTargetVariant());
         sb.append("}");
         return sb.toString();
     }
@@ -475,6 +537,10 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getTargetModel() != null && other.getTargetModel().equals(this.getTargetModel()) == false)
             return false;
+        if (other.getTargetVariant() == null ^ this.getTargetVariant() == null)
+            return false;
+        if (other.getTargetVariant() != null && other.getTargetVariant().equals(this.getTargetVariant()) == false)
+            return false;
         return true;
     }
 
@@ -489,6 +555,7 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getAccept() == null) ? 0 : getAccept().hashCode());
         hashCode = prime * hashCode + ((getCustomAttributes() == null) ? 0 : getCustomAttributes().hashCode());
         hashCode = prime * hashCode + ((getTargetModel() == null) ? 0 : getTargetModel().hashCode());
+        hashCode = prime * hashCode + ((getTargetVariant() == null) ? 0 : getTargetVariant().hashCode());
         return hashCode;
     }
 

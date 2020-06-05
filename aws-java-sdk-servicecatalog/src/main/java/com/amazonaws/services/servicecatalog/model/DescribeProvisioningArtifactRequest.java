@@ -62,6 +62,18 @@ public class DescribeProvisioningArtifactRequest extends com.amazonaws.AmazonWeb
     private String productId;
     /**
      * <p>
+     * The provisioning artifact name.
+     * </p>
+     */
+    private String provisioningArtifactName;
+    /**
+     * <p>
+     * The product name.
+     * </p>
+     */
+    private String productName;
+    /**
+     * <p>
      * Indicates whether a verbose level of detail is enabled.
      * </p>
      */
@@ -288,6 +300,86 @@ public class DescribeProvisioningArtifactRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
+     * The provisioning artifact name.
+     * </p>
+     * 
+     * @param provisioningArtifactName
+     *        The provisioning artifact name.
+     */
+
+    public void setProvisioningArtifactName(String provisioningArtifactName) {
+        this.provisioningArtifactName = provisioningArtifactName;
+    }
+
+    /**
+     * <p>
+     * The provisioning artifact name.
+     * </p>
+     * 
+     * @return The provisioning artifact name.
+     */
+
+    public String getProvisioningArtifactName() {
+        return this.provisioningArtifactName;
+    }
+
+    /**
+     * <p>
+     * The provisioning artifact name.
+     * </p>
+     * 
+     * @param provisioningArtifactName
+     *        The provisioning artifact name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeProvisioningArtifactRequest withProvisioningArtifactName(String provisioningArtifactName) {
+        setProvisioningArtifactName(provisioningArtifactName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The product name.
+     * </p>
+     * 
+     * @param productName
+     *        The product name.
+     */
+
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
+
+    /**
+     * <p>
+     * The product name.
+     * </p>
+     * 
+     * @return The product name.
+     */
+
+    public String getProductName() {
+        return this.productName;
+    }
+
+    /**
+     * <p>
+     * The product name.
+     * </p>
+     * 
+     * @param productName
+     *        The product name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeProvisioningArtifactRequest withProductName(String productName) {
+        setProductName(productName);
+        return this;
+    }
+
+    /**
+     * <p>
      * Indicates whether a verbose level of detail is enabled.
      * </p>
      * 
@@ -356,6 +448,10 @@ public class DescribeProvisioningArtifactRequest extends com.amazonaws.AmazonWeb
             sb.append("ProvisioningArtifactId: ").append(getProvisioningArtifactId()).append(",");
         if (getProductId() != null)
             sb.append("ProductId: ").append(getProductId()).append(",");
+        if (getProvisioningArtifactName() != null)
+            sb.append("ProvisioningArtifactName: ").append(getProvisioningArtifactName()).append(",");
+        if (getProductName() != null)
+            sb.append("ProductName: ").append(getProductName()).append(",");
         if (getVerbose() != null)
             sb.append("Verbose: ").append(getVerbose());
         sb.append("}");
@@ -384,6 +480,14 @@ public class DescribeProvisioningArtifactRequest extends com.amazonaws.AmazonWeb
             return false;
         if (other.getProductId() != null && other.getProductId().equals(this.getProductId()) == false)
             return false;
+        if (other.getProvisioningArtifactName() == null ^ this.getProvisioningArtifactName() == null)
+            return false;
+        if (other.getProvisioningArtifactName() != null && other.getProvisioningArtifactName().equals(this.getProvisioningArtifactName()) == false)
+            return false;
+        if (other.getProductName() == null ^ this.getProductName() == null)
+            return false;
+        if (other.getProductName() != null && other.getProductName().equals(this.getProductName()) == false)
+            return false;
         if (other.getVerbose() == null ^ this.getVerbose() == null)
             return false;
         if (other.getVerbose() != null && other.getVerbose().equals(this.getVerbose()) == false)
@@ -399,6 +503,8 @@ public class DescribeProvisioningArtifactRequest extends com.amazonaws.AmazonWeb
         hashCode = prime * hashCode + ((getAcceptLanguage() == null) ? 0 : getAcceptLanguage().hashCode());
         hashCode = prime * hashCode + ((getProvisioningArtifactId() == null) ? 0 : getProvisioningArtifactId().hashCode());
         hashCode = prime * hashCode + ((getProductId() == null) ? 0 : getProductId().hashCode());
+        hashCode = prime * hashCode + ((getProvisioningArtifactName() == null) ? 0 : getProvisioningArtifactName().hashCode());
+        hashCode = prime * hashCode + ((getProductName() == null) ? 0 : getProductName().hashCode());
         hashCode = prime * hashCode + ((getVerbose() == null) ? 0 : getVerbose().hashCode());
         return hashCode;
     }

@@ -17,7 +17,9 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A custom origin or an Amazon S3 bucket configured as a website endpoint.
+ * A custom origin. A custom origin is any origin that is <i>not</i> an Amazon S3 bucket, with one exception. An Amazon
+ * S3 bucket that is <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">configured with
+ * static website hosting</a> <i>is</i> a custom origin.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CustomOriginConfig" target="_top">AWS API
@@ -28,60 +30,86 @@ public class CustomOriginConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The HTTP port the custom origin listens on.
+     * The HTTP port that CloudFront uses to connect to the origin. Specify the HTTP port that the origin listens on.
      * </p>
      */
     private Integer hTTPPort;
     /**
      * <p>
-     * The HTTPS port the custom origin listens on.
+     * The HTTPS port that CloudFront uses to connect to the origin. Specify the HTTPS port that the origin listens on.
      * </p>
      */
     private Integer hTTPSPort;
     /**
      * <p>
-     * The origin protocol policy to apply to your origin.
+     * Specifies the protocol (HTTP or HTTPS) that CloudFront uses to connect to the origin. Valid values are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>http-only</code> – CloudFront always uses HTTP to connect to the origin.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>match-viewer</code> – CloudFront connects to the origin using the same protocol that the viewer used to
+     * connect to CloudFront.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>https-only</code> – CloudFront always uses HTTPS to connect to the origin.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String originProtocolPolicy;
     /**
      * <p>
-     * The SSL/TLS protocols that you want CloudFront to use when communicating with your origin over HTTPS.
+     * Specifies the minimum SSL/TLS protocol that CloudFront uses when connecting to your origin over HTTPS. Valid
+     * values include <code>SSLv3</code>, <code>TLSv1</code>, <code>TLSv1.1</code>, and <code>TLSv1.2</code>.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginSSLProtocols"
+     * >Minimum Origin SSL Protocol</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      */
     private OriginSslProtocols originSslProtocols;
     /**
      * <p>
-     * You can create a custom origin read timeout. All timeout units are in seconds. The default origin read timeout is
-     * 30 seconds, but you can configure custom timeout lengths using the CloudFront API. The minimum timeout length is
-     * 4 seconds; the maximum is 60 seconds.
+     * Specifies how long, in seconds, CloudFront waits for a response from the origin. This is also known as the
+     * <i>origin response timeout</i>. The minimum timeout is 1 second, the maximum is 60 seconds, and the default (if
+     * you don’t specify otherwise) is 30 seconds.
      * </p>
      * <p>
-     * If you need to increase the maximum time limit, contact the <a
-     * href="https://console.aws.amazon.com/support/home#/">AWS Support Center</a>.
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout"
+     * >Origin Response Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      */
     private Integer originReadTimeout;
     /**
      * <p>
-     * You can create a custom keep-alive timeout. All timeout units are in seconds. The default keep-alive timeout is 5
-     * seconds, but you can configure custom timeout lengths using the CloudFront API. The minimum timeout length is 1
-     * second; the maximum is 60 seconds.
+     * Specifies how long, in seconds, CloudFront persists its connection to the origin. The minimum timeout is 1
+     * second, the maximum is 60 seconds, and the default (if you don’t specify otherwise) is 5 seconds.
      * </p>
      * <p>
-     * If you need to increase the maximum time limit, contact the <a
-     * href="https://console.aws.amazon.com/support/home#/">AWS Support Center</a>.
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginKeepaliveTimeout"
+     * >Origin Keep-alive Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      */
     private Integer originKeepaliveTimeout;
 
     /**
      * <p>
-     * The HTTP port the custom origin listens on.
+     * The HTTP port that CloudFront uses to connect to the origin. Specify the HTTP port that the origin listens on.
      * </p>
      * 
      * @param hTTPPort
-     *        The HTTP port the custom origin listens on.
+     *        The HTTP port that CloudFront uses to connect to the origin. Specify the HTTP port that the origin listens
+     *        on.
      */
 
     public void setHTTPPort(Integer hTTPPort) {
@@ -90,10 +118,11 @@ public class CustomOriginConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The HTTP port the custom origin listens on.
+     * The HTTP port that CloudFront uses to connect to the origin. Specify the HTTP port that the origin listens on.
      * </p>
      * 
-     * @return The HTTP port the custom origin listens on.
+     * @return The HTTP port that CloudFront uses to connect to the origin. Specify the HTTP port that the origin
+     *         listens on.
      */
 
     public Integer getHTTPPort() {
@@ -102,11 +131,12 @@ public class CustomOriginConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The HTTP port the custom origin listens on.
+     * The HTTP port that CloudFront uses to connect to the origin. Specify the HTTP port that the origin listens on.
      * </p>
      * 
      * @param hTTPPort
-     *        The HTTP port the custom origin listens on.
+     *        The HTTP port that CloudFront uses to connect to the origin. Specify the HTTP port that the origin listens
+     *        on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -117,11 +147,12 @@ public class CustomOriginConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The HTTPS port the custom origin listens on.
+     * The HTTPS port that CloudFront uses to connect to the origin. Specify the HTTPS port that the origin listens on.
      * </p>
      * 
      * @param hTTPSPort
-     *        The HTTPS port the custom origin listens on.
+     *        The HTTPS port that CloudFront uses to connect to the origin. Specify the HTTPS port that the origin
+     *        listens on.
      */
 
     public void setHTTPSPort(Integer hTTPSPort) {
@@ -130,10 +161,11 @@ public class CustomOriginConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The HTTPS port the custom origin listens on.
+     * The HTTPS port that CloudFront uses to connect to the origin. Specify the HTTPS port that the origin listens on.
      * </p>
      * 
-     * @return The HTTPS port the custom origin listens on.
+     * @return The HTTPS port that CloudFront uses to connect to the origin. Specify the HTTPS port that the origin
+     *         listens on.
      */
 
     public Integer getHTTPSPort() {
@@ -142,11 +174,12 @@ public class CustomOriginConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The HTTPS port the custom origin listens on.
+     * The HTTPS port that CloudFront uses to connect to the origin. Specify the HTTPS port that the origin listens on.
      * </p>
      * 
      * @param hTTPSPort
-     *        The HTTPS port the custom origin listens on.
+     *        The HTTPS port that CloudFront uses to connect to the origin. Specify the HTTPS port that the origin
+     *        listens on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -157,11 +190,47 @@ public class CustomOriginConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The origin protocol policy to apply to your origin.
+     * Specifies the protocol (HTTP or HTTPS) that CloudFront uses to connect to the origin. Valid values are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>http-only</code> – CloudFront always uses HTTP to connect to the origin.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>match-viewer</code> – CloudFront connects to the origin using the same protocol that the viewer used to
+     * connect to CloudFront.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>https-only</code> – CloudFront always uses HTTPS to connect to the origin.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param originProtocolPolicy
-     *        The origin protocol policy to apply to your origin.
+     *        Specifies the protocol (HTTP or HTTPS) that CloudFront uses to connect to the origin. Valid values
+     *        are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>http-only</code> – CloudFront always uses HTTP to connect to the origin.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>match-viewer</code> – CloudFront connects to the origin using the same protocol that the viewer used
+     *        to connect to CloudFront.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>https-only</code> – CloudFront always uses HTTPS to connect to the origin.
+     *        </p>
+     *        </li>
      * @see OriginProtocolPolicy
      */
 
@@ -171,10 +240,46 @@ public class CustomOriginConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The origin protocol policy to apply to your origin.
+     * Specifies the protocol (HTTP or HTTPS) that CloudFront uses to connect to the origin. Valid values are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>http-only</code> – CloudFront always uses HTTP to connect to the origin.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>match-viewer</code> – CloudFront connects to the origin using the same protocol that the viewer used to
+     * connect to CloudFront.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>https-only</code> – CloudFront always uses HTTPS to connect to the origin.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The origin protocol policy to apply to your origin.
+     * @return Specifies the protocol (HTTP or HTTPS) that CloudFront uses to connect to the origin. Valid values
+     *         are:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>http-only</code> – CloudFront always uses HTTP to connect to the origin.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>match-viewer</code> – CloudFront connects to the origin using the same protocol that the viewer
+     *         used to connect to CloudFront.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>https-only</code> – CloudFront always uses HTTPS to connect to the origin.
+     *         </p>
+     *         </li>
      * @see OriginProtocolPolicy
      */
 
@@ -184,11 +289,47 @@ public class CustomOriginConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The origin protocol policy to apply to your origin.
+     * Specifies the protocol (HTTP or HTTPS) that CloudFront uses to connect to the origin. Valid values are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>http-only</code> – CloudFront always uses HTTP to connect to the origin.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>match-viewer</code> – CloudFront connects to the origin using the same protocol that the viewer used to
+     * connect to CloudFront.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>https-only</code> – CloudFront always uses HTTPS to connect to the origin.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param originProtocolPolicy
-     *        The origin protocol policy to apply to your origin.
+     *        Specifies the protocol (HTTP or HTTPS) that CloudFront uses to connect to the origin. Valid values
+     *        are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>http-only</code> – CloudFront always uses HTTP to connect to the origin.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>match-viewer</code> – CloudFront connects to the origin using the same protocol that the viewer used
+     *        to connect to CloudFront.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>https-only</code> – CloudFront always uses HTTPS to connect to the origin.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OriginProtocolPolicy
      */
@@ -200,11 +341,47 @@ public class CustomOriginConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The origin protocol policy to apply to your origin.
+     * Specifies the protocol (HTTP or HTTPS) that CloudFront uses to connect to the origin. Valid values are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>http-only</code> – CloudFront always uses HTTP to connect to the origin.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>match-viewer</code> – CloudFront connects to the origin using the same protocol that the viewer used to
+     * connect to CloudFront.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>https-only</code> – CloudFront always uses HTTPS to connect to the origin.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param originProtocolPolicy
-     *        The origin protocol policy to apply to your origin.
+     *        Specifies the protocol (HTTP or HTTPS) that CloudFront uses to connect to the origin. Valid values
+     *        are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>http-only</code> – CloudFront always uses HTTP to connect to the origin.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>match-viewer</code> – CloudFront connects to the origin using the same protocol that the viewer used
+     *        to connect to CloudFront.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>https-only</code> – CloudFront always uses HTTPS to connect to the origin.
+     *        </p>
+     *        </li>
      * @see OriginProtocolPolicy
      */
 
@@ -214,11 +391,47 @@ public class CustomOriginConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The origin protocol policy to apply to your origin.
+     * Specifies the protocol (HTTP or HTTPS) that CloudFront uses to connect to the origin. Valid values are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>http-only</code> – CloudFront always uses HTTP to connect to the origin.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>match-viewer</code> – CloudFront connects to the origin using the same protocol that the viewer used to
+     * connect to CloudFront.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>https-only</code> – CloudFront always uses HTTPS to connect to the origin.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param originProtocolPolicy
-     *        The origin protocol policy to apply to your origin.
+     *        Specifies the protocol (HTTP or HTTPS) that CloudFront uses to connect to the origin. Valid values
+     *        are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>http-only</code> – CloudFront always uses HTTP to connect to the origin.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>match-viewer</code> – CloudFront connects to the origin using the same protocol that the viewer used
+     *        to connect to CloudFront.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>https-only</code> – CloudFront always uses HTTPS to connect to the origin.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OriginProtocolPolicy
      */
@@ -230,11 +443,23 @@ public class CustomOriginConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The SSL/TLS protocols that you want CloudFront to use when communicating with your origin over HTTPS.
+     * Specifies the minimum SSL/TLS protocol that CloudFront uses when connecting to your origin over HTTPS. Valid
+     * values include <code>SSLv3</code>, <code>TLSv1</code>, <code>TLSv1.1</code>, and <code>TLSv1.2</code>.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginSSLProtocols"
+     * >Minimum Origin SSL Protocol</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
      * @param originSslProtocols
-     *        The SSL/TLS protocols that you want CloudFront to use when communicating with your origin over HTTPS.
+     *        Specifies the minimum SSL/TLS protocol that CloudFront uses when connecting to your origin over HTTPS.
+     *        Valid values include <code>SSLv3</code>, <code>TLSv1</code>, <code>TLSv1.1</code>, and
+     *        <code>TLSv1.2</code>.</p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginSSLProtocols"
+     *        >Minimum Origin SSL Protocol</a> in the <i>Amazon CloudFront Developer Guide</i>.
      */
 
     public void setOriginSslProtocols(OriginSslProtocols originSslProtocols) {
@@ -243,10 +468,22 @@ public class CustomOriginConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The SSL/TLS protocols that you want CloudFront to use when communicating with your origin over HTTPS.
+     * Specifies the minimum SSL/TLS protocol that CloudFront uses when connecting to your origin over HTTPS. Valid
+     * values include <code>SSLv3</code>, <code>TLSv1</code>, <code>TLSv1.1</code>, and <code>TLSv1.2</code>.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginSSLProtocols"
+     * >Minimum Origin SSL Protocol</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
-     * @return The SSL/TLS protocols that you want CloudFront to use when communicating with your origin over HTTPS.
+     * @return Specifies the minimum SSL/TLS protocol that CloudFront uses when connecting to your origin over HTTPS.
+     *         Valid values include <code>SSLv3</code>, <code>TLSv1</code>, <code>TLSv1.1</code>, and
+     *         <code>TLSv1.2</code>.</p>
+     *         <p>
+     *         For more information, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginSSLProtocols"
+     *         >Minimum Origin SSL Protocol</a> in the <i>Amazon CloudFront Developer Guide</i>.
      */
 
     public OriginSslProtocols getOriginSslProtocols() {
@@ -255,11 +492,23 @@ public class CustomOriginConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The SSL/TLS protocols that you want CloudFront to use when communicating with your origin over HTTPS.
+     * Specifies the minimum SSL/TLS protocol that CloudFront uses when connecting to your origin over HTTPS. Valid
+     * values include <code>SSLv3</code>, <code>TLSv1</code>, <code>TLSv1.1</code>, and <code>TLSv1.2</code>.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginSSLProtocols"
+     * >Minimum Origin SSL Protocol</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
      * @param originSslProtocols
-     *        The SSL/TLS protocols that you want CloudFront to use when communicating with your origin over HTTPS.
+     *        Specifies the minimum SSL/TLS protocol that CloudFront uses when connecting to your origin over HTTPS.
+     *        Valid values include <code>SSLv3</code>, <code>TLSv1</code>, <code>TLSv1.1</code>, and
+     *        <code>TLSv1.2</code>.</p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginSSLProtocols"
+     *        >Minimum Origin SSL Protocol</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -270,22 +519,24 @@ public class CustomOriginConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * You can create a custom origin read timeout. All timeout units are in seconds. The default origin read timeout is
-     * 30 seconds, but you can configure custom timeout lengths using the CloudFront API. The minimum timeout length is
-     * 4 seconds; the maximum is 60 seconds.
+     * Specifies how long, in seconds, CloudFront waits for a response from the origin. This is also known as the
+     * <i>origin response timeout</i>. The minimum timeout is 1 second, the maximum is 60 seconds, and the default (if
+     * you don’t specify otherwise) is 30 seconds.
      * </p>
      * <p>
-     * If you need to increase the maximum time limit, contact the <a
-     * href="https://console.aws.amazon.com/support/home#/">AWS Support Center</a>.
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout"
+     * >Origin Response Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
      * @param originReadTimeout
-     *        You can create a custom origin read timeout. All timeout units are in seconds. The default origin read
-     *        timeout is 30 seconds, but you can configure custom timeout lengths using the CloudFront API. The minimum
-     *        timeout length is 4 seconds; the maximum is 60 seconds.</p>
+     *        Specifies how long, in seconds, CloudFront waits for a response from the origin. This is also known as the
+     *        <i>origin response timeout</i>. The minimum timeout is 1 second, the maximum is 60 seconds, and the
+     *        default (if you don’t specify otherwise) is 30 seconds.</p>
      *        <p>
-     *        If you need to increase the maximum time limit, contact the <a
-     *        href="https://console.aws.amazon.com/support/home#/">AWS Support Center</a>.
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout"
+     *        >Origin Response Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.
      */
 
     public void setOriginReadTimeout(Integer originReadTimeout) {
@@ -294,21 +545,23 @@ public class CustomOriginConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * You can create a custom origin read timeout. All timeout units are in seconds. The default origin read timeout is
-     * 30 seconds, but you can configure custom timeout lengths using the CloudFront API. The minimum timeout length is
-     * 4 seconds; the maximum is 60 seconds.
+     * Specifies how long, in seconds, CloudFront waits for a response from the origin. This is also known as the
+     * <i>origin response timeout</i>. The minimum timeout is 1 second, the maximum is 60 seconds, and the default (if
+     * you don’t specify otherwise) is 30 seconds.
      * </p>
      * <p>
-     * If you need to increase the maximum time limit, contact the <a
-     * href="https://console.aws.amazon.com/support/home#/">AWS Support Center</a>.
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout"
+     * >Origin Response Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
-     * @return You can create a custom origin read timeout. All timeout units are in seconds. The default origin read
-     *         timeout is 30 seconds, but you can configure custom timeout lengths using the CloudFront API. The minimum
-     *         timeout length is 4 seconds; the maximum is 60 seconds.</p>
+     * @return Specifies how long, in seconds, CloudFront waits for a response from the origin. This is also known as
+     *         the <i>origin response timeout</i>. The minimum timeout is 1 second, the maximum is 60 seconds, and the
+     *         default (if you don’t specify otherwise) is 30 seconds.</p>
      *         <p>
-     *         If you need to increase the maximum time limit, contact the <a
-     *         href="https://console.aws.amazon.com/support/home#/">AWS Support Center</a>.
+     *         For more information, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout"
+     *         >Origin Response Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.
      */
 
     public Integer getOriginReadTimeout() {
@@ -317,22 +570,24 @@ public class CustomOriginConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * You can create a custom origin read timeout. All timeout units are in seconds. The default origin read timeout is
-     * 30 seconds, but you can configure custom timeout lengths using the CloudFront API. The minimum timeout length is
-     * 4 seconds; the maximum is 60 seconds.
+     * Specifies how long, in seconds, CloudFront waits for a response from the origin. This is also known as the
+     * <i>origin response timeout</i>. The minimum timeout is 1 second, the maximum is 60 seconds, and the default (if
+     * you don’t specify otherwise) is 30 seconds.
      * </p>
      * <p>
-     * If you need to increase the maximum time limit, contact the <a
-     * href="https://console.aws.amazon.com/support/home#/">AWS Support Center</a>.
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout"
+     * >Origin Response Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
      * @param originReadTimeout
-     *        You can create a custom origin read timeout. All timeout units are in seconds. The default origin read
-     *        timeout is 30 seconds, but you can configure custom timeout lengths using the CloudFront API. The minimum
-     *        timeout length is 4 seconds; the maximum is 60 seconds.</p>
+     *        Specifies how long, in seconds, CloudFront waits for a response from the origin. This is also known as the
+     *        <i>origin response timeout</i>. The minimum timeout is 1 second, the maximum is 60 seconds, and the
+     *        default (if you don’t specify otherwise) is 30 seconds.</p>
      *        <p>
-     *        If you need to increase the maximum time limit, contact the <a
-     *        href="https://console.aws.amazon.com/support/home#/">AWS Support Center</a>.
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout"
+     *        >Origin Response Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -343,22 +598,22 @@ public class CustomOriginConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * You can create a custom keep-alive timeout. All timeout units are in seconds. The default keep-alive timeout is 5
-     * seconds, but you can configure custom timeout lengths using the CloudFront API. The minimum timeout length is 1
-     * second; the maximum is 60 seconds.
+     * Specifies how long, in seconds, CloudFront persists its connection to the origin. The minimum timeout is 1
+     * second, the maximum is 60 seconds, and the default (if you don’t specify otherwise) is 5 seconds.
      * </p>
      * <p>
-     * If you need to increase the maximum time limit, contact the <a
-     * href="https://console.aws.amazon.com/support/home#/">AWS Support Center</a>.
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginKeepaliveTimeout"
+     * >Origin Keep-alive Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
      * @param originKeepaliveTimeout
-     *        You can create a custom keep-alive timeout. All timeout units are in seconds. The default keep-alive
-     *        timeout is 5 seconds, but you can configure custom timeout lengths using the CloudFront API. The minimum
-     *        timeout length is 1 second; the maximum is 60 seconds.</p>
+     *        Specifies how long, in seconds, CloudFront persists its connection to the origin. The minimum timeout is 1
+     *        second, the maximum is 60 seconds, and the default (if you don’t specify otherwise) is 5 seconds.</p>
      *        <p>
-     *        If you need to increase the maximum time limit, contact the <a
-     *        href="https://console.aws.amazon.com/support/home#/">AWS Support Center</a>.
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginKeepaliveTimeout"
+     *        >Origin Keep-alive Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.
      */
 
     public void setOriginKeepaliveTimeout(Integer originKeepaliveTimeout) {
@@ -367,21 +622,21 @@ public class CustomOriginConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * You can create a custom keep-alive timeout. All timeout units are in seconds. The default keep-alive timeout is 5
-     * seconds, but you can configure custom timeout lengths using the CloudFront API. The minimum timeout length is 1
-     * second; the maximum is 60 seconds.
+     * Specifies how long, in seconds, CloudFront persists its connection to the origin. The minimum timeout is 1
+     * second, the maximum is 60 seconds, and the default (if you don’t specify otherwise) is 5 seconds.
      * </p>
      * <p>
-     * If you need to increase the maximum time limit, contact the <a
-     * href="https://console.aws.amazon.com/support/home#/">AWS Support Center</a>.
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginKeepaliveTimeout"
+     * >Origin Keep-alive Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
-     * @return You can create a custom keep-alive timeout. All timeout units are in seconds. The default keep-alive
-     *         timeout is 5 seconds, but you can configure custom timeout lengths using the CloudFront API. The minimum
-     *         timeout length is 1 second; the maximum is 60 seconds.</p>
+     * @return Specifies how long, in seconds, CloudFront persists its connection to the origin. The minimum timeout is
+     *         1 second, the maximum is 60 seconds, and the default (if you don’t specify otherwise) is 5 seconds.</p>
      *         <p>
-     *         If you need to increase the maximum time limit, contact the <a
-     *         href="https://console.aws.amazon.com/support/home#/">AWS Support Center</a>.
+     *         For more information, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginKeepaliveTimeout"
+     *         >Origin Keep-alive Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.
      */
 
     public Integer getOriginKeepaliveTimeout() {
@@ -390,22 +645,22 @@ public class CustomOriginConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * You can create a custom keep-alive timeout. All timeout units are in seconds. The default keep-alive timeout is 5
-     * seconds, but you can configure custom timeout lengths using the CloudFront API. The minimum timeout length is 1
-     * second; the maximum is 60 seconds.
+     * Specifies how long, in seconds, CloudFront persists its connection to the origin. The minimum timeout is 1
+     * second, the maximum is 60 seconds, and the default (if you don’t specify otherwise) is 5 seconds.
      * </p>
      * <p>
-     * If you need to increase the maximum time limit, contact the <a
-     * href="https://console.aws.amazon.com/support/home#/">AWS Support Center</a>.
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginKeepaliveTimeout"
+     * >Origin Keep-alive Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
      * @param originKeepaliveTimeout
-     *        You can create a custom keep-alive timeout. All timeout units are in seconds. The default keep-alive
-     *        timeout is 5 seconds, but you can configure custom timeout lengths using the CloudFront API. The minimum
-     *        timeout length is 1 second; the maximum is 60 seconds.</p>
+     *        Specifies how long, in seconds, CloudFront persists its connection to the origin. The minimum timeout is 1
+     *        second, the maximum is 60 seconds, and the default (if you don’t specify otherwise) is 5 seconds.</p>
      *        <p>
-     *        If you need to increase the maximum time limit, contact the <a
-     *        href="https://console.aws.amazon.com/support/home#/">AWS Support Center</a>.
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginKeepaliveTimeout"
+     *        >Origin Keep-alive Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

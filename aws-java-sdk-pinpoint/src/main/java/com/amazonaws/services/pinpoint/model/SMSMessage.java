@@ -48,9 +48,9 @@ public class SMSMessage implements Serializable, Cloneable, StructuredPojo {
     private String mediaUrl;
     /**
      * <p>
-     * The SMS message type. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such as a
-     * one-time password that supports a customer transaction; and, PROMOTIONAL, the message is not critical or
-     * time-sensitive, such as a marketing message.
+     * The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive, such as a
+     * one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such as marketing
+     * messages).
      * </p>
      */
     private String messageType;
@@ -199,15 +199,15 @@ public class SMSMessage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The SMS message type. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such as a
-     * one-time password that supports a customer transaction; and, PROMOTIONAL, the message is not critical or
-     * time-sensitive, such as a marketing message.
+     * The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive, such as a
+     * one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such as marketing
+     * messages).
      * </p>
      * 
      * @param messageType
-     *        The SMS message type. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such as
-     *        a one-time password that supports a customer transaction; and, PROMOTIONAL, the message is not critical or
-     *        time-sensitive, such as a marketing message.
+     *        The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive,
+     *        such as a one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such
+     *        as marketing messages).
      * @see MessageType
      */
 
@@ -217,14 +217,14 @@ public class SMSMessage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The SMS message type. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such as a
-     * one-time password that supports a customer transaction; and, PROMOTIONAL, the message is not critical or
-     * time-sensitive, such as a marketing message.
+     * The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive, such as a
+     * one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such as marketing
+     * messages).
      * </p>
      * 
-     * @return The SMS message type. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such as
-     *         a one-time password that supports a customer transaction; and, PROMOTIONAL, the message is not critical
-     *         or time-sensitive, such as a marketing message.
+     * @return The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive,
+     *         such as a one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such
+     *         as marketing messages).
      * @see MessageType
      */
 
@@ -234,15 +234,15 @@ public class SMSMessage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The SMS message type. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such as a
-     * one-time password that supports a customer transaction; and, PROMOTIONAL, the message is not critical or
-     * time-sensitive, such as a marketing message.
+     * The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive, such as a
+     * one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such as marketing
+     * messages).
      * </p>
      * 
      * @param messageType
-     *        The SMS message type. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such as
-     *        a one-time password that supports a customer transaction; and, PROMOTIONAL, the message is not critical or
-     *        time-sensitive, such as a marketing message.
+     *        The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive,
+     *        such as a one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such
+     *        as marketing messages).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MessageType
      */
@@ -254,15 +254,15 @@ public class SMSMessage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The SMS message type. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such as a
-     * one-time password that supports a customer transaction; and, PROMOTIONAL, the message is not critical or
-     * time-sensitive, such as a marketing message.
+     * The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive, such as a
+     * one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such as marketing
+     * messages).
      * </p>
      * 
      * @param messageType
-     *        The SMS message type. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such as
-     *        a one-time password that supports a customer transaction; and, PROMOTIONAL, the message is not critical or
-     *        time-sensitive, such as a marketing message.
+     *        The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive,
+     *        such as a one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such
+     *        as marketing messages).
      * @see MessageType
      */
 
@@ -272,15 +272,15 @@ public class SMSMessage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The SMS message type. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such as a
-     * one-time password that supports a customer transaction; and, PROMOTIONAL, the message is not critical or
-     * time-sensitive, such as a marketing message.
+     * The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive, such as a
+     * one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such as marketing
+     * messages).
      * </p>
      * 
      * @param messageType
-     *        The SMS message type. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such as
-     *        a one-time password that supports a customer transaction; and, PROMOTIONAL, the message is not critical or
-     *        time-sensitive, such as a marketing message.
+     *        The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive,
+     *        such as a one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such
+     *        as marketing messages).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MessageType
      */

@@ -275,6 +275,39 @@ public class AmazonPersonalizeAsyncClient extends AmazonPersonalizeClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<CreateFilterResult> createFilterAsync(CreateFilterRequest request) {
+
+        return createFilterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateFilterResult> createFilterAsync(final CreateFilterRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateFilterRequest, CreateFilterResult> asyncHandler) {
+        final CreateFilterRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateFilterResult>() {
+            @Override
+            public CreateFilterResult call() throws Exception {
+                CreateFilterResult result = null;
+
+                try {
+                    result = executeCreateFilter(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateSchemaResult> createSchemaAsync(CreateSchemaRequest request) {
 
         return createSchemaAsync(request, null);
@@ -490,6 +523,39 @@ public class AmazonPersonalizeAsyncClient extends AmazonPersonalizeClient implem
 
                 try {
                     result = executeDeleteEventTracker(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteFilterResult> deleteFilterAsync(DeleteFilterRequest request) {
+
+        return deleteFilterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteFilterResult> deleteFilterAsync(final DeleteFilterRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteFilterRequest, DeleteFilterResult> asyncHandler) {
+        final DeleteFilterRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteFilterResult>() {
+            @Override
+            public DeleteFilterResult call() throws Exception {
+                DeleteFilterResult result = null;
+
+                try {
+                    result = executeDeleteFilter(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -821,6 +887,39 @@ public class AmazonPersonalizeAsyncClient extends AmazonPersonalizeClient implem
 
                 try {
                     result = executeDescribeFeatureTransformation(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFilterResult> describeFilterAsync(DescribeFilterRequest request) {
+
+        return describeFilterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFilterResult> describeFilterAsync(final DescribeFilterRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeFilterRequest, DescribeFilterResult> asyncHandler) {
+        final DescribeFilterRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeFilterResult>() {
+            @Override
+            public DescribeFilterResult call() throws Exception {
+                DescribeFilterResult result = null;
+
+                try {
+                    result = executeDescribeFilter(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1184,6 +1283,39 @@ public class AmazonPersonalizeAsyncClient extends AmazonPersonalizeClient implem
 
                 try {
                     result = executeListEventTrackers(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFiltersResult> listFiltersAsync(ListFiltersRequest request) {
+
+        return listFiltersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFiltersResult> listFiltersAsync(final ListFiltersRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListFiltersRequest, ListFiltersResult> asyncHandler) {
+        final ListFiltersRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListFiltersResult>() {
+            @Override
+            public ListFiltersResult call() throws Exception {
+                ListFiltersResult result = null;
+
+                try {
+                    result = executeListFilters(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

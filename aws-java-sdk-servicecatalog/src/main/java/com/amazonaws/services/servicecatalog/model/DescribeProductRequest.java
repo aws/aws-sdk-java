@@ -54,6 +54,12 @@ public class DescribeProductRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private String id;
+    /**
+     * <p>
+     * The product name.
+     * </p>
+     */
+    private String name;
 
     /**
      * <p>
@@ -235,6 +241,46 @@ public class DescribeProductRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * The product name.
+     * </p>
+     * 
+     * @param name
+     *        The product name.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * The product name.
+     * </p>
+     * 
+     * @return The product name.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The product name.
+     * </p>
+     * 
+     * @param name
+     *        The product name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeProductRequest withName(String name) {
+        setName(name);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -249,7 +295,9 @@ public class DescribeProductRequest extends com.amazonaws.AmazonWebServiceReques
         if (getAcceptLanguage() != null)
             sb.append("AcceptLanguage: ").append(getAcceptLanguage()).append(",");
         if (getId() != null)
-            sb.append("Id: ").append(getId());
+            sb.append("Id: ").append(getId()).append(",");
+        if (getName() != null)
+            sb.append("Name: ").append(getName());
         sb.append("}");
         return sb.toString();
     }
@@ -272,6 +320,10 @@ public class DescribeProductRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
         return true;
     }
 
@@ -282,6 +334,7 @@ public class DescribeProductRequest extends com.amazonaws.AmazonWebServiceReques
 
         hashCode = prime * hashCode + ((getAcceptLanguage() == null) ? 0 : getAcceptLanguage().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         return hashCode;
     }
 

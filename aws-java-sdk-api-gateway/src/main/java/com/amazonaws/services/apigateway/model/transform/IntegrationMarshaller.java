@@ -57,6 +57,8 @@ public class IntegrationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("cacheKeyParameters").build();
     private static final MarshallingInfo<Map> INTEGRATIONRESPONSES_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("integrationResponses").build();
+    private static final MarshallingInfo<StructuredPojo> TLSCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("tlsConfig").build();
 
     private static final IntegrationMarshaller instance = new IntegrationMarshaller();
 
@@ -88,6 +90,7 @@ public class IntegrationMarshaller {
             protocolMarshaller.marshall(integration.getCacheNamespace(), CACHENAMESPACE_BINDING);
             protocolMarshaller.marshall(integration.getCacheKeyParameters(), CACHEKEYPARAMETERS_BINDING);
             protocolMarshaller.marshall(integration.getIntegrationResponses(), INTEGRATIONRESPONSES_BINDING);
+            protocolMarshaller.marshall(integration.getTlsConfig(), TLSCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

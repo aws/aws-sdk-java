@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ActivityMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> CUSTOM_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CUSTOM").build();
     private static final MarshallingInfo<StructuredPojo> CONDITIONALSPLIT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConditionalSplit").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -37,8 +39,12 @@ public class ActivityMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Holdout").build();
     private static final MarshallingInfo<StructuredPojo> MULTICONDITION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MultiCondition").build();
+    private static final MarshallingInfo<StructuredPojo> PUSH_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PUSH").build();
     private static final MarshallingInfo<StructuredPojo> RANDOMSPLIT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RandomSplit").build();
+    private static final MarshallingInfo<StructuredPojo> SMS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SMS").build();
     private static final MarshallingInfo<StructuredPojo> WAIT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Wait").build();
 
@@ -58,12 +64,15 @@ public class ActivityMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(activity.getCUSTOM(), CUSTOM_BINDING);
             protocolMarshaller.marshall(activity.getConditionalSplit(), CONDITIONALSPLIT_BINDING);
             protocolMarshaller.marshall(activity.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(activity.getEMAIL(), EMAIL_BINDING);
             protocolMarshaller.marshall(activity.getHoldout(), HOLDOUT_BINDING);
             protocolMarshaller.marshall(activity.getMultiCondition(), MULTICONDITION_BINDING);
+            protocolMarshaller.marshall(activity.getPUSH(), PUSH_BINDING);
             protocolMarshaller.marshall(activity.getRandomSplit(), RANDOMSPLIT_BINDING);
+            protocolMarshaller.marshall(activity.getSMS(), SMS_BINDING);
             protocolMarshaller.marshall(activity.getWait(), WAIT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

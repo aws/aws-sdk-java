@@ -41,6 +41,12 @@ public class DescribeProductResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      */
     private java.util.List<BudgetDetail> budgets;
+    /**
+     * <p>
+     * Information about the associated launch paths.
+     * </p>
+     */
+    private java.util.List<LaunchPath> launchPaths;
 
     /**
      * <p>
@@ -223,6 +229,76 @@ public class DescribeProductResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
+     * <p>
+     * Information about the associated launch paths.
+     * </p>
+     * 
+     * @return Information about the associated launch paths.
+     */
+
+    public java.util.List<LaunchPath> getLaunchPaths() {
+        return launchPaths;
+    }
+
+    /**
+     * <p>
+     * Information about the associated launch paths.
+     * </p>
+     * 
+     * @param launchPaths
+     *        Information about the associated launch paths.
+     */
+
+    public void setLaunchPaths(java.util.Collection<LaunchPath> launchPaths) {
+        if (launchPaths == null) {
+            this.launchPaths = null;
+            return;
+        }
+
+        this.launchPaths = new java.util.ArrayList<LaunchPath>(launchPaths);
+    }
+
+    /**
+     * <p>
+     * Information about the associated launch paths.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLaunchPaths(java.util.Collection)} or {@link #withLaunchPaths(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param launchPaths
+     *        Information about the associated launch paths.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeProductResult withLaunchPaths(LaunchPath... launchPaths) {
+        if (this.launchPaths == null) {
+            setLaunchPaths(new java.util.ArrayList<LaunchPath>(launchPaths.length));
+        }
+        for (LaunchPath ele : launchPaths) {
+            this.launchPaths.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the associated launch paths.
+     * </p>
+     * 
+     * @param launchPaths
+     *        Information about the associated launch paths.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeProductResult withLaunchPaths(java.util.Collection<LaunchPath> launchPaths) {
+        setLaunchPaths(launchPaths);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -239,7 +315,9 @@ public class DescribeProductResult extends com.amazonaws.AmazonWebServiceResult<
         if (getProvisioningArtifacts() != null)
             sb.append("ProvisioningArtifacts: ").append(getProvisioningArtifacts()).append(",");
         if (getBudgets() != null)
-            sb.append("Budgets: ").append(getBudgets());
+            sb.append("Budgets: ").append(getBudgets()).append(",");
+        if (getLaunchPaths() != null)
+            sb.append("LaunchPaths: ").append(getLaunchPaths());
         sb.append("}");
         return sb.toString();
     }
@@ -266,6 +344,10 @@ public class DescribeProductResult extends com.amazonaws.AmazonWebServiceResult<
             return false;
         if (other.getBudgets() != null && other.getBudgets().equals(this.getBudgets()) == false)
             return false;
+        if (other.getLaunchPaths() == null ^ this.getLaunchPaths() == null)
+            return false;
+        if (other.getLaunchPaths() != null && other.getLaunchPaths().equals(this.getLaunchPaths()) == false)
+            return false;
         return true;
     }
 
@@ -277,6 +359,7 @@ public class DescribeProductResult extends com.amazonaws.AmazonWebServiceResult<
         hashCode = prime * hashCode + ((getProductViewSummary() == null) ? 0 : getProductViewSummary().hashCode());
         hashCode = prime * hashCode + ((getProvisioningArtifacts() == null) ? 0 : getProvisioningArtifacts().hashCode());
         hashCode = prime * hashCode + ((getBudgets() == null) ? 0 : getBudgets().hashCode());
+        hashCode = prime * hashCode + ((getLaunchPaths() == null) ? 0 : getLaunchPaths().hashCode());
         return hashCode;
     }
 

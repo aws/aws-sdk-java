@@ -31,6 +31,8 @@ public class BatchInferenceJobMarshaller {
             .marshallLocationName("jobName").build();
     private static final MarshallingInfo<String> BATCHINFERENCEJOBARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("batchInferenceJobArn").build();
+    private static final MarshallingInfo<String> FILTERARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("filterArn").build();
     private static final MarshallingInfo<String> FAILUREREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("failureReason").build();
     private static final MarshallingInfo<String> SOLUTIONVERSIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -68,6 +70,7 @@ public class BatchInferenceJobMarshaller {
         try {
             protocolMarshaller.marshall(batchInferenceJob.getJobName(), JOBNAME_BINDING);
             protocolMarshaller.marshall(batchInferenceJob.getBatchInferenceJobArn(), BATCHINFERENCEJOBARN_BINDING);
+            protocolMarshaller.marshall(batchInferenceJob.getFilterArn(), FILTERARN_BINDING);
             protocolMarshaller.marshall(batchInferenceJob.getFailureReason(), FAILUREREASON_BINDING);
             protocolMarshaller.marshall(batchInferenceJob.getSolutionVersionArn(), SOLUTIONVERSIONARN_BINDING);
             protocolMarshaller.marshall(batchInferenceJob.getNumResults(), NUMRESULTS_BINDING);

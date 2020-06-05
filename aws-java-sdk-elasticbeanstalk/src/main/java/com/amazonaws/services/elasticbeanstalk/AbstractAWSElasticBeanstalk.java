@@ -53,6 +53,11 @@ public class AbstractAWSElasticBeanstalk implements AWSElasticBeanstalk {
     }
 
     @Override
+    public AssociateEnvironmentOperationsRoleResult associateEnvironmentOperationsRole(AssociateEnvironmentOperationsRoleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CheckDNSAvailabilityResult checkDNSAvailability(CheckDNSAvailabilityRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -204,6 +209,11 @@ public class AbstractAWSElasticBeanstalk implements AWSElasticBeanstalk {
 
     @Override
     public DescribePlatformVersionResult describePlatformVersion(DescribePlatformVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DisassociateEnvironmentOperationsRoleResult disassociateEnvironmentOperationsRole(DisassociateEnvironmentOperationsRoleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
