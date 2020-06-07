@@ -4272,7 +4272,7 @@
 
 ## __Amazon Relational Database Service__
   - ### Features
-    - In the RDS API and CLI documentation, corrections to the descriptions for Boolean parameters to avoid references to TRUE and FALSE. The RDS CLI does not allow TRUE and FALSE values values for Boolean parameters.
+    - In the RDS API and CLI documentation, corrections to the descriptions for Boolean parameters to avoid references to TRUE and FALSE. The RDS CLI does not allow TRUE and FALSE values for Boolean parameters.
 
 ## __Amazon Transcribe Service__
   - ### Features
