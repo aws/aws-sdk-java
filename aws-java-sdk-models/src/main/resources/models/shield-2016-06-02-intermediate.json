@@ -93,7 +93,7 @@
       "asyncReturnType" : "AssociateDRTLogBucketResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Authorizes the DDoS Response team (DRT) to access the specified Amazon S3 bucket containing your AWS WAF logs. You can associate up to 10 Amazon S3 buckets with your subscription.</p> <p>To use the services of the DRT and make an <code>AssociateDRTLogBucket</code> request, you must be subscribed to the <a href=\"https://aws.amazon.com/premiumsupport/business-support/\">Business Support plan</a> or the <a href=\"https://aws.amazon.com/premiumsupport/enterprise-support/\">Enterprise Support plan</a>.</p>",
+      "documentation" : "<p>Authorizes the DDoS Response Team (DRT) to access the specified Amazon S3 bucket containing your AWS WAF logs. You can associate up to 10 Amazon S3 buckets with your subscription.</p> <p>To use the services of the DRT and make an <code>AssociateDRTLogBucket</code> request, you must be subscribed to the <a href=\"https://aws.amazon.com/premiumsupport/business-support/\">Business Support plan</a> or the <a href=\"https://aws.amazon.com/premiumsupport/enterprise-support/\">Enterprise Support plan</a>.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -120,11 +120,11 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "AccessDeniedForDependencyException",
-        "documentation" : "<p>In order to grant the necessary access to the DDoS Response Team, the user submitting the request must have the <code>iam:PassRole</code> permission. This error indicates the user did not have the appropriate permissions. For more information, see <a href=\"https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html\">Granting a User Permissions to Pass a Role to an AWS Service</a>. </p>",
+        "documentation" : "<p>In order to grant the necessary access to the DDoS Response Team (DRT), the user submitting the request must have the <code>iam:PassRole</code> permission. This error indicates the user did not have the appropriate permissions. For more information, see <a href=\"https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html\">Granting a User Permissions to Pass a Role to an AWS Service</a>. </p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OptimisticLockException",
-        "documentation" : "<p>Exception that indicates that the protection state has been modified by another client. You can retry the request.</p>",
+        "documentation" : "<p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ResourceNotFoundException",
@@ -158,7 +158,7 @@
       "asyncReturnType" : "AssociateDRTRoleResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Authorizes the DDoS Response team (DRT), using the specified role, to access your AWS account to assist with DDoS attack mitigation during potential attacks. This enables the DRT to inspect your AWS WAF configuration and create or update AWS WAF rules and web ACLs.</p> <p>You can associate only one <code>RoleArn</code> with your subscription. If you submit an <code>AssociateDRTRole</code> request for an account that already has an associated role, the new <code>RoleArn</code> will replace the existing <code>RoleArn</code>. </p> <p>Prior to making the <code>AssociateDRTRole</code> request, you must attach the <a href=\"https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSShieldDRTAccessPolicy\">AWSShieldDRTAccessPolicy</a> managed policy to the role you will specify in the request. For more information see <a href=\" https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html\">Attaching and Detaching IAM Policies</a>. The role must also trust the service principal <code> drt.shield.amazonaws.com</code>. For more information, see <a href=\"https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html\">IAM JSON Policy Elements: Principal</a>.</p> <p>The DRT will have access only to your AWS WAF and Shield resources. By submitting this request, you authorize the DRT to inspect your AWS WAF and Shield configuration and create and update AWS WAF rules and web ACLs on your behalf. The DRT takes these actions only if explicitly authorized by you.</p> <p>You must have the <code>iam:PassRole</code> permission to make an <code>AssociateDRTRole</code> request. For more information, see <a href=\"https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html\">Granting a User Permissions to Pass a Role to an AWS Service</a>. </p> <p>To use the services of the DRT and make an <code>AssociateDRTRole</code> request, you must be subscribed to the <a href=\"https://aws.amazon.com/premiumsupport/business-support/\">Business Support plan</a> or the <a href=\"https://aws.amazon.com/premiumsupport/enterprise-support/\">Enterprise Support plan</a>.</p>",
+      "documentation" : "<p>Authorizes the DDoS Response Team (DRT), using the specified role, to access your AWS account to assist with DDoS attack mitigation during potential attacks. This enables the DRT to inspect your AWS WAF configuration and create or update AWS WAF rules and web ACLs.</p> <p>You can associate only one <code>RoleArn</code> with your subscription. If you submit an <code>AssociateDRTRole</code> request for an account that already has an associated role, the new <code>RoleArn</code> will replace the existing <code>RoleArn</code>. </p> <p>Prior to making the <code>AssociateDRTRole</code> request, you must attach the <a href=\"https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSShieldDRTAccessPolicy\">AWSShieldDRTAccessPolicy</a> managed policy to the role you will specify in the request. For more information see <a href=\" https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html\">Attaching and Detaching IAM Policies</a>. The role must also trust the service principal <code> drt.shield.amazonaws.com</code>. For more information, see <a href=\"https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html\">IAM JSON Policy Elements: Principal</a>.</p> <p>The DRT will have access only to your AWS WAF and Shield resources. By submitting this request, you authorize the DRT to inspect your AWS WAF and Shield configuration and create and update AWS WAF rules and web ACLs on your behalf. The DRT takes these actions only if explicitly authorized by you.</p> <p>You must have the <code>iam:PassRole</code> permission to make an <code>AssociateDRTRole</code> request. For more information, see <a href=\"https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html\">Granting a User Permissions to Pass a Role to an AWS Service</a>. </p> <p>To use the services of the DRT and make an <code>AssociateDRTRole</code> request, you must be subscribed to the <a href=\"https://aws.amazon.com/premiumsupport/business-support/\">Business Support plan</a> or the <a href=\"https://aws.amazon.com/premiumsupport/enterprise-support/\">Enterprise Support plan</a>.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -177,11 +177,11 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "AccessDeniedForDependencyException",
-        "documentation" : "<p>In order to grant the necessary access to the DDoS Response Team, the user submitting the request must have the <code>iam:PassRole</code> permission. This error indicates the user did not have the appropriate permissions. For more information, see <a href=\"https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html\">Granting a User Permissions to Pass a Role to an AWS Service</a>. </p>",
+        "documentation" : "<p>In order to grant the necessary access to the DDoS Response Team (DRT), the user submitting the request must have the <code>iam:PassRole</code> permission. This error indicates the user did not have the appropriate permissions. For more information, see <a href=\"https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html\">Granting a User Permissions to Pass a Role to an AWS Service</a>. </p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OptimisticLockException",
-        "documentation" : "<p>Exception that indicates that the protection state has been modified by another client. You can retry the request.</p>",
+        "documentation" : "<p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ResourceNotFoundException",
@@ -238,7 +238,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OptimisticLockException",
-        "documentation" : "<p>Exception that indicates that the protection state has been modified by another client. You can retry the request.</p>",
+        "documentation" : "<p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -260,6 +260,59 @@
         "documentation" : null
       },
       "syncReturnType" : "AssociateHealthCheckResult"
+    },
+    "AssociateProactiveEngagementDetails" : {
+      "asyncCallableType" : "java.util.concurrent.Callable<AssociateProactiveEngagementDetailsResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<AssociateProactiveEngagementDetailsResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AssociateProactiveEngagementDetailsRequest, AssociateProactiveEngagementDetailsResult>",
+      "asyncReturnType" : "AssociateProactiveEngagementDetailsResult",
+      "authenticated" : true,
+      "deprecated" : false,
+      "documentation" : "<p>Initializes proactive engagement and sets the list of contacts for the DDoS Response Team (DRT) to use. You must provide at least one phone number in the emergency contact list. </p> <p>After you have initialized proactive engagement using this call, to disable or enable proactive engagement, use the calls <code>DisableProactiveEngagement</code> and <code>EnableProactiveEngagement</code>. </p> <note> <p>This call defines the list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you for escalations to the DRT and to initiate proactive customer support.</p> <p>The contacts that you provide in the request replace any contacts that were already defined. If you already have contacts defined and want to use them, retrieve the list using <code>DescribeEmergencyContactSettings</code> and then provide it to this call. </p> </note>",
+      "endpointCacheRequired" : false,
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
+      "endpointTrait" : null,
+      "exceptions" : [ {
+        "exceptionName" : "InternalErrorException",
+        "documentation" : "<p>Exception that indicates that a problem occurred with the service infrastructure. You can retry the request.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "InvalidOperationException",
+        "documentation" : "<p>Exception that indicates that the operation would not cause any change to occur.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "InvalidParameterException",
+        "documentation" : "<p>Exception that indicates that the parameters passed to the API are invalid. </p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ResourceNotFoundException",
+        "documentation" : "<p>Exception indicating the specified resource does not exist.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "OptimisticLockException",
+        "documentation" : "<p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>",
+        "httpStatusCode" : null
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
+      "input" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "AssociateProactiveEngagementDetailsRequest",
+        "variableName" : "associateProactiveEngagementDetailsRequest",
+        "variableType" : "AssociateProactiveEngagementDetailsRequest",
+        "documentation" : "",
+        "simpleType" : "AssociateProactiveEngagementDetailsRequest",
+        "variableSetterType" : "AssociateProactiveEngagementDetailsRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "methodName" : "associateProactiveEngagementDetails",
+      "operationName" : "AssociateProactiveEngagementDetails",
+      "returnType" : {
+        "returnType" : "AssociateProactiveEngagementDetailsResult",
+        "documentation" : null
+      },
+      "syncReturnType" : "AssociateProactiveEngagementDetailsResult"
     },
     "CreateProtection" : {
       "asyncCallableType" : "java.util.concurrent.Callable<CreateProtectionResult>",
@@ -295,7 +348,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OptimisticLockException",
-        "documentation" : "<p>Exception that indicates that the protection state has been modified by another client. You can retry the request.</p>",
+        "documentation" : "<p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ResourceNotFoundException",
@@ -385,7 +438,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OptimisticLockException",
-        "documentation" : "<p>Exception that indicates that the protection state has been modified by another client. You can retry the request.</p>",
+        "documentation" : "<p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -501,7 +554,7 @@
       "asyncReturnType" : "DescribeDRTAccessResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Returns the current role and list of Amazon S3 log buckets used by the DDoS Response team (DRT) to access your AWS account while assisting with attack mitigation.</p>",
+      "documentation" : "<p>Returns the current role and list of Amazon S3 log buckets used by the DDoS Response Team (DRT) to access your AWS account while assisting with attack mitigation.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -542,7 +595,7 @@
       "asyncReturnType" : "DescribeEmergencyContactSettingsResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Lists the email addresses that the DRT can use to contact you during a suspected attack.</p>",
+      "documentation" : "<p>A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -662,6 +715,59 @@
       },
       "syncReturnType" : "DescribeSubscriptionResult"
     },
+    "DisableProactiveEngagement" : {
+      "asyncCallableType" : "java.util.concurrent.Callable<DisableProactiveEngagementResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<DisableProactiveEngagementResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DisableProactiveEngagementRequest, DisableProactiveEngagementResult>",
+      "asyncReturnType" : "DisableProactiveEngagementResult",
+      "authenticated" : true,
+      "deprecated" : false,
+      "documentation" : "<p>Removes authorization from the DDoS Response Team (DRT) to notify contacts about escalations to the DRT and to initiate proactive customer support.</p>",
+      "endpointCacheRequired" : false,
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
+      "endpointTrait" : null,
+      "exceptions" : [ {
+        "exceptionName" : "InternalErrorException",
+        "documentation" : "<p>Exception that indicates that a problem occurred with the service infrastructure. You can retry the request.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "InvalidOperationException",
+        "documentation" : "<p>Exception that indicates that the operation would not cause any change to occur.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "InvalidParameterException",
+        "documentation" : "<p>Exception that indicates that the parameters passed to the API are invalid. </p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ResourceNotFoundException",
+        "documentation" : "<p>Exception indicating the specified resource does not exist.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "OptimisticLockException",
+        "documentation" : "<p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>",
+        "httpStatusCode" : null
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
+      "input" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "DisableProactiveEngagementRequest",
+        "variableName" : "disableProactiveEngagementRequest",
+        "variableType" : "DisableProactiveEngagementRequest",
+        "documentation" : "",
+        "simpleType" : "DisableProactiveEngagementRequest",
+        "variableSetterType" : "DisableProactiveEngagementRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "methodName" : "disableProactiveEngagement",
+      "operationName" : "DisableProactiveEngagement",
+      "returnType" : {
+        "returnType" : "DisableProactiveEngagementResult",
+        "documentation" : null
+      },
+      "syncReturnType" : "DisableProactiveEngagementResult"
+    },
     "DisassociateDRTLogBucket" : {
       "asyncCallableType" : "java.util.concurrent.Callable<DisassociateDRTLogBucketResult>",
       "asyncFutureType" : "java.util.concurrent.Future<DisassociateDRTLogBucketResult>",
@@ -669,7 +775,7 @@
       "asyncReturnType" : "DisassociateDRTLogBucketResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Removes the DDoS Response team's (DRT) access to the specified Amazon S3 bucket containing your AWS WAF logs.</p> <p>To make a <code>DisassociateDRTLogBucket</code> request, you must be subscribed to the <a href=\"https://aws.amazon.com/premiumsupport/business-support/\">Business Support plan</a> or the <a href=\"https://aws.amazon.com/premiumsupport/enterprise-support/\">Enterprise Support plan</a>. However, if you are not subscribed to one of these support plans, but had been previously and had granted the DRT access to your account, you can submit a <code>DisassociateDRTLogBucket</code> request to remove this access.</p>",
+      "documentation" : "<p>Removes the DDoS Response Team's (DRT) access to the specified Amazon S3 bucket containing your AWS WAF logs.</p> <p>To make a <code>DisassociateDRTLogBucket</code> request, you must be subscribed to the <a href=\"https://aws.amazon.com/premiumsupport/business-support/\">Business Support plan</a> or the <a href=\"https://aws.amazon.com/premiumsupport/enterprise-support/\">Enterprise Support plan</a>. However, if you are not subscribed to one of these support plans, but had been previously and had granted the DRT access to your account, you can submit a <code>DisassociateDRTLogBucket</code> request to remove this access.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -688,11 +794,11 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "AccessDeniedForDependencyException",
-        "documentation" : "<p>In order to grant the necessary access to the DDoS Response Team, the user submitting the request must have the <code>iam:PassRole</code> permission. This error indicates the user did not have the appropriate permissions. For more information, see <a href=\"https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html\">Granting a User Permissions to Pass a Role to an AWS Service</a>. </p>",
+        "documentation" : "<p>In order to grant the necessary access to the DDoS Response Team (DRT), the user submitting the request must have the <code>iam:PassRole</code> permission. This error indicates the user did not have the appropriate permissions. For more information, see <a href=\"https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html\">Granting a User Permissions to Pass a Role to an AWS Service</a>. </p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OptimisticLockException",
-        "documentation" : "<p>Exception that indicates that the protection state has been modified by another client. You can retry the request.</p>",
+        "documentation" : "<p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ResourceNotFoundException",
@@ -726,7 +832,7 @@
       "asyncReturnType" : "DisassociateDRTRoleResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Removes the DDoS Response team's (DRT) access to your AWS account.</p> <p>To make a <code>DisassociateDRTRole</code> request, you must be subscribed to the <a href=\"https://aws.amazon.com/premiumsupport/business-support/\">Business Support plan</a> or the <a href=\"https://aws.amazon.com/premiumsupport/enterprise-support/\">Enterprise Support plan</a>. However, if you are not subscribed to one of these support plans, but had been previously and had granted the DRT access to your account, you can submit a <code>DisassociateDRTRole</code> request to remove this access.</p>",
+      "documentation" : "<p>Removes the DDoS Response Team's (DRT) access to your AWS account.</p> <p>To make a <code>DisassociateDRTRole</code> request, you must be subscribed to the <a href=\"https://aws.amazon.com/premiumsupport/business-support/\">Business Support plan</a> or the <a href=\"https://aws.amazon.com/premiumsupport/enterprise-support/\">Enterprise Support plan</a>. However, if you are not subscribed to one of these support plans, but had been previously and had granted the DRT access to your account, you can submit a <code>DisassociateDRTRole</code> request to remove this access.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -741,7 +847,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OptimisticLockException",
-        "documentation" : "<p>Exception that indicates that the protection state has been modified by another client. You can retry the request.</p>",
+        "documentation" : "<p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ResourceNotFoundException",
@@ -794,7 +900,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OptimisticLockException",
-        "documentation" : "<p>Exception that indicates that the protection state has been modified by another client. You can retry the request.</p>",
+        "documentation" : "<p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -816,6 +922,59 @@
         "documentation" : null
       },
       "syncReturnType" : "DisassociateHealthCheckResult"
+    },
+    "EnableProactiveEngagement" : {
+      "asyncCallableType" : "java.util.concurrent.Callable<EnableProactiveEngagementResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<EnableProactiveEngagementResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<EnableProactiveEngagementRequest, EnableProactiveEngagementResult>",
+      "asyncReturnType" : "EnableProactiveEngagementResult",
+      "authenticated" : true,
+      "deprecated" : false,
+      "documentation" : "<p>Authorizes the DDoS Response Team (DRT) to use email and phone to notify contacts about escalations to the DRT and to initiate proactive customer support.</p>",
+      "endpointCacheRequired" : false,
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
+      "endpointTrait" : null,
+      "exceptions" : [ {
+        "exceptionName" : "InternalErrorException",
+        "documentation" : "<p>Exception that indicates that a problem occurred with the service infrastructure. You can retry the request.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "InvalidOperationException",
+        "documentation" : "<p>Exception that indicates that the operation would not cause any change to occur.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "InvalidParameterException",
+        "documentation" : "<p>Exception that indicates that the parameters passed to the API are invalid. </p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ResourceNotFoundException",
+        "documentation" : "<p>Exception indicating the specified resource does not exist.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "OptimisticLockException",
+        "documentation" : "<p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>",
+        "httpStatusCode" : null
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
+      "input" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "EnableProactiveEngagementRequest",
+        "variableName" : "enableProactiveEngagementRequest",
+        "variableType" : "EnableProactiveEngagementRequest",
+        "documentation" : "",
+        "simpleType" : "EnableProactiveEngagementRequest",
+        "variableSetterType" : "EnableProactiveEngagementRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "methodName" : "enableProactiveEngagement",
+      "operationName" : "EnableProactiveEngagement",
+      "returnType" : {
+        "returnType" : "EnableProactiveEngagementResult",
+        "documentation" : null
+      },
+      "syncReturnType" : "EnableProactiveEngagementResult"
     },
     "GetSubscriptionState" : {
       "asyncCallableType" : "java.util.concurrent.Callable<GetSubscriptionStateResult>",
@@ -951,7 +1110,7 @@
       "asyncReturnType" : "UpdateEmergencyContactSettingsResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Updates the details of the list of email addresses that the DRT can use to contact you during a suspected attack.</p>",
+      "documentation" : "<p>Updates the details of the list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -966,7 +1125,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OptimisticLockException",
-        "documentation" : "<p>Exception that indicates that the protection state has been modified by another client. You can retry the request.</p>",
+        "documentation" : "<p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ResourceNotFoundException",
@@ -1023,7 +1182,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OptimisticLockException",
-        "documentation" : "<p>Exception that indicates that the protection state has been modified by another client. You can retry the request.</p>",
+        "documentation" : "<p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -1096,7 +1255,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>In order to grant the necessary access to the DDoS Response Team, the user submitting the request must have the <code>iam:PassRole</code> permission. This error indicates the user did not have the appropriate permissions. For more information, see <a href=\"https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html\">Granting a User Permissions to Pass a Role to an AWS Service</a>. </p>",
+      "documentation" : "<p>In order to grant the necessary access to the DDoS Response Team (DRT), the user submitting the request must have the <code>iam:PassRole</code> permission. This error indicates the user did not have the appropriate permissions. For more information, see <a href=\"https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html\">Granting a User Permissions to Pass a Role to an AWS Service</a>. </p>",
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "AccessDeniedForDependencyException",
@@ -1938,6 +2097,398 @@
         "documentation" : null,
         "simpleType" : "AssociateHealthCheckResult",
         "variableSetterType" : "AssociateHealthCheckResult"
+      },
+      "wrapper" : false
+    },
+    "AssociateProactiveEngagementDetailsRequest" : {
+      "c2jName" : "AssociateProactiveEngagementDetailsRequest",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "endpointDiscoveryMembers" : null,
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : {
+        "action" : "AssociateProactiveEngagementDetails",
+        "locationName" : null,
+        "requestUri" : "/",
+        "target" : "AWSShield_20160616.AssociateProactiveEngagementDetails",
+        "verb" : "POST",
+        "xmlNameSpaceUri" : null
+      },
+      "members" : [ {
+        "c2jName" : "EmergencyContactList",
+        "c2jShape" : "EmergencyContactList",
+        "deprecated" : false,
+        "documentation" : "<p>A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you for escalations to the DRT and to initiate proactive customer support. </p> <p>To enable proactive engagement, the contact list must include at least one phone number.</p> <note> <p>The contacts that you provide here replace any contacts that were already defined. If you already have contacts defined and want to use them, retrieve the list using <code>DescribeEmergencyContactSettings</code> and then provide it here. </p> </note>",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you for escalations to the DRT and to initiate proactive customer support. </p> <p>To enable proactive engagement, the contact list must include at least one phone number.</p> <note> <p>The contacts that you provide here replace any contacts that were already defined. If you already have contacts defined and want to use them, retrieve the list using <code>DescribeEmergencyContactSettings</code> and then provide it here. </p> </note>\n@param emergencyContactList A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you for escalations to the DRT and to initiate proactive customer support. </p> <p>To enable proactive engagement, the contact list must include at least one phone number.</p> <note> <p>The contacts that you provide here replace any contacts that were already defined. If you already have contacts defined and want to use them, retrieve the list using <code>DescribeEmergencyContactSettings</code> and then provide it here. </p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withEmergencyContactList",
+        "getterDocumentation" : "/**<p>A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you for escalations to the DRT and to initiate proactive customer support. </p> <p>To enable proactive engagement, the contact list must include at least one phone number.</p> <note> <p>The contacts that you provide here replace any contacts that were already defined. If you already have contacts defined and want to use them, retrieve the list using <code>DescribeEmergencyContactSettings</code> and then provide it here. </p> </note>\n@return A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you for escalations to the DRT and to initiate proactive customer support. </p> <p>To enable proactive engagement, the contact list must include at least one phone number.</p> <note> <p>The contacts that you provide here replace any contacts that were already defined. If you already have contacts defined and want to use them, retrieve the list using <code>DescribeEmergencyContactSettings</code> and then provide it here. </p>*/",
+        "getterMethodName" : "getEmergencyContactList",
+        "getterModel" : {
+          "returnType" : "java.util.List<EmergencyContact>",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "EmergencyContactList",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "EmergencyContactList",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : true,
+        "listModel" : {
+          "implType" : "java.util.ArrayList",
+          "interfaceType" : "java.util.List",
+          "listMemberModel" : {
+            "c2jName" : "member",
+            "c2jShape" : "EmergencyContact",
+            "deprecated" : false,
+            "documentation" : "",
+            "endpointDiscoveryId" : false,
+            "enumType" : null,
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "fluentSetterMethodName" : "withMember",
+            "getterDocumentation" : "/**\n@return */",
+            "getterMethodName" : "getMember",
+            "getterModel" : {
+              "returnType" : "EmergencyContact",
+              "documentation" : null
+            },
+            "http" : {
+              "additionalMarshallingPath" : null,
+              "additionalUnmarshallingPath" : null,
+              "flattened" : false,
+              "greedy" : false,
+              "header" : false,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "marshallLocation" : "PAYLOAD",
+              "marshallLocationName" : "member",
+              "queryString" : false,
+              "requiresLength" : false,
+              "statusCode" : false,
+              "unmarshallLocationName" : "member",
+              "uri" : false
+            },
+            "idempotencyToken" : false,
+            "isBinary" : false,
+            "jsonValue" : false,
+            "list" : false,
+            "listModel" : null,
+            "map" : false,
+            "mapModel" : null,
+            "marshallingTargetClass" : "StructuredPojo",
+            "marshallingType" : "STRUCTURED",
+            "name" : "Member",
+            "sensitive" : false,
+            "setterDocumentation" : "/**\n@param member */",
+            "setterMethodName" : "setMember",
+            "setterModel" : {
+              "timestampFormat" : null,
+              "variableDeclarationType" : "EmergencyContact",
+              "variableName" : "member",
+              "variableType" : "EmergencyContact",
+              "documentation" : "",
+              "simpleType" : "EmergencyContact",
+              "variableSetterType" : "EmergencyContact"
+            },
+            "shouldEmitLegacyEnumSetter" : false,
+            "simple" : false,
+            "unmarshallingType" : null,
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "variable" : {
+              "timestampFormat" : null,
+              "variableDeclarationType" : "EmergencyContact",
+              "variableName" : "member",
+              "variableType" : "EmergencyContact",
+              "documentation" : "",
+              "simpleType" : "EmergencyContact",
+              "variableSetterType" : "EmergencyContact"
+            },
+            "xmlNameSpaceUri" : null
+          },
+          "memberLocationName" : null,
+          "memberType" : "EmergencyContact",
+          "map" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
+          "memberAdditionalMarshallingPath" : null,
+          "memberAdditionalUnmarshallingPath" : null,
+          "sendEmptyQueryString" : false,
+          "simple" : false,
+          "simpleType" : "EmergencyContact",
+          "templateImplType" : "java.util.ArrayList<EmergencyContact>",
+          "templateType" : "java.util.List<EmergencyContact>"
+        },
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "List",
+        "marshallingType" : "LIST",
+        "name" : "EmergencyContactList",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you for escalations to the DRT and to initiate proactive customer support. </p> <p>To enable proactive engagement, the contact list must include at least one phone number.</p> <note> <p>The contacts that you provide here replace any contacts that were already defined. If you already have contacts defined and want to use them, retrieve the list using <code>DescribeEmergencyContactSettings</code> and then provide it here. </p> </note>\n@param emergencyContactList A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you for escalations to the DRT and to initiate proactive customer support. </p> <p>To enable proactive engagement, the contact list must include at least one phone number.</p> <note> <p>The contacts that you provide here replace any contacts that were already defined. If you already have contacts defined and want to use them, retrieve the list using <code>DescribeEmergencyContactSettings</code> and then provide it here. </p>*/",
+        "setterMethodName" : "setEmergencyContactList",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "java.util.List<EmergencyContact>",
+          "variableName" : "emergencyContactList",
+          "variableType" : "java.util.List<EmergencyContact>",
+          "documentation" : "",
+          "simpleType" : "List<EmergencyContact>",
+          "variableSetterType" : "java.util.Collection<EmergencyContact>"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : false,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you for escalations to the DRT and to initiate proactive customer support. </p> <p>To enable proactive engagement, the contact list must include at least one phone number.</p> <note> <p>The contacts that you provide here replace any contacts that were already defined. If you already have contacts defined and want to use them, retrieve the list using <code>DescribeEmergencyContactSettings</code> and then provide it here. </p> </note>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEmergencyContactList(java.util.Collection)} or {@link #withEmergencyContactList(java.util.Collection)} if you want to override the existing values.</p>\n@param emergencyContactList A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you for escalations to the DRT and to initiate proactive customer support. </p> <p>To enable proactive engagement, the contact list must include at least one phone number.</p> <note> <p>The contacts that you provide here replace any contacts that were already defined. If you already have contacts defined and want to use them, retrieve the list using <code>DescribeEmergencyContactSettings</code> and then provide it here. </p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "java.util.List<EmergencyContact>",
+          "variableName" : "emergencyContactList",
+          "variableType" : "java.util.List<EmergencyContact>",
+          "documentation" : "<p>A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you for escalations to the DRT and to initiate proactive customer support. </p> <p>To enable proactive engagement, the contact list must include at least one phone number.</p> <note> <p>The contacts that you provide here replace any contacts that were already defined. If you already have contacts defined and want to use them, retrieve the list using <code>DescribeEmergencyContactSettings</code> and then provide it here. </p> </note>",
+          "simpleType" : "List<EmergencyContact>",
+          "variableSetterType" : "java.util.Collection<EmergencyContact>"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "EmergencyContactList" : {
+          "c2jName" : "EmergencyContactList",
+          "c2jShape" : "EmergencyContactList",
+          "deprecated" : false,
+          "documentation" : "<p>A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you for escalations to the DRT and to initiate proactive customer support. </p> <p>To enable proactive engagement, the contact list must include at least one phone number.</p> <note> <p>The contacts that you provide here replace any contacts that were already defined. If you already have contacts defined and want to use them, retrieve the list using <code>DescribeEmergencyContactSettings</code> and then provide it here. </p> </note>",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you for escalations to the DRT and to initiate proactive customer support. </p> <p>To enable proactive engagement, the contact list must include at least one phone number.</p> <note> <p>The contacts that you provide here replace any contacts that were already defined. If you already have contacts defined and want to use them, retrieve the list using <code>DescribeEmergencyContactSettings</code> and then provide it here. </p> </note>\n@param emergencyContactList A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you for escalations to the DRT and to initiate proactive customer support. </p> <p>To enable proactive engagement, the contact list must include at least one phone number.</p> <note> <p>The contacts that you provide here replace any contacts that were already defined. If you already have contacts defined and want to use them, retrieve the list using <code>DescribeEmergencyContactSettings</code> and then provide it here. </p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withEmergencyContactList",
+          "getterDocumentation" : "/**<p>A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you for escalations to the DRT and to initiate proactive customer support. </p> <p>To enable proactive engagement, the contact list must include at least one phone number.</p> <note> <p>The contacts that you provide here replace any contacts that were already defined. If you already have contacts defined and want to use them, retrieve the list using <code>DescribeEmergencyContactSettings</code> and then provide it here. </p> </note>\n@return A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you for escalations to the DRT and to initiate proactive customer support. </p> <p>To enable proactive engagement, the contact list must include at least one phone number.</p> <note> <p>The contacts that you provide here replace any contacts that were already defined. If you already have contacts defined and want to use them, retrieve the list using <code>DescribeEmergencyContactSettings</code> and then provide it here. </p>*/",
+          "getterMethodName" : "getEmergencyContactList",
+          "getterModel" : {
+            "returnType" : "java.util.List<EmergencyContact>",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "EmergencyContactList",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "EmergencyContactList",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : true,
+          "listModel" : {
+            "implType" : "java.util.ArrayList",
+            "interfaceType" : "java.util.List",
+            "listMemberModel" : {
+              "c2jName" : "member",
+              "c2jShape" : "EmergencyContact",
+              "deprecated" : false,
+              "documentation" : "",
+              "endpointDiscoveryId" : false,
+              "enumType" : null,
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "fluentSetterMethodName" : "withMember",
+              "getterDocumentation" : "/**\n@return */",
+              "getterMethodName" : "getMember",
+              "getterModel" : {
+                "returnType" : "EmergencyContact",
+                "documentation" : null
+              },
+              "http" : {
+                "additionalMarshallingPath" : null,
+                "additionalUnmarshallingPath" : null,
+                "flattened" : false,
+                "greedy" : false,
+                "header" : false,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "marshallLocation" : "PAYLOAD",
+                "marshallLocationName" : "member",
+                "queryString" : false,
+                "requiresLength" : false,
+                "statusCode" : false,
+                "unmarshallLocationName" : "member",
+                "uri" : false
+              },
+              "idempotencyToken" : false,
+              "isBinary" : false,
+              "jsonValue" : false,
+              "list" : false,
+              "listModel" : null,
+              "map" : false,
+              "mapModel" : null,
+              "marshallingTargetClass" : "StructuredPojo",
+              "marshallingType" : "STRUCTURED",
+              "name" : "Member",
+              "sensitive" : false,
+              "setterDocumentation" : "/**\n@param member */",
+              "setterMethodName" : "setMember",
+              "setterModel" : {
+                "timestampFormat" : null,
+                "variableDeclarationType" : "EmergencyContact",
+                "variableName" : "member",
+                "variableType" : "EmergencyContact",
+                "documentation" : "",
+                "simpleType" : "EmergencyContact",
+                "variableSetterType" : "EmergencyContact"
+              },
+              "shouldEmitLegacyEnumSetter" : false,
+              "simple" : false,
+              "unmarshallingType" : null,
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "variable" : {
+                "timestampFormat" : null,
+                "variableDeclarationType" : "EmergencyContact",
+                "variableName" : "member",
+                "variableType" : "EmergencyContact",
+                "documentation" : "",
+                "simpleType" : "EmergencyContact",
+                "variableSetterType" : "EmergencyContact"
+              },
+              "xmlNameSpaceUri" : null
+            },
+            "memberLocationName" : null,
+            "memberType" : "EmergencyContact",
+            "map" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
+            "memberAdditionalMarshallingPath" : null,
+            "memberAdditionalUnmarshallingPath" : null,
+            "sendEmptyQueryString" : false,
+            "simple" : false,
+            "simpleType" : "EmergencyContact",
+            "templateImplType" : "java.util.ArrayList<EmergencyContact>",
+            "templateType" : "java.util.List<EmergencyContact>"
+          },
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "List",
+          "marshallingType" : "LIST",
+          "name" : "EmergencyContactList",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you for escalations to the DRT and to initiate proactive customer support. </p> <p>To enable proactive engagement, the contact list must include at least one phone number.</p> <note> <p>The contacts that you provide here replace any contacts that were already defined. If you already have contacts defined and want to use them, retrieve the list using <code>DescribeEmergencyContactSettings</code> and then provide it here. </p> </note>\n@param emergencyContactList A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you for escalations to the DRT and to initiate proactive customer support. </p> <p>To enable proactive engagement, the contact list must include at least one phone number.</p> <note> <p>The contacts that you provide here replace any contacts that were already defined. If you already have contacts defined and want to use them, retrieve the list using <code>DescribeEmergencyContactSettings</code> and then provide it here. </p>*/",
+          "setterMethodName" : "setEmergencyContactList",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "java.util.List<EmergencyContact>",
+            "variableName" : "emergencyContactList",
+            "variableType" : "java.util.List<EmergencyContact>",
+            "documentation" : "",
+            "simpleType" : "List<EmergencyContact>",
+            "variableSetterType" : "java.util.Collection<EmergencyContact>"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : false,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you for escalations to the DRT and to initiate proactive customer support. </p> <p>To enable proactive engagement, the contact list must include at least one phone number.</p> <note> <p>The contacts that you provide here replace any contacts that were already defined. If you already have contacts defined and want to use them, retrieve the list using <code>DescribeEmergencyContactSettings</code> and then provide it here. </p> </note>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEmergencyContactList(java.util.Collection)} or {@link #withEmergencyContactList(java.util.Collection)} if you want to override the existing values.</p>\n@param emergencyContactList A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you for escalations to the DRT and to initiate proactive customer support. </p> <p>To enable proactive engagement, the contact list must include at least one phone number.</p> <note> <p>The contacts that you provide here replace any contacts that were already defined. If you already have contacts defined and want to use them, retrieve the list using <code>DescribeEmergencyContactSettings</code> and then provide it here. </p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "java.util.List<EmergencyContact>",
+            "variableName" : "emergencyContactList",
+            "variableType" : "java.util.List<EmergencyContact>",
+            "documentation" : "<p>A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you for escalations to the DRT and to initiate proactive customer support. </p> <p>To enable proactive engagement, the contact list must include at least one phone number.</p> <note> <p>The contacts that you provide here replace any contacts that were already defined. If you already have contacts defined and want to use them, retrieve the list using <code>DescribeEmergencyContactSettings</code> and then provide it here. </p> </note>",
+            "simpleType" : "List<EmergencyContact>",
+            "variableSetterType" : "java.util.Collection<EmergencyContact>"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : [ "EmergencyContactList" ],
+      "shapeName" : "AssociateProactiveEngagementDetailsRequest",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "AssociateProactiveEngagementDetailsRequest",
+        "variableName" : "associateProactiveEngagementDetailsRequest",
+        "variableType" : "AssociateProactiveEngagementDetailsRequest",
+        "documentation" : null,
+        "simpleType" : "AssociateProactiveEngagementDetailsRequest",
+        "variableSetterType" : "AssociateProactiveEngagementDetailsRequest"
+      },
+      "wrapper" : false
+    },
+    "AssociateProactiveEngagementDetailsResult" : {
+      "c2jName" : "AssociateProactiveEngagementDetailsResponse",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "endpointDiscoveryMembers" : null,
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "AssociateProactiveEngagementDetailsResult",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "AssociateProactiveEngagementDetailsResult",
+        "variableName" : "associateProactiveEngagementDetailsResult",
+        "variableType" : "AssociateProactiveEngagementDetailsResult",
+        "documentation" : null,
+        "simpleType" : "AssociateProactiveEngagementDetailsResult",
+        "variableSetterType" : "AssociateProactiveEngagementDetailsResult"
       },
       "wrapper" : false
     },
@@ -8056,12 +8607,12 @@
         "c2jName" : "EmergencyContactList",
         "c2jShape" : "EmergencyContactList",
         "deprecated" : false,
-        "documentation" : "<p>A list of email addresses that the DRT can use to contact you during a suspected attack.</p>",
+        "documentation" : "<p>A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.</p>",
         "endpointDiscoveryId" : false,
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>A list of email addresses that the DRT can use to contact you during a suspected attack.</p>\n@param emergencyContactList A list of email addresses that the DRT can use to contact you during a suspected attack.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.</p>\n@param emergencyContactList A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withEmergencyContactList",
-        "getterDocumentation" : "/**<p>A list of email addresses that the DRT can use to contact you during a suspected attack.</p>\n@return A list of email addresses that the DRT can use to contact you during a suspected attack.*/",
+        "getterDocumentation" : "/**<p>A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.</p>\n@return A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.*/",
         "getterMethodName" : "getEmergencyContactList",
         "getterModel" : {
           "returnType" : "java.util.List<EmergencyContact>",
@@ -8178,7 +8729,7 @@
         "marshallingType" : "LIST",
         "name" : "EmergencyContactList",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>A list of email addresses that the DRT can use to contact you during a suspected attack.</p>\n@param emergencyContactList A list of email addresses that the DRT can use to contact you during a suspected attack.*/",
+        "setterDocumentation" : "/**<p>A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.</p>\n@param emergencyContactList A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.*/",
         "setterMethodName" : "setEmergencyContactList",
         "setterModel" : {
           "timestampFormat" : null,
@@ -8192,13 +8743,13 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>A list of email addresses that the DRT can use to contact you during a suspected attack.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEmergencyContactList(java.util.Collection)} or {@link #withEmergencyContactList(java.util.Collection)} if you want to override the existing values.</p>\n@param emergencyContactList A list of email addresses that the DRT can use to contact you during a suspected attack.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEmergencyContactList(java.util.Collection)} or {@link #withEmergencyContactList(java.util.Collection)} if you want to override the existing values.</p>\n@param emergencyContactList A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<EmergencyContact>",
           "variableName" : "emergencyContactList",
           "variableType" : "java.util.List<EmergencyContact>",
-          "documentation" : "<p>A list of email addresses that the DRT can use to contact you during a suspected attack.</p>",
+          "documentation" : "<p>A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.</p>",
           "simpleType" : "List<EmergencyContact>",
           "variableSetterType" : "java.util.Collection<EmergencyContact>"
         },
@@ -8209,12 +8760,12 @@
           "c2jName" : "EmergencyContactList",
           "c2jShape" : "EmergencyContactList",
           "deprecated" : false,
-          "documentation" : "<p>A list of email addresses that the DRT can use to contact you during a suspected attack.</p>",
+          "documentation" : "<p>A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.</p>",
           "endpointDiscoveryId" : false,
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>A list of email addresses that the DRT can use to contact you during a suspected attack.</p>\n@param emergencyContactList A list of email addresses that the DRT can use to contact you during a suspected attack.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.</p>\n@param emergencyContactList A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withEmergencyContactList",
-          "getterDocumentation" : "/**<p>A list of email addresses that the DRT can use to contact you during a suspected attack.</p>\n@return A list of email addresses that the DRT can use to contact you during a suspected attack.*/",
+          "getterDocumentation" : "/**<p>A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.</p>\n@return A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.*/",
           "getterMethodName" : "getEmergencyContactList",
           "getterModel" : {
             "returnType" : "java.util.List<EmergencyContact>",
@@ -8331,7 +8882,7 @@
           "marshallingType" : "LIST",
           "name" : "EmergencyContactList",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>A list of email addresses that the DRT can use to contact you during a suspected attack.</p>\n@param emergencyContactList A list of email addresses that the DRT can use to contact you during a suspected attack.*/",
+          "setterDocumentation" : "/**<p>A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.</p>\n@param emergencyContactList A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.*/",
           "setterMethodName" : "setEmergencyContactList",
           "setterModel" : {
             "timestampFormat" : null,
@@ -8345,13 +8896,13 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>A list of email addresses that the DRT can use to contact you during a suspected attack.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEmergencyContactList(java.util.Collection)} or {@link #withEmergencyContactList(java.util.Collection)} if you want to override the existing values.</p>\n@param emergencyContactList A list of email addresses that the DRT can use to contact you during a suspected attack.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEmergencyContactList(java.util.Collection)} or {@link #withEmergencyContactList(java.util.Collection)} if you want to override the existing values.</p>\n@param emergencyContactList A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<EmergencyContact>",
             "variableName" : "emergencyContactList",
             "variableType" : "java.util.List<EmergencyContact>",
-            "documentation" : "<p>A list of email addresses that the DRT can use to contact you during a suspected attack.</p>",
+            "documentation" : "<p>A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.</p>",
             "simpleType" : "List<EmergencyContact>",
             "variableSetterType" : "java.util.Collection<EmergencyContact>"
           },
@@ -9106,6 +9657,94 @@
       },
       "wrapper" : false
     },
+    "DisableProactiveEngagementRequest" : {
+      "c2jName" : "DisableProactiveEngagementRequest",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "endpointDiscoveryMembers" : null,
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : {
+        "action" : "DisableProactiveEngagement",
+        "locationName" : null,
+        "requestUri" : "/",
+        "target" : "AWSShield_20160616.DisableProactiveEngagement",
+        "verb" : "POST",
+        "xmlNameSpaceUri" : null
+      },
+      "members" : null,
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "DisableProactiveEngagementRequest",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "DisableProactiveEngagementRequest",
+        "variableName" : "disableProactiveEngagementRequest",
+        "variableType" : "DisableProactiveEngagementRequest",
+        "documentation" : null,
+        "simpleType" : "DisableProactiveEngagementRequest",
+        "variableSetterType" : "DisableProactiveEngagementRequest"
+      },
+      "wrapper" : false
+    },
+    "DisableProactiveEngagementResult" : {
+      "c2jName" : "DisableProactiveEngagementResponse",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "endpointDiscoveryMembers" : null,
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "DisableProactiveEngagementResult",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "DisableProactiveEngagementResult",
+        "variableName" : "disableProactiveEngagementResult",
+        "variableType" : "DisableProactiveEngagementResult",
+        "documentation" : null,
+        "simpleType" : "DisableProactiveEngagementResult",
+        "variableSetterType" : "DisableProactiveEngagementResult"
+      },
+      "wrapper" : false
+    },
     "DisassociateDRTLogBucketRequest" : {
       "c2jName" : "DisassociateDRTLogBucketRequest",
       "customization" : {
@@ -9792,7 +10431,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contact information that the DRT can use to contact you during a suspected attack.</p>",
+      "documentation" : "<p>Contact information that the DRT can use to contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.</p>",
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
@@ -9806,12 +10445,12 @@
         "c2jName" : "EmailAddress",
         "c2jShape" : "EmailAddress",
         "deprecated" : false,
-        "documentation" : "<p>An email address that the DRT can use to contact you during a suspected attack.</p>",
+        "documentation" : "<p>The email address for the contact.</p>",
         "endpointDiscoveryId" : false,
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>An email address that the DRT can use to contact you during a suspected attack.</p>\n@param emailAddress An email address that the DRT can use to contact you during a suspected attack.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The email address for the contact.</p>\n@param emailAddress The email address for the contact.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withEmailAddress",
-        "getterDocumentation" : "/**<p>An email address that the DRT can use to contact you during a suspected attack.</p>\n@return An email address that the DRT can use to contact you during a suspected attack.*/",
+        "getterDocumentation" : "/**<p>The email address for the contact.</p>\n@return The email address for the contact.*/",
         "getterMethodName" : "getEmailAddress",
         "getterModel" : {
           "returnType" : "String",
@@ -9845,7 +10484,7 @@
         "marshallingType" : "STRING",
         "name" : "EmailAddress",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>An email address that the DRT can use to contact you during a suspected attack.</p>\n@param emailAddress An email address that the DRT can use to contact you during a suspected attack.*/",
+        "setterDocumentation" : "/**<p>The email address for the contact.</p>\n@param emailAddress The email address for the contact.*/",
         "setterMethodName" : "setEmailAddress",
         "setterModel" : {
           "timestampFormat" : null,
@@ -9859,29 +10498,234 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>An email address that the DRT can use to contact you during a suspected attack.</p>\n@param emailAddress An email address that the DRT can use to contact you during a suspected attack.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The email address for the contact.</p>\n@param emailAddress The email address for the contact.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "emailAddress",
           "variableType" : "String",
-          "documentation" : "<p>An email address that the DRT can use to contact you during a suspected attack.</p>",
+          "documentation" : "<p>The email address for the contact.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "PhoneNumber",
+        "c2jShape" : "PhoneNumber",
+        "deprecated" : false,
+        "documentation" : "<p>The phone number for the contact.</p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The phone number for the contact.</p>\n@param phoneNumber The phone number for the contact.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withPhoneNumber",
+        "getterDocumentation" : "/**<p>The phone number for the contact.</p>\n@return The phone number for the contact.*/",
+        "getterMethodName" : "getPhoneNumber",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "PhoneNumber",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "PhoneNumber",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "PhoneNumber",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The phone number for the contact.</p>\n@param phoneNumber The phone number for the contact.*/",
+        "setterMethodName" : "setPhoneNumber",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "phoneNumber",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The phone number for the contact.</p>\n@param phoneNumber The phone number for the contact.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "phoneNumber",
+          "variableType" : "String",
+          "documentation" : "<p>The phone number for the contact.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "ContactNotes",
+        "c2jShape" : "ContactNotes",
+        "deprecated" : false,
+        "documentation" : "<p>Additional notes regarding the contact. </p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>Additional notes regarding the contact. </p>\n@param contactNotes Additional notes regarding the contact.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withContactNotes",
+        "getterDocumentation" : "/**<p>Additional notes regarding the contact. </p>\n@return Additional notes regarding the contact.*/",
+        "getterMethodName" : "getContactNotes",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "ContactNotes",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "ContactNotes",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "ContactNotes",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>Additional notes regarding the contact. </p>\n@param contactNotes Additional notes regarding the contact.*/",
+        "setterMethodName" : "setContactNotes",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "contactNotes",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>Additional notes regarding the contact. </p>\n@param contactNotes Additional notes regarding the contact.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "contactNotes",
+          "variableType" : "String",
+          "documentation" : "<p>Additional notes regarding the contact. </p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
         "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
+        "ContactNotes" : {
+          "c2jName" : "ContactNotes",
+          "c2jShape" : "ContactNotes",
+          "deprecated" : false,
+          "documentation" : "<p>Additional notes regarding the contact. </p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>Additional notes regarding the contact. </p>\n@param contactNotes Additional notes regarding the contact.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withContactNotes",
+          "getterDocumentation" : "/**<p>Additional notes regarding the contact. </p>\n@return Additional notes regarding the contact.*/",
+          "getterMethodName" : "getContactNotes",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "ContactNotes",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "ContactNotes",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "ContactNotes",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>Additional notes regarding the contact. </p>\n@param contactNotes Additional notes regarding the contact.*/",
+          "setterMethodName" : "setContactNotes",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "contactNotes",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>Additional notes regarding the contact. </p>\n@param contactNotes Additional notes regarding the contact.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "contactNotes",
+            "variableType" : "String",
+            "documentation" : "<p>Additional notes regarding the contact. </p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
         "EmailAddress" : {
           "c2jName" : "EmailAddress",
           "c2jShape" : "EmailAddress",
           "deprecated" : false,
-          "documentation" : "<p>An email address that the DRT can use to contact you during a suspected attack.</p>",
+          "documentation" : "<p>The email address for the contact.</p>",
           "endpointDiscoveryId" : false,
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>An email address that the DRT can use to contact you during a suspected attack.</p>\n@param emailAddress An email address that the DRT can use to contact you during a suspected attack.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The email address for the contact.</p>\n@param emailAddress The email address for the contact.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withEmailAddress",
-          "getterDocumentation" : "/**<p>An email address that the DRT can use to contact you during a suspected attack.</p>\n@return An email address that the DRT can use to contact you during a suspected attack.*/",
+          "getterDocumentation" : "/**<p>The email address for the contact.</p>\n@return The email address for the contact.*/",
           "getterMethodName" : "getEmailAddress",
           "getterModel" : {
             "returnType" : "String",
@@ -9915,7 +10759,7 @@
           "marshallingType" : "STRING",
           "name" : "EmailAddress",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>An email address that the DRT can use to contact you during a suspected attack.</p>\n@param emailAddress An email address that the DRT can use to contact you during a suspected attack.*/",
+          "setterDocumentation" : "/**<p>The email address for the contact.</p>\n@param emailAddress The email address for the contact.*/",
           "setterMethodName" : "setEmailAddress",
           "setterModel" : {
             "timestampFormat" : null,
@@ -9929,13 +10773,82 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>An email address that the DRT can use to contact you during a suspected attack.</p>\n@param emailAddress An email address that the DRT can use to contact you during a suspected attack.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The email address for the contact.</p>\n@param emailAddress The email address for the contact.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "emailAddress",
             "variableType" : "String",
-            "documentation" : "<p>An email address that the DRT can use to contact you during a suspected attack.</p>",
+            "documentation" : "<p>The email address for the contact.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "PhoneNumber" : {
+          "c2jName" : "PhoneNumber",
+          "c2jShape" : "PhoneNumber",
+          "deprecated" : false,
+          "documentation" : "<p>The phone number for the contact.</p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The phone number for the contact.</p>\n@param phoneNumber The phone number for the contact.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withPhoneNumber",
+          "getterDocumentation" : "/**<p>The phone number for the contact.</p>\n@return The phone number for the contact.*/",
+          "getterMethodName" : "getPhoneNumber",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "PhoneNumber",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "PhoneNumber",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "PhoneNumber",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The phone number for the contact.</p>\n@param phoneNumber The phone number for the contact.*/",
+          "setterMethodName" : "setPhoneNumber",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "phoneNumber",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The phone number for the contact.</p>\n@param phoneNumber The phone number for the contact.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "phoneNumber",
+            "variableType" : "String",
+            "documentation" : "<p>The phone number for the contact.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -9960,6 +10873,94 @@
         "documentation" : null,
         "simpleType" : "EmergencyContact",
         "variableSetterType" : "EmergencyContact"
+      },
+      "wrapper" : false
+    },
+    "EnableProactiveEngagementRequest" : {
+      "c2jName" : "EnableProactiveEngagementRequest",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "endpointDiscoveryMembers" : null,
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : {
+        "action" : "EnableProactiveEngagement",
+        "locationName" : null,
+        "requestUri" : "/",
+        "target" : "AWSShield_20160616.EnableProactiveEngagement",
+        "verb" : "POST",
+        "xmlNameSpaceUri" : null
+      },
+      "members" : null,
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "EnableProactiveEngagementRequest",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "EnableProactiveEngagementRequest",
+        "variableName" : "enableProactiveEngagementRequest",
+        "variableType" : "EnableProactiveEngagementRequest",
+        "documentation" : null,
+        "simpleType" : "EnableProactiveEngagementRequest",
+        "variableSetterType" : "EnableProactiveEngagementRequest"
+      },
+      "wrapper" : false
+    },
+    "EnableProactiveEngagementResult" : {
+      "c2jName" : "EnableProactiveEngagementResponse",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "endpointDiscoveryMembers" : null,
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "EnableProactiveEngagementResult",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "EnableProactiveEngagementResult",
+        "variableName" : "enableProactiveEngagementResult",
+        "variableType" : "EnableProactiveEngagementResult",
+        "documentation" : null,
+        "simpleType" : "EnableProactiveEngagementResult",
+        "variableSetterType" : "EnableProactiveEngagementResult"
       },
       "wrapper" : false
     },
@@ -13467,7 +14468,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Exception that indicates that the protection state has been modified by another client. You can retry the request.</p>",
+      "documentation" : "<p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>",
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "OptimisticLockException",
@@ -13494,6 +14495,57 @@
         "documentation" : null,
         "simpleType" : "OptimisticLockException",
         "variableSetterType" : "OptimisticLockException"
+      },
+      "wrapper" : false
+    },
+    "ProactiveEngagementStatus" : {
+      "c2jName" : "ProactiveEngagementStatus",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "endpointDiscoveryMembers" : null,
+      "enums" : [ {
+        "name" : "ENABLED",
+        "value" : "ENABLED"
+      }, {
+        "name" : "DISABLED",
+        "value" : "DISABLED"
+      }, {
+        "name" : "PENDING",
+        "value" : "PENDING"
+      } ],
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "ProactiveEngagementStatus",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "ProactiveEngagementStatus",
+        "variableName" : "proactiveEngagementStatus",
+        "variableType" : "ProactiveEngagementStatus",
+        "documentation" : null,
+        "simpleType" : "ProactiveEngagementStatus",
+        "variableSetterType" : "ProactiveEngagementStatus"
       },
       "wrapper" : false
     },
@@ -15745,6 +16797,74 @@
           "variableSetterType" : "java.util.Collection<Limit>"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "ProactiveEngagementStatus",
+        "c2jShape" : "ProactiveEngagementStatus",
+        "deprecated" : false,
+        "documentation" : "<p>If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and phone to notify contacts about escalations to the DRT and to initiate proactive customer support.</p> <p>If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status changes to <code>ENABLED</code> when your request is fully processed.</p> <p>If <code>DISABLED</code>, the DRT will not proactively notify contacts about escalations or to initiate proactive customer support. </p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : "ProactiveEngagementStatus",
+        "fluentSetterDocumentation" : "/**<p>If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and phone to notify contacts about escalations to the DRT and to initiate proactive customer support.</p> <p>If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status changes to <code>ENABLED</code> when your request is fully processed.</p> <p>If <code>DISABLED</code>, the DRT will not proactively notify contacts about escalations or to initiate proactive customer support. </p>\n@param proactiveEngagementStatus If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and phone to notify contacts about escalations to the DRT and to initiate proactive customer support.</p> <p>If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status changes to <code>ENABLED</code> when your request is fully processed.</p> <p>If <code>DISABLED</code>, the DRT will not proactively notify contacts about escalations or to initiate proactive customer support.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ProactiveEngagementStatus*/",
+        "fluentSetterMethodName" : "withProactiveEngagementStatus",
+        "getterDocumentation" : "/**<p>If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and phone to notify contacts about escalations to the DRT and to initiate proactive customer support.</p> <p>If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status changes to <code>ENABLED</code> when your request is fully processed.</p> <p>If <code>DISABLED</code>, the DRT will not proactively notify contacts about escalations or to initiate proactive customer support. </p>\n@return If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and phone to notify contacts about escalations to the DRT and to initiate proactive customer support.</p> <p>If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status changes to <code>ENABLED</code> when your request is fully processed.</p> <p>If <code>DISABLED</code>, the DRT will not proactively notify contacts about escalations or to initiate proactive customer support.\n@see ProactiveEngagementStatus*/",
+        "getterMethodName" : "getProactiveEngagementStatus",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "ProactiveEngagementStatus",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "ProactiveEngagementStatus",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "ProactiveEngagementStatus",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and phone to notify contacts about escalations to the DRT and to initiate proactive customer support.</p> <p>If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status changes to <code>ENABLED</code> when your request is fully processed.</p> <p>If <code>DISABLED</code>, the DRT will not proactively notify contacts about escalations or to initiate proactive customer support. </p>\n@param proactiveEngagementStatus If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and phone to notify contacts about escalations to the DRT and to initiate proactive customer support.</p> <p>If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status changes to <code>ENABLED</code> when your request is fully processed.</p> <p>If <code>DISABLED</code>, the DRT will not proactively notify contacts about escalations or to initiate proactive customer support.\n@see ProactiveEngagementStatus*/",
+        "setterMethodName" : "setProactiveEngagementStatus",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "proactiveEngagementStatus",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and phone to notify contacts about escalations to the DRT and to initiate proactive customer support.</p> <p>If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status changes to <code>ENABLED</code> when your request is fully processed.</p> <p>If <code>DISABLED</code>, the DRT will not proactively notify contacts about escalations or to initiate proactive customer support. </p>\n@param proactiveEngagementStatus If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and phone to notify contacts about escalations to the DRT and to initiate proactive customer support.</p> <p>If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status changes to <code>ENABLED</code> when your request is fully processed.</p> <p>If <code>DISABLED</code>, the DRT will not proactively notify contacts about escalations or to initiate proactive customer support.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ProactiveEngagementStatus*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "proactiveEngagementStatus",
+          "variableType" : "String",
+          "documentation" : "<p>If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and phone to notify contacts about escalations to the DRT and to initiate proactive customer support.</p> <p>If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status changes to <code>ENABLED</code> when your request is fully processed.</p> <p>If <code>DISABLED</code>, the DRT will not proactively notify contacts about escalations or to initiate proactive customer support. </p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
         "AutoRenew" : {
@@ -16034,6 +17154,75 @@
             "documentation" : "<p>Specifies how many protections of a given type you can create.</p>",
             "simpleType" : "List<Limit>",
             "variableSetterType" : "java.util.Collection<Limit>"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "ProactiveEngagementStatus" : {
+          "c2jName" : "ProactiveEngagementStatus",
+          "c2jShape" : "ProactiveEngagementStatus",
+          "deprecated" : false,
+          "documentation" : "<p>If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and phone to notify contacts about escalations to the DRT and to initiate proactive customer support.</p> <p>If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status changes to <code>ENABLED</code> when your request is fully processed.</p> <p>If <code>DISABLED</code>, the DRT will not proactively notify contacts about escalations or to initiate proactive customer support. </p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : "ProactiveEngagementStatus",
+          "fluentSetterDocumentation" : "/**<p>If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and phone to notify contacts about escalations to the DRT and to initiate proactive customer support.</p> <p>If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status changes to <code>ENABLED</code> when your request is fully processed.</p> <p>If <code>DISABLED</code>, the DRT will not proactively notify contacts about escalations or to initiate proactive customer support. </p>\n@param proactiveEngagementStatus If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and phone to notify contacts about escalations to the DRT and to initiate proactive customer support.</p> <p>If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status changes to <code>ENABLED</code> when your request is fully processed.</p> <p>If <code>DISABLED</code>, the DRT will not proactively notify contacts about escalations or to initiate proactive customer support.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ProactiveEngagementStatus*/",
+          "fluentSetterMethodName" : "withProactiveEngagementStatus",
+          "getterDocumentation" : "/**<p>If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and phone to notify contacts about escalations to the DRT and to initiate proactive customer support.</p> <p>If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status changes to <code>ENABLED</code> when your request is fully processed.</p> <p>If <code>DISABLED</code>, the DRT will not proactively notify contacts about escalations or to initiate proactive customer support. </p>\n@return If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and phone to notify contacts about escalations to the DRT and to initiate proactive customer support.</p> <p>If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status changes to <code>ENABLED</code> when your request is fully processed.</p> <p>If <code>DISABLED</code>, the DRT will not proactively notify contacts about escalations or to initiate proactive customer support.\n@see ProactiveEngagementStatus*/",
+          "getterMethodName" : "getProactiveEngagementStatus",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "ProactiveEngagementStatus",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "ProactiveEngagementStatus",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "ProactiveEngagementStatus",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and phone to notify contacts about escalations to the DRT and to initiate proactive customer support.</p> <p>If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status changes to <code>ENABLED</code> when your request is fully processed.</p> <p>If <code>DISABLED</code>, the DRT will not proactively notify contacts about escalations or to initiate proactive customer support. </p>\n@param proactiveEngagementStatus If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and phone to notify contacts about escalations to the DRT and to initiate proactive customer support.</p> <p>If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status changes to <code>ENABLED</code> when your request is fully processed.</p> <p>If <code>DISABLED</code>, the DRT will not proactively notify contacts about escalations or to initiate proactive customer support.\n@see ProactiveEngagementStatus*/",
+          "setterMethodName" : "setProactiveEngagementStatus",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "proactiveEngagementStatus",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and phone to notify contacts about escalations to the DRT and to initiate proactive customer support.</p> <p>If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status changes to <code>ENABLED</code> when your request is fully processed.</p> <p>If <code>DISABLED</code>, the DRT will not proactively notify contacts about escalations or to initiate proactive customer support. </p>\n@param proactiveEngagementStatus If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and phone to notify contacts about escalations to the DRT and to initiate proactive customer support.</p> <p>If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status changes to <code>ENABLED</code> when your request is fully processed.</p> <p>If <code>DISABLED</code>, the DRT will not proactively notify contacts about escalations or to initiate proactive customer support.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ProactiveEngagementStatus*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "proactiveEngagementStatus",
+            "variableType" : "String",
+            "documentation" : "<p>If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and phone to notify contacts about escalations to the DRT and to initiate proactive customer support.</p> <p>If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status changes to <code>ENABLED</code> when your request is fully processed.</p> <p>If <code>DISABLED</code>, the DRT will not proactively notify contacts about escalations or to initiate proactive customer support. </p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "xmlNameSpaceUri" : null
         },
@@ -17994,12 +19183,12 @@
         "c2jName" : "EmergencyContactList",
         "c2jShape" : "EmergencyContactList",
         "deprecated" : false,
-        "documentation" : "<p>A list of email addresses that the DRT can use to contact you during a suspected attack.</p>",
+        "documentation" : "<p>A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.</p> <p>If you have proactive engagement enabled, the contact list must include at least one phone number.</p>",
         "endpointDiscoveryId" : false,
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>A list of email addresses that the DRT can use to contact you during a suspected attack.</p>\n@param emergencyContactList A list of email addresses that the DRT can use to contact you during a suspected attack.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.</p> <p>If you have proactive engagement enabled, the contact list must include at least one phone number.</p>\n@param emergencyContactList A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.</p> <p>If you have proactive engagement enabled, the contact list must include at least one phone number.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withEmergencyContactList",
-        "getterDocumentation" : "/**<p>A list of email addresses that the DRT can use to contact you during a suspected attack.</p>\n@return A list of email addresses that the DRT can use to contact you during a suspected attack.*/",
+        "getterDocumentation" : "/**<p>A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.</p> <p>If you have proactive engagement enabled, the contact list must include at least one phone number.</p>\n@return A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.</p> <p>If you have proactive engagement enabled, the contact list must include at least one phone number.*/",
         "getterMethodName" : "getEmergencyContactList",
         "getterModel" : {
           "returnType" : "java.util.List<EmergencyContact>",
@@ -18116,7 +19305,7 @@
         "marshallingType" : "LIST",
         "name" : "EmergencyContactList",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>A list of email addresses that the DRT can use to contact you during a suspected attack.</p>\n@param emergencyContactList A list of email addresses that the DRT can use to contact you during a suspected attack.*/",
+        "setterDocumentation" : "/**<p>A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.</p> <p>If you have proactive engagement enabled, the contact list must include at least one phone number.</p>\n@param emergencyContactList A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.</p> <p>If you have proactive engagement enabled, the contact list must include at least one phone number.*/",
         "setterMethodName" : "setEmergencyContactList",
         "setterModel" : {
           "timestampFormat" : null,
@@ -18130,13 +19319,13 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>A list of email addresses that the DRT can use to contact you during a suspected attack.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEmergencyContactList(java.util.Collection)} or {@link #withEmergencyContactList(java.util.Collection)} if you want to override the existing values.</p>\n@param emergencyContactList A list of email addresses that the DRT can use to contact you during a suspected attack.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.</p> <p>If you have proactive engagement enabled, the contact list must include at least one phone number.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEmergencyContactList(java.util.Collection)} or {@link #withEmergencyContactList(java.util.Collection)} if you want to override the existing values.</p>\n@param emergencyContactList A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.</p> <p>If you have proactive engagement enabled, the contact list must include at least one phone number.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<EmergencyContact>",
           "variableName" : "emergencyContactList",
           "variableType" : "java.util.List<EmergencyContact>",
-          "documentation" : "<p>A list of email addresses that the DRT can use to contact you during a suspected attack.</p>",
+          "documentation" : "<p>A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.</p> <p>If you have proactive engagement enabled, the contact list must include at least one phone number.</p>",
           "simpleType" : "List<EmergencyContact>",
           "variableSetterType" : "java.util.Collection<EmergencyContact>"
         },
@@ -18147,12 +19336,12 @@
           "c2jName" : "EmergencyContactList",
           "c2jShape" : "EmergencyContactList",
           "deprecated" : false,
-          "documentation" : "<p>A list of email addresses that the DRT can use to contact you during a suspected attack.</p>",
+          "documentation" : "<p>A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.</p> <p>If you have proactive engagement enabled, the contact list must include at least one phone number.</p>",
           "endpointDiscoveryId" : false,
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>A list of email addresses that the DRT can use to contact you during a suspected attack.</p>\n@param emergencyContactList A list of email addresses that the DRT can use to contact you during a suspected attack.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.</p> <p>If you have proactive engagement enabled, the contact list must include at least one phone number.</p>\n@param emergencyContactList A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.</p> <p>If you have proactive engagement enabled, the contact list must include at least one phone number.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withEmergencyContactList",
-          "getterDocumentation" : "/**<p>A list of email addresses that the DRT can use to contact you during a suspected attack.</p>\n@return A list of email addresses that the DRT can use to contact you during a suspected attack.*/",
+          "getterDocumentation" : "/**<p>A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.</p> <p>If you have proactive engagement enabled, the contact list must include at least one phone number.</p>\n@return A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.</p> <p>If you have proactive engagement enabled, the contact list must include at least one phone number.*/",
           "getterMethodName" : "getEmergencyContactList",
           "getterModel" : {
             "returnType" : "java.util.List<EmergencyContact>",
@@ -18269,7 +19458,7 @@
           "marshallingType" : "LIST",
           "name" : "EmergencyContactList",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>A list of email addresses that the DRT can use to contact you during a suspected attack.</p>\n@param emergencyContactList A list of email addresses that the DRT can use to contact you during a suspected attack.*/",
+          "setterDocumentation" : "/**<p>A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.</p> <p>If you have proactive engagement enabled, the contact list must include at least one phone number.</p>\n@param emergencyContactList A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.</p> <p>If you have proactive engagement enabled, the contact list must include at least one phone number.*/",
           "setterMethodName" : "setEmergencyContactList",
           "setterModel" : {
             "timestampFormat" : null,
@@ -18283,13 +19472,13 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>A list of email addresses that the DRT can use to contact you during a suspected attack.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEmergencyContactList(java.util.Collection)} or {@link #withEmergencyContactList(java.util.Collection)} if you want to override the existing values.</p>\n@param emergencyContactList A list of email addresses that the DRT can use to contact you during a suspected attack.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.</p> <p>If you have proactive engagement enabled, the contact list must include at least one phone number.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEmergencyContactList(java.util.Collection)} or {@link #withEmergencyContactList(java.util.Collection)} if you want to override the existing values.</p>\n@param emergencyContactList A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.</p> <p>If you have proactive engagement enabled, the contact list must include at least one phone number.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<EmergencyContact>",
             "variableName" : "emergencyContactList",
             "variableType" : "java.util.List<EmergencyContact>",
-            "documentation" : "<p>A list of email addresses that the DRT can use to contact you during a suspected attack.</p>",
+            "documentation" : "<p>A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.</p> <p>If you have proactive engagement enabled, the contact list must include at least one phone number.</p>",
             "simpleType" : "List<EmergencyContact>",
             "variableSetterType" : "java.util.Collection<EmergencyContact>"
           },

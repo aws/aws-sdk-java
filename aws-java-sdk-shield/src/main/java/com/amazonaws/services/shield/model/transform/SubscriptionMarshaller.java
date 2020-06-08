@@ -38,6 +38,8 @@ public class SubscriptionMarshaller {
             .marshallLocationName("AutoRenew").build();
     private static final MarshallingInfo<List> LIMITS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Limits").build();
+    private static final MarshallingInfo<String> PROACTIVEENGAGEMENTSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProactiveEngagementStatus").build();
 
     private static final SubscriptionMarshaller instance = new SubscriptionMarshaller();
 
@@ -60,6 +62,7 @@ public class SubscriptionMarshaller {
             protocolMarshaller.marshall(subscription.getTimeCommitmentInSeconds(), TIMECOMMITMENTINSECONDS_BINDING);
             protocolMarshaller.marshall(subscription.getAutoRenew(), AUTORENEW_BINDING);
             protocolMarshaller.marshall(subscription.getLimits(), LIMITS_BINDING);
+            protocolMarshaller.marshall(subscription.getProactiveEngagementStatus(), PROACTIVEENGAGEMENTSTATUS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -16,7 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Exception that indicates that the protection state has been modified by another client. You can retry the request.
+ * Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then
+ * retry your request.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -68,6 +68,10 @@ public class SubscriptionJsonUnmarshaller implements Unmarshaller<Subscription, 
                     context.nextToken();
                     subscription.setLimits(new ListUnmarshaller<Limit>(LimitJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("ProactiveEngagementStatus", targetDepth)) {
+                    context.nextToken();
+                    subscription.setProactiveEngagementStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

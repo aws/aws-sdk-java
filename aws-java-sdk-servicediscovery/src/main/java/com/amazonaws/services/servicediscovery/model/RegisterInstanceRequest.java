@@ -209,7 +209,8 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * You can add up to 30 custom attributes. For each key-value pair, the maximum length of the attribute name is 255
-     * characters, and the maximum length of the attribute value is 1,024 characters.
+     * characters, and the maximum length of the attribute value is 1,024 characters. Total size of all provided
+     * attributes (sum of all keys and values) must not exceed 5,000 characters.
      * </p>
      */
     private java.util.Map<String, String> attributes;
@@ -685,7 +686,8 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * You can add up to 30 custom attributes. For each key-value pair, the maximum length of the attribute name is 255
-     * characters, and the maximum length of the attribute value is 1,024 characters.
+     * characters, and the maximum length of the attribute value is 1,024 characters. Total size of all provided
+     * attributes (sum of all keys and values) must not exceed 5,000 characters.
      * </p>
      * 
      * @return A string map that contains the following information for the service that you specify in
@@ -817,7 +819,8 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         </p>
      *         <p>
      *         You can add up to 30 custom attributes. For each key-value pair, the maximum length of the attribute name
-     *         is 255 characters, and the maximum length of the attribute value is 1,024 characters.
+     *         is 255 characters, and the maximum length of the attribute value is 1,024 characters. Total size of all
+     *         provided attributes (sum of all keys and values) must not exceed 5,000 characters.
      */
 
     public java.util.Map<String, String> getAttributes() {
@@ -953,7 +956,8 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * You can add up to 30 custom attributes. For each key-value pair, the maximum length of the attribute name is 255
-     * characters, and the maximum length of the attribute value is 1,024 characters.
+     * characters, and the maximum length of the attribute value is 1,024 characters. Total size of all provided
+     * attributes (sum of all keys and values) must not exceed 5,000 characters.
      * </p>
      * 
      * @param attributes
@@ -1086,7 +1090,8 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </p>
      *        <p>
      *        You can add up to 30 custom attributes. For each key-value pair, the maximum length of the attribute name
-     *        is 255 characters, and the maximum length of the attribute value is 1,024 characters.
+     *        is 255 characters, and the maximum length of the attribute value is 1,024 characters. Total size of all
+     *        provided attributes (sum of all keys and values) must not exceed 5,000 characters.
      */
 
     public void setAttributes(java.util.Map<String, String> attributes) {
@@ -1222,7 +1227,8 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * You can add up to 30 custom attributes. For each key-value pair, the maximum length of the attribute name is 255
-     * characters, and the maximum length of the attribute value is 1,024 characters.
+     * characters, and the maximum length of the attribute value is 1,024 characters. Total size of all provided
+     * attributes (sum of all keys and values) must not exceed 5,000 characters.
      * </p>
      * 
      * @param attributes
@@ -1355,7 +1361,8 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </p>
      *        <p>
      *        You can add up to 30 custom attributes. For each key-value pair, the maximum length of the attribute name
-     *        is 255 characters, and the maximum length of the attribute value is 1,024 characters.
+     *        is 255 characters, and the maximum length of the attribute value is 1,024 characters. Total size of all
+     *        provided attributes (sum of all keys and values) must not exceed 5,000 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

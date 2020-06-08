@@ -52,6 +52,14 @@ public class EmergencyContactJsonUnmarshaller implements Unmarshaller<EmergencyC
                     context.nextToken();
                     emergencyContact.setEmailAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("PhoneNumber", targetDepth)) {
+                    context.nextToken();
+                    emergencyContact.setPhoneNumber(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ContactNotes", targetDepth)) {
+                    context.nextToken();
+                    emergencyContact.setContactNotes(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -29,6 +29,10 @@ public class EmergencyContactMarshaller {
 
     private static final MarshallingInfo<String> EMAILADDRESS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EmailAddress").build();
+    private static final MarshallingInfo<String> PHONENUMBER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PhoneNumber").build();
+    private static final MarshallingInfo<String> CONTACTNOTES_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ContactNotes").build();
 
     private static final EmergencyContactMarshaller instance = new EmergencyContactMarshaller();
 
@@ -47,6 +51,8 @@ public class EmergencyContactMarshaller {
 
         try {
             protocolMarshaller.marshall(emergencyContact.getEmailAddress(), EMAILADDRESS_BINDING);
+            protocolMarshaller.marshall(emergencyContact.getPhoneNumber(), PHONENUMBER_BINDING);
+            protocolMarshaller.marshall(emergencyContact.getContactNotes(), CONTACTNOTES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

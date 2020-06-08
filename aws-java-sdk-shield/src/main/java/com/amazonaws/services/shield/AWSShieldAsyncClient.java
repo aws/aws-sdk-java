@@ -359,6 +359,41 @@ public class AWSShieldAsyncClient extends AWSShieldClient implements AWSShieldAs
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateProactiveEngagementDetailsResult> associateProactiveEngagementDetailsAsync(
+            AssociateProactiveEngagementDetailsRequest request) {
+
+        return associateProactiveEngagementDetailsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateProactiveEngagementDetailsResult> associateProactiveEngagementDetailsAsync(
+            final AssociateProactiveEngagementDetailsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssociateProactiveEngagementDetailsRequest, AssociateProactiveEngagementDetailsResult> asyncHandler) {
+        final AssociateProactiveEngagementDetailsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AssociateProactiveEngagementDetailsResult>() {
+            @Override
+            public AssociateProactiveEngagementDetailsResult call() throws Exception {
+                AssociateProactiveEngagementDetailsResult result = null;
+
+                try {
+                    result = executeAssociateProactiveEngagementDetails(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateProtectionResult> createProtectionAsync(CreateProtectionRequest request) {
 
         return createProtectionAsync(request, null);
@@ -660,6 +695,39 @@ public class AWSShieldAsyncClient extends AWSShieldClient implements AWSShieldAs
     }
 
     @Override
+    public java.util.concurrent.Future<DisableProactiveEngagementResult> disableProactiveEngagementAsync(DisableProactiveEngagementRequest request) {
+
+        return disableProactiveEngagementAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableProactiveEngagementResult> disableProactiveEngagementAsync(final DisableProactiveEngagementRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisableProactiveEngagementRequest, DisableProactiveEngagementResult> asyncHandler) {
+        final DisableProactiveEngagementRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisableProactiveEngagementResult>() {
+            @Override
+            public DisableProactiveEngagementResult call() throws Exception {
+                DisableProactiveEngagementResult result = null;
+
+                try {
+                    result = executeDisableProactiveEngagement(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DisassociateDRTLogBucketResult> disassociateDRTLogBucketAsync(DisassociateDRTLogBucketRequest request) {
 
         return disassociateDRTLogBucketAsync(request, null);
@@ -743,6 +811,39 @@ public class AWSShieldAsyncClient extends AWSShieldClient implements AWSShieldAs
 
                 try {
                     result = executeDisassociateHealthCheck(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableProactiveEngagementResult> enableProactiveEngagementAsync(EnableProactiveEngagementRequest request) {
+
+        return enableProactiveEngagementAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableProactiveEngagementResult> enableProactiveEngagementAsync(final EnableProactiveEngagementRequest request,
+            final com.amazonaws.handlers.AsyncHandler<EnableProactiveEngagementRequest, EnableProactiveEngagementResult> asyncHandler) {
+        final EnableProactiveEngagementRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<EnableProactiveEngagementResult>() {
+            @Override
+            public EnableProactiveEngagementResult call() throws Exception {
+                EnableProactiveEngagementResult result = null;
+
+                try {
+                    result = executeEnableProactiveEngagement(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -32,16 +32,11 @@ import java.lang.annotation.Target;
  * <p>Only nullable, integral numeric types (e.g. Integer, Long) can be used as
  * version properties. On a save() operation, the {@link DynamoDBMapper} will
  * attempt to increment the version property and assert that the service's value
- * matches the client's. New objects will be assigned a version of 1 when saved.
- * <p>
- * Note that for batchWrite, and by extension batchSave and batchDelete, <b>no
+ * matches the client's. New objects will be assigned a version of 1 when saved.</p>
+ * <p>Note that for batchWrite, and by extension batchSave and batchDelete, <b>no
  * version checks are performed</b>, as required by the
  * {@link com.amazonaws.services.dynamodbv2.AmazonDynamoDB#batchWriteItem(BatchWriteItemRequest)}
- * API.
- *
- * <p>Note that for transactionWrite, <b>no version checks are performed</b>.
- * An {@link com.amazonaws.SdkClientException} exception is thrown, if class of
- * any input object is annotated with {@link DynamoDBVersionAttribute}.</p>
+ * API.</p>
  *
  * @see com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBVersioned
  */

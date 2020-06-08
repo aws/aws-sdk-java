@@ -1,3 +1,12 @@
+# __1.11.798__ __2020-06-08__
+## __AWS Cloud Map__
+  - ### Features
+    - Added support for tagging Service and Namespace type resources  in Cloud Map
+
+## __AWS Shield__
+  - ### Features
+    - This release adds the option for customers to identify a contact name and method that the DDoS Response Team can proactively engage when a Route 53 Health Check that is associated with a Shield protected resource fails.
+
 # __1.11.797__ __2020-06-05__
 ## __AWS Elastic Beanstalk__
   - ### Features

@@ -66,6 +66,21 @@ public class AbstractAWSShieldAsync extends AbstractAWSShield implements AWSShie
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateProactiveEngagementDetailsResult> associateProactiveEngagementDetailsAsync(
+            AssociateProactiveEngagementDetailsRequest request) {
+
+        return associateProactiveEngagementDetailsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateProactiveEngagementDetailsResult> associateProactiveEngagementDetailsAsync(
+            AssociateProactiveEngagementDetailsRequest request,
+            com.amazonaws.handlers.AsyncHandler<AssociateProactiveEngagementDetailsRequest, AssociateProactiveEngagementDetailsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateProtectionResult> createProtectionAsync(CreateProtectionRequest request) {
 
         return createProtectionAsync(request, null);
@@ -187,6 +202,19 @@ public class AbstractAWSShieldAsync extends AbstractAWSShield implements AWSShie
     }
 
     @Override
+    public java.util.concurrent.Future<DisableProactiveEngagementResult> disableProactiveEngagementAsync(DisableProactiveEngagementRequest request) {
+
+        return disableProactiveEngagementAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableProactiveEngagementResult> disableProactiveEngagementAsync(DisableProactiveEngagementRequest request,
+            com.amazonaws.handlers.AsyncHandler<DisableProactiveEngagementRequest, DisableProactiveEngagementResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DisassociateDRTLogBucketResult> disassociateDRTLogBucketAsync(DisassociateDRTLogBucketRequest request) {
 
         return disassociateDRTLogBucketAsync(request, null);
@@ -221,6 +249,19 @@ public class AbstractAWSShieldAsync extends AbstractAWSShield implements AWSShie
     @Override
     public java.util.concurrent.Future<DisassociateHealthCheckResult> disassociateHealthCheckAsync(DisassociateHealthCheckRequest request,
             com.amazonaws.handlers.AsyncHandler<DisassociateHealthCheckRequest, DisassociateHealthCheckResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableProactiveEngagementResult> enableProactiveEngagementAsync(EnableProactiveEngagementRequest request) {
+
+        return enableProactiveEngagementAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableProactiveEngagementResult> enableProactiveEngagementAsync(EnableProactiveEngagementRequest request,
+            com.amazonaws.handlers.AsyncHandler<EnableProactiveEngagementRequest, EnableProactiveEngagementResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -53,6 +53,11 @@ public class AbstractAWSShield implements AWSShield {
     }
 
     @Override
+    public AssociateProactiveEngagementDetailsResult associateProactiveEngagementDetails(AssociateProactiveEngagementDetailsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateProtectionResult createProtection(CreateProtectionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -99,6 +104,11 @@ public class AbstractAWSShield implements AWSShield {
     }
 
     @Override
+    public DisableProactiveEngagementResult disableProactiveEngagement(DisableProactiveEngagementRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DisassociateDRTLogBucketResult disassociateDRTLogBucket(DisassociateDRTLogBucketRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -110,6 +120,11 @@ public class AbstractAWSShield implements AWSShield {
 
     @Override
     public DisassociateHealthCheckResult disassociateHealthCheck(DisassociateHealthCheckRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public EnableProactiveEngagementResult enableProactiveEngagement(EnableProactiveEngagementRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

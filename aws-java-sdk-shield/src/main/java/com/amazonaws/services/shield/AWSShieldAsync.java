@@ -38,7 +38,7 @@ public interface AWSShieldAsync extends AWSShield {
 
     /**
      * <p>
-     * Authorizes the DDoS Response team (DRT) to access the specified Amazon S3 bucket containing your AWS WAF logs.
+     * Authorizes the DDoS Response Team (DRT) to access the specified Amazon S3 bucket containing your AWS WAF logs.
      * You can associate up to 10 Amazon S3 buckets with your subscription.
      * </p>
      * <p>
@@ -57,7 +57,7 @@ public interface AWSShieldAsync extends AWSShield {
 
     /**
      * <p>
-     * Authorizes the DDoS Response team (DRT) to access the specified Amazon S3 bucket containing your AWS WAF logs.
+     * Authorizes the DDoS Response Team (DRT) to access the specified Amazon S3 bucket containing your AWS WAF logs.
      * You can associate up to 10 Amazon S3 buckets with your subscription.
      * </p>
      * <p>
@@ -81,7 +81,7 @@ public interface AWSShieldAsync extends AWSShield {
 
     /**
      * <p>
-     * Authorizes the DDoS Response team (DRT), using the specified role, to access your AWS account to assist with DDoS
+     * Authorizes the DDoS Response Team (DRT), using the specified role, to access your AWS account to assist with DDoS
      * attack mitigation during potential attacks. This enables the DRT to inspect your AWS WAF configuration and create
      * or update AWS WAF rules and web ACLs.
      * </p>
@@ -127,7 +127,7 @@ public interface AWSShieldAsync extends AWSShield {
 
     /**
      * <p>
-     * Authorizes the DDoS Response team (DRT), using the specified role, to access your AWS account to assist with DDoS
+     * Authorizes the DDoS Response Team (DRT), using the specified role, to access your AWS account to assist with DDoS
      * attack mitigation during potential attacks. This enables the DRT to inspect your AWS WAF configuration and create
      * or update AWS WAF rules and web ACLs.
      * </p>
@@ -224,6 +224,73 @@ public interface AWSShieldAsync extends AWSShield {
      */
     java.util.concurrent.Future<AssociateHealthCheckResult> associateHealthCheckAsync(AssociateHealthCheckRequest associateHealthCheckRequest,
             com.amazonaws.handlers.AsyncHandler<AssociateHealthCheckRequest, AssociateHealthCheckResult> asyncHandler);
+
+    /**
+     * <p>
+     * Initializes proactive engagement and sets the list of contacts for the DDoS Response Team (DRT) to use. You must
+     * provide at least one phone number in the emergency contact list.
+     * </p>
+     * <p>
+     * After you have initialized proactive engagement using this call, to disable or enable proactive engagement, use
+     * the calls <code>DisableProactiveEngagement</code> and <code>EnableProactiveEngagement</code>.
+     * </p>
+     * <note>
+     * <p>
+     * This call defines the list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to
+     * contact you for escalations to the DRT and to initiate proactive customer support.
+     * </p>
+     * <p>
+     * The contacts that you provide in the request replace any contacts that were already defined. If you already have
+     * contacts defined and want to use them, retrieve the list using <code>DescribeEmergencyContactSettings</code> and
+     * then provide it to this call.
+     * </p>
+     * </note>
+     * 
+     * @param associateProactiveEngagementDetailsRequest
+     * @return A Java Future containing the result of the AssociateProactiveEngagementDetails operation returned by the
+     *         service.
+     * @sample AWSShieldAsync.AssociateProactiveEngagementDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/AssociateProactiveEngagementDetails"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateProactiveEngagementDetailsResult> associateProactiveEngagementDetailsAsync(
+            AssociateProactiveEngagementDetailsRequest associateProactiveEngagementDetailsRequest);
+
+    /**
+     * <p>
+     * Initializes proactive engagement and sets the list of contacts for the DDoS Response Team (DRT) to use. You must
+     * provide at least one phone number in the emergency contact list.
+     * </p>
+     * <p>
+     * After you have initialized proactive engagement using this call, to disable or enable proactive engagement, use
+     * the calls <code>DisableProactiveEngagement</code> and <code>EnableProactiveEngagement</code>.
+     * </p>
+     * <note>
+     * <p>
+     * This call defines the list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to
+     * contact you for escalations to the DRT and to initiate proactive customer support.
+     * </p>
+     * <p>
+     * The contacts that you provide in the request replace any contacts that were already defined. If you already have
+     * contacts defined and want to use them, retrieve the list using <code>DescribeEmergencyContactSettings</code> and
+     * then provide it to this call.
+     * </p>
+     * </note>
+     * 
+     * @param associateProactiveEngagementDetailsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateProactiveEngagementDetails operation returned by the
+     *         service.
+     * @sample AWSShieldAsyncHandler.AssociateProactiveEngagementDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/AssociateProactiveEngagementDetails"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateProactiveEngagementDetailsResult> associateProactiveEngagementDetailsAsync(
+            AssociateProactiveEngagementDetailsRequest associateProactiveEngagementDetailsRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateProactiveEngagementDetailsRequest, AssociateProactiveEngagementDetailsResult> asyncHandler);
 
     /**
      * <p>
@@ -438,7 +505,7 @@ public interface AWSShieldAsync extends AWSShield {
 
     /**
      * <p>
-     * Returns the current role and list of Amazon S3 log buckets used by the DDoS Response team (DRT) to access your
+     * Returns the current role and list of Amazon S3 log buckets used by the DDoS Response Team (DRT) to access your
      * AWS account while assisting with attack mitigation.
      * </p>
      * 
@@ -452,7 +519,7 @@ public interface AWSShieldAsync extends AWSShield {
 
     /**
      * <p>
-     * Returns the current role and list of Amazon S3 log buckets used by the DDoS Response team (DRT) to access your
+     * Returns the current role and list of Amazon S3 log buckets used by the DDoS Response Team (DRT) to access your
      * AWS account while assisting with attack mitigation.
      * </p>
      * 
@@ -471,7 +538,8 @@ public interface AWSShieldAsync extends AWSShield {
 
     /**
      * <p>
-     * Lists the email addresses that the DRT can use to contact you during a suspected attack.
+     * A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have
+     * proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.
      * </p>
      * 
      * @param describeEmergencyContactSettingsRequest
@@ -486,7 +554,8 @@ public interface AWSShieldAsync extends AWSShield {
 
     /**
      * <p>
-     * Lists the email addresses that the DRT can use to contact you during a suspected attack.
+     * A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have
+     * proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.
      * </p>
      * 
      * @param describeEmergencyContactSettingsRequest
@@ -568,7 +637,42 @@ public interface AWSShieldAsync extends AWSShield {
 
     /**
      * <p>
-     * Removes the DDoS Response team's (DRT) access to the specified Amazon S3 bucket containing your AWS WAF logs.
+     * Removes authorization from the DDoS Response Team (DRT) to notify contacts about escalations to the DRT and to
+     * initiate proactive customer support.
+     * </p>
+     * 
+     * @param disableProactiveEngagementRequest
+     * @return A Java Future containing the result of the DisableProactiveEngagement operation returned by the service.
+     * @sample AWSShieldAsync.DisableProactiveEngagement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DisableProactiveEngagement"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisableProactiveEngagementResult> disableProactiveEngagementAsync(
+            DisableProactiveEngagementRequest disableProactiveEngagementRequest);
+
+    /**
+     * <p>
+     * Removes authorization from the DDoS Response Team (DRT) to notify contacts about escalations to the DRT and to
+     * initiate proactive customer support.
+     * </p>
+     * 
+     * @param disableProactiveEngagementRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisableProactiveEngagement operation returned by the service.
+     * @sample AWSShieldAsyncHandler.DisableProactiveEngagement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DisableProactiveEngagement"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisableProactiveEngagementResult> disableProactiveEngagementAsync(
+            DisableProactiveEngagementRequest disableProactiveEngagementRequest,
+            com.amazonaws.handlers.AsyncHandler<DisableProactiveEngagementRequest, DisableProactiveEngagementResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes the DDoS Response Team's (DRT) access to the specified Amazon S3 bucket containing your AWS WAF logs.
      * </p>
      * <p>
      * To make a <code>DisassociateDRTLogBucket</code> request, you must be subscribed to the <a
@@ -588,7 +692,7 @@ public interface AWSShieldAsync extends AWSShield {
 
     /**
      * <p>
-     * Removes the DDoS Response team's (DRT) access to the specified Amazon S3 bucket containing your AWS WAF logs.
+     * Removes the DDoS Response Team's (DRT) access to the specified Amazon S3 bucket containing your AWS WAF logs.
      * </p>
      * <p>
      * To make a <code>DisassociateDRTLogBucket</code> request, you must be subscribed to the <a
@@ -613,7 +717,7 @@ public interface AWSShieldAsync extends AWSShield {
 
     /**
      * <p>
-     * Removes the DDoS Response team's (DRT) access to your AWS account.
+     * Removes the DDoS Response Team's (DRT) access to your AWS account.
      * </p>
      * <p>
      * To make a <code>DisassociateDRTRole</code> request, you must be subscribed to the <a
@@ -633,7 +737,7 @@ public interface AWSShieldAsync extends AWSShield {
 
     /**
      * <p>
-     * Removes the DDoS Response team's (DRT) access to your AWS account.
+     * Removes the DDoS Response Team's (DRT) access to your AWS account.
      * </p>
      * <p>
      * To make a <code>DisassociateDRTRole</code> request, you must be subscribed to the <a
@@ -704,6 +808,41 @@ public interface AWSShieldAsync extends AWSShield {
      */
     java.util.concurrent.Future<DisassociateHealthCheckResult> disassociateHealthCheckAsync(DisassociateHealthCheckRequest disassociateHealthCheckRequest,
             com.amazonaws.handlers.AsyncHandler<DisassociateHealthCheckRequest, DisassociateHealthCheckResult> asyncHandler);
+
+    /**
+     * <p>
+     * Authorizes the DDoS Response Team (DRT) to use email and phone to notify contacts about escalations to the DRT
+     * and to initiate proactive customer support.
+     * </p>
+     * 
+     * @param enableProactiveEngagementRequest
+     * @return A Java Future containing the result of the EnableProactiveEngagement operation returned by the service.
+     * @sample AWSShieldAsync.EnableProactiveEngagement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/EnableProactiveEngagement"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<EnableProactiveEngagementResult> enableProactiveEngagementAsync(
+            EnableProactiveEngagementRequest enableProactiveEngagementRequest);
+
+    /**
+     * <p>
+     * Authorizes the DDoS Response Team (DRT) to use email and phone to notify contacts about escalations to the DRT
+     * and to initiate proactive customer support.
+     * </p>
+     * 
+     * @param enableProactiveEngagementRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the EnableProactiveEngagement operation returned by the service.
+     * @sample AWSShieldAsyncHandler.EnableProactiveEngagement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/EnableProactiveEngagement"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<EnableProactiveEngagementResult> enableProactiveEngagementAsync(
+            EnableProactiveEngagementRequest enableProactiveEngagementRequest,
+            com.amazonaws.handlers.AsyncHandler<EnableProactiveEngagementRequest, EnableProactiveEngagementResult> asyncHandler);
 
     /**
      * <p>
@@ -800,7 +939,9 @@ public interface AWSShieldAsync extends AWSShield {
 
     /**
      * <p>
-     * Updates the details of the list of email addresses that the DRT can use to contact you during a suspected attack.
+     * Updates the details of the list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to
+     * contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive
+     * customer support.
      * </p>
      * 
      * @param updateEmergencyContactSettingsRequest
@@ -815,7 +956,9 @@ public interface AWSShieldAsync extends AWSShield {
 
     /**
      * <p>
-     * Updates the details of the list of email addresses that the DRT can use to contact you during a suspected attack.
+     * Updates the details of the list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to
+     * contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive
+     * customer support.
      * </p>
      * 
      * @param updateEmergencyContactSettingsRequest

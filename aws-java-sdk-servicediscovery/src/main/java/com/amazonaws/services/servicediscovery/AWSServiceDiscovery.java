@@ -67,6 +67,9 @@ public interface AWSServiceDiscovery {
      *         The resource can't be created because you've reached the limit on the number of resources.
      * @throws DuplicateRequestException
      *         The operation is already in progress.
+     * @throws TooManyTagsException
+     *         The list of tags on the resource is over the limit. The maximum number of tags that can be applied to a
+     *         resource is 50.
      * @sample AWSServiceDiscovery.CreateHttpNamespace
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/CreateHttpNamespace"
      *      target="_top">AWS API Documentation</a>
@@ -94,6 +97,9 @@ public interface AWSServiceDiscovery {
      *         The resource can't be created because you've reached the limit on the number of resources.
      * @throws DuplicateRequestException
      *         The operation is already in progress.
+     * @throws TooManyTagsException
+     *         The list of tags on the resource is over the limit. The maximum number of tags that can be applied to a
+     *         resource is 50.
      * @sample AWSServiceDiscovery.CreatePrivateDnsNamespace
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/CreatePrivateDnsNamespace"
      *      target="_top">AWS API Documentation</a>
@@ -121,6 +127,9 @@ public interface AWSServiceDiscovery {
      *         The resource can't be created because you've reached the limit on the number of resources.
      * @throws DuplicateRequestException
      *         The operation is already in progress.
+     * @throws TooManyTagsException
+     *         The list of tags on the resource is over the limit. The maximum number of tags that can be applied to a
+     *         resource is 50.
      * @sample AWSServiceDiscovery.CreatePublicDnsNamespace
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/CreatePublicDnsNamespace"
      *      target="_top">AWS API Documentation</a>
@@ -192,6 +201,9 @@ public interface AWSServiceDiscovery {
      *         No namespace exists with the specified ID.
      * @throws ServiceAlreadyExistsException
      *         The service can't be created because a service with the same name already exists.
+     * @throws TooManyTagsException
+     *         The list of tags on the resource is over the limit. The maximum number of tags that can be applied to a
+     *         resource is 50.
      * @sample AWSServiceDiscovery.CreateService
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/CreateService" target="_top">AWS
      *      API Documentation</a>
@@ -286,6 +298,8 @@ public interface AWSServiceDiscovery {
      * @throws InvalidInputException
      *         One or more specified values aren't valid. For example, a required value might be missing, a numeric
      *         value might be outside the allowed range, or a string value might exceed length constraints.
+     * @throws RequestLimitExceededException
+     *         The operation can't be completed because you've reached the limit on the number of requests.
      * @sample AWSServiceDiscovery.DiscoverInstances
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/DiscoverInstances"
      *      target="_top">AWS API Documentation</a>
@@ -470,6 +484,24 @@ public interface AWSServiceDiscovery {
 
     /**
      * <p>
+     * Lists tags for the specified resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The operation can't be completed because the resource was not found.
+     * @throws InvalidInputException
+     *         One or more specified values aren't valid. For example, a required value might be missing, a numeric
+     *         value might be outside the allowed range, or a string value might exceed length constraints.
+     * @sample AWSServiceDiscovery.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
      * Creates or updates one or more records and, optionally, creates a health check based on the settings in a
      * specified service. When you submit a <code>RegisterInstance</code> request, the following occurs:
      * </p>
@@ -547,6 +579,45 @@ public interface AWSServiceDiscovery {
      *      target="_top">AWS API Documentation</a>
      */
     RegisterInstanceResult registerInstance(RegisterInstanceRequest registerInstanceRequest);
+
+    /**
+     * <p>
+     * Adds one or more tags to the specified resource.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The operation can't be completed because the resource was not found.
+     * @throws TooManyTagsException
+     *         The list of tags on the resource is over the limit. The maximum number of tags that can be applied to a
+     *         resource is 50.
+     * @throws InvalidInputException
+     *         One or more specified values aren't valid. For example, a required value might be missing, a numeric
+     *         value might be outside the allowed range, or a string value might exceed length constraints.
+     * @sample AWSServiceDiscovery.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/TagResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Removes one or more tags from the specified resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The operation can't be completed because the resource was not found.
+     * @throws InvalidInputException
+     *         One or more specified values aren't valid. For example, a required value might be missing, a numeric
+     *         value might be outside the allowed range, or a string value might exceed length constraints.
+     * @sample AWSServiceDiscovery.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/UntagResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * <p>

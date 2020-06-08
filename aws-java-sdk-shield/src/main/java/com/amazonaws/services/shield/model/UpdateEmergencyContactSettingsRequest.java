@@ -27,17 +27,29 @@ public class UpdateEmergencyContactSettingsRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * A list of email addresses that the DRT can use to contact you during a suspected attack.
+     * A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have
+     * proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.
+     * </p>
+     * <p>
+     * If you have proactive engagement enabled, the contact list must include at least one phone number.
      * </p>
      */
     private java.util.List<EmergencyContact> emergencyContactList;
 
     /**
      * <p>
-     * A list of email addresses that the DRT can use to contact you during a suspected attack.
+     * A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have
+     * proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.
+     * </p>
+     * <p>
+     * If you have proactive engagement enabled, the contact list must include at least one phone number.
      * </p>
      * 
-     * @return A list of email addresses that the DRT can use to contact you during a suspected attack.
+     * @return A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if
+     *         you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer
+     *         support.</p>
+     *         <p>
+     *         If you have proactive engagement enabled, the contact list must include at least one phone number.
      */
 
     public java.util.List<EmergencyContact> getEmergencyContactList() {
@@ -46,11 +58,19 @@ public class UpdateEmergencyContactSettingsRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * A list of email addresses that the DRT can use to contact you during a suspected attack.
+     * A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have
+     * proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.
+     * </p>
+     * <p>
+     * If you have proactive engagement enabled, the contact list must include at least one phone number.
      * </p>
      * 
      * @param emergencyContactList
-     *        A list of email addresses that the DRT can use to contact you during a suspected attack.
+     *        A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if
+     *        you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer
+     *        support.</p>
+     *        <p>
+     *        If you have proactive engagement enabled, the contact list must include at least one phone number.
      */
 
     public void setEmergencyContactList(java.util.Collection<EmergencyContact> emergencyContactList) {
@@ -64,7 +84,11 @@ public class UpdateEmergencyContactSettingsRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * A list of email addresses that the DRT can use to contact you during a suspected attack.
+     * A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have
+     * proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.
+     * </p>
+     * <p>
+     * If you have proactive engagement enabled, the contact list must include at least one phone number.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -73,7 +97,11 @@ public class UpdateEmergencyContactSettingsRequest extends com.amazonaws.AmazonW
      * </p>
      * 
      * @param emergencyContactList
-     *        A list of email addresses that the DRT can use to contact you during a suspected attack.
+     *        A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if
+     *        you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer
+     *        support.</p>
+     *        <p>
+     *        If you have proactive engagement enabled, the contact list must include at least one phone number.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +117,19 @@ public class UpdateEmergencyContactSettingsRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * A list of email addresses that the DRT can use to contact you during a suspected attack.
+     * A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have
+     * proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.
+     * </p>
+     * <p>
+     * If you have proactive engagement enabled, the contact list must include at least one phone number.
      * </p>
      * 
      * @param emergencyContactList
-     *        A list of email addresses that the DRT can use to contact you during a suspected attack.
+     *        A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if
+     *        you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer
+     *        support.</p>
+     *        <p>
+     *        If you have proactive engagement enabled, the contact list must include at least one phone number.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

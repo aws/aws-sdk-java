@@ -66,6 +66,21 @@ public class Subscription implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<Limit> limits;
+    /**
+     * <p>
+     * If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and phone to notify contacts about
+     * escalations to the DRT and to initiate proactive customer support.
+     * </p>
+     * <p>
+     * If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status changes
+     * to <code>ENABLED</code> when your request is fully processed.
+     * </p>
+     * <p>
+     * If <code>DISABLED</code>, the DRT will not proactively notify contacts about escalations or to initiate proactive
+     * customer support.
+     * </p>
+     */
+    private String proactiveEngagementStatus;
 
     /**
      * <p>
@@ -376,6 +391,133 @@ public class Subscription implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and phone to notify contacts about
+     * escalations to the DRT and to initiate proactive customer support.
+     * </p>
+     * <p>
+     * If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status changes
+     * to <code>ENABLED</code> when your request is fully processed.
+     * </p>
+     * <p>
+     * If <code>DISABLED</code>, the DRT will not proactively notify contacts about escalations or to initiate proactive
+     * customer support.
+     * </p>
+     * 
+     * @param proactiveEngagementStatus
+     *        If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and phone to notify contacts about
+     *        escalations to the DRT and to initiate proactive customer support.</p>
+     *        <p>
+     *        If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status
+     *        changes to <code>ENABLED</code> when your request is fully processed.
+     *        </p>
+     *        <p>
+     *        If <code>DISABLED</code>, the DRT will not proactively notify contacts about escalations or to initiate
+     *        proactive customer support.
+     * @see ProactiveEngagementStatus
+     */
+
+    public void setProactiveEngagementStatus(String proactiveEngagementStatus) {
+        this.proactiveEngagementStatus = proactiveEngagementStatus;
+    }
+
+    /**
+     * <p>
+     * If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and phone to notify contacts about
+     * escalations to the DRT and to initiate proactive customer support.
+     * </p>
+     * <p>
+     * If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status changes
+     * to <code>ENABLED</code> when your request is fully processed.
+     * </p>
+     * <p>
+     * If <code>DISABLED</code>, the DRT will not proactively notify contacts about escalations or to initiate proactive
+     * customer support.
+     * </p>
+     * 
+     * @return If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and phone to notify contacts about
+     *         escalations to the DRT and to initiate proactive customer support.</p>
+     *         <p>
+     *         If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status
+     *         changes to <code>ENABLED</code> when your request is fully processed.
+     *         </p>
+     *         <p>
+     *         If <code>DISABLED</code>, the DRT will not proactively notify contacts about escalations or to initiate
+     *         proactive customer support.
+     * @see ProactiveEngagementStatus
+     */
+
+    public String getProactiveEngagementStatus() {
+        return this.proactiveEngagementStatus;
+    }
+
+    /**
+     * <p>
+     * If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and phone to notify contacts about
+     * escalations to the DRT and to initiate proactive customer support.
+     * </p>
+     * <p>
+     * If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status changes
+     * to <code>ENABLED</code> when your request is fully processed.
+     * </p>
+     * <p>
+     * If <code>DISABLED</code>, the DRT will not proactively notify contacts about escalations or to initiate proactive
+     * customer support.
+     * </p>
+     * 
+     * @param proactiveEngagementStatus
+     *        If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and phone to notify contacts about
+     *        escalations to the DRT and to initiate proactive customer support.</p>
+     *        <p>
+     *        If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status
+     *        changes to <code>ENABLED</code> when your request is fully processed.
+     *        </p>
+     *        <p>
+     *        If <code>DISABLED</code>, the DRT will not proactively notify contacts about escalations or to initiate
+     *        proactive customer support.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ProactiveEngagementStatus
+     */
+
+    public Subscription withProactiveEngagementStatus(String proactiveEngagementStatus) {
+        setProactiveEngagementStatus(proactiveEngagementStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and phone to notify contacts about
+     * escalations to the DRT and to initiate proactive customer support.
+     * </p>
+     * <p>
+     * If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status changes
+     * to <code>ENABLED</code> when your request is fully processed.
+     * </p>
+     * <p>
+     * If <code>DISABLED</code>, the DRT will not proactively notify contacts about escalations or to initiate proactive
+     * customer support.
+     * </p>
+     * 
+     * @param proactiveEngagementStatus
+     *        If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and phone to notify contacts about
+     *        escalations to the DRT and to initiate proactive customer support.</p>
+     *        <p>
+     *        If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status
+     *        changes to <code>ENABLED</code> when your request is fully processed.
+     *        </p>
+     *        <p>
+     *        If <code>DISABLED</code>, the DRT will not proactively notify contacts about escalations or to initiate
+     *        proactive customer support.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ProactiveEngagementStatus
+     */
+
+    public Subscription withProactiveEngagementStatus(ProactiveEngagementStatus proactiveEngagementStatus) {
+        this.proactiveEngagementStatus = proactiveEngagementStatus.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -396,7 +538,9 @@ public class Subscription implements Serializable, Cloneable, StructuredPojo {
         if (getAutoRenew() != null)
             sb.append("AutoRenew: ").append(getAutoRenew()).append(",");
         if (getLimits() != null)
-            sb.append("Limits: ").append(getLimits());
+            sb.append("Limits: ").append(getLimits()).append(",");
+        if (getProactiveEngagementStatus() != null)
+            sb.append("ProactiveEngagementStatus: ").append(getProactiveEngagementStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -431,6 +575,10 @@ public class Subscription implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getLimits() != null && other.getLimits().equals(this.getLimits()) == false)
             return false;
+        if (other.getProactiveEngagementStatus() == null ^ this.getProactiveEngagementStatus() == null)
+            return false;
+        if (other.getProactiveEngagementStatus() != null && other.getProactiveEngagementStatus().equals(this.getProactiveEngagementStatus()) == false)
+            return false;
         return true;
     }
 
@@ -444,6 +592,7 @@ public class Subscription implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getTimeCommitmentInSeconds() == null) ? 0 : getTimeCommitmentInSeconds().hashCode());
         hashCode = prime * hashCode + ((getAutoRenew() == null) ? 0 : getAutoRenew().hashCode());
         hashCode = prime * hashCode + ((getLimits() == null) ? 0 : getLimits().hashCode());
+        hashCode = prime * hashCode + ((getProactiveEngagementStatus() == null) ? 0 : getProactiveEngagementStatus().hashCode());
         return hashCode;
     }
 

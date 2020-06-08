@@ -321,7 +321,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
 
     /**
      * <p>
-     * Authorizes the DDoS Response team (DRT) to access the specified Amazon S3 bucket containing your AWS WAF logs.
+     * Authorizes the DDoS Response Team (DRT) to access the specified Amazon S3 bucket containing your AWS WAF logs.
      * You can associate up to 10 Amazon S3 buckets with your subscription.
      * </p>
      * <p>
@@ -349,14 +349,14 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      * @throws InvalidParameterException
      *         Exception that indicates that the parameters passed to the API are invalid.
      * @throws AccessDeniedForDependencyException
-     *         In order to grant the necessary access to the DDoS Response Team, the user submitting the request must
-     *         have the <code>iam:PassRole</code> permission. This error indicates the user did not have the appropriate
-     *         permissions. For more information, see <a
+     *         In order to grant the necessary access to the DDoS Response Team (DRT), the user submitting the request
+     *         must have the <code>iam:PassRole</code> permission. This error indicates the user did not have the
+     *         appropriate permissions. For more information, see <a
      *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">Granting a User
      *         Permissions to Pass a Role to an AWS Service</a>.
      * @throws OptimisticLockException
-     *         Exception that indicates that the protection state has been modified by another client. You can retry the
-     *         request.
+     *         Exception that indicates that the resource state has been modified by another client. Retrieve the
+     *         resource and then retry your request.
      * @throws ResourceNotFoundException
      *         Exception indicating the specified resource does not exist.
      * @sample AWSShield.AssociateDRTLogBucket
@@ -408,7 +408,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
 
     /**
      * <p>
-     * Authorizes the DDoS Response team (DRT), using the specified role, to access your AWS account to assist with DDoS
+     * Authorizes the DDoS Response Team (DRT), using the specified role, to access your AWS account to assist with DDoS
      * attack mitigation during potential attacks. This enables the DRT to inspect your AWS WAF configuration and create
      * or update AWS WAF rules and web ACLs.
      * </p>
@@ -454,14 +454,14 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      * @throws InvalidParameterException
      *         Exception that indicates that the parameters passed to the API are invalid.
      * @throws AccessDeniedForDependencyException
-     *         In order to grant the necessary access to the DDoS Response Team, the user submitting the request must
-     *         have the <code>iam:PassRole</code> permission. This error indicates the user did not have the appropriate
-     *         permissions. For more information, see <a
+     *         In order to grant the necessary access to the DDoS Response Team (DRT), the user submitting the request
+     *         must have the <code>iam:PassRole</code> permission. This error indicates the user did not have the
+     *         appropriate permissions. For more information, see <a
      *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">Granting a User
      *         Permissions to Pass a Role to an AWS Service</a>.
      * @throws OptimisticLockException
-     *         Exception that indicates that the protection state has been modified by another client. You can retry the
-     *         request.
+     *         Exception that indicates that the resource state has been modified by another client. Retrieve the
+     *         resource and then retry your request.
      * @throws ResourceNotFoundException
      *         Exception indicating the specified resource does not exist.
      * @sample AWSShield.AssociateDRTRole
@@ -541,8 +541,8 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      * @throws InvalidParameterException
      *         Exception that indicates that the parameters passed to the API are invalid.
      * @throws OptimisticLockException
-     *         Exception that indicates that the protection state has been modified by another client. You can retry the
-     *         request.
+     *         Exception that indicates that the resource state has been modified by another client. Retrieve the
+     *         resource and then retry your request.
      * @sample AWSShield.AssociateHealthCheck
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/AssociateHealthCheck" target="_top">AWS
      *      API Documentation</a>
@@ -591,6 +591,90 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
 
     /**
      * <p>
+     * Initializes proactive engagement and sets the list of contacts for the DDoS Response Team (DRT) to use. You must
+     * provide at least one phone number in the emergency contact list.
+     * </p>
+     * <p>
+     * After you have initialized proactive engagement using this call, to disable or enable proactive engagement, use
+     * the calls <code>DisableProactiveEngagement</code> and <code>EnableProactiveEngagement</code>.
+     * </p>
+     * <note>
+     * <p>
+     * This call defines the list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to
+     * contact you for escalations to the DRT and to initiate proactive customer support.
+     * </p>
+     * <p>
+     * The contacts that you provide in the request replace any contacts that were already defined. If you already have
+     * contacts defined and want to use them, retrieve the list using <code>DescribeEmergencyContactSettings</code> and
+     * then provide it to this call.
+     * </p>
+     * </note>
+     * 
+     * @param associateProactiveEngagementDetailsRequest
+     * @return Result of the AssociateProactiveEngagementDetails operation returned by the service.
+     * @throws InternalErrorException
+     *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
+     *         request.
+     * @throws InvalidOperationException
+     *         Exception that indicates that the operation would not cause any change to occur.
+     * @throws InvalidParameterException
+     *         Exception that indicates that the parameters passed to the API are invalid.
+     * @throws ResourceNotFoundException
+     *         Exception indicating the specified resource does not exist.
+     * @throws OptimisticLockException
+     *         Exception that indicates that the resource state has been modified by another client. Retrieve the
+     *         resource and then retry your request.
+     * @sample AWSShield.AssociateProactiveEngagementDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/AssociateProactiveEngagementDetails"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AssociateProactiveEngagementDetailsResult associateProactiveEngagementDetails(AssociateProactiveEngagementDetailsRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateProactiveEngagementDetails(request);
+    }
+
+    @SdkInternalApi
+    final AssociateProactiveEngagementDetailsResult executeAssociateProactiveEngagementDetails(
+            AssociateProactiveEngagementDetailsRequest associateProactiveEngagementDetailsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(associateProactiveEngagementDetailsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AssociateProactiveEngagementDetailsRequest> request = null;
+        Response<AssociateProactiveEngagementDetailsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AssociateProactiveEngagementDetailsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(associateProactiveEngagementDetailsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateProactiveEngagementDetails");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AssociateProactiveEngagementDetailsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new AssociateProactiveEngagementDetailsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Enables AWS Shield Advanced for a specific AWS resource. The resource can be an Amazon CloudFront distribution,
      * Elastic Load Balancing load balancer, AWS Global Accelerator accelerator, Elastic IP Address, or an Amazon Route
      * 53 hosted zone.
@@ -625,8 +709,8 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      * @throws ResourceAlreadyExistsException
      *         Exception indicating the specified resource already exists.
      * @throws OptimisticLockException
-     *         Exception that indicates that the protection state has been modified by another client. You can retry the
-     *         request.
+     *         Exception that indicates that the resource state has been modified by another client. Retrieve the
+     *         resource and then retry your request.
      * @throws ResourceNotFoundException
      *         Exception indicating the specified resource does not exist.
      * @sample AWSShield.CreateProtection
@@ -761,8 +845,8 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      * @throws ResourceNotFoundException
      *         Exception indicating the specified resource does not exist.
      * @throws OptimisticLockException
-     *         Exception that indicates that the protection state has been modified by another client. You can retry the
-     *         request.
+     *         Exception that indicates that the resource state has been modified by another client. Retrieve the
+     *         resource and then retry your request.
      * @sample AWSShield.DeleteProtection
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DeleteProtection" target="_top">AWS API
      *      Documentation</a>
@@ -934,7 +1018,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
 
     /**
      * <p>
-     * Returns the current role and list of Amazon S3 log buckets used by the DDoS Response team (DRT) to access your
+     * Returns the current role and list of Amazon S3 log buckets used by the DDoS Response Team (DRT) to access your
      * AWS account while assisting with attack mitigation.
      * </p>
      * 
@@ -993,7 +1077,8 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
 
     /**
      * <p>
-     * Lists the email addresses that the DRT can use to contact you during a suspected attack.
+     * A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have
+     * proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.
      * </p>
      * 
      * @param describeEmergencyContactSettingsRequest
@@ -1172,7 +1257,75 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
 
     /**
      * <p>
-     * Removes the DDoS Response team's (DRT) access to the specified Amazon S3 bucket containing your AWS WAF logs.
+     * Removes authorization from the DDoS Response Team (DRT) to notify contacts about escalations to the DRT and to
+     * initiate proactive customer support.
+     * </p>
+     * 
+     * @param disableProactiveEngagementRequest
+     * @return Result of the DisableProactiveEngagement operation returned by the service.
+     * @throws InternalErrorException
+     *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
+     *         request.
+     * @throws InvalidOperationException
+     *         Exception that indicates that the operation would not cause any change to occur.
+     * @throws InvalidParameterException
+     *         Exception that indicates that the parameters passed to the API are invalid.
+     * @throws ResourceNotFoundException
+     *         Exception indicating the specified resource does not exist.
+     * @throws OptimisticLockException
+     *         Exception that indicates that the resource state has been modified by another client. Retrieve the
+     *         resource and then retry your request.
+     * @sample AWSShield.DisableProactiveEngagement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DisableProactiveEngagement"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DisableProactiveEngagementResult disableProactiveEngagement(DisableProactiveEngagementRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisableProactiveEngagement(request);
+    }
+
+    @SdkInternalApi
+    final DisableProactiveEngagementResult executeDisableProactiveEngagement(DisableProactiveEngagementRequest disableProactiveEngagementRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disableProactiveEngagementRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisableProactiveEngagementRequest> request = null;
+        Response<DisableProactiveEngagementResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisableProactiveEngagementRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(disableProactiveEngagementRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableProactiveEngagement");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DisableProactiveEngagementResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DisableProactiveEngagementResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes the DDoS Response Team's (DRT) access to the specified Amazon S3 bucket containing your AWS WAF logs.
      * </p>
      * <p>
      * To make a <code>DisassociateDRTLogBucket</code> request, you must be subscribed to the <a
@@ -1192,14 +1345,14 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      * @throws NoAssociatedRoleException
      *         The ARN of the role that you specifed does not exist.
      * @throws AccessDeniedForDependencyException
-     *         In order to grant the necessary access to the DDoS Response Team, the user submitting the request must
-     *         have the <code>iam:PassRole</code> permission. This error indicates the user did not have the appropriate
-     *         permissions. For more information, see <a
+     *         In order to grant the necessary access to the DDoS Response Team (DRT), the user submitting the request
+     *         must have the <code>iam:PassRole</code> permission. This error indicates the user did not have the
+     *         appropriate permissions. For more information, see <a
      *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">Granting a User
      *         Permissions to Pass a Role to an AWS Service</a>.
      * @throws OptimisticLockException
-     *         Exception that indicates that the protection state has been modified by another client. You can retry the
-     *         request.
+     *         Exception that indicates that the resource state has been modified by another client. Retrieve the
+     *         resource and then retry your request.
      * @throws ResourceNotFoundException
      *         Exception indicating the specified resource does not exist.
      * @sample AWSShield.DisassociateDRTLogBucket
@@ -1252,7 +1405,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
 
     /**
      * <p>
-     * Removes the DDoS Response team's (DRT) access to your AWS account.
+     * Removes the DDoS Response Team's (DRT) access to your AWS account.
      * </p>
      * <p>
      * To make a <code>DisassociateDRTRole</code> request, you must be subscribed to the <a
@@ -1270,8 +1423,8 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      * @throws InvalidOperationException
      *         Exception that indicates that the operation would not cause any change to occur.
      * @throws OptimisticLockException
-     *         Exception that indicates that the protection state has been modified by another client. You can retry the
-     *         request.
+     *         Exception that indicates that the resource state has been modified by another client. Retrieve the
+     *         resource and then retry your request.
      * @throws ResourceNotFoundException
      *         Exception indicating the specified resource does not exist.
      * @sample AWSShield.DisassociateDRTRole
@@ -1344,8 +1497,8 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      * @throws ResourceNotFoundException
      *         Exception indicating the specified resource does not exist.
      * @throws OptimisticLockException
-     *         Exception that indicates that the protection state has been modified by another client. You can retry the
-     *         request.
+     *         Exception that indicates that the resource state has been modified by another client. Retrieve the
+     *         resource and then retry your request.
      * @sample AWSShield.DisassociateHealthCheck
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DisassociateHealthCheck" target="_top">AWS
      *      API Documentation</a>
@@ -1384,6 +1537,74 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
             HttpResponseHandler<AmazonWebServiceResponse<DisassociateHealthCheckResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DisassociateHealthCheckResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Authorizes the DDoS Response Team (DRT) to use email and phone to notify contacts about escalations to the DRT
+     * and to initiate proactive customer support.
+     * </p>
+     * 
+     * @param enableProactiveEngagementRequest
+     * @return Result of the EnableProactiveEngagement operation returned by the service.
+     * @throws InternalErrorException
+     *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
+     *         request.
+     * @throws InvalidOperationException
+     *         Exception that indicates that the operation would not cause any change to occur.
+     * @throws InvalidParameterException
+     *         Exception that indicates that the parameters passed to the API are invalid.
+     * @throws ResourceNotFoundException
+     *         Exception indicating the specified resource does not exist.
+     * @throws OptimisticLockException
+     *         Exception that indicates that the resource state has been modified by another client. Retrieve the
+     *         resource and then retry your request.
+     * @sample AWSShield.EnableProactiveEngagement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/EnableProactiveEngagement"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public EnableProactiveEngagementResult enableProactiveEngagement(EnableProactiveEngagementRequest request) {
+        request = beforeClientExecution(request);
+        return executeEnableProactiveEngagement(request);
+    }
+
+    @SdkInternalApi
+    final EnableProactiveEngagementResult executeEnableProactiveEngagement(EnableProactiveEngagementRequest enableProactiveEngagementRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(enableProactiveEngagementRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<EnableProactiveEngagementRequest> request = null;
+        Response<EnableProactiveEngagementResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new EnableProactiveEngagementRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(enableProactiveEngagementRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableProactiveEngagement");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<EnableProactiveEngagementResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new EnableProactiveEngagementResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1573,7 +1794,9 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
 
     /**
      * <p>
-     * Updates the details of the list of email addresses that the DRT can use to contact you during a suspected attack.
+     * Updates the details of the list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to
+     * contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive
+     * customer support.
      * </p>
      * 
      * @param updateEmergencyContactSettingsRequest
@@ -1584,8 +1807,8 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      * @throws InvalidParameterException
      *         Exception that indicates that the parameters passed to the API are invalid.
      * @throws OptimisticLockException
-     *         Exception that indicates that the protection state has been modified by another client. You can retry the
-     *         request.
+     *         Exception that indicates that the resource state has been modified by another client. Retrieve the
+     *         resource and then retry your request.
      * @throws ResourceNotFoundException
      *         Exception indicating the specified resource does not exist.
      * @sample AWSShield.UpdateEmergencyContactSettings
@@ -1656,8 +1879,8 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      * @throws InvalidParameterException
      *         Exception that indicates that the parameters passed to the API are invalid.
      * @throws OptimisticLockException
-     *         Exception that indicates that the protection state has been modified by another client. You can retry the
-     *         request.
+     *         Exception that indicates that the resource state has been modified by another client. Retrieve the
+     *         resource and then retry your request.
      * @sample AWSShield.UpdateSubscription
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/UpdateSubscription" target="_top">AWS API
      *      Documentation</a>

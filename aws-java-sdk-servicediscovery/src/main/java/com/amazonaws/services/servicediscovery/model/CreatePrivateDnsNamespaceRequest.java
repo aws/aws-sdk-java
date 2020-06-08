@@ -52,6 +52,14 @@ public class CreatePrivateDnsNamespaceRequest extends com.amazonaws.AmazonWebSer
      * </p>
      */
     private String vpc;
+    /**
+     * <p>
+     * The tags to add to the namespace. Each tag consists of a key and an optional value, both of which you define. Tag
+     * keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256
+     * characters.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -232,6 +240,92 @@ public class CreatePrivateDnsNamespaceRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
+     * The tags to add to the namespace. Each tag consists of a key and an optional value, both of which you define. Tag
+     * keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256
+     * characters.
+     * </p>
+     * 
+     * @return The tags to add to the namespace. Each tag consists of a key and an optional value, both of which you
+     *         define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum
+     *         length of 256 characters.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags to add to the namespace. Each tag consists of a key and an optional value, both of which you define. Tag
+     * keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256
+     * characters.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to add to the namespace. Each tag consists of a key and an optional value, both of which you
+     *        define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum
+     *        length of 256 characters.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The tags to add to the namespace. Each tag consists of a key and an optional value, both of which you define. Tag
+     * keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256
+     * characters.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to add to the namespace. Each tag consists of a key and an optional value, both of which you
+     *        define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum
+     *        length of 256 characters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreatePrivateDnsNamespaceRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags to add to the namespace. Each tag consists of a key and an optional value, both of which you define. Tag
+     * keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256
+     * characters.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to add to the namespace. Each tag consists of a key and an optional value, both of which you
+     *        define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum
+     *        length of 256 characters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreatePrivateDnsNamespaceRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -250,7 +344,9 @@ public class CreatePrivateDnsNamespaceRequest extends com.amazonaws.AmazonWebSer
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getVpc() != null)
-            sb.append("Vpc: ").append(getVpc());
+            sb.append("Vpc: ").append(getVpc()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -281,6 +377,10 @@ public class CreatePrivateDnsNamespaceRequest extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getVpc() != null && other.getVpc().equals(this.getVpc()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -293,6 +393,7 @@ public class CreatePrivateDnsNamespaceRequest extends com.amazonaws.AmazonWebSer
         hashCode = prime * hashCode + ((getCreatorRequestId() == null) ? 0 : getCreatorRequestId().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getVpc() == null) ? 0 : getVpc().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 
