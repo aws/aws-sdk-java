@@ -171,7 +171,7 @@ abstract class BaseCredentialsFetcher {
         }
 
         // Otherwise, just log the error and continuing using the current credentials
-        LOG.debug(errorMessage, e);
+        LOG.warn(errorMessage, e);
     }
 
     public void refresh() {

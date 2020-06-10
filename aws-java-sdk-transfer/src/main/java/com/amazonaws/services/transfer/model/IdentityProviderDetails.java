@@ -31,7 +31,7 @@ public class IdentityProviderDetails implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Contains the location of the service endpoint used to authenticate users.
+     * Provides the location of the service endpoint used to authenticate users.
      * </p>
      */
     private String url;
@@ -44,11 +44,11 @@ public class IdentityProviderDetails implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Contains the location of the service endpoint used to authenticate users.
+     * Provides the location of the service endpoint used to authenticate users.
      * </p>
      * 
      * @param url
-     *        Contains the location of the service endpoint used to authenticate users.
+     *        Provides the location of the service endpoint used to authenticate users.
      */
 
     public void setUrl(String url) {
@@ -57,10 +57,10 @@ public class IdentityProviderDetails implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Contains the location of the service endpoint used to authenticate users.
+     * Provides the location of the service endpoint used to authenticate users.
      * </p>
      * 
-     * @return Contains the location of the service endpoint used to authenticate users.
+     * @return Provides the location of the service endpoint used to authenticate users.
      */
 
     public String getUrl() {
@@ -69,11 +69,11 @@ public class IdentityProviderDetails implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Contains the location of the service endpoint used to authenticate users.
+     * Provides the location of the service endpoint used to authenticate users.
      * </p>
      * 
      * @param url
-     *        Contains the location of the service endpoint used to authenticate users.
+     *        Provides the location of the service endpoint used to authenticate users.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

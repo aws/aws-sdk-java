@@ -1,7 +1,16 @@
+# __1.11.799__ __2020-06-09__
+## __AWS Transfer Family__
+  - ### Features
+    - This release updates the API so customers can test use of Source IP to allow, deny or limit access to data in their S3 buckets after integrating their identity provider.
+
 # __1.11.798__ __2020-06-08__
 ## __AWS Cloud Map__
   - ### Features
     - Added support for tagging Service and Namespace type resources  in Cloud Map
+
+## __AWS SDK for Java__
+  - ### Bugfixes
+    - Change the log level to warn when fetching credential fails. See [#2351](https://github.com/aws/aws-sdk-java/issues/2351)
 
 ## __AWS Shield__
   - ### Features

@@ -30,7 +30,7 @@ public class ListedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique Amazon Resource Name (ARN) for the user that you want to learn about.
+     * Provides the unique Amazon Resource Name (ARN) for the user that you want to learn about.
      * </p>
      */
     private String arn;
@@ -43,7 +43,7 @@ public class ListedUser implements Serializable, Cloneable, StructuredPojo {
     private String homeDirectory;
     /**
      * <p>
-     * The type of landing directory (folder) you mapped for your users' home directory. If you set it to
+     * Specifies the type of landing directory (folder) you mapped for your users' home directory. If you set it to
      * <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in their file transfer protocol
      * clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
      * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 paths visible to your users.
@@ -52,32 +52,33 @@ public class ListedUser implements Serializable, Cloneable, StructuredPojo {
     private String homeDirectoryType;
     /**
      * <p>
-     * The role in use by this user. A <i>role</i> is an AWS Identity and Access Management (IAM) entity that, in this
-     * case, allows a file transfer protocol-enabled server to act on a user's behalf. It allows the server to inherit
-     * the trust relationship that enables that user to perform file operations to their Amazon S3 bucket.
+     * Specifies the role that is in use by this user. A <i>role</i> is an AWS Identity and Access Management (IAM)
+     * entity that, in this case, allows a file transfer protocol-enabled server to act on a user's behalf. It allows
+     * the server to inherit the trust relationship that enables that user to perform file operations to their Amazon S3
+     * bucket.
      * </p>
      */
     private String role;
     /**
      * <p>
-     * The number of SSH public keys stored for the user you specified.
+     * Specifies the number of SSH public keys stored for the user you specified.
      * </p>
      */
     private Integer sshPublicKeyCount;
     /**
      * <p>
-     * The name of the user whose ARN was specified. User names are used for authentication purposes.
+     * Specifies the name of the user whose ARN was specified. User names are used for authentication purposes.
      * </p>
      */
     private String userName;
 
     /**
      * <p>
-     * The unique Amazon Resource Name (ARN) for the user that you want to learn about.
+     * Provides the unique Amazon Resource Name (ARN) for the user that you want to learn about.
      * </p>
      * 
      * @param arn
-     *        The unique Amazon Resource Name (ARN) for the user that you want to learn about.
+     *        Provides the unique Amazon Resource Name (ARN) for the user that you want to learn about.
      */
 
     public void setArn(String arn) {
@@ -86,10 +87,10 @@ public class ListedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique Amazon Resource Name (ARN) for the user that you want to learn about.
+     * Provides the unique Amazon Resource Name (ARN) for the user that you want to learn about.
      * </p>
      * 
-     * @return The unique Amazon Resource Name (ARN) for the user that you want to learn about.
+     * @return Provides the unique Amazon Resource Name (ARN) for the user that you want to learn about.
      */
 
     public String getArn() {
@@ -98,11 +99,11 @@ public class ListedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique Amazon Resource Name (ARN) for the user that you want to learn about.
+     * Provides the unique Amazon Resource Name (ARN) for the user that you want to learn about.
      * </p>
      * 
      * @param arn
-     *        The unique Amazon Resource Name (ARN) for the user that you want to learn about.
+     *        Provides the unique Amazon Resource Name (ARN) for the user that you want to learn about.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -159,15 +160,15 @@ public class ListedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of landing directory (folder) you mapped for your users' home directory. If you set it to
+     * Specifies the type of landing directory (folder) you mapped for your users' home directory. If you set it to
      * <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in their file transfer protocol
      * clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
      * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 paths visible to your users.
      * </p>
      * 
      * @param homeDirectoryType
-     *        The type of landing directory (folder) you mapped for your users' home directory. If you set it to
-     *        <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in their file transfer
+     *        Specifies the type of landing directory (folder) you mapped for your users' home directory. If you set it
+     *        to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in their file transfer
      *        protocol clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
      *        <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 paths visible to your users.
      * @see HomeDirectoryType
@@ -179,14 +180,14 @@ public class ListedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of landing directory (folder) you mapped for your users' home directory. If you set it to
+     * Specifies the type of landing directory (folder) you mapped for your users' home directory. If you set it to
      * <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in their file transfer protocol
      * clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
      * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 paths visible to your users.
      * </p>
      * 
-     * @return The type of landing directory (folder) you mapped for your users' home directory. If you set it to
-     *         <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in their file transfer
+     * @return Specifies the type of landing directory (folder) you mapped for your users' home directory. If you set it
+     *         to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in their file transfer
      *         protocol clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
      *         <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 paths visible to your users.
      * @see HomeDirectoryType
@@ -198,15 +199,15 @@ public class ListedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of landing directory (folder) you mapped for your users' home directory. If you set it to
+     * Specifies the type of landing directory (folder) you mapped for your users' home directory. If you set it to
      * <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in their file transfer protocol
      * clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
      * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 paths visible to your users.
      * </p>
      * 
      * @param homeDirectoryType
-     *        The type of landing directory (folder) you mapped for your users' home directory. If you set it to
-     *        <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in their file transfer
+     *        Specifies the type of landing directory (folder) you mapped for your users' home directory. If you set it
+     *        to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in their file transfer
      *        protocol clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
      *        <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 paths visible to your users.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -220,15 +221,15 @@ public class ListedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of landing directory (folder) you mapped for your users' home directory. If you set it to
+     * Specifies the type of landing directory (folder) you mapped for your users' home directory. If you set it to
      * <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in their file transfer protocol
      * clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
      * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 paths visible to your users.
      * </p>
      * 
      * @param homeDirectoryType
-     *        The type of landing directory (folder) you mapped for your users' home directory. If you set it to
-     *        <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in their file transfer
+     *        Specifies the type of landing directory (folder) you mapped for your users' home directory. If you set it
+     *        to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in their file transfer
      *        protocol clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
      *        <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 paths visible to your users.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -242,16 +243,17 @@ public class ListedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The role in use by this user. A <i>role</i> is an AWS Identity and Access Management (IAM) entity that, in this
-     * case, allows a file transfer protocol-enabled server to act on a user's behalf. It allows the server to inherit
-     * the trust relationship that enables that user to perform file operations to their Amazon S3 bucket.
+     * Specifies the role that is in use by this user. A <i>role</i> is an AWS Identity and Access Management (IAM)
+     * entity that, in this case, allows a file transfer protocol-enabled server to act on a user's behalf. It allows
+     * the server to inherit the trust relationship that enables that user to perform file operations to their Amazon S3
+     * bucket.
      * </p>
      * 
      * @param role
-     *        The role in use by this user. A <i>role</i> is an AWS Identity and Access Management (IAM) entity that, in
-     *        this case, allows a file transfer protocol-enabled server to act on a user's behalf. It allows the server
-     *        to inherit the trust relationship that enables that user to perform file operations to their Amazon S3
-     *        bucket.
+     *        Specifies the role that is in use by this user. A <i>role</i> is an AWS Identity and Access Management
+     *        (IAM) entity that, in this case, allows a file transfer protocol-enabled server to act on a user's behalf.
+     *        It allows the server to inherit the trust relationship that enables that user to perform file operations
+     *        to their Amazon S3 bucket.
      */
 
     public void setRole(String role) {
@@ -260,15 +262,16 @@ public class ListedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The role in use by this user. A <i>role</i> is an AWS Identity and Access Management (IAM) entity that, in this
-     * case, allows a file transfer protocol-enabled server to act on a user's behalf. It allows the server to inherit
-     * the trust relationship that enables that user to perform file operations to their Amazon S3 bucket.
+     * Specifies the role that is in use by this user. A <i>role</i> is an AWS Identity and Access Management (IAM)
+     * entity that, in this case, allows a file transfer protocol-enabled server to act on a user's behalf. It allows
+     * the server to inherit the trust relationship that enables that user to perform file operations to their Amazon S3
+     * bucket.
      * </p>
      * 
-     * @return The role in use by this user. A <i>role</i> is an AWS Identity and Access Management (IAM) entity that,
-     *         in this case, allows a file transfer protocol-enabled server to act on a user's behalf. It allows the
-     *         server to inherit the trust relationship that enables that user to perform file operations to their
-     *         Amazon S3 bucket.
+     * @return Specifies the role that is in use by this user. A <i>role</i> is an AWS Identity and Access Management
+     *         (IAM) entity that, in this case, allows a file transfer protocol-enabled server to act on a user's
+     *         behalf. It allows the server to inherit the trust relationship that enables that user to perform file
+     *         operations to their Amazon S3 bucket.
      */
 
     public String getRole() {
@@ -277,16 +280,17 @@ public class ListedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The role in use by this user. A <i>role</i> is an AWS Identity and Access Management (IAM) entity that, in this
-     * case, allows a file transfer protocol-enabled server to act on a user's behalf. It allows the server to inherit
-     * the trust relationship that enables that user to perform file operations to their Amazon S3 bucket.
+     * Specifies the role that is in use by this user. A <i>role</i> is an AWS Identity and Access Management (IAM)
+     * entity that, in this case, allows a file transfer protocol-enabled server to act on a user's behalf. It allows
+     * the server to inherit the trust relationship that enables that user to perform file operations to their Amazon S3
+     * bucket.
      * </p>
      * 
      * @param role
-     *        The role in use by this user. A <i>role</i> is an AWS Identity and Access Management (IAM) entity that, in
-     *        this case, allows a file transfer protocol-enabled server to act on a user's behalf. It allows the server
-     *        to inherit the trust relationship that enables that user to perform file operations to their Amazon S3
-     *        bucket.
+     *        Specifies the role that is in use by this user. A <i>role</i> is an AWS Identity and Access Management
+     *        (IAM) entity that, in this case, allows a file transfer protocol-enabled server to act on a user's behalf.
+     *        It allows the server to inherit the trust relationship that enables that user to perform file operations
+     *        to their Amazon S3 bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -297,11 +301,11 @@ public class ListedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of SSH public keys stored for the user you specified.
+     * Specifies the number of SSH public keys stored for the user you specified.
      * </p>
      * 
      * @param sshPublicKeyCount
-     *        The number of SSH public keys stored for the user you specified.
+     *        Specifies the number of SSH public keys stored for the user you specified.
      */
 
     public void setSshPublicKeyCount(Integer sshPublicKeyCount) {
@@ -310,10 +314,10 @@ public class ListedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of SSH public keys stored for the user you specified.
+     * Specifies the number of SSH public keys stored for the user you specified.
      * </p>
      * 
-     * @return The number of SSH public keys stored for the user you specified.
+     * @return Specifies the number of SSH public keys stored for the user you specified.
      */
 
     public Integer getSshPublicKeyCount() {
@@ -322,11 +326,11 @@ public class ListedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of SSH public keys stored for the user you specified.
+     * Specifies the number of SSH public keys stored for the user you specified.
      * </p>
      * 
      * @param sshPublicKeyCount
-     *        The number of SSH public keys stored for the user you specified.
+     *        Specifies the number of SSH public keys stored for the user you specified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -337,11 +341,11 @@ public class ListedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the user whose ARN was specified. User names are used for authentication purposes.
+     * Specifies the name of the user whose ARN was specified. User names are used for authentication purposes.
      * </p>
      * 
      * @param userName
-     *        The name of the user whose ARN was specified. User names are used for authentication purposes.
+     *        Specifies the name of the user whose ARN was specified. User names are used for authentication purposes.
      */
 
     public void setUserName(String userName) {
@@ -350,10 +354,10 @@ public class ListedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the user whose ARN was specified. User names are used for authentication purposes.
+     * Specifies the name of the user whose ARN was specified. User names are used for authentication purposes.
      * </p>
      * 
-     * @return The name of the user whose ARN was specified. User names are used for authentication purposes.
+     * @return Specifies the name of the user whose ARN was specified. User names are used for authentication purposes.
      */
 
     public String getUserName() {
@@ -362,11 +366,11 @@ public class ListedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the user whose ARN was specified. User names are used for authentication purposes.
+     * Specifies the name of the user whose ARN was specified. User names are used for authentication purposes.
      * </p>
      * 
      * @param userName
-     *        The name of the user whose ARN was specified. User names are used for authentication purposes.
+     *        Specifies the name of the user whose ARN was specified. User names are used for authentication purposes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

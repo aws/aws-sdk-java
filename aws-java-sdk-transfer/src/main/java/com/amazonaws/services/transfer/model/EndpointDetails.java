@@ -46,18 +46,33 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * A list of subnet IDs that are required to host your file transfer protocol-enabled server endpoint in your VPC.
      * </p>
+     * <note>
+     * <p>
+     * This property can only be used when <code>EndpointType</code> is set to <code>VPC</code>.
+     * </p>
+     * </note>
      */
     private java.util.List<String> subnetIds;
     /**
      * <p>
      * The ID of the VPC endpoint.
      * </p>
+     * <note>
+     * <p>
+     * This property can only be used when <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.
+     * </p>
+     * </note>
      */
     private String vpcEndpointId;
     /**
      * <p>
      * The VPC ID of the VPC in which a file transfer protocol-enabled server's endpoint will be hosted.
      * </p>
+     * <note>
+     * <p>
+     * This property can only be used when <code>EndpointType</code> is set to <code>VPC</code>.
+     * </p>
+     * </note>
      */
     private String vpcId;
 
@@ -175,9 +190,17 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * A list of subnet IDs that are required to host your file transfer protocol-enabled server endpoint in your VPC.
      * </p>
+     * <note>
+     * <p>
+     * This property can only be used when <code>EndpointType</code> is set to <code>VPC</code>.
+     * </p>
+     * </note>
      * 
      * @return A list of subnet IDs that are required to host your file transfer protocol-enabled server endpoint in
-     *         your VPC.
+     *         your VPC.</p> <note>
+     *         <p>
+     *         This property can only be used when <code>EndpointType</code> is set to <code>VPC</code>.
+     *         </p>
      */
 
     public java.util.List<String> getSubnetIds() {
@@ -188,10 +211,18 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * A list of subnet IDs that are required to host your file transfer protocol-enabled server endpoint in your VPC.
      * </p>
+     * <note>
+     * <p>
+     * This property can only be used when <code>EndpointType</code> is set to <code>VPC</code>.
+     * </p>
+     * </note>
      * 
      * @param subnetIds
      *        A list of subnet IDs that are required to host your file transfer protocol-enabled server endpoint in your
-     *        VPC.
+     *        VPC.</p> <note>
+     *        <p>
+     *        This property can only be used when <code>EndpointType</code> is set to <code>VPC</code>.
+     *        </p>
      */
 
     public void setSubnetIds(java.util.Collection<String> subnetIds) {
@@ -207,6 +238,11 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * A list of subnet IDs that are required to host your file transfer protocol-enabled server endpoint in your VPC.
      * </p>
+     * <note>
+     * <p>
+     * This property can only be used when <code>EndpointType</code> is set to <code>VPC</code>.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSubnetIds(java.util.Collection)} or {@link #withSubnetIds(java.util.Collection)} if you want to
@@ -215,7 +251,10 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
      * 
      * @param subnetIds
      *        A list of subnet IDs that are required to host your file transfer protocol-enabled server endpoint in your
-     *        VPC.
+     *        VPC.</p> <note>
+     *        <p>
+     *        This property can only be used when <code>EndpointType</code> is set to <code>VPC</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -233,10 +272,18 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * A list of subnet IDs that are required to host your file transfer protocol-enabled server endpoint in your VPC.
      * </p>
+     * <note>
+     * <p>
+     * This property can only be used when <code>EndpointType</code> is set to <code>VPC</code>.
+     * </p>
+     * </note>
      * 
      * @param subnetIds
      *        A list of subnet IDs that are required to host your file transfer protocol-enabled server endpoint in your
-     *        VPC.
+     *        VPC.</p> <note>
+     *        <p>
+     *        This property can only be used when <code>EndpointType</code> is set to <code>VPC</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -249,9 +296,17 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The ID of the VPC endpoint.
      * </p>
+     * <note>
+     * <p>
+     * This property can only be used when <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.
+     * </p>
+     * </note>
      * 
      * @param vpcEndpointId
-     *        The ID of the VPC endpoint.
+     *        The ID of the VPC endpoint.</p> <note>
+     *        <p>
+     *        This property can only be used when <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.
+     *        </p>
      */
 
     public void setVpcEndpointId(String vpcEndpointId) {
@@ -262,8 +317,16 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The ID of the VPC endpoint.
      * </p>
+     * <note>
+     * <p>
+     * This property can only be used when <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.
+     * </p>
+     * </note>
      * 
-     * @return The ID of the VPC endpoint.
+     * @return The ID of the VPC endpoint.</p> <note>
+     *         <p>
+     *         This property can only be used when <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.
+     *         </p>
      */
 
     public String getVpcEndpointId() {
@@ -274,9 +337,17 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The ID of the VPC endpoint.
      * </p>
+     * <note>
+     * <p>
+     * This property can only be used when <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.
+     * </p>
+     * </note>
      * 
      * @param vpcEndpointId
-     *        The ID of the VPC endpoint.
+     *        The ID of the VPC endpoint.</p> <note>
+     *        <p>
+     *        This property can only be used when <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -289,9 +360,18 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The VPC ID of the VPC in which a file transfer protocol-enabled server's endpoint will be hosted.
      * </p>
+     * <note>
+     * <p>
+     * This property can only be used when <code>EndpointType</code> is set to <code>VPC</code>.
+     * </p>
+     * </note>
      * 
      * @param vpcId
-     *        The VPC ID of the VPC in which a file transfer protocol-enabled server's endpoint will be hosted.
+     *        The VPC ID of the VPC in which a file transfer protocol-enabled server's endpoint will be hosted.</p>
+     *        <note>
+     *        <p>
+     *        This property can only be used when <code>EndpointType</code> is set to <code>VPC</code>.
+     *        </p>
      */
 
     public void setVpcId(String vpcId) {
@@ -302,8 +382,17 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The VPC ID of the VPC in which a file transfer protocol-enabled server's endpoint will be hosted.
      * </p>
+     * <note>
+     * <p>
+     * This property can only be used when <code>EndpointType</code> is set to <code>VPC</code>.
+     * </p>
+     * </note>
      * 
-     * @return The VPC ID of the VPC in which a file transfer protocol-enabled server's endpoint will be hosted.
+     * @return The VPC ID of the VPC in which a file transfer protocol-enabled server's endpoint will be hosted.</p>
+     *         <note>
+     *         <p>
+     *         This property can only be used when <code>EndpointType</code> is set to <code>VPC</code>.
+     *         </p>
      */
 
     public String getVpcId() {
@@ -314,9 +403,18 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The VPC ID of the VPC in which a file transfer protocol-enabled server's endpoint will be hosted.
      * </p>
+     * <note>
+     * <p>
+     * This property can only be used when <code>EndpointType</code> is set to <code>VPC</code>.
+     * </p>
+     * </note>
      * 
      * @param vpcId
-     *        The VPC ID of the VPC in which a file transfer protocol-enabled server's endpoint will be hosted.
+     *        The VPC ID of the VPC in which a file transfer protocol-enabled server's endpoint will be hosted.</p>
+     *        <note>
+     *        <p>
+     *        This property can only be used when <code>EndpointType</code> is set to <code>VPC</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -131,4 +131,8 @@ public enum ElasticBeanstalkActions implements Action {
     public String getActionName() {
         return this.action;
     }
+
+    public boolean isNotType() {
+        return false;
+    }
 }

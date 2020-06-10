@@ -31,7 +31,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * client.
      * </p>
      * <p>
-     * An example is <code>your-Amazon-S3-bucket-name&gt;/home/username</code>.
+     * An example is <i> <code>your-Amazon-S3-bucket-name&gt;/home/username</code> </i>.
      * </p>
      */
     private String homeDirectory;
@@ -50,7 +50,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * Logical directory mappings that specify what Amazon S3 paths and keys should be visible to your user and how you
      * want to make them visible. You will need to specify the "<code>Entry</code>" and "<code>Target</code>" pair,
      * where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 path.
-     * If you only specify a target, it will be displayed as is. You will need to also make sure that your AWS IAM Role
+     * If you only specify a target, it will be displayed as is. You will need to also make sure that your IAM role
      * provides access to paths in <code>Target</code>. The following is an example.
      * </p>
      * <p>
@@ -87,7 +87,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * For an example of a scope-down policy, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down">Creating a
-     * Scope-Down Policy</a>.
+     * scope-down policy</a>.
      * </p>
      * <p>
      * For more information, see <a
@@ -143,14 +143,14 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * client.
      * </p>
      * <p>
-     * An example is <code>your-Amazon-S3-bucket-name&gt;/home/username</code>.
+     * An example is <i> <code>your-Amazon-S3-bucket-name&gt;/home/username</code> </i>.
      * </p>
      * 
      * @param homeDirectory
      *        The landing directory (folder) for a user when they log in to the file transfer protocol-enabled server
      *        using the client.</p>
      *        <p>
-     *        An example is <code>your-Amazon-S3-bucket-name&gt;/home/username</code>.
+     *        An example is <i> <code>your-Amazon-S3-bucket-name&gt;/home/username</code> </i>.
      */
 
     public void setHomeDirectory(String homeDirectory) {
@@ -163,13 +163,13 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * client.
      * </p>
      * <p>
-     * An example is <code>your-Amazon-S3-bucket-name&gt;/home/username</code>.
+     * An example is <i> <code>your-Amazon-S3-bucket-name&gt;/home/username</code> </i>.
      * </p>
      * 
      * @return The landing directory (folder) for a user when they log in to the file transfer protocol-enabled server
      *         using the client.</p>
      *         <p>
-     *         An example is <code>your-Amazon-S3-bucket-name&gt;/home/username</code>.
+     *         An example is <i> <code>your-Amazon-S3-bucket-name&gt;/home/username</code> </i>.
      */
 
     public String getHomeDirectory() {
@@ -182,14 +182,14 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * client.
      * </p>
      * <p>
-     * An example is <code>your-Amazon-S3-bucket-name&gt;/home/username</code>.
+     * An example is <i> <code>your-Amazon-S3-bucket-name&gt;/home/username</code> </i>.
      * </p>
      * 
      * @param homeDirectory
      *        The landing directory (folder) for a user when they log in to the file transfer protocol-enabled server
      *        using the client.</p>
      *        <p>
-     *        An example is <code>your-Amazon-S3-bucket-name&gt;/home/username</code>.
+     *        An example is <i> <code>your-Amazon-S3-bucket-name&gt;/home/username</code> </i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -294,7 +294,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * Logical directory mappings that specify what Amazon S3 paths and keys should be visible to your user and how you
      * want to make them visible. You will need to specify the "<code>Entry</code>" and "<code>Target</code>" pair,
      * where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 path.
-     * If you only specify a target, it will be displayed as is. You will need to also make sure that your AWS IAM Role
+     * If you only specify a target, it will be displayed as is. You will need to also make sure that your IAM role
      * provides access to paths in <code>Target</code>. The following is an example.
      * </p>
      * <p>
@@ -319,8 +319,8 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         how you want to make them visible. You will need to specify the "<code>Entry</code>" and "
      *         <code>Target</code>" pair, where <code>Entry</code> shows how the path is made visible and
      *         <code>Target</code> is the actual Amazon S3 path. If you only specify a target, it will be displayed as
-     *         is. You will need to also make sure that your AWS IAM Role provides access to paths in
-     *         <code>Target</code>. The following is an example.</p>
+     *         is. You will need to also make sure that your IAM role provides access to paths in <code>Target</code>.
+     *         The following is an example.</p>
      *         <p>
      *         <code>'[ "/bucket2/documentation", { "Entry": "your-personal-report.pdf", "Target": "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]'</code>
      *         </p>
@@ -349,7 +349,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * Logical directory mappings that specify what Amazon S3 paths and keys should be visible to your user and how you
      * want to make them visible. You will need to specify the "<code>Entry</code>" and "<code>Target</code>" pair,
      * where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 path.
-     * If you only specify a target, it will be displayed as is. You will need to also make sure that your AWS IAM Role
+     * If you only specify a target, it will be displayed as is. You will need to also make sure that your IAM role
      * provides access to paths in <code>Target</code>. The following is an example.
      * </p>
      * <p>
@@ -375,8 +375,8 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        how you want to make them visible. You will need to specify the "<code>Entry</code>" and "
      *        <code>Target</code>" pair, where <code>Entry</code> shows how the path is made visible and
      *        <code>Target</code> is the actual Amazon S3 path. If you only specify a target, it will be displayed as
-     *        is. You will need to also make sure that your AWS IAM Role provides access to paths in <code>Target</code>
-     *        . The following is an example.</p>
+     *        is. You will need to also make sure that your IAM role provides access to paths in <code>Target</code>.
+     *        The following is an example.</p>
      *        <p>
      *        <code>'[ "/bucket2/documentation", { "Entry": "your-personal-report.pdf", "Target": "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]'</code>
      *        </p>
@@ -410,7 +410,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * Logical directory mappings that specify what Amazon S3 paths and keys should be visible to your user and how you
      * want to make them visible. You will need to specify the "<code>Entry</code>" and "<code>Target</code>" pair,
      * where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 path.
-     * If you only specify a target, it will be displayed as is. You will need to also make sure that your AWS IAM Role
+     * If you only specify a target, it will be displayed as is. You will need to also make sure that your IAM role
      * provides access to paths in <code>Target</code>. The following is an example.
      * </p>
      * <p>
@@ -441,8 +441,8 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        how you want to make them visible. You will need to specify the "<code>Entry</code>" and "
      *        <code>Target</code>" pair, where <code>Entry</code> shows how the path is made visible and
      *        <code>Target</code> is the actual Amazon S3 path. If you only specify a target, it will be displayed as
-     *        is. You will need to also make sure that your AWS IAM Role provides access to paths in <code>Target</code>
-     *        . The following is an example.</p>
+     *        is. You will need to also make sure that your IAM role provides access to paths in <code>Target</code>.
+     *        The following is an example.</p>
      *        <p>
      *        <code>'[ "/bucket2/documentation", { "Entry": "your-personal-report.pdf", "Target": "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]'</code>
      *        </p>
@@ -478,7 +478,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * Logical directory mappings that specify what Amazon S3 paths and keys should be visible to your user and how you
      * want to make them visible. You will need to specify the "<code>Entry</code>" and "<code>Target</code>" pair,
      * where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 path.
-     * If you only specify a target, it will be displayed as is. You will need to also make sure that your AWS IAM Role
+     * If you only specify a target, it will be displayed as is. You will need to also make sure that your IAM role
      * provides access to paths in <code>Target</code>. The following is an example.
      * </p>
      * <p>
@@ -504,8 +504,8 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        how you want to make them visible. You will need to specify the "<code>Entry</code>" and "
      *        <code>Target</code>" pair, where <code>Entry</code> shows how the path is made visible and
      *        <code>Target</code> is the actual Amazon S3 path. If you only specify a target, it will be displayed as
-     *        is. You will need to also make sure that your AWS IAM Role provides access to paths in <code>Target</code>
-     *        . The following is an example.</p>
+     *        is. You will need to also make sure that your IAM role provides access to paths in <code>Target</code>.
+     *        The following is an example.</p>
      *        <p>
      *        <code>'[ "/bucket2/documentation", { "Entry": "your-personal-report.pdf", "Target": "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]'</code>
      *        </p>
@@ -546,7 +546,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * For an example of a scope-down policy, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down">Creating a
-     * Scope-Down Policy</a>.
+     * scope-down policy</a>.
      * </p>
      * <p>
      * For more information, see <a
@@ -568,7 +568,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <p>
      *        For an example of a scope-down policy, see <a
      *        href="https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down">Creating
-     *        a Scope-Down Policy</a>.
+     *        a scope-down policy</a>.
      *        </p>
      *        <p>
      *        For more information, see <a
@@ -596,7 +596,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * For an example of a scope-down policy, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down">Creating a
-     * Scope-Down Policy</a>.
+     * scope-down policy</a>.
      * </p>
      * <p>
      * For more information, see <a
@@ -617,7 +617,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         <p>
      *         For an example of a scope-down policy, see <a
      *         href="https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down"
-     *         >Creating a Scope-Down Policy</a>.
+     *         >Creating a scope-down policy</a>.
      *         </p>
      *         <p>
      *         For more information, see <a
@@ -645,7 +645,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * For an example of a scope-down policy, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down">Creating a
-     * Scope-Down Policy</a>.
+     * scope-down policy</a>.
      * </p>
      * <p>
      * For more information, see <a
@@ -667,7 +667,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <p>
      *        For an example of a scope-down policy, see <a
      *        href="https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down">Creating
-     *        a Scope-Down Policy</a>.
+     *        a scope-down policy</a>.
      *        </p>
      *        <p>
      *        For more information, see <a

@@ -50,7 +50,7 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * Logical directory mappings that specify what Amazon S3 paths and keys should be visible to your user and how you
      * want to make them visible. You will need to specify the "<code>Entry</code>" and "<code>Target</code>" pair,
      * where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 path.
-     * If you only specify a target, it will be displayed as is. You will need to also make sure that your AWS IAM Role
+     * If you only specify a target, it will be displayed as is. You will need to also make sure that your IAM role
      * provides access to paths in <code>Target</code>. The following is an example.
      * </p>
      * <p>
@@ -74,10 +74,10 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private java.util.List<HomeDirectoryMapEntry> homeDirectoryMappings;
     /**
      * <p>
-     * Allows you to supply a scope-down policy for your user so you can use the same AWS Identity and Access Management
-     * (IAM) role across multiple users. The policy scopes down user access to portions of your Amazon S3 bucket.
-     * Variables you can use inside this policy include <code>${Transfer:UserName}</code>,
-     * <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.
+     * Allows you to supply a scope-down policy for your user so you can use the same IAM role across multiple users.
+     * The policy scopes down user access to portions of your Amazon S3 bucket. Variables you can use inside this policy
+     * include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
+     * <code>${Transfer:HomeBucket}</code>.
      * </p>
      * <note>
      * <p>
@@ -87,7 +87,7 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * For an example of a scope-down policy, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down">Creating a
-     * Scope-Down Policy</a>.
+     * scope-down policy</a>.
      * </p>
      * <p>
      * For more information, see <a
@@ -280,7 +280,7 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * Logical directory mappings that specify what Amazon S3 paths and keys should be visible to your user and how you
      * want to make them visible. You will need to specify the "<code>Entry</code>" and "<code>Target</code>" pair,
      * where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 path.
-     * If you only specify a target, it will be displayed as is. You will need to also make sure that your AWS IAM Role
+     * If you only specify a target, it will be displayed as is. You will need to also make sure that your IAM role
      * provides access to paths in <code>Target</code>. The following is an example.
      * </p>
      * <p>
@@ -305,8 +305,8 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         how you want to make them visible. You will need to specify the "<code>Entry</code>" and "
      *         <code>Target</code>" pair, where <code>Entry</code> shows how the path is made visible and
      *         <code>Target</code> is the actual Amazon S3 path. If you only specify a target, it will be displayed as
-     *         is. You will need to also make sure that your AWS IAM Role provides access to paths in
-     *         <code>Target</code>. The following is an example.</p>
+     *         is. You will need to also make sure that your IAM role provides access to paths in <code>Target</code>.
+     *         The following is an example.</p>
      *         <p>
      *         <code>'[ "/bucket2/documentation", { "Entry": "your-personal-report.pdf", "Target": "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]'</code>
      *         </p>
@@ -335,7 +335,7 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * Logical directory mappings that specify what Amazon S3 paths and keys should be visible to your user and how you
      * want to make them visible. You will need to specify the "<code>Entry</code>" and "<code>Target</code>" pair,
      * where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 path.
-     * If you only specify a target, it will be displayed as is. You will need to also make sure that your AWS IAM Role
+     * If you only specify a target, it will be displayed as is. You will need to also make sure that your IAM role
      * provides access to paths in <code>Target</code>. The following is an example.
      * </p>
      * <p>
@@ -361,8 +361,8 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        how you want to make them visible. You will need to specify the "<code>Entry</code>" and "
      *        <code>Target</code>" pair, where <code>Entry</code> shows how the path is made visible and
      *        <code>Target</code> is the actual Amazon S3 path. If you only specify a target, it will be displayed as
-     *        is. You will need to also make sure that your AWS IAM Role provides access to paths in <code>Target</code>
-     *        . The following is an example.</p>
+     *        is. You will need to also make sure that your IAM role provides access to paths in <code>Target</code>.
+     *        The following is an example.</p>
      *        <p>
      *        <code>'[ "/bucket2/documentation", { "Entry": "your-personal-report.pdf", "Target": "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]'</code>
      *        </p>
@@ -396,7 +396,7 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * Logical directory mappings that specify what Amazon S3 paths and keys should be visible to your user and how you
      * want to make them visible. You will need to specify the "<code>Entry</code>" and "<code>Target</code>" pair,
      * where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 path.
-     * If you only specify a target, it will be displayed as is. You will need to also make sure that your AWS IAM Role
+     * If you only specify a target, it will be displayed as is. You will need to also make sure that your IAM role
      * provides access to paths in <code>Target</code>. The following is an example.
      * </p>
      * <p>
@@ -427,8 +427,8 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        how you want to make them visible. You will need to specify the "<code>Entry</code>" and "
      *        <code>Target</code>" pair, where <code>Entry</code> shows how the path is made visible and
      *        <code>Target</code> is the actual Amazon S3 path. If you only specify a target, it will be displayed as
-     *        is. You will need to also make sure that your AWS IAM Role provides access to paths in <code>Target</code>
-     *        . The following is an example.</p>
+     *        is. You will need to also make sure that your IAM role provides access to paths in <code>Target</code>.
+     *        The following is an example.</p>
      *        <p>
      *        <code>'[ "/bucket2/documentation", { "Entry": "your-personal-report.pdf", "Target": "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]'</code>
      *        </p>
@@ -464,7 +464,7 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * Logical directory mappings that specify what Amazon S3 paths and keys should be visible to your user and how you
      * want to make them visible. You will need to specify the "<code>Entry</code>" and "<code>Target</code>" pair,
      * where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 path.
-     * If you only specify a target, it will be displayed as is. You will need to also make sure that your AWS IAM Role
+     * If you only specify a target, it will be displayed as is. You will need to also make sure that your IAM role
      * provides access to paths in <code>Target</code>. The following is an example.
      * </p>
      * <p>
@@ -490,8 +490,8 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        how you want to make them visible. You will need to specify the "<code>Entry</code>" and "
      *        <code>Target</code>" pair, where <code>Entry</code> shows how the path is made visible and
      *        <code>Target</code> is the actual Amazon S3 path. If you only specify a target, it will be displayed as
-     *        is. You will need to also make sure that your AWS IAM Role provides access to paths in <code>Target</code>
-     *        . The following is an example.</p>
+     *        is. You will need to also make sure that your IAM role provides access to paths in <code>Target</code>.
+     *        The following is an example.</p>
      *        <p>
      *        <code>'[ "/bucket2/documentation", { "Entry": "your-personal-report.pdf", "Target": "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]'</code>
      *        </p>
@@ -519,10 +519,10 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Allows you to supply a scope-down policy for your user so you can use the same AWS Identity and Access Management
-     * (IAM) role across multiple users. The policy scopes down user access to portions of your Amazon S3 bucket.
-     * Variables you can use inside this policy include <code>${Transfer:UserName}</code>,
-     * <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.
+     * Allows you to supply a scope-down policy for your user so you can use the same IAM role across multiple users.
+     * The policy scopes down user access to portions of your Amazon S3 bucket. Variables you can use inside this policy
+     * include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
+     * <code>${Transfer:HomeBucket}</code>.
      * </p>
      * <note>
      * <p>
@@ -532,7 +532,7 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * For an example of a scope-down policy, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down">Creating a
-     * Scope-Down Policy</a>.
+     * scope-down policy</a>.
      * </p>
      * <p>
      * For more information, see <a
@@ -542,10 +542,10 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </note>
      * 
      * @param policy
-     *        Allows you to supply a scope-down policy for your user so you can use the same AWS Identity and Access
-     *        Management (IAM) role across multiple users. The policy scopes down user access to portions of your Amazon
-     *        S3 bucket. Variables you can use inside this policy include <code>${Transfer:UserName}</code>,
-     *        <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
+     *        Allows you to supply a scope-down policy for your user so you can use the same IAM role across multiple
+     *        users. The policy scopes down user access to portions of your Amazon S3 bucket. Variables you can use
+     *        inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
+     *        <code>${Transfer:HomeBucket}</code>.</p> <note>
      *        <p>
      *        For scope-down policies, AWS Transfer Family stores the policy as a JSON blob, instead of the Amazon
      *        Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the
@@ -554,7 +554,7 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <p>
      *        For an example of a scope-down policy, see <a
      *        href="https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down">Creating
-     *        a Scope-Down Policy</a>.
+     *        a scope-down policy</a>.
      *        </p>
      *        <p>
      *        For more information, see <a
@@ -569,10 +569,10 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Allows you to supply a scope-down policy for your user so you can use the same AWS Identity and Access Management
-     * (IAM) role across multiple users. The policy scopes down user access to portions of your Amazon S3 bucket.
-     * Variables you can use inside this policy include <code>${Transfer:UserName}</code>,
-     * <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.
+     * Allows you to supply a scope-down policy for your user so you can use the same IAM role across multiple users.
+     * The policy scopes down user access to portions of your Amazon S3 bucket. Variables you can use inside this policy
+     * include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
+     * <code>${Transfer:HomeBucket}</code>.
      * </p>
      * <note>
      * <p>
@@ -582,7 +582,7 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * For an example of a scope-down policy, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down">Creating a
-     * Scope-Down Policy</a>.
+     * scope-down policy</a>.
      * </p>
      * <p>
      * For more information, see <a
@@ -591,10 +591,10 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * </note>
      * 
-     * @return Allows you to supply a scope-down policy for your user so you can use the same AWS Identity and Access
-     *         Management (IAM) role across multiple users. The policy scopes down user access to portions of your
-     *         Amazon S3 bucket. Variables you can use inside this policy include <code>${Transfer:UserName}</code>,
-     *         <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
+     * @return Allows you to supply a scope-down policy for your user so you can use the same IAM role across multiple
+     *         users. The policy scopes down user access to portions of your Amazon S3 bucket. Variables you can use
+     *         inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
+     *         <code>${Transfer:HomeBucket}</code>.</p> <note>
      *         <p>
      *         For scope-down policies, AWS Transfer Family stores the policy as a JSON blob, instead of the Amazon
      *         Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the
@@ -603,7 +603,7 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         <p>
      *         For an example of a scope-down policy, see <a
      *         href="https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down"
-     *         >Creating a Scope-Down Policy</a>.
+     *         >Creating a scope-down policy</a>.
      *         </p>
      *         <p>
      *         For more information, see <a
@@ -618,10 +618,10 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Allows you to supply a scope-down policy for your user so you can use the same AWS Identity and Access Management
-     * (IAM) role across multiple users. The policy scopes down user access to portions of your Amazon S3 bucket.
-     * Variables you can use inside this policy include <code>${Transfer:UserName}</code>,
-     * <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.
+     * Allows you to supply a scope-down policy for your user so you can use the same IAM role across multiple users.
+     * The policy scopes down user access to portions of your Amazon S3 bucket. Variables you can use inside this policy
+     * include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
+     * <code>${Transfer:HomeBucket}</code>.
      * </p>
      * <note>
      * <p>
@@ -631,7 +631,7 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * For an example of a scope-down policy, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down">Creating a
-     * Scope-Down Policy</a>.
+     * scope-down policy</a>.
      * </p>
      * <p>
      * For more information, see <a
@@ -641,10 +641,10 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </note>
      * 
      * @param policy
-     *        Allows you to supply a scope-down policy for your user so you can use the same AWS Identity and Access
-     *        Management (IAM) role across multiple users. The policy scopes down user access to portions of your Amazon
-     *        S3 bucket. Variables you can use inside this policy include <code>${Transfer:UserName}</code>,
-     *        <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
+     *        Allows you to supply a scope-down policy for your user so you can use the same IAM role across multiple
+     *        users. The policy scopes down user access to portions of your Amazon S3 bucket. Variables you can use
+     *        inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
+     *        <code>${Transfer:HomeBucket}</code>.</p> <note>
      *        <p>
      *        For scope-down policies, AWS Transfer Family stores the policy as a JSON blob, instead of the Amazon
      *        Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the
@@ -653,7 +653,7 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <p>
      *        For an example of a scope-down policy, see <a
      *        href="https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down">Creating
-     *        a Scope-Down Policy</a>.
+     *        a scope-down policy</a>.
      *        </p>
      *        <p>
      *        For more information, see <a
