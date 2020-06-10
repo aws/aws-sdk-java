@@ -158,7 +158,7 @@ public class Validator implements Serializable, Cloneable, StructuredPojo {
         if (getType() != null)
             sb.append("Type: ").append(getType()).append(",");
         if (getContent() != null)
-            sb.append("Content: ").append(getContent());
+            sb.append("Content: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

@@ -209,7 +209,7 @@ public class GetConfigurationResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getContent() != null)
-            sb.append("Content: ").append(getContent()).append(",");
+            sb.append("Content: ").append("***Sensitive Data Redacted***").append(",");
         if (getConfigurationVersion() != null)
             sb.append("ConfigurationVersion: ").append(getConfigurationVersion()).append(",");
         if (getContentType() != null)

@@ -65,37 +65,6 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Archives one or more findings.
-     * </p>
-     * 
-     * @param archiveFindingsRequest
-     * @return A Java Future containing the result of the ArchiveFindings operation returned by the service.
-     * @sample AmazonMacie2Async.ArchiveFindings
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ArchiveFindings" target="_top">AWS API
-     *      Documentation</a>
-     */
-    java.util.concurrent.Future<ArchiveFindingsResult> archiveFindingsAsync(ArchiveFindingsRequest archiveFindingsRequest);
-
-    /**
-     * <p>
-     * Archives one or more findings.
-     * </p>
-     * 
-     * @param archiveFindingsRequest
-     * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
-     *        implementation of the callback methods in this interface to receive notification of successful or
-     *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the ArchiveFindings operation returned by the service.
-     * @sample AmazonMacie2AsyncHandler.ArchiveFindings
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ArchiveFindings" target="_top">AWS API
-     *      Documentation</a>
-     */
-    java.util.concurrent.Future<ArchiveFindingsResult> archiveFindingsAsync(ArchiveFindingsRequest archiveFindingsRequest,
-            com.amazonaws.handlers.AsyncHandler<ArchiveFindingsRequest, ArchiveFindingsResult> asyncHandler);
-
-    /**
-     * <p>
      * Retrieves information about one or more custom data identifiers.
      * </p>
      * 
@@ -1505,37 +1474,6 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
      */
     java.util.concurrent.Future<TestCustomDataIdentifierResult> testCustomDataIdentifierAsync(TestCustomDataIdentifierRequest testCustomDataIdentifierRequest,
             com.amazonaws.handlers.AsyncHandler<TestCustomDataIdentifierRequest, TestCustomDataIdentifierResult> asyncHandler);
-
-    /**
-     * <p>
-     * Reactivates (unarchives) one or more findings.
-     * </p>
-     * 
-     * @param unarchiveFindingsRequest
-     * @return A Java Future containing the result of the UnarchiveFindings operation returned by the service.
-     * @sample AmazonMacie2Async.UnarchiveFindings
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UnarchiveFindings" target="_top">AWS API
-     *      Documentation</a>
-     */
-    java.util.concurrent.Future<UnarchiveFindingsResult> unarchiveFindingsAsync(UnarchiveFindingsRequest unarchiveFindingsRequest);
-
-    /**
-     * <p>
-     * Reactivates (unarchives) one or more findings.
-     * </p>
-     * 
-     * @param unarchiveFindingsRequest
-     * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
-     *        implementation of the callback methods in this interface to receive notification of successful or
-     *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the UnarchiveFindings operation returned by the service.
-     * @sample AmazonMacie2AsyncHandler.UnarchiveFindings
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UnarchiveFindings" target="_top">AWS API
-     *      Documentation</a>
-     */
-    java.util.concurrent.Future<UnarchiveFindingsResult> unarchiveFindingsAsync(UnarchiveFindingsRequest unarchiveFindingsRequest,
-            com.amazonaws.handlers.AsyncHandler<UnarchiveFindingsRequest, UnarchiveFindingsResult> asyncHandler);
 
     /**
      * <p>

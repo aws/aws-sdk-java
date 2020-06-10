@@ -33,11 +33,6 @@ public class AbstractAmazonMacie2 implements AmazonMacie2 {
     }
 
     @Override
-    public ArchiveFindingsResult archiveFindings(ArchiveFindingsRequest request) {
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
     public BatchGetCustomDataIdentifiersResult batchGetCustomDataIdentifiers(BatchGetCustomDataIdentifiersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -254,11 +249,6 @@ public class AbstractAmazonMacie2 implements AmazonMacie2 {
 
     @Override
     public TestCustomDataIdentifierResult testCustomDataIdentifier(TestCustomDataIdentifierRequest request) {
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
-    public UnarchiveFindingsResult unarchiveFindings(UnarchiveFindingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

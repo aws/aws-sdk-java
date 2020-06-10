@@ -44,14 +44,12 @@ public class PortInfo implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * ICMP - <code>8</code> (to configure Ping)
+     * ICMP - The ICMP type. For example, specify <code>8</code> as the <code>fromPort</code> (ICMP type), and
+     * <code>-1</code> as the <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information, see <a
+     * href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control Messages</a> on
+     * <i>Wikipedia</i>.
      * </p>
-     * <note>
-     * <p>
-     * Ping is the only communication supported through the ICMP protocol in Lightsail. To configure ping, specify the
-     * <code>fromPort</code> parameter as <code>8</code>, and the <code>toPort</code> parameter as <code>-1</code>.
-     * </p>
-     * </note></li>
+     * </li>
      * </ul>
      */
     private Integer fromPort;
@@ -70,14 +68,12 @@ public class PortInfo implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * ICMP - <code>-1</code> (to configure Ping)
+     * ICMP - The ICMP code. For example, specify <code>8</code> as the <code>fromPort</code> (ICMP type), and
+     * <code>-1</code> as the <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information, see <a
+     * href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control Messages</a> on
+     * <i>Wikipedia</i>.
      * </p>
-     * <note>
-     * <p>
-     * Ping is the only communication supported through the ICMP protocol in Lightsail. To configure ping, specify the
-     * <code>fromPort</code> parameter as <code>8</code>, and the <code>toPort</code> parameter as <code>-1</code>.
-     * </p>
-     * </note></li>
+     * </li>
      * </ul>
      */
     private Integer toPort;
@@ -115,14 +111,11 @@ public class PortInfo implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * <code>icmp</code> - Internet Control Message Protocol (ICMP) is used to send error messages and operational
      * information indicating success or failure when communicating with an instance. For example, an error is indicated
-     * when an instance could not be reached.
+     * when an instance could not be reached. When you specify <code>icmp</code> as the <code>protocol</code>, you must
+     * specify the ICMP type using the <code>fromPort</code> parameter, and ICMP code using the <code>toPort</code>
+     * parameter.
      * </p>
-     * <note>
-     * <p>
-     * Ping is the only communication supported through the ICMP protocol in Lightsail. To configure ping, specify the
-     * <code>fromPort</code> parameter as <code>8</code>, and the <code>toPort</code> parameter as <code>-1</code>.
-     * </p>
-     * </note></li>
+     * </li>
      * </ul>
      */
     private String protocol;
@@ -179,14 +172,12 @@ public class PortInfo implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * ICMP - <code>8</code> (to configure Ping)
+     * ICMP - The ICMP type. For example, specify <code>8</code> as the <code>fromPort</code> (ICMP type), and
+     * <code>-1</code> as the <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information, see <a
+     * href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control Messages</a> on
+     * <i>Wikipedia</i>.
      * </p>
-     * <note>
-     * <p>
-     * Ping is the only communication supported through the ICMP protocol in Lightsail. To configure ping, specify the
-     * <code>fromPort</code> parameter as <code>8</code>, and the <code>toPort</code> parameter as <code>-1</code>.
-     * </p>
-     * </note></li>
+     * </li>
      * </ul>
      * 
      * @param fromPort
@@ -202,15 +193,12 @@ public class PortInfo implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        ICMP - <code>8</code> (to configure Ping)
+     *        ICMP - The ICMP type. For example, specify <code>8</code> as the <code>fromPort</code> (ICMP type), and
+     *        <code>-1</code> as the <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information, see <a
+     *        href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control
+     *        Messages</a> on <i>Wikipedia</i>.
      *        </p>
-     *        <note>
-     *        <p>
-     *        Ping is the only communication supported through the ICMP protocol in Lightsail. To configure ping,
-     *        specify the <code>fromPort</code> parameter as <code>8</code>, and the <code>toPort</code> parameter as
-     *        <code>-1</code>.
-     *        </p>
-     *        </note></li>
+     *        </li>
      */
 
     public void setFromPort(Integer fromPort) {
@@ -232,14 +220,12 @@ public class PortInfo implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * ICMP - <code>8</code> (to configure Ping)
+     * ICMP - The ICMP type. For example, specify <code>8</code> as the <code>fromPort</code> (ICMP type), and
+     * <code>-1</code> as the <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information, see <a
+     * href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control Messages</a> on
+     * <i>Wikipedia</i>.
      * </p>
-     * <note>
-     * <p>
-     * Ping is the only communication supported through the ICMP protocol in Lightsail. To configure ping, specify the
-     * <code>fromPort</code> parameter as <code>8</code>, and the <code>toPort</code> parameter as <code>-1</code>.
-     * </p>
-     * </note></li>
+     * </li>
      * </ul>
      * 
      * @return The first port in a range of open ports on an instance.</p>
@@ -254,15 +240,12 @@ public class PortInfo implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         ICMP - <code>8</code> (to configure Ping)
+     *         ICMP - The ICMP type. For example, specify <code>8</code> as the <code>fromPort</code> (ICMP type), and
+     *         <code>-1</code> as the <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information, see <a
+     *         href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control
+     *         Messages</a> on <i>Wikipedia</i>.
      *         </p>
-     *         <note>
-     *         <p>
-     *         Ping is the only communication supported through the ICMP protocol in Lightsail. To configure ping,
-     *         specify the <code>fromPort</code> parameter as <code>8</code>, and the <code>toPort</code> parameter as
-     *         <code>-1</code>.
-     *         </p>
-     *         </note></li>
+     *         </li>
      */
 
     public Integer getFromPort() {
@@ -284,14 +267,12 @@ public class PortInfo implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * ICMP - <code>8</code> (to configure Ping)
+     * ICMP - The ICMP type. For example, specify <code>8</code> as the <code>fromPort</code> (ICMP type), and
+     * <code>-1</code> as the <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information, see <a
+     * href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control Messages</a> on
+     * <i>Wikipedia</i>.
      * </p>
-     * <note>
-     * <p>
-     * Ping is the only communication supported through the ICMP protocol in Lightsail. To configure ping, specify the
-     * <code>fromPort</code> parameter as <code>8</code>, and the <code>toPort</code> parameter as <code>-1</code>.
-     * </p>
-     * </note></li>
+     * </li>
      * </ul>
      * 
      * @param fromPort
@@ -307,15 +288,12 @@ public class PortInfo implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        ICMP - <code>8</code> (to configure Ping)
+     *        ICMP - The ICMP type. For example, specify <code>8</code> as the <code>fromPort</code> (ICMP type), and
+     *        <code>-1</code> as the <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information, see <a
+     *        href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control
+     *        Messages</a> on <i>Wikipedia</i>.
      *        </p>
-     *        <note>
-     *        <p>
-     *        Ping is the only communication supported through the ICMP protocol in Lightsail. To configure ping,
-     *        specify the <code>fromPort</code> parameter as <code>8</code>, and the <code>toPort</code> parameter as
-     *        <code>-1</code>.
-     *        </p>
-     *        </note></li>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -339,14 +317,12 @@ public class PortInfo implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * ICMP - <code>-1</code> (to configure Ping)
+     * ICMP - The ICMP code. For example, specify <code>8</code> as the <code>fromPort</code> (ICMP type), and
+     * <code>-1</code> as the <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information, see <a
+     * href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control Messages</a> on
+     * <i>Wikipedia</i>.
      * </p>
-     * <note>
-     * <p>
-     * Ping is the only communication supported through the ICMP protocol in Lightsail. To configure ping, specify the
-     * <code>fromPort</code> parameter as <code>8</code>, and the <code>toPort</code> parameter as <code>-1</code>.
-     * </p>
-     * </note></li>
+     * </li>
      * </ul>
      * 
      * @param toPort
@@ -362,15 +338,12 @@ public class PortInfo implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        ICMP - <code>-1</code> (to configure Ping)
+     *        ICMP - The ICMP code. For example, specify <code>8</code> as the <code>fromPort</code> (ICMP type), and
+     *        <code>-1</code> as the <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information, see <a
+     *        href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control
+     *        Messages</a> on <i>Wikipedia</i>.
      *        </p>
-     *        <note>
-     *        <p>
-     *        Ping is the only communication supported through the ICMP protocol in Lightsail. To configure ping,
-     *        specify the <code>fromPort</code> parameter as <code>8</code>, and the <code>toPort</code> parameter as
-     *        <code>-1</code>.
-     *        </p>
-     *        </note></li>
+     *        </li>
      */
 
     public void setToPort(Integer toPort) {
@@ -392,14 +365,12 @@ public class PortInfo implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * ICMP - <code>-1</code> (to configure Ping)
+     * ICMP - The ICMP code. For example, specify <code>8</code> as the <code>fromPort</code> (ICMP type), and
+     * <code>-1</code> as the <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information, see <a
+     * href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control Messages</a> on
+     * <i>Wikipedia</i>.
      * </p>
-     * <note>
-     * <p>
-     * Ping is the only communication supported through the ICMP protocol in Lightsail. To configure ping, specify the
-     * <code>fromPort</code> parameter as <code>8</code>, and the <code>toPort</code> parameter as <code>-1</code>.
-     * </p>
-     * </note></li>
+     * </li>
      * </ul>
      * 
      * @return The last port in a range of open ports on an instance.</p>
@@ -414,15 +385,12 @@ public class PortInfo implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         ICMP - <code>-1</code> (to configure Ping)
+     *         ICMP - The ICMP code. For example, specify <code>8</code> as the <code>fromPort</code> (ICMP type), and
+     *         <code>-1</code> as the <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information, see <a
+     *         href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control
+     *         Messages</a> on <i>Wikipedia</i>.
      *         </p>
-     *         <note>
-     *         <p>
-     *         Ping is the only communication supported through the ICMP protocol in Lightsail. To configure ping,
-     *         specify the <code>fromPort</code> parameter as <code>8</code>, and the <code>toPort</code> parameter as
-     *         <code>-1</code>.
-     *         </p>
-     *         </note></li>
+     *         </li>
      */
 
     public Integer getToPort() {
@@ -444,14 +412,12 @@ public class PortInfo implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * ICMP - <code>-1</code> (to configure Ping)
+     * ICMP - The ICMP code. For example, specify <code>8</code> as the <code>fromPort</code> (ICMP type), and
+     * <code>-1</code> as the <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information, see <a
+     * href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control Messages</a> on
+     * <i>Wikipedia</i>.
      * </p>
-     * <note>
-     * <p>
-     * Ping is the only communication supported through the ICMP protocol in Lightsail. To configure ping, specify the
-     * <code>fromPort</code> parameter as <code>8</code>, and the <code>toPort</code> parameter as <code>-1</code>.
-     * </p>
-     * </note></li>
+     * </li>
      * </ul>
      * 
      * @param toPort
@@ -467,15 +433,12 @@ public class PortInfo implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        ICMP - <code>-1</code> (to configure Ping)
+     *        ICMP - The ICMP code. For example, specify <code>8</code> as the <code>fromPort</code> (ICMP type), and
+     *        <code>-1</code> as the <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information, see <a
+     *        href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control
+     *        Messages</a> on <i>Wikipedia</i>.
      *        </p>
-     *        <note>
-     *        <p>
-     *        Ping is the only communication supported through the ICMP protocol in Lightsail. To configure ping,
-     *        specify the <code>fromPort</code> parameter as <code>8</code>, and the <code>toPort</code> parameter as
-     *        <code>-1</code>.
-     *        </p>
-     *        </note></li>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -518,14 +481,11 @@ public class PortInfo implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * <code>icmp</code> - Internet Control Message Protocol (ICMP) is used to send error messages and operational
      * information indicating success or failure when communicating with an instance. For example, an error is indicated
-     * when an instance could not be reached.
+     * when an instance could not be reached. When you specify <code>icmp</code> as the <code>protocol</code>, you must
+     * specify the ICMP type using the <code>fromPort</code> parameter, and ICMP code using the <code>toPort</code>
+     * parameter.
      * </p>
-     * <note>
-     * <p>
-     * Ping is the only communication supported through the ICMP protocol in Lightsail. To configure ping, specify the
-     * <code>fromPort</code> parameter as <code>8</code>, and the <code>toPort</code> parameter as <code>-1</code>.
-     * </p>
-     * </note></li>
+     * </li>
      * </ul>
      * 
      * @param protocol
@@ -560,15 +520,11 @@ public class PortInfo implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        <code>icmp</code> - Internet Control Message Protocol (ICMP) is used to send error messages and
      *        operational information indicating success or failure when communicating with an instance. For example, an
-     *        error is indicated when an instance could not be reached.
+     *        error is indicated when an instance could not be reached. When you specify <code>icmp</code> as the
+     *        <code>protocol</code>, you must specify the ICMP type using the <code>fromPort</code> parameter, and ICMP
+     *        code using the <code>toPort</code> parameter.
      *        </p>
-     *        <note>
-     *        <p>
-     *        Ping is the only communication supported through the ICMP protocol in Lightsail. To configure ping,
-     *        specify the <code>fromPort</code> parameter as <code>8</code>, and the <code>toPort</code> parameter as
-     *        <code>-1</code>.
-     *        </p>
-     *        </note></li>
+     *        </li>
      * @see NetworkProtocol
      */
 
@@ -610,14 +566,11 @@ public class PortInfo implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * <code>icmp</code> - Internet Control Message Protocol (ICMP) is used to send error messages and operational
      * information indicating success or failure when communicating with an instance. For example, an error is indicated
-     * when an instance could not be reached.
+     * when an instance could not be reached. When you specify <code>icmp</code> as the <code>protocol</code>, you must
+     * specify the ICMP type using the <code>fromPort</code> parameter, and ICMP code using the <code>toPort</code>
+     * parameter.
      * </p>
-     * <note>
-     * <p>
-     * Ping is the only communication supported through the ICMP protocol in Lightsail. To configure ping, specify the
-     * <code>fromPort</code> parameter as <code>8</code>, and the <code>toPort</code> parameter as <code>-1</code>.
-     * </p>
-     * </note></li>
+     * </li>
      * </ul>
      * 
      * @return The IP protocol name.</p>
@@ -651,15 +604,11 @@ public class PortInfo implements Serializable, Cloneable, StructuredPojo {
      *         <p>
      *         <code>icmp</code> - Internet Control Message Protocol (ICMP) is used to send error messages and
      *         operational information indicating success or failure when communicating with an instance. For example,
-     *         an error is indicated when an instance could not be reached.
+     *         an error is indicated when an instance could not be reached. When you specify <code>icmp</code> as the
+     *         <code>protocol</code>, you must specify the ICMP type using the <code>fromPort</code> parameter, and ICMP
+     *         code using the <code>toPort</code> parameter.
      *         </p>
-     *         <note>
-     *         <p>
-     *         Ping is the only communication supported through the ICMP protocol in Lightsail. To configure ping,
-     *         specify the <code>fromPort</code> parameter as <code>8</code>, and the <code>toPort</code> parameter as
-     *         <code>-1</code>.
-     *         </p>
-     *         </note></li>
+     *         </li>
      * @see NetworkProtocol
      */
 
@@ -701,14 +650,11 @@ public class PortInfo implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * <code>icmp</code> - Internet Control Message Protocol (ICMP) is used to send error messages and operational
      * information indicating success or failure when communicating with an instance. For example, an error is indicated
-     * when an instance could not be reached.
+     * when an instance could not be reached. When you specify <code>icmp</code> as the <code>protocol</code>, you must
+     * specify the ICMP type using the <code>fromPort</code> parameter, and ICMP code using the <code>toPort</code>
+     * parameter.
      * </p>
-     * <note>
-     * <p>
-     * Ping is the only communication supported through the ICMP protocol in Lightsail. To configure ping, specify the
-     * <code>fromPort</code> parameter as <code>8</code>, and the <code>toPort</code> parameter as <code>-1</code>.
-     * </p>
-     * </note></li>
+     * </li>
      * </ul>
      * 
      * @param protocol
@@ -743,15 +689,11 @@ public class PortInfo implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        <code>icmp</code> - Internet Control Message Protocol (ICMP) is used to send error messages and
      *        operational information indicating success or failure when communicating with an instance. For example, an
-     *        error is indicated when an instance could not be reached.
+     *        error is indicated when an instance could not be reached. When you specify <code>icmp</code> as the
+     *        <code>protocol</code>, you must specify the ICMP type using the <code>fromPort</code> parameter, and ICMP
+     *        code using the <code>toPort</code> parameter.
      *        </p>
-     *        <note>
-     *        <p>
-     *        Ping is the only communication supported through the ICMP protocol in Lightsail. To configure ping,
-     *        specify the <code>fromPort</code> parameter as <code>8</code>, and the <code>toPort</code> parameter as
-     *        <code>-1</code>.
-     *        </p>
-     *        </note></li>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NetworkProtocol
      */
@@ -795,14 +737,11 @@ public class PortInfo implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * <code>icmp</code> - Internet Control Message Protocol (ICMP) is used to send error messages and operational
      * information indicating success or failure when communicating with an instance. For example, an error is indicated
-     * when an instance could not be reached.
+     * when an instance could not be reached. When you specify <code>icmp</code> as the <code>protocol</code>, you must
+     * specify the ICMP type using the <code>fromPort</code> parameter, and ICMP code using the <code>toPort</code>
+     * parameter.
      * </p>
-     * <note>
-     * <p>
-     * Ping is the only communication supported through the ICMP protocol in Lightsail. To configure ping, specify the
-     * <code>fromPort</code> parameter as <code>8</code>, and the <code>toPort</code> parameter as <code>-1</code>.
-     * </p>
-     * </note></li>
+     * </li>
      * </ul>
      * 
      * @param protocol
@@ -837,15 +776,11 @@ public class PortInfo implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        <code>icmp</code> - Internet Control Message Protocol (ICMP) is used to send error messages and
      *        operational information indicating success or failure when communicating with an instance. For example, an
-     *        error is indicated when an instance could not be reached.
+     *        error is indicated when an instance could not be reached. When you specify <code>icmp</code> as the
+     *        <code>protocol</code>, you must specify the ICMP type using the <code>fromPort</code> parameter, and ICMP
+     *        code using the <code>toPort</code> parameter.
      *        </p>
-     *        <note>
-     *        <p>
-     *        Ping is the only communication supported through the ICMP protocol in Lightsail. To configure ping,
-     *        specify the <code>fromPort</code> parameter as <code>8</code>, and the <code>toPort</code> parameter as
-     *        <code>-1</code>.
-     *        </p>
-     *        </note></li>
+     *        </li>
      * @see NetworkProtocol
      */
 
@@ -887,14 +822,11 @@ public class PortInfo implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * <code>icmp</code> - Internet Control Message Protocol (ICMP) is used to send error messages and operational
      * information indicating success or failure when communicating with an instance. For example, an error is indicated
-     * when an instance could not be reached.
+     * when an instance could not be reached. When you specify <code>icmp</code> as the <code>protocol</code>, you must
+     * specify the ICMP type using the <code>fromPort</code> parameter, and ICMP code using the <code>toPort</code>
+     * parameter.
      * </p>
-     * <note>
-     * <p>
-     * Ping is the only communication supported through the ICMP protocol in Lightsail. To configure ping, specify the
-     * <code>fromPort</code> parameter as <code>8</code>, and the <code>toPort</code> parameter as <code>-1</code>.
-     * </p>
-     * </note></li>
+     * </li>
      * </ul>
      * 
      * @param protocol
@@ -929,15 +861,11 @@ public class PortInfo implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        <code>icmp</code> - Internet Control Message Protocol (ICMP) is used to send error messages and
      *        operational information indicating success or failure when communicating with an instance. For example, an
-     *        error is indicated when an instance could not be reached.
+     *        error is indicated when an instance could not be reached. When you specify <code>icmp</code> as the
+     *        <code>protocol</code>, you must specify the ICMP type using the <code>fromPort</code> parameter, and ICMP
+     *        code using the <code>toPort</code> parameter.
      *        </p>
-     *        <note>
-     *        <p>
-     *        Ping is the only communication supported through the ICMP protocol in Lightsail. To configure ping,
-     *        specify the <code>fromPort</code> parameter as <code>8</code>, and the <code>toPort</code> parameter as
-     *        <code>-1</code>.
-     *        </p>
-     *        </note></li>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NetworkProtocol
      */

@@ -107,39 +107,6 @@ public class AmazonMacie2AsyncClient extends AmazonMacie2Client implements Amazo
     }
 
     @Override
-    public java.util.concurrent.Future<ArchiveFindingsResult> archiveFindingsAsync(ArchiveFindingsRequest request) {
-
-        return archiveFindingsAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ArchiveFindingsResult> archiveFindingsAsync(final ArchiveFindingsRequest request,
-            final com.amazonaws.handlers.AsyncHandler<ArchiveFindingsRequest, ArchiveFindingsResult> asyncHandler) {
-        final ArchiveFindingsRequest finalRequest = beforeClientExecution(request);
-
-        return executorService.submit(new java.util.concurrent.Callable<ArchiveFindingsResult>() {
-            @Override
-            public ArchiveFindingsResult call() throws Exception {
-                ArchiveFindingsResult result = null;
-
-                try {
-                    result = executeArchiveFindings(finalRequest);
-                } catch (Exception ex) {
-                    if (asyncHandler != null) {
-                        asyncHandler.onError(ex);
-                    }
-                    throw ex;
-                }
-
-                if (asyncHandler != null) {
-                    asyncHandler.onSuccess(finalRequest, result);
-                }
-                return result;
-            }
-        });
-    }
-
-    @Override
     public java.util.concurrent.Future<BatchGetCustomDataIdentifiersResult> batchGetCustomDataIdentifiersAsync(BatchGetCustomDataIdentifiersRequest request) {
 
         return batchGetCustomDataIdentifiersAsync(request, null);
@@ -1588,39 +1555,6 @@ public class AmazonMacie2AsyncClient extends AmazonMacie2Client implements Amazo
 
                 try {
                     result = executeTestCustomDataIdentifier(finalRequest);
-                } catch (Exception ex) {
-                    if (asyncHandler != null) {
-                        asyncHandler.onError(ex);
-                    }
-                    throw ex;
-                }
-
-                if (asyncHandler != null) {
-                    asyncHandler.onSuccess(finalRequest, result);
-                }
-                return result;
-            }
-        });
-    }
-
-    @Override
-    public java.util.concurrent.Future<UnarchiveFindingsResult> unarchiveFindingsAsync(UnarchiveFindingsRequest request) {
-
-        return unarchiveFindingsAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UnarchiveFindingsResult> unarchiveFindingsAsync(final UnarchiveFindingsRequest request,
-            final com.amazonaws.handlers.AsyncHandler<UnarchiveFindingsRequest, UnarchiveFindingsResult> asyncHandler) {
-        final UnarchiveFindingsRequest finalRequest = beforeClientExecution(request);
-
-        return executorService.submit(new java.util.concurrent.Callable<UnarchiveFindingsResult>() {
-            @Override
-            public UnarchiveFindingsResult call() throws Exception {
-                UnarchiveFindingsResult result = null;
-
-                try {
-                    result = executeUnarchiveFindings(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

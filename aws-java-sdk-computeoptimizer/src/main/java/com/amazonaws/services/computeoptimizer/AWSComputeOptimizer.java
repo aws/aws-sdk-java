@@ -33,8 +33,9 @@ import com.amazonaws.services.computeoptimizer.model.*;
  * provides recent utilization metric data, as well as projected utilization metric data for the recommendations, which
  * you can use to evaluate which recommendation provides the best price-performance trade-off. The analysis of your
  * usage patterns can help you decide when to move or resize your running resources, and still meet your performance and
- * capacity requirements. For more information about Compute Optimizer, see the <a
- * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/">AWS Compute Optimizer User Guide</a>.
+ * capacity requirements. For more information about Compute Optimizer, including the required permissions to use the
+ * service, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/">AWS Compute Optimizer User
+ * Guide</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -47,6 +48,122 @@ public interface AWSComputeOptimizer {
      * @see RegionUtils#getRegionsForService(String)
      */
     String ENDPOINT_PREFIX = "compute-optimizer";
+
+    /**
+     * <p>
+     * Describes recommendation export jobs created in the last seven days.
+     * </p>
+     * <p>
+     * Use the <code>ExportAutoScalingGroupRecommendations</code> or <code>ExportEC2InstanceRecommendations</code>
+     * actions to request an export of your recommendations. Then use the <code>DescribeRecommendationExportJobs</code>
+     * action to view your export jobs.
+     * </p>
+     * 
+     * @param describeRecommendationExportJobsRequest
+     * @return Result of the DescribeRecommendationExportJobs operation returned by the service.
+     * @throws OptInRequiredException
+     *         The account is not opted in to AWS Compute Optimizer.
+     * @throws InternalServerException
+     *         An internal error has occurred. Try your call again.
+     * @throws ServiceUnavailableException
+     *         The request has failed due to a temporary failure of the server.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws InvalidParameterValueException
+     *         An invalid or out-of-range value was supplied for the input parameter.
+     * @throws ResourceNotFoundException
+     *         A resource that is required for the action doesn't exist.
+     * @throws MissingAuthenticationTokenException
+     *         The request must contain either a valid (registered) AWS access key ID or X.509 certificate.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AWSComputeOptimizer.DescribeRecommendationExportJobs
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/DescribeRecommendationExportJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeRecommendationExportJobsResult describeRecommendationExportJobs(DescribeRecommendationExportJobsRequest describeRecommendationExportJobsRequest);
+
+    /**
+     * <p>
+     * Exports optimization recommendations for Auto Scaling groups.
+     * </p>
+     * <p>
+     * Recommendations are exported in a comma-separated values (.csv) file, and its metadata in a JavaScript Object
+     * Notation (.json) file, to an existing Amazon Simple Storage Service (Amazon S3) bucket that you specify. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
+     * Recommendations</a> in the <i>Compute Optimizer User Guide</i>.
+     * </p>
+     * <p>
+     * You can have only one Auto Scaling group export job in progress per AWS Region.
+     * </p>
+     * 
+     * @param exportAutoScalingGroupRecommendationsRequest
+     * @return Result of the ExportAutoScalingGroupRecommendations operation returned by the service.
+     * @throws OptInRequiredException
+     *         The account is not opted in to AWS Compute Optimizer.
+     * @throws InternalServerException
+     *         An internal error has occurred. Try your call again.
+     * @throws ServiceUnavailableException
+     *         The request has failed due to a temporary failure of the server.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws InvalidParameterValueException
+     *         An invalid or out-of-range value was supplied for the input parameter.
+     * @throws MissingAuthenticationTokenException
+     *         The request must contain either a valid (registered) AWS access key ID or X.509 certificate.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws LimitExceededException
+     *         The request exceeds a limit of the service.
+     * @sample AWSComputeOptimizer.ExportAutoScalingGroupRecommendations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportAutoScalingGroupRecommendations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ExportAutoScalingGroupRecommendationsResult exportAutoScalingGroupRecommendations(
+            ExportAutoScalingGroupRecommendationsRequest exportAutoScalingGroupRecommendationsRequest);
+
+    /**
+     * <p>
+     * Exports optimization recommendations for Amazon EC2 instances.
+     * </p>
+     * <p>
+     * Recommendations are exported in a comma-separated values (.csv) file, and its metadata in a JavaScript Object
+     * Notation (.json) file, to an existing Amazon Simple Storage Service (Amazon S3) bucket that you specify. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
+     * Recommendations</a> in the <i>Compute Optimizer User Guide</i>.
+     * </p>
+     * <p>
+     * You can have only one Amazon EC2 instance export job in progress per AWS Region.
+     * </p>
+     * 
+     * @param exportEC2InstanceRecommendationsRequest
+     * @return Result of the ExportEC2InstanceRecommendations operation returned by the service.
+     * @throws OptInRequiredException
+     *         The account is not opted in to AWS Compute Optimizer.
+     * @throws InternalServerException
+     *         An internal error has occurred. Try your call again.
+     * @throws ServiceUnavailableException
+     *         The request has failed due to a temporary failure of the server.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws InvalidParameterValueException
+     *         An invalid or out-of-range value was supplied for the input parameter.
+     * @throws MissingAuthenticationTokenException
+     *         The request must contain either a valid (registered) AWS access key ID or X.509 certificate.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws LimitExceededException
+     *         The request exceeds a limit of the service.
+     * @sample AWSComputeOptimizer.ExportEC2InstanceRecommendations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportEC2InstanceRecommendations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ExportEC2InstanceRecommendationsResult exportEC2InstanceRecommendations(ExportEC2InstanceRecommendationsRequest exportEC2InstanceRecommendationsRequest);
 
     /**
      * <p>
@@ -64,9 +181,9 @@ public interface AWSComputeOptimizer {
      * @param getAutoScalingGroupRecommendationsRequest
      * @return Result of the GetAutoScalingGroupRecommendations operation returned by the service.
      * @throws OptInRequiredException
-     *         You must opt in to the service to perform this action.
+     *         The account is not opted in to AWS Compute Optimizer.
      * @throws InternalServerException
-     *         The request processing has failed because of an unknown error, exception, or failure.
+     *         An internal error has occurred. Try your call again.
      * @throws ServiceUnavailableException
      *         The request has failed due to a temporary failure of the server.
      * @throws AccessDeniedException
@@ -74,11 +191,11 @@ public interface AWSComputeOptimizer {
      * @throws InvalidParameterValueException
      *         An invalid or out-of-range value was supplied for the input parameter.
      * @throws ResourceNotFoundException
-     *         The specified resource was not found.
+     *         A resource that is required for the action doesn't exist.
      * @throws MissingAuthenticationTokenException
      *         The request must contain either a valid (registered) AWS access key ID or X.509 certificate.
      * @throws ThrottlingException
-     *         The limit on the number of requests per second was exceeded.
+     *         The request was denied due to request throttling.
      * @sample AWSComputeOptimizer.GetAutoScalingGroupRecommendations
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetAutoScalingGroupRecommendations"
@@ -101,9 +218,9 @@ public interface AWSComputeOptimizer {
      * @param getEC2InstanceRecommendationsRequest
      * @return Result of the GetEC2InstanceRecommendations operation returned by the service.
      * @throws OptInRequiredException
-     *         You must opt in to the service to perform this action.
+     *         The account is not opted in to AWS Compute Optimizer.
      * @throws InternalServerException
-     *         The request processing has failed because of an unknown error, exception, or failure.
+     *         An internal error has occurred. Try your call again.
      * @throws ServiceUnavailableException
      *         The request has failed due to a temporary failure of the server.
      * @throws AccessDeniedException
@@ -111,11 +228,11 @@ public interface AWSComputeOptimizer {
      * @throws InvalidParameterValueException
      *         An invalid or out-of-range value was supplied for the input parameter.
      * @throws ResourceNotFoundException
-     *         The specified resource was not found.
+     *         A resource that is required for the action doesn't exist.
      * @throws MissingAuthenticationTokenException
      *         The request must contain either a valid (registered) AWS access key ID or X.509 certificate.
      * @throws ThrottlingException
-     *         The limit on the number of requests per second was exceeded.
+     *         The request was denied due to request throttling.
      * @sample AWSComputeOptimizer.GetEC2InstanceRecommendations
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetEC2InstanceRecommendations"
      *      target="_top">AWS API Documentation</a>
@@ -130,9 +247,9 @@ public interface AWSComputeOptimizer {
      * @param getEC2RecommendationProjectedMetricsRequest
      * @return Result of the GetEC2RecommendationProjectedMetrics operation returned by the service.
      * @throws OptInRequiredException
-     *         You must opt in to the service to perform this action.
+     *         The account is not opted in to AWS Compute Optimizer.
      * @throws InternalServerException
-     *         The request processing has failed because of an unknown error, exception, or failure.
+     *         An internal error has occurred. Try your call again.
      * @throws ServiceUnavailableException
      *         The request has failed due to a temporary failure of the server.
      * @throws AccessDeniedException
@@ -140,11 +257,11 @@ public interface AWSComputeOptimizer {
      * @throws InvalidParameterValueException
      *         An invalid or out-of-range value was supplied for the input parameter.
      * @throws ResourceNotFoundException
-     *         The specified resource was not found.
+     *         A resource that is required for the action doesn't exist.
      * @throws MissingAuthenticationTokenException
      *         The request must contain either a valid (registered) AWS access key ID or X.509 certificate.
      * @throws ThrottlingException
-     *         The limit on the number of requests per second was exceeded.
+     *         The request was denied due to request throttling.
      * @sample AWSComputeOptimizer.GetEC2RecommendationProjectedMetrics
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetEC2RecommendationProjectedMetrics"
@@ -158,14 +275,14 @@ public interface AWSComputeOptimizer {
      * Returns the enrollment (opt in) status of an account to the AWS Compute Optimizer service.
      * </p>
      * <p>
-     * If the account is a master account of an organization, this operation also confirms the enrollment status of
+     * If the account is the master account of an organization, this action also confirms the enrollment status of
      * member accounts within the organization.
      * </p>
      * 
      * @param getEnrollmentStatusRequest
      * @return Result of the GetEnrollmentStatus operation returned by the service.
      * @throws InternalServerException
-     *         The request processing has failed because of an unknown error, exception, or failure.
+     *         An internal error has occurred. Try your call again.
      * @throws ServiceUnavailableException
      *         The request has failed due to a temporary failure of the server.
      * @throws AccessDeniedException
@@ -175,7 +292,7 @@ public interface AWSComputeOptimizer {
      * @throws MissingAuthenticationTokenException
      *         The request must contain either a valid (registered) AWS access key ID or X.509 certificate.
      * @throws ThrottlingException
-     *         The limit on the number of requests per second was exceeded.
+     *         The request was denied due to request throttling.
      * @sample AWSComputeOptimizer.GetEnrollmentStatus
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetEnrollmentStatus"
      *      target="_top">AWS API Documentation</a>
@@ -195,9 +312,9 @@ public interface AWSComputeOptimizer {
      * @param getRecommendationSummariesRequest
      * @return Result of the GetRecommendationSummaries operation returned by the service.
      * @throws OptInRequiredException
-     *         You must opt in to the service to perform this action.
+     *         The account is not opted in to AWS Compute Optimizer.
      * @throws InternalServerException
-     *         The request processing has failed because of an unknown error, exception, or failure.
+     *         An internal error has occurred. Try your call again.
      * @throws ServiceUnavailableException
      *         The request has failed due to a temporary failure of the server.
      * @throws AccessDeniedException
@@ -207,7 +324,7 @@ public interface AWSComputeOptimizer {
      * @throws MissingAuthenticationTokenException
      *         The request must contain either a valid (registered) AWS access key ID or X.509 certificate.
      * @throws ThrottlingException
-     *         The limit on the number of requests per second was exceeded.
+     *         The request was denied due to request throttling.
      * @sample AWSComputeOptimizer.GetRecommendationSummaries
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetRecommendationSummaries"
      *      target="_top">AWS API Documentation</a>
@@ -219,14 +336,14 @@ public interface AWSComputeOptimizer {
      * Updates the enrollment (opt in) status of an account to the AWS Compute Optimizer service.
      * </p>
      * <p>
-     * If the account is a master account of an organization, this operation can also enroll member accounts within the
-     * organization.
+     * If the account is a master account of an organization, this action can also be used to enroll member accounts
+     * within the organization.
      * </p>
      * 
      * @param updateEnrollmentStatusRequest
      * @return Result of the UpdateEnrollmentStatus operation returned by the service.
      * @throws InternalServerException
-     *         The request processing has failed because of an unknown error, exception, or failure.
+     *         An internal error has occurred. Try your call again.
      * @throws ServiceUnavailableException
      *         The request has failed due to a temporary failure of the server.
      * @throws AccessDeniedException
@@ -236,7 +353,7 @@ public interface AWSComputeOptimizer {
      * @throws MissingAuthenticationTokenException
      *         The request must contain either a valid (registered) AWS access key ID or X.509 certificate.
      * @throws ThrottlingException
-     *         The limit on the number of requests per second was exceeded.
+     *         The request was denied due to request throttling.
      * @sample AWSComputeOptimizer.UpdateEnrollmentStatus
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/UpdateEnrollmentStatus"
      *      target="_top">AWS API Documentation</a>

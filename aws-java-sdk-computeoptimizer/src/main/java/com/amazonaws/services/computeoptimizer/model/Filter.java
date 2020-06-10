@@ -33,10 +33,12 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * The name of the filter.
      * </p>
      * <p>
-     * Specify <code>Finding</code> to filter the results to a specific findings classification.
+     * Specify <code>Finding</code> to return recommendations with a specific findings classification (e.g.,
+     * <code>Overprovisioned</code>).
      * </p>
      * <p>
-     * Specify <code>RecommendationSourceType</code> to filter the results to a specific resource type.
+     * Specify <code>RecommendationSourceType</code> to return recommendations of a specific resource type (e.g.,
+     * <code>AutoScalingGroup</code>).
      * </p>
      */
     private String name;
@@ -45,17 +47,17 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * The value of the filter.
      * </p>
      * <p>
-     * If you specify the <code>name</code> parameter as <code>Finding</code>, and you're recommendations for an
+     * If you specify the <code>name</code> parameter as <code>Finding</code>, and you request recommendations for an
      * <i>instance</i>, then the valid values are <code>Underprovisioned</code>, <code>Overprovisioned</code>,
      * <code>NotOptimized</code>, or <code>Optimized</code>.
      * </p>
      * <p>
-     * If you specify the <code>name</code> parameter as <code>Finding</code>, and you're recommendations for an <i>Auto
-     * Scaling group</i>, then the valid values are <code>Optimized</code>, or <code>NotOptimized</code>.
+     * If you specify the <code>name</code> parameter as <code>Finding</code>, and you request recommendations for an
+     * <i>Auto Scaling group</i>, then the valid values are <code>Optimized</code>, or <code>NotOptimized</code>.
      * </p>
      * <p>
      * If you specify the <code>name</code> parameter as <code>RecommendationSourceType</code>, then the valid values
-     * are <code>EC2Instance</code>, or <code>AutoScalingGroup</code>.
+     * are <code>Ec2Instance</code>, or <code>AutoScalingGroup</code>.
      * </p>
      */
     private java.util.List<String> values;
@@ -65,19 +67,23 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * The name of the filter.
      * </p>
      * <p>
-     * Specify <code>Finding</code> to filter the results to a specific findings classification.
+     * Specify <code>Finding</code> to return recommendations with a specific findings classification (e.g.,
+     * <code>Overprovisioned</code>).
      * </p>
      * <p>
-     * Specify <code>RecommendationSourceType</code> to filter the results to a specific resource type.
+     * Specify <code>RecommendationSourceType</code> to return recommendations of a specific resource type (e.g.,
+     * <code>AutoScalingGroup</code>).
      * </p>
      * 
      * @param name
      *        The name of the filter.</p>
      *        <p>
-     *        Specify <code>Finding</code> to filter the results to a specific findings classification.
+     *        Specify <code>Finding</code> to return recommendations with a specific findings classification (e.g.,
+     *        <code>Overprovisioned</code>).
      *        </p>
      *        <p>
-     *        Specify <code>RecommendationSourceType</code> to filter the results to a specific resource type.
+     *        Specify <code>RecommendationSourceType</code> to return recommendations of a specific resource type (e.g.,
+     *        <code>AutoScalingGroup</code>).
      * @see FilterName
      */
 
@@ -90,18 +96,22 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * The name of the filter.
      * </p>
      * <p>
-     * Specify <code>Finding</code> to filter the results to a specific findings classification.
+     * Specify <code>Finding</code> to return recommendations with a specific findings classification (e.g.,
+     * <code>Overprovisioned</code>).
      * </p>
      * <p>
-     * Specify <code>RecommendationSourceType</code> to filter the results to a specific resource type.
+     * Specify <code>RecommendationSourceType</code> to return recommendations of a specific resource type (e.g.,
+     * <code>AutoScalingGroup</code>).
      * </p>
      * 
      * @return The name of the filter.</p>
      *         <p>
-     *         Specify <code>Finding</code> to filter the results to a specific findings classification.
+     *         Specify <code>Finding</code> to return recommendations with a specific findings classification (e.g.,
+     *         <code>Overprovisioned</code>).
      *         </p>
      *         <p>
-     *         Specify <code>RecommendationSourceType</code> to filter the results to a specific resource type.
+     *         Specify <code>RecommendationSourceType</code> to return recommendations of a specific resource type
+     *         (e.g., <code>AutoScalingGroup</code>).
      * @see FilterName
      */
 
@@ -114,19 +124,23 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * The name of the filter.
      * </p>
      * <p>
-     * Specify <code>Finding</code> to filter the results to a specific findings classification.
+     * Specify <code>Finding</code> to return recommendations with a specific findings classification (e.g.,
+     * <code>Overprovisioned</code>).
      * </p>
      * <p>
-     * Specify <code>RecommendationSourceType</code> to filter the results to a specific resource type.
+     * Specify <code>RecommendationSourceType</code> to return recommendations of a specific resource type (e.g.,
+     * <code>AutoScalingGroup</code>).
      * </p>
      * 
      * @param name
      *        The name of the filter.</p>
      *        <p>
-     *        Specify <code>Finding</code> to filter the results to a specific findings classification.
+     *        Specify <code>Finding</code> to return recommendations with a specific findings classification (e.g.,
+     *        <code>Overprovisioned</code>).
      *        </p>
      *        <p>
-     *        Specify <code>RecommendationSourceType</code> to filter the results to a specific resource type.
+     *        Specify <code>RecommendationSourceType</code> to return recommendations of a specific resource type (e.g.,
+     *        <code>AutoScalingGroup</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FilterName
      */
@@ -141,19 +155,23 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * The name of the filter.
      * </p>
      * <p>
-     * Specify <code>Finding</code> to filter the results to a specific findings classification.
+     * Specify <code>Finding</code> to return recommendations with a specific findings classification (e.g.,
+     * <code>Overprovisioned</code>).
      * </p>
      * <p>
-     * Specify <code>RecommendationSourceType</code> to filter the results to a specific resource type.
+     * Specify <code>RecommendationSourceType</code> to return recommendations of a specific resource type (e.g.,
+     * <code>AutoScalingGroup</code>).
      * </p>
      * 
      * @param name
      *        The name of the filter.</p>
      *        <p>
-     *        Specify <code>Finding</code> to filter the results to a specific findings classification.
+     *        Specify <code>Finding</code> to return recommendations with a specific findings classification (e.g.,
+     *        <code>Overprovisioned</code>).
      *        </p>
      *        <p>
-     *        Specify <code>RecommendationSourceType</code> to filter the results to a specific resource type.
+     *        Specify <code>RecommendationSourceType</code> to return recommendations of a specific resource type (e.g.,
+     *        <code>AutoScalingGroup</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FilterName
      */
@@ -168,33 +186,33 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * The value of the filter.
      * </p>
      * <p>
-     * If you specify the <code>name</code> parameter as <code>Finding</code>, and you're recommendations for an
+     * If you specify the <code>name</code> parameter as <code>Finding</code>, and you request recommendations for an
      * <i>instance</i>, then the valid values are <code>Underprovisioned</code>, <code>Overprovisioned</code>,
      * <code>NotOptimized</code>, or <code>Optimized</code>.
      * </p>
      * <p>
-     * If you specify the <code>name</code> parameter as <code>Finding</code>, and you're recommendations for an <i>Auto
-     * Scaling group</i>, then the valid values are <code>Optimized</code>, or <code>NotOptimized</code>.
+     * If you specify the <code>name</code> parameter as <code>Finding</code>, and you request recommendations for an
+     * <i>Auto Scaling group</i>, then the valid values are <code>Optimized</code>, or <code>NotOptimized</code>.
      * </p>
      * <p>
      * If you specify the <code>name</code> parameter as <code>RecommendationSourceType</code>, then the valid values
-     * are <code>EC2Instance</code>, or <code>AutoScalingGroup</code>.
+     * are <code>Ec2Instance</code>, or <code>AutoScalingGroup</code>.
      * </p>
      * 
      * @return The value of the filter.</p>
      *         <p>
-     *         If you specify the <code>name</code> parameter as <code>Finding</code>, and you're recommendations for an
-     *         <i>instance</i>, then the valid values are <code>Underprovisioned</code>, <code>Overprovisioned</code>,
-     *         <code>NotOptimized</code>, or <code>Optimized</code>.
+     *         If you specify the <code>name</code> parameter as <code>Finding</code>, and you request recommendations
+     *         for an <i>instance</i>, then the valid values are <code>Underprovisioned</code>,
+     *         <code>Overprovisioned</code>, <code>NotOptimized</code>, or <code>Optimized</code>.
      *         </p>
      *         <p>
-     *         If you specify the <code>name</code> parameter as <code>Finding</code>, and you're recommendations for an
-     *         <i>Auto Scaling group</i>, then the valid values are <code>Optimized</code>, or <code>NotOptimized</code>
-     *         .
+     *         If you specify the <code>name</code> parameter as <code>Finding</code>, and you request recommendations
+     *         for an <i>Auto Scaling group</i>, then the valid values are <code>Optimized</code>, or
+     *         <code>NotOptimized</code>.
      *         </p>
      *         <p>
      *         If you specify the <code>name</code> parameter as <code>RecommendationSourceType</code>, then the valid
-     *         values are <code>EC2Instance</code>, or <code>AutoScalingGroup</code>.
+     *         values are <code>Ec2Instance</code>, or <code>AutoScalingGroup</code>.
      */
 
     public java.util.List<String> getValues() {
@@ -206,33 +224,34 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * The value of the filter.
      * </p>
      * <p>
-     * If you specify the <code>name</code> parameter as <code>Finding</code>, and you're recommendations for an
+     * If you specify the <code>name</code> parameter as <code>Finding</code>, and you request recommendations for an
      * <i>instance</i>, then the valid values are <code>Underprovisioned</code>, <code>Overprovisioned</code>,
      * <code>NotOptimized</code>, or <code>Optimized</code>.
      * </p>
      * <p>
-     * If you specify the <code>name</code> parameter as <code>Finding</code>, and you're recommendations for an <i>Auto
-     * Scaling group</i>, then the valid values are <code>Optimized</code>, or <code>NotOptimized</code>.
+     * If you specify the <code>name</code> parameter as <code>Finding</code>, and you request recommendations for an
+     * <i>Auto Scaling group</i>, then the valid values are <code>Optimized</code>, or <code>NotOptimized</code>.
      * </p>
      * <p>
      * If you specify the <code>name</code> parameter as <code>RecommendationSourceType</code>, then the valid values
-     * are <code>EC2Instance</code>, or <code>AutoScalingGroup</code>.
+     * are <code>Ec2Instance</code>, or <code>AutoScalingGroup</code>.
      * </p>
      * 
      * @param values
      *        The value of the filter.</p>
      *        <p>
-     *        If you specify the <code>name</code> parameter as <code>Finding</code>, and you're recommendations for an
-     *        <i>instance</i>, then the valid values are <code>Underprovisioned</code>, <code>Overprovisioned</code>,
-     *        <code>NotOptimized</code>, or <code>Optimized</code>.
+     *        If you specify the <code>name</code> parameter as <code>Finding</code>, and you request recommendations
+     *        for an <i>instance</i>, then the valid values are <code>Underprovisioned</code>,
+     *        <code>Overprovisioned</code>, <code>NotOptimized</code>, or <code>Optimized</code>.
      *        </p>
      *        <p>
-     *        If you specify the <code>name</code> parameter as <code>Finding</code>, and you're recommendations for an
-     *        <i>Auto Scaling group</i>, then the valid values are <code>Optimized</code>, or <code>NotOptimized</code>.
+     *        If you specify the <code>name</code> parameter as <code>Finding</code>, and you request recommendations
+     *        for an <i>Auto Scaling group</i>, then the valid values are <code>Optimized</code>, or
+     *        <code>NotOptimized</code>.
      *        </p>
      *        <p>
      *        If you specify the <code>name</code> parameter as <code>RecommendationSourceType</code>, then the valid
-     *        values are <code>EC2Instance</code>, or <code>AutoScalingGroup</code>.
+     *        values are <code>Ec2Instance</code>, or <code>AutoScalingGroup</code>.
      */
 
     public void setValues(java.util.Collection<String> values) {
@@ -249,17 +268,17 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * The value of the filter.
      * </p>
      * <p>
-     * If you specify the <code>name</code> parameter as <code>Finding</code>, and you're recommendations for an
+     * If you specify the <code>name</code> parameter as <code>Finding</code>, and you request recommendations for an
      * <i>instance</i>, then the valid values are <code>Underprovisioned</code>, <code>Overprovisioned</code>,
      * <code>NotOptimized</code>, or <code>Optimized</code>.
      * </p>
      * <p>
-     * If you specify the <code>name</code> parameter as <code>Finding</code>, and you're recommendations for an <i>Auto
-     * Scaling group</i>, then the valid values are <code>Optimized</code>, or <code>NotOptimized</code>.
+     * If you specify the <code>name</code> parameter as <code>Finding</code>, and you request recommendations for an
+     * <i>Auto Scaling group</i>, then the valid values are <code>Optimized</code>, or <code>NotOptimized</code>.
      * </p>
      * <p>
      * If you specify the <code>name</code> parameter as <code>RecommendationSourceType</code>, then the valid values
-     * are <code>EC2Instance</code>, or <code>AutoScalingGroup</code>.
+     * are <code>Ec2Instance</code>, or <code>AutoScalingGroup</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -270,17 +289,18 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * @param values
      *        The value of the filter.</p>
      *        <p>
-     *        If you specify the <code>name</code> parameter as <code>Finding</code>, and you're recommendations for an
-     *        <i>instance</i>, then the valid values are <code>Underprovisioned</code>, <code>Overprovisioned</code>,
-     *        <code>NotOptimized</code>, or <code>Optimized</code>.
+     *        If you specify the <code>name</code> parameter as <code>Finding</code>, and you request recommendations
+     *        for an <i>instance</i>, then the valid values are <code>Underprovisioned</code>,
+     *        <code>Overprovisioned</code>, <code>NotOptimized</code>, or <code>Optimized</code>.
      *        </p>
      *        <p>
-     *        If you specify the <code>name</code> parameter as <code>Finding</code>, and you're recommendations for an
-     *        <i>Auto Scaling group</i>, then the valid values are <code>Optimized</code>, or <code>NotOptimized</code>.
+     *        If you specify the <code>name</code> parameter as <code>Finding</code>, and you request recommendations
+     *        for an <i>Auto Scaling group</i>, then the valid values are <code>Optimized</code>, or
+     *        <code>NotOptimized</code>.
      *        </p>
      *        <p>
      *        If you specify the <code>name</code> parameter as <code>RecommendationSourceType</code>, then the valid
-     *        values are <code>EC2Instance</code>, or <code>AutoScalingGroup</code>.
+     *        values are <code>Ec2Instance</code>, or <code>AutoScalingGroup</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -299,33 +319,34 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * The value of the filter.
      * </p>
      * <p>
-     * If you specify the <code>name</code> parameter as <code>Finding</code>, and you're recommendations for an
+     * If you specify the <code>name</code> parameter as <code>Finding</code>, and you request recommendations for an
      * <i>instance</i>, then the valid values are <code>Underprovisioned</code>, <code>Overprovisioned</code>,
      * <code>NotOptimized</code>, or <code>Optimized</code>.
      * </p>
      * <p>
-     * If you specify the <code>name</code> parameter as <code>Finding</code>, and you're recommendations for an <i>Auto
-     * Scaling group</i>, then the valid values are <code>Optimized</code>, or <code>NotOptimized</code>.
+     * If you specify the <code>name</code> parameter as <code>Finding</code>, and you request recommendations for an
+     * <i>Auto Scaling group</i>, then the valid values are <code>Optimized</code>, or <code>NotOptimized</code>.
      * </p>
      * <p>
      * If you specify the <code>name</code> parameter as <code>RecommendationSourceType</code>, then the valid values
-     * are <code>EC2Instance</code>, or <code>AutoScalingGroup</code>.
+     * are <code>Ec2Instance</code>, or <code>AutoScalingGroup</code>.
      * </p>
      * 
      * @param values
      *        The value of the filter.</p>
      *        <p>
-     *        If you specify the <code>name</code> parameter as <code>Finding</code>, and you're recommendations for an
-     *        <i>instance</i>, then the valid values are <code>Underprovisioned</code>, <code>Overprovisioned</code>,
-     *        <code>NotOptimized</code>, or <code>Optimized</code>.
+     *        If you specify the <code>name</code> parameter as <code>Finding</code>, and you request recommendations
+     *        for an <i>instance</i>, then the valid values are <code>Underprovisioned</code>,
+     *        <code>Overprovisioned</code>, <code>NotOptimized</code>, or <code>Optimized</code>.
      *        </p>
      *        <p>
-     *        If you specify the <code>name</code> parameter as <code>Finding</code>, and you're recommendations for an
-     *        <i>Auto Scaling group</i>, then the valid values are <code>Optimized</code>, or <code>NotOptimized</code>.
+     *        If you specify the <code>name</code> parameter as <code>Finding</code>, and you request recommendations
+     *        for an <i>Auto Scaling group</i>, then the valid values are <code>Optimized</code>, or
+     *        <code>NotOptimized</code>.
      *        </p>
      *        <p>
      *        If you specify the <code>name</code> parameter as <code>RecommendationSourceType</code>, then the valid
-     *        values are <code>EC2Instance</code>, or <code>AutoScalingGroup</code>.
+     *        values are <code>Ec2Instance</code>, or <code>AutoScalingGroup</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

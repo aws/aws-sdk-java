@@ -39,10 +39,10 @@ public class GetEC2InstanceRecommendationsRequest extends com.amazonaws.AmazonWe
     private String nextToken;
     /**
      * <p>
-     * The maximum number of instance recommendations to return with a single call.
+     * The maximum number of instance recommendations to return with a single request.
      * </p>
      * <p>
-     * To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
+     * To retrieve the remaining results, make another request with the returned <code>NextToken</code> value.
      * </p>
      */
     private Integer maxResults;
@@ -54,7 +54,11 @@ public class GetEC2InstanceRecommendationsRequest extends com.amazonaws.AmazonWe
     private java.util.List<Filter> filters;
     /**
      * <p>
-     * The AWS account IDs for which to return instance recommendations.
+     * The IDs of the AWS accounts for which to return instance recommendations.
+     * </p>
+     * <p>
+     * If your account is the master account of an organization, use this parameter to specify the member accounts for
+     * which you want to return instance recommendations.
      * </p>
      * <p>
      * Only one account ID can be specified per request.
@@ -174,16 +178,16 @@ public class GetEC2InstanceRecommendationsRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The maximum number of instance recommendations to return with a single call.
+     * The maximum number of instance recommendations to return with a single request.
      * </p>
      * <p>
-     * To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
+     * To retrieve the remaining results, make another request with the returned <code>NextToken</code> value.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of instance recommendations to return with a single call.</p>
+     *        The maximum number of instance recommendations to return with a single request.</p>
      *        <p>
-     *        To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
+     *        To retrieve the remaining results, make another request with the returned <code>NextToken</code> value.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -192,15 +196,15 @@ public class GetEC2InstanceRecommendationsRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The maximum number of instance recommendations to return with a single call.
+     * The maximum number of instance recommendations to return with a single request.
      * </p>
      * <p>
-     * To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
+     * To retrieve the remaining results, make another request with the returned <code>NextToken</code> value.
      * </p>
      * 
-     * @return The maximum number of instance recommendations to return with a single call.</p>
+     * @return The maximum number of instance recommendations to return with a single request.</p>
      *         <p>
-     *         To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
+     *         To retrieve the remaining results, make another request with the returned <code>NextToken</code> value.
      */
 
     public Integer getMaxResults() {
@@ -209,16 +213,16 @@ public class GetEC2InstanceRecommendationsRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The maximum number of instance recommendations to return with a single call.
+     * The maximum number of instance recommendations to return with a single request.
      * </p>
      * <p>
-     * To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
+     * To retrieve the remaining results, make another request with the returned <code>NextToken</code> value.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of instance recommendations to return with a single call.</p>
+     *        The maximum number of instance recommendations to return with a single request.</p>
      *        <p>
-     *        To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
+     *        To retrieve the remaining results, make another request with the returned <code>NextToken</code> value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -299,13 +303,21 @@ public class GetEC2InstanceRecommendationsRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The AWS account IDs for which to return instance recommendations.
+     * The IDs of the AWS accounts for which to return instance recommendations.
+     * </p>
+     * <p>
+     * If your account is the master account of an organization, use this parameter to specify the member accounts for
+     * which you want to return instance recommendations.
      * </p>
      * <p>
      * Only one account ID can be specified per request.
      * </p>
      * 
-     * @return The AWS account IDs for which to return instance recommendations.</p>
+     * @return The IDs of the AWS accounts for which to return instance recommendations.</p>
+     *         <p>
+     *         If your account is the master account of an organization, use this parameter to specify the member
+     *         accounts for which you want to return instance recommendations.
+     *         </p>
      *         <p>
      *         Only one account ID can be specified per request.
      */
@@ -316,14 +328,22 @@ public class GetEC2InstanceRecommendationsRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The AWS account IDs for which to return instance recommendations.
+     * The IDs of the AWS accounts for which to return instance recommendations.
+     * </p>
+     * <p>
+     * If your account is the master account of an organization, use this parameter to specify the member accounts for
+     * which you want to return instance recommendations.
      * </p>
      * <p>
      * Only one account ID can be specified per request.
      * </p>
      * 
      * @param accountIds
-     *        The AWS account IDs for which to return instance recommendations.</p>
+     *        The IDs of the AWS accounts for which to return instance recommendations.</p>
+     *        <p>
+     *        If your account is the master account of an organization, use this parameter to specify the member
+     *        accounts for which you want to return instance recommendations.
+     *        </p>
      *        <p>
      *        Only one account ID can be specified per request.
      */
@@ -339,7 +359,11 @@ public class GetEC2InstanceRecommendationsRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The AWS account IDs for which to return instance recommendations.
+     * The IDs of the AWS accounts for which to return instance recommendations.
+     * </p>
+     * <p>
+     * If your account is the master account of an organization, use this parameter to specify the member accounts for
+     * which you want to return instance recommendations.
      * </p>
      * <p>
      * Only one account ID can be specified per request.
@@ -351,7 +375,11 @@ public class GetEC2InstanceRecommendationsRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param accountIds
-     *        The AWS account IDs for which to return instance recommendations.</p>
+     *        The IDs of the AWS accounts for which to return instance recommendations.</p>
+     *        <p>
+     *        If your account is the master account of an organization, use this parameter to specify the member
+     *        accounts for which you want to return instance recommendations.
+     *        </p>
      *        <p>
      *        Only one account ID can be specified per request.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -369,14 +397,22 @@ public class GetEC2InstanceRecommendationsRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The AWS account IDs for which to return instance recommendations.
+     * The IDs of the AWS accounts for which to return instance recommendations.
+     * </p>
+     * <p>
+     * If your account is the master account of an organization, use this parameter to specify the member accounts for
+     * which you want to return instance recommendations.
      * </p>
      * <p>
      * Only one account ID can be specified per request.
      * </p>
      * 
      * @param accountIds
-     *        The AWS account IDs for which to return instance recommendations.</p>
+     *        The IDs of the AWS accounts for which to return instance recommendations.</p>
+     *        <p>
+     *        If your account is the master account of an organization, use this parameter to specify the member
+     *        accounts for which you want to return instance recommendations.
+     *        </p>
      *        <p>
      *        Only one account ID can be specified per request.
      * @return Returns a reference to this object so that method calls can be chained together.

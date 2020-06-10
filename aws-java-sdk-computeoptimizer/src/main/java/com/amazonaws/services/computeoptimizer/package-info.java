@@ -19,8 +19,9 @@
  * provides recent utilization metric data, as well as projected utilization metric data for the recommendations, which
  * you can use to evaluate which recommendation provides the best price-performance trade-off. The analysis of your
  * usage patterns can help you decide when to move or resize your running resources, and still meet your performance and
- * capacity requirements. For more information about Compute Optimizer, see the <a
- * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/">AWS Compute Optimizer User Guide</a>.
+ * capacity requirements. For more information about Compute Optimizer, including the required permissions to use the
+ * service, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/">AWS Compute Optimizer User
+ * Guide</a>.
  * </p>
  */
 package com.amazonaws.services.computeoptimizer;

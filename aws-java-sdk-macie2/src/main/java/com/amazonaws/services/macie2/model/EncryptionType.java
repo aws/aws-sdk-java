@@ -24,7 +24,8 @@ public enum EncryptionType {
 
     NONE("NONE"),
     AES256("AES256"),
-    AwsKms("aws:kms");
+    AwsKms("aws:kms"),
+    UNKNOWN("UNKNOWN");
 
     private String value;
 

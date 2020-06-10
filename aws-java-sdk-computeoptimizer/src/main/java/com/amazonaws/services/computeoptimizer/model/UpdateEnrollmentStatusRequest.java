@@ -37,7 +37,7 @@ public class UpdateEnrollmentStatusRequest extends com.amazonaws.AmazonWebServic
     private String status;
     /**
      * <p>
-     * Indicates whether to enroll member accounts within the organization, if the account is a master account of an
+     * Indicates whether to enroll member accounts of the organization if the your account is the master account of an
      * organization.
      * </p>
      */
@@ -132,13 +132,13 @@ public class UpdateEnrollmentStatusRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Indicates whether to enroll member accounts within the organization, if the account is a master account of an
+     * Indicates whether to enroll member accounts of the organization if the your account is the master account of an
      * organization.
      * </p>
      * 
      * @param includeMemberAccounts
-     *        Indicates whether to enroll member accounts within the organization, if the account is a master account of
-     *        an organization.
+     *        Indicates whether to enroll member accounts of the organization if the your account is the master account
+     *        of an organization.
      */
 
     public void setIncludeMemberAccounts(Boolean includeMemberAccounts) {
@@ -147,11 +147,11 @@ public class UpdateEnrollmentStatusRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Indicates whether to enroll member accounts within the organization, if the account is a master account of an
+     * Indicates whether to enroll member accounts of the organization if the your account is the master account of an
      * organization.
      * </p>
      * 
-     * @return Indicates whether to enroll member accounts within the organization, if the account is a master account
+     * @return Indicates whether to enroll member accounts of the organization if the your account is the master account
      *         of an organization.
      */
 
@@ -161,13 +161,13 @@ public class UpdateEnrollmentStatusRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Indicates whether to enroll member accounts within the organization, if the account is a master account of an
+     * Indicates whether to enroll member accounts of the organization if the your account is the master account of an
      * organization.
      * </p>
      * 
      * @param includeMemberAccounts
-     *        Indicates whether to enroll member accounts within the organization, if the account is a master account of
-     *        an organization.
+     *        Indicates whether to enroll member accounts of the organization if the your account is the master account
+     *        of an organization.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -178,11 +178,11 @@ public class UpdateEnrollmentStatusRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Indicates whether to enroll member accounts within the organization, if the account is a master account of an
+     * Indicates whether to enroll member accounts of the organization if the your account is the master account of an
      * organization.
      * </p>
      * 
-     * @return Indicates whether to enroll member accounts within the organization, if the account is a master account
+     * @return Indicates whether to enroll member accounts of the organization if the your account is the master account
      *         of an organization.
      */
 

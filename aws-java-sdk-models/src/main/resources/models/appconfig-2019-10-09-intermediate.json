@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors", "EnumSetterOverload" ],
+    "deprecatedSuppressions" : [ "ClientConstructors", "EnumSetterOverload", "ClientMutationMethods" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -509,10 +509,6 @@
         "exceptionName" : "InternalServerException",
         "documentation" : "<p>There was an internal failure in the AppConfig service.</p>",
         "httpStatusCode" : 500
-      }, {
-        "exceptionName" : "ResourceNotFoundException",
-        "documentation" : "<p>The requested resource could not be found.</p>",
-        "httpStatusCode" : 404
       }, {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The input fails to satisfy the constraints specified by an AWS service.</p>",
@@ -4195,7 +4191,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "RetrievalRoleArn",
-        "c2jShape" : "Arn",
+        "c2jShape" : "RoleArn",
         "deprecated" : false,
         "documentation" : "<p>The ARN of an IAM role with permission to access the configuration at the specified LocationUri.</p>",
         "endpointDiscoveryId" : false,
@@ -4843,7 +4839,7 @@
         },
         "RetrievalRoleArn" : {
           "c2jName" : "RetrievalRoleArn",
-          "c2jShape" : "Arn",
+          "c2jShape" : "RoleArn",
           "deprecated" : false,
           "documentation" : "<p>The ARN of an IAM role with permission to access the configuration at the specified LocationUri.</p>",
           "endpointDiscoveryId" : false,
@@ -5594,7 +5590,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "RetrievalRoleArn",
-        "c2jShape" : "Arn",
+        "c2jShape" : "RoleArn",
         "deprecated" : false,
         "documentation" : "<p>The ARN of an IAM role with permission to access the configuration at the specified LocationUri.</p>",
         "endpointDiscoveryId" : false,
@@ -6160,7 +6156,7 @@
         },
         "RetrievalRoleArn" : {
           "c2jName" : "RetrievalRoleArn",
-          "c2jShape" : "Arn",
+          "c2jShape" : "RoleArn",
           "deprecated" : false,
           "documentation" : "<p>The ARN of an IAM role with permission to access the configuration at the specified LocationUri.</p>",
           "endpointDiscoveryId" : false,
@@ -17927,7 +17923,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "RetrievalRoleArn",
-        "c2jShape" : "Arn",
+        "c2jShape" : "RoleArn",
         "deprecated" : false,
         "documentation" : "<p>The ARN of an IAM role with permission to access the configuration at the specified LocationUri.</p>",
         "endpointDiscoveryId" : false,
@@ -18493,7 +18489,7 @@
         },
         "RetrievalRoleArn" : {
           "c2jName" : "RetrievalRoleArn",
-          "c2jShape" : "Arn",
+          "c2jShape" : "RoleArn",
           "deprecated" : false,
           "documentation" : "<p>The ARN of an IAM role with permission to access the configuration at the specified LocationUri.</p>",
           "endpointDiscoveryId" : false,
@@ -19527,7 +19523,7 @@
         "marshallingTargetClass" : "java.nio.ByteBuffer",
         "marshallingType" : "BYTE_BUFFER",
         "name" : "Content",
-        "sensitive" : false,
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The content of the configuration or the configuration data.</p><p>\nThe AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param content The content of the configuration or the configuration data.*/",
         "setterMethodName" : "setContent",
         "setterModel" : {
@@ -19802,7 +19798,7 @@
           "marshallingTargetClass" : "java.nio.ByteBuffer",
           "marshallingType" : "BYTE_BUFFER",
           "name" : "Content",
-          "sensitive" : false,
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The content of the configuration or the configuration data.</p><p>\nThe AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param content The content of the configuration or the configuration data.*/",
           "setterMethodName" : "setContent",
           "setterModel" : {
@@ -31002,7 +30998,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "AlarmRoleArn",
-        "c2jShape" : "Arn",
+        "c2jShape" : "RoleArn",
         "deprecated" : false,
         "documentation" : "<p>ARN of an IAM role for AppConfig to monitor <code>AlarmArn</code>.</p>",
         "endpointDiscoveryId" : false,
@@ -31141,7 +31137,7 @@
         },
         "AlarmRoleArn" : {
           "c2jName" : "AlarmRoleArn",
-          "c2jShape" : "Arn",
+          "c2jShape" : "RoleArn",
           "deprecated" : false,
           "documentation" : "<p>ARN of an IAM role for AppConfig to monitor <code>AlarmArn</code>.</p>",
           "endpointDiscoveryId" : false,
@@ -40759,7 +40755,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "RetrievalRoleArn",
-        "c2jShape" : "Arn",
+        "c2jShape" : "RoleArn",
         "deprecated" : false,
         "documentation" : "<p>The ARN of an IAM role with permission to access the configuration at the specified LocationUri.</p>",
         "endpointDiscoveryId" : false,
@@ -41256,7 +41252,7 @@
         },
         "RetrievalRoleArn" : {
           "c2jName" : "RetrievalRoleArn",
-          "c2jShape" : "Arn",
+          "c2jShape" : "RoleArn",
           "deprecated" : false,
           "documentation" : "<p>The ARN of an IAM role with permission to access the configuration at the specified LocationUri.</p>",
           "endpointDiscoveryId" : false,
@@ -41855,7 +41851,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "RetrievalRoleArn",
-        "c2jShape" : "Arn",
+        "c2jShape" : "RoleArn",
         "deprecated" : false,
         "documentation" : "<p>The ARN of an IAM role with permission to access the configuration at the specified LocationUri.</p>",
         "endpointDiscoveryId" : false,
@@ -42421,7 +42417,7 @@
         },
         "RetrievalRoleArn" : {
           "c2jName" : "RetrievalRoleArn",
-          "c2jShape" : "Arn",
+          "c2jShape" : "RoleArn",
           "deprecated" : false,
           "documentation" : "<p>The ARN of an IAM role with permission to access the configuration at the specified LocationUri.</p>",
           "endpointDiscoveryId" : false,
@@ -47228,7 +47224,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Content",
-        "sensitive" : false,
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>Either the JSON Schema content or the Amazon Resource Name (ARN) of an AWS Lambda function.</p>\n@param content Either the JSON Schema content or the Amazon Resource Name (ARN) of an AWS Lambda function.*/",
         "setterMethodName" : "setContent",
         "setterModel" : {
@@ -47298,7 +47294,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Content",
-          "sensitive" : false,
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>Either the JSON Schema content or the Amazon Resource Name (ARN) of an AWS Lambda function.</p>\n@param content Either the JSON Schema content or the Amazon Resource Name (ARN) of an AWS Lambda function.*/",
           "setterMethodName" : "setContent",
           "setterModel" : {

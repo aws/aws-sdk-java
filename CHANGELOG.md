@@ -1,3 +1,40 @@
+# __1.11.800__ __2020-06-10__
+## __AWS Compute Optimizer__
+  - ### Features
+    - Compute Optimizer supports exporting recommendations to Amazon S3.
+
+## __AWS Service Catalog__
+  - ### Features
+    - Service Catalog Documentation Update for Integration with AWS Organizations Delegated Administrator feature
+
+## __AWS Shield__
+  - ### Features
+    - Corrections to the supported format for contact phone numbers and to the description for the create subscription action.
+
+## __Amazon AppConfig__
+  - ### Features
+    - This release allows customers to choose from a list of predefined deployment strategies while starting deployments.
+
+## __Amazon Data Lifecycle Manager__
+  - ### Features
+    - Reducing the schedule name of DLM Lifecycle policy from 500 to 120 characters. 
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - New C6g instances powered by AWS Graviton2 processors and ideal for running advanced, compute-intensive workloads; New R6g instances powered by AWS Graviton2 processors and ideal for running memory-intensive workloads.
+
+## __Amazon Lightsail__
+  - ### Features
+    - Documentation updates for lightsail
+
+## __Amazon Macie 2__
+  - ### Features
+    - This release of the Amazon Macie API removes support for the ArchiveFindings and UnarchiveFindings operations. This release also adds UNKNOWN as an encryption type for S3 bucket metadata.
+
+## __CodeArtifact__
+  - ### Features
+    - Added support for AWS CodeArtifact.
+
 # __1.11.799__ __2020-06-09__
 ## __AWS Transfer Family__
   - ### Features

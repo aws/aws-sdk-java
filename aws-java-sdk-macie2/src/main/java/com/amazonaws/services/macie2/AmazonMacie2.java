@@ -71,34 +71,6 @@ public interface AmazonMacie2 {
 
     /**
      * <p>
-     * Archives one or more findings.
-     * </p>
-     * 
-     * @param archiveFindingsRequest
-     * @return Result of the ArchiveFindings operation returned by the service.
-     * @throws ValidationException
-     *         The request failed because it contains a syntax error.
-     * @throws InternalServerException
-     *         The request failed due to an unknown internal server error, exception, or failure.
-     * @throws ServiceQuotaExceededException
-     *         The request failed because fulfilling the request would exceed one or more service quotas for your
-     *         account.
-     * @throws AccessDeniedException
-     *         The request was denied because you don't have sufficient access to the specified resource.
-     * @throws ResourceNotFoundException
-     *         The request failed because the specified resource wasn't found.
-     * @throws ThrottlingException
-     *         The request failed because you sent too many requests during a certain amount of time.
-     * @throws ConflictException
-     *         The request failed because it conflicts with the current state of the specified resource.
-     * @sample AmazonMacie2.ArchiveFindings
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ArchiveFindings" target="_top">AWS API
-     *      Documentation</a>
-     */
-    ArchiveFindingsResult archiveFindings(ArchiveFindingsRequest archiveFindingsRequest);
-
-    /**
-     * <p>
      * Retrieves information about one or more custom data identifiers.
      * </p>
      * 
@@ -1304,34 +1276,6 @@ public interface AmazonMacie2 {
      *      target="_top">AWS API Documentation</a>
      */
     TestCustomDataIdentifierResult testCustomDataIdentifier(TestCustomDataIdentifierRequest testCustomDataIdentifierRequest);
-
-    /**
-     * <p>
-     * Reactivates (unarchives) one or more findings.
-     * </p>
-     * 
-     * @param unarchiveFindingsRequest
-     * @return Result of the UnarchiveFindings operation returned by the service.
-     * @throws ValidationException
-     *         The request failed because it contains a syntax error.
-     * @throws InternalServerException
-     *         The request failed due to an unknown internal server error, exception, or failure.
-     * @throws ServiceQuotaExceededException
-     *         The request failed because fulfilling the request would exceed one or more service quotas for your
-     *         account.
-     * @throws AccessDeniedException
-     *         The request was denied because you don't have sufficient access to the specified resource.
-     * @throws ResourceNotFoundException
-     *         The request failed because the specified resource wasn't found.
-     * @throws ThrottlingException
-     *         The request failed because you sent too many requests during a certain amount of time.
-     * @throws ConflictException
-     *         The request failed because it conflicts with the current state of the specified resource.
-     * @sample AmazonMacie2.UnarchiveFindings
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UnarchiveFindings" target="_top">AWS API
-     *      Documentation</a>
-     */
-    UnarchiveFindingsResult unarchiveFindings(UnarchiveFindingsRequest unarchiveFindingsRequest);
 
     /**
      * <p>

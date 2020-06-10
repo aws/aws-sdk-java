@@ -786,8 +786,6 @@ public class AmazonAppConfigClient extends AmazonWebServiceClient implements Ama
      *         The requested resource could not be found.
      * @throws InternalServerException
      *         There was an internal failure in the AppConfig service.
-     * @throws ResourceNotFoundException
-     *         The requested resource could not be found.
      * @throws BadRequestException
      *         The input fails to satisfy the constraints specified by an AWS service.
      * @sample AmazonAppConfig.GetConfiguration

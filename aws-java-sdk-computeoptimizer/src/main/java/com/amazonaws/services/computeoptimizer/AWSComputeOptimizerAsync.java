@@ -32,12 +32,174 @@ import com.amazonaws.services.computeoptimizer.model.*;
  * provides recent utilization metric data, as well as projected utilization metric data for the recommendations, which
  * you can use to evaluate which recommendation provides the best price-performance trade-off. The analysis of your
  * usage patterns can help you decide when to move or resize your running resources, and still meet your performance and
- * capacity requirements. For more information about Compute Optimizer, see the <a
- * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/">AWS Compute Optimizer User Guide</a>.
+ * capacity requirements. For more information about Compute Optimizer, including the required permissions to use the
+ * service, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/">AWS Compute Optimizer User
+ * Guide</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSComputeOptimizerAsync extends AWSComputeOptimizer {
+
+    /**
+     * <p>
+     * Describes recommendation export jobs created in the last seven days.
+     * </p>
+     * <p>
+     * Use the <code>ExportAutoScalingGroupRecommendations</code> or <code>ExportEC2InstanceRecommendations</code>
+     * actions to request an export of your recommendations. Then use the <code>DescribeRecommendationExportJobs</code>
+     * action to view your export jobs.
+     * </p>
+     * 
+     * @param describeRecommendationExportJobsRequest
+     * @return A Java Future containing the result of the DescribeRecommendationExportJobs operation returned by the
+     *         service.
+     * @sample AWSComputeOptimizerAsync.DescribeRecommendationExportJobs
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/DescribeRecommendationExportJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeRecommendationExportJobsResult> describeRecommendationExportJobsAsync(
+            DescribeRecommendationExportJobsRequest describeRecommendationExportJobsRequest);
+
+    /**
+     * <p>
+     * Describes recommendation export jobs created in the last seven days.
+     * </p>
+     * <p>
+     * Use the <code>ExportAutoScalingGroupRecommendations</code> or <code>ExportEC2InstanceRecommendations</code>
+     * actions to request an export of your recommendations. Then use the <code>DescribeRecommendationExportJobs</code>
+     * action to view your export jobs.
+     * </p>
+     * 
+     * @param describeRecommendationExportJobsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeRecommendationExportJobs operation returned by the
+     *         service.
+     * @sample AWSComputeOptimizerAsyncHandler.DescribeRecommendationExportJobs
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/DescribeRecommendationExportJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeRecommendationExportJobsResult> describeRecommendationExportJobsAsync(
+            DescribeRecommendationExportJobsRequest describeRecommendationExportJobsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeRecommendationExportJobsRequest, DescribeRecommendationExportJobsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Exports optimization recommendations for Auto Scaling groups.
+     * </p>
+     * <p>
+     * Recommendations are exported in a comma-separated values (.csv) file, and its metadata in a JavaScript Object
+     * Notation (.json) file, to an existing Amazon Simple Storage Service (Amazon S3) bucket that you specify. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
+     * Recommendations</a> in the <i>Compute Optimizer User Guide</i>.
+     * </p>
+     * <p>
+     * You can have only one Auto Scaling group export job in progress per AWS Region.
+     * </p>
+     * 
+     * @param exportAutoScalingGroupRecommendationsRequest
+     * @return A Java Future containing the result of the ExportAutoScalingGroupRecommendations operation returned by
+     *         the service.
+     * @sample AWSComputeOptimizerAsync.ExportAutoScalingGroupRecommendations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportAutoScalingGroupRecommendations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ExportAutoScalingGroupRecommendationsResult> exportAutoScalingGroupRecommendationsAsync(
+            ExportAutoScalingGroupRecommendationsRequest exportAutoScalingGroupRecommendationsRequest);
+
+    /**
+     * <p>
+     * Exports optimization recommendations for Auto Scaling groups.
+     * </p>
+     * <p>
+     * Recommendations are exported in a comma-separated values (.csv) file, and its metadata in a JavaScript Object
+     * Notation (.json) file, to an existing Amazon Simple Storage Service (Amazon S3) bucket that you specify. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
+     * Recommendations</a> in the <i>Compute Optimizer User Guide</i>.
+     * </p>
+     * <p>
+     * You can have only one Auto Scaling group export job in progress per AWS Region.
+     * </p>
+     * 
+     * @param exportAutoScalingGroupRecommendationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ExportAutoScalingGroupRecommendations operation returned by
+     *         the service.
+     * @sample AWSComputeOptimizerAsyncHandler.ExportAutoScalingGroupRecommendations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportAutoScalingGroupRecommendations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ExportAutoScalingGroupRecommendationsResult> exportAutoScalingGroupRecommendationsAsync(
+            ExportAutoScalingGroupRecommendationsRequest exportAutoScalingGroupRecommendationsRequest,
+            com.amazonaws.handlers.AsyncHandler<ExportAutoScalingGroupRecommendationsRequest, ExportAutoScalingGroupRecommendationsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Exports optimization recommendations for Amazon EC2 instances.
+     * </p>
+     * <p>
+     * Recommendations are exported in a comma-separated values (.csv) file, and its metadata in a JavaScript Object
+     * Notation (.json) file, to an existing Amazon Simple Storage Service (Amazon S3) bucket that you specify. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
+     * Recommendations</a> in the <i>Compute Optimizer User Guide</i>.
+     * </p>
+     * <p>
+     * You can have only one Amazon EC2 instance export job in progress per AWS Region.
+     * </p>
+     * 
+     * @param exportEC2InstanceRecommendationsRequest
+     * @return A Java Future containing the result of the ExportEC2InstanceRecommendations operation returned by the
+     *         service.
+     * @sample AWSComputeOptimizerAsync.ExportEC2InstanceRecommendations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportEC2InstanceRecommendations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ExportEC2InstanceRecommendationsResult> exportEC2InstanceRecommendationsAsync(
+            ExportEC2InstanceRecommendationsRequest exportEC2InstanceRecommendationsRequest);
+
+    /**
+     * <p>
+     * Exports optimization recommendations for Amazon EC2 instances.
+     * </p>
+     * <p>
+     * Recommendations are exported in a comma-separated values (.csv) file, and its metadata in a JavaScript Object
+     * Notation (.json) file, to an existing Amazon Simple Storage Service (Amazon S3) bucket that you specify. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
+     * Recommendations</a> in the <i>Compute Optimizer User Guide</i>.
+     * </p>
+     * <p>
+     * You can have only one Amazon EC2 instance export job in progress per AWS Region.
+     * </p>
+     * 
+     * @param exportEC2InstanceRecommendationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ExportEC2InstanceRecommendations operation returned by the
+     *         service.
+     * @sample AWSComputeOptimizerAsyncHandler.ExportEC2InstanceRecommendations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportEC2InstanceRecommendations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ExportEC2InstanceRecommendationsResult> exportEC2InstanceRecommendationsAsync(
+            ExportEC2InstanceRecommendationsRequest exportEC2InstanceRecommendationsRequest,
+            com.amazonaws.handlers.AsyncHandler<ExportEC2InstanceRecommendationsRequest, ExportEC2InstanceRecommendationsResult> asyncHandler);
 
     /**
      * <p>
@@ -181,7 +343,7 @@ public interface AWSComputeOptimizerAsync extends AWSComputeOptimizer {
      * Returns the enrollment (opt in) status of an account to the AWS Compute Optimizer service.
      * </p>
      * <p>
-     * If the account is a master account of an organization, this operation also confirms the enrollment status of
+     * If the account is the master account of an organization, this action also confirms the enrollment status of
      * member accounts within the organization.
      * </p>
      * 
@@ -198,7 +360,7 @@ public interface AWSComputeOptimizerAsync extends AWSComputeOptimizer {
      * Returns the enrollment (opt in) status of an account to the AWS Compute Optimizer service.
      * </p>
      * <p>
-     * If the account is a master account of an organization, this operation also confirms the enrollment status of
+     * If the account is the master account of an organization, this action also confirms the enrollment status of
      * member accounts within the organization.
      * </p>
      * 
@@ -263,8 +425,8 @@ public interface AWSComputeOptimizerAsync extends AWSComputeOptimizer {
      * Updates the enrollment (opt in) status of an account to the AWS Compute Optimizer service.
      * </p>
      * <p>
-     * If the account is a master account of an organization, this operation can also enroll member accounts within the
-     * organization.
+     * If the account is a master account of an organization, this action can also be used to enroll member accounts
+     * within the organization.
      * </p>
      * 
      * @param updateEnrollmentStatusRequest
@@ -280,8 +442,8 @@ public interface AWSComputeOptimizerAsync extends AWSComputeOptimizer {
      * Updates the enrollment (opt in) status of an account to the AWS Compute Optimizer service.
      * </p>
      * <p>
-     * If the account is a master account of an organization, this operation can also enroll member accounts within the
-     * organization.
+     * If the account is a master account of an organization, this action can also be used to enroll member accounts
+     * within the organization.
      * </p>
      * 
      * @param updateEnrollmentStatusRequest

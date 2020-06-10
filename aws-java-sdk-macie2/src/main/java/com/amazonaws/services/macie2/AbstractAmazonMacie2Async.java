@@ -41,19 +41,6 @@ public class AbstractAmazonMacie2Async extends AbstractAmazonMacie2 implements A
     }
 
     @Override
-    public java.util.concurrent.Future<ArchiveFindingsResult> archiveFindingsAsync(ArchiveFindingsRequest request) {
-
-        return archiveFindingsAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ArchiveFindingsResult> archiveFindingsAsync(ArchiveFindingsRequest request,
-            com.amazonaws.handlers.AsyncHandler<ArchiveFindingsRequest, ArchiveFindingsResult> asyncHandler) {
-
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
     public java.util.concurrent.Future<BatchGetCustomDataIdentifiersResult> batchGetCustomDataIdentifiersAsync(BatchGetCustomDataIdentifiersRequest request) {
 
         return batchGetCustomDataIdentifiersAsync(request, null);
@@ -629,19 +616,6 @@ public class AbstractAmazonMacie2Async extends AbstractAmazonMacie2 implements A
     @Override
     public java.util.concurrent.Future<TestCustomDataIdentifierResult> testCustomDataIdentifierAsync(TestCustomDataIdentifierRequest request,
             com.amazonaws.handlers.AsyncHandler<TestCustomDataIdentifierRequest, TestCustomDataIdentifierResult> asyncHandler) {
-
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
-    public java.util.concurrent.Future<UnarchiveFindingsResult> unarchiveFindingsAsync(UnarchiveFindingsRequest request) {
-
-        return unarchiveFindingsAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UnarchiveFindingsResult> unarchiveFindingsAsync(UnarchiveFindingsRequest request,
-            com.amazonaws.handlers.AsyncHandler<UnarchiveFindingsRequest, UnarchiveFindingsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The limit on the number of requests per second was exceeded.
+ * The request was denied due to request throttling.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

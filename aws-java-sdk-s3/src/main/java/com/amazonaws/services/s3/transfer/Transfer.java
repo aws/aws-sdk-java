@@ -20,7 +20,7 @@ import com.amazonaws.event.ProgressListener;
 
 /**
  * Represents an asynchronous upload to or download from Amazon S3.
- * Use this class to check a tranfer's progress,
+ * Use this class to check a transfer's progress,
  * add listeners for progress events,
  * check the state of a transfer,
  * or wait for the transfer to complete.

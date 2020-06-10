@@ -164,6 +164,9 @@ public interface AWSServiceCatalog {
      * <p>
      * Associates the specified product with the specified portfolio.
      * </p>
+     * <p>
+     * A delegated admin is authorized to invoke this command.
+     * </p>
      * 
      * @param associateProductWithPortfolioRequest
      * @return Result of the AssociateProductWithPortfolio operation returned by the service.
@@ -294,6 +297,9 @@ public interface AWSServiceCatalog {
      * <p>
      * Creates a constraint.
      * </p>
+     * <p>
+     * A delegated admin is authorized to invoke this command.
+     * </p>
      * 
      * @param createConstraintRequest
      * @return Result of the CreateConstraint operation returned by the service.
@@ -316,6 +322,9 @@ public interface AWSServiceCatalog {
      * <p>
      * Creates a portfolio.
      * </p>
+     * <p>
+     * A delegated admin is authorized to invoke this command.
+     * </p>
      * 
      * @param createPortfolioRequest
      * @return Result of the CreatePortfolio operation returned by the service.
@@ -337,8 +346,14 @@ public interface AWSServiceCatalog {
     /**
      * <p>
      * Shares the specified portfolio with the specified account or organization node. Shares to an organization node
-     * can only be created by the master account of an Organization. AWSOrganizationsAccess must be enabled in order to
-     * create a portfolio share to an organization node.
+     * can only be created by the master account of an organization or by a delegated administrator. You can share
+     * portfolios to an organization, an organizational unit, or a specific account.
+     * </p>
+     * <p>
+     * Note that if a delegated admin is de-registered, they can no longer create portfolio shares.
+     * </p>
+     * <p>
+     * <code>AWSOrganizationsAccess</code> must be enabled in order to create a portfolio share to an organization node.
      * </p>
      * 
      * @param createPortfolioShareRequest
@@ -364,6 +379,9 @@ public interface AWSServiceCatalog {
     /**
      * <p>
      * Creates a product.
+     * </p>
+     * <p>
+     * A delegated admin is authorized to invoke this command.
      * </p>
      * 
      * @param createProductRequest
@@ -479,6 +497,9 @@ public interface AWSServiceCatalog {
      * <p>
      * Deletes the specified constraint.
      * </p>
+     * <p>
+     * A delegated admin is authorized to invoke this command.
+     * </p>
      * 
      * @param deleteConstraintRequest
      * @return Result of the DeleteConstraint operation returned by the service.
@@ -499,6 +520,9 @@ public interface AWSServiceCatalog {
      * <p>
      * You cannot delete a portfolio if it was shared with you or if it has associated products, users, constraints, or
      * shared accounts.
+     * </p>
+     * <p>
+     * A delegated admin is authorized to invoke this command.
      * </p>
      * 
      * @param deletePortfolioRequest
@@ -522,7 +546,10 @@ public interface AWSServiceCatalog {
     /**
      * <p>
      * Stops sharing the specified portfolio with the specified account or organization node. Shares to an organization
-     * node can only be deleted by the master account of an Organization.
+     * node can only be deleted by the master account of an organization or by a delegated administrator.
+     * </p>
+     * <p>
+     * Note that if a delegated admin is de-registered, portfolio shares created from that account are removed.
      * </p>
      * 
      * @param deletePortfolioShareRequest
@@ -548,6 +575,9 @@ public interface AWSServiceCatalog {
      * </p>
      * <p>
      * You cannot delete a product if it was shared with you or is associated with a portfolio.
+     * </p>
+     * <p>
+     * A delegated admin is authorized to invoke this command.
      * </p>
      * 
      * @param deleteProductRequest
@@ -683,6 +713,9 @@ public interface AWSServiceCatalog {
      * <p>
      * Gets information about the specified portfolio.
      * </p>
+     * <p>
+     * A delegated admin is authorized to invoke this command.
+     * </p>
      * 
      * @param describePortfolioRequest
      * @return Result of the DescribePortfolio operation returned by the service.
@@ -697,7 +730,7 @@ public interface AWSServiceCatalog {
     /**
      * <p>
      * Gets the status of the specified portfolio share operation. This API can only be called by the master account in
-     * the organization.
+     * the organization or by a delegated admin.
      * </p>
      * 
      * @param describePortfolioShareStatusRequest
@@ -927,6 +960,12 @@ public interface AWSServiceCatalog {
      * with your organization structure if it changes after calling this API. This API can only be called by the master
      * account in the organization.
      * </p>
+     * <p>
+     * This API can't be invoked if there are active delegated administrators in the organization.
+     * </p>
+     * <p>
+     * Note that a delegated administrator is not authorized to invoke <code>DisableAWSOrganizationsAccess</code>.
+     * </p>
      * 
      * @param disableAWSOrganizationsAccessRequest
      * @return Result of the DisableAWSOrganizationsAccess operation returned by the service.
@@ -980,6 +1019,9 @@ public interface AWSServiceCatalog {
     /**
      * <p>
      * Disassociates the specified product from the specified portfolio.
+     * </p>
+     * <p>
+     * A delegated admin is authorized to invoke this command.
      * </p>
      * 
      * @param disassociateProductFromPortfolioRequest
@@ -1042,6 +1084,9 @@ public interface AWSServiceCatalog {
      * By calling this API Service Catalog will make a call to organizations:EnableAWSServiceAccess on your behalf so
      * that your shares can be in sync with any changes in your AWS Organizations structure.
      * </p>
+     * <p>
+     * Note that a delegated administrator is not authorized to invoke <code>EnableAWSOrganizationsAccess</code>.
+     * </p>
      * 
      * @param enableAWSOrganizationsAccessRequest
      * @return Result of the EnableAWSOrganizationsAccess operation returned by the service.
@@ -1103,7 +1148,7 @@ public interface AWSServiceCatalog {
     /**
      * <p>
      * Get the Access Status for AWS Organization portfolio share feature. This API can only be called by the master
-     * account in the organization.
+     * account in the organization or by a delegated admin.
      * </p>
      * 
      * @param getAWSOrganizationsAccessStatusRequest
@@ -1190,7 +1235,10 @@ public interface AWSServiceCatalog {
     /**
      * <p>
      * Lists the organization nodes that have access to the specified portfolio. This API can only be called by the
-     * master account in the organization.
+     * master account in the organization or by a delegated admin.
+     * </p>
+     * <p>
+     * If a delegated admin is de-registered, they can no longer perform this operation.
      * </p>
      * 
      * @param listOrganizationPortfolioAccessRequest
@@ -1210,6 +1258,10 @@ public interface AWSServiceCatalog {
     /**
      * <p>
      * Lists the account IDs that have access to the specified portfolio.
+     * </p>
+     * <p>
+     * A delegated admin can list the accounts that have access to the shared portfolio. Note that if a delegated admin
+     * is de-registered, they can no longer perform this operation.
      * </p>
      * 
      * @param listPortfolioAccessRequest

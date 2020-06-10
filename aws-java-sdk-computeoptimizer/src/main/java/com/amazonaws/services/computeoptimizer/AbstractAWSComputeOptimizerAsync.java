@@ -28,6 +28,51 @@ public class AbstractAWSComputeOptimizerAsync extends AbstractAWSComputeOptimize
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeRecommendationExportJobsResult> describeRecommendationExportJobsAsync(
+            DescribeRecommendationExportJobsRequest request) {
+
+        return describeRecommendationExportJobsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRecommendationExportJobsResult> describeRecommendationExportJobsAsync(
+            DescribeRecommendationExportJobsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeRecommendationExportJobsRequest, DescribeRecommendationExportJobsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExportAutoScalingGroupRecommendationsResult> exportAutoScalingGroupRecommendationsAsync(
+            ExportAutoScalingGroupRecommendationsRequest request) {
+
+        return exportAutoScalingGroupRecommendationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExportAutoScalingGroupRecommendationsResult> exportAutoScalingGroupRecommendationsAsync(
+            ExportAutoScalingGroupRecommendationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ExportAutoScalingGroupRecommendationsRequest, ExportAutoScalingGroupRecommendationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExportEC2InstanceRecommendationsResult> exportEC2InstanceRecommendationsAsync(
+            ExportEC2InstanceRecommendationsRequest request) {
+
+        return exportEC2InstanceRecommendationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExportEC2InstanceRecommendationsResult> exportEC2InstanceRecommendationsAsync(
+            ExportEC2InstanceRecommendationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ExportEC2InstanceRecommendationsRequest, ExportEC2InstanceRecommendationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetAutoScalingGroupRecommendationsResult> getAutoScalingGroupRecommendationsAsync(
             GetAutoScalingGroupRecommendationsRequest request) {
 

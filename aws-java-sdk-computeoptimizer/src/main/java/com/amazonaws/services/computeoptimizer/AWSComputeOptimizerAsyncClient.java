@@ -32,8 +32,9 @@ import java.util.concurrent.ExecutorService;
  * provides recent utilization metric data, as well as projected utilization metric data for the recommendations, which
  * you can use to evaluate which recommendation provides the best price-performance trade-off. The analysis of your
  * usage patterns can help you decide when to move or resize your running resources, and still meet your performance and
- * capacity requirements. For more information about Compute Optimizer, see the <a
- * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/">AWS Compute Optimizer User Guide</a>.
+ * capacity requirements. For more information about Compute Optimizer, including the required permissions to use the
+ * service, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/">AWS Compute Optimizer User
+ * Guide</a>.
  * </p>
  */
 @ThreadSafe
@@ -80,6 +81,111 @@ public class AWSComputeOptimizerAsyncClient extends AWSComputeOptimizerClient im
      */
     public ExecutorService getExecutorService() {
         return executorService;
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRecommendationExportJobsResult> describeRecommendationExportJobsAsync(
+            DescribeRecommendationExportJobsRequest request) {
+
+        return describeRecommendationExportJobsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRecommendationExportJobsResult> describeRecommendationExportJobsAsync(
+            final DescribeRecommendationExportJobsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeRecommendationExportJobsRequest, DescribeRecommendationExportJobsResult> asyncHandler) {
+        final DescribeRecommendationExportJobsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeRecommendationExportJobsResult>() {
+            @Override
+            public DescribeRecommendationExportJobsResult call() throws Exception {
+                DescribeRecommendationExportJobsResult result = null;
+
+                try {
+                    result = executeDescribeRecommendationExportJobs(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExportAutoScalingGroupRecommendationsResult> exportAutoScalingGroupRecommendationsAsync(
+            ExportAutoScalingGroupRecommendationsRequest request) {
+
+        return exportAutoScalingGroupRecommendationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExportAutoScalingGroupRecommendationsResult> exportAutoScalingGroupRecommendationsAsync(
+            final ExportAutoScalingGroupRecommendationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ExportAutoScalingGroupRecommendationsRequest, ExportAutoScalingGroupRecommendationsResult> asyncHandler) {
+        final ExportAutoScalingGroupRecommendationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ExportAutoScalingGroupRecommendationsResult>() {
+            @Override
+            public ExportAutoScalingGroupRecommendationsResult call() throws Exception {
+                ExportAutoScalingGroupRecommendationsResult result = null;
+
+                try {
+                    result = executeExportAutoScalingGroupRecommendations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExportEC2InstanceRecommendationsResult> exportEC2InstanceRecommendationsAsync(
+            ExportEC2InstanceRecommendationsRequest request) {
+
+        return exportEC2InstanceRecommendationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExportEC2InstanceRecommendationsResult> exportEC2InstanceRecommendationsAsync(
+            final ExportEC2InstanceRecommendationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ExportEC2InstanceRecommendationsRequest, ExportEC2InstanceRecommendationsResult> asyncHandler) {
+        final ExportEC2InstanceRecommendationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ExportEC2InstanceRecommendationsResult>() {
+            @Override
+            public ExportEC2InstanceRecommendationsResult call() throws Exception {
+                ExportEC2InstanceRecommendationsResult result = null;
+
+                try {
+                    result = executeExportEC2InstanceRecommendations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override
