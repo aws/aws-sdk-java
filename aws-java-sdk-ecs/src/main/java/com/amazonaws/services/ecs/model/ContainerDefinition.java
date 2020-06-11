@@ -698,7 +698,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
     private java.util.Map<String, String> dockerLabels;
     /**
      * <p>
-     * A list of <code>ulimits</code> to set in the container. This parameter maps to <code>Ulimits</code> in the <a
+     * A list of <code>ulimits</code> to set in the container. If a ulimit value is specified in a task definition, it
+     * will override the default values set by Docker. This parameter maps to <code>Ulimits</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
      * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--ulimit</code> option to
      * <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Valid naming values are displayed in the
@@ -5935,7 +5936,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A list of <code>ulimits</code> to set in the container. This parameter maps to <code>Ulimits</code> in the <a
+     * A list of <code>ulimits</code> to set in the container. If a ulimit value is specified in a task definition, it
+     * will override the default values set by Docker. This parameter maps to <code>Ulimits</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
      * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--ulimit</code> option to
      * <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Valid naming values are displayed in the
@@ -5949,9 +5951,11 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * </note>
      * 
-     * @return A list of <code>ulimits</code> to set in the container. This parameter maps to <code>Ulimits</code> in
-     *         the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a>
-     *         section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+     * @return A list of <code>ulimits</code> to set in the container. If a ulimit value is specified in a task
+     *         definition, it will override the default values set by Docker. This parameter maps to
+     *         <code>Ulimits</code> in the <a
+     *         href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
+     *         of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      *         <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      *         Valid naming values are displayed in the <a>Ulimit</a> data type. This parameter requires version 1.18 of
      *         the Docker Remote API or greater on your container instance. To check the Docker Remote API version on
@@ -5971,7 +5975,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A list of <code>ulimits</code> to set in the container. This parameter maps to <code>Ulimits</code> in the <a
+     * A list of <code>ulimits</code> to set in the container. If a ulimit value is specified in a task definition, it
+     * will override the default values set by Docker. This parameter maps to <code>Ulimits</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
      * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--ulimit</code> option to
      * <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Valid naming values are displayed in the
@@ -5986,13 +5991,14 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </note>
      * 
      * @param ulimits
-     *        A list of <code>ulimits</code> to set in the container. This parameter maps to <code>Ulimits</code> in the
-     *        <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a>
-     *        section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
-     *        <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
-     *        Valid naming values are displayed in the <a>Ulimit</a> data type. This parameter requires version 1.18 of
-     *        the Docker Remote API or greater on your container instance. To check the Docker Remote API version on
-     *        your container instance, log in to your container instance and run the following command:
+     *        A list of <code>ulimits</code> to set in the container. If a ulimit value is specified in a task
+     *        definition, it will override the default values set by Docker. This parameter maps to <code>Ulimits</code>
+     *        in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a
+     *        container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and
+     *        the <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+     *        run</a>. Valid naming values are displayed in the <a>Ulimit</a> data type. This parameter requires version
+     *        1.18 of the Docker Remote API or greater on your container instance. To check the Docker Remote API
+     *        version on your container instance, log in to your container instance and run the following command:
      *        <code>sudo docker version --format '{{.Server.APIVersion}}'</code> </p> <note>
      *        <p>
      *        This parameter is not supported for Windows containers.
@@ -6010,7 +6016,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A list of <code>ulimits</code> to set in the container. This parameter maps to <code>Ulimits</code> in the <a
+     * A list of <code>ulimits</code> to set in the container. If a ulimit value is specified in a task definition, it
+     * will override the default values set by Docker. This parameter maps to <code>Ulimits</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
      * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--ulimit</code> option to
      * <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Valid naming values are displayed in the
@@ -6030,13 +6037,14 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param ulimits
-     *        A list of <code>ulimits</code> to set in the container. This parameter maps to <code>Ulimits</code> in the
-     *        <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a>
-     *        section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
-     *        <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
-     *        Valid naming values are displayed in the <a>Ulimit</a> data type. This parameter requires version 1.18 of
-     *        the Docker Remote API or greater on your container instance. To check the Docker Remote API version on
-     *        your container instance, log in to your container instance and run the following command:
+     *        A list of <code>ulimits</code> to set in the container. If a ulimit value is specified in a task
+     *        definition, it will override the default values set by Docker. This parameter maps to <code>Ulimits</code>
+     *        in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a
+     *        container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and
+     *        the <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+     *        run</a>. Valid naming values are displayed in the <a>Ulimit</a> data type. This parameter requires version
+     *        1.18 of the Docker Remote API or greater on your container instance. To check the Docker Remote API
+     *        version on your container instance, log in to your container instance and run the following command:
      *        <code>sudo docker version --format '{{.Server.APIVersion}}'</code> </p> <note>
      *        <p>
      *        This parameter is not supported for Windows containers.
@@ -6056,7 +6064,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A list of <code>ulimits</code> to set in the container. This parameter maps to <code>Ulimits</code> in the <a
+     * A list of <code>ulimits</code> to set in the container. If a ulimit value is specified in a task definition, it
+     * will override the default values set by Docker. This parameter maps to <code>Ulimits</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
      * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--ulimit</code> option to
      * <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Valid naming values are displayed in the
@@ -6071,13 +6080,14 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </note>
      * 
      * @param ulimits
-     *        A list of <code>ulimits</code> to set in the container. This parameter maps to <code>Ulimits</code> in the
-     *        <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a>
-     *        section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
-     *        <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
-     *        Valid naming values are displayed in the <a>Ulimit</a> data type. This parameter requires version 1.18 of
-     *        the Docker Remote API or greater on your container instance. To check the Docker Remote API version on
-     *        your container instance, log in to your container instance and run the following command:
+     *        A list of <code>ulimits</code> to set in the container. If a ulimit value is specified in a task
+     *        definition, it will override the default values set by Docker. This parameter maps to <code>Ulimits</code>
+     *        in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a
+     *        container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and
+     *        the <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+     *        run</a>. Valid naming values are displayed in the <a>Ulimit</a> data type. This parameter requires version
+     *        1.18 of the Docker Remote API or greater on your container instance. To check the Docker Remote API
+     *        version on your container instance, log in to your container instance and run the following command:
      *        <code>sudo docker version --format '{{.Server.APIVersion}}'</code> </p> <note>
      *        <p>
      *        This parameter is not supported for Windows containers.

@@ -54,6 +54,19 @@ public class AbstractAWSIotDataAsync extends AbstractAWSIotData implements AWSIo
     }
 
     @Override
+    public java.util.concurrent.Future<ListNamedShadowsForThingResult> listNamedShadowsForThingAsync(ListNamedShadowsForThingRequest request) {
+
+        return listNamedShadowsForThingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListNamedShadowsForThingResult> listNamedShadowsForThingAsync(ListNamedShadowsForThingRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListNamedShadowsForThingRequest, ListNamedShadowsForThingResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<PublishResult> publishAsync(PublishRequest request) {
 
         return publishAsync(request, null);

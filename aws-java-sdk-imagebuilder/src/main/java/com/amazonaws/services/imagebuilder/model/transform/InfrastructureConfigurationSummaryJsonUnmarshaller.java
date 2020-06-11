@@ -68,6 +68,11 @@ public class InfrastructureConfigurationSummaryJsonUnmarshaller implements Unmar
                     context.nextToken();
                     infrastructureConfigurationSummary.setDateUpdated(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("resourceTags", targetDepth)) {
+                    context.nextToken();
+                    infrastructureConfigurationSummary.setResourceTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(String.class)).unmarshall(context));
+                }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
                     infrastructureConfigurationSummary.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context

@@ -44,8 +44,11 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
     private String taskRoleArn;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS container agent and the Docker
-     * daemon can assume.
+     * The Amazon Resource Name (ARN) of the task execution role that grants the Amazon ECS container agent permission
+     * to make AWS API calls on your behalf. The task execution IAM role is required depending on the requirements of
+     * your task. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS task
+     * execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      */
     private String executionRoleArn;
@@ -463,13 +466,19 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS container agent and the Docker
-     * daemon can assume.
+     * The Amazon Resource Name (ARN) of the task execution role that grants the Amazon ECS container agent permission
+     * to make AWS API calls on your behalf. The task execution IAM role is required depending on the requirements of
+     * your task. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS task
+     * execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param executionRoleArn
-     *        The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS container agent and the
-     *        Docker daemon can assume.
+     *        The Amazon Resource Name (ARN) of the task execution role that grants the Amazon ECS container agent
+     *        permission to make AWS API calls on your behalf. The task execution IAM role is required depending on the
+     *        requirements of your task. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS
+     *        task execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public void setExecutionRoleArn(String executionRoleArn) {
@@ -478,12 +487,18 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS container agent and the Docker
-     * daemon can assume.
+     * The Amazon Resource Name (ARN) of the task execution role that grants the Amazon ECS container agent permission
+     * to make AWS API calls on your behalf. The task execution IAM role is required depending on the requirements of
+     * your task. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS task
+     * execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS container agent and the
-     *         Docker daemon can assume.
+     * @return The Amazon Resource Name (ARN) of the task execution role that grants the Amazon ECS container agent
+     *         permission to make AWS API calls on your behalf. The task execution IAM role is required depending on the
+     *         requirements of your task. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
+     *         ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public String getExecutionRoleArn() {
@@ -492,13 +507,19 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS container agent and the Docker
-     * daemon can assume.
+     * The Amazon Resource Name (ARN) of the task execution role that grants the Amazon ECS container agent permission
+     * to make AWS API calls on your behalf. The task execution IAM role is required depending on the requirements of
+     * your task. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS task
+     * execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param executionRoleArn
-     *        The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS container agent and the
-     *        Docker daemon can assume.
+     *        The Amazon Resource Name (ARN) of the task execution role that grants the Amazon ECS container agent
+     *        permission to make AWS API calls on your behalf. The task execution IAM role is required depending on the
+     *        requirements of your task. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS
+     *        task execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -66,11 +66,11 @@ public class Slot implements Serializable, Cloneable, StructuredPojo {
     private Prompt valueElicitationPrompt;
     /**
      * <p>
-     * Directs Lex the order in which to elicit this slot value from the user. For example, if the intent has two slots
-     * with priorities 1 and 2, AWS Lex first elicits a value for the slot with priority 1.
+     * Directs Amazon Lex the order in which to elicit this slot value from the user. For example, if the intent has two
+     * slots with priorities 1 and 2, AWS Amazon Lex first elicits a value for the slot with priority 1.
      * </p>
      * <p>
-     * If multiple slots share the same priority, the order in which Lex elicits values is arbitrary.
+     * If multiple slots share the same priority, the order in which Amazon Lex elicits values is arbitrary.
      * </p>
      */
     private Integer priority;
@@ -374,18 +374,19 @@ public class Slot implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Directs Lex the order in which to elicit this slot value from the user. For example, if the intent has two slots
-     * with priorities 1 and 2, AWS Lex first elicits a value for the slot with priority 1.
+     * Directs Amazon Lex the order in which to elicit this slot value from the user. For example, if the intent has two
+     * slots with priorities 1 and 2, AWS Amazon Lex first elicits a value for the slot with priority 1.
      * </p>
      * <p>
-     * If multiple slots share the same priority, the order in which Lex elicits values is arbitrary.
+     * If multiple slots share the same priority, the order in which Amazon Lex elicits values is arbitrary.
      * </p>
      * 
      * @param priority
-     *        Directs Lex the order in which to elicit this slot value from the user. For example, if the intent has two
-     *        slots with priorities 1 and 2, AWS Lex first elicits a value for the slot with priority 1.</p>
+     *        Directs Amazon Lex the order in which to elicit this slot value from the user. For example, if the intent
+     *        has two slots with priorities 1 and 2, AWS Amazon Lex first elicits a value for the slot with priority
+     *        1.</p>
      *        <p>
-     *        If multiple slots share the same priority, the order in which Lex elicits values is arbitrary.
+     *        If multiple slots share the same priority, the order in which Amazon Lex elicits values is arbitrary.
      */
 
     public void setPriority(Integer priority) {
@@ -394,17 +395,18 @@ public class Slot implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Directs Lex the order in which to elicit this slot value from the user. For example, if the intent has two slots
-     * with priorities 1 and 2, AWS Lex first elicits a value for the slot with priority 1.
+     * Directs Amazon Lex the order in which to elicit this slot value from the user. For example, if the intent has two
+     * slots with priorities 1 and 2, AWS Amazon Lex first elicits a value for the slot with priority 1.
      * </p>
      * <p>
-     * If multiple slots share the same priority, the order in which Lex elicits values is arbitrary.
+     * If multiple slots share the same priority, the order in which Amazon Lex elicits values is arbitrary.
      * </p>
      * 
-     * @return Directs Lex the order in which to elicit this slot value from the user. For example, if the intent has
-     *         two slots with priorities 1 and 2, AWS Lex first elicits a value for the slot with priority 1.</p>
+     * @return Directs Amazon Lex the order in which to elicit this slot value from the user. For example, if the intent
+     *         has two slots with priorities 1 and 2, AWS Amazon Lex first elicits a value for the slot with priority
+     *         1.</p>
      *         <p>
-     *         If multiple slots share the same priority, the order in which Lex elicits values is arbitrary.
+     *         If multiple slots share the same priority, the order in which Amazon Lex elicits values is arbitrary.
      */
 
     public Integer getPriority() {
@@ -413,18 +415,19 @@ public class Slot implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Directs Lex the order in which to elicit this slot value from the user. For example, if the intent has two slots
-     * with priorities 1 and 2, AWS Lex first elicits a value for the slot with priority 1.
+     * Directs Amazon Lex the order in which to elicit this slot value from the user. For example, if the intent has two
+     * slots with priorities 1 and 2, AWS Amazon Lex first elicits a value for the slot with priority 1.
      * </p>
      * <p>
-     * If multiple slots share the same priority, the order in which Lex elicits values is arbitrary.
+     * If multiple slots share the same priority, the order in which Amazon Lex elicits values is arbitrary.
      * </p>
      * 
      * @param priority
-     *        Directs Lex the order in which to elicit this slot value from the user. For example, if the intent has two
-     *        slots with priorities 1 and 2, AWS Lex first elicits a value for the slot with priority 1.</p>
+     *        Directs Amazon Lex the order in which to elicit this slot value from the user. For example, if the intent
+     *        has two slots with priorities 1 and 2, AWS Amazon Lex first elicits a value for the slot with priority
+     *        1.</p>
      *        <p>
-     *        If multiple slots share the same priority, the order in which Lex elicits values is arbitrary.
+     *        If multiple slots share the same priority, the order in which Amazon Lex elicits values is arbitrary.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

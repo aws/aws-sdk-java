@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A data volume used in a task definition. For tasks that use a Docker volume, specify a
+ * A data volume used in a task definition. For tasks that use Amazon Elastic File System (Amazon EFS) file storage,
+ * specify an <code>efsVolumeConfiguration</code>. For tasks that use a Docker volume, specify a
  * <code>DockerVolumeConfiguration</code>. For tasks that use a bind mount host volume, specify a <code>host</code> and
  * optional <code>sourcePath</code>. For more information, see <a
  * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using Data Volumes in
@@ -40,11 +41,10 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * This parameter is specified when you are using bind mount host volumes. Bind mount host volumes are supported
-     * when you are using either the EC2 or Fargate launch types. The contents of the <code>host</code> parameter
-     * determine whether your bind mount host volume persists on the host container instance and where it is stored. If
-     * the <code>host</code> parameter is empty, then the Docker daemon assigns a host path for your data volume.
-     * However, the data is not guaranteed to persist after the containers associated with it stop running.
+     * This parameter is specified when you are using bind mount host volumes. The contents of the <code>host</code>
+     * parameter determine whether your bind mount host volume persists on the host container instance and where it is
+     * stored. If the <code>host</code> parameter is empty, then the Docker daemon assigns a host path for your data
+     * volume. However, the data is not guaranteed to persist after the containers associated with it stop running.
      * </p>
      * <p>
      * Windows containers can mount whole directories on the same drive as <code>$env:ProgramData</code>. Windows
@@ -64,17 +64,8 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
     private DockerVolumeConfiguration dockerVolumeConfiguration;
     /**
      * <p>
-     * This parameter is specified when you are using an Amazon Elastic File System (Amazon EFS) file storage. Amazon
-     * EFS file systems are only supported when you are using the EC2 launch type.
+     * This parameter is specified when you are using an Amazon Elastic File System file system for task storage.
      * </p>
-     * <important>
-     * <p>
-     * <code>EFSVolumeConfiguration</code> remains in preview and is a Beta Service as defined by and subject to the
-     * Beta Service Participation Service Terms located at <a
-     * href="https://aws.amazon.com/service-terms">https://aws.amazon.com/service-terms</a> ("Beta Terms"). These Beta
-     * Terms apply to your participation in this preview of <code>EFSVolumeConfiguration</code>.
-     * </p>
-     * </important>
      */
     private EFSVolumeConfiguration efsVolumeConfiguration;
 
@@ -129,11 +120,10 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This parameter is specified when you are using bind mount host volumes. Bind mount host volumes are supported
-     * when you are using either the EC2 or Fargate launch types. The contents of the <code>host</code> parameter
-     * determine whether your bind mount host volume persists on the host container instance and where it is stored. If
-     * the <code>host</code> parameter is empty, then the Docker daemon assigns a host path for your data volume.
-     * However, the data is not guaranteed to persist after the containers associated with it stop running.
+     * This parameter is specified when you are using bind mount host volumes. The contents of the <code>host</code>
+     * parameter determine whether your bind mount host volume persists on the host container instance and where it is
+     * stored. If the <code>host</code> parameter is empty, then the Docker daemon assigns a host path for your data
+     * volume. However, the data is not guaranteed to persist after the containers associated with it stop running.
      * </p>
      * <p>
      * Windows containers can mount whole directories on the same drive as <code>$env:ProgramData</code>. Windows
@@ -143,12 +133,11 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param host
-     *        This parameter is specified when you are using bind mount host volumes. Bind mount host volumes are
-     *        supported when you are using either the EC2 or Fargate launch types. The contents of the <code>host</code>
-     *        parameter determine whether your bind mount host volume persists on the host container instance and where
-     *        it is stored. If the <code>host</code> parameter is empty, then the Docker daemon assigns a host path for
-     *        your data volume. However, the data is not guaranteed to persist after the containers associated with it
-     *        stop running.</p>
+     *        This parameter is specified when you are using bind mount host volumes. The contents of the
+     *        <code>host</code> parameter determine whether your bind mount host volume persists on the host container
+     *        instance and where it is stored. If the <code>host</code> parameter is empty, then the Docker daemon
+     *        assigns a host path for your data volume. However, the data is not guaranteed to persist after the
+     *        containers associated with it stop running.</p>
      *        <p>
      *        Windows containers can mount whole directories on the same drive as <code>$env:ProgramData</code>. Windows
      *        containers cannot mount directories on a different drive, and mount point cannot be across drives. For
@@ -162,11 +151,10 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This parameter is specified when you are using bind mount host volumes. Bind mount host volumes are supported
-     * when you are using either the EC2 or Fargate launch types. The contents of the <code>host</code> parameter
-     * determine whether your bind mount host volume persists on the host container instance and where it is stored. If
-     * the <code>host</code> parameter is empty, then the Docker daemon assigns a host path for your data volume.
-     * However, the data is not guaranteed to persist after the containers associated with it stop running.
+     * This parameter is specified when you are using bind mount host volumes. The contents of the <code>host</code>
+     * parameter determine whether your bind mount host volume persists on the host container instance and where it is
+     * stored. If the <code>host</code> parameter is empty, then the Docker daemon assigns a host path for your data
+     * volume. However, the data is not guaranteed to persist after the containers associated with it stop running.
      * </p>
      * <p>
      * Windows containers can mount whole directories on the same drive as <code>$env:ProgramData</code>. Windows
@@ -175,8 +163,7 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      * <code>D:\my\path:C:\my\path</code> or <code>D:\:C:\my\path</code>.
      * </p>
      * 
-     * @return This parameter is specified when you are using bind mount host volumes. Bind mount host volumes are
-     *         supported when you are using either the EC2 or Fargate launch types. The contents of the
+     * @return This parameter is specified when you are using bind mount host volumes. The contents of the
      *         <code>host</code> parameter determine whether your bind mount host volume persists on the host container
      *         instance and where it is stored. If the <code>host</code> parameter is empty, then the Docker daemon
      *         assigns a host path for your data volume. However, the data is not guaranteed to persist after the
@@ -194,11 +181,10 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This parameter is specified when you are using bind mount host volumes. Bind mount host volumes are supported
-     * when you are using either the EC2 or Fargate launch types. The contents of the <code>host</code> parameter
-     * determine whether your bind mount host volume persists on the host container instance and where it is stored. If
-     * the <code>host</code> parameter is empty, then the Docker daemon assigns a host path for your data volume.
-     * However, the data is not guaranteed to persist after the containers associated with it stop running.
+     * This parameter is specified when you are using bind mount host volumes. The contents of the <code>host</code>
+     * parameter determine whether your bind mount host volume persists on the host container instance and where it is
+     * stored. If the <code>host</code> parameter is empty, then the Docker daemon assigns a host path for your data
+     * volume. However, the data is not guaranteed to persist after the containers associated with it stop running.
      * </p>
      * <p>
      * Windows containers can mount whole directories on the same drive as <code>$env:ProgramData</code>. Windows
@@ -208,12 +194,11 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param host
-     *        This parameter is specified when you are using bind mount host volumes. Bind mount host volumes are
-     *        supported when you are using either the EC2 or Fargate launch types. The contents of the <code>host</code>
-     *        parameter determine whether your bind mount host volume persists on the host container instance and where
-     *        it is stored. If the <code>host</code> parameter is empty, then the Docker daemon assigns a host path for
-     *        your data volume. However, the data is not guaranteed to persist after the containers associated with it
-     *        stop running.</p>
+     *        This parameter is specified when you are using bind mount host volumes. The contents of the
+     *        <code>host</code> parameter determine whether your bind mount host volume persists on the host container
+     *        instance and where it is stored. If the <code>host</code> parameter is empty, then the Docker daemon
+     *        assigns a host path for your data volume. However, the data is not guaranteed to persist after the
+     *        containers associated with it stop running.</p>
      *        <p>
      *        Windows containers can mount whole directories on the same drive as <code>$env:ProgramData</code>. Windows
      *        containers cannot mount directories on a different drive, and mount point cannot be across drives. For
@@ -281,27 +266,11 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This parameter is specified when you are using an Amazon Elastic File System (Amazon EFS) file storage. Amazon
-     * EFS file systems are only supported when you are using the EC2 launch type.
+     * This parameter is specified when you are using an Amazon Elastic File System file system for task storage.
      * </p>
-     * <important>
-     * <p>
-     * <code>EFSVolumeConfiguration</code> remains in preview and is a Beta Service as defined by and subject to the
-     * Beta Service Participation Service Terms located at <a
-     * href="https://aws.amazon.com/service-terms">https://aws.amazon.com/service-terms</a> ("Beta Terms"). These Beta
-     * Terms apply to your participation in this preview of <code>EFSVolumeConfiguration</code>.
-     * </p>
-     * </important>
      * 
      * @param efsVolumeConfiguration
-     *        This parameter is specified when you are using an Amazon Elastic File System (Amazon EFS) file storage.
-     *        Amazon EFS file systems are only supported when you are using the EC2 launch type.</p> <important>
-     *        <p>
-     *        <code>EFSVolumeConfiguration</code> remains in preview and is a Beta Service as defined by and subject to
-     *        the Beta Service Participation Service Terms located at <a
-     *        href="https://aws.amazon.com/service-terms">https://aws.amazon.com/service-terms</a> ("Beta Terms"). These
-     *        Beta Terms apply to your participation in this preview of <code>EFSVolumeConfiguration</code>.
-     *        </p>
+     *        This parameter is specified when you are using an Amazon Elastic File System file system for task storage.
      */
 
     public void setEfsVolumeConfiguration(EFSVolumeConfiguration efsVolumeConfiguration) {
@@ -310,26 +279,11 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This parameter is specified when you are using an Amazon Elastic File System (Amazon EFS) file storage. Amazon
-     * EFS file systems are only supported when you are using the EC2 launch type.
+     * This parameter is specified when you are using an Amazon Elastic File System file system for task storage.
      * </p>
-     * <important>
-     * <p>
-     * <code>EFSVolumeConfiguration</code> remains in preview and is a Beta Service as defined by and subject to the
-     * Beta Service Participation Service Terms located at <a
-     * href="https://aws.amazon.com/service-terms">https://aws.amazon.com/service-terms</a> ("Beta Terms"). These Beta
-     * Terms apply to your participation in this preview of <code>EFSVolumeConfiguration</code>.
-     * </p>
-     * </important>
      * 
-     * @return This parameter is specified when you are using an Amazon Elastic File System (Amazon EFS) file storage.
-     *         Amazon EFS file systems are only supported when you are using the EC2 launch type.</p> <important>
-     *         <p>
-     *         <code>EFSVolumeConfiguration</code> remains in preview and is a Beta Service as defined by and subject to
-     *         the Beta Service Participation Service Terms located at <a
-     *         href="https://aws.amazon.com/service-terms">https://aws.amazon.com/service-terms</a> ("Beta Terms").
-     *         These Beta Terms apply to your participation in this preview of <code>EFSVolumeConfiguration</code>.
-     *         </p>
+     * @return This parameter is specified when you are using an Amazon Elastic File System file system for task
+     *         storage.
      */
 
     public EFSVolumeConfiguration getEfsVolumeConfiguration() {
@@ -338,27 +292,11 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This parameter is specified when you are using an Amazon Elastic File System (Amazon EFS) file storage. Amazon
-     * EFS file systems are only supported when you are using the EC2 launch type.
+     * This parameter is specified when you are using an Amazon Elastic File System file system for task storage.
      * </p>
-     * <important>
-     * <p>
-     * <code>EFSVolumeConfiguration</code> remains in preview and is a Beta Service as defined by and subject to the
-     * Beta Service Participation Service Terms located at <a
-     * href="https://aws.amazon.com/service-terms">https://aws.amazon.com/service-terms</a> ("Beta Terms"). These Beta
-     * Terms apply to your participation in this preview of <code>EFSVolumeConfiguration</code>.
-     * </p>
-     * </important>
      * 
      * @param efsVolumeConfiguration
-     *        This parameter is specified when you are using an Amazon Elastic File System (Amazon EFS) file storage.
-     *        Amazon EFS file systems are only supported when you are using the EC2 launch type.</p> <important>
-     *        <p>
-     *        <code>EFSVolumeConfiguration</code> remains in preview and is a Beta Service as defined by and subject to
-     *        the Beta Service Participation Service Terms located at <a
-     *        href="https://aws.amazon.com/service-terms">https://aws.amazon.com/service-terms</a> ("Beta Terms"). These
-     *        Beta Terms apply to your participation in this preview of <code>EFSVolumeConfiguration</code>.
-     *        </p>
+     *        This parameter is specified when you are using an Amazon Elastic File System file system for task storage.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

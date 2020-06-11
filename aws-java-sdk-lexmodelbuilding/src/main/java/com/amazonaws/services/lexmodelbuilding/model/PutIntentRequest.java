@@ -204,6 +204,15 @@ public class PutIntentRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      */
     private Boolean createVersion;
+    /**
+     * <p>
+     * Configuration information required to use the <code>AMAZON.KendraSearchIntent</code> intent to connect to an
+     * Amazon Kendra index. For more information, see <a
+     * href="http://docs.aws.amazon.com/lex/latest/dg/built-in-intent-kendra-search.html">
+     * AMAZON.KendraSearchIntent</a>.
+     * </p>
+     */
+    private KendraConfiguration kendraConfiguration;
 
     /**
      * <p>
@@ -1400,6 +1409,64 @@ public class PutIntentRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
+     * Configuration information required to use the <code>AMAZON.KendraSearchIntent</code> intent to connect to an
+     * Amazon Kendra index. For more information, see <a
+     * href="http://docs.aws.amazon.com/lex/latest/dg/built-in-intent-kendra-search.html">
+     * AMAZON.KendraSearchIntent</a>.
+     * </p>
+     * 
+     * @param kendraConfiguration
+     *        Configuration information required to use the <code>AMAZON.KendraSearchIntent</code> intent to connect to
+     *        an Amazon Kendra index. For more information, see <a
+     *        href="http://docs.aws.amazon.com/lex/latest/dg/built-in-intent-kendra-search.html">
+     *        AMAZON.KendraSearchIntent</a>.
+     */
+
+    public void setKendraConfiguration(KendraConfiguration kendraConfiguration) {
+        this.kendraConfiguration = kendraConfiguration;
+    }
+
+    /**
+     * <p>
+     * Configuration information required to use the <code>AMAZON.KendraSearchIntent</code> intent to connect to an
+     * Amazon Kendra index. For more information, see <a
+     * href="http://docs.aws.amazon.com/lex/latest/dg/built-in-intent-kendra-search.html">
+     * AMAZON.KendraSearchIntent</a>.
+     * </p>
+     * 
+     * @return Configuration information required to use the <code>AMAZON.KendraSearchIntent</code> intent to connect to
+     *         an Amazon Kendra index. For more information, see <a
+     *         href="http://docs.aws.amazon.com/lex/latest/dg/built-in-intent-kendra-search.html">
+     *         AMAZON.KendraSearchIntent</a>.
+     */
+
+    public KendraConfiguration getKendraConfiguration() {
+        return this.kendraConfiguration;
+    }
+
+    /**
+     * <p>
+     * Configuration information required to use the <code>AMAZON.KendraSearchIntent</code> intent to connect to an
+     * Amazon Kendra index. For more information, see <a
+     * href="http://docs.aws.amazon.com/lex/latest/dg/built-in-intent-kendra-search.html">
+     * AMAZON.KendraSearchIntent</a>.
+     * </p>
+     * 
+     * @param kendraConfiguration
+     *        Configuration information required to use the <code>AMAZON.KendraSearchIntent</code> intent to connect to
+     *        an Amazon Kendra index. For more information, see <a
+     *        href="http://docs.aws.amazon.com/lex/latest/dg/built-in-intent-kendra-search.html">
+     *        AMAZON.KendraSearchIntent</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutIntentRequest withKendraConfiguration(KendraConfiguration kendraConfiguration) {
+        setKendraConfiguration(kendraConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1436,7 +1503,9 @@ public class PutIntentRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (getChecksum() != null)
             sb.append("Checksum: ").append(getChecksum()).append(",");
         if (getCreateVersion() != null)
-            sb.append("CreateVersion: ").append(getCreateVersion());
+            sb.append("CreateVersion: ").append(getCreateVersion()).append(",");
+        if (getKendraConfiguration() != null)
+            sb.append("KendraConfiguration: ").append(getKendraConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -1503,6 +1572,10 @@ public class PutIntentRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getCreateVersion() != null && other.getCreateVersion().equals(this.getCreateVersion()) == false)
             return false;
+        if (other.getKendraConfiguration() == null ^ this.getKendraConfiguration() == null)
+            return false;
+        if (other.getKendraConfiguration() != null && other.getKendraConfiguration().equals(this.getKendraConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -1524,6 +1597,7 @@ public class PutIntentRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getParentIntentSignature() == null) ? 0 : getParentIntentSignature().hashCode());
         hashCode = prime * hashCode + ((getChecksum() == null) ? 0 : getChecksum().hashCode());
         hashCode = prime * hashCode + ((getCreateVersion() == null) ? 0 : getCreateVersion().hashCode());
+        hashCode = prime * hashCode + ((getKendraConfiguration() == null) ? 0 : getKendraConfiguration().hashCode());
         return hashCode;
     }
 

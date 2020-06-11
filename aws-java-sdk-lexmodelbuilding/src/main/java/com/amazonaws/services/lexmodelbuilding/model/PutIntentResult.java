@@ -125,6 +125,13 @@ public class PutIntentResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * </p>
      */
     private Boolean createVersion;
+    /**
+     * <p>
+     * Configuration information, if any, required to connect to an Amazon Kendra index and use the
+     * <code>AMAZON.KendraSearchIntent</code> intent.
+     * </p>
+     */
+    private KendraConfiguration kendraConfiguration;
 
     /**
      * <p>
@@ -877,6 +884,52 @@ public class PutIntentResult extends com.amazonaws.AmazonWebServiceResult<com.am
     }
 
     /**
+     * <p>
+     * Configuration information, if any, required to connect to an Amazon Kendra index and use the
+     * <code>AMAZON.KendraSearchIntent</code> intent.
+     * </p>
+     * 
+     * @param kendraConfiguration
+     *        Configuration information, if any, required to connect to an Amazon Kendra index and use the
+     *        <code>AMAZON.KendraSearchIntent</code> intent.
+     */
+
+    public void setKendraConfiguration(KendraConfiguration kendraConfiguration) {
+        this.kendraConfiguration = kendraConfiguration;
+    }
+
+    /**
+     * <p>
+     * Configuration information, if any, required to connect to an Amazon Kendra index and use the
+     * <code>AMAZON.KendraSearchIntent</code> intent.
+     * </p>
+     * 
+     * @return Configuration information, if any, required to connect to an Amazon Kendra index and use the
+     *         <code>AMAZON.KendraSearchIntent</code> intent.
+     */
+
+    public KendraConfiguration getKendraConfiguration() {
+        return this.kendraConfiguration;
+    }
+
+    /**
+     * <p>
+     * Configuration information, if any, required to connect to an Amazon Kendra index and use the
+     * <code>AMAZON.KendraSearchIntent</code> intent.
+     * </p>
+     * 
+     * @param kendraConfiguration
+     *        Configuration information, if any, required to connect to an Amazon Kendra index and use the
+     *        <code>AMAZON.KendraSearchIntent</code> intent.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutIntentResult withKendraConfiguration(KendraConfiguration kendraConfiguration) {
+        setKendraConfiguration(kendraConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -919,7 +972,9 @@ public class PutIntentResult extends com.amazonaws.AmazonWebServiceResult<com.am
         if (getChecksum() != null)
             sb.append("Checksum: ").append(getChecksum()).append(",");
         if (getCreateVersion() != null)
-            sb.append("CreateVersion: ").append(getCreateVersion());
+            sb.append("CreateVersion: ").append(getCreateVersion()).append(",");
+        if (getKendraConfiguration() != null)
+            sb.append("KendraConfiguration: ").append(getKendraConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -998,6 +1053,10 @@ public class PutIntentResult extends com.amazonaws.AmazonWebServiceResult<com.am
             return false;
         if (other.getCreateVersion() != null && other.getCreateVersion().equals(this.getCreateVersion()) == false)
             return false;
+        if (other.getKendraConfiguration() == null ^ this.getKendraConfiguration() == null)
+            return false;
+        if (other.getKendraConfiguration() != null && other.getKendraConfiguration().equals(this.getKendraConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -1022,6 +1081,7 @@ public class PutIntentResult extends com.amazonaws.AmazonWebServiceResult<com.am
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         hashCode = prime * hashCode + ((getChecksum() == null) ? 0 : getChecksum().hashCode());
         hashCode = prime * hashCode + ((getCreateVersion() == null) ? 0 : getCreateVersion().hashCode());
+        hashCode = prime * hashCode + ((getKendraConfiguration() == null) ? 0 : getKendraConfiguration().hashCode());
         return hashCode;
     }
 

@@ -75,6 +75,12 @@ public class CreateImageRecipeRequest extends com.amazonaws.AmazonWebServiceRequ
     private java.util.Map<String, String> tags;
     /**
      * <p>
+     * The working directory to be used during build and test workflows.
+     * </p>
+     */
+    private String workingDirectory;
+    /**
+     * <p>
      * The idempotency token used to make this request idempotent.
      * </p>
      */
@@ -486,6 +492,46 @@ public class CreateImageRecipeRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
+     * The working directory to be used during build and test workflows.
+     * </p>
+     * 
+     * @param workingDirectory
+     *        The working directory to be used during build and test workflows.
+     */
+
+    public void setWorkingDirectory(String workingDirectory) {
+        this.workingDirectory = workingDirectory;
+    }
+
+    /**
+     * <p>
+     * The working directory to be used during build and test workflows.
+     * </p>
+     * 
+     * @return The working directory to be used during build and test workflows.
+     */
+
+    public String getWorkingDirectory() {
+        return this.workingDirectory;
+    }
+
+    /**
+     * <p>
+     * The working directory to be used during build and test workflows.
+     * </p>
+     * 
+     * @param workingDirectory
+     *        The working directory to be used during build and test workflows.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateImageRecipeRequest withWorkingDirectory(String workingDirectory) {
+        setWorkingDirectory(workingDirectory);
+        return this;
+    }
+
+    /**
+     * <p>
      * The idempotency token used to make this request idempotent.
      * </p>
      * 
@@ -550,6 +596,8 @@ public class CreateImageRecipeRequest extends com.amazonaws.AmazonWebServiceRequ
             sb.append("BlockDeviceMappings: ").append(getBlockDeviceMappings()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
+        if (getWorkingDirectory() != null)
+            sb.append("WorkingDirectory: ").append(getWorkingDirectory()).append(",");
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken());
         sb.append("}");
@@ -594,6 +642,10 @@ public class CreateImageRecipeRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getWorkingDirectory() == null ^ this.getWorkingDirectory() == null)
+            return false;
+        if (other.getWorkingDirectory() != null && other.getWorkingDirectory().equals(this.getWorkingDirectory()) == false)
+            return false;
         if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
@@ -613,6 +665,7 @@ public class CreateImageRecipeRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getParentImage() == null) ? 0 : getParentImage().hashCode());
         hashCode = prime * hashCode + ((getBlockDeviceMappings() == null) ? 0 : getBlockDeviceMappings().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getWorkingDirectory() == null) ? 0 : getWorkingDirectory().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         return hashCode;
     }

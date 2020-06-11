@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum CapacityProviderStatus {
 
-    ACTIVE("ACTIVE");
+    ACTIVE("ACTIVE"),
+    INACTIVE("INACTIVE");
 
     private String value;
 

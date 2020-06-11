@@ -54,6 +54,8 @@ public class PutIntentRequestMarshaller {
             .marshallLocationName("checksum").build();
     private static final MarshallingInfo<Boolean> CREATEVERSION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createVersion").build();
+    private static final MarshallingInfo<StructuredPojo> KENDRACONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("kendraConfiguration").build();
 
     private static final PutIntentRequestMarshaller instance = new PutIntentRequestMarshaller();
 
@@ -84,6 +86,7 @@ public class PutIntentRequestMarshaller {
             protocolMarshaller.marshall(putIntentRequest.getParentIntentSignature(), PARENTINTENTSIGNATURE_BINDING);
             protocolMarshaller.marshall(putIntentRequest.getChecksum(), CHECKSUM_BINDING);
             protocolMarshaller.marshall(putIntentRequest.getCreateVersion(), CREATEVERSION_BINDING);
+            protocolMarshaller.marshall(putIntentRequest.getKendraConfiguration(), KENDRACONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

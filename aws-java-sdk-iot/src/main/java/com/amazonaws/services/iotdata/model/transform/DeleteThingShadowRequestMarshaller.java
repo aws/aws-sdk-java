@@ -29,6 +29,8 @@ public class DeleteThingShadowRequestMarshaller {
 
     private static final MarshallingInfo<String> THINGNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("thingName").build();
+    private static final MarshallingInfo<String> SHADOWNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("name").build();
 
     private static final DeleteThingShadowRequestMarshaller instance = new DeleteThingShadowRequestMarshaller();
 
@@ -47,6 +49,7 @@ public class DeleteThingShadowRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(deleteThingShadowRequest.getThingName(), THINGNAME_BINDING);
+            protocolMarshaller.marshall(deleteThingShadowRequest.getShadowName(), SHADOWNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

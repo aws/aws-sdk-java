@@ -115,6 +115,13 @@ public class CreateIntentVersionResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      */
     private String checksum;
+    /**
+     * <p>
+     * Configuration information, if any, for connectin an Amazon Kendra index with the
+     * <code>AMAZON.KendraSearchIntent</code> intent.
+     * </p>
+     */
+    private KendraConfiguration kendraConfiguration;
 
     /**
      * <p>
@@ -790,6 +797,52 @@ public class CreateIntentVersionResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
+     * Configuration information, if any, for connectin an Amazon Kendra index with the
+     * <code>AMAZON.KendraSearchIntent</code> intent.
+     * </p>
+     * 
+     * @param kendraConfiguration
+     *        Configuration information, if any, for connectin an Amazon Kendra index with the
+     *        <code>AMAZON.KendraSearchIntent</code> intent.
+     */
+
+    public void setKendraConfiguration(KendraConfiguration kendraConfiguration) {
+        this.kendraConfiguration = kendraConfiguration;
+    }
+
+    /**
+     * <p>
+     * Configuration information, if any, for connectin an Amazon Kendra index with the
+     * <code>AMAZON.KendraSearchIntent</code> intent.
+     * </p>
+     * 
+     * @return Configuration information, if any, for connectin an Amazon Kendra index with the
+     *         <code>AMAZON.KendraSearchIntent</code> intent.
+     */
+
+    public KendraConfiguration getKendraConfiguration() {
+        return this.kendraConfiguration;
+    }
+
+    /**
+     * <p>
+     * Configuration information, if any, for connectin an Amazon Kendra index with the
+     * <code>AMAZON.KendraSearchIntent</code> intent.
+     * </p>
+     * 
+     * @param kendraConfiguration
+     *        Configuration information, if any, for connectin an Amazon Kendra index with the
+     *        <code>AMAZON.KendraSearchIntent</code> intent.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateIntentVersionResult withKendraConfiguration(KendraConfiguration kendraConfiguration) {
+        setKendraConfiguration(kendraConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -830,7 +883,9 @@ public class CreateIntentVersionResult extends com.amazonaws.AmazonWebServiceRes
         if (getVersion() != null)
             sb.append("Version: ").append(getVersion()).append(",");
         if (getChecksum() != null)
-            sb.append("Checksum: ").append(getChecksum());
+            sb.append("Checksum: ").append(getChecksum()).append(",");
+        if (getKendraConfiguration() != null)
+            sb.append("KendraConfiguration: ").append(getKendraConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -905,6 +960,10 @@ public class CreateIntentVersionResult extends com.amazonaws.AmazonWebServiceRes
             return false;
         if (other.getChecksum() != null && other.getChecksum().equals(this.getChecksum()) == false)
             return false;
+        if (other.getKendraConfiguration() == null ^ this.getKendraConfiguration() == null)
+            return false;
+        if (other.getKendraConfiguration() != null && other.getKendraConfiguration().equals(this.getKendraConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -928,6 +987,7 @@ public class CreateIntentVersionResult extends com.amazonaws.AmazonWebServiceRes
         hashCode = prime * hashCode + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         hashCode = prime * hashCode + ((getChecksum() == null) ? 0 : getChecksum().hashCode());
+        hashCode = prime * hashCode + ((getKendraConfiguration() == null) ? 0 : getKendraConfiguration().hashCode());
         return hashCode;
     }
 

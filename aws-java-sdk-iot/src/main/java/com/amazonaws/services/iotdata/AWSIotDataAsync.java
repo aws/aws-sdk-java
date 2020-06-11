@@ -29,8 +29,18 @@ import com.amazonaws.services.iotdata.model.*;
  * <p>
  * AWS IoT-Data enables secure, bi-directional communication between Internet-connected things (such as sensors,
  * actuators, embedded devices, or smart appliances) and the AWS cloud. It implements a broker for applications and
- * things to publish messages over HTTP (Publish) and retrieve, update, and delete thing shadows. A thing shadow is a
- * persistent representation of your things and their state in the AWS cloud.
+ * things to publish messages over HTTP (Publish) and retrieve, update, and delete shadows. A shadow is a persistent
+ * representation of your things and their state in the AWS cloud.
+ * </p>
+ * <p>
+ * Find the endpoint address for actions in the AWS IoT data plane by running this CLI command:
+ * </p>
+ * <p>
+ * <code>aws iot describe-endpoint --endpoint-type iot:Data-ATS</code>
+ * </p>
+ * <p>
+ * The service name used by <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">AWS
+ * Signature Version 4</a> to sign requests is: <i>iotdevicegateway</i>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -38,12 +48,12 @@ public interface AWSIotDataAsync extends AWSIotData {
 
     /**
      * <p>
-     * Deletes the thing shadow for the specified thing.
+     * Deletes the shadow for the specified thing.
      * </p>
      * <p>
      * For more information, see <a
      * href="http://docs.aws.amazon.com/iot/latest/developerguide/API_DeleteThingShadow.html">DeleteThingShadow</a> in
-     * the <i>AWS IoT Developer Guide</i>.
+     * the AWS IoT Developer Guide.
      * </p>
      * 
      * @param deleteThingShadowRequest
@@ -55,12 +65,12 @@ public interface AWSIotDataAsync extends AWSIotData {
 
     /**
      * <p>
-     * Deletes the thing shadow for the specified thing.
+     * Deletes the shadow for the specified thing.
      * </p>
      * <p>
      * For more information, see <a
      * href="http://docs.aws.amazon.com/iot/latest/developerguide/API_DeleteThingShadow.html">DeleteThingShadow</a> in
-     * the <i>AWS IoT Developer Guide</i>.
+     * the AWS IoT Developer Guide.
      * </p>
      * 
      * @param deleteThingShadowRequest
@@ -77,12 +87,12 @@ public interface AWSIotDataAsync extends AWSIotData {
 
     /**
      * <p>
-     * Gets the thing shadow for the specified thing.
+     * Gets the shadow for the specified thing.
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/iot/latest/developerguide/API_GetThingShadow.html">GetThingShadow</a> in the
-     * <i>AWS IoT Developer Guide</i>.
+     * href="http://docs.aws.amazon.com/iot/latest/developerguide/API_GetThingShadow.html">GetThingShadow</a> in the AWS
+     * IoT Developer Guide.
      * </p>
      * 
      * @param getThingShadowRequest
@@ -94,12 +104,12 @@ public interface AWSIotDataAsync extends AWSIotData {
 
     /**
      * <p>
-     * Gets the thing shadow for the specified thing.
+     * Gets the shadow for the specified thing.
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/iot/latest/developerguide/API_GetThingShadow.html">GetThingShadow</a> in the
-     * <i>AWS IoT Developer Guide</i>.
+     * href="http://docs.aws.amazon.com/iot/latest/developerguide/API_GetThingShadow.html">GetThingShadow</a> in the AWS
+     * IoT Developer Guide.
      * </p>
      * 
      * @param getThingShadowRequest
@@ -116,11 +126,38 @@ public interface AWSIotDataAsync extends AWSIotData {
 
     /**
      * <p>
+     * Lists the shadows for the specified thing.
+     * </p>
+     * 
+     * @param listNamedShadowsForThingRequest
+     * @return A Java Future containing the result of the ListNamedShadowsForThing operation returned by the service.
+     * @sample AWSIotDataAsync.ListNamedShadowsForThing
+     */
+    java.util.concurrent.Future<ListNamedShadowsForThingResult> listNamedShadowsForThingAsync(ListNamedShadowsForThingRequest listNamedShadowsForThingRequest);
+
+    /**
+     * <p>
+     * Lists the shadows for the specified thing.
+     * </p>
+     * 
+     * @param listNamedShadowsForThingRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListNamedShadowsForThing operation returned by the service.
+     * @sample AWSIotDataAsyncHandler.ListNamedShadowsForThing
+     */
+    java.util.concurrent.Future<ListNamedShadowsForThingResult> listNamedShadowsForThingAsync(ListNamedShadowsForThingRequest listNamedShadowsForThingRequest,
+            com.amazonaws.handlers.AsyncHandler<ListNamedShadowsForThingRequest, ListNamedShadowsForThingResult> asyncHandler);
+
+    /**
+     * <p>
      * Publishes state information.
      * </p>
      * <p>
      * For more information, see <a href="http://docs.aws.amazon.com/iot/latest/developerguide/protocols.html#http">HTTP
-     * Protocol</a> in the <i>AWS IoT Developer Guide</i>.
+     * Protocol</a> in the AWS IoT Developer Guide.
      * </p>
      * 
      * @param publishRequest
@@ -136,7 +173,7 @@ public interface AWSIotDataAsync extends AWSIotData {
      * </p>
      * <p>
      * For more information, see <a href="http://docs.aws.amazon.com/iot/latest/developerguide/protocols.html#http">HTTP
-     * Protocol</a> in the <i>AWS IoT Developer Guide</i>.
+     * Protocol</a> in the AWS IoT Developer Guide.
      * </p>
      * 
      * @param publishRequest
@@ -153,12 +190,12 @@ public interface AWSIotDataAsync extends AWSIotData {
 
     /**
      * <p>
-     * Updates the thing shadow for the specified thing.
+     * Updates the shadow for the specified thing.
      * </p>
      * <p>
      * For more information, see <a
      * href="http://docs.aws.amazon.com/iot/latest/developerguide/API_UpdateThingShadow.html">UpdateThingShadow</a> in
-     * the <i>AWS IoT Developer Guide</i>.
+     * the AWS IoT Developer Guide.
      * </p>
      * 
      * @param updateThingShadowRequest
@@ -170,12 +207,12 @@ public interface AWSIotDataAsync extends AWSIotData {
 
     /**
      * <p>
-     * Updates the thing shadow for the specified thing.
+     * Updates the shadow for the specified thing.
      * </p>
      * <p>
      * For more information, see <a
      * href="http://docs.aws.amazon.com/iot/latest/developerguide/API_UpdateThingShadow.html">UpdateThingShadow</a> in
-     * the <i>AWS IoT Developer Guide</i>.
+     * the AWS IoT Developer Guide.
      * </p>
      * 
      * @param updateThingShadowRequest

@@ -1,3 +1,20 @@
+# __1.11.801__ __2020-06-11__
+## __AWS IoT Data Plane__
+  - ### Features
+    - As part of this release, we are introducing a new feature called named shadow, which extends the capability of AWS IoT Device Shadow to support multiple shadows for a single IoT device. With this release, customers can store different device state data into different shadows, and as a result access only the required state data when needed and reduce individual shadow size.
+
+## __Amazon EC2 Container Service__
+  - ### Features
+    - This release adds support for deleting capacity providers.
+
+## __Amazon Lex Model Building Service__
+  - ### Features
+    - This change adds the built-in AMAZON.KendraSearchIntent that enables integration with Amazon Kendra.
+
+## __EC2 Image Builder__
+  - ### Features
+    - EC2 Image Builder now supports specifying a custom working directory for your build and test workflows. In addition, Image Builder now supports defining tags that are applied to ephemeral resources created by EC2 Image Builder as part of the image creation workflow. 
+
 # __1.11.800__ __2020-06-10__
 ## __AWS Compute Optimizer__
   - ### Features

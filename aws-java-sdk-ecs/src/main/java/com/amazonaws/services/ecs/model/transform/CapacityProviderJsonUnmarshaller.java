@@ -64,6 +64,14 @@ public class CapacityProviderJsonUnmarshaller implements Unmarshaller<CapacityPr
                     context.nextToken();
                     capacityProvider.setAutoScalingGroupProvider(AutoScalingGroupProviderJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("updateStatus", targetDepth)) {
+                    context.nextToken();
+                    capacityProvider.setUpdateStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("updateStatusReason", targetDepth)) {
+                    context.nextToken();
+                    capacityProvider.setUpdateStatusReason(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
                     capacityProvider.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));

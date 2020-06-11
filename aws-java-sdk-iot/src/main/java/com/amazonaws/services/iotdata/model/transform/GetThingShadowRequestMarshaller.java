@@ -29,6 +29,8 @@ public class GetThingShadowRequestMarshaller {
 
     private static final MarshallingInfo<String> THINGNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("thingName").build();
+    private static final MarshallingInfo<String> SHADOWNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("name").build();
 
     private static final GetThingShadowRequestMarshaller instance = new GetThingShadowRequestMarshaller();
 
@@ -47,6 +49,7 @@ public class GetThingShadowRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(getThingShadowRequest.getThingName(), THINGNAME_BINDING);
+            protocolMarshaller.marshall(getThingShadowRequest.getShadowName(), SHADOWNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

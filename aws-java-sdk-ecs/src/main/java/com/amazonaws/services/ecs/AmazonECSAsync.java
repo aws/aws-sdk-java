@@ -524,6 +524,69 @@ public interface AmazonECSAsync extends AmazonECS {
 
     /**
      * <p>
+     * Deletes the specified capacity provider.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>FARGATE</code> and <code>FARGATE_SPOT</code> capacity providers are reserved and cannot be deleted. You
+     * can disassociate them from a cluster using either the <a>PutClusterCapacityProviders</a> API or by deleting the
+     * cluster.
+     * </p>
+     * </note>
+     * <p>
+     * Prior to a capacity provider being deleted, the capacity provider must be removed from the capacity provider
+     * strategy from all services. The <a>UpdateService</a> API can be used to remove a capacity provider from a
+     * service's capacity provider strategy. When updating a service, the <code>forceNewDeployment</code> option can be
+     * used to ensure that any tasks using the Amazon EC2 instance capacity provided by the capacity provider are
+     * transitioned to use the capacity from the remaining capacity providers. Only capacity providers that are not
+     * associated with a cluster can be deleted. To remove a capacity provider from a cluster, you can either use
+     * <a>PutClusterCapacityProviders</a> or delete the cluster.
+     * </p>
+     * 
+     * @param deleteCapacityProviderRequest
+     * @return A Java Future containing the result of the DeleteCapacityProvider operation returned by the service.
+     * @sample AmazonECSAsync.DeleteCapacityProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteCapacityProvider" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteCapacityProviderResult> deleteCapacityProviderAsync(DeleteCapacityProviderRequest deleteCapacityProviderRequest);
+
+    /**
+     * <p>
+     * Deletes the specified capacity provider.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>FARGATE</code> and <code>FARGATE_SPOT</code> capacity providers are reserved and cannot be deleted. You
+     * can disassociate them from a cluster using either the <a>PutClusterCapacityProviders</a> API or by deleting the
+     * cluster.
+     * </p>
+     * </note>
+     * <p>
+     * Prior to a capacity provider being deleted, the capacity provider must be removed from the capacity provider
+     * strategy from all services. The <a>UpdateService</a> API can be used to remove a capacity provider from a
+     * service's capacity provider strategy. When updating a service, the <code>forceNewDeployment</code> option can be
+     * used to ensure that any tasks using the Amazon EC2 instance capacity provided by the capacity provider are
+     * transitioned to use the capacity from the remaining capacity providers. Only capacity providers that are not
+     * associated with a cluster can be deleted. To remove a capacity provider from a cluster, you can either use
+     * <a>PutClusterCapacityProviders</a> or delete the cluster.
+     * </p>
+     * 
+     * @param deleteCapacityProviderRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteCapacityProvider operation returned by the service.
+     * @sample AmazonECSAsyncHandler.DeleteCapacityProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteCapacityProvider" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteCapacityProviderResult> deleteCapacityProviderAsync(DeleteCapacityProviderRequest deleteCapacityProviderRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteCapacityProviderRequest, DeleteCapacityProviderResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes the specified cluster. The cluster will transition to the <code>INACTIVE</code> state. Clusters with an
      * <code>INACTIVE</code> status may remain discoverable in your account for a period of time. However, this behavior
      * is subject to change in the future, so you should not rely on <code>INACTIVE</code> clusters persisting.

@@ -51,7 +51,8 @@
         {"shape":"CallRateLimitExceededException"},
         {"shape":"InvalidVersionNumberException"},
         {"shape":"ResourceInUseException"},
-        {"shape":"InvalidParameterCombinationException"}
+        {"shape":"InvalidParameterCombinationException"},
+        {"shape":"ServiceQuotaExceededException"}
       ],
       "documentation":"<p>Creates a new component that can be used to build, validate, test, and assess your image.</p>"
     },
@@ -73,7 +74,8 @@
         {"shape":"CallRateLimitExceededException"},
         {"shape":"ResourceInUseException"},
         {"shape":"ResourceAlreadyExistsException"},
-        {"shape":"InvalidParameterCombinationException"}
+        {"shape":"InvalidParameterCombinationException"},
+        {"shape":"ServiceQuotaExceededException"}
       ],
       "documentation":"<p>Creates a new distribution configuration. Distribution configurations define and configure the outputs of your pipeline. </p>"
     },
@@ -93,7 +95,8 @@
         {"shape":"IdempotentParameterMismatchException"},
         {"shape":"ForbiddenException"},
         {"shape":"CallRateLimitExceededException"},
-        {"shape":"ResourceInUseException"}
+        {"shape":"ResourceInUseException"},
+        {"shape":"ServiceQuotaExceededException"}
       ],
       "documentation":"<p> Creates a new image. This request will create a new image along with all of the configured output resources defined in the distribution configuration. </p>"
     },
@@ -114,7 +117,8 @@
         {"shape":"ForbiddenException"},
         {"shape":"CallRateLimitExceededException"},
         {"shape":"ResourceInUseException"},
-        {"shape":"ResourceAlreadyExistsException"}
+        {"shape":"ResourceAlreadyExistsException"},
+        {"shape":"ServiceQuotaExceededException"}
       ],
       "documentation":"<p> Creates a new image pipeline. Image pipelines enable you to automate the creation and distribution of images. </p>"
     },
@@ -136,7 +140,8 @@
         {"shape":"CallRateLimitExceededException"},
         {"shape":"InvalidVersionNumberException"},
         {"shape":"ResourceInUseException"},
-        {"shape":"ResourceAlreadyExistsException"}
+        {"shape":"ResourceAlreadyExistsException"},
+        {"shape":"ServiceQuotaExceededException"}
       ],
       "documentation":"<p> Creates a new image recipe. Image recipes define how images are configured, tested, and assessed. </p>"
     },
@@ -157,7 +162,8 @@
         {"shape":"ForbiddenException"},
         {"shape":"CallRateLimitExceededException"},
         {"shape":"ResourceInUseException"},
-        {"shape":"ResourceAlreadyExistsException"}
+        {"shape":"ResourceAlreadyExistsException"},
+        {"shape":"ServiceQuotaExceededException"}
       ],
       "documentation":"<p> Creates a new infrastructure configuration. An infrastructure configuration defines the environment in which your image will be built and tested. </p>"
     },
@@ -533,7 +539,7 @@
         {"shape":"ForbiddenException"},
         {"shape":"CallRateLimitExceededException"}
       ],
-      "documentation":"<p> Returns a list of distribution configurations. </p>"
+      "documentation":"<p> Returns a list of image build versions. </p>"
     },
     "ListImagePipelineImages":{
       "name":"ListImagePipelineImages",
@@ -610,7 +616,7 @@
         {"shape":"ForbiddenException"},
         {"shape":"CallRateLimitExceededException"}
       ],
-      "documentation":"<p> Returns the list of image build versions for the specified semantic version. </p>"
+      "documentation":"<p> Returns the list of images that you have access to. </p>"
     },
     "ListInfrastructureConfigurations":{
       "name":"ListInfrastructureConfigurations",
@@ -1376,6 +1382,10 @@
           "shape":"TagMap",
           "documentation":"<p> The tags of the image recipe. </p>"
         },
+        "workingDirectory":{
+          "shape":"NonEmptyString",
+          "documentation":"<p>The working directory to be used during build and test workflows.</p>"
+        },
         "clientToken":{
           "shape":"ClientToken",
           "documentation":"<p>The idempotency token used to make this request idempotent. </p>",
@@ -1503,6 +1513,10 @@
         "snsTopicArn":{
           "shape":"SnsTopicArn",
           "documentation":"<p>The SNS topic on which to send image build events. </p>"
+        },
+        "resourceTags":{
+          "shape":"ResourceTagMap",
+          "documentation":"<p>The tags attached to the resource created by Image Builder.</p>"
         },
         "tags":{
           "shape":"TagMap",
@@ -1921,7 +1935,7 @@
       "required":["componentBuildVersionArn"],
       "members":{
         "componentBuildVersionArn":{
-          "shape":"ComponentBuildVersionArn",
+          "shape":"ComponentVersionArnOrBuildVersionArn",
           "documentation":"<p>The Amazon Resource Name (ARN) of the component that you want to retrieve. Regex requires \"/\\d+$\" suffix.</p>",
           "location":"querystring",
           "locationName":"componentBuildVersionArn"
@@ -2071,7 +2085,7 @@
       "required":["imageBuildVersionArn"],
       "members":{
         "imageBuildVersionArn":{
-          "shape":"ImageBuildVersionArn",
+          "shape":"ImageVersionArnOrBuildVersionArn",
           "documentation":"<p>The Amazon Resource Name (ARN) of the image that you want to retrieve. </p>",
           "location":"querystring",
           "locationName":"imageBuildVersionArn"
@@ -2329,6 +2343,10 @@
         "tags":{
           "shape":"TagMap",
           "documentation":"<p>The tags of the image recipe.</p>"
+        },
+        "workingDirectory":{
+          "shape":"NonEmptyString",
+          "documentation":"<p>The working directory to be used during build and test workflows.</p>"
         }
       },
       "documentation":"<p>An image recipe.</p>"
@@ -2512,6 +2530,10 @@
       "type":"string",
       "pattern":"^arn:aws[^:]*:imagebuilder:[^:]+:(?:\\d{12}|aws):image/[a-z0-9-_]+/\\d+\\.\\d+\\.\\d+$"
     },
+    "ImageVersionArnOrBuildVersionArn":{
+      "type":"string",
+      "pattern":"^arn:aws[^:]*:imagebuilder:[^:]+:(?:\\d{12}|aws):image/[a-z0-9-_]+/(?:(?:(\\d+|x)\\.(\\d+|x)\\.(\\d+|x))|(?:\\d+\\.\\d+\\.\\d+/\\d+))$"
+    },
     "ImageVersionList":{
       "type":"list",
       "member":{"shape":"ImageVersion"}
@@ -2650,6 +2672,10 @@
           "shape":"DateTime",
           "documentation":"<p>The date on which the infrastructure configuration was last updated.</p>"
         },
+        "resourceTags":{
+          "shape":"ResourceTagMap",
+          "documentation":"<p>The tags attached to the resource created by Image Builder.</p>"
+        },
         "tags":{
           "shape":"TagMap",
           "documentation":"<p>The tags of the infrastructure configuration.</p>"
@@ -2683,6 +2709,10 @@
         "dateUpdated":{
           "shape":"DateTime",
           "documentation":"<p>The date on which the infrastructure configuration was last updated.</p>"
+        },
+        "resourceTags":{
+          "shape":"ResourceTagMap",
+          "documentation":"<p>The tags attached to the image created by Image Builder.</p>"
         },
         "tags":{
           "shape":"TagMap",
@@ -3358,6 +3388,13 @@
       "max":30000,
       "min":1
     },
+    "ResourceTagMap":{
+      "type":"map",
+      "key":{"shape":"TagKey"},
+      "value":{"shape":"TagValue"},
+      "max":30,
+      "min":1
+    },
     "RestrictedInteger":{
       "type":"integer",
       "max":25,
@@ -3402,6 +3439,15 @@
       },
       "documentation":"<p>This exception is thrown when the service encounters an unrecoverable exception.</p>",
       "error":{"httpStatusCode":500},
+      "exception":true
+    },
+    "ServiceQuotaExceededException":{
+      "type":"structure",
+      "members":{
+        "message":{"shape":"ErrorMessage"}
+      },
+      "documentation":"<p>You have exceeded the number of permitted resources or operations for this service. For service quotas, see <a href=\"https://docs.aws.amazon.com/general/latest/gr/imagebuilder.html#limits_imagebuilder\">EC2 Image Builder endpoints and quotas</a>.</p>",
+      "error":{"httpStatusCode":402},
       "exception":true
     },
     "ServiceUnavailableException":{
@@ -3694,6 +3740,10 @@
           "shape":"ClientToken",
           "documentation":"<p>The idempotency token used to make this request idempotent. </p>",
           "idempotencyToken":true
+        },
+        "resourceTags":{
+          "shape":"ResourceTagMap",
+          "documentation":"<p>The tags attached to the resource created by Image Builder.</p>"
         }
       }
     },

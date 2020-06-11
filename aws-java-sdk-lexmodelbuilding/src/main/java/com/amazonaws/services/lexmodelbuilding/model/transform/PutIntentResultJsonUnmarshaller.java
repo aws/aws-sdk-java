@@ -112,6 +112,10 @@ public class PutIntentResultJsonUnmarshaller implements Unmarshaller<PutIntentRe
                     context.nextToken();
                     putIntentResult.setCreateVersion(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("kendraConfiguration", targetDepth)) {
+                    context.nextToken();
+                    putIntentResult.setKendraConfiguration(KendraConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -75,8 +75,11 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
     private String taskRoleArn;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task execution role that containers in this task can assume. All containers
-     * in this task are granted the permissions that are specified in this role.
+     * The Amazon Resource Name (ARN) of the task execution role that grants the Amazon ECS container agent permission
+     * to make AWS API calls on your behalf. The task execution IAM role is required depending on the requirements of
+     * your task. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS task
+     * execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      */
     private String executionRoleArn;
@@ -662,13 +665,19 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task execution role that containers in this task can assume. All containers
-     * in this task are granted the permissions that are specified in this role.
+     * The Amazon Resource Name (ARN) of the task execution role that grants the Amazon ECS container agent permission
+     * to make AWS API calls on your behalf. The task execution IAM role is required depending on the requirements of
+     * your task. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS task
+     * execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param executionRoleArn
-     *        The Amazon Resource Name (ARN) of the task execution role that containers in this task can assume. All
-     *        containers in this task are granted the permissions that are specified in this role.
+     *        The Amazon Resource Name (ARN) of the task execution role that grants the Amazon ECS container agent
+     *        permission to make AWS API calls on your behalf. The task execution IAM role is required depending on the
+     *        requirements of your task. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS
+     *        task execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public void setExecutionRoleArn(String executionRoleArn) {
@@ -677,12 +686,18 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task execution role that containers in this task can assume. All containers
-     * in this task are granted the permissions that are specified in this role.
+     * The Amazon Resource Name (ARN) of the task execution role that grants the Amazon ECS container agent permission
+     * to make AWS API calls on your behalf. The task execution IAM role is required depending on the requirements of
+     * your task. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS task
+     * execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the task execution role that containers in this task can assume. All
-     *         containers in this task are granted the permissions that are specified in this role.
+     * @return The Amazon Resource Name (ARN) of the task execution role that grants the Amazon ECS container agent
+     *         permission to make AWS API calls on your behalf. The task execution IAM role is required depending on the
+     *         requirements of your task. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
+     *         ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public String getExecutionRoleArn() {
@@ -691,13 +706,19 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task execution role that containers in this task can assume. All containers
-     * in this task are granted the permissions that are specified in this role.
+     * The Amazon Resource Name (ARN) of the task execution role that grants the Amazon ECS container agent permission
+     * to make AWS API calls on your behalf. The task execution IAM role is required depending on the requirements of
+     * your task. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS task
+     * execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param executionRoleArn
-     *        The Amazon Resource Name (ARN) of the task execution role that containers in this task can assume. All
-     *        containers in this task are granted the permissions that are specified in this role.
+     *        The Amazon Resource Name (ARN) of the task execution role that grants the Amazon ECS container agent
+     *        permission to make AWS API calls on your behalf. The task execution IAM role is required depending on the
+     *        requirements of your task. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS
+     *        task execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

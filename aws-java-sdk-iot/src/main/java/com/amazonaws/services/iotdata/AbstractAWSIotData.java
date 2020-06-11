@@ -48,6 +48,11 @@ public class AbstractAWSIotData implements AWSIotData {
     }
 
     @Override
+    public ListNamedShadowsForThingResult listNamedShadowsForThing(ListNamedShadowsForThingRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PublishResult publish(PublishRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

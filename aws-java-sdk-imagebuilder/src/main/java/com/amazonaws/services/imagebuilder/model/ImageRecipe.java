@@ -94,6 +94,12 @@ public class ImageRecipe implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * The working directory to be used during build and test workflows.
+     * </p>
+     */
+    private String workingDirectory;
 
     /**
      * <p>
@@ -643,6 +649,46 @@ public class ImageRecipe implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The working directory to be used during build and test workflows.
+     * </p>
+     * 
+     * @param workingDirectory
+     *        The working directory to be used during build and test workflows.
+     */
+
+    public void setWorkingDirectory(String workingDirectory) {
+        this.workingDirectory = workingDirectory;
+    }
+
+    /**
+     * <p>
+     * The working directory to be used during build and test workflows.
+     * </p>
+     * 
+     * @return The working directory to be used during build and test workflows.
+     */
+
+    public String getWorkingDirectory() {
+        return this.workingDirectory;
+    }
+
+    /**
+     * <p>
+     * The working directory to be used during build and test workflows.
+     * </p>
+     * 
+     * @param workingDirectory
+     *        The working directory to be used during build and test workflows.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImageRecipe withWorkingDirectory(String workingDirectory) {
+        setWorkingDirectory(workingDirectory);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -675,7 +721,9 @@ public class ImageRecipe implements Serializable, Cloneable, StructuredPojo {
         if (getDateCreated() != null)
             sb.append("DateCreated: ").append(getDateCreated()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getWorkingDirectory() != null)
+            sb.append("WorkingDirectory: ").append(getWorkingDirectory());
         sb.append("}");
         return sb.toString();
     }
@@ -734,6 +782,10 @@ public class ImageRecipe implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getWorkingDirectory() == null ^ this.getWorkingDirectory() == null)
+            return false;
+        if (other.getWorkingDirectory() != null && other.getWorkingDirectory().equals(this.getWorkingDirectory()) == false)
+            return false;
         return true;
     }
 
@@ -753,6 +805,7 @@ public class ImageRecipe implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getBlockDeviceMappings() == null) ? 0 : getBlockDeviceMappings().hashCode());
         hashCode = prime * hashCode + ((getDateCreated() == null) ? 0 : getDateCreated().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getWorkingDirectory() == null) ? 0 : getWorkingDirectory().hashCode());
         return hashCode;
     }
 

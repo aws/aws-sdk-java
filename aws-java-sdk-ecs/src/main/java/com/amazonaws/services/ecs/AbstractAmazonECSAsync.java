@@ -128,6 +128,19 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteCapacityProviderResult> deleteCapacityProviderAsync(DeleteCapacityProviderRequest request) {
+
+        return deleteCapacityProviderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCapacityProviderResult> deleteCapacityProviderAsync(DeleteCapacityProviderRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteCapacityProviderRequest, DeleteCapacityProviderResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteClusterResult> deleteClusterAsync(DeleteClusterRequest request) {
 
         return deleteClusterAsync(request, null);

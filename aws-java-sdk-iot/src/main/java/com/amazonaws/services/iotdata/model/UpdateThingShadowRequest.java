@@ -33,6 +33,12 @@ public class UpdateThingShadowRequest extends com.amazonaws.AmazonWebServiceRequ
     private String thingName;
     /**
      * <p>
+     * The name of the shadow.
+     * </p>
+     */
+    private String shadowName;
+    /**
+     * <p>
      * The state information, in JSON format.
      * </p>
      */
@@ -75,6 +81,46 @@ public class UpdateThingShadowRequest extends com.amazonaws.AmazonWebServiceRequ
 
     public UpdateThingShadowRequest withThingName(String thingName) {
         setThingName(thingName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the shadow.
+     * </p>
+     * 
+     * @param shadowName
+     *        The name of the shadow.
+     */
+
+    public void setShadowName(String shadowName) {
+        this.shadowName = shadowName;
+    }
+
+    /**
+     * <p>
+     * The name of the shadow.
+     * </p>
+     * 
+     * @return The name of the shadow.
+     */
+
+    public String getShadowName() {
+        return this.shadowName;
+    }
+
+    /**
+     * <p>
+     * The name of the shadow.
+     * </p>
+     * 
+     * @param shadowName
+     *        The name of the shadow.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateThingShadowRequest withShadowName(String shadowName) {
+        setShadowName(shadowName);
         return this;
     }
 
@@ -159,6 +205,8 @@ public class UpdateThingShadowRequest extends com.amazonaws.AmazonWebServiceRequ
         sb.append("{");
         if (getThingName() != null)
             sb.append("ThingName: ").append(getThingName()).append(",");
+        if (getShadowName() != null)
+            sb.append("ShadowName: ").append(getShadowName()).append(",");
         if (getPayload() != null)
             sb.append("Payload: ").append(getPayload());
         sb.append("}");
@@ -179,6 +227,10 @@ public class UpdateThingShadowRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getThingName() != null && other.getThingName().equals(this.getThingName()) == false)
             return false;
+        if (other.getShadowName() == null ^ this.getShadowName() == null)
+            return false;
+        if (other.getShadowName() != null && other.getShadowName().equals(this.getShadowName()) == false)
+            return false;
         if (other.getPayload() == null ^ this.getPayload() == null)
             return false;
         if (other.getPayload() != null && other.getPayload().equals(this.getPayload()) == false)
@@ -192,6 +244,7 @@ public class UpdateThingShadowRequest extends com.amazonaws.AmazonWebServiceRequ
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getThingName() == null) ? 0 : getThingName().hashCode());
+        hashCode = prime * hashCode + ((getShadowName() == null) ? 0 : getShadowName().hashCode());
         hashCode = prime * hashCode + ((getPayload() == null) ? 0 : getPayload().hashCode());
         return hashCode;
     }

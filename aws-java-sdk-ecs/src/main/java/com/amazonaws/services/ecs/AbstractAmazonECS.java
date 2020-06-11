@@ -74,6 +74,11 @@ public class AbstractAmazonECS implements AmazonECS {
     }
 
     @Override
+    public DeleteCapacityProviderResult deleteCapacityProvider(DeleteCapacityProviderRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteClusterResult deleteCluster(DeleteClusterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

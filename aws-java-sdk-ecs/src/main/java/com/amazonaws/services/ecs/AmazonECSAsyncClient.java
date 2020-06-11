@@ -492,6 +492,39 @@ public class AmazonECSAsyncClient extends AmazonECSClient implements AmazonECSAs
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteCapacityProviderResult> deleteCapacityProviderAsync(DeleteCapacityProviderRequest request) {
+
+        return deleteCapacityProviderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCapacityProviderResult> deleteCapacityProviderAsync(final DeleteCapacityProviderRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteCapacityProviderRequest, DeleteCapacityProviderResult> asyncHandler) {
+        final DeleteCapacityProviderRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteCapacityProviderResult>() {
+            @Override
+            public DeleteCapacityProviderResult call() throws Exception {
+                DeleteCapacityProviderResult result = null;
+
+                try {
+                    result = executeDeleteCapacityProvider(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteClusterResult> deleteClusterAsync(DeleteClusterRequest request) {
 
         return deleteClusterAsync(request, null);

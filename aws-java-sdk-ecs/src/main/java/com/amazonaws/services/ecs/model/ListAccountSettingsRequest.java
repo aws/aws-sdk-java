@@ -27,7 +27,7 @@ public class ListAccountSettingsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The resource name you want to list the account settings for.
+     * The name of the account setting you want to list the settings for.
      * </p>
      */
     private String name;
@@ -82,11 +82,11 @@ public class ListAccountSettingsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The resource name you want to list the account settings for.
+     * The name of the account setting you want to list the settings for.
      * </p>
      * 
      * @param name
-     *        The resource name you want to list the account settings for.
+     *        The name of the account setting you want to list the settings for.
      * @see SettingName
      */
 
@@ -96,10 +96,10 @@ public class ListAccountSettingsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The resource name you want to list the account settings for.
+     * The name of the account setting you want to list the settings for.
      * </p>
      * 
-     * @return The resource name you want to list the account settings for.
+     * @return The name of the account setting you want to list the settings for.
      * @see SettingName
      */
 
@@ -109,11 +109,11 @@ public class ListAccountSettingsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The resource name you want to list the account settings for.
+     * The name of the account setting you want to list the settings for.
      * </p>
      * 
      * @param name
-     *        The resource name you want to list the account settings for.
+     *        The name of the account setting you want to list the settings for.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SettingName
      */
@@ -125,11 +125,11 @@ public class ListAccountSettingsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The resource name you want to list the account settings for.
+     * The name of the account setting you want to list the settings for.
      * </p>
      * 
      * @param name
-     *        The resource name you want to list the account settings for.
+     *        The name of the account setting you want to list the settings for.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SettingName
      */

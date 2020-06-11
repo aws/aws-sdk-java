@@ -95,6 +95,9 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
                             new JsonErrorShapeMetadata().withErrorCode("ServiceException").withExceptionUnmarshaller(
                                     com.amazonaws.services.imagebuilder.model.transform.ServiceExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceQuotaExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.imagebuilder.model.transform.ServiceQuotaExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("CallRateLimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.imagebuilder.model.transform.CallRateLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -280,6 +283,10 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
      *         later.
      * @throws InvalidParameterCombinationException
      *         You have specified two or more mutually exclusive parameters. Review the error message for details.
+     * @throws ServiceQuotaExceededException
+     *         You have exceeded the number of permitted resources or operations for this service. For service quotas,
+     *         see <a href="https://docs.aws.amazon.com/general/latest/gr/imagebuilder.html#limits_imagebuilder">EC2
+     *         Image Builder endpoints and quotas</a>.
      * @sample AWSimagebuilder.CreateComponent
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateComponent" target="_top">AWS
      *      API Documentation</a>
@@ -358,6 +365,10 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
      *         The resource that you are trying to create already exists.
      * @throws InvalidParameterCombinationException
      *         You have specified two or more mutually exclusive parameters. Review the error message for details.
+     * @throws ServiceQuotaExceededException
+     *         You have exceeded the number of permitted resources or operations for this service. For service quotas,
+     *         see <a href="https://docs.aws.amazon.com/general/latest/gr/imagebuilder.html#limits_imagebuilder">EC2
+     *         Image Builder endpoints and quotas</a>.
      * @sample AWSimagebuilder.CreateDistributionConfiguration
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateDistributionConfiguration"
      *      target="_top">AWS API Documentation</a>
@@ -435,6 +446,10 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
      * @throws ResourceInUseException
      *         The resource that you are trying to operate on is currently in use. Review the message details and retry
      *         later.
+     * @throws ServiceQuotaExceededException
+     *         You have exceeded the number of permitted resources or operations for this service. For service quotas,
+     *         see <a href="https://docs.aws.amazon.com/general/latest/gr/imagebuilder.html#limits_imagebuilder">EC2
+     *         Image Builder endpoints and quotas</a>.
      * @sample AWSimagebuilder.CreateImage
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateImage" target="_top">AWS API
      *      Documentation</a>
@@ -510,6 +525,10 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
      *         later.
      * @throws ResourceAlreadyExistsException
      *         The resource that you are trying to create already exists.
+     * @throws ServiceQuotaExceededException
+     *         You have exceeded the number of permitted resources or operations for this service. For service quotas,
+     *         see <a href="https://docs.aws.amazon.com/general/latest/gr/imagebuilder.html#limits_imagebuilder">EC2
+     *         Image Builder endpoints and quotas</a>.
      * @sample AWSimagebuilder.CreateImagePipeline
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateImagePipeline"
      *      target="_top">AWS API Documentation</a>
@@ -587,6 +606,10 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
      *         later.
      * @throws ResourceAlreadyExistsException
      *         The resource that you are trying to create already exists.
+     * @throws ServiceQuotaExceededException
+     *         You have exceeded the number of permitted resources or operations for this service. For service quotas,
+     *         see <a href="https://docs.aws.amazon.com/general/latest/gr/imagebuilder.html#limits_imagebuilder">EC2
+     *         Image Builder endpoints and quotas</a>.
      * @sample AWSimagebuilder.CreateImageRecipe
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateImageRecipe" target="_top">AWS
      *      API Documentation</a>
@@ -663,6 +686,10 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
      *         later.
      * @throws ResourceAlreadyExistsException
      *         The resource that you are trying to create already exists.
+     * @throws ServiceQuotaExceededException
+     *         You have exceeded the number of permitted resources or operations for this service. For service quotas,
+     *         see <a href="https://docs.aws.amazon.com/general/latest/gr/imagebuilder.html#limits_imagebuilder">EC2
+     *         Image Builder endpoints and quotas</a>.
      * @sample AWSimagebuilder.CreateInfrastructureConfiguration
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateInfrastructureConfiguration"
      *      target="_top">AWS API Documentation</a>
@@ -2030,7 +2057,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Returns a list of distribution configurations.
+     * Returns a list of image build versions.
      * </p>
      * 
      * @param listImageBuildVersionsRequest
@@ -2311,7 +2338,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Returns the list of image build versions for the specified semantic version.
+     * Returns the list of images that you have access to.
      * </p>
      * 
      * @param listImagesRequest

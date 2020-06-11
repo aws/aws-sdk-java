@@ -48,8 +48,7 @@ public class TaskOverride implements Serializable, Cloneable, StructuredPojo {
     private com.amazonaws.internal.SdkInternalList<InferenceAcceleratorOverride> inferenceAcceleratorOverrides;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS container agent and the Docker
-     * daemon can assume.
+     * The Amazon Resource Name (ARN) of the task execution IAM role override for the task.
      * </p>
      */
     private String executionRoleArn;
@@ -255,13 +254,11 @@ public class TaskOverride implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS container agent and the Docker
-     * daemon can assume.
+     * The Amazon Resource Name (ARN) of the task execution IAM role override for the task.
      * </p>
      * 
      * @param executionRoleArn
-     *        The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS container agent and the
-     *        Docker daemon can assume.
+     *        The Amazon Resource Name (ARN) of the task execution IAM role override for the task.
      */
 
     public void setExecutionRoleArn(String executionRoleArn) {
@@ -270,12 +267,10 @@ public class TaskOverride implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS container agent and the Docker
-     * daemon can assume.
+     * The Amazon Resource Name (ARN) of the task execution IAM role override for the task.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS container agent and the
-     *         Docker daemon can assume.
+     * @return The Amazon Resource Name (ARN) of the task execution IAM role override for the task.
      */
 
     public String getExecutionRoleArn() {
@@ -284,13 +279,11 @@ public class TaskOverride implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS container agent and the Docker
-     * daemon can assume.
+     * The Amazon Resource Name (ARN) of the task execution IAM role override for the task.
      * </p>
      * 
      * @param executionRoleArn
-     *        The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS container agent and the
-     *        Docker daemon can assume.
+     *        The Amazon Resource Name (ARN) of the task execution IAM role override for the task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -882,7 +882,7 @@ public interface AWSimagebuilderAsync extends AWSimagebuilder {
 
     /**
      * <p>
-     * Returns a list of distribution configurations.
+     * Returns a list of image build versions.
      * </p>
      * 
      * @param listImageBuildVersionsRequest
@@ -895,7 +895,7 @@ public interface AWSimagebuilderAsync extends AWSimagebuilder {
 
     /**
      * <p>
-     * Returns a list of distribution configurations.
+     * Returns a list of image build versions.
      * </p>
      * 
      * @param listImageBuildVersionsRequest
@@ -1006,7 +1006,7 @@ public interface AWSimagebuilderAsync extends AWSimagebuilder {
 
     /**
      * <p>
-     * Returns the list of image build versions for the specified semantic version.
+     * Returns the list of images that you have access to.
      * </p>
      * 
      * @param listImagesRequest
@@ -1019,7 +1019,7 @@ public interface AWSimagebuilderAsync extends AWSimagebuilder {
 
     /**
      * <p>
-     * Returns the list of image build versions for the specified semantic version.
+     * Returns the list of images that you have access to.
      * </p>
      * 
      * @param listImagesRequest

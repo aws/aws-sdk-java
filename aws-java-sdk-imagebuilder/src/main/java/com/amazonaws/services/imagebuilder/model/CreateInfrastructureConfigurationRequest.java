@@ -90,6 +90,12 @@ public class CreateInfrastructureConfigurationRequest extends com.amazonaws.Amaz
     private String snsTopicArn;
     /**
      * <p>
+     * The tags attached to the resource created by Image Builder.
+     * </p>
+     */
+    private java.util.Map<String, String> resourceTags;
+    /**
+     * <p>
      * The tags of the infrastructure configuration.
      * </p>
      */
@@ -601,6 +607,74 @@ public class CreateInfrastructureConfigurationRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
+     * The tags attached to the resource created by Image Builder.
+     * </p>
+     * 
+     * @return The tags attached to the resource created by Image Builder.
+     */
+
+    public java.util.Map<String, String> getResourceTags() {
+        return resourceTags;
+    }
+
+    /**
+     * <p>
+     * The tags attached to the resource created by Image Builder.
+     * </p>
+     * 
+     * @param resourceTags
+     *        The tags attached to the resource created by Image Builder.
+     */
+
+    public void setResourceTags(java.util.Map<String, String> resourceTags) {
+        this.resourceTags = resourceTags;
+    }
+
+    /**
+     * <p>
+     * The tags attached to the resource created by Image Builder.
+     * </p>
+     * 
+     * @param resourceTags
+     *        The tags attached to the resource created by Image Builder.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateInfrastructureConfigurationRequest withResourceTags(java.util.Map<String, String> resourceTags) {
+        setResourceTags(resourceTags);
+        return this;
+    }
+
+    /**
+     * Add a single ResourceTags entry
+     *
+     * @see CreateInfrastructureConfigurationRequest#withResourceTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateInfrastructureConfigurationRequest addResourceTagsEntry(String key, String value) {
+        if (null == this.resourceTags) {
+            this.resourceTags = new java.util.HashMap<String, String>();
+        }
+        if (this.resourceTags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.resourceTags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into ResourceTags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateInfrastructureConfigurationRequest clearResourceTagsEntries() {
+        this.resourceTags = null;
+        return this;
+    }
+
+    /**
+     * <p>
      * The tags of the infrastructure configuration.
      * </p>
      * 
@@ -739,6 +813,8 @@ public class CreateInfrastructureConfigurationRequest extends com.amazonaws.Amaz
             sb.append("TerminateInstanceOnFailure: ").append(getTerminateInstanceOnFailure()).append(",");
         if (getSnsTopicArn() != null)
             sb.append("SnsTopicArn: ").append(getSnsTopicArn()).append(",");
+        if (getResourceTags() != null)
+            sb.append("ResourceTags: ").append(getResourceTags()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getClientToken() != null)
@@ -797,6 +873,10 @@ public class CreateInfrastructureConfigurationRequest extends com.amazonaws.Amaz
             return false;
         if (other.getSnsTopicArn() != null && other.getSnsTopicArn().equals(this.getSnsTopicArn()) == false)
             return false;
+        if (other.getResourceTags() == null ^ this.getResourceTags() == null)
+            return false;
+        if (other.getResourceTags() != null && other.getResourceTags().equals(this.getResourceTags()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -823,6 +903,7 @@ public class CreateInfrastructureConfigurationRequest extends com.amazonaws.Amaz
         hashCode = prime * hashCode + ((getKeyPair() == null) ? 0 : getKeyPair().hashCode());
         hashCode = prime * hashCode + ((getTerminateInstanceOnFailure() == null) ? 0 : getTerminateInstanceOnFailure().hashCode());
         hashCode = prime * hashCode + ((getSnsTopicArn() == null) ? 0 : getSnsTopicArn().hashCode());
+        hashCode = prime * hashCode + ((getResourceTags() == null) ? 0 : getResourceTags().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         return hashCode;
