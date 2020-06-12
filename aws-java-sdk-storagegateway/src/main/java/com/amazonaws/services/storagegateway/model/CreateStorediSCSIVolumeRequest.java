@@ -67,7 +67,7 @@ public class CreateStorediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new stored volume. Specify this field if
-     * you want to create the iSCSI storage volume from a snapshot otherwise do not include this field. To list
+     * you want to create the iSCSI storage volume from a snapshot; otherwise, do not include this field. To list
      * snapshots for your account use <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html"
      * >DescribeSnapshots</a> in the <i>Amazon Elastic Compute Cloud API Reference</i>.
@@ -76,11 +76,11 @@ public class CreateStorediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
     private String snapshotId;
     /**
      * <p>
-     * Specify this field as true if you want to preserve the data on the local disk. Otherwise, specifying this field
-     * as false creates an empty volume.
+     * Set to true <code>true</code> if you want to preserve the data on the local disk. Otherwise, set to
+     * <code>false</code> to create an empty volume.
      * </p>
      * <p>
-     * Valid Values: true, false
+     * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      */
     private Boolean preserveExistingData;
@@ -109,15 +109,19 @@ public class CreateStorediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
     private String networkInterfaceId;
     /**
      * <p>
-     * True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by Amazon
-     * S3. Optional.
+     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or <code>false</code>
+     * to use a key managed by Amazon S3. Optional.
+     * </p>
+     * <p>
+     * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      */
     private Boolean kMSEncrypted;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the KMS key used for Amazon S3 server-side encryption. This value can only be
-     * set when KMSEncrypted is true. Optional.
+     * The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side
+     * encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when
+     * <code>KMSEncrypted</code> is <code>true</code>. Optional.
      * </p>
      */
     private String kMSKey;
@@ -216,7 +220,7 @@ public class CreateStorediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new stored volume. Specify this field if
-     * you want to create the iSCSI storage volume from a snapshot otherwise do not include this field. To list
+     * you want to create the iSCSI storage volume from a snapshot; otherwise, do not include this field. To list
      * snapshots for your account use <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html"
      * >DescribeSnapshots</a> in the <i>Amazon Elastic Compute Cloud API Reference</i>.
@@ -224,8 +228,8 @@ public class CreateStorediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
      * 
      * @param snapshotId
      *        The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new stored volume. Specify this
-     *        field if you want to create the iSCSI storage volume from a snapshot otherwise do not include this field.
-     *        To list snapshots for your account use <a
+     *        field if you want to create the iSCSI storage volume from a snapshot; otherwise, do not include this
+     *        field. To list snapshots for your account use <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html"
      *        >DescribeSnapshots</a> in the <i>Amazon Elastic Compute Cloud API Reference</i>.
      */
@@ -237,15 +241,15 @@ public class CreateStorediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new stored volume. Specify this field if
-     * you want to create the iSCSI storage volume from a snapshot otherwise do not include this field. To list
+     * you want to create the iSCSI storage volume from a snapshot; otherwise, do not include this field. To list
      * snapshots for your account use <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html"
      * >DescribeSnapshots</a> in the <i>Amazon Elastic Compute Cloud API Reference</i>.
      * </p>
      * 
      * @return The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new stored volume. Specify this
-     *         field if you want to create the iSCSI storage volume from a snapshot otherwise do not include this field.
-     *         To list snapshots for your account use <a
+     *         field if you want to create the iSCSI storage volume from a snapshot; otherwise, do not include this
+     *         field. To list snapshots for your account use <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html"
      *         >DescribeSnapshots</a> in the <i>Amazon Elastic Compute Cloud API Reference</i>.
      */
@@ -257,7 +261,7 @@ public class CreateStorediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new stored volume. Specify this field if
-     * you want to create the iSCSI storage volume from a snapshot otherwise do not include this field. To list
+     * you want to create the iSCSI storage volume from a snapshot; otherwise, do not include this field. To list
      * snapshots for your account use <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html"
      * >DescribeSnapshots</a> in the <i>Amazon Elastic Compute Cloud API Reference</i>.
@@ -265,8 +269,8 @@ public class CreateStorediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
      * 
      * @param snapshotId
      *        The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new stored volume. Specify this
-     *        field if you want to create the iSCSI storage volume from a snapshot otherwise do not include this field.
-     *        To list snapshots for your account use <a
+     *        field if you want to create the iSCSI storage volume from a snapshot; otherwise, do not include this
+     *        field. To list snapshots for your account use <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html"
      *        >DescribeSnapshots</a> in the <i>Amazon Elastic Compute Cloud API Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -279,18 +283,18 @@ public class CreateStorediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Specify this field as true if you want to preserve the data on the local disk. Otherwise, specifying this field
-     * as false creates an empty volume.
+     * Set to true <code>true</code> if you want to preserve the data on the local disk. Otherwise, set to
+     * <code>false</code> to create an empty volume.
      * </p>
      * <p>
-     * Valid Values: true, false
+     * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
      * @param preserveExistingData
-     *        Specify this field as true if you want to preserve the data on the local disk. Otherwise, specifying this
-     *        field as false creates an empty volume.</p>
+     *        Set to true <code>true</code> if you want to preserve the data on the local disk. Otherwise, set to
+     *        <code>false</code> to create an empty volume.</p>
      *        <p>
-     *        Valid Values: true, false
+     *        Valid Values: <code>true</code> | <code>false</code>
      */
 
     public void setPreserveExistingData(Boolean preserveExistingData) {
@@ -299,17 +303,17 @@ public class CreateStorediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Specify this field as true if you want to preserve the data on the local disk. Otherwise, specifying this field
-     * as false creates an empty volume.
+     * Set to true <code>true</code> if you want to preserve the data on the local disk. Otherwise, set to
+     * <code>false</code> to create an empty volume.
      * </p>
      * <p>
-     * Valid Values: true, false
+     * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
-     * @return Specify this field as true if you want to preserve the data on the local disk. Otherwise, specifying this
-     *         field as false creates an empty volume.</p>
+     * @return Set to true <code>true</code> if you want to preserve the data on the local disk. Otherwise, set to
+     *         <code>false</code> to create an empty volume.</p>
      *         <p>
-     *         Valid Values: true, false
+     *         Valid Values: <code>true</code> | <code>false</code>
      */
 
     public Boolean getPreserveExistingData() {
@@ -318,18 +322,18 @@ public class CreateStorediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Specify this field as true if you want to preserve the data on the local disk. Otherwise, specifying this field
-     * as false creates an empty volume.
+     * Set to true <code>true</code> if you want to preserve the data on the local disk. Otherwise, set to
+     * <code>false</code> to create an empty volume.
      * </p>
      * <p>
-     * Valid Values: true, false
+     * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
      * @param preserveExistingData
-     *        Specify this field as true if you want to preserve the data on the local disk. Otherwise, specifying this
-     *        field as false creates an empty volume.</p>
+     *        Set to true <code>true</code> if you want to preserve the data on the local disk. Otherwise, set to
+     *        <code>false</code> to create an empty volume.</p>
      *        <p>
-     *        Valid Values: true, false
+     *        Valid Values: <code>true</code> | <code>false</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -340,17 +344,17 @@ public class CreateStorediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Specify this field as true if you want to preserve the data on the local disk. Otherwise, specifying this field
-     * as false creates an empty volume.
+     * Set to true <code>true</code> if you want to preserve the data on the local disk. Otherwise, set to
+     * <code>false</code> to create an empty volume.
      * </p>
      * <p>
-     * Valid Values: true, false
+     * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
-     * @return Specify this field as true if you want to preserve the data on the local disk. Otherwise, specifying this
-     *         field as false creates an empty volume.</p>
+     * @return Set to true <code>true</code> if you want to preserve the data on the local disk. Otherwise, set to
+     *         <code>false</code> to create an empty volume.</p>
      *         <p>
-     *         Valid Values: true, false
+     *         Valid Values: <code>true</code> | <code>false</code>
      */
 
     public Boolean isPreserveExistingData() {
@@ -505,13 +509,18 @@ public class CreateStorediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by Amazon
-     * S3. Optional.
+     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or <code>false</code>
+     * to use a key managed by Amazon S3. Optional.
+     * </p>
+     * <p>
+     * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
      * @param kMSEncrypted
-     *        True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by
-     *        Amazon S3. Optional.
+     *        Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or
+     *        <code>false</code> to use a key managed by Amazon S3. Optional.</p>
+     *        <p>
+     *        Valid Values: <code>true</code> | <code>false</code>
      */
 
     public void setKMSEncrypted(Boolean kMSEncrypted) {
@@ -520,12 +529,17 @@ public class CreateStorediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by Amazon
-     * S3. Optional.
+     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or <code>false</code>
+     * to use a key managed by Amazon S3. Optional.
+     * </p>
+     * <p>
+     * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
-     * @return True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by
-     *         Amazon S3. Optional.
+     * @return Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or
+     *         <code>false</code> to use a key managed by Amazon S3. Optional.</p>
+     *         <p>
+     *         Valid Values: <code>true</code> | <code>false</code>
      */
 
     public Boolean getKMSEncrypted() {
@@ -534,13 +548,18 @@ public class CreateStorediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by Amazon
-     * S3. Optional.
+     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or <code>false</code>
+     * to use a key managed by Amazon S3. Optional.
+     * </p>
+     * <p>
+     * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
      * @param kMSEncrypted
-     *        True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by
-     *        Amazon S3. Optional.
+     *        Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or
+     *        <code>false</code> to use a key managed by Amazon S3. Optional.</p>
+     *        <p>
+     *        Valid Values: <code>true</code> | <code>false</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -551,12 +570,17 @@ public class CreateStorediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by Amazon
-     * S3. Optional.
+     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or <code>false</code>
+     * to use a key managed by Amazon S3. Optional.
+     * </p>
+     * <p>
+     * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
-     * @return True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by
-     *         Amazon S3. Optional.
+     * @return Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or
+     *         <code>false</code> to use a key managed by Amazon S3. Optional.</p>
+     *         <p>
+     *         Valid Values: <code>true</code> | <code>false</code>
      */
 
     public Boolean isKMSEncrypted() {
@@ -565,13 +589,15 @@ public class CreateStorediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the KMS key used for Amazon S3 server-side encryption. This value can only be
-     * set when KMSEncrypted is true. Optional.
+     * The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side
+     * encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when
+     * <code>KMSEncrypted</code> is <code>true</code>. Optional.
      * </p>
      * 
      * @param kMSKey
-     *        The Amazon Resource Name (ARN) of the KMS key used for Amazon S3 server-side encryption. This value can
-     *        only be set when KMSEncrypted is true. Optional.
+     *        The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side
+     *        encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when
+     *        <code>KMSEncrypted</code> is <code>true</code>. Optional.
      */
 
     public void setKMSKey(String kMSKey) {
@@ -580,12 +606,14 @@ public class CreateStorediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the KMS key used for Amazon S3 server-side encryption. This value can only be
-     * set when KMSEncrypted is true. Optional.
+     * The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side
+     * encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when
+     * <code>KMSEncrypted</code> is <code>true</code>. Optional.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the KMS key used for Amazon S3 server-side encryption. This value can
-     *         only be set when KMSEncrypted is true. Optional.
+     * @return The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side
+     *         encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when
+     *         <code>KMSEncrypted</code> is <code>true</code>. Optional.
      */
 
     public String getKMSKey() {
@@ -594,13 +622,15 @@ public class CreateStorediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the KMS key used for Amazon S3 server-side encryption. This value can only be
-     * set when KMSEncrypted is true. Optional.
+     * The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side
+     * encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when
+     * <code>KMSEncrypted</code> is <code>true</code>. Optional.
      * </p>
      * 
      * @param kMSKey
-     *        The Amazon Resource Name (ARN) of the KMS key used for Amazon S3 server-side encryption. This value can
-     *        only be set when KMSEncrypted is true. Optional.
+     *        The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side
+     *        encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when
+     *        <code>KMSEncrypted</code> is <code>true</code>. Optional.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

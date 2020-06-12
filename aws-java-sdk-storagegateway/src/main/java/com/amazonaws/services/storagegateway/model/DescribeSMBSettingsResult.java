@@ -37,38 +37,41 @@ public class DescribeSMBSettingsResult extends com.amazonaws.AmazonWebServiceRes
      * <ul>
      * <li>
      * <p>
-     * ACCESS_DENIED: Indicates that the <code>JoinDomain</code> operation failed due to an authentication error.
+     * <code>ACCESS_DENIED</code>: Indicates that the <code>JoinDomain</code> operation failed due to an authentication
+     * error.
      * </p>
      * </li>
      * <li>
      * <p>
-     * DETACHED: Indicates that gateway is not joined to a domain.
+     * <code>DETACHED</code>: Indicates that gateway is not joined to a domain.
      * </p>
      * </li>
      * <li>
      * <p>
-     * JOINED: Indicates that the gateway has successfully joined a domain.
+     * <code>JOINED</code>: Indicates that the gateway has successfully joined a domain.
      * </p>
      * </li>
      * <li>
      * <p>
-     * JOINING: Indicates that a <code>JoinDomain</code> operation is in progress.
+     * <code>JOINING</code>: Indicates that a <code>JoinDomain</code> operation is in progress.
      * </p>
      * </li>
      * <li>
      * <p>
-     * NETWORK_ERROR: Indicates that <code>JoinDomain</code> operation failed due to a network or connectivity error.
+     * <code>NETWORK_ERROR</code>: Indicates that <code>JoinDomain</code> operation failed due to a network or
+     * connectivity error.
      * </p>
      * </li>
      * <li>
      * <p>
-     * TIMEOUT: Indicates that the <code>JoinDomain</code> operation failed because the operation didn't complete within
-     * the allotted time.
+     * <code>TIMEOUT</code>: Indicates that the <code>JoinDomain</code> operation failed because the operation didn't
+     * complete within the allotted time.
      * </p>
      * </li>
      * <li>
      * <p>
-     * UNKNOWN_ERROR: Indicates that the <code>JoinDomain</code> operation failed due to another type of error.
+     * <code>UNKNOWN_ERROR</code>: Indicates that the <code>JoinDomain</code> operation failed due to another type of
+     * error.
      * </p>
      * </li>
      * </ul>
@@ -76,7 +79,11 @@ public class DescribeSMBSettingsResult extends com.amazonaws.AmazonWebServiceRes
     private String activeDirectoryStatus;
     /**
      * <p>
-     * This value is true if a password for the guest user “smbguest” is set, and otherwise false.
+     * This value is <code>true</code> if a password for the guest user <code>smbguest</code> is set, otherwise
+     * <code>false</code>.
+     * </p>
+     * <p>
+     * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      */
     private Boolean sMBGuestPasswordSet;
@@ -84,20 +91,29 @@ public class DescribeSMBSettingsResult extends com.amazonaws.AmazonWebServiceRes
      * <p>
      * The type of security strategy that was specified for file gateway.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * ClientSpecified: if you use this option, requests are established based on what is negotiated by the client. This
-     * option is recommended when you want to maximize compatibility across different clients in your environment.
+     * <code>ClientSpecified</code>: If you use this option, requests are established based on what is negotiated by the
+     * client. This option is recommended when you want to maximize compatibility across different clients in your
+     * environment.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * MandatorySigning: if you use this option, file gateway only allows connections from SMBv2 or SMBv3 clients that
-     * have signing enabled. This option works with SMB clients on Microsoft Windows Vista, Windows Server 2008 or
-     * newer.
+     * <code>MandatorySigning</code>: If you use this option, file gateway only allows connections from SMBv2 or SMBv3
+     * clients that have signing enabled. This option works with SMB clients on Microsoft Windows Vista, Windows Server
+     * 2008 or newer.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * MandatoryEncryption: if you use this option, file gateway only allows connections from SMBv3 clients that have
-     * encryption enabled. This option is highly recommended for environments that handle sensitive data. This option
-     * works with SMB clients on Microsoft Windows 8, Windows Server 2012 or newer.
+     * <code>MandatoryEncryption</code>: If you use this option, file gateway only allows connections from SMBv3 clients
+     * that have encryption enabled. This option is highly recommended for environments that handle sensitive data. This
+     * option works with SMB clients on Microsoft Windows 8, Windows Server 2012 or newer.
      * </p>
+     * </li>
+     * </ul>
      */
     private String sMBSecurityStrategy;
 
@@ -174,38 +190,41 @@ public class DescribeSMBSettingsResult extends com.amazonaws.AmazonWebServiceRes
      * <ul>
      * <li>
      * <p>
-     * ACCESS_DENIED: Indicates that the <code>JoinDomain</code> operation failed due to an authentication error.
+     * <code>ACCESS_DENIED</code>: Indicates that the <code>JoinDomain</code> operation failed due to an authentication
+     * error.
      * </p>
      * </li>
      * <li>
      * <p>
-     * DETACHED: Indicates that gateway is not joined to a domain.
+     * <code>DETACHED</code>: Indicates that gateway is not joined to a domain.
      * </p>
      * </li>
      * <li>
      * <p>
-     * JOINED: Indicates that the gateway has successfully joined a domain.
+     * <code>JOINED</code>: Indicates that the gateway has successfully joined a domain.
      * </p>
      * </li>
      * <li>
      * <p>
-     * JOINING: Indicates that a <code>JoinDomain</code> operation is in progress.
+     * <code>JOINING</code>: Indicates that a <code>JoinDomain</code> operation is in progress.
      * </p>
      * </li>
      * <li>
      * <p>
-     * NETWORK_ERROR: Indicates that <code>JoinDomain</code> operation failed due to a network or connectivity error.
+     * <code>NETWORK_ERROR</code>: Indicates that <code>JoinDomain</code> operation failed due to a network or
+     * connectivity error.
      * </p>
      * </li>
      * <li>
      * <p>
-     * TIMEOUT: Indicates that the <code>JoinDomain</code> operation failed because the operation didn't complete within
-     * the allotted time.
+     * <code>TIMEOUT</code>: Indicates that the <code>JoinDomain</code> operation failed because the operation didn't
+     * complete within the allotted time.
      * </p>
      * </li>
      * <li>
      * <p>
-     * UNKNOWN_ERROR: Indicates that the <code>JoinDomain</code> operation failed due to another type of error.
+     * <code>UNKNOWN_ERROR</code>: Indicates that the <code>JoinDomain</code> operation failed due to another type of
+     * error.
      * </p>
      * </li>
      * </ul>
@@ -215,39 +234,41 @@ public class DescribeSMBSettingsResult extends com.amazonaws.AmazonWebServiceRes
      *        <ul>
      *        <li>
      *        <p>
-     *        ACCESS_DENIED: Indicates that the <code>JoinDomain</code> operation failed due to an authentication error.
+     *        <code>ACCESS_DENIED</code>: Indicates that the <code>JoinDomain</code> operation failed due to an
+     *        authentication error.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        DETACHED: Indicates that gateway is not joined to a domain.
+     *        <code>DETACHED</code>: Indicates that gateway is not joined to a domain.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        JOINED: Indicates that the gateway has successfully joined a domain.
+     *        <code>JOINED</code>: Indicates that the gateway has successfully joined a domain.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        JOINING: Indicates that a <code>JoinDomain</code> operation is in progress.
+     *        <code>JOINING</code>: Indicates that a <code>JoinDomain</code> operation is in progress.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        NETWORK_ERROR: Indicates that <code>JoinDomain</code> operation failed due to a network or connectivity
-     *        error.
+     *        <code>NETWORK_ERROR</code>: Indicates that <code>JoinDomain</code> operation failed due to a network or
+     *        connectivity error.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        TIMEOUT: Indicates that the <code>JoinDomain</code> operation failed because the operation didn't complete
-     *        within the allotted time.
+     *        <code>TIMEOUT</code>: Indicates that the <code>JoinDomain</code> operation failed because the operation
+     *        didn't complete within the allotted time.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        UNKNOWN_ERROR: Indicates that the <code>JoinDomain</code> operation failed due to another type of error.
+     *        <code>UNKNOWN_ERROR</code>: Indicates that the <code>JoinDomain</code> operation failed due to another
+     *        type of error.
      *        </p>
      *        </li>
      * @see ActiveDirectoryStatus
@@ -264,38 +285,41 @@ public class DescribeSMBSettingsResult extends com.amazonaws.AmazonWebServiceRes
      * <ul>
      * <li>
      * <p>
-     * ACCESS_DENIED: Indicates that the <code>JoinDomain</code> operation failed due to an authentication error.
+     * <code>ACCESS_DENIED</code>: Indicates that the <code>JoinDomain</code> operation failed due to an authentication
+     * error.
      * </p>
      * </li>
      * <li>
      * <p>
-     * DETACHED: Indicates that gateway is not joined to a domain.
+     * <code>DETACHED</code>: Indicates that gateway is not joined to a domain.
      * </p>
      * </li>
      * <li>
      * <p>
-     * JOINED: Indicates that the gateway has successfully joined a domain.
+     * <code>JOINED</code>: Indicates that the gateway has successfully joined a domain.
      * </p>
      * </li>
      * <li>
      * <p>
-     * JOINING: Indicates that a <code>JoinDomain</code> operation is in progress.
+     * <code>JOINING</code>: Indicates that a <code>JoinDomain</code> operation is in progress.
      * </p>
      * </li>
      * <li>
      * <p>
-     * NETWORK_ERROR: Indicates that <code>JoinDomain</code> operation failed due to a network or connectivity error.
+     * <code>NETWORK_ERROR</code>: Indicates that <code>JoinDomain</code> operation failed due to a network or
+     * connectivity error.
      * </p>
      * </li>
      * <li>
      * <p>
-     * TIMEOUT: Indicates that the <code>JoinDomain</code> operation failed because the operation didn't complete within
-     * the allotted time.
+     * <code>TIMEOUT</code>: Indicates that the <code>JoinDomain</code> operation failed because the operation didn't
+     * complete within the allotted time.
      * </p>
      * </li>
      * <li>
      * <p>
-     * UNKNOWN_ERROR: Indicates that the <code>JoinDomain</code> operation failed due to another type of error.
+     * <code>UNKNOWN_ERROR</code>: Indicates that the <code>JoinDomain</code> operation failed due to another type of
+     * error.
      * </p>
      * </li>
      * </ul>
@@ -304,40 +328,41 @@ public class DescribeSMBSettingsResult extends com.amazonaws.AmazonWebServiceRes
      *         <ul>
      *         <li>
      *         <p>
-     *         ACCESS_DENIED: Indicates that the <code>JoinDomain</code> operation failed due to an authentication
-     *         error.
+     *         <code>ACCESS_DENIED</code>: Indicates that the <code>JoinDomain</code> operation failed due to an
+     *         authentication error.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         DETACHED: Indicates that gateway is not joined to a domain.
+     *         <code>DETACHED</code>: Indicates that gateway is not joined to a domain.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         JOINED: Indicates that the gateway has successfully joined a domain.
+     *         <code>JOINED</code>: Indicates that the gateway has successfully joined a domain.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         JOINING: Indicates that a <code>JoinDomain</code> operation is in progress.
+     *         <code>JOINING</code>: Indicates that a <code>JoinDomain</code> operation is in progress.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         NETWORK_ERROR: Indicates that <code>JoinDomain</code> operation failed due to a network or connectivity
-     *         error.
+     *         <code>NETWORK_ERROR</code>: Indicates that <code>JoinDomain</code> operation failed due to a network or
+     *         connectivity error.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         TIMEOUT: Indicates that the <code>JoinDomain</code> operation failed because the operation didn't
-     *         complete within the allotted time.
+     *         <code>TIMEOUT</code>: Indicates that the <code>JoinDomain</code> operation failed because the operation
+     *         didn't complete within the allotted time.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         UNKNOWN_ERROR: Indicates that the <code>JoinDomain</code> operation failed due to another type of error.
+     *         <code>UNKNOWN_ERROR</code>: Indicates that the <code>JoinDomain</code> operation failed due to another
+     *         type of error.
      *         </p>
      *         </li>
      * @see ActiveDirectoryStatus
@@ -354,38 +379,41 @@ public class DescribeSMBSettingsResult extends com.amazonaws.AmazonWebServiceRes
      * <ul>
      * <li>
      * <p>
-     * ACCESS_DENIED: Indicates that the <code>JoinDomain</code> operation failed due to an authentication error.
+     * <code>ACCESS_DENIED</code>: Indicates that the <code>JoinDomain</code> operation failed due to an authentication
+     * error.
      * </p>
      * </li>
      * <li>
      * <p>
-     * DETACHED: Indicates that gateway is not joined to a domain.
+     * <code>DETACHED</code>: Indicates that gateway is not joined to a domain.
      * </p>
      * </li>
      * <li>
      * <p>
-     * JOINED: Indicates that the gateway has successfully joined a domain.
+     * <code>JOINED</code>: Indicates that the gateway has successfully joined a domain.
      * </p>
      * </li>
      * <li>
      * <p>
-     * JOINING: Indicates that a <code>JoinDomain</code> operation is in progress.
+     * <code>JOINING</code>: Indicates that a <code>JoinDomain</code> operation is in progress.
      * </p>
      * </li>
      * <li>
      * <p>
-     * NETWORK_ERROR: Indicates that <code>JoinDomain</code> operation failed due to a network or connectivity error.
+     * <code>NETWORK_ERROR</code>: Indicates that <code>JoinDomain</code> operation failed due to a network or
+     * connectivity error.
      * </p>
      * </li>
      * <li>
      * <p>
-     * TIMEOUT: Indicates that the <code>JoinDomain</code> operation failed because the operation didn't complete within
-     * the allotted time.
+     * <code>TIMEOUT</code>: Indicates that the <code>JoinDomain</code> operation failed because the operation didn't
+     * complete within the allotted time.
      * </p>
      * </li>
      * <li>
      * <p>
-     * UNKNOWN_ERROR: Indicates that the <code>JoinDomain</code> operation failed due to another type of error.
+     * <code>UNKNOWN_ERROR</code>: Indicates that the <code>JoinDomain</code> operation failed due to another type of
+     * error.
      * </p>
      * </li>
      * </ul>
@@ -395,39 +423,41 @@ public class DescribeSMBSettingsResult extends com.amazonaws.AmazonWebServiceRes
      *        <ul>
      *        <li>
      *        <p>
-     *        ACCESS_DENIED: Indicates that the <code>JoinDomain</code> operation failed due to an authentication error.
+     *        <code>ACCESS_DENIED</code>: Indicates that the <code>JoinDomain</code> operation failed due to an
+     *        authentication error.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        DETACHED: Indicates that gateway is not joined to a domain.
+     *        <code>DETACHED</code>: Indicates that gateway is not joined to a domain.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        JOINED: Indicates that the gateway has successfully joined a domain.
+     *        <code>JOINED</code>: Indicates that the gateway has successfully joined a domain.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        JOINING: Indicates that a <code>JoinDomain</code> operation is in progress.
+     *        <code>JOINING</code>: Indicates that a <code>JoinDomain</code> operation is in progress.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        NETWORK_ERROR: Indicates that <code>JoinDomain</code> operation failed due to a network or connectivity
-     *        error.
+     *        <code>NETWORK_ERROR</code>: Indicates that <code>JoinDomain</code> operation failed due to a network or
+     *        connectivity error.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        TIMEOUT: Indicates that the <code>JoinDomain</code> operation failed because the operation didn't complete
-     *        within the allotted time.
+     *        <code>TIMEOUT</code>: Indicates that the <code>JoinDomain</code> operation failed because the operation
+     *        didn't complete within the allotted time.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        UNKNOWN_ERROR: Indicates that the <code>JoinDomain</code> operation failed due to another type of error.
+     *        <code>UNKNOWN_ERROR</code>: Indicates that the <code>JoinDomain</code> operation failed due to another
+     *        type of error.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -446,38 +476,41 @@ public class DescribeSMBSettingsResult extends com.amazonaws.AmazonWebServiceRes
      * <ul>
      * <li>
      * <p>
-     * ACCESS_DENIED: Indicates that the <code>JoinDomain</code> operation failed due to an authentication error.
+     * <code>ACCESS_DENIED</code>: Indicates that the <code>JoinDomain</code> operation failed due to an authentication
+     * error.
      * </p>
      * </li>
      * <li>
      * <p>
-     * DETACHED: Indicates that gateway is not joined to a domain.
+     * <code>DETACHED</code>: Indicates that gateway is not joined to a domain.
      * </p>
      * </li>
      * <li>
      * <p>
-     * JOINED: Indicates that the gateway has successfully joined a domain.
+     * <code>JOINED</code>: Indicates that the gateway has successfully joined a domain.
      * </p>
      * </li>
      * <li>
      * <p>
-     * JOINING: Indicates that a <code>JoinDomain</code> operation is in progress.
+     * <code>JOINING</code>: Indicates that a <code>JoinDomain</code> operation is in progress.
      * </p>
      * </li>
      * <li>
      * <p>
-     * NETWORK_ERROR: Indicates that <code>JoinDomain</code> operation failed due to a network or connectivity error.
+     * <code>NETWORK_ERROR</code>: Indicates that <code>JoinDomain</code> operation failed due to a network or
+     * connectivity error.
      * </p>
      * </li>
      * <li>
      * <p>
-     * TIMEOUT: Indicates that the <code>JoinDomain</code> operation failed because the operation didn't complete within
-     * the allotted time.
+     * <code>TIMEOUT</code>: Indicates that the <code>JoinDomain</code> operation failed because the operation didn't
+     * complete within the allotted time.
      * </p>
      * </li>
      * <li>
      * <p>
-     * UNKNOWN_ERROR: Indicates that the <code>JoinDomain</code> operation failed due to another type of error.
+     * <code>UNKNOWN_ERROR</code>: Indicates that the <code>JoinDomain</code> operation failed due to another type of
+     * error.
      * </p>
      * </li>
      * </ul>
@@ -487,39 +520,41 @@ public class DescribeSMBSettingsResult extends com.amazonaws.AmazonWebServiceRes
      *        <ul>
      *        <li>
      *        <p>
-     *        ACCESS_DENIED: Indicates that the <code>JoinDomain</code> operation failed due to an authentication error.
+     *        <code>ACCESS_DENIED</code>: Indicates that the <code>JoinDomain</code> operation failed due to an
+     *        authentication error.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        DETACHED: Indicates that gateway is not joined to a domain.
+     *        <code>DETACHED</code>: Indicates that gateway is not joined to a domain.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        JOINED: Indicates that the gateway has successfully joined a domain.
+     *        <code>JOINED</code>: Indicates that the gateway has successfully joined a domain.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        JOINING: Indicates that a <code>JoinDomain</code> operation is in progress.
+     *        <code>JOINING</code>: Indicates that a <code>JoinDomain</code> operation is in progress.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        NETWORK_ERROR: Indicates that <code>JoinDomain</code> operation failed due to a network or connectivity
-     *        error.
+     *        <code>NETWORK_ERROR</code>: Indicates that <code>JoinDomain</code> operation failed due to a network or
+     *        connectivity error.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        TIMEOUT: Indicates that the <code>JoinDomain</code> operation failed because the operation didn't complete
-     *        within the allotted time.
+     *        <code>TIMEOUT</code>: Indicates that the <code>JoinDomain</code> operation failed because the operation
+     *        didn't complete within the allotted time.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        UNKNOWN_ERROR: Indicates that the <code>JoinDomain</code> operation failed due to another type of error.
+     *        <code>UNKNOWN_ERROR</code>: Indicates that the <code>JoinDomain</code> operation failed due to another
+     *        type of error.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -533,11 +568,18 @@ public class DescribeSMBSettingsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * This value is true if a password for the guest user “smbguest” is set, and otherwise false.
+     * This value is <code>true</code> if a password for the guest user <code>smbguest</code> is set, otherwise
+     * <code>false</code>.
+     * </p>
+     * <p>
+     * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
      * @param sMBGuestPasswordSet
-     *        This value is true if a password for the guest user “smbguest” is set, and otherwise false.
+     *        This value is <code>true</code> if a password for the guest user <code>smbguest</code> is set, otherwise
+     *        <code>false</code>.</p>
+     *        <p>
+     *        Valid Values: <code>true</code> | <code>false</code>
      */
 
     public void setSMBGuestPasswordSet(Boolean sMBGuestPasswordSet) {
@@ -546,10 +588,17 @@ public class DescribeSMBSettingsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * This value is true if a password for the guest user “smbguest” is set, and otherwise false.
+     * This value is <code>true</code> if a password for the guest user <code>smbguest</code> is set, otherwise
+     * <code>false</code>.
+     * </p>
+     * <p>
+     * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
-     * @return This value is true if a password for the guest user “smbguest” is set, and otherwise false.
+     * @return This value is <code>true</code> if a password for the guest user <code>smbguest</code> is set, otherwise
+     *         <code>false</code>.</p>
+     *         <p>
+     *         Valid Values: <code>true</code> | <code>false</code>
      */
 
     public Boolean getSMBGuestPasswordSet() {
@@ -558,11 +607,18 @@ public class DescribeSMBSettingsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * This value is true if a password for the guest user “smbguest” is set, and otherwise false.
+     * This value is <code>true</code> if a password for the guest user <code>smbguest</code> is set, otherwise
+     * <code>false</code>.
+     * </p>
+     * <p>
+     * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
      * @param sMBGuestPasswordSet
-     *        This value is true if a password for the guest user “smbguest” is set, and otherwise false.
+     *        This value is <code>true</code> if a password for the guest user <code>smbguest</code> is set, otherwise
+     *        <code>false</code>.</p>
+     *        <p>
+     *        Valid Values: <code>true</code> | <code>false</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -573,10 +629,17 @@ public class DescribeSMBSettingsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * This value is true if a password for the guest user “smbguest” is set, and otherwise false.
+     * This value is <code>true</code> if a password for the guest user <code>smbguest</code> is set, otherwise
+     * <code>false</code>.
+     * </p>
+     * <p>
+     * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
-     * @return This value is true if a password for the guest user “smbguest” is set, and otherwise false.
+     * @return This value is <code>true</code> if a password for the guest user <code>smbguest</code> is set, otherwise
+     *         <code>false</code>.</p>
+     *         <p>
+     *         Valid Values: <code>true</code> | <code>false</code>
      */
 
     public Boolean isSMBGuestPasswordSet() {
@@ -587,37 +650,54 @@ public class DescribeSMBSettingsResult extends com.amazonaws.AmazonWebServiceRes
      * <p>
      * The type of security strategy that was specified for file gateway.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * ClientSpecified: if you use this option, requests are established based on what is negotiated by the client. This
-     * option is recommended when you want to maximize compatibility across different clients in your environment.
+     * <code>ClientSpecified</code>: If you use this option, requests are established based on what is negotiated by the
+     * client. This option is recommended when you want to maximize compatibility across different clients in your
+     * environment.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * MandatorySigning: if you use this option, file gateway only allows connections from SMBv2 or SMBv3 clients that
-     * have signing enabled. This option works with SMB clients on Microsoft Windows Vista, Windows Server 2008 or
-     * newer.
+     * <code>MandatorySigning</code>: If you use this option, file gateway only allows connections from SMBv2 or SMBv3
+     * clients that have signing enabled. This option works with SMB clients on Microsoft Windows Vista, Windows Server
+     * 2008 or newer.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * MandatoryEncryption: if you use this option, file gateway only allows connections from SMBv3 clients that have
-     * encryption enabled. This option is highly recommended for environments that handle sensitive data. This option
-     * works with SMB clients on Microsoft Windows 8, Windows Server 2012 or newer.
+     * <code>MandatoryEncryption</code>: If you use this option, file gateway only allows connections from SMBv3 clients
+     * that have encryption enabled. This option is highly recommended for environments that handle sensitive data. This
+     * option works with SMB clients on Microsoft Windows 8, Windows Server 2012 or newer.
      * </p>
+     * </li>
+     * </ul>
      * 
      * @param sMBSecurityStrategy
      *        The type of security strategy that was specified for file gateway.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        ClientSpecified: if you use this option, requests are established based on what is negotiated by the
-     *        client. This option is recommended when you want to maximize compatibility across different clients in
-     *        your environment.
+     *        <code>ClientSpecified</code>: If you use this option, requests are established based on what is negotiated
+     *        by the client. This option is recommended when you want to maximize compatibility across different clients
+     *        in your environment.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        MandatorySigning: if you use this option, file gateway only allows connections from SMBv2 or SMBv3 clients
-     *        that have signing enabled. This option works with SMB clients on Microsoft Windows Vista, Windows Server
-     *        2008 or newer.
+     *        <code>MandatorySigning</code>: If you use this option, file gateway only allows connections from SMBv2 or
+     *        SMBv3 clients that have signing enabled. This option works with SMB clients on Microsoft Windows Vista,
+     *        Windows Server 2008 or newer.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        MandatoryEncryption: if you use this option, file gateway only allows connections from SMBv3 clients that
-     *        have encryption enabled. This option is highly recommended for environments that handle sensitive data.
-     *        This option works with SMB clients on Microsoft Windows 8, Windows Server 2012 or newer.
+     *        <code>MandatoryEncryption</code>: If you use this option, file gateway only allows connections from SMBv3
+     *        clients that have encryption enabled. This option is highly recommended for environments that handle
+     *        sensitive data. This option works with SMB clients on Microsoft Windows 8, Windows Server 2012 or newer.
+     *        </p>
+     *        </li>
      * @see SMBSecurityStrategy
      */
 
@@ -629,36 +709,53 @@ public class DescribeSMBSettingsResult extends com.amazonaws.AmazonWebServiceRes
      * <p>
      * The type of security strategy that was specified for file gateway.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * ClientSpecified: if you use this option, requests are established based on what is negotiated by the client. This
-     * option is recommended when you want to maximize compatibility across different clients in your environment.
+     * <code>ClientSpecified</code>: If you use this option, requests are established based on what is negotiated by the
+     * client. This option is recommended when you want to maximize compatibility across different clients in your
+     * environment.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * MandatorySigning: if you use this option, file gateway only allows connections from SMBv2 or SMBv3 clients that
-     * have signing enabled. This option works with SMB clients on Microsoft Windows Vista, Windows Server 2008 or
-     * newer.
+     * <code>MandatorySigning</code>: If you use this option, file gateway only allows connections from SMBv2 or SMBv3
+     * clients that have signing enabled. This option works with SMB clients on Microsoft Windows Vista, Windows Server
+     * 2008 or newer.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * MandatoryEncryption: if you use this option, file gateway only allows connections from SMBv3 clients that have
-     * encryption enabled. This option is highly recommended for environments that handle sensitive data. This option
-     * works with SMB clients on Microsoft Windows 8, Windows Server 2012 or newer.
+     * <code>MandatoryEncryption</code>: If you use this option, file gateway only allows connections from SMBv3 clients
+     * that have encryption enabled. This option is highly recommended for environments that handle sensitive data. This
+     * option works with SMB clients on Microsoft Windows 8, Windows Server 2012 or newer.
      * </p>
+     * </li>
+     * </ul>
      * 
      * @return The type of security strategy that was specified for file gateway.</p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         ClientSpecified: if you use this option, requests are established based on what is negotiated by the
-     *         client. This option is recommended when you want to maximize compatibility across different clients in
-     *         your environment.
+     *         <code>ClientSpecified</code>: If you use this option, requests are established based on what is
+     *         negotiated by the client. This option is recommended when you want to maximize compatibility across
+     *         different clients in your environment.
      *         </p>
+     *         </li>
+     *         <li>
      *         <p>
-     *         MandatorySigning: if you use this option, file gateway only allows connections from SMBv2 or SMBv3
-     *         clients that have signing enabled. This option works with SMB clients on Microsoft Windows Vista, Windows
-     *         Server 2008 or newer.
+     *         <code>MandatorySigning</code>: If you use this option, file gateway only allows connections from SMBv2 or
+     *         SMBv3 clients that have signing enabled. This option works with SMB clients on Microsoft Windows Vista,
+     *         Windows Server 2008 or newer.
      *         </p>
+     *         </li>
+     *         <li>
      *         <p>
-     *         MandatoryEncryption: if you use this option, file gateway only allows connections from SMBv3 clients that
-     *         have encryption enabled. This option is highly recommended for environments that handle sensitive data.
-     *         This option works with SMB clients on Microsoft Windows 8, Windows Server 2012 or newer.
+     *         <code>MandatoryEncryption</code>: If you use this option, file gateway only allows connections from SMBv3
+     *         clients that have encryption enabled. This option is highly recommended for environments that handle
+     *         sensitive data. This option works with SMB clients on Microsoft Windows 8, Windows Server 2012 or newer.
+     *         </p>
+     *         </li>
      * @see SMBSecurityStrategy
      */
 
@@ -670,37 +767,54 @@ public class DescribeSMBSettingsResult extends com.amazonaws.AmazonWebServiceRes
      * <p>
      * The type of security strategy that was specified for file gateway.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * ClientSpecified: if you use this option, requests are established based on what is negotiated by the client. This
-     * option is recommended when you want to maximize compatibility across different clients in your environment.
+     * <code>ClientSpecified</code>: If you use this option, requests are established based on what is negotiated by the
+     * client. This option is recommended when you want to maximize compatibility across different clients in your
+     * environment.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * MandatorySigning: if you use this option, file gateway only allows connections from SMBv2 or SMBv3 clients that
-     * have signing enabled. This option works with SMB clients on Microsoft Windows Vista, Windows Server 2008 or
-     * newer.
+     * <code>MandatorySigning</code>: If you use this option, file gateway only allows connections from SMBv2 or SMBv3
+     * clients that have signing enabled. This option works with SMB clients on Microsoft Windows Vista, Windows Server
+     * 2008 or newer.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * MandatoryEncryption: if you use this option, file gateway only allows connections from SMBv3 clients that have
-     * encryption enabled. This option is highly recommended for environments that handle sensitive data. This option
-     * works with SMB clients on Microsoft Windows 8, Windows Server 2012 or newer.
+     * <code>MandatoryEncryption</code>: If you use this option, file gateway only allows connections from SMBv3 clients
+     * that have encryption enabled. This option is highly recommended for environments that handle sensitive data. This
+     * option works with SMB clients on Microsoft Windows 8, Windows Server 2012 or newer.
      * </p>
+     * </li>
+     * </ul>
      * 
      * @param sMBSecurityStrategy
      *        The type of security strategy that was specified for file gateway.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        ClientSpecified: if you use this option, requests are established based on what is negotiated by the
-     *        client. This option is recommended when you want to maximize compatibility across different clients in
-     *        your environment.
+     *        <code>ClientSpecified</code>: If you use this option, requests are established based on what is negotiated
+     *        by the client. This option is recommended when you want to maximize compatibility across different clients
+     *        in your environment.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        MandatorySigning: if you use this option, file gateway only allows connections from SMBv2 or SMBv3 clients
-     *        that have signing enabled. This option works with SMB clients on Microsoft Windows Vista, Windows Server
-     *        2008 or newer.
+     *        <code>MandatorySigning</code>: If you use this option, file gateway only allows connections from SMBv2 or
+     *        SMBv3 clients that have signing enabled. This option works with SMB clients on Microsoft Windows Vista,
+     *        Windows Server 2008 or newer.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        MandatoryEncryption: if you use this option, file gateway only allows connections from SMBv3 clients that
-     *        have encryption enabled. This option is highly recommended for environments that handle sensitive data.
-     *        This option works with SMB clients on Microsoft Windows 8, Windows Server 2012 or newer.
+     *        <code>MandatoryEncryption</code>: If you use this option, file gateway only allows connections from SMBv3
+     *        clients that have encryption enabled. This option is highly recommended for environments that handle
+     *        sensitive data. This option works with SMB clients on Microsoft Windows 8, Windows Server 2012 or newer.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SMBSecurityStrategy
      */
@@ -714,37 +828,54 @@ public class DescribeSMBSettingsResult extends com.amazonaws.AmazonWebServiceRes
      * <p>
      * The type of security strategy that was specified for file gateway.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * ClientSpecified: if you use this option, requests are established based on what is negotiated by the client. This
-     * option is recommended when you want to maximize compatibility across different clients in your environment.
+     * <code>ClientSpecified</code>: If you use this option, requests are established based on what is negotiated by the
+     * client. This option is recommended when you want to maximize compatibility across different clients in your
+     * environment.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * MandatorySigning: if you use this option, file gateway only allows connections from SMBv2 or SMBv3 clients that
-     * have signing enabled. This option works with SMB clients on Microsoft Windows Vista, Windows Server 2008 or
-     * newer.
+     * <code>MandatorySigning</code>: If you use this option, file gateway only allows connections from SMBv2 or SMBv3
+     * clients that have signing enabled. This option works with SMB clients on Microsoft Windows Vista, Windows Server
+     * 2008 or newer.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * MandatoryEncryption: if you use this option, file gateway only allows connections from SMBv3 clients that have
-     * encryption enabled. This option is highly recommended for environments that handle sensitive data. This option
-     * works with SMB clients on Microsoft Windows 8, Windows Server 2012 or newer.
+     * <code>MandatoryEncryption</code>: If you use this option, file gateway only allows connections from SMBv3 clients
+     * that have encryption enabled. This option is highly recommended for environments that handle sensitive data. This
+     * option works with SMB clients on Microsoft Windows 8, Windows Server 2012 or newer.
      * </p>
+     * </li>
+     * </ul>
      * 
      * @param sMBSecurityStrategy
      *        The type of security strategy that was specified for file gateway.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        ClientSpecified: if you use this option, requests are established based on what is negotiated by the
-     *        client. This option is recommended when you want to maximize compatibility across different clients in
-     *        your environment.
+     *        <code>ClientSpecified</code>: If you use this option, requests are established based on what is negotiated
+     *        by the client. This option is recommended when you want to maximize compatibility across different clients
+     *        in your environment.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        MandatorySigning: if you use this option, file gateway only allows connections from SMBv2 or SMBv3 clients
-     *        that have signing enabled. This option works with SMB clients on Microsoft Windows Vista, Windows Server
-     *        2008 or newer.
+     *        <code>MandatorySigning</code>: If you use this option, file gateway only allows connections from SMBv2 or
+     *        SMBv3 clients that have signing enabled. This option works with SMB clients on Microsoft Windows Vista,
+     *        Windows Server 2008 or newer.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        MandatoryEncryption: if you use this option, file gateway only allows connections from SMBv3 clients that
-     *        have encryption enabled. This option is highly recommended for environments that handle sensitive data.
-     *        This option works with SMB clients on Microsoft Windows 8, Windows Server 2012 or newer.
+     *        <code>MandatoryEncryption</code>: If you use this option, file gateway only allows connections from SMBv3
+     *        clients that have encryption enabled. This option is highly recommended for environments that handle
+     *        sensitive data. This option works with SMB clients on Microsoft Windows 8, Windows Server 2012 or newer.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SMBSecurityStrategy
      */

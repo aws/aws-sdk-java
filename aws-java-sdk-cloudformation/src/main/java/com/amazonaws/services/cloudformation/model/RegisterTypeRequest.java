@@ -109,11 +109,13 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
     private LoggingConfig loggingConfig;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM execution role to use to register the type. If your resource type calls
-     * AWS APIs in any of its handlers, you must create an <i> <a
+     * The Amazon Resource Name (ARN) of the IAM role for CloudFormation to assume when invoking the resource provider.
+     * If your resource type calls AWS APIs in any of its handlers, you must create an <i> <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM execution role</a> </i> that includes
-     * the necessary permissions to call those AWS APIs, and provision that execution role in your account.
-     * CloudFormation then assumes that execution role to provide your resource type with the appropriate credentials.
+     * the necessary permissions to call those AWS APIs, and provision that execution role in your account. When
+     * CloudFormation needs to invoke the resource provider handler, CloudFormation assumes this execution role to
+     * create a temporary session token, which it then passes to the resource provider handler, thereby supplying your
+     * resource provider with the appropriate credentials.
      * </p>
      */
     private String executionRoleArn;
@@ -651,20 +653,23 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM execution role to use to register the type. If your resource type calls
-     * AWS APIs in any of its handlers, you must create an <i> <a
+     * The Amazon Resource Name (ARN) of the IAM role for CloudFormation to assume when invoking the resource provider.
+     * If your resource type calls AWS APIs in any of its handlers, you must create an <i> <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM execution role</a> </i> that includes
-     * the necessary permissions to call those AWS APIs, and provision that execution role in your account.
-     * CloudFormation then assumes that execution role to provide your resource type with the appropriate credentials.
+     * the necessary permissions to call those AWS APIs, and provision that execution role in your account. When
+     * CloudFormation needs to invoke the resource provider handler, CloudFormation assumes this execution role to
+     * create a temporary session token, which it then passes to the resource provider handler, thereby supplying your
+     * resource provider with the appropriate credentials.
      * </p>
      * 
      * @param executionRoleArn
-     *        The Amazon Resource Name (ARN) of the IAM execution role to use to register the type. If your resource
-     *        type calls AWS APIs in any of its handlers, you must create an <i> <a
+     *        The Amazon Resource Name (ARN) of the IAM role for CloudFormation to assume when invoking the resource
+     *        provider. If your resource type calls AWS APIs in any of its handlers, you must create an <i> <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM execution role</a> </i> that
      *        includes the necessary permissions to call those AWS APIs, and provision that execution role in your
-     *        account. CloudFormation then assumes that execution role to provide your resource type with the
-     *        appropriate credentials.
+     *        account. When CloudFormation needs to invoke the resource provider handler, CloudFormation assumes this
+     *        execution role to create a temporary session token, which it then passes to the resource provider handler,
+     *        thereby supplying your resource provider with the appropriate credentials.
      */
 
     public void setExecutionRoleArn(String executionRoleArn) {
@@ -673,19 +678,22 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM execution role to use to register the type. If your resource type calls
-     * AWS APIs in any of its handlers, you must create an <i> <a
+     * The Amazon Resource Name (ARN) of the IAM role for CloudFormation to assume when invoking the resource provider.
+     * If your resource type calls AWS APIs in any of its handlers, you must create an <i> <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM execution role</a> </i> that includes
-     * the necessary permissions to call those AWS APIs, and provision that execution role in your account.
-     * CloudFormation then assumes that execution role to provide your resource type with the appropriate credentials.
+     * the necessary permissions to call those AWS APIs, and provision that execution role in your account. When
+     * CloudFormation needs to invoke the resource provider handler, CloudFormation assumes this execution role to
+     * create a temporary session token, which it then passes to the resource provider handler, thereby supplying your
+     * resource provider with the appropriate credentials.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the IAM execution role to use to register the type. If your resource
-     *         type calls AWS APIs in any of its handlers, you must create an <i> <a
+     * @return The Amazon Resource Name (ARN) of the IAM role for CloudFormation to assume when invoking the resource
+     *         provider. If your resource type calls AWS APIs in any of its handlers, you must create an <i> <a
      *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM execution role</a> </i> that
      *         includes the necessary permissions to call those AWS APIs, and provision that execution role in your
-     *         account. CloudFormation then assumes that execution role to provide your resource type with the
-     *         appropriate credentials.
+     *         account. When CloudFormation needs to invoke the resource provider handler, CloudFormation assumes this
+     *         execution role to create a temporary session token, which it then passes to the resource provider
+     *         handler, thereby supplying your resource provider with the appropriate credentials.
      */
 
     public String getExecutionRoleArn() {
@@ -694,20 +702,23 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM execution role to use to register the type. If your resource type calls
-     * AWS APIs in any of its handlers, you must create an <i> <a
+     * The Amazon Resource Name (ARN) of the IAM role for CloudFormation to assume when invoking the resource provider.
+     * If your resource type calls AWS APIs in any of its handlers, you must create an <i> <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM execution role</a> </i> that includes
-     * the necessary permissions to call those AWS APIs, and provision that execution role in your account.
-     * CloudFormation then assumes that execution role to provide your resource type with the appropriate credentials.
+     * the necessary permissions to call those AWS APIs, and provision that execution role in your account. When
+     * CloudFormation needs to invoke the resource provider handler, CloudFormation assumes this execution role to
+     * create a temporary session token, which it then passes to the resource provider handler, thereby supplying your
+     * resource provider with the appropriate credentials.
      * </p>
      * 
      * @param executionRoleArn
-     *        The Amazon Resource Name (ARN) of the IAM execution role to use to register the type. If your resource
-     *        type calls AWS APIs in any of its handlers, you must create an <i> <a
+     *        The Amazon Resource Name (ARN) of the IAM role for CloudFormation to assume when invoking the resource
+     *        provider. If your resource type calls AWS APIs in any of its handlers, you must create an <i> <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM execution role</a> </i> that
      *        includes the necessary permissions to call those AWS APIs, and provision that execution role in your
-     *        account. CloudFormation then assumes that execution role to provide your resource type with the
-     *        appropriate credentials.
+     *        account. When CloudFormation needs to invoke the resource provider handler, CloudFormation assumes this
+     *        execution role to create a temporary session token, which it then passes to the resource provider handler,
+     *        thereby supplying your resource provider with the appropriate credentials.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

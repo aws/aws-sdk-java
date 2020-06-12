@@ -185,7 +185,7 @@ public class DescribeTapesRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @param marker
      *        A marker value, obtained in a previous call to <code>DescribeTapes</code>. This marker indicates which
-     *        page of results to retrieve. </p>
+     *        page of results to retrieve.</p>
      *        <p>
      *        If not specified, the first page of results is retrieved.
      */
@@ -204,7 +204,7 @@ public class DescribeTapesRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @return A marker value, obtained in a previous call to <code>DescribeTapes</code>. This marker indicates which
-     *         page of results to retrieve. </p>
+     *         page of results to retrieve.</p>
      *         <p>
      *         If not specified, the first page of results is retrieved.
      */
@@ -224,7 +224,7 @@ public class DescribeTapesRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @param marker
      *        A marker value, obtained in a previous call to <code>DescribeTapes</code>. This marker indicates which
-     *        page of results to retrieve. </p>
+     *        page of results to retrieve.</p>
      *        <p>
      *        If not specified, the first page of results is retrieved.
      * @return Returns a reference to this object so that method calls can be chained together.

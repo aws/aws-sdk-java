@@ -161,13 +161,17 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
     private String passthroughBehavior;
     /**
      * <p>
-     * A list of request parameters whose values are to be cached.
+     * Specifies a group of related cached parameters. By default, API Gateway uses the resource ID as the
+     * <code>cacheNamespace</code>. You can specify the same <code>cacheNamespace</code> across resources to return the
+     * same cached data for requests to different resources.
      * </p>
      */
     private String cacheNamespace;
     /**
      * <p>
-     * An API-specific tag group of related cached parameters.
+     * A list of request parameters whose values API Gateway caches. To be valid values for
+     * <code>cacheKeyParameters</code>, these parameters must also be specified for <a>Method</a>
+     * <code>requestParameters</code>.
      * </p>
      */
     private java.util.List<String> cacheKeyParameters;
@@ -1194,11 +1198,15 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of request parameters whose values are to be cached.
+     * Specifies a group of related cached parameters. By default, API Gateway uses the resource ID as the
+     * <code>cacheNamespace</code>. You can specify the same <code>cacheNamespace</code> across resources to return the
+     * same cached data for requests to different resources.
      * </p>
      * 
      * @param cacheNamespace
-     *        A list of request parameters whose values are to be cached.
+     *        Specifies a group of related cached parameters. By default, API Gateway uses the resource ID as the
+     *        <code>cacheNamespace</code>. You can specify the same <code>cacheNamespace</code> across resources to
+     *        return the same cached data for requests to different resources.
      */
 
     public void setCacheNamespace(String cacheNamespace) {
@@ -1207,10 +1215,14 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of request parameters whose values are to be cached.
+     * Specifies a group of related cached parameters. By default, API Gateway uses the resource ID as the
+     * <code>cacheNamespace</code>. You can specify the same <code>cacheNamespace</code> across resources to return the
+     * same cached data for requests to different resources.
      * </p>
      * 
-     * @return A list of request parameters whose values are to be cached.
+     * @return Specifies a group of related cached parameters. By default, API Gateway uses the resource ID as the
+     *         <code>cacheNamespace</code>. You can specify the same <code>cacheNamespace</code> across resources to
+     *         return the same cached data for requests to different resources.
      */
 
     public String getCacheNamespace() {
@@ -1219,11 +1231,15 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of request parameters whose values are to be cached.
+     * Specifies a group of related cached parameters. By default, API Gateway uses the resource ID as the
+     * <code>cacheNamespace</code>. You can specify the same <code>cacheNamespace</code> across resources to return the
+     * same cached data for requests to different resources.
      * </p>
      * 
      * @param cacheNamespace
-     *        A list of request parameters whose values are to be cached.
+     *        Specifies a group of related cached parameters. By default, API Gateway uses the resource ID as the
+     *        <code>cacheNamespace</code>. You can specify the same <code>cacheNamespace</code> across resources to
+     *        return the same cached data for requests to different resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1234,10 +1250,14 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * An API-specific tag group of related cached parameters.
+     * A list of request parameters whose values API Gateway caches. To be valid values for
+     * <code>cacheKeyParameters</code>, these parameters must also be specified for <a>Method</a>
+     * <code>requestParameters</code>.
      * </p>
      * 
-     * @return An API-specific tag group of related cached parameters.
+     * @return A list of request parameters whose values API Gateway caches. To be valid values for
+     *         <code>cacheKeyParameters</code>, these parameters must also be specified for <a>Method</a>
+     *         <code>requestParameters</code>.
      */
 
     public java.util.List<String> getCacheKeyParameters() {
@@ -1246,11 +1266,15 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * An API-specific tag group of related cached parameters.
+     * A list of request parameters whose values API Gateway caches. To be valid values for
+     * <code>cacheKeyParameters</code>, these parameters must also be specified for <a>Method</a>
+     * <code>requestParameters</code>.
      * </p>
      * 
      * @param cacheKeyParameters
-     *        An API-specific tag group of related cached parameters.
+     *        A list of request parameters whose values API Gateway caches. To be valid values for
+     *        <code>cacheKeyParameters</code>, these parameters must also be specified for <a>Method</a>
+     *        <code>requestParameters</code>.
      */
 
     public void setCacheKeyParameters(java.util.Collection<String> cacheKeyParameters) {
@@ -1264,7 +1288,9 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * An API-specific tag group of related cached parameters.
+     * A list of request parameters whose values API Gateway caches. To be valid values for
+     * <code>cacheKeyParameters</code>, these parameters must also be specified for <a>Method</a>
+     * <code>requestParameters</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1273,7 +1299,9 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param cacheKeyParameters
-     *        An API-specific tag group of related cached parameters.
+     *        A list of request parameters whose values API Gateway caches. To be valid values for
+     *        <code>cacheKeyParameters</code>, these parameters must also be specified for <a>Method</a>
+     *        <code>requestParameters</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1289,11 +1317,15 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * An API-specific tag group of related cached parameters.
+     * A list of request parameters whose values API Gateway caches. To be valid values for
+     * <code>cacheKeyParameters</code>, these parameters must also be specified for <a>Method</a>
+     * <code>requestParameters</code>.
      * </p>
      * 
      * @param cacheKeyParameters
-     *        An API-specific tag group of related cached parameters.
+     *        A list of request parameters whose values API Gateway caches. To be valid values for
+     *        <code>cacheKeyParameters</code>, these parameters must also be specified for <a>Method</a>
+     *        <code>requestParameters</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

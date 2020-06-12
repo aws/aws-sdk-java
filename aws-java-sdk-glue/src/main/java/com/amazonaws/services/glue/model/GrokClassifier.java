@@ -61,14 +61,14 @@ public class GrokClassifier implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The grok pattern applied to a data store by this classifier. For more information, see built-in patterns in <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.
+     * href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.
      * </p>
      */
     private String grokPattern;
     /**
      * <p>
      * Optional custom grok patterns defined by this classifier. For more information, see custom patterns in <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.
+     * href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.
      * </p>
      */
     private String customPatterns;
@@ -279,12 +279,12 @@ public class GrokClassifier implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The grok pattern applied to a data store by this classifier. For more information, see built-in patterns in <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.
+     * href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.
      * </p>
      * 
      * @param grokPattern
      *        The grok pattern applied to a data store by this classifier. For more information, see built-in patterns
-     *        in <a href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom
+     *        in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom
      *        Classifiers</a>.
      */
 
@@ -295,11 +295,11 @@ public class GrokClassifier implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The grok pattern applied to a data store by this classifier. For more information, see built-in patterns in <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.
+     * href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.
      * </p>
      * 
      * @return The grok pattern applied to a data store by this classifier. For more information, see built-in patterns
-     *         in <a href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom
+     *         in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom
      *         Classifiers</a>.
      */
 
@@ -310,12 +310,12 @@ public class GrokClassifier implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The grok pattern applied to a data store by this classifier. For more information, see built-in patterns in <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.
+     * href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.
      * </p>
      * 
      * @param grokPattern
      *        The grok pattern applied to a data store by this classifier. For more information, see built-in patterns
-     *        in <a href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom
+     *        in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom
      *        Classifiers</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -328,12 +328,12 @@ public class GrokClassifier implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Optional custom grok patterns defined by this classifier. For more information, see custom patterns in <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.
+     * href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.
      * </p>
      * 
      * @param customPatterns
      *        Optional custom grok patterns defined by this classifier. For more information, see custom patterns in <a
-     *        href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.
+     *        href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.
      */
 
     public void setCustomPatterns(String customPatterns) {
@@ -343,11 +343,11 @@ public class GrokClassifier implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Optional custom grok patterns defined by this classifier. For more information, see custom patterns in <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.
+     * href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.
      * </p>
      * 
      * @return Optional custom grok patterns defined by this classifier. For more information, see custom patterns in <a
-     *         href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.
+     *         href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.
      */
 
     public String getCustomPatterns() {
@@ -357,12 +357,12 @@ public class GrokClassifier implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Optional custom grok patterns defined by this classifier. For more information, see custom patterns in <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.
+     * href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.
      * </p>
      * 
      * @param customPatterns
      *        Optional custom grok patterns defined by this classifier. For more information, see custom patterns in <a
-     *        href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.
+     *        href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

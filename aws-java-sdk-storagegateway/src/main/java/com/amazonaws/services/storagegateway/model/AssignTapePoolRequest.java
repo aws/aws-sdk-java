@@ -38,7 +38,7 @@ public class AssignTapePoolRequest extends com.amazonaws.AmazonWebServiceRequest
      * is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.
      * </p>
      * <p>
-     * Valid values: "GLACIER", "DEEP_ARCHIVE"
+     * Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code>
      * </p>
      */
     private String poolId;
@@ -90,7 +90,7 @@ public class AssignTapePoolRequest extends com.amazonaws.AmazonWebServiceRequest
      * is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.
      * </p>
      * <p>
-     * Valid values: "GLACIER", "DEEP_ARCHIVE"
+     * Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code>
      * </p>
      * 
      * @param poolId
@@ -99,7 +99,7 @@ public class AssignTapePoolRequest extends com.amazonaws.AmazonWebServiceRequest
      *        tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that
      *        corresponds to the pool.</p>
      *        <p>
-     *        Valid values: "GLACIER", "DEEP_ARCHIVE"
+     *        Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code>
      */
 
     public void setPoolId(String poolId) {
@@ -113,7 +113,7 @@ public class AssignTapePoolRequest extends com.amazonaws.AmazonWebServiceRequest
      * is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.
      * </p>
      * <p>
-     * Valid values: "GLACIER", "DEEP_ARCHIVE"
+     * Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code>
      * </p>
      * 
      * @return The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in
@@ -121,7 +121,7 @@ public class AssignTapePoolRequest extends com.amazonaws.AmazonWebServiceRequest
      *         tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that
      *         corresponds to the pool.</p>
      *         <p>
-     *         Valid values: "GLACIER", "DEEP_ARCHIVE"
+     *         Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code>
      */
 
     public String getPoolId() {
@@ -135,7 +135,7 @@ public class AssignTapePoolRequest extends com.amazonaws.AmazonWebServiceRequest
      * is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.
      * </p>
      * <p>
-     * Valid values: "GLACIER", "DEEP_ARCHIVE"
+     * Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code>
      * </p>
      * 
      * @param poolId
@@ -144,7 +144,7 @@ public class AssignTapePoolRequest extends com.amazonaws.AmazonWebServiceRequest
      *        tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that
      *        corresponds to the pool.</p>
      *        <p>
-     *        Valid values: "GLACIER", "DEEP_ARCHIVE"
+     *        Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

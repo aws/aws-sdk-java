@@ -150,7 +150,10 @@ public class StackSet implements Serializable, Cloneable {
     private String permissionModel;
     /**
      * <p>
-     * Reserved for internal use. No data returned.
+     * [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OU) IDs that you
+     * specified for <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html"
+     * >DeploymentTargets</a>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> organizationalUnitIds;
@@ -1205,10 +1208,16 @@ public class StackSet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Reserved for internal use. No data returned.
+     * [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OU) IDs that you
+     * specified for <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html"
+     * >DeploymentTargets</a>.
      * </p>
      * 
-     * @return Reserved for internal use. No data returned.
+     * @return [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OU) IDs that
+     *         you specified for <a
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html"
+     *         >DeploymentTargets</a>.
      */
 
     public java.util.List<String> getOrganizationalUnitIds() {
@@ -1220,11 +1229,17 @@ public class StackSet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Reserved for internal use. No data returned.
+     * [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OU) IDs that you
+     * specified for <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html"
+     * >DeploymentTargets</a>.
      * </p>
      * 
      * @param organizationalUnitIds
-     *        Reserved for internal use. No data returned.
+     *        [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OU) IDs that
+     *        you specified for <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html"
+     *        >DeploymentTargets</a>.
      */
 
     public void setOrganizationalUnitIds(java.util.Collection<String> organizationalUnitIds) {
@@ -1238,7 +1253,10 @@ public class StackSet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Reserved for internal use. No data returned.
+     * [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OU) IDs that you
+     * specified for <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html"
+     * >DeploymentTargets</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1247,7 +1265,10 @@ public class StackSet implements Serializable, Cloneable {
      * </p>
      * 
      * @param organizationalUnitIds
-     *        Reserved for internal use. No data returned.
+     *        [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OU) IDs that
+     *        you specified for <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html"
+     *        >DeploymentTargets</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1263,11 +1284,17 @@ public class StackSet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Reserved for internal use. No data returned.
+     * [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OU) IDs that you
+     * specified for <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html"
+     * >DeploymentTargets</a>.
      * </p>
      * 
      * @param organizationalUnitIds
-     *        Reserved for internal use. No data returned.
+     *        [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OU) IDs that
+     *        you specified for <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html"
+     *        >DeploymentTargets</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

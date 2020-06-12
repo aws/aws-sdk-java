@@ -37,7 +37,7 @@ public class S3Target implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A list of glob patterns used to exclude from the crawl. For more information, see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.
      * </p>
      */
     private java.util.List<String> exclusions;
@@ -85,11 +85,11 @@ public class S3Target implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A list of glob patterns used to exclude from the crawl. For more information, see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.
      * </p>
      * 
      * @return A list of glob patterns used to exclude from the crawl. For more information, see <a
-     *         href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.
+     *         href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.
      */
 
     public java.util.List<String> getExclusions() {
@@ -99,12 +99,12 @@ public class S3Target implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A list of glob patterns used to exclude from the crawl. For more information, see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.
      * </p>
      * 
      * @param exclusions
      *        A list of glob patterns used to exclude from the crawl. For more information, see <a
-     *        href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.
+     *        href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.
      */
 
     public void setExclusions(java.util.Collection<String> exclusions) {
@@ -119,7 +119,7 @@ public class S3Target implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A list of glob patterns used to exclude from the crawl. For more information, see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -129,7 +129,7 @@ public class S3Target implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param exclusions
      *        A list of glob patterns used to exclude from the crawl. For more information, see <a
-     *        href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.
+     *        href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -146,12 +146,12 @@ public class S3Target implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A list of glob patterns used to exclude from the crawl. For more information, see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.
      * </p>
      * 
      * @param exclusions
      *        A list of glob patterns used to exclude from the crawl. For more information, see <a
-     *        href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.
+     *        href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

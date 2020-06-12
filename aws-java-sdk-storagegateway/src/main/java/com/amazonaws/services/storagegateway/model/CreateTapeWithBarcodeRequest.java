@@ -59,15 +59,19 @@ public class CreateTapeWithBarcodeRequest extends com.amazonaws.AmazonWebService
     private String tapeBarcode;
     /**
      * <p>
-     * True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by Amazon
-     * S3. Optional.
+     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or <code>false</code>
+     * to use a key managed by Amazon S3. Optional.
+     * </p>
+     * <p>
+     * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      */
     private Boolean kMSEncrypted;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server-side encryption. This value can only
-     * be set when KMSEncrypted is true. Optional.
+     * The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side
+     * encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when
+     * <code>KMSEncrypted</code> is <code>true</code>. Optional.
      * </p>
      */
     private String kMSKey;
@@ -75,10 +79,10 @@ public class CreateTapeWithBarcodeRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the S3
      * storage class that is associated with the pool. When you use your backup application to eject the tape, the tape
-     * is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.
+     * is archived directly into the storage class (S3 Glacier or S3 Deep Archive) that corresponds to the pool.
      * </p>
      * <p>
-     * Valid values: "GLACIER", "DEEP_ARCHIVE"
+     * Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code>
      * </p>
      */
     private String poolId;
@@ -272,13 +276,18 @@ public class CreateTapeWithBarcodeRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by Amazon
-     * S3. Optional.
+     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or <code>false</code>
+     * to use a key managed by Amazon S3. Optional.
+     * </p>
+     * <p>
+     * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
      * @param kMSEncrypted
-     *        True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by
-     *        Amazon S3. Optional.
+     *        Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or
+     *        <code>false</code> to use a key managed by Amazon S3. Optional.</p>
+     *        <p>
+     *        Valid Values: <code>true</code> | <code>false</code>
      */
 
     public void setKMSEncrypted(Boolean kMSEncrypted) {
@@ -287,12 +296,17 @@ public class CreateTapeWithBarcodeRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by Amazon
-     * S3. Optional.
+     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or <code>false</code>
+     * to use a key managed by Amazon S3. Optional.
+     * </p>
+     * <p>
+     * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
-     * @return True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by
-     *         Amazon S3. Optional.
+     * @return Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or
+     *         <code>false</code> to use a key managed by Amazon S3. Optional.</p>
+     *         <p>
+     *         Valid Values: <code>true</code> | <code>false</code>
      */
 
     public Boolean getKMSEncrypted() {
@@ -301,13 +315,18 @@ public class CreateTapeWithBarcodeRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by Amazon
-     * S3. Optional.
+     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or <code>false</code>
+     * to use a key managed by Amazon S3. Optional.
+     * </p>
+     * <p>
+     * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
      * @param kMSEncrypted
-     *        True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by
-     *        Amazon S3. Optional.
+     *        Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or
+     *        <code>false</code> to use a key managed by Amazon S3. Optional.</p>
+     *        <p>
+     *        Valid Values: <code>true</code> | <code>false</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -318,12 +337,17 @@ public class CreateTapeWithBarcodeRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by Amazon
-     * S3. Optional.
+     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or <code>false</code>
+     * to use a key managed by Amazon S3. Optional.
+     * </p>
+     * <p>
+     * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
-     * @return True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by
-     *         Amazon S3. Optional.
+     * @return Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or
+     *         <code>false</code> to use a key managed by Amazon S3. Optional.</p>
+     *         <p>
+     *         Valid Values: <code>true</code> | <code>false</code>
      */
 
     public Boolean isKMSEncrypted() {
@@ -332,13 +356,15 @@ public class CreateTapeWithBarcodeRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server-side encryption. This value can only
-     * be set when KMSEncrypted is true. Optional.
+     * The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side
+     * encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when
+     * <code>KMSEncrypted</code> is <code>true</code>. Optional.
      * </p>
      * 
      * @param kMSKey
-     *        The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server-side encryption. This value
-     *        can only be set when KMSEncrypted is true. Optional.
+     *        The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side
+     *        encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when
+     *        <code>KMSEncrypted</code> is <code>true</code>. Optional.
      */
 
     public void setKMSKey(String kMSKey) {
@@ -347,12 +373,14 @@ public class CreateTapeWithBarcodeRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server-side encryption. This value can only
-     * be set when KMSEncrypted is true. Optional.
+     * The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side
+     * encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when
+     * <code>KMSEncrypted</code> is <code>true</code>. Optional.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server-side encryption. This value
-     *         can only be set when KMSEncrypted is true. Optional.
+     * @return The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side
+     *         encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when
+     *         <code>KMSEncrypted</code> is <code>true</code>. Optional.
      */
 
     public String getKMSKey() {
@@ -361,13 +389,15 @@ public class CreateTapeWithBarcodeRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server-side encryption. This value can only
-     * be set when KMSEncrypted is true. Optional.
+     * The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side
+     * encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when
+     * <code>KMSEncrypted</code> is <code>true</code>. Optional.
      * </p>
      * 
      * @param kMSKey
-     *        The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server-side encryption. This value
-     *        can only be set when KMSEncrypted is true. Optional.
+     *        The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side
+     *        encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when
+     *        <code>KMSEncrypted</code> is <code>true</code>. Optional.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -380,19 +410,19 @@ public class CreateTapeWithBarcodeRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the S3
      * storage class that is associated with the pool. When you use your backup application to eject the tape, the tape
-     * is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.
+     * is archived directly into the storage class (S3 Glacier or S3 Deep Archive) that corresponds to the pool.
      * </p>
      * <p>
-     * Valid values: "GLACIER", "DEEP_ARCHIVE"
+     * Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code>
      * </p>
      * 
      * @param poolId
      *        The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in
      *        the S3 storage class that is associated with the pool. When you use your backup application to eject the
-     *        tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that
+     *        tape, the tape is archived directly into the storage class (S3 Glacier or S3 Deep Archive) that
      *        corresponds to the pool.</p>
      *        <p>
-     *        Valid values: "GLACIER", "DEEP_ARCHIVE"
+     *        Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code>
      */
 
     public void setPoolId(String poolId) {
@@ -403,18 +433,18 @@ public class CreateTapeWithBarcodeRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the S3
      * storage class that is associated with the pool. When you use your backup application to eject the tape, the tape
-     * is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.
+     * is archived directly into the storage class (S3 Glacier or S3 Deep Archive) that corresponds to the pool.
      * </p>
      * <p>
-     * Valid values: "GLACIER", "DEEP_ARCHIVE"
+     * Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code>
      * </p>
      * 
      * @return The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in
      *         the S3 storage class that is associated with the pool. When you use your backup application to eject the
-     *         tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that
+     *         tape, the tape is archived directly into the storage class (S3 Glacier or S3 Deep Archive) that
      *         corresponds to the pool.</p>
      *         <p>
-     *         Valid values: "GLACIER", "DEEP_ARCHIVE"
+     *         Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code>
      */
 
     public String getPoolId() {
@@ -425,19 +455,19 @@ public class CreateTapeWithBarcodeRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the S3
      * storage class that is associated with the pool. When you use your backup application to eject the tape, the tape
-     * is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.
+     * is archived directly into the storage class (S3 Glacier or S3 Deep Archive) that corresponds to the pool.
      * </p>
      * <p>
-     * Valid values: "GLACIER", "DEEP_ARCHIVE"
+     * Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code>
      * </p>
      * 
      * @param poolId
      *        The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in
      *        the S3 storage class that is associated with the pool. When you use your backup application to eject the
-     *        tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that
+     *        tape, the tape is archived directly into the storage class (S3 Glacier or S3 Deep Archive) that
      *        corresponds to the pool.</p>
      *        <p>
-     *        Valid values: "GLACIER", "DEEP_ARCHIVE"
+     *        Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

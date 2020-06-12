@@ -83,14 +83,15 @@ public class ArnTest {
         assertThat(arn.getResource().getResource(), equalTo("finks"));
         assertThat(arn.getResource().getResourceType(), equalTo("bucket"));
     }
+
     @Test
     public void arnWithResourceTypeAndResourceAndQualifier_SlashSplitter_ParsesCorrectly() {
-        String arnString = "arn:aws:s3:us-east-1:12345678910:bucket/finks/1";
+        String arnString = "arn:aws:s3:us-east-1:12345678910:bucket/finks:1";
         Arn arn = Arn.fromString(arnString);
         assertThat(arn.getPartition(), equalTo("aws"));
         assertThat(arn.getService(), equalTo("s3"));
         assertThat(arn.getRegion(), equalTo("us-east-1"));
-        assertThat(arn.getResourceAsString(), equalTo("bucket/finks/1"));
+        assertThat(arn.getResourceAsString(), equalTo("bucket/finks:1"));
         assertThat(arn.getResource().getResource(), equalTo("finks"));
         assertThat(arn.getResource().getResourceType(), equalTo("bucket"));
         assertThat(arn.getResource().getQualifier(), equalTo("1"));

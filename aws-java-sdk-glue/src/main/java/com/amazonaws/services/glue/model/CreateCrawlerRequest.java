@@ -58,9 +58,9 @@ public class CreateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
     private CrawlerTargets targets;
     /**
      * <p>
-     * A <code>cron</code> expression used to specify the schedule. For more information, see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for
-     * Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, specify
+     * A <code>cron</code> expression used to specify the schedule (see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for
+     * Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify:
      * <code>cron(15 12 * * ? *)</code>.
      * </p>
      */
@@ -86,9 +86,9 @@ public class CreateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
     private SchemaChangePolicy schemaChangePolicy;
     /**
      * <p>
-     * The crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's
+     * Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's
      * behavior. For more information, see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.
+     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.
      * </p>
      */
     private String configuration;
@@ -100,8 +100,9 @@ public class CreateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String crawlerSecurityConfiguration;
     /**
      * <p>
-     * The tags to use with this crawler request. You can use tags to limit access to the crawler. For more information,
-     * see <a href="http://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in AWS Glue</a>.
+     * The tags to use with this crawler request. You may use tags to limit access to the crawler. For more information
+     * about tags in AWS Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
+     * AWS Glue</a> in the developer guide.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -317,17 +318,17 @@ public class CreateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A <code>cron</code> expression used to specify the schedule. For more information, see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for
-     * Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, specify
+     * A <code>cron</code> expression used to specify the schedule (see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for
+     * Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify:
      * <code>cron(15 12 * * ? *)</code>.
      * </p>
      * 
      * @param schedule
-     *        A <code>cron</code> expression used to specify the schedule. For more information, see <a
-     *        href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules
-     *        for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, specify
-     *        <code>cron(15 12 * * ? *)</code>.
+     *        A <code>cron</code> expression used to specify the schedule (see <a
+     *        href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
+     *        Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would
+     *        specify: <code>cron(15 12 * * ? *)</code>.
      */
 
     public void setSchedule(String schedule) {
@@ -336,16 +337,16 @@ public class CreateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A <code>cron</code> expression used to specify the schedule. For more information, see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for
-     * Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, specify
+     * A <code>cron</code> expression used to specify the schedule (see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for
+     * Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify:
      * <code>cron(15 12 * * ? *)</code>.
      * </p>
      * 
-     * @return A <code>cron</code> expression used to specify the schedule. For more information, see <a
-     *         href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
-     *         Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, specify
-     *         <code>cron(15 12 * * ? *)</code>.
+     * @return A <code>cron</code> expression used to specify the schedule (see <a
+     *         href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
+     *         Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would
+     *         specify: <code>cron(15 12 * * ? *)</code>.
      */
 
     public String getSchedule() {
@@ -354,17 +355,17 @@ public class CreateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A <code>cron</code> expression used to specify the schedule. For more information, see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for
-     * Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, specify
+     * A <code>cron</code> expression used to specify the schedule (see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for
+     * Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify:
      * <code>cron(15 12 * * ? *)</code>.
      * </p>
      * 
      * @param schedule
-     *        A <code>cron</code> expression used to specify the schedule. For more information, see <a
-     *        href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules
-     *        for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, specify
-     *        <code>cron(15 12 * * ? *)</code>.
+     *        A <code>cron</code> expression used to specify the schedule (see <a
+     *        href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
+     *        Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would
+     *        specify: <code>cron(15 12 * * ? *)</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -537,15 +538,15 @@ public class CreateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's
+     * Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's
      * behavior. For more information, see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.
+     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.
      * </p>
      * 
      * @param configuration
-     *        The crawler configuration information. This versioned JSON string allows users to specify aspects of a
+     *        Crawler configuration information. This versioned JSON string allows users to specify aspects of a
      *        crawler's behavior. For more information, see <a
-     *        href="http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.
+     *        href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.
      */
 
     public void setConfiguration(String configuration) {
@@ -554,14 +555,14 @@ public class CreateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's
+     * Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's
      * behavior. For more information, see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.
+     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.
      * </p>
      * 
-     * @return The crawler configuration information. This versioned JSON string allows users to specify aspects of a
+     * @return Crawler configuration information. This versioned JSON string allows users to specify aspects of a
      *         crawler's behavior. For more information, see <a
-     *         href="http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.
+     *         href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.
      */
 
     public String getConfiguration() {
@@ -570,15 +571,15 @@ public class CreateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's
+     * Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's
      * behavior. For more information, see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.
+     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.
      * </p>
      * 
      * @param configuration
-     *        The crawler configuration information. This versioned JSON string allows users to specify aspects of a
+     *        Crawler configuration information. This versioned JSON string allows users to specify aspects of a
      *        crawler's behavior. For more information, see <a
-     *        href="http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.
+     *        href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -629,13 +630,15 @@ public class CreateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The tags to use with this crawler request. You can use tags to limit access to the crawler. For more information,
-     * see <a href="http://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in AWS Glue</a>.
+     * The tags to use with this crawler request. You may use tags to limit access to the crawler. For more information
+     * about tags in AWS Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
+     * AWS Glue</a> in the developer guide.
      * </p>
      * 
-     * @return The tags to use with this crawler request. You can use tags to limit access to the crawler. For more
-     *         information, see <a href="http://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in AWS
-     *         Glue</a>.
+     * @return The tags to use with this crawler request. You may use tags to limit access to the crawler. For more
+     *         information about tags in AWS Glue, see <a
+     *         href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in AWS Glue</a> in the
+     *         developer guide.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -644,14 +647,16 @@ public class CreateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The tags to use with this crawler request. You can use tags to limit access to the crawler. For more information,
-     * see <a href="http://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in AWS Glue</a>.
+     * The tags to use with this crawler request. You may use tags to limit access to the crawler. For more information
+     * about tags in AWS Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
+     * AWS Glue</a> in the developer guide.
      * </p>
      * 
      * @param tags
-     *        The tags to use with this crawler request. You can use tags to limit access to the crawler. For more
-     *        information, see <a href="http://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in AWS
-     *        Glue</a>.
+     *        The tags to use with this crawler request. You may use tags to limit access to the crawler. For more
+     *        information about tags in AWS Glue, see <a
+     *        href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in AWS Glue</a> in the
+     *        developer guide.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -660,14 +665,16 @@ public class CreateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The tags to use with this crawler request. You can use tags to limit access to the crawler. For more information,
-     * see <a href="http://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in AWS Glue</a>.
+     * The tags to use with this crawler request. You may use tags to limit access to the crawler. For more information
+     * about tags in AWS Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
+     * AWS Glue</a> in the developer guide.
      * </p>
      * 
      * @param tags
-     *        The tags to use with this crawler request. You can use tags to limit access to the crawler. For more
-     *        information, see <a href="http://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in AWS
-     *        Glue</a>.
+     *        The tags to use with this crawler request. You may use tags to limit access to the crawler. For more
+     *        information about tags in AWS Glue, see <a
+     *        href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in AWS Glue</a> in the
+     *        developer guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

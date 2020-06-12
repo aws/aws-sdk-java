@@ -116,6 +116,15 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
      * </p>
      */
     private String hostEnvironment;
+    /**
+     * <p>
+     * The type of endpoint for your gateway.
+     * </p>
+     * <p>
+     * Valid Values: <code>STANDARD</code> | <code>FIPS</code>
+     * </p>
+     */
+    private String endpointType;
 
     /**
      * @param gatewayARN
@@ -826,6 +835,61 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
+     * The type of endpoint for your gateway.
+     * </p>
+     * <p>
+     * Valid Values: <code>STANDARD</code> | <code>FIPS</code>
+     * </p>
+     * 
+     * @param endpointType
+     *        The type of endpoint for your gateway.</p>
+     *        <p>
+     *        Valid Values: <code>STANDARD</code> | <code>FIPS</code>
+     */
+
+    public void setEndpointType(String endpointType) {
+        this.endpointType = endpointType;
+    }
+
+    /**
+     * <p>
+     * The type of endpoint for your gateway.
+     * </p>
+     * <p>
+     * Valid Values: <code>STANDARD</code> | <code>FIPS</code>
+     * </p>
+     * 
+     * @return The type of endpoint for your gateway.</p>
+     *         <p>
+     *         Valid Values: <code>STANDARD</code> | <code>FIPS</code>
+     */
+
+    public String getEndpointType() {
+        return this.endpointType;
+    }
+
+    /**
+     * <p>
+     * The type of endpoint for your gateway.
+     * </p>
+     * <p>
+     * Valid Values: <code>STANDARD</code> | <code>FIPS</code>
+     * </p>
+     * 
+     * @param endpointType
+     *        The type of endpoint for your gateway.</p>
+     *        <p>
+     *        Valid Values: <code>STANDARD</code> | <code>FIPS</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeGatewayInformationResult withEndpointType(String endpointType) {
+        setEndpointType(endpointType);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -866,7 +930,9 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
         if (getCloudWatchLogGroupARN() != null)
             sb.append("CloudWatchLogGroupARN: ").append(getCloudWatchLogGroupARN()).append(",");
         if (getHostEnvironment() != null)
-            sb.append("HostEnvironment: ").append(getHostEnvironment());
+            sb.append("HostEnvironment: ").append(getHostEnvironment()).append(",");
+        if (getEndpointType() != null)
+            sb.append("EndpointType: ").append(getEndpointType());
         sb.append("}");
         return sb.toString();
     }
@@ -941,6 +1007,10 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getHostEnvironment() != null && other.getHostEnvironment().equals(this.getHostEnvironment()) == false)
             return false;
+        if (other.getEndpointType() == null ^ this.getEndpointType() == null)
+            return false;
+        if (other.getEndpointType() != null && other.getEndpointType().equals(this.getEndpointType()) == false)
+            return false;
         return true;
     }
 
@@ -964,6 +1034,7 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
         hashCode = prime * hashCode + ((getVPCEndpoint() == null) ? 0 : getVPCEndpoint().hashCode());
         hashCode = prime * hashCode + ((getCloudWatchLogGroupARN() == null) ? 0 : getCloudWatchLogGroupARN().hashCode());
         hashCode = prime * hashCode + ((getHostEnvironment() == null) ? 0 : getHostEnvironment().hashCode());
+        hashCode = prime * hashCode + ((getEndpointType() == null) ? 0 : getEndpointType().hashCode());
         return hashCode;
     }
 

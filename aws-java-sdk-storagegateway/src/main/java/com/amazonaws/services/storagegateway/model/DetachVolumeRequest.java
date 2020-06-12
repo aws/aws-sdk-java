@@ -40,6 +40,9 @@ public class DetachVolumeRequest extends com.amazonaws.AmazonWebServiceRequest i
      * default is <code>false</code>. If this value is set to <code>false</code>, you must manually disconnect the iSCSI
      * connection from the target volume.
      * </p>
+     * <p>
+     * Valid Values: <code>true</code> | <code>false</code>
+     * </p>
      */
     private Boolean forceDetach;
 
@@ -89,11 +92,16 @@ public class DetachVolumeRequest extends com.amazonaws.AmazonWebServiceRequest i
      * default is <code>false</code>. If this value is set to <code>false</code>, you must manually disconnect the iSCSI
      * connection from the target volume.
      * </p>
+     * <p>
+     * Valid Values: <code>true</code> | <code>false</code>
+     * </p>
      * 
      * @param forceDetach
      *        Set to <code>true</code> to forcibly remove the iSCSI connection of the target volume and detach the
      *        volume. The default is <code>false</code>. If this value is set to <code>false</code>, you must manually
-     *        disconnect the iSCSI connection from the target volume.
+     *        disconnect the iSCSI connection from the target volume.</p>
+     *        <p>
+     *        Valid Values: <code>true</code> | <code>false</code>
      */
 
     public void setForceDetach(Boolean forceDetach) {
@@ -106,10 +114,15 @@ public class DetachVolumeRequest extends com.amazonaws.AmazonWebServiceRequest i
      * default is <code>false</code>. If this value is set to <code>false</code>, you must manually disconnect the iSCSI
      * connection from the target volume.
      * </p>
+     * <p>
+     * Valid Values: <code>true</code> | <code>false</code>
+     * </p>
      * 
      * @return Set to <code>true</code> to forcibly remove the iSCSI connection of the target volume and detach the
      *         volume. The default is <code>false</code>. If this value is set to <code>false</code>, you must manually
-     *         disconnect the iSCSI connection from the target volume.
+     *         disconnect the iSCSI connection from the target volume.</p>
+     *         <p>
+     *         Valid Values: <code>true</code> | <code>false</code>
      */
 
     public Boolean getForceDetach() {
@@ -122,11 +135,16 @@ public class DetachVolumeRequest extends com.amazonaws.AmazonWebServiceRequest i
      * default is <code>false</code>. If this value is set to <code>false</code>, you must manually disconnect the iSCSI
      * connection from the target volume.
      * </p>
+     * <p>
+     * Valid Values: <code>true</code> | <code>false</code>
+     * </p>
      * 
      * @param forceDetach
      *        Set to <code>true</code> to forcibly remove the iSCSI connection of the target volume and detach the
      *        volume. The default is <code>false</code>. If this value is set to <code>false</code>, you must manually
-     *        disconnect the iSCSI connection from the target volume.
+     *        disconnect the iSCSI connection from the target volume.</p>
+     *        <p>
+     *        Valid Values: <code>true</code> | <code>false</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,10 +159,15 @@ public class DetachVolumeRequest extends com.amazonaws.AmazonWebServiceRequest i
      * default is <code>false</code>. If this value is set to <code>false</code>, you must manually disconnect the iSCSI
      * connection from the target volume.
      * </p>
+     * <p>
+     * Valid Values: <code>true</code> | <code>false</code>
+     * </p>
      * 
      * @return Set to <code>true</code> to forcibly remove the iSCSI connection of the target volume and detach the
      *         volume. The default is <code>false</code>. If this value is set to <code>false</code>, you must manually
-     *         disconnect the iSCSI connection from the target volume.
+     *         disconnect the iSCSI connection from the target volume.</p>
+     *         <p>
+     *         Valid Values: <code>true</code> | <code>false</code>
      */
 
     public Boolean isForceDetach() {

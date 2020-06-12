@@ -58,7 +58,7 @@ public class PutRestApiRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * [Required] The PUT request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML
-     * files are supported. The maximum size of the API definition file is 2MB.
+     * files are supported. The maximum size of the API definition file is 6MB.
      * </p>
      */
     private java.nio.ByteBuffer body;
@@ -341,7 +341,7 @@ public class PutRestApiRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * [Required] The PUT request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML
-     * files are supported. The maximum size of the API definition file is 2MB.
+     * files are supported. The maximum size of the API definition file is 6MB.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -356,7 +356,7 @@ public class PutRestApiRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * 
      * @param body
      *        [Required] The PUT request body containing external API definitions. Currently, only OpenAPI definition
-     *        JSON/YAML files are supported. The maximum size of the API definition file is 2MB.
+     *        JSON/YAML files are supported. The maximum size of the API definition file is 6MB.
      */
 
     public void setBody(java.nio.ByteBuffer body) {
@@ -366,7 +366,7 @@ public class PutRestApiRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * [Required] The PUT request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML
-     * files are supported. The maximum size of the API definition file is 2MB.
+     * files are supported. The maximum size of the API definition file is 6MB.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -377,7 +377,7 @@ public class PutRestApiRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @return [Required] The PUT request body containing external API definitions. Currently, only OpenAPI definition
-     *         JSON/YAML files are supported. The maximum size of the API definition file is 2MB.
+     *         JSON/YAML files are supported. The maximum size of the API definition file is 6MB.
      */
 
     public java.nio.ByteBuffer getBody() {
@@ -387,7 +387,7 @@ public class PutRestApiRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * [Required] The PUT request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML
-     * files are supported. The maximum size of the API definition file is 2MB.
+     * files are supported. The maximum size of the API definition file is 6MB.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -402,7 +402,7 @@ public class PutRestApiRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * 
      * @param body
      *        [Required] The PUT request body containing external API definitions. Currently, only OpenAPI definition
-     *        JSON/YAML files are supported. The maximum size of the API definition file is 2MB.
+     *        JSON/YAML files are supported. The maximum size of the API definition file is 6MB.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

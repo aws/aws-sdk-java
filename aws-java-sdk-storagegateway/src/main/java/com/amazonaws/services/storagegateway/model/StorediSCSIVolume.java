@@ -57,7 +57,7 @@ public class StorediSCSIVolume implements Serializable, Cloneable, StructuredPoj
      * A value that indicates whether a storage volume is attached to, detached from, or is in the process of detaching
      * from a gateway. For more information, see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume"
-     * >Moving Your Volumes to a Different Gateway</a>.
+     * >Moving your volumes to a different gateway</a>.
      * </p>
      */
     private String volumeAttachmentStatus;
@@ -93,7 +93,7 @@ public class StorediSCSIVolume implements Serializable, Cloneable, StructuredPoj
      * Indicates if when the stored volume was created, existing data on the underlying local disk was preserved.
      * </p>
      * <p>
-     * Valid Values: true, false
+     * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      */
     private Boolean preservedExistingData;
@@ -304,14 +304,14 @@ public class StorediSCSIVolume implements Serializable, Cloneable, StructuredPoj
      * A value that indicates whether a storage volume is attached to, detached from, or is in the process of detaching
      * from a gateway. For more information, see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume"
-     * >Moving Your Volumes to a Different Gateway</a>.
+     * >Moving your volumes to a different gateway</a>.
      * </p>
      * 
      * @param volumeAttachmentStatus
      *        A value that indicates whether a storage volume is attached to, detached from, or is in the process of
      *        detaching from a gateway. For more information, see <a href=
      *        "https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume"
-     *        >Moving Your Volumes to a Different Gateway</a>.
+     *        >Moving your volumes to a different gateway</a>.
      */
 
     public void setVolumeAttachmentStatus(String volumeAttachmentStatus) {
@@ -323,13 +323,13 @@ public class StorediSCSIVolume implements Serializable, Cloneable, StructuredPoj
      * A value that indicates whether a storage volume is attached to, detached from, or is in the process of detaching
      * from a gateway. For more information, see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume"
-     * >Moving Your Volumes to a Different Gateway</a>.
+     * >Moving your volumes to a different gateway</a>.
      * </p>
      * 
      * @return A value that indicates whether a storage volume is attached to, detached from, or is in the process of
      *         detaching from a gateway. For more information, see <a href=
      *         "https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume"
-     *         >Moving Your Volumes to a Different Gateway</a>.
+     *         >Moving your volumes to a different gateway</a>.
      */
 
     public String getVolumeAttachmentStatus() {
@@ -341,14 +341,14 @@ public class StorediSCSIVolume implements Serializable, Cloneable, StructuredPoj
      * A value that indicates whether a storage volume is attached to, detached from, or is in the process of detaching
      * from a gateway. For more information, see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume"
-     * >Moving Your Volumes to a Different Gateway</a>.
+     * >Moving your volumes to a different gateway</a>.
      * </p>
      * 
      * @param volumeAttachmentStatus
      *        A value that indicates whether a storage volume is attached to, detached from, or is in the process of
      *        detaching from a gateway. For more information, see <a href=
      *        "https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume"
-     *        >Moving Your Volumes to a Different Gateway</a>.
+     *        >Moving your volumes to a different gateway</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -540,14 +540,14 @@ public class StorediSCSIVolume implements Serializable, Cloneable, StructuredPoj
      * Indicates if when the stored volume was created, existing data on the underlying local disk was preserved.
      * </p>
      * <p>
-     * Valid Values: true, false
+     * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
      * @param preservedExistingData
      *        Indicates if when the stored volume was created, existing data on the underlying local disk was
      *        preserved.</p>
      *        <p>
-     *        Valid Values: true, false
+     *        Valid Values: <code>true</code> | <code>false</code>
      */
 
     public void setPreservedExistingData(Boolean preservedExistingData) {
@@ -559,13 +559,13 @@ public class StorediSCSIVolume implements Serializable, Cloneable, StructuredPoj
      * Indicates if when the stored volume was created, existing data on the underlying local disk was preserved.
      * </p>
      * <p>
-     * Valid Values: true, false
+     * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
      * @return Indicates if when the stored volume was created, existing data on the underlying local disk was
      *         preserved.</p>
      *         <p>
-     *         Valid Values: true, false
+     *         Valid Values: <code>true</code> | <code>false</code>
      */
 
     public Boolean getPreservedExistingData() {
@@ -577,14 +577,14 @@ public class StorediSCSIVolume implements Serializable, Cloneable, StructuredPoj
      * Indicates if when the stored volume was created, existing data on the underlying local disk was preserved.
      * </p>
      * <p>
-     * Valid Values: true, false
+     * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
      * @param preservedExistingData
      *        Indicates if when the stored volume was created, existing data on the underlying local disk was
      *        preserved.</p>
      *        <p>
-     *        Valid Values: true, false
+     *        Valid Values: <code>true</code> | <code>false</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -598,13 +598,13 @@ public class StorediSCSIVolume implements Serializable, Cloneable, StructuredPoj
      * Indicates if when the stored volume was created, existing data on the underlying local disk was preserved.
      * </p>
      * <p>
-     * Valid Values: true, false
+     * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
      * @return Indicates if when the stored volume was created, existing data on the underlying local disk was
      *         preserved.</p>
      *         <p>
-     *         Valid Values: true, false
+     *         Valid Values: <code>true</code> | <code>false</code>
      */
 
     public Boolean isPreservedExistingData() {

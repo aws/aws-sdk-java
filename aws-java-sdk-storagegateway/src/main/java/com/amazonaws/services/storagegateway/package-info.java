@@ -27,7 +27,7 @@
  * <p>
  * <a href=
  * "https://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#AWSStorageGatewayHTTPRequestsHeaders"
- * >AWS Storage Gateway Required Request Headers</a>: Describes the required headers that you must send with every POST
+ * >AWS Storage Gateway required request headers</a>: Describes the required headers that you must send with every POST
  * request to AWS Storage Gateway.
  * </p>
  * </li>
@@ -35,14 +35,14 @@
  * <p>
  * <a href=
  * "https://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#AWSStorageGatewaySigningRequests"
- * >Signing Requests</a>: AWS Storage Gateway requires that you authenticate every request you send; this topic
+ * >Signing requests</a>: AWS Storage Gateway requires that you authenticate every request you send; this topic
  * describes how sign such a request.
  * </p>
  * </li>
  * <li>
  * <p>
  * <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#APIErrorResponses">
- * Error Responses</a>: Provides reference information about AWS Storage Gateway errors.
+ * Error responses</a>: Provides reference information about AWS Storage Gateway errors.
  * </p>
  * </li>
  * <li>
@@ -54,8 +54,8 @@
  * </li>
  * <li>
  * <p>
- * <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">AWS Storage Gateway Regions and
- * Endpoints:</a> Provides a list of each AWS Region and the endpoints available for use with AWS Storage Gateway.
+ * <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS Storage Gateway endpoints and quotas:</a>
+ * Provides a list of each AWS Region and the endpoints available for use with AWS Storage Gateway.
  * </p>
  * </li>
  * </ul>
@@ -72,7 +72,7 @@
  * IDs for Storage Gateway volumes and Amazon EBS snapshots created from gateway volumes are changing to a longer
  * format. Starting in December 2016, all new volumes and snapshots will be created with a 17-character string. Starting
  * in April 2016, you will be able to use these longer IDs so you can test your systems with the new format. For more
- * information, see <a href="https://aws.amazon.com/ec2/faqs/#longer-ids">Longer EC2 and EBS Resource IDs</a>.
+ * information, see <a href="http://aws.amazon.com/ec2/faqs/#longer-ids">Longer EC2 and EBS resource IDs</a>.
  * </p>
  * <p>
  * For example, a volume Amazon Resource Name (ARN) with the longer volume ID format looks like the following:
@@ -84,7 +84,7 @@
  * A snapshot ID with the longer ID format looks like the following: <code>snap-78e226633445566ee</code>.
  * </p>
  * <p>
- * For more information, see <a href="https://forums.aws.amazon.com/ann.jspa?annID=3557">Announcement: Heads-up – Longer
+ * For more information, see <a href="http://forums.aws.amazon.com/ann.jspa?annID=3557">Announcement: Heads-up – Longer
  * AWS Storage Gateway volume and snapshot IDs coming in 2016</a>.
  * </p>
  * </important>

@@ -192,8 +192,9 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
     private Integer timeoutInMillis;
     /**
      * <p>
-     * An API-specific tag group of related cached parameters. To be valid values for <code>cacheKeyParameters</code>,
-     * these parameters must also be specified for <a>Method</a> <code>requestParameters</code>.
+     * Specifies a group of related cached parameters. By default, API Gateway uses the resource ID as the
+     * <code>cacheNamespace</code>. You can specify the same <code>cacheNamespace</code> across resources to return the
+     * same cached data for requests to different resources.
      * </p>
      */
     private String cacheNamespace;
@@ -1599,14 +1600,15 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * An API-specific tag group of related cached parameters. To be valid values for <code>cacheKeyParameters</code>,
-     * these parameters must also be specified for <a>Method</a> <code>requestParameters</code>.
+     * Specifies a group of related cached parameters. By default, API Gateway uses the resource ID as the
+     * <code>cacheNamespace</code>. You can specify the same <code>cacheNamespace</code> across resources to return the
+     * same cached data for requests to different resources.
      * </p>
      * 
      * @param cacheNamespace
-     *        An API-specific tag group of related cached parameters. To be valid values for
-     *        <code>cacheKeyParameters</code>, these parameters must also be specified for <a>Method</a>
-     *        <code>requestParameters</code>.
+     *        Specifies a group of related cached parameters. By default, API Gateway uses the resource ID as the
+     *        <code>cacheNamespace</code>. You can specify the same <code>cacheNamespace</code> across resources to
+     *        return the same cached data for requests to different resources.
      */
 
     public void setCacheNamespace(String cacheNamespace) {
@@ -1615,13 +1617,14 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * An API-specific tag group of related cached parameters. To be valid values for <code>cacheKeyParameters</code>,
-     * these parameters must also be specified for <a>Method</a> <code>requestParameters</code>.
+     * Specifies a group of related cached parameters. By default, API Gateway uses the resource ID as the
+     * <code>cacheNamespace</code>. You can specify the same <code>cacheNamespace</code> across resources to return the
+     * same cached data for requests to different resources.
      * </p>
      * 
-     * @return An API-specific tag group of related cached parameters. To be valid values for
-     *         <code>cacheKeyParameters</code>, these parameters must also be specified for <a>Method</a>
-     *         <code>requestParameters</code>.
+     * @return Specifies a group of related cached parameters. By default, API Gateway uses the resource ID as the
+     *         <code>cacheNamespace</code>. You can specify the same <code>cacheNamespace</code> across resources to
+     *         return the same cached data for requests to different resources.
      */
 
     public String getCacheNamespace() {
@@ -1630,14 +1633,15 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * An API-specific tag group of related cached parameters. To be valid values for <code>cacheKeyParameters</code>,
-     * these parameters must also be specified for <a>Method</a> <code>requestParameters</code>.
+     * Specifies a group of related cached parameters. By default, API Gateway uses the resource ID as the
+     * <code>cacheNamespace</code>. You can specify the same <code>cacheNamespace</code> across resources to return the
+     * same cached data for requests to different resources.
      * </p>
      * 
      * @param cacheNamespace
-     *        An API-specific tag group of related cached parameters. To be valid values for
-     *        <code>cacheKeyParameters</code>, these parameters must also be specified for <a>Method</a>
-     *        <code>requestParameters</code>.
+     *        Specifies a group of related cached parameters. By default, API Gateway uses the resource ID as the
+     *        <code>cacheNamespace</code>. You can specify the same <code>cacheNamespace</code> across resources to
+     *        return the same cached data for requests to different resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

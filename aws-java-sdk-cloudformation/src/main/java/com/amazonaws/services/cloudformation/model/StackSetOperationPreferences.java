@@ -68,8 +68,8 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
     /**
      * <p>
      * The maximum number of accounts in which to perform this operation at one time. This is dependent on the value of
-     * <code>FailureToleranceCount</code>—<code>MaxConcurrentCount</code> is at most one more than the
-     * <code>FailureToleranceCount</code> .
+     * <code>FailureToleranceCount</code>. <code>MaxConcurrentCount</code> is at most one more than the
+     * <code>FailureToleranceCount</code>.
      * </p>
      * <p>
      * Note that this setting lets you specify the <i>maximum</i> for operations. For large deployments, under certain
@@ -347,8 +347,8 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
     /**
      * <p>
      * The maximum number of accounts in which to perform this operation at one time. This is dependent on the value of
-     * <code>FailureToleranceCount</code>—<code>MaxConcurrentCount</code> is at most one more than the
-     * <code>FailureToleranceCount</code> .
+     * <code>FailureToleranceCount</code>. <code>MaxConcurrentCount</code> is at most one more than the
+     * <code>FailureToleranceCount</code>.
      * </p>
      * <p>
      * Note that this setting lets you specify the <i>maximum</i> for operations. For large deployments, under certain
@@ -361,8 +361,8 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      * 
      * @param maxConcurrentCount
      *        The maximum number of accounts in which to perform this operation at one time. This is dependent on the
-     *        value of <code>FailureToleranceCount</code>—<code>MaxConcurrentCount</code> is at most one more than the
-     *        <code>FailureToleranceCount</code> .</p>
+     *        value of <code>FailureToleranceCount</code>. <code>MaxConcurrentCount</code> is at most one more than the
+     *        <code>FailureToleranceCount</code>.</p>
      *        <p>
      *        Note that this setting lets you specify the <i>maximum</i> for operations. For large deployments, under
      *        certain circumstances the actual number of accounts acted upon concurrently may be lower due to service
@@ -380,8 +380,8 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
     /**
      * <p>
      * The maximum number of accounts in which to perform this operation at one time. This is dependent on the value of
-     * <code>FailureToleranceCount</code>—<code>MaxConcurrentCount</code> is at most one more than the
-     * <code>FailureToleranceCount</code> .
+     * <code>FailureToleranceCount</code>. <code>MaxConcurrentCount</code> is at most one more than the
+     * <code>FailureToleranceCount</code>.
      * </p>
      * <p>
      * Note that this setting lets you specify the <i>maximum</i> for operations. For large deployments, under certain
@@ -393,8 +393,8 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      * </p>
      * 
      * @return The maximum number of accounts in which to perform this operation at one time. This is dependent on the
-     *         value of <code>FailureToleranceCount</code>—<code>MaxConcurrentCount</code> is at most one more than the
-     *         <code>FailureToleranceCount</code> .</p>
+     *         value of <code>FailureToleranceCount</code>. <code>MaxConcurrentCount</code> is at most one more than the
+     *         <code>FailureToleranceCount</code>.</p>
      *         <p>
      *         Note that this setting lets you specify the <i>maximum</i> for operations. For large deployments, under
      *         certain circumstances the actual number of accounts acted upon concurrently may be lower due to service
@@ -412,8 +412,8 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
     /**
      * <p>
      * The maximum number of accounts in which to perform this operation at one time. This is dependent on the value of
-     * <code>FailureToleranceCount</code>—<code>MaxConcurrentCount</code> is at most one more than the
-     * <code>FailureToleranceCount</code> .
+     * <code>FailureToleranceCount</code>. <code>MaxConcurrentCount</code> is at most one more than the
+     * <code>FailureToleranceCount</code>.
      * </p>
      * <p>
      * Note that this setting lets you specify the <i>maximum</i> for operations. For large deployments, under certain
@@ -426,8 +426,8 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      * 
      * @param maxConcurrentCount
      *        The maximum number of accounts in which to perform this operation at one time. This is dependent on the
-     *        value of <code>FailureToleranceCount</code>—<code>MaxConcurrentCount</code> is at most one more than the
-     *        <code>FailureToleranceCount</code> .</p>
+     *        value of <code>FailureToleranceCount</code>. <code>MaxConcurrentCount</code> is at most one more than the
+     *        <code>FailureToleranceCount</code>.</p>
      *        <p>
      *        Note that this setting lets you specify the <i>maximum</i> for operations. For large deployments, under
      *        certain circumstances the actual number of accounts acted upon concurrently may be lower due to service

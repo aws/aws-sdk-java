@@ -22,36 +22,39 @@ public class TlsConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether API Gateway skips trust chain validation of the server certificate during the TLS handshake.
-     * Supported only for <code>HTTP</code> and <code>HTTP_PROXY</code> integrations. By default, API Gateway validates
-     * that certificates for integration endpoints are issued by a <a href=
+     * Specifies whether or not API Gateway skips verification that the certificate for an integration endpoint is
+     * issued by a <a href=
      * "https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-supported-certificate-authorities-for-http-endpoints.html"
-     * >supported Certificate Authority</a>. If enabled, API Gateway skips trust chain validation of the server
-     * certificate. This is not recommended, but it enables you to use certificates that are signed by private
-     * Certificate Authorities, or certificates that are self-signed.
+     * >supported certificate authority</a>. This isn’t recommended, but it enables you to use certificates that are
+     * signed by private certificate authorities, or certificates that are self-signed. If enabled, API Gateway still
+     * performs basic certificate validation, which includes checking the certificate's expiration date, hostname, and
+     * presence of a root certificate authority. Supported only for <code>HTTP</code> and <code>HTTP_PROXY</code>
+     * integrations.
      * </p>
      */
     private Boolean insecureSkipVerification;
 
     /**
      * <p>
-     * Specifies whether API Gateway skips trust chain validation of the server certificate during the TLS handshake.
-     * Supported only for <code>HTTP</code> and <code>HTTP_PROXY</code> integrations. By default, API Gateway validates
-     * that certificates for integration endpoints are issued by a <a href=
+     * Specifies whether or not API Gateway skips verification that the certificate for an integration endpoint is
+     * issued by a <a href=
      * "https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-supported-certificate-authorities-for-http-endpoints.html"
-     * >supported Certificate Authority</a>. If enabled, API Gateway skips trust chain validation of the server
-     * certificate. This is not recommended, but it enables you to use certificates that are signed by private
-     * Certificate Authorities, or certificates that are self-signed.
+     * >supported certificate authority</a>. This isn’t recommended, but it enables you to use certificates that are
+     * signed by private certificate authorities, or certificates that are self-signed. If enabled, API Gateway still
+     * performs basic certificate validation, which includes checking the certificate's expiration date, hostname, and
+     * presence of a root certificate authority. Supported only for <code>HTTP</code> and <code>HTTP_PROXY</code>
+     * integrations.
      * </p>
      * 
      * @param insecureSkipVerification
-     *        Specifies whether API Gateway skips trust chain validation of the server certificate during the TLS
-     *        handshake. Supported only for <code>HTTP</code> and <code>HTTP_PROXY</code> integrations. By default, API
-     *        Gateway validates that certificates for integration endpoints are issued by a <a href=
+     *        Specifies whether or not API Gateway skips verification that the certificate for an integration endpoint
+     *        is issued by a <a href=
      *        "https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-supported-certificate-authorities-for-http-endpoints.html"
-     *        >supported Certificate Authority</a>. If enabled, API Gateway skips trust chain validation of the server
-     *        certificate. This is not recommended, but it enables you to use certificates that are signed by private
-     *        Certificate Authorities, or certificates that are self-signed.
+     *        >supported certificate authority</a>. This isn’t recommended, but it enables you to use certificates that
+     *        are signed by private certificate authorities, or certificates that are self-signed. If enabled, API
+     *        Gateway still performs basic certificate validation, which includes checking the certificate's expiration
+     *        date, hostname, and presence of a root certificate authority. Supported only for <code>HTTP</code> and
+     *        <code>HTTP_PROXY</code> integrations.
      */
 
     public void setInsecureSkipVerification(Boolean insecureSkipVerification) {
@@ -60,22 +63,24 @@ public class TlsConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether API Gateway skips trust chain validation of the server certificate during the TLS handshake.
-     * Supported only for <code>HTTP</code> and <code>HTTP_PROXY</code> integrations. By default, API Gateway validates
-     * that certificates for integration endpoints are issued by a <a href=
+     * Specifies whether or not API Gateway skips verification that the certificate for an integration endpoint is
+     * issued by a <a href=
      * "https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-supported-certificate-authorities-for-http-endpoints.html"
-     * >supported Certificate Authority</a>. If enabled, API Gateway skips trust chain validation of the server
-     * certificate. This is not recommended, but it enables you to use certificates that are signed by private
-     * Certificate Authorities, or certificates that are self-signed.
+     * >supported certificate authority</a>. This isn’t recommended, but it enables you to use certificates that are
+     * signed by private certificate authorities, or certificates that are self-signed. If enabled, API Gateway still
+     * performs basic certificate validation, which includes checking the certificate's expiration date, hostname, and
+     * presence of a root certificate authority. Supported only for <code>HTTP</code> and <code>HTTP_PROXY</code>
+     * integrations.
      * </p>
      * 
-     * @return Specifies whether API Gateway skips trust chain validation of the server certificate during the TLS
-     *         handshake. Supported only for <code>HTTP</code> and <code>HTTP_PROXY</code> integrations. By default, API
-     *         Gateway validates that certificates for integration endpoints are issued by a <a href=
+     * @return Specifies whether or not API Gateway skips verification that the certificate for an integration endpoint
+     *         is issued by a <a href=
      *         "https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-supported-certificate-authorities-for-http-endpoints.html"
-     *         >supported Certificate Authority</a>. If enabled, API Gateway skips trust chain validation of the server
-     *         certificate. This is not recommended, but it enables you to use certificates that are signed by private
-     *         Certificate Authorities, or certificates that are self-signed.
+     *         >supported certificate authority</a>. This isn’t recommended, but it enables you to use certificates that
+     *         are signed by private certificate authorities, or certificates that are self-signed. If enabled, API
+     *         Gateway still performs basic certificate validation, which includes checking the certificate's expiration
+     *         date, hostname, and presence of a root certificate authority. Supported only for <code>HTTP</code> and
+     *         <code>HTTP_PROXY</code> integrations.
      */
 
     public Boolean getInsecureSkipVerification() {
@@ -84,23 +89,25 @@ public class TlsConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether API Gateway skips trust chain validation of the server certificate during the TLS handshake.
-     * Supported only for <code>HTTP</code> and <code>HTTP_PROXY</code> integrations. By default, API Gateway validates
-     * that certificates for integration endpoints are issued by a <a href=
+     * Specifies whether or not API Gateway skips verification that the certificate for an integration endpoint is
+     * issued by a <a href=
      * "https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-supported-certificate-authorities-for-http-endpoints.html"
-     * >supported Certificate Authority</a>. If enabled, API Gateway skips trust chain validation of the server
-     * certificate. This is not recommended, but it enables you to use certificates that are signed by private
-     * Certificate Authorities, or certificates that are self-signed.
+     * >supported certificate authority</a>. This isn’t recommended, but it enables you to use certificates that are
+     * signed by private certificate authorities, or certificates that are self-signed. If enabled, API Gateway still
+     * performs basic certificate validation, which includes checking the certificate's expiration date, hostname, and
+     * presence of a root certificate authority. Supported only for <code>HTTP</code> and <code>HTTP_PROXY</code>
+     * integrations.
      * </p>
      * 
      * @param insecureSkipVerification
-     *        Specifies whether API Gateway skips trust chain validation of the server certificate during the TLS
-     *        handshake. Supported only for <code>HTTP</code> and <code>HTTP_PROXY</code> integrations. By default, API
-     *        Gateway validates that certificates for integration endpoints are issued by a <a href=
+     *        Specifies whether or not API Gateway skips verification that the certificate for an integration endpoint
+     *        is issued by a <a href=
      *        "https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-supported-certificate-authorities-for-http-endpoints.html"
-     *        >supported Certificate Authority</a>. If enabled, API Gateway skips trust chain validation of the server
-     *        certificate. This is not recommended, but it enables you to use certificates that are signed by private
-     *        Certificate Authorities, or certificates that are self-signed.
+     *        >supported certificate authority</a>. This isn’t recommended, but it enables you to use certificates that
+     *        are signed by private certificate authorities, or certificates that are self-signed. If enabled, API
+     *        Gateway still performs basic certificate validation, which includes checking the certificate's expiration
+     *        date, hostname, and presence of a root certificate authority. Supported only for <code>HTTP</code> and
+     *        <code>HTTP_PROXY</code> integrations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -111,22 +118,24 @@ public class TlsConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether API Gateway skips trust chain validation of the server certificate during the TLS handshake.
-     * Supported only for <code>HTTP</code> and <code>HTTP_PROXY</code> integrations. By default, API Gateway validates
-     * that certificates for integration endpoints are issued by a <a href=
+     * Specifies whether or not API Gateway skips verification that the certificate for an integration endpoint is
+     * issued by a <a href=
      * "https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-supported-certificate-authorities-for-http-endpoints.html"
-     * >supported Certificate Authority</a>. If enabled, API Gateway skips trust chain validation of the server
-     * certificate. This is not recommended, but it enables you to use certificates that are signed by private
-     * Certificate Authorities, or certificates that are self-signed.
+     * >supported certificate authority</a>. This isn’t recommended, but it enables you to use certificates that are
+     * signed by private certificate authorities, or certificates that are self-signed. If enabled, API Gateway still
+     * performs basic certificate validation, which includes checking the certificate's expiration date, hostname, and
+     * presence of a root certificate authority. Supported only for <code>HTTP</code> and <code>HTTP_PROXY</code>
+     * integrations.
      * </p>
      * 
-     * @return Specifies whether API Gateway skips trust chain validation of the server certificate during the TLS
-     *         handshake. Supported only for <code>HTTP</code> and <code>HTTP_PROXY</code> integrations. By default, API
-     *         Gateway validates that certificates for integration endpoints are issued by a <a href=
+     * @return Specifies whether or not API Gateway skips verification that the certificate for an integration endpoint
+     *         is issued by a <a href=
      *         "https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-supported-certificate-authorities-for-http-endpoints.html"
-     *         >supported Certificate Authority</a>. If enabled, API Gateway skips trust chain validation of the server
-     *         certificate. This is not recommended, but it enables you to use certificates that are signed by private
-     *         Certificate Authorities, or certificates that are self-signed.
+     *         >supported certificate authority</a>. This isn’t recommended, but it enables you to use certificates that
+     *         are signed by private certificate authorities, or certificates that are self-signed. If enabled, API
+     *         Gateway still performs basic certificate validation, which includes checking the certificate's expiration
+     *         date, hostname, and presence of a root certificate authority. Supported only for <code>HTTP</code> and
+     *         <code>HTTP_PROXY</code> integrations.
      */
 
     public Boolean isInsecureSkipVerification() {

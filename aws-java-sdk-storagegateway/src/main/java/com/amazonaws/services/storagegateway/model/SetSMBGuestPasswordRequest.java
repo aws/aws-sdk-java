@@ -36,7 +36,7 @@ public class SetSMBGuestPasswordRequest extends com.amazonaws.AmazonWebServiceRe
     private String gatewayARN;
     /**
      * <p>
-     * The password that you want to set for your SMB Server.
+     * The password that you want to set for your SMB server.
      * </p>
      */
     private String password;
@@ -83,11 +83,11 @@ public class SetSMBGuestPasswordRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The password that you want to set for your SMB Server.
+     * The password that you want to set for your SMB server.
      * </p>
      * 
      * @param password
-     *        The password that you want to set for your SMB Server.
+     *        The password that you want to set for your SMB server.
      */
 
     public void setPassword(String password) {
@@ -96,10 +96,10 @@ public class SetSMBGuestPasswordRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The password that you want to set for your SMB Server.
+     * The password that you want to set for your SMB server.
      * </p>
      * 
-     * @return The password that you want to set for your SMB Server.
+     * @return The password that you want to set for your SMB server.
      */
 
     public String getPassword() {
@@ -108,11 +108,11 @@ public class SetSMBGuestPasswordRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The password that you want to set for your SMB Server.
+     * The password that you want to set for your SMB server.
      * </p>
      * 
      * @param password
-     *        The password that you want to set for your SMB Server.
+     *        The password that you want to set for your SMB server.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

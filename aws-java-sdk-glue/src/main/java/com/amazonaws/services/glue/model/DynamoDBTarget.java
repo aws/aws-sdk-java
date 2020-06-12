@@ -34,6 +34,30 @@ public class DynamoDBTarget implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String path;
+    /**
+     * <p>
+     * Indicates whether to scan all the records, or to sample rows from the table. Scanning all the records can take a
+     * long time when the table is not a high throughput table.
+     * </p>
+     * <p>
+     * A value of <code>true</code> means to scan all records, while a value of <code>false</code> means to sample the
+     * records. If no value is specified, the value defaults to <code>true</code>.
+     * </p>
+     */
+    private Boolean scanAll;
+    /**
+     * <p>
+     * The percentage of the configured read capacity units to use by the AWS Glue crawler. Read capacity units is a
+     * term defined by DynamoDB, and is a numeric value that acts as rate limiter for the number of reads that can be
+     * performed on that table per second.
+     * </p>
+     * <p>
+     * The valid values are null or a value between 0.1 to 1.5. A null value is used when user does not provide a value,
+     * and defaults to 0.5 of the configured Read Capacity Unit (for provisioned tables), or 0.25 of the max configured
+     * Read Capacity Unit (for tables using on-demand mode).
+     * </p>
+     */
+    private Double scanRate;
 
     /**
      * <p>
@@ -76,6 +100,173 @@ public class DynamoDBTarget implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Indicates whether to scan all the records, or to sample rows from the table. Scanning all the records can take a
+     * long time when the table is not a high throughput table.
+     * </p>
+     * <p>
+     * A value of <code>true</code> means to scan all records, while a value of <code>false</code> means to sample the
+     * records. If no value is specified, the value defaults to <code>true</code>.
+     * </p>
+     * 
+     * @param scanAll
+     *        Indicates whether to scan all the records, or to sample rows from the table. Scanning all the records can
+     *        take a long time when the table is not a high throughput table.</p>
+     *        <p>
+     *        A value of <code>true</code> means to scan all records, while a value of <code>false</code> means to
+     *        sample the records. If no value is specified, the value defaults to <code>true</code>.
+     */
+
+    public void setScanAll(Boolean scanAll) {
+        this.scanAll = scanAll;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to scan all the records, or to sample rows from the table. Scanning all the records can take a
+     * long time when the table is not a high throughput table.
+     * </p>
+     * <p>
+     * A value of <code>true</code> means to scan all records, while a value of <code>false</code> means to sample the
+     * records. If no value is specified, the value defaults to <code>true</code>.
+     * </p>
+     * 
+     * @return Indicates whether to scan all the records, or to sample rows from the table. Scanning all the records can
+     *         take a long time when the table is not a high throughput table.</p>
+     *         <p>
+     *         A value of <code>true</code> means to scan all records, while a value of <code>false</code> means to
+     *         sample the records. If no value is specified, the value defaults to <code>true</code>.
+     */
+
+    public Boolean getScanAll() {
+        return this.scanAll;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to scan all the records, or to sample rows from the table. Scanning all the records can take a
+     * long time when the table is not a high throughput table.
+     * </p>
+     * <p>
+     * A value of <code>true</code> means to scan all records, while a value of <code>false</code> means to sample the
+     * records. If no value is specified, the value defaults to <code>true</code>.
+     * </p>
+     * 
+     * @param scanAll
+     *        Indicates whether to scan all the records, or to sample rows from the table. Scanning all the records can
+     *        take a long time when the table is not a high throughput table.</p>
+     *        <p>
+     *        A value of <code>true</code> means to scan all records, while a value of <code>false</code> means to
+     *        sample the records. If no value is specified, the value defaults to <code>true</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DynamoDBTarget withScanAll(Boolean scanAll) {
+        setScanAll(scanAll);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to scan all the records, or to sample rows from the table. Scanning all the records can take a
+     * long time when the table is not a high throughput table.
+     * </p>
+     * <p>
+     * A value of <code>true</code> means to scan all records, while a value of <code>false</code> means to sample the
+     * records. If no value is specified, the value defaults to <code>true</code>.
+     * </p>
+     * 
+     * @return Indicates whether to scan all the records, or to sample rows from the table. Scanning all the records can
+     *         take a long time when the table is not a high throughput table.</p>
+     *         <p>
+     *         A value of <code>true</code> means to scan all records, while a value of <code>false</code> means to
+     *         sample the records. If no value is specified, the value defaults to <code>true</code>.
+     */
+
+    public Boolean isScanAll() {
+        return this.scanAll;
+    }
+
+    /**
+     * <p>
+     * The percentage of the configured read capacity units to use by the AWS Glue crawler. Read capacity units is a
+     * term defined by DynamoDB, and is a numeric value that acts as rate limiter for the number of reads that can be
+     * performed on that table per second.
+     * </p>
+     * <p>
+     * The valid values are null or a value between 0.1 to 1.5. A null value is used when user does not provide a value,
+     * and defaults to 0.5 of the configured Read Capacity Unit (for provisioned tables), or 0.25 of the max configured
+     * Read Capacity Unit (for tables using on-demand mode).
+     * </p>
+     * 
+     * @param scanRate
+     *        The percentage of the configured read capacity units to use by the AWS Glue crawler. Read capacity units
+     *        is a term defined by DynamoDB, and is a numeric value that acts as rate limiter for the number of reads
+     *        that can be performed on that table per second.</p>
+     *        <p>
+     *        The valid values are null or a value between 0.1 to 1.5. A null value is used when user does not provide a
+     *        value, and defaults to 0.5 of the configured Read Capacity Unit (for provisioned tables), or 0.25 of the
+     *        max configured Read Capacity Unit (for tables using on-demand mode).
+     */
+
+    public void setScanRate(Double scanRate) {
+        this.scanRate = scanRate;
+    }
+
+    /**
+     * <p>
+     * The percentage of the configured read capacity units to use by the AWS Glue crawler. Read capacity units is a
+     * term defined by DynamoDB, and is a numeric value that acts as rate limiter for the number of reads that can be
+     * performed on that table per second.
+     * </p>
+     * <p>
+     * The valid values are null or a value between 0.1 to 1.5. A null value is used when user does not provide a value,
+     * and defaults to 0.5 of the configured Read Capacity Unit (for provisioned tables), or 0.25 of the max configured
+     * Read Capacity Unit (for tables using on-demand mode).
+     * </p>
+     * 
+     * @return The percentage of the configured read capacity units to use by the AWS Glue crawler. Read capacity units
+     *         is a term defined by DynamoDB, and is a numeric value that acts as rate limiter for the number of reads
+     *         that can be performed on that table per second.</p>
+     *         <p>
+     *         The valid values are null or a value between 0.1 to 1.5. A null value is used when user does not provide
+     *         a value, and defaults to 0.5 of the configured Read Capacity Unit (for provisioned tables), or 0.25 of
+     *         the max configured Read Capacity Unit (for tables using on-demand mode).
+     */
+
+    public Double getScanRate() {
+        return this.scanRate;
+    }
+
+    /**
+     * <p>
+     * The percentage of the configured read capacity units to use by the AWS Glue crawler. Read capacity units is a
+     * term defined by DynamoDB, and is a numeric value that acts as rate limiter for the number of reads that can be
+     * performed on that table per second.
+     * </p>
+     * <p>
+     * The valid values are null or a value between 0.1 to 1.5. A null value is used when user does not provide a value,
+     * and defaults to 0.5 of the configured Read Capacity Unit (for provisioned tables), or 0.25 of the max configured
+     * Read Capacity Unit (for tables using on-demand mode).
+     * </p>
+     * 
+     * @param scanRate
+     *        The percentage of the configured read capacity units to use by the AWS Glue crawler. Read capacity units
+     *        is a term defined by DynamoDB, and is a numeric value that acts as rate limiter for the number of reads
+     *        that can be performed on that table per second.</p>
+     *        <p>
+     *        The valid values are null or a value between 0.1 to 1.5. A null value is used when user does not provide a
+     *        value, and defaults to 0.5 of the configured Read Capacity Unit (for provisioned tables), or 0.25 of the
+     *        max configured Read Capacity Unit (for tables using on-demand mode).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DynamoDBTarget withScanRate(Double scanRate) {
+        setScanRate(scanRate);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -88,7 +279,11 @@ public class DynamoDBTarget implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPath() != null)
-            sb.append("Path: ").append(getPath());
+            sb.append("Path: ").append(getPath()).append(",");
+        if (getScanAll() != null)
+            sb.append("ScanAll: ").append(getScanAll()).append(",");
+        if (getScanRate() != null)
+            sb.append("ScanRate: ").append(getScanRate());
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +302,14 @@ public class DynamoDBTarget implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getPath() != null && other.getPath().equals(this.getPath()) == false)
             return false;
+        if (other.getScanAll() == null ^ this.getScanAll() == null)
+            return false;
+        if (other.getScanAll() != null && other.getScanAll().equals(this.getScanAll()) == false)
+            return false;
+        if (other.getScanRate() == null ^ this.getScanRate() == null)
+            return false;
+        if (other.getScanRate() != null && other.getScanRate().equals(this.getScanRate()) == false)
+            return false;
         return true;
     }
 
@@ -116,6 +319,8 @@ public class DynamoDBTarget implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getPath() == null) ? 0 : getPath().hashCode());
+        hashCode = prime * hashCode + ((getScanAll() == null) ? 0 : getScanAll().hashCode());
+        hashCode = prime * hashCode + ((getScanRate() == null) ? 0 : getScanRate().hashCode());
         return hashCode;
     }
 

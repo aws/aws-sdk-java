@@ -95,7 +95,7 @@ public class TapeArchive implements Serializable, Cloneable, StructuredPojo {
      * that is associated with the pool.
      * </p>
      * <p>
-     * Valid values: "GLACIER", "DEEP_ARCHIVE"
+     * Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code>
      * </p>
      */
     private String poolId;
@@ -506,14 +506,14 @@ public class TapeArchive implements Serializable, Cloneable, StructuredPojo {
      * that is associated with the pool.
      * </p>
      * <p>
-     * Valid values: "GLACIER", "DEEP_ARCHIVE"
+     * Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code>
      * </p>
      * 
      * @param poolId
      *        The ID of the pool that was used to archive the tape. The tapes in this pool are archived in the S3
      *        storage class that is associated with the pool.</p>
      *        <p>
-     *        Valid values: "GLACIER", "DEEP_ARCHIVE"
+     *        Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code>
      */
 
     public void setPoolId(String poolId) {
@@ -526,13 +526,13 @@ public class TapeArchive implements Serializable, Cloneable, StructuredPojo {
      * that is associated with the pool.
      * </p>
      * <p>
-     * Valid values: "GLACIER", "DEEP_ARCHIVE"
+     * Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code>
      * </p>
      * 
      * @return The ID of the pool that was used to archive the tape. The tapes in this pool are archived in the S3
      *         storage class that is associated with the pool.</p>
      *         <p>
-     *         Valid values: "GLACIER", "DEEP_ARCHIVE"
+     *         Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code>
      */
 
     public String getPoolId() {
@@ -545,14 +545,14 @@ public class TapeArchive implements Serializable, Cloneable, StructuredPojo {
      * that is associated with the pool.
      * </p>
      * <p>
-     * Valid values: "GLACIER", "DEEP_ARCHIVE"
+     * Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code>
      * </p>
      * 
      * @param poolId
      *        The ID of the pool that was used to archive the tape. The tapes in this pool are archived in the S3
      *        storage class that is associated with the pool.</p>
      *        <p>
-     *        Valid values: "GLACIER", "DEEP_ARCHIVE"
+     *        Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

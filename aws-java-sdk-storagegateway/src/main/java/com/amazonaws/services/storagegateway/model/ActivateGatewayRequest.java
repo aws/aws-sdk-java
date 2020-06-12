@@ -49,12 +49,12 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </li>
  * <li>
  * <p>
- * <a>ActivateGatewayInput$TapeDriveType</a>
+ * <a>ActivateGatewayInput$MediumChangerType</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>ActivateGatewayInput$MediumChangerType</a>
+ * <a>ActivateGatewayInput$TapeDriveType</a>
  * </p>
  * </li>
  * </ul>
@@ -74,8 +74,9 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      * <code>ActivateGateway</code> API call determine the actual configuration of your gateway.
      * </p>
      * <p>
-     * For more information, see https://docs.aws.amazon.com/storagegateway/latest/userguide/get-activation-key.html in
-     * the Storage Gateway User Guide.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/get-activation-key.html">Getting activation
+     * key</a> in the <i>AWS Storage Gateway User Guide</i>.
      * </p>
      */
     private String activationKey;
@@ -99,12 +100,12 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      * A value that indicates the AWS Region where you want to store your data. The gateway AWS Region specified must be
      * the same AWS Region as the AWS Region in your <code>Host</code> header in the request. For more information about
      * available AWS Regions and endpoints for AWS Storage Gateway, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions and Endpoints</a> in the
-     * <i>Amazon Web Services Glossary</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS Storage Gateway endpoints and quotas</a> in the
+     * <i>AWS General Reference</i>.
      * </p>
      * <p>
-     * Valid Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">AWS Storage
-     * Gateway Regions and Endpoints</a> in the AWS General Reference.
+     * Valid Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS Storage Gateway endpoints
+     * and quotas</a> in the <i>AWS General Reference</i>.
      * </p>
      */
     private String gatewayRegion;
@@ -114,7 +115,7 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      * the gateway and cannot be changed after activation. The default value is <code>CACHED</code>.
      * </p>
      * <p>
-     * Valid Values: "STORED", "CACHED", "VTL", "FILE_S3"
+     * Valid Values: <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> | <code>FILE_S3</code>
      * </p>
      */
     private String gatewayType;
@@ -123,7 +124,7 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      * The value that indicates the type of tape drive to use for tape gateway. This field is optional.
      * </p>
      * <p>
-     * Valid Values: "IBM-ULT3580-TD5"
+     * Valid Values: <code>IBM-ULT3580-TD5</code>
      * </p>
      */
     private String tapeDriveType;
@@ -132,7 +133,7 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      * The value that indicates the type of medium changer to use for tape gateway. This field is optional.
      * </p>
      * <p>
-     * Valid Values: "STK-L700", "AWS-Gateway-VTL"
+     * Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code>
      * </p>
      */
     private String mediumChangerType;
@@ -159,8 +160,9 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      * <code>ActivateGateway</code> API call determine the actual configuration of your gateway.
      * </p>
      * <p>
-     * For more information, see https://docs.aws.amazon.com/storagegateway/latest/userguide/get-activation-key.html in
-     * the Storage Gateway User Guide.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/get-activation-key.html">Getting activation
+     * key</a> in the <i>AWS Storage Gateway User Guide</i>.
      * </p>
      * 
      * @param activationKey
@@ -168,11 +170,11 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      *        redirects enabled to the gateway IP address (port 80). The redirect URL returned in the response provides
      *        you the activation key for your gateway in the query string parameter <code>activationKey</code>. It may
      *        also include other activation-related parameters, however, these are merely defaults -- the arguments you
-     *        pass to the <code>ActivateGateway</code> API call determine the actual configuration of your gateway. </p>
+     *        pass to the <code>ActivateGateway</code> API call determine the actual configuration of your gateway.</p>
      *        <p>
-     *        For more information, see
-     *        https://docs.aws.amazon.com/storagegateway/latest/userguide/get-activation-key.html in the Storage Gateway
-     *        User Guide.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/storagegateway/latest/userguide/get-activation-key.html">Getting
+     *        activation key</a> in the <i>AWS Storage Gateway User Guide</i>.
      */
 
     public void setActivationKey(String activationKey) {
@@ -188,20 +190,20 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      * <code>ActivateGateway</code> API call determine the actual configuration of your gateway.
      * </p>
      * <p>
-     * For more information, see https://docs.aws.amazon.com/storagegateway/latest/userguide/get-activation-key.html in
-     * the Storage Gateway User Guide.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/get-activation-key.html">Getting activation
+     * key</a> in the <i>AWS Storage Gateway User Guide</i>.
      * </p>
      * 
      * @return Your gateway activation key. You can obtain the activation key by sending an HTTP GET request with
      *         redirects enabled to the gateway IP address (port 80). The redirect URL returned in the response provides
      *         you the activation key for your gateway in the query string parameter <code>activationKey</code>. It may
      *         also include other activation-related parameters, however, these are merely defaults -- the arguments you
-     *         pass to the <code>ActivateGateway</code> API call determine the actual configuration of your gateway.
-     *         </p>
+     *         pass to the <code>ActivateGateway</code> API call determine the actual configuration of your gateway.</p>
      *         <p>
-     *         For more information, see
-     *         https://docs.aws.amazon.com/storagegateway/latest/userguide/get-activation-key.html in the Storage
-     *         Gateway User Guide.
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/storagegateway/latest/userguide/get-activation-key.html">Getting
+     *         activation key</a> in the <i>AWS Storage Gateway User Guide</i>.
      */
 
     public String getActivationKey() {
@@ -217,8 +219,9 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      * <code>ActivateGateway</code> API call determine the actual configuration of your gateway.
      * </p>
      * <p>
-     * For more information, see https://docs.aws.amazon.com/storagegateway/latest/userguide/get-activation-key.html in
-     * the Storage Gateway User Guide.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/get-activation-key.html">Getting activation
+     * key</a> in the <i>AWS Storage Gateway User Guide</i>.
      * </p>
      * 
      * @param activationKey
@@ -226,11 +229,11 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      *        redirects enabled to the gateway IP address (port 80). The redirect URL returned in the response provides
      *        you the activation key for your gateway in the query string parameter <code>activationKey</code>. It may
      *        also include other activation-related parameters, however, these are merely defaults -- the arguments you
-     *        pass to the <code>ActivateGateway</code> API call determine the actual configuration of your gateway. </p>
+     *        pass to the <code>ActivateGateway</code> API call determine the actual configuration of your gateway.</p>
      *        <p>
-     *        For more information, see
-     *        https://docs.aws.amazon.com/storagegateway/latest/userguide/get-activation-key.html in the Storage Gateway
-     *        User Guide.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/storagegateway/latest/userguide/get-activation-key.html">Getting
+     *        activation key</a> in the <i>AWS Storage Gateway User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -342,23 +345,23 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      * A value that indicates the AWS Region where you want to store your data. The gateway AWS Region specified must be
      * the same AWS Region as the AWS Region in your <code>Host</code> header in the request. For more information about
      * available AWS Regions and endpoints for AWS Storage Gateway, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions and Endpoints</a> in the
-     * <i>Amazon Web Services Glossary</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS Storage Gateway endpoints and quotas</a> in the
+     * <i>AWS General Reference</i>.
      * </p>
      * <p>
-     * Valid Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">AWS Storage
-     * Gateway Regions and Endpoints</a> in the AWS General Reference.
+     * Valid Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS Storage Gateway endpoints
+     * and quotas</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param gatewayRegion
      *        A value that indicates the AWS Region where you want to store your data. The gateway AWS Region specified
      *        must be the same AWS Region as the AWS Region in your <code>Host</code> header in the request. For more
      *        information about available AWS Regions and endpoints for AWS Storage Gateway, see <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions and Endpoints</a> in the
-     *        <i>Amazon Web Services Glossary</i>.</p>
+     *        href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS Storage Gateway endpoints and quotas</a>
+     *        in the <i>AWS General Reference</i>.</p>
      *        <p>
-     *        Valid Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">AWS Storage
-     *        Gateway Regions and Endpoints</a> in the AWS General Reference.
+     *        Valid Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS Storage Gateway
+     *        endpoints and quotas</a> in the <i>AWS General Reference</i>.
      */
 
     public void setGatewayRegion(String gatewayRegion) {
@@ -370,22 +373,22 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      * A value that indicates the AWS Region where you want to store your data. The gateway AWS Region specified must be
      * the same AWS Region as the AWS Region in your <code>Host</code> header in the request. For more information about
      * available AWS Regions and endpoints for AWS Storage Gateway, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions and Endpoints</a> in the
-     * <i>Amazon Web Services Glossary</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS Storage Gateway endpoints and quotas</a> in the
+     * <i>AWS General Reference</i>.
      * </p>
      * <p>
-     * Valid Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">AWS Storage
-     * Gateway Regions and Endpoints</a> in the AWS General Reference.
+     * Valid Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS Storage Gateway endpoints
+     * and quotas</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @return A value that indicates the AWS Region where you want to store your data. The gateway AWS Region specified
      *         must be the same AWS Region as the AWS Region in your <code>Host</code> header in the request. For more
      *         information about available AWS Regions and endpoints for AWS Storage Gateway, see <a
-     *         href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions and Endpoints</a> in
-     *         the <i>Amazon Web Services Glossary</i>.</p>
+     *         href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS Storage Gateway endpoints and quotas</a>
+     *         in the <i>AWS General Reference</i>.</p>
      *         <p>
-     *         Valid Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">AWS
-     *         Storage Gateway Regions and Endpoints</a> in the AWS General Reference.
+     *         Valid Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS Storage Gateway
+     *         endpoints and quotas</a> in the <i>AWS General Reference</i>.
      */
 
     public String getGatewayRegion() {
@@ -397,23 +400,23 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      * A value that indicates the AWS Region where you want to store your data. The gateway AWS Region specified must be
      * the same AWS Region as the AWS Region in your <code>Host</code> header in the request. For more information about
      * available AWS Regions and endpoints for AWS Storage Gateway, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions and Endpoints</a> in the
-     * <i>Amazon Web Services Glossary</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS Storage Gateway endpoints and quotas</a> in the
+     * <i>AWS General Reference</i>.
      * </p>
      * <p>
-     * Valid Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">AWS Storage
-     * Gateway Regions and Endpoints</a> in the AWS General Reference.
+     * Valid Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS Storage Gateway endpoints
+     * and quotas</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param gatewayRegion
      *        A value that indicates the AWS Region where you want to store your data. The gateway AWS Region specified
      *        must be the same AWS Region as the AWS Region in your <code>Host</code> header in the request. For more
      *        information about available AWS Regions and endpoints for AWS Storage Gateway, see <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions and Endpoints</a> in the
-     *        <i>Amazon Web Services Glossary</i>.</p>
+     *        href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS Storage Gateway endpoints and quotas</a>
+     *        in the <i>AWS General Reference</i>.</p>
      *        <p>
-     *        Valid Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">AWS Storage
-     *        Gateway Regions and Endpoints</a> in the AWS General Reference.
+     *        Valid Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS Storage Gateway
+     *        endpoints and quotas</a> in the <i>AWS General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -428,15 +431,15 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      * the gateway and cannot be changed after activation. The default value is <code>CACHED</code>.
      * </p>
      * <p>
-     * Valid Values: "STORED", "CACHED", "VTL", "FILE_S3"
+     * Valid Values: <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> | <code>FILE_S3</code>
      * </p>
      * 
      * @param gatewayType
      *        A value that defines the type of gateway to activate. The type specified is critical to all later
-     *        functions of the gateway and cannot be changed after activation. The default value is <code>CACHED</code>.
-     *        </p>
+     *        functions of the gateway and cannot be changed after activation. The default value is <code>CACHED</code>
+     *        .</p>
      *        <p>
-     *        Valid Values: "STORED", "CACHED", "VTL", "FILE_S3"
+     *        Valid Values: <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> | <code>FILE_S3</code>
      */
 
     public void setGatewayType(String gatewayType) {
@@ -449,14 +452,14 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      * the gateway and cannot be changed after activation. The default value is <code>CACHED</code>.
      * </p>
      * <p>
-     * Valid Values: "STORED", "CACHED", "VTL", "FILE_S3"
+     * Valid Values: <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> | <code>FILE_S3</code>
      * </p>
      * 
      * @return A value that defines the type of gateway to activate. The type specified is critical to all later
      *         functions of the gateway and cannot be changed after activation. The default value is <code>CACHED</code>
-     *         . </p>
+     *         .</p>
      *         <p>
-     *         Valid Values: "STORED", "CACHED", "VTL", "FILE_S3"
+     *         Valid Values: <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> | <code>FILE_S3</code>
      */
 
     public String getGatewayType() {
@@ -469,15 +472,15 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      * the gateway and cannot be changed after activation. The default value is <code>CACHED</code>.
      * </p>
      * <p>
-     * Valid Values: "STORED", "CACHED", "VTL", "FILE_S3"
+     * Valid Values: <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> | <code>FILE_S3</code>
      * </p>
      * 
      * @param gatewayType
      *        A value that defines the type of gateway to activate. The type specified is critical to all later
-     *        functions of the gateway and cannot be changed after activation. The default value is <code>CACHED</code>.
-     *        </p>
+     *        functions of the gateway and cannot be changed after activation. The default value is <code>CACHED</code>
+     *        .</p>
      *        <p>
-     *        Valid Values: "STORED", "CACHED", "VTL", "FILE_S3"
+     *        Valid Values: <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> | <code>FILE_S3</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -491,13 +494,13 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      * The value that indicates the type of tape drive to use for tape gateway. This field is optional.
      * </p>
      * <p>
-     * Valid Values: "IBM-ULT3580-TD5"
+     * Valid Values: <code>IBM-ULT3580-TD5</code>
      * </p>
      * 
      * @param tapeDriveType
      *        The value that indicates the type of tape drive to use for tape gateway. This field is optional.</p>
      *        <p>
-     *        Valid Values: "IBM-ULT3580-TD5"
+     *        Valid Values: <code>IBM-ULT3580-TD5</code>
      */
 
     public void setTapeDriveType(String tapeDriveType) {
@@ -509,12 +512,12 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      * The value that indicates the type of tape drive to use for tape gateway. This field is optional.
      * </p>
      * <p>
-     * Valid Values: "IBM-ULT3580-TD5"
+     * Valid Values: <code>IBM-ULT3580-TD5</code>
      * </p>
      * 
      * @return The value that indicates the type of tape drive to use for tape gateway. This field is optional.</p>
      *         <p>
-     *         Valid Values: "IBM-ULT3580-TD5"
+     *         Valid Values: <code>IBM-ULT3580-TD5</code>
      */
 
     public String getTapeDriveType() {
@@ -526,13 +529,13 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      * The value that indicates the type of tape drive to use for tape gateway. This field is optional.
      * </p>
      * <p>
-     * Valid Values: "IBM-ULT3580-TD5"
+     * Valid Values: <code>IBM-ULT3580-TD5</code>
      * </p>
      * 
      * @param tapeDriveType
      *        The value that indicates the type of tape drive to use for tape gateway. This field is optional.</p>
      *        <p>
-     *        Valid Values: "IBM-ULT3580-TD5"
+     *        Valid Values: <code>IBM-ULT3580-TD5</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -546,13 +549,13 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      * The value that indicates the type of medium changer to use for tape gateway. This field is optional.
      * </p>
      * <p>
-     * Valid Values: "STK-L700", "AWS-Gateway-VTL"
+     * Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code>
      * </p>
      * 
      * @param mediumChangerType
      *        The value that indicates the type of medium changer to use for tape gateway. This field is optional.</p>
      *        <p>
-     *        Valid Values: "STK-L700", "AWS-Gateway-VTL"
+     *        Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code>
      */
 
     public void setMediumChangerType(String mediumChangerType) {
@@ -564,12 +567,12 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      * The value that indicates the type of medium changer to use for tape gateway. This field is optional.
      * </p>
      * <p>
-     * Valid Values: "STK-L700", "AWS-Gateway-VTL"
+     * Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code>
      * </p>
      * 
      * @return The value that indicates the type of medium changer to use for tape gateway. This field is optional.</p>
      *         <p>
-     *         Valid Values: "STK-L700", "AWS-Gateway-VTL"
+     *         Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code>
      */
 
     public String getMediumChangerType() {
@@ -581,13 +584,13 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      * The value that indicates the type of medium changer to use for tape gateway. This field is optional.
      * </p>
      * <p>
-     * Valid Values: "STK-L700", "AWS-Gateway-VTL"
+     * Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code>
      * </p>
      * 
      * @param mediumChangerType
      *        The value that indicates the type of medium changer to use for tape gateway. This field is optional.</p>
      *        <p>
-     *        Valid Values: "STK-L700", "AWS-Gateway-VTL"
+     *        Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

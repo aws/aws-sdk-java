@@ -36,7 +36,7 @@ public class CreateSnapshotFromVolumeRecoveryPointRequest extends com.amazonaws.
      * <p>
      * Textual description of the snapshot that appears in the Amazon EC2 console, Elastic Block Store snapshots panel
      * in the <b>Description</b> field, and in the AWS Storage Gateway snapshot <b>Details</b> pane, <b>Description</b>
-     * field
+     * field.
      * </p>
      */
     private String snapshotDescription;
@@ -104,13 +104,13 @@ public class CreateSnapshotFromVolumeRecoveryPointRequest extends com.amazonaws.
      * <p>
      * Textual description of the snapshot that appears in the Amazon EC2 console, Elastic Block Store snapshots panel
      * in the <b>Description</b> field, and in the AWS Storage Gateway snapshot <b>Details</b> pane, <b>Description</b>
-     * field
+     * field.
      * </p>
      * 
      * @param snapshotDescription
      *        Textual description of the snapshot that appears in the Amazon EC2 console, Elastic Block Store snapshots
      *        panel in the <b>Description</b> field, and in the AWS Storage Gateway snapshot <b>Details</b> pane,
-     *        <b>Description</b> field
+     *        <b>Description</b> field.
      */
 
     public void setSnapshotDescription(String snapshotDescription) {
@@ -121,12 +121,12 @@ public class CreateSnapshotFromVolumeRecoveryPointRequest extends com.amazonaws.
      * <p>
      * Textual description of the snapshot that appears in the Amazon EC2 console, Elastic Block Store snapshots panel
      * in the <b>Description</b> field, and in the AWS Storage Gateway snapshot <b>Details</b> pane, <b>Description</b>
-     * field
+     * field.
      * </p>
      * 
      * @return Textual description of the snapshot that appears in the Amazon EC2 console, Elastic Block Store snapshots
      *         panel in the <b>Description</b> field, and in the AWS Storage Gateway snapshot <b>Details</b> pane,
-     *         <b>Description</b> field
+     *         <b>Description</b> field.
      */
 
     public String getSnapshotDescription() {
@@ -137,13 +137,13 @@ public class CreateSnapshotFromVolumeRecoveryPointRequest extends com.amazonaws.
      * <p>
      * Textual description of the snapshot that appears in the Amazon EC2 console, Elastic Block Store snapshots panel
      * in the <b>Description</b> field, and in the AWS Storage Gateway snapshot <b>Details</b> pane, <b>Description</b>
-     * field
+     * field.
      * </p>
      * 
      * @param snapshotDescription
      *        Textual description of the snapshot that appears in the Amazon EC2 console, Elastic Block Store snapshots
      *        panel in the <b>Description</b> field, and in the AWS Storage Gateway snapshot <b>Details</b> pane,
-     *        <b>Description</b> field
+     *        <b>Description</b> field.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

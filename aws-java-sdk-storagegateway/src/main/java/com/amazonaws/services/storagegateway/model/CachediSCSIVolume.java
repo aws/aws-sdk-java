@@ -57,7 +57,7 @@ public class CachediSCSIVolume implements Serializable, Cloneable, StructuredPoj
      * A value that indicates whether a storage volume is attached to or detached from a gateway. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume"
-     * >Moving Your Volumes to a Different Gateway</a>.
+     * >Moving your volumes to a different gateway</a>.
      * </p>
      */
     private String volumeAttachmentStatus;
@@ -289,14 +289,14 @@ public class CachediSCSIVolume implements Serializable, Cloneable, StructuredPoj
      * A value that indicates whether a storage volume is attached to or detached from a gateway. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume"
-     * >Moving Your Volumes to a Different Gateway</a>.
+     * >Moving your volumes to a different gateway</a>.
      * </p>
      * 
      * @param volumeAttachmentStatus
      *        A value that indicates whether a storage volume is attached to or detached from a gateway. For more
      *        information, see <a href=
      *        "https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume"
-     *        >Moving Your Volumes to a Different Gateway</a>.
+     *        >Moving your volumes to a different gateway</a>.
      */
 
     public void setVolumeAttachmentStatus(String volumeAttachmentStatus) {
@@ -308,13 +308,13 @@ public class CachediSCSIVolume implements Serializable, Cloneable, StructuredPoj
      * A value that indicates whether a storage volume is attached to or detached from a gateway. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume"
-     * >Moving Your Volumes to a Different Gateway</a>.
+     * >Moving your volumes to a different gateway</a>.
      * </p>
      * 
      * @return A value that indicates whether a storage volume is attached to or detached from a gateway. For more
      *         information, see <a href=
      *         "https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume"
-     *         >Moving Your Volumes to a Different Gateway</a>.
+     *         >Moving your volumes to a different gateway</a>.
      */
 
     public String getVolumeAttachmentStatus() {
@@ -326,14 +326,14 @@ public class CachediSCSIVolume implements Serializable, Cloneable, StructuredPoj
      * A value that indicates whether a storage volume is attached to or detached from a gateway. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume"
-     * >Moving Your Volumes to a Different Gateway</a>.
+     * >Moving your volumes to a different gateway</a>.
      * </p>
      * 
      * @param volumeAttachmentStatus
      *        A value that indicates whether a storage volume is attached to or detached from a gateway. For more
      *        information, see <a href=
      *        "https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume"
-     *        >Moving Your Volumes to a Different Gateway</a>.
+     *        >Moving your volumes to a different gateway</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

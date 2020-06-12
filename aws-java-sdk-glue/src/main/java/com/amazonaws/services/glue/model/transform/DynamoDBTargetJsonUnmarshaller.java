@@ -52,6 +52,14 @@ public class DynamoDBTargetJsonUnmarshaller implements Unmarshaller<DynamoDBTarg
                     context.nextToken();
                     dynamoDBTarget.setPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("scanAll", targetDepth)) {
+                    context.nextToken();
+                    dynamoDBTarget.setScanAll(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("scanRate", targetDepth)) {
+                    context.nextToken();
+                    dynamoDBTarget.setScanRate(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

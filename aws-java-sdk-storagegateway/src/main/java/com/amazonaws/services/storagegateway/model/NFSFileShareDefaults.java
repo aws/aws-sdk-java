@@ -33,42 +33,42 @@ public class NFSFileShareDefaults implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Unix file mode in the form "nnnn". For example, "0666" represents the default file mode inside the file
-     * share. The default value is 0666.
+     * The Unix file mode in the form "nnnn". For example, <code>0666</code> represents the default file mode inside the
+     * file share. The default value is <code>0666</code>.
      * </p>
      */
     private String fileMode;
     /**
      * <p>
-     * The Unix directory mode in the form "nnnn". For example, "0666" represents the default access mode for all
-     * directories inside the file share. The default value is 0777.
+     * The Unix directory mode in the form "nnnn". For example, <code>0666</code> represents the default access mode for
+     * all directories inside the file share. The default value is <code>0777</code>.
      * </p>
      */
     private String directoryMode;
     /**
      * <p>
      * The default group ID for the file share (unless the files have another group ID specified). The default value is
-     * nfsnobody.
+     * <code>nfsnobody</code>.
      * </p>
      */
     private Long groupId;
     /**
      * <p>
      * The default owner ID for files in the file share (unless the files have another owner ID specified). The default
-     * value is nfsnobody.
+     * value is <code>nfsnobody</code>.
      * </p>
      */
     private Long ownerId;
 
     /**
      * <p>
-     * The Unix file mode in the form "nnnn". For example, "0666" represents the default file mode inside the file
-     * share. The default value is 0666.
+     * The Unix file mode in the form "nnnn". For example, <code>0666</code> represents the default file mode inside the
+     * file share. The default value is <code>0666</code>.
      * </p>
      * 
      * @param fileMode
-     *        The Unix file mode in the form "nnnn". For example, "0666" represents the default file mode inside the
-     *        file share. The default value is 0666.
+     *        The Unix file mode in the form "nnnn". For example, <code>0666</code> represents the default file mode
+     *        inside the file share. The default value is <code>0666</code>.
      */
 
     public void setFileMode(String fileMode) {
@@ -77,12 +77,12 @@ public class NFSFileShareDefaults implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Unix file mode in the form "nnnn". For example, "0666" represents the default file mode inside the file
-     * share. The default value is 0666.
+     * The Unix file mode in the form "nnnn". For example, <code>0666</code> represents the default file mode inside the
+     * file share. The default value is <code>0666</code>.
      * </p>
      * 
-     * @return The Unix file mode in the form "nnnn". For example, "0666" represents the default file mode inside the
-     *         file share. The default value is 0666.
+     * @return The Unix file mode in the form "nnnn". For example, <code>0666</code> represents the default file mode
+     *         inside the file share. The default value is <code>0666</code>.
      */
 
     public String getFileMode() {
@@ -91,13 +91,13 @@ public class NFSFileShareDefaults implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Unix file mode in the form "nnnn". For example, "0666" represents the default file mode inside the file
-     * share. The default value is 0666.
+     * The Unix file mode in the form "nnnn". For example, <code>0666</code> represents the default file mode inside the
+     * file share. The default value is <code>0666</code>.
      * </p>
      * 
      * @param fileMode
-     *        The Unix file mode in the form "nnnn". For example, "0666" represents the default file mode inside the
-     *        file share. The default value is 0666.
+     *        The Unix file mode in the form "nnnn". For example, <code>0666</code> represents the default file mode
+     *        inside the file share. The default value is <code>0666</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -108,13 +108,13 @@ public class NFSFileShareDefaults implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Unix directory mode in the form "nnnn". For example, "0666" represents the default access mode for all
-     * directories inside the file share. The default value is 0777.
+     * The Unix directory mode in the form "nnnn". For example, <code>0666</code> represents the default access mode for
+     * all directories inside the file share. The default value is <code>0777</code>.
      * </p>
      * 
      * @param directoryMode
-     *        The Unix directory mode in the form "nnnn". For example, "0666" represents the default access mode for all
-     *        directories inside the file share. The default value is 0777.
+     *        The Unix directory mode in the form "nnnn". For example, <code>0666</code> represents the default access
+     *        mode for all directories inside the file share. The default value is <code>0777</code>.
      */
 
     public void setDirectoryMode(String directoryMode) {
@@ -123,12 +123,12 @@ public class NFSFileShareDefaults implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Unix directory mode in the form "nnnn". For example, "0666" represents the default access mode for all
-     * directories inside the file share. The default value is 0777.
+     * The Unix directory mode in the form "nnnn". For example, <code>0666</code> represents the default access mode for
+     * all directories inside the file share. The default value is <code>0777</code>.
      * </p>
      * 
-     * @return The Unix directory mode in the form "nnnn". For example, "0666" represents the default access mode for
-     *         all directories inside the file share. The default value is 0777.
+     * @return The Unix directory mode in the form "nnnn". For example, <code>0666</code> represents the default access
+     *         mode for all directories inside the file share. The default value is <code>0777</code>.
      */
 
     public String getDirectoryMode() {
@@ -137,13 +137,13 @@ public class NFSFileShareDefaults implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Unix directory mode in the form "nnnn". For example, "0666" represents the default access mode for all
-     * directories inside the file share. The default value is 0777.
+     * The Unix directory mode in the form "nnnn". For example, <code>0666</code> represents the default access mode for
+     * all directories inside the file share. The default value is <code>0777</code>.
      * </p>
      * 
      * @param directoryMode
-     *        The Unix directory mode in the form "nnnn". For example, "0666" represents the default access mode for all
-     *        directories inside the file share. The default value is 0777.
+     *        The Unix directory mode in the form "nnnn". For example, <code>0666</code> represents the default access
+     *        mode for all directories inside the file share. The default value is <code>0777</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -155,12 +155,12 @@ public class NFSFileShareDefaults implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The default group ID for the file share (unless the files have another group ID specified). The default value is
-     * nfsnobody.
+     * <code>nfsnobody</code>.
      * </p>
      * 
      * @param groupId
      *        The default group ID for the file share (unless the files have another group ID specified). The default
-     *        value is nfsnobody.
+     *        value is <code>nfsnobody</code>.
      */
 
     public void setGroupId(Long groupId) {
@@ -170,11 +170,11 @@ public class NFSFileShareDefaults implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The default group ID for the file share (unless the files have another group ID specified). The default value is
-     * nfsnobody.
+     * <code>nfsnobody</code>.
      * </p>
      * 
      * @return The default group ID for the file share (unless the files have another group ID specified). The default
-     *         value is nfsnobody.
+     *         value is <code>nfsnobody</code>.
      */
 
     public Long getGroupId() {
@@ -184,12 +184,12 @@ public class NFSFileShareDefaults implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The default group ID for the file share (unless the files have another group ID specified). The default value is
-     * nfsnobody.
+     * <code>nfsnobody</code>.
      * </p>
      * 
      * @param groupId
      *        The default group ID for the file share (unless the files have another group ID specified). The default
-     *        value is nfsnobody.
+     *        value is <code>nfsnobody</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -201,12 +201,12 @@ public class NFSFileShareDefaults implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The default owner ID for files in the file share (unless the files have another owner ID specified). The default
-     * value is nfsnobody.
+     * value is <code>nfsnobody</code>.
      * </p>
      * 
      * @param ownerId
      *        The default owner ID for files in the file share (unless the files have another owner ID specified). The
-     *        default value is nfsnobody.
+     *        default value is <code>nfsnobody</code>.
      */
 
     public void setOwnerId(Long ownerId) {
@@ -216,11 +216,11 @@ public class NFSFileShareDefaults implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The default owner ID for files in the file share (unless the files have another owner ID specified). The default
-     * value is nfsnobody.
+     * value is <code>nfsnobody</code>.
      * </p>
      * 
      * @return The default owner ID for files in the file share (unless the files have another owner ID specified). The
-     *         default value is nfsnobody.
+     *         default value is <code>nfsnobody</code>.
      */
 
     public Long getOwnerId() {
@@ -230,12 +230,12 @@ public class NFSFileShareDefaults implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The default owner ID for files in the file share (unless the files have another owner ID specified). The default
-     * value is nfsnobody.
+     * value is <code>nfsnobody</code>.
      * </p>
      * 
      * @param ownerId
      *        The default owner ID for files in the file share (unless the files have another owner ID specified). The
-     *        default value is nfsnobody.
+     *        default value is <code>nfsnobody</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
