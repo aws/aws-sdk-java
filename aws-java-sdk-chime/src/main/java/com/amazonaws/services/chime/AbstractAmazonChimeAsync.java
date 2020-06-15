@@ -229,6 +229,19 @@ public class AbstractAmazonChimeAsync extends AbstractAmazonChime implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<CreateMeetingWithAttendeesResult> createMeetingWithAttendeesAsync(CreateMeetingWithAttendeesRequest request) {
+
+        return createMeetingWithAttendeesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateMeetingWithAttendeesResult> createMeetingWithAttendeesAsync(CreateMeetingWithAttendeesRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateMeetingWithAttendeesRequest, CreateMeetingWithAttendeesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreatePhoneNumberOrderResult> createPhoneNumberOrderAsync(CreatePhoneNumberOrderRequest request) {
 
         return createPhoneNumberOrderAsync(request, null);

@@ -547,7 +547,9 @@ public interface AmazonChime {
     /**
      * <p>
      * Creates a new Amazon Chime SDK meeting in the specified media Region with no initial attendees. For more
-     * information about the Amazon Chime SDK, see <a
+     * information about specifying media Regions, see <a
+     * href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon Chime SDK Media
+     * Regions</a> in the <i>Amazon Chime Developer Guide</i>. For more information about the Amazon Chime SDK, see <a
      * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
      * <i>Amazon Chime Developer Guide</i>.
      * </p>
@@ -574,6 +576,39 @@ public interface AmazonChime {
      *      Documentation</a>
      */
     CreateMeetingResult createMeeting(CreateMeetingRequest createMeetingRequest);
+
+    /**
+     * <p>
+     * Creates a new Amazon Chime SDK meeting in the specified media Region, with attendees. For more information about
+     * specifying media Regions, see <a
+     * href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon Chime SDK Media
+     * Regions</a> in the <i>Amazon Chime Developer Guide</i>. For more information about the Amazon Chime SDK, see <a
+     * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
+     * <i>Amazon Chime Developer Guide</i>.
+     * </p>
+     * 
+     * @param createMeetingWithAttendeesRequest
+     * @return Result of the CreateMeetingWithAttendees operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.CreateMeetingWithAttendees
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateMeetingWithAttendees"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateMeetingWithAttendeesResult createMeetingWithAttendees(CreateMeetingWithAttendeesRequest createMeetingWithAttendeesRequest);
 
     /**
      * <p>

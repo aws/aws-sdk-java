@@ -104,6 +104,11 @@ public class AbstractAmazonChime implements AmazonChime {
     }
 
     @Override
+    public CreateMeetingWithAttendeesResult createMeetingWithAttendees(CreateMeetingWithAttendeesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreatePhoneNumberOrderResult createPhoneNumberOrder(CreatePhoneNumberOrderRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

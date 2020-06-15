@@ -65,7 +65,7 @@ import com.amazonaws.services.appconfig.model.*;
  * </li>
  * <li>
  * <p>
- * <b>User membership</b>: Use AppConfig to allow premium subscribers to access paid content.
+ * <b>Allow list</b>: Use AppConfig to allow premium subscribers to access paid content.
  * </p>
  * </li>
  * <li>
@@ -200,6 +200,32 @@ public interface AmazonAppConfig {
 
     /**
      * <p>
+     * Create a new configuration in the AppConfig configuration store.
+     * </p>
+     * 
+     * @param createHostedConfigurationVersionRequest
+     * @return Result of the CreateHostedConfigurationVersion operation returned by the service.
+     * @throws BadRequestException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ServiceQuotaExceededException
+     *         The number of hosted configuration versions exceeds the limit for the AppConfig configuration store.
+     *         Delete one or more versions and try again.
+     * @throws ResourceNotFoundException
+     *         The requested resource could not be found.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws PayloadTooLargeException
+     *         The configuration size is too large.
+     * @throws InternalServerException
+     *         There was an internal failure in the AppConfig service.
+     * @sample AmazonAppConfig.CreateHostedConfigurationVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateHostedConfigurationVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateHostedConfigurationVersionResult createHostedConfigurationVersion(CreateHostedConfigurationVersionRequest createHostedConfigurationVersionRequest);
+
+    /**
+     * <p>
      * Delete an application. Deleting an application does not delete a configuration from a host.
      * </p>
      * 
@@ -277,6 +303,25 @@ public interface AmazonAppConfig {
      *      API Documentation</a>
      */
     DeleteEnvironmentResult deleteEnvironment(DeleteEnvironmentRequest deleteEnvironmentRequest);
+
+    /**
+     * <p>
+     * Delete a version of a configuration from the AppConfig configuration store.
+     * </p>
+     * 
+     * @param deleteHostedConfigurationVersionRequest
+     * @return Result of the DeleteHostedConfigurationVersion operation returned by the service.
+     * @throws BadRequestException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ResourceNotFoundException
+     *         The requested resource could not be found.
+     * @throws InternalServerException
+     *         There was an internal failure in the AppConfig service.
+     * @sample AmazonAppConfig.DeleteHostedConfigurationVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeleteHostedConfigurationVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteHostedConfigurationVersionResult deleteHostedConfigurationVersion(DeleteHostedConfigurationVersionRequest deleteHostedConfigurationVersionRequest);
 
     /**
      * <p>
@@ -414,6 +459,25 @@ public interface AmazonAppConfig {
 
     /**
      * <p>
+     * Get information about a specific configuration version.
+     * </p>
+     * 
+     * @param getHostedConfigurationVersionRequest
+     * @return Result of the GetHostedConfigurationVersion operation returned by the service.
+     * @throws BadRequestException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ResourceNotFoundException
+     *         The requested resource could not be found.
+     * @throws InternalServerException
+     *         There was an internal failure in the AppConfig service.
+     * @sample AmazonAppConfig.GetHostedConfigurationVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetHostedConfigurationVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetHostedConfigurationVersionResult getHostedConfigurationVersion(GetHostedConfigurationVersionRequest getHostedConfigurationVersionRequest);
+
+    /**
+     * <p>
      * List all applications in your AWS account.
      * </p>
      * 
@@ -502,6 +566,25 @@ public interface AmazonAppConfig {
      *      Documentation</a>
      */
     ListEnvironmentsResult listEnvironments(ListEnvironmentsRequest listEnvironmentsRequest);
+
+    /**
+     * <p>
+     * View a list of configurations stored in the AppConfig configuration store by version.
+     * </p>
+     * 
+     * @param listHostedConfigurationVersionsRequest
+     * @return Result of the ListHostedConfigurationVersions operation returned by the service.
+     * @throws BadRequestException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ResourceNotFoundException
+     *         The requested resource could not be found.
+     * @throws InternalServerException
+     *         There was an internal failure in the AppConfig service.
+     * @sample AmazonAppConfig.ListHostedConfigurationVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListHostedConfigurationVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListHostedConfigurationVersionsResult listHostedConfigurationVersions(ListHostedConfigurationVersionsRequest listHostedConfigurationVersionsRequest);
 
     /**
      * <p>

@@ -51,7 +51,7 @@
  * </li>
  * <li>
  * <p>
- * <b>User membership</b>: Use AppConfig to allow premium subscribers to access paid content.
+ * <b>Allow list</b>: Use AppConfig to allow premium subscribers to access paid content.
  * </p>
  * </li>
  * <li>

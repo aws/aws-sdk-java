@@ -52,6 +52,10 @@ public class AwsJobExecutionsRolloutConfigJsonUnmarshaller implements Unmarshall
                     context.nextToken();
                     awsJobExecutionsRolloutConfig.setMaximumPerMinute(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("exponentialRate", targetDepth)) {
+                    context.nextToken();
+                    awsJobExecutionsRolloutConfig.setExponentialRate(AwsJobExponentialRolloutRateJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

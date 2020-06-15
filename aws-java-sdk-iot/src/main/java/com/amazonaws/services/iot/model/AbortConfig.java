@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Details of abort criteria to abort the job.
+ * The criteria that determine when and how a job abort takes place.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,17 +27,17 @@ public class AbortConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The list of abort criteria to define rules to abort the job.
+     * The list of criteria that determine when and how to abort the job.
      * </p>
      */
     private java.util.List<AbortCriteria> criteriaList;
 
     /**
      * <p>
-     * The list of abort criteria to define rules to abort the job.
+     * The list of criteria that determine when and how to abort the job.
      * </p>
      * 
-     * @return The list of abort criteria to define rules to abort the job.
+     * @return The list of criteria that determine when and how to abort the job.
      */
 
     public java.util.List<AbortCriteria> getCriteriaList() {
@@ -46,11 +46,11 @@ public class AbortConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The list of abort criteria to define rules to abort the job.
+     * The list of criteria that determine when and how to abort the job.
      * </p>
      * 
      * @param criteriaList
-     *        The list of abort criteria to define rules to abort the job.
+     *        The list of criteria that determine when and how to abort the job.
      */
 
     public void setCriteriaList(java.util.Collection<AbortCriteria> criteriaList) {
@@ -64,7 +64,7 @@ public class AbortConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The list of abort criteria to define rules to abort the job.
+     * The list of criteria that determine when and how to abort the job.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -73,7 +73,7 @@ public class AbortConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param criteriaList
-     *        The list of abort criteria to define rules to abort the job.
+     *        The list of criteria that determine when and how to abort the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class AbortConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The list of abort criteria to define rules to abort the job.
+     * The list of criteria that determine when and how to abort the job.
      * </p>
      * 
      * @param criteriaList
-     *        The list of abort criteria to define rules to abort the job.
+     *        The list of criteria that determine when and how to abort the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

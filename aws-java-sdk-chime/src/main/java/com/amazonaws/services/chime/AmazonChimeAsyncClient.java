@@ -623,6 +623,39 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
     }
 
     @Override
+    public java.util.concurrent.Future<CreateMeetingWithAttendeesResult> createMeetingWithAttendeesAsync(CreateMeetingWithAttendeesRequest request) {
+
+        return createMeetingWithAttendeesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateMeetingWithAttendeesResult> createMeetingWithAttendeesAsync(final CreateMeetingWithAttendeesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateMeetingWithAttendeesRequest, CreateMeetingWithAttendeesResult> asyncHandler) {
+        final CreateMeetingWithAttendeesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateMeetingWithAttendeesResult>() {
+            @Override
+            public CreateMeetingWithAttendeesResult call() throws Exception {
+                CreateMeetingWithAttendeesResult result = null;
+
+                try {
+                    result = executeCreateMeetingWithAttendees(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreatePhoneNumberOrderResult> createPhoneNumberOrderAsync(CreatePhoneNumberOrderRequest request) {
 
         return createPhoneNumberOrderAsync(request, null);

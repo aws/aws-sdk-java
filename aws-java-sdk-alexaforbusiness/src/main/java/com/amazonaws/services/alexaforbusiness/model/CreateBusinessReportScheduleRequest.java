@@ -69,6 +69,12 @@ public class CreateBusinessReportScheduleRequest extends com.amazonaws.AmazonWeb
      * </p>
      */
     private String clientRequestToken;
+    /**
+     * <p>
+     * The tags for the business report schedule.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -382,6 +388,76 @@ public class CreateBusinessReportScheduleRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
+     * The tags for the business report schedule.
+     * </p>
+     * 
+     * @return The tags for the business report schedule.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags for the business report schedule.
+     * </p>
+     * 
+     * @param tags
+     *        The tags for the business report schedule.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The tags for the business report schedule.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The tags for the business report schedule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateBusinessReportScheduleRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags for the business report schedule.
+     * </p>
+     * 
+     * @param tags
+     *        The tags for the business report schedule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateBusinessReportScheduleRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -406,7 +482,9 @@ public class CreateBusinessReportScheduleRequest extends com.amazonaws.AmazonWeb
         if (getRecurrence() != null)
             sb.append("Recurrence: ").append(getRecurrence()).append(",");
         if (getClientRequestToken() != null)
-            sb.append("ClientRequestToken: ").append(getClientRequestToken());
+            sb.append("ClientRequestToken: ").append(getClientRequestToken()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -449,6 +527,10 @@ public class CreateBusinessReportScheduleRequest extends com.amazonaws.AmazonWeb
             return false;
         if (other.getClientRequestToken() != null && other.getClientRequestToken().equals(this.getClientRequestToken()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -464,6 +546,7 @@ public class CreateBusinessReportScheduleRequest extends com.amazonaws.AmazonWeb
         hashCode = prime * hashCode + ((getContentRange() == null) ? 0 : getContentRange().hashCode());
         hashCode = prime * hashCode + ((getRecurrence() == null) ? 0 : getRecurrence().hashCode());
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

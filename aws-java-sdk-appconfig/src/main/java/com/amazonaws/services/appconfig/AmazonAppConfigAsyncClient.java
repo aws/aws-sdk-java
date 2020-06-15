@@ -64,7 +64,7 @@ import java.util.concurrent.ExecutorService;
  * </li>
  * <li>
  * <p>
- * <b>User membership</b>: Use AppConfig to allow premium subscribers to access paid content.
+ * <b>Allow list</b>: Use AppConfig to allow premium subscribers to access paid content.
  * </p>
  * </li>
  * <li>
@@ -256,6 +256,41 @@ public class AmazonAppConfigAsyncClient extends AmazonAppConfigClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<CreateHostedConfigurationVersionResult> createHostedConfigurationVersionAsync(
+            CreateHostedConfigurationVersionRequest request) {
+
+        return createHostedConfigurationVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateHostedConfigurationVersionResult> createHostedConfigurationVersionAsync(
+            final CreateHostedConfigurationVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateHostedConfigurationVersionRequest, CreateHostedConfigurationVersionResult> asyncHandler) {
+        final CreateHostedConfigurationVersionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateHostedConfigurationVersionResult>() {
+            @Override
+            public CreateHostedConfigurationVersionResult call() throws Exception {
+                CreateHostedConfigurationVersionResult result = null;
+
+                try {
+                    result = executeCreateHostedConfigurationVersion(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteApplicationResult> deleteApplicationAsync(DeleteApplicationRequest request) {
 
         return deleteApplicationAsync(request, null);
@@ -372,6 +407,41 @@ public class AmazonAppConfigAsyncClient extends AmazonAppConfigClient implements
 
                 try {
                     result = executeDeleteEnvironment(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteHostedConfigurationVersionResult> deleteHostedConfigurationVersionAsync(
+            DeleteHostedConfigurationVersionRequest request) {
+
+        return deleteHostedConfigurationVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteHostedConfigurationVersionResult> deleteHostedConfigurationVersionAsync(
+            final DeleteHostedConfigurationVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteHostedConfigurationVersionRequest, DeleteHostedConfigurationVersionResult> asyncHandler) {
+        final DeleteHostedConfigurationVersionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteHostedConfigurationVersionResult>() {
+            @Override
+            public DeleteHostedConfigurationVersionResult call() throws Exception {
+                DeleteHostedConfigurationVersionResult result = null;
+
+                try {
+                    result = executeDeleteHostedConfigurationVersion(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -586,6 +656,40 @@ public class AmazonAppConfigAsyncClient extends AmazonAppConfigClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<GetHostedConfigurationVersionResult> getHostedConfigurationVersionAsync(GetHostedConfigurationVersionRequest request) {
+
+        return getHostedConfigurationVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetHostedConfigurationVersionResult> getHostedConfigurationVersionAsync(
+            final GetHostedConfigurationVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetHostedConfigurationVersionRequest, GetHostedConfigurationVersionResult> asyncHandler) {
+        final GetHostedConfigurationVersionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetHostedConfigurationVersionResult>() {
+            @Override
+            public GetHostedConfigurationVersionResult call() throws Exception {
+                GetHostedConfigurationVersionResult result = null;
+
+                try {
+                    result = executeGetHostedConfigurationVersion(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListApplicationsResult> listApplicationsAsync(ListApplicationsRequest request) {
 
         return listApplicationsAsync(request, null);
@@ -735,6 +839,41 @@ public class AmazonAppConfigAsyncClient extends AmazonAppConfigClient implements
 
                 try {
                     result = executeListEnvironments(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListHostedConfigurationVersionsResult> listHostedConfigurationVersionsAsync(
+            ListHostedConfigurationVersionsRequest request) {
+
+        return listHostedConfigurationVersionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListHostedConfigurationVersionsResult> listHostedConfigurationVersionsAsync(
+            final ListHostedConfigurationVersionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListHostedConfigurationVersionsRequest, ListHostedConfigurationVersionsResult> asyncHandler) {
+        final ListHostedConfigurationVersionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListHostedConfigurationVersionsResult>() {
+            @Override
+            public ListHostedConfigurationVersionsResult call() throws Exception {
+                ListHostedConfigurationVersionsResult result = null;
+
+                try {
+                    result = executeListHostedConfigurationVersions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

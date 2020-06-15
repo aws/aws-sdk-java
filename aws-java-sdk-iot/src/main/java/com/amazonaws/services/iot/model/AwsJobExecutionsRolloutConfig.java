@@ -31,6 +31,13 @@ public class AwsJobExecutionsRolloutConfig implements Serializable, Cloneable, S
      * </p>
      */
     private Integer maximumPerMinute;
+    /**
+     * <p>
+     * The rate of increase for a job rollout. This parameter allows you to define an exponential rate increase for a
+     * job rollout.
+     * </p>
+     */
+    private AwsJobExponentialRolloutRate exponentialRate;
 
     /**
      * <p>
@@ -73,6 +80,52 @@ public class AwsJobExecutionsRolloutConfig implements Serializable, Cloneable, S
     }
 
     /**
+     * <p>
+     * The rate of increase for a job rollout. This parameter allows you to define an exponential rate increase for a
+     * job rollout.
+     * </p>
+     * 
+     * @param exponentialRate
+     *        The rate of increase for a job rollout. This parameter allows you to define an exponential rate increase
+     *        for a job rollout.
+     */
+
+    public void setExponentialRate(AwsJobExponentialRolloutRate exponentialRate) {
+        this.exponentialRate = exponentialRate;
+    }
+
+    /**
+     * <p>
+     * The rate of increase for a job rollout. This parameter allows you to define an exponential rate increase for a
+     * job rollout.
+     * </p>
+     * 
+     * @return The rate of increase for a job rollout. This parameter allows you to define an exponential rate increase
+     *         for a job rollout.
+     */
+
+    public AwsJobExponentialRolloutRate getExponentialRate() {
+        return this.exponentialRate;
+    }
+
+    /**
+     * <p>
+     * The rate of increase for a job rollout. This parameter allows you to define an exponential rate increase for a
+     * job rollout.
+     * </p>
+     * 
+     * @param exponentialRate
+     *        The rate of increase for a job rollout. This parameter allows you to define an exponential rate increase
+     *        for a job rollout.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsJobExecutionsRolloutConfig withExponentialRate(AwsJobExponentialRolloutRate exponentialRate) {
+        setExponentialRate(exponentialRate);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -85,7 +138,9 @@ public class AwsJobExecutionsRolloutConfig implements Serializable, Cloneable, S
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMaximumPerMinute() != null)
-            sb.append("MaximumPerMinute: ").append(getMaximumPerMinute());
+            sb.append("MaximumPerMinute: ").append(getMaximumPerMinute()).append(",");
+        if (getExponentialRate() != null)
+            sb.append("ExponentialRate: ").append(getExponentialRate());
         sb.append("}");
         return sb.toString();
     }
@@ -104,6 +159,10 @@ public class AwsJobExecutionsRolloutConfig implements Serializable, Cloneable, S
             return false;
         if (other.getMaximumPerMinute() != null && other.getMaximumPerMinute().equals(this.getMaximumPerMinute()) == false)
             return false;
+        if (other.getExponentialRate() == null ^ this.getExponentialRate() == null)
+            return false;
+        if (other.getExponentialRate() != null && other.getExponentialRate().equals(this.getExponentialRate()) == false)
+            return false;
         return true;
     }
 
@@ -113,6 +172,7 @@ public class AwsJobExecutionsRolloutConfig implements Serializable, Cloneable, S
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getMaximumPerMinute() == null) ? 0 : getMaximumPerMinute().hashCode());
+        hashCode = prime * hashCode + ((getExponentialRate() == null) ? 0 : getExponentialRate().hashCode());
         return hashCode;
     }
 

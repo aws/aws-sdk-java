@@ -48,6 +48,11 @@ public class AbstractAmazonAppConfig implements AmazonAppConfig {
     }
 
     @Override
+    public CreateHostedConfigurationVersionResult createHostedConfigurationVersion(CreateHostedConfigurationVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteApplicationResult deleteApplication(DeleteApplicationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -64,6 +69,11 @@ public class AbstractAmazonAppConfig implements AmazonAppConfig {
 
     @Override
     public DeleteEnvironmentResult deleteEnvironment(DeleteEnvironmentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteHostedConfigurationVersionResult deleteHostedConfigurationVersion(DeleteHostedConfigurationVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -98,6 +108,11 @@ public class AbstractAmazonAppConfig implements AmazonAppConfig {
     }
 
     @Override
+    public GetHostedConfigurationVersionResult getHostedConfigurationVersion(GetHostedConfigurationVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListApplicationsResult listApplications(ListApplicationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -119,6 +134,11 @@ public class AbstractAmazonAppConfig implements AmazonAppConfig {
 
     @Override
     public ListEnvironmentsResult listEnvironments(ListEnvironmentsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListHostedConfigurationVersionsResult listHostedConfigurationVersions(ListHostedConfigurationVersionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

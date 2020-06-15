@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.alexaforbusiness.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -54,6 +55,8 @@ public class CreateProfileRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PSTNEnabled").build();
     private static final MarshallingInfo<StructuredPojo> MEETINGROOMCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MeetingRoomConfiguration").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateProfileRequestMarshaller instance = new CreateProfileRequestMarshaller();
 
@@ -83,6 +86,7 @@ public class CreateProfileRequestMarshaller {
             protocolMarshaller.marshall(createProfileRequest.getMaxVolumeLimit(), MAXVOLUMELIMIT_BINDING);
             protocolMarshaller.marshall(createProfileRequest.getPSTNEnabled(), PSTNENABLED_BINDING);
             protocolMarshaller.marshall(createProfileRequest.getMeetingRoomConfiguration(), MEETINGROOMCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(createProfileRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

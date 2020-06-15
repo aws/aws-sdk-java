@@ -1237,7 +1237,9 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
     /**
      * <p>
      * Creates a new Amazon Chime SDK meeting in the specified media Region with no initial attendees. For more
-     * information about the Amazon Chime SDK, see <a
+     * information about specifying media Regions, see <a
+     * href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon Chime SDK Media
+     * Regions</a> in the <i>Amazon Chime Developer Guide</i>. For more information about the Amazon Chime SDK, see <a
      * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
      * <i>Amazon Chime Developer Guide</i>.
      * </p>
@@ -1295,6 +1297,81 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateMeetingResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateMeetingResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a new Amazon Chime SDK meeting in the specified media Region, with attendees. For more information about
+     * specifying media Regions, see <a
+     * href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon Chime SDK Media
+     * Regions</a> in the <i>Amazon Chime Developer Guide</i>. For more information about the Amazon Chime SDK, see <a
+     * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
+     * <i>Amazon Chime Developer Guide</i>.
+     * </p>
+     * 
+     * @param createMeetingWithAttendeesRequest
+     * @return Result of the CreateMeetingWithAttendees operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.CreateMeetingWithAttendees
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateMeetingWithAttendees"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateMeetingWithAttendeesResult createMeetingWithAttendees(CreateMeetingWithAttendeesRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateMeetingWithAttendees(request);
+    }
+
+    @SdkInternalApi
+    final CreateMeetingWithAttendeesResult executeCreateMeetingWithAttendees(CreateMeetingWithAttendeesRequest createMeetingWithAttendeesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createMeetingWithAttendeesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateMeetingWithAttendeesRequest> request = null;
+        Response<CreateMeetingWithAttendeesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateMeetingWithAttendeesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createMeetingWithAttendeesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateMeetingWithAttendees");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateMeetingWithAttendeesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateMeetingWithAttendeesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

@@ -1447,6 +1447,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *         This exception is thrown when a user tries to confirm the account with an email or phone number that has
      *         already been supplied as an alias from a different account. This exception tells user that an account
      *         with this email or phone already exists.
+     * @throws LimitExceededException
+     *         This exception is thrown when a user exceeds the limit for a requested AWS resource.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an internal error.
      * @sample AWSCognitoIdentityProvider.AdminLinkProviderForUser

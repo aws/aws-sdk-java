@@ -78,6 +78,9 @@ public class SkillDetails implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<String> skillTypes;
     /**
      * <p>
+     * <i>This member has been deprecated.</i>
+     * </p>
+     * <p>
      * The list of reviews for the skill, including Key and Value pair.
      * </p>
      */
@@ -531,10 +534,15 @@ public class SkillDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * <i>This member has been deprecated.</i>
+     * </p>
+     * <p>
      * The list of reviews for the skill, including Key and Value pair.
      * </p>
      * 
-     * @return The list of reviews for the skill, including Key and Value pair.
+     * @return <i>This member has been deprecated.</i> </p>
+     *         <p>
+     *         The list of reviews for the skill, including Key and Value pair.
      */
 
     public java.util.Map<String, String> getReviews() {
@@ -543,10 +551,15 @@ public class SkillDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * <i>This member has been deprecated.</i>
+     * </p>
+     * <p>
      * The list of reviews for the skill, including Key and Value pair.
      * </p>
      * 
      * @param reviews
+     *        <i>This member has been deprecated.</i> </p>
+     *        <p>
      *        The list of reviews for the skill, including Key and Value pair.
      */
 
@@ -556,10 +569,15 @@ public class SkillDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * <i>This member has been deprecated.</i>
+     * </p>
+     * <p>
      * The list of reviews for the skill, including Key and Value pair.
      * </p>
      * 
      * @param reviews
+     *        <i>This member has been deprecated.</i> </p>
+     *        <p>
      *        The list of reviews for the skill, including Key and Value pair.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

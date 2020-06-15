@@ -1,3 +1,24 @@
+# __1.11.803__ __2020-06-15__
+## __AWS IoT__
+  - ### Features
+    - Added support for job executions rollout configuration, job abort configuration, and job executions timeout configuration for AWS IoT Over-the-Air (OTA) Update Feature.
+
+## __Alexa For Business__
+  - ### Features
+    - Adding support for optional tags in CreateBusinessReportSchedule, CreateProfile and CreateSkillGroup APIs
+
+## __Amazon AppConfig__
+  - ### Features
+    - This release adds a hosted configuration source provider. Customers can now store their application configurations directly in AppConfig, without the need for an external configuration source.
+
+## __Amazon Chime__
+  - ### Features
+    - feature: Chime: This release introduces the ability to create an AWS Chime SDK meeting with attendees.
+
+## __Amazon Cognito Identity Provider__
+  - ### Features
+    - Updated all AuthParameters to be sensitive.
+
 # __1.11.802__ __2020-06-12__
 ## __AWS CloudFormation__
   - ### Features

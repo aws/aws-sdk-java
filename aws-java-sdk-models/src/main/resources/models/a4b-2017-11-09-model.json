@@ -1516,6 +1516,7 @@
     },
     "BusinessReportContentRange":{
       "type":"structure",
+      "required":["Interval"],
       "members":{
         "Interval":{
           "shape":"BusinessReportInterval",
@@ -1917,6 +1918,10 @@
           "shape":"ClientRequestToken",
           "documentation":"<p>The client request token.</p>",
           "idempotencyToken":true
+        },
+        "Tags":{
+          "shape":"TagList",
+          "documentation":"<p>The tags for the business report schedule.</p>"
         }
       }
     },
@@ -2227,6 +2232,10 @@
         "MeetingRoomConfiguration":{
           "shape":"CreateMeetingRoomConfiguration",
           "documentation":"<p>The meeting room settings of a room profile.</p>"
+        },
+        "Tags":{
+          "shape":"TagList",
+          "documentation":"<p>The tags for the profile.</p>"
         }
       }
     },
@@ -2271,7 +2280,7 @@
         },
         "ProfileArn":{
           "shape":"Arn",
-          "documentation":"<p>The profile ARN for the room.</p>"
+          "documentation":"<p>The profile ARN for the room. This is required.</p>"
         },
         "ProviderCalendarId":{
           "shape":"ProviderCalendarId",
@@ -2313,6 +2322,10 @@
           "shape":"ClientRequestToken",
           "documentation":"<p>A unique, user-specified identifier for this request that ensures idempotency. </p>",
           "idempotencyToken":true
+        },
+        "Tags":{
+          "shape":"TagList",
+          "documentation":"<p>The tags for the skill group.</p>"
         }
       }
     },
@@ -2726,7 +2739,7 @@
           "documentation":"<p>The room ARN associated with a device.</p>"
         },
         "RoomName":{
-          "shape":"RoomName",
+          "shape":"DeviceRoomName",
           "documentation":"<p>The name of the room associated with a device.</p>"
         },
         "DeviceStatusInfo":{
@@ -2813,6 +2826,12 @@
       "documentation":"<p>The request failed because this device is no longer registered and therefore no longer managed by this account.</p>",
       "exception":true
     },
+    "DeviceRoomName":{
+      "type":"string",
+      "max":100,
+      "min":1,
+      "pattern":"[\\u0009\\u000A\\u000D\\u0020-\\u007E\\u0085\\u00A0-\\uD7FF\\uE000-\\uFFFD\\u10000-\\u10FFFF]*"
+    },
     "DeviceSerialNumber":{
       "type":"string",
       "pattern":"[a-zA-Z0-9]{1,200}"
@@ -2862,7 +2881,9 @@
         "INVALID_CERTIFICATE_AUTHORITY",
         "NETWORK_PROFILE_NOT_FOUND",
         "INVALID_PASSWORD_STATE",
-        "PASSWORD_NOT_FOUND"
+        "PASSWORD_NOT_FOUND",
+        "PASSWORD_MANAGER_ACCESS_DENIED",
+        "CERTIFICATE_AUTHORITY_ACCESS_DENIED"
       ]
     },
     "DeviceStatusDetails":{
@@ -5098,7 +5119,7 @@
         },
         "Reviews":{
           "shape":"Reviews",
-          "documentation":"<p>The list of reviews for the skill, including Key and Value pair.</p>"
+          "documentation":"<p> <i>This member has been deprecated.</i> </p> <p>The list of reviews for the skill, including Key and Value pair.</p>"
         },
         "DeveloperInfo":{
           "shape":"DeveloperInfo",

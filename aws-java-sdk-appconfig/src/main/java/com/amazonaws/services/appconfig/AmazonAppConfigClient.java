@@ -89,7 +89,7 @@ import com.amazonaws.services.appconfig.model.transform.*;
  * </li>
  * <li>
  * <p>
- * <b>User membership</b>: Use AppConfig to allow premium subscribers to access paid content.
+ * <b>Allow list</b>: Use AppConfig to allow premium subscribers to access paid content.
  * </p>
  * </li>
  * <li>
@@ -133,6 +133,12 @@ public class AmazonAppConfigClient extends AmazonWebServiceClient implements Ama
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.appconfig.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("PayloadTooLargeException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.appconfig.model.transform.PayloadTooLargeExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceQuotaExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.appconfig.model.transform.ServiceQuotaExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withExceptionUnmarshaller(
                                     com.amazonaws.services.appconfig.model.transform.InternalServerExceptionUnmarshaller.getInstance()))
@@ -460,6 +466,75 @@ public class AmazonAppConfigClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Create a new configuration in the AppConfig configuration store.
+     * </p>
+     * 
+     * @param createHostedConfigurationVersionRequest
+     * @return Result of the CreateHostedConfigurationVersion operation returned by the service.
+     * @throws BadRequestException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ServiceQuotaExceededException
+     *         The number of hosted configuration versions exceeds the limit for the AppConfig configuration store.
+     *         Delete one or more versions and try again.
+     * @throws ResourceNotFoundException
+     *         The requested resource could not be found.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws PayloadTooLargeException
+     *         The configuration size is too large.
+     * @throws InternalServerException
+     *         There was an internal failure in the AppConfig service.
+     * @sample AmazonAppConfig.CreateHostedConfigurationVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateHostedConfigurationVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateHostedConfigurationVersionResult createHostedConfigurationVersion(CreateHostedConfigurationVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateHostedConfigurationVersion(request);
+    }
+
+    @SdkInternalApi
+    final CreateHostedConfigurationVersionResult executeCreateHostedConfigurationVersion(
+            CreateHostedConfigurationVersionRequest createHostedConfigurationVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createHostedConfigurationVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateHostedConfigurationVersionRequest> request = null;
+        Response<CreateHostedConfigurationVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateHostedConfigurationVersionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createHostedConfigurationVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppConfig");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateHostedConfigurationVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateHostedConfigurationVersionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(false).withHasStreamingSuccessResponse(false),
+                    new CreateHostedConfigurationVersionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Delete an application. Deleting an application does not delete a configuration from a host.
      * </p>
      * 
@@ -692,6 +767,68 @@ public class AmazonAppConfigClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteEnvironmentResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteEnvironmentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Delete a version of a configuration from the AppConfig configuration store.
+     * </p>
+     * 
+     * @param deleteHostedConfigurationVersionRequest
+     * @return Result of the DeleteHostedConfigurationVersion operation returned by the service.
+     * @throws BadRequestException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ResourceNotFoundException
+     *         The requested resource could not be found.
+     * @throws InternalServerException
+     *         There was an internal failure in the AppConfig service.
+     * @sample AmazonAppConfig.DeleteHostedConfigurationVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeleteHostedConfigurationVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteHostedConfigurationVersionResult deleteHostedConfigurationVersion(DeleteHostedConfigurationVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteHostedConfigurationVersion(request);
+    }
+
+    @SdkInternalApi
+    final DeleteHostedConfigurationVersionResult executeDeleteHostedConfigurationVersion(
+            DeleteHostedConfigurationVersionRequest deleteHostedConfigurationVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteHostedConfigurationVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteHostedConfigurationVersionRequest> request = null;
+        Response<DeleteHostedConfigurationVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteHostedConfigurationVersionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteHostedConfigurationVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppConfig");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteHostedConfigurationVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteHostedConfigurationVersionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteHostedConfigurationVersionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1081,6 +1218,67 @@ public class AmazonAppConfigClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Get information about a specific configuration version.
+     * </p>
+     * 
+     * @param getHostedConfigurationVersionRequest
+     * @return Result of the GetHostedConfigurationVersion operation returned by the service.
+     * @throws BadRequestException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ResourceNotFoundException
+     *         The requested resource could not be found.
+     * @throws InternalServerException
+     *         There was an internal failure in the AppConfig service.
+     * @sample AmazonAppConfig.GetHostedConfigurationVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetHostedConfigurationVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetHostedConfigurationVersionResult getHostedConfigurationVersion(GetHostedConfigurationVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetHostedConfigurationVersion(request);
+    }
+
+    @SdkInternalApi
+    final GetHostedConfigurationVersionResult executeGetHostedConfigurationVersion(GetHostedConfigurationVersionRequest getHostedConfigurationVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getHostedConfigurationVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetHostedConfigurationVersionRequest> request = null;
+        Response<GetHostedConfigurationVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetHostedConfigurationVersionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getHostedConfigurationVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppConfig");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetHostedConfigurationVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetHostedConfigurationVersionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(false).withHasStreamingSuccessResponse(false),
+                    new GetHostedConfigurationVersionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * List all applications in your AWS account.
      * </p>
      * 
@@ -1364,6 +1562,68 @@ public class AmazonAppConfigClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<ListEnvironmentsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListEnvironmentsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * View a list of configurations stored in the AppConfig configuration store by version.
+     * </p>
+     * 
+     * @param listHostedConfigurationVersionsRequest
+     * @return Result of the ListHostedConfigurationVersions operation returned by the service.
+     * @throws BadRequestException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ResourceNotFoundException
+     *         The requested resource could not be found.
+     * @throws InternalServerException
+     *         There was an internal failure in the AppConfig service.
+     * @sample AmazonAppConfig.ListHostedConfigurationVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListHostedConfigurationVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListHostedConfigurationVersionsResult listHostedConfigurationVersions(ListHostedConfigurationVersionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListHostedConfigurationVersions(request);
+    }
+
+    @SdkInternalApi
+    final ListHostedConfigurationVersionsResult executeListHostedConfigurationVersions(
+            ListHostedConfigurationVersionsRequest listHostedConfigurationVersionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listHostedConfigurationVersionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListHostedConfigurationVersionsRequest> request = null;
+        Response<ListHostedConfigurationVersionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListHostedConfigurationVersionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listHostedConfigurationVersionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppConfig");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListHostedConfigurationVersions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListHostedConfigurationVersionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListHostedConfigurationVersionsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

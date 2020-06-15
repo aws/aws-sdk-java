@@ -28,8 +28,8 @@ public class AttachPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String policyName;
     /**
      * <p>
-     * The <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-security-identity.html">identity</a> to
-     * which the policy is attached.
+     * The <a href="https://docs.aws.amazon.com/iot/latest/developerguide/security-iam.html">identity</a> to which the
+     * policy is attached.
      * </p>
      */
     private String target;
@@ -76,13 +76,12 @@ public class AttachPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-security-identity.html">identity</a> to
-     * which the policy is attached.
+     * The <a href="https://docs.aws.amazon.com/iot/latest/developerguide/security-iam.html">identity</a> to which the
+     * policy is attached.
      * </p>
      * 
      * @param target
-     *        The <a
-     *        href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-security-identity.html">identity</a> to
+     *        The <a href="https://docs.aws.amazon.com/iot/latest/developerguide/security-iam.html">identity</a> to
      *        which the policy is attached.
      */
 
@@ -92,12 +91,11 @@ public class AttachPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-security-identity.html">identity</a> to
-     * which the policy is attached.
+     * The <a href="https://docs.aws.amazon.com/iot/latest/developerguide/security-iam.html">identity</a> to which the
+     * policy is attached.
      * </p>
      * 
-     * @return The <a
-     *         href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-security-identity.html">identity</a> to
+     * @return The <a href="https://docs.aws.amazon.com/iot/latest/developerguide/security-iam.html">identity</a> to
      *         which the policy is attached.
      */
 
@@ -107,13 +105,12 @@ public class AttachPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-security-identity.html">identity</a> to
-     * which the policy is attached.
+     * The <a href="https://docs.aws.amazon.com/iot/latest/developerguide/security-iam.html">identity</a> to which the
+     * policy is attached.
      * </p>
      * 
      * @param target
-     *        The <a
-     *        href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-security-identity.html">identity</a> to
+     *        The <a href="https://docs.aws.amazon.com/iot/latest/developerguide/security-iam.html">identity</a> to
      *        which the policy is attached.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
