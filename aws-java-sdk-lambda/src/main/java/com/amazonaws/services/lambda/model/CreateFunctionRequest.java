@@ -156,6 +156,12 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> layers;
+    /**
+     * <p>
+     * Connection settings for an Amazon EFS file system.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<FileSystemConfig> fileSystemConfigs;
 
     /**
      * <p>
@@ -1136,6 +1142,79 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * Connection settings for an Amazon EFS file system.
+     * </p>
+     * 
+     * @return Connection settings for an Amazon EFS file system.
+     */
+
+    public java.util.List<FileSystemConfig> getFileSystemConfigs() {
+        if (fileSystemConfigs == null) {
+            fileSystemConfigs = new com.amazonaws.internal.SdkInternalList<FileSystemConfig>();
+        }
+        return fileSystemConfigs;
+    }
+
+    /**
+     * <p>
+     * Connection settings for an Amazon EFS file system.
+     * </p>
+     * 
+     * @param fileSystemConfigs
+     *        Connection settings for an Amazon EFS file system.
+     */
+
+    public void setFileSystemConfigs(java.util.Collection<FileSystemConfig> fileSystemConfigs) {
+        if (fileSystemConfigs == null) {
+            this.fileSystemConfigs = null;
+            return;
+        }
+
+        this.fileSystemConfigs = new com.amazonaws.internal.SdkInternalList<FileSystemConfig>(fileSystemConfigs);
+    }
+
+    /**
+     * <p>
+     * Connection settings for an Amazon EFS file system.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFileSystemConfigs(java.util.Collection)} or {@link #withFileSystemConfigs(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param fileSystemConfigs
+     *        Connection settings for an Amazon EFS file system.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFunctionRequest withFileSystemConfigs(FileSystemConfig... fileSystemConfigs) {
+        if (this.fileSystemConfigs == null) {
+            setFileSystemConfigs(new com.amazonaws.internal.SdkInternalList<FileSystemConfig>(fileSystemConfigs.length));
+        }
+        for (FileSystemConfig ele : fileSystemConfigs) {
+            this.fileSystemConfigs.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Connection settings for an Amazon EFS file system.
+     * </p>
+     * 
+     * @param fileSystemConfigs
+     *        Connection settings for an Amazon EFS file system.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFunctionRequest withFileSystemConfigs(java.util.Collection<FileSystemConfig> fileSystemConfigs) {
+        setFileSystemConfigs(fileSystemConfigs);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1178,7 +1257,9 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getLayers() != null)
-            sb.append("Layers: ").append(getLayers());
+            sb.append("Layers: ").append(getLayers()).append(",");
+        if (getFileSystemConfigs() != null)
+            sb.append("FileSystemConfigs: ").append(getFileSystemConfigs());
         sb.append("}");
         return sb.toString();
     }
@@ -1257,6 +1338,10 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getLayers() != null && other.getLayers().equals(this.getLayers()) == false)
             return false;
+        if (other.getFileSystemConfigs() == null ^ this.getFileSystemConfigs() == null)
+            return false;
+        if (other.getFileSystemConfigs() != null && other.getFileSystemConfigs().equals(this.getFileSystemConfigs()) == false)
+            return false;
         return true;
     }
 
@@ -1281,6 +1366,7 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getTracingConfig() == null) ? 0 : getTracingConfig().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getLayers() == null) ? 0 : getLayers().hashCode());
+        hashCode = prime * hashCode + ((getFileSystemConfigs() == null) ? 0 : getFileSystemConfigs().hashCode());
         return hashCode;
     }
 

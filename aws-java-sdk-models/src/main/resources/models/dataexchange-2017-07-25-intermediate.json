@@ -16383,7 +16383,7 @@
       },
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
-      "required" : [ "Type", "KmsKeyArn" ],
+      "required" : [ "Type" ],
       "shapeName" : "ExportServerSideEncryption",
       "signerAware" : false,
       "signerType" : null,

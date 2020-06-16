@@ -32,17 +32,17 @@ public class AliasRoutingConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The name of the second alias, and the percentage of traffic that's routed to it.
+     * The second version, and the percentage of traffic that's routed to it.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalMap<String, Double> additionalVersionWeights;
 
     /**
      * <p>
-     * The name of the second alias, and the percentage of traffic that's routed to it.
+     * The second version, and the percentage of traffic that's routed to it.
      * </p>
      * 
-     * @return The name of the second alias, and the percentage of traffic that's routed to it.
+     * @return The second version, and the percentage of traffic that's routed to it.
      */
 
     public java.util.Map<String, Double> getAdditionalVersionWeights() {
@@ -54,11 +54,11 @@ public class AliasRoutingConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The name of the second alias, and the percentage of traffic that's routed to it.
+     * The second version, and the percentage of traffic that's routed to it.
      * </p>
      * 
      * @param additionalVersionWeights
-     *        The name of the second alias, and the percentage of traffic that's routed to it.
+     *        The second version, and the percentage of traffic that's routed to it.
      */
 
     public void setAdditionalVersionWeights(java.util.Map<String, Double> additionalVersionWeights) {
@@ -68,11 +68,11 @@ public class AliasRoutingConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The name of the second alias, and the percentage of traffic that's routed to it.
+     * The second version, and the percentage of traffic that's routed to it.
      * </p>
      * 
      * @param additionalVersionWeights
-     *        The name of the second alias, and the percentage of traffic that's routed to it.
+     *        The second version, and the percentage of traffic that's routed to it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

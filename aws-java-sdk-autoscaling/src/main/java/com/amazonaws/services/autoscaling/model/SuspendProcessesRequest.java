@@ -33,7 +33,7 @@ public class SuspendProcessesRequest extends com.amazonaws.AmazonWebServiceReque
     private String autoScalingGroupName;
     /**
      * <p>
-     * One or more of the following processes. If you omit this parameter, all processes are specified.
+     * One or more of the following processes:
      * </p>
      * <ul>
      * <li>
@@ -48,17 +48,7 @@ public class SuspendProcessesRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * <code>HealthCheck</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ReplaceUnhealthy</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AZRebalance</code>
+     * <code>AddToLoadBalancer</code>
      * </p>
      * </li>
      * <li>
@@ -68,15 +58,33 @@ public class SuspendProcessesRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * <code>ScheduledActions</code>
+     * <code>AZRebalance</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>AddToLoadBalancer</code>
+     * <code>HealthCheck</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>InstanceRefresh</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ReplaceUnhealthy</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ScheduledActions</code>
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * If you omit this parameter, all processes are specified.
+     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> scalingProcesses;
 
@@ -122,7 +130,7 @@ public class SuspendProcessesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * One or more of the following processes. If you omit this parameter, all processes are specified.
+     * One or more of the following processes:
      * </p>
      * <ul>
      * <li>
@@ -137,17 +145,7 @@ public class SuspendProcessesRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * <code>HealthCheck</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ReplaceUnhealthy</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AZRebalance</code>
+     * <code>AddToLoadBalancer</code>
      * </p>
      * </li>
      * <li>
@@ -157,17 +155,35 @@ public class SuspendProcessesRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * <code>ScheduledActions</code>
+     * <code>AZRebalance</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>AddToLoadBalancer</code>
+     * <code>HealthCheck</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>InstanceRefresh</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ReplaceUnhealthy</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ScheduledActions</code>
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * If you omit this parameter, all processes are specified.
+     * </p>
      * 
-     * @return One or more of the following processes. If you omit this parameter, all processes are specified.</p>
+     * @return One or more of the following processes:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -181,17 +197,7 @@ public class SuspendProcessesRequest extends com.amazonaws.AmazonWebServiceReque
      *         </li>
      *         <li>
      *         <p>
-     *         <code>HealthCheck</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>ReplaceUnhealthy</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>AZRebalance</code>
+     *         <code>AddToLoadBalancer</code>
      *         </p>
      *         </li>
      *         <li>
@@ -201,14 +207,32 @@ public class SuspendProcessesRequest extends com.amazonaws.AmazonWebServiceReque
      *         </li>
      *         <li>
      *         <p>
-     *         <code>ScheduledActions</code>
+     *         <code>AZRebalance</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>AddToLoadBalancer</code>
+     *         <code>HealthCheck</code>
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         <code>InstanceRefresh</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ReplaceUnhealthy</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ScheduledActions</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         If you omit this parameter, all processes are specified.
      */
 
     public java.util.List<String> getScalingProcesses() {
@@ -220,7 +244,7 @@ public class SuspendProcessesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * One or more of the following processes. If you omit this parameter, all processes are specified.
+     * One or more of the following processes:
      * </p>
      * <ul>
      * <li>
@@ -235,17 +259,7 @@ public class SuspendProcessesRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * <code>HealthCheck</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ReplaceUnhealthy</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AZRebalance</code>
+     * <code>AddToLoadBalancer</code>
      * </p>
      * </li>
      * <li>
@@ -255,18 +269,36 @@ public class SuspendProcessesRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * <code>ScheduledActions</code>
+     * <code>AZRebalance</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>AddToLoadBalancer</code>
+     * <code>HealthCheck</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>InstanceRefresh</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ReplaceUnhealthy</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ScheduledActions</code>
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * If you omit this parameter, all processes are specified.
+     * </p>
      * 
      * @param scalingProcesses
-     *        One or more of the following processes. If you omit this parameter, all processes are specified.</p>
+     *        One or more of the following processes:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -280,17 +312,7 @@ public class SuspendProcessesRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        <code>HealthCheck</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>ReplaceUnhealthy</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>AZRebalance</code>
+     *        <code>AddToLoadBalancer</code>
      *        </p>
      *        </li>
      *        <li>
@@ -300,14 +322,32 @@ public class SuspendProcessesRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ScheduledActions</code>
+     *        <code>AZRebalance</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>AddToLoadBalancer</code>
+     *        <code>HealthCheck</code>
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <code>InstanceRefresh</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ReplaceUnhealthy</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ScheduledActions</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you omit this parameter, all processes are specified.
      */
 
     public void setScalingProcesses(java.util.Collection<String> scalingProcesses) {
@@ -321,7 +361,7 @@ public class SuspendProcessesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * One or more of the following processes. If you omit this parameter, all processes are specified.
+     * One or more of the following processes:
      * </p>
      * <ul>
      * <li>
@@ -336,17 +376,7 @@ public class SuspendProcessesRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * <code>HealthCheck</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ReplaceUnhealthy</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AZRebalance</code>
+     * <code>AddToLoadBalancer</code>
      * </p>
      * </li>
      * <li>
@@ -356,15 +386,33 @@ public class SuspendProcessesRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * <code>ScheduledActions</code>
+     * <code>AZRebalance</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>AddToLoadBalancer</code>
+     * <code>HealthCheck</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>InstanceRefresh</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ReplaceUnhealthy</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ScheduledActions</code>
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * If you omit this parameter, all processes are specified.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setScalingProcesses(java.util.Collection)} or {@link #withScalingProcesses(java.util.Collection)} if you
@@ -372,7 +420,7 @@ public class SuspendProcessesRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param scalingProcesses
-     *        One or more of the following processes. If you omit this parameter, all processes are specified.</p>
+     *        One or more of the following processes:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -386,17 +434,7 @@ public class SuspendProcessesRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        <code>HealthCheck</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>ReplaceUnhealthy</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>AZRebalance</code>
+     *        <code>AddToLoadBalancer</code>
      *        </p>
      *        </li>
      *        <li>
@@ -406,14 +444,32 @@ public class SuspendProcessesRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ScheduledActions</code>
+     *        <code>AZRebalance</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>AddToLoadBalancer</code>
+     *        <code>HealthCheck</code>
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <code>InstanceRefresh</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ReplaceUnhealthy</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ScheduledActions</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you omit this parameter, all processes are specified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -429,7 +485,7 @@ public class SuspendProcessesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * One or more of the following processes. If you omit this parameter, all processes are specified.
+     * One or more of the following processes:
      * </p>
      * <ul>
      * <li>
@@ -444,17 +500,7 @@ public class SuspendProcessesRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * <code>HealthCheck</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ReplaceUnhealthy</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AZRebalance</code>
+     * <code>AddToLoadBalancer</code>
      * </p>
      * </li>
      * <li>
@@ -464,18 +510,36 @@ public class SuspendProcessesRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * <code>ScheduledActions</code>
+     * <code>AZRebalance</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>AddToLoadBalancer</code>
+     * <code>HealthCheck</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>InstanceRefresh</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ReplaceUnhealthy</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ScheduledActions</code>
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * If you omit this parameter, all processes are specified.
+     * </p>
      * 
      * @param scalingProcesses
-     *        One or more of the following processes. If you omit this parameter, all processes are specified.</p>
+     *        One or more of the following processes:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -489,17 +553,7 @@ public class SuspendProcessesRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        <code>HealthCheck</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>ReplaceUnhealthy</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>AZRebalance</code>
+     *        <code>AddToLoadBalancer</code>
      *        </p>
      *        </li>
      *        <li>
@@ -509,14 +563,32 @@ public class SuspendProcessesRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ScheduledActions</code>
+     *        <code>AZRebalance</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>AddToLoadBalancer</code>
+     *        <code>HealthCheck</code>
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <code>InstanceRefresh</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ReplaceUnhealthy</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ScheduledActions</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you omit this parameter, all processes are specified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

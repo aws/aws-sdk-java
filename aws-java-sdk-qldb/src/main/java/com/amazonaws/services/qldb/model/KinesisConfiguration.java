@@ -36,7 +36,7 @@ public class KinesisConfiguration implements Serializable, Cloneable, Structured
     private String streamArn;
     /**
      * <p>
-     * Enables QLDB to publish multiple stream records in a single Kinesis Data Streams record. To learn more, see <a
+     * Enables QLDB to publish multiple data records in a single Kinesis Data Streams record. To learn more, see <a
      * href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html">KPL Key Concepts</a> in the
      * <i>Amazon Kinesis Data Streams Developer Guide</i>.
      * </p>
@@ -85,15 +85,15 @@ public class KinesisConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Enables QLDB to publish multiple stream records in a single Kinesis Data Streams record. To learn more, see <a
+     * Enables QLDB to publish multiple data records in a single Kinesis Data Streams record. To learn more, see <a
      * href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html">KPL Key Concepts</a> in the
      * <i>Amazon Kinesis Data Streams Developer Guide</i>.
      * </p>
      * 
      * @param aggregationEnabled
-     *        Enables QLDB to publish multiple stream records in a single Kinesis Data Streams record. To learn more,
-     *        see <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html">KPL Key
-     *        Concepts</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.
+     *        Enables QLDB to publish multiple data records in a single Kinesis Data Streams record. To learn more, see
+     *        <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html">KPL Key Concepts</a> in
+     *        the <i>Amazon Kinesis Data Streams Developer Guide</i>.
      */
 
     public void setAggregationEnabled(Boolean aggregationEnabled) {
@@ -102,14 +102,14 @@ public class KinesisConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Enables QLDB to publish multiple stream records in a single Kinesis Data Streams record. To learn more, see <a
+     * Enables QLDB to publish multiple data records in a single Kinesis Data Streams record. To learn more, see <a
      * href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html">KPL Key Concepts</a> in the
      * <i>Amazon Kinesis Data Streams Developer Guide</i>.
      * </p>
      * 
-     * @return Enables QLDB to publish multiple stream records in a single Kinesis Data Streams record. To learn more,
-     *         see <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html">KPL Key
-     *         Concepts</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.
+     * @return Enables QLDB to publish multiple data records in a single Kinesis Data Streams record. To learn more, see
+     *         <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html">KPL Key Concepts</a>
+     *         in the <i>Amazon Kinesis Data Streams Developer Guide</i>.
      */
 
     public Boolean getAggregationEnabled() {
@@ -118,15 +118,15 @@ public class KinesisConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Enables QLDB to publish multiple stream records in a single Kinesis Data Streams record. To learn more, see <a
+     * Enables QLDB to publish multiple data records in a single Kinesis Data Streams record. To learn more, see <a
      * href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html">KPL Key Concepts</a> in the
      * <i>Amazon Kinesis Data Streams Developer Guide</i>.
      * </p>
      * 
      * @param aggregationEnabled
-     *        Enables QLDB to publish multiple stream records in a single Kinesis Data Streams record. To learn more,
-     *        see <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html">KPL Key
-     *        Concepts</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.
+     *        Enables QLDB to publish multiple data records in a single Kinesis Data Streams record. To learn more, see
+     *        <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html">KPL Key Concepts</a> in
+     *        the <i>Amazon Kinesis Data Streams Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -137,14 +137,14 @@ public class KinesisConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Enables QLDB to publish multiple stream records in a single Kinesis Data Streams record. To learn more, see <a
+     * Enables QLDB to publish multiple data records in a single Kinesis Data Streams record. To learn more, see <a
      * href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html">KPL Key Concepts</a> in the
      * <i>Amazon Kinesis Data Streams Developer Guide</i>.
      * </p>
      * 
-     * @return Enables QLDB to publish multiple stream records in a single Kinesis Data Streams record. To learn more,
-     *         see <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html">KPL Key
-     *         Concepts</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.
+     * @return Enables QLDB to publish multiple data records in a single Kinesis Data Streams record. To learn more, see
+     *         <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html">KPL Key Concepts</a>
+     *         in the <i>Amazon Kinesis Data Streams Developer Guide</i>.
      */
 
     public Boolean isAggregationEnabled() {

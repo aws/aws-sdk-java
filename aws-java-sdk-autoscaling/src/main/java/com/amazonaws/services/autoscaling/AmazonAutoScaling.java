@@ -248,6 +248,35 @@ public interface AmazonAutoScaling {
 
     /**
      * <p>
+     * Cancels an instance refresh operation in progress. Cancellation does not roll back any replacements that have
+     * already been completed, but it prevents new replacements from being started.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing Auto Scaling
+     * Instances Based on an Instance Refresh</a>.
+     * </p>
+     * 
+     * @param cancelInstanceRefreshRequest
+     * @return Result of the CancelInstanceRefresh operation returned by the service.
+     * @throws LimitExceededException
+     *         You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example, Auto Scaling
+     *         groups, launch configurations, or lifecycle hooks). For more information, see <a
+     *         href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html"
+     *         >DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.
+     * @throws ResourceContentionException
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
+     * @throws ActiveInstanceRefreshNotFoundException
+     *         The request failed because an active instance refresh for the specified Auto Scaling group was not found.
+     * @sample AmazonAutoScaling.CancelInstanceRefresh
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CancelInstanceRefresh"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CancelInstanceRefreshResult cancelInstanceRefresh(CancelInstanceRefreshRequest cancelInstanceRefreshRequest);
+
+    /**
+     * <p>
      * Completes the lifecycle action for the specified token or instance with the specified result.
      * </p>
      * <p>
@@ -708,6 +737,62 @@ public interface AmazonAutoScaling {
      * @see #describeAutoScalingNotificationTypes(DescribeAutoScalingNotificationTypesRequest)
      */
     DescribeAutoScalingNotificationTypesResult describeAutoScalingNotificationTypes();
+
+    /**
+     * <p>
+     * Describes one or more instance refreshes.
+     * </p>
+     * <p>
+     * You can determine the status of a request by looking at the <code>Status</code> parameter. The following are the
+     * possible statuses:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Pending</code> - The request was created, but the operation has not started.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>InProgress</code> - The operation is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Successful</code> - The operation completed successfully.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Failed</code> - The operation failed to complete. You can troubleshoot using the status reason and the
+     * scaling activities.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Cancelling</code> - An ongoing operation is being cancelled. Cancellation does not roll back any
+     * replacements that have already been completed, but it prevents new replacements from being started.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Cancelled</code> - The operation is cancelled.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param describeInstanceRefreshesRequest
+     * @return Result of the DescribeInstanceRefreshes operation returned by the service.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> value is not valid.
+     * @throws ResourceContentionException
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
+     * @sample AmazonAutoScaling.DescribeInstanceRefreshes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeInstanceRefreshes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeInstanceRefreshesResult describeInstanceRefreshes(DescribeInstanceRefreshesRequest describeInstanceRefreshesRequest);
 
     /**
      * <p>
@@ -1547,6 +1632,42 @@ public interface AmazonAutoScaling {
      *      target="_top">AWS API Documentation</a>
      */
     SetInstanceProtectionResult setInstanceProtection(SetInstanceProtectionRequest setInstanceProtectionRequest);
+
+    /**
+     * <p>
+     * Starts a new instance refresh operation, which triggers a rolling replacement of all previously launched
+     * instances in the Auto Scaling group with a new group of instances.
+     * </p>
+     * <p>
+     * If successful, this call creates a new instance refresh request with a unique ID that you can use to track its
+     * progress. To query its status, call the <a>DescribeInstanceRefreshes</a> API. To describe the instance refreshes
+     * that have already run, call the <a>DescribeInstanceRefreshes</a> API. To cancel an active instance refresh
+     * operation, use the <a>CancelInstanceRefresh</a> API.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing Auto Scaling
+     * Instances Based on an Instance Refresh</a>.
+     * </p>
+     * 
+     * @param startInstanceRefreshRequest
+     * @return Result of the StartInstanceRefresh operation returned by the service.
+     * @throws LimitExceededException
+     *         You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example, Auto Scaling
+     *         groups, launch configurations, or lifecycle hooks). For more information, see <a
+     *         href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html"
+     *         >DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.
+     * @throws ResourceContentionException
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
+     * @throws InstanceRefreshInProgressException
+     *         The request failed because an active instance refresh operation already exists for the specified Auto
+     *         Scaling group.
+     * @sample AmazonAutoScaling.StartInstanceRefresh
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/StartInstanceRefresh"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartInstanceRefreshResult startInstanceRefresh(StartInstanceRefreshRequest startInstanceRefreshRequest);
 
     /**
      * <p>

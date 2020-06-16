@@ -307,6 +307,49 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
 
     /**
      * <p>
+     * Cancels an instance refresh operation in progress. Cancellation does not roll back any replacements that have
+     * already been completed, but it prevents new replacements from being started.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing Auto Scaling
+     * Instances Based on an Instance Refresh</a>.
+     * </p>
+     * 
+     * @param cancelInstanceRefreshRequest
+     * @return A Java Future containing the result of the CancelInstanceRefresh operation returned by the service.
+     * @sample AmazonAutoScalingAsync.CancelInstanceRefresh
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CancelInstanceRefresh"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CancelInstanceRefreshResult> cancelInstanceRefreshAsync(CancelInstanceRefreshRequest cancelInstanceRefreshRequest);
+
+    /**
+     * <p>
+     * Cancels an instance refresh operation in progress. Cancellation does not roll back any replacements that have
+     * already been completed, but it prevents new replacements from being started.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing Auto Scaling
+     * Instances Based on an Instance Refresh</a>.
+     * </p>
+     * 
+     * @param cancelInstanceRefreshRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CancelInstanceRefresh operation returned by the service.
+     * @sample AmazonAutoScalingAsyncHandler.CancelInstanceRefresh
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CancelInstanceRefresh"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CancelInstanceRefreshResult> cancelInstanceRefreshAsync(CancelInstanceRefreshRequest cancelInstanceRefreshRequest,
+            com.amazonaws.handlers.AsyncHandler<CancelInstanceRefreshRequest, CancelInstanceRefreshResult> asyncHandler);
+
+    /**
+     * <p>
      * Completes the lifecycle action for the specified token or instance with the specified result.
      * </p>
      * <p>
@@ -1158,6 +1201,115 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      */
     java.util.concurrent.Future<DescribeAutoScalingNotificationTypesResult> describeAutoScalingNotificationTypesAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeAutoScalingNotificationTypesRequest, DescribeAutoScalingNotificationTypesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes one or more instance refreshes.
+     * </p>
+     * <p>
+     * You can determine the status of a request by looking at the <code>Status</code> parameter. The following are the
+     * possible statuses:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Pending</code> - The request was created, but the operation has not started.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>InProgress</code> - The operation is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Successful</code> - The operation completed successfully.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Failed</code> - The operation failed to complete. You can troubleshoot using the status reason and the
+     * scaling activities.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Cancelling</code> - An ongoing operation is being cancelled. Cancellation does not roll back any
+     * replacements that have already been completed, but it prevents new replacements from being started.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Cancelled</code> - The operation is cancelled.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param describeInstanceRefreshesRequest
+     * @return A Java Future containing the result of the DescribeInstanceRefreshes operation returned by the service.
+     * @sample AmazonAutoScalingAsync.DescribeInstanceRefreshes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeInstanceRefreshes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeInstanceRefreshesResult> describeInstanceRefreshesAsync(
+            DescribeInstanceRefreshesRequest describeInstanceRefreshesRequest);
+
+    /**
+     * <p>
+     * Describes one or more instance refreshes.
+     * </p>
+     * <p>
+     * You can determine the status of a request by looking at the <code>Status</code> parameter. The following are the
+     * possible statuses:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Pending</code> - The request was created, but the operation has not started.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>InProgress</code> - The operation is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Successful</code> - The operation completed successfully.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Failed</code> - The operation failed to complete. You can troubleshoot using the status reason and the
+     * scaling activities.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Cancelling</code> - An ongoing operation is being cancelled. Cancellation does not roll back any
+     * replacements that have already been completed, but it prevents new replacements from being started.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Cancelled</code> - The operation is cancelled.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param describeInstanceRefreshesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeInstanceRefreshes operation returned by the service.
+     * @sample AmazonAutoScalingAsyncHandler.DescribeInstanceRefreshes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeInstanceRefreshes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeInstanceRefreshesResult> describeInstanceRefreshesAsync(
+            DescribeInstanceRefreshesRequest describeInstanceRefreshesRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeInstanceRefreshesRequest, DescribeInstanceRefreshesResult> asyncHandler);
 
     /**
      * <p>
@@ -2757,6 +2909,61 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      */
     java.util.concurrent.Future<SetInstanceProtectionResult> setInstanceProtectionAsync(SetInstanceProtectionRequest setInstanceProtectionRequest,
             com.amazonaws.handlers.AsyncHandler<SetInstanceProtectionRequest, SetInstanceProtectionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Starts a new instance refresh operation, which triggers a rolling replacement of all previously launched
+     * instances in the Auto Scaling group with a new group of instances.
+     * </p>
+     * <p>
+     * If successful, this call creates a new instance refresh request with a unique ID that you can use to track its
+     * progress. To query its status, call the <a>DescribeInstanceRefreshes</a> API. To describe the instance refreshes
+     * that have already run, call the <a>DescribeInstanceRefreshes</a> API. To cancel an active instance refresh
+     * operation, use the <a>CancelInstanceRefresh</a> API.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing Auto Scaling
+     * Instances Based on an Instance Refresh</a>.
+     * </p>
+     * 
+     * @param startInstanceRefreshRequest
+     * @return A Java Future containing the result of the StartInstanceRefresh operation returned by the service.
+     * @sample AmazonAutoScalingAsync.StartInstanceRefresh
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/StartInstanceRefresh"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartInstanceRefreshResult> startInstanceRefreshAsync(StartInstanceRefreshRequest startInstanceRefreshRequest);
+
+    /**
+     * <p>
+     * Starts a new instance refresh operation, which triggers a rolling replacement of all previously launched
+     * instances in the Auto Scaling group with a new group of instances.
+     * </p>
+     * <p>
+     * If successful, this call creates a new instance refresh request with a unique ID that you can use to track its
+     * progress. To query its status, call the <a>DescribeInstanceRefreshes</a> API. To describe the instance refreshes
+     * that have already run, call the <a>DescribeInstanceRefreshes</a> API. To cancel an active instance refresh
+     * operation, use the <a>CancelInstanceRefresh</a> API.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing Auto Scaling
+     * Instances Based on an Instance Refresh</a>.
+     * </p>
+     * 
+     * @param startInstanceRefreshRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartInstanceRefresh operation returned by the service.
+     * @sample AmazonAutoScalingAsyncHandler.StartInstanceRefresh
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/StartInstanceRefresh"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartInstanceRefreshResult> startInstanceRefreshAsync(StartInstanceRefreshRequest startInstanceRefreshRequest,
+            com.amazonaws.handlers.AsyncHandler<StartInstanceRefreshRequest, StartInstanceRefreshResult> asyncHandler);
 
     /**
      * <p>

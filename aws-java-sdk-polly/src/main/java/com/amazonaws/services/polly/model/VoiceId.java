@@ -50,6 +50,7 @@ public enum VoiceId {
     Justin("Justin"),
     Karl("Karl"),
     Kendra("Kendra"),
+    Kevin("Kevin"),
     Kimberly("Kimberly"),
     Lea("Lea"),
     Liv("Liv"),

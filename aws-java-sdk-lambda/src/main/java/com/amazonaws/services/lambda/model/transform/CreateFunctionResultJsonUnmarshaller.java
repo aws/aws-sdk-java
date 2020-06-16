@@ -152,6 +152,11 @@ public class CreateFunctionResultJsonUnmarshaller implements Unmarshaller<Create
                     context.nextToken();
                     createFunctionResult.setLastUpdateStatusReasonCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("FileSystemConfigs", targetDepth)) {
+                    context.nextToken();
+                    createFunctionResult.setFileSystemConfigs(new ListUnmarshaller<FileSystemConfig>(FileSystemConfigJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

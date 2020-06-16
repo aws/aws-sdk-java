@@ -68,6 +68,11 @@ public class ProcessType implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * <code>InstanceRefresh</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>ReplaceUnhealthy</code>
      * </p>
      * </li>
@@ -117,6 +122,11 @@ public class ProcessType implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * <code>InstanceRefresh</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>ReplaceUnhealthy</code>
      * </p>
      * </li>
@@ -158,6 +168,11 @@ public class ProcessType implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <code>HealthCheck</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>InstanceRefresh</code>
      *        </p>
      *        </li>
      *        <li>
@@ -213,6 +228,11 @@ public class ProcessType implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * <code>InstanceRefresh</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>ReplaceUnhealthy</code>
      * </p>
      * </li>
@@ -253,6 +273,11 @@ public class ProcessType implements Serializable, Cloneable {
      *         <li>
      *         <p>
      *         <code>HealthCheck</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>InstanceRefresh</code>
      *         </p>
      *         </li>
      *         <li>
@@ -308,6 +333,11 @@ public class ProcessType implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * <code>InstanceRefresh</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>ReplaceUnhealthy</code>
      * </p>
      * </li>
@@ -349,6 +379,11 @@ public class ProcessType implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <code>HealthCheck</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>InstanceRefresh</code>
      *        </p>
      *        </li>
      *        <li>

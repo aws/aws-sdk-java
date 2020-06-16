@@ -598,8 +598,13 @@ public class AmazonQLDBClient extends AmazonWebServiceClient implements AmazonQL
 
     /**
      * <p>
-     * Returns a journal block object at a specified address in a ledger. Also returns a proof of the specified block
-     * for verification if <code>DigestTipAddress</code> is provided.
+     * Returns a block object at a specified address in a journal. Also returns a proof of the specified block for
+     * verification if <code>DigestTipAddress</code> is provided.
+     * </p>
+     * <p>
+     * For information about the data contents in a block, see <a
+     * href="https://docs.aws.amazon.com/qldb/latest/developerguide/journal-contents.html">Journal contents</a> in the
+     * <i>Amazon QLDB Developer Guide</i>.
      * </p>
      * <p>
      * If the specified ledger doesn't exist or is in <code>DELETING</code> status, then throws
@@ -1097,9 +1102,8 @@ public class AmazonQLDBClient extends AmazonWebServiceClient implements AmazonQL
 
     /**
      * <p>
-     * Creates a stream for a given Amazon QLDB ledger that delivers the journal data to a specified Amazon Kinesis Data
-     * Streams resource. The stream captures every document revision that is committed to your journal and sends it to
-     * the Kinesis data stream.
+     * Creates a journal stream for a given Amazon QLDB ledger. The stream captures every document revision that is
+     * committed to the ledger's journal and delivers the data to a specified Amazon Kinesis Data Streams resource.
      * </p>
      * 
      * @param streamJournalToKinesisRequest

@@ -187,6 +187,12 @@ public class CreateFunctionResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      */
     private String lastUpdateStatusReasonCode;
+    /**
+     * <p>
+     * Connection settings for an Amazon EFS file system.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<FileSystemConfig> fileSystemConfigs;
 
     /**
      * <p>
@@ -1473,6 +1479,79 @@ public class CreateFunctionResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * <p>
+     * Connection settings for an Amazon EFS file system.
+     * </p>
+     * 
+     * @return Connection settings for an Amazon EFS file system.
+     */
+
+    public java.util.List<FileSystemConfig> getFileSystemConfigs() {
+        if (fileSystemConfigs == null) {
+            fileSystemConfigs = new com.amazonaws.internal.SdkInternalList<FileSystemConfig>();
+        }
+        return fileSystemConfigs;
+    }
+
+    /**
+     * <p>
+     * Connection settings for an Amazon EFS file system.
+     * </p>
+     * 
+     * @param fileSystemConfigs
+     *        Connection settings for an Amazon EFS file system.
+     */
+
+    public void setFileSystemConfigs(java.util.Collection<FileSystemConfig> fileSystemConfigs) {
+        if (fileSystemConfigs == null) {
+            this.fileSystemConfigs = null;
+            return;
+        }
+
+        this.fileSystemConfigs = new com.amazonaws.internal.SdkInternalList<FileSystemConfig>(fileSystemConfigs);
+    }
+
+    /**
+     * <p>
+     * Connection settings for an Amazon EFS file system.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFileSystemConfigs(java.util.Collection)} or {@link #withFileSystemConfigs(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param fileSystemConfigs
+     *        Connection settings for an Amazon EFS file system.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFunctionResult withFileSystemConfigs(FileSystemConfig... fileSystemConfigs) {
+        if (this.fileSystemConfigs == null) {
+            setFileSystemConfigs(new com.amazonaws.internal.SdkInternalList<FileSystemConfig>(fileSystemConfigs.length));
+        }
+        for (FileSystemConfig ele : fileSystemConfigs) {
+            this.fileSystemConfigs.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Connection settings for an Amazon EFS file system.
+     * </p>
+     * 
+     * @param fileSystemConfigs
+     *        Connection settings for an Amazon EFS file system.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFunctionResult withFileSystemConfigs(java.util.Collection<FileSystemConfig> fileSystemConfigs) {
+        setFileSystemConfigs(fileSystemConfigs);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1535,7 +1614,9 @@ public class CreateFunctionResult extends com.amazonaws.AmazonWebServiceResult<c
         if (getLastUpdateStatusReason() != null)
             sb.append("LastUpdateStatusReason: ").append(getLastUpdateStatusReason()).append(",");
         if (getLastUpdateStatusReasonCode() != null)
-            sb.append("LastUpdateStatusReasonCode: ").append(getLastUpdateStatusReasonCode());
+            sb.append("LastUpdateStatusReasonCode: ").append(getLastUpdateStatusReasonCode()).append(",");
+        if (getFileSystemConfigs() != null)
+            sb.append("FileSystemConfigs: ").append(getFileSystemConfigs());
         sb.append("}");
         return sb.toString();
     }
@@ -1654,6 +1735,10 @@ public class CreateFunctionResult extends com.amazonaws.AmazonWebServiceResult<c
             return false;
         if (other.getLastUpdateStatusReasonCode() != null && other.getLastUpdateStatusReasonCode().equals(this.getLastUpdateStatusReasonCode()) == false)
             return false;
+        if (other.getFileSystemConfigs() == null ^ this.getFileSystemConfigs() == null)
+            return false;
+        if (other.getFileSystemConfigs() != null && other.getFileSystemConfigs().equals(this.getFileSystemConfigs()) == false)
+            return false;
         return true;
     }
 
@@ -1688,6 +1773,7 @@ public class CreateFunctionResult extends com.amazonaws.AmazonWebServiceResult<c
         hashCode = prime * hashCode + ((getLastUpdateStatus() == null) ? 0 : getLastUpdateStatus().hashCode());
         hashCode = prime * hashCode + ((getLastUpdateStatusReason() == null) ? 0 : getLastUpdateStatusReason().hashCode());
         hashCode = prime * hashCode + ((getLastUpdateStatusReasonCode() == null) ? 0 : getLastUpdateStatusReasonCode().hashCode());
+        hashCode = prime * hashCode + ((getFileSystemConfigs() == null) ? 0 : getFileSystemConfigs().hashCode());
         return hashCode;
     }
 

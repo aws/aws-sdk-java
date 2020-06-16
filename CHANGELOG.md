@@ -1,3 +1,28 @@
+# __1.11.804__ __2020-06-16__
+## __AWS Data Exchange__
+  - ### Features
+    - This release fixes a bug in the AWS Data Exchange Python and NodeJS SDKs. The 'KmsKeyArn' field in the create-job API was configured to be required instead of optional. We updated this field to be optional in this release.
+
+## __AWS Lambda__
+  - ### Features
+    - Adds support for using Amazon Elastic File System (persistent storage) with AWS Lambda. This enables customers to share data across function invocations, read large reference data files, and write function output to a persistent and shared store.
+
+## __Amazon CloudFront__
+  - ### Features
+    - Documentation updates for CloudFront
+
+## __Amazon Polly__
+  - ### Features
+    - Amazon Polly adds new US English child voice - Kevin. Kevin is available as Neural voice only.
+
+## __Amazon QLDB__
+  - ### Features
+    - Documentation updates for Amazon QLDB
+
+## __Auto Scaling__
+  - ### Features
+    - Introducing instance refresh, a feature that helps you update all instances in an Auto Scaling group in a rolling fashion (for example, to apply a new AMI or instance type). You can control the pace of the refresh by defining the percentage of the group that must remain running/healthy during the replacement process and the time for new instances to warm up between replacements.
+
 # __1.11.803__ __2020-06-15__
 ## __AWS IoT__
   - ### Features

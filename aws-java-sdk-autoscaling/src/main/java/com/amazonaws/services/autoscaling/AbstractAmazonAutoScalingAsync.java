@@ -118,6 +118,19 @@ public class AbstractAmazonAutoScalingAsync extends AbstractAmazonAutoScaling im
     }
 
     @Override
+    public java.util.concurrent.Future<CancelInstanceRefreshResult> cancelInstanceRefreshAsync(CancelInstanceRefreshRequest request) {
+
+        return cancelInstanceRefreshAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelInstanceRefreshResult> cancelInstanceRefreshAsync(CancelInstanceRefreshRequest request,
+            com.amazonaws.handlers.AsyncHandler<CancelInstanceRefreshRequest, CancelInstanceRefreshResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CompleteLifecycleActionResult> completeLifecycleActionAsync(CompleteLifecycleActionRequest request) {
 
         return completeLifecycleActionAsync(request, null);
@@ -443,6 +456,19 @@ public class AbstractAmazonAutoScalingAsync extends AbstractAmazonAutoScaling im
             com.amazonaws.handlers.AsyncHandler<DescribeAutoScalingNotificationTypesRequest, DescribeAutoScalingNotificationTypesResult> asyncHandler) {
 
         return describeAutoScalingNotificationTypesAsync(new DescribeAutoScalingNotificationTypesRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeInstanceRefreshesResult> describeInstanceRefreshesAsync(DescribeInstanceRefreshesRequest request) {
+
+        return describeInstanceRefreshesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeInstanceRefreshesResult> describeInstanceRefreshesAsync(DescribeInstanceRefreshesRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeInstanceRefreshesRequest, DescribeInstanceRefreshesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -1091,6 +1117,19 @@ public class AbstractAmazonAutoScalingAsync extends AbstractAmazonAutoScaling im
     @Override
     public java.util.concurrent.Future<SetInstanceProtectionResult> setInstanceProtectionAsync(SetInstanceProtectionRequest request,
             com.amazonaws.handlers.AsyncHandler<SetInstanceProtectionRequest, SetInstanceProtectionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartInstanceRefreshResult> startInstanceRefreshAsync(StartInstanceRefreshRequest request) {
+
+        return startInstanceRefreshAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartInstanceRefreshResult> startInstanceRefreshAsync(StartInstanceRefreshRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartInstanceRefreshRequest, StartInstanceRefreshResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

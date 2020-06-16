@@ -82,8 +82,8 @@ public class Origin implements Serializable, Cloneable {
      * A unique identifier for the origin. This value must be unique within the distribution.
      * </p>
      * <p>
-     * Use this value to specify the <code>TargetOriginId</code> in a <a>CacheBehavior</a> or
-     * <a>DefaultCacheBehavior</a>.
+     * Use this value to specify the <code>TargetOriginId</code> in a <code>CacheBehavior</code> or
+     * <code>DefaultCacheBehavior</code>.
      * </p>
      */
     private String id;
@@ -143,6 +143,13 @@ public class Origin implements Serializable, Cloneable {
      * and the default (if you don’t specify otherwise) is 3.
      * </p>
      * <p>
+     * For a custom origin (including an Amazon S3 bucket that’s configured with static website hosting), this value
+     * also specifies the number of times that CloudFront attempts to get a response from the origin, in the case of an
+     * <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout"
+     * >Origin Response Timeout</a>.
+     * </p>
+     * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#origin-connection-attempts"
      * >Origin Connection Attempts</a> in the <i>Amazon CloudFront Developer Guide</i>.
@@ -167,15 +174,15 @@ public class Origin implements Serializable, Cloneable {
      * A unique identifier for the origin. This value must be unique within the distribution.
      * </p>
      * <p>
-     * Use this value to specify the <code>TargetOriginId</code> in a <a>CacheBehavior</a> or
-     * <a>DefaultCacheBehavior</a>.
+     * Use this value to specify the <code>TargetOriginId</code> in a <code>CacheBehavior</code> or
+     * <code>DefaultCacheBehavior</code>.
      * </p>
      * 
      * @param id
      *        A unique identifier for the origin. This value must be unique within the distribution.</p>
      *        <p>
-     *        Use this value to specify the <code>TargetOriginId</code> in a <a>CacheBehavior</a> or
-     *        <a>DefaultCacheBehavior</a>.
+     *        Use this value to specify the <code>TargetOriginId</code> in a <code>CacheBehavior</code> or
+     *        <code>DefaultCacheBehavior</code>.
      */
 
     public void setId(String id) {
@@ -187,14 +194,14 @@ public class Origin implements Serializable, Cloneable {
      * A unique identifier for the origin. This value must be unique within the distribution.
      * </p>
      * <p>
-     * Use this value to specify the <code>TargetOriginId</code> in a <a>CacheBehavior</a> or
-     * <a>DefaultCacheBehavior</a>.
+     * Use this value to specify the <code>TargetOriginId</code> in a <code>CacheBehavior</code> or
+     * <code>DefaultCacheBehavior</code>.
      * </p>
      * 
      * @return A unique identifier for the origin. This value must be unique within the distribution.</p>
      *         <p>
-     *         Use this value to specify the <code>TargetOriginId</code> in a <a>CacheBehavior</a> or
-     *         <a>DefaultCacheBehavior</a>.
+     *         Use this value to specify the <code>TargetOriginId</code> in a <code>CacheBehavior</code> or
+     *         <code>DefaultCacheBehavior</code>.
      */
 
     public String getId() {
@@ -206,15 +213,15 @@ public class Origin implements Serializable, Cloneable {
      * A unique identifier for the origin. This value must be unique within the distribution.
      * </p>
      * <p>
-     * Use this value to specify the <code>TargetOriginId</code> in a <a>CacheBehavior</a> or
-     * <a>DefaultCacheBehavior</a>.
+     * Use this value to specify the <code>TargetOriginId</code> in a <code>CacheBehavior</code> or
+     * <code>DefaultCacheBehavior</code>.
      * </p>
      * 
      * @param id
      *        A unique identifier for the origin. This value must be unique within the distribution.</p>
      *        <p>
-     *        Use this value to specify the <code>TargetOriginId</code> in a <a>CacheBehavior</a> or
-     *        <a>DefaultCacheBehavior</a>.
+     *        Use this value to specify the <code>TargetOriginId</code> in a <code>CacheBehavior</code> or
+     *        <code>DefaultCacheBehavior</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -540,6 +547,13 @@ public class Origin implements Serializable, Cloneable {
      * and the default (if you don’t specify otherwise) is 3.
      * </p>
      * <p>
+     * For a custom origin (including an Amazon S3 bucket that’s configured with static website hosting), this value
+     * also specifies the number of times that CloudFront attempts to get a response from the origin, in the case of an
+     * <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout"
+     * >Origin Response Timeout</a>.
+     * </p>
+     * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#origin-connection-attempts"
      * >Origin Connection Attempts</a> in the <i>Amazon CloudFront Developer Guide</i>.
@@ -548,6 +562,13 @@ public class Origin implements Serializable, Cloneable {
      * @param connectionAttempts
      *        The number of times that CloudFront attempts to connect to the origin. The minimum number is 1, the
      *        maximum is 3, and the default (if you don’t specify otherwise) is 3.</p>
+     *        <p>
+     *        For a custom origin (including an Amazon S3 bucket that’s configured with static website hosting), this
+     *        value also specifies the number of times that CloudFront attempts to get a response from the origin, in
+     *        the case of an <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout"
+     *        >Origin Response Timeout</a>.
+     *        </p>
      *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#origin-connection-attempts"
@@ -564,6 +585,13 @@ public class Origin implements Serializable, Cloneable {
      * and the default (if you don’t specify otherwise) is 3.
      * </p>
      * <p>
+     * For a custom origin (including an Amazon S3 bucket that’s configured with static website hosting), this value
+     * also specifies the number of times that CloudFront attempts to get a response from the origin, in the case of an
+     * <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout"
+     * >Origin Response Timeout</a>.
+     * </p>
+     * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#origin-connection-attempts"
      * >Origin Connection Attempts</a> in the <i>Amazon CloudFront Developer Guide</i>.
@@ -571,6 +599,13 @@ public class Origin implements Serializable, Cloneable {
      * 
      * @return The number of times that CloudFront attempts to connect to the origin. The minimum number is 1, the
      *         maximum is 3, and the default (if you don’t specify otherwise) is 3.</p>
+     *         <p>
+     *         For a custom origin (including an Amazon S3 bucket that’s configured with static website hosting), this
+     *         value also specifies the number of times that CloudFront attempts to get a response from the origin, in
+     *         the case of an <a href=
+     *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout"
+     *         >Origin Response Timeout</a>.
+     *         </p>
      *         <p>
      *         For more information, see <a href=
      *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#origin-connection-attempts"
@@ -587,6 +622,13 @@ public class Origin implements Serializable, Cloneable {
      * and the default (if you don’t specify otherwise) is 3.
      * </p>
      * <p>
+     * For a custom origin (including an Amazon S3 bucket that’s configured with static website hosting), this value
+     * also specifies the number of times that CloudFront attempts to get a response from the origin, in the case of an
+     * <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout"
+     * >Origin Response Timeout</a>.
+     * </p>
+     * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#origin-connection-attempts"
      * >Origin Connection Attempts</a> in the <i>Amazon CloudFront Developer Guide</i>.
@@ -595,6 +637,13 @@ public class Origin implements Serializable, Cloneable {
      * @param connectionAttempts
      *        The number of times that CloudFront attempts to connect to the origin. The minimum number is 1, the
      *        maximum is 3, and the default (if you don’t specify otherwise) is 3.</p>
+     *        <p>
+     *        For a custom origin (including an Amazon S3 bucket that’s configured with static website hosting), this
+     *        value also specifies the number of times that CloudFront attempts to get a response from the origin, in
+     *        the case of an <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout"
+     *        >Origin Response Timeout</a>.
+     *        </p>
      *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#origin-connection-attempts"

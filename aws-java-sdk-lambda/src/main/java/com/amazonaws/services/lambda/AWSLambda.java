@@ -860,6 +860,15 @@ public interface AWSLambda {
      * @throws ENILimitReachedException
      *         AWS Lambda was not able to create an elastic network interface in the VPC, specified as part of Lambda
      *         function configuration, because the limit for network interfaces has been reached.
+     * @throws EFSMountConnectivityException
+     *         The function couldn't make a network connection to the configured file system.
+     * @throws EFSMountFailureException
+     *         The function couldn't mount the configured file system due to a permission or configuration issue.
+     * @throws EFSMountTimeoutException
+     *         The function was able to make a network connection to the configured file system, but the mount operation
+     *         timed out.
+     * @throws EFSIOException
+     *         An error occured when reading from or writing to a connected file system.
      * @throws EC2ThrottledException
      *         AWS Lambda was throttled by Amazon EC2 during Lambda function initialization using the execution role
      *         provided for the Lambda function.
@@ -1252,7 +1261,7 @@ public interface AWSLambda {
      * Configures options for <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html">asynchronous
      * invocation</a> on a function, version, or alias. If a configuration already exists for a function, version, or
      * alias, this operation overwrites it. If you exclude any settings, they are removed. To set one option without
-     * affecting existing settings for other options, use <a>PutFunctionEventInvokeConfig</a>.
+     * affecting existing settings for other options, use <a>UpdateFunctionEventInvokeConfig</a>.
      * </p>
      * <p>
      * By default, Lambda retries an asynchronous invocation twice if the function returns an error. It retains events

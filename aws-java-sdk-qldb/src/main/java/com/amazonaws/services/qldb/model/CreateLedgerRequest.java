@@ -30,6 +30,11 @@ public class CreateLedgerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The name of the ledger that you want to create. The name must be unique among all of your ledgers in the current
      * AWS Region.
      * </p>
+     * <p>
+     * Naming constraints for ledger names are defined in <a
+     * href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas in Amazon QLDB</a>
+     * in the <i>Amazon QLDB Developer Guide</i>.
+     * </p>
      */
     private String name;
     /**
@@ -64,10 +69,19 @@ public class CreateLedgerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The name of the ledger that you want to create. The name must be unique among all of your ledgers in the current
      * AWS Region.
      * </p>
+     * <p>
+     * Naming constraints for ledger names are defined in <a
+     * href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas in Amazon QLDB</a>
+     * in the <i>Amazon QLDB Developer Guide</i>.
+     * </p>
      * 
      * @param name
      *        The name of the ledger that you want to create. The name must be unique among all of your ledgers in the
-     *        current AWS Region.
+     *        current AWS Region.</p>
+     *        <p>
+     *        Naming constraints for ledger names are defined in <a
+     *        href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas in Amazon
+     *        QLDB</a> in the <i>Amazon QLDB Developer Guide</i>.
      */
 
     public void setName(String name) {
@@ -79,9 +93,18 @@ public class CreateLedgerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The name of the ledger that you want to create. The name must be unique among all of your ledgers in the current
      * AWS Region.
      * </p>
+     * <p>
+     * Naming constraints for ledger names are defined in <a
+     * href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas in Amazon QLDB</a>
+     * in the <i>Amazon QLDB Developer Guide</i>.
+     * </p>
      * 
      * @return The name of the ledger that you want to create. The name must be unique among all of your ledgers in the
-     *         current AWS Region.
+     *         current AWS Region.</p>
+     *         <p>
+     *         Naming constraints for ledger names are defined in <a
+     *         href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas in Amazon
+     *         QLDB</a> in the <i>Amazon QLDB Developer Guide</i>.
      */
 
     public String getName() {
@@ -93,10 +116,19 @@ public class CreateLedgerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The name of the ledger that you want to create. The name must be unique among all of your ledgers in the current
      * AWS Region.
      * </p>
+     * <p>
+     * Naming constraints for ledger names are defined in <a
+     * href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas in Amazon QLDB</a>
+     * in the <i>Amazon QLDB Developer Guide</i>.
+     * </p>
      * 
      * @param name
      *        The name of the ledger that you want to create. The name must be unique among all of your ledgers in the
-     *        current AWS Region.
+     *        current AWS Region.</p>
+     *        <p>
+     *        Naming constraints for ledger names are defined in <a
+     *        href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas in Amazon
+     *        QLDB</a> in the <i>Amazon QLDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

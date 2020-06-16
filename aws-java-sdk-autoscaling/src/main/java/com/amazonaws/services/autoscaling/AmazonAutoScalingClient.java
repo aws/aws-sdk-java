@@ -278,10 +278,12 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
     private void init() {
         exceptionUnmarshallers.add(new ResourceInUseExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InstanceRefreshInProgressExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ScalingActivityInProgressExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidNextTokenExceptionUnmarshaller());
         exceptionUnmarshallers.add(new LimitExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new AlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ActiveInstanceRefreshNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ResourceContentionExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ServiceLinkedRoleFailureExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller(com.amazonaws.services.autoscaling.model.AmazonAutoScalingException.class));
@@ -628,6 +630,75 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<BatchPutScheduledUpdateGroupActionResult> responseHandler = new StaxResponseHandler<BatchPutScheduledUpdateGroupActionResult>(
                     new BatchPutScheduledUpdateGroupActionResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Cancels an instance refresh operation in progress. Cancellation does not roll back any replacements that have
+     * already been completed, but it prevents new replacements from being started.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing Auto Scaling
+     * Instances Based on an Instance Refresh</a>.
+     * </p>
+     * 
+     * @param cancelInstanceRefreshRequest
+     * @return Result of the CancelInstanceRefresh operation returned by the service.
+     * @throws LimitExceededException
+     *         You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example, Auto Scaling
+     *         groups, launch configurations, or lifecycle hooks). For more information, see <a
+     *         href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html"
+     *         >DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.
+     * @throws ResourceContentionException
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
+     * @throws ActiveInstanceRefreshNotFoundException
+     *         The request failed because an active instance refresh for the specified Auto Scaling group was not found.
+     * @sample AmazonAutoScaling.CancelInstanceRefresh
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CancelInstanceRefresh"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CancelInstanceRefreshResult cancelInstanceRefresh(CancelInstanceRefreshRequest request) {
+        request = beforeClientExecution(request);
+        return executeCancelInstanceRefresh(request);
+    }
+
+    @SdkInternalApi
+    final CancelInstanceRefreshResult executeCancelInstanceRefresh(CancelInstanceRefreshRequest cancelInstanceRefreshRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(cancelInstanceRefreshRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CancelInstanceRefreshRequest> request = null;
+        Response<CancelInstanceRefreshResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CancelInstanceRefreshRequestMarshaller().marshall(super.beforeMarshalling(cancelInstanceRefreshRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Auto Scaling");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelInstanceRefresh");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CancelInstanceRefreshResult> responseHandler = new StaxResponseHandler<CancelInstanceRefreshResult>(
+                    new CancelInstanceRefreshResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1729,6 +1800,102 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
     @Override
     public DescribeAutoScalingNotificationTypesResult describeAutoScalingNotificationTypes() {
         return describeAutoScalingNotificationTypes(new DescribeAutoScalingNotificationTypesRequest());
+    }
+
+    /**
+     * <p>
+     * Describes one or more instance refreshes.
+     * </p>
+     * <p>
+     * You can determine the status of a request by looking at the <code>Status</code> parameter. The following are the
+     * possible statuses:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Pending</code> - The request was created, but the operation has not started.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>InProgress</code> - The operation is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Successful</code> - The operation completed successfully.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Failed</code> - The operation failed to complete. You can troubleshoot using the status reason and the
+     * scaling activities.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Cancelling</code> - An ongoing operation is being cancelled. Cancellation does not roll back any
+     * replacements that have already been completed, but it prevents new replacements from being started.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Cancelled</code> - The operation is cancelled.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param describeInstanceRefreshesRequest
+     * @return Result of the DescribeInstanceRefreshes operation returned by the service.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> value is not valid.
+     * @throws ResourceContentionException
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
+     * @sample AmazonAutoScaling.DescribeInstanceRefreshes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeInstanceRefreshes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeInstanceRefreshesResult describeInstanceRefreshes(DescribeInstanceRefreshesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeInstanceRefreshes(request);
+    }
+
+    @SdkInternalApi
+    final DescribeInstanceRefreshesResult executeDescribeInstanceRefreshes(DescribeInstanceRefreshesRequest describeInstanceRefreshesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeInstanceRefreshesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeInstanceRefreshesRequest> request = null;
+        Response<DescribeInstanceRefreshesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeInstanceRefreshesRequestMarshaller().marshall(super.beforeMarshalling(describeInstanceRefreshesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Auto Scaling");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeInstanceRefreshes");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeInstanceRefreshesResult> responseHandler = new StaxResponseHandler<DescribeInstanceRefreshesResult>(
+                    new DescribeInstanceRefreshesResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -3736,6 +3903,82 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<SetInstanceProtectionResult> responseHandler = new StaxResponseHandler<SetInstanceProtectionResult>(
                     new SetInstanceProtectionResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Starts a new instance refresh operation, which triggers a rolling replacement of all previously launched
+     * instances in the Auto Scaling group with a new group of instances.
+     * </p>
+     * <p>
+     * If successful, this call creates a new instance refresh request with a unique ID that you can use to track its
+     * progress. To query its status, call the <a>DescribeInstanceRefreshes</a> API. To describe the instance refreshes
+     * that have already run, call the <a>DescribeInstanceRefreshes</a> API. To cancel an active instance refresh
+     * operation, use the <a>CancelInstanceRefresh</a> API.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing Auto Scaling
+     * Instances Based on an Instance Refresh</a>.
+     * </p>
+     * 
+     * @param startInstanceRefreshRequest
+     * @return Result of the StartInstanceRefresh operation returned by the service.
+     * @throws LimitExceededException
+     *         You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example, Auto Scaling
+     *         groups, launch configurations, or lifecycle hooks). For more information, see <a
+     *         href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html"
+     *         >DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.
+     * @throws ResourceContentionException
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
+     * @throws InstanceRefreshInProgressException
+     *         The request failed because an active instance refresh operation already exists for the specified Auto
+     *         Scaling group.
+     * @sample AmazonAutoScaling.StartInstanceRefresh
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/StartInstanceRefresh"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StartInstanceRefreshResult startInstanceRefresh(StartInstanceRefreshRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartInstanceRefresh(request);
+    }
+
+    @SdkInternalApi
+    final StartInstanceRefreshResult executeStartInstanceRefresh(StartInstanceRefreshRequest startInstanceRefreshRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startInstanceRefreshRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartInstanceRefreshRequest> request = null;
+        Response<StartInstanceRefreshResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartInstanceRefreshRequestMarshaller().marshall(super.beforeMarshalling(startInstanceRefreshRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Auto Scaling");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartInstanceRefresh");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<StartInstanceRefreshResult> responseHandler = new StaxResponseHandler<StartInstanceRefreshResult>(
+                    new StartInstanceRefreshResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

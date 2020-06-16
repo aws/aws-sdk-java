@@ -456,6 +456,39 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<CancelInstanceRefreshResult> cancelInstanceRefreshAsync(CancelInstanceRefreshRequest request) {
+
+        return cancelInstanceRefreshAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelInstanceRefreshResult> cancelInstanceRefreshAsync(final CancelInstanceRefreshRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CancelInstanceRefreshRequest, CancelInstanceRefreshResult> asyncHandler) {
+        final CancelInstanceRefreshRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CancelInstanceRefreshResult>() {
+            @Override
+            public CancelInstanceRefreshResult call() throws Exception {
+                CancelInstanceRefreshResult result = null;
+
+                try {
+                    result = executeCancelInstanceRefresh(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CompleteLifecycleActionResult> completeLifecycleActionAsync(CompleteLifecycleActionRequest request) {
 
         return completeLifecycleActionAsync(request, null);
@@ -1101,6 +1134,39 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient implem
             com.amazonaws.handlers.AsyncHandler<DescribeAutoScalingNotificationTypesRequest, DescribeAutoScalingNotificationTypesResult> asyncHandler) {
 
         return describeAutoScalingNotificationTypesAsync(new DescribeAutoScalingNotificationTypesRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeInstanceRefreshesResult> describeInstanceRefreshesAsync(DescribeInstanceRefreshesRequest request) {
+
+        return describeInstanceRefreshesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeInstanceRefreshesResult> describeInstanceRefreshesAsync(final DescribeInstanceRefreshesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeInstanceRefreshesRequest, DescribeInstanceRefreshesResult> asyncHandler) {
+        final DescribeInstanceRefreshesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeInstanceRefreshesResult>() {
+            @Override
+            public DescribeInstanceRefreshesResult call() throws Exception {
+                DescribeInstanceRefreshesResult result = null;
+
+                try {
+                    result = executeDescribeInstanceRefreshes(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override
@@ -2343,6 +2409,39 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient implem
 
                 try {
                     result = executeSetInstanceProtection(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartInstanceRefreshResult> startInstanceRefreshAsync(StartInstanceRefreshRequest request) {
+
+        return startInstanceRefreshAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartInstanceRefreshResult> startInstanceRefreshAsync(final StartInstanceRefreshRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartInstanceRefreshRequest, StartInstanceRefreshResult> asyncHandler) {
+        final StartInstanceRefreshRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartInstanceRefreshResult>() {
+            @Override
+            public StartInstanceRefreshResult call() throws Exception {
+                StartInstanceRefreshResult result = null;
+
+                try {
+                    result = executeStartInstanceRefresh(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

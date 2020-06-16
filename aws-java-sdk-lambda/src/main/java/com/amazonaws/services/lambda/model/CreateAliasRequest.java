@@ -75,8 +75,8 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String description;
     /**
      * <p>
-     * The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
-     * configuration</a> of the alias.
+     * The <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html#configuring-alias-routing">
+     * routing configuration</a> of the alias.
      * </p>
      */
     private AliasRoutingConfiguration routingConfig;
@@ -384,14 +384,14 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
-     * configuration</a> of the alias.
+     * The <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html#configuring-alias-routing">
+     * routing configuration</a> of the alias.
      * </p>
      * 
      * @param routingConfig
      *        The <a
-     *        href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
-     *        configuration</a> of the alias.
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html#configuring-alias-routing"
+     *        >routing configuration</a> of the alias.
      */
 
     public void setRoutingConfig(AliasRoutingConfiguration routingConfig) {
@@ -400,13 +400,13 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
-     * configuration</a> of the alias.
+     * The <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html#configuring-alias-routing">
+     * routing configuration</a> of the alias.
      * </p>
      * 
      * @return The <a
-     *         href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
-     *         configuration</a> of the alias.
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html#configuring-alias-routing"
+     *         >routing configuration</a> of the alias.
      */
 
     public AliasRoutingConfiguration getRoutingConfig() {
@@ -415,14 +415,14 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
-     * configuration</a> of the alias.
+     * The <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html#configuring-alias-routing">
+     * routing configuration</a> of the alias.
      * </p>
      * 
      * @param routingConfig
      *        The <a
-     *        href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
-     *        configuration</a> of the alias.
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html#configuring-alias-routing"
+     *        >routing configuration</a> of the alias.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

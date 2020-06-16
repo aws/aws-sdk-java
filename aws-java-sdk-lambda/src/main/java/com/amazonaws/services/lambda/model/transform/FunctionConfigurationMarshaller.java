@@ -80,6 +80,8 @@ public class FunctionConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastUpdateStatusReason").build();
     private static final MarshallingInfo<String> LASTUPDATESTATUSREASONCODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastUpdateStatusReasonCode").build();
+    private static final MarshallingInfo<List> FILESYSTEMCONFIGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FileSystemConfigs").build();
 
     private static final FunctionConfigurationMarshaller instance = new FunctionConfigurationMarshaller();
 
@@ -123,6 +125,7 @@ public class FunctionConfigurationMarshaller {
             protocolMarshaller.marshall(functionConfiguration.getLastUpdateStatus(), LASTUPDATESTATUS_BINDING);
             protocolMarshaller.marshall(functionConfiguration.getLastUpdateStatusReason(), LASTUPDATESTATUSREASON_BINDING);
             protocolMarshaller.marshall(functionConfiguration.getLastUpdateStatusReasonCode(), LASTUPDATESTATUSREASONCODE_BINDING);
+            protocolMarshaller.marshall(functionConfiguration.getFileSystemConfigs(), FILESYSTEMCONFIGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
