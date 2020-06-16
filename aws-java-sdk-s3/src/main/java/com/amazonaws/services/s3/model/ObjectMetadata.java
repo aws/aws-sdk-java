@@ -288,8 +288,8 @@ public class ObjectMetadata implements ServerSideEncryptionResult, S3RequesterCh
      * </p>
      *
      * @return The Content-Length HTTP header indicating the size of the
-     *         associated object in bytes. Returns <code>null</code>
-     *         if it hasn't been set yet.
+     *         associated object in bytes. Returns <code>0</code> if it
+     *         hasn't been set yet.
      *
      * @see ObjectMetadata#setContentLength(long)
      */
