@@ -26,7 +26,7 @@ public class PutClassificationExportConfigurationResult extends com.amazonaws.Am
 
     /**
      * <p>
-     * The location that data classification results are exported to, and the encryption settings that are used when
+     * The location where the data classification results are stored, and the encryption settings that are used when
      * storing results in that location.
      * </p>
      */
@@ -34,12 +34,12 @@ public class PutClassificationExportConfigurationResult extends com.amazonaws.Am
 
     /**
      * <p>
-     * The location that data classification results are exported to, and the encryption settings that are used when
+     * The location where the data classification results are stored, and the encryption settings that are used when
      * storing results in that location.
      * </p>
      * 
      * @param configuration
-     *        The location that data classification results are exported to, and the encryption settings that are used
+     *        The location where the data classification results are stored, and the encryption settings that are used
      *        when storing results in that location.
      */
 
@@ -49,11 +49,11 @@ public class PutClassificationExportConfigurationResult extends com.amazonaws.Am
 
     /**
      * <p>
-     * The location that data classification results are exported to, and the encryption settings that are used when
+     * The location where the data classification results are stored, and the encryption settings that are used when
      * storing results in that location.
      * </p>
      * 
-     * @return The location that data classification results are exported to, and the encryption settings that are used
+     * @return The location where the data classification results are stored, and the encryption settings that are used
      *         when storing results in that location.
      */
 
@@ -63,12 +63,12 @@ public class PutClassificationExportConfigurationResult extends com.amazonaws.Am
 
     /**
      * <p>
-     * The location that data classification results are exported to, and the encryption settings that are used when
+     * The location where the data classification results are stored, and the encryption settings that are used when
      * storing results in that location.
      * </p>
      * 
      * @param configuration
-     *        The location that data classification results are exported to, and the encryption settings that are used
+     *        The location where the data classification results are stored, and the encryption settings that are used
      *        when storing results in that location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

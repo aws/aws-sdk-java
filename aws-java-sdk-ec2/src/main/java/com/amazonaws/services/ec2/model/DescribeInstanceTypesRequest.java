@@ -113,6 +113,12 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
+     * <code>ebs-info.nvme-support</code> - Indicates whether non-volatile memory express (NVMe) is supported or
+     * required. (<code>required</code> | <code>supported</code> | <code>unsupported</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>free-tier-eligible</code> - Indicates whether the instance type is eligible to use in the free tier. (
      * <code>true</code> | <code>false</code>)
      * </p>
@@ -438,6 +444,12 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
+     * <code>ebs-info.nvme-support</code> - Indicates whether non-volatile memory express (NVMe) is supported or
+     * required. (<code>required</code> | <code>supported</code> | <code>unsupported</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>free-tier-eligible</code> - Indicates whether the instance type is eligible to use in the free tier. (
      * <code>true</code> | <code>false</code>)
      * </p>
@@ -620,6 +632,12 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *         <p>
      *         <code>ebs-info.encryption-support</code> - Indicates whether EBS encryption is supported. (
      *         <code>supported</code> | <code>unsupported</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ebs-info.nvme-support</code> - Indicates whether non-volatile memory express (NVMe) is supported or
+     *         required. (<code>required</code> | <code>supported</code> | <code>unsupported</code>)
      *         </p>
      *         </li>
      *         <li>
@@ -823,6 +841,12 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
+     * <code>ebs-info.nvme-support</code> - Indicates whether non-volatile memory express (NVMe) is supported or
+     * required. (<code>required</code> | <code>supported</code> | <code>unsupported</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>free-tier-eligible</code> - Indicates whether the instance type is eligible to use in the free tier. (
      * <code>true</code> | <code>false</code>)
      * </p>
@@ -1006,6 +1030,12 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        <p>
      *        <code>ebs-info.encryption-support</code> - Indicates whether EBS encryption is supported. (
      *        <code>supported</code> | <code>unsupported</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ebs-info.nvme-support</code> - Indicates whether non-volatile memory express (NVMe) is supported or
+     *        required. (<code>required</code> | <code>supported</code> | <code>unsupported</code>)
      *        </p>
      *        </li>
      *        <li>
@@ -1211,6 +1241,12 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
+     * <code>ebs-info.nvme-support</code> - Indicates whether non-volatile memory express (NVMe) is supported or
+     * required. (<code>required</code> | <code>supported</code> | <code>unsupported</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>free-tier-eligible</code> - Indicates whether the instance type is eligible to use in the free tier. (
      * <code>true</code> | <code>false</code>)
      * </p>
@@ -1399,6 +1435,12 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        <p>
      *        <code>ebs-info.encryption-support</code> - Indicates whether EBS encryption is supported. (
      *        <code>supported</code> | <code>unsupported</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ebs-info.nvme-support</code> - Indicates whether non-volatile memory express (NVMe) is supported or
+     *        required. (<code>required</code> | <code>supported</code> | <code>unsupported</code>)
      *        </p>
      *        </li>
      *        <li>
@@ -1606,6 +1648,12 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
+     * <code>ebs-info.nvme-support</code> - Indicates whether non-volatile memory express (NVMe) is supported or
+     * required. (<code>required</code> | <code>supported</code> | <code>unsupported</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>free-tier-eligible</code> - Indicates whether the instance type is eligible to use in the free tier. (
      * <code>true</code> | <code>false</code>)
      * </p>
@@ -1789,6 +1837,12 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        <p>
      *        <code>ebs-info.encryption-support</code> - Indicates whether EBS encryption is supported. (
      *        <code>supported</code> | <code>unsupported</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ebs-info.nvme-support</code> - Indicates whether non-volatile memory express (NVMe) is supported or
+     *        required. (<code>required</code> | <code>supported</code> | <code>unsupported</code>)
      *        </p>
      *        </li>
      *        <li>

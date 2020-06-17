@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies an S3 bucket to export data classification results to, and the encryption settings to use when storing
+ * Specifies an S3 bucket to store data classification results in, and the encryption settings to use when storing
  * results in that bucket.
  * </p>
  * 
@@ -31,7 +31,7 @@ public class S3Destination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the bucket. This must be the ARN of an existing bucket.
+     * The name of the bucket.
      * </p>
      */
     private String bucketName;
@@ -44,20 +44,19 @@ public class S3Destination implements Serializable, Cloneable, StructuredPojo {
     private String keyPrefix;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Key Management Service master key to use for encryption of the exported
-     * results. This must be the ARN of an existing KMS key. In addition, the key must be in the same AWS Region as the
-     * bucket.
+     * The Amazon Resource Name (ARN) of the AWS Key Management Service customer master key (CMK) to use for encryption
+     * of the results. This must be the ARN of an existing CMK that's in the same AWS Region as the bucket.
      * </p>
      */
     private String kmsKeyArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the bucket. This must be the ARN of an existing bucket.
+     * The name of the bucket.
      * </p>
      * 
      * @param bucketName
-     *        The Amazon Resource Name (ARN) of the bucket. This must be the ARN of an existing bucket.
+     *        The name of the bucket.
      */
 
     public void setBucketName(String bucketName) {
@@ -66,10 +65,10 @@ public class S3Destination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the bucket. This must be the ARN of an existing bucket.
+     * The name of the bucket.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the bucket. This must be the ARN of an existing bucket.
+     * @return The name of the bucket.
      */
 
     public String getBucketName() {
@@ -78,11 +77,11 @@ public class S3Destination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the bucket. This must be the ARN of an existing bucket.
+     * The name of the bucket.
      * </p>
      * 
      * @param bucketName
-     *        The Amazon Resource Name (ARN) of the bucket. This must be the ARN of an existing bucket.
+     *        The name of the bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -139,15 +138,14 @@ public class S3Destination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Key Management Service master key to use for encryption of the exported
-     * results. This must be the ARN of an existing KMS key. In addition, the key must be in the same AWS Region as the
-     * bucket.
+     * The Amazon Resource Name (ARN) of the AWS Key Management Service customer master key (CMK) to use for encryption
+     * of the results. This must be the ARN of an existing CMK that's in the same AWS Region as the bucket.
      * </p>
      * 
      * @param kmsKeyArn
-     *        The Amazon Resource Name (ARN) of the AWS Key Management Service master key to use for encryption of the
-     *        exported results. This must be the ARN of an existing KMS key. In addition, the key must be in the same
-     *        AWS Region as the bucket.
+     *        The Amazon Resource Name (ARN) of the AWS Key Management Service customer master key (CMK) to use for
+     *        encryption of the results. This must be the ARN of an existing CMK that's in the same AWS Region as the
+     *        bucket.
      */
 
     public void setKmsKeyArn(String kmsKeyArn) {
@@ -156,14 +154,13 @@ public class S3Destination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Key Management Service master key to use for encryption of the exported
-     * results. This must be the ARN of an existing KMS key. In addition, the key must be in the same AWS Region as the
-     * bucket.
+     * The Amazon Resource Name (ARN) of the AWS Key Management Service customer master key (CMK) to use for encryption
+     * of the results. This must be the ARN of an existing CMK that's in the same AWS Region as the bucket.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the AWS Key Management Service master key to use for encryption of the
-     *         exported results. This must be the ARN of an existing KMS key. In addition, the key must be in the same
-     *         AWS Region as the bucket.
+     * @return The Amazon Resource Name (ARN) of the AWS Key Management Service customer master key (CMK) to use for
+     *         encryption of the results. This must be the ARN of an existing CMK that's in the same AWS Region as the
+     *         bucket.
      */
 
     public String getKmsKeyArn() {
@@ -172,15 +169,14 @@ public class S3Destination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Key Management Service master key to use for encryption of the exported
-     * results. This must be the ARN of an existing KMS key. In addition, the key must be in the same AWS Region as the
-     * bucket.
+     * The Amazon Resource Name (ARN) of the AWS Key Management Service customer master key (CMK) to use for encryption
+     * of the results. This must be the ARN of an existing CMK that's in the same AWS Region as the bucket.
      * </p>
      * 
      * @param kmsKeyArn
-     *        The Amazon Resource Name (ARN) of the AWS Key Management Service master key to use for encryption of the
-     *        exported results. This must be the ARN of an existing KMS key. In addition, the key must be in the same
-     *        AWS Region as the bucket.
+     *        The Amazon Resource Name (ARN) of the AWS Key Management Service customer master key (CMK) to use for
+     *        encryption of the results. This must be the ARN of an existing CMK that's in the same AWS Region as the
+     *        bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides information about a session that was created for an entity who performed an action by using temporary
+ * Provides information about a session that was created for an entity that performed an action by using temporary
  * security credentials.
  * </p>
  * 

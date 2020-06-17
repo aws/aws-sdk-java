@@ -26,7 +26,7 @@ public class GetFindingsFilterResult extends com.amazonaws.AmazonWebServiceResul
     /**
      * <p>
      * The action that's performed on findings that meet the filter criteria (findingCriteria). Possible values are:
-     * ARCHIVE, automatically archive the findings; and, NOOP, don't perform any action on the findings.
+     * ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.
      * </p>
      */
     private String action;
@@ -78,12 +78,13 @@ public class GetFindingsFilterResult extends com.amazonaws.AmazonWebServiceResul
     /**
      * <p>
      * The action that's performed on findings that meet the filter criteria (findingCriteria). Possible values are:
-     * ARCHIVE, automatically archive the findings; and, NOOP, don't perform any action on the findings.
+     * ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.
      * </p>
      * 
      * @param action
      *        The action that's performed on findings that meet the filter criteria (findingCriteria). Possible values
-     *        are: ARCHIVE, automatically archive the findings; and, NOOP, don't perform any action on the findings.
+     *        are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the
+     *        findings.
      * @see FindingsFilterAction
      */
 
@@ -94,11 +95,12 @@ public class GetFindingsFilterResult extends com.amazonaws.AmazonWebServiceResul
     /**
      * <p>
      * The action that's performed on findings that meet the filter criteria (findingCriteria). Possible values are:
-     * ARCHIVE, automatically archive the findings; and, NOOP, don't perform any action on the findings.
+     * ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.
      * </p>
      * 
      * @return The action that's performed on findings that meet the filter criteria (findingCriteria). Possible values
-     *         are: ARCHIVE, automatically archive the findings; and, NOOP, don't perform any action on the findings.
+     *         are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the
+     *         findings.
      * @see FindingsFilterAction
      */
 
@@ -109,12 +111,13 @@ public class GetFindingsFilterResult extends com.amazonaws.AmazonWebServiceResul
     /**
      * <p>
      * The action that's performed on findings that meet the filter criteria (findingCriteria). Possible values are:
-     * ARCHIVE, automatically archive the findings; and, NOOP, don't perform any action on the findings.
+     * ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.
      * </p>
      * 
      * @param action
      *        The action that's performed on findings that meet the filter criteria (findingCriteria). Possible values
-     *        are: ARCHIVE, automatically archive the findings; and, NOOP, don't perform any action on the findings.
+     *        are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the
+     *        findings.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FindingsFilterAction
      */
@@ -127,12 +130,13 @@ public class GetFindingsFilterResult extends com.amazonaws.AmazonWebServiceResul
     /**
      * <p>
      * The action that's performed on findings that meet the filter criteria (findingCriteria). Possible values are:
-     * ARCHIVE, automatically archive the findings; and, NOOP, don't perform any action on the findings.
+     * ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.
      * </p>
      * 
      * @param action
      *        The action that's performed on findings that meet the filter criteria (findingCriteria). Possible values
-     *        are: ARCHIVE, automatically archive the findings; and, NOOP, don't perform any action on the findings.
+     *        are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the
+     *        findings.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FindingsFilterAction
      */

@@ -60,6 +60,10 @@ public class HttpRouteJsonUnmarshaller implements Unmarshaller<HttpRoute, JsonUn
                     context.nextToken();
                     httpRoute.setRetryPolicy(HttpRetryPolicyJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("timeout", targetDepth)) {
+                    context.nextToken();
+                    httpRoute.setTimeout(HttpTimeoutJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

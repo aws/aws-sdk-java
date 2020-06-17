@@ -66,13 +66,13 @@ public class DisableFastSnapshotRestoreSuccessItem implements Serializable, Clon
     private String stateTransitionReason;
     /**
      * <p>
-     * The ID of the AWS account that owns the snapshot.
+     * The ID of the AWS account that enabled fast snapshot restores on the snapshot.
      * </p>
      */
     private String ownerId;
     /**
      * <p>
-     * The alias of the snapshot owner.
+     * The AWS owner alias that enabled fast snapshot restores on the snapshot. This is intended for future use.
      * </p>
      */
     private String ownerAlias;
@@ -369,11 +369,11 @@ public class DisableFastSnapshotRestoreSuccessItem implements Serializable, Clon
 
     /**
      * <p>
-     * The ID of the AWS account that owns the snapshot.
+     * The ID of the AWS account that enabled fast snapshot restores on the snapshot.
      * </p>
      * 
      * @param ownerId
-     *        The ID of the AWS account that owns the snapshot.
+     *        The ID of the AWS account that enabled fast snapshot restores on the snapshot.
      */
 
     public void setOwnerId(String ownerId) {
@@ -382,10 +382,10 @@ public class DisableFastSnapshotRestoreSuccessItem implements Serializable, Clon
 
     /**
      * <p>
-     * The ID of the AWS account that owns the snapshot.
+     * The ID of the AWS account that enabled fast snapshot restores on the snapshot.
      * </p>
      * 
-     * @return The ID of the AWS account that owns the snapshot.
+     * @return The ID of the AWS account that enabled fast snapshot restores on the snapshot.
      */
 
     public String getOwnerId() {
@@ -394,11 +394,11 @@ public class DisableFastSnapshotRestoreSuccessItem implements Serializable, Clon
 
     /**
      * <p>
-     * The ID of the AWS account that owns the snapshot.
+     * The ID of the AWS account that enabled fast snapshot restores on the snapshot.
      * </p>
      * 
      * @param ownerId
-     *        The ID of the AWS account that owns the snapshot.
+     *        The ID of the AWS account that enabled fast snapshot restores on the snapshot.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -409,11 +409,11 @@ public class DisableFastSnapshotRestoreSuccessItem implements Serializable, Clon
 
     /**
      * <p>
-     * The alias of the snapshot owner.
+     * The AWS owner alias that enabled fast snapshot restores on the snapshot. This is intended for future use.
      * </p>
      * 
      * @param ownerAlias
-     *        The alias of the snapshot owner.
+     *        The AWS owner alias that enabled fast snapshot restores on the snapshot. This is intended for future use.
      */
 
     public void setOwnerAlias(String ownerAlias) {
@@ -422,10 +422,10 @@ public class DisableFastSnapshotRestoreSuccessItem implements Serializable, Clon
 
     /**
      * <p>
-     * The alias of the snapshot owner.
+     * The AWS owner alias that enabled fast snapshot restores on the snapshot. This is intended for future use.
      * </p>
      * 
-     * @return The alias of the snapshot owner.
+     * @return The AWS owner alias that enabled fast snapshot restores on the snapshot. This is intended for future use.
      */
 
     public String getOwnerAlias() {
@@ -434,11 +434,11 @@ public class DisableFastSnapshotRestoreSuccessItem implements Serializable, Clon
 
     /**
      * <p>
-     * The alias of the snapshot owner.
+     * The AWS owner alias that enabled fast snapshot restores on the snapshot. This is intended for future use.
      * </p>
      * 
      * @param ownerAlias
-     *        The alias of the snapshot owner.
+     *        The AWS owner alias that enabled fast snapshot restores on the snapshot. This is intended for future use.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

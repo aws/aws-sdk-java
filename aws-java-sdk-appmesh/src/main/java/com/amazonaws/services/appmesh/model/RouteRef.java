@@ -34,9 +34,17 @@ public class RouteRef implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String arn;
-
+    /**
+     * <p>
+     * The Unix epoch timestamp in seconds for when the resource was created.
+     * </p>
+     */
     private java.util.Date createdAt;
-
+    /**
+     * <p>
+     * The Unix epoch timestamp in seconds for when the resource was last updated.
+     * </p>
+     */
     private java.util.Date lastUpdatedAt;
     /**
      * <p>
@@ -48,7 +56,7 @@ public class RouteRef implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the
      * account that shared the mesh with your account. For more information about mesh sharing, see <a
-     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
      * </p>
      */
     private String meshOwner;
@@ -56,7 +64,7 @@ public class RouteRef implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh
      * owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a
-     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
      * </p>
      */
     private String resourceOwner;
@@ -66,7 +74,12 @@ public class RouteRef implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String routeName;
-
+    /**
+     * <p>
+     * The version of the resource. Resources are created at version 1, and this version is incremented each time that
+     * they're updated.
+     * </p>
+     */
     private Long version;
     /**
      * <p>
@@ -116,7 +129,12 @@ public class RouteRef implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The Unix epoch timestamp in seconds for when the resource was created.
+     * </p>
+     * 
      * @param createdAt
+     *        The Unix epoch timestamp in seconds for when the resource was created.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -124,7 +142,11 @@ public class RouteRef implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The Unix epoch timestamp in seconds for when the resource was created.
+     * </p>
+     * 
+     * @return The Unix epoch timestamp in seconds for when the resource was created.
      */
 
     public java.util.Date getCreatedAt() {
@@ -132,7 +154,12 @@ public class RouteRef implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The Unix epoch timestamp in seconds for when the resource was created.
+     * </p>
+     * 
      * @param createdAt
+     *        The Unix epoch timestamp in seconds for when the resource was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -142,7 +169,12 @@ public class RouteRef implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The Unix epoch timestamp in seconds for when the resource was last updated.
+     * </p>
+     * 
      * @param lastUpdatedAt
+     *        The Unix epoch timestamp in seconds for when the resource was last updated.
      */
 
     public void setLastUpdatedAt(java.util.Date lastUpdatedAt) {
@@ -150,7 +182,11 @@ public class RouteRef implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The Unix epoch timestamp in seconds for when the resource was last updated.
+     * </p>
+     * 
+     * @return The Unix epoch timestamp in seconds for when the resource was last updated.
      */
 
     public java.util.Date getLastUpdatedAt() {
@@ -158,7 +194,12 @@ public class RouteRef implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The Unix epoch timestamp in seconds for when the resource was last updated.
+     * </p>
+     * 
      * @param lastUpdatedAt
+     *        The Unix epoch timestamp in seconds for when the resource was last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -211,13 +252,13 @@ public class RouteRef implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the
      * account that shared the mesh with your account. For more information about mesh sharing, see <a
-     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
      * </p>
      * 
      * @param meshOwner
      *        The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of
      *        the account that shared the mesh with your account. For more information about mesh sharing, see <a
-     *        href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
+     *        href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
      */
 
     public void setMeshOwner(String meshOwner) {
@@ -228,12 +269,12 @@ public class RouteRef implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the
      * account that shared the mesh with your account. For more information about mesh sharing, see <a
-     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
      * </p>
      * 
      * @return The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of
      *         the account that shared the mesh with your account. For more information about mesh sharing, see <a
-     *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
+     *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
      */
 
     public String getMeshOwner() {
@@ -244,13 +285,13 @@ public class RouteRef implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the
      * account that shared the mesh with your account. For more information about mesh sharing, see <a
-     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
      * </p>
      * 
      * @param meshOwner
      *        The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of
      *        the account that shared the mesh with your account. For more information about mesh sharing, see <a
-     *        href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
+     *        href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -263,14 +304,14 @@ public class RouteRef implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh
      * owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a
-     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
      * </p>
      * 
      * @param resourceOwner
      *        The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the
      *        mesh owner or of another account that the mesh is shared with. For more information about mesh sharing,
-     *        see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared
-     *        Meshes</a>.
+     *        see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared
+     *        meshes</a>.
      */
 
     public void setResourceOwner(String resourceOwner) {
@@ -281,13 +322,13 @@ public class RouteRef implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh
      * owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a
-     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
      * </p>
      * 
      * @return The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the
      *         mesh owner or of another account that the mesh is shared with. For more information about mesh sharing,
-     *         see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared
-     *         Meshes</a>.
+     *         see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared
+     *         meshes</a>.
      */
 
     public String getResourceOwner() {
@@ -298,14 +339,14 @@ public class RouteRef implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh
      * owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a
-     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
      * </p>
      * 
      * @param resourceOwner
      *        The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the
      *        mesh owner or of another account that the mesh is shared with. For more information about mesh sharing,
-     *        see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared
-     *        Meshes</a>.
+     *        see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared
+     *        meshes</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -355,7 +396,14 @@ public class RouteRef implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The version of the resource. Resources are created at version 1, and this version is incremented each time that
+     * they're updated.
+     * </p>
+     * 
      * @param version
+     *        The version of the resource. Resources are created at version 1, and this version is incremented each time
+     *        that they're updated.
      */
 
     public void setVersion(Long version) {
@@ -363,7 +411,13 @@ public class RouteRef implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The version of the resource. Resources are created at version 1, and this version is incremented each time that
+     * they're updated.
+     * </p>
+     * 
+     * @return The version of the resource. Resources are created at version 1, and this version is incremented each
+     *         time that they're updated.
      */
 
     public Long getVersion() {
@@ -371,7 +425,14 @@ public class RouteRef implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The version of the resource. Resources are created at version 1, and this version is incremented each time that
+     * they're updated.
+     * </p>
+     * 
      * @param version
+     *        The version of the resource. Resources are created at version 1, and this version is incremented each time
+     *        that they're updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

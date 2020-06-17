@@ -31,6 +31,8 @@ public class ListenerMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("healthCheck").build();
     private static final MarshallingInfo<StructuredPojo> PORTMAPPING_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("portMapping").build();
+    private static final MarshallingInfo<StructuredPojo> TIMEOUT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("timeout").build();
     private static final MarshallingInfo<StructuredPojo> TLS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("tls").build();
 
@@ -52,6 +54,7 @@ public class ListenerMarshaller {
         try {
             protocolMarshaller.marshall(listener.getHealthCheck(), HEALTHCHECK_BINDING);
             protocolMarshaller.marshall(listener.getPortMapping(), PORTMAPPING_BINDING);
+            protocolMarshaller.marshall(listener.getTimeout(), TIMEOUT_BINDING);
             protocolMarshaller.marshall(listener.getTls(), TLS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

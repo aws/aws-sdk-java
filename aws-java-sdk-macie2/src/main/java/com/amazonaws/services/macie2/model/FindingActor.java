@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides information about an entity who performed an action that produced a policy finding for a resource.
+ * Provides information about an entity that performed an action that produced a policy finding for a resource.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/FindingActor" target="_top">AWS API
@@ -43,7 +43,7 @@ public class FindingActor implements Serializable, Cloneable, StructuredPojo {
     private IpAddressDetails ipAddressDetails;
     /**
      * <p>
-     * The name and type of entity who performed the action on the affected resource.
+     * The name and type of entity that performed the action on the affected resource.
      * </p>
      */
     private UserIdentity userIdentity;
@@ -136,11 +136,11 @@ public class FindingActor implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name and type of entity who performed the action on the affected resource.
+     * The name and type of entity that performed the action on the affected resource.
      * </p>
      * 
      * @param userIdentity
-     *        The name and type of entity who performed the action on the affected resource.
+     *        The name and type of entity that performed the action on the affected resource.
      */
 
     public void setUserIdentity(UserIdentity userIdentity) {
@@ -149,10 +149,10 @@ public class FindingActor implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name and type of entity who performed the action on the affected resource.
+     * The name and type of entity that performed the action on the affected resource.
      * </p>
      * 
-     * @return The name and type of entity who performed the action on the affected resource.
+     * @return The name and type of entity that performed the action on the affected resource.
      */
 
     public UserIdentity getUserIdentity() {
@@ -161,11 +161,11 @@ public class FindingActor implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name and type of entity who performed the action on the affected resource.
+     * The name and type of entity that performed the action on the affected resource.
      * </p>
      * 
      * @param userIdentity
-     *        The name and type of entity who performed the action on the affected resource.
+     *        The name and type of entity that performed the action on the affected resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

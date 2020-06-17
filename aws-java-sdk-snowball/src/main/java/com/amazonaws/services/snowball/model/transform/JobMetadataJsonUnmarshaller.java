@@ -120,6 +120,10 @@ public class JobMetadataJsonUnmarshaller implements Unmarshaller<JobMetadata, Js
                     context.nextToken();
                     jobMetadata.setTaxDocuments(TaxDocumentsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("DeviceConfiguration", targetDepth)) {
+                    context.nextToken();
+                    jobMetadata.setDeviceConfiguration(DeviceConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

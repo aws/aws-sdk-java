@@ -35,7 +35,7 @@ public class DescribeMeshRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the
      * account that shared the mesh with your account. For more information about mesh sharing, see <a
-     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
      * </p>
      */
     private String meshOwner;
@@ -84,13 +84,13 @@ public class DescribeMeshRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the
      * account that shared the mesh with your account. For more information about mesh sharing, see <a
-     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
      * </p>
      * 
      * @param meshOwner
      *        The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of
      *        the account that shared the mesh with your account. For more information about mesh sharing, see <a
-     *        href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
+     *        href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
      */
 
     public void setMeshOwner(String meshOwner) {
@@ -101,12 +101,12 @@ public class DescribeMeshRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the
      * account that shared the mesh with your account. For more information about mesh sharing, see <a
-     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
      * </p>
      * 
      * @return The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of
      *         the account that shared the mesh with your account. For more information about mesh sharing, see <a
-     *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
+     *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
      */
 
     public String getMeshOwner() {
@@ -117,13 +117,13 @@ public class DescribeMeshRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the
      * account that shared the mesh with your account. For more information about mesh sharing, see <a
-     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
      * </p>
      * 
      * @param meshOwner
      *        The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of
      *        the account that shared the mesh with your account. For more information about mesh sharing, see <a
-     *        href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
+     *        href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

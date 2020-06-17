@@ -30,9 +30,9 @@ public class SensitiveDataItem implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The category of sensitive data that was detected. For example, FINANCIAL_INFORMATION, for financial information
-     * such as credit card numbers, or PERSONAL_INFORMATION, for personally identifiable information such as names and
-     * addresses.
+     * The category of sensitive data that was detected. For example: FINANCIAL_INFORMATION, for financial information
+     * such as credit card numbers; PERSONAL_INFORMATION, for personally identifiable information such as full names and
+     * mailing addresses; or, CUSTOM_IDENTIFIER, for data that was detected by a custom data identifier.
      * </p>
      */
     private String category;
@@ -52,15 +52,16 @@ public class SensitiveDataItem implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The category of sensitive data that was detected. For example, FINANCIAL_INFORMATION, for financial information
-     * such as credit card numbers, or PERSONAL_INFORMATION, for personally identifiable information such as names and
-     * addresses.
+     * The category of sensitive data that was detected. For example: FINANCIAL_INFORMATION, for financial information
+     * such as credit card numbers; PERSONAL_INFORMATION, for personally identifiable information such as full names and
+     * mailing addresses; or, CUSTOM_IDENTIFIER, for data that was detected by a custom data identifier.
      * </p>
      * 
      * @param category
-     *        The category of sensitive data that was detected. For example, FINANCIAL_INFORMATION, for financial
-     *        information such as credit card numbers, or PERSONAL_INFORMATION, for personally identifiable information
-     *        such as names and addresses.
+     *        The category of sensitive data that was detected. For example: FINANCIAL_INFORMATION, for financial
+     *        information such as credit card numbers; PERSONAL_INFORMATION, for personally identifiable information
+     *        such as full names and mailing addresses; or, CUSTOM_IDENTIFIER, for data that was detected by a custom
+     *        data identifier.
      * @see SensitiveDataItemCategory
      */
 
@@ -70,14 +71,15 @@ public class SensitiveDataItem implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The category of sensitive data that was detected. For example, FINANCIAL_INFORMATION, for financial information
-     * such as credit card numbers, or PERSONAL_INFORMATION, for personally identifiable information such as names and
-     * addresses.
+     * The category of sensitive data that was detected. For example: FINANCIAL_INFORMATION, for financial information
+     * such as credit card numbers; PERSONAL_INFORMATION, for personally identifiable information such as full names and
+     * mailing addresses; or, CUSTOM_IDENTIFIER, for data that was detected by a custom data identifier.
      * </p>
      * 
-     * @return The category of sensitive data that was detected. For example, FINANCIAL_INFORMATION, for financial
-     *         information such as credit card numbers, or PERSONAL_INFORMATION, for personally identifiable information
-     *         such as names and addresses.
+     * @return The category of sensitive data that was detected. For example: FINANCIAL_INFORMATION, for financial
+     *         information such as credit card numbers; PERSONAL_INFORMATION, for personally identifiable information
+     *         such as full names and mailing addresses; or, CUSTOM_IDENTIFIER, for data that was detected by a custom
+     *         data identifier.
      * @see SensitiveDataItemCategory
      */
 
@@ -87,15 +89,16 @@ public class SensitiveDataItem implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The category of sensitive data that was detected. For example, FINANCIAL_INFORMATION, for financial information
-     * such as credit card numbers, or PERSONAL_INFORMATION, for personally identifiable information such as names and
-     * addresses.
+     * The category of sensitive data that was detected. For example: FINANCIAL_INFORMATION, for financial information
+     * such as credit card numbers; PERSONAL_INFORMATION, for personally identifiable information such as full names and
+     * mailing addresses; or, CUSTOM_IDENTIFIER, for data that was detected by a custom data identifier.
      * </p>
      * 
      * @param category
-     *        The category of sensitive data that was detected. For example, FINANCIAL_INFORMATION, for financial
-     *        information such as credit card numbers, or PERSONAL_INFORMATION, for personally identifiable information
-     *        such as names and addresses.
+     *        The category of sensitive data that was detected. For example: FINANCIAL_INFORMATION, for financial
+     *        information such as credit card numbers; PERSONAL_INFORMATION, for personally identifiable information
+     *        such as full names and mailing addresses; or, CUSTOM_IDENTIFIER, for data that was detected by a custom
+     *        data identifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SensitiveDataItemCategory
      */
@@ -107,15 +110,16 @@ public class SensitiveDataItem implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The category of sensitive data that was detected. For example, FINANCIAL_INFORMATION, for financial information
-     * such as credit card numbers, or PERSONAL_INFORMATION, for personally identifiable information such as names and
-     * addresses.
+     * The category of sensitive data that was detected. For example: FINANCIAL_INFORMATION, for financial information
+     * such as credit card numbers; PERSONAL_INFORMATION, for personally identifiable information such as full names and
+     * mailing addresses; or, CUSTOM_IDENTIFIER, for data that was detected by a custom data identifier.
      * </p>
      * 
      * @param category
-     *        The category of sensitive data that was detected. For example, FINANCIAL_INFORMATION, for financial
-     *        information such as credit card numbers, or PERSONAL_INFORMATION, for personally identifiable information
-     *        such as names and addresses.
+     *        The category of sensitive data that was detected. For example: FINANCIAL_INFORMATION, for financial
+     *        information such as credit card numbers; PERSONAL_INFORMATION, for personally identifiable information
+     *        such as full names and mailing addresses; or, CUSTOM_IDENTIFIER, for data that was detected by a custom
+     *        data identifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SensitiveDataItemCategory
      */

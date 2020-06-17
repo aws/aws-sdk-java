@@ -35,6 +35,8 @@ public class TcpRoute implements Serializable, Cloneable, StructuredPojo {
      */
     private TcpRouteAction action;
 
+    private TcpTimeout timeout;
+
     /**
      * <p>
      * The action to take if a match is determined.
@@ -76,6 +78,32 @@ public class TcpRoute implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * @param timeout
+     */
+
+    public void setTimeout(TcpTimeout timeout) {
+        this.timeout = timeout;
+    }
+
+    /**
+     * @return
+     */
+
+    public TcpTimeout getTimeout() {
+        return this.timeout;
+    }
+
+    /**
+     * @param timeout
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TcpRoute withTimeout(TcpTimeout timeout) {
+        setTimeout(timeout);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -88,7 +116,9 @@ public class TcpRoute implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAction() != null)
-            sb.append("Action: ").append(getAction());
+            sb.append("Action: ").append(getAction()).append(",");
+        if (getTimeout() != null)
+            sb.append("Timeout: ").append(getTimeout());
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +137,10 @@ public class TcpRoute implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAction() != null && other.getAction().equals(this.getAction()) == false)
             return false;
+        if (other.getTimeout() == null ^ this.getTimeout() == null)
+            return false;
+        if (other.getTimeout() != null && other.getTimeout().equals(this.getTimeout()) == false)
+            return false;
         return true;
     }
 
@@ -116,6 +150,7 @@ public class TcpRoute implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAction() == null) ? 0 : getAction().hashCode());
+        hashCode = prime * hashCode + ((getTimeout() == null) ? 0 : getTimeout().hashCode());
         return hashCode;
     }
 

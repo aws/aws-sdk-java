@@ -38,7 +38,7 @@ public class DescribeFastSnapshotRestoresRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code>: The ID of the AWS account that owns the snapshot.
+     * <code>owner-id</code>: The ID of the AWS account that enabled fast snapshot restore on the snapshot.
      * </p>
      * </li>
      * <li>
@@ -81,7 +81,7 @@ public class DescribeFastSnapshotRestoresRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code>: The ID of the AWS account that owns the snapshot.
+     * <code>owner-id</code>: The ID of the AWS account that enabled fast snapshot restore on the snapshot.
      * </p>
      * </li>
      * <li>
@@ -106,7 +106,7 @@ public class DescribeFastSnapshotRestoresRequest extends AmazonWebServiceRequest
      *         </li>
      *         <li>
      *         <p>
-     *         <code>owner-id</code>: The ID of the AWS account that owns the snapshot.
+     *         <code>owner-id</code>: The ID of the AWS account that enabled fast snapshot restore on the snapshot.
      *         </p>
      *         </li>
      *         <li>
@@ -141,7 +141,7 @@ public class DescribeFastSnapshotRestoresRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code>: The ID of the AWS account that owns the snapshot.
+     * <code>owner-id</code>: The ID of the AWS account that enabled fast snapshot restore on the snapshot.
      * </p>
      * </li>
      * <li>
@@ -167,7 +167,7 @@ public class DescribeFastSnapshotRestoresRequest extends AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <code>owner-id</code>: The ID of the AWS account that owns the snapshot.
+     *        <code>owner-id</code>: The ID of the AWS account that enabled fast snapshot restore on the snapshot.
      *        </p>
      *        </li>
      *        <li>
@@ -204,7 +204,7 @@ public class DescribeFastSnapshotRestoresRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code>: The ID of the AWS account that owns the snapshot.
+     * <code>owner-id</code>: The ID of the AWS account that enabled fast snapshot restore on the snapshot.
      * </p>
      * </li>
      * <li>
@@ -235,7 +235,7 @@ public class DescribeFastSnapshotRestoresRequest extends AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <code>owner-id</code>: The ID of the AWS account that owns the snapshot.
+     *        <code>owner-id</code>: The ID of the AWS account that enabled fast snapshot restore on the snapshot.
      *        </p>
      *        </li>
      *        <li>
@@ -274,7 +274,7 @@ public class DescribeFastSnapshotRestoresRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code>: The ID of the AWS account that owns the snapshot.
+     * <code>owner-id</code>: The ID of the AWS account that enabled fast snapshot restore on the snapshot.
      * </p>
      * </li>
      * <li>
@@ -300,7 +300,7 @@ public class DescribeFastSnapshotRestoresRequest extends AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <code>owner-id</code>: The ID of the AWS account that owns the snapshot.
+     *        <code>owner-id</code>: The ID of the AWS account that enabled fast snapshot restore on the snapshot.
      *        </p>
      *        </li>
      *        <li>

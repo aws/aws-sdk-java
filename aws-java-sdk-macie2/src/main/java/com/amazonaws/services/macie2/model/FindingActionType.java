@@ -15,7 +15,9 @@ package com.amazonaws.services.macie2.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * The type of action that occurred for the resource and produced the policy finding.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum FindingActionType {

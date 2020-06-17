@@ -167,12 +167,11 @@ public class TypeUtils {
             if (shape.isStreaming()) {
                 return dataTypeMappings.get("stream");
             }
-
             // scalar type.
             final String dataType = dataTypeMappings.get(shapeType);
             if (dataType == null) {
                 throw new RuntimeException(
-                        "Equivalent Java data type cannot be found for data type : " + shapeType);
+                        String.format("Equivalent Java data type cannot be found for shape name '%s' with data type '%s' ", shapeName, shapeType));
             }
             return dataType;
         }

@@ -28,20 +28,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TaxDocuments implements Serializable, Cloneable, StructuredPojo {
 
-    /**
-     * <p>
-     * The tax documents required in AWS Regions in India.
-     * </p>
-     */
     private INDTaxDocuments iND;
 
     /**
-     * <p>
-     * The tax documents required in AWS Regions in India.
-     * </p>
-     * 
      * @param iND
-     *        The tax documents required in AWS Regions in India.
      */
 
     public void setIND(INDTaxDocuments iND) {
@@ -49,11 +39,7 @@ public class TaxDocuments implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p>
-     * The tax documents required in AWS Regions in India.
-     * </p>
-     * 
-     * @return The tax documents required in AWS Regions in India.
+     * @return
      */
 
     public INDTaxDocuments getIND() {
@@ -61,12 +47,7 @@ public class TaxDocuments implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p>
-     * The tax documents required in AWS Regions in India.
-     * </p>
-     * 
      * @param iND
-     *        The tax documents required in AWS Regions in India.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

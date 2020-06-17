@@ -178,7 +178,7 @@ public interface AmazonSnowball {
      *         The provided AWS Key Management Service key lacks the permissions to perform the specified
      *         <a>CreateJob</a> or <a>UpdateJob</a> action.
      * @throws InvalidInputCombinationException
-     *         Job or cluster creation failed. One ore more inputs were invalid. Confirm that the
+     *         Job or cluster creation failed. One or more inputs were invalid. Confirm that the
      *         <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>, and try
      *         again.
      * @throws Ec2RequestFailedException
@@ -203,7 +203,7 @@ public interface AmazonSnowball {
      *         The provided AWS Key Management Service key lacks the permissions to perform the specified
      *         <a>CreateJob</a> or <a>UpdateJob</a> action.
      * @throws InvalidInputCombinationException
-     *         Job or cluster creation failed. One ore more inputs were invalid. Confirm that the
+     *         Job or cluster creation failed. One or more inputs were invalid. Confirm that the
      *         <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>, and try
      *         again.
      * @throws ClusterLimitExceededException
@@ -485,7 +485,7 @@ public interface AmazonSnowball {
      *         The provided AWS Key Management Service key lacks the permissions to perform the specified
      *         <a>CreateJob</a> or <a>UpdateJob</a> action.
      * @throws InvalidInputCombinationException
-     *         Job or cluster creation failed. One ore more inputs were invalid. Confirm that the
+     *         Job or cluster creation failed. One or more inputs were invalid. Confirm that the
      *         <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>, and try
      *         again.
      * @throws Ec2RequestFailedException
@@ -514,7 +514,7 @@ public interface AmazonSnowball {
      *         The provided AWS Key Management Service key lacks the permissions to perform the specified
      *         <a>CreateJob</a> or <a>UpdateJob</a> action.
      * @throws InvalidInputCombinationException
-     *         Job or cluster creation failed. One ore more inputs were invalid. Confirm that the
+     *         Job or cluster creation failed. One or more inputs were invalid. Confirm that the
      *         <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>, and try
      *         again.
      * @throws ClusterLimitExceededException

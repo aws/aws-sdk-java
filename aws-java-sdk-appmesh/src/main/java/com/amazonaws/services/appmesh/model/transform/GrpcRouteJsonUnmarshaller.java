@@ -60,6 +60,10 @@ public class GrpcRouteJsonUnmarshaller implements Unmarshaller<GrpcRoute, JsonUn
                     context.nextToken();
                     grpcRoute.setRetryPolicy(GrpcRetryPolicyJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("timeout", targetDepth)) {
+                    context.nextToken();
+                    grpcRoute.setTimeout(GrpcTimeoutJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

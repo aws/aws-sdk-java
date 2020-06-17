@@ -31,8 +31,8 @@ public class GetMacieSessionResult extends com.amazonaws.AmazonWebServiceResult<
     private java.util.Date createdAt;
     /**
      * <p>
-     * The frequency with which Amazon Macie publishes findings for the account. This includes adding findings to AWS
-     * Security Hub and exporting finding events to Amazon CloudWatch.
+     * The frequency with which Amazon Macie publishes updates to policy findings for the account. This includes
+     * publishing updates to AWS Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
      * </p>
      */
     private String findingPublishingFrequency;
@@ -101,13 +101,13 @@ public class GetMacieSessionResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The frequency with which Amazon Macie publishes findings for the account. This includes adding findings to AWS
-     * Security Hub and exporting finding events to Amazon CloudWatch.
+     * The frequency with which Amazon Macie publishes updates to policy findings for the account. This includes
+     * publishing updates to AWS Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
      * </p>
      * 
      * @param findingPublishingFrequency
-     *        The frequency with which Amazon Macie publishes findings for the account. This includes adding findings to
-     *        AWS Security Hub and exporting finding events to Amazon CloudWatch.
+     *        The frequency with which Amazon Macie publishes updates to policy findings for the account. This includes
+     *        publishing updates to AWS Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
      * @see FindingPublishingFrequency
      */
 
@@ -117,12 +117,12 @@ public class GetMacieSessionResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The frequency with which Amazon Macie publishes findings for the account. This includes adding findings to AWS
-     * Security Hub and exporting finding events to Amazon CloudWatch.
+     * The frequency with which Amazon Macie publishes updates to policy findings for the account. This includes
+     * publishing updates to AWS Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
      * </p>
      * 
-     * @return The frequency with which Amazon Macie publishes findings for the account. This includes adding findings
-     *         to AWS Security Hub and exporting finding events to Amazon CloudWatch.
+     * @return The frequency with which Amazon Macie publishes updates to policy findings for the account. This includes
+     *         publishing updates to AWS Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
      * @see FindingPublishingFrequency
      */
 
@@ -132,13 +132,13 @@ public class GetMacieSessionResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The frequency with which Amazon Macie publishes findings for the account. This includes adding findings to AWS
-     * Security Hub and exporting finding events to Amazon CloudWatch.
+     * The frequency with which Amazon Macie publishes updates to policy findings for the account. This includes
+     * publishing updates to AWS Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
      * </p>
      * 
      * @param findingPublishingFrequency
-     *        The frequency with which Amazon Macie publishes findings for the account. This includes adding findings to
-     *        AWS Security Hub and exporting finding events to Amazon CloudWatch.
+     *        The frequency with which Amazon Macie publishes updates to policy findings for the account. This includes
+     *        publishing updates to AWS Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FindingPublishingFrequency
      */
@@ -150,13 +150,13 @@ public class GetMacieSessionResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The frequency with which Amazon Macie publishes findings for the account. This includes adding findings to AWS
-     * Security Hub and exporting finding events to Amazon CloudWatch.
+     * The frequency with which Amazon Macie publishes updates to policy findings for the account. This includes
+     * publishing updates to AWS Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
      * </p>
      * 
      * @param findingPublishingFrequency
-     *        The frequency with which Amazon Macie publishes findings for the account. This includes adding findings to
-     *        AWS Security Hub and exporting finding events to Amazon CloudWatch.
+     *        The frequency with which Amazon Macie publishes updates to policy findings for the account. This includes
+     *        publishing updates to AWS Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FindingPublishingFrequency
      */

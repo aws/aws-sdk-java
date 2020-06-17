@@ -130,6 +130,14 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String clusterId;
     /**
      * <p>
+     * The type of AWS Snowball device to use for this job.
+     * </p>
+     * <note>
+     * <p>
+     * For cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device type.
+     * </p>
+     * </note>
+     * <p>
      * The type of AWS Snowball device to use for this job. Currently, the only supported device type for cluster jobs
      * is <code>EDGE</code>.
      * </p>
@@ -152,6 +160,12 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      */
     private TaxDocuments taxDocuments;
+    /**
+     * <p>
+     * Defines the device configuration for an AWS Snowcone job.
+     * </p>
+     */
+    private DeviceConfiguration deviceConfiguration;
 
     /**
      * <p>
@@ -1020,6 +1034,14 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
+     * The type of AWS Snowball device to use for this job.
+     * </p>
+     * <note>
+     * <p>
+     * For cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device type.
+     * </p>
+     * </note>
+     * <p>
      * The type of AWS Snowball device to use for this job. Currently, the only supported device type for cluster jobs
      * is <code>EDGE</code>.
      * </p>
@@ -1030,8 +1052,15 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param snowballType
+     *        The type of AWS Snowball device to use for this job. </p> <note>
+     *        <p>
+     *        For cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device type.
+     *        </p>
+     *        </note>
+     *        <p>
      *        The type of AWS Snowball device to use for this job. Currently, the only supported device type for cluster
-     *        jobs is <code>EDGE</code>.</p>
+     *        jobs is <code>EDGE</code>.
+     *        </p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge
@@ -1045,6 +1074,14 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
+     * The type of AWS Snowball device to use for this job.
+     * </p>
+     * <note>
+     * <p>
+     * For cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device type.
+     * </p>
+     * </note>
+     * <p>
      * The type of AWS Snowball device to use for this job. Currently, the only supported device type for cluster jobs
      * is <code>EDGE</code>.
      * </p>
@@ -1054,8 +1091,15 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * Options</a> in the Snowball Edge Developer Guide.
      * </p>
      * 
-     * @return The type of AWS Snowball device to use for this job. Currently, the only supported device type for
-     *         cluster jobs is <code>EDGE</code>.</p>
+     * @return The type of AWS Snowball device to use for this job. </p> <note>
+     *         <p>
+     *         For cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device type.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         The type of AWS Snowball device to use for this job. Currently, the only supported device type for
+     *         cluster jobs is <code>EDGE</code>.
+     *         </p>
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge
@@ -1069,6 +1113,14 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
+     * The type of AWS Snowball device to use for this job.
+     * </p>
+     * <note>
+     * <p>
+     * For cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device type.
+     * </p>
+     * </note>
+     * <p>
      * The type of AWS Snowball device to use for this job. Currently, the only supported device type for cluster jobs
      * is <code>EDGE</code>.
      * </p>
@@ -1079,8 +1131,15 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param snowballType
+     *        The type of AWS Snowball device to use for this job. </p> <note>
+     *        <p>
+     *        For cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device type.
+     *        </p>
+     *        </note>
+     *        <p>
      *        The type of AWS Snowball device to use for this job. Currently, the only supported device type for cluster
-     *        jobs is <code>EDGE</code>.</p>
+     *        jobs is <code>EDGE</code>.
+     *        </p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge
@@ -1096,6 +1155,14 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
+     * The type of AWS Snowball device to use for this job.
+     * </p>
+     * <note>
+     * <p>
+     * For cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device type.
+     * </p>
+     * </note>
+     * <p>
      * The type of AWS Snowball device to use for this job. Currently, the only supported device type for cluster jobs
      * is <code>EDGE</code>.
      * </p>
@@ -1106,8 +1173,15 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param snowballType
+     *        The type of AWS Snowball device to use for this job. </p> <note>
+     *        <p>
+     *        For cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device type.
+     *        </p>
+     *        </note>
+     *        <p>
      *        The type of AWS Snowball device to use for this job. Currently, the only supported device type for cluster
-     *        jobs is <code>EDGE</code>.</p>
+     *        jobs is <code>EDGE</code>.
+     *        </p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge
@@ -1121,6 +1195,14 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
+     * The type of AWS Snowball device to use for this job.
+     * </p>
+     * <note>
+     * <p>
+     * For cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device type.
+     * </p>
+     * </note>
+     * <p>
      * The type of AWS Snowball device to use for this job. Currently, the only supported device type for cluster jobs
      * is <code>EDGE</code>.
      * </p>
@@ -1131,8 +1213,15 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param snowballType
+     *        The type of AWS Snowball device to use for this job. </p> <note>
+     *        <p>
+     *        For cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device type.
+     *        </p>
+     *        </note>
+     *        <p>
      *        The type of AWS Snowball device to use for this job. Currently, the only supported device type for cluster
-     *        jobs is <code>EDGE</code>.</p>
+     *        jobs is <code>EDGE</code>.
+     *        </p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge
@@ -1227,6 +1316,46 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
+     * Defines the device configuration for an AWS Snowcone job.
+     * </p>
+     * 
+     * @param deviceConfiguration
+     *        Defines the device configuration for an AWS Snowcone job.
+     */
+
+    public void setDeviceConfiguration(DeviceConfiguration deviceConfiguration) {
+        this.deviceConfiguration = deviceConfiguration;
+    }
+
+    /**
+     * <p>
+     * Defines the device configuration for an AWS Snowcone job.
+     * </p>
+     * 
+     * @return Defines the device configuration for an AWS Snowcone job.
+     */
+
+    public DeviceConfiguration getDeviceConfiguration() {
+        return this.deviceConfiguration;
+    }
+
+    /**
+     * <p>
+     * Defines the device configuration for an AWS Snowcone job.
+     * </p>
+     * 
+     * @param deviceConfiguration
+     *        Defines the device configuration for an AWS Snowcone job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateJobRequest withDeviceConfiguration(DeviceConfiguration deviceConfiguration) {
+        setDeviceConfiguration(deviceConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1263,7 +1392,9 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (getForwardingAddressId() != null)
             sb.append("ForwardingAddressId: ").append(getForwardingAddressId()).append(",");
         if (getTaxDocuments() != null)
-            sb.append("TaxDocuments: ").append(getTaxDocuments());
+            sb.append("TaxDocuments: ").append(getTaxDocuments()).append(",");
+        if (getDeviceConfiguration() != null)
+            sb.append("DeviceConfiguration: ").append(getDeviceConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -1330,6 +1461,10 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getTaxDocuments() != null && other.getTaxDocuments().equals(this.getTaxDocuments()) == false)
             return false;
+        if (other.getDeviceConfiguration() == null ^ this.getDeviceConfiguration() == null)
+            return false;
+        if (other.getDeviceConfiguration() != null && other.getDeviceConfiguration().equals(this.getDeviceConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -1351,6 +1486,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getSnowballType() == null) ? 0 : getSnowballType().hashCode());
         hashCode = prime * hashCode + ((getForwardingAddressId() == null) ? 0 : getForwardingAddressId().hashCode());
         hashCode = prime * hashCode + ((getTaxDocuments() == null) ? 0 : getTaxDocuments().hashCode());
+        hashCode = prime * hashCode + ((getDeviceConfiguration() == null) ? 0 : getDeviceConfiguration().hashCode());
         return hashCode;
     }
 

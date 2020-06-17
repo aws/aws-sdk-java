@@ -42,14 +42,15 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>owner-alias</code> - Value from an Amazon-maintained list (<code>amazon</code> | <code>self</code> |
-     * <code>all</code> | <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to be confused
-     * with the user-configured AWS account alias, which is set from the IAM console.
+     * <code>owner-alias</code> - The owner alias, from an Amazon-maintained list (<code>amazon</code>). This is not the
+     * user-configured AWS account alias set using the IAM console. We recommend that you use the related parameter
+     * instead of this filter.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The ID of the AWS account that owns the snapshot.
+     * <code>owner-id</code> - The AWS account ID of the owner. We recommend that you use the related parameter instead
+     * of this filter.
      * </p>
      * </li>
      * <li>
@@ -123,7 +124,8 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
     private String nextToken;
     /**
      * <p>
-     * Describes the snapshots owned by these owners.
+     * Scopes the results to snapshots with the specified owners. You can specify a combination of AWS account IDs,
+     * <code>self</code>, and <code>amazon</code>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> ownerIds;
@@ -160,14 +162,15 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>owner-alias</code> - Value from an Amazon-maintained list (<code>amazon</code> | <code>self</code> |
-     * <code>all</code> | <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to be confused
-     * with the user-configured AWS account alias, which is set from the IAM console.
+     * <code>owner-alias</code> - The owner alias, from an Amazon-maintained list (<code>amazon</code>). This is not the
+     * user-configured AWS account alias set using the IAM console. We recommend that you use the related parameter
+     * instead of this filter.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The ID of the AWS account that owns the snapshot.
+     * <code>owner-id</code> - The AWS account ID of the owner. We recommend that you use the related parameter instead
+     * of this filter.
      * </p>
      * </li>
      * <li>
@@ -232,14 +235,15 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      *         </li>
      *         <li>
      *         <p>
-     *         <code>owner-alias</code> - Value from an Amazon-maintained list (<code>amazon</code> | <code>self</code>
-     *         | <code>all</code> | <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to be
-     *         confused with the user-configured AWS account alias, which is set from the IAM console.
+     *         <code>owner-alias</code> - The owner alias, from an Amazon-maintained list (<code>amazon</code>). This is
+     *         not the user-configured AWS account alias set using the IAM console. We recommend that you use the
+     *         related parameter instead of this filter.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>owner-id</code> - The ID of the AWS account that owns the snapshot.
+     *         <code>owner-id</code> - The AWS account ID of the owner. We recommend that you use the related parameter
+     *         instead of this filter.
      *         </p>
      *         </li>
      *         <li>
@@ -313,14 +317,15 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>owner-alias</code> - Value from an Amazon-maintained list (<code>amazon</code> | <code>self</code> |
-     * <code>all</code> | <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to be confused
-     * with the user-configured AWS account alias, which is set from the IAM console.
+     * <code>owner-alias</code> - The owner alias, from an Amazon-maintained list (<code>amazon</code>). This is not the
+     * user-configured AWS account alias set using the IAM console. We recommend that you use the related parameter
+     * instead of this filter.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The ID of the AWS account that owns the snapshot.
+     * <code>owner-id</code> - The AWS account ID of the owner. We recommend that you use the related parameter instead
+     * of this filter.
      * </p>
      * </li>
      * <li>
@@ -386,14 +391,15 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>owner-alias</code> - Value from an Amazon-maintained list (<code>amazon</code> | <code>self</code> |
-     *        <code>all</code> | <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to be
-     *        confused with the user-configured AWS account alias, which is set from the IAM console.
+     *        <code>owner-alias</code> - The owner alias, from an Amazon-maintained list (<code>amazon</code>). This is
+     *        not the user-configured AWS account alias set using the IAM console. We recommend that you use the related
+     *        parameter instead of this filter.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>owner-id</code> - The ID of the AWS account that owns the snapshot.
+     *        <code>owner-id</code> - The AWS account ID of the owner. We recommend that you use the related parameter
+     *        instead of this filter.
      *        </p>
      *        </li>
      *        <li>
@@ -469,14 +475,15 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>owner-alias</code> - Value from an Amazon-maintained list (<code>amazon</code> | <code>self</code> |
-     * <code>all</code> | <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to be confused
-     * with the user-configured AWS account alias, which is set from the IAM console.
+     * <code>owner-alias</code> - The owner alias, from an Amazon-maintained list (<code>amazon</code>). This is not the
+     * user-configured AWS account alias set using the IAM console. We recommend that you use the related parameter
+     * instead of this filter.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The ID of the AWS account that owns the snapshot.
+     * <code>owner-id</code> - The AWS account ID of the owner. We recommend that you use the related parameter instead
+     * of this filter.
      * </p>
      * </li>
      * <li>
@@ -547,14 +554,15 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>owner-alias</code> - Value from an Amazon-maintained list (<code>amazon</code> | <code>self</code> |
-     *        <code>all</code> | <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to be
-     *        confused with the user-configured AWS account alias, which is set from the IAM console.
+     *        <code>owner-alias</code> - The owner alias, from an Amazon-maintained list (<code>amazon</code>). This is
+     *        not the user-configured AWS account alias set using the IAM console. We recommend that you use the related
+     *        parameter instead of this filter.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>owner-id</code> - The ID of the AWS account that owns the snapshot.
+     *        <code>owner-id</code> - The AWS account ID of the owner. We recommend that you use the related parameter
+     *        instead of this filter.
      *        </p>
      *        </li>
      *        <li>
@@ -632,14 +640,15 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>owner-alias</code> - Value from an Amazon-maintained list (<code>amazon</code> | <code>self</code> |
-     * <code>all</code> | <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to be confused
-     * with the user-configured AWS account alias, which is set from the IAM console.
+     * <code>owner-alias</code> - The owner alias, from an Amazon-maintained list (<code>amazon</code>). This is not the
+     * user-configured AWS account alias set using the IAM console. We recommend that you use the related parameter
+     * instead of this filter.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The ID of the AWS account that owns the snapshot.
+     * <code>owner-id</code> - The AWS account ID of the owner. We recommend that you use the related parameter instead
+     * of this filter.
      * </p>
      * </li>
      * <li>
@@ -705,14 +714,15 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>owner-alias</code> - Value from an Amazon-maintained list (<code>amazon</code> | <code>self</code> |
-     *        <code>all</code> | <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to be
-     *        confused with the user-configured AWS account alias, which is set from the IAM console.
+     *        <code>owner-alias</code> - The owner alias, from an Amazon-maintained list (<code>amazon</code>). This is
+     *        not the user-configured AWS account alias set using the IAM console. We recommend that you use the related
+     *        parameter instead of this filter.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>owner-id</code> - The ID of the AWS account that owns the snapshot.
+     *        <code>owner-id</code> - The AWS account ID of the owner. We recommend that you use the related parameter
+     *        instead of this filter.
      *        </p>
      *        </li>
      *        <li>
@@ -907,10 +917,12 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Describes the snapshots owned by these owners.
+     * Scopes the results to snapshots with the specified owners. You can specify a combination of AWS account IDs,
+     * <code>self</code>, and <code>amazon</code>.
      * </p>
      * 
-     * @return Describes the snapshots owned by these owners.
+     * @return Scopes the results to snapshots with the specified owners. You can specify a combination of AWS account
+     *         IDs, <code>self</code>, and <code>amazon</code>.
      */
 
     public java.util.List<String> getOwnerIds() {
@@ -922,11 +934,13 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Describes the snapshots owned by these owners.
+     * Scopes the results to snapshots with the specified owners. You can specify a combination of AWS account IDs,
+     * <code>self</code>, and <code>amazon</code>.
      * </p>
      * 
      * @param ownerIds
-     *        Describes the snapshots owned by these owners.
+     *        Scopes the results to snapshots with the specified owners. You can specify a combination of AWS account
+     *        IDs, <code>self</code>, and <code>amazon</code>.
      */
 
     public void setOwnerIds(java.util.Collection<String> ownerIds) {
@@ -940,7 +954,8 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Describes the snapshots owned by these owners.
+     * Scopes the results to snapshots with the specified owners. You can specify a combination of AWS account IDs,
+     * <code>self</code>, and <code>amazon</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -949,7 +964,8 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param ownerIds
-     *        Describes the snapshots owned by these owners.
+     *        Scopes the results to snapshots with the specified owners. You can specify a combination of AWS account
+     *        IDs, <code>self</code>, and <code>amazon</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -965,11 +981,13 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Describes the snapshots owned by these owners.
+     * Scopes the results to snapshots with the specified owners. You can specify a combination of AWS account IDs,
+     * <code>self</code>, and <code>amazon</code>.
      * </p>
      * 
      * @param ownerIds
-     *        Describes the snapshots owned by these owners.
+     *        Scopes the results to snapshots with the specified owners. You can specify a combination of AWS account
+     *        IDs, <code>self</code>, and <code>amazon</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

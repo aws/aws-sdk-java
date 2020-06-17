@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Job or cluster creation failed. One ore more inputs were invalid. Confirm that the
+ * Job or cluster creation failed. One or more inputs were invalid. Confirm that the
  * <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>, and try again.
  * </p>
  */

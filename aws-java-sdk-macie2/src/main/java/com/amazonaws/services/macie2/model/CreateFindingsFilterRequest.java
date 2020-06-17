@@ -28,7 +28,7 @@ public class CreateFindingsFilterRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are: ARCHIVE,
-     * automatically archive the findings; and, NOOP, don't perform any action on the findings.
+     * suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.
      * </p>
      */
     private String action;
@@ -89,12 +89,13 @@ public class CreateFindingsFilterRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are: ARCHIVE,
-     * automatically archive the findings; and, NOOP, don't perform any action on the findings.
+     * suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.
      * </p>
      * 
      * @param action
      *        The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are:
-     *        ARCHIVE, automatically archive the findings; and, NOOP, don't perform any action on the findings.
+     *        ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the
+     *        findings.
      * @see FindingsFilterAction
      */
 
@@ -105,11 +106,12 @@ public class CreateFindingsFilterRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are: ARCHIVE,
-     * automatically archive the findings; and, NOOP, don't perform any action on the findings.
+     * suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.
      * </p>
      * 
      * @return The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are:
-     *         ARCHIVE, automatically archive the findings; and, NOOP, don't perform any action on the findings.
+     *         ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the
+     *         findings.
      * @see FindingsFilterAction
      */
 
@@ -120,12 +122,13 @@ public class CreateFindingsFilterRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are: ARCHIVE,
-     * automatically archive the findings; and, NOOP, don't perform any action on the findings.
+     * suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.
      * </p>
      * 
      * @param action
      *        The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are:
-     *        ARCHIVE, automatically archive the findings; and, NOOP, don't perform any action on the findings.
+     *        ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the
+     *        findings.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FindingsFilterAction
      */
@@ -138,12 +141,13 @@ public class CreateFindingsFilterRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are: ARCHIVE,
-     * automatically archive the findings; and, NOOP, don't perform any action on the findings.
+     * suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.
      * </p>
      * 
      * @param action
      *        The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are:
-     *        ARCHIVE, automatically archive the findings; and, NOOP, don't perform any action on the findings.
+     *        ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the
+     *        findings.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FindingsFilterAction
      */

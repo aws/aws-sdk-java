@@ -67,7 +67,7 @@ public class VolumeModification implements Serializable, Cloneable {
     private String targetVolumeType;
     /**
      * <p>
-     * The original size of the volume.
+     * The original size of the volume, in GiB.
      * </p>
      */
     private Integer originalSize;
@@ -410,11 +410,11 @@ public class VolumeModification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The original size of the volume.
+     * The original size of the volume, in GiB.
      * </p>
      * 
      * @param originalSize
-     *        The original size of the volume.
+     *        The original size of the volume, in GiB.
      */
 
     public void setOriginalSize(Integer originalSize) {
@@ -423,10 +423,10 @@ public class VolumeModification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The original size of the volume.
+     * The original size of the volume, in GiB.
      * </p>
      * 
-     * @return The original size of the volume.
+     * @return The original size of the volume, in GiB.
      */
 
     public Integer getOriginalSize() {
@@ -435,11 +435,11 @@ public class VolumeModification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The original size of the volume.
+     * The original size of the volume, in GiB.
      * </p>
      * 
      * @param originalSize
-     *        The original size of the volume.
+     *        The original size of the volume, in GiB.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

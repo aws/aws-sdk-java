@@ -15,7 +15,9 @@ package com.amazonaws.services.macie2.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * The category of sensitive data that was detected and produced the finding.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum SensitiveDataItemCategory {

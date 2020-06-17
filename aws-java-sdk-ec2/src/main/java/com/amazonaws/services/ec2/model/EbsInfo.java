@@ -45,6 +45,12 @@ public class EbsInfo implements Serializable, Cloneable {
      * </p>
      */
     private EbsOptimizedInfo ebsOptimizedInfo;
+    /**
+     * <p>
+     * Indicates whether non-volatile memory express (NVMe) is supported.
+     * </p>
+     */
+    private String nvmeSupport;
 
     /**
      * <p>
@@ -221,6 +227,65 @@ public class EbsInfo implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Indicates whether non-volatile memory express (NVMe) is supported.
+     * </p>
+     * 
+     * @param nvmeSupport
+     *        Indicates whether non-volatile memory express (NVMe) is supported.
+     * @see EbsNvmeSupport
+     */
+
+    public void setNvmeSupport(String nvmeSupport) {
+        this.nvmeSupport = nvmeSupport;
+    }
+
+    /**
+     * <p>
+     * Indicates whether non-volatile memory express (NVMe) is supported.
+     * </p>
+     * 
+     * @return Indicates whether non-volatile memory express (NVMe) is supported.
+     * @see EbsNvmeSupport
+     */
+
+    public String getNvmeSupport() {
+        return this.nvmeSupport;
+    }
+
+    /**
+     * <p>
+     * Indicates whether non-volatile memory express (NVMe) is supported.
+     * </p>
+     * 
+     * @param nvmeSupport
+     *        Indicates whether non-volatile memory express (NVMe) is supported.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EbsNvmeSupport
+     */
+
+    public EbsInfo withNvmeSupport(String nvmeSupport) {
+        setNvmeSupport(nvmeSupport);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether non-volatile memory express (NVMe) is supported.
+     * </p>
+     * 
+     * @param nvmeSupport
+     *        Indicates whether non-volatile memory express (NVMe) is supported.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EbsNvmeSupport
+     */
+
+    public EbsInfo withNvmeSupport(EbsNvmeSupport nvmeSupport) {
+        this.nvmeSupport = nvmeSupport.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -237,7 +302,9 @@ public class EbsInfo implements Serializable, Cloneable {
         if (getEncryptionSupport() != null)
             sb.append("EncryptionSupport: ").append(getEncryptionSupport()).append(",");
         if (getEbsOptimizedInfo() != null)
-            sb.append("EbsOptimizedInfo: ").append(getEbsOptimizedInfo());
+            sb.append("EbsOptimizedInfo: ").append(getEbsOptimizedInfo()).append(",");
+        if (getNvmeSupport() != null)
+            sb.append("NvmeSupport: ").append(getNvmeSupport());
         sb.append("}");
         return sb.toString();
     }
@@ -264,6 +331,10 @@ public class EbsInfo implements Serializable, Cloneable {
             return false;
         if (other.getEbsOptimizedInfo() != null && other.getEbsOptimizedInfo().equals(this.getEbsOptimizedInfo()) == false)
             return false;
+        if (other.getNvmeSupport() == null ^ this.getNvmeSupport() == null)
+            return false;
+        if (other.getNvmeSupport() != null && other.getNvmeSupport().equals(this.getNvmeSupport()) == false)
+            return false;
         return true;
     }
 
@@ -275,6 +346,7 @@ public class EbsInfo implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getEbsOptimizedSupport() == null) ? 0 : getEbsOptimizedSupport().hashCode());
         hashCode = prime * hashCode + ((getEncryptionSupport() == null) ? 0 : getEncryptionSupport().hashCode());
         hashCode = prime * hashCode + ((getEbsOptimizedInfo() == null) ? 0 : getEbsOptimizedInfo().hashCode());
+        hashCode = prime * hashCode + ((getNvmeSupport() == null) ? 0 : getNvmeSupport().hashCode());
         return hashCode;
     }
 

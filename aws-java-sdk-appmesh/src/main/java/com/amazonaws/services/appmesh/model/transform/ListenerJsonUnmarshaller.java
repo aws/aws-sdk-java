@@ -56,6 +56,10 @@ public class ListenerJsonUnmarshaller implements Unmarshaller<Listener, JsonUnma
                     context.nextToken();
                     listener.setPortMapping(PortMappingJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("timeout", targetDepth)) {
+                    context.nextToken();
+                    listener.setTimeout(ListenerTimeoutJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("tls", targetDepth)) {
                     context.nextToken();
                     listener.setTls(ListenerTlsJsonUnmarshaller.getInstance().unmarshall(context));

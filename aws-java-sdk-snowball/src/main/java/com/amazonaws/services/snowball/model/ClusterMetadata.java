@@ -70,14 +70,13 @@ public class ClusterMetadata implements Serializable, Cloneable, StructuredPojo 
     private String jobType;
     /**
      * <p>
-     * The type of AWS Snowball device to use for this cluster. Currently, the only supported device type for cluster
-     * jobs is <code>EDGE</code>.
+     * The type of AWS Snowball device to use for this cluster.
      * </p>
+     * <note>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge Device
-     * Options</a> in the Snowball Edge Developer Guide.
+     * For cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device type.
      * </p>
+     * </note>
      */
     private String snowballType;
     /**
@@ -489,22 +488,19 @@ public class ClusterMetadata implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The type of AWS Snowball device to use for this cluster. Currently, the only supported device type for cluster
-     * jobs is <code>EDGE</code>.
+     * The type of AWS Snowball device to use for this cluster.
      * </p>
+     * <note>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge Device
-     * Options</a> in the Snowball Edge Developer Guide.
+     * For cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device type.
      * </p>
+     * </note>
      * 
      * @param snowballType
-     *        The type of AWS Snowball device to use for this cluster. Currently, the only supported device type for
-     *        cluster jobs is <code>EDGE</code>.</p>
+     *        The type of AWS Snowball device to use for this cluster. </p> <note>
      *        <p>
-     *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge
-     *        Device Options</a> in the Snowball Edge Developer Guide.
+     *        For cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device type.
+     *        </p>
      * @see SnowballType
      */
 
@@ -514,21 +510,18 @@ public class ClusterMetadata implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The type of AWS Snowball device to use for this cluster. Currently, the only supported device type for cluster
-     * jobs is <code>EDGE</code>.
+     * The type of AWS Snowball device to use for this cluster.
      * </p>
+     * <note>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge Device
-     * Options</a> in the Snowball Edge Developer Guide.
+     * For cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device type.
      * </p>
+     * </note>
      * 
-     * @return The type of AWS Snowball device to use for this cluster. Currently, the only supported device type for
-     *         cluster jobs is <code>EDGE</code>.</p>
+     * @return The type of AWS Snowball device to use for this cluster. </p> <note>
      *         <p>
-     *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge
-     *         Device Options</a> in the Snowball Edge Developer Guide.
+     *         For cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device type.
+     *         </p>
      * @see SnowballType
      */
 
@@ -538,22 +531,19 @@ public class ClusterMetadata implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The type of AWS Snowball device to use for this cluster. Currently, the only supported device type for cluster
-     * jobs is <code>EDGE</code>.
+     * The type of AWS Snowball device to use for this cluster.
      * </p>
+     * <note>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge Device
-     * Options</a> in the Snowball Edge Developer Guide.
+     * For cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device type.
      * </p>
+     * </note>
      * 
      * @param snowballType
-     *        The type of AWS Snowball device to use for this cluster. Currently, the only supported device type for
-     *        cluster jobs is <code>EDGE</code>.</p>
+     *        The type of AWS Snowball device to use for this cluster. </p> <note>
      *        <p>
-     *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge
-     *        Device Options</a> in the Snowball Edge Developer Guide.
+     *        For cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device type.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SnowballType
      */
@@ -565,22 +555,19 @@ public class ClusterMetadata implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The type of AWS Snowball device to use for this cluster. Currently, the only supported device type for cluster
-     * jobs is <code>EDGE</code>.
+     * The type of AWS Snowball device to use for this cluster.
      * </p>
+     * <note>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge Device
-     * Options</a> in the Snowball Edge Developer Guide.
+     * For cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device type.
      * </p>
+     * </note>
      * 
      * @param snowballType
-     *        The type of AWS Snowball device to use for this cluster. Currently, the only supported device type for
-     *        cluster jobs is <code>EDGE</code>.</p>
+     *        The type of AWS Snowball device to use for this cluster. </p> <note>
      *        <p>
-     *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge
-     *        Device Options</a> in the Snowball Edge Developer Guide.
+     *        For cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device type.
+     *        </p>
      * @see SnowballType
      */
 
@@ -590,22 +577,19 @@ public class ClusterMetadata implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The type of AWS Snowball device to use for this cluster. Currently, the only supported device type for cluster
-     * jobs is <code>EDGE</code>.
+     * The type of AWS Snowball device to use for this cluster.
      * </p>
+     * <note>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge Device
-     * Options</a> in the Snowball Edge Developer Guide.
+     * For cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device type.
      * </p>
+     * </note>
      * 
      * @param snowballType
-     *        The type of AWS Snowball device to use for this cluster. Currently, the only supported device type for
-     *        cluster jobs is <code>EDGE</code>.</p>
+     *        The type of AWS Snowball device to use for this cluster. </p> <note>
      *        <p>
-     *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge
-     *        Device Options</a> in the Snowball Edge Developer Guide.
+     *        For cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device type.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SnowballType
      */

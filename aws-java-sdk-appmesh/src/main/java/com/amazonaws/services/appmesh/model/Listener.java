@@ -40,6 +40,8 @@ public class Listener implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private PortMapping portMapping;
+
+    private ListenerTimeout timeout;
     /**
      * <p>
      * A reference to an object that represents the Transport Layer Security (TLS) properties for a listener.
@@ -128,6 +130,32 @@ public class Listener implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * @param timeout
+     */
+
+    public void setTimeout(ListenerTimeout timeout) {
+        this.timeout = timeout;
+    }
+
+    /**
+     * @return
+     */
+
+    public ListenerTimeout getTimeout() {
+        return this.timeout;
+    }
+
+    /**
+     * @param timeout
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Listener withTimeout(ListenerTimeout timeout) {
+        setTimeout(timeout);
+        return this;
+    }
+
+    /**
      * <p>
      * A reference to an object that represents the Transport Layer Security (TLS) properties for a listener.
      * </p>
@@ -183,6 +211,8 @@ public class Listener implements Serializable, Cloneable, StructuredPojo {
             sb.append("HealthCheck: ").append(getHealthCheck()).append(",");
         if (getPortMapping() != null)
             sb.append("PortMapping: ").append(getPortMapping()).append(",");
+        if (getTimeout() != null)
+            sb.append("Timeout: ").append(getTimeout()).append(",");
         if (getTls() != null)
             sb.append("Tls: ").append(getTls());
         sb.append("}");
@@ -207,6 +237,10 @@ public class Listener implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getPortMapping() != null && other.getPortMapping().equals(this.getPortMapping()) == false)
             return false;
+        if (other.getTimeout() == null ^ this.getTimeout() == null)
+            return false;
+        if (other.getTimeout() != null && other.getTimeout().equals(this.getTimeout()) == false)
+            return false;
         if (other.getTls() == null ^ this.getTls() == null)
             return false;
         if (other.getTls() != null && other.getTls().equals(this.getTls()) == false)
@@ -221,6 +255,7 @@ public class Listener implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getHealthCheck() == null) ? 0 : getHealthCheck().hashCode());
         hashCode = prime * hashCode + ((getPortMapping() == null) ? 0 : getPortMapping().hashCode());
+        hashCode = prime * hashCode + ((getTimeout() == null) ? 0 : getTimeout().hashCode());
         hashCode = prime * hashCode + ((getTls() == null) ? 0 : getTls().hashCode());
         return hashCode;
     }

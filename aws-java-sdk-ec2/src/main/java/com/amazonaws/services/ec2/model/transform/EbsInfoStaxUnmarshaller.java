@@ -57,6 +57,11 @@ public class EbsInfoStaxUnmarshaller implements Unmarshaller<EbsInfo, StaxUnmars
                     ebsInfo.setEbsOptimizedInfo(EbsOptimizedInfoStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("nvmeSupport", targetDepth)) {
+                    ebsInfo.setNvmeSupport(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return ebsInfo;
