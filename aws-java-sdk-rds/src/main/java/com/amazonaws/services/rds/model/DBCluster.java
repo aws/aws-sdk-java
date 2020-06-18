@@ -386,6 +386,22 @@ public class DBCluster implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<DomainMembership> domainMemberships;
+    /**
+     * <p>
+     * Specifies whether a secondary cluster in an Aurora global database has write forwarding enabled, not enabled, or
+     * is in the process of enabling it.
+     * </p>
+     */
+    private String globalWriteForwardingStatus;
+    /**
+     * <p>
+     * Specifies whether you have requested to enable write forwarding for a secondary cluster in an Aurora global
+     * database. Because write forwarding takes time to enable, check the value of
+     * <code>GlobalWriteForwardingStatus</code> to confirm that the request has completed before using the write
+     * forwarding feature for this cluster.
+     * </p>
+     */
+    private Boolean globalWriteForwardingRequested;
 
     /**
      * <p>
@@ -3198,6 +3214,149 @@ public class DBCluster implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Specifies whether a secondary cluster in an Aurora global database has write forwarding enabled, not enabled, or
+     * is in the process of enabling it.
+     * </p>
+     * 
+     * @param globalWriteForwardingStatus
+     *        Specifies whether a secondary cluster in an Aurora global database has write forwarding enabled, not
+     *        enabled, or is in the process of enabling it.
+     * @see WriteForwardingStatus
+     */
+
+    public void setGlobalWriteForwardingStatus(String globalWriteForwardingStatus) {
+        this.globalWriteForwardingStatus = globalWriteForwardingStatus;
+    }
+
+    /**
+     * <p>
+     * Specifies whether a secondary cluster in an Aurora global database has write forwarding enabled, not enabled, or
+     * is in the process of enabling it.
+     * </p>
+     * 
+     * @return Specifies whether a secondary cluster in an Aurora global database has write forwarding enabled, not
+     *         enabled, or is in the process of enabling it.
+     * @see WriteForwardingStatus
+     */
+
+    public String getGlobalWriteForwardingStatus() {
+        return this.globalWriteForwardingStatus;
+    }
+
+    /**
+     * <p>
+     * Specifies whether a secondary cluster in an Aurora global database has write forwarding enabled, not enabled, or
+     * is in the process of enabling it.
+     * </p>
+     * 
+     * @param globalWriteForwardingStatus
+     *        Specifies whether a secondary cluster in an Aurora global database has write forwarding enabled, not
+     *        enabled, or is in the process of enabling it.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see WriteForwardingStatus
+     */
+
+    public DBCluster withGlobalWriteForwardingStatus(String globalWriteForwardingStatus) {
+        setGlobalWriteForwardingStatus(globalWriteForwardingStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether a secondary cluster in an Aurora global database has write forwarding enabled, not enabled, or
+     * is in the process of enabling it.
+     * </p>
+     * 
+     * @param globalWriteForwardingStatus
+     *        Specifies whether a secondary cluster in an Aurora global database has write forwarding enabled, not
+     *        enabled, or is in the process of enabling it.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see WriteForwardingStatus
+     */
+
+    public DBCluster withGlobalWriteForwardingStatus(WriteForwardingStatus globalWriteForwardingStatus) {
+        this.globalWriteForwardingStatus = globalWriteForwardingStatus.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether you have requested to enable write forwarding for a secondary cluster in an Aurora global
+     * database. Because write forwarding takes time to enable, check the value of
+     * <code>GlobalWriteForwardingStatus</code> to confirm that the request has completed before using the write
+     * forwarding feature for this cluster.
+     * </p>
+     * 
+     * @param globalWriteForwardingRequested
+     *        Specifies whether you have requested to enable write forwarding for a secondary cluster in an Aurora
+     *        global database. Because write forwarding takes time to enable, check the value of
+     *        <code>GlobalWriteForwardingStatus</code> to confirm that the request has completed before using the write
+     *        forwarding feature for this cluster.
+     */
+
+    public void setGlobalWriteForwardingRequested(Boolean globalWriteForwardingRequested) {
+        this.globalWriteForwardingRequested = globalWriteForwardingRequested;
+    }
+
+    /**
+     * <p>
+     * Specifies whether you have requested to enable write forwarding for a secondary cluster in an Aurora global
+     * database. Because write forwarding takes time to enable, check the value of
+     * <code>GlobalWriteForwardingStatus</code> to confirm that the request has completed before using the write
+     * forwarding feature for this cluster.
+     * </p>
+     * 
+     * @return Specifies whether you have requested to enable write forwarding for a secondary cluster in an Aurora
+     *         global database. Because write forwarding takes time to enable, check the value of
+     *         <code>GlobalWriteForwardingStatus</code> to confirm that the request has completed before using the write
+     *         forwarding feature for this cluster.
+     */
+
+    public Boolean getGlobalWriteForwardingRequested() {
+        return this.globalWriteForwardingRequested;
+    }
+
+    /**
+     * <p>
+     * Specifies whether you have requested to enable write forwarding for a secondary cluster in an Aurora global
+     * database. Because write forwarding takes time to enable, check the value of
+     * <code>GlobalWriteForwardingStatus</code> to confirm that the request has completed before using the write
+     * forwarding feature for this cluster.
+     * </p>
+     * 
+     * @param globalWriteForwardingRequested
+     *        Specifies whether you have requested to enable write forwarding for a secondary cluster in an Aurora
+     *        global database. Because write forwarding takes time to enable, check the value of
+     *        <code>GlobalWriteForwardingStatus</code> to confirm that the request has completed before using the write
+     *        forwarding feature for this cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBCluster withGlobalWriteForwardingRequested(Boolean globalWriteForwardingRequested) {
+        setGlobalWriteForwardingRequested(globalWriteForwardingRequested);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether you have requested to enable write forwarding for a secondary cluster in an Aurora global
+     * database. Because write forwarding takes time to enable, check the value of
+     * <code>GlobalWriteForwardingStatus</code> to confirm that the request has completed before using the write
+     * forwarding feature for this cluster.
+     * </p>
+     * 
+     * @return Specifies whether you have requested to enable write forwarding for a secondary cluster in an Aurora
+     *         global database. Because write forwarding takes time to enable, check the value of
+     *         <code>GlobalWriteForwardingStatus</code> to confirm that the request has completed before using the write
+     *         forwarding feature for this cluster.
+     */
+
+    public Boolean isGlobalWriteForwardingRequested() {
+        return this.globalWriteForwardingRequested;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -3312,7 +3471,11 @@ public class DBCluster implements Serializable, Cloneable {
         if (getCrossAccountClone() != null)
             sb.append("CrossAccountClone: ").append(getCrossAccountClone()).append(",");
         if (getDomainMemberships() != null)
-            sb.append("DomainMemberships: ").append(getDomainMemberships());
+            sb.append("DomainMemberships: ").append(getDomainMemberships()).append(",");
+        if (getGlobalWriteForwardingStatus() != null)
+            sb.append("GlobalWriteForwardingStatus: ").append(getGlobalWriteForwardingStatus()).append(",");
+        if (getGlobalWriteForwardingRequested() != null)
+            sb.append("GlobalWriteForwardingRequested: ").append(getGlobalWriteForwardingRequested());
         sb.append("}");
         return sb.toString();
     }
@@ -3539,6 +3702,15 @@ public class DBCluster implements Serializable, Cloneable {
             return false;
         if (other.getDomainMemberships() != null && other.getDomainMemberships().equals(this.getDomainMemberships()) == false)
             return false;
+        if (other.getGlobalWriteForwardingStatus() == null ^ this.getGlobalWriteForwardingStatus() == null)
+            return false;
+        if (other.getGlobalWriteForwardingStatus() != null && other.getGlobalWriteForwardingStatus().equals(this.getGlobalWriteForwardingStatus()) == false)
+            return false;
+        if (other.getGlobalWriteForwardingRequested() == null ^ this.getGlobalWriteForwardingRequested() == null)
+            return false;
+        if (other.getGlobalWriteForwardingRequested() != null
+                && other.getGlobalWriteForwardingRequested().equals(this.getGlobalWriteForwardingRequested()) == false)
+            return false;
         return true;
     }
 
@@ -3599,6 +3771,8 @@ public class DBCluster implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCopyTagsToSnapshot() == null) ? 0 : getCopyTagsToSnapshot().hashCode());
         hashCode = prime * hashCode + ((getCrossAccountClone() == null) ? 0 : getCrossAccountClone().hashCode());
         hashCode = prime * hashCode + ((getDomainMemberships() == null) ? 0 : getDomainMemberships().hashCode());
+        hashCode = prime * hashCode + ((getGlobalWriteForwardingStatus() == null) ? 0 : getGlobalWriteForwardingStatus().hashCode());
+        hashCode = prime * hashCode + ((getGlobalWriteForwardingRequested() == null) ? 0 : getGlobalWriteForwardingRequested().hashCode());
         return hashCode;
     }
 

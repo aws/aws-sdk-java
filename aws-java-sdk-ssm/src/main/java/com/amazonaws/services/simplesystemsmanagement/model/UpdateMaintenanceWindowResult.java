@@ -71,6 +71,12 @@ public class UpdateMaintenanceWindowResult extends com.amazonaws.AmazonWebServic
     private String scheduleTimezone;
     /**
      * <p>
+     * The number of days to wait to run a maintenance window after the scheduled CRON expression date and time.
+     * </p>
+     */
+    private Integer scheduleOffset;
+    /**
+     * <p>
      * The duration of the maintenance window in hours.
      * </p>
      */
@@ -402,6 +408,46 @@ public class UpdateMaintenanceWindowResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
+     * The number of days to wait to run a maintenance window after the scheduled CRON expression date and time.
+     * </p>
+     * 
+     * @param scheduleOffset
+     *        The number of days to wait to run a maintenance window after the scheduled CRON expression date and time.
+     */
+
+    public void setScheduleOffset(Integer scheduleOffset) {
+        this.scheduleOffset = scheduleOffset;
+    }
+
+    /**
+     * <p>
+     * The number of days to wait to run a maintenance window after the scheduled CRON expression date and time.
+     * </p>
+     * 
+     * @return The number of days to wait to run a maintenance window after the scheduled CRON expression date and time.
+     */
+
+    public Integer getScheduleOffset() {
+        return this.scheduleOffset;
+    }
+
+    /**
+     * <p>
+     * The number of days to wait to run a maintenance window after the scheduled CRON expression date and time.
+     * </p>
+     * 
+     * @param scheduleOffset
+     *        The number of days to wait to run a maintenance window after the scheduled CRON expression date and time.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateMaintenanceWindowResult withScheduleOffset(Integer scheduleOffset) {
+        setScheduleOffset(scheduleOffset);
+        return this;
+    }
+
+    /**
+     * <p>
      * The duration of the maintenance window in hours.
      * </p>
      * 
@@ -620,6 +666,8 @@ public class UpdateMaintenanceWindowResult extends com.amazonaws.AmazonWebServic
             sb.append("Schedule: ").append(getSchedule()).append(",");
         if (getScheduleTimezone() != null)
             sb.append("ScheduleTimezone: ").append(getScheduleTimezone()).append(",");
+        if (getScheduleOffset() != null)
+            sb.append("ScheduleOffset: ").append(getScheduleOffset()).append(",");
         if (getDuration() != null)
             sb.append("Duration: ").append(getDuration()).append(",");
         if (getCutoff() != null)
@@ -670,6 +718,10 @@ public class UpdateMaintenanceWindowResult extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getScheduleTimezone() != null && other.getScheduleTimezone().equals(this.getScheduleTimezone()) == false)
             return false;
+        if (other.getScheduleOffset() == null ^ this.getScheduleOffset() == null)
+            return false;
+        if (other.getScheduleOffset() != null && other.getScheduleOffset().equals(this.getScheduleOffset()) == false)
+            return false;
         if (other.getDuration() == null ^ this.getDuration() == null)
             return false;
         if (other.getDuration() != null && other.getDuration().equals(this.getDuration()) == false)
@@ -701,6 +753,7 @@ public class UpdateMaintenanceWindowResult extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getEndDate() == null) ? 0 : getEndDate().hashCode());
         hashCode = prime * hashCode + ((getSchedule() == null) ? 0 : getSchedule().hashCode());
         hashCode = prime * hashCode + ((getScheduleTimezone() == null) ? 0 : getScheduleTimezone().hashCode());
+        hashCode = prime * hashCode + ((getScheduleOffset() == null) ? 0 : getScheduleOffset().hashCode());
         hashCode = prime * hashCode + ((getDuration() == null) ? 0 : getDuration().hashCode());
         hashCode = prime * hashCode + ((getCutoff() == null) ? 0 : getCutoff().hashCode());
         hashCode = prime * hashCode + ((getAllowUnassociatedTargets() == null) ? 0 : getAllowUnassociatedTargets().hashCode());

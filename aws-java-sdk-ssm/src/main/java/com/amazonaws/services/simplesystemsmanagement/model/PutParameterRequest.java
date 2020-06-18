@@ -106,16 +106,22 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The type of parameter that you want to add to the system.
      * </p>
-     * <p>
-     * Items in a <code>StringList</code> must be separated by a comma (,). You can't use other punctuation or special
-     * character to escape items in the list. If you have a parameter value that requires a comma, then use the
-     * <code>String</code> data type.
-     * </p>
      * <note>
      * <p>
      * <code>SecureString</code> is not currently supported for AWS CloudFormation templates or in the China Regions.
      * </p>
      * </note>
+     * <p>
+     * Items in a <code>StringList</code> must be separated by a comma (,). You can't use other punctuation or special
+     * character to escape items in the list. If you have a parameter value that requires a comma, then use the
+     * <code>String</code> data type.
+     * </p>
+     * <important>
+     * <p>
+     * Specifying a parameter type is not required when updating a parameter. You must specify a parameter type when
+     * creating a parameter.
+     * </p>
+     * </important>
      */
     private String type;
     /**
@@ -810,28 +816,39 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The type of parameter that you want to add to the system.
      * </p>
-     * <p>
-     * Items in a <code>StringList</code> must be separated by a comma (,). You can't use other punctuation or special
-     * character to escape items in the list. If you have a parameter value that requires a comma, then use the
-     * <code>String</code> data type.
-     * </p>
      * <note>
      * <p>
      * <code>SecureString</code> is not currently supported for AWS CloudFormation templates or in the China Regions.
      * </p>
      * </note>
+     * <p>
+     * Items in a <code>StringList</code> must be separated by a comma (,). You can't use other punctuation or special
+     * character to escape items in the list. If you have a parameter value that requires a comma, then use the
+     * <code>String</code> data type.
+     * </p>
+     * <important>
+     * <p>
+     * Specifying a parameter type is not required when updating a parameter. You must specify a parameter type when
+     * creating a parameter.
+     * </p>
+     * </important>
      * 
      * @param type
-     *        The type of parameter that you want to add to the system.</p>
+     *        The type of parameter that you want to add to the system.</p> <note>
+     *        <p>
+     *        <code>SecureString</code> is not currently supported for AWS CloudFormation templates or in the China
+     *        Regions.
+     *        </p>
+     *        </note>
      *        <p>
      *        Items in a <code>StringList</code> must be separated by a comma (,). You can't use other punctuation or
      *        special character to escape items in the list. If you have a parameter value that requires a comma, then
      *        use the <code>String</code> data type.
      *        </p>
-     *        <note>
+     *        <important>
      *        <p>
-     *        <code>SecureString</code> is not currently supported for AWS CloudFormation templates or in the China
-     *        Regions.
+     *        Specifying a parameter type is not required when updating a parameter. You must specify a parameter type
+     *        when creating a parameter.
      *        </p>
      * @see ParameterType
      */
@@ -844,27 +861,38 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The type of parameter that you want to add to the system.
      * </p>
-     * <p>
-     * Items in a <code>StringList</code> must be separated by a comma (,). You can't use other punctuation or special
-     * character to escape items in the list. If you have a parameter value that requires a comma, then use the
-     * <code>String</code> data type.
-     * </p>
      * <note>
      * <p>
      * <code>SecureString</code> is not currently supported for AWS CloudFormation templates or in the China Regions.
      * </p>
      * </note>
+     * <p>
+     * Items in a <code>StringList</code> must be separated by a comma (,). You can't use other punctuation or special
+     * character to escape items in the list. If you have a parameter value that requires a comma, then use the
+     * <code>String</code> data type.
+     * </p>
+     * <important>
+     * <p>
+     * Specifying a parameter type is not required when updating a parameter. You must specify a parameter type when
+     * creating a parameter.
+     * </p>
+     * </important>
      * 
-     * @return The type of parameter that you want to add to the system.</p>
+     * @return The type of parameter that you want to add to the system.</p> <note>
+     *         <p>
+     *         <code>SecureString</code> is not currently supported for AWS CloudFormation templates or in the China
+     *         Regions.
+     *         </p>
+     *         </note>
      *         <p>
      *         Items in a <code>StringList</code> must be separated by a comma (,). You can't use other punctuation or
      *         special character to escape items in the list. If you have a parameter value that requires a comma, then
      *         use the <code>String</code> data type.
      *         </p>
-     *         <note>
+     *         <important>
      *         <p>
-     *         <code>SecureString</code> is not currently supported for AWS CloudFormation templates or in the China
-     *         Regions.
+     *         Specifying a parameter type is not required when updating a parameter. You must specify a parameter type
+     *         when creating a parameter.
      *         </p>
      * @see ParameterType
      */
@@ -877,28 +905,39 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The type of parameter that you want to add to the system.
      * </p>
-     * <p>
-     * Items in a <code>StringList</code> must be separated by a comma (,). You can't use other punctuation or special
-     * character to escape items in the list. If you have a parameter value that requires a comma, then use the
-     * <code>String</code> data type.
-     * </p>
      * <note>
      * <p>
      * <code>SecureString</code> is not currently supported for AWS CloudFormation templates or in the China Regions.
      * </p>
      * </note>
+     * <p>
+     * Items in a <code>StringList</code> must be separated by a comma (,). You can't use other punctuation or special
+     * character to escape items in the list. If you have a parameter value that requires a comma, then use the
+     * <code>String</code> data type.
+     * </p>
+     * <important>
+     * <p>
+     * Specifying a parameter type is not required when updating a parameter. You must specify a parameter type when
+     * creating a parameter.
+     * </p>
+     * </important>
      * 
      * @param type
-     *        The type of parameter that you want to add to the system.</p>
+     *        The type of parameter that you want to add to the system.</p> <note>
+     *        <p>
+     *        <code>SecureString</code> is not currently supported for AWS CloudFormation templates or in the China
+     *        Regions.
+     *        </p>
+     *        </note>
      *        <p>
      *        Items in a <code>StringList</code> must be separated by a comma (,). You can't use other punctuation or
      *        special character to escape items in the list. If you have a parameter value that requires a comma, then
      *        use the <code>String</code> data type.
      *        </p>
-     *        <note>
+     *        <important>
      *        <p>
-     *        <code>SecureString</code> is not currently supported for AWS CloudFormation templates or in the China
-     *        Regions.
+     *        Specifying a parameter type is not required when updating a parameter. You must specify a parameter type
+     *        when creating a parameter.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ParameterType
@@ -913,28 +952,39 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The type of parameter that you want to add to the system.
      * </p>
-     * <p>
-     * Items in a <code>StringList</code> must be separated by a comma (,). You can't use other punctuation or special
-     * character to escape items in the list. If you have a parameter value that requires a comma, then use the
-     * <code>String</code> data type.
-     * </p>
      * <note>
      * <p>
      * <code>SecureString</code> is not currently supported for AWS CloudFormation templates or in the China Regions.
      * </p>
      * </note>
+     * <p>
+     * Items in a <code>StringList</code> must be separated by a comma (,). You can't use other punctuation or special
+     * character to escape items in the list. If you have a parameter value that requires a comma, then use the
+     * <code>String</code> data type.
+     * </p>
+     * <important>
+     * <p>
+     * Specifying a parameter type is not required when updating a parameter. You must specify a parameter type when
+     * creating a parameter.
+     * </p>
+     * </important>
      * 
      * @param type
-     *        The type of parameter that you want to add to the system.</p>
+     *        The type of parameter that you want to add to the system.</p> <note>
+     *        <p>
+     *        <code>SecureString</code> is not currently supported for AWS CloudFormation templates or in the China
+     *        Regions.
+     *        </p>
+     *        </note>
      *        <p>
      *        Items in a <code>StringList</code> must be separated by a comma (,). You can't use other punctuation or
      *        special character to escape items in the list. If you have a parameter value that requires a comma, then
      *        use the <code>String</code> data type.
      *        </p>
-     *        <note>
+     *        <important>
      *        <p>
-     *        <code>SecureString</code> is not currently supported for AWS CloudFormation templates or in the China
-     *        Regions.
+     *        Specifying a parameter type is not required when updating a parameter. You must specify a parameter type
+     *        when creating a parameter.
      *        </p>
      * @see ParameterType
      */
@@ -947,28 +997,39 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The type of parameter that you want to add to the system.
      * </p>
-     * <p>
-     * Items in a <code>StringList</code> must be separated by a comma (,). You can't use other punctuation or special
-     * character to escape items in the list. If you have a parameter value that requires a comma, then use the
-     * <code>String</code> data type.
-     * </p>
      * <note>
      * <p>
      * <code>SecureString</code> is not currently supported for AWS CloudFormation templates or in the China Regions.
      * </p>
      * </note>
+     * <p>
+     * Items in a <code>StringList</code> must be separated by a comma (,). You can't use other punctuation or special
+     * character to escape items in the list. If you have a parameter value that requires a comma, then use the
+     * <code>String</code> data type.
+     * </p>
+     * <important>
+     * <p>
+     * Specifying a parameter type is not required when updating a parameter. You must specify a parameter type when
+     * creating a parameter.
+     * </p>
+     * </important>
      * 
      * @param type
-     *        The type of parameter that you want to add to the system.</p>
+     *        The type of parameter that you want to add to the system.</p> <note>
+     *        <p>
+     *        <code>SecureString</code> is not currently supported for AWS CloudFormation templates or in the China
+     *        Regions.
+     *        </p>
+     *        </note>
      *        <p>
      *        Items in a <code>StringList</code> must be separated by a comma (,). You can't use other punctuation or
      *        special character to escape items in the list. If you have a parameter value that requires a comma, then
      *        use the <code>String</code> data type.
      *        </p>
-     *        <note>
+     *        <important>
      *        <p>
-     *        <code>SecureString</code> is not currently supported for AWS CloudFormation templates or in the China
-     *        Regions.
+     *        Specifying a parameter type is not required when updating a parameter. You must specify a parameter type
+     *        when creating a parameter.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ParameterType

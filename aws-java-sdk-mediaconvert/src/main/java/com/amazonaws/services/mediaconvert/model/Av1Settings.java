@@ -39,7 +39,10 @@ public class Av1Settings implements Serializable, Cloneable, StructuredPojo {
      * settings FramerateNumerator and FramerateDenominator.
      */
     private String framerateControl;
-    /** When set to INTERPOLATE, produces smoother motion during frame rate conversion. */
+    /**
+     * Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use duplicate drop
+     * conversion.
+     */
     private String framerateConversionAlgorithm;
     /**
      * When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For
@@ -251,10 +254,12 @@ public class Av1Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use duplicate drop
+     * conversion.
      * 
      * @param framerateConversionAlgorithm
-     *        When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     *        Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use
+     *        duplicate drop conversion.
      * @see Av1FramerateConversionAlgorithm
      */
 
@@ -263,9 +268,11 @@ public class Av1Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use duplicate drop
+     * conversion.
      * 
-     * @return When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * @return Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use
+     *         duplicate drop conversion.
      * @see Av1FramerateConversionAlgorithm
      */
 
@@ -274,10 +281,12 @@ public class Av1Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use duplicate drop
+     * conversion.
      * 
      * @param framerateConversionAlgorithm
-     *        When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     *        Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use
+     *        duplicate drop conversion.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Av1FramerateConversionAlgorithm
      */
@@ -288,10 +297,12 @@ public class Av1Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use duplicate drop
+     * conversion.
      * 
      * @param framerateConversionAlgorithm
-     *        When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     *        Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use
+     *        duplicate drop conversion.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Av1FramerateConversionAlgorithm
      */

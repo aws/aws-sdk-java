@@ -1329,12 +1329,13 @@ public interface AmazonRoute53 {
 
     /**
      * <p>
-     * Disassociates a VPC from a Amazon Route 53 private hosted zone. Note the following:
+     * Disassociates an Amazon Virtual Private Cloud (Amazon VPC) from an Amazon Route 53 private hosted zone. Note the
+     * following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * You can't disassociate the last VPC from a private hosted zone.
+     * You can't disassociate the last Amazon VPC from a private hosted zone.
      * </p>
      * </li>
      * <li>
@@ -1345,7 +1346,21 @@ public interface AmazonRoute53 {
      * <li>
      * <p>
      * You can submit a <code>DisassociateVPCFromHostedZone</code> request using either the account that created the
-     * hosted zone or the account that created the VPC.
+     * hosted zone or the account that created the Amazon VPC.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Some services, such as AWS Cloud Map and Amazon Elastic File System (Amazon EFS) automatically create hosted
+     * zones and associate VPCs with the hosted zones. A service can create a hosted zone using your account or using
+     * its own account. You can disassociate a VPC from a hosted zone only if the service created the hosted zone using
+     * your account.
+     * </p>
+     * <p>
+     * When you run <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListHostedZonesByVPC.html">
+     * DisassociateVPCFromHostedZone</a>, if the hosted zone has a value for <code>OwningAccount</code>, you can use
+     * <code>DisassociateVPCFromHostedZone</code>. If the hosted zone has a value for <code>OwningService</code>, you
+     * can't use <code>DisassociateVPCFromHostedZone</code>.
      * </p>
      * </li>
      * </ul>
@@ -1974,6 +1989,42 @@ public interface AmazonRoute53 {
      * @see #listHostedZonesByName(ListHostedZonesByNameRequest)
      */
     ListHostedZonesByNameResult listHostedZonesByName();
+
+    /**
+     * <p>
+     * Lists all the private hosted zones that a specified VPC is associated with, regardless of which AWS account or
+     * AWS service owns the hosted zones. The <code>HostedZoneOwner</code> structure in the response contains one of the
+     * following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * An <code>OwningAccount</code> element, which contains the account number of either the current AWS account or
+     * another AWS account. Some services, such as AWS Cloud Map, create hosted zones using the current account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An <code>OwningService</code> element, which identifies the AWS service that created and owns the hosted zone.
+     * For example, if a hosted zone was created by Amazon Elastic File System (Amazon EFS), the value of
+     * <code>Owner</code> is <code>efs.amazonaws.com</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param listHostedZonesByVPCRequest
+     *        Lists all the private hosted zones that a specified VPC is associated with, regardless of which AWS
+     *        account created the hosted zones.
+     * @return Result of the ListHostedZonesByVPC operation returned by the service.
+     * @throws InvalidInputException
+     *         The input is not valid.
+     * @throws InvalidPaginationTokenException
+     *         The value that you specified to get the second or subsequent page of results is invalid.
+     * @sample AmazonRoute53.ListHostedZonesByVPC
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHostedZonesByVPC" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListHostedZonesByVPCResult listHostedZonesByVPC(ListHostedZonesByVPCRequest listHostedZonesByVPCRequest);
 
     /**
      * <p>

@@ -235,6 +235,10 @@ public class CreateDBClusterRequestMarshaller implements Marshaller<Request<Crea
             request.addParameter("DomainIAMRoleName", StringUtils.fromString(createDBClusterRequest.getDomainIAMRoleName()));
         }
 
+        if (createDBClusterRequest.getEnableGlobalWriteForwarding() != null) {
+            request.addParameter("EnableGlobalWriteForwarding", StringUtils.fromBoolean(createDBClusterRequest.getEnableGlobalWriteForwarding()));
+        }
+
         if (createDBClusterRequest.getSourceRegion() != null) {
             request.addParameter("SourceRegion", StringUtils.fromString(createDBClusterRequest.getSourceRegion()));
         }

@@ -76,6 +76,10 @@ public class UpdateMaintenanceWindowResultJsonUnmarshaller implements Unmarshall
                     context.nextToken();
                     updateMaintenanceWindowResult.setScheduleTimezone(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ScheduleOffset", targetDepth)) {
+                    context.nextToken();
+                    updateMaintenanceWindowResult.setScheduleOffset(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("Duration", targetDepth)) {
                     context.nextToken();
                     updateMaintenanceWindowResult.setDuration(context.getUnmarshaller(Integer.class).unmarshall(context));

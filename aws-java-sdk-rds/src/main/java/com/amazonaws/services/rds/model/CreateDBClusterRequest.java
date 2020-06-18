@@ -419,6 +419,11 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * The target backtrack window, in seconds. To disable backtracking, set this value to 0.
      * </p>
+     * <note>
+     * <p>
+     * Currently, Backtrack is only supported for Aurora MySQL DB clusters.
+     * </p>
+     * </note>
      * <p>
      * Default: 0
      * </p>
@@ -551,6 +556,15 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private String domainIAMRoleName;
+    /**
+     * <p>
+     * A value that indicates whether to enable write operations to be forwarded from this cluster to the primary
+     * cluster in an Aurora global database. The resulting changes are replicated back to this cluster. This parameter
+     * only applies to DB clusters that are secondary clusters in an Aurora global database. By default, Aurora
+     * disallows write operations for secondary clusters.
+     * </p>
+     */
+    private Boolean enableGlobalWriteForwarding;
     /** The region where the source instance is located. */
     private String sourceRegion;
 
@@ -3084,6 +3098,11 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * The target backtrack window, in seconds. To disable backtracking, set this value to 0.
      * </p>
+     * <note>
+     * <p>
+     * Currently, Backtrack is only supported for Aurora MySQL DB clusters.
+     * </p>
+     * </note>
      * <p>
      * Default: 0
      * </p>
@@ -3099,7 +3118,11 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </ul>
      * 
      * @param backtrackWindow
-     *        The target backtrack window, in seconds. To disable backtracking, set this value to 0. </p>
+     *        The target backtrack window, in seconds. To disable backtracking, set this value to 0. </p> <note>
+     *        <p>
+     *        Currently, Backtrack is only supported for Aurora MySQL DB clusters.
+     *        </p>
+     *        </note>
      *        <p>
      *        Default: 0
      *        </p>
@@ -3122,6 +3145,11 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * The target backtrack window, in seconds. To disable backtracking, set this value to 0.
      * </p>
+     * <note>
+     * <p>
+     * Currently, Backtrack is only supported for Aurora MySQL DB clusters.
+     * </p>
+     * </note>
      * <p>
      * Default: 0
      * </p>
@@ -3136,7 +3164,11 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * </ul>
      * 
-     * @return The target backtrack window, in seconds. To disable backtracking, set this value to 0. </p>
+     * @return The target backtrack window, in seconds. To disable backtracking, set this value to 0. </p> <note>
+     *         <p>
+     *         Currently, Backtrack is only supported for Aurora MySQL DB clusters.
+     *         </p>
+     *         </note>
      *         <p>
      *         Default: 0
      *         </p>
@@ -3159,6 +3191,11 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * The target backtrack window, in seconds. To disable backtracking, set this value to 0.
      * </p>
+     * <note>
+     * <p>
+     * Currently, Backtrack is only supported for Aurora MySQL DB clusters.
+     * </p>
+     * </note>
      * <p>
      * Default: 0
      * </p>
@@ -3174,7 +3211,11 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </ul>
      * 
      * @param backtrackWindow
-     *        The target backtrack window, in seconds. To disable backtracking, set this value to 0. </p>
+     *        The target backtrack window, in seconds. To disable backtracking, set this value to 0. </p> <note>
+     *        <p>
+     *        Currently, Backtrack is only supported for Aurora MySQL DB clusters.
+     *        </p>
+     *        </note>
      *        <p>
      *        Default: 0
      *        </p>
@@ -4027,6 +4068,82 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * A value that indicates whether to enable write operations to be forwarded from this cluster to the primary
+     * cluster in an Aurora global database. The resulting changes are replicated back to this cluster. This parameter
+     * only applies to DB clusters that are secondary clusters in an Aurora global database. By default, Aurora
+     * disallows write operations for secondary clusters.
+     * </p>
+     * 
+     * @param enableGlobalWriteForwarding
+     *        A value that indicates whether to enable write operations to be forwarded from this cluster to the primary
+     *        cluster in an Aurora global database. The resulting changes are replicated back to this cluster. This
+     *        parameter only applies to DB clusters that are secondary clusters in an Aurora global database. By
+     *        default, Aurora disallows write operations for secondary clusters.
+     */
+
+    public void setEnableGlobalWriteForwarding(Boolean enableGlobalWriteForwarding) {
+        this.enableGlobalWriteForwarding = enableGlobalWriteForwarding;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether to enable write operations to be forwarded from this cluster to the primary
+     * cluster in an Aurora global database. The resulting changes are replicated back to this cluster. This parameter
+     * only applies to DB clusters that are secondary clusters in an Aurora global database. By default, Aurora
+     * disallows write operations for secondary clusters.
+     * </p>
+     * 
+     * @return A value that indicates whether to enable write operations to be forwarded from this cluster to the
+     *         primary cluster in an Aurora global database. The resulting changes are replicated back to this cluster.
+     *         This parameter only applies to DB clusters that are secondary clusters in an Aurora global database. By
+     *         default, Aurora disallows write operations for secondary clusters.
+     */
+
+    public Boolean getEnableGlobalWriteForwarding() {
+        return this.enableGlobalWriteForwarding;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether to enable write operations to be forwarded from this cluster to the primary
+     * cluster in an Aurora global database. The resulting changes are replicated back to this cluster. This parameter
+     * only applies to DB clusters that are secondary clusters in an Aurora global database. By default, Aurora
+     * disallows write operations for secondary clusters.
+     * </p>
+     * 
+     * @param enableGlobalWriteForwarding
+     *        A value that indicates whether to enable write operations to be forwarded from this cluster to the primary
+     *        cluster in an Aurora global database. The resulting changes are replicated back to this cluster. This
+     *        parameter only applies to DB clusters that are secondary clusters in an Aurora global database. By
+     *        default, Aurora disallows write operations for secondary clusters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDBClusterRequest withEnableGlobalWriteForwarding(Boolean enableGlobalWriteForwarding) {
+        setEnableGlobalWriteForwarding(enableGlobalWriteForwarding);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether to enable write operations to be forwarded from this cluster to the primary
+     * cluster in an Aurora global database. The resulting changes are replicated back to this cluster. This parameter
+     * only applies to DB clusters that are secondary clusters in an Aurora global database. By default, Aurora
+     * disallows write operations for secondary clusters.
+     * </p>
+     * 
+     * @return A value that indicates whether to enable write operations to be forwarded from this cluster to the
+     *         primary cluster in an Aurora global database. The resulting changes are replicated back to this cluster.
+     *         This parameter only applies to DB clusters that are secondary clusters in an Aurora global database. By
+     *         default, Aurora disallows write operations for secondary clusters.
+     */
+
+    public Boolean isEnableGlobalWriteForwarding() {
+        return this.enableGlobalWriteForwarding;
+    }
+
+    /**
      * The region where the source instance is located.
      * 
      * @param sourceRegion
@@ -4136,6 +4253,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
             sb.append("Domain: ").append(getDomain()).append(",");
         if (getDomainIAMRoleName() != null)
             sb.append("DomainIAMRoleName: ").append(getDomainIAMRoleName()).append(",");
+        if (getEnableGlobalWriteForwarding() != null)
+            sb.append("EnableGlobalWriteForwarding: ").append(getEnableGlobalWriteForwarding()).append(",");
         if (getSourceRegion() != null)
             sb.append("SourceRegion: ").append(getSourceRegion());
         sb.append("}");
@@ -4281,6 +4400,10 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getDomainIAMRoleName() != null && other.getDomainIAMRoleName().equals(this.getDomainIAMRoleName()) == false)
             return false;
+        if (other.getEnableGlobalWriteForwarding() == null ^ this.getEnableGlobalWriteForwarding() == null)
+            return false;
+        if (other.getEnableGlobalWriteForwarding() != null && other.getEnableGlobalWriteForwarding().equals(this.getEnableGlobalWriteForwarding()) == false)
+            return false;
         if (other.getSourceRegion() == null ^ this.getSourceRegion() == null)
             return false;
         if (other.getSourceRegion() != null && other.getSourceRegion().equals(this.getSourceRegion()) == false)
@@ -4325,6 +4448,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getCopyTagsToSnapshot() == null) ? 0 : getCopyTagsToSnapshot().hashCode());
         hashCode = prime * hashCode + ((getDomain() == null) ? 0 : getDomain().hashCode());
         hashCode = prime * hashCode + ((getDomainIAMRoleName() == null) ? 0 : getDomainIAMRoleName().hashCode());
+        hashCode = prime * hashCode + ((getEnableGlobalWriteForwarding() == null) ? 0 : getEnableGlobalWriteForwarding().hashCode());
         hashCode = prime * hashCode + ((getSourceRegion() == null) ? 0 : getSourceRegion().hashCode());
         return hashCode;
     }

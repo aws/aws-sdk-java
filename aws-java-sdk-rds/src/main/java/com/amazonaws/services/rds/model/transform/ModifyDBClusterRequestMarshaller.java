@@ -197,6 +197,10 @@ public class ModifyDBClusterRequestMarshaller implements Marshaller<Request<Modi
             request.addParameter("CopyTagsToSnapshot", StringUtils.fromBoolean(modifyDBClusterRequest.getCopyTagsToSnapshot()));
         }
 
+        if (modifyDBClusterRequest.getEnableGlobalWriteForwarding() != null) {
+            request.addParameter("EnableGlobalWriteForwarding", StringUtils.fromBoolean(modifyDBClusterRequest.getEnableGlobalWriteForwarding()));
+        }
+
         return request;
     }
 

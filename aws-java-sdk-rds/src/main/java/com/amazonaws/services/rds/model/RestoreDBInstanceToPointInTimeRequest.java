@@ -170,10 +170,20 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
     private Boolean multiAZ;
     /**
      * <p>
-     * A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
-     * accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a public IP
-     * address. When the DB instance isn't publicly accessible, it is an internal instance with a DNS name that resolves
-     * to a private IP address. For more information, see <a>CreateDBInstance</a>.
+     * A value that indicates whether the DB instance is publicly accessible.
+     * </p>
+     * <p>
+     * When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from within the
+     * DB instance's VPC, and to the public IP address from outside of the DB instance's VPC. Access to the DB instance
+     * is ultimately controlled by the security group it uses, and that public access is not permitted if the security
+     * group assigned to the DB instance doesn't permit it.
+     * </p>
+     * <p>
+     * When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a
+     * private IP address.
+     * </p>
+     * <p>
+     * For more information, see <a>CreateDBInstance</a>.
      * </p>
      */
     private Boolean publiclyAccessible;
@@ -1413,17 +1423,36 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
-     * accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a public IP
-     * address. When the DB instance isn't publicly accessible, it is an internal instance with a DNS name that resolves
-     * to a private IP address. For more information, see <a>CreateDBInstance</a>.
+     * A value that indicates whether the DB instance is publicly accessible.
+     * </p>
+     * <p>
+     * When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from within the
+     * DB instance's VPC, and to the public IP address from outside of the DB instance's VPC. Access to the DB instance
+     * is ultimately controlled by the security group it uses, and that public access is not permitted if the security
+     * group assigned to the DB instance doesn't permit it.
+     * </p>
+     * <p>
+     * When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a
+     * private IP address.
+     * </p>
+     * <p>
+     * For more information, see <a>CreateDBInstance</a>.
      * </p>
      * 
      * @param publiclyAccessible
-     *        A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
-     *        accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a
-     *        public IP address. When the DB instance isn't publicly accessible, it is an internal instance with a DNS
-     *        name that resolves to a private IP address. For more information, see <a>CreateDBInstance</a>.
+     *        A value that indicates whether the DB instance is publicly accessible.</p>
+     *        <p>
+     *        When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from
+     *        within the DB instance's VPC, and to the public IP address from outside of the DB instance's VPC. Access
+     *        to the DB instance is ultimately controlled by the security group it uses, and that public access is not
+     *        permitted if the security group assigned to the DB instance doesn't permit it.
+     *        </p>
+     *        <p>
+     *        When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that
+     *        resolves to a private IP address.
+     *        </p>
+     *        <p>
+     *        For more information, see <a>CreateDBInstance</a>.
      */
 
     public void setPubliclyAccessible(Boolean publiclyAccessible) {
@@ -1432,16 +1461,35 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
-     * accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a public IP
-     * address. When the DB instance isn't publicly accessible, it is an internal instance with a DNS name that resolves
-     * to a private IP address. For more information, see <a>CreateDBInstance</a>.
+     * A value that indicates whether the DB instance is publicly accessible.
+     * </p>
+     * <p>
+     * When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from within the
+     * DB instance's VPC, and to the public IP address from outside of the DB instance's VPC. Access to the DB instance
+     * is ultimately controlled by the security group it uses, and that public access is not permitted if the security
+     * group assigned to the DB instance doesn't permit it.
+     * </p>
+     * <p>
+     * When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a
+     * private IP address.
+     * </p>
+     * <p>
+     * For more information, see <a>CreateDBInstance</a>.
      * </p>
      * 
-     * @return A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
-     *         accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a
-     *         public IP address. When the DB instance isn't publicly accessible, it is an internal instance with a DNS
-     *         name that resolves to a private IP address. For more information, see <a>CreateDBInstance</a>.
+     * @return A value that indicates whether the DB instance is publicly accessible.</p>
+     *         <p>
+     *         When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from
+     *         within the DB instance's VPC, and to the public IP address from outside of the DB instance's VPC. Access
+     *         to the DB instance is ultimately controlled by the security group it uses, and that public access is not
+     *         permitted if the security group assigned to the DB instance doesn't permit it.
+     *         </p>
+     *         <p>
+     *         When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that
+     *         resolves to a private IP address.
+     *         </p>
+     *         <p>
+     *         For more information, see <a>CreateDBInstance</a>.
      */
 
     public Boolean getPubliclyAccessible() {
@@ -1450,17 +1498,36 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
-     * accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a public IP
-     * address. When the DB instance isn't publicly accessible, it is an internal instance with a DNS name that resolves
-     * to a private IP address. For more information, see <a>CreateDBInstance</a>.
+     * A value that indicates whether the DB instance is publicly accessible.
+     * </p>
+     * <p>
+     * When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from within the
+     * DB instance's VPC, and to the public IP address from outside of the DB instance's VPC. Access to the DB instance
+     * is ultimately controlled by the security group it uses, and that public access is not permitted if the security
+     * group assigned to the DB instance doesn't permit it.
+     * </p>
+     * <p>
+     * When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a
+     * private IP address.
+     * </p>
+     * <p>
+     * For more information, see <a>CreateDBInstance</a>.
      * </p>
      * 
      * @param publiclyAccessible
-     *        A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
-     *        accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a
-     *        public IP address. When the DB instance isn't publicly accessible, it is an internal instance with a DNS
-     *        name that resolves to a private IP address. For more information, see <a>CreateDBInstance</a>.
+     *        A value that indicates whether the DB instance is publicly accessible.</p>
+     *        <p>
+     *        When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from
+     *        within the DB instance's VPC, and to the public IP address from outside of the DB instance's VPC. Access
+     *        to the DB instance is ultimately controlled by the security group it uses, and that public access is not
+     *        permitted if the security group assigned to the DB instance doesn't permit it.
+     *        </p>
+     *        <p>
+     *        When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that
+     *        resolves to a private IP address.
+     *        </p>
+     *        <p>
+     *        For more information, see <a>CreateDBInstance</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1471,16 +1538,35 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
-     * accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a public IP
-     * address. When the DB instance isn't publicly accessible, it is an internal instance with a DNS name that resolves
-     * to a private IP address. For more information, see <a>CreateDBInstance</a>.
+     * A value that indicates whether the DB instance is publicly accessible.
+     * </p>
+     * <p>
+     * When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from within the
+     * DB instance's VPC, and to the public IP address from outside of the DB instance's VPC. Access to the DB instance
+     * is ultimately controlled by the security group it uses, and that public access is not permitted if the security
+     * group assigned to the DB instance doesn't permit it.
+     * </p>
+     * <p>
+     * When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a
+     * private IP address.
+     * </p>
+     * <p>
+     * For more information, see <a>CreateDBInstance</a>.
      * </p>
      * 
-     * @return A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
-     *         accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a
-     *         public IP address. When the DB instance isn't publicly accessible, it is an internal instance with a DNS
-     *         name that resolves to a private IP address. For more information, see <a>CreateDBInstance</a>.
+     * @return A value that indicates whether the DB instance is publicly accessible.</p>
+     *         <p>
+     *         When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from
+     *         within the DB instance's VPC, and to the public IP address from outside of the DB instance's VPC. Access
+     *         to the DB instance is ultimately controlled by the security group it uses, and that public access is not
+     *         permitted if the security group assigned to the DB instance doesn't permit it.
+     *         </p>
+     *         <p>
+     *         When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that
+     *         resolves to a private IP address.
+     *         </p>
+     *         <p>
+     *         For more information, see <a>CreateDBInstance</a>.
      */
 
     public Boolean isPubliclyAccessible() {

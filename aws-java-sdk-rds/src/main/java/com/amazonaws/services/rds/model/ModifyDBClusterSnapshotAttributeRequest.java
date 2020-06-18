@@ -40,6 +40,12 @@ public class ModifyDBClusterSnapshotAttributeRequest extends com.amazonaws.Amazo
      * To manage authorization for other AWS accounts to copy or restore a manual DB cluster snapshot, set this value to
      * <code>restore</code>.
      * </p>
+     * <note>
+     * <p>
+     * To view the list of attributes available to modify, use the <a>DescribeDBClusterSnapshotAttributes</a> API
+     * action.
+     * </p>
+     * </note>
      */
     private String attributeName;
     /**
@@ -115,12 +121,24 @@ public class ModifyDBClusterSnapshotAttributeRequest extends com.amazonaws.Amazo
      * To manage authorization for other AWS accounts to copy or restore a manual DB cluster snapshot, set this value to
      * <code>restore</code>.
      * </p>
+     * <note>
+     * <p>
+     * To view the list of attributes available to modify, use the <a>DescribeDBClusterSnapshotAttributes</a> API
+     * action.
+     * </p>
+     * </note>
      * 
      * @param attributeName
      *        The name of the DB cluster snapshot attribute to modify.</p>
      *        <p>
      *        To manage authorization for other AWS accounts to copy or restore a manual DB cluster snapshot, set this
      *        value to <code>restore</code>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        To view the list of attributes available to modify, use the <a>DescribeDBClusterSnapshotAttributes</a> API
+     *        action.
+     *        </p>
      */
 
     public void setAttributeName(String attributeName) {
@@ -135,11 +153,23 @@ public class ModifyDBClusterSnapshotAttributeRequest extends com.amazonaws.Amazo
      * To manage authorization for other AWS accounts to copy or restore a manual DB cluster snapshot, set this value to
      * <code>restore</code>.
      * </p>
+     * <note>
+     * <p>
+     * To view the list of attributes available to modify, use the <a>DescribeDBClusterSnapshotAttributes</a> API
+     * action.
+     * </p>
+     * </note>
      * 
      * @return The name of the DB cluster snapshot attribute to modify.</p>
      *         <p>
      *         To manage authorization for other AWS accounts to copy or restore a manual DB cluster snapshot, set this
      *         value to <code>restore</code>.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         To view the list of attributes available to modify, use the <a>DescribeDBClusterSnapshotAttributes</a>
+     *         API action.
+     *         </p>
      */
 
     public String getAttributeName() {
@@ -154,12 +184,24 @@ public class ModifyDBClusterSnapshotAttributeRequest extends com.amazonaws.Amazo
      * To manage authorization for other AWS accounts to copy or restore a manual DB cluster snapshot, set this value to
      * <code>restore</code>.
      * </p>
+     * <note>
+     * <p>
+     * To view the list of attributes available to modify, use the <a>DescribeDBClusterSnapshotAttributes</a> API
+     * action.
+     * </p>
+     * </note>
      * 
      * @param attributeName
      *        The name of the DB cluster snapshot attribute to modify.</p>
      *        <p>
      *        To manage authorization for other AWS accounts to copy or restore a manual DB cluster snapshot, set this
      *        value to <code>restore</code>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        To view the list of attributes available to modify, use the <a>DescribeDBClusterSnapshotAttributes</a> API
+     *        action.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

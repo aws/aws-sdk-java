@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * AWS Marketplace does not support metering usage from the underlying platform. Currently, only Amazon ECS is
- * supported.
+ * AWS Marketplace does not support metering usage from the underlying platform. Currently, Amazon ECS, Amazon EKS, and
+ * AWS Fargate are supported.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

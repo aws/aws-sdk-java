@@ -18,7 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p/>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorCheckRefreshStatuses"
  *      target="_top">AWS API Documentation</a>
@@ -28,20 +27,33 @@ public class DescribeTrustedAdvisorCheckRefreshStatusesRequest extends com.amazo
 
     /**
      * <p>
-     * The IDs of the Trusted Advisor checks to get the status of. <b>Note:</b> Specifying the check ID of a check that
-     * is automatically refreshed causes an <code>InvalidParameterValue</code> error.
+     * The IDs of the Trusted Advisor checks to get the status of.
      * </p>
+     * <note>
+     * <p>
+     * If you specify the check ID of a check that is automatically refreshed, you might see an
+     * <code>InvalidParameterValue</code> error.
+     * </p>
+     * </note>
      */
     private com.amazonaws.internal.SdkInternalList<String> checkIds;
 
     /**
      * <p>
-     * The IDs of the Trusted Advisor checks to get the status of. <b>Note:</b> Specifying the check ID of a check that
-     * is automatically refreshed causes an <code>InvalidParameterValue</code> error.
+     * The IDs of the Trusted Advisor checks to get the status of.
      * </p>
+     * <note>
+     * <p>
+     * If you specify the check ID of a check that is automatically refreshed, you might see an
+     * <code>InvalidParameterValue</code> error.
+     * </p>
+     * </note>
      * 
-     * @return The IDs of the Trusted Advisor checks to get the status of. <b>Note:</b> Specifying the check ID of a
-     *         check that is automatically refreshed causes an <code>InvalidParameterValue</code> error.
+     * @return The IDs of the Trusted Advisor checks to get the status of. </p> <note>
+     *         <p>
+     *         If you specify the check ID of a check that is automatically refreshed, you might see an
+     *         <code>InvalidParameterValue</code> error.
+     *         </p>
      */
 
     public java.util.List<String> getCheckIds() {
@@ -53,13 +65,21 @@ public class DescribeTrustedAdvisorCheckRefreshStatusesRequest extends com.amazo
 
     /**
      * <p>
-     * The IDs of the Trusted Advisor checks to get the status of. <b>Note:</b> Specifying the check ID of a check that
-     * is automatically refreshed causes an <code>InvalidParameterValue</code> error.
+     * The IDs of the Trusted Advisor checks to get the status of.
      * </p>
+     * <note>
+     * <p>
+     * If you specify the check ID of a check that is automatically refreshed, you might see an
+     * <code>InvalidParameterValue</code> error.
+     * </p>
+     * </note>
      * 
      * @param checkIds
-     *        The IDs of the Trusted Advisor checks to get the status of. <b>Note:</b> Specifying the check ID of a
-     *        check that is automatically refreshed causes an <code>InvalidParameterValue</code> error.
+     *        The IDs of the Trusted Advisor checks to get the status of. </p> <note>
+     *        <p>
+     *        If you specify the check ID of a check that is automatically refreshed, you might see an
+     *        <code>InvalidParameterValue</code> error.
+     *        </p>
      */
 
     public void setCheckIds(java.util.Collection<String> checkIds) {
@@ -73,9 +93,14 @@ public class DescribeTrustedAdvisorCheckRefreshStatusesRequest extends com.amazo
 
     /**
      * <p>
-     * The IDs of the Trusted Advisor checks to get the status of. <b>Note:</b> Specifying the check ID of a check that
-     * is automatically refreshed causes an <code>InvalidParameterValue</code> error.
+     * The IDs of the Trusted Advisor checks to get the status of.
      * </p>
+     * <note>
+     * <p>
+     * If you specify the check ID of a check that is automatically refreshed, you might see an
+     * <code>InvalidParameterValue</code> error.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setCheckIds(java.util.Collection)} or {@link #withCheckIds(java.util.Collection)} if you want to override
@@ -83,8 +108,11 @@ public class DescribeTrustedAdvisorCheckRefreshStatusesRequest extends com.amazo
      * </p>
      * 
      * @param checkIds
-     *        The IDs of the Trusted Advisor checks to get the status of. <b>Note:</b> Specifying the check ID of a
-     *        check that is automatically refreshed causes an <code>InvalidParameterValue</code> error.
+     *        The IDs of the Trusted Advisor checks to get the status of. </p> <note>
+     *        <p>
+     *        If you specify the check ID of a check that is automatically refreshed, you might see an
+     *        <code>InvalidParameterValue</code> error.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -100,13 +128,21 @@ public class DescribeTrustedAdvisorCheckRefreshStatusesRequest extends com.amazo
 
     /**
      * <p>
-     * The IDs of the Trusted Advisor checks to get the status of. <b>Note:</b> Specifying the check ID of a check that
-     * is automatically refreshed causes an <code>InvalidParameterValue</code> error.
+     * The IDs of the Trusted Advisor checks to get the status of.
      * </p>
+     * <note>
+     * <p>
+     * If you specify the check ID of a check that is automatically refreshed, you might see an
+     * <code>InvalidParameterValue</code> error.
+     * </p>
+     * </note>
      * 
      * @param checkIds
-     *        The IDs of the Trusted Advisor checks to get the status of. <b>Note:</b> Specifying the check ID of a
-     *        check that is automatically refreshed causes an <code>InvalidParameterValue</code> error.
+     *        The IDs of the Trusted Advisor checks to get the status of. </p> <note>
+     *        <p>
+     *        If you specify the check ID of a check that is automatically refreshed, you might see an
+     *        <code>InvalidParameterValue</code> error.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

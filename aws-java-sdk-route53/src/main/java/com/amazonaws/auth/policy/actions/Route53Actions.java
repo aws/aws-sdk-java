@@ -105,6 +105,8 @@ public enum Route53Actions implements Action {
     ListHostedZones("route53:ListHostedZones"),
     /** Action for the ListHostedZonesByName operation. */
     ListHostedZonesByName("route53:ListHostedZonesByName"),
+    /** Action for the ListHostedZonesByVPC operation. */
+    ListHostedZonesByVPC("route53:ListHostedZonesByVPC"),
     /** Action for the ListQueryLoggingConfigs operation. */
     ListQueryLoggingConfigs("route53:ListQueryLoggingConfigs"),
     /** Action for the ListResourceRecordSets operation. */

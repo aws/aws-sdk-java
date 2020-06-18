@@ -18,7 +18,7 @@
  * operations and data types. This service enables you to manage your AWS Support cases programmatically. It uses HTTP
  * methods that return results in JSON format.
  * </p>
- * <important>
+ * <note>
  * <ul>
  * <li>
  * <p>
@@ -27,17 +27,17 @@
  * </li>
  * <li>
  * <p>
- * If you call the AWS Support API from an account that doesn't have a Business or Enterprise support plan, the
+ * If you call the AWS Support API from an account that does not have a Business or Enterprise support plan, the
  * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support plan,
  * see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
  * </p>
  * </li>
  * </ul>
- * </important>
+ * </note>
  * <p>
- * The AWS Support service also exposes a set of <a href="http://aws.amazon.com/premiumsupport/trustedadvisor/">Trusted
- * Advisor</a> features. You can retrieve a list of checks and their descriptions, get check results, specify checks to
- * refresh, and get the refresh status of checks.
+ * The AWS Support service also exposes a set of <a href="http://aws.amazon.com/premiumsupport/trustedadvisor/">AWS
+ * Trusted Advisor</a> features. You can retrieve a list of checks and their descriptions, get check results, specify
+ * checks to refresh, and get the refresh status of checks.
  * </p>
  * <p>
  * The following list describes the AWS Support case management operations:
@@ -76,7 +76,7 @@
  * <li>
  * <p>
  * Using the <code>checkId</code> for a specific check returned by <a>DescribeTrustedAdvisorChecks</a>, you can call
- * <a>DescribeTrustedAdvisorCheckResult</a> to obtain the results for the check you specified.
+ * <a>DescribeTrustedAdvisorCheckResult</a> to obtain the results for the check that you specified.
  * </p>
  * </li>
  * <li>

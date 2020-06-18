@@ -284,6 +284,11 @@ public class AbstractAmazonRoute53 implements AmazonRoute53 {
     }
 
     @Override
+    public ListHostedZonesByVPCResult listHostedZonesByVPC(ListHostedZonesByVPCRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListQueryLoggingConfigsResult listQueryLoggingConfigs(ListQueryLoggingConfigsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

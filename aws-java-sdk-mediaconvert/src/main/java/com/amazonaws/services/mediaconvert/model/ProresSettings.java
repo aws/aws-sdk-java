@@ -65,14 +65,25 @@ public class ProresSettings implements Serializable, Cloneable, StructuredPojo {
     private String interlaceMode;
     /**
      * Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior,
-     * Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To use a different
-     * PAR, choose (SPECIFIED). In the console, SPECIFIED corresponds to any value other than Follow source. When you
-     * choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
+     * Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To specify a
+     * different PAR in the console, choose any value other than Follow source. To specify a different PAR by editing the
+     * JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting, you must also specify values
+     * for the parNumerator and parDenominator settings.
      */
     private String parControl;
-    /** Pixel Aspect Ratio denominator. */
+    /**
+     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value
+     * other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input
+     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio
+     * 40:33. In this example, the value for parDenominator is 33.
+     */
     private Integer parDenominator;
-    /** Pixel Aspect Ratio numerator. */
+    /**
+     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value
+     * other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input
+     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio
+     * 40:33. In this example, the value for parNumerator is 40.
+     */
     private Integer parNumerator;
     /**
      * Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as 25fps, and audio is sped up
@@ -500,16 +511,17 @@ public class ProresSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior,
-     * Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To use a different
-     * PAR, choose (SPECIFIED). In the console, SPECIFIED corresponds to any value other than Follow source. When you
-     * choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
+     * Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To specify a
+     * different PAR in the console, choose any value other than Follow source. To specify a different PAR by editing the
+     * JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting, you must also specify values
+     * for the parNumerator and parDenominator settings.
      * 
      * @param parControl
      *        Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default
      *        behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To
-     *        use a different PAR, choose (SPECIFIED). In the console, SPECIFIED corresponds to any value other than
-     *        Follow source. When you choose SPECIFIED for this setting, you must also specify values for the
-     *        parNumerator and parDenominator settings.
+     *        specify a different PAR in the console, choose any value other than Follow source. To specify a different
+     *        PAR by editing the JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting,
+     *        you must also specify values for the parNumerator and parDenominator settings.
      * @see ProresParControl
      */
 
@@ -519,15 +531,16 @@ public class ProresSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior,
-     * Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To use a different
-     * PAR, choose (SPECIFIED). In the console, SPECIFIED corresponds to any value other than Follow source. When you
-     * choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
+     * Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To specify a
+     * different PAR in the console, choose any value other than Follow source. To specify a different PAR by editing the
+     * JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting, you must also specify values
+     * for the parNumerator and parDenominator settings.
      * 
      * @return Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default
      *         behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To
-     *         use a different PAR, choose (SPECIFIED). In the console, SPECIFIED corresponds to any value other than
-     *         Follow source. When you choose SPECIFIED for this setting, you must also specify values for the
-     *         parNumerator and parDenominator settings.
+     *         specify a different PAR in the console, choose any value other than Follow source. To specify a different
+     *         PAR by editing the JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting,
+     *         you must also specify values for the parNumerator and parDenominator settings.
      * @see ProresParControl
      */
 
@@ -537,16 +550,17 @@ public class ProresSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior,
-     * Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To use a different
-     * PAR, choose (SPECIFIED). In the console, SPECIFIED corresponds to any value other than Follow source. When you
-     * choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
+     * Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To specify a
+     * different PAR in the console, choose any value other than Follow source. To specify a different PAR by editing the
+     * JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting, you must also specify values
+     * for the parNumerator and parDenominator settings.
      * 
      * @param parControl
      *        Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default
      *        behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To
-     *        use a different PAR, choose (SPECIFIED). In the console, SPECIFIED corresponds to any value other than
-     *        Follow source. When you choose SPECIFIED for this setting, you must also specify values for the
-     *        parNumerator and parDenominator settings.
+     *        specify a different PAR in the console, choose any value other than Follow source. To specify a different
+     *        PAR by editing the JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting,
+     *        you must also specify values for the parNumerator and parDenominator settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProresParControl
      */
@@ -558,16 +572,17 @@ public class ProresSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior,
-     * Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To use a different
-     * PAR, choose (SPECIFIED). In the console, SPECIFIED corresponds to any value other than Follow source. When you
-     * choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
+     * Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To specify a
+     * different PAR in the console, choose any value other than Follow source. To specify a different PAR by editing the
+     * JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting, you must also specify values
+     * for the parNumerator and parDenominator settings.
      * 
      * @param parControl
      *        Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default
      *        behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To
-     *        use a different PAR, choose (SPECIFIED). In the console, SPECIFIED corresponds to any value other than
-     *        Follow source. When you choose SPECIFIED for this setting, you must also specify values for the
-     *        parNumerator and parDenominator settings.
+     *        specify a different PAR in the console, choose any value other than Follow source. To specify a different
+     *        PAR by editing the JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting,
+     *        you must also specify values for the parNumerator and parDenominator settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProresParControl
      */
@@ -578,10 +593,16 @@ public class ProresSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Pixel Aspect Ratio denominator.
+     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value
+     * other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input
+     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio
+     * 40:33. In this example, the value for parDenominator is 33.
      * 
      * @param parDenominator
-     *        Pixel Aspect Ratio denominator.
+     *        Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to
+     *        any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different
+     *        from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you
+     *        would specify the ratio 40:33. In this example, the value for parDenominator is 33.
      */
 
     public void setParDenominator(Integer parDenominator) {
@@ -589,9 +610,15 @@ public class ProresSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Pixel Aspect Ratio denominator.
+     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value
+     * other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input
+     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio
+     * 40:33. In this example, the value for parDenominator is 33.
      * 
-     * @return Pixel Aspect Ratio denominator.
+     * @return Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to
+     *         any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different
+     *         from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen,
+     *         you would specify the ratio 40:33. In this example, the value for parDenominator is 33.
      */
 
     public Integer getParDenominator() {
@@ -599,10 +626,16 @@ public class ProresSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Pixel Aspect Ratio denominator.
+     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value
+     * other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input
+     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio
+     * 40:33. In this example, the value for parDenominator is 33.
      * 
      * @param parDenominator
-     *        Pixel Aspect Ratio denominator.
+     *        Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to
+     *        any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different
+     *        from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you
+     *        would specify the ratio 40:33. In this example, the value for parDenominator is 33.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -612,10 +645,16 @@ public class ProresSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Pixel Aspect Ratio numerator.
+     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value
+     * other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input
+     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio
+     * 40:33. In this example, the value for parNumerator is 40.
      * 
      * @param parNumerator
-     *        Pixel Aspect Ratio numerator.
+     *        Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to
+     *        any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different
+     *        from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you
+     *        would specify the ratio 40:33. In this example, the value for parNumerator is 40.
      */
 
     public void setParNumerator(Integer parNumerator) {
@@ -623,9 +662,15 @@ public class ProresSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Pixel Aspect Ratio numerator.
+     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value
+     * other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input
+     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio
+     * 40:33. In this example, the value for parNumerator is 40.
      * 
-     * @return Pixel Aspect Ratio numerator.
+     * @return Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to
+     *         any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different
+     *         from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen,
+     *         you would specify the ratio 40:33. In this example, the value for parNumerator is 40.
      */
 
     public Integer getParNumerator() {
@@ -633,10 +678,16 @@ public class ProresSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Pixel Aspect Ratio numerator.
+     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value
+     * other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input
+     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio
+     * 40:33. In this example, the value for parNumerator is 40.
      * 
      * @param parNumerator
-     *        Pixel Aspect Ratio numerator.
+     *        Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to
+     *        any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different
+     *        from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you
+     *        would specify the ratio 40:33. In this example, the value for parNumerator is 40.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1793,6 +1793,39 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<ListHostedZonesByVPCResult> listHostedZonesByVPCAsync(ListHostedZonesByVPCRequest request) {
+
+        return listHostedZonesByVPCAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListHostedZonesByVPCResult> listHostedZonesByVPCAsync(final ListHostedZonesByVPCRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListHostedZonesByVPCRequest, ListHostedZonesByVPCResult> asyncHandler) {
+        final ListHostedZonesByVPCRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListHostedZonesByVPCResult>() {
+            @Override
+            public ListHostedZonesByVPCResult call() throws Exception {
+                ListHostedZonesByVPCResult result = null;
+
+                try {
+                    result = executeListHostedZonesByVPC(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListQueryLoggingConfigsResult> listQueryLoggingConfigsAsync(ListQueryLoggingConfigsRequest request) {
 
         return listQueryLoggingConfigsAsync(request, null);

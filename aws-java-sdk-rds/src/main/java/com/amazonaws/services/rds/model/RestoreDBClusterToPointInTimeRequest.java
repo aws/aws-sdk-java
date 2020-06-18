@@ -231,6 +231,11 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * <p>
      * The target backtrack window, in seconds. To disable backtracking, set this value to 0.
      * </p>
+     * <note>
+     * <p>
+     * Currently, Backtrack is only supported for Aurora MySQL DB clusters.
+     * </p>
+     * </note>
      * <p>
      * Default: 0
      * </p>
@@ -1667,6 +1672,11 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * <p>
      * The target backtrack window, in seconds. To disable backtracking, set this value to 0.
      * </p>
+     * <note>
+     * <p>
+     * Currently, Backtrack is only supported for Aurora MySQL DB clusters.
+     * </p>
+     * </note>
      * <p>
      * Default: 0
      * </p>
@@ -1682,7 +1692,11 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </ul>
      * 
      * @param backtrackWindow
-     *        The target backtrack window, in seconds. To disable backtracking, set this value to 0.</p>
+     *        The target backtrack window, in seconds. To disable backtracking, set this value to 0.</p> <note>
+     *        <p>
+     *        Currently, Backtrack is only supported for Aurora MySQL DB clusters.
+     *        </p>
+     *        </note>
      *        <p>
      *        Default: 0
      *        </p>
@@ -1705,6 +1719,11 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * <p>
      * The target backtrack window, in seconds. To disable backtracking, set this value to 0.
      * </p>
+     * <note>
+     * <p>
+     * Currently, Backtrack is only supported for Aurora MySQL DB clusters.
+     * </p>
+     * </note>
      * <p>
      * Default: 0
      * </p>
@@ -1719,7 +1738,11 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </li>
      * </ul>
      * 
-     * @return The target backtrack window, in seconds. To disable backtracking, set this value to 0.</p>
+     * @return The target backtrack window, in seconds. To disable backtracking, set this value to 0.</p> <note>
+     *         <p>
+     *         Currently, Backtrack is only supported for Aurora MySQL DB clusters.
+     *         </p>
+     *         </note>
      *         <p>
      *         Default: 0
      *         </p>
@@ -1742,6 +1765,11 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * <p>
      * The target backtrack window, in seconds. To disable backtracking, set this value to 0.
      * </p>
+     * <note>
+     * <p>
+     * Currently, Backtrack is only supported for Aurora MySQL DB clusters.
+     * </p>
+     * </note>
      * <p>
      * Default: 0
      * </p>
@@ -1757,7 +1785,11 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </ul>
      * 
      * @param backtrackWindow
-     *        The target backtrack window, in seconds. To disable backtracking, set this value to 0.</p>
+     *        The target backtrack window, in seconds. To disable backtracking, set this value to 0.</p> <note>
+     *        <p>
+     *        Currently, Backtrack is only supported for Aurora MySQL DB clusters.
+     *        </p>
+     *        </note>
      *        <p>
      *        Default: 0
      *        </p>

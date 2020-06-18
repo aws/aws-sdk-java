@@ -80,6 +80,10 @@ public class MaintenanceWindowIdentityJsonUnmarshaller implements Unmarshaller<M
                     context.nextToken();
                     maintenanceWindowIdentity.setScheduleTimezone(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ScheduleOffset", targetDepth)) {
+                    context.nextToken();
+                    maintenanceWindowIdentity.setScheduleOffset(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("EndDate", targetDepth)) {
                     context.nextToken();
                     maintenanceWindowIdentity.setEndDate(context.getUnmarshaller(String.class).unmarshall(context));

@@ -64,6 +64,11 @@ public class GlobalClusterMemberStaxUnmarshaller implements Unmarshaller<GlobalC
                     globalClusterMember.setIsWriter(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("GlobalWriteForwardingStatus", targetDepth)) {
+                    globalClusterMember.setGlobalWriteForwardingStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return globalClusterMember;

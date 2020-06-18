@@ -238,7 +238,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "PlatformNotSupportedException",
-        "documentation" : "<p>AWS Marketplace does not support metering usage from the underlying platform. Currently, only Amazon ECS is supported.</p>",
+        "documentation" : "<p>AWS Marketplace does not support metering usage from the underlying platform. Currently, Amazon ECS, Amazon EKS, and AWS Fargate are supported.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "CustomerNotEntitledException",
@@ -2857,7 +2857,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>AWS Marketplace does not support metering usage from the underlying platform. Currently, only Amazon ECS is supported.</p>",
+      "documentation" : "<p>AWS Marketplace does not support metering usage from the underlying platform. Currently, Amazon ECS, Amazon EKS, and AWS Fargate are supported.</p>",
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "PlatformNotSupportedException",

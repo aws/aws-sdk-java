@@ -43,7 +43,7 @@ public class DBSnapshot implements Serializable, Cloneable {
     private String dBInstanceIdentifier;
     /**
      * <p>
-     * Provides the time when the snapshot was taken, in Universal Coordinated Time (UTC).
+     * Specifies when the snapshot was taken in Coodinated Universal Time (UTC).
      * </p>
      */
     private java.util.Date snapshotCreateTime;
@@ -85,7 +85,8 @@ public class DBSnapshot implements Serializable, Cloneable {
     private String vpcId;
     /**
      * <p>
-     * Specifies the time when the snapshot was taken, in Universal Coordinated Time (UTC).
+     * Specifies the time in Coordinated Universal Time (UTC) when the DB instance, from which the snapshot was taken,
+     * was created.
      * </p>
      */
     private java.util.Date instanceCreateTime;
@@ -285,11 +286,11 @@ public class DBSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the time when the snapshot was taken, in Universal Coordinated Time (UTC).
+     * Specifies when the snapshot was taken in Coodinated Universal Time (UTC).
      * </p>
      * 
      * @param snapshotCreateTime
-     *        Provides the time when the snapshot was taken, in Universal Coordinated Time (UTC).
+     *        Specifies when the snapshot was taken in Coodinated Universal Time (UTC).
      */
 
     public void setSnapshotCreateTime(java.util.Date snapshotCreateTime) {
@@ -298,10 +299,10 @@ public class DBSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the time when the snapshot was taken, in Universal Coordinated Time (UTC).
+     * Specifies when the snapshot was taken in Coodinated Universal Time (UTC).
      * </p>
      * 
-     * @return Provides the time when the snapshot was taken, in Universal Coordinated Time (UTC).
+     * @return Specifies when the snapshot was taken in Coodinated Universal Time (UTC).
      */
 
     public java.util.Date getSnapshotCreateTime() {
@@ -310,11 +311,11 @@ public class DBSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the time when the snapshot was taken, in Universal Coordinated Time (UTC).
+     * Specifies when the snapshot was taken in Coodinated Universal Time (UTC).
      * </p>
      * 
      * @param snapshotCreateTime
-     *        Provides the time when the snapshot was taken, in Universal Coordinated Time (UTC).
+     *        Specifies when the snapshot was taken in Coodinated Universal Time (UTC).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -566,11 +567,13 @@ public class DBSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the time when the snapshot was taken, in Universal Coordinated Time (UTC).
+     * Specifies the time in Coordinated Universal Time (UTC) when the DB instance, from which the snapshot was taken,
+     * was created.
      * </p>
      * 
      * @param instanceCreateTime
-     *        Specifies the time when the snapshot was taken, in Universal Coordinated Time (UTC).
+     *        Specifies the time in Coordinated Universal Time (UTC) when the DB instance, from which the snapshot was
+     *        taken, was created.
      */
 
     public void setInstanceCreateTime(java.util.Date instanceCreateTime) {
@@ -579,10 +582,12 @@ public class DBSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the time when the snapshot was taken, in Universal Coordinated Time (UTC).
+     * Specifies the time in Coordinated Universal Time (UTC) when the DB instance, from which the snapshot was taken,
+     * was created.
      * </p>
      * 
-     * @return Specifies the time when the snapshot was taken, in Universal Coordinated Time (UTC).
+     * @return Specifies the time in Coordinated Universal Time (UTC) when the DB instance, from which the snapshot was
+     *         taken, was created.
      */
 
     public java.util.Date getInstanceCreateTime() {
@@ -591,11 +596,13 @@ public class DBSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the time when the snapshot was taken, in Universal Coordinated Time (UTC).
+     * Specifies the time in Coordinated Universal Time (UTC) when the DB instance, from which the snapshot was taken,
+     * was created.
      * </p>
      * 
      * @param instanceCreateTime
-     *        Specifies the time when the snapshot was taken, in Universal Coordinated Time (UTC).
+     *        Specifies the time in Coordinated Universal Time (UTC) when the DB instance, from which the snapshot was
+     *        taken, was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

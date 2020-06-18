@@ -587,8 +587,8 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
      * @throws InvalidPublicKeyVersionException
      *         Public Key version is invalid.
      * @throws PlatformNotSupportedException
-     *         AWS Marketplace does not support metering usage from the underlying platform. Currently, only Amazon ECS
-     *         is supported.
+     *         AWS Marketplace does not support metering usage from the underlying platform. Currently, Amazon ECS,
+     *         Amazon EKS, and AWS Fargate are supported.
      * @throws CustomerNotEntitledException
      *         Exception thrown when the customer does not have a valid subscription for the product.
      * @throws ThrottlingException

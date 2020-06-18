@@ -17,8 +17,9 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Returns an array of <a>CaseDetails</a> objects and a <code>nextToken</code> that defines a point for pagination in
- * the result set.
+ * Returns an array of <a
+ * href="https://docs.aws.amazon.com/awssupport/latest/APIReference/API_CaseDetails.html">CaseDetails</a> objects and a
+ * <code>nextToken</code> that defines a point for pagination in the result set.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeCases" target="_top">AWS API

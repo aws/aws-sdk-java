@@ -1,3 +1,32 @@
+# __1.11.806__ __2020-06-18__
+## __AWS Elemental MediaConvert__
+  - ### Features
+    - AWS Elemental MediaConvert SDK has added support for NexGuard FileMarker SDK, which allows NexGuard partners to watermark proprietary content in mezzanine and OTT streaming contexts.
+
+## __AWS Support__
+  - ### Features
+    - Documentation updates for support
+
+## __AWSMarketplace Metering__
+  - ### Features
+    - Documentation updates for meteringmarketplace
+
+## __Amazon Relational Database Service__
+  - ### Features
+    - Adding support for global write forwarding on secondary clusters in an Aurora global database.
+
+## __Amazon Route 53__
+  - ### Features
+    - Added a new ListHostedZonesByVPC API for customers to list all the private hosted zones that a specified VPC is associated with.
+
+## __Amazon Simple Email Service__
+  - ### Features
+    - You can now configure Amazon SES to send event notifications when the delivery of an email is delayed because of a temporary issue. For example, you can receive a notification if the recipient's inbox is full, or if there's a temporary problem with the receiving email server.
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - Added offset support for specifying the number of days to wait after the date and time specified by a CRON expression before running the maintenance window.
+
 # __1.11.805__ __2020-06-17__
 ## __AWS App Mesh__
   - ### Features

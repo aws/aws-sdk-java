@@ -43,6 +43,8 @@ public class MaintenanceWindowIdentityMarshaller {
             .marshallLocationName("Schedule").build();
     private static final MarshallingInfo<String> SCHEDULETIMEZONE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ScheduleTimezone").build();
+    private static final MarshallingInfo<Integer> SCHEDULEOFFSET_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ScheduleOffset").build();
     private static final MarshallingInfo<String> ENDDATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("EndDate").build();
     private static final MarshallingInfo<String> STARTDATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -74,6 +76,7 @@ public class MaintenanceWindowIdentityMarshaller {
             protocolMarshaller.marshall(maintenanceWindowIdentity.getCutoff(), CUTOFF_BINDING);
             protocolMarshaller.marshall(maintenanceWindowIdentity.getSchedule(), SCHEDULE_BINDING);
             protocolMarshaller.marshall(maintenanceWindowIdentity.getScheduleTimezone(), SCHEDULETIMEZONE_BINDING);
+            protocolMarshaller.marshall(maintenanceWindowIdentity.getScheduleOffset(), SCHEDULEOFFSET_BINDING);
             protocolMarshaller.marshall(maintenanceWindowIdentity.getEndDate(), ENDDATE_BINDING);
             protocolMarshaller.marshall(maintenanceWindowIdentity.getStartDate(), STARTDATE_BINDING);
             protocolMarshaller.marshall(maintenanceWindowIdentity.getNextExecutionTime(), NEXTEXECUTIONTIME_BINDING);

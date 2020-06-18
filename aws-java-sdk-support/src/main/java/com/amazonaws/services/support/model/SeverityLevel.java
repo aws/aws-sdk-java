@@ -21,8 +21,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * A code and name pair that represents the severity level of a support case. The available values depend on the support
  * plan for the account. For more information, see <a
- * href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing a
- * Severity</a>.
+ * href="https://docs.aws.amazon.com/awssupport/latest/user/case-management.html#choosing-severity">Choosing a
+ * severity</a> in the <i>AWS Support User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/SeverityLevel" target="_top">AWS API
@@ -81,8 +81,8 @@ public class SeverityLevel implements Serializable, Cloneable, StructuredPojo {
      * </note>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing a
-     * Severity</a>
+     * href="https://docs.aws.amazon.com/awssupport/latest/user/case-management.html#choosing-severity">Choosing a
+     * severity</a> in the <i>AWS Support User Guide</i>.
      * </p>
      */
     private String name;
@@ -188,8 +188,8 @@ public class SeverityLevel implements Serializable, Cloneable, StructuredPojo {
      * </note>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing a
-     * Severity</a>
+     * href="https://docs.aws.amazon.com/awssupport/latest/user/case-management.html#choosing-severity">Choosing a
+     * severity</a> in the <i>AWS Support User Guide</i>.
      * </p>
      * 
      * @param name
@@ -229,8 +229,8 @@ public class SeverityLevel implements Serializable, Cloneable, StructuredPojo {
      *        </note>
      *        <p>
      *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing
-     *        a Severity</a>
+     *        href="https://docs.aws.amazon.com/awssupport/latest/user/case-management.html#choosing-severity">Choosing
+     *        a severity</a> in the <i>AWS Support User Guide</i>.
      */
 
     public void setName(String name) {
@@ -277,8 +277,8 @@ public class SeverityLevel implements Serializable, Cloneable, StructuredPojo {
      * </note>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing a
-     * Severity</a>
+     * href="https://docs.aws.amazon.com/awssupport/latest/user/case-management.html#choosing-severity">Choosing a
+     * severity</a> in the <i>AWS Support User Guide</i>.
      * </p>
      * 
      * @return The name of the severity level that corresponds to the severity level code.</p> <note>
@@ -317,8 +317,8 @@ public class SeverityLevel implements Serializable, Cloneable, StructuredPojo {
      *         </note>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing
-     *         a Severity</a>
+     *         href="https://docs.aws.amazon.com/awssupport/latest/user/case-management.html#choosing-severity">Choosing
+     *         a severity</a> in the <i>AWS Support User Guide</i>.
      */
 
     public String getName() {
@@ -365,8 +365,8 @@ public class SeverityLevel implements Serializable, Cloneable, StructuredPojo {
      * </note>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing a
-     * Severity</a>
+     * href="https://docs.aws.amazon.com/awssupport/latest/user/case-management.html#choosing-severity">Choosing a
+     * severity</a> in the <i>AWS Support User Guide</i>.
      * </p>
      * 
      * @param name
@@ -406,8 +406,8 @@ public class SeverityLevel implements Serializable, Cloneable, StructuredPojo {
      *        </note>
      *        <p>
      *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing
-     *        a Severity</a>
+     *        href="https://docs.aws.amazon.com/awssupport/latest/user/case-management.html#choosing-severity">Choosing
+     *        a severity</a> in the <i>AWS Support User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

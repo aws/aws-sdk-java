@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A JSON-formatted object that contains the metadata for a support case. It is contained the response from a
+ * A JSON-formatted object that contains the metadata for a support case. It is contained in the response from a
  * <a>DescribeCases</a> request. <b>CaseDetails</b> contains the following fields:
  * </p>
  * <ul>
@@ -48,14 +48,14 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </li>
  * <li>
  * <p>
- * <b>recentCommunications.</b> One or more <a>Communication</a> objects. Fields of these objects are
- * <code>attachments</code>, <code>body</code>, <code>caseId</code>, <code>submittedBy</code>, and
- * <code>timeCreated</code>.
+ * <b>nextToken.</b> A resumption point for pagination.
  * </p>
  * </li>
  * <li>
  * <p>
- * <b>nextToken.</b> A resumption point for pagination.
+ * <b>recentCommunications.</b> One or more <a>Communication</a> objects. Fields of these objects are
+ * <code>attachments</code>, <code>body</code>, <code>caseId</code>, <code>submittedBy</code>, and
+ * <code>timeCreated</code>.
  * </p>
  * </li>
  * <li>
@@ -218,7 +218,7 @@ public class CaseDetails implements Serializable, Cloneable, StructuredPojo {
     private String submittedBy;
     /**
      * <p>
-     * The time that the case was case created in the AWS Support Center.
+     * The time that the case was created in the AWS Support Center.
      * </p>
      */
     private String timeCreated;
@@ -784,11 +784,11 @@ public class CaseDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time that the case was case created in the AWS Support Center.
+     * The time that the case was created in the AWS Support Center.
      * </p>
      * 
      * @param timeCreated
-     *        The time that the case was case created in the AWS Support Center.
+     *        The time that the case was created in the AWS Support Center.
      */
 
     public void setTimeCreated(String timeCreated) {
@@ -797,10 +797,10 @@ public class CaseDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time that the case was case created in the AWS Support Center.
+     * The time that the case was created in the AWS Support Center.
      * </p>
      * 
-     * @return The time that the case was case created in the AWS Support Center.
+     * @return The time that the case was created in the AWS Support Center.
      */
 
     public String getTimeCreated() {
@@ -809,11 +809,11 @@ public class CaseDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time that the case was case created in the AWS Support Center.
+     * The time that the case was created in the AWS Support Center.
      * </p>
      * 
      * @param timeCreated
-     *        The time that the case was case created in the AWS Support Center.
+     *        The time that the case was created in the AWS Support Center.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

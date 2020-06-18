@@ -278,7 +278,7 @@
       "members":{
         "message":{"shape":"errorMessage"}
       },
-      "documentation":"<p>AWS Marketplace does not support metering usage from the underlying platform. Currently, only Amazon ECS is supported.</p>",
+      "documentation":"<p>AWS Marketplace does not support metering usage from the underlying platform. Currently, Amazon ECS, Amazon EKS, and AWS Fargate are supported.</p>",
       "exception":true
     },
     "ProductCode":{

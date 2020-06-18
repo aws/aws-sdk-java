@@ -68,6 +68,10 @@ public class VideoPreprocessorJsonUnmarshaller implements Unmarshaller<VideoPrep
                     context.nextToken();
                     videoPreprocessor.setNoiseReducer(NoiseReducerJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("partnerWatermarking", targetDepth)) {
+                    context.nextToken();
+                    videoPreprocessor.setPartnerWatermarking(PartnerWatermarkingJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("timecodeBurnin", targetDepth)) {
                     context.nextToken();
                     videoPreprocessor.setTimecodeBurnin(TimecodeBurninJsonUnmarshaller.getInstance().unmarshall(context));

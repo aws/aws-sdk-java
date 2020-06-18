@@ -870,7 +870,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * </p>
      * <note>
      * <p>
-     * This action only applies to Aurora DB clusters.
+     * This action only applies to Aurora MySQL DB clusters.
      * </p>
      * </note>
      * 
@@ -2419,8 +2419,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
     /**
      * <p>
-     * </p>
-     * <p>
      * Creates an Aurora global database spread across multiple regions. The global database contains a single primary
      * cluster with read-write capability, and a read-only secondary cluster that receives data from the primary cluster
      * through high-speed replication performed by the Aurora storage subsystem.
@@ -3852,7 +3850,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * </p>
      * <note>
      * <p>
-     * This action only applies to Aurora DB clusters.
+     * This action only applies to Aurora MySQL DB clusters.
      * </p>
      * </note>
      * 
@@ -6760,15 +6758,23 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * To share a manual DB cluster snapshot with other AWS accounts, specify <code>restore</code> as the
      * <code>AttributeName</code> and use the <code>ValuesToAdd</code> parameter to add a list of IDs of the AWS
      * accounts that are authorized to restore the manual DB cluster snapshot. Use the value <code>all</code> to make
-     * the manual DB cluster snapshot public, which means that it can be copied or restored by all AWS accounts. Do not
-     * add the <code>all</code> value for any manual DB cluster snapshots that contain private information that you
-     * don't want available to all AWS accounts. If a manual DB cluster snapshot is encrypted, it can be shared, but
-     * only by specifying a list of authorized AWS account IDs for the <code>ValuesToAdd</code> parameter. You can't use
-     * <code>all</code> as a value for that parameter in this case.
+     * the manual DB cluster snapshot public, which means that it can be copied or restored by all AWS accounts.
+     * </p>
+     * <note>
+     * <p>
+     * Don't add the <code>all</code> value for any manual DB cluster snapshots that contain private information that
+     * you don't want available to all AWS accounts.
+     * </p>
+     * </note>
+     * <p>
+     * If a manual DB cluster snapshot is encrypted, it can be shared, but only by specifying a list of authorized AWS
+     * account IDs for the <code>ValuesToAdd</code> parameter. You can't use <code>all</code> as a value for that
+     * parameter in this case.
      * </p>
      * <p>
      * To view which AWS accounts have access to copy or restore a manual DB cluster snapshot, or whether a manual DB
-     * cluster snapshot public or private, use the <code>DescribeDBClusterSnapshotAttributes</code> API action.
+     * cluster snapshot is public or private, use the <a>DescribeDBClusterSnapshotAttributes</a> API action. The
+     * accounts are returned as values for the <code>restore</code> attribute.
      * </p>
      * <note>
      * <p>
@@ -7195,15 +7201,23 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * To share a manual DB snapshot with other AWS accounts, specify <code>restore</code> as the
      * <code>AttributeName</code> and use the <code>ValuesToAdd</code> parameter to add a list of IDs of the AWS
      * accounts that are authorized to restore the manual DB snapshot. Uses the value <code>all</code> to make the
-     * manual DB snapshot public, which means it can be copied or restored by all AWS accounts. Do not add the
-     * <code>all</code> value for any manual DB snapshots that contain private information that you don't want available
-     * to all AWS accounts. If the manual DB snapshot is encrypted, it can be shared, but only by specifying a list of
-     * authorized AWS account IDs for the <code>ValuesToAdd</code> parameter. You can't use <code>all</code> as a value
-     * for that parameter in this case.
+     * manual DB snapshot public, which means it can be copied or restored by all AWS accounts.
+     * </p>
+     * <note>
+     * <p>
+     * Don't add the <code>all</code> value for any manual DB snapshots that contain private information that you don't
+     * want available to all AWS accounts.
+     * </p>
+     * </note>
+     * <p>
+     * If the manual DB snapshot is encrypted, it can be shared, but only by specifying a list of authorized AWS account
+     * IDs for the <code>ValuesToAdd</code> parameter. You can't use <code>all</code> as a value for that parameter in
+     * this case.
      * </p>
      * <p>
      * To view which AWS accounts have access to copy or restore a manual DB snapshot, or whether a manual DB snapshot
-     * public or private, use the <code>DescribeDBSnapshotAttributes</code> API action.
+     * public or private, use the <a>DescribeDBSnapshotAttributes</a> API action. The accounts are returned as values
+     * for the <code>restore</code> attribute.
      * </p>
      * 
      * @param modifyDBSnapshotAttributeRequest

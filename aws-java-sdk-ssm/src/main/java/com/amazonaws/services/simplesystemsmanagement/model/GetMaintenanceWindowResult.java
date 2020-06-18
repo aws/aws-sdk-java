@@ -71,6 +71,12 @@ public class GetMaintenanceWindowResult extends com.amazonaws.AmazonWebServiceRe
     private String scheduleTimezone;
     /**
      * <p>
+     * The number of days to wait to run a maintenance window after the scheduled CRON expression date and time.
+     * </p>
+     */
+    private Integer scheduleOffset;
+    /**
+     * <p>
      * The next time the maintenance window will actually run, taking into account any specified times for the
      * maintenance window to become active or inactive.
      * </p>
@@ -421,6 +427,46 @@ public class GetMaintenanceWindowResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
+     * The number of days to wait to run a maintenance window after the scheduled CRON expression date and time.
+     * </p>
+     * 
+     * @param scheduleOffset
+     *        The number of days to wait to run a maintenance window after the scheduled CRON expression date and time.
+     */
+
+    public void setScheduleOffset(Integer scheduleOffset) {
+        this.scheduleOffset = scheduleOffset;
+    }
+
+    /**
+     * <p>
+     * The number of days to wait to run a maintenance window after the scheduled CRON expression date and time.
+     * </p>
+     * 
+     * @return The number of days to wait to run a maintenance window after the scheduled CRON expression date and time.
+     */
+
+    public Integer getScheduleOffset() {
+        return this.scheduleOffset;
+    }
+
+    /**
+     * <p>
+     * The number of days to wait to run a maintenance window after the scheduled CRON expression date and time.
+     * </p>
+     * 
+     * @param scheduleOffset
+     *        The number of days to wait to run a maintenance window after the scheduled CRON expression date and time.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetMaintenanceWindowResult withScheduleOffset(Integer scheduleOffset) {
+        setScheduleOffset(scheduleOffset);
+        return this;
+    }
+
+    /**
+     * <p>
      * The next time the maintenance window will actually run, taking into account any specified times for the
      * maintenance window to become active or inactive.
      * </p>
@@ -765,6 +811,8 @@ public class GetMaintenanceWindowResult extends com.amazonaws.AmazonWebServiceRe
             sb.append("Schedule: ").append(getSchedule()).append(",");
         if (getScheduleTimezone() != null)
             sb.append("ScheduleTimezone: ").append(getScheduleTimezone()).append(",");
+        if (getScheduleOffset() != null)
+            sb.append("ScheduleOffset: ").append(getScheduleOffset()).append(",");
         if (getNextExecutionTime() != null)
             sb.append("NextExecutionTime: ").append(getNextExecutionTime()).append(",");
         if (getDuration() != null)
@@ -821,6 +869,10 @@ public class GetMaintenanceWindowResult extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getScheduleTimezone() != null && other.getScheduleTimezone().equals(this.getScheduleTimezone()) == false)
             return false;
+        if (other.getScheduleOffset() == null ^ this.getScheduleOffset() == null)
+            return false;
+        if (other.getScheduleOffset() != null && other.getScheduleOffset().equals(this.getScheduleOffset()) == false)
+            return false;
         if (other.getNextExecutionTime() == null ^ this.getNextExecutionTime() == null)
             return false;
         if (other.getNextExecutionTime() != null && other.getNextExecutionTime().equals(this.getNextExecutionTime()) == false)
@@ -864,6 +916,7 @@ public class GetMaintenanceWindowResult extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getEndDate() == null) ? 0 : getEndDate().hashCode());
         hashCode = prime * hashCode + ((getSchedule() == null) ? 0 : getSchedule().hashCode());
         hashCode = prime * hashCode + ((getScheduleTimezone() == null) ? 0 : getScheduleTimezone().hashCode());
+        hashCode = prime * hashCode + ((getScheduleOffset() == null) ? 0 : getScheduleOffset().hashCode());
         hashCode = prime * hashCode + ((getNextExecutionTime() == null) ? 0 : getNextExecutionTime().hashCode());
         hashCode = prime * hashCode + ((getDuration() == null) ? 0 : getDuration().hashCode());
         hashCode = prime * hashCode + ((getCutoff() == null) ? 0 : getCutoff().hashCode());

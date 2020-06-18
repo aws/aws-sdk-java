@@ -80,6 +80,12 @@ public class MaintenanceWindowIdentity implements Serializable, Cloneable, Struc
     private String scheduleTimezone;
     /**
      * <p>
+     * The number of days to wait to run a maintenance window after the scheduled CRON expression date and time.
+     * </p>
+     */
+    private Integer scheduleOffset;
+    /**
+     * <p>
      * The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become inactive.
      * </p>
      */
@@ -444,6 +450,46 @@ public class MaintenanceWindowIdentity implements Serializable, Cloneable, Struc
 
     /**
      * <p>
+     * The number of days to wait to run a maintenance window after the scheduled CRON expression date and time.
+     * </p>
+     * 
+     * @param scheduleOffset
+     *        The number of days to wait to run a maintenance window after the scheduled CRON expression date and time.
+     */
+
+    public void setScheduleOffset(Integer scheduleOffset) {
+        this.scheduleOffset = scheduleOffset;
+    }
+
+    /**
+     * <p>
+     * The number of days to wait to run a maintenance window after the scheduled CRON expression date and time.
+     * </p>
+     * 
+     * @return The number of days to wait to run a maintenance window after the scheduled CRON expression date and time.
+     */
+
+    public Integer getScheduleOffset() {
+        return this.scheduleOffset;
+    }
+
+    /**
+     * <p>
+     * The number of days to wait to run a maintenance window after the scheduled CRON expression date and time.
+     * </p>
+     * 
+     * @param scheduleOffset
+     *        The number of days to wait to run a maintenance window after the scheduled CRON expression date and time.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MaintenanceWindowIdentity withScheduleOffset(Integer scheduleOffset) {
+        setScheduleOffset(scheduleOffset);
+        return this;
+    }
+
+    /**
+     * <p>
      * The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become inactive.
      * </p>
      * 
@@ -602,6 +648,8 @@ public class MaintenanceWindowIdentity implements Serializable, Cloneable, Struc
             sb.append("Schedule: ").append(getSchedule()).append(",");
         if (getScheduleTimezone() != null)
             sb.append("ScheduleTimezone: ").append(getScheduleTimezone()).append(",");
+        if (getScheduleOffset() != null)
+            sb.append("ScheduleOffset: ").append(getScheduleOffset()).append(",");
         if (getEndDate() != null)
             sb.append("EndDate: ").append(getEndDate()).append(",");
         if (getStartDate() != null)
@@ -654,6 +702,10 @@ public class MaintenanceWindowIdentity implements Serializable, Cloneable, Struc
             return false;
         if (other.getScheduleTimezone() != null && other.getScheduleTimezone().equals(this.getScheduleTimezone()) == false)
             return false;
+        if (other.getScheduleOffset() == null ^ this.getScheduleOffset() == null)
+            return false;
+        if (other.getScheduleOffset() != null && other.getScheduleOffset().equals(this.getScheduleOffset()) == false)
+            return false;
         if (other.getEndDate() == null ^ this.getEndDate() == null)
             return false;
         if (other.getEndDate() != null && other.getEndDate().equals(this.getEndDate()) == false)
@@ -682,6 +734,7 @@ public class MaintenanceWindowIdentity implements Serializable, Cloneable, Struc
         hashCode = prime * hashCode + ((getCutoff() == null) ? 0 : getCutoff().hashCode());
         hashCode = prime * hashCode + ((getSchedule() == null) ? 0 : getSchedule().hashCode());
         hashCode = prime * hashCode + ((getScheduleTimezone() == null) ? 0 : getScheduleTimezone().hashCode());
+        hashCode = prime * hashCode + ((getScheduleOffset() == null) ? 0 : getScheduleOffset().hashCode());
         hashCode = prime * hashCode + ((getEndDate() == null) ? 0 : getEndDate().hashCode());
         hashCode = prime * hashCode + ((getStartDate() == null) ? 0 : getStartDate().hashCode());
         hashCode = prime * hashCode + ((getNextExecutionTime() == null) ? 0 : getNextExecutionTime().hashCode());

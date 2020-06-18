@@ -762,6 +762,19 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     }
 
     @Override
+    public java.util.concurrent.Future<ListHostedZonesByVPCResult> listHostedZonesByVPCAsync(ListHostedZonesByVPCRequest request) {
+
+        return listHostedZonesByVPCAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListHostedZonesByVPCResult> listHostedZonesByVPCAsync(ListHostedZonesByVPCRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListHostedZonesByVPCRequest, ListHostedZonesByVPCResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListQueryLoggingConfigsResult> listQueryLoggingConfigsAsync(ListQueryLoggingConfigsRequest request) {
 
         return listQueryLoggingConfigsAsync(request, null);

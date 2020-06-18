@@ -46,6 +46,11 @@ public class VideoPreprocessor implements Serializable, Cloneable, StructuredPoj
      * disable this feature for each output individually. This setting is disabled by default.
      */
     private NoiseReducer noiseReducer;
+    /**
+     * If you work with a third party video watermarking partner, use the group of settings that correspond with your
+     * watermarking partner to include watermarks in your output.
+     */
+    private PartnerWatermarking partnerWatermarking;
     /** Timecode burn-in (TimecodeBurnIn)--Burns the output timecode and specified prefix into the output. */
     private TimecodeBurnin timecodeBurnin;
 
@@ -238,6 +243,46 @@ public class VideoPreprocessor implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * If you work with a third party video watermarking partner, use the group of settings that correspond with your
+     * watermarking partner to include watermarks in your output.
+     * 
+     * @param partnerWatermarking
+     *        If you work with a third party video watermarking partner, use the group of settings that correspond with
+     *        your watermarking partner to include watermarks in your output.
+     */
+
+    public void setPartnerWatermarking(PartnerWatermarking partnerWatermarking) {
+        this.partnerWatermarking = partnerWatermarking;
+    }
+
+    /**
+     * If you work with a third party video watermarking partner, use the group of settings that correspond with your
+     * watermarking partner to include watermarks in your output.
+     * 
+     * @return If you work with a third party video watermarking partner, use the group of settings that correspond with
+     *         your watermarking partner to include watermarks in your output.
+     */
+
+    public PartnerWatermarking getPartnerWatermarking() {
+        return this.partnerWatermarking;
+    }
+
+    /**
+     * If you work with a third party video watermarking partner, use the group of settings that correspond with your
+     * watermarking partner to include watermarks in your output.
+     * 
+     * @param partnerWatermarking
+     *        If you work with a third party video watermarking partner, use the group of settings that correspond with
+     *        your watermarking partner to include watermarks in your output.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VideoPreprocessor withPartnerWatermarking(PartnerWatermarking partnerWatermarking) {
+        setPartnerWatermarking(partnerWatermarking);
+        return this;
+    }
+
+    /**
      * Timecode burn-in (TimecodeBurnIn)--Burns the output timecode and specified prefix into the output.
      * 
      * @param timecodeBurnin
@@ -293,6 +338,8 @@ public class VideoPreprocessor implements Serializable, Cloneable, StructuredPoj
             sb.append("ImageInserter: ").append(getImageInserter()).append(",");
         if (getNoiseReducer() != null)
             sb.append("NoiseReducer: ").append(getNoiseReducer()).append(",");
+        if (getPartnerWatermarking() != null)
+            sb.append("PartnerWatermarking: ").append(getPartnerWatermarking()).append(",");
         if (getTimecodeBurnin() != null)
             sb.append("TimecodeBurnin: ").append(getTimecodeBurnin());
         sb.append("}");
@@ -329,6 +376,10 @@ public class VideoPreprocessor implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getNoiseReducer() != null && other.getNoiseReducer().equals(this.getNoiseReducer()) == false)
             return false;
+        if (other.getPartnerWatermarking() == null ^ this.getPartnerWatermarking() == null)
+            return false;
+        if (other.getPartnerWatermarking() != null && other.getPartnerWatermarking().equals(this.getPartnerWatermarking()) == false)
+            return false;
         if (other.getTimecodeBurnin() == null ^ this.getTimecodeBurnin() == null)
             return false;
         if (other.getTimecodeBurnin() != null && other.getTimecodeBurnin().equals(this.getTimecodeBurnin()) == false)
@@ -346,6 +397,7 @@ public class VideoPreprocessor implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getDolbyVision() == null) ? 0 : getDolbyVision().hashCode());
         hashCode = prime * hashCode + ((getImageInserter() == null) ? 0 : getImageInserter().hashCode());
         hashCode = prime * hashCode + ((getNoiseReducer() == null) ? 0 : getNoiseReducer().hashCode());
+        hashCode = prime * hashCode + ((getPartnerWatermarking() == null) ? 0 : getPartnerWatermarking().hashCode());
         hashCode = prime * hashCode + ((getTimecodeBurnin() == null) ? 0 : getTimecodeBurnin().hashCode());
         return hashCode;
     }

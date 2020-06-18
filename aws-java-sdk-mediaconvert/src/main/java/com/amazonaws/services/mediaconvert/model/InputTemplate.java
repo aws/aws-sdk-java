@@ -37,8 +37,8 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
      */
     private java.util.Map<String, AudioSelector> audioSelectors;
     /**
-     * Use Captions selectors (CaptionSelectors) to specify the captions data from the input that you will use in your
-     * outputs. You can use multiple captions selectors per input.
+     * Use captions selectors to specify the captions data from your input that you use in your outputs. You can use up
+     * to 20 captions selectors per input.
      */
     private java.util.Map<String, CaptionSelector> captionSelectors;
     /**
@@ -259,11 +259,11 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Captions selectors (CaptionSelectors) to specify the captions data from the input that you will use in your
-     * outputs. You can use multiple captions selectors per input.
+     * Use captions selectors to specify the captions data from your input that you use in your outputs. You can use up
+     * to 20 captions selectors per input.
      * 
-     * @return Use Captions selectors (CaptionSelectors) to specify the captions data from the input that you will use
-     *         in your outputs. You can use multiple captions selectors per input.
+     * @return Use captions selectors to specify the captions data from your input that you use in your outputs. You can
+     *         use up to 20 captions selectors per input.
      */
 
     public java.util.Map<String, CaptionSelector> getCaptionSelectors() {
@@ -271,12 +271,12 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Captions selectors (CaptionSelectors) to specify the captions data from the input that you will use in your
-     * outputs. You can use multiple captions selectors per input.
+     * Use captions selectors to specify the captions data from your input that you use in your outputs. You can use up
+     * to 20 captions selectors per input.
      * 
      * @param captionSelectors
-     *        Use Captions selectors (CaptionSelectors) to specify the captions data from the input that you will use in
-     *        your outputs. You can use multiple captions selectors per input.
+     *        Use captions selectors to specify the captions data from your input that you use in your outputs. You can
+     *        use up to 20 captions selectors per input.
      */
 
     public void setCaptionSelectors(java.util.Map<String, CaptionSelector> captionSelectors) {
@@ -284,12 +284,12 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Captions selectors (CaptionSelectors) to specify the captions data from the input that you will use in your
-     * outputs. You can use multiple captions selectors per input.
+     * Use captions selectors to specify the captions data from your input that you use in your outputs. You can use up
+     * to 20 captions selectors per input.
      * 
      * @param captionSelectors
-     *        Use Captions selectors (CaptionSelectors) to specify the captions data from the input that you will use in
-     *        your outputs. You can use multiple captions selectors per input.
+     *        Use captions selectors to specify the captions data from your input that you use in your outputs. You can
+     *        use up to 20 captions selectors per input.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
