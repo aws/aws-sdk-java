@@ -35,6 +35,8 @@ public class EncoderSettings implements Serializable, Cloneable, StructuredPojo 
     private BlackoutSlate blackoutSlate;
     /** Settings for caption decriptions */
     private java.util.List<CaptionDescription> captionDescriptions;
+    /** Feature Activations */
+    private FeatureActivations featureActivations;
     /** Configuration settings that apply to the event as a whole. */
     private GlobalConfiguration globalConfiguration;
     /** Nielsen configuration settings. */
@@ -259,6 +261,40 @@ public class EncoderSettings implements Serializable, Cloneable, StructuredPojo 
 
     public EncoderSettings withCaptionDescriptions(java.util.Collection<CaptionDescription> captionDescriptions) {
         setCaptionDescriptions(captionDescriptions);
+        return this;
+    }
+
+    /**
+     * Feature Activations
+     * 
+     * @param featureActivations
+     *        Feature Activations
+     */
+
+    public void setFeatureActivations(FeatureActivations featureActivations) {
+        this.featureActivations = featureActivations;
+    }
+
+    /**
+     * Feature Activations
+     * 
+     * @return Feature Activations
+     */
+
+    public FeatureActivations getFeatureActivations() {
+        return this.featureActivations;
+    }
+
+    /**
+     * Feature Activations
+     * 
+     * @param featureActivations
+     *        Feature Activations
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EncoderSettings withFeatureActivations(FeatureActivations featureActivations) {
+        setFeatureActivations(featureActivations);
         return this;
     }
 
@@ -490,6 +526,8 @@ public class EncoderSettings implements Serializable, Cloneable, StructuredPojo 
             sb.append("BlackoutSlate: ").append(getBlackoutSlate()).append(",");
         if (getCaptionDescriptions() != null)
             sb.append("CaptionDescriptions: ").append(getCaptionDescriptions()).append(",");
+        if (getFeatureActivations() != null)
+            sb.append("FeatureActivations: ").append(getFeatureActivations()).append(",");
         if (getGlobalConfiguration() != null)
             sb.append("GlobalConfiguration: ").append(getGlobalConfiguration()).append(",");
         if (getNielsenConfiguration() != null)
@@ -534,6 +572,10 @@ public class EncoderSettings implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getCaptionDescriptions() != null && other.getCaptionDescriptions().equals(this.getCaptionDescriptions()) == false)
             return false;
+        if (other.getFeatureActivations() == null ^ this.getFeatureActivations() == null)
+            return false;
+        if (other.getFeatureActivations() != null && other.getFeatureActivations().equals(this.getFeatureActivations()) == false)
+            return false;
         if (other.getGlobalConfiguration() == null ^ this.getGlobalConfiguration() == null)
             return false;
         if (other.getGlobalConfiguration() != null && other.getGlobalConfiguration().equals(this.getGlobalConfiguration()) == false)
@@ -567,6 +609,7 @@ public class EncoderSettings implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getAvailConfiguration() == null) ? 0 : getAvailConfiguration().hashCode());
         hashCode = prime * hashCode + ((getBlackoutSlate() == null) ? 0 : getBlackoutSlate().hashCode());
         hashCode = prime * hashCode + ((getCaptionDescriptions() == null) ? 0 : getCaptionDescriptions().hashCode());
+        hashCode = prime * hashCode + ((getFeatureActivations() == null) ? 0 : getFeatureActivations().hashCode());
         hashCode = prime * hashCode + ((getGlobalConfiguration() == null) ? 0 : getGlobalConfiguration().hashCode());
         hashCode = prime * hashCode + ((getNielsenConfiguration() == null) ? 0 : getNielsenConfiguration().hashCode());
         hashCode = prime * hashCode + ((getOutputGroups() == null) ? 0 : getOutputGroups().hashCode());

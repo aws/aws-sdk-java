@@ -9,7 +9,7 @@
     "uid": "medialive-2017-10-14",
     "signatureVersion": "v4",
     "serviceAbbreviation": "MediaLive",
-    "jsonVersion": "1.1"
+    "jsonVersion": "1.1"  
   },
   "operations": {
     "BatchUpdateSchedule": {
@@ -555,7 +555,7 @@
         },
         {
           "shape": "NotFoundException",
-          "documentation": "The program that you are trying to delete doesn\u2019t exist. Check the ID and try again."
+          "documentation": "The program that you are trying to delete doesn’t exist. Check the ID and try again."
         },
         {
           "shape": "GatewayTimeoutException",
@@ -915,7 +915,7 @@
         },
         {
           "shape": "NotFoundException",
-          "documentation": "The multiplex that you are trying to describe doesn\u2019t exist. Check the ID and try again."
+          "documentation": "The multiplex that you are trying to describe doesn’t exist. Check the ID and try again."
         },
         {
           "shape": "GatewayTimeoutException",
@@ -961,7 +961,7 @@
         },
         {
           "shape": "NotFoundException",
-          "documentation": "MediaLive can't describe the program. The multiplex or the program that you specified doesn\u2019t exist. Check the IDs and try again."
+          "documentation": "MediaLive can't describe the program. The multiplex or the program that you specified doesn’t exist. Check the IDs and try again."
         },
         {
           "shape": "GatewayTimeoutException",
@@ -1313,7 +1313,7 @@
         },
         {
           "shape": "NotFoundException",
-          "documentation": "MediaLive can't provide the list of programs. The multiplex that you specified doesn\u2019t exist. Check the ID and try again."
+          "documentation": "MediaLive can't provide the list of programs. The multiplex that you specified doesn’t exist. Check the ID and try again."
         },
         {
           "shape": "GatewayTimeoutException",
@@ -1619,7 +1619,7 @@
         },
         {
           "shape": "NotFoundException",
-          "documentation": "The multiplex that you are trying to start doesn\u2019t exist. Check the ID and try again."
+          "documentation": "The multiplex that you are trying to start doesn’t exist. Check the ID and try again."
         },
         {
           "shape": "GatewayTimeoutException",
@@ -1719,7 +1719,7 @@
         },
         {
           "shape": "NotFoundException",
-          "documentation": "The multiplex that you are trying to stop doesn\u2019t exist. Check the ID and try again."
+          "documentation": "The multiplex that you are trying to stop doesn’t exist. Check the ID and try again."
         },
         {
           "shape": "GatewayTimeoutException",
@@ -2015,7 +2015,7 @@
         },
         {
           "shape": "NotFoundException",
-          "documentation": "The multiplex that you are trying to update doesn\u2019t exist. Check the ID and try again."
+          "documentation": "The multiplex that you are trying to update doesn’t exist. Check the ID and try again."
         },
         {
           "shape": "GatewayTimeoutException",
@@ -2065,7 +2065,7 @@
         },
         {
           "shape": "NotFoundException",
-          "documentation": "MediaLive can't update the program. The multiplex or the program that you specified doesn\u2019t exist. Check the IDs and try again."
+          "documentation": "MediaLive can't update the program. The multiplex or the program that you specified doesn’t exist. Check the IDs and try again."
         },
         {
           "shape": "GatewayTimeoutException",
@@ -5677,6 +5677,11 @@
           "locationName": "captionDescriptions",
           "documentation": "Settings for caption decriptions"
         },
+        "FeatureActivations": {
+          "shape": "FeatureActivations",
+          "locationName": "featureActivations",
+          "documentation": "Feature Activations"
+        },
         "GlobalConfiguration": {
           "shape": "GlobalConfiguration",
           "locationName": "globalConfiguration",
@@ -5707,6 +5712,25 @@
         "AudioDescriptions",
         "OutputGroups",
         "TimecodeConfig"
+      ]
+    },
+    "FeatureActivations": {
+      "type": "structure",
+      "members": {
+        "InputPrepareScheduleActions": {
+          "shape": "FeatureActivationsInputPrepareScheduleActions",
+          "locationName": "inputPrepareScheduleActions",
+          "documentation": "Enables the Input Prepare feature. You can create Input Prepare actions in the schedule only if this feature is enabled.\nIf you disable the feature on an existing schedule, make sure that you first delete all input prepare actions from the schedule."
+        }
+      },
+      "documentation": "Feature Activations"
+    },
+    "FeatureActivationsInputPrepareScheduleActions": {
+      "type": "string",
+      "documentation": "Feature Activations Input Prepare Schedule Actions",
+      "enum": [
+        "DISABLED",
+        "ENABLED"
       ]
     },
     "FecOutputIncludeFec": {
@@ -8038,6 +8062,30 @@
       "enum": [
         "EQUAL_INPUT_PREFERENCE",
         "PRIMARY_INPUT_PREFERRED"
+      ]
+    },
+    "InputPrepareScheduleActionSettings": {
+      "type": "structure",
+      "members": {
+        "InputAttachmentNameReference": {
+          "shape": "__string",
+          "locationName": "inputAttachmentNameReference",
+          "documentation": "The name of the input attachment that should be prepared by this action. If no name is provided, the action will stop the most recent prepare (if any) when activated."
+        },
+        "InputClippingSettings": {
+          "shape": "InputClippingSettings",
+          "locationName": "inputClippingSettings",
+          "documentation": "Settings to let you create a clip of the file input, in order to set up the input to ingest only a portion of the file."
+        },
+        "UrlPath": {
+          "shape": "__listOf__string",
+          "locationName": "urlPath",
+          "documentation": "The value for the variable portion of the URL for the dynamic input, for this instance of the input. Each time you use the same dynamic input in an input switch action, you can provide a different value, in order to connect the input to a different content source."
+        }
+      },
+      "documentation": "Action to prepare an input for a future immediate input switch.",
+      "required": [
+        "InputAttachmentNameReference"
       ]
     },
     "InputResolution": {
@@ -10994,6 +11042,11 @@
           "shape": "HlsTimedMetadataScheduleActionSettings",
           "locationName": "hlsTimedMetadataSettings",
           "documentation": "Action to insert HLS metadata"
+        },
+        "InputPrepareSettings": {
+          "shape": "InputPrepareScheduleActionSettings",
+          "locationName": "inputPrepareSettings",
+          "documentation": "Action to prepare an input for a future immediate input switch"
         },
         "InputSwitchSettings": {
           "shape": "InputSwitchScheduleActionSettings",

@@ -30865,6 +30865,7 @@
         "dedicated-host",
         "dhcp-options",
         "elastic-ip",
+        "elastic-gpu",
         "fleet",
         "fpga-image",
         "host-reservation",
@@ -36995,6 +36996,7 @@
       "enum":[
         "standard",
         "io1",
+        "io2",
         "gp2",
         "sc1",
         "st1"

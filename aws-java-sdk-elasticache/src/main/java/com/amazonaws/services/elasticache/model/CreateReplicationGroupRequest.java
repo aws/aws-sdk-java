@@ -83,10 +83,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * fails.
      * </p>
      * <p>
-     * If <code>true</code>, Multi-AZ is enabled for this replication group. If <code>false</code>, Multi-AZ is disabled
-     * for this replication group.
-     * </p>
-     * <p>
      * <code>AutomaticFailoverEnabled</code> must be enabled for Redis (cluster mode enabled) replication groups.
      * </p>
      * <p>
@@ -114,11 +110,17 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </ul>
      */
     private Boolean automaticFailoverEnabled;
-
+    /**
+     * <p>
+     * A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime:
+     * Multi-AZ</a>.
+     * </p>
+     */
     private Boolean multiAZEnabled;
     /**
      * <p>
-     * The number of nodes in the cluster.
+     * The number of clusters this replication group initially has.
      * </p>
      * <p>
      * This parameter is not used if there is more than one node group (shard). You should use
@@ -937,10 +939,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * fails.
      * </p>
      * <p>
-     * If <code>true</code>, Multi-AZ is enabled for this replication group. If <code>false</code>, Multi-AZ is disabled
-     * for this replication group.
-     * </p>
-     * <p>
      * <code>AutomaticFailoverEnabled</code> must be enabled for Redis (cluster mode enabled) replication groups.
      * </p>
      * <p>
@@ -970,10 +968,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * @param automaticFailoverEnabled
      *        Specifies whether a read-only replica is automatically promoted to read/write primary if the existing
      *        primary fails.</p>
-     *        <p>
-     *        If <code>true</code>, Multi-AZ is enabled for this replication group. If <code>false</code>, Multi-AZ is
-     *        disabled for this replication group.
-     *        </p>
      *        <p>
      *        <code>AutomaticFailoverEnabled</code> must be enabled for Redis (cluster mode enabled) replication groups.
      *        </p>
@@ -1011,10 +1005,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * fails.
      * </p>
      * <p>
-     * If <code>true</code>, Multi-AZ is enabled for this replication group. If <code>false</code>, Multi-AZ is disabled
-     * for this replication group.
-     * </p>
-     * <p>
      * <code>AutomaticFailoverEnabled</code> must be enabled for Redis (cluster mode enabled) replication groups.
      * </p>
      * <p>
@@ -1043,10 +1033,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * 
      * @return Specifies whether a read-only replica is automatically promoted to read/write primary if the existing
      *         primary fails.</p>
-     *         <p>
-     *         If <code>true</code>, Multi-AZ is enabled for this replication group. If <code>false</code>, Multi-AZ is
-     *         disabled for this replication group.
-     *         </p>
      *         <p>
      *         <code>AutomaticFailoverEnabled</code> must be enabled for Redis (cluster mode enabled) replication
      *         groups.
@@ -1085,10 +1071,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * fails.
      * </p>
      * <p>
-     * If <code>true</code>, Multi-AZ is enabled for this replication group. If <code>false</code>, Multi-AZ is disabled
-     * for this replication group.
-     * </p>
-     * <p>
      * <code>AutomaticFailoverEnabled</code> must be enabled for Redis (cluster mode enabled) replication groups.
      * </p>
      * <p>
@@ -1118,10 +1100,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * @param automaticFailoverEnabled
      *        Specifies whether a read-only replica is automatically promoted to read/write primary if the existing
      *        primary fails.</p>
-     *        <p>
-     *        If <code>true</code>, Multi-AZ is enabled for this replication group. If <code>false</code>, Multi-AZ is
-     *        disabled for this replication group.
-     *        </p>
      *        <p>
      *        <code>AutomaticFailoverEnabled</code> must be enabled for Redis (cluster mode enabled) replication groups.
      *        </p>
@@ -1161,10 +1139,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * fails.
      * </p>
      * <p>
-     * If <code>true</code>, Multi-AZ is enabled for this replication group. If <code>false</code>, Multi-AZ is disabled
-     * for this replication group.
-     * </p>
-     * <p>
      * <code>AutomaticFailoverEnabled</code> must be enabled for Redis (cluster mode enabled) replication groups.
      * </p>
      * <p>
@@ -1193,10 +1167,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * 
      * @return Specifies whether a read-only replica is automatically promoted to read/write primary if the existing
      *         primary fails.</p>
-     *         <p>
-     *         If <code>true</code>, Multi-AZ is enabled for this replication group. If <code>false</code>, Multi-AZ is
-     *         disabled for this replication group.
-     *         </p>
      *         <p>
      *         <code>AutomaticFailoverEnabled</code> must be enabled for Redis (cluster mode enabled) replication
      *         groups.
@@ -1230,7 +1200,16 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime:
+     * Multi-AZ</a>.
+     * </p>
+     * 
      * @param multiAZEnabled
+     *        A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime:
+     *        Multi-AZ</a>.
      */
 
     public void setMultiAZEnabled(Boolean multiAZEnabled) {
@@ -1238,7 +1217,15 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * @return
+     * <p>
+     * A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime:
+     * Multi-AZ</a>.
+     * </p>
+     * 
+     * @return A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime:
+     *         Multi-AZ</a>.
      */
 
     public Boolean getMultiAZEnabled() {
@@ -1246,7 +1233,16 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime:
+     * Multi-AZ</a>.
+     * </p>
+     * 
      * @param multiAZEnabled
+     *        A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime:
+     *        Multi-AZ</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1256,7 +1252,15 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * @return
+     * <p>
+     * A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime:
+     * Multi-AZ</a>.
+     * </p>
+     * 
+     * @return A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime:
+     *         Multi-AZ</a>.
      */
 
     public Boolean isMultiAZEnabled() {
@@ -1265,7 +1269,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The number of nodes in the cluster.
+     * The number of clusters this replication group initially has.
      * </p>
      * <p>
      * This parameter is not used if there is more than one node group (shard). You should use
@@ -1281,7 +1285,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param numCacheClusters
-     *        The number of nodes in the cluster.</p>
+     *        The number of clusters this replication group initially has.</p>
      *        <p>
      *        This parameter is not used if there is more than one node group (shard). You should use
      *        <code>ReplicasPerNodeGroup</code> instead.
@@ -1301,7 +1305,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The number of nodes in the cluster.
+     * The number of clusters this replication group initially has.
      * </p>
      * <p>
      * This parameter is not used if there is more than one node group (shard). You should use
@@ -1316,7 +1320,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * The maximum permitted value for <code>NumCacheClusters</code> is 6 (1 primary plus 5 replicas).
      * </p>
      * 
-     * @return The number of nodes in the cluster.</p>
+     * @return The number of clusters this replication group initially has.</p>
      *         <p>
      *         This parameter is not used if there is more than one node group (shard). You should use
      *         <code>ReplicasPerNodeGroup</code> instead.
@@ -1336,7 +1340,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The number of nodes in the cluster.
+     * The number of clusters this replication group initially has.
      * </p>
      * <p>
      * This parameter is not used if there is more than one node group (shard). You should use
@@ -1352,7 +1356,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param numCacheClusters
-     *        The number of nodes in the cluster.</p>
+     *        The number of clusters this replication group initially has.</p>
      *        <p>
      *        This parameter is not used if there is more than one node group (shard). You should use
      *        <code>ReplicasPerNodeGroup</code> instead.

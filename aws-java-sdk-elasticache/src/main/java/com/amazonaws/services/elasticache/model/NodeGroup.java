@@ -37,7 +37,8 @@ public class NodeGroup implements Serializable, Cloneable {
     private String nodeGroupId;
     /**
      * <p>
-     * The current state of this replication group - <code>creating</code>, <code>available</code>, etc.
+     * The current state of this replication group - <code>creating</code>, <code>available</code>,
+     * <code>modifying</code>, <code>deleting</code>.
      * </p>
      */
     private String status;
@@ -123,11 +124,13 @@ public class NodeGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current state of this replication group - <code>creating</code>, <code>available</code>, etc.
+     * The current state of this replication group - <code>creating</code>, <code>available</code>,
+     * <code>modifying</code>, <code>deleting</code>.
      * </p>
      * 
      * @param status
-     *        The current state of this replication group - <code>creating</code>, <code>available</code>, etc.
+     *        The current state of this replication group - <code>creating</code>, <code>available</code>,
+     *        <code>modifying</code>, <code>deleting</code>.
      */
 
     public void setStatus(String status) {
@@ -136,10 +139,12 @@ public class NodeGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current state of this replication group - <code>creating</code>, <code>available</code>, etc.
+     * The current state of this replication group - <code>creating</code>, <code>available</code>,
+     * <code>modifying</code>, <code>deleting</code>.
      * </p>
      * 
-     * @return The current state of this replication group - <code>creating</code>, <code>available</code>, etc.
+     * @return The current state of this replication group - <code>creating</code>, <code>available</code>,
+     *         <code>modifying</code>, <code>deleting</code>.
      */
 
     public String getStatus() {
@@ -148,11 +153,13 @@ public class NodeGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current state of this replication group - <code>creating</code>, <code>available</code>, etc.
+     * The current state of this replication group - <code>creating</code>, <code>available</code>,
+     * <code>modifying</code>, <code>deleting</code>.
      * </p>
      * 
      * @param status
-     *        The current state of this replication group - <code>creating</code>, <code>available</code>, etc.
+     *        The current state of this replication group - <code>creating</code>, <code>available</code>,
+     *        <code>modifying</code>, <code>deleting</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

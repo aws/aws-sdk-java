@@ -104,7 +104,13 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * </ul>
      */
     private String automaticFailover;
-
+    /**
+     * <p>
+     * A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime:
+     * Multi-AZ</a>
+     * </p>
+     */
     private String multiAZ;
     /**
      * <p>
@@ -906,7 +912,16 @@ public class ReplicationGroup implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime:
+     * Multi-AZ</a>
+     * </p>
+     * 
      * @param multiAZ
+     *        A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime:
+     *        Multi-AZ</a>
      * @see MultiAZStatus
      */
 
@@ -915,7 +930,15 @@ public class ReplicationGroup implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime:
+     * Multi-AZ</a>
+     * </p>
+     * 
+     * @return A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime:
+     *         Multi-AZ</a>
      * @see MultiAZStatus
      */
 
@@ -924,7 +947,16 @@ public class ReplicationGroup implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime:
+     * Multi-AZ</a>
+     * </p>
+     * 
      * @param multiAZ
+     *        A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime:
+     *        Multi-AZ</a>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MultiAZStatus
      */
@@ -935,7 +967,16 @@ public class ReplicationGroup implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime:
+     * Multi-AZ</a>
+     * </p>
+     * 
      * @param multiAZ
+     *        A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime:
+     *        Multi-AZ</a>
      * @see MultiAZStatus
      */
 
@@ -944,7 +985,16 @@ public class ReplicationGroup implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime:
+     * Multi-AZ</a>
+     * </p>
+     * 
      * @param multiAZ
+     *        A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime:
+     *        Multi-AZ</a>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MultiAZStatus
      */

@@ -58,6 +58,10 @@ public class ScheduleActionSettingsJsonUnmarshaller implements Unmarshaller<Sche
                     scheduleActionSettings
                             .setHlsTimedMetadataSettings(HlsTimedMetadataScheduleActionSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("inputPrepareSettings", targetDepth)) {
+                    context.nextToken();
+                    scheduleActionSettings.setInputPrepareSettings(InputPrepareScheduleActionSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("inputSwitchSettings", targetDepth)) {
                     context.nextToken();
                     scheduleActionSettings.setInputSwitchSettings(InputSwitchScheduleActionSettingsJsonUnmarshaller.getInstance().unmarshall(context));

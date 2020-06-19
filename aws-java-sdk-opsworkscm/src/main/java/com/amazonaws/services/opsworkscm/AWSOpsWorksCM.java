@@ -128,6 +128,10 @@ import com.amazonaws.services.opsworkscm.waiters.AWSOpsWorksCMWaiters;
  * </li>
  * </ul>
  * <p>
+ * For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/opsworks-service.html">AWS OpsWorks
+ * endpoints and quotas</a> in the AWS General Reference.
+ * </p>
+ * <p>
  * <b>Throttling limits</b>
  * </p>
  * <p>
@@ -214,7 +218,7 @@ public interface AWSOpsWorksCM {
      * Puppet node CSR.
      * </p>
      * <p>
-     * Example (Chef):
+     * Example (Puppet):
      * <code>aws opsworks-cm associate-node --server-name <i>MyServer</i> --node-name <i>MyManagedNode</i> --engine-attributes "Name=<i>PUPPET_NODE_CSR</i>,Value=<i>csr-pem</i>"</code>
      * </p>
      * <p>

@@ -85,7 +85,13 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </ul>
      */
     private Boolean automaticFailoverEnabled;
-
+    /**
+     * <p>
+     * A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime:
+     * Multi-AZ</a>.
+     * </p>
+     */
     private Boolean multiAZEnabled;
     /**
      * <p>
@@ -735,7 +741,16 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime:
+     * Multi-AZ</a>.
+     * </p>
+     * 
      * @param multiAZEnabled
+     *        A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime:
+     *        Multi-AZ</a>.
      */
 
     public void setMultiAZEnabled(Boolean multiAZEnabled) {
@@ -743,7 +758,15 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * @return
+     * <p>
+     * A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime:
+     * Multi-AZ</a>.
+     * </p>
+     * 
+     * @return A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime:
+     *         Multi-AZ</a>.
      */
 
     public Boolean getMultiAZEnabled() {
@@ -751,7 +774,16 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime:
+     * Multi-AZ</a>.
+     * </p>
+     * 
      * @param multiAZEnabled
+     *        A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime:
+     *        Multi-AZ</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -761,7 +793,15 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * @return
+     * <p>
+     * A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime:
+     * Multi-AZ</a>.
+     * </p>
+     * 
+     * @return A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime:
+     *         Multi-AZ</a>.
      */
 
     public Boolean isMultiAZEnabled() {

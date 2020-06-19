@@ -30,6 +30,8 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
     private HlsId3SegmentTaggingScheduleActionSettings hlsId3SegmentTaggingSettings;
     /** Action to insert HLS metadata */
     private HlsTimedMetadataScheduleActionSettings hlsTimedMetadataSettings;
+    /** Action to prepare an input for a future immediate input switch */
+    private InputPrepareScheduleActionSettings inputPrepareSettings;
     /** Action to switch the input */
     private InputSwitchScheduleActionSettings inputSwitchSettings;
     /** Action to pause or unpause one or both channel pipelines */
@@ -110,6 +112,40 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
 
     public ScheduleActionSettings withHlsTimedMetadataSettings(HlsTimedMetadataScheduleActionSettings hlsTimedMetadataSettings) {
         setHlsTimedMetadataSettings(hlsTimedMetadataSettings);
+        return this;
+    }
+
+    /**
+     * Action to prepare an input for a future immediate input switch
+     * 
+     * @param inputPrepareSettings
+     *        Action to prepare an input for a future immediate input switch
+     */
+
+    public void setInputPrepareSettings(InputPrepareScheduleActionSettings inputPrepareSettings) {
+        this.inputPrepareSettings = inputPrepareSettings;
+    }
+
+    /**
+     * Action to prepare an input for a future immediate input switch
+     * 
+     * @return Action to prepare an input for a future immediate input switch
+     */
+
+    public InputPrepareScheduleActionSettings getInputPrepareSettings() {
+        return this.inputPrepareSettings;
+    }
+
+    /**
+     * Action to prepare an input for a future immediate input switch
+     * 
+     * @param inputPrepareSettings
+     *        Action to prepare an input for a future immediate input switch
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ScheduleActionSettings withInputPrepareSettings(InputPrepareScheduleActionSettings inputPrepareSettings) {
+        setInputPrepareSettings(inputPrepareSettings);
         return this;
     }
 
@@ -367,6 +403,8 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
             sb.append("HlsId3SegmentTaggingSettings: ").append(getHlsId3SegmentTaggingSettings()).append(",");
         if (getHlsTimedMetadataSettings() != null)
             sb.append("HlsTimedMetadataSettings: ").append(getHlsTimedMetadataSettings()).append(",");
+        if (getInputPrepareSettings() != null)
+            sb.append("InputPrepareSettings: ").append(getInputPrepareSettings()).append(",");
         if (getInputSwitchSettings() != null)
             sb.append("InputSwitchSettings: ").append(getInputSwitchSettings()).append(",");
         if (getPauseStateSettings() != null)
@@ -402,6 +440,10 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
         if (other.getHlsTimedMetadataSettings() == null ^ this.getHlsTimedMetadataSettings() == null)
             return false;
         if (other.getHlsTimedMetadataSettings() != null && other.getHlsTimedMetadataSettings().equals(this.getHlsTimedMetadataSettings()) == false)
+            return false;
+        if (other.getInputPrepareSettings() == null ^ this.getInputPrepareSettings() == null)
+            return false;
+        if (other.getInputPrepareSettings() != null && other.getInputPrepareSettings().equals(this.getInputPrepareSettings()) == false)
             return false;
         if (other.getInputSwitchSettings() == null ^ this.getInputSwitchSettings() == null)
             return false;
@@ -443,6 +485,7 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
 
         hashCode = prime * hashCode + ((getHlsId3SegmentTaggingSettings() == null) ? 0 : getHlsId3SegmentTaggingSettings().hashCode());
         hashCode = prime * hashCode + ((getHlsTimedMetadataSettings() == null) ? 0 : getHlsTimedMetadataSettings().hashCode());
+        hashCode = prime * hashCode + ((getInputPrepareSettings() == null) ? 0 : getInputPrepareSettings().hashCode());
         hashCode = prime * hashCode + ((getInputSwitchSettings() == null) ? 0 : getInputSwitchSettings().hashCode());
         hashCode = prime * hashCode + ((getPauseStateSettings() == null) ? 0 : getPauseStateSettings().hashCode());
         hashCode = prime * hashCode + ((getScte35ReturnToNetworkSettings() == null) ? 0 : getScte35ReturnToNetworkSettings().hashCode());

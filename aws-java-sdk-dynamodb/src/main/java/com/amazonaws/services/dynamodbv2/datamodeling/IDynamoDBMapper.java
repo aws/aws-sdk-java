@@ -232,8 +232,9 @@ public interface IDynamoDBMapper {
      * as if SaveBehavior is set as CLOBBER.</b>
      * </p>
      * <p>
-     * <b>This method does not support versioning annotations. It throws {@link com.amazonaws.SdkClientException} exception if
-     * class of any input object is annotated with {@link DynamoDBVersionAttribute} or {@link DynamoDBVersioned}</b>
+     * <b>This method supports versioning annotations, but not in conjunction with condition expressions. It throws
+     * {@link com.amazonaws.SdkClientException} exception if class of any input object is annotated with
+     * {@link DynamoDBVersionAttribute} or {@link DynamoDBVersioned} and a condition expression is also present</b>
      * </p>
      * <p>
      * Any exceptions from underlying API are thrown as is. For more information, please refer
@@ -256,8 +257,9 @@ public interface IDynamoDBMapper {
      * as if SaveBehavior is set as CLOBBER.</b>
      * </p>
      * <p>
-     * <b>This method does not support versioning annotations. It throws {@link com.amazonaws.SdkClientException} exception if
-     * class of any input object is annotated with {@link DynamoDBVersionAttribute} or {@link DynamoDBVersioned}</b>
+     * <b>This method supports versioning annotations, but not in conjunction with condition expressions. It throws
+     * {@link com.amazonaws.SdkClientException} exception if class of any input object is annotated with
+     * {@link DynamoDBVersionAttribute} or {@link DynamoDBVersioned} and a condition expression is also present</b>
      * </p>
      * <p>
      * Any exceptions from underlying API are thrown as is. For more information, please refer

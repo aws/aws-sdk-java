@@ -38,6 +38,8 @@ public class EncoderSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("blackoutSlate").build();
     private static final MarshallingInfo<List> CAPTIONDESCRIPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("captionDescriptions").build();
+    private static final MarshallingInfo<StructuredPojo> FEATUREACTIVATIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("featureActivations").build();
     private static final MarshallingInfo<StructuredPojo> GLOBALCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("globalConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> NIELSENCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -70,6 +72,7 @@ public class EncoderSettingsMarshaller {
             protocolMarshaller.marshall(encoderSettings.getAvailConfiguration(), AVAILCONFIGURATION_BINDING);
             protocolMarshaller.marshall(encoderSettings.getBlackoutSlate(), BLACKOUTSLATE_BINDING);
             protocolMarshaller.marshall(encoderSettings.getCaptionDescriptions(), CAPTIONDESCRIPTIONS_BINDING);
+            protocolMarshaller.marshall(encoderSettings.getFeatureActivations(), FEATUREACTIVATIONS_BINDING);
             protocolMarshaller.marshall(encoderSettings.getGlobalConfiguration(), GLOBALCONFIGURATION_BINDING);
             protocolMarshaller.marshall(encoderSettings.getNielsenConfiguration(), NIELSENCONFIGURATION_BINDING);
             protocolMarshaller.marshall(encoderSettings.getOutputGroups(), OUTPUTGROUPS_BINDING);

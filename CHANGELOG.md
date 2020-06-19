@@ -1,3 +1,20 @@
+# __1.11.807__ __2020-06-19__
+## __AWS Elemental MediaLive__
+  - ### Features
+    - AWS Elemental MediaLive now supports Input Prepare schedule actions. This feature improves existing input switching by allowing users to prepare an input prior to switching to it.
+
+## __AWS OpsWorks CM__
+  - ### Features
+    - Documentation updates for AWS OpsWorks CM.
+
+## __Amazon ElastiCache__
+  - ### Features
+    - Documentation updates for elasticache
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Adds support to tag elastic-gpu on the RunInstances api
+
 # __1.11.806__ __2020-06-18__
 ## __AWS Elemental MediaConvert__
   - ### Features

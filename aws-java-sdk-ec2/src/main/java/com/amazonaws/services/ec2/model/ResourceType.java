@@ -25,6 +25,7 @@ public enum ResourceType {
     DedicatedHost("dedicated-host"),
     DhcpOptions("dhcp-options"),
     ElasticIp("elastic-ip"),
+    ElasticGpu("elastic-gpu"),
     Fleet("fleet"),
     FpgaImage("fpga-image"),
     HostReservation("host-reservation"),

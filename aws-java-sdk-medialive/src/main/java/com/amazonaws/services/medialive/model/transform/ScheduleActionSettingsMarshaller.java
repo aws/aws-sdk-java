@@ -31,6 +31,8 @@ public class ScheduleActionSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("hlsId3SegmentTaggingSettings").build();
     private static final MarshallingInfo<StructuredPojo> HLSTIMEDMETADATASETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("hlsTimedMetadataSettings").build();
+    private static final MarshallingInfo<StructuredPojo> INPUTPREPARESETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inputPrepareSettings").build();
     private static final MarshallingInfo<StructuredPojo> INPUTSWITCHSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inputSwitchSettings").build();
     private static final MarshallingInfo<StructuredPojo> PAUSESTATESETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -64,6 +66,7 @@ public class ScheduleActionSettingsMarshaller {
         try {
             protocolMarshaller.marshall(scheduleActionSettings.getHlsId3SegmentTaggingSettings(), HLSID3SEGMENTTAGGINGSETTINGS_BINDING);
             protocolMarshaller.marshall(scheduleActionSettings.getHlsTimedMetadataSettings(), HLSTIMEDMETADATASETTINGS_BINDING);
+            protocolMarshaller.marshall(scheduleActionSettings.getInputPrepareSettings(), INPUTPREPARESETTINGS_BINDING);
             protocolMarshaller.marshall(scheduleActionSettings.getInputSwitchSettings(), INPUTSWITCHSETTINGS_BINDING);
             protocolMarshaller.marshall(scheduleActionSettings.getPauseStateSettings(), PAUSESTATESETTINGS_BINDING);
             protocolMarshaller.marshall(scheduleActionSettings.getScte35ReturnToNetworkSettings(), SCTE35RETURNTONETWORKSETTINGS_BINDING);
