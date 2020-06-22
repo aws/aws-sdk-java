@@ -463,8 +463,8 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
 
     /**
      * <p>
-     * Deletes an Amazon Rekognition Custom Labels project. To delete a project you must first delete all versions of
-     * the model associated with the project. To delete a version of a model, see <a>DeleteProjectVersion</a>.
+     * Deletes an Amazon Rekognition Custom Labels project. To delete a project you must first delete all models
+     * associated with the project. To delete a model, see <a>DeleteProjectVersion</a>.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>rekognition:DeleteProject</code> action.
@@ -478,8 +478,8 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
 
     /**
      * <p>
-     * Deletes an Amazon Rekognition Custom Labels project. To delete a project you must first delete all versions of
-     * the model associated with the project. To delete a version of a model, see <a>DeleteProjectVersion</a>.
+     * Deletes an Amazon Rekognition Custom Labels project. To delete a project you must first delete all models
+     * associated with the project. To delete a model, see <a>DeleteProjectVersion</a>.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>rekognition:DeleteProject</code> action.
@@ -498,12 +498,12 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
 
     /**
      * <p>
-     * Deletes a version of a model.
+     * Deletes an Amazon Rekognition Custom Labels model.
      * </p>
      * <p>
-     * You must first stop the model before you can delete it. To check if a model is running, use the
+     * You can't delete a model if it is running or if it is training. To check the status of a model, use the
      * <code>Status</code> field returned from <a>DescribeProjectVersions</a>. To stop a running model call
-     * <a>StopProjectVersion</a>.
+     * <a>StopProjectVersion</a>. If the model is training, wait until it finishes.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>rekognition:DeleteProjectVersion</code> action.
@@ -517,12 +517,12 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
 
     /**
      * <p>
-     * Deletes a version of a model.
+     * Deletes an Amazon Rekognition Custom Labels model.
      * </p>
      * <p>
-     * You must first stop the model before you can delete it. To check if a model is running, use the
+     * You can't delete a model if it is running or if it is training. To check the status of a model, use the
      * <code>Status</code> field returned from <a>DescribeProjectVersions</a>. To stop a running model call
-     * <a>StopProjectVersion</a>.
+     * <a>StopProjectVersion</a>. If the model is training, wait until it finishes.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>rekognition:DeleteProjectVersion</code> action.
@@ -1798,6 +1798,95 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
 
     /**
      * <p>
+     * Gets the segment detection results of a Amazon Rekognition Video analysis started by
+     * <a>StartSegmentDetection</a>.
+     * </p>
+     * <p>
+     * Segment detection with Amazon Rekognition Video is an asynchronous operation. You start segment detection by
+     * calling <a>StartSegmentDetection</a> which returns a job identifier (<code>JobId</code>). When the segment
+     * detection operation finishes, Amazon Rekognition publishes a completion status to the Amazon Simple Notification
+     * Service topic registered in the initial call to <code>StartSegmentDetection</code>. To get the results of the
+     * segment detection operation, first check that the status value published to the Amazon SNS topic is
+     * <code>SUCCEEDED</code>. if so, call <code>GetSegmentDetection</code> and pass the job identifier (
+     * <code>JobId</code>) from the initial call of <code>StartSegmentDetection</code>.
+     * </p>
+     * <p>
+     * <code>GetSegmentDetection</code> returns detected segments in an array (<code>Segments</code>) of
+     * <a>SegmentDetection</a> objects. <code>Segments</code> is sorted by the segment types specified in the
+     * <code>SegmentTypes</code> input parameter of <code>StartSegmentDetection</code>. Each element of the array
+     * includes the detected segment, the precentage confidence in the acuracy of the detected segment, the type of the
+     * segment, and the frame in which the segment was detected.
+     * </p>
+     * <p>
+     * Use <code>SelectedSegmentTypes</code> to find out the type of segment detection requested in the call to
+     * <code>StartSegmentDetection</code>.
+     * </p>
+     * <p>
+     * Use the <code>MaxResults</code> parameter to limit the number of segment detections returned. If there are more
+     * results than specified in <code>MaxResults</code>, the value of <code>NextToken</code> in the operation response
+     * contains a pagination token for getting the next set of results. To get the next page of results, call
+     * <code>GetSegmentDetection</code> and populate the <code>NextToken</code> request parameter with the token value
+     * returned from the previous call to <code>GetSegmentDetection</code>.
+     * </p>
+     * <p>
+     * For more information, see Detecting Video Segments in Stored Video in the Amazon Rekognition Developer Guide.
+     * </p>
+     * 
+     * @param getSegmentDetectionRequest
+     * @return A Java Future containing the result of the GetSegmentDetection operation returned by the service.
+     * @sample AmazonRekognitionAsync.GetSegmentDetection
+     */
+    java.util.concurrent.Future<GetSegmentDetectionResult> getSegmentDetectionAsync(GetSegmentDetectionRequest getSegmentDetectionRequest);
+
+    /**
+     * <p>
+     * Gets the segment detection results of a Amazon Rekognition Video analysis started by
+     * <a>StartSegmentDetection</a>.
+     * </p>
+     * <p>
+     * Segment detection with Amazon Rekognition Video is an asynchronous operation. You start segment detection by
+     * calling <a>StartSegmentDetection</a> which returns a job identifier (<code>JobId</code>). When the segment
+     * detection operation finishes, Amazon Rekognition publishes a completion status to the Amazon Simple Notification
+     * Service topic registered in the initial call to <code>StartSegmentDetection</code>. To get the results of the
+     * segment detection operation, first check that the status value published to the Amazon SNS topic is
+     * <code>SUCCEEDED</code>. if so, call <code>GetSegmentDetection</code> and pass the job identifier (
+     * <code>JobId</code>) from the initial call of <code>StartSegmentDetection</code>.
+     * </p>
+     * <p>
+     * <code>GetSegmentDetection</code> returns detected segments in an array (<code>Segments</code>) of
+     * <a>SegmentDetection</a> objects. <code>Segments</code> is sorted by the segment types specified in the
+     * <code>SegmentTypes</code> input parameter of <code>StartSegmentDetection</code>. Each element of the array
+     * includes the detected segment, the precentage confidence in the acuracy of the detected segment, the type of the
+     * segment, and the frame in which the segment was detected.
+     * </p>
+     * <p>
+     * Use <code>SelectedSegmentTypes</code> to find out the type of segment detection requested in the call to
+     * <code>StartSegmentDetection</code>.
+     * </p>
+     * <p>
+     * Use the <code>MaxResults</code> parameter to limit the number of segment detections returned. If there are more
+     * results than specified in <code>MaxResults</code>, the value of <code>NextToken</code> in the operation response
+     * contains a pagination token for getting the next set of results. To get the next page of results, call
+     * <code>GetSegmentDetection</code> and populate the <code>NextToken</code> request parameter with the token value
+     * returned from the previous call to <code>GetSegmentDetection</code>.
+     * </p>
+     * <p>
+     * For more information, see Detecting Video Segments in Stored Video in the Amazon Rekognition Developer Guide.
+     * </p>
+     * 
+     * @param getSegmentDetectionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetSegmentDetection operation returned by the service.
+     * @sample AmazonRekognitionAsyncHandler.GetSegmentDetection
+     */
+    java.util.concurrent.Future<GetSegmentDetectionResult> getSegmentDetectionAsync(GetSegmentDetectionRequest getSegmentDetectionRequest,
+            com.amazonaws.handlers.AsyncHandler<GetSegmentDetectionRequest, GetSegmentDetectionResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets the text detection results of a Amazon Rekognition Video analysis started by <a>StartTextDetection</a>.
      * </p>
      * <p>
@@ -1906,7 +1995,7 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * For more information, see Model Versioning in the Amazon Rekognition Developer Guide.
      * </p>
      * <p>
-     * If you provide the optional <code>ExternalImageID</code> for the input image you provided, Amazon Rekognition
+     * If you provide the optional <code>ExternalImageId</code> for the input image you provided, Amazon Rekognition
      * associates this ID with all faces that it detects. When you call the <a>ListFaces</a> operation, the response
      * returns the external ID. You can use this external image ID to create a client-side index to associate the faces
      * with each image. You can then use the index to find all faces in an image.
@@ -2047,7 +2136,7 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * For more information, see Model Versioning in the Amazon Rekognition Developer Guide.
      * </p>
      * <p>
-     * If you provide the optional <code>ExternalImageID</code> for the input image you provided, Amazon Rekognition
+     * If you provide the optional <code>ExternalImageId</code> for the input image you provided, Amazon Rekognition
      * associates this ID with all faces that it detects. When you call the <a>ListFaces</a> operation, the response
      * returns the external ID. You can use this external image ID to create a client-side index to associate the faces
      * with each image. You can then use the index to find all faces in an image.
@@ -2902,6 +2991,75 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      */
     java.util.concurrent.Future<StartProjectVersionResult> startProjectVersionAsync(StartProjectVersionRequest startProjectVersionRequest,
             com.amazonaws.handlers.AsyncHandler<StartProjectVersionRequest, StartProjectVersionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Starts asynchronous detection of segment detection in a stored video.
+     * </p>
+     * <p>
+     * Amazon Rekognition Video can detect segments in a video stored in an Amazon S3 bucket. Use <a>Video</a> to
+     * specify the bucket name and the filename of the video. <code>StartSegmentDetection</code> returns a job
+     * identifier (<code>JobId</code>) which you use to get the results of the operation. When segment detection is
+     * finished, Amazon Rekognition Video publishes a completion status to the Amazon Simple Notification Service topic
+     * that you specify in <code>NotificationChannel</code>.
+     * </p>
+     * <p>
+     * You can use the <code>Filters</code> (<a>StartSegmentDetectionFilters</a>) input parameter to specify the minimum
+     * detection confidence returned in the response. Within <code>Filters</code>, use <code>ShotFilter</code>
+     * (<a>StartShotDetectionFilter</a>) to filter detected shots. Use <code>TechnicalCueFilter</code>
+     * (<a>StartTechnicalCueDetectionFilter</a>) to filter technical cues.
+     * </p>
+     * <p>
+     * To get the results of the segment detection operation, first check that the status value published to the Amazon
+     * SNS topic is <code>SUCCEEDED</code>. if so, call <a>GetSegmentDetection</a> and pass the job identifier (
+     * <code>JobId</code>) from the initial call to <code>StartSegmentDetection</code>.
+     * </p>
+     * <p>
+     * For more information, see Detecting Video Segments in Stored Video in the Amazon Rekognition Developer Guide.
+     * </p>
+     * 
+     * @param startSegmentDetectionRequest
+     * @return A Java Future containing the result of the StartSegmentDetection operation returned by the service.
+     * @sample AmazonRekognitionAsync.StartSegmentDetection
+     */
+    java.util.concurrent.Future<StartSegmentDetectionResult> startSegmentDetectionAsync(StartSegmentDetectionRequest startSegmentDetectionRequest);
+
+    /**
+     * <p>
+     * Starts asynchronous detection of segment detection in a stored video.
+     * </p>
+     * <p>
+     * Amazon Rekognition Video can detect segments in a video stored in an Amazon S3 bucket. Use <a>Video</a> to
+     * specify the bucket name and the filename of the video. <code>StartSegmentDetection</code> returns a job
+     * identifier (<code>JobId</code>) which you use to get the results of the operation. When segment detection is
+     * finished, Amazon Rekognition Video publishes a completion status to the Amazon Simple Notification Service topic
+     * that you specify in <code>NotificationChannel</code>.
+     * </p>
+     * <p>
+     * You can use the <code>Filters</code> (<a>StartSegmentDetectionFilters</a>) input parameter to specify the minimum
+     * detection confidence returned in the response. Within <code>Filters</code>, use <code>ShotFilter</code>
+     * (<a>StartShotDetectionFilter</a>) to filter detected shots. Use <code>TechnicalCueFilter</code>
+     * (<a>StartTechnicalCueDetectionFilter</a>) to filter technical cues.
+     * </p>
+     * <p>
+     * To get the results of the segment detection operation, first check that the status value published to the Amazon
+     * SNS topic is <code>SUCCEEDED</code>. if so, call <a>GetSegmentDetection</a> and pass the job identifier (
+     * <code>JobId</code>) from the initial call to <code>StartSegmentDetection</code>.
+     * </p>
+     * <p>
+     * For more information, see Detecting Video Segments in Stored Video in the Amazon Rekognition Developer Guide.
+     * </p>
+     * 
+     * @param startSegmentDetectionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartSegmentDetection operation returned by the service.
+     * @sample AmazonRekognitionAsyncHandler.StartSegmentDetection
+     */
+    java.util.concurrent.Future<StartSegmentDetectionResult> startSegmentDetectionAsync(StartSegmentDetectionRequest startSegmentDetectionRequest,
+            com.amazonaws.handlers.AsyncHandler<StartSegmentDetectionRequest, StartSegmentDetectionResult> asyncHandler);
 
     /**
      * <p>

@@ -169,6 +169,11 @@ public class AbstractAmazonRekognition implements AmazonRekognition {
     }
 
     @Override
+    public GetSegmentDetectionResult getSegmentDetection(GetSegmentDetectionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetTextDetectionResult getTextDetection(GetTextDetectionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -240,6 +245,11 @@ public class AbstractAmazonRekognition implements AmazonRekognition {
 
     @Override
     public StartProjectVersionResult startProjectVersion(StartProjectVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartSegmentDetectionResult startSegmentDetection(StartSegmentDetectionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

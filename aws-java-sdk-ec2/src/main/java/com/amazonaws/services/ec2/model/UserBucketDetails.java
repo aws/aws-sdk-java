@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes the S3 bucket for the disk image.
+ * Describes the Amazon S3 bucket for the disk image.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UserBucketDetails" target="_top">AWS API
@@ -28,7 +28,7 @@ public class UserBucketDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The S3 bucket from which the disk image was created.
+     * The Amazon S3 bucket from which the disk image was created.
      * </p>
      */
     private String s3Bucket;
@@ -41,11 +41,11 @@ public class UserBucketDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The S3 bucket from which the disk image was created.
+     * The Amazon S3 bucket from which the disk image was created.
      * </p>
      * 
      * @param s3Bucket
-     *        The S3 bucket from which the disk image was created.
+     *        The Amazon S3 bucket from which the disk image was created.
      */
 
     public void setS3Bucket(String s3Bucket) {
@@ -54,10 +54,10 @@ public class UserBucketDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The S3 bucket from which the disk image was created.
+     * The Amazon S3 bucket from which the disk image was created.
      * </p>
      * 
-     * @return The S3 bucket from which the disk image was created.
+     * @return The Amazon S3 bucket from which the disk image was created.
      */
 
     public String getS3Bucket() {
@@ -66,11 +66,11 @@ public class UserBucketDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The S3 bucket from which the disk image was created.
+     * The Amazon S3 bucket from which the disk image was created.
      * </p>
      * 
      * @param s3Bucket
-     *        The S3 bucket from which the disk image was created.
+     *        The Amazon S3 bucket from which the disk image was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

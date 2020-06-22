@@ -64,6 +64,10 @@ public class ComputeLimitsJsonUnmarshaller implements Unmarshaller<ComputeLimits
                     context.nextToken();
                     computeLimits.setMaximumOnDemandCapacityUnits(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("MaximumCoreCapacityUnits", targetDepth)) {
+                    context.nextToken();
+                    computeLimits.setMaximumCoreCapacityUnits(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

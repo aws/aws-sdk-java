@@ -48,6 +48,10 @@ public class ListQueuesResultStaxUnmarshaller implements Unmarshaller<ListQueues
                     continue;
                 }
 
+                if (context.testExpression("NextToken", targetDepth)) {
+                    listQueuesResult.setNextToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return listQueuesResult;

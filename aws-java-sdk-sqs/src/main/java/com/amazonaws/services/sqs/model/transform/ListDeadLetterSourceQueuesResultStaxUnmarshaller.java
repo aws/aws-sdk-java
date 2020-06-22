@@ -48,6 +48,10 @@ public class ListDeadLetterSourceQueuesResultStaxUnmarshaller implements Unmarsh
                     continue;
                 }
 
+                if (context.testExpression("NextToken", targetDepth)) {
+                    listDeadLetterSourceQueuesResult.setNextToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return listDeadLetterSourceQueuesResult;

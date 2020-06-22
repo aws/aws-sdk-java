@@ -35,6 +35,8 @@ public class ComputeLimitsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaximumCapacityUnits").build();
     private static final MarshallingInfo<Integer> MAXIMUMONDEMANDCAPACITYUNITS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaximumOnDemandCapacityUnits").build();
+    private static final MarshallingInfo<Integer> MAXIMUMCORECAPACITYUNITS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaximumCoreCapacityUnits").build();
 
     private static final ComputeLimitsMarshaller instance = new ComputeLimitsMarshaller();
 
@@ -56,6 +58,7 @@ public class ComputeLimitsMarshaller {
             protocolMarshaller.marshall(computeLimits.getMinimumCapacityUnits(), MINIMUMCAPACITYUNITS_BINDING);
             protocolMarshaller.marshall(computeLimits.getMaximumCapacityUnits(), MAXIMUMCAPACITYUNITS_BINDING);
             protocolMarshaller.marshall(computeLimits.getMaximumOnDemandCapacityUnits(), MAXIMUMONDEMANDCAPACITYUNITS_BINDING);
+            protocolMarshaller.marshall(computeLimits.getMaximumCoreCapacityUnits(), MAXIMUMCORECAPACITYUNITS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

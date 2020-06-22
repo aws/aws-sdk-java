@@ -44,6 +44,14 @@ public class ListQueuesRequestMarshaller implements Marshaller<Request<ListQueue
             request.addParameter("QueueNamePrefix", StringUtils.fromString(listQueuesRequest.getQueueNamePrefix()));
         }
 
+        if (listQueuesRequest.getNextToken() != null) {
+            request.addParameter("NextToken", StringUtils.fromString(listQueuesRequest.getNextToken()));
+        }
+
+        if (listQueuesRequest.getMaxResults() != null) {
+            request.addParameter("MaxResults", StringUtils.fromInteger(listQueuesRequest.getMaxResults()));
+        }
+
         return request;
     }
 

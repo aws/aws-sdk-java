@@ -32,7 +32,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * The <code>Id</code>s of a batch request need to be unique within a request
+     * The <code>Id</code>s of a batch request need to be unique within a request.
      * </p>
      * <p>
      * This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters,
@@ -80,7 +80,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * <li>
      * <p>
      * Currently, the only supported message system attribute is <code>AWSTraceHeader</code>. Its type must be
-     * <code>String</code> and its value must be a correctly formatted AWS X-Ray trace string.
+     * <code>String</code> and its value must be a correctly formatted AWS X-Ray trace header string.
      * </p>
      * </li>
      * <li>
@@ -234,7 +234,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * @param id
      *        An identifier for a message in this batch used to communicate the result.</p> <note>
      *        <p>
-     *        The <code>Id</code>s of a batch request need to be unique within a request
+     *        The <code>Id</code>s of a batch request need to be unique within a request.
      *        </p>
      *        <p>
      *        This identifier can have up to 80 characters. The following characters are accepted: alphanumeric
@@ -254,7 +254,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * The <code>Id</code>s of a batch request need to be unique within a request
+     * The <code>Id</code>s of a batch request need to be unique within a request.
      * </p>
      * <p>
      * This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters,
@@ -265,7 +265,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * @param id
      *        An identifier for a message in this batch used to communicate the result.</p> <note>
      *        <p>
-     *        The <code>Id</code>s of a batch request need to be unique within a request
+     *        The <code>Id</code>s of a batch request need to be unique within a request.
      *        </p>
      *        <p>
      *        This identifier can have up to 80 characters. The following characters are accepted: alphanumeric
@@ -283,7 +283,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * The <code>Id</code>s of a batch request need to be unique within a request
+     * The <code>Id</code>s of a batch request need to be unique within a request.
      * </p>
      * <p>
      * This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters,
@@ -293,7 +293,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * 
      * @return An identifier for a message in this batch used to communicate the result.</p> <note>
      *         <p>
-     *         The <code>Id</code>s of a batch request need to be unique within a request
+     *         The <code>Id</code>s of a batch request need to be unique within a request.
      *         </p>
      *         <p>
      *         This identifier can have up to 80 characters. The following characters are accepted: alphanumeric
@@ -311,7 +311,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * The <code>Id</code>s of a batch request need to be unique within a request
+     * The <code>Id</code>s of a batch request need to be unique within a request.
      * </p>
      * <p>
      * This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters,
@@ -322,7 +322,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * @param id
      *        An identifier for a message in this batch used to communicate the result.</p> <note>
      *        <p>
-     *        The <code>Id</code>s of a batch request need to be unique within a request
+     *        The <code>Id</code>s of a batch request need to be unique within a request.
      *        </p>
      *        <p>
      *        This identifier can have up to 80 characters. The following characters are accepted: alphanumeric
@@ -560,7 +560,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * <li>
      * <p>
      * Currently, the only supported message system attribute is <code>AWSTraceHeader</code>. Its type must be
-     * <code>String</code> and its value must be a correctly formatted AWS X-Ray trace string.
+     * <code>String</code> and its value must be a correctly formatted AWS X-Ray trace header string.
      * </p>
      * </li>
      * <li>
@@ -577,7 +577,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      *         <li>
      *         <p>
      *         Currently, the only supported message system attribute is <code>AWSTraceHeader</code>. Its type must be
-     *         <code>String</code> and its value must be a correctly formatted AWS X-Ray trace string.
+     *         <code>String</code> and its value must be a correctly formatted AWS X-Ray trace header string.
      *         </p>
      *         </li>
      *         <li>
@@ -605,7 +605,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * <li>
      * <p>
      * Currently, the only supported message system attribute is <code>AWSTraceHeader</code>. Its type must be
-     * <code>String</code> and its value must be a correctly formatted AWS X-Ray trace string.
+     * <code>String</code> and its value must be a correctly formatted AWS X-Ray trace header string.
      * </p>
      * </li>
      * <li>
@@ -623,7 +623,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        Currently, the only supported message system attribute is <code>AWSTraceHeader</code>. Its type must be
-     *        <code>String</code> and its value must be a correctly formatted AWS X-Ray trace string.
+     *        <code>String</code> and its value must be a correctly formatted AWS X-Ray trace header string.
      *        </p>
      *        </li>
      *        <li>
@@ -649,7 +649,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * <li>
      * <p>
      * Currently, the only supported message system attribute is <code>AWSTraceHeader</code>. Its type must be
-     * <code>String</code> and its value must be a correctly formatted AWS X-Ray trace string.
+     * <code>String</code> and its value must be a correctly formatted AWS X-Ray trace header string.
      * </p>
      * </li>
      * <li>
@@ -667,7 +667,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        Currently, the only supported message system attribute is <code>AWSTraceHeader</code>. Its type must be
-     *        <code>String</code> and its value must be a correctly formatted AWS X-Ray trace string.
+     *        <code>String</code> and its value must be a correctly formatted AWS X-Ray trace header string.
      *        </p>
      *        </li>
      *        <li>

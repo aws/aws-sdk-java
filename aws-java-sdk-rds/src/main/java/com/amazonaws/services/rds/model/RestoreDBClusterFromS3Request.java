@@ -65,7 +65,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
     private String databaseName;
     /**
      * <p>
-     * The name of the DB cluster to create from the source data in the Amazon S3 bucket. This parameter is isn't
+     * The name of the DB cluster to create from the source data in the Amazon S3 bucket. This parameter isn't
      * case-sensitive.
      * </p>
      * <p>
@@ -340,10 +340,10 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * The version of the database that the backup files were created from.
      * </p>
      * <p>
-     * MySQL version 5.5 and 5.6 are supported.
+     * MySQL versions 5.5, 5.6, and 5.7 are supported.
      * </p>
      * <p>
-     * Example: <code>5.6.22</code>
+     * Example: <code>5.6.40</code>
      * </p>
      */
     private String sourceEngineVersion;
@@ -711,7 +711,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the DB cluster to create from the source data in the Amazon S3 bucket. This parameter is isn't
+     * The name of the DB cluster to create from the source data in the Amazon S3 bucket. This parameter isn't
      * case-sensitive.
      * </p>
      * <p>
@@ -739,7 +739,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param dBClusterIdentifier
-     *        The name of the DB cluster to create from the source data in the Amazon S3 bucket. This parameter is isn't
+     *        The name of the DB cluster to create from the source data in the Amazon S3 bucket. This parameter isn't
      *        case-sensitive.</p>
      *        <p>
      *        Constraints:
@@ -771,7 +771,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the DB cluster to create from the source data in the Amazon S3 bucket. This parameter is isn't
+     * The name of the DB cluster to create from the source data in the Amazon S3 bucket. This parameter isn't
      * case-sensitive.
      * </p>
      * <p>
@@ -798,8 +798,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * Example: <code>my-cluster1</code>
      * </p>
      * 
-     * @return The name of the DB cluster to create from the source data in the Amazon S3 bucket. This parameter is
-     *         isn't case-sensitive.</p>
+     * @return The name of the DB cluster to create from the source data in the Amazon S3 bucket. This parameter isn't
+     *         case-sensitive.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -830,7 +830,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the DB cluster to create from the source data in the Amazon S3 bucket. This parameter is isn't
+     * The name of the DB cluster to create from the source data in the Amazon S3 bucket. This parameter isn't
      * case-sensitive.
      * </p>
      * <p>
@@ -858,7 +858,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param dBClusterIdentifier
-     *        The name of the DB cluster to create from the source data in the Amazon S3 bucket. This parameter is isn't
+     *        The name of the DB cluster to create from the source data in the Amazon S3 bucket. This parameter isn't
      *        case-sensitive.</p>
      *        <p>
      *        Constraints:
@@ -2489,19 +2489,19 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * The version of the database that the backup files were created from.
      * </p>
      * <p>
-     * MySQL version 5.5 and 5.6 are supported.
+     * MySQL versions 5.5, 5.6, and 5.7 are supported.
      * </p>
      * <p>
-     * Example: <code>5.6.22</code>
+     * Example: <code>5.6.40</code>
      * </p>
      * 
      * @param sourceEngineVersion
      *        The version of the database that the backup files were created from.</p>
      *        <p>
-     *        MySQL version 5.5 and 5.6 are supported.
+     *        MySQL versions 5.5, 5.6, and 5.7 are supported.
      *        </p>
      *        <p>
-     *        Example: <code>5.6.22</code>
+     *        Example: <code>5.6.40</code>
      */
 
     public void setSourceEngineVersion(String sourceEngineVersion) {
@@ -2513,18 +2513,18 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * The version of the database that the backup files were created from.
      * </p>
      * <p>
-     * MySQL version 5.5 and 5.6 are supported.
+     * MySQL versions 5.5, 5.6, and 5.7 are supported.
      * </p>
      * <p>
-     * Example: <code>5.6.22</code>
+     * Example: <code>5.6.40</code>
      * </p>
      * 
      * @return The version of the database that the backup files were created from.</p>
      *         <p>
-     *         MySQL version 5.5 and 5.6 are supported.
+     *         MySQL versions 5.5, 5.6, and 5.7 are supported.
      *         </p>
      *         <p>
-     *         Example: <code>5.6.22</code>
+     *         Example: <code>5.6.40</code>
      */
 
     public String getSourceEngineVersion() {
@@ -2536,19 +2536,19 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * The version of the database that the backup files were created from.
      * </p>
      * <p>
-     * MySQL version 5.5 and 5.6 are supported.
+     * MySQL versions 5.5, 5.6, and 5.7 are supported.
      * </p>
      * <p>
-     * Example: <code>5.6.22</code>
+     * Example: <code>5.6.40</code>
      * </p>
      * 
      * @param sourceEngineVersion
      *        The version of the database that the backup files were created from.</p>
      *        <p>
-     *        MySQL version 5.5 and 5.6 are supported.
+     *        MySQL versions 5.5, 5.6, and 5.7 are supported.
      *        </p>
      *        <p>
-     *        Example: <code>5.6.22</code>
+     *        Example: <code>5.6.40</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

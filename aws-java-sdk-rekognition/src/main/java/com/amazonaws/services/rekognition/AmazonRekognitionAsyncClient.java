@@ -1116,6 +1116,39 @@ public class AmazonRekognitionAsyncClient extends AmazonRekognitionClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<GetSegmentDetectionResult> getSegmentDetectionAsync(GetSegmentDetectionRequest request) {
+
+        return getSegmentDetectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSegmentDetectionResult> getSegmentDetectionAsync(final GetSegmentDetectionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetSegmentDetectionRequest, GetSegmentDetectionResult> asyncHandler) {
+        final GetSegmentDetectionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetSegmentDetectionResult>() {
+            @Override
+            public GetSegmentDetectionResult call() throws Exception {
+                GetSegmentDetectionResult result = null;
+
+                try {
+                    result = executeGetSegmentDetection(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetTextDetectionResult> getTextDetectionAsync(GetTextDetectionRequest request) {
 
         return getTextDetectionAsync(request, null);
@@ -1595,6 +1628,39 @@ public class AmazonRekognitionAsyncClient extends AmazonRekognitionClient implem
 
                 try {
                     result = executeStartProjectVersion(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartSegmentDetectionResult> startSegmentDetectionAsync(StartSegmentDetectionRequest request) {
+
+        return startSegmentDetectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartSegmentDetectionResult> startSegmentDetectionAsync(final StartSegmentDetectionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartSegmentDetectionRequest, StartSegmentDetectionResult> asyncHandler) {
+        final StartSegmentDetectionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartSegmentDetectionResult>() {
+            @Override
+            public StartSegmentDetectionResult call() throws Exception {
+                StartSegmentDetectionResult result = null;
+
+                try {
+                    result = executeStartSegmentDetection(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

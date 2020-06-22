@@ -214,10 +214,10 @@ public interface AmazonSQS {
      * of <code>n</code> are integers starting from 1. For example, a parameter list with two elements looks like this:
      * </p>
      * <p>
-     * <code>&amp;Attribute.1=first</code>
+     * <code>&amp;AttributeName.1=first</code>
      * </p>
      * <p>
-     * <code>&amp;Attribute.2=second</code>
+     * <code>&amp;AttributeName.2=second</code>
      * </p>
      * <note>
      * <p>
@@ -353,10 +353,10 @@ public interface AmazonSQS {
      * of <code>n</code> are integers starting from 1. For example, a parameter list with two elements looks like this:
      * </p>
      * <p>
-     * <code>&amp;Attribute.1=first</code>
+     * <code>&amp;AttributeName.1=first</code>
      * </p>
      * <p>
-     * <code>&amp;Attribute.2=second</code>
+     * <code>&amp;AttributeName.2=second</code>
      * </p>
      * 
      * @param changeMessageVisibilityBatchRequest
@@ -384,8 +384,8 @@ public interface AmazonSQS {
 
     /**
      * <p>
-     * Creates a new standard or FIFO queue. You can pass one or more attributes in the request. Keep the following
-     * caveats in mind:
+     * Creates a new standard or FIFO queue. You can pass one or more attributes in the request. Keep the following in
+     * mind:
      * </p>
      * <ul>
      * <li>
@@ -417,6 +417,12 @@ public interface AmazonSQS {
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/limits-queues.html">limits
      * related to queues</a> and is unique within the scope of your queues.
      * </p>
+     * <note>
+     * <p>
+     * After you create a queue, you must wait at least one second after the queue is created to be able to use the
+     * queue.
+     * </p>
+     * </note>
      * <p>
      * To get the queue URL, use the <code> <a>GetQueueUrl</a> </code> action. <code> <a>GetQueueUrl</a> </code>
      * requires only the <code>QueueName</code> parameter. be aware of existing queue names:
@@ -440,10 +446,10 @@ public interface AmazonSQS {
      * of <code>n</code> are integers starting from 1. For example, a parameter list with two elements looks like this:
      * </p>
      * <p>
-     * <code>&amp;Attribute.1=first</code>
+     * <code>&amp;AttributeName.1=first</code>
      * </p>
      * <p>
-     * <code>&amp;Attribute.2=second</code>
+     * <code>&amp;AttributeName.2=second</code>
      * </p>
      * <note>
      * <p>
@@ -535,10 +541,10 @@ public interface AmazonSQS {
      * of <code>n</code> are integers starting from 1. For example, a parameter list with two elements looks like this:
      * </p>
      * <p>
-     * <code>&amp;Attribute.1=first</code>
+     * <code>&amp;AttributeName.1=first</code>
      * </p>
      * <p>
-     * <code>&amp;Attribute.2=second</code>
+     * <code>&amp;AttributeName.2=second</code>
      * </p>
      * 
      * @param deleteMessageBatchRequest
@@ -566,8 +572,7 @@ public interface AmazonSQS {
 
     /**
      * <p>
-     * Deletes the queue specified by the <code>QueueUrl</code>, regardless of the queue's contents. If the specified
-     * queue doesn't exist, Amazon SQS returns a successful response.
+     * Deletes the queue specified by the <code>QueueUrl</code>, regardless of the queue's contents.
      * </p>
      * <important>
      * <p>
@@ -618,16 +623,6 @@ public interface AmazonSQS {
      * can check whether <code>QueueName</code> ends with the <code>.fifo</code> suffix.
      * </p>
      * </note>
-     * <p>
-     * Some actions take lists of parameters. These lists are specified using the <code>param.n</code> notation. Values
-     * of <code>n</code> are integers starting from 1. For example, a parameter list with two elements looks like this:
-     * </p>
-     * <p>
-     * <code>&amp;Attribute.1=first</code>
-     * </p>
-     * <p>
-     * <code>&amp;Attribute.2=second</code>
-     * </p>
      * 
      * @param getQueueAttributesRequest
      * @return Result of the GetQueueAttributes operation returned by the service.
@@ -1009,10 +1004,10 @@ public interface AmazonSQS {
      * of <code>n</code> are integers starting from 1. For example, a parameter list with two elements looks like this:
      * </p>
      * <p>
-     * <code>&amp;Attribute.1=first</code>
+     * <code>&amp;AttributeName.1=first</code>
      * </p>
      * <p>
-     * <code>&amp;Attribute.2=second</code>
+     * <code>&amp;AttributeName.2=second</code>
      * </p>
      * 
      * @param sendMessageBatchRequest

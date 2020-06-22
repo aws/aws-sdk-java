@@ -87,7 +87,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * Currently, the only supported message system attribute is <code>AWSTraceHeader</code>. Its type must be
-     * <code>String</code> and its value must be a correctly formatted AWS X-Ray trace string.
+     * <code>String</code> and its value must be a correctly formatted AWS X-Ray trace header string.
      * </p>
      * </li>
      * <li>
@@ -173,8 +173,8 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * </note>
      * <p>
-     * The length of <code>MessageDeduplicationId</code> is 128 characters. <code>MessageDeduplicationId</code> can
-     * contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation (
+     * The maximum length of <code>MessageDeduplicationId</code> is 128 characters. <code>MessageDeduplicationId</code>
+     * can contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation (
      * <code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).
      * </p>
      * <p>
@@ -614,7 +614,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * Currently, the only supported message system attribute is <code>AWSTraceHeader</code>. Its type must be
-     * <code>String</code> and its value must be a correctly formatted AWS X-Ray trace string.
+     * <code>String</code> and its value must be a correctly formatted AWS X-Ray trace header string.
      * </p>
      * </li>
      * <li>
@@ -631,7 +631,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <li>
      *         <p>
      *         Currently, the only supported message system attribute is <code>AWSTraceHeader</code>. Its type must be
-     *         <code>String</code> and its value must be a correctly formatted AWS X-Ray trace string.
+     *         <code>String</code> and its value must be a correctly formatted AWS X-Ray trace header string.
      *         </p>
      *         </li>
      *         <li>
@@ -659,7 +659,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * Currently, the only supported message system attribute is <code>AWSTraceHeader</code>. Its type must be
-     * <code>String</code> and its value must be a correctly formatted AWS X-Ray trace string.
+     * <code>String</code> and its value must be a correctly formatted AWS X-Ray trace header string.
      * </p>
      * </li>
      * <li>
@@ -677,7 +677,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <li>
      *        <p>
      *        Currently, the only supported message system attribute is <code>AWSTraceHeader</code>. Its type must be
-     *        <code>String</code> and its value must be a correctly formatted AWS X-Ray trace string.
+     *        <code>String</code> and its value must be a correctly formatted AWS X-Ray trace header string.
      *        </p>
      *        </li>
      *        <li>
@@ -703,7 +703,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * Currently, the only supported message system attribute is <code>AWSTraceHeader</code>. Its type must be
-     * <code>String</code> and its value must be a correctly formatted AWS X-Ray trace string.
+     * <code>String</code> and its value must be a correctly formatted AWS X-Ray trace header string.
      * </p>
      * </li>
      * <li>
@@ -721,7 +721,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <li>
      *        <p>
      *        Currently, the only supported message system attribute is <code>AWSTraceHeader</code>. Its type must be
-     *        <code>String</code> and its value must be a correctly formatted AWS X-Ray trace string.
+     *        <code>String</code> and its value must be a correctly formatted AWS X-Ray trace header string.
      *        </p>
      *        </li>
      *        <li>
@@ -840,8 +840,8 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * </note>
      * <p>
-     * The length of <code>MessageDeduplicationId</code> is 128 characters. <code>MessageDeduplicationId</code> can
-     * contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation (
+     * The maximum length of <code>MessageDeduplicationId</code> is 128 characters. <code>MessageDeduplicationId</code>
+     * can contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation (
      * <code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).
      * </p>
      * <p>
@@ -923,9 +923,10 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </p>
      *        </note>
      *        <p>
-     *        The length of <code>MessageDeduplicationId</code> is 128 characters. <code>MessageDeduplicationId</code>
-     *        can contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
-     *        (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).
+     *        The maximum length of <code>MessageDeduplicationId</code> is 128 characters.
+     *        <code>MessageDeduplicationId</code> can contain alphanumeric characters (<code>a-z</code>,
+     *        <code>A-Z</code>, <code>0-9</code>) and punctuation (
+     *        <code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).
      *        </p>
      *        <p>
      *        For best practices of using <code>MessageDeduplicationId</code>, see <a href=
@@ -1011,8 +1012,8 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * </note>
      * <p>
-     * The length of <code>MessageDeduplicationId</code> is 128 characters. <code>MessageDeduplicationId</code> can
-     * contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation (
+     * The maximum length of <code>MessageDeduplicationId</code> is 128 characters. <code>MessageDeduplicationId</code>
+     * can contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation (
      * <code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).
      * </p>
      * <p>
@@ -1094,9 +1095,10 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         </p>
      *         </note>
      *         <p>
-     *         The length of <code>MessageDeduplicationId</code> is 128 characters. <code>MessageDeduplicationId</code>
-     *         can contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and
-     *         punctuation (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).
+     *         The maximum length of <code>MessageDeduplicationId</code> is 128 characters.
+     *         <code>MessageDeduplicationId</code> can contain alphanumeric characters (<code>a-z</code>,
+     *         <code>A-Z</code>, <code>0-9</code>) and punctuation (
+     *         <code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).
      *         </p>
      *         <p>
      *         For best practices of using <code>MessageDeduplicationId</code>, see <a href=
@@ -1182,8 +1184,8 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * </note>
      * <p>
-     * The length of <code>MessageDeduplicationId</code> is 128 characters. <code>MessageDeduplicationId</code> can
-     * contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation (
+     * The maximum length of <code>MessageDeduplicationId</code> is 128 characters. <code>MessageDeduplicationId</code>
+     * can contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation (
      * <code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).
      * </p>
      * <p>
@@ -1265,9 +1267,10 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </p>
      *        </note>
      *        <p>
-     *        The length of <code>MessageDeduplicationId</code> is 128 characters. <code>MessageDeduplicationId</code>
-     *        can contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
-     *        (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).
+     *        The maximum length of <code>MessageDeduplicationId</code> is 128 characters.
+     *        <code>MessageDeduplicationId</code> can contain alphanumeric characters (<code>a-z</code>,
+     *        <code>A-Z</code>, <code>0-9</code>) and punctuation (
+     *        <code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).
      *        </p>
      *        <p>
      *        For best practices of using <code>MessageDeduplicationId</code>, see <a href=

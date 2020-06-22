@@ -45,6 +45,14 @@ public class ListDeadLetterSourceQueuesRequestMarshaller implements Marshaller<R
             request.addParameter("QueueUrl", StringUtils.fromString(listDeadLetterSourceQueuesRequest.getQueueUrl()));
         }
 
+        if (listDeadLetterSourceQueuesRequest.getNextToken() != null) {
+            request.addParameter("NextToken", StringUtils.fromString(listDeadLetterSourceQueuesRequest.getNextToken()));
+        }
+
+        if (listDeadLetterSourceQueuesRequest.getMaxResults() != null) {
+            request.addParameter("MaxResults", StringUtils.fromInteger(listDeadLetterSourceQueuesRequest.getMaxResults()));
+        }
+
         return request;
     }
 

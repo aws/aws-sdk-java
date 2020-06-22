@@ -3642,7 +3642,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Exports a running or stopped instance to an S3 bucket.
+     * Exports a running or stopped instance to an Amazon S3 bucket.
      * </p>
      * <p>
      * For information about the supported operating systems, image formats, and known limitations for the types of
@@ -10345,7 +10345,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Describes the specified export image tasks or all your export image tasks.
+     * Describes the specified export image tasks or all of your export image tasks.
      * </p>
      * 
      * @param describeExportImageTasksRequest
@@ -10398,7 +10398,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Describes the specified export instance tasks or all your export instance tasks.
+     * Describes the specified export instance tasks or all of your export instance tasks.
      * </p>
      * 
      * @param describeExportTasksRequest

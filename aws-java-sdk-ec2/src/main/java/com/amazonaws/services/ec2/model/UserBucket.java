@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes the S3 bucket for the disk image.
+ * Describes the Amazon S3 bucket for the disk image.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UserBucket" target="_top">AWS API
@@ -28,7 +28,7 @@ public class UserBucket implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the S3 bucket where the disk image is located.
+     * The name of the Amazon S3 bucket where the disk image is located.
      * </p>
      */
     private String s3Bucket;
@@ -41,11 +41,11 @@ public class UserBucket implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the S3 bucket where the disk image is located.
+     * The name of the Amazon S3 bucket where the disk image is located.
      * </p>
      * 
      * @param s3Bucket
-     *        The name of the S3 bucket where the disk image is located.
+     *        The name of the Amazon S3 bucket where the disk image is located.
      */
 
     public void setS3Bucket(String s3Bucket) {
@@ -54,10 +54,10 @@ public class UserBucket implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the S3 bucket where the disk image is located.
+     * The name of the Amazon S3 bucket where the disk image is located.
      * </p>
      * 
-     * @return The name of the S3 bucket where the disk image is located.
+     * @return The name of the Amazon S3 bucket where the disk image is located.
      */
 
     public String getS3Bucket() {
@@ -66,11 +66,11 @@ public class UserBucket implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the S3 bucket where the disk image is located.
+     * The name of the Amazon S3 bucket where the disk image is located.
      * </p>
      * 
      * @param s3Bucket
-     *        The name of the S3 bucket where the disk image is located.
+     *        The name of the Amazon S3 bucket where the disk image is located.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -41,14 +41,14 @@ public class ExportToS3TaskSpecification implements Serializable, Cloneable {
     private String diskImageFormat;
     /**
      * <p>
-     * The S3 bucket for the destination image. The destination bucket must exist and grant WRITE and READ_ACP
+     * The Amazon S3 bucket for the destination image. The destination bucket must exist and grant WRITE and READ_ACP
      * permissions to the AWS account <code>vm-import-export@amazon.com</code>.
      * </p>
      */
     private String s3Bucket;
     /**
      * <p>
-     * The image is written to a single object in the S3 bucket at the S3 key s3prefix + exportTaskId + '.' +
+     * The image is written to a single object in the Amazon S3 bucket at the S3 key s3prefix + exportTaskId + '.' +
      * diskImageFormat.
      * </p>
      */
@@ -212,13 +212,13 @@ public class ExportToS3TaskSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The S3 bucket for the destination image. The destination bucket must exist and grant WRITE and READ_ACP
+     * The Amazon S3 bucket for the destination image. The destination bucket must exist and grant WRITE and READ_ACP
      * permissions to the AWS account <code>vm-import-export@amazon.com</code>.
      * </p>
      * 
      * @param s3Bucket
-     *        The S3 bucket for the destination image. The destination bucket must exist and grant WRITE and READ_ACP
-     *        permissions to the AWS account <code>vm-import-export@amazon.com</code>.
+     *        The Amazon S3 bucket for the destination image. The destination bucket must exist and grant WRITE and
+     *        READ_ACP permissions to the AWS account <code>vm-import-export@amazon.com</code>.
      */
 
     public void setS3Bucket(String s3Bucket) {
@@ -227,12 +227,12 @@ public class ExportToS3TaskSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The S3 bucket for the destination image. The destination bucket must exist and grant WRITE and READ_ACP
+     * The Amazon S3 bucket for the destination image. The destination bucket must exist and grant WRITE and READ_ACP
      * permissions to the AWS account <code>vm-import-export@amazon.com</code>.
      * </p>
      * 
-     * @return The S3 bucket for the destination image. The destination bucket must exist and grant WRITE and READ_ACP
-     *         permissions to the AWS account <code>vm-import-export@amazon.com</code>.
+     * @return The Amazon S3 bucket for the destination image. The destination bucket must exist and grant WRITE and
+     *         READ_ACP permissions to the AWS account <code>vm-import-export@amazon.com</code>.
      */
 
     public String getS3Bucket() {
@@ -241,13 +241,13 @@ public class ExportToS3TaskSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The S3 bucket for the destination image. The destination bucket must exist and grant WRITE and READ_ACP
+     * The Amazon S3 bucket for the destination image. The destination bucket must exist and grant WRITE and READ_ACP
      * permissions to the AWS account <code>vm-import-export@amazon.com</code>.
      * </p>
      * 
      * @param s3Bucket
-     *        The S3 bucket for the destination image. The destination bucket must exist and grant WRITE and READ_ACP
-     *        permissions to the AWS account <code>vm-import-export@amazon.com</code>.
+     *        The Amazon S3 bucket for the destination image. The destination bucket must exist and grant WRITE and
+     *        READ_ACP permissions to the AWS account <code>vm-import-export@amazon.com</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -258,13 +258,13 @@ public class ExportToS3TaskSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The image is written to a single object in the S3 bucket at the S3 key s3prefix + exportTaskId + '.' +
+     * The image is written to a single object in the Amazon S3 bucket at the S3 key s3prefix + exportTaskId + '.' +
      * diskImageFormat.
      * </p>
      * 
      * @param s3Prefix
-     *        The image is written to a single object in the S3 bucket at the S3 key s3prefix + exportTaskId + '.' +
-     *        diskImageFormat.
+     *        The image is written to a single object in the Amazon S3 bucket at the S3 key s3prefix + exportTaskId +
+     *        '.' + diskImageFormat.
      */
 
     public void setS3Prefix(String s3Prefix) {
@@ -273,12 +273,12 @@ public class ExportToS3TaskSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The image is written to a single object in the S3 bucket at the S3 key s3prefix + exportTaskId + '.' +
+     * The image is written to a single object in the Amazon S3 bucket at the S3 key s3prefix + exportTaskId + '.' +
      * diskImageFormat.
      * </p>
      * 
-     * @return The image is written to a single object in the S3 bucket at the S3 key s3prefix + exportTaskId + '.' +
-     *         diskImageFormat.
+     * @return The image is written to a single object in the Amazon S3 bucket at the S3 key s3prefix + exportTaskId +
+     *         '.' + diskImageFormat.
      */
 
     public String getS3Prefix() {
@@ -287,13 +287,13 @@ public class ExportToS3TaskSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The image is written to a single object in the S3 bucket at the S3 key s3prefix + exportTaskId + '.' +
+     * The image is written to a single object in the Amazon S3 bucket at the S3 key s3prefix + exportTaskId + '.' +
      * diskImageFormat.
      * </p>
      * 
      * @param s3Prefix
-     *        The image is written to a single object in the S3 bucket at the S3 key s3prefix + exportTaskId + '.' +
-     *        diskImageFormat.
+     *        The image is written to a single object in the Amazon S3 bucket at the S3 key s3prefix + exportTaskId +
+     *        '.' + diskImageFormat.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

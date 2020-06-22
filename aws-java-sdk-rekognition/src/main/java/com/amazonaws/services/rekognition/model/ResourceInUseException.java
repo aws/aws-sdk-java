@@ -15,7 +15,9 @@ package com.amazonaws.services.rekognition.model;
 import javax.annotation.Generated;
 
 /**
- * <p/>
+ * <p>
+ * The specified resource is already being used.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ResourceInUseException extends com.amazonaws.services.rekognition.model.AmazonRekognitionException {

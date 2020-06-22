@@ -37,7 +37,7 @@ public class ImportImageResult extends com.amazonaws.AmazonWebServiceResult<com.
     private String description;
     /**
      * <p>
-     * Indicates whether the AMI is encypted.
+     * Indicates whether the AMI is encrypted.
      * </p>
      */
     private Boolean encrypted;
@@ -108,6 +108,12 @@ public class ImportImageResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ImportImageLicenseConfigurationResponse> licenseSpecifications;
+    /**
+     * <p>
+     * Any tags assigned to the image being imported.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
@@ -191,11 +197,11 @@ public class ImportImageResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Indicates whether the AMI is encypted.
+     * Indicates whether the AMI is encrypted.
      * </p>
      * 
      * @param encrypted
-     *        Indicates whether the AMI is encypted.
+     *        Indicates whether the AMI is encrypted.
      */
 
     public void setEncrypted(Boolean encrypted) {
@@ -204,10 +210,10 @@ public class ImportImageResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Indicates whether the AMI is encypted.
+     * Indicates whether the AMI is encrypted.
      * </p>
      * 
-     * @return Indicates whether the AMI is encypted.
+     * @return Indicates whether the AMI is encrypted.
      */
 
     public Boolean getEncrypted() {
@@ -216,11 +222,11 @@ public class ImportImageResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Indicates whether the AMI is encypted.
+     * Indicates whether the AMI is encrypted.
      * </p>
      * 
      * @param encrypted
-     *        Indicates whether the AMI is encypted.
+     *        Indicates whether the AMI is encrypted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -231,10 +237,10 @@ public class ImportImageResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Indicates whether the AMI is encypted.
+     * Indicates whether the AMI is encrypted.
      * </p>
      * 
-     * @return Indicates whether the AMI is encypted.
+     * @return Indicates whether the AMI is encrypted.
      */
 
     public Boolean isEncrypted() {
@@ -754,6 +760,79 @@ public class ImportImageResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * Any tags assigned to the image being imported.
+     * </p>
+     * 
+     * @return Any tags assigned to the image being imported.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to the image being imported.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to the image being imported.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to the image being imported.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to the image being imported.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImportImageResult withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to the image being imported.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to the image being imported.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImportImageResult withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -792,7 +871,9 @@ public class ImportImageResult extends com.amazonaws.AmazonWebServiceResult<com.
         if (getStatusMessage() != null)
             sb.append("StatusMessage: ").append(getStatusMessage()).append(",");
         if (getLicenseSpecifications() != null)
-            sb.append("LicenseSpecifications: ").append(getLicenseSpecifications());
+            sb.append("LicenseSpecifications: ").append(getLicenseSpecifications()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -863,6 +944,10 @@ public class ImportImageResult extends com.amazonaws.AmazonWebServiceResult<com.
             return false;
         if (other.getLicenseSpecifications() != null && other.getLicenseSpecifications().equals(this.getLicenseSpecifications()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -885,6 +970,7 @@ public class ImportImageResult extends com.amazonaws.AmazonWebServiceResult<com.
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getStatusMessage() == null) ? 0 : getStatusMessage().hashCode());
         hashCode = prime * hashCode + ((getLicenseSpecifications() == null) ? 0 : getLicenseSpecifications().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

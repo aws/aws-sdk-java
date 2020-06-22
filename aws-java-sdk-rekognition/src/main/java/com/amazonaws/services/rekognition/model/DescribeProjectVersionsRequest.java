@@ -29,7 +29,11 @@ public class DescribeProjectVersionsRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * A list of model version names that you want to describe. You can add up to 10 model version names to the list. If
-     * you don't specify a value, all model descriptions are returned.
+     * you don't specify a value, all model descriptions are returned. A version name is part of a model
+     * (ProjectVersion) ARN. For example, <code>my-model.2020-01-21T09.10.15</code> is the version name in the following
+     * ARN.
+     * <code>arn:aws:rekognition:us-east-1:123456789012:project/getting-started/version/<i>my-model.2020-01-21T09.10.15</i>/1234567890123</code>
+     * .
      * </p>
      */
     private java.util.List<String> versionNames;
@@ -92,11 +96,19 @@ public class DescribeProjectVersionsRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * A list of model version names that you want to describe. You can add up to 10 model version names to the list. If
-     * you don't specify a value, all model descriptions are returned.
+     * you don't specify a value, all model descriptions are returned. A version name is part of a model
+     * (ProjectVersion) ARN. For example, <code>my-model.2020-01-21T09.10.15</code> is the version name in the following
+     * ARN.
+     * <code>arn:aws:rekognition:us-east-1:123456789012:project/getting-started/version/<i>my-model.2020-01-21T09.10.15</i>/1234567890123</code>
+     * .
      * </p>
      * 
      * @return A list of model version names that you want to describe. You can add up to 10 model version names to the
-     *         list. If you don't specify a value, all model descriptions are returned.
+     *         list. If you don't specify a value, all model descriptions are returned. A version name is part of a
+     *         model (ProjectVersion) ARN. For example, <code>my-model.2020-01-21T09.10.15</code> is the version name in
+     *         the following ARN.
+     *         <code>arn:aws:rekognition:us-east-1:123456789012:project/getting-started/version/<i>my-model.2020-01-21T09.10.15</i>/1234567890123</code>
+     *         .
      */
 
     public java.util.List<String> getVersionNames() {
@@ -106,12 +118,20 @@ public class DescribeProjectVersionsRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * A list of model version names that you want to describe. You can add up to 10 model version names to the list. If
-     * you don't specify a value, all model descriptions are returned.
+     * you don't specify a value, all model descriptions are returned. A version name is part of a model
+     * (ProjectVersion) ARN. For example, <code>my-model.2020-01-21T09.10.15</code> is the version name in the following
+     * ARN.
+     * <code>arn:aws:rekognition:us-east-1:123456789012:project/getting-started/version/<i>my-model.2020-01-21T09.10.15</i>/1234567890123</code>
+     * .
      * </p>
      * 
      * @param versionNames
      *        A list of model version names that you want to describe. You can add up to 10 model version names to the
-     *        list. If you don't specify a value, all model descriptions are returned.
+     *        list. If you don't specify a value, all model descriptions are returned. A version name is part of a model
+     *        (ProjectVersion) ARN. For example, <code>my-model.2020-01-21T09.10.15</code> is the version name in the
+     *        following ARN.
+     *        <code>arn:aws:rekognition:us-east-1:123456789012:project/getting-started/version/<i>my-model.2020-01-21T09.10.15</i>/1234567890123</code>
+     *        .
      */
 
     public void setVersionNames(java.util.Collection<String> versionNames) {
@@ -126,7 +146,11 @@ public class DescribeProjectVersionsRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * A list of model version names that you want to describe. You can add up to 10 model version names to the list. If
-     * you don't specify a value, all model descriptions are returned.
+     * you don't specify a value, all model descriptions are returned. A version name is part of a model
+     * (ProjectVersion) ARN. For example, <code>my-model.2020-01-21T09.10.15</code> is the version name in the following
+     * ARN.
+     * <code>arn:aws:rekognition:us-east-1:123456789012:project/getting-started/version/<i>my-model.2020-01-21T09.10.15</i>/1234567890123</code>
+     * .
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -136,7 +160,11 @@ public class DescribeProjectVersionsRequest extends com.amazonaws.AmazonWebServi
      * 
      * @param versionNames
      *        A list of model version names that you want to describe. You can add up to 10 model version names to the
-     *        list. If you don't specify a value, all model descriptions are returned.
+     *        list. If you don't specify a value, all model descriptions are returned. A version name is part of a model
+     *        (ProjectVersion) ARN. For example, <code>my-model.2020-01-21T09.10.15</code> is the version name in the
+     *        following ARN.
+     *        <code>arn:aws:rekognition:us-east-1:123456789012:project/getting-started/version/<i>my-model.2020-01-21T09.10.15</i>/1234567890123</code>
+     *        .
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -153,12 +181,20 @@ public class DescribeProjectVersionsRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * A list of model version names that you want to describe. You can add up to 10 model version names to the list. If
-     * you don't specify a value, all model descriptions are returned.
+     * you don't specify a value, all model descriptions are returned. A version name is part of a model
+     * (ProjectVersion) ARN. For example, <code>my-model.2020-01-21T09.10.15</code> is the version name in the following
+     * ARN.
+     * <code>arn:aws:rekognition:us-east-1:123456789012:project/getting-started/version/<i>my-model.2020-01-21T09.10.15</i>/1234567890123</code>
+     * .
      * </p>
      * 
      * @param versionNames
      *        A list of model version names that you want to describe. You can add up to 10 model version names to the
-     *        list. If you don't specify a value, all model descriptions are returned.
+     *        list. If you don't specify a value, all model descriptions are returned. A version name is part of a model
+     *        (ProjectVersion) ARN. For example, <code>my-model.2020-01-21T09.10.15</code> is the version name in the
+     *        following ARN.
+     *        <code>arn:aws:rekognition:us-east-1:123456789012:project/getting-started/version/<i>my-model.2020-01-21T09.10.15</i>/1234567890123</code>
+     *        .
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

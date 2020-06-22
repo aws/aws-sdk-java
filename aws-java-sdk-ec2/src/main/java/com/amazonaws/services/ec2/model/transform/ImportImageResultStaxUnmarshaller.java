@@ -125,6 +125,16 @@ public class ImportImageResultStaxUnmarshaller implements Unmarshaller<ImportIma
                     continue;
                 }
 
+                if (context.testExpression("tagSet", targetDepth)) {
+                    importImageResult.withTags(new ArrayList<Tag>());
+                    continue;
+                }
+
+                if (context.testExpression("tagSet/item", targetDepth)) {
+                    importImageResult.withTags(TagStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return importImageResult;

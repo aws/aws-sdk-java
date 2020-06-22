@@ -28,7 +28,7 @@ public class ExportTaskS3Location implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The destination S3 bucket.
+     * The destination Amazon S3 bucket.
      * </p>
      */
     private String s3Bucket;
@@ -41,11 +41,11 @@ public class ExportTaskS3Location implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The destination S3 bucket.
+     * The destination Amazon S3 bucket.
      * </p>
      * 
      * @param s3Bucket
-     *        The destination S3 bucket.
+     *        The destination Amazon S3 bucket.
      */
 
     public void setS3Bucket(String s3Bucket) {
@@ -54,10 +54,10 @@ public class ExportTaskS3Location implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The destination S3 bucket.
+     * The destination Amazon S3 bucket.
      * </p>
      * 
-     * @return The destination S3 bucket.
+     * @return The destination Amazon S3 bucket.
      */
 
     public String getS3Bucket() {
@@ -66,11 +66,11 @@ public class ExportTaskS3Location implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The destination S3 bucket.
+     * The destination Amazon S3 bucket.
      * </p>
      * 
      * @param s3Bucket
-     *        The destination S3 bucket.
+     *        The destination Amazon S3 bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

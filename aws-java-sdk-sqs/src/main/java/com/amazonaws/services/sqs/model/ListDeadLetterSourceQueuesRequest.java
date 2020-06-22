@@ -35,6 +35,18 @@ public class ListDeadLetterSourceQueuesRequest extends com.amazonaws.AmazonWebSe
      * </p>
      */
     private String queueUrl;
+    /**
+     * <p>
+     * Pagination token to request the next set of results.
+     * </p>
+     */
+    private String nextToken;
+    /**
+     * <p>
+     * Maximum number of results to include in the response.
+     * </p>
+     */
+    private Integer maxResults;
 
     /**
      * Default constructor for ListDeadLetterSourceQueuesRequest object. Callers should use the setter or fluent setter
@@ -112,6 +124,86 @@ public class ListDeadLetterSourceQueuesRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * Pagination token to request the next set of results.
+     * </p>
+     * 
+     * @param nextToken
+     *        Pagination token to request the next set of results.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * Pagination token to request the next set of results.
+     * </p>
+     * 
+     * @return Pagination token to request the next set of results.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * Pagination token to request the next set of results.
+     * </p>
+     * 
+     * @param nextToken
+     *        Pagination token to request the next set of results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListDeadLetterSourceQueuesRequest withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Maximum number of results to include in the response.
+     * </p>
+     * 
+     * @param maxResults
+     *        Maximum number of results to include in the response.
+     */
+
+    public void setMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
+    }
+
+    /**
+     * <p>
+     * Maximum number of results to include in the response.
+     * </p>
+     * 
+     * @return Maximum number of results to include in the response.
+     */
+
+    public Integer getMaxResults() {
+        return this.maxResults;
+    }
+
+    /**
+     * <p>
+     * Maximum number of results to include in the response.
+     * </p>
+     * 
+     * @param maxResults
+     *        Maximum number of results to include in the response.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListDeadLetterSourceQueuesRequest withMaxResults(Integer maxResults) {
+        setMaxResults(maxResults);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -124,7 +216,11 @@ public class ListDeadLetterSourceQueuesRequest extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getQueueUrl() != null)
-            sb.append("QueueUrl: ").append(getQueueUrl());
+            sb.append("QueueUrl: ").append(getQueueUrl()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getMaxResults() != null)
+            sb.append("MaxResults: ").append(getMaxResults());
         sb.append("}");
         return sb.toString();
     }
@@ -143,6 +239,14 @@ public class ListDeadLetterSourceQueuesRequest extends com.amazonaws.AmazonWebSe
             return false;
         if (other.getQueueUrl() != null && other.getQueueUrl().equals(this.getQueueUrl()) == false)
             return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
+            return false;
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
+            return false;
         return true;
     }
 
@@ -152,6 +256,8 @@ public class ListDeadLetterSourceQueuesRequest extends com.amazonaws.AmazonWebSe
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getQueueUrl() == null) ? 0 : getQueueUrl().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         return hashCode;
     }
 

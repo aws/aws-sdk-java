@@ -447,10 +447,13 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
     private String sourceEngine;
     /**
      * <p>
-     * The engine version of your source database.
+     * The version of the database that the backup files were created from.
      * </p>
      * <p>
-     * Valid Values: <code>5.6</code>
+     * MySQL versions 5.6 and 5.7 are supported.
+     * </p>
+     * <p>
+     * Example: <code>5.6.40</code>
      * </p>
      */
     private String sourceEngineVersion;
@@ -3352,16 +3355,22 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The engine version of your source database.
+     * The version of the database that the backup files were created from.
      * </p>
      * <p>
-     * Valid Values: <code>5.6</code>
+     * MySQL versions 5.6 and 5.7 are supported.
+     * </p>
+     * <p>
+     * Example: <code>5.6.40</code>
      * </p>
      * 
      * @param sourceEngineVersion
-     *        The engine version of your source database. </p>
+     *        The version of the database that the backup files were created from.</p>
      *        <p>
-     *        Valid Values: <code>5.6</code>
+     *        MySQL versions 5.6 and 5.7 are supported.
+     *        </p>
+     *        <p>
+     *        Example: <code>5.6.40</code>
      */
 
     public void setSourceEngineVersion(String sourceEngineVersion) {
@@ -3370,15 +3379,21 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The engine version of your source database.
+     * The version of the database that the backup files were created from.
      * </p>
      * <p>
-     * Valid Values: <code>5.6</code>
+     * MySQL versions 5.6 and 5.7 are supported.
+     * </p>
+     * <p>
+     * Example: <code>5.6.40</code>
      * </p>
      * 
-     * @return The engine version of your source database. </p>
+     * @return The version of the database that the backup files were created from.</p>
      *         <p>
-     *         Valid Values: <code>5.6</code>
+     *         MySQL versions 5.6 and 5.7 are supported.
+     *         </p>
+     *         <p>
+     *         Example: <code>5.6.40</code>
      */
 
     public String getSourceEngineVersion() {
@@ -3387,16 +3402,22 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The engine version of your source database.
+     * The version of the database that the backup files were created from.
      * </p>
      * <p>
-     * Valid Values: <code>5.6</code>
+     * MySQL versions 5.6 and 5.7 are supported.
+     * </p>
+     * <p>
+     * Example: <code>5.6.40</code>
      * </p>
      * 
      * @param sourceEngineVersion
-     *        The engine version of your source database. </p>
+     *        The version of the database that the backup files were created from.</p>
      *        <p>
-     *        Valid Values: <code>5.6</code>
+     *        MySQL versions 5.6 and 5.7 are supported.
+     *        </p>
+     *        <p>
+     *        Example: <code>5.6.40</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

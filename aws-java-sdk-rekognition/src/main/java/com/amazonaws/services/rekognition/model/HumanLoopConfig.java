@@ -34,7 +34,10 @@ public class HumanLoopConfig implements Serializable, Cloneable, StructuredPojo 
     private String humanLoopName;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the flow definition.
+     * The Amazon Resource Name (ARN) of the flow definition. You can create a flow definition by using the Amazon
+     * Sagemaker <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateFlowDefinition.html">CreateFlowDefinition</a>
+     * Operation.
      * </p>
      */
     private String flowDefinitionArn;
@@ -87,11 +90,16 @@ public class HumanLoopConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the flow definition.
+     * The Amazon Resource Name (ARN) of the flow definition. You can create a flow definition by using the Amazon
+     * Sagemaker <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateFlowDefinition.html">CreateFlowDefinition</a>
+     * Operation.
      * </p>
      * 
      * @param flowDefinitionArn
-     *        The Amazon Resource Name (ARN) of the flow definition.
+     *        The Amazon Resource Name (ARN) of the flow definition. You can create a flow definition by using the
+     *        Amazon Sagemaker <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateFlowDefinition.html">
+     *        CreateFlowDefinition</a> Operation.
      */
 
     public void setFlowDefinitionArn(String flowDefinitionArn) {
@@ -100,10 +108,15 @@ public class HumanLoopConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the flow definition.
+     * The Amazon Resource Name (ARN) of the flow definition. You can create a flow definition by using the Amazon
+     * Sagemaker <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateFlowDefinition.html">CreateFlowDefinition</a>
+     * Operation.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the flow definition.
+     * @return The Amazon Resource Name (ARN) of the flow definition. You can create a flow definition by using the
+     *         Amazon Sagemaker <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateFlowDefinition.html">
+     *         CreateFlowDefinition</a> Operation.
      */
 
     public String getFlowDefinitionArn() {
@@ -112,11 +125,16 @@ public class HumanLoopConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the flow definition.
+     * The Amazon Resource Name (ARN) of the flow definition. You can create a flow definition by using the Amazon
+     * Sagemaker <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateFlowDefinition.html">CreateFlowDefinition</a>
+     * Operation.
      * </p>
      * 
      * @param flowDefinitionArn
-     *        The Amazon Resource Name (ARN) of the flow definition.
+     *        The Amazon Resource Name (ARN) of the flow definition. You can create a flow definition by using the
+     *        Amazon Sagemaker <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateFlowDefinition.html">
+     *        CreateFlowDefinition</a> Operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -554,6 +554,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * @param createProjectRequest
      * @return Result of the CreateProject operation returned by the service.
      * @throws ResourceInUseException
+     *         The specified resource is already being used.
      * @throws LimitExceededException
      *         An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition
      *         Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will
@@ -637,6 +638,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * @param createProjectVersionRequest
      * @return Result of the CreateProjectVersion operation returned by the service.
      * @throws ResourceInUseException
+     *         The specified resource is already being used.
      * @throws ResourceNotFoundException
      *         The collection specified in the request cannot be found.
      * @throws LimitExceededException
@@ -736,6 +738,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      *         raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of
      *         concurrently running jobs is below the Amazon Rekognition service limit.
      * @throws ResourceInUseException
+     *         The specified resource is already being used.
      * @throws ProvisionedThroughputExceededException
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
@@ -922,8 +925,8 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Deletes an Amazon Rekognition Custom Labels project. To delete a project you must first delete all versions of
-     * the model associated with the project. To delete a version of a model, see <a>DeleteProjectVersion</a>.
+     * Deletes an Amazon Rekognition Custom Labels project. To delete a project you must first delete all models
+     * associated with the project. To delete a model, see <a>DeleteProjectVersion</a>.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>rekognition:DeleteProject</code> action.
@@ -932,6 +935,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * @param deleteProjectRequest
      * @return Result of the DeleteProject operation returned by the service.
      * @throws ResourceInUseException
+     *         The specified resource is already being used.
      * @throws ResourceNotFoundException
      *         The collection specified in the request cannot be found.
      * @throws InvalidParameterException
@@ -991,12 +995,12 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Deletes a version of a model.
+     * Deletes an Amazon Rekognition Custom Labels model.
      * </p>
      * <p>
-     * You must first stop the model before you can delete it. To check if a model is running, use the
+     * You can't delete a model if it is running or if it is training. To check the status of a model, use the
      * <code>Status</code> field returned from <a>DescribeProjectVersions</a>. To stop a running model call
-     * <a>StopProjectVersion</a>.
+     * <a>StopProjectVersion</a>. If the model is training, wait until it finishes.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>rekognition:DeleteProjectVersion</code> action.
@@ -1007,6 +1011,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * @throws ResourceNotFoundException
      *         The collection specified in the request cannot be found.
      * @throws ResourceInUseException
+     *         The specified resource is already being used.
      * @throws InvalidParameterException
      *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
      * @throws AccessDeniedException
@@ -1082,6 +1087,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * @throws ResourceNotFoundException
      *         The collection specified in the request cannot be found.
      * @throws ResourceInUseException
+     *         The specified resource is already being used.
      * @throws ProvisionedThroughputExceededException
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
@@ -2611,6 +2617,103 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Gets the segment detection results of a Amazon Rekognition Video analysis started by
+     * <a>StartSegmentDetection</a>.
+     * </p>
+     * <p>
+     * Segment detection with Amazon Rekognition Video is an asynchronous operation. You start segment detection by
+     * calling <a>StartSegmentDetection</a> which returns a job identifier (<code>JobId</code>). When the segment
+     * detection operation finishes, Amazon Rekognition publishes a completion status to the Amazon Simple Notification
+     * Service topic registered in the initial call to <code>StartSegmentDetection</code>. To get the results of the
+     * segment detection operation, first check that the status value published to the Amazon SNS topic is
+     * <code>SUCCEEDED</code>. if so, call <code>GetSegmentDetection</code> and pass the job identifier (
+     * <code>JobId</code>) from the initial call of <code>StartSegmentDetection</code>.
+     * </p>
+     * <p>
+     * <code>GetSegmentDetection</code> returns detected segments in an array (<code>Segments</code>) of
+     * <a>SegmentDetection</a> objects. <code>Segments</code> is sorted by the segment types specified in the
+     * <code>SegmentTypes</code> input parameter of <code>StartSegmentDetection</code>. Each element of the array
+     * includes the detected segment, the precentage confidence in the acuracy of the detected segment, the type of the
+     * segment, and the frame in which the segment was detected.
+     * </p>
+     * <p>
+     * Use <code>SelectedSegmentTypes</code> to find out the type of segment detection requested in the call to
+     * <code>StartSegmentDetection</code>.
+     * </p>
+     * <p>
+     * Use the <code>MaxResults</code> parameter to limit the number of segment detections returned. If there are more
+     * results than specified in <code>MaxResults</code>, the value of <code>NextToken</code> in the operation response
+     * contains a pagination token for getting the next set of results. To get the next page of results, call
+     * <code>GetSegmentDetection</code> and populate the <code>NextToken</code> request parameter with the token value
+     * returned from the previous call to <code>GetSegmentDetection</code>.
+     * </p>
+     * <p>
+     * For more information, see Detecting Video Segments in Stored Video in the Amazon Rekognition Developer Guide.
+     * </p>
+     * 
+     * @param getSegmentDetectionRequest
+     * @return Result of the GetSegmentDetection operation returned by the service.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws InvalidPaginationTokenException
+     *         Pagination token in the request is not valid.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @throws ResourceNotFoundException
+     *         The collection specified in the request cannot be found.
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @sample AmazonRekognition.GetSegmentDetection
+     */
+    @Override
+    public GetSegmentDetectionResult getSegmentDetection(GetSegmentDetectionRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetSegmentDetection(request);
+    }
+
+    @SdkInternalApi
+    final GetSegmentDetectionResult executeGetSegmentDetection(GetSegmentDetectionRequest getSegmentDetectionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getSegmentDetectionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetSegmentDetectionRequest> request = null;
+        Response<GetSegmentDetectionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetSegmentDetectionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSegmentDetectionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Rekognition");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSegmentDetection");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetSegmentDetectionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetSegmentDetectionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets the text detection results of a Amazon Rekognition Video analysis started by <a>StartTextDetection</a>.
      * </p>
      * <p>
@@ -2733,7 +2836,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * For more information, see Model Versioning in the Amazon Rekognition Developer Guide.
      * </p>
      * <p>
-     * If you provide the optional <code>ExternalImageID</code> for the input image you provided, Amazon Rekognition
+     * If you provide the optional <code>ExternalImageId</code> for the input image you provided, Amazon Rekognition
      * associates this ID with all faces that it detects. When you call the <a>ListFaces</a> operation, the response
      * returns the external ID. You can use this external image ID to create a client-side index to associate the faces
      * with each image. You can then use the index to find all faces in an image.
@@ -3963,6 +4066,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * @throws ResourceNotFoundException
      *         The collection specified in the request cannot be found.
      * @throws ResourceInUseException
+     *         The specified resource is already being used.
      * @throws LimitExceededException
      *         An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition
      *         Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will
@@ -4025,6 +4129,103 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Starts asynchronous detection of segment detection in a stored video.
+     * </p>
+     * <p>
+     * Amazon Rekognition Video can detect segments in a video stored in an Amazon S3 bucket. Use <a>Video</a> to
+     * specify the bucket name and the filename of the video. <code>StartSegmentDetection</code> returns a job
+     * identifier (<code>JobId</code>) which you use to get the results of the operation. When segment detection is
+     * finished, Amazon Rekognition Video publishes a completion status to the Amazon Simple Notification Service topic
+     * that you specify in <code>NotificationChannel</code>.
+     * </p>
+     * <p>
+     * You can use the <code>Filters</code> (<a>StartSegmentDetectionFilters</a>) input parameter to specify the minimum
+     * detection confidence returned in the response. Within <code>Filters</code>, use <code>ShotFilter</code>
+     * (<a>StartShotDetectionFilter</a>) to filter detected shots. Use <code>TechnicalCueFilter</code>
+     * (<a>StartTechnicalCueDetectionFilter</a>) to filter technical cues.
+     * </p>
+     * <p>
+     * To get the results of the segment detection operation, first check that the status value published to the Amazon
+     * SNS topic is <code>SUCCEEDED</code>. if so, call <a>GetSegmentDetection</a> and pass the job identifier (
+     * <code>JobId</code>) from the initial call to <code>StartSegmentDetection</code>.
+     * </p>
+     * <p>
+     * For more information, see Detecting Video Segments in Stored Video in the Amazon Rekognition Developer Guide.
+     * </p>
+     * 
+     * @param startSegmentDetectionRequest
+     * @return Result of the StartSegmentDetection operation returned by the service.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws IdempotentParameterMismatchException
+     *         A <code>ClientRequestToken</code> input parameter was reused with an operation, but at least one of the
+     *         other input parameters is different from the previous call to the operation.
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws InvalidS3ObjectException
+     *         Amazon Rekognition is unable to access the S3 object specified in the request.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws VideoTooLargeException
+     *         The file size or duration of the supplied media is too large. The maximum file size is 10GB. The maximum
+     *         duration is 6 hours.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @throws LimitExceededException
+     *         An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition
+     *         Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will
+     *         raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of
+     *         concurrently running jobs is below the Amazon Rekognition service limit.
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @sample AmazonRekognition.StartSegmentDetection
+     */
+    @Override
+    public StartSegmentDetectionResult startSegmentDetection(StartSegmentDetectionRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartSegmentDetection(request);
+    }
+
+    @SdkInternalApi
+    final StartSegmentDetectionResult executeStartSegmentDetection(StartSegmentDetectionRequest startSegmentDetectionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startSegmentDetectionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartSegmentDetectionRequest> request = null;
+        Response<StartSegmentDetectionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartSegmentDetectionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startSegmentDetectionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Rekognition");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartSegmentDetection");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartSegmentDetectionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new StartSegmentDetectionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Starts processing a stream processor. You create a stream processor by calling <a>CreateStreamProcessor</a>. To
      * tell <code>StartStreamProcessor</code> which stream processor to start, use the value of the <code>Name</code>
      * field specified in the call to <code>CreateStreamProcessor</code>.
@@ -4043,6 +4244,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * @throws ResourceNotFoundException
      *         The collection specified in the request cannot be found.
      * @throws ResourceInUseException
+     *         The specified resource is already being used.
      * @throws ProvisionedThroughputExceededException
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
@@ -4188,6 +4390,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * @throws ResourceNotFoundException
      *         The collection specified in the request cannot be found.
      * @throws ResourceInUseException
+     *         The specified resource is already being used.
      * @throws InvalidParameterException
      *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
      * @throws AccessDeniedException
@@ -4261,6 +4464,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * @throws ResourceNotFoundException
      *         The collection specified in the request cannot be found.
      * @throws ResourceInUseException
+     *         The specified resource is already being used.
      * @throws ProvisionedThroughputExceededException
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.

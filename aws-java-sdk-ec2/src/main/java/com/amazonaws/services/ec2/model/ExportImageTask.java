@@ -52,7 +52,7 @@ public class ExportImageTask implements Serializable, Cloneable {
     private String progress;
     /**
      * <p>
-     * Information about the destination S3 bucket.
+     * Information about the destination Amazon S3 bucket.
      * </p>
      */
     private ExportTaskS3Location s3ExportLocation;
@@ -69,6 +69,12 @@ public class ExportImageTask implements Serializable, Cloneable {
      * </p>
      */
     private String statusMessage;
+    /**
+     * <p>
+     * Any tags assigned to the image being exported.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
@@ -232,11 +238,11 @@ public class ExportImageTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the destination S3 bucket.
+     * Information about the destination Amazon S3 bucket.
      * </p>
      * 
      * @param s3ExportLocation
-     *        Information about the destination S3 bucket.
+     *        Information about the destination Amazon S3 bucket.
      */
 
     public void setS3ExportLocation(ExportTaskS3Location s3ExportLocation) {
@@ -245,10 +251,10 @@ public class ExportImageTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the destination S3 bucket.
+     * Information about the destination Amazon S3 bucket.
      * </p>
      * 
-     * @return Information about the destination S3 bucket.
+     * @return Information about the destination Amazon S3 bucket.
      */
 
     public ExportTaskS3Location getS3ExportLocation() {
@@ -257,11 +263,11 @@ public class ExportImageTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the destination S3 bucket.
+     * Information about the destination Amazon S3 bucket.
      * </p>
      * 
      * @param s3ExportLocation
-     *        Information about the destination S3 bucket.
+     *        Information about the destination Amazon S3 bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -357,6 +363,79 @@ public class ExportImageTask implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Any tags assigned to the image being exported.
+     * </p>
+     * 
+     * @return Any tags assigned to the image being exported.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to the image being exported.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to the image being exported.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to the image being exported.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to the image being exported.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExportImageTask withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to the image being exported.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to the image being exported.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExportImageTask withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -381,7 +460,9 @@ public class ExportImageTask implements Serializable, Cloneable {
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getStatusMessage() != null)
-            sb.append("StatusMessage: ").append(getStatusMessage());
+            sb.append("StatusMessage: ").append(getStatusMessage()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -424,6 +505,10 @@ public class ExportImageTask implements Serializable, Cloneable {
             return false;
         if (other.getStatusMessage() != null && other.getStatusMessage().equals(this.getStatusMessage()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -439,6 +524,7 @@ public class ExportImageTask implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getS3ExportLocation() == null) ? 0 : getS3ExportLocation().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getStatusMessage() == null) ? 0 : getStatusMessage().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 
