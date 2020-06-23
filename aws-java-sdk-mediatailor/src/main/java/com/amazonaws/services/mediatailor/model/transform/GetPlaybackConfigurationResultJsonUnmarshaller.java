@@ -56,6 +56,10 @@ public class GetPlaybackConfigurationResultJsonUnmarshaller implements Unmarshal
                     context.nextToken();
                     getPlaybackConfigurationResult.setAvailSuppression(AvailSuppressionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Bumper", targetDepth)) {
+                    context.nextToken();
+                    getPlaybackConfigurationResult.setBumper(BumperJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("CdnConfiguration", targetDepth)) {
                     context.nextToken();
                     getPlaybackConfigurationResult.setCdnConfiguration(CdnConfigurationJsonUnmarshaller.getInstance().unmarshall(context));

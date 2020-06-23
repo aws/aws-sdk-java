@@ -43,6 +43,13 @@ public class PutPlaybackConfigurationRequest extends com.amazonaws.AmazonWebServ
     private AvailSuppression availSuppression;
     /**
      * <p>
+     * The configuration for bumpers. Bumpers are short audio or video clips that play at the start or before the end of
+     * an ad break.
+     * </p>
+     */
+    private Bumper bumper;
+    /**
+     * <p>
      * The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment
      * management.
      * </p>
@@ -203,6 +210,52 @@ public class PutPlaybackConfigurationRequest extends com.amazonaws.AmazonWebServ
 
     public PutPlaybackConfigurationRequest withAvailSuppression(AvailSuppression availSuppression) {
         setAvailSuppression(availSuppression);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The configuration for bumpers. Bumpers are short audio or video clips that play at the start or before the end of
+     * an ad break.
+     * </p>
+     * 
+     * @param bumper
+     *        The configuration for bumpers. Bumpers are short audio or video clips that play at the start or before the
+     *        end of an ad break.
+     */
+
+    public void setBumper(Bumper bumper) {
+        this.bumper = bumper;
+    }
+
+    /**
+     * <p>
+     * The configuration for bumpers. Bumpers are short audio or video clips that play at the start or before the end of
+     * an ad break.
+     * </p>
+     * 
+     * @return The configuration for bumpers. Bumpers are short audio or video clips that play at the start or before
+     *         the end of an ad break.
+     */
+
+    public Bumper getBumper() {
+        return this.bumper;
+    }
+
+    /**
+     * <p>
+     * The configuration for bumpers. Bumpers are short audio or video clips that play at the start or before the end of
+     * an ad break.
+     * </p>
+     * 
+     * @param bumper
+     *        The configuration for bumpers. Bumpers are short audio or video clips that play at the start or before the
+     *        end of an ad break.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutPlaybackConfigurationRequest withBumper(Bumper bumper) {
+        setBumper(bumper);
         return this;
     }
 
@@ -652,6 +705,8 @@ public class PutPlaybackConfigurationRequest extends com.amazonaws.AmazonWebServ
             sb.append("AdDecisionServerUrl: ").append(getAdDecisionServerUrl()).append(",");
         if (getAvailSuppression() != null)
             sb.append("AvailSuppression: ").append(getAvailSuppression()).append(",");
+        if (getBumper() != null)
+            sb.append("Bumper: ").append(getBumper()).append(",");
         if (getCdnConfiguration() != null)
             sb.append("CdnConfiguration: ").append(getCdnConfiguration()).append(",");
         if (getDashConfiguration() != null)
@@ -691,6 +746,10 @@ public class PutPlaybackConfigurationRequest extends com.amazonaws.AmazonWebServ
         if (other.getAvailSuppression() == null ^ this.getAvailSuppression() == null)
             return false;
         if (other.getAvailSuppression() != null && other.getAvailSuppression().equals(this.getAvailSuppression()) == false)
+            return false;
+        if (other.getBumper() == null ^ this.getBumper() == null)
+            return false;
+        if (other.getBumper() != null && other.getBumper().equals(this.getBumper()) == false)
             return false;
         if (other.getCdnConfiguration() == null ^ this.getCdnConfiguration() == null)
             return false;
@@ -739,6 +798,7 @@ public class PutPlaybackConfigurationRequest extends com.amazonaws.AmazonWebServ
 
         hashCode = prime * hashCode + ((getAdDecisionServerUrl() == null) ? 0 : getAdDecisionServerUrl().hashCode());
         hashCode = prime * hashCode + ((getAvailSuppression() == null) ? 0 : getAvailSuppression().hashCode());
+        hashCode = prime * hashCode + ((getBumper() == null) ? 0 : getBumper().hashCode());
         hashCode = prime * hashCode + ((getCdnConfiguration() == null) ? 0 : getCdnConfiguration().hashCode());
         hashCode = prime * hashCode + ((getDashConfiguration() == null) ? 0 : getDashConfiguration().hashCode());
         hashCode = prime * hashCode + ((getLivePreRollConfiguration() == null) ? 0 : getLivePreRollConfiguration().hashCode());

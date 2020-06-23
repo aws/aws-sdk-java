@@ -33,6 +33,8 @@ public class PutPlaybackConfigurationRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AdDecisionServerUrl").build();
     private static final MarshallingInfo<StructuredPojo> AVAILSUPPRESSION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AvailSuppression").build();
+    private static final MarshallingInfo<StructuredPojo> BUMPER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Bumper").build();
     private static final MarshallingInfo<StructuredPojo> CDNCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CdnConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> DASHCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -70,6 +72,7 @@ public class PutPlaybackConfigurationRequestMarshaller {
         try {
             protocolMarshaller.marshall(putPlaybackConfigurationRequest.getAdDecisionServerUrl(), ADDECISIONSERVERURL_BINDING);
             protocolMarshaller.marshall(putPlaybackConfigurationRequest.getAvailSuppression(), AVAILSUPPRESSION_BINDING);
+            protocolMarshaller.marshall(putPlaybackConfigurationRequest.getBumper(), BUMPER_BINDING);
             protocolMarshaller.marshall(putPlaybackConfigurationRequest.getCdnConfiguration(), CDNCONFIGURATION_BINDING);
             protocolMarshaller.marshall(putPlaybackConfigurationRequest.getDashConfiguration(), DASHCONFIGURATION_BINDING);
             protocolMarshaller.marshall(putPlaybackConfigurationRequest.getLivePreRollConfiguration(), LIVEPREROLLCONFIGURATION_BINDING);

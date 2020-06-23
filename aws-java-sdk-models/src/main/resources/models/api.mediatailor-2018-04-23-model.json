@@ -141,17 +141,17 @@
         }
     }, 
     "shapes": {
-        "AvailSuppression" : {
-          "type" : "structure",
+        "AvailSuppression": {
+          "type": "structure",
           "documentation" : "<p>The configuration for Avail Suppression. Ad suppression can be used to turn off ad personalization in a long manifest, or if a viewer joins mid-break.</p>",
-          "members" : {
-            "Mode" : {
-                "documentation" : "Sets the mode for avail suppression, also known as ad suppression. By default, ad suppression is off and all ad breaks are filled by MediaTailor with ads or slate.",
-                "shape" : "Mode"
+          "members": {
+            "Mode": {
+                "documentation": "Sets the mode for avail suppression, also known as ad suppression. By default, ad suppression is off and all ad breaks are filled by MediaTailor with ads or slate.",
+                "shape": "Mode"
             },
-            "Value" : {
-                "documentation" : "The avail suppression value is a live edge offset time in HH:MM:SS. MediaTailor won't fill ad breaks on or behind this time in the manifest lookback window. ",
-                "shape" : "__string"
+            "Value": {
+                "documentation": "The avail suppression value is a live edge offset time in HH:MM:SS. MediaTailor won't fill ad breaks on or behind this time in the manifest lookback window. ",
+                "shape": "__string"
             }
           }
         },
@@ -168,6 +168,20 @@
             }, 
             "type": "structure"
         }, 
+        "Bumper": {
+            "type": "structure",
+            "documentation": "<p>The configuration for bumpers. Bumpers are short audio or video clips that play at the start or before the end of an ad break. </p>",
+            "members": {
+                "EndUrl": {
+                    "documentation": "<p>The URL for the end bumper asset. </p>",
+                    "shape": "__string"
+                },
+                "StartUrl": {
+                    "documentation": "<p>The URL for the start bumper asset. </p>",
+                    "shape": "__string"
+                }
+            }
+        },
         "CdnConfiguration": {
             "documentation": "<p>The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management. </p>", 
             "members": {
@@ -256,9 +270,13 @@
                     "documentation": "<p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25,000 characters.</p>", 
                     "shape": "__string"
                 }, 
-                "AvailSuppression" : {
-                  "shape" : "AvailSuppression",
+                "AvailSuppression": {
+                  "shape": "AvailSuppression",
                   "documentation": "<p>The configuration for Avail Suppression. Ad suppression can be used to turn off ad personalization in a long manifest, or if a viewer joins mid-break.</p>"
+                },
+                "Bumper": {
+                    "shape": "Bumper",
+                    "documentation": "<p>The configuration for bumpers. Bumpers are short audio or video clips that play at the start or before the end of an ad break. </p>"
                 },
                 "CdnConfiguration": {
                     "documentation": "<p>The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management. </p>", 
@@ -267,7 +285,7 @@
                 "DashConfiguration": {
                     "documentation": "<p>The configuration for DASH content. </p>", 
                     "shape": "DashConfiguration"
-                }, 
+                },
                 "HlsConfiguration": {
                     "documentation": "<p>The configuration for HLS content. </p>", 
                     "shape": "HlsConfiguration"
@@ -405,6 +423,10 @@
                     "documentation": "<p>The configuration for Avail Suppression. Ad suppression can be used to turn off ad personalization in a long manifest, or if a viewer joins mid-break.</p>",
                     "shape": "AvailSuppression"
                 },
+                "Bumper": {
+                    "shape": "Bumper",
+                    "documentation": "<p>The configuration for bumpers. Bumpers are short audio or video clips that play at the start or before the end of an ad break. </p>"
+                },
                 "CdnConfiguration": {
                     "documentation": "<p>The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management. </p>", 
                     "shape": "CdnConfiguration"
@@ -481,6 +503,10 @@
                   "shape" : "AvailSuppression",
                   "documentation": "<p>The configuration for Avail Suppression. Ad suppression can be used to turn off ad personalization in a long manifest, or if a viewer joins mid-break.</p>"
                 },
+                "Bumper": {
+                    "shape": "Bumper",
+                    "documentation": "<p>The configuration for bumpers. Bumpers are short audio or video clips that play at the start or before the end of an ad break. </p>"
+                },
                 "CdnConfiguration": {
                     "documentation": "<p>The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management. </p>", 
                     "shape": "CdnConfiguration"
@@ -504,7 +530,7 @@
                 "SlateAdUrl": {
                     "documentation": "<p>The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because MediaTailor provides it in the slots that are designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video. </p>", 
                     "shape": "__string"
-                }, 
+                },
                 "Tags": {
                     "documentation": "<p>The tags to assign to the playback configuration. </p>", 
                     "locationName": "tags", 
@@ -531,6 +557,10 @@
                   "shape" : "AvailSuppression",
                   "documentation": "<p>The configuration for Avail Suppression. Ad suppression can be used to turn off ad personalization in a long manifest, or if a viewer joins mid-break.</p>"
                 },
+                "Bumper": {
+                    "shape": "Bumper",
+                    "documentation": "<p>The configuration for bumpers. Bumpers are short audio or video clips that play at the start or before the end of an ad break. </p>"
+                },
                 "CdnConfiguration": {
                     "documentation": "<p>The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management. </p>", 
                     "shape": "CdnConfiguration"
@@ -538,7 +568,7 @@
                 "DashConfiguration": {
                     "documentation": "<p>The configuration for DASH content. </p>", 
                     "shape": "DashConfiguration"
-                }, 
+                },
                 "HlsConfiguration": {
                     "documentation": "<p>The configuration for HLS content. </p>", 
                     "shape": "HlsConfiguration"
