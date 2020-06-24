@@ -19,12 +19,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The launch specification for Spot instances in the fleet, which determines the defined duration and provisioning
- * timeout behavior.
+ * The launch specification for Spot instances in the fleet, which determines the defined duration, provisioning timeout
+ * behavior, and allocation strategy.
  * </p>
  * <note>
  * <p>
  * The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.
+ * On-Demand and Spot instance allocation strategies are available in Amazon EMR version 5.12.1 and later.
  * </p>
  * </note>
  * 
@@ -37,21 +38,33 @@ public class InstanceFleetProvisioningSpecifications implements Serializable, Cl
 
     /**
      * <p>
-     * The launch specification for Spot instances in the fleet, which determines the defined duration and provisioning
-     * timeout behavior.
+     * The launch specification for Spot instances in the fleet, which determines the defined duration, provisioning
+     * timeout behavior, and allocation strategy.
      * </p>
      */
     private SpotProvisioningSpecification spotSpecification;
+    /**
+     * <p>
+     * The launch specification for On-Demand instances in the instance fleet, which determines the allocation strategy.
+     * </p>
+     * <note>
+     * <p>
+     * The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
+     * versions. On-Demand instances allocation strategy is available in Amazon EMR version 5.12.1 and later.
+     * </p>
+     * </note>
+     */
+    private OnDemandProvisioningSpecification onDemandSpecification;
 
     /**
      * <p>
-     * The launch specification for Spot instances in the fleet, which determines the defined duration and provisioning
-     * timeout behavior.
+     * The launch specification for Spot instances in the fleet, which determines the defined duration, provisioning
+     * timeout behavior, and allocation strategy.
      * </p>
      * 
      * @param spotSpecification
-     *        The launch specification for Spot instances in the fleet, which determines the defined duration and
-     *        provisioning timeout behavior.
+     *        The launch specification for Spot instances in the fleet, which determines the defined duration,
+     *        provisioning timeout behavior, and allocation strategy.
      */
 
     public void setSpotSpecification(SpotProvisioningSpecification spotSpecification) {
@@ -60,12 +73,12 @@ public class InstanceFleetProvisioningSpecifications implements Serializable, Cl
 
     /**
      * <p>
-     * The launch specification for Spot instances in the fleet, which determines the defined duration and provisioning
-     * timeout behavior.
+     * The launch specification for Spot instances in the fleet, which determines the defined duration, provisioning
+     * timeout behavior, and allocation strategy.
      * </p>
      * 
-     * @return The launch specification for Spot instances in the fleet, which determines the defined duration and
-     *         provisioning timeout behavior.
+     * @return The launch specification for Spot instances in the fleet, which determines the defined duration,
+     *         provisioning timeout behavior, and allocation strategy.
      */
 
     public SpotProvisioningSpecification getSpotSpecification() {
@@ -74,18 +87,92 @@ public class InstanceFleetProvisioningSpecifications implements Serializable, Cl
 
     /**
      * <p>
-     * The launch specification for Spot instances in the fleet, which determines the defined duration and provisioning
-     * timeout behavior.
+     * The launch specification for Spot instances in the fleet, which determines the defined duration, provisioning
+     * timeout behavior, and allocation strategy.
      * </p>
      * 
      * @param spotSpecification
-     *        The launch specification for Spot instances in the fleet, which determines the defined duration and
-     *        provisioning timeout behavior.
+     *        The launch specification for Spot instances in the fleet, which determines the defined duration,
+     *        provisioning timeout behavior, and allocation strategy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceFleetProvisioningSpecifications withSpotSpecification(SpotProvisioningSpecification spotSpecification) {
         setSpotSpecification(spotSpecification);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The launch specification for On-Demand instances in the instance fleet, which determines the allocation strategy.
+     * </p>
+     * <note>
+     * <p>
+     * The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
+     * versions. On-Demand instances allocation strategy is available in Amazon EMR version 5.12.1 and later.
+     * </p>
+     * </note>
+     * 
+     * @param onDemandSpecification
+     *        The launch specification for On-Demand instances in the instance fleet, which determines the allocation
+     *        strategy. </p> <note>
+     *        <p>
+     *        The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
+     *        versions. On-Demand instances allocation strategy is available in Amazon EMR version 5.12.1 and later.
+     *        </p>
+     */
+
+    public void setOnDemandSpecification(OnDemandProvisioningSpecification onDemandSpecification) {
+        this.onDemandSpecification = onDemandSpecification;
+    }
+
+    /**
+     * <p>
+     * The launch specification for On-Demand instances in the instance fleet, which determines the allocation strategy.
+     * </p>
+     * <note>
+     * <p>
+     * The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
+     * versions. On-Demand instances allocation strategy is available in Amazon EMR version 5.12.1 and later.
+     * </p>
+     * </note>
+     * 
+     * @return The launch specification for On-Demand instances in the instance fleet, which determines the allocation
+     *         strategy. </p> <note>
+     *         <p>
+     *         The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding
+     *         5.0.x versions. On-Demand instances allocation strategy is available in Amazon EMR version 5.12.1 and
+     *         later.
+     *         </p>
+     */
+
+    public OnDemandProvisioningSpecification getOnDemandSpecification() {
+        return this.onDemandSpecification;
+    }
+
+    /**
+     * <p>
+     * The launch specification for On-Demand instances in the instance fleet, which determines the allocation strategy.
+     * </p>
+     * <note>
+     * <p>
+     * The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
+     * versions. On-Demand instances allocation strategy is available in Amazon EMR version 5.12.1 and later.
+     * </p>
+     * </note>
+     * 
+     * @param onDemandSpecification
+     *        The launch specification for On-Demand instances in the instance fleet, which determines the allocation
+     *        strategy. </p> <note>
+     *        <p>
+     *        The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
+     *        versions. On-Demand instances allocation strategy is available in Amazon EMR version 5.12.1 and later.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceFleetProvisioningSpecifications withOnDemandSpecification(OnDemandProvisioningSpecification onDemandSpecification) {
+        setOnDemandSpecification(onDemandSpecification);
         return this;
     }
 
@@ -102,7 +189,9 @@ public class InstanceFleetProvisioningSpecifications implements Serializable, Cl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSpotSpecification() != null)
-            sb.append("SpotSpecification: ").append(getSpotSpecification());
+            sb.append("SpotSpecification: ").append(getSpotSpecification()).append(",");
+        if (getOnDemandSpecification() != null)
+            sb.append("OnDemandSpecification: ").append(getOnDemandSpecification());
         sb.append("}");
         return sb.toString();
     }
@@ -121,6 +210,10 @@ public class InstanceFleetProvisioningSpecifications implements Serializable, Cl
             return false;
         if (other.getSpotSpecification() != null && other.getSpotSpecification().equals(this.getSpotSpecification()) == false)
             return false;
+        if (other.getOnDemandSpecification() == null ^ this.getOnDemandSpecification() == null)
+            return false;
+        if (other.getOnDemandSpecification() != null && other.getOnDemandSpecification().equals(this.getOnDemandSpecification()) == false)
+            return false;
         return true;
     }
 
@@ -130,6 +223,7 @@ public class InstanceFleetProvisioningSpecifications implements Serializable, Cl
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getSpotSpecification() == null) ? 0 : getSpotSpecification().hashCode());
+        hashCode = prime * hashCode + ((getOnDemandSpecification() == null) ? 0 : getOnDemandSpecification().hashCode());
         return hashCode;
     }
 

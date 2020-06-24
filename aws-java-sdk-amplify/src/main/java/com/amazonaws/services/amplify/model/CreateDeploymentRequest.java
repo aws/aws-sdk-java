@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Request structure for create a new deployment.
+ * The request structure for the create a new deployment request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateDeployment" target="_top">AWS API
@@ -30,32 +30,32 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Unique Id for an Amplify App.
+     * The unique ID for an Amplify app.
      * </p>
      */
     private String appId;
     /**
      * <p>
-     * Name for the branch, for the Job.
+     * The name for the branch, for the job.
      * </p>
      */
     private String branchName;
     /**
      * <p>
-     * Optional file map that contains file name as the key and file content md5 hash as the value. If this argument is
-     * provided, the service will generate different upload url per file. Otherwise, the service will only generate a
-     * single upload url for the zipped files.
+     * An optional file map that contains the file name as the key and the file content md5 hash as the value. If this
+     * argument is provided, the service will generate a unique upload URL per file. Otherwise, the service will only
+     * generate a single upload URL for the zipped files.
      * </p>
      */
     private java.util.Map<String, String> fileMap;
 
     /**
      * <p>
-     * Unique Id for an Amplify App.
+     * The unique ID for an Amplify app.
      * </p>
      * 
      * @param appId
-     *        Unique Id for an Amplify App.
+     *        The unique ID for an Amplify app.
      */
 
     public void setAppId(String appId) {
@@ -64,10 +64,10 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Unique Id for an Amplify App.
+     * The unique ID for an Amplify app.
      * </p>
      * 
-     * @return Unique Id for an Amplify App.
+     * @return The unique ID for an Amplify app.
      */
 
     public String getAppId() {
@@ -76,11 +76,11 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Unique Id for an Amplify App.
+     * The unique ID for an Amplify app.
      * </p>
      * 
      * @param appId
-     *        Unique Id for an Amplify App.
+     *        The unique ID for an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -91,11 +91,11 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Name for the branch, for the Job.
+     * The name for the branch, for the job.
      * </p>
      * 
      * @param branchName
-     *        Name for the branch, for the Job.
+     *        The name for the branch, for the job.
      */
 
     public void setBranchName(String branchName) {
@@ -104,10 +104,10 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Name for the branch, for the Job.
+     * The name for the branch, for the job.
      * </p>
      * 
-     * @return Name for the branch, for the Job.
+     * @return The name for the branch, for the job.
      */
 
     public String getBranchName() {
@@ -116,11 +116,11 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Name for the branch, for the Job.
+     * The name for the branch, for the job.
      * </p>
      * 
      * @param branchName
-     *        Name for the branch, for the Job.
+     *        The name for the branch, for the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -131,14 +131,14 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Optional file map that contains file name as the key and file content md5 hash as the value. If this argument is
-     * provided, the service will generate different upload url per file. Otherwise, the service will only generate a
-     * single upload url for the zipped files.
+     * An optional file map that contains the file name as the key and the file content md5 hash as the value. If this
+     * argument is provided, the service will generate a unique upload URL per file. Otherwise, the service will only
+     * generate a single upload URL for the zipped files.
      * </p>
      * 
-     * @return Optional file map that contains file name as the key and file content md5 hash as the value. If this
-     *         argument is provided, the service will generate different upload url per file. Otherwise, the service
-     *         will only generate a single upload url for the zipped files.
+     * @return An optional file map that contains the file name as the key and the file content md5 hash as the value.
+     *         If this argument is provided, the service will generate a unique upload URL per file. Otherwise, the
+     *         service will only generate a single upload URL for the zipped files.
      */
 
     public java.util.Map<String, String> getFileMap() {
@@ -147,15 +147,15 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Optional file map that contains file name as the key and file content md5 hash as the value. If this argument is
-     * provided, the service will generate different upload url per file. Otherwise, the service will only generate a
-     * single upload url for the zipped files.
+     * An optional file map that contains the file name as the key and the file content md5 hash as the value. If this
+     * argument is provided, the service will generate a unique upload URL per file. Otherwise, the service will only
+     * generate a single upload URL for the zipped files.
      * </p>
      * 
      * @param fileMap
-     *        Optional file map that contains file name as the key and file content md5 hash as the value. If this
-     *        argument is provided, the service will generate different upload url per file. Otherwise, the service will
-     *        only generate a single upload url for the zipped files.
+     *        An optional file map that contains the file name as the key and the file content md5 hash as the value. If
+     *        this argument is provided, the service will generate a unique upload URL per file. Otherwise, the service
+     *        will only generate a single upload URL for the zipped files.
      */
 
     public void setFileMap(java.util.Map<String, String> fileMap) {
@@ -164,15 +164,15 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Optional file map that contains file name as the key and file content md5 hash as the value. If this argument is
-     * provided, the service will generate different upload url per file. Otherwise, the service will only generate a
-     * single upload url for the zipped files.
+     * An optional file map that contains the file name as the key and the file content md5 hash as the value. If this
+     * argument is provided, the service will generate a unique upload URL per file. Otherwise, the service will only
+     * generate a single upload URL for the zipped files.
      * </p>
      * 
      * @param fileMap
-     *        Optional file map that contains file name as the key and file content md5 hash as the value. If this
-     *        argument is provided, the service will generate different upload url per file. Otherwise, the service will
-     *        only generate a single upload url for the zipped files.
+     *        An optional file map that contains the file name as the key and the file content md5 hash as the value. If
+     *        this argument is provided, the service will generate a unique upload URL per file. Otherwise, the service
+     *        will only generate a single upload URL for the zipped files.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

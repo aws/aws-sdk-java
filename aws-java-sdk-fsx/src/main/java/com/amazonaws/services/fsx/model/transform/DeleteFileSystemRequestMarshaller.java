@@ -36,6 +36,8 @@ public class DeleteFileSystemRequestMarshaller {
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
     private static final MarshallingInfo<StructuredPojo> WINDOWSCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WindowsConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> LUSTRECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LustreConfiguration").build();
 
     private static final DeleteFileSystemRequestMarshaller instance = new DeleteFileSystemRequestMarshaller();
 
@@ -56,6 +58,7 @@ public class DeleteFileSystemRequestMarshaller {
             protocolMarshaller.marshall(deleteFileSystemRequest.getFileSystemId(), FILESYSTEMID_BINDING);
             protocolMarshaller.marshall(deleteFileSystemRequest.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
             protocolMarshaller.marshall(deleteFileSystemRequest.getWindowsConfiguration(), WINDOWSCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(deleteFileSystemRequest.getLustreConfiguration(), LUSTRECONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

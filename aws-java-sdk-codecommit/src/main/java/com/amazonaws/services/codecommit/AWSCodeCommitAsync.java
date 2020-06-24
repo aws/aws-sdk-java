@@ -427,6 +427,11 @@ import com.amazonaws.services.codecommit.model.*;
  * </li>
  * <li>
  * <p>
+ * <a>GetCommentReactions</a>, which returns information about emoji reactions to comments.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <a>GetCommentsForComparedCommit</a>, which returns information about comments on the comparison between two commit
  * specifiers in a repository.
  * </p>
@@ -440,6 +445,11 @@ import com.amazonaws.services.codecommit.model.*;
  * <li>
  * <p>
  * <a>PostCommentReply</a>, which creates a reply to a comment.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>PutCommentReaction</a>, which creates or updates an emoji reaction to a comment.
  * </p>
  * </li>
  * <li>
@@ -1461,6 +1471,12 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      * <p>
      * Returns the content of a comment made on a change, file, or commit in a repository.
      * </p>
+     * <note>
+     * <p>
+     * Reaction counts might include numbers from user identities who were deleted after the reaction was made. For a
+     * count of reactions from active identities, use GetCommentReactions.
+     * </p>
+     * </note>
      * 
      * @param getCommentRequest
      * @return A Java Future containing the result of the GetComment operation returned by the service.
@@ -1474,6 +1490,12 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      * <p>
      * Returns the content of a comment made on a change, file, or commit in a repository.
      * </p>
+     * <note>
+     * <p>
+     * Reaction counts might include numbers from user identities who were deleted after the reaction was made. For a
+     * count of reactions from active identities, use GetCommentReactions.
+     * </p>
+     * </note>
      * 
      * @param getCommentRequest
      * @param asyncHandler
@@ -1490,8 +1512,47 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
 
     /**
      * <p>
+     * Returns information about reactions to a specified comment ID. Reactions from users who have been deleted will
+     * not be included in the count.
+     * </p>
+     * 
+     * @param getCommentReactionsRequest
+     * @return A Java Future containing the result of the GetCommentReactions operation returned by the service.
+     * @sample AWSCodeCommitAsync.GetCommentReactions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetCommentReactions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCommentReactionsResult> getCommentReactionsAsync(GetCommentReactionsRequest getCommentReactionsRequest);
+
+    /**
+     * <p>
+     * Returns information about reactions to a specified comment ID. Reactions from users who have been deleted will
+     * not be included in the count.
+     * </p>
+     * 
+     * @param getCommentReactionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetCommentReactions operation returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.GetCommentReactions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetCommentReactions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCommentReactionsResult> getCommentReactionsAsync(GetCommentReactionsRequest getCommentReactionsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetCommentReactionsRequest, GetCommentReactionsResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns information about comments made on the comparison between two commits.
      * </p>
+     * <note>
+     * <p>
+     * Reaction counts might include numbers from user identities who were deleted after the reaction was made. For a
+     * count of reactions from active identities, use GetCommentReactions.
+     * </p>
+     * </note>
      * 
      * @param getCommentsForComparedCommitRequest
      * @return A Java Future containing the result of the GetCommentsForComparedCommit operation returned by the
@@ -1507,6 +1568,12 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      * <p>
      * Returns information about comments made on the comparison between two commits.
      * </p>
+     * <note>
+     * <p>
+     * Reaction counts might include numbers from user identities who were deleted after the reaction was made. For a
+     * count of reactions from active identities, use GetCommentReactions.
+     * </p>
+     * </note>
      * 
      * @param getCommentsForComparedCommitRequest
      * @param asyncHandler
@@ -1527,6 +1594,12 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      * <p>
      * Returns comments made on a pull request.
      * </p>
+     * <note>
+     * <p>
+     * Reaction counts might include numbers from user identities who were deleted after the reaction was made. For a
+     * count of reactions from active identities, use GetCommentReactions.
+     * </p>
+     * </note>
      * 
      * @param getCommentsForPullRequestRequest
      * @return A Java Future containing the result of the GetCommentsForPullRequest operation returned by the service.
@@ -1541,6 +1614,12 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      * <p>
      * Returns comments made on a pull request.
      * </p>
+     * <note>
+     * <p>
+     * Reaction counts might include numbers from user identities who were deleted after the reaction was made. For a
+     * count of reactions from active identities, use GetCommentReactions.
+     * </p>
+     * </note>
      * 
      * @param getCommentsForPullRequestRequest
      * @param asyncHandler
@@ -2550,6 +2629,39 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      */
     java.util.concurrent.Future<PostCommentReplyResult> postCommentReplyAsync(PostCommentReplyRequest postCommentReplyRequest,
             com.amazonaws.handlers.AsyncHandler<PostCommentReplyRequest, PostCommentReplyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Adds or updates a reaction to a specified comment for the user whose identity is used to make the request. You
+     * can only add or update a reaction for yourself. You cannot add, modify, or delete a reaction for another user.
+     * </p>
+     * 
+     * @param putCommentReactionRequest
+     * @return A Java Future containing the result of the PutCommentReaction operation returned by the service.
+     * @sample AWSCodeCommitAsync.PutCommentReaction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PutCommentReaction" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutCommentReactionResult> putCommentReactionAsync(PutCommentReactionRequest putCommentReactionRequest);
+
+    /**
+     * <p>
+     * Adds or updates a reaction to a specified comment for the user whose identity is used to make the request. You
+     * can only add or update a reaction for yourself. You cannot add, modify, or delete a reaction for another user.
+     * </p>
+     * 
+     * @param putCommentReactionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutCommentReaction operation returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.PutCommentReaction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PutCommentReaction" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutCommentReactionResult> putCommentReactionAsync(PutCommentReactionRequest putCommentReactionRequest,
+            com.amazonaws.handlers.AsyncHandler<PutCommentReactionRequest, PutCommentReactionResult> asyncHandler);
 
     /**
      * <p>

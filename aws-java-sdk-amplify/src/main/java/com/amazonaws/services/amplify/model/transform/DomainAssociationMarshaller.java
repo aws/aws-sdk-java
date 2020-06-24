@@ -34,6 +34,10 @@ public class DomainAssociationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("domainName").build();
     private static final MarshallingInfo<Boolean> ENABLEAUTOSUBDOMAIN_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("enableAutoSubDomain").build();
+    private static final MarshallingInfo<List> AUTOSUBDOMAINCREATIONPATTERNS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("autoSubDomainCreationPatterns").build();
+    private static final MarshallingInfo<String> AUTOSUBDOMAINIAMROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("autoSubDomainIAMRole").build();
     private static final MarshallingInfo<String> DOMAINSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("domainStatus").build();
     private static final MarshallingInfo<String> STATUSREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -62,6 +66,8 @@ public class DomainAssociationMarshaller {
             protocolMarshaller.marshall(domainAssociation.getDomainAssociationArn(), DOMAINASSOCIATIONARN_BINDING);
             protocolMarshaller.marshall(domainAssociation.getDomainName(), DOMAINNAME_BINDING);
             protocolMarshaller.marshall(domainAssociation.getEnableAutoSubDomain(), ENABLEAUTOSUBDOMAIN_BINDING);
+            protocolMarshaller.marshall(domainAssociation.getAutoSubDomainCreationPatterns(), AUTOSUBDOMAINCREATIONPATTERNS_BINDING);
+            protocolMarshaller.marshall(domainAssociation.getAutoSubDomainIAMRole(), AUTOSUBDOMAINIAMROLE_BINDING);
             protocolMarshaller.marshall(domainAssociation.getDomainStatus(), DOMAINSTATUS_BINDING);
             protocolMarshaller.marshall(domainAssociation.getStatusReason(), STATUSREASON_BINDING);
             protocolMarshaller.marshall(domainAssociation.getCertificateVerificationDNSRecord(), CERTIFICATEVERIFICATIONDNSRECORD_BINDING);

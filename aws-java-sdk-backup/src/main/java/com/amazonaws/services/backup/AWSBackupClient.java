@@ -1092,10 +1092,10 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
 
     /**
      * <p>
-     * Returns the current service opt-in settings for the region. If the service has a value set to true, AWS Backup
-     * will attempt to protect that service's resources in this region, when included in an on-demand backup or
-     * scheduled backup plan. If the value is set to false for a service, AWS Backup will not attempt to protect that
-     * service's resources in this region.
+     * Returns the current service opt-in settings for the Region. If the service has a value set to <code>true</code>,
+     * AWS Backup attempts to protect that service's resources in this Region, when included in an on-demand backup or
+     * scheduled backup plan. If the value is set to <code>false</code> for a service, AWS Backup does not attempt to
+     * protect that service's resources in this Region.
      * </p>
      * 
      * @param describeRegionSettingsRequest
@@ -1783,9 +1783,6 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
      * @return Result of the ListBackupJobs operation returned by the service.
      * @throws InvalidParameterValueException
      *         Indicates that something is wrong with a parameter's value. For example, the value is out of range.
-     * @throws InvalidRequestException
-     *         Indicates that something is wrong with the input to the request. For example, a parameter is of the wrong
-     *         type.
      * @throws ServiceUnavailableException
      *         The request failed due to a temporary failure of the server.
      * @sample AWSBackup.ListBackupJobs
@@ -3161,10 +3158,10 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
 
     /**
      * <p>
-     * Updates the current service opt-in settings for the region. If the service has a value set to true, AWS Backup
-     * will attempt to protect that service's resources in this region, when included in an on-demand backup or
-     * scheduled backup plan. If the value is set to false for a service, AWS Backup will not attempt to protect that
-     * service's resources in this region.
+     * Updates the current service opt-in settings for the Region. If the service has a value set to <code>true</code>,
+     * AWS Backup attempts to protect that service's resources in this Region, when included in an on-demand backup or
+     * scheduled backup plan. If the value is set to <code>false</code> for a service, AWS Backup does not attempt to
+     * protect that service's resources in this Region.
      * </p>
      * 
      * @param updateRegionSettingsRequest

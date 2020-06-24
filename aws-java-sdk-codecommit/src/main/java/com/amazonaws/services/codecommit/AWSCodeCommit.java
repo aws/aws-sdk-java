@@ -428,6 +428,11 @@ import com.amazonaws.services.codecommit.model.*;
  * </li>
  * <li>
  * <p>
+ * <a>GetCommentReactions</a>, which returns information about emoji reactions to comments.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <a>GetCommentsForComparedCommit</a>, which returns information about comments on the comparison between two commit
  * specifiers in a repository.
  * </p>
@@ -441,6 +446,11 @@ import com.amazonaws.services.codecommit.model.*;
  * <li>
  * <p>
  * <a>PostCommentReply</a>, which creates a reply to a comment.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>PutCommentReaction</a>, which creates or updates an emoji reaction to a comment.
  * </p>
  * </li>
  * <li>
@@ -894,7 +904,8 @@ public interface AWSCodeCommit {
      * @throws BranchNameRequiredException
      *         A branch name is required, but was not specified.
      * @throws BranchNameExistsException
-     *         The specified branch name already exists.
+     *         Cannot create the branch with the specified name because the commit conflicts with an existing branch
+     *         with the same name. Branch names must be unique.
      * @throws InvalidBranchNameException
      *         The specified reference name is not valid.
      * @throws CommitIdRequiredException
@@ -1865,17 +1876,33 @@ public interface AWSCodeCommit {
      * <p>
      * Returns the content of a comment made on a change, file, or commit in a repository.
      * </p>
+     * <note>
+     * <p>
+     * Reaction counts might include numbers from user identities who were deleted after the reaction was made. For a
+     * count of reactions from active identities, use GetCommentReactions.
+     * </p>
+     * </note>
      * 
      * @param getCommentRequest
      * @return Result of the GetComment operation returned by the service.
      * @throws CommentDoesNotExistException
      *         No comment exists with the provided ID. Verify that you have used the correct ID, and then try again.
+     * @throws CommentDeletedException
+     *         This comment has already been deleted. You cannot edit or delete a deleted comment.
      * @throws CommentIdRequiredException
      *         The comment ID is missing or null. A comment ID is required.
      * @throws InvalidCommentIdException
      *         The comment ID is not in a valid format. Make sure that you have provided the full comment ID.
-     * @throws CommentDeletedException
-     *         This comment has already been deleted. You cannot edit or delete a deleted comment.
+     * @throws EncryptionIntegrityChecksFailedException
+     *         An encryption integrity check failed.
+     * @throws EncryptionKeyAccessDeniedException
+     *         An encryption key could not be accessed.
+     * @throws EncryptionKeyDisabledException
+     *         The encryption key is disabled.
+     * @throws EncryptionKeyNotFoundException
+     *         No encryption key was found.
+     * @throws EncryptionKeyUnavailableException
+     *         The encryption key is not available.
      * @sample AWSCodeCommit.GetComment
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetComment" target="_top">AWS API
      *      Documentation</a>
@@ -1884,8 +1911,42 @@ public interface AWSCodeCommit {
 
     /**
      * <p>
+     * Returns information about reactions to a specified comment ID. Reactions from users who have been deleted will
+     * not be included in the count.
+     * </p>
+     * 
+     * @param getCommentReactionsRequest
+     * @return Result of the GetCommentReactions operation returned by the service.
+     * @throws CommentDoesNotExistException
+     *         No comment exists with the provided ID. Verify that you have used the correct ID, and then try again.
+     * @throws CommentIdRequiredException
+     *         The comment ID is missing or null. A comment ID is required.
+     * @throws InvalidCommentIdException
+     *         The comment ID is not in a valid format. Make sure that you have provided the full comment ID.
+     * @throws InvalidReactionUserArnException
+     *         The Amazon Resource Name (ARN) of the user or identity is not valid.
+     * @throws InvalidMaxResultsException
+     *         The specified number of maximum results is not valid.
+     * @throws InvalidContinuationTokenException
+     *         The specified continuation token is not valid.
+     * @throws CommentDeletedException
+     *         This comment has already been deleted. You cannot edit or delete a deleted comment.
+     * @sample AWSCodeCommit.GetCommentReactions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetCommentReactions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetCommentReactionsResult getCommentReactions(GetCommentReactionsRequest getCommentReactionsRequest);
+
+    /**
+     * <p>
      * Returns information about comments made on the comparison between two commits.
      * </p>
+     * <note>
+     * <p>
+     * Reaction counts might include numbers from user identities who were deleted after the reaction was made. For a
+     * count of reactions from active identities, use GetCommentReactions.
+     * </p>
+     * </note>
      * 
      * @param getCommentsForComparedCommitRequest
      * @return Result of the GetCommentsForComparedCommit operation returned by the service.
@@ -1930,6 +1991,12 @@ public interface AWSCodeCommit {
      * <p>
      * Returns comments made on a pull request.
      * </p>
+     * <note>
+     * <p>
+     * Reaction counts might include numbers from user identities who were deleted after the reaction was made. For a
+     * count of reactions from active identities, use GetCommentReactions.
+     * </p>
+     * </note>
      * 
      * @param getCommentsForPullRequestRequest
      * @return Result of the GetCommentsForPullRequest operation returned by the service.
@@ -3398,6 +3465,9 @@ public interface AWSCodeCommit {
      *         A commit ID was not specified.
      * @throws InvalidCommitIdException
      *         The specified commit ID is not valid.
+     * @throws BeforeCommitIdAndAfterCommitIdAreSameException
+     *         The before commit ID and the after commit ID are the same, which is not valid. The before commit ID and
+     *         the after commit ID must be different commit IDs.
      * @throws EncryptionIntegrityChecksFailedException
      *         An encryption integrity check failed.
      * @throws EncryptionKeyAccessDeniedException
@@ -3408,9 +3478,6 @@ public interface AWSCodeCommit {
      *         No encryption key was found.
      * @throws EncryptionKeyUnavailableException
      *         The encryption key is not available.
-     * @throws BeforeCommitIdAndAfterCommitIdAreSameException
-     *         The before commit ID and the after commit ID are the same, which is not valid. The before commit ID and
-     *         the after commit ID must be different commit IDs.
      * @throws CommitDoesNotExistException
      *         The specified commit does not exist or no commit was specified, and the specified repository has no
      *         default branch.
@@ -3418,6 +3485,8 @@ public interface AWSCodeCommit {
      *         The specified path is not valid.
      * @throws PathDoesNotExistException
      *         The specified path does not exist.
+     * @throws PathRequiredException
+     *         The folderPath for a location cannot be null.
      * @sample AWSCodeCommit.PostCommentForComparedCommit
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PostCommentForComparedCommit"
      *      target="_top">AWS API Documentation</a>
@@ -3480,6 +3549,9 @@ public interface AWSCodeCommit {
      *         A commit ID was not specified.
      * @throws InvalidCommitIdException
      *         The specified commit ID is not valid.
+     * @throws BeforeCommitIdAndAfterCommitIdAreSameException
+     *         The before commit ID and the after commit ID are the same, which is not valid. The before commit ID and
+     *         the after commit ID must be different commit IDs.
      * @throws EncryptionIntegrityChecksFailedException
      *         An encryption integrity check failed.
      * @throws EncryptionKeyAccessDeniedException
@@ -3499,9 +3571,6 @@ public interface AWSCodeCommit {
      *         The specified path does not exist.
      * @throws PathRequiredException
      *         The folderPath for a location cannot be null.
-     * @throws BeforeCommitIdAndAfterCommitIdAreSameException
-     *         The before commit ID and the after commit ID are the same, which is not valid. The before commit ID and
-     *         the after commit ID must be different commit IDs.
      * @sample AWSCodeCommit.PostCommentForPullRequest
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PostCommentForPullRequest"
      *      target="_top">AWS API Documentation</a>
@@ -3540,6 +3609,37 @@ public interface AWSCodeCommit {
      *      API Documentation</a>
      */
     PostCommentReplyResult postCommentReply(PostCommentReplyRequest postCommentReplyRequest);
+
+    /**
+     * <p>
+     * Adds or updates a reaction to a specified comment for the user whose identity is used to make the request. You
+     * can only add or update a reaction for yourself. You cannot add, modify, or delete a reaction for another user.
+     * </p>
+     * 
+     * @param putCommentReactionRequest
+     * @return Result of the PutCommentReaction operation returned by the service.
+     * @throws CommentDoesNotExistException
+     *         No comment exists with the provided ID. Verify that you have used the correct ID, and then try again.
+     * @throws CommentIdRequiredException
+     *         The comment ID is missing or null. A comment ID is required.
+     * @throws InvalidCommentIdException
+     *         The comment ID is not in a valid format. Make sure that you have provided the full comment ID.
+     * @throws InvalidReactionValueException
+     *         The value of the reaction is not valid. For more information, see the <a
+     *         href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit User
+     *         Guide</a>.
+     * @throws ReactionValueRequiredException
+     *         A reaction value is required.
+     * @throws ReactionLimitExceededException
+     *         The number of reactions has been exceeded. Reactions are limited to one reaction per user for each
+     *         individual comment ID.
+     * @throws CommentDeletedException
+     *         This comment has already been deleted. You cannot edit or delete a deleted comment.
+     * @sample AWSCodeCommit.PutCommentReaction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PutCommentReaction" target="_top">AWS
+     *      API Documentation</a>
+     */
+    PutCommentReactionResult putCommentReaction(PutCommentReactionRequest putCommentReactionRequest);
 
     /**
      * <p>

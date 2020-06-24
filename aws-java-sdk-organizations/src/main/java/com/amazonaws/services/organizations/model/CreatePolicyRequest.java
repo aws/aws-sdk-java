@@ -27,12 +27,8 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The policy content to add to the new policy. For example, if you create a <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">service control
-     * policy</a> (SCP), this string must be JSON text that specifies the permissions that admins in attached accounts
-     * can delegate to their users, groups, and roles. For more information about the SCP syntax, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service Control
-     * Policy Syntax</a> in the <i>AWS Organizations User Guide.</i>
+     * The policy text content to add to the new policy. The text that you supply must adhere to the rules of the policy
+     * type you specify in the <code>Type</code> parameter.
      * </p>
      */
     private String content;
@@ -54,34 +50,41 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String name;
     /**
      * <p>
-     * The type of policy to create.
+     * The type of policy to create. You can specify one of the following values:
      * </p>
-     * <note>
+     * <ul>
+     * <li>
      * <p>
-     * In the current release, the only type of policy that you can create is a service control policy (SCP).
+     * <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY
+     * </a>
      * </p>
-     * </note>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">
+     * SERVICE_CONTROL_POLICY</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">
+     * TAG_POLICY</a>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String type;
 
     /**
      * <p>
-     * The policy content to add to the new policy. For example, if you create a <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">service control
-     * policy</a> (SCP), this string must be JSON text that specifies the permissions that admins in attached accounts
-     * can delegate to their users, groups, and roles. For more information about the SCP syntax, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service Control
-     * Policy Syntax</a> in the <i>AWS Organizations User Guide.</i>
+     * The policy text content to add to the new policy. The text that you supply must adhere to the rules of the policy
+     * type you specify in the <code>Type</code> parameter.
      * </p>
      * 
      * @param content
-     *        The policy content to add to the new policy. For example, if you create a <a
-     *        href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">service
-     *        control policy</a> (SCP), this string must be JSON text that specifies the permissions that admins in
-     *        attached accounts can delegate to their users, groups, and roles. For more information about the SCP
-     *        syntax, see <a
-     *        href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
-     *        Control Policy Syntax</a> in the <i>AWS Organizations User Guide.</i>
+     *        The policy text content to add to the new policy. The text that you supply must adhere to the rules of the
+     *        policy type you specify in the <code>Type</code> parameter.
      */
 
     public void setContent(String content) {
@@ -90,21 +93,12 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The policy content to add to the new policy. For example, if you create a <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">service control
-     * policy</a> (SCP), this string must be JSON text that specifies the permissions that admins in attached accounts
-     * can delegate to their users, groups, and roles. For more information about the SCP syntax, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service Control
-     * Policy Syntax</a> in the <i>AWS Organizations User Guide.</i>
+     * The policy text content to add to the new policy. The text that you supply must adhere to the rules of the policy
+     * type you specify in the <code>Type</code> parameter.
      * </p>
      * 
-     * @return The policy content to add to the new policy. For example, if you create a <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">service
-     *         control policy</a> (SCP), this string must be JSON text that specifies the permissions that admins in
-     *         attached accounts can delegate to their users, groups, and roles. For more information about the SCP
-     *         syntax, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
-     *         Control Policy Syntax</a> in the <i>AWS Organizations User Guide.</i>
+     * @return The policy text content to add to the new policy. The text that you supply must adhere to the rules of
+     *         the policy type you specify in the <code>Type</code> parameter.
      */
 
     public String getContent() {
@@ -113,22 +107,13 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The policy content to add to the new policy. For example, if you create a <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">service control
-     * policy</a> (SCP), this string must be JSON text that specifies the permissions that admins in attached accounts
-     * can delegate to their users, groups, and roles. For more information about the SCP syntax, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service Control
-     * Policy Syntax</a> in the <i>AWS Organizations User Guide.</i>
+     * The policy text content to add to the new policy. The text that you supply must adhere to the rules of the policy
+     * type you specify in the <code>Type</code> parameter.
      * </p>
      * 
      * @param content
-     *        The policy content to add to the new policy. For example, if you create a <a
-     *        href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">service
-     *        control policy</a> (SCP), this string must be JSON text that specifies the permissions that admins in
-     *        attached accounts can delegate to their users, groups, and roles. For more information about the SCP
-     *        syntax, see <a
-     *        href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
-     *        Control Policy Syntax</a> in the <i>AWS Organizations User Guide.</i>
+     *        The policy text content to add to the new policy. The text that you supply must adhere to the rules of the
+     *        policy type you specify in the <code>Type</code> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -240,19 +225,52 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The type of policy to create.
+     * The type of policy to create. You can specify one of the following values:
      * </p>
-     * <note>
+     * <ul>
+     * <li>
      * <p>
-     * In the current release, the only type of policy that you can create is a service control policy (SCP).
+     * <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY
+     * </a>
      * </p>
-     * </note>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">
+     * SERVICE_CONTROL_POLICY</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">
+     * TAG_POLICY</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param type
-     *        The type of policy to create.</p> <note>
+     *        The type of policy to create. You can specify one of the following values:</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        In the current release, the only type of policy that you can create is a service control policy (SCP).
+     *        <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">
+     *        BACKUP_POLICY</a>
      *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">
+     *        SERVICE_CONTROL_POLICY</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a
+     *        href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">
+     *        TAG_POLICY</a>
+     *        </p>
+     *        </li>
      * @see PolicyType
      */
 
@@ -262,18 +280,51 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The type of policy to create.
+     * The type of policy to create. You can specify one of the following values:
      * </p>
-     * <note>
+     * <ul>
+     * <li>
      * <p>
-     * In the current release, the only type of policy that you can create is a service control policy (SCP).
+     * <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY
+     * </a>
      * </p>
-     * </note>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">
+     * SERVICE_CONTROL_POLICY</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">
+     * TAG_POLICY</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The type of policy to create.</p> <note>
+     * @return The type of policy to create. You can specify one of the following values:</p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         In the current release, the only type of policy that you can create is a service control policy (SCP).
+     *         <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">
+     *         BACKUP_POLICY</a>
      *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">
+     *         SERVICE_CONTROL_POLICY</a>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <a
+     *         href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html"
+     *         >TAG_POLICY</a>
+     *         </p>
+     *         </li>
      * @see PolicyType
      */
 
@@ -283,19 +334,52 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The type of policy to create.
+     * The type of policy to create. You can specify one of the following values:
      * </p>
-     * <note>
+     * <ul>
+     * <li>
      * <p>
-     * In the current release, the only type of policy that you can create is a service control policy (SCP).
+     * <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY
+     * </a>
      * </p>
-     * </note>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">
+     * SERVICE_CONTROL_POLICY</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">
+     * TAG_POLICY</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param type
-     *        The type of policy to create.</p> <note>
+     *        The type of policy to create. You can specify one of the following values:</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        In the current release, the only type of policy that you can create is a service control policy (SCP).
+     *        <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">
+     *        BACKUP_POLICY</a>
      *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">
+     *        SERVICE_CONTROL_POLICY</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a
+     *        href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">
+     *        TAG_POLICY</a>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PolicyType
      */
@@ -307,19 +391,52 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The type of policy to create.
+     * The type of policy to create. You can specify one of the following values:
      * </p>
-     * <note>
+     * <ul>
+     * <li>
      * <p>
-     * In the current release, the only type of policy that you can create is a service control policy (SCP).
+     * <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY
+     * </a>
      * </p>
-     * </note>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">
+     * SERVICE_CONTROL_POLICY</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">
+     * TAG_POLICY</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param type
-     *        The type of policy to create.</p> <note>
+     *        The type of policy to create. You can specify one of the following values:</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        In the current release, the only type of policy that you can create is a service control policy (SCP).
+     *        <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">
+     *        BACKUP_POLICY</a>
      *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">
+     *        SERVICE_CONTROL_POLICY</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a
+     *        href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">
+     *        TAG_POLICY</a>
+     *        </p>
+     *        </li>
      * @see PolicyType
      */
 
@@ -329,19 +446,52 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The type of policy to create.
+     * The type of policy to create. You can specify one of the following values:
      * </p>
-     * <note>
+     * <ul>
+     * <li>
      * <p>
-     * In the current release, the only type of policy that you can create is a service control policy (SCP).
+     * <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY
+     * </a>
      * </p>
-     * </note>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">
+     * SERVICE_CONTROL_POLICY</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">
+     * TAG_POLICY</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param type
-     *        The type of policy to create.</p> <note>
+     *        The type of policy to create. You can specify one of the following values:</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        In the current release, the only type of policy that you can create is a service control policy (SCP).
+     *        <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">
+     *        BACKUP_POLICY</a>
      *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">
+     *        SERVICE_CONTROL_POLICY</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a
+     *        href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">
+     *        TAG_POLICY</a>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PolicyType
      */

@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.codecommit.model.transform;
 
+import java.util.Map;
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -43,6 +45,10 @@ public class CommentMarshaller {
             .marshallLocationName("deleted").build();
     private static final MarshallingInfo<String> CLIENTREQUESTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientRequestToken").build();
+    private static final MarshallingInfo<List> CALLERREACTIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("callerReactions").build();
+    private static final MarshallingInfo<Map> REACTIONCOUNTS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("reactionCounts").build();
 
     private static final CommentMarshaller instance = new CommentMarshaller();
 
@@ -68,6 +74,8 @@ public class CommentMarshaller {
             protocolMarshaller.marshall(comment.getAuthorArn(), AUTHORARN_BINDING);
             protocolMarshaller.marshall(comment.getDeleted(), DELETED_BINDING);
             protocolMarshaller.marshall(comment.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
+            protocolMarshaller.marshall(comment.getCallerReactions(), CALLERREACTIONS_BINDING);
+            protocolMarshaller.marshall(comment.getReactionCounts(), REACTIONCOUNTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

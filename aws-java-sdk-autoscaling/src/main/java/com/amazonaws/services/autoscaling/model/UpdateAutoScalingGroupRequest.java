@@ -101,14 +101,13 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The amount of time, in seconds, after a scaling activity completes before another scaling activity can start. The
-     * default value is <code>300</code>. This cooldown period is not used when a scaling-specific cooldown is
-     * specified.
+     * default value is <code>300</code>.
      * </p>
      * <p>
-     * Cooldown periods are not supported for target tracking scaling policies, step scaling policies, or scheduled
+     * This setting applies when using simple scaling policies, but not when using other scaling policies or scheduled
      * scaling. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling Cooldowns</a> in the <i>Amazon
-     * EC2 Auto Scaling User Guide</i>.
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling Cooldowns for Amazon EC2 Auto
+     * Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      */
     private Integer defaultCooldown;
@@ -137,7 +136,7 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * Check Grace Period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * <p>
-     * Conditional: This parameter is required if you are adding an <code>ELB</code> health check.
+     * Required if you are adding an <code>ELB</code> health check.
      * </p>
      */
     private Integer healthCheckGracePeriod;
@@ -671,25 +670,23 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The amount of time, in seconds, after a scaling activity completes before another scaling activity can start. The
-     * default value is <code>300</code>. This cooldown period is not used when a scaling-specific cooldown is
-     * specified.
+     * default value is <code>300</code>.
      * </p>
      * <p>
-     * Cooldown periods are not supported for target tracking scaling policies, step scaling policies, or scheduled
+     * This setting applies when using simple scaling policies, but not when using other scaling policies or scheduled
      * scaling. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling Cooldowns</a> in the <i>Amazon
-     * EC2 Auto Scaling User Guide</i>.
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling Cooldowns for Amazon EC2 Auto
+     * Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param defaultCooldown
      *        The amount of time, in seconds, after a scaling activity completes before another scaling activity can
-     *        start. The default value is <code>300</code>. This cooldown period is not used when a scaling-specific
-     *        cooldown is specified.</p>
+     *        start. The default value is <code>300</code>.</p>
      *        <p>
-     *        Cooldown periods are not supported for target tracking scaling policies, step scaling policies, or
+     *        This setting applies when using simple scaling policies, but not when using other scaling policies or
      *        scheduled scaling. For more information, see <a
-     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling Cooldowns</a> in the
-     *        <i>Amazon EC2 Auto Scaling User Guide</i>.
+     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling Cooldowns for Amazon
+     *        EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      */
 
     public void setDefaultCooldown(Integer defaultCooldown) {
@@ -699,24 +696,22 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The amount of time, in seconds, after a scaling activity completes before another scaling activity can start. The
-     * default value is <code>300</code>. This cooldown period is not used when a scaling-specific cooldown is
-     * specified.
+     * default value is <code>300</code>.
      * </p>
      * <p>
-     * Cooldown periods are not supported for target tracking scaling policies, step scaling policies, or scheduled
+     * This setting applies when using simple scaling policies, but not when using other scaling policies or scheduled
      * scaling. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling Cooldowns</a> in the <i>Amazon
-     * EC2 Auto Scaling User Guide</i>.
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling Cooldowns for Amazon EC2 Auto
+     * Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @return The amount of time, in seconds, after a scaling activity completes before another scaling activity can
-     *         start. The default value is <code>300</code>. This cooldown period is not used when a scaling-specific
-     *         cooldown is specified.</p>
+     *         start. The default value is <code>300</code>.</p>
      *         <p>
-     *         Cooldown periods are not supported for target tracking scaling policies, step scaling policies, or
+     *         This setting applies when using simple scaling policies, but not when using other scaling policies or
      *         scheduled scaling. For more information, see <a
-     *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling Cooldowns</a> in the
-     *         <i>Amazon EC2 Auto Scaling User Guide</i>.
+     *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling Cooldowns for Amazon
+     *         EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      */
 
     public Integer getDefaultCooldown() {
@@ -726,25 +721,23 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The amount of time, in seconds, after a scaling activity completes before another scaling activity can start. The
-     * default value is <code>300</code>. This cooldown period is not used when a scaling-specific cooldown is
-     * specified.
+     * default value is <code>300</code>.
      * </p>
      * <p>
-     * Cooldown periods are not supported for target tracking scaling policies, step scaling policies, or scheduled
+     * This setting applies when using simple scaling policies, but not when using other scaling policies or scheduled
      * scaling. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling Cooldowns</a> in the <i>Amazon
-     * EC2 Auto Scaling User Guide</i>.
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling Cooldowns for Amazon EC2 Auto
+     * Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param defaultCooldown
      *        The amount of time, in seconds, after a scaling activity completes before another scaling activity can
-     *        start. The default value is <code>300</code>. This cooldown period is not used when a scaling-specific
-     *        cooldown is specified.</p>
+     *        start. The default value is <code>300</code>.</p>
      *        <p>
-     *        Cooldown periods are not supported for target tracking scaling policies, step scaling policies, or
+     *        This setting applies when using simple scaling policies, but not when using other scaling policies or
      *        scheduled scaling. For more information, see <a
-     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling Cooldowns</a> in the
-     *        <i>Amazon EC2 Auto Scaling User Guide</i>.
+     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling Cooldowns for Amazon
+     *        EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -889,7 +882,7 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * Check Grace Period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * <p>
-     * Conditional: This parameter is required if you are adding an <code>ELB</code> health check.
+     * Required if you are adding an <code>ELB</code> health check.
      * </p>
      * 
      * @param healthCheckGracePeriod
@@ -901,7 +894,7 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      *        >Health Check Grace Period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      *        </p>
      *        <p>
-     *        Conditional: This parameter is required if you are adding an <code>ELB</code> health check.
+     *        Required if you are adding an <code>ELB</code> health check.
      */
 
     public void setHealthCheckGracePeriod(Integer healthCheckGracePeriod) {
@@ -919,7 +912,7 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * Check Grace Period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * <p>
-     * Conditional: This parameter is required if you are adding an <code>ELB</code> health check.
+     * Required if you are adding an <code>ELB</code> health check.
      * </p>
      * 
      * @return The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status of
@@ -930,7 +923,7 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      *         >Health Check Grace Period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      *         </p>
      *         <p>
-     *         Conditional: This parameter is required if you are adding an <code>ELB</code> health check.
+     *         Required if you are adding an <code>ELB</code> health check.
      */
 
     public Integer getHealthCheckGracePeriod() {
@@ -948,7 +941,7 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * Check Grace Period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * <p>
-     * Conditional: This parameter is required if you are adding an <code>ELB</code> health check.
+     * Required if you are adding an <code>ELB</code> health check.
      * </p>
      * 
      * @param healthCheckGracePeriod
@@ -960,7 +953,7 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      *        >Health Check Grace Period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      *        </p>
      *        <p>
-     *        Conditional: This parameter is required if you are adding an <code>ELB</code> health check.
+     *        Required if you are adding an <code>ELB</code> health check.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

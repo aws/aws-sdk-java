@@ -26,7 +26,15 @@ import com.amazonaws.services.amplify.model.*;
  * </p>
  * <p>
  * <p>
- * Amplify is a fully managed continuous deployment and hosting service for modern web apps.
+ * Welcome to the AWS Amplify API documentation. This reference provides descriptions of the actions and data types for
+ * the Amplify API.
+ * </p>
+ * <p>
+ * Amplify enables developers to develop and deploy cloud-powered mobile and web apps. The Amplify Console provides a
+ * continuous delivery and hosting service for web applications. For more information, see the <a
+ * href="https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html">Amplify Console User Guide</a>. The Amplify
+ * Framework is a comprehensive set of SDKs, libraries, tools, and documentation for client app development. For more
+ * information, see the <a href="https://aws-amplify.github.io/docs/">Amplify Framework.</a>
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -34,11 +42,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Creates a new Amplify App.
+     * Creates a new Amplify app.
      * </p>
      * 
      * @param createAppRequest
-     *        Request structure used to create Apps in Amplify.
+     *        The request structure used to create apps in Amplify.
      * @return A Java Future containing the result of the CreateApp operation returned by the service.
      * @sample AWSAmplifyAsync.CreateApp
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateApp" target="_top">AWS API
@@ -48,11 +56,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Creates a new Amplify App.
+     * Creates a new Amplify app.
      * </p>
      * 
      * @param createAppRequest
-     *        Request structure used to create Apps in Amplify.
+     *        The request structure used to create apps in Amplify.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -67,11 +75,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Creates a new backend environment for an Amplify App.
+     * Creates a new backend environment for an Amplify app.
      * </p>
      * 
      * @param createBackendEnvironmentRequest
-     *        Request structure for a backend environment create request.
+     *        The request structure for the backend environment create request.
      * @return A Java Future containing the result of the CreateBackendEnvironment operation returned by the service.
      * @sample AWSAmplifyAsync.CreateBackendEnvironment
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateBackendEnvironment"
@@ -81,11 +89,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Creates a new backend environment for an Amplify App.
+     * Creates a new backend environment for an Amplify app.
      * </p>
      * 
      * @param createBackendEnvironmentRequest
-     *        Request structure for a backend environment create request.
+     *        The request structure for the backend environment create request.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -100,11 +108,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Creates a new Branch for an Amplify App.
+     * Creates a new branch for an Amplify app.
      * </p>
      * 
      * @param createBranchRequest
-     *        Request structure for a branch create request.
+     *        The request structure for the create branch request.
      * @return A Java Future containing the result of the CreateBranch operation returned by the service.
      * @sample AWSAmplifyAsync.CreateBranch
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateBranch" target="_top">AWS API
@@ -114,11 +122,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Creates a new Branch for an Amplify App.
+     * Creates a new branch for an Amplify app.
      * </p>
      * 
      * @param createBranchRequest
-     *        Request structure for a branch create request.
+     *        The request structure for the create branch request.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -133,11 +141,12 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Create a deployment for manual deploy apps. (Apps are not connected to repository)
+     * Creates a deployment for a manually deployed Amplify app. Manually deployed apps are not connected to a
+     * repository.
      * </p>
      * 
      * @param createDeploymentRequest
-     *        Request structure for create a new deployment.
+     *        The request structure for the create a new deployment request.
      * @return A Java Future containing the result of the CreateDeployment operation returned by the service.
      * @sample AWSAmplifyAsync.CreateDeployment
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateDeployment" target="_top">AWS API
@@ -147,11 +156,12 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Create a deployment for manual deploy apps. (Apps are not connected to repository)
+     * Creates a deployment for a manually deployed Amplify app. Manually deployed apps are not connected to a
+     * repository.
      * </p>
      * 
      * @param createDeploymentRequest
-     *        Request structure for create a new deployment.
+     *        The request structure for the create a new deployment request.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -166,11 +176,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Create a new DomainAssociation on an App
+     * Creates a new domain association for an Amplify app. This action associates a custom domain with the Amplify app
      * </p>
      * 
      * @param createDomainAssociationRequest
-     *        Request structure for create Domain Association request.
+     *        The request structure for the create domain association request.
      * @return A Java Future containing the result of the CreateDomainAssociation operation returned by the service.
      * @sample AWSAmplifyAsync.CreateDomainAssociation
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateDomainAssociation"
@@ -180,11 +190,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Create a new DomainAssociation on an App
+     * Creates a new domain association for an Amplify app. This action associates a custom domain with the Amplify app
      * </p>
      * 
      * @param createDomainAssociationRequest
-     *        Request structure for create Domain Association request.
+     *        The request structure for the create domain association request.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -199,11 +209,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Create a new webhook on an App.
+     * Creates a new webhook on an Amplify app.
      * </p>
      * 
      * @param createWebhookRequest
-     *        Request structure for create webhook request.
+     *        The request structure for the create webhook request.
      * @return A Java Future containing the result of the CreateWebhook operation returned by the service.
      * @sample AWSAmplifyAsync.CreateWebhook
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateWebhook" target="_top">AWS API
@@ -213,11 +223,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Create a new webhook on an App.
+     * Creates a new webhook on an Amplify app.
      * </p>
      * 
      * @param createWebhookRequest
-     *        Request structure for create webhook request.
+     *        The request structure for the create webhook request.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -232,11 +242,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Delete an existing Amplify App by appId.
+     * Deletes an existing Amplify app specified by an app ID.
      * </p>
      * 
      * @param deleteAppRequest
-     *        Request structure for an Amplify App delete request.
+     *        Describes the request structure for the delete app request.
      * @return A Java Future containing the result of the DeleteApp operation returned by the service.
      * @sample AWSAmplifyAsync.DeleteApp
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/DeleteApp" target="_top">AWS API
@@ -246,11 +256,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Delete an existing Amplify App by appId.
+     * Deletes an existing Amplify app specified by an app ID.
      * </p>
      * 
      * @param deleteAppRequest
-     *        Request structure for an Amplify App delete request.
+     *        Describes the request structure for the delete app request.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -265,11 +275,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Delete backend environment for an Amplify App.
+     * Deletes a backend environment for an Amplify app.
      * </p>
      * 
      * @param deleteBackendEnvironmentRequest
-     *        Request structure for delete backend environment request.
+     *        The request structure for the delete backend environment request.
      * @return A Java Future containing the result of the DeleteBackendEnvironment operation returned by the service.
      * @sample AWSAmplifyAsync.DeleteBackendEnvironment
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/DeleteBackendEnvironment"
@@ -279,11 +289,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Delete backend environment for an Amplify App.
+     * Deletes a backend environment for an Amplify app.
      * </p>
      * 
      * @param deleteBackendEnvironmentRequest
-     *        Request structure for delete backend environment request.
+     *        The request structure for the delete backend environment request.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -298,11 +308,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Deletes a branch for an Amplify App.
+     * Deletes a branch for an Amplify app.
      * </p>
      * 
      * @param deleteBranchRequest
-     *        Request structure for delete branch request.
+     *        The request structure for the delete branch request.
      * @return A Java Future containing the result of the DeleteBranch operation returned by the service.
      * @sample AWSAmplifyAsync.DeleteBranch
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/DeleteBranch" target="_top">AWS API
@@ -312,11 +322,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Deletes a branch for an Amplify App.
+     * Deletes a branch for an Amplify app.
      * </p>
      * 
      * @param deleteBranchRequest
-     *        Request structure for delete branch request.
+     *        The request structure for the delete branch request.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -331,11 +341,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Deletes a DomainAssociation.
+     * Deletes a domain association for an Amplify app.
      * </p>
      * 
      * @param deleteDomainAssociationRequest
-     *        Request structure for the delete Domain Association request.
+     *        The request structure for the delete domain association request.
      * @return A Java Future containing the result of the DeleteDomainAssociation operation returned by the service.
      * @sample AWSAmplifyAsync.DeleteDomainAssociation
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/DeleteDomainAssociation"
@@ -345,11 +355,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Deletes a DomainAssociation.
+     * Deletes a domain association for an Amplify app.
      * </p>
      * 
      * @param deleteDomainAssociationRequest
-     *        Request structure for the delete Domain Association request.
+     *        The request structure for the delete domain association request.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -364,11 +374,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Delete a job, for an Amplify branch, part of Amplify App.
+     * Deletes a job for a branch of an Amplify app.
      * </p>
      * 
      * @param deleteJobRequest
-     *        Request structure for delete job request.
+     *        The request structure for the delete job request.
      * @return A Java Future containing the result of the DeleteJob operation returned by the service.
      * @sample AWSAmplifyAsync.DeleteJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/DeleteJob" target="_top">AWS API
@@ -378,11 +388,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Delete a job, for an Amplify branch, part of Amplify App.
+     * Deletes a job for a branch of an Amplify app.
      * </p>
      * 
      * @param deleteJobRequest
-     *        Request structure for delete job request.
+     *        The request structure for the delete job request.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -401,7 +411,7 @@ public interface AWSAmplifyAsync extends AWSAmplify {
      * </p>
      * 
      * @param deleteWebhookRequest
-     *        Request structure for the delete webhook request.
+     *        The request structure for the delete webhook request.
      * @return A Java Future containing the result of the DeleteWebhook operation returned by the service.
      * @sample AWSAmplifyAsync.DeleteWebhook
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/DeleteWebhook" target="_top">AWS API
@@ -415,7 +425,7 @@ public interface AWSAmplifyAsync extends AWSAmplify {
      * </p>
      * 
      * @param deleteWebhookRequest
-     *        Request structure for the delete webhook request.
+     *        The request structure for the delete webhook request.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -430,11 +440,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Retrieve website access logs for a specific time range via a pre-signed URL.
+     * Returns the website access logs for a specific time range using a presigned URL.
      * </p>
      * 
      * @param generateAccessLogsRequest
-     *        Request structure for the generate access logs request.
+     *        The request structure for the generate access logs request.
      * @return A Java Future containing the result of the GenerateAccessLogs operation returned by the service.
      * @sample AWSAmplifyAsync.GenerateAccessLogs
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GenerateAccessLogs" target="_top">AWS API
@@ -444,11 +454,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Retrieve website access logs for a specific time range via a pre-signed URL.
+     * Returns the website access logs for a specific time range using a presigned URL.
      * </p>
      * 
      * @param generateAccessLogsRequest
-     *        Request structure for the generate access logs request.
+     *        The request structure for the generate access logs request.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -463,11 +473,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Retrieves an existing Amplify App by appId.
+     * Returns an existing Amplify app by appID.
      * </p>
      * 
      * @param getAppRequest
-     *        Request structure for get App request.
+     *        The request structure for the get app request.
      * @return A Java Future containing the result of the GetApp operation returned by the service.
      * @sample AWSAmplifyAsync.GetApp
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetApp" target="_top">AWS API
@@ -477,11 +487,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Retrieves an existing Amplify App by appId.
+     * Returns an existing Amplify app by appID.
      * </p>
      * 
      * @param getAppRequest
-     *        Request structure for get App request.
+     *        The request structure for the get app request.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -496,11 +506,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Retrieves artifact info that corresponds to a artifactId.
+     * Returns the artifact info that corresponds to an artifact id.
      * </p>
      * 
      * @param getArtifactUrlRequest
-     *        Request structure for the get artifact request.
+     *        Returns the request structure for the get artifact request.
      * @return A Java Future containing the result of the GetArtifactUrl operation returned by the service.
      * @sample AWSAmplifyAsync.GetArtifactUrl
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetArtifactUrl" target="_top">AWS API
@@ -510,11 +520,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Retrieves artifact info that corresponds to a artifactId.
+     * Returns the artifact info that corresponds to an artifact id.
      * </p>
      * 
      * @param getArtifactUrlRequest
-     *        Request structure for the get artifact request.
+     *        Returns the request structure for the get artifact request.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -529,11 +539,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Retrieves a backend environment for an Amplify App.
+     * Returns a backend environment for an Amplify app.
      * </p>
      * 
      * @param getBackendEnvironmentRequest
-     *        Request structure for get backend environment request.
+     *        The request structure for the get backend environment request.
      * @return A Java Future containing the result of the GetBackendEnvironment operation returned by the service.
      * @sample AWSAmplifyAsync.GetBackendEnvironment
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetBackendEnvironment" target="_top">AWS
@@ -543,11 +553,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Retrieves a backend environment for an Amplify App.
+     * Returns a backend environment for an Amplify app.
      * </p>
      * 
      * @param getBackendEnvironmentRequest
-     *        Request structure for get backend environment request.
+     *        The request structure for the get backend environment request.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -562,11 +572,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Retrieves a branch for an Amplify App.
+     * Returns a branch for an Amplify app.
      * </p>
      * 
      * @param getBranchRequest
-     *        Request structure for get branch request.
+     *        The request structure for the get branch request.
      * @return A Java Future containing the result of the GetBranch operation returned by the service.
      * @sample AWSAmplifyAsync.GetBranch
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetBranch" target="_top">AWS API
@@ -576,11 +586,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Retrieves a branch for an Amplify App.
+     * Returns a branch for an Amplify app.
      * </p>
      * 
      * @param getBranchRequest
-     *        Request structure for get branch request.
+     *        The request structure for the get branch request.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -595,11 +605,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Retrieves domain info that corresponds to an appId and domainName.
+     * Returns the domain information for an Amplify app.
      * </p>
      * 
      * @param getDomainAssociationRequest
-     *        Request structure for the get Domain Association request.
+     *        The request structure for the get domain association request.
      * @return A Java Future containing the result of the GetDomainAssociation operation returned by the service.
      * @sample AWSAmplifyAsync.GetDomainAssociation
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetDomainAssociation" target="_top">AWS
@@ -609,11 +619,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Retrieves domain info that corresponds to an appId and domainName.
+     * Returns the domain information for an Amplify app.
      * </p>
      * 
      * @param getDomainAssociationRequest
-     *        Request structure for the get Domain Association request.
+     *        The request structure for the get domain association request.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -628,11 +638,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Get a job for a branch, part of an Amplify App.
+     * Returns a job for a branch of an Amplify app.
      * </p>
      * 
      * @param getJobRequest
-     *        Request structure for get job request.
+     *        The request structure for the get job request.
      * @return A Java Future containing the result of the GetJob operation returned by the service.
      * @sample AWSAmplifyAsync.GetJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetJob" target="_top">AWS API
@@ -642,11 +652,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Get a job for a branch, part of an Amplify App.
+     * Returns a job for a branch of an Amplify app.
      * </p>
      * 
      * @param getJobRequest
-     *        Request structure for get job request.
+     *        The request structure for the get job request.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -661,11 +671,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Retrieves webhook info that corresponds to a webhookId.
+     * Returns the webhook information that corresponds to a specified webhook ID.
      * </p>
      * 
      * @param getWebhookRequest
-     *        Request structure for the get webhook request.
+     *        The request structure for the get webhook request.
      * @return A Java Future containing the result of the GetWebhook operation returned by the service.
      * @sample AWSAmplifyAsync.GetWebhook
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetWebhook" target="_top">AWS API
@@ -675,11 +685,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Retrieves webhook info that corresponds to a webhookId.
+     * Returns the webhook information that corresponds to a specified webhook ID.
      * </p>
      * 
      * @param getWebhookRequest
-     *        Request structure for the get webhook request.
+     *        The request structure for the get webhook request.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -694,11 +704,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Lists existing Amplify Apps.
+     * Returns a list of the existing Amplify apps.
      * </p>
      * 
      * @param listAppsRequest
-     *        Request structure for an Amplify App list request.
+     *        The request structure for the list apps request.
      * @return A Java Future containing the result of the ListApps operation returned by the service.
      * @sample AWSAmplifyAsync.ListApps
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListApps" target="_top">AWS API
@@ -708,11 +718,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Lists existing Amplify Apps.
+     * Returns a list of the existing Amplify apps.
      * </p>
      * 
      * @param listAppsRequest
-     *        Request structure for an Amplify App list request.
+     *        The request structure for the list apps request.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -727,11 +737,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * List artifacts with an app, a branch, a job and an artifact type.
+     * Returns a list of artifacts for a specified app, branch, and job.
      * </p>
      * 
      * @param listArtifactsRequest
-     *        Request structure for the list artifacts request.
+     *        Describes the request structure for the list artifacts request.
      * @return A Java Future containing the result of the ListArtifacts operation returned by the service.
      * @sample AWSAmplifyAsync.ListArtifacts
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListArtifacts" target="_top">AWS API
@@ -741,11 +751,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * List artifacts with an app, a branch, a job and an artifact type.
+     * Returns a list of artifacts for a specified app, branch, and job.
      * </p>
      * 
      * @param listArtifactsRequest
-     *        Request structure for the list artifacts request.
+     *        Describes the request structure for the list artifacts request.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -760,11 +770,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Lists backend environments for an Amplify App.
+     * Lists the backend environments for an Amplify app.
      * </p>
      * 
      * @param listBackendEnvironmentsRequest
-     *        Request structure for list backend environments request.
+     *        The request structure for the list backend environments request.
      * @return A Java Future containing the result of the ListBackendEnvironments operation returned by the service.
      * @sample AWSAmplifyAsync.ListBackendEnvironments
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListBackendEnvironments"
@@ -774,11 +784,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Lists backend environments for an Amplify App.
+     * Lists the backend environments for an Amplify app.
      * </p>
      * 
      * @param listBackendEnvironmentsRequest
-     *        Request structure for list backend environments request.
+     *        The request structure for the list backend environments request.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -793,11 +803,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Lists branches for an Amplify App.
+     * Lists the branches of an Amplify app.
      * </p>
      * 
      * @param listBranchesRequest
-     *        Request structure for list branches request.
+     *        The request structure for the list branches request.
      * @return A Java Future containing the result of the ListBranches operation returned by the service.
      * @sample AWSAmplifyAsync.ListBranches
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListBranches" target="_top">AWS API
@@ -807,11 +817,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Lists branches for an Amplify App.
+     * Lists the branches of an Amplify app.
      * </p>
      * 
      * @param listBranchesRequest
-     *        Request structure for list branches request.
+     *        The request structure for the list branches request.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -826,11 +836,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * List domains with an app
+     * Returns the domain associations for an Amplify app.
      * </p>
      * 
      * @param listDomainAssociationsRequest
-     *        Request structure for the list Domain Associations request.
+     *        The request structure for the list domain associations request.
      * @return A Java Future containing the result of the ListDomainAssociations operation returned by the service.
      * @sample AWSAmplifyAsync.ListDomainAssociations
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListDomainAssociations" target="_top">AWS
@@ -840,11 +850,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * List domains with an app
+     * Returns the domain associations for an Amplify app.
      * </p>
      * 
      * @param listDomainAssociationsRequest
-     *        Request structure for the list Domain Associations request.
+     *        The request structure for the list domain associations request.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -859,11 +869,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * List Jobs for a branch, part of an Amplify App.
+     * Lists the jobs for a branch of an Amplify app.
      * </p>
      * 
      * @param listJobsRequest
-     *        Request structure for list job request.
+     *        The request structure for the list jobs request.
      * @return A Java Future containing the result of the ListJobs operation returned by the service.
      * @sample AWSAmplifyAsync.ListJobs
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListJobs" target="_top">AWS API
@@ -873,11 +883,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * List Jobs for a branch, part of an Amplify App.
+     * Lists the jobs for a branch of an Amplify app.
      * </p>
      * 
      * @param listJobsRequest
-     *        Request structure for list job request.
+     *        The request structure for the list jobs request.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -892,11 +902,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * List tags for resource.
+     * Returns a list of tags for a specified Amazon Resource Name (ARN).
      * </p>
      * 
      * @param listTagsForResourceRequest
-     *        Request structure used to list tags for resource.
+     *        The request structure to use to list tags for a resource.
      * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
      * @sample AWSAmplifyAsync.ListTagsForResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListTagsForResource" target="_top">AWS
@@ -906,11 +916,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * List tags for resource.
+     * Returns a list of tags for a specified Amazon Resource Name (ARN).
      * </p>
      * 
      * @param listTagsForResourceRequest
-     *        Request structure used to list tags for resource.
+     *        The request structure to use to list tags for a resource.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -925,11 +935,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * List webhooks with an app.
+     * Returns a list of webhooks for an Amplify app.
      * </p>
      * 
      * @param listWebhooksRequest
-     *        Request structure for the list webhooks request.
+     *        The request structure for the list webhooks request.
      * @return A Java Future containing the result of the ListWebhooks operation returned by the service.
      * @sample AWSAmplifyAsync.ListWebhooks
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListWebhooks" target="_top">AWS API
@@ -939,11 +949,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * List webhooks with an app.
+     * Returns a list of webhooks for an Amplify app.
      * </p>
      * 
      * @param listWebhooksRequest
-     *        Request structure for the list webhooks request.
+     *        The request structure for the list webhooks request.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -958,11 +968,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Start a deployment for manual deploy apps. (Apps are not connected to repository)
+     * Starts a deployment for a manually deployed app. Manually deployed apps are not connected to a repository.
      * </p>
      * 
      * @param startDeploymentRequest
-     *        Request structure for start a deployment.
+     *        The request structure for the start a deployment request.
      * @return A Java Future containing the result of the StartDeployment operation returned by the service.
      * @sample AWSAmplifyAsync.StartDeployment
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/StartDeployment" target="_top">AWS API
@@ -972,11 +982,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Start a deployment for manual deploy apps. (Apps are not connected to repository)
+     * Starts a deployment for a manually deployed app. Manually deployed apps are not connected to a repository.
      * </p>
      * 
      * @param startDeploymentRequest
-     *        Request structure for start a deployment.
+     *        The request structure for the start a deployment request.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -991,11 +1001,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Starts a new job for a branch, part of an Amplify App.
+     * Starts a new job for a branch of an Amplify app.
      * </p>
      * 
      * @param startJobRequest
-     *        Request structure for Start job request.
+     *        The request structure for the start job request.
      * @return A Java Future containing the result of the StartJob operation returned by the service.
      * @sample AWSAmplifyAsync.StartJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/StartJob" target="_top">AWS API
@@ -1005,11 +1015,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Starts a new job for a branch, part of an Amplify App.
+     * Starts a new job for a branch of an Amplify app.
      * </p>
      * 
      * @param startJobRequest
-     *        Request structure for Start job request.
+     *        The request structure for the start job request.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1024,11 +1034,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Stop a job that is in progress, for an Amplify branch, part of Amplify App.
+     * Stops a job that is in progress for a branch of an Amplify app.
      * </p>
      * 
      * @param stopJobRequest
-     *        Request structure for stop job request.
+     *        The request structure for the stop job request.
      * @return A Java Future containing the result of the StopJob operation returned by the service.
      * @sample AWSAmplifyAsync.StopJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/StopJob" target="_top">AWS API
@@ -1038,11 +1048,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Stop a job that is in progress, for an Amplify branch, part of Amplify App.
+     * Stops a job that is in progress for a branch of an Amplify app.
      * </p>
      * 
      * @param stopJobRequest
-     *        Request structure for stop job request.
+     *        The request structure for the stop job request.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1057,11 +1067,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Tag resource with tag key and value.
+     * Tags the resource with a tag key and value.
      * </p>
      * 
      * @param tagResourceRequest
-     *        Request structure used to tag resource.
+     *        The request structure to tag a resource with a tag key and value.
      * @return A Java Future containing the result of the TagResource operation returned by the service.
      * @sample AWSAmplifyAsync.TagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/TagResource" target="_top">AWS API
@@ -1071,11 +1081,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Tag resource with tag key and value.
+     * Tags the resource with a tag key and value.
      * </p>
      * 
      * @param tagResourceRequest
-     *        Request structure used to tag resource.
+     *        The request structure to tag a resource with a tag key and value.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1090,11 +1100,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Untag resource with resourceArn.
+     * Untags a resource with a specified Amazon Resource Name (ARN).
      * </p>
      * 
      * @param untagResourceRequest
-     *        Request structure used to untag resource.
+     *        The request structure for the untag resource request.
      * @return A Java Future containing the result of the UntagResource operation returned by the service.
      * @sample AWSAmplifyAsync.UntagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/UntagResource" target="_top">AWS API
@@ -1104,11 +1114,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Untag resource with resourceArn.
+     * Untags a resource with a specified Amazon Resource Name (ARN).
      * </p>
      * 
      * @param untagResourceRequest
-     *        Request structure used to untag resource.
+     *        The request structure for the untag resource request.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1123,11 +1133,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Updates an existing Amplify App.
+     * Updates an existing Amplify app.
      * </p>
      * 
      * @param updateAppRequest
-     *        Request structure for update App request.
+     *        The request structure for the update app request.
      * @return A Java Future containing the result of the UpdateApp operation returned by the service.
      * @sample AWSAmplifyAsync.UpdateApp
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/UpdateApp" target="_top">AWS API
@@ -1137,11 +1147,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Updates an existing Amplify App.
+     * Updates an existing Amplify app.
      * </p>
      * 
      * @param updateAppRequest
-     *        Request structure for update App request.
+     *        The request structure for the update app request.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1156,11 +1166,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Updates a branch for an Amplify App.
+     * Updates a branch for an Amplify app.
      * </p>
      * 
      * @param updateBranchRequest
-     *        Request structure for update branch request.
+     *        The request structure for the update branch request.
      * @return A Java Future containing the result of the UpdateBranch operation returned by the service.
      * @sample AWSAmplifyAsync.UpdateBranch
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/UpdateBranch" target="_top">AWS API
@@ -1170,11 +1180,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Updates a branch for an Amplify App.
+     * Updates a branch for an Amplify app.
      * </p>
      * 
      * @param updateBranchRequest
-     *        Request structure for update branch request.
+     *        The request structure for the update branch request.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1189,11 +1199,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Create a new DomainAssociation on an App
+     * Creates a new domain association for an Amplify app.
      * </p>
      * 
      * @param updateDomainAssociationRequest
-     *        Request structure for update Domain Association request.
+     *        The request structure for the update domain association request.
      * @return A Java Future containing the result of the UpdateDomainAssociation operation returned by the service.
      * @sample AWSAmplifyAsync.UpdateDomainAssociation
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/UpdateDomainAssociation"
@@ -1203,11 +1213,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Create a new DomainAssociation on an App
+     * Creates a new domain association for an Amplify app.
      * </p>
      * 
      * @param updateDomainAssociationRequest
-     *        Request structure for update Domain Association request.
+     *        The request structure for the update domain association request.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1222,11 +1232,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Update a webhook.
+     * Updates a webhook.
      * </p>
      * 
      * @param updateWebhookRequest
-     *        Request structure for update webhook request.
+     *        The request structure for the update webhook request.
      * @return A Java Future containing the result of the UpdateWebhook operation returned by the service.
      * @sample AWSAmplifyAsync.UpdateWebhook
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/UpdateWebhook" target="_top">AWS API
@@ -1236,11 +1246,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Update a webhook.
+     * Updates a webhook.
      * </p>
      * 
      * @param updateWebhookRequest
-     *        Request structure for update webhook request.
+     *        The request structure for the update webhook request.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or

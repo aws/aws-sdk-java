@@ -19,36 +19,44 @@ import com.amazonaws.util.ValidationUtils;
 /**
  * The ARNs generated and recognized by this code are the ARNs described here:
  *
- * https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html
+ * <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+ *     https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html</a>
+ * <p>
+ * The primary supported ARN format is: {@code arn:<partition>:<service>:<region>:<account>:<resource>}
+ * <p>
+ * To parse an ARN from a string use ARN.fromString(). To convert an ARN to it's
+ * string representation use ARN.toString(). For instance, for a string s, containing a well-formed ARN the
+ * following should always be true:
+ * <pre>
+ * ARN theArn = ARN.fromString(s);
+ * s.equals(theArn.toString());
+ * </pre>
  *
- * The primary supported ARN format is:
- *
- * arn:<partition>:<service>:<region>:<account>:<resource>
- *
+ * <h3>Resources</h3>
  * {@link #getResourceAsString()} returns everything after the account section of the ARN
  * as a single string.
- *
- * However, the following ARN formats are supported where the values are present and well
- * formatted through {{@link #getResource()} ()}}:
- *
+ * <p>
+ * You can also retrieve the resource with the different resource parts using {@link #getResource()}.
+ * This method returns a {@link ArnResource} which has access to {@link ArnResource#getResourceType()},
+ * {@link ArnResource#getResource()} and {@link ArnResource#getQualifier()}.
+ * <p>
+ * The following ARN formats are supported when parsing resources:
+ * <pre>{@code
+ * arn:<partition>:<service>:<region>:<account>:resource
  * arn:<partition>:<service>:<region>:<account>:<resourcetype>/resource
- * arn:<partition>:<service>:<region>:<account>:<resourcetype>/resource/qualifier
  * arn:<partition>:<service>:<region>:<account>:<resourcetype>/resource:qualifier
  * arn:<partition>:<service>:<region>:<account>:<resourcetype>:resource
  * arn:<partition>:<service>:<region>:<account>:<resourcetype>:resource:qualifier
- *
- * {@link #getResource()} ()} returns a {@link ArnResource} which has access
- * to {@link ArnResource#getResourceType()}, {@link ArnResource#getResource()} and
- * {@link ArnResource#getQualifier()}.
- *
- * To parse an ARN from a string use ARN.fromString(). To convert an ARN to it's
- * string representation use ARN.toString().
- *
- * For instance, for a string s, containing a well-formed ARN the
- * following should always be true:
- *
- * ARN theArn = ARN.fromString(s);
- * s.equals(theArn.toString());
+ * }</pre>
+ * Some services use parent- and subresources which follow the format
+ * 'sub-resource-type/parent-resource/sub-resource'. In this case, the whole expression 'parent-resource/sub-resource'
+ * will be returned as the resource-id. An ARN using this pattern would be
+ * {@code arn:<partition>:<service>:<region>:<account>:<resourcetype>/parent-resource/sub-resource} which has
+ * a resource type and a resource but no qualifier.
+ * <p>
+ * <b>Note:</b><br/>
+ * Parsing permutations of any ARN formats not covered in tests or described as supported in documentation are at the
+ * user's own risk, as these use cases may change in the future.
  */
 public class Arn {
 

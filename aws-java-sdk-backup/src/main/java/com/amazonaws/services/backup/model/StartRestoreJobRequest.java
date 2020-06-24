@@ -103,12 +103,22 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
+     * <code>DynamoDB</code> for Amazon DynamoDB
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>EBS</code> for Amazon Elastic Block Store
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Storage Gateway</code> for AWS Storage Gateway
+     * <code>EC2</code> for Amazon Elastic Compute Cloud
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EFS</code> for Amazon Elastic File System
      * </p>
      * </li>
      * <li>
@@ -118,12 +128,7 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * <code>DDB</code> for Amazon DynamoDB
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>EFS</code> for Amazon Elastic File System
+     * <code>Storage Gateway</code> for AWS Storage Gateway
      * </p>
      * </li>
      * </ul>
@@ -607,12 +612,22 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
+     * <code>DynamoDB</code> for Amazon DynamoDB
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>EBS</code> for Amazon Elastic Block Store
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Storage Gateway</code> for AWS Storage Gateway
+     * <code>EC2</code> for Amazon Elastic Compute Cloud
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EFS</code> for Amazon Elastic File System
      * </p>
      * </li>
      * <li>
@@ -622,12 +637,7 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * <code>DDB</code> for Amazon DynamoDB
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>EFS</code> for Amazon Elastic File System
+     * <code>Storage Gateway</code> for AWS Storage Gateway
      * </p>
      * </li>
      * </ul>
@@ -637,12 +647,22 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      *        <ul>
      *        <li>
      *        <p>
+     *        <code>DynamoDB</code> for Amazon DynamoDB
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>EBS</code> for Amazon Elastic Block Store
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Storage Gateway</code> for AWS Storage Gateway
+     *        <code>EC2</code> for Amazon Elastic Compute Cloud
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EFS</code> for Amazon Elastic File System
      *        </p>
      *        </li>
      *        <li>
@@ -652,12 +672,7 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DDB</code> for Amazon DynamoDB
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>EFS</code> for Amazon Elastic File System
+     *        <code>Storage Gateway</code> for AWS Storage Gateway
      *        </p>
      *        </li>
      */
@@ -673,12 +688,22 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
+     * <code>DynamoDB</code> for Amazon DynamoDB
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>EBS</code> for Amazon Elastic Block Store
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Storage Gateway</code> for AWS Storage Gateway
+     * <code>EC2</code> for Amazon Elastic Compute Cloud
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EFS</code> for Amazon Elastic File System
      * </p>
      * </li>
      * <li>
@@ -688,12 +713,7 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * <code>DDB</code> for Amazon DynamoDB
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>EFS</code> for Amazon Elastic File System
+     * <code>Storage Gateway</code> for AWS Storage Gateway
      * </p>
      * </li>
      * </ul>
@@ -702,12 +722,22 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      *         <ul>
      *         <li>
      *         <p>
+     *         <code>DynamoDB</code> for Amazon DynamoDB
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>EBS</code> for Amazon Elastic Block Store
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Storage Gateway</code> for AWS Storage Gateway
+     *         <code>EC2</code> for Amazon Elastic Compute Cloud
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>EFS</code> for Amazon Elastic File System
      *         </p>
      *         </li>
      *         <li>
@@ -717,12 +747,7 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      *         </li>
      *         <li>
      *         <p>
-     *         <code>DDB</code> for Amazon DynamoDB
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>EFS</code> for Amazon Elastic File System
+     *         <code>Storage Gateway</code> for AWS Storage Gateway
      *         </p>
      *         </li>
      */
@@ -738,12 +763,22 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
+     * <code>DynamoDB</code> for Amazon DynamoDB
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>EBS</code> for Amazon Elastic Block Store
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Storage Gateway</code> for AWS Storage Gateway
+     * <code>EC2</code> for Amazon Elastic Compute Cloud
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EFS</code> for Amazon Elastic File System
      * </p>
      * </li>
      * <li>
@@ -753,12 +788,7 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * <code>DDB</code> for Amazon DynamoDB
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>EFS</code> for Amazon Elastic File System
+     * <code>Storage Gateway</code> for AWS Storage Gateway
      * </p>
      * </li>
      * </ul>
@@ -768,12 +798,22 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      *        <ul>
      *        <li>
      *        <p>
+     *        <code>DynamoDB</code> for Amazon DynamoDB
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>EBS</code> for Amazon Elastic Block Store
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Storage Gateway</code> for AWS Storage Gateway
+     *        <code>EC2</code> for Amazon Elastic Compute Cloud
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EFS</code> for Amazon Elastic File System
      *        </p>
      *        </li>
      *        <li>
@@ -783,12 +823,7 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DDB</code> for Amazon DynamoDB
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>EFS</code> for Amazon Elastic File System
+     *        <code>Storage Gateway</code> for AWS Storage Gateway
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

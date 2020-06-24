@@ -48,6 +48,10 @@ public class CopyJobJsonUnmarshaller implements Unmarshaller<CopyJob, JsonUnmars
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("AccountId", targetDepth)) {
+                    context.nextToken();
+                    copyJob.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("CopyJobId", targetDepth)) {
                     context.nextToken();
                     copyJob.setCopyJobId(context.getUnmarshaller(String.class).unmarshall(context));

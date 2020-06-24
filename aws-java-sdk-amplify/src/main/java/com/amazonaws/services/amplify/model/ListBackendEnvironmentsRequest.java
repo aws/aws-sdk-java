@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Request structure for list backend environments request.
+ * The request structure for the list backend environments request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListBackendEnvironments" target="_top">AWS
@@ -30,37 +30,37 @@ public class ListBackendEnvironmentsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Unique Id for an amplify App.
+     * The unique ID for an Amplify app.
      * </p>
      */
     private String appId;
     /**
      * <p>
-     * Name of the backend environment
+     * The name of the backend environment
      * </p>
      */
     private String environmentName;
     /**
      * <p>
-     * Pagination token. Set to null to start listing backen environments from start. If a non-null pagination token is
-     * returned in a result, then pass its value in here to list more backend environments.
+     * A pagination token. Set to null to start listing backend environments from the start. If a non-null pagination
+     * token is returned in a result, pass its value in here to list more backend environments.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * Maximum number of records to list in a single response.
+     * The maximum number of records to list in a single response.
      * </p>
      */
     private Integer maxResults;
 
     /**
      * <p>
-     * Unique Id for an amplify App.
+     * The unique ID for an Amplify app.
      * </p>
      * 
      * @param appId
-     *        Unique Id for an amplify App.
+     *        The unique ID for an Amplify app.
      */
 
     public void setAppId(String appId) {
@@ -69,10 +69,10 @@ public class ListBackendEnvironmentsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Unique Id for an amplify App.
+     * The unique ID for an Amplify app.
      * </p>
      * 
-     * @return Unique Id for an amplify App.
+     * @return The unique ID for an Amplify app.
      */
 
     public String getAppId() {
@@ -81,11 +81,11 @@ public class ListBackendEnvironmentsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Unique Id for an amplify App.
+     * The unique ID for an Amplify app.
      * </p>
      * 
      * @param appId
-     *        Unique Id for an amplify App.
+     *        The unique ID for an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,11 +96,11 @@ public class ListBackendEnvironmentsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Name of the backend environment
+     * The name of the backend environment
      * </p>
      * 
      * @param environmentName
-     *        Name of the backend environment
+     *        The name of the backend environment
      */
 
     public void setEnvironmentName(String environmentName) {
@@ -109,10 +109,10 @@ public class ListBackendEnvironmentsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Name of the backend environment
+     * The name of the backend environment
      * </p>
      * 
-     * @return Name of the backend environment
+     * @return The name of the backend environment
      */
 
     public String getEnvironmentName() {
@@ -121,11 +121,11 @@ public class ListBackendEnvironmentsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Name of the backend environment
+     * The name of the backend environment
      * </p>
      * 
      * @param environmentName
-     *        Name of the backend environment
+     *        The name of the backend environment
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -136,13 +136,13 @@ public class ListBackendEnvironmentsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Pagination token. Set to null to start listing backen environments from start. If a non-null pagination token is
-     * returned in a result, then pass its value in here to list more backend environments.
+     * A pagination token. Set to null to start listing backend environments from the start. If a non-null pagination
+     * token is returned in a result, pass its value in here to list more backend environments.
      * </p>
      * 
      * @param nextToken
-     *        Pagination token. Set to null to start listing backen environments from start. If a non-null pagination
-     *        token is returned in a result, then pass its value in here to list more backend environments.
+     *        A pagination token. Set to null to start listing backend environments from the start. If a non-null
+     *        pagination token is returned in a result, pass its value in here to list more backend environments.
      */
 
     public void setNextToken(String nextToken) {
@@ -151,12 +151,12 @@ public class ListBackendEnvironmentsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Pagination token. Set to null to start listing backen environments from start. If a non-null pagination token is
-     * returned in a result, then pass its value in here to list more backend environments.
+     * A pagination token. Set to null to start listing backend environments from the start. If a non-null pagination
+     * token is returned in a result, pass its value in here to list more backend environments.
      * </p>
      * 
-     * @return Pagination token. Set to null to start listing backen environments from start. If a non-null pagination
-     *         token is returned in a result, then pass its value in here to list more backend environments.
+     * @return A pagination token. Set to null to start listing backend environments from the start. If a non-null
+     *         pagination token is returned in a result, pass its value in here to list more backend environments.
      */
 
     public String getNextToken() {
@@ -165,13 +165,13 @@ public class ListBackendEnvironmentsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Pagination token. Set to null to start listing backen environments from start. If a non-null pagination token is
-     * returned in a result, then pass its value in here to list more backend environments.
+     * A pagination token. Set to null to start listing backend environments from the start. If a non-null pagination
+     * token is returned in a result, pass its value in here to list more backend environments.
      * </p>
      * 
      * @param nextToken
-     *        Pagination token. Set to null to start listing backen environments from start. If a non-null pagination
-     *        token is returned in a result, then pass its value in here to list more backend environments.
+     *        A pagination token. Set to null to start listing backend environments from the start. If a non-null
+     *        pagination token is returned in a result, pass its value in here to list more backend environments.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -182,11 +182,11 @@ public class ListBackendEnvironmentsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Maximum number of records to list in a single response.
+     * The maximum number of records to list in a single response.
      * </p>
      * 
      * @param maxResults
-     *        Maximum number of records to list in a single response.
+     *        The maximum number of records to list in a single response.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -195,10 +195,10 @@ public class ListBackendEnvironmentsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Maximum number of records to list in a single response.
+     * The maximum number of records to list in a single response.
      * </p>
      * 
-     * @return Maximum number of records to list in a single response.
+     * @return The maximum number of records to list in a single response.
      */
 
     public Integer getMaxResults() {
@@ -207,11 +207,11 @@ public class ListBackendEnvironmentsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Maximum number of records to list in a single response.
+     * The maximum number of records to list in a single response.
      * </p>
      * 
      * @param maxResults
-     *        Maximum number of records to list in a single response.
+     *        The maximum number of records to list in a single response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -39,6 +39,30 @@ public class ListRestoreJobsRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private Integer maxResults;
+    /**
+     * <p>
+     * The account ID to list the jobs from. Returns only restore jobs associated with the specified account ID.
+     * </p>
+     */
+    private String byAccountId;
+    /**
+     * <p>
+     * Returns only restore jobs that were created before the specified date.
+     * </p>
+     */
+    private java.util.Date byCreatedBefore;
+    /**
+     * <p>
+     * Returns only restore jobs that were created after the specified date.
+     * </p>
+     */
+    private java.util.Date byCreatedAfter;
+    /**
+     * <p>
+     * Returns only restore jobs associated with the specified job status.
+     * </p>
+     */
+    private String byStatus;
 
     /**
      * <p>
@@ -133,6 +157,185 @@ public class ListRestoreJobsRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * The account ID to list the jobs from. Returns only restore jobs associated with the specified account ID.
+     * </p>
+     * 
+     * @param byAccountId
+     *        The account ID to list the jobs from. Returns only restore jobs associated with the specified account ID.
+     */
+
+    public void setByAccountId(String byAccountId) {
+        this.byAccountId = byAccountId;
+    }
+
+    /**
+     * <p>
+     * The account ID to list the jobs from. Returns only restore jobs associated with the specified account ID.
+     * </p>
+     * 
+     * @return The account ID to list the jobs from. Returns only restore jobs associated with the specified account ID.
+     */
+
+    public String getByAccountId() {
+        return this.byAccountId;
+    }
+
+    /**
+     * <p>
+     * The account ID to list the jobs from. Returns only restore jobs associated with the specified account ID.
+     * </p>
+     * 
+     * @param byAccountId
+     *        The account ID to list the jobs from. Returns only restore jobs associated with the specified account ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListRestoreJobsRequest withByAccountId(String byAccountId) {
+        setByAccountId(byAccountId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Returns only restore jobs that were created before the specified date.
+     * </p>
+     * 
+     * @param byCreatedBefore
+     *        Returns only restore jobs that were created before the specified date.
+     */
+
+    public void setByCreatedBefore(java.util.Date byCreatedBefore) {
+        this.byCreatedBefore = byCreatedBefore;
+    }
+
+    /**
+     * <p>
+     * Returns only restore jobs that were created before the specified date.
+     * </p>
+     * 
+     * @return Returns only restore jobs that were created before the specified date.
+     */
+
+    public java.util.Date getByCreatedBefore() {
+        return this.byCreatedBefore;
+    }
+
+    /**
+     * <p>
+     * Returns only restore jobs that were created before the specified date.
+     * </p>
+     * 
+     * @param byCreatedBefore
+     *        Returns only restore jobs that were created before the specified date.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListRestoreJobsRequest withByCreatedBefore(java.util.Date byCreatedBefore) {
+        setByCreatedBefore(byCreatedBefore);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Returns only restore jobs that were created after the specified date.
+     * </p>
+     * 
+     * @param byCreatedAfter
+     *        Returns only restore jobs that were created after the specified date.
+     */
+
+    public void setByCreatedAfter(java.util.Date byCreatedAfter) {
+        this.byCreatedAfter = byCreatedAfter;
+    }
+
+    /**
+     * <p>
+     * Returns only restore jobs that were created after the specified date.
+     * </p>
+     * 
+     * @return Returns only restore jobs that were created after the specified date.
+     */
+
+    public java.util.Date getByCreatedAfter() {
+        return this.byCreatedAfter;
+    }
+
+    /**
+     * <p>
+     * Returns only restore jobs that were created after the specified date.
+     * </p>
+     * 
+     * @param byCreatedAfter
+     *        Returns only restore jobs that were created after the specified date.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListRestoreJobsRequest withByCreatedAfter(java.util.Date byCreatedAfter) {
+        setByCreatedAfter(byCreatedAfter);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Returns only restore jobs associated with the specified job status.
+     * </p>
+     * 
+     * @param byStatus
+     *        Returns only restore jobs associated with the specified job status.
+     * @see RestoreJobStatus
+     */
+
+    public void setByStatus(String byStatus) {
+        this.byStatus = byStatus;
+    }
+
+    /**
+     * <p>
+     * Returns only restore jobs associated with the specified job status.
+     * </p>
+     * 
+     * @return Returns only restore jobs associated with the specified job status.
+     * @see RestoreJobStatus
+     */
+
+    public String getByStatus() {
+        return this.byStatus;
+    }
+
+    /**
+     * <p>
+     * Returns only restore jobs associated with the specified job status.
+     * </p>
+     * 
+     * @param byStatus
+     *        Returns only restore jobs associated with the specified job status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RestoreJobStatus
+     */
+
+    public ListRestoreJobsRequest withByStatus(String byStatus) {
+        setByStatus(byStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Returns only restore jobs associated with the specified job status.
+     * </p>
+     * 
+     * @param byStatus
+     *        Returns only restore jobs associated with the specified job status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RestoreJobStatus
+     */
+
+    public ListRestoreJobsRequest withByStatus(RestoreJobStatus byStatus) {
+        this.byStatus = byStatus.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -147,7 +350,15 @@ public class ListRestoreJobsRequest extends com.amazonaws.AmazonWebServiceReques
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults());
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getByAccountId() != null)
+            sb.append("ByAccountId: ").append(getByAccountId()).append(",");
+        if (getByCreatedBefore() != null)
+            sb.append("ByCreatedBefore: ").append(getByCreatedBefore()).append(",");
+        if (getByCreatedAfter() != null)
+            sb.append("ByCreatedAfter: ").append(getByCreatedAfter()).append(",");
+        if (getByStatus() != null)
+            sb.append("ByStatus: ").append(getByStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -170,6 +381,22 @@ public class ListRestoreJobsRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
+        if (other.getByAccountId() == null ^ this.getByAccountId() == null)
+            return false;
+        if (other.getByAccountId() != null && other.getByAccountId().equals(this.getByAccountId()) == false)
+            return false;
+        if (other.getByCreatedBefore() == null ^ this.getByCreatedBefore() == null)
+            return false;
+        if (other.getByCreatedBefore() != null && other.getByCreatedBefore().equals(this.getByCreatedBefore()) == false)
+            return false;
+        if (other.getByCreatedAfter() == null ^ this.getByCreatedAfter() == null)
+            return false;
+        if (other.getByCreatedAfter() != null && other.getByCreatedAfter().equals(this.getByCreatedAfter()) == false)
+            return false;
+        if (other.getByStatus() == null ^ this.getByStatus() == null)
+            return false;
+        if (other.getByStatus() != null && other.getByStatus().equals(this.getByStatus()) == false)
+            return false;
         return true;
     }
 
@@ -180,6 +407,10 @@ public class ListRestoreJobsRequest extends com.amazonaws.AmazonWebServiceReques
 
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getByAccountId() == null) ? 0 : getByAccountId().hashCode());
+        hashCode = prime * hashCode + ((getByCreatedBefore() == null) ? 0 : getByCreatedBefore().hashCode());
+        hashCode = prime * hashCode + ((getByCreatedAfter() == null) ? 0 : getByCreatedAfter().hashCode());
+        hashCode = prime * hashCode + ((getByStatus() == null) ? 0 : getByStatus().hashCode());
         return hashCode;
     }
 

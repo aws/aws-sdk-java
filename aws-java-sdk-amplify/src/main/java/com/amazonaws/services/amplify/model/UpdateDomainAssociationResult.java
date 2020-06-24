@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Result structure for the update Domain Association request.
+ * The result structure for the update domain association request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/UpdateDomainAssociation" target="_top">AWS
@@ -28,18 +28,18 @@ public class UpdateDomainAssociationResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Domain Association structure.
+     * Describes a domain association, which associates a custom domain with an Amplify app.
      * </p>
      */
     private DomainAssociation domainAssociation;
 
     /**
      * <p>
-     * Domain Association structure.
+     * Describes a domain association, which associates a custom domain with an Amplify app.
      * </p>
      * 
      * @param domainAssociation
-     *        Domain Association structure.
+     *        Describes a domain association, which associates a custom domain with an Amplify app.
      */
 
     public void setDomainAssociation(DomainAssociation domainAssociation) {
@@ -48,10 +48,10 @@ public class UpdateDomainAssociationResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Domain Association structure.
+     * Describes a domain association, which associates a custom domain with an Amplify app.
      * </p>
      * 
-     * @return Domain Association structure.
+     * @return Describes a domain association, which associates a custom domain with an Amplify app.
      */
 
     public DomainAssociation getDomainAssociation() {
@@ -60,11 +60,11 @@ public class UpdateDomainAssociationResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Domain Association structure.
+     * Describes a domain association, which associates a custom domain with an Amplify app.
      * </p>
      * 
      * @param domainAssociation
-     *        Domain Association structure.
+     *        Describes a domain association, which associates a custom domain with an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

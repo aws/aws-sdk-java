@@ -80,6 +80,15 @@ public class CommentJsonUnmarshaller implements Unmarshaller<Comment, JsonUnmars
                     context.nextToken();
                     comment.setClientRequestToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("callerReactions", targetDepth)) {
+                    context.nextToken();
+                    comment.setCallerReactions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (context.testExpression("reactionCounts", targetDepth)) {
+                    context.nextToken();
+                    comment.setReactionCounts(new MapUnmarshaller<String, Integer>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(Integer.class)).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

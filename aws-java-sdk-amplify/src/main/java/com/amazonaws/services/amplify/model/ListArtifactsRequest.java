@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Request structure for the list artifacts request.
+ * Describes the request structure for the list artifacts request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListArtifacts" target="_top">AWS API
@@ -30,43 +30,43 @@ public class ListArtifactsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Unique Id for an Amplify App.
+     * The unique ID for an Amplify app.
      * </p>
      */
     private String appId;
     /**
      * <p>
-     * Name for a branch, part of an Amplify App.
+     * The name of a branch that is part of an Amplify app.
      * </p>
      */
     private String branchName;
     /**
      * <p>
-     * Unique Id for an Job.
+     * The unique ID for a job.
      * </p>
      */
     private String jobId;
     /**
      * <p>
-     * Pagination token. Set to null to start listing artifacts from start. If non-null pagination token is returned in
-     * a result, then pass its value in here to list more artifacts.
+     * A pagination token. Set to null to start listing artifacts from start. If a non-null pagination token is returned
+     * in a result, pass its value in here to list more artifacts.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * Maximum number of records to list in a single response.
+     * The maximum number of records to list in a single response.
      * </p>
      */
     private Integer maxResults;
 
     /**
      * <p>
-     * Unique Id for an Amplify App.
+     * The unique ID for an Amplify app.
      * </p>
      * 
      * @param appId
-     *        Unique Id for an Amplify App.
+     *        The unique ID for an Amplify app.
      */
 
     public void setAppId(String appId) {
@@ -75,10 +75,10 @@ public class ListArtifactsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Unique Id for an Amplify App.
+     * The unique ID for an Amplify app.
      * </p>
      * 
-     * @return Unique Id for an Amplify App.
+     * @return The unique ID for an Amplify app.
      */
 
     public String getAppId() {
@@ -87,11 +87,11 @@ public class ListArtifactsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Unique Id for an Amplify App.
+     * The unique ID for an Amplify app.
      * </p>
      * 
      * @param appId
-     *        Unique Id for an Amplify App.
+     *        The unique ID for an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -102,11 +102,11 @@ public class ListArtifactsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Name for a branch, part of an Amplify App.
+     * The name of a branch that is part of an Amplify app.
      * </p>
      * 
      * @param branchName
-     *        Name for a branch, part of an Amplify App.
+     *        The name of a branch that is part of an Amplify app.
      */
 
     public void setBranchName(String branchName) {
@@ -115,10 +115,10 @@ public class ListArtifactsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Name for a branch, part of an Amplify App.
+     * The name of a branch that is part of an Amplify app.
      * </p>
      * 
-     * @return Name for a branch, part of an Amplify App.
+     * @return The name of a branch that is part of an Amplify app.
      */
 
     public String getBranchName() {
@@ -127,11 +127,11 @@ public class ListArtifactsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Name for a branch, part of an Amplify App.
+     * The name of a branch that is part of an Amplify app.
      * </p>
      * 
      * @param branchName
-     *        Name for a branch, part of an Amplify App.
+     *        The name of a branch that is part of an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -142,11 +142,11 @@ public class ListArtifactsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Unique Id for an Job.
+     * The unique ID for a job.
      * </p>
      * 
      * @param jobId
-     *        Unique Id for an Job.
+     *        The unique ID for a job.
      */
 
     public void setJobId(String jobId) {
@@ -155,10 +155,10 @@ public class ListArtifactsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Unique Id for an Job.
+     * The unique ID for a job.
      * </p>
      * 
-     * @return Unique Id for an Job.
+     * @return The unique ID for a job.
      */
 
     public String getJobId() {
@@ -167,11 +167,11 @@ public class ListArtifactsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Unique Id for an Job.
+     * The unique ID for a job.
      * </p>
      * 
      * @param jobId
-     *        Unique Id for an Job.
+     *        The unique ID for a job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -182,13 +182,13 @@ public class ListArtifactsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Pagination token. Set to null to start listing artifacts from start. If non-null pagination token is returned in
-     * a result, then pass its value in here to list more artifacts.
+     * A pagination token. Set to null to start listing artifacts from start. If a non-null pagination token is returned
+     * in a result, pass its value in here to list more artifacts.
      * </p>
      * 
      * @param nextToken
-     *        Pagination token. Set to null to start listing artifacts from start. If non-null pagination token is
-     *        returned in a result, then pass its value in here to list more artifacts.
+     *        A pagination token. Set to null to start listing artifacts from start. If a non-null pagination token is
+     *        returned in a result, pass its value in here to list more artifacts.
      */
 
     public void setNextToken(String nextToken) {
@@ -197,12 +197,12 @@ public class ListArtifactsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Pagination token. Set to null to start listing artifacts from start. If non-null pagination token is returned in
-     * a result, then pass its value in here to list more artifacts.
+     * A pagination token. Set to null to start listing artifacts from start. If a non-null pagination token is returned
+     * in a result, pass its value in here to list more artifacts.
      * </p>
      * 
-     * @return Pagination token. Set to null to start listing artifacts from start. If non-null pagination token is
-     *         returned in a result, then pass its value in here to list more artifacts.
+     * @return A pagination token. Set to null to start listing artifacts from start. If a non-null pagination token is
+     *         returned in a result, pass its value in here to list more artifacts.
      */
 
     public String getNextToken() {
@@ -211,13 +211,13 @@ public class ListArtifactsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Pagination token. Set to null to start listing artifacts from start. If non-null pagination token is returned in
-     * a result, then pass its value in here to list more artifacts.
+     * A pagination token. Set to null to start listing artifacts from start. If a non-null pagination token is returned
+     * in a result, pass its value in here to list more artifacts.
      * </p>
      * 
      * @param nextToken
-     *        Pagination token. Set to null to start listing artifacts from start. If non-null pagination token is
-     *        returned in a result, then pass its value in here to list more artifacts.
+     *        A pagination token. Set to null to start listing artifacts from start. If a non-null pagination token is
+     *        returned in a result, pass its value in here to list more artifacts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -228,11 +228,11 @@ public class ListArtifactsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Maximum number of records to list in a single response.
+     * The maximum number of records to list in a single response.
      * </p>
      * 
      * @param maxResults
-     *        Maximum number of records to list in a single response.
+     *        The maximum number of records to list in a single response.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -241,10 +241,10 @@ public class ListArtifactsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Maximum number of records to list in a single response.
+     * The maximum number of records to list in a single response.
      * </p>
      * 
-     * @return Maximum number of records to list in a single response.
+     * @return The maximum number of records to list in a single response.
      */
 
     public Integer getMaxResults() {
@@ -253,11 +253,11 @@ public class ListArtifactsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Maximum number of records to list in a single response.
+     * The maximum number of records to list in a single response.
      * </p>
      * 
      * @param maxResults
-     *        Maximum number of records to list in a single response.
+     *        The maximum number of records to list in a single response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -274,9 +274,29 @@ public class AmazonFSxClient extends AmazonWebServiceClient implements AmazonFSx
 
     /**
      * <p>
-     * Creates a backup of an existing Amazon FSx for Windows File Server file system. Creating regular backups for your
-     * file system is a best practice that complements the replication that Amazon FSx for Windows File Server performs
-     * for your file system. It also enables you to restore from user modification of data.
+     * Creates a backup of an existing Amazon FSx file system. Creating regular backups for your file system is a best
+     * practice, enabling you to restore a file system from a backup if an issue arises with the original file system.
+     * </p>
+     * <p>
+     * For Amazon FSx for Lustre file systems, you can create a backup only for file systems with the following
+     * configuration:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * a Persistent deployment type
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * is <i>not</i> linked to an Amazon S3 data respository.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-backups.html">https:/
+     * /docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-backups.html</a>.
      * </p>
      * <p>
      * If a backup with the specified client request token exists, and the parameters match, this operation returns the
@@ -303,13 +323,10 @@ public class AmazonFSxClient extends AmazonWebServiceClient implements AmazonFSx
      * operation returns a successful result because all the parameters are the same.
      * </p>
      * <p>
-     * The <code>CreateFileSystem</code> operation returns while the backup's lifecycle state is still
-     * <code>CREATING</code>. You can check the file system creation status by calling the <a>DescribeBackups</a>
-     * operation, which returns the backup state along with other information.
+     * The <code>CreateBackup</code> operation returns while the backup's lifecycle state is still <code>CREATING</code>
+     * . You can check the backup creation status by calling the <a>DescribeBackups</a> operation, which returns the
+     * backup state along with other information.
      * </p>
-     * <note>
-     * <p/>
-     * </note>
      * 
      * @param createBackupRequest
      *        The request object for the <code>CreateBackup</code> operation.
@@ -577,7 +594,7 @@ public class AmazonFSxClient extends AmazonWebServiceClient implements AmazonFSx
 
     /**
      * <p>
-     * Creates a new Amazon FSx file system from an existing Amazon FSx for Windows File Server backup.
+     * Creates a new Amazon FSx file system from an existing Amazon FSx backup.
      * </p>
      * <p>
      * If a file system with the specified client request token exists and the parameters match, this operation returns
@@ -633,6 +650,9 @@ public class AmazonFSxClient extends AmazonWebServiceClient implements AmazonFSx
      *         list of IDs for subnets that are either invalid or not part of the VPC specified.
      *         <code>InvalidSecurityGroupIds</code> returns the list of IDs for security groups that are either invalid
      *         or not part of the VPC specified.
+     * @throws InvalidPerUnitStorageThroughputException
+     *         An invalid value for <code>PerUnitStorageThroughput</code> was provided. Please create your file system
+     *         again, using a valid value.
      * @throws ServiceLimitExceededException
      *         An error indicating that a particular service limit was exceeded. You can increase some service limits by
      *         contacting AWS Support.
@@ -692,8 +712,8 @@ public class AmazonFSxClient extends AmazonWebServiceClient implements AmazonFSx
 
     /**
      * <p>
-     * Deletes an Amazon FSx for Windows File Server backup, deleting its contents. After deletion, the backup no longer
-     * exists, and its data is gone.
+     * Deletes an Amazon FSx backup, deleting its contents. After deletion, the backup no longer exists, and its data is
+     * gone.
      * </p>
      * <p>
      * The <code>DeleteBackup</code> call returns instantly. The backup will not show up in later
@@ -857,9 +877,9 @@ public class AmazonFSxClient extends AmazonWebServiceClient implements AmazonFSx
 
     /**
      * <p>
-     * Returns the description of specific Amazon FSx for Windows File Server backups, if a <code>BackupIds</code> value
-     * is provided for that backup. Otherwise, it returns all backups owned by your AWS account in the AWS Region of the
-     * endpoint that you're calling.
+     * Returns the description of specific Amazon FSx backups, if a <code>BackupIds</code> value is provided for that
+     * backup. Otherwise, it returns all backups owned by your AWS account in the AWS Region of the endpoint that you're
+     * calling.
      * </p>
      * <p>
      * When retrieving all backups, you can optionally specify the <code>MaxResults</code> parameter to limit the number

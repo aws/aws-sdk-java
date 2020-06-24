@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Backend environment for an Amplify App.
+ * Describes the backend environment for an Amplify app.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/BackendEnvironment" target="_top">AWS API
@@ -30,48 +30,48 @@ public class BackendEnvironment implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Arn for a backend environment, part of an Amplify App.
+     * The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app.
      * </p>
      */
     private String backendEnvironmentArn;
     /**
      * <p>
-     * Name for a backend environment, part of an Amplify App.
+     * The name for a backend environment that is part of an Amplify app.
      * </p>
      */
     private String environmentName;
     /**
      * <p>
-     * CloudFormation stack name of backend environment.
+     * The AWS CloudFormation stack name of a backend environment.
      * </p>
      */
     private String stackName;
     /**
      * <p>
-     * Name of deployment artifacts.
+     * The name of deployment artifacts.
      * </p>
      */
     private String deploymentArtifacts;
     /**
      * <p>
-     * Creation date and time for a backend environment, part of an Amplify App.
+     * The creation date and time for a backend environment that is part of an Amplify app.
      * </p>
      */
     private java.util.Date createTime;
     /**
      * <p>
-     * Last updated date and time for a backend environment, part of an Amplify App.
+     * The last updated date and time for a backend environment that is part of an Amplify app.
      * </p>
      */
     private java.util.Date updateTime;
 
     /**
      * <p>
-     * Arn for a backend environment, part of an Amplify App.
+     * The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app.
      * </p>
      * 
      * @param backendEnvironmentArn
-     *        Arn for a backend environment, part of an Amplify App.
+     *        The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app.
      */
 
     public void setBackendEnvironmentArn(String backendEnvironmentArn) {
@@ -80,10 +80,10 @@ public class BackendEnvironment implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Arn for a backend environment, part of an Amplify App.
+     * The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app.
      * </p>
      * 
-     * @return Arn for a backend environment, part of an Amplify App.
+     * @return The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app.
      */
 
     public String getBackendEnvironmentArn() {
@@ -92,11 +92,11 @@ public class BackendEnvironment implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Arn for a backend environment, part of an Amplify App.
+     * The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app.
      * </p>
      * 
      * @param backendEnvironmentArn
-     *        Arn for a backend environment, part of an Amplify App.
+     *        The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -107,11 +107,11 @@ public class BackendEnvironment implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Name for a backend environment, part of an Amplify App.
+     * The name for a backend environment that is part of an Amplify app.
      * </p>
      * 
      * @param environmentName
-     *        Name for a backend environment, part of an Amplify App.
+     *        The name for a backend environment that is part of an Amplify app.
      */
 
     public void setEnvironmentName(String environmentName) {
@@ -120,10 +120,10 @@ public class BackendEnvironment implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Name for a backend environment, part of an Amplify App.
+     * The name for a backend environment that is part of an Amplify app.
      * </p>
      * 
-     * @return Name for a backend environment, part of an Amplify App.
+     * @return The name for a backend environment that is part of an Amplify app.
      */
 
     public String getEnvironmentName() {
@@ -132,11 +132,11 @@ public class BackendEnvironment implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Name for a backend environment, part of an Amplify App.
+     * The name for a backend environment that is part of an Amplify app.
      * </p>
      * 
      * @param environmentName
-     *        Name for a backend environment, part of an Amplify App.
+     *        The name for a backend environment that is part of an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -147,11 +147,11 @@ public class BackendEnvironment implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * CloudFormation stack name of backend environment.
+     * The AWS CloudFormation stack name of a backend environment.
      * </p>
      * 
      * @param stackName
-     *        CloudFormation stack name of backend environment.
+     *        The AWS CloudFormation stack name of a backend environment.
      */
 
     public void setStackName(String stackName) {
@@ -160,10 +160,10 @@ public class BackendEnvironment implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * CloudFormation stack name of backend environment.
+     * The AWS CloudFormation stack name of a backend environment.
      * </p>
      * 
-     * @return CloudFormation stack name of backend environment.
+     * @return The AWS CloudFormation stack name of a backend environment.
      */
 
     public String getStackName() {
@@ -172,11 +172,11 @@ public class BackendEnvironment implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * CloudFormation stack name of backend environment.
+     * The AWS CloudFormation stack name of a backend environment.
      * </p>
      * 
      * @param stackName
-     *        CloudFormation stack name of backend environment.
+     *        The AWS CloudFormation stack name of a backend environment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -187,11 +187,11 @@ public class BackendEnvironment implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Name of deployment artifacts.
+     * The name of deployment artifacts.
      * </p>
      * 
      * @param deploymentArtifacts
-     *        Name of deployment artifacts.
+     *        The name of deployment artifacts.
      */
 
     public void setDeploymentArtifacts(String deploymentArtifacts) {
@@ -200,10 +200,10 @@ public class BackendEnvironment implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Name of deployment artifacts.
+     * The name of deployment artifacts.
      * </p>
      * 
-     * @return Name of deployment artifacts.
+     * @return The name of deployment artifacts.
      */
 
     public String getDeploymentArtifacts() {
@@ -212,11 +212,11 @@ public class BackendEnvironment implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Name of deployment artifacts.
+     * The name of deployment artifacts.
      * </p>
      * 
      * @param deploymentArtifacts
-     *        Name of deployment artifacts.
+     *        The name of deployment artifacts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -227,11 +227,11 @@ public class BackendEnvironment implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Creation date and time for a backend environment, part of an Amplify App.
+     * The creation date and time for a backend environment that is part of an Amplify app.
      * </p>
      * 
      * @param createTime
-     *        Creation date and time for a backend environment, part of an Amplify App.
+     *        The creation date and time for a backend environment that is part of an Amplify app.
      */
 
     public void setCreateTime(java.util.Date createTime) {
@@ -240,10 +240,10 @@ public class BackendEnvironment implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Creation date and time for a backend environment, part of an Amplify App.
+     * The creation date and time for a backend environment that is part of an Amplify app.
      * </p>
      * 
-     * @return Creation date and time for a backend environment, part of an Amplify App.
+     * @return The creation date and time for a backend environment that is part of an Amplify app.
      */
 
     public java.util.Date getCreateTime() {
@@ -252,11 +252,11 @@ public class BackendEnvironment implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Creation date and time for a backend environment, part of an Amplify App.
+     * The creation date and time for a backend environment that is part of an Amplify app.
      * </p>
      * 
      * @param createTime
-     *        Creation date and time for a backend environment, part of an Amplify App.
+     *        The creation date and time for a backend environment that is part of an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -267,11 +267,11 @@ public class BackendEnvironment implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Last updated date and time for a backend environment, part of an Amplify App.
+     * The last updated date and time for a backend environment that is part of an Amplify app.
      * </p>
      * 
      * @param updateTime
-     *        Last updated date and time for a backend environment, part of an Amplify App.
+     *        The last updated date and time for a backend environment that is part of an Amplify app.
      */
 
     public void setUpdateTime(java.util.Date updateTime) {
@@ -280,10 +280,10 @@ public class BackendEnvironment implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Last updated date and time for a backend environment, part of an Amplify App.
+     * The last updated date and time for a backend environment that is part of an Amplify app.
      * </p>
      * 
-     * @return Last updated date and time for a backend environment, part of an Amplify App.
+     * @return The last updated date and time for a backend environment that is part of an Amplify app.
      */
 
     public java.util.Date getUpdateTime() {
@@ -292,11 +292,11 @@ public class BackendEnvironment implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Last updated date and time for a backend environment, part of an Amplify App.
+     * The last updated date and time for a backend environment that is part of an Amplify app.
      * </p>
      * 
      * @param updateTime
-     *        Last updated date and time for a backend environment, part of an Amplify App.
+     *        The last updated date and time for a backend environment that is part of an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

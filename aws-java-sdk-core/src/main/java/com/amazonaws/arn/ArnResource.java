@@ -111,18 +111,21 @@ public class ArnResource {
                               .withResourceType(resourceType)
                               .withResource(resourceId)
                               .withQualifier(qualifier).build();
-
         }
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(this.resourceType);
-        sb.append(":");
+        if (this.resourceType != null) {
+            sb.append(this.resourceType);
+            sb.append(":");
+        }
         sb.append(this.resource);
-        sb.append(":");
-        sb.append(this.qualifier);
+        if (this.qualifier != null) {
+            sb.append(":");
+            sb.append(this.qualifier);
+        }
         return sb.toString();
     }
 

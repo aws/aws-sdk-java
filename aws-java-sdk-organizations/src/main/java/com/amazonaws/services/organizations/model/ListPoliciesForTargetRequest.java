@@ -56,8 +56,29 @@ public class ListPoliciesForTargetRequest extends com.amazonaws.AmazonWebService
     private String targetId;
     /**
      * <p>
-     * The type of policy that you want to include in the returned list.
+     * The type of policy that you want to include in the returned list. You must specify one of the following values:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY
+     * </a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">
+     * SERVICE_CONTROL_POLICY</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">
+     * TAG_POLICY</a>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String filter;
     /**
@@ -261,11 +282,53 @@ public class ListPoliciesForTargetRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The type of policy that you want to include in the returned list.
+     * The type of policy that you want to include in the returned list. You must specify one of the following values:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY
+     * </a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">
+     * SERVICE_CONTROL_POLICY</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">
+     * TAG_POLICY</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param filter
-     *        The type of policy that you want to include in the returned list.
+     *        The type of policy that you want to include in the returned list. You must specify one of the following
+     *        values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">
+     *        BACKUP_POLICY</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">
+     *        SERVICE_CONTROL_POLICY</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a
+     *        href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">
+     *        TAG_POLICY</a>
+     *        </p>
+     *        </li>
      * @see PolicyType
      */
 
@@ -275,10 +338,52 @@ public class ListPoliciesForTargetRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The type of policy that you want to include in the returned list.
+     * The type of policy that you want to include in the returned list. You must specify one of the following values:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY
+     * </a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">
+     * SERVICE_CONTROL_POLICY</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">
+     * TAG_POLICY</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The type of policy that you want to include in the returned list.
+     * @return The type of policy that you want to include in the returned list. You must specify one of the following
+     *         values:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">
+     *         BACKUP_POLICY</a>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">
+     *         SERVICE_CONTROL_POLICY</a>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <a
+     *         href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html"
+     *         >TAG_POLICY</a>
+     *         </p>
+     *         </li>
      * @see PolicyType
      */
 
@@ -288,11 +393,53 @@ public class ListPoliciesForTargetRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The type of policy that you want to include in the returned list.
+     * The type of policy that you want to include in the returned list. You must specify one of the following values:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY
+     * </a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">
+     * SERVICE_CONTROL_POLICY</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">
+     * TAG_POLICY</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param filter
-     *        The type of policy that you want to include in the returned list.
+     *        The type of policy that you want to include in the returned list. You must specify one of the following
+     *        values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">
+     *        BACKUP_POLICY</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">
+     *        SERVICE_CONTROL_POLICY</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a
+     *        href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">
+     *        TAG_POLICY</a>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PolicyType
      */
@@ -304,11 +451,53 @@ public class ListPoliciesForTargetRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The type of policy that you want to include in the returned list.
+     * The type of policy that you want to include in the returned list. You must specify one of the following values:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY
+     * </a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">
+     * SERVICE_CONTROL_POLICY</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">
+     * TAG_POLICY</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param filter
-     *        The type of policy that you want to include in the returned list.
+     *        The type of policy that you want to include in the returned list. You must specify one of the following
+     *        values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">
+     *        BACKUP_POLICY</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">
+     *        SERVICE_CONTROL_POLICY</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a
+     *        href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">
+     *        TAG_POLICY</a>
+     *        </p>
+     *        </li>
      * @see PolicyType
      */
 
@@ -318,11 +507,53 @@ public class ListPoliciesForTargetRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The type of policy that you want to include in the returned list.
+     * The type of policy that you want to include in the returned list. You must specify one of the following values:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY
+     * </a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">
+     * SERVICE_CONTROL_POLICY</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">
+     * TAG_POLICY</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param filter
-     *        The type of policy that you want to include in the returned list.
+     *        The type of policy that you want to include in the returned list. You must specify one of the following
+     *        values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">
+     *        BACKUP_POLICY</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">
+     *        SERVICE_CONTROL_POLICY</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a
+     *        href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">
+     *        TAG_POLICY</a>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PolicyType
      */

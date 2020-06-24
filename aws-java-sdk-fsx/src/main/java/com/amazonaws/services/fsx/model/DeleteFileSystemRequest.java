@@ -36,13 +36,15 @@ public class DeleteFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
     private String fileSystemId;
     /**
      * <p>
-     * (Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent deletion. This is
-     * automatically filled on your behalf when using the AWS CLI or SDK.
+     * A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent deletion. This is automatically
+     * filled on your behalf when using the AWS CLI or SDK.
      * </p>
      */
     private String clientRequestToken;
 
     private DeleteFileSystemWindowsConfiguration windowsConfiguration;
+
+    private DeleteFileSystemLustreConfiguration lustreConfiguration;
 
     /**
      * <p>
@@ -86,13 +88,13 @@ public class DeleteFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * (Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent deletion. This is
-     * automatically filled on your behalf when using the AWS CLI or SDK.
+     * A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent deletion. This is automatically
+     * filled on your behalf when using the AWS CLI or SDK.
      * </p>
      * 
      * @param clientRequestToken
-     *        (Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent deletion. This
-     *        is automatically filled on your behalf when using the AWS CLI or SDK.
+     *        A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent deletion. This is
+     *        automatically filled on your behalf when using the AWS CLI or SDK.
      */
 
     public void setClientRequestToken(String clientRequestToken) {
@@ -101,12 +103,12 @@ public class DeleteFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * (Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent deletion. This is
-     * automatically filled on your behalf when using the AWS CLI or SDK.
+     * A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent deletion. This is automatically
+     * filled on your behalf when using the AWS CLI or SDK.
      * </p>
      * 
-     * @return (Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent deletion. This
-     *         is automatically filled on your behalf when using the AWS CLI or SDK.
+     * @return A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent deletion. This is
+     *         automatically filled on your behalf when using the AWS CLI or SDK.
      */
 
     public String getClientRequestToken() {
@@ -115,13 +117,13 @@ public class DeleteFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * (Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent deletion. This is
-     * automatically filled on your behalf when using the AWS CLI or SDK.
+     * A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent deletion. This is automatically
+     * filled on your behalf when using the AWS CLI or SDK.
      * </p>
      * 
      * @param clientRequestToken
-     *        (Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent deletion. This
-     *        is automatically filled on your behalf when using the AWS CLI or SDK.
+     *        A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent deletion. This is
+     *        automatically filled on your behalf when using the AWS CLI or SDK.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -157,6 +159,32 @@ public class DeleteFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * @param lustreConfiguration
+     */
+
+    public void setLustreConfiguration(DeleteFileSystemLustreConfiguration lustreConfiguration) {
+        this.lustreConfiguration = lustreConfiguration;
+    }
+
+    /**
+     * @return
+     */
+
+    public DeleteFileSystemLustreConfiguration getLustreConfiguration() {
+        return this.lustreConfiguration;
+    }
+
+    /**
+     * @param lustreConfiguration
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteFileSystemRequest withLustreConfiguration(DeleteFileSystemLustreConfiguration lustreConfiguration) {
+        setLustreConfiguration(lustreConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -173,7 +201,9 @@ public class DeleteFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
         if (getClientRequestToken() != null)
             sb.append("ClientRequestToken: ").append(getClientRequestToken()).append(",");
         if (getWindowsConfiguration() != null)
-            sb.append("WindowsConfiguration: ").append(getWindowsConfiguration());
+            sb.append("WindowsConfiguration: ").append(getWindowsConfiguration()).append(",");
+        if (getLustreConfiguration() != null)
+            sb.append("LustreConfiguration: ").append(getLustreConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -200,6 +230,10 @@ public class DeleteFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getWindowsConfiguration() != null && other.getWindowsConfiguration().equals(this.getWindowsConfiguration()) == false)
             return false;
+        if (other.getLustreConfiguration() == null ^ this.getLustreConfiguration() == null)
+            return false;
+        if (other.getLustreConfiguration() != null && other.getLustreConfiguration().equals(this.getLustreConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -211,6 +245,7 @@ public class DeleteFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getFileSystemId() == null) ? 0 : getFileSystemId().hashCode());
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
         hashCode = prime * hashCode + ((getWindowsConfiguration() == null) ? 0 : getWindowsConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getLustreConfiguration() == null) ? 0 : getLustreConfiguration().hashCode());
         return hashCode;
     }
 

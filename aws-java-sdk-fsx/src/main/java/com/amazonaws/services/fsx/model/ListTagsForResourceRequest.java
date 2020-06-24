@@ -36,16 +36,16 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
     private String resourceARN;
     /**
      * <p>
-     * (Optional) Maximum number of tags to return in the response (integer). This parameter value must be greater than
-     * 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter specified
-     * in the request and the service's internal maximum number of items per page.
+     * Maximum number of tags to return in the response (integer). This parameter value must be greater than 0. The
+     * number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter specified in the
+     * request and the service's internal maximum number of items per page.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * (Optional) Opaque pagination token returned from a previous <code>ListTagsForResource</code> operation (String).
-     * If a token present, the action continues the list from where the returning call left off.
+     * Opaque pagination token returned from a previous <code>ListTagsForResource</code> operation (String). If a token
+     * present, the action continues the list from where the returning call left off.
      * </p>
      */
     private String nextToken;
@@ -92,15 +92,15 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * (Optional) Maximum number of tags to return in the response (integer). This parameter value must be greater than
-     * 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter specified
-     * in the request and the service's internal maximum number of items per page.
+     * Maximum number of tags to return in the response (integer). This parameter value must be greater than 0. The
+     * number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter specified in the
+     * request and the service's internal maximum number of items per page.
      * </p>
      * 
      * @param maxResults
-     *        (Optional) Maximum number of tags to return in the response (integer). This parameter value must be
-     *        greater than 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code>
-     *        parameter specified in the request and the service's internal maximum number of items per page.
+     *        Maximum number of tags to return in the response (integer). This parameter value must be greater than 0.
+     *        The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter
+     *        specified in the request and the service's internal maximum number of items per page.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -109,14 +109,14 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * (Optional) Maximum number of tags to return in the response (integer). This parameter value must be greater than
-     * 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter specified
-     * in the request and the service's internal maximum number of items per page.
+     * Maximum number of tags to return in the response (integer). This parameter value must be greater than 0. The
+     * number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter specified in the
+     * request and the service's internal maximum number of items per page.
      * </p>
      * 
-     * @return (Optional) Maximum number of tags to return in the response (integer). This parameter value must be
-     *         greater than 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code>
-     *         parameter specified in the request and the service's internal maximum number of items per page.
+     * @return Maximum number of tags to return in the response (integer). This parameter value must be greater than 0.
+     *         The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter
+     *         specified in the request and the service's internal maximum number of items per page.
      */
 
     public Integer getMaxResults() {
@@ -125,15 +125,15 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * (Optional) Maximum number of tags to return in the response (integer). This parameter value must be greater than
-     * 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter specified
-     * in the request and the service's internal maximum number of items per page.
+     * Maximum number of tags to return in the response (integer). This parameter value must be greater than 0. The
+     * number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter specified in the
+     * request and the service's internal maximum number of items per page.
      * </p>
      * 
      * @param maxResults
-     *        (Optional) Maximum number of tags to return in the response (integer). This parameter value must be
-     *        greater than 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code>
-     *        parameter specified in the request and the service's internal maximum number of items per page.
+     *        Maximum number of tags to return in the response (integer). This parameter value must be greater than 0.
+     *        The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter
+     *        specified in the request and the service's internal maximum number of items per page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -144,13 +144,13 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * (Optional) Opaque pagination token returned from a previous <code>ListTagsForResource</code> operation (String).
-     * If a token present, the action continues the list from where the returning call left off.
+     * Opaque pagination token returned from a previous <code>ListTagsForResource</code> operation (String). If a token
+     * present, the action continues the list from where the returning call left off.
      * </p>
      * 
      * @param nextToken
-     *        (Optional) Opaque pagination token returned from a previous <code>ListTagsForResource</code> operation
-     *        (String). If a token present, the action continues the list from where the returning call left off.
+     *        Opaque pagination token returned from a previous <code>ListTagsForResource</code> operation (String). If a
+     *        token present, the action continues the list from where the returning call left off.
      */
 
     public void setNextToken(String nextToken) {
@@ -159,12 +159,12 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * (Optional) Opaque pagination token returned from a previous <code>ListTagsForResource</code> operation (String).
-     * If a token present, the action continues the list from where the returning call left off.
+     * Opaque pagination token returned from a previous <code>ListTagsForResource</code> operation (String). If a token
+     * present, the action continues the list from where the returning call left off.
      * </p>
      * 
-     * @return (Optional) Opaque pagination token returned from a previous <code>ListTagsForResource</code> operation
-     *         (String). If a token present, the action continues the list from where the returning call left off.
+     * @return Opaque pagination token returned from a previous <code>ListTagsForResource</code> operation (String). If
+     *         a token present, the action continues the list from where the returning call left off.
      */
 
     public String getNextToken() {
@@ -173,13 +173,13 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * (Optional) Opaque pagination token returned from a previous <code>ListTagsForResource</code> operation (String).
-     * If a token present, the action continues the list from where the returning call left off.
+     * Opaque pagination token returned from a previous <code>ListTagsForResource</code> operation (String). If a token
+     * present, the action continues the list from where the returning call left off.
      * </p>
      * 
      * @param nextToken
-     *        (Optional) Opaque pagination token returned from a previous <code>ListTagsForResource</code> operation
-     *        (String). If a token present, the action continues the list from where the returning call left off.
+     *        Opaque pagination token returned from a previous <code>ListTagsForResource</code> operation (String). If a
+     *        token present, the action continues the list from where the returning call left off.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

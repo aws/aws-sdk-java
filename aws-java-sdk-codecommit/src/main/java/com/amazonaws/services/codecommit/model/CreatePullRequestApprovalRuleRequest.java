@@ -84,7 +84,7 @@ public class CreatePullRequestApprovalRuleRequest extends com.amazonaws.AmazonWe
      * </ul>
      * <p>
      * For more information about IAM ARNs, wildcards, and formats, see <a
-     * href="https://docs.aws.amazon.com/iam/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the
      * <i>IAM User Guide</i>.
      * </p>
      * </note>
@@ -218,7 +218,7 @@ public class CreatePullRequestApprovalRuleRequest extends com.amazonaws.AmazonWe
      * </ul>
      * <p>
      * For more information about IAM ARNs, wildcards, and formats, see <a
-     * href="https://docs.aws.amazon.com/iam/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the
      * <i>IAM User Guide</i>.
      * </p>
      * </note>
@@ -269,7 +269,7 @@ public class CreatePullRequestApprovalRuleRequest extends com.amazonaws.AmazonWe
      *        </ul>
      *        <p>
      *        For more information about IAM ARNs, wildcards, and formats, see <a
-     *        href="https://docs.aws.amazon.com/iam/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in
      *        the <i>IAM User Guide</i>.
      *        </p>
      */
@@ -325,7 +325,7 @@ public class CreatePullRequestApprovalRuleRequest extends com.amazonaws.AmazonWe
      * </ul>
      * <p>
      * For more information about IAM ARNs, wildcards, and formats, see <a
-     * href="https://docs.aws.amazon.com/iam/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the
      * <i>IAM User Guide</i>.
      * </p>
      * </note>
@@ -375,7 +375,7 @@ public class CreatePullRequestApprovalRuleRequest extends com.amazonaws.AmazonWe
      *         </ul>
      *         <p>
      *         For more information about IAM ARNs, wildcards, and formats, see <a
-     *         href="https://docs.aws.amazon.com/iam/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in
      *         the <i>IAM User Guide</i>.
      *         </p>
      */
@@ -431,7 +431,7 @@ public class CreatePullRequestApprovalRuleRequest extends com.amazonaws.AmazonWe
      * </ul>
      * <p>
      * For more information about IAM ARNs, wildcards, and formats, see <a
-     * href="https://docs.aws.amazon.com/iam/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the
      * <i>IAM User Guide</i>.
      * </p>
      * </note>
@@ -482,7 +482,7 @@ public class CreatePullRequestApprovalRuleRequest extends com.amazonaws.AmazonWe
      *        </ul>
      *        <p>
      *        For more information about IAM ARNs, wildcards, and formats, see <a
-     *        href="https://docs.aws.amazon.com/iam/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in
      *        the <i>IAM User Guide</i>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.

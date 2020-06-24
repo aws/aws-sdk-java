@@ -53,6 +53,11 @@ public class InstanceFleetProvisioningSpecificationsJsonUnmarshaller implements 
                     instanceFleetProvisioningSpecifications.setSpotSpecification(SpotProvisioningSpecificationJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
+                if (context.testExpression("OnDemandSpecification", targetDepth)) {
+                    context.nextToken();
+                    instanceFleetProvisioningSpecifications.setOnDemandSpecification(OnDemandProvisioningSpecificationJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

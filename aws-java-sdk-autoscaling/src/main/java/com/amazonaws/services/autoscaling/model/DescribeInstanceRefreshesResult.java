@@ -27,11 +27,6 @@ public class DescribeInstanceRefreshesResult extends com.amazonaws.AmazonWebServ
      * <p>
      * The instance refreshes for the specified group.
      * </p>
-     * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing Auto Scaling
-     * Instances Based on an Instance Refresh</a>.
-     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<InstanceRefresh> instanceRefreshes;
     /**
@@ -47,17 +42,8 @@ public class DescribeInstanceRefreshesResult extends com.amazonaws.AmazonWebServ
      * <p>
      * The instance refreshes for the specified group.
      * </p>
-     * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing Auto Scaling
-     * Instances Based on an Instance Refresh</a>.
-     * </p>
      * 
-     * @return The instance refreshes for the specified group.</p>
-     *         <p>
-     *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing Auto
-     *         Scaling Instances Based on an Instance Refresh</a>.
+     * @return The instance refreshes for the specified group.
      */
 
     public java.util.List<InstanceRefresh> getInstanceRefreshes() {
@@ -71,18 +57,9 @@ public class DescribeInstanceRefreshesResult extends com.amazonaws.AmazonWebServ
      * <p>
      * The instance refreshes for the specified group.
      * </p>
-     * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing Auto Scaling
-     * Instances Based on an Instance Refresh</a>.
-     * </p>
      * 
      * @param instanceRefreshes
-     *        The instance refreshes for the specified group.</p>
-     *        <p>
-     *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing Auto
-     *        Scaling Instances Based on an Instance Refresh</a>.
+     *        The instance refreshes for the specified group.
      */
 
     public void setInstanceRefreshes(java.util.Collection<InstanceRefresh> instanceRefreshes) {
@@ -99,22 +76,13 @@ public class DescribeInstanceRefreshesResult extends com.amazonaws.AmazonWebServ
      * The instance refreshes for the specified group.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing Auto Scaling
-     * Instances Based on an Instance Refresh</a>.
-     * </p>
-     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setInstanceRefreshes(java.util.Collection)} or {@link #withInstanceRefreshes(java.util.Collection)} if
      * you want to override the existing values.
      * </p>
      * 
      * @param instanceRefreshes
-     *        The instance refreshes for the specified group.</p>
-     *        <p>
-     *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing Auto
-     *        Scaling Instances Based on an Instance Refresh</a>.
+     *        The instance refreshes for the specified group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -132,18 +100,9 @@ public class DescribeInstanceRefreshesResult extends com.amazonaws.AmazonWebServ
      * <p>
      * The instance refreshes for the specified group.
      * </p>
-     * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing Auto Scaling
-     * Instances Based on an Instance Refresh</a>.
-     * </p>
      * 
      * @param instanceRefreshes
-     *        The instance refreshes for the specified group.</p>
-     *        <p>
-     *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing Auto
-     *        Scaling Instances Based on an Instance Refresh</a>.
+     *        The instance refreshes for the specified group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

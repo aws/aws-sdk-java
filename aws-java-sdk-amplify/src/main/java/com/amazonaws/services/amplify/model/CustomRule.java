@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Custom rewrite / redirect rule.
+ * Describes a custom rewrite or redirect rule.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CustomRule" target="_top">AWS API
@@ -48,7 +48,7 @@ public class CustomRule implements Serializable, Cloneable, StructuredPojo {
     private String status;
     /**
      * <p>
-     * The condition for a URL rewrite or redirect rule, e.g. country code.
+     * The condition for a URL rewrite or redirect rule, such as a country code.
      * </p>
      */
     private String condition;
@@ -175,11 +175,11 @@ public class CustomRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The condition for a URL rewrite or redirect rule, e.g. country code.
+     * The condition for a URL rewrite or redirect rule, such as a country code.
      * </p>
      * 
      * @param condition
-     *        The condition for a URL rewrite or redirect rule, e.g. country code.
+     *        The condition for a URL rewrite or redirect rule, such as a country code.
      */
 
     public void setCondition(String condition) {
@@ -188,10 +188,10 @@ public class CustomRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The condition for a URL rewrite or redirect rule, e.g. country code.
+     * The condition for a URL rewrite or redirect rule, such as a country code.
      * </p>
      * 
-     * @return The condition for a URL rewrite or redirect rule, e.g. country code.
+     * @return The condition for a URL rewrite or redirect rule, such as a country code.
      */
 
     public String getCondition() {
@@ -200,11 +200,11 @@ public class CustomRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The condition for a URL rewrite or redirect rule, e.g. country code.
+     * The condition for a URL rewrite or redirect rule, such as a country code.
      * </p>
      * 
      * @param condition
-     *        The condition for a URL rewrite or redirect rule, e.g. country code.
+     *        The condition for a URL rewrite or redirect rule, such as a country code.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

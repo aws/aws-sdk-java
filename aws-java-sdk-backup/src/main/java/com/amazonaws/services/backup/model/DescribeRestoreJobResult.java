@@ -25,6 +25,12 @@ public class DescribeRestoreJobResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
+     * Returns the account ID that owns the restore job.
+     * </p>
+     */
+    private String accountId;
+    /**
+     * <p>
      * Uniquely identifies the job that restores a recovery point.
      * </p>
      */
@@ -60,7 +66,7 @@ public class DescribeRestoreJobResult extends com.amazonaws.AmazonWebServiceResu
     private String status;
     /**
      * <p>
-     * A detailed message explaining the status of a job to restore a recovery point.
+     * A message showing the status of a job to restore a recovery point.
      * </p>
      */
     private String statusMessage;
@@ -96,6 +102,52 @@ public class DescribeRestoreJobResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      */
     private String createdResourceArn;
+    /**
+     * <p>
+     * Returns metadata associated with a restore job listed by resource type.
+     * </p>
+     */
+    private String resourceType;
+
+    /**
+     * <p>
+     * Returns the account ID that owns the restore job.
+     * </p>
+     * 
+     * @param accountId
+     *        Returns the account ID that owns the restore job.
+     */
+
+    public void setAccountId(String accountId) {
+        this.accountId = accountId;
+    }
+
+    /**
+     * <p>
+     * Returns the account ID that owns the restore job.
+     * </p>
+     * 
+     * @return Returns the account ID that owns the restore job.
+     */
+
+    public String getAccountId() {
+        return this.accountId;
+    }
+
+    /**
+     * <p>
+     * Returns the account ID that owns the restore job.
+     * </p>
+     * 
+     * @param accountId
+     *        Returns the account ID that owns the restore job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeRestoreJobResult withAccountId(String accountId) {
+        setAccountId(accountId);
+        return this;
+    }
 
     /**
      * <p>
@@ -348,11 +400,11 @@ public class DescribeRestoreJobResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * A detailed message explaining the status of a job to restore a recovery point.
+     * A message showing the status of a job to restore a recovery point.
      * </p>
      * 
      * @param statusMessage
-     *        A detailed message explaining the status of a job to restore a recovery point.
+     *        A message showing the status of a job to restore a recovery point.
      */
 
     public void setStatusMessage(String statusMessage) {
@@ -361,10 +413,10 @@ public class DescribeRestoreJobResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * A detailed message explaining the status of a job to restore a recovery point.
+     * A message showing the status of a job to restore a recovery point.
      * </p>
      * 
-     * @return A detailed message explaining the status of a job to restore a recovery point.
+     * @return A message showing the status of a job to restore a recovery point.
      */
 
     public String getStatusMessage() {
@@ -373,11 +425,11 @@ public class DescribeRestoreJobResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * A detailed message explaining the status of a job to restore a recovery point.
+     * A message showing the status of a job to restore a recovery point.
      * </p>
      * 
      * @param statusMessage
-     *        A detailed message explaining the status of a job to restore a recovery point.
+     *        A message showing the status of a job to restore a recovery point.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -599,6 +651,46 @@ public class DescribeRestoreJobResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
+     * Returns metadata associated with a restore job listed by resource type.
+     * </p>
+     * 
+     * @param resourceType
+     *        Returns metadata associated with a restore job listed by resource type.
+     */
+
+    public void setResourceType(String resourceType) {
+        this.resourceType = resourceType;
+    }
+
+    /**
+     * <p>
+     * Returns metadata associated with a restore job listed by resource type.
+     * </p>
+     * 
+     * @return Returns metadata associated with a restore job listed by resource type.
+     */
+
+    public String getResourceType() {
+        return this.resourceType;
+    }
+
+    /**
+     * <p>
+     * Returns metadata associated with a restore job listed by resource type.
+     * </p>
+     * 
+     * @param resourceType
+     *        Returns metadata associated with a restore job listed by resource type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeRestoreJobResult withResourceType(String resourceType) {
+        setResourceType(resourceType);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -610,6 +702,8 @@ public class DescribeRestoreJobResult extends com.amazonaws.AmazonWebServiceResu
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAccountId() != null)
+            sb.append("AccountId: ").append(getAccountId()).append(",");
         if (getRestoreJobId() != null)
             sb.append("RestoreJobId: ").append(getRestoreJobId()).append(",");
         if (getRecoveryPointArn() != null)
@@ -631,7 +725,9 @@ public class DescribeRestoreJobResult extends com.amazonaws.AmazonWebServiceResu
         if (getExpectedCompletionTimeMinutes() != null)
             sb.append("ExpectedCompletionTimeMinutes: ").append(getExpectedCompletionTimeMinutes()).append(",");
         if (getCreatedResourceArn() != null)
-            sb.append("CreatedResourceArn: ").append(getCreatedResourceArn());
+            sb.append("CreatedResourceArn: ").append(getCreatedResourceArn()).append(",");
+        if (getResourceType() != null)
+            sb.append("ResourceType: ").append(getResourceType());
         sb.append("}");
         return sb.toString();
     }
@@ -646,6 +742,10 @@ public class DescribeRestoreJobResult extends com.amazonaws.AmazonWebServiceResu
         if (obj instanceof DescribeRestoreJobResult == false)
             return false;
         DescribeRestoreJobResult other = (DescribeRestoreJobResult) obj;
+        if (other.getAccountId() == null ^ this.getAccountId() == null)
+            return false;
+        if (other.getAccountId() != null && other.getAccountId().equals(this.getAccountId()) == false)
+            return false;
         if (other.getRestoreJobId() == null ^ this.getRestoreJobId() == null)
             return false;
         if (other.getRestoreJobId() != null && other.getRestoreJobId().equals(this.getRestoreJobId()) == false)
@@ -691,6 +791,10 @@ public class DescribeRestoreJobResult extends com.amazonaws.AmazonWebServiceResu
             return false;
         if (other.getCreatedResourceArn() != null && other.getCreatedResourceArn().equals(this.getCreatedResourceArn()) == false)
             return false;
+        if (other.getResourceType() == null ^ this.getResourceType() == null)
+            return false;
+        if (other.getResourceType() != null && other.getResourceType().equals(this.getResourceType()) == false)
+            return false;
         return true;
     }
 
@@ -699,6 +803,7 @@ public class DescribeRestoreJobResult extends com.amazonaws.AmazonWebServiceResu
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
         hashCode = prime * hashCode + ((getRestoreJobId() == null) ? 0 : getRestoreJobId().hashCode());
         hashCode = prime * hashCode + ((getRecoveryPointArn() == null) ? 0 : getRecoveryPointArn().hashCode());
         hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
@@ -710,6 +815,7 @@ public class DescribeRestoreJobResult extends com.amazonaws.AmazonWebServiceResu
         hashCode = prime * hashCode + ((getIamRoleArn() == null) ? 0 : getIamRoleArn().hashCode());
         hashCode = prime * hashCode + ((getExpectedCompletionTimeMinutes() == null) ? 0 : getExpectedCompletionTimeMinutes().hashCode());
         hashCode = prime * hashCode + ((getCreatedResourceArn() == null) ? 0 : getCreatedResourceArn().hashCode());
+        hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
         return hashCode;
     }
 

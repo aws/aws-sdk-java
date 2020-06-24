@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Result structure for the stop job request.
+ * The result structure for the stop job request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/StopJob" target="_top">AWS API
@@ -28,18 +28,18 @@ public class StopJobResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * Summary for the Job.
+     * The summary for the job.
      * </p>
      */
     private JobSummary jobSummary;
 
     /**
      * <p>
-     * Summary for the Job.
+     * The summary for the job.
      * </p>
      * 
      * @param jobSummary
-     *        Summary for the Job.
+     *        The summary for the job.
      */
 
     public void setJobSummary(JobSummary jobSummary) {
@@ -48,10 +48,10 @@ public class StopJobResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * Summary for the Job.
+     * The summary for the job.
      * </p>
      * 
-     * @return Summary for the Job.
+     * @return The summary for the job.
      */
 
     public JobSummary getJobSummary() {
@@ -60,11 +60,11 @@ public class StopJobResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * Summary for the Job.
+     * The summary for the job.
      * </p>
      * 
      * @param jobSummary
-     *        Summary for the Job.
+     *        The summary for the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

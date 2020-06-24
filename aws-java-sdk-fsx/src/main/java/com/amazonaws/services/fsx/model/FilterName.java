@@ -23,7 +23,8 @@ import javax.annotation.Generated;
 public enum FilterName {
 
     FileSystemId("file-system-id"),
-    BackupType("backup-type");
+    BackupType("backup-type"),
+    FileSystemType("file-system-type");
 
     private String value;
 

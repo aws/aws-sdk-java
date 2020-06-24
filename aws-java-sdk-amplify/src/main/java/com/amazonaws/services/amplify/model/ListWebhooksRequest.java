@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Request structure for the list webhooks request.
+ * The request structure for the list webhooks request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListWebhooks" target="_top">AWS API
@@ -30,31 +30,31 @@ public class ListWebhooksRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Unique Id for an Amplify App.
+     * The unique ID for an Amplify app.
      * </p>
      */
     private String appId;
     /**
      * <p>
-     * Pagination token. Set to null to start listing webhooks from start. If non-null pagination token is returned in a
-     * result, then pass its value in here to list more webhooks.
+     * A pagination token. Set to null to start listing webhooks from the start. If non-null,the pagination token is
+     * returned in a result. Pass its value in here to list more webhooks.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * Maximum number of records to list in a single response.
+     * The maximum number of records to list in a single response.
      * </p>
      */
     private Integer maxResults;
 
     /**
      * <p>
-     * Unique Id for an Amplify App.
+     * The unique ID for an Amplify app.
      * </p>
      * 
      * @param appId
-     *        Unique Id for an Amplify App.
+     *        The unique ID for an Amplify app.
      */
 
     public void setAppId(String appId) {
@@ -63,10 +63,10 @@ public class ListWebhooksRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Unique Id for an Amplify App.
+     * The unique ID for an Amplify app.
      * </p>
      * 
-     * @return Unique Id for an Amplify App.
+     * @return The unique ID for an Amplify app.
      */
 
     public String getAppId() {
@@ -75,11 +75,11 @@ public class ListWebhooksRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Unique Id for an Amplify App.
+     * The unique ID for an Amplify app.
      * </p>
      * 
      * @param appId
-     *        Unique Id for an Amplify App.
+     *        The unique ID for an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,13 +90,13 @@ public class ListWebhooksRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Pagination token. Set to null to start listing webhooks from start. If non-null pagination token is returned in a
-     * result, then pass its value in here to list more webhooks.
+     * A pagination token. Set to null to start listing webhooks from the start. If non-null,the pagination token is
+     * returned in a result. Pass its value in here to list more webhooks.
      * </p>
      * 
      * @param nextToken
-     *        Pagination token. Set to null to start listing webhooks from start. If non-null pagination token is
-     *        returned in a result, then pass its value in here to list more webhooks.
+     *        A pagination token. Set to null to start listing webhooks from the start. If non-null,the pagination token
+     *        is returned in a result. Pass its value in here to list more webhooks.
      */
 
     public void setNextToken(String nextToken) {
@@ -105,12 +105,12 @@ public class ListWebhooksRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Pagination token. Set to null to start listing webhooks from start. If non-null pagination token is returned in a
-     * result, then pass its value in here to list more webhooks.
+     * A pagination token. Set to null to start listing webhooks from the start. If non-null,the pagination token is
+     * returned in a result. Pass its value in here to list more webhooks.
      * </p>
      * 
-     * @return Pagination token. Set to null to start listing webhooks from start. If non-null pagination token is
-     *         returned in a result, then pass its value in here to list more webhooks.
+     * @return A pagination token. Set to null to start listing webhooks from the start. If non-null,the pagination
+     *         token is returned in a result. Pass its value in here to list more webhooks.
      */
 
     public String getNextToken() {
@@ -119,13 +119,13 @@ public class ListWebhooksRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Pagination token. Set to null to start listing webhooks from start. If non-null pagination token is returned in a
-     * result, then pass its value in here to list more webhooks.
+     * A pagination token. Set to null to start listing webhooks from the start. If non-null,the pagination token is
+     * returned in a result. Pass its value in here to list more webhooks.
      * </p>
      * 
      * @param nextToken
-     *        Pagination token. Set to null to start listing webhooks from start. If non-null pagination token is
-     *        returned in a result, then pass its value in here to list more webhooks.
+     *        A pagination token. Set to null to start listing webhooks from the start. If non-null,the pagination token
+     *        is returned in a result. Pass its value in here to list more webhooks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -136,11 +136,11 @@ public class ListWebhooksRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Maximum number of records to list in a single response.
+     * The maximum number of records to list in a single response.
      * </p>
      * 
      * @param maxResults
-     *        Maximum number of records to list in a single response.
+     *        The maximum number of records to list in a single response.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -149,10 +149,10 @@ public class ListWebhooksRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Maximum number of records to list in a single response.
+     * The maximum number of records to list in a single response.
      * </p>
      * 
-     * @return Maximum number of records to list in a single response.
+     * @return The maximum number of records to list in a single response.
      */
 
     public Integer getMaxResults() {
@@ -161,11 +161,11 @@ public class ListWebhooksRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Maximum number of records to list in a single response.
+     * The maximum number of records to list in a single response.
      * </p>
      * 
      * @param maxResults
-     *        Maximum number of records to list in a single response.
+     *        The maximum number of records to list in a single response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

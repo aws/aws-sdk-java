@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Request structure for get backend environment request.
+ * The request structure for the get backend environment request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetBackendEnvironment" target="_top">AWS API
@@ -30,24 +30,24 @@ public class GetBackendEnvironmentRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Unique Id for an Amplify App.
+     * The unique id for an Amplify app.
      * </p>
      */
     private String appId;
     /**
      * <p>
-     * Name for the backend environment.
+     * The name for the backend environment.
      * </p>
      */
     private String environmentName;
 
     /**
      * <p>
-     * Unique Id for an Amplify App.
+     * The unique id for an Amplify app.
      * </p>
      * 
      * @param appId
-     *        Unique Id for an Amplify App.
+     *        The unique id for an Amplify app.
      */
 
     public void setAppId(String appId) {
@@ -56,10 +56,10 @@ public class GetBackendEnvironmentRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Unique Id for an Amplify App.
+     * The unique id for an Amplify app.
      * </p>
      * 
-     * @return Unique Id for an Amplify App.
+     * @return The unique id for an Amplify app.
      */
 
     public String getAppId() {
@@ -68,11 +68,11 @@ public class GetBackendEnvironmentRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Unique Id for an Amplify App.
+     * The unique id for an Amplify app.
      * </p>
      * 
      * @param appId
-     *        Unique Id for an Amplify App.
+     *        The unique id for an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class GetBackendEnvironmentRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Name for the backend environment.
+     * The name for the backend environment.
      * </p>
      * 
      * @param environmentName
-     *        Name for the backend environment.
+     *        The name for the backend environment.
      */
 
     public void setEnvironmentName(String environmentName) {
@@ -96,10 +96,10 @@ public class GetBackendEnvironmentRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Name for the backend environment.
+     * The name for the backend environment.
      * </p>
      * 
-     * @return Name for the backend environment.
+     * @return The name for the backend environment.
      */
 
     public String getEnvironmentName() {
@@ -108,11 +108,11 @@ public class GetBackendEnvironmentRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Name for the backend environment.
+     * The name for the backend environment.
      * </p>
      * 
      * @param environmentName
-     *        Name for the backend environment.
+     *        The name for the backend environment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

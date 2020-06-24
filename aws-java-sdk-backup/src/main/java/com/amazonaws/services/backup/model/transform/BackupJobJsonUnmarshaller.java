@@ -48,6 +48,10 @@ public class BackupJobJsonUnmarshaller implements Unmarshaller<BackupJob, JsonUn
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("AccountId", targetDepth)) {
+                    context.nextToken();
+                    backupJob.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("BackupJobId", targetDepth)) {
                     context.nextToken();
                     backupJob.setBackupJobId(context.getUnmarshaller(String.class).unmarshall(context));

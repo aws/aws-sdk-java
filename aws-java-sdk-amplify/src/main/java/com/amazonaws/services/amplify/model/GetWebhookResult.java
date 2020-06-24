@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Result structure for the get webhook request.
+ * The result structure for the get webhook request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetWebhook" target="_top">AWS API
@@ -28,18 +28,18 @@ public class GetWebhookResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Webhook structure.
+     * Describes the structure of a webhook.
      * </p>
      */
     private Webhook webhook;
 
     /**
      * <p>
-     * Webhook structure.
+     * Describes the structure of a webhook.
      * </p>
      * 
      * @param webhook
-     *        Webhook structure.
+     *        Describes the structure of a webhook.
      */
 
     public void setWebhook(Webhook webhook) {
@@ -48,10 +48,10 @@ public class GetWebhookResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Webhook structure.
+     * Describes the structure of a webhook.
      * </p>
      * 
-     * @return Webhook structure.
+     * @return Describes the structure of a webhook.
      */
 
     public Webhook getWebhook() {
@@ -60,11 +60,11 @@ public class GetWebhookResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Webhook structure.
+     * Describes the structure of a webhook.
      * </p>
      * 
      * @param webhook
-     *        Webhook structure.
+     *        Describes the structure of a webhook.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

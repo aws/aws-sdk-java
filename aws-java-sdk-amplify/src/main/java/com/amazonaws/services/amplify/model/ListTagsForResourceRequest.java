@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Request structure used to list tags for resource.
+ * The request structure to use to list tags for a resource.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListTagsForResource" target="_top">AWS API
@@ -30,18 +30,18 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Resource arn used to list tags.
+     * The Amazon Resource Name (ARN) to use to list tags.
      * </p>
      */
     private String resourceArn;
 
     /**
      * <p>
-     * Resource arn used to list tags.
+     * The Amazon Resource Name (ARN) to use to list tags.
      * </p>
      * 
      * @param resourceArn
-     *        Resource arn used to list tags.
+     *        The Amazon Resource Name (ARN) to use to list tags.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -50,10 +50,10 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Resource arn used to list tags.
+     * The Amazon Resource Name (ARN) to use to list tags.
      * </p>
      * 
-     * @return Resource arn used to list tags.
+     * @return The Amazon Resource Name (ARN) to use to list tags.
      */
 
     public String getResourceArn() {
@@ -62,11 +62,11 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Resource arn used to list tags.
+     * The Amazon Resource Name (ARN) to use to list tags.
      * </p>
      * 
      * @param resourceArn
-     *        Resource arn used to list tags.
+     *        The Amazon Resource Name (ARN) to use to list tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

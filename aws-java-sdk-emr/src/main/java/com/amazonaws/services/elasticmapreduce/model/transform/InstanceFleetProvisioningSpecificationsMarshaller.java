@@ -29,6 +29,8 @@ public class InstanceFleetProvisioningSpecificationsMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> SPOTSPECIFICATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SpotSpecification").build();
+    private static final MarshallingInfo<StructuredPojo> ONDEMANDSPECIFICATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OnDemandSpecification").build();
 
     private static final InstanceFleetProvisioningSpecificationsMarshaller instance = new InstanceFleetProvisioningSpecificationsMarshaller();
 
@@ -47,6 +49,7 @@ public class InstanceFleetProvisioningSpecificationsMarshaller {
 
         try {
             protocolMarshaller.marshall(instanceFleetProvisioningSpecifications.getSpotSpecification(), SPOTSPECIFICATION_BINDING);
+            protocolMarshaller.marshall(instanceFleetProvisioningSpecifications.getOnDemandSpecification(), ONDEMANDSPECIFICATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

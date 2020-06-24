@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Result structure for the list artifacts request.
+ * The result structure for the list artifacts request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListArtifacts" target="_top">AWS API
@@ -28,24 +28,24 @@ public class ListArtifactsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * List of artifacts.
+     * A list of artifacts.
      * </p>
      */
     private java.util.List<Artifact> artifacts;
     /**
      * <p>
-     * Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to
-     * fetch more entries.
+     * A pagination token. If a non-null pagination token is returned in a result, pass its value in another request to
+     * retrieve more entries.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * List of artifacts.
+     * A list of artifacts.
      * </p>
      * 
-     * @return List of artifacts.
+     * @return A list of artifacts.
      */
 
     public java.util.List<Artifact> getArtifacts() {
@@ -54,11 +54,11 @@ public class ListArtifactsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * List of artifacts.
+     * A list of artifacts.
      * </p>
      * 
      * @param artifacts
-     *        List of artifacts.
+     *        A list of artifacts.
      */
 
     public void setArtifacts(java.util.Collection<Artifact> artifacts) {
@@ -72,7 +72,7 @@ public class ListArtifactsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * List of artifacts.
+     * A list of artifacts.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -81,7 +81,7 @@ public class ListArtifactsResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      * 
      * @param artifacts
-     *        List of artifacts.
+     *        A list of artifacts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,11 +97,11 @@ public class ListArtifactsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * List of artifacts.
+     * A list of artifacts.
      * </p>
      * 
      * @param artifacts
-     *        List of artifacts.
+     *        A list of artifacts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,13 +112,13 @@ public class ListArtifactsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to
-     * fetch more entries.
+     * A pagination token. If a non-null pagination token is returned in a result, pass its value in another request to
+     * retrieve more entries.
      * </p>
      * 
      * @param nextToken
-     *        Pagination token. If non-null pagination token is returned in a result, then pass its value in another
-     *        request to fetch more entries.
+     *        A pagination token. If a non-null pagination token is returned in a result, pass its value in another
+     *        request to retrieve more entries.
      */
 
     public void setNextToken(String nextToken) {
@@ -127,12 +127,12 @@ public class ListArtifactsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to
-     * fetch more entries.
+     * A pagination token. If a non-null pagination token is returned in a result, pass its value in another request to
+     * retrieve more entries.
      * </p>
      * 
-     * @return Pagination token. If non-null pagination token is returned in a result, then pass its value in another
-     *         request to fetch more entries.
+     * @return A pagination token. If a non-null pagination token is returned in a result, pass its value in another
+     *         request to retrieve more entries.
      */
 
     public String getNextToken() {
@@ -141,13 +141,13 @@ public class ListArtifactsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to
-     * fetch more entries.
+     * A pagination token. If a non-null pagination token is returned in a result, pass its value in another request to
+     * retrieve more entries.
      * </p>
      * 
      * @param nextToken
-     *        Pagination token. If non-null pagination token is returned in a result, then pass its value in another
-     *        request to fetch more entries.
+     *        A pagination token. If a non-null pagination token is returned in a result, pass its value in another
+     *        request to retrieve more entries.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

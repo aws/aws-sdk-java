@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum EffectivePolicyType {
 
-    TAG_POLICY("TAG_POLICY");
+    TAG_POLICY("TAG_POLICY"),
+    BACKUP_POLICY("BACKUP_POLICY");
 
     private String value;
 

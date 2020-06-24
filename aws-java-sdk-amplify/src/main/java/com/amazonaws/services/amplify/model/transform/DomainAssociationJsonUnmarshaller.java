@@ -60,6 +60,14 @@ public class DomainAssociationJsonUnmarshaller implements Unmarshaller<DomainAss
                     context.nextToken();
                     domainAssociation.setEnableAutoSubDomain(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("autoSubDomainCreationPatterns", targetDepth)) {
+                    context.nextToken();
+                    domainAssociation.setAutoSubDomainCreationPatterns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (context.testExpression("autoSubDomainIAMRole", targetDepth)) {
+                    context.nextToken();
+                    domainAssociation.setAutoSubDomainIAMRole(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("domainStatus", targetDepth)) {
                     context.nextToken();
                     domainAssociation.setDomainStatus(context.getUnmarshaller(String.class).unmarshall(context));

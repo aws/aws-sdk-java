@@ -30,6 +30,7 @@ public class ArnResourceTest {
         assertThat(arnResource.getResourceType(), equalTo("accesspoint"));
         assertThat(arnResource.getResource(), equalTo("test/object/unit-01/finance/*"));
         assertThat(arnResource.getQualifier(), nullValue());
+        assertThat(arnResource.toString(), equalTo("accesspoint:test/object/unit-01/finance/*"));
     }
 
     @Test
@@ -38,38 +39,46 @@ public class ArnResourceTest {
         assertThat(arnResource.getResourceType(), equalTo("accesspoint"));
         assertThat(arnResource.getResource(), equalTo("test/object/unit-01/finance/file1"));
         assertThat(arnResource.getQualifier(), equalTo("123"));
+        assertThat(arnResource.toString(), equalTo("accesspoint:test/object/unit-01/finance/file1:123"));
     }
 
     @Test
     public void fromString_slashForm_pathEmptyQualifier() {
-        ArnResource arnResource = ArnResource.fromString("accesspoint/test/object/unit-01/finance/*:");
+        ArnResource arnResource = ArnResource.fromString( "accesspoint/test/object/unit-01/finance/*:");
         assertThat(arnResource.getResourceType(), equalTo("accesspoint"));
         assertThat(arnResource.getResource(), equalTo("test/object/unit-01/finance/*"));
         assertThat(arnResource.getQualifier(), isEmptyString());
+        assertThat(arnResource.toString(), equalTo( "accesspoint:test/object/unit-01/finance/*:"));
     }
 
     @Test
     public void fromString_colonForm_pathNoQualifier() {
-        ArnResource arnResource = ArnResource.fromString("accesspoint:test/object/unit-01/finance/*");
+        String resourceString = "accesspoint:test/object/unit-01/finance/*";
+        ArnResource arnResource = ArnResource.fromString(resourceString);
         assertThat(arnResource.getResourceType(), equalTo("accesspoint"));
         assertThat(arnResource.getResource(), equalTo("test/object/unit-01/finance/*"));
         assertThat(arnResource.getQualifier(), nullValue());
+        assertThat(arnResource.toString(), equalTo(resourceString));
     }
 
     @Test
     public void fromString_colonForm_pathWithQualifier() {
-        ArnResource arnResource = ArnResource.fromString("accesspoint:test/object/unit-01/finance/file1:123");
+        String resourceString = "accesspoint:test/object/unit-01/finance/file1:123";
+        ArnResource arnResource = ArnResource.fromString(resourceString);
         assertThat(arnResource.getResourceType(), equalTo("accesspoint"));
         assertThat(arnResource.getResource(), equalTo("test/object/unit-01/finance/file1"));
         assertThat(arnResource.getQualifier(), equalTo("123"));
+        assertThat(arnResource.toString(), equalTo(resourceString));
     }
 
     @Test
     public void fromString_colonForm_pathEmptyQualifier() {
-        ArnResource arnResource = ArnResource.fromString("accesspoint:test/object/unit-01/finance/file1:");
+        String resourceString = "accesspoint:test/object/unit-01/finance/file1:";
+        ArnResource arnResource = ArnResource.fromString(resourceString);
         assertThat(arnResource.getResourceType(), equalTo("accesspoint"));
         assertThat(arnResource.getResource(), equalTo("test/object/unit-01/finance/file1"));
         assertThat(arnResource.getQualifier(), isEmptyString());
+        assertThat(arnResource.toString(), equalTo(resourceString));
     }
 
     @Test
@@ -78,6 +87,7 @@ public class ArnResourceTest {
         assertThat(arnResource.getResourceType(), equalTo("accesspoint"));
         assertThat(arnResource.getResource(), equalTo("test"));
         assertThat(arnResource.getQualifier(), nullValue());
+        assertThat(arnResource.toString(), equalTo("accesspoint:test"));
     }
 
     @Test
@@ -86,6 +96,7 @@ public class ArnResourceTest {
         assertThat(arnResource.getResourceType(), equalTo("accesspoint"));
         assertThat(arnResource.getResource(), equalTo("test"));
         assertThat(arnResource.getQualifier(), equalTo("123"));
+        assertThat(arnResource.toString(), equalTo("accesspoint:test:123"));
     }
 
     @Test
@@ -94,6 +105,7 @@ public class ArnResourceTest {
         assertThat(arnResource.getResourceType(), equalTo("accesspoint"));
         assertThat(arnResource.getResource(), equalTo("test"));
         assertThat(arnResource.getQualifier(), isEmptyString());
+        assertThat(arnResource.toString(), equalTo("accesspoint:test:"));
     }
 
     @Test
@@ -102,30 +114,37 @@ public class ArnResourceTest {
         assertThat(arnResource.getResourceType(), equalTo("accesspoint"));
         assertThat(arnResource.getResource(), equalTo("test"));
         assertThat(arnResource.getQualifier(), nullValue());
+        assertThat(arnResource.toString(), equalTo("accesspoint:test"));
     }
 
     @Test
     public void fromString_colonForm_typeAndNameWithQualifier() {
-        ArnResource arnResource = ArnResource.fromString("accesspoint:test:123");
+        String resourceString = "accesspoint:test:123";
+        ArnResource arnResource = ArnResource.fromString(resourceString);
         assertThat(arnResource.getResourceType(), equalTo("accesspoint"));
         assertThat(arnResource.getResource(), equalTo("test"));
         assertThat(arnResource.getQualifier(), equalTo("123"));
+        assertThat(arnResource.toString(), equalTo(resourceString));
     }
 
     @Test
     public void fromString_colonForm_typeAndNameEmptyQualifier() {
-        ArnResource arnResource = ArnResource.fromString("accesspoint:test:");
+        String resourceString = "accesspoint:test:";
+        ArnResource arnResource = ArnResource.fromString(resourceString);
         assertThat(arnResource.getResourceType(), equalTo("accesspoint"));
         assertThat(arnResource.getResource(), equalTo("test"));
         assertThat(arnResource.getQualifier(), isEmptyString());
+        assertThat(arnResource.toString(), equalTo(resourceString));
     }
 
     @Test
     public void fromString_nameOnly() {
-        ArnResource arnResource = ArnResource.fromString("bob");
+        String resourceString = "bob";
+        ArnResource arnResource = ArnResource.fromString(resourceString);
         assertThat(arnResource.getResourceType(), nullValue());
         assertThat(arnResource.getResource(), equalTo("bob"));
         assertThat(arnResource.getQualifier(), nullValue());
+        assertThat(arnResource.toString(), equalTo(resourceString));
     }
 
     @Test(expected = IllegalArgumentException.class)

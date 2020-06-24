@@ -102,6 +102,10 @@ public class AppJsonUnmarshaller implements Unmarshaller<App, JsonUnmarshallerCo
                     context.nextToken();
                     app.setEnableBranchAutoBuild(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("enableBranchAutoDeletion", targetDepth)) {
+                    context.nextToken();
+                    app.setEnableBranchAutoDeletion(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("enableBasicAuth", targetDepth)) {
                     context.nextToken();
                     app.setEnableBasicAuth(context.getUnmarshaller(Boolean.class).unmarshall(context));

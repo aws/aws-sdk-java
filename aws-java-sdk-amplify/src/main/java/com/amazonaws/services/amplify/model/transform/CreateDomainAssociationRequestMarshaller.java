@@ -36,6 +36,10 @@ public class CreateDomainAssociationRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("enableAutoSubDomain").build();
     private static final MarshallingInfo<List> SUBDOMAINSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("subDomainSettings").build();
+    private static final MarshallingInfo<List> AUTOSUBDOMAINCREATIONPATTERNS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("autoSubDomainCreationPatterns").build();
+    private static final MarshallingInfo<String> AUTOSUBDOMAINIAMROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("autoSubDomainIAMRole").build();
 
     private static final CreateDomainAssociationRequestMarshaller instance = new CreateDomainAssociationRequestMarshaller();
 
@@ -57,6 +61,8 @@ public class CreateDomainAssociationRequestMarshaller {
             protocolMarshaller.marshall(createDomainAssociationRequest.getDomainName(), DOMAINNAME_BINDING);
             protocolMarshaller.marshall(createDomainAssociationRequest.getEnableAutoSubDomain(), ENABLEAUTOSUBDOMAIN_BINDING);
             protocolMarshaller.marshall(createDomainAssociationRequest.getSubDomainSettings(), SUBDOMAINSETTINGS_BINDING);
+            protocolMarshaller.marshall(createDomainAssociationRequest.getAutoSubDomainCreationPatterns(), AUTOSUBDOMAINCREATIONPATTERNS_BINDING);
+            protocolMarshaller.marshall(createDomainAssociationRequest.getAutoSubDomainIAMRole(), AUTOSUBDOMAINIAMROLE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

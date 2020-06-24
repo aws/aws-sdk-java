@@ -36,15 +36,17 @@ public class CreateBackupRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String fileSystemId;
     /**
      * <p>
-     * (Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string
-     * is automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.
+     * A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is
+     * automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.
      * </p>
      */
     private String clientRequestToken;
     /**
      * <p>
      * The tags to apply to the backup at backup creation. The key value of the <code>Name</code> tag appears in the
-     * console as the backup name.
+     * console as the backup name. If you have set <code>CopyTagsToBackups</code> to true, and you specify one or more
+     * tags using the <code>CreateBackup</code> action, no existing tags on the file system are copied from the file
+     * system to the backup.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -91,14 +93,13 @@ public class CreateBackupRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * (Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string
-     * is automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.
+     * A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is
+     * automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.
      * </p>
      * 
      * @param clientRequestToken
-     *        (Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This
-     *        string is automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an
-     *        AWS SDK.
+     *        A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is
+     *        automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.
      */
 
     public void setClientRequestToken(String clientRequestToken) {
@@ -107,13 +108,12 @@ public class CreateBackupRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * (Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string
-     * is automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.
+     * A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is
+     * automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.
      * </p>
      * 
-     * @return (Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This
-     *         string is automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an
-     *         AWS SDK.
+     * @return A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is
+     *         automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.
      */
 
     public String getClientRequestToken() {
@@ -122,14 +122,13 @@ public class CreateBackupRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * (Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string
-     * is automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.
+     * A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is
+     * automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.
      * </p>
      * 
      * @param clientRequestToken
-     *        (Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This
-     *        string is automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an
-     *        AWS SDK.
+     *        A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is
+     *        automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,11 +140,15 @@ public class CreateBackupRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The tags to apply to the backup at backup creation. The key value of the <code>Name</code> tag appears in the
-     * console as the backup name.
+     * console as the backup name. If you have set <code>CopyTagsToBackups</code> to true, and you specify one or more
+     * tags using the <code>CreateBackup</code> action, no existing tags on the file system are copied from the file
+     * system to the backup.
      * </p>
      * 
      * @return The tags to apply to the backup at backup creation. The key value of the <code>Name</code> tag appears in
-     *         the console as the backup name.
+     *         the console as the backup name. If you have set <code>CopyTagsToBackups</code> to true, and you specify
+     *         one or more tags using the <code>CreateBackup</code> action, no existing tags on the file system are
+     *         copied from the file system to the backup.
      */
 
     public java.util.List<Tag> getTags() {
@@ -155,12 +158,16 @@ public class CreateBackupRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The tags to apply to the backup at backup creation. The key value of the <code>Name</code> tag appears in the
-     * console as the backup name.
+     * console as the backup name. If you have set <code>CopyTagsToBackups</code> to true, and you specify one or more
+     * tags using the <code>CreateBackup</code> action, no existing tags on the file system are copied from the file
+     * system to the backup.
      * </p>
      * 
      * @param tags
      *        The tags to apply to the backup at backup creation. The key value of the <code>Name</code> tag appears in
-     *        the console as the backup name.
+     *        the console as the backup name. If you have set <code>CopyTagsToBackups</code> to true, and you specify
+     *        one or more tags using the <code>CreateBackup</code> action, no existing tags on the file system are
+     *        copied from the file system to the backup.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -175,7 +182,9 @@ public class CreateBackupRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The tags to apply to the backup at backup creation. The key value of the <code>Name</code> tag appears in the
-     * console as the backup name.
+     * console as the backup name. If you have set <code>CopyTagsToBackups</code> to true, and you specify one or more
+     * tags using the <code>CreateBackup</code> action, no existing tags on the file system are copied from the file
+     * system to the backup.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -185,7 +194,9 @@ public class CreateBackupRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @param tags
      *        The tags to apply to the backup at backup creation. The key value of the <code>Name</code> tag appears in
-     *        the console as the backup name.
+     *        the console as the backup name. If you have set <code>CopyTagsToBackups</code> to true, and you specify
+     *        one or more tags using the <code>CreateBackup</code> action, no existing tags on the file system are
+     *        copied from the file system to the backup.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -202,12 +213,16 @@ public class CreateBackupRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The tags to apply to the backup at backup creation. The key value of the <code>Name</code> tag appears in the
-     * console as the backup name.
+     * console as the backup name. If you have set <code>CopyTagsToBackups</code> to true, and you specify one or more
+     * tags using the <code>CreateBackup</code> action, no existing tags on the file system are copied from the file
+     * system to the backup.
      * </p>
      * 
      * @param tags
      *        The tags to apply to the backup at backup creation. The key value of the <code>Name</code> tag appears in
-     *        the console as the backup name.
+     *        the console as the backup name. If you have set <code>CopyTagsToBackups</code> to true, and you specify
+     *        one or more tags using the <code>CreateBackup</code> action, no existing tags on the file system are
+     *        copied from the file system to the backup.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Exception thrown when the service fails to perform an operation due to an internal issue.
+ * The service failed to perform an operation due to an internal issue.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

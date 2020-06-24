@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Result structure for the update webhook request.
+ * The result structure for the update webhook request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/UpdateWebhook" target="_top">AWS API
@@ -28,18 +28,18 @@ public class UpdateWebhookResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Webhook structure.
+     * Describes a webhook that connects repository events to an Amplify app.
      * </p>
      */
     private Webhook webhook;
 
     /**
      * <p>
-     * Webhook structure.
+     * Describes a webhook that connects repository events to an Amplify app.
      * </p>
      * 
      * @param webhook
-     *        Webhook structure.
+     *        Describes a webhook that connects repository events to an Amplify app.
      */
 
     public void setWebhook(Webhook webhook) {
@@ -48,10 +48,10 @@ public class UpdateWebhookResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Webhook structure.
+     * Describes a webhook that connects repository events to an Amplify app.
      * </p>
      * 
-     * @return Webhook structure.
+     * @return Describes a webhook that connects repository events to an Amplify app.
      */
 
     public Webhook getWebhook() {
@@ -60,11 +60,11 @@ public class UpdateWebhookResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Webhook structure.
+     * Describes a webhook that connects repository events to an Amplify app.
      * </p>
      * 
      * @param webhook
-     *        Webhook structure.
+     *        Describes a webhook that connects repository events to an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

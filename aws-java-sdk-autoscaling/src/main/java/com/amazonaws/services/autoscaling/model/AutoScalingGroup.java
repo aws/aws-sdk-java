@@ -76,7 +76,7 @@ public class AutoScalingGroup implements Serializable, Cloneable {
     private Integer desiredCapacity;
     /**
      * <p>
-     * The amount of time, in seconds, after a scaling activity completes before another scaling activity can start.
+     * The duration of the default cooldown period, in seconds.
      * </p>
      */
     private Integer defaultCooldown;
@@ -513,12 +513,11 @@ public class AutoScalingGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The amount of time, in seconds, after a scaling activity completes before another scaling activity can start.
+     * The duration of the default cooldown period, in seconds.
      * </p>
      * 
      * @param defaultCooldown
-     *        The amount of time, in seconds, after a scaling activity completes before another scaling activity can
-     *        start.
+     *        The duration of the default cooldown period, in seconds.
      */
 
     public void setDefaultCooldown(Integer defaultCooldown) {
@@ -527,11 +526,10 @@ public class AutoScalingGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The amount of time, in seconds, after a scaling activity completes before another scaling activity can start.
+     * The duration of the default cooldown period, in seconds.
      * </p>
      * 
-     * @return The amount of time, in seconds, after a scaling activity completes before another scaling activity can
-     *         start.
+     * @return The duration of the default cooldown period, in seconds.
      */
 
     public Integer getDefaultCooldown() {
@@ -540,12 +538,11 @@ public class AutoScalingGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The amount of time, in seconds, after a scaling activity completes before another scaling activity can start.
+     * The duration of the default cooldown period, in seconds.
      * </p>
      * 
      * @param defaultCooldown
-     *        The amount of time, in seconds, after a scaling activity completes before another scaling activity can
-     *        start.
+     *        The duration of the default cooldown period, in seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

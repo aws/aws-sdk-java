@@ -33,6 +33,8 @@ public class SpotProvisioningSpecificationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TimeoutAction").build();
     private static final MarshallingInfo<Integer> BLOCKDURATIONMINUTES_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BlockDurationMinutes").build();
+    private static final MarshallingInfo<String> ALLOCATIONSTRATEGY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AllocationStrategy").build();
 
     private static final SpotProvisioningSpecificationMarshaller instance = new SpotProvisioningSpecificationMarshaller();
 
@@ -53,6 +55,7 @@ public class SpotProvisioningSpecificationMarshaller {
             protocolMarshaller.marshall(spotProvisioningSpecification.getTimeoutDurationMinutes(), TIMEOUTDURATIONMINUTES_BINDING);
             protocolMarshaller.marshall(spotProvisioningSpecification.getTimeoutAction(), TIMEOUTACTION_BINDING);
             protocolMarshaller.marshall(spotProvisioningSpecification.getBlockDurationMinutes(), BLOCKDURATIONMINUTES_BINDING);
+            protocolMarshaller.marshall(spotProvisioningSpecification.getAllocationStrategy(), ALLOCATIONSTRATEGY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

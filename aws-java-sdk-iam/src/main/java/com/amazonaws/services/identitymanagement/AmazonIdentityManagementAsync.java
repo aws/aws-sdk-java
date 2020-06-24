@@ -84,9 +84,11 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
 
     /**
      * <p>
-     * Adds the specified IAM role to the specified instance profile. An instance profile can contain only one role, and
-     * this limit cannot be increased. You can remove the existing role and then add a different role to an instance
-     * profile. You must then wait for the change to appear across all of AWS because of <a
+     * Adds the specified IAM role to the specified instance profile. An instance profile can contain only one role.
+     * (The number and size of IAM resources in an AWS account are limited. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM and STS Quotas</a> in the
+     * <i>IAM User Guide</i>.) You can remove the existing role and then add a different role to an instance profile.
+     * You must then wait for the change to appear across all of AWS because of <a
      * href="https://en.wikipedia.org/wiki/Eventual_consistency">eventual consistency</a>. To force the change, you must
      * <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateIamInstanceProfile.html">
      * disassociate the instance profile</a> and then <a
@@ -116,9 +118,11 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
 
     /**
      * <p>
-     * Adds the specified IAM role to the specified instance profile. An instance profile can contain only one role, and
-     * this limit cannot be increased. You can remove the existing role and then add a different role to an instance
-     * profile. You must then wait for the change to appear across all of AWS because of <a
+     * Adds the specified IAM role to the specified instance profile. An instance profile can contain only one role.
+     * (The number and size of IAM resources in an AWS account are limited. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM and STS Quotas</a> in the
+     * <i>IAM User Guide</i>.) You can remove the existing role and then add a different role to an instance profile.
+     * You must then wait for the change to appear across all of AWS because of <a
      * href="https://en.wikipedia.org/wiki/Eventual_consistency">eventual consistency</a>. To force the change, you must
      * <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateIamInstanceProfile.html">
      * disassociate the instance profile</a> and then <a
@@ -391,9 +395,9 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * to manage AWS account root user credentials. This is true even if the AWS account has no associated users.
      * </p>
      * <p>
-     * For information about limits on the number of keys you can create, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations on IAM
-     * Entities</a> in the <i>IAM User Guide</i>.
+     * The number and size of IAM resources in an AWS account are limited. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM and STS Quotas</a> in the
+     * <i>IAM User Guide</i>.
      * </p>
      * <important>
      * <p>
@@ -422,9 +426,9 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * to manage AWS account root user credentials. This is true even if the AWS account has no associated users.
      * </p>
      * <p>
-     * For information about limits on the number of keys you can create, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations on IAM
-     * Entities</a> in the <i>IAM User Guide</i>.
+     * The number and size of IAM resources in an AWS account are limited. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM and STS Quotas</a> in the
+     * <i>IAM User Guide</i>.
      * </p>
      * <important>
      * <p>
@@ -502,9 +506,9 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * Creates a new group.
      * </p>
      * <p>
-     * For information about the number of groups you can create, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations on IAM
-     * Entities</a> in the <i>IAM User Guide</i>.
+     * The number and size of IAM resources in an AWS account are limited. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM and STS Quotas</a> in the
+     * <i>IAM User Guide</i>.
      * </p>
      * 
      * @param createGroupRequest
@@ -520,9 +524,9 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * Creates a new group.
      * </p>
      * <p>
-     * For information about the number of groups you can create, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations on IAM
-     * Entities</a> in the <i>IAM User Guide</i>.
+     * The number and size of IAM resources in an AWS account are limited. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM and STS Quotas</a> in the
+     * <i>IAM User Guide</i>.
      * </p>
      * 
      * @param createGroupRequest
@@ -544,9 +548,9 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About Instance Profiles</a>.
      * </p>
      * <p>
-     * For information about the number of instance profiles you can create, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations on IAM
-     * Entities</a> in the <i>IAM User Guide</i>.
+     * The number and size of IAM resources in an AWS account are limited. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM and STS Quotas</a> in the
+     * <i>IAM User Guide</i>.
      * </p>
      * 
      * @param createInstanceProfileRequest
@@ -563,9 +567,9 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About Instance Profiles</a>.
      * </p>
      * <p>
-     * For information about the number of instance profiles you can create, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations on IAM
-     * Entities</a> in the <i>IAM User Guide</i>.
+     * The number and size of IAM resources in an AWS account are limited. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM and STS Quotas</a> in the
+     * <i>IAM User Guide</i>.
      * </p>
      * 
      * @param createInstanceProfileRequest
@@ -830,10 +834,10 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
     /**
      * <p>
      * Creates a new role for your AWS account. For more information about roles, go to <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">IAM Roles</a>. For information
-     * about limitations on role names and the number of roles you can create, go to <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations on IAM
-     * Entities</a> in the <i>IAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">IAM Roles</a>. The number and size
+     * of IAM resources in an AWS account are limited. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM and STS Quotas</a> in the
+     * <i>IAM User Guide</i>.
      * </p>
      * 
      * @param createRoleRequest
@@ -847,10 +851,10 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
     /**
      * <p>
      * Creates a new role for your AWS account. For more information about roles, go to <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">IAM Roles</a>. For information
-     * about limitations on role names and the number of roles you can create, go to <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations on IAM
-     * Entities</a> in the <i>IAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">IAM Roles</a>. The number and size
+     * of IAM resources in an AWS account are limited. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM and STS Quotas</a> in the
+     * <i>IAM User Guide</i>.
      * </p>
      * 
      * @param createRoleRequest
@@ -1066,9 +1070,9 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * Creates a new IAM user for your AWS account.
      * </p>
      * <p>
-     * For information about limitations on the number of IAM users you can create, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations on IAM
-     * Entities</a> in the <i>IAM User Guide</i>.
+     * The number and size of IAM resources in an AWS account are limited. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM and STS Quotas</a> in the
+     * <i>IAM User Guide</i>.
      * </p>
      * 
      * @param createUserRequest
@@ -1084,9 +1088,9 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * Creates a new IAM user for your AWS account.
      * </p>
      * <p>
-     * For information about limitations on the number of IAM users you can create, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations on IAM
-     * Entities</a> in the <i>IAM User Guide</i>.
+     * The number and size of IAM resources in an AWS account are limited. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM and STS Quotas</a> in the
+     * <i>IAM User Guide</i>.
      * </p>
      * 
      * @param createUserRequest
@@ -1110,9 +1114,9 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * MFA Device</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
-     * For information about limits on the number of MFA devices you can create, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations on Entities</a> in
-     * the <i>IAM User Guide</i>.
+     * The number and size of IAM resources in an AWS account are limited. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM and STS Quotas</a> in the
+     * <i>IAM User Guide</i>.
      * </p>
      * <important>
      * <p>
@@ -1139,9 +1143,9 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * MFA Device</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
-     * For information about limits on the number of MFA devices you can create, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations on Entities</a> in
-     * the <i>IAM User Guide</i>.
+     * The number and size of IAM resources in an AWS account are limited. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM and STS Quotas</a> in the
+     * <i>IAM User Guide</i>.
      * </p>
      * <important>
      * <p>
@@ -3245,9 +3249,9 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * Retrieves information about IAM entity usage and IAM quotas in the AWS account.
      * </p>
      * <p>
-     * For information about limitations on IAM entities, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations on IAM
-     * Entities</a> in the <i>IAM User Guide</i>.
+     * The number and size of IAM resources in an AWS account are limited. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM and STS Quotas</a> in the
+     * <i>IAM User Guide</i>.
      * </p>
      * 
      * @param getAccountSummaryRequest
@@ -3263,9 +3267,9 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * Retrieves information about IAM entity usage and IAM quotas in the AWS account.
      * </p>
      * <p>
-     * For information about limitations on IAM entities, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations on IAM
-     * Entities</a> in the <i>IAM User Guide</i>.
+     * The number and size of IAM resources in an AWS account are limited. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM and STS Quotas</a> in the
+     * <i>IAM User Guide</i>.
      * </p>
      * 
      * @param getAccountSummaryRequest

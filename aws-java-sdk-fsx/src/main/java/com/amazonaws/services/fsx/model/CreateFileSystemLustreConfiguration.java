@@ -76,10 +76,15 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
     private Integer importedFileChunkSize;
     /**
      * <p>
-     * (Optional) Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types when you need temporary
-     * storage and shorter-term processing of data. The <code>SCRATCH_2</code> deployment type provides in-transit
-     * encryption of data and higher burst throughput capacity than <code>SCRATCH_1</code>.
+     * Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types when you need temporary storage and
+     * shorter-term processing of data. The <code>SCRATCH_2</code> deployment type provides in-transit encryption of
+     * data and higher burst throughput capacity than <code>SCRATCH_1</code>.
      * </p>
+     * <note>
+     * <p>
+     * This option can only be set for for PERSISTENT_1 deployments types.
+     * </p>
+     * </note>
      * <p>
      * Choose <code>PERSISTENT_1</code> deployment type for longer-term storage and workloads and encryption of data in
      * transit. To learn more about deployment types, see <a
@@ -113,6 +118,20 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
      * </p>
      */
     private Integer perUnitStorageThroughput;
+
+    private String dailyAutomaticBackupStartTime;
+
+    private Integer automaticBackupRetentionDays;
+    /**
+     * <p>
+     * A boolean flag indicating whether tags for the file system should be copied to backups. This value defaults to
+     * false. If it's set to true, all tags for the file system are copied to all automatic and user-initiated backups
+     * where the user doesn't specify tags. If this value is true, and you specify one or more tags, only the specified
+     * tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are
+     * copied from the file system, regardless of this value.
+     * </p>
+     */
+    private Boolean copyTagsToBackups;
 
     /**
      * <p>
@@ -411,10 +430,15 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
 
     /**
      * <p>
-     * (Optional) Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types when you need temporary
-     * storage and shorter-term processing of data. The <code>SCRATCH_2</code> deployment type provides in-transit
-     * encryption of data and higher burst throughput capacity than <code>SCRATCH_1</code>.
+     * Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types when you need temporary storage and
+     * shorter-term processing of data. The <code>SCRATCH_2</code> deployment type provides in-transit encryption of
+     * data and higher burst throughput capacity than <code>SCRATCH_1</code>.
      * </p>
+     * <note>
+     * <p>
+     * This option can only be set for for PERSISTENT_1 deployments types.
+     * </p>
+     * </note>
      * <p>
      * Choose <code>PERSISTENT_1</code> deployment type for longer-term storage and workloads and encryption of data in
      * transit. To learn more about deployment types, see <a
@@ -435,9 +459,13 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
      * </p>
      * 
      * @param deploymentType
-     *        (Optional) Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types when you need
-     *        temporary storage and shorter-term processing of data. The <code>SCRATCH_2</code> deployment type provides
-     *        in-transit encryption of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p>
+     *        Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types when you need temporary storage
+     *        and shorter-term processing of data. The <code>SCRATCH_2</code> deployment type provides in-transit
+     *        encryption of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p> <note>
+     *        <p>
+     *        This option can only be set for for PERSISTENT_1 deployments types.
+     *        </p>
+     *        </note>
      *        <p>
      *        Choose <code>PERSISTENT_1</code> deployment type for longer-term storage and workloads and encryption of
      *        data in transit. To learn more about deployment types, see <a
@@ -464,10 +492,15 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
 
     /**
      * <p>
-     * (Optional) Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types when you need temporary
-     * storage and shorter-term processing of data. The <code>SCRATCH_2</code> deployment type provides in-transit
-     * encryption of data and higher burst throughput capacity than <code>SCRATCH_1</code>.
+     * Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types when you need temporary storage and
+     * shorter-term processing of data. The <code>SCRATCH_2</code> deployment type provides in-transit encryption of
+     * data and higher burst throughput capacity than <code>SCRATCH_1</code>.
      * </p>
+     * <note>
+     * <p>
+     * This option can only be set for for PERSISTENT_1 deployments types.
+     * </p>
+     * </note>
      * <p>
      * Choose <code>PERSISTENT_1</code> deployment type for longer-term storage and workloads and encryption of data in
      * transit. To learn more about deployment types, see <a
@@ -487,10 +520,13 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
      * Transit</a>.
      * </p>
      * 
-     * @return (Optional) Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types when you need
-     *         temporary storage and shorter-term processing of data. The <code>SCRATCH_2</code> deployment type
-     *         provides in-transit encryption of data and higher burst throughput capacity than <code>SCRATCH_1</code>
-     *         .</p>
+     * @return Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types when you need temporary storage
+     *         and shorter-term processing of data. The <code>SCRATCH_2</code> deployment type provides in-transit
+     *         encryption of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p> <note>
+     *         <p>
+     *         This option can only be set for for PERSISTENT_1 deployments types.
+     *         </p>
+     *         </note>
      *         <p>
      *         Choose <code>PERSISTENT_1</code> deployment type for longer-term storage and workloads and encryption of
      *         data in transit. To learn more about deployment types, see <a
@@ -517,10 +553,15 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
 
     /**
      * <p>
-     * (Optional) Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types when you need temporary
-     * storage and shorter-term processing of data. The <code>SCRATCH_2</code> deployment type provides in-transit
-     * encryption of data and higher burst throughput capacity than <code>SCRATCH_1</code>.
+     * Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types when you need temporary storage and
+     * shorter-term processing of data. The <code>SCRATCH_2</code> deployment type provides in-transit encryption of
+     * data and higher burst throughput capacity than <code>SCRATCH_1</code>.
      * </p>
+     * <note>
+     * <p>
+     * This option can only be set for for PERSISTENT_1 deployments types.
+     * </p>
+     * </note>
      * <p>
      * Choose <code>PERSISTENT_1</code> deployment type for longer-term storage and workloads and encryption of data in
      * transit. To learn more about deployment types, see <a
@@ -541,9 +582,13 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
      * </p>
      * 
      * @param deploymentType
-     *        (Optional) Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types when you need
-     *        temporary storage and shorter-term processing of data. The <code>SCRATCH_2</code> deployment type provides
-     *        in-transit encryption of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p>
+     *        Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types when you need temporary storage
+     *        and shorter-term processing of data. The <code>SCRATCH_2</code> deployment type provides in-transit
+     *        encryption of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p> <note>
+     *        <p>
+     *        This option can only be set for for PERSISTENT_1 deployments types.
+     *        </p>
+     *        </note>
      *        <p>
      *        Choose <code>PERSISTENT_1</code> deployment type for longer-term storage and workloads and encryption of
      *        data in transit. To learn more about deployment types, see <a
@@ -572,10 +617,15 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
 
     /**
      * <p>
-     * (Optional) Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types when you need temporary
-     * storage and shorter-term processing of data. The <code>SCRATCH_2</code> deployment type provides in-transit
-     * encryption of data and higher burst throughput capacity than <code>SCRATCH_1</code>.
+     * Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types when you need temporary storage and
+     * shorter-term processing of data. The <code>SCRATCH_2</code> deployment type provides in-transit encryption of
+     * data and higher burst throughput capacity than <code>SCRATCH_1</code>.
      * </p>
+     * <note>
+     * <p>
+     * This option can only be set for for PERSISTENT_1 deployments types.
+     * </p>
+     * </note>
      * <p>
      * Choose <code>PERSISTENT_1</code> deployment type for longer-term storage and workloads and encryption of data in
      * transit. To learn more about deployment types, see <a
@@ -596,9 +646,13 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
      * </p>
      * 
      * @param deploymentType
-     *        (Optional) Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types when you need
-     *        temporary storage and shorter-term processing of data. The <code>SCRATCH_2</code> deployment type provides
-     *        in-transit encryption of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p>
+     *        Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types when you need temporary storage
+     *        and shorter-term processing of data. The <code>SCRATCH_2</code> deployment type provides in-transit
+     *        encryption of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p> <note>
+     *        <p>
+     *        This option can only be set for for PERSISTENT_1 deployments types.
+     *        </p>
+     *        </note>
      *        <p>
      *        Choose <code>PERSISTENT_1</code> deployment type for longer-term storage and workloads and encryption of
      *        data in transit. To learn more about deployment types, see <a
@@ -705,6 +759,142 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
     }
 
     /**
+     * @param dailyAutomaticBackupStartTime
+     */
+
+    public void setDailyAutomaticBackupStartTime(String dailyAutomaticBackupStartTime) {
+        this.dailyAutomaticBackupStartTime = dailyAutomaticBackupStartTime;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getDailyAutomaticBackupStartTime() {
+        return this.dailyAutomaticBackupStartTime;
+    }
+
+    /**
+     * @param dailyAutomaticBackupStartTime
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFileSystemLustreConfiguration withDailyAutomaticBackupStartTime(String dailyAutomaticBackupStartTime) {
+        setDailyAutomaticBackupStartTime(dailyAutomaticBackupStartTime);
+        return this;
+    }
+
+    /**
+     * @param automaticBackupRetentionDays
+     */
+
+    public void setAutomaticBackupRetentionDays(Integer automaticBackupRetentionDays) {
+        this.automaticBackupRetentionDays = automaticBackupRetentionDays;
+    }
+
+    /**
+     * @return
+     */
+
+    public Integer getAutomaticBackupRetentionDays() {
+        return this.automaticBackupRetentionDays;
+    }
+
+    /**
+     * @param automaticBackupRetentionDays
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFileSystemLustreConfiguration withAutomaticBackupRetentionDays(Integer automaticBackupRetentionDays) {
+        setAutomaticBackupRetentionDays(automaticBackupRetentionDays);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A boolean flag indicating whether tags for the file system should be copied to backups. This value defaults to
+     * false. If it's set to true, all tags for the file system are copied to all automatic and user-initiated backups
+     * where the user doesn't specify tags. If this value is true, and you specify one or more tags, only the specified
+     * tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are
+     * copied from the file system, regardless of this value.
+     * </p>
+     * 
+     * @param copyTagsToBackups
+     *        A boolean flag indicating whether tags for the file system should be copied to backups. This value
+     *        defaults to false. If it's set to true, all tags for the file system are copied to all automatic and
+     *        user-initiated backups where the user doesn't specify tags. If this value is true, and you specify one or
+     *        more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a
+     *        user-initiated backup, no tags are copied from the file system, regardless of this value.
+     */
+
+    public void setCopyTagsToBackups(Boolean copyTagsToBackups) {
+        this.copyTagsToBackups = copyTagsToBackups;
+    }
+
+    /**
+     * <p>
+     * A boolean flag indicating whether tags for the file system should be copied to backups. This value defaults to
+     * false. If it's set to true, all tags for the file system are copied to all automatic and user-initiated backups
+     * where the user doesn't specify tags. If this value is true, and you specify one or more tags, only the specified
+     * tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are
+     * copied from the file system, regardless of this value.
+     * </p>
+     * 
+     * @return A boolean flag indicating whether tags for the file system should be copied to backups. This value
+     *         defaults to false. If it's set to true, all tags for the file system are copied to all automatic and
+     *         user-initiated backups where the user doesn't specify tags. If this value is true, and you specify one or
+     *         more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a
+     *         user-initiated backup, no tags are copied from the file system, regardless of this value.
+     */
+
+    public Boolean getCopyTagsToBackups() {
+        return this.copyTagsToBackups;
+    }
+
+    /**
+     * <p>
+     * A boolean flag indicating whether tags for the file system should be copied to backups. This value defaults to
+     * false. If it's set to true, all tags for the file system are copied to all automatic and user-initiated backups
+     * where the user doesn't specify tags. If this value is true, and you specify one or more tags, only the specified
+     * tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are
+     * copied from the file system, regardless of this value.
+     * </p>
+     * 
+     * @param copyTagsToBackups
+     *        A boolean flag indicating whether tags for the file system should be copied to backups. This value
+     *        defaults to false. If it's set to true, all tags for the file system are copied to all automatic and
+     *        user-initiated backups where the user doesn't specify tags. If this value is true, and you specify one or
+     *        more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a
+     *        user-initiated backup, no tags are copied from the file system, regardless of this value.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFileSystemLustreConfiguration withCopyTagsToBackups(Boolean copyTagsToBackups) {
+        setCopyTagsToBackups(copyTagsToBackups);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A boolean flag indicating whether tags for the file system should be copied to backups. This value defaults to
+     * false. If it's set to true, all tags for the file system are copied to all automatic and user-initiated backups
+     * where the user doesn't specify tags. If this value is true, and you specify one or more tags, only the specified
+     * tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are
+     * copied from the file system, regardless of this value.
+     * </p>
+     * 
+     * @return A boolean flag indicating whether tags for the file system should be copied to backups. This value
+     *         defaults to false. If it's set to true, all tags for the file system are copied to all automatic and
+     *         user-initiated backups where the user doesn't specify tags. If this value is true, and you specify one or
+     *         more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a
+     *         user-initiated backup, no tags are copied from the file system, regardless of this value.
+     */
+
+    public Boolean isCopyTagsToBackups() {
+        return this.copyTagsToBackups;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -727,7 +917,13 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
         if (getDeploymentType() != null)
             sb.append("DeploymentType: ").append(getDeploymentType()).append(",");
         if (getPerUnitStorageThroughput() != null)
-            sb.append("PerUnitStorageThroughput: ").append(getPerUnitStorageThroughput());
+            sb.append("PerUnitStorageThroughput: ").append(getPerUnitStorageThroughput()).append(",");
+        if (getDailyAutomaticBackupStartTime() != null)
+            sb.append("DailyAutomaticBackupStartTime: ").append(getDailyAutomaticBackupStartTime()).append(",");
+        if (getAutomaticBackupRetentionDays() != null)
+            sb.append("AutomaticBackupRetentionDays: ").append(getAutomaticBackupRetentionDays()).append(",");
+        if (getCopyTagsToBackups() != null)
+            sb.append("CopyTagsToBackups: ").append(getCopyTagsToBackups());
         sb.append("}");
         return sb.toString();
     }
@@ -766,6 +962,19 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
             return false;
         if (other.getPerUnitStorageThroughput() != null && other.getPerUnitStorageThroughput().equals(this.getPerUnitStorageThroughput()) == false)
             return false;
+        if (other.getDailyAutomaticBackupStartTime() == null ^ this.getDailyAutomaticBackupStartTime() == null)
+            return false;
+        if (other.getDailyAutomaticBackupStartTime() != null
+                && other.getDailyAutomaticBackupStartTime().equals(this.getDailyAutomaticBackupStartTime()) == false)
+            return false;
+        if (other.getAutomaticBackupRetentionDays() == null ^ this.getAutomaticBackupRetentionDays() == null)
+            return false;
+        if (other.getAutomaticBackupRetentionDays() != null && other.getAutomaticBackupRetentionDays().equals(this.getAutomaticBackupRetentionDays()) == false)
+            return false;
+        if (other.getCopyTagsToBackups() == null ^ this.getCopyTagsToBackups() == null)
+            return false;
+        if (other.getCopyTagsToBackups() != null && other.getCopyTagsToBackups().equals(this.getCopyTagsToBackups()) == false)
+            return false;
         return true;
     }
 
@@ -780,6 +989,9 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
         hashCode = prime * hashCode + ((getImportedFileChunkSize() == null) ? 0 : getImportedFileChunkSize().hashCode());
         hashCode = prime * hashCode + ((getDeploymentType() == null) ? 0 : getDeploymentType().hashCode());
         hashCode = prime * hashCode + ((getPerUnitStorageThroughput() == null) ? 0 : getPerUnitStorageThroughput().hashCode());
+        hashCode = prime * hashCode + ((getDailyAutomaticBackupStartTime() == null) ? 0 : getDailyAutomaticBackupStartTime().hashCode());
+        hashCode = prime * hashCode + ((getAutomaticBackupRetentionDays() == null) ? 0 : getAutomaticBackupRetentionDays().hashCode());
+        hashCode = prime * hashCode + ((getCopyTagsToBackups() == null) ? 0 : getCopyTagsToBackups().hashCode());
         return hashCode;
     }
 

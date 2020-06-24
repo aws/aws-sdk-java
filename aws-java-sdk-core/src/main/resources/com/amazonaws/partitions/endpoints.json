@@ -6401,6 +6401,24 @@
           }
         }
       },
+      "organizations" : {
+        "endpoints" : {
+          "aws-cn-global" : {
+            "credentialScope" : {
+              "region" : "cn-northwest-1"
+            },
+            "hostname" : "organizations.cn-northwest-1.amazonaws.com.cn"
+          },
+          "fips-aws-cn-global" : {
+            "credentialScope" : {
+              "region" : "cn-northwest-1"
+            },
+            "hostname" : "organizations.cn-northwest-1.amazonaws.com.cn"
+          }
+        },
+        "isRegionalized" : false,
+        "partitionEndpoint" : "aws-cn-global"
+      },
       "polly" : {
         "endpoints" : {
           "cn-northwest-1" : { }

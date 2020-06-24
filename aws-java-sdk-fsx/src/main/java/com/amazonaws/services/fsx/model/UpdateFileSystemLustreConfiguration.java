@@ -36,6 +36,10 @@ public class UpdateFileSystemLustreConfiguration implements Serializable, Clonea
      */
     private String weeklyMaintenanceStartTime;
 
+    private String dailyAutomaticBackupStartTime;
+
+    private Integer automaticBackupRetentionDays;
+
     /**
      * <p>
      * The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. d is the weekday
@@ -83,6 +87,58 @@ public class UpdateFileSystemLustreConfiguration implements Serializable, Clonea
     }
 
     /**
+     * @param dailyAutomaticBackupStartTime
+     */
+
+    public void setDailyAutomaticBackupStartTime(String dailyAutomaticBackupStartTime) {
+        this.dailyAutomaticBackupStartTime = dailyAutomaticBackupStartTime;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getDailyAutomaticBackupStartTime() {
+        return this.dailyAutomaticBackupStartTime;
+    }
+
+    /**
+     * @param dailyAutomaticBackupStartTime
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFileSystemLustreConfiguration withDailyAutomaticBackupStartTime(String dailyAutomaticBackupStartTime) {
+        setDailyAutomaticBackupStartTime(dailyAutomaticBackupStartTime);
+        return this;
+    }
+
+    /**
+     * @param automaticBackupRetentionDays
+     */
+
+    public void setAutomaticBackupRetentionDays(Integer automaticBackupRetentionDays) {
+        this.automaticBackupRetentionDays = automaticBackupRetentionDays;
+    }
+
+    /**
+     * @return
+     */
+
+    public Integer getAutomaticBackupRetentionDays() {
+        return this.automaticBackupRetentionDays;
+    }
+
+    /**
+     * @param automaticBackupRetentionDays
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFileSystemLustreConfiguration withAutomaticBackupRetentionDays(Integer automaticBackupRetentionDays) {
+        setAutomaticBackupRetentionDays(automaticBackupRetentionDays);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -95,7 +151,11 @@ public class UpdateFileSystemLustreConfiguration implements Serializable, Clonea
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWeeklyMaintenanceStartTime() != null)
-            sb.append("WeeklyMaintenanceStartTime: ").append(getWeeklyMaintenanceStartTime());
+            sb.append("WeeklyMaintenanceStartTime: ").append(getWeeklyMaintenanceStartTime()).append(",");
+        if (getDailyAutomaticBackupStartTime() != null)
+            sb.append("DailyAutomaticBackupStartTime: ").append(getDailyAutomaticBackupStartTime()).append(",");
+        if (getAutomaticBackupRetentionDays() != null)
+            sb.append("AutomaticBackupRetentionDays: ").append(getAutomaticBackupRetentionDays());
         sb.append("}");
         return sb.toString();
     }
@@ -114,6 +174,15 @@ public class UpdateFileSystemLustreConfiguration implements Serializable, Clonea
             return false;
         if (other.getWeeklyMaintenanceStartTime() != null && other.getWeeklyMaintenanceStartTime().equals(this.getWeeklyMaintenanceStartTime()) == false)
             return false;
+        if (other.getDailyAutomaticBackupStartTime() == null ^ this.getDailyAutomaticBackupStartTime() == null)
+            return false;
+        if (other.getDailyAutomaticBackupStartTime() != null
+                && other.getDailyAutomaticBackupStartTime().equals(this.getDailyAutomaticBackupStartTime()) == false)
+            return false;
+        if (other.getAutomaticBackupRetentionDays() == null ^ this.getAutomaticBackupRetentionDays() == null)
+            return false;
+        if (other.getAutomaticBackupRetentionDays() != null && other.getAutomaticBackupRetentionDays().equals(this.getAutomaticBackupRetentionDays()) == false)
+            return false;
         return true;
     }
 
@@ -123,6 +192,8 @@ public class UpdateFileSystemLustreConfiguration implements Serializable, Clonea
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getWeeklyMaintenanceStartTime() == null) ? 0 : getWeeklyMaintenanceStartTime().hashCode());
+        hashCode = prime * hashCode + ((getDailyAutomaticBackupStartTime() == null) ? 0 : getDailyAutomaticBackupStartTime().hashCode());
+        hashCode = prime * hashCode + ((getAutomaticBackupRetentionDays() == null) ? 0 : getAutomaticBackupRetentionDays().hashCode());
         return hashCode;
     }
 

@@ -30,6 +30,12 @@ public class BackupJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The account ID that owns the backup job.
+     * </p>
+     */
+    private String accountId;
+    /**
+     * <p>
      * Uniquely identifies a request to AWS Backup to back up a resource.
      * </p>
      */
@@ -148,6 +154,46 @@ public class BackupJob implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Long bytesTransferred;
+
+    /**
+     * <p>
+     * The account ID that owns the backup job.
+     * </p>
+     * 
+     * @param accountId
+     *        The account ID that owns the backup job.
+     */
+
+    public void setAccountId(String accountId) {
+        this.accountId = accountId;
+    }
+
+    /**
+     * <p>
+     * The account ID that owns the backup job.
+     * </p>
+     * 
+     * @return The account ID that owns the backup job.
+     */
+
+    public String getAccountId() {
+        return this.accountId;
+    }
+
+    /**
+     * <p>
+     * The account ID that owns the backup job.
+     * </p>
+     * 
+     * @param accountId
+     *        The account ID that owns the backup job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BackupJob withAccountId(String accountId) {
+        setAccountId(accountId);
+        return this;
+    }
 
     /**
      * <p>
@@ -968,6 +1014,8 @@ public class BackupJob implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAccountId() != null)
+            sb.append("AccountId: ").append(getAccountId()).append(",");
         if (getBackupJobId() != null)
             sb.append("BackupJobId: ").append(getBackupJobId()).append(",");
         if (getBackupVaultName() != null)
@@ -1016,6 +1064,10 @@ public class BackupJob implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof BackupJob == false)
             return false;
         BackupJob other = (BackupJob) obj;
+        if (other.getAccountId() == null ^ this.getAccountId() == null)
+            return false;
+        if (other.getAccountId() != null && other.getAccountId().equals(this.getAccountId()) == false)
+            return false;
         if (other.getBackupJobId() == null ^ this.getBackupJobId() == null)
             return false;
         if (other.getBackupJobId() != null && other.getBackupJobId().equals(this.getBackupJobId()) == false)
@@ -1092,6 +1144,7 @@ public class BackupJob implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
         hashCode = prime * hashCode + ((getBackupJobId() == null) ? 0 : getBackupJobId().hashCode());
         hashCode = prime * hashCode + ((getBackupVaultName() == null) ? 0 : getBackupVaultName().hashCode());
         hashCode = prime * hashCode + ((getBackupVaultArn() == null) ? 0 : getBackupVaultArn().hashCode());

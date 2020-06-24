@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Structure for Domain Association, which associates a custom domain with an Amplify App.
+ * Describes a domain association that associates a custom domain with an Amplify app.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/DomainAssociation" target="_top">AWS API
@@ -30,54 +30,67 @@ public class DomainAssociation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * ARN for the Domain Association.
+     * The Amazon Resource Name (ARN) for the domain association.
      * </p>
      */
     private String domainAssociationArn;
     /**
      * <p>
-     * Name of the domain.
+     * The name of the domain.
      * </p>
      */
     private String domainName;
     /**
      * <p>
-     * Enables automated creation of Subdomains for branches. (Currently not supported)
+     * Enables the automated creation of subdomains for branches.
      * </p>
      */
     private Boolean enableAutoSubDomain;
     /**
      * <p>
-     * Status fo the Domain Association.
+     * Sets branch patterns for automatic subdomain creation.
+     * </p>
+     */
+    private java.util.List<String> autoSubDomainCreationPatterns;
+    /**
+     * <p>
+     * The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for
+     * automatically creating subdomains.
+     * </p>
+     */
+    private String autoSubDomainIAMRole;
+    /**
+     * <p>
+     * The current status of the domain association.
      * </p>
      */
     private String domainStatus;
     /**
      * <p>
-     * Reason for the current status of the Domain Association.
+     * The reason for the current status of the domain association.
      * </p>
      */
     private String statusReason;
     /**
      * <p>
-     * DNS Record for certificate verification.
+     * The DNS record for certificate verification.
      * </p>
      */
     private String certificateVerificationDNSRecord;
     /**
      * <p>
-     * Subdomains for the Domain Association.
+     * The subdomains for the domain association.
      * </p>
      */
     private java.util.List<SubDomain> subDomains;
 
     /**
      * <p>
-     * ARN for the Domain Association.
+     * The Amazon Resource Name (ARN) for the domain association.
      * </p>
      * 
      * @param domainAssociationArn
-     *        ARN for the Domain Association.
+     *        The Amazon Resource Name (ARN) for the domain association.
      */
 
     public void setDomainAssociationArn(String domainAssociationArn) {
@@ -86,10 +99,10 @@ public class DomainAssociation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * ARN for the Domain Association.
+     * The Amazon Resource Name (ARN) for the domain association.
      * </p>
      * 
-     * @return ARN for the Domain Association.
+     * @return The Amazon Resource Name (ARN) for the domain association.
      */
 
     public String getDomainAssociationArn() {
@@ -98,11 +111,11 @@ public class DomainAssociation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * ARN for the Domain Association.
+     * The Amazon Resource Name (ARN) for the domain association.
      * </p>
      * 
      * @param domainAssociationArn
-     *        ARN for the Domain Association.
+     *        The Amazon Resource Name (ARN) for the domain association.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -113,11 +126,11 @@ public class DomainAssociation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Name of the domain.
+     * The name of the domain.
      * </p>
      * 
      * @param domainName
-     *        Name of the domain.
+     *        The name of the domain.
      */
 
     public void setDomainName(String domainName) {
@@ -126,10 +139,10 @@ public class DomainAssociation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Name of the domain.
+     * The name of the domain.
      * </p>
      * 
-     * @return Name of the domain.
+     * @return The name of the domain.
      */
 
     public String getDomainName() {
@@ -138,11 +151,11 @@ public class DomainAssociation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Name of the domain.
+     * The name of the domain.
      * </p>
      * 
      * @param domainName
-     *        Name of the domain.
+     *        The name of the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -153,11 +166,11 @@ public class DomainAssociation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Enables automated creation of Subdomains for branches. (Currently not supported)
+     * Enables the automated creation of subdomains for branches.
      * </p>
      * 
      * @param enableAutoSubDomain
-     *        Enables automated creation of Subdomains for branches. (Currently not supported)
+     *        Enables the automated creation of subdomains for branches.
      */
 
     public void setEnableAutoSubDomain(Boolean enableAutoSubDomain) {
@@ -166,10 +179,10 @@ public class DomainAssociation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Enables automated creation of Subdomains for branches. (Currently not supported)
+     * Enables the automated creation of subdomains for branches.
      * </p>
      * 
-     * @return Enables automated creation of Subdomains for branches. (Currently not supported)
+     * @return Enables the automated creation of subdomains for branches.
      */
 
     public Boolean getEnableAutoSubDomain() {
@@ -178,11 +191,11 @@ public class DomainAssociation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Enables automated creation of Subdomains for branches. (Currently not supported)
+     * Enables the automated creation of subdomains for branches.
      * </p>
      * 
      * @param enableAutoSubDomain
-     *        Enables automated creation of Subdomains for branches. (Currently not supported)
+     *        Enables the automated creation of subdomains for branches.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -193,10 +206,10 @@ public class DomainAssociation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Enables automated creation of Subdomains for branches. (Currently not supported)
+     * Enables the automated creation of subdomains for branches.
      * </p>
      * 
-     * @return Enables automated creation of Subdomains for branches. (Currently not supported)
+     * @return Enables the automated creation of subdomains for branches.
      */
 
     public Boolean isEnableAutoSubDomain() {
@@ -205,11 +218,127 @@ public class DomainAssociation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Status fo the Domain Association.
+     * Sets branch patterns for automatic subdomain creation.
+     * </p>
+     * 
+     * @return Sets branch patterns for automatic subdomain creation.
+     */
+
+    public java.util.List<String> getAutoSubDomainCreationPatterns() {
+        return autoSubDomainCreationPatterns;
+    }
+
+    /**
+     * <p>
+     * Sets branch patterns for automatic subdomain creation.
+     * </p>
+     * 
+     * @param autoSubDomainCreationPatterns
+     *        Sets branch patterns for automatic subdomain creation.
+     */
+
+    public void setAutoSubDomainCreationPatterns(java.util.Collection<String> autoSubDomainCreationPatterns) {
+        if (autoSubDomainCreationPatterns == null) {
+            this.autoSubDomainCreationPatterns = null;
+            return;
+        }
+
+        this.autoSubDomainCreationPatterns = new java.util.ArrayList<String>(autoSubDomainCreationPatterns);
+    }
+
+    /**
+     * <p>
+     * Sets branch patterns for automatic subdomain creation.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAutoSubDomainCreationPatterns(java.util.Collection)} or
+     * {@link #withAutoSubDomainCreationPatterns(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param autoSubDomainCreationPatterns
+     *        Sets branch patterns for automatic subdomain creation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DomainAssociation withAutoSubDomainCreationPatterns(String... autoSubDomainCreationPatterns) {
+        if (this.autoSubDomainCreationPatterns == null) {
+            setAutoSubDomainCreationPatterns(new java.util.ArrayList<String>(autoSubDomainCreationPatterns.length));
+        }
+        for (String ele : autoSubDomainCreationPatterns) {
+            this.autoSubDomainCreationPatterns.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Sets branch patterns for automatic subdomain creation.
+     * </p>
+     * 
+     * @param autoSubDomainCreationPatterns
+     *        Sets branch patterns for automatic subdomain creation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DomainAssociation withAutoSubDomainCreationPatterns(java.util.Collection<String> autoSubDomainCreationPatterns) {
+        setAutoSubDomainCreationPatterns(autoSubDomainCreationPatterns);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for
+     * automatically creating subdomains.
+     * </p>
+     * 
+     * @param autoSubDomainIAMRole
+     *        The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for
+     *        automatically creating subdomains.
+     */
+
+    public void setAutoSubDomainIAMRole(String autoSubDomainIAMRole) {
+        this.autoSubDomainIAMRole = autoSubDomainIAMRole;
+    }
+
+    /**
+     * <p>
+     * The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for
+     * automatically creating subdomains.
+     * </p>
+     * 
+     * @return The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for
+     *         automatically creating subdomains.
+     */
+
+    public String getAutoSubDomainIAMRole() {
+        return this.autoSubDomainIAMRole;
+    }
+
+    /**
+     * <p>
+     * The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for
+     * automatically creating subdomains.
+     * </p>
+     * 
+     * @param autoSubDomainIAMRole
+     *        The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for
+     *        automatically creating subdomains.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DomainAssociation withAutoSubDomainIAMRole(String autoSubDomainIAMRole) {
+        setAutoSubDomainIAMRole(autoSubDomainIAMRole);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The current status of the domain association.
      * </p>
      * 
      * @param domainStatus
-     *        Status fo the Domain Association.
+     *        The current status of the domain association.
      * @see DomainStatus
      */
 
@@ -219,10 +348,10 @@ public class DomainAssociation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Status fo the Domain Association.
+     * The current status of the domain association.
      * </p>
      * 
-     * @return Status fo the Domain Association.
+     * @return The current status of the domain association.
      * @see DomainStatus
      */
 
@@ -232,11 +361,11 @@ public class DomainAssociation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Status fo the Domain Association.
+     * The current status of the domain association.
      * </p>
      * 
      * @param domainStatus
-     *        Status fo the Domain Association.
+     *        The current status of the domain association.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DomainStatus
      */
@@ -248,11 +377,11 @@ public class DomainAssociation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Status fo the Domain Association.
+     * The current status of the domain association.
      * </p>
      * 
      * @param domainStatus
-     *        Status fo the Domain Association.
+     *        The current status of the domain association.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DomainStatus
      */
@@ -264,11 +393,11 @@ public class DomainAssociation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Reason for the current status of the Domain Association.
+     * The reason for the current status of the domain association.
      * </p>
      * 
      * @param statusReason
-     *        Reason for the current status of the Domain Association.
+     *        The reason for the current status of the domain association.
      */
 
     public void setStatusReason(String statusReason) {
@@ -277,10 +406,10 @@ public class DomainAssociation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Reason for the current status of the Domain Association.
+     * The reason for the current status of the domain association.
      * </p>
      * 
-     * @return Reason for the current status of the Domain Association.
+     * @return The reason for the current status of the domain association.
      */
 
     public String getStatusReason() {
@@ -289,11 +418,11 @@ public class DomainAssociation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Reason for the current status of the Domain Association.
+     * The reason for the current status of the domain association.
      * </p>
      * 
      * @param statusReason
-     *        Reason for the current status of the Domain Association.
+     *        The reason for the current status of the domain association.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -304,11 +433,11 @@ public class DomainAssociation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * DNS Record for certificate verification.
+     * The DNS record for certificate verification.
      * </p>
      * 
      * @param certificateVerificationDNSRecord
-     *        DNS Record for certificate verification.
+     *        The DNS record for certificate verification.
      */
 
     public void setCertificateVerificationDNSRecord(String certificateVerificationDNSRecord) {
@@ -317,10 +446,10 @@ public class DomainAssociation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * DNS Record for certificate verification.
+     * The DNS record for certificate verification.
      * </p>
      * 
-     * @return DNS Record for certificate verification.
+     * @return The DNS record for certificate verification.
      */
 
     public String getCertificateVerificationDNSRecord() {
@@ -329,11 +458,11 @@ public class DomainAssociation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * DNS Record for certificate verification.
+     * The DNS record for certificate verification.
      * </p>
      * 
      * @param certificateVerificationDNSRecord
-     *        DNS Record for certificate verification.
+     *        The DNS record for certificate verification.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -344,10 +473,10 @@ public class DomainAssociation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Subdomains for the Domain Association.
+     * The subdomains for the domain association.
      * </p>
      * 
-     * @return Subdomains for the Domain Association.
+     * @return The subdomains for the domain association.
      */
 
     public java.util.List<SubDomain> getSubDomains() {
@@ -356,11 +485,11 @@ public class DomainAssociation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Subdomains for the Domain Association.
+     * The subdomains for the domain association.
      * </p>
      * 
      * @param subDomains
-     *        Subdomains for the Domain Association.
+     *        The subdomains for the domain association.
      */
 
     public void setSubDomains(java.util.Collection<SubDomain> subDomains) {
@@ -374,7 +503,7 @@ public class DomainAssociation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Subdomains for the Domain Association.
+     * The subdomains for the domain association.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -383,7 +512,7 @@ public class DomainAssociation implements Serializable, Cloneable, StructuredPoj
      * </p>
      * 
      * @param subDomains
-     *        Subdomains for the Domain Association.
+     *        The subdomains for the domain association.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -399,11 +528,11 @@ public class DomainAssociation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Subdomains for the Domain Association.
+     * The subdomains for the domain association.
      * </p>
      * 
      * @param subDomains
-     *        Subdomains for the Domain Association.
+     *        The subdomains for the domain association.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -430,6 +559,10 @@ public class DomainAssociation implements Serializable, Cloneable, StructuredPoj
             sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getEnableAutoSubDomain() != null)
             sb.append("EnableAutoSubDomain: ").append(getEnableAutoSubDomain()).append(",");
+        if (getAutoSubDomainCreationPatterns() != null)
+            sb.append("AutoSubDomainCreationPatterns: ").append(getAutoSubDomainCreationPatterns()).append(",");
+        if (getAutoSubDomainIAMRole() != null)
+            sb.append("AutoSubDomainIAMRole: ").append(getAutoSubDomainIAMRole()).append(",");
         if (getDomainStatus() != null)
             sb.append("DomainStatus: ").append(getDomainStatus()).append(",");
         if (getStatusReason() != null)
@@ -464,6 +597,15 @@ public class DomainAssociation implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getEnableAutoSubDomain() != null && other.getEnableAutoSubDomain().equals(this.getEnableAutoSubDomain()) == false)
             return false;
+        if (other.getAutoSubDomainCreationPatterns() == null ^ this.getAutoSubDomainCreationPatterns() == null)
+            return false;
+        if (other.getAutoSubDomainCreationPatterns() != null
+                && other.getAutoSubDomainCreationPatterns().equals(this.getAutoSubDomainCreationPatterns()) == false)
+            return false;
+        if (other.getAutoSubDomainIAMRole() == null ^ this.getAutoSubDomainIAMRole() == null)
+            return false;
+        if (other.getAutoSubDomainIAMRole() != null && other.getAutoSubDomainIAMRole().equals(this.getAutoSubDomainIAMRole()) == false)
+            return false;
         if (other.getDomainStatus() == null ^ this.getDomainStatus() == null)
             return false;
         if (other.getDomainStatus() != null && other.getDomainStatus().equals(this.getDomainStatus()) == false)
@@ -492,6 +634,8 @@ public class DomainAssociation implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getDomainAssociationArn() == null) ? 0 : getDomainAssociationArn().hashCode());
         hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
         hashCode = prime * hashCode + ((getEnableAutoSubDomain() == null) ? 0 : getEnableAutoSubDomain().hashCode());
+        hashCode = prime * hashCode + ((getAutoSubDomainCreationPatterns() == null) ? 0 : getAutoSubDomainCreationPatterns().hashCode());
+        hashCode = prime * hashCode + ((getAutoSubDomainIAMRole() == null) ? 0 : getAutoSubDomainIAMRole().hashCode());
         hashCode = prime * hashCode + ((getDomainStatus() == null) ? 0 : getDomainStatus().hashCode());
         hashCode = prime * hashCode + ((getStatusReason() == null) ? 0 : getStatusReason().hashCode());
         hashCode = prime * hashCode + ((getCertificateVerificationDNSRecord() == null) ? 0 : getCertificateVerificationDNSRecord().hashCode());

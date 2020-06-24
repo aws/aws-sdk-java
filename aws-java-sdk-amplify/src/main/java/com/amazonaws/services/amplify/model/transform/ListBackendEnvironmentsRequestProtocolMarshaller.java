@@ -33,7 +33,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class ListBackendEnvironmentsRequestProtocolMarshaller implements Marshaller<Request<ListBackendEnvironmentsRequest>, ListBackendEnvironmentsRequest> {
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
-            .requestUri("/apps/{appId}/backendenvironments").httpMethodName(HttpMethodName.GET).hasExplicitPayloadMember(false).hasPayloadMembers(true)
+            .requestUri("/apps/{appId}/backendenvironments").httpMethodName(HttpMethodName.GET).hasExplicitPayloadMember(false).hasPayloadMembers(false)
             .serviceName("AWSAmplify").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;

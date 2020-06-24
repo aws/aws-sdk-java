@@ -25,6 +25,12 @@ public class DescribeBackupJobResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
+     * Returns the account ID that owns the backup job.
+     * </p>
+     */
+    private String accountId;
+    /**
+     * <p>
      * Uniquely identifies a request to AWS Backup to back up a resource.
      * </p>
      */
@@ -68,8 +74,8 @@ public class DescribeBackupJobResult extends com.amazonaws.AmazonWebServiceResul
     /**
      * <p>
      * The date and time that a job to create a backup job is completed, in Unix format and Coordinated Universal Time
-     * (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087
-     * represents Friday, January 26, 2018 12:11:30.087 AM.
+     * (UTC). The value of <code>CompletionDate</code> is accurate to milliseconds. For example, the value
+     * 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.
      * </p>
      */
     private java.util.Date completionDate;
@@ -143,6 +149,46 @@ public class DescribeBackupJobResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      */
     private java.util.Date startBy;
+
+    /**
+     * <p>
+     * Returns the account ID that owns the backup job.
+     * </p>
+     * 
+     * @param accountId
+     *        Returns the account ID that owns the backup job.
+     */
+
+    public void setAccountId(String accountId) {
+        this.accountId = accountId;
+    }
+
+    /**
+     * <p>
+     * Returns the account ID that owns the backup job.
+     * </p>
+     * 
+     * @return Returns the account ID that owns the backup job.
+     */
+
+    public String getAccountId() {
+        return this.accountId;
+    }
+
+    /**
+     * <p>
+     * Returns the account ID that owns the backup job.
+     * </p>
+     * 
+     * @param accountId
+     *        Returns the account ID that owns the backup job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeBackupJobResult withAccountId(String accountId) {
+        setAccountId(accountId);
+        return this;
+    }
 
     /**
      * <p>
@@ -423,13 +469,13 @@ public class DescribeBackupJobResult extends com.amazonaws.AmazonWebServiceResul
     /**
      * <p>
      * The date and time that a job to create a backup job is completed, in Unix format and Coordinated Universal Time
-     * (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087
-     * represents Friday, January 26, 2018 12:11:30.087 AM.
+     * (UTC). The value of <code>CompletionDate</code> is accurate to milliseconds. For example, the value
+     * 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.
      * </p>
      * 
      * @param completionDate
      *        The date and time that a job to create a backup job is completed, in Unix format and Coordinated Universal
-     *        Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value
+     *        Time (UTC). The value of <code>CompletionDate</code> is accurate to milliseconds. For example, the value
      *        1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.
      */
 
@@ -440,12 +486,12 @@ public class DescribeBackupJobResult extends com.amazonaws.AmazonWebServiceResul
     /**
      * <p>
      * The date and time that a job to create a backup job is completed, in Unix format and Coordinated Universal Time
-     * (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087
-     * represents Friday, January 26, 2018 12:11:30.087 AM.
+     * (UTC). The value of <code>CompletionDate</code> is accurate to milliseconds. For example, the value
+     * 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.
      * </p>
      * 
      * @return The date and time that a job to create a backup job is completed, in Unix format and Coordinated
-     *         Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example,
+     *         Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to milliseconds. For example,
      *         the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.
      */
 
@@ -456,13 +502,13 @@ public class DescribeBackupJobResult extends com.amazonaws.AmazonWebServiceResul
     /**
      * <p>
      * The date and time that a job to create a backup job is completed, in Unix format and Coordinated Universal Time
-     * (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087
-     * represents Friday, January 26, 2018 12:11:30.087 AM.
+     * (UTC). The value of <code>CompletionDate</code> is accurate to milliseconds. For example, the value
+     * 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.
      * </p>
      * 
      * @param completionDate
      *        The date and time that a job to create a backup job is completed, in Unix format and Coordinated Universal
-     *        Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value
+     *        Time (UTC). The value of <code>CompletionDate</code> is accurate to milliseconds. For example, the value
      *        1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -963,6 +1009,8 @@ public class DescribeBackupJobResult extends com.amazonaws.AmazonWebServiceResul
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAccountId() != null)
+            sb.append("AccountId: ").append(getAccountId()).append(",");
         if (getBackupJobId() != null)
             sb.append("BackupJobId: ").append(getBackupJobId()).append(",");
         if (getBackupVaultName() != null)
@@ -1011,6 +1059,10 @@ public class DescribeBackupJobResult extends com.amazonaws.AmazonWebServiceResul
         if (obj instanceof DescribeBackupJobResult == false)
             return false;
         DescribeBackupJobResult other = (DescribeBackupJobResult) obj;
+        if (other.getAccountId() == null ^ this.getAccountId() == null)
+            return false;
+        if (other.getAccountId() != null && other.getAccountId().equals(this.getAccountId()) == false)
+            return false;
         if (other.getBackupJobId() == null ^ this.getBackupJobId() == null)
             return false;
         if (other.getBackupJobId() != null && other.getBackupJobId().equals(this.getBackupJobId()) == false)
@@ -1087,6 +1139,7 @@ public class DescribeBackupJobResult extends com.amazonaws.AmazonWebServiceResul
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
         hashCode = prime * hashCode + ((getBackupJobId() == null) ? 0 : getBackupJobId().hashCode());
         hashCode = prime * hashCode + ((getBackupVaultName() == null) ? 0 : getBackupVaultName().hashCode());
         hashCode = prime * hashCode + ((getBackupVaultArn() == null) ? 0 : getBackupVaultArn().hashCode());

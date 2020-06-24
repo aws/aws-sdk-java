@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Structure for the summary of a Job.
+ * Describes the summary for an execution job for an Amplify app.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/JobSummary" target="_top">AWS API
@@ -30,67 +30,69 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Arn for the Job.
+     * The Amazon Resource Name (ARN) for the job.
      * </p>
      */
     private String jobArn;
     /**
      * <p>
-     * Unique Id for the Job.
+     * The unique ID for the job.
      * </p>
      */
     private String jobId;
     /**
      * <p>
-     * Commit Id from 3rd party repository provider for the Job.
+     * The commit ID from a third-party repository provider for the job.
      * </p>
      */
     private String commitId;
     /**
      * <p>
-     * Commit message from 3rd party repository provider for the Job.
+     * The commit message from a third-party repository provider for the job.
      * </p>
      */
     private String commitMessage;
     /**
      * <p>
-     * Commit date / time for the Job.
+     * The commit date and time for the job.
      * </p>
      */
     private java.util.Date commitTime;
     /**
      * <p>
-     * Start date / time for the Job.
+     * The start date and time for the job.
      * </p>
      */
     private java.util.Date startTime;
     /**
      * <p>
-     * Status for the Job.
+     * The current status for the job.
      * </p>
      */
     private String status;
     /**
      * <p>
-     * End date / time for the Job.
+     * The end date and time for the job.
      * </p>
      */
     private java.util.Date endTime;
     /**
      * <p>
-     * Type for the Job. \n "RELEASE": Manually released from source by using StartJob API. "RETRY": Manually retried by
-     * using StartJob API. "WEB_HOOK": Automatically triggered by WebHooks.
+     * The type for the job. If the value is <code>RELEASE</code>, the job was manually released from its source by
+     * using the <code>StartJob</code> API. If the value is <code>RETRY</code>, the job was manually retried using the
+     * <code>StartJob</code> API. If the value is <code>WEB_HOOK</code>, the job was automatically triggered by
+     * webhooks.
      * </p>
      */
     private String jobType;
 
     /**
      * <p>
-     * Arn for the Job.
+     * The Amazon Resource Name (ARN) for the job.
      * </p>
      * 
      * @param jobArn
-     *        Arn for the Job.
+     *        The Amazon Resource Name (ARN) for the job.
      */
 
     public void setJobArn(String jobArn) {
@@ -99,10 +101,10 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Arn for the Job.
+     * The Amazon Resource Name (ARN) for the job.
      * </p>
      * 
-     * @return Arn for the Job.
+     * @return The Amazon Resource Name (ARN) for the job.
      */
 
     public String getJobArn() {
@@ -111,11 +113,11 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Arn for the Job.
+     * The Amazon Resource Name (ARN) for the job.
      * </p>
      * 
      * @param jobArn
-     *        Arn for the Job.
+     *        The Amazon Resource Name (ARN) for the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,11 +128,11 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique Id for the Job.
+     * The unique ID for the job.
      * </p>
      * 
      * @param jobId
-     *        Unique Id for the Job.
+     *        The unique ID for the job.
      */
 
     public void setJobId(String jobId) {
@@ -139,10 +141,10 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique Id for the Job.
+     * The unique ID for the job.
      * </p>
      * 
-     * @return Unique Id for the Job.
+     * @return The unique ID for the job.
      */
 
     public String getJobId() {
@@ -151,11 +153,11 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique Id for the Job.
+     * The unique ID for the job.
      * </p>
      * 
      * @param jobId
-     *        Unique Id for the Job.
+     *        The unique ID for the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -166,11 +168,11 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Commit Id from 3rd party repository provider for the Job.
+     * The commit ID from a third-party repository provider for the job.
      * </p>
      * 
      * @param commitId
-     *        Commit Id from 3rd party repository provider for the Job.
+     *        The commit ID from a third-party repository provider for the job.
      */
 
     public void setCommitId(String commitId) {
@@ -179,10 +181,10 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Commit Id from 3rd party repository provider for the Job.
+     * The commit ID from a third-party repository provider for the job.
      * </p>
      * 
-     * @return Commit Id from 3rd party repository provider for the Job.
+     * @return The commit ID from a third-party repository provider for the job.
      */
 
     public String getCommitId() {
@@ -191,11 +193,11 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Commit Id from 3rd party repository provider for the Job.
+     * The commit ID from a third-party repository provider for the job.
      * </p>
      * 
      * @param commitId
-     *        Commit Id from 3rd party repository provider for the Job.
+     *        The commit ID from a third-party repository provider for the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -206,11 +208,11 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Commit message from 3rd party repository provider for the Job.
+     * The commit message from a third-party repository provider for the job.
      * </p>
      * 
      * @param commitMessage
-     *        Commit message from 3rd party repository provider for the Job.
+     *        The commit message from a third-party repository provider for the job.
      */
 
     public void setCommitMessage(String commitMessage) {
@@ -219,10 +221,10 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Commit message from 3rd party repository provider for the Job.
+     * The commit message from a third-party repository provider for the job.
      * </p>
      * 
-     * @return Commit message from 3rd party repository provider for the Job.
+     * @return The commit message from a third-party repository provider for the job.
      */
 
     public String getCommitMessage() {
@@ -231,11 +233,11 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Commit message from 3rd party repository provider for the Job.
+     * The commit message from a third-party repository provider for the job.
      * </p>
      * 
      * @param commitMessage
-     *        Commit message from 3rd party repository provider for the Job.
+     *        The commit message from a third-party repository provider for the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -246,11 +248,11 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Commit date / time for the Job.
+     * The commit date and time for the job.
      * </p>
      * 
      * @param commitTime
-     *        Commit date / time for the Job.
+     *        The commit date and time for the job.
      */
 
     public void setCommitTime(java.util.Date commitTime) {
@@ -259,10 +261,10 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Commit date / time for the Job.
+     * The commit date and time for the job.
      * </p>
      * 
-     * @return Commit date / time for the Job.
+     * @return The commit date and time for the job.
      */
 
     public java.util.Date getCommitTime() {
@@ -271,11 +273,11 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Commit date / time for the Job.
+     * The commit date and time for the job.
      * </p>
      * 
      * @param commitTime
-     *        Commit date / time for the Job.
+     *        The commit date and time for the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -286,11 +288,11 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Start date / time for the Job.
+     * The start date and time for the job.
      * </p>
      * 
      * @param startTime
-     *        Start date / time for the Job.
+     *        The start date and time for the job.
      */
 
     public void setStartTime(java.util.Date startTime) {
@@ -299,10 +301,10 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Start date / time for the Job.
+     * The start date and time for the job.
      * </p>
      * 
-     * @return Start date / time for the Job.
+     * @return The start date and time for the job.
      */
 
     public java.util.Date getStartTime() {
@@ -311,11 +313,11 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Start date / time for the Job.
+     * The start date and time for the job.
      * </p>
      * 
      * @param startTime
-     *        Start date / time for the Job.
+     *        The start date and time for the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -326,11 +328,11 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Status for the Job.
+     * The current status for the job.
      * </p>
      * 
      * @param status
-     *        Status for the Job.
+     *        The current status for the job.
      * @see JobStatus
      */
 
@@ -340,10 +342,10 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Status for the Job.
+     * The current status for the job.
      * </p>
      * 
-     * @return Status for the Job.
+     * @return The current status for the job.
      * @see JobStatus
      */
 
@@ -353,11 +355,11 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Status for the Job.
+     * The current status for the job.
      * </p>
      * 
      * @param status
-     *        Status for the Job.
+     *        The current status for the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobStatus
      */
@@ -369,11 +371,11 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Status for the Job.
+     * The current status for the job.
      * </p>
      * 
      * @param status
-     *        Status for the Job.
+     *        The current status for the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobStatus
      */
@@ -385,11 +387,11 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * End date / time for the Job.
+     * The end date and time for the job.
      * </p>
      * 
      * @param endTime
-     *        End date / time for the Job.
+     *        The end date and time for the job.
      */
 
     public void setEndTime(java.util.Date endTime) {
@@ -398,10 +400,10 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * End date / time for the Job.
+     * The end date and time for the job.
      * </p>
      * 
-     * @return End date / time for the Job.
+     * @return The end date and time for the job.
      */
 
     public java.util.Date getEndTime() {
@@ -410,11 +412,11 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * End date / time for the Job.
+     * The end date and time for the job.
      * </p>
      * 
      * @param endTime
-     *        End date / time for the Job.
+     *        The end date and time for the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -425,13 +427,17 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Type for the Job. \n "RELEASE": Manually released from source by using StartJob API. "RETRY": Manually retried by
-     * using StartJob API. "WEB_HOOK": Automatically triggered by WebHooks.
+     * The type for the job. If the value is <code>RELEASE</code>, the job was manually released from its source by
+     * using the <code>StartJob</code> API. If the value is <code>RETRY</code>, the job was manually retried using the
+     * <code>StartJob</code> API. If the value is <code>WEB_HOOK</code>, the job was automatically triggered by
+     * webhooks.
      * </p>
      * 
      * @param jobType
-     *        Type for the Job. \n "RELEASE": Manually released from source by using StartJob API. "RETRY": Manually
-     *        retried by using StartJob API. "WEB_HOOK": Automatically triggered by WebHooks.
+     *        The type for the job. If the value is <code>RELEASE</code>, the job was manually released from its source
+     *        by using the <code>StartJob</code> API. If the value is <code>RETRY</code>, the job was manually retried
+     *        using the <code>StartJob</code> API. If the value is <code>WEB_HOOK</code>, the job was automatically
+     *        triggered by webhooks.
      * @see JobType
      */
 
@@ -441,12 +447,16 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Type for the Job. \n "RELEASE": Manually released from source by using StartJob API. "RETRY": Manually retried by
-     * using StartJob API. "WEB_HOOK": Automatically triggered by WebHooks.
+     * The type for the job. If the value is <code>RELEASE</code>, the job was manually released from its source by
+     * using the <code>StartJob</code> API. If the value is <code>RETRY</code>, the job was manually retried using the
+     * <code>StartJob</code> API. If the value is <code>WEB_HOOK</code>, the job was automatically triggered by
+     * webhooks.
      * </p>
      * 
-     * @return Type for the Job. \n "RELEASE": Manually released from source by using StartJob API. "RETRY": Manually
-     *         retried by using StartJob API. "WEB_HOOK": Automatically triggered by WebHooks.
+     * @return The type for the job. If the value is <code>RELEASE</code>, the job was manually released from its source
+     *         by using the <code>StartJob</code> API. If the value is <code>RETRY</code>, the job was manually retried
+     *         using the <code>StartJob</code> API. If the value is <code>WEB_HOOK</code>, the job was automatically
+     *         triggered by webhooks.
      * @see JobType
      */
 
@@ -456,13 +466,17 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Type for the Job. \n "RELEASE": Manually released from source by using StartJob API. "RETRY": Manually retried by
-     * using StartJob API. "WEB_HOOK": Automatically triggered by WebHooks.
+     * The type for the job. If the value is <code>RELEASE</code>, the job was manually released from its source by
+     * using the <code>StartJob</code> API. If the value is <code>RETRY</code>, the job was manually retried using the
+     * <code>StartJob</code> API. If the value is <code>WEB_HOOK</code>, the job was automatically triggered by
+     * webhooks.
      * </p>
      * 
      * @param jobType
-     *        Type for the Job. \n "RELEASE": Manually released from source by using StartJob API. "RETRY": Manually
-     *        retried by using StartJob API. "WEB_HOOK": Automatically triggered by WebHooks.
+     *        The type for the job. If the value is <code>RELEASE</code>, the job was manually released from its source
+     *        by using the <code>StartJob</code> API. If the value is <code>RETRY</code>, the job was manually retried
+     *        using the <code>StartJob</code> API. If the value is <code>WEB_HOOK</code>, the job was automatically
+     *        triggered by webhooks.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobType
      */
@@ -474,13 +488,17 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Type for the Job. \n "RELEASE": Manually released from source by using StartJob API. "RETRY": Manually retried by
-     * using StartJob API. "WEB_HOOK": Automatically triggered by WebHooks.
+     * The type for the job. If the value is <code>RELEASE</code>, the job was manually released from its source by
+     * using the <code>StartJob</code> API. If the value is <code>RETRY</code>, the job was manually retried using the
+     * <code>StartJob</code> API. If the value is <code>WEB_HOOK</code>, the job was automatically triggered by
+     * webhooks.
      * </p>
      * 
      * @param jobType
-     *        Type for the Job. \n "RELEASE": Manually released from source by using StartJob API. "RETRY": Manually
-     *        retried by using StartJob API. "WEB_HOOK": Automatically triggered by WebHooks.
+     *        The type for the job. If the value is <code>RELEASE</code>, the job was manually released from its source
+     *        by using the <code>StartJob</code> API. If the value is <code>RETRY</code>, the job was manually retried
+     *        using the <code>StartJob</code> API. If the value is <code>WEB_HOOK</code>, the job was automatically
+     *        triggered by webhooks.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobType
      */

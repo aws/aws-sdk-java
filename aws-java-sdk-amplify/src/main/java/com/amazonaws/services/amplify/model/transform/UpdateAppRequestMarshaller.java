@@ -43,6 +43,8 @@ public class UpdateAppRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("environmentVariables").build();
     private static final MarshallingInfo<Boolean> ENABLEBRANCHAUTOBUILD_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("enableBranchAutoBuild").build();
+    private static final MarshallingInfo<Boolean> ENABLEBRANCHAUTODELETION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("enableBranchAutoDeletion").build();
     private static final MarshallingInfo<Boolean> ENABLEBASICAUTH_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("enableBasicAuth").build();
     private static final MarshallingInfo<String> BASICAUTHCREDENTIALS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -87,6 +89,7 @@ public class UpdateAppRequestMarshaller {
             protocolMarshaller.marshall(updateAppRequest.getIamServiceRoleArn(), IAMSERVICEROLEARN_BINDING);
             protocolMarshaller.marshall(updateAppRequest.getEnvironmentVariables(), ENVIRONMENTVARIABLES_BINDING);
             protocolMarshaller.marshall(updateAppRequest.getEnableBranchAutoBuild(), ENABLEBRANCHAUTOBUILD_BINDING);
+            protocolMarshaller.marshall(updateAppRequest.getEnableBranchAutoDeletion(), ENABLEBRANCHAUTODELETION_BINDING);
             protocolMarshaller.marshall(updateAppRequest.getEnableBasicAuth(), ENABLEBASICAUTH_BINDING);
             protocolMarshaller.marshall(updateAppRequest.getBasicAuthCredentials(), BASICAUTHCREDENTIALS_BINDING);
             protocolMarshaller.marshall(updateAppRequest.getCustomRules(), CUSTOMRULES_BINDING);

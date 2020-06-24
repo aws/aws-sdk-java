@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Exception thrown when a request contains unexpected data.
+ * A request contains unexpected data.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

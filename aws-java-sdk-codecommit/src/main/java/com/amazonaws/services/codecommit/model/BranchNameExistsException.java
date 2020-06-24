@@ -16,7 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified branch name already exists.
+ * Cannot create the branch with the specified name because the commit conflicts with an existing branch with the same
+ * name. Branch names must be unique.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

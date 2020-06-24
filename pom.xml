@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-pom</artifactId>
-  <version>1.11.810-SNAPSHOT</version>
+  <version>1.11.810</version>
   <packaging>pom</packaging>
   <name>AWS SDK for Java</name>
   <description>The Amazon Web Services SDK for Java provides Java APIs
@@ -33,6 +33,7 @@
   </developers>
   <!-- The module section in pom.xml is auto generated. No manual changes are allowed -->
   <modules>
+    <module>aws-java-sdk-honeycode</module>
     <module>aws-java-sdk-codeartifact</module>
     <module>aws-java-sdk-macie2</module>
     <module>aws-java-sdk-iotsitewise</module>

@@ -70,7 +70,17 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
+     * <code>DynamoDB</code> for Amazon DynamoDB
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>EBS</code> for Amazon Elastic Block Store
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EC2</code> for Amazon Elastic Compute Cloud
      * </p>
      * </li>
      * <li>
@@ -98,6 +108,12 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private String byDestinationVaultArn;
+    /**
+     * <p>
+     * The account ID to list the jobs from. Returns only copy jobs associated with the specified account ID.
+     * </p>
+     */
+    private String byAccountId;
 
     /**
      * <p>
@@ -377,7 +393,17 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
+     * <code>DynamoDB</code> for Amazon DynamoDB
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>EBS</code> for Amazon Elastic Block Store
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EC2</code> for Amazon Elastic Compute Cloud
      * </p>
      * </li>
      * <li>
@@ -402,7 +428,17 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <ul>
      *        <li>
      *        <p>
+     *        <code>DynamoDB</code> for Amazon DynamoDB
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>EBS</code> for Amazon Elastic Block Store
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EC2</code> for Amazon Elastic Compute Cloud
      *        </p>
      *        </li>
      *        <li>
@@ -433,7 +469,17 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
+     * <code>DynamoDB</code> for Amazon DynamoDB
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>EBS</code> for Amazon Elastic Block Store
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EC2</code> for Amazon Elastic Compute Cloud
      * </p>
      * </li>
      * <li>
@@ -457,7 +503,17 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <ul>
      *         <li>
      *         <p>
+     *         <code>DynamoDB</code> for Amazon DynamoDB
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>EBS</code> for Amazon Elastic Block Store
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>EC2</code> for Amazon Elastic Compute Cloud
      *         </p>
      *         </li>
      *         <li>
@@ -488,7 +544,17 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
+     * <code>DynamoDB</code> for Amazon DynamoDB
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>EBS</code> for Amazon Elastic Block Store
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EC2</code> for Amazon Elastic Compute Cloud
      * </p>
      * </li>
      * <li>
@@ -513,7 +579,17 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <ul>
      *        <li>
      *        <p>
+     *        <code>DynamoDB</code> for Amazon DynamoDB
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>EBS</code> for Amazon Elastic Block Store
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EC2</code> for Amazon Elastic Compute Cloud
      *        </p>
      *        </li>
      *        <li>
@@ -586,6 +662,46 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * The account ID to list the jobs from. Returns only copy jobs associated with the specified account ID.
+     * </p>
+     * 
+     * @param byAccountId
+     *        The account ID to list the jobs from. Returns only copy jobs associated with the specified account ID.
+     */
+
+    public void setByAccountId(String byAccountId) {
+        this.byAccountId = byAccountId;
+    }
+
+    /**
+     * <p>
+     * The account ID to list the jobs from. Returns only copy jobs associated with the specified account ID.
+     * </p>
+     * 
+     * @return The account ID to list the jobs from. Returns only copy jobs associated with the specified account ID.
+     */
+
+    public String getByAccountId() {
+        return this.byAccountId;
+    }
+
+    /**
+     * <p>
+     * The account ID to list the jobs from. Returns only copy jobs associated with the specified account ID.
+     * </p>
+     * 
+     * @param byAccountId
+     *        The account ID to list the jobs from. Returns only copy jobs associated with the specified account ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListCopyJobsRequest withByAccountId(String byAccountId) {
+        setByAccountId(byAccountId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -612,7 +728,9 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getByResourceType() != null)
             sb.append("ByResourceType: ").append(getByResourceType()).append(",");
         if (getByDestinationVaultArn() != null)
-            sb.append("ByDestinationVaultArn: ").append(getByDestinationVaultArn());
+            sb.append("ByDestinationVaultArn: ").append(getByDestinationVaultArn()).append(",");
+        if (getByAccountId() != null)
+            sb.append("ByAccountId: ").append(getByAccountId());
         sb.append("}");
         return sb.toString();
     }
@@ -659,6 +777,10 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getByDestinationVaultArn() != null && other.getByDestinationVaultArn().equals(this.getByDestinationVaultArn()) == false)
             return false;
+        if (other.getByAccountId() == null ^ this.getByAccountId() == null)
+            return false;
+        if (other.getByAccountId() != null && other.getByAccountId().equals(this.getByAccountId()) == false)
+            return false;
         return true;
     }
 
@@ -675,6 +797,7 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getByCreatedAfter() == null) ? 0 : getByCreatedAfter().hashCode());
         hashCode = prime * hashCode + ((getByResourceType() == null) ? 0 : getByResourceType().hashCode());
         hashCode = prime * hashCode + ((getByDestinationVaultArn() == null) ? 0 : getByDestinationVaultArn().hashCode());
+        hashCode = prime * hashCode + ((getByAccountId() == null) ? 0 : getByAccountId().hashCode());
         return hashCode;
     }
 

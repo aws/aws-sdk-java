@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Exception thrown when a resource could not be created because of service limits.
+ * A resource could not be created because service quotas were exceeded.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

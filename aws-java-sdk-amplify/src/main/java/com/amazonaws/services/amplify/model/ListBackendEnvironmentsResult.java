@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Result structure for list backend environments result.
+ * The result structure for the list backend environments result.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListBackendEnvironments" target="_top">AWS
@@ -28,24 +28,24 @@ public class ListBackendEnvironmentsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * List of backend environments for an Amplify App.
+     * The list of backend environments for an Amplify app.
      * </p>
      */
     private java.util.List<BackendEnvironment> backendEnvironments;
     /**
      * <p>
-     * Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to
-     * fetch more entries.
+     * A pagination token. If a non-null pagination token is returned in a result, pass its value in another request to
+     * retrieve more entries.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * List of backend environments for an Amplify App.
+     * The list of backend environments for an Amplify app.
      * </p>
      * 
-     * @return List of backend environments for an Amplify App.
+     * @return The list of backend environments for an Amplify app.
      */
 
     public java.util.List<BackendEnvironment> getBackendEnvironments() {
@@ -54,11 +54,11 @@ public class ListBackendEnvironmentsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * List of backend environments for an Amplify App.
+     * The list of backend environments for an Amplify app.
      * </p>
      * 
      * @param backendEnvironments
-     *        List of backend environments for an Amplify App.
+     *        The list of backend environments for an Amplify app.
      */
 
     public void setBackendEnvironments(java.util.Collection<BackendEnvironment> backendEnvironments) {
@@ -72,7 +72,7 @@ public class ListBackendEnvironmentsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * List of backend environments for an Amplify App.
+     * The list of backend environments for an Amplify app.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -81,7 +81,7 @@ public class ListBackendEnvironmentsResult extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param backendEnvironments
-     *        List of backend environments for an Amplify App.
+     *        The list of backend environments for an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,11 +97,11 @@ public class ListBackendEnvironmentsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * List of backend environments for an Amplify App.
+     * The list of backend environments for an Amplify app.
      * </p>
      * 
      * @param backendEnvironments
-     *        List of backend environments for an Amplify App.
+     *        The list of backend environments for an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,13 +112,13 @@ public class ListBackendEnvironmentsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to
-     * fetch more entries.
+     * A pagination token. If a non-null pagination token is returned in a result, pass its value in another request to
+     * retrieve more entries.
      * </p>
      * 
      * @param nextToken
-     *        Pagination token. If non-null pagination token is returned in a result, then pass its value in another
-     *        request to fetch more entries.
+     *        A pagination token. If a non-null pagination token is returned in a result, pass its value in another
+     *        request to retrieve more entries.
      */
 
     public void setNextToken(String nextToken) {
@@ -127,12 +127,12 @@ public class ListBackendEnvironmentsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to
-     * fetch more entries.
+     * A pagination token. If a non-null pagination token is returned in a result, pass its value in another request to
+     * retrieve more entries.
      * </p>
      * 
-     * @return Pagination token. If non-null pagination token is returned in a result, then pass its value in another
-     *         request to fetch more entries.
+     * @return A pagination token. If a non-null pagination token is returned in a result, pass its value in another
+     *         request to retrieve more entries.
      */
 
     public String getNextToken() {
@@ -141,13 +141,13 @@ public class ListBackendEnvironmentsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to
-     * fetch more entries.
+     * A pagination token. If a non-null pagination token is returned in a result, pass its value in another request to
+     * retrieve more entries.
      * </p>
      * 
      * @param nextToken
-     *        Pagination token. If non-null pagination token is returned in a result, then pass its value in another
-     *        request to fetch more entries.
+     *        A pagination token. If a non-null pagination token is returned in a result, pass its value in another
+     *        request to retrieve more entries.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

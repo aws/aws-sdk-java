@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Response for list tags.
+ * The response for the list tags for resource request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListTagsForResource" target="_top">AWS API
@@ -28,17 +28,17 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Tags result for response.
+     * A list of tags for the specified The Amazon Resource Name (ARN).
      * </p>
      */
     private java.util.Map<String, String> tags;
 
     /**
      * <p>
-     * Tags result for response.
+     * A list of tags for the specified The Amazon Resource Name (ARN).
      * </p>
      * 
-     * @return Tags result for response.
+     * @return A list of tags for the specified The Amazon Resource Name (ARN).
      */
 
     public java.util.Map<String, String> getTags() {
@@ -47,11 +47,11 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Tags result for response.
+     * A list of tags for the specified The Amazon Resource Name (ARN).
      * </p>
      * 
      * @param tags
-     *        Tags result for response.
+     *        A list of tags for the specified The Amazon Resource Name (ARN).
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -60,11 +60,11 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Tags result for response.
+     * A list of tags for the specified The Amazon Resource Name (ARN).
      * </p>
      * 
      * @param tags
-     *        Tags result for response.
+     *        A list of tags for the specified The Amazon Resource Name (ARN).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

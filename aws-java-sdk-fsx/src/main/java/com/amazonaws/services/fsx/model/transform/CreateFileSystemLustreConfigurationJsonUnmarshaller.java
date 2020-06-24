@@ -72,6 +72,18 @@ public class CreateFileSystemLustreConfigurationJsonUnmarshaller implements Unma
                     context.nextToken();
                     createFileSystemLustreConfiguration.setPerUnitStorageThroughput(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("DailyAutomaticBackupStartTime", targetDepth)) {
+                    context.nextToken();
+                    createFileSystemLustreConfiguration.setDailyAutomaticBackupStartTime(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("AutomaticBackupRetentionDays", targetDepth)) {
+                    context.nextToken();
+                    createFileSystemLustreConfiguration.setAutomaticBackupRetentionDays(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("CopyTagsToBackups", targetDepth)) {
+                    context.nextToken();
+                    createFileSystemLustreConfiguration.setCopyTagsToBackups(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

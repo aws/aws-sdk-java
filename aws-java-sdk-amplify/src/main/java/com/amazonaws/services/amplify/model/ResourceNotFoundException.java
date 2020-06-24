@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Exception thrown when an operation fails due to non-existent resource.
+ * An operation failed due to a non-existent resource.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

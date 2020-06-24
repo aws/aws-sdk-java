@@ -54,7 +54,7 @@ public class PutLifecycleHookRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * </ul>
      * <p>
-     * Conditional: This parameter is required for new lifecycle hooks, but optional when updating existing hooks.
+     * Required for new lifecycle hooks, but optional when updating existing hooks.
      * </p>
      */
     private String lifecycleTransition;
@@ -64,7 +64,7 @@ public class PutLifecycleHookRequest extends com.amazonaws.AmazonWebServiceReque
      * example, an Amazon SNS topic or an Amazon SQS queue.
      * </p>
      * <p>
-     * Conditional: This parameter is required for new lifecycle hooks, but optional when updating existing hooks.
+     * Required for new lifecycle hooks, but optional when updating existing hooks.
      * </p>
      */
     private String roleARN;
@@ -211,7 +211,7 @@ public class PutLifecycleHookRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * </ul>
      * <p>
-     * Conditional: This parameter is required for new lifecycle hooks, but optional when updating existing hooks.
+     * Required for new lifecycle hooks, but optional when updating existing hooks.
      * </p>
      * 
      * @param lifecycleTransition
@@ -229,8 +229,7 @@ public class PutLifecycleHookRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        </ul>
      *        <p>
-     *        Conditional: This parameter is required for new lifecycle hooks, but optional when updating existing
-     *        hooks.
+     *        Required for new lifecycle hooks, but optional when updating existing hooks.
      */
 
     public void setLifecycleTransition(String lifecycleTransition) {
@@ -254,7 +253,7 @@ public class PutLifecycleHookRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * </ul>
      * <p>
-     * Conditional: This parameter is required for new lifecycle hooks, but optional when updating existing hooks.
+     * Required for new lifecycle hooks, but optional when updating existing hooks.
      * </p>
      * 
      * @return The instance state to which you want to attach the lifecycle hook. The valid values are:</p>
@@ -271,8 +270,7 @@ public class PutLifecycleHookRequest extends com.amazonaws.AmazonWebServiceReque
      *         </li>
      *         </ul>
      *         <p>
-     *         Conditional: This parameter is required for new lifecycle hooks, but optional when updating existing
-     *         hooks.
+     *         Required for new lifecycle hooks, but optional when updating existing hooks.
      */
 
     public String getLifecycleTransition() {
@@ -296,7 +294,7 @@ public class PutLifecycleHookRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * </ul>
      * <p>
-     * Conditional: This parameter is required for new lifecycle hooks, but optional when updating existing hooks.
+     * Required for new lifecycle hooks, but optional when updating existing hooks.
      * </p>
      * 
      * @param lifecycleTransition
@@ -314,8 +312,7 @@ public class PutLifecycleHookRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        </ul>
      *        <p>
-     *        Conditional: This parameter is required for new lifecycle hooks, but optional when updating existing
-     *        hooks.
+     *        Required for new lifecycle hooks, but optional when updating existing hooks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -330,15 +327,14 @@ public class PutLifecycleHookRequest extends com.amazonaws.AmazonWebServiceReque
      * example, an Amazon SNS topic or an Amazon SQS queue.
      * </p>
      * <p>
-     * Conditional: This parameter is required for new lifecycle hooks, but optional when updating existing hooks.
+     * Required for new lifecycle hooks, but optional when updating existing hooks.
      * </p>
      * 
      * @param roleARN
      *        The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification
      *        target, for example, an Amazon SNS topic or an Amazon SQS queue.</p>
      *        <p>
-     *        Conditional: This parameter is required for new lifecycle hooks, but optional when updating existing
-     *        hooks.
+     *        Required for new lifecycle hooks, but optional when updating existing hooks.
      */
 
     public void setRoleARN(String roleARN) {
@@ -351,14 +347,13 @@ public class PutLifecycleHookRequest extends com.amazonaws.AmazonWebServiceReque
      * example, an Amazon SNS topic or an Amazon SQS queue.
      * </p>
      * <p>
-     * Conditional: This parameter is required for new lifecycle hooks, but optional when updating existing hooks.
+     * Required for new lifecycle hooks, but optional when updating existing hooks.
      * </p>
      * 
      * @return The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification
      *         target, for example, an Amazon SNS topic or an Amazon SQS queue.</p>
      *         <p>
-     *         Conditional: This parameter is required for new lifecycle hooks, but optional when updating existing
-     *         hooks.
+     *         Required for new lifecycle hooks, but optional when updating existing hooks.
      */
 
     public String getRoleARN() {
@@ -371,15 +366,14 @@ public class PutLifecycleHookRequest extends com.amazonaws.AmazonWebServiceReque
      * example, an Amazon SNS topic or an Amazon SQS queue.
      * </p>
      * <p>
-     * Conditional: This parameter is required for new lifecycle hooks, but optional when updating existing hooks.
+     * Required for new lifecycle hooks, but optional when updating existing hooks.
      * </p>
      * 
      * @param roleARN
      *        The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification
      *        target, for example, an Amazon SNS topic or an Amazon SQS queue.</p>
      *        <p>
-     *        Conditional: This parameter is required for new lifecycle hooks, but optional when updating existing
-     *        hooks.
+     *        Required for new lifecycle hooks, but optional when updating existing hooks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

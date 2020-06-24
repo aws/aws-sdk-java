@@ -39,7 +39,19 @@ public class LustreFileSystemConfiguration implements Serializable, Cloneable, S
     private DataRepositoryConfiguration dataRepositoryConfiguration;
     /**
      * <p>
-     * The deployment type of the FSX for Lustre file system.
+     * The deployment type of the FSX for Lustre file system. <i>Scratch deployment type</i> is designed for temporary
+     * storage and shorter-term processing of data.
+     * </p>
+     * <p>
+     * <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types are best suited for when you need temporary
+     * storage and shorter-term processing of data. The <code>SCRATCH_2</code> deployment type provides in-transit
+     * encryption of data and higher burst throughput capacity than <code>SCRATCH_1</code>.
+     * </p>
+     * <p>
+     * The <code>PERSISTENT_1</code> deployment type is used for longer-term storage and workloads and encryption of
+     * data in transit. To learn more about deployment types, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html"> FSx for Lustre Deployment
+     * Options</a>. (Default = <code>SCRATCH_1</code>)
      * </p>
      */
     private String deploymentType;
@@ -63,6 +75,20 @@ public class LustreFileSystemConfiguration implements Serializable, Cloneable, S
      * </p>
      */
     private String mountName;
+
+    private String dailyAutomaticBackupStartTime;
+
+    private Integer automaticBackupRetentionDays;
+    /**
+     * <p>
+     * A boolean flag indicating whether tags on the file system should be copied to backups. If it's set to true, all
+     * tags on the file system are copied to all automatic backups and any user-initiated backups where the user doesn't
+     * specify any tags. If this value is true, and you specify one or more tags, only the specified tags are copied to
+     * backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the file
+     * system, regardless of this value. (Default = false)
+     * </p>
+     */
+    private Boolean copyTagsToBackups;
 
     /**
      * <p>
@@ -138,11 +164,34 @@ public class LustreFileSystemConfiguration implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The deployment type of the FSX for Lustre file system.
+     * The deployment type of the FSX for Lustre file system. <i>Scratch deployment type</i> is designed for temporary
+     * storage and shorter-term processing of data.
+     * </p>
+     * <p>
+     * <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types are best suited for when you need temporary
+     * storage and shorter-term processing of data. The <code>SCRATCH_2</code> deployment type provides in-transit
+     * encryption of data and higher burst throughput capacity than <code>SCRATCH_1</code>.
+     * </p>
+     * <p>
+     * The <code>PERSISTENT_1</code> deployment type is used for longer-term storage and workloads and encryption of
+     * data in transit. To learn more about deployment types, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html"> FSx for Lustre Deployment
+     * Options</a>. (Default = <code>SCRATCH_1</code>)
      * </p>
      * 
      * @param deploymentType
-     *        The deployment type of the FSX for Lustre file system.
+     *        The deployment type of the FSX for Lustre file system. <i>Scratch deployment type</i> is designed for
+     *        temporary storage and shorter-term processing of data.</p>
+     *        <p>
+     *        <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types are best suited for when you need
+     *        temporary storage and shorter-term processing of data. The <code>SCRATCH_2</code> deployment type provides
+     *        in-transit encryption of data and higher burst throughput capacity than <code>SCRATCH_1</code>.
+     *        </p>
+     *        <p>
+     *        The <code>PERSISTENT_1</code> deployment type is used for longer-term storage and workloads and encryption
+     *        of data in transit. To learn more about deployment types, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html"> FSx for Lustre
+     *        Deployment Options</a>. (Default = <code>SCRATCH_1</code>)
      * @see LustreDeploymentType
      */
 
@@ -152,10 +201,33 @@ public class LustreFileSystemConfiguration implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The deployment type of the FSX for Lustre file system.
+     * The deployment type of the FSX for Lustre file system. <i>Scratch deployment type</i> is designed for temporary
+     * storage and shorter-term processing of data.
+     * </p>
+     * <p>
+     * <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types are best suited for when you need temporary
+     * storage and shorter-term processing of data. The <code>SCRATCH_2</code> deployment type provides in-transit
+     * encryption of data and higher burst throughput capacity than <code>SCRATCH_1</code>.
+     * </p>
+     * <p>
+     * The <code>PERSISTENT_1</code> deployment type is used for longer-term storage and workloads and encryption of
+     * data in transit. To learn more about deployment types, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html"> FSx for Lustre Deployment
+     * Options</a>. (Default = <code>SCRATCH_1</code>)
      * </p>
      * 
-     * @return The deployment type of the FSX for Lustre file system.
+     * @return The deployment type of the FSX for Lustre file system. <i>Scratch deployment type</i> is designed for
+     *         temporary storage and shorter-term processing of data.</p>
+     *         <p>
+     *         <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types are best suited for when you need
+     *         temporary storage and shorter-term processing of data. The <code>SCRATCH_2</code> deployment type
+     *         provides in-transit encryption of data and higher burst throughput capacity than <code>SCRATCH_1</code>.
+     *         </p>
+     *         <p>
+     *         The <code>PERSISTENT_1</code> deployment type is used for longer-term storage and workloads and
+     *         encryption of data in transit. To learn more about deployment types, see <a
+     *         href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html"> FSx for Lustre
+     *         Deployment Options</a>. (Default = <code>SCRATCH_1</code>)
      * @see LustreDeploymentType
      */
 
@@ -165,11 +237,34 @@ public class LustreFileSystemConfiguration implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The deployment type of the FSX for Lustre file system.
+     * The deployment type of the FSX for Lustre file system. <i>Scratch deployment type</i> is designed for temporary
+     * storage and shorter-term processing of data.
+     * </p>
+     * <p>
+     * <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types are best suited for when you need temporary
+     * storage and shorter-term processing of data. The <code>SCRATCH_2</code> deployment type provides in-transit
+     * encryption of data and higher burst throughput capacity than <code>SCRATCH_1</code>.
+     * </p>
+     * <p>
+     * The <code>PERSISTENT_1</code> deployment type is used for longer-term storage and workloads and encryption of
+     * data in transit. To learn more about deployment types, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html"> FSx for Lustre Deployment
+     * Options</a>. (Default = <code>SCRATCH_1</code>)
      * </p>
      * 
      * @param deploymentType
-     *        The deployment type of the FSX for Lustre file system.
+     *        The deployment type of the FSX for Lustre file system. <i>Scratch deployment type</i> is designed for
+     *        temporary storage and shorter-term processing of data.</p>
+     *        <p>
+     *        <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types are best suited for when you need
+     *        temporary storage and shorter-term processing of data. The <code>SCRATCH_2</code> deployment type provides
+     *        in-transit encryption of data and higher burst throughput capacity than <code>SCRATCH_1</code>.
+     *        </p>
+     *        <p>
+     *        The <code>PERSISTENT_1</code> deployment type is used for longer-term storage and workloads and encryption
+     *        of data in transit. To learn more about deployment types, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html"> FSx for Lustre
+     *        Deployment Options</a>. (Default = <code>SCRATCH_1</code>)
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LustreDeploymentType
      */
@@ -181,11 +276,34 @@ public class LustreFileSystemConfiguration implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The deployment type of the FSX for Lustre file system.
+     * The deployment type of the FSX for Lustre file system. <i>Scratch deployment type</i> is designed for temporary
+     * storage and shorter-term processing of data.
+     * </p>
+     * <p>
+     * <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types are best suited for when you need temporary
+     * storage and shorter-term processing of data. The <code>SCRATCH_2</code> deployment type provides in-transit
+     * encryption of data and higher burst throughput capacity than <code>SCRATCH_1</code>.
+     * </p>
+     * <p>
+     * The <code>PERSISTENT_1</code> deployment type is used for longer-term storage and workloads and encryption of
+     * data in transit. To learn more about deployment types, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html"> FSx for Lustre Deployment
+     * Options</a>. (Default = <code>SCRATCH_1</code>)
      * </p>
      * 
      * @param deploymentType
-     *        The deployment type of the FSX for Lustre file system.
+     *        The deployment type of the FSX for Lustre file system. <i>Scratch deployment type</i> is designed for
+     *        temporary storage and shorter-term processing of data.</p>
+     *        <p>
+     *        <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types are best suited for when you need
+     *        temporary storage and shorter-term processing of data. The <code>SCRATCH_2</code> deployment type provides
+     *        in-transit encryption of data and higher burst throughput capacity than <code>SCRATCH_1</code>.
+     *        </p>
+     *        <p>
+     *        The <code>PERSISTENT_1</code> deployment type is used for longer-term storage and workloads and encryption
+     *        of data in transit. To learn more about deployment types, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html"> FSx for Lustre
+     *        Deployment Options</a>. (Default = <code>SCRATCH_1</code>)
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LustreDeploymentType
      */
@@ -321,6 +439,142 @@ public class LustreFileSystemConfiguration implements Serializable, Cloneable, S
     }
 
     /**
+     * @param dailyAutomaticBackupStartTime
+     */
+
+    public void setDailyAutomaticBackupStartTime(String dailyAutomaticBackupStartTime) {
+        this.dailyAutomaticBackupStartTime = dailyAutomaticBackupStartTime;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getDailyAutomaticBackupStartTime() {
+        return this.dailyAutomaticBackupStartTime;
+    }
+
+    /**
+     * @param dailyAutomaticBackupStartTime
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LustreFileSystemConfiguration withDailyAutomaticBackupStartTime(String dailyAutomaticBackupStartTime) {
+        setDailyAutomaticBackupStartTime(dailyAutomaticBackupStartTime);
+        return this;
+    }
+
+    /**
+     * @param automaticBackupRetentionDays
+     */
+
+    public void setAutomaticBackupRetentionDays(Integer automaticBackupRetentionDays) {
+        this.automaticBackupRetentionDays = automaticBackupRetentionDays;
+    }
+
+    /**
+     * @return
+     */
+
+    public Integer getAutomaticBackupRetentionDays() {
+        return this.automaticBackupRetentionDays;
+    }
+
+    /**
+     * @param automaticBackupRetentionDays
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LustreFileSystemConfiguration withAutomaticBackupRetentionDays(Integer automaticBackupRetentionDays) {
+        setAutomaticBackupRetentionDays(automaticBackupRetentionDays);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A boolean flag indicating whether tags on the file system should be copied to backups. If it's set to true, all
+     * tags on the file system are copied to all automatic backups and any user-initiated backups where the user doesn't
+     * specify any tags. If this value is true, and you specify one or more tags, only the specified tags are copied to
+     * backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the file
+     * system, regardless of this value. (Default = false)
+     * </p>
+     * 
+     * @param copyTagsToBackups
+     *        A boolean flag indicating whether tags on the file system should be copied to backups. If it's set to
+     *        true, all tags on the file system are copied to all automatic backups and any user-initiated backups where
+     *        the user doesn't specify any tags. If this value is true, and you specify one or more tags, only the
+     *        specified tags are copied to backups. If you specify one or more tags when creating a user-initiated
+     *        backup, no tags are copied from the file system, regardless of this value. (Default = false)
+     */
+
+    public void setCopyTagsToBackups(Boolean copyTagsToBackups) {
+        this.copyTagsToBackups = copyTagsToBackups;
+    }
+
+    /**
+     * <p>
+     * A boolean flag indicating whether tags on the file system should be copied to backups. If it's set to true, all
+     * tags on the file system are copied to all automatic backups and any user-initiated backups where the user doesn't
+     * specify any tags. If this value is true, and you specify one or more tags, only the specified tags are copied to
+     * backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the file
+     * system, regardless of this value. (Default = false)
+     * </p>
+     * 
+     * @return A boolean flag indicating whether tags on the file system should be copied to backups. If it's set to
+     *         true, all tags on the file system are copied to all automatic backups and any user-initiated backups
+     *         where the user doesn't specify any tags. If this value is true, and you specify one or more tags, only
+     *         the specified tags are copied to backups. If you specify one or more tags when creating a user-initiated
+     *         backup, no tags are copied from the file system, regardless of this value. (Default = false)
+     */
+
+    public Boolean getCopyTagsToBackups() {
+        return this.copyTagsToBackups;
+    }
+
+    /**
+     * <p>
+     * A boolean flag indicating whether tags on the file system should be copied to backups. If it's set to true, all
+     * tags on the file system are copied to all automatic backups and any user-initiated backups where the user doesn't
+     * specify any tags. If this value is true, and you specify one or more tags, only the specified tags are copied to
+     * backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the file
+     * system, regardless of this value. (Default = false)
+     * </p>
+     * 
+     * @param copyTagsToBackups
+     *        A boolean flag indicating whether tags on the file system should be copied to backups. If it's set to
+     *        true, all tags on the file system are copied to all automatic backups and any user-initiated backups where
+     *        the user doesn't specify any tags. If this value is true, and you specify one or more tags, only the
+     *        specified tags are copied to backups. If you specify one or more tags when creating a user-initiated
+     *        backup, no tags are copied from the file system, regardless of this value. (Default = false)
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LustreFileSystemConfiguration withCopyTagsToBackups(Boolean copyTagsToBackups) {
+        setCopyTagsToBackups(copyTagsToBackups);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A boolean flag indicating whether tags on the file system should be copied to backups. If it's set to true, all
+     * tags on the file system are copied to all automatic backups and any user-initiated backups where the user doesn't
+     * specify any tags. If this value is true, and you specify one or more tags, only the specified tags are copied to
+     * backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the file
+     * system, regardless of this value. (Default = false)
+     * </p>
+     * 
+     * @return A boolean flag indicating whether tags on the file system should be copied to backups. If it's set to
+     *         true, all tags on the file system are copied to all automatic backups and any user-initiated backups
+     *         where the user doesn't specify any tags. If this value is true, and you specify one or more tags, only
+     *         the specified tags are copied to backups. If you specify one or more tags when creating a user-initiated
+     *         backup, no tags are copied from the file system, regardless of this value. (Default = false)
+     */
+
+    public Boolean isCopyTagsToBackups() {
+        return this.copyTagsToBackups;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -341,7 +595,13 @@ public class LustreFileSystemConfiguration implements Serializable, Cloneable, S
         if (getPerUnitStorageThroughput() != null)
             sb.append("PerUnitStorageThroughput: ").append(getPerUnitStorageThroughput()).append(",");
         if (getMountName() != null)
-            sb.append("MountName: ").append(getMountName());
+            sb.append("MountName: ").append(getMountName()).append(",");
+        if (getDailyAutomaticBackupStartTime() != null)
+            sb.append("DailyAutomaticBackupStartTime: ").append(getDailyAutomaticBackupStartTime()).append(",");
+        if (getAutomaticBackupRetentionDays() != null)
+            sb.append("AutomaticBackupRetentionDays: ").append(getAutomaticBackupRetentionDays()).append(",");
+        if (getCopyTagsToBackups() != null)
+            sb.append("CopyTagsToBackups: ").append(getCopyTagsToBackups());
         sb.append("}");
         return sb.toString();
     }
@@ -376,6 +636,19 @@ public class LustreFileSystemConfiguration implements Serializable, Cloneable, S
             return false;
         if (other.getMountName() != null && other.getMountName().equals(this.getMountName()) == false)
             return false;
+        if (other.getDailyAutomaticBackupStartTime() == null ^ this.getDailyAutomaticBackupStartTime() == null)
+            return false;
+        if (other.getDailyAutomaticBackupStartTime() != null
+                && other.getDailyAutomaticBackupStartTime().equals(this.getDailyAutomaticBackupStartTime()) == false)
+            return false;
+        if (other.getAutomaticBackupRetentionDays() == null ^ this.getAutomaticBackupRetentionDays() == null)
+            return false;
+        if (other.getAutomaticBackupRetentionDays() != null && other.getAutomaticBackupRetentionDays().equals(this.getAutomaticBackupRetentionDays()) == false)
+            return false;
+        if (other.getCopyTagsToBackups() == null ^ this.getCopyTagsToBackups() == null)
+            return false;
+        if (other.getCopyTagsToBackups() != null && other.getCopyTagsToBackups().equals(this.getCopyTagsToBackups()) == false)
+            return false;
         return true;
     }
 
@@ -389,6 +662,9 @@ public class LustreFileSystemConfiguration implements Serializable, Cloneable, S
         hashCode = prime * hashCode + ((getDeploymentType() == null) ? 0 : getDeploymentType().hashCode());
         hashCode = prime * hashCode + ((getPerUnitStorageThroughput() == null) ? 0 : getPerUnitStorageThroughput().hashCode());
         hashCode = prime * hashCode + ((getMountName() == null) ? 0 : getMountName().hashCode());
+        hashCode = prime * hashCode + ((getDailyAutomaticBackupStartTime() == null) ? 0 : getDailyAutomaticBackupStartTime().hashCode());
+        hashCode = prime * hashCode + ((getAutomaticBackupRetentionDays() == null) ? 0 : getAutomaticBackupRetentionDays().hashCode());
+        hashCode = prime * hashCode + ((getCopyTagsToBackups() == null) ? 0 : getCopyTagsToBackups().hashCode());
         return hashCode;
     }
 

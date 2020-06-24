@@ -1244,6 +1244,11 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing Auto Scaling
+     * Instances Based on an Instance Refresh</a>.
+     * </p>
      * 
      * @param describeInstanceRefreshesRequest
      * @return A Java Future containing the result of the DescribeInstanceRefreshes operation returned by the service.
@@ -1296,6 +1301,11 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing Auto Scaling
+     * Instances Based on an Instance Refresh</a>.
+     * </p>
      * 
      * @param describeInstanceRefreshesRequest
      * @param asyncHandler
@@ -2918,8 +2928,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * <p>
      * If successful, this call creates a new instance refresh request with a unique ID that you can use to track its
      * progress. To query its status, call the <a>DescribeInstanceRefreshes</a> API. To describe the instance refreshes
-     * that have already run, call the <a>DescribeInstanceRefreshes</a> API. To cancel an active instance refresh
-     * operation, use the <a>CancelInstanceRefresh</a> API.
+     * that have already run, call the <a>DescribeInstanceRefreshes</a> API. To cancel an instance refresh operation in
+     * progress, use the <a>CancelInstanceRefresh</a> API.
      * </p>
      * <p>
      * For more information, see <a
@@ -2943,8 +2953,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * <p>
      * If successful, this call creates a new instance refresh request with a unique ID that you can use to track its
      * progress. To query its status, call the <a>DescribeInstanceRefreshes</a> API. To describe the instance refreshes
-     * that have already run, call the <a>DescribeInstanceRefreshes</a> API. To cancel an active instance refresh
-     * operation, use the <a>CancelInstanceRefresh</a> API.
+     * that have already run, call the <a>DescribeInstanceRefreshes</a> API. To cancel an instance refresh operation in
+     * progress, use the <a>CancelInstanceRefresh</a> API.
      * </p>
      * <p>
      * For more information, see <a

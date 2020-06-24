@@ -177,6 +177,11 @@ public class AbstractAWSCodeCommit implements AWSCodeCommit {
     }
 
     @Override
+    public GetCommentReactionsResult getCommentReactions(GetCommentReactionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetCommentsForComparedCommitResult getCommentsForComparedCommit(GetCommentsForComparedCommitRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -329,6 +334,11 @@ public class AbstractAWSCodeCommit implements AWSCodeCommit {
 
     @Override
     public PostCommentReplyResult postCommentReply(PostCommentReplyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutCommentReactionResult putCommentReaction(PutCommentReactionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

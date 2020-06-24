@@ -32,7 +32,7 @@ public class BackupPlanInput implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The display name of a backup plan.
+     * The optional display name of a backup plan.
      * </p>
      */
     private String backupPlanName;
@@ -46,11 +46,11 @@ public class BackupPlanInput implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The display name of a backup plan.
+     * The optional display name of a backup plan.
      * </p>
      * 
      * @param backupPlanName
-     *        The display name of a backup plan.
+     *        The optional display name of a backup plan.
      */
 
     public void setBackupPlanName(String backupPlanName) {
@@ -59,10 +59,10 @@ public class BackupPlanInput implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The display name of a backup plan.
+     * The optional display name of a backup plan.
      * </p>
      * 
-     * @return The display name of a backup plan.
+     * @return The optional display name of a backup plan.
      */
 
     public String getBackupPlanName() {
@@ -71,11 +71,11 @@ public class BackupPlanInput implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The display name of a backup plan.
+     * The optional display name of a backup plan.
      * </p>
      * 
      * @param backupPlanName
-     *        The display name of a backup plan.
+     *        The optional display name of a backup plan.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

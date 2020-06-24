@@ -31,8 +31,8 @@ public class Ebs implements Serializable, Cloneable {
      * The snapshot ID of the volume to use.
      * </p>
      * <p>
-     * Conditional: This parameter is optional if you specify a volume size. If you specify both <code>SnapshotId</code>
-     * and <code>VolumeSize</code>, <code>VolumeSize</code> must be equal or greater than the size of the snapshot.
+     * <code>SnapshotId</code> is optional if you specify a volume size. If you specify both <code>SnapshotId</code> and
+     * <code>VolumeSize</code>, the volume size must be equal or greater than the size of the snapshot.
      * </p>
      */
     private String snapshotId;
@@ -51,7 +51,7 @@ public class Ebs implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * At least one of VolumeSize or SnapshotId is required.
+     * At least one of <code>VolumeSize</code> or <code>SnapshotId</code> is required.
      * </p>
      * </note>
      */
@@ -84,8 +84,8 @@ public class Ebs implements Serializable, Cloneable {
      * <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * <p>
-     * Conditional: This parameter is required when the volume type is <code>io1</code>. (Not used with
-     * <code>standard</code>, <code>gp2</code>, <code>st1</code>, or <code>sc1</code> volumes.)
+     * Required when the volume type is <code>io1</code>. (Not used with <code>standard</code>, <code>gp2</code>,
+     * <code>st1</code>, or <code>sc1</code> volumes.)
      * </p>
      */
     private Integer iops;
@@ -127,16 +127,16 @@ public class Ebs implements Serializable, Cloneable {
      * The snapshot ID of the volume to use.
      * </p>
      * <p>
-     * Conditional: This parameter is optional if you specify a volume size. If you specify both <code>SnapshotId</code>
-     * and <code>VolumeSize</code>, <code>VolumeSize</code> must be equal or greater than the size of the snapshot.
+     * <code>SnapshotId</code> is optional if you specify a volume size. If you specify both <code>SnapshotId</code> and
+     * <code>VolumeSize</code>, the volume size must be equal or greater than the size of the snapshot.
      * </p>
      * 
      * @param snapshotId
      *        The snapshot ID of the volume to use.</p>
      *        <p>
-     *        Conditional: This parameter is optional if you specify a volume size. If you specify both
-     *        <code>SnapshotId</code> and <code>VolumeSize</code>, <code>VolumeSize</code> must be equal or greater than
-     *        the size of the snapshot.
+     *        <code>SnapshotId</code> is optional if you specify a volume size. If you specify both
+     *        <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must be equal or greater than the
+     *        size of the snapshot.
      */
 
     public void setSnapshotId(String snapshotId) {
@@ -148,15 +148,15 @@ public class Ebs implements Serializable, Cloneable {
      * The snapshot ID of the volume to use.
      * </p>
      * <p>
-     * Conditional: This parameter is optional if you specify a volume size. If you specify both <code>SnapshotId</code>
-     * and <code>VolumeSize</code>, <code>VolumeSize</code> must be equal or greater than the size of the snapshot.
+     * <code>SnapshotId</code> is optional if you specify a volume size. If you specify both <code>SnapshotId</code> and
+     * <code>VolumeSize</code>, the volume size must be equal or greater than the size of the snapshot.
      * </p>
      * 
      * @return The snapshot ID of the volume to use.</p>
      *         <p>
-     *         Conditional: This parameter is optional if you specify a volume size. If you specify both
-     *         <code>SnapshotId</code> and <code>VolumeSize</code>, <code>VolumeSize</code> must be equal or greater
-     *         than the size of the snapshot.
+     *         <code>SnapshotId</code> is optional if you specify a volume size. If you specify both
+     *         <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must be equal or greater than the
+     *         size of the snapshot.
      */
 
     public String getSnapshotId() {
@@ -168,16 +168,16 @@ public class Ebs implements Serializable, Cloneable {
      * The snapshot ID of the volume to use.
      * </p>
      * <p>
-     * Conditional: This parameter is optional if you specify a volume size. If you specify both <code>SnapshotId</code>
-     * and <code>VolumeSize</code>, <code>VolumeSize</code> must be equal or greater than the size of the snapshot.
+     * <code>SnapshotId</code> is optional if you specify a volume size. If you specify both <code>SnapshotId</code> and
+     * <code>VolumeSize</code>, the volume size must be equal or greater than the size of the snapshot.
      * </p>
      * 
      * @param snapshotId
      *        The snapshot ID of the volume to use.</p>
      *        <p>
-     *        Conditional: This parameter is optional if you specify a volume size. If you specify both
-     *        <code>SnapshotId</code> and <code>VolumeSize</code>, <code>VolumeSize</code> must be equal or greater than
-     *        the size of the snapshot.
+     *        <code>SnapshotId</code> is optional if you specify a volume size. If you specify both
+     *        <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must be equal or greater than the
+     *        size of the snapshot.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -201,7 +201,7 @@ public class Ebs implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * At least one of VolumeSize or SnapshotId is required.
+     * At least one of <code>VolumeSize</code> or <code>SnapshotId</code> is required.
      * </p>
      * </note>
      * 
@@ -218,7 +218,7 @@ public class Ebs implements Serializable, Cloneable {
      *        </p>
      *        <note>
      *        <p>
-     *        At least one of VolumeSize or SnapshotId is required.
+     *        At least one of <code>VolumeSize</code> or <code>SnapshotId</code> is required.
      *        </p>
      */
 
@@ -241,7 +241,7 @@ public class Ebs implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * At least one of VolumeSize or SnapshotId is required.
+     * At least one of <code>VolumeSize</code> or <code>SnapshotId</code> is required.
      * </p>
      * </note>
      * 
@@ -257,7 +257,7 @@ public class Ebs implements Serializable, Cloneable {
      *         </p>
      *         <note>
      *         <p>
-     *         At least one of VolumeSize or SnapshotId is required.
+     *         At least one of <code>VolumeSize</code> or <code>SnapshotId</code> is required.
      *         </p>
      */
 
@@ -280,7 +280,7 @@ public class Ebs implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * At least one of VolumeSize or SnapshotId is required.
+     * At least one of <code>VolumeSize</code> or <code>SnapshotId</code> is required.
      * </p>
      * </note>
      * 
@@ -297,7 +297,7 @@ public class Ebs implements Serializable, Cloneable {
      *        </p>
      *        <note>
      *        <p>
-     *        At least one of VolumeSize or SnapshotId is required.
+     *        At least one of <code>VolumeSize</code> or <code>SnapshotId</code> is required.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -457,8 +457,8 @@ public class Ebs implements Serializable, Cloneable {
      * <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * <p>
-     * Conditional: This parameter is required when the volume type is <code>io1</code>. (Not used with
-     * <code>standard</code>, <code>gp2</code>, <code>st1</code>, or <code>sc1</code> volumes.)
+     * Required when the volume type is <code>io1</code>. (Not used with <code>standard</code>, <code>gp2</code>,
+     * <code>st1</code>, or <code>sc1</code> volumes.)
      * </p>
      * 
      * @param iops
@@ -467,8 +467,8 @@ public class Ebs implements Serializable, Cloneable {
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a>
      *        in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      *        <p>
-     *        Conditional: This parameter is required when the volume type is <code>io1</code>. (Not used with
-     *        <code>standard</code>, <code>gp2</code>, <code>st1</code>, or <code>sc1</code> volumes.)
+     *        Required when the volume type is <code>io1</code>. (Not used with <code>standard</code>, <code>gp2</code>,
+     *        <code>st1</code>, or <code>sc1</code> volumes.)
      */
 
     public void setIops(Integer iops) {
@@ -483,8 +483,8 @@ public class Ebs implements Serializable, Cloneable {
      * <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * <p>
-     * Conditional: This parameter is required when the volume type is <code>io1</code>. (Not used with
-     * <code>standard</code>, <code>gp2</code>, <code>st1</code>, or <code>sc1</code> volumes.)
+     * Required when the volume type is <code>io1</code>. (Not used with <code>standard</code>, <code>gp2</code>,
+     * <code>st1</code>, or <code>sc1</code> volumes.)
      * </p>
      * 
      * @return The number of I/O operations per second (IOPS) to provision for the volume. The maximum ratio of IOPS to
@@ -492,8 +492,7 @@ public class Ebs implements Serializable, Cloneable {
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume
      *         Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      *         <p>
-     *         Conditional: This parameter is required when the volume type is <code>io1</code>. (Not used with
-     *         <code>standard</code>, <code>gp2</code>, <code>st1</code>, or <code>sc1</code> volumes.)
+     *         Required when the volume type is <code>io1</code>. (Not used with <code>standard</code>, <code>gp2</code>, <code>st1</code>, or <code>sc1</code> volumes.)
      */
 
     public Integer getIops() {
@@ -508,8 +507,8 @@ public class Ebs implements Serializable, Cloneable {
      * <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * <p>
-     * Conditional: This parameter is required when the volume type is <code>io1</code>. (Not used with
-     * <code>standard</code>, <code>gp2</code>, <code>st1</code>, or <code>sc1</code> volumes.)
+     * Required when the volume type is <code>io1</code>. (Not used with <code>standard</code>, <code>gp2</code>,
+     * <code>st1</code>, or <code>sc1</code> volumes.)
      * </p>
      * 
      * @param iops
@@ -518,8 +517,8 @@ public class Ebs implements Serializable, Cloneable {
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a>
      *        in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      *        <p>
-     *        Conditional: This parameter is required when the volume type is <code>io1</code>. (Not used with
-     *        <code>standard</code>, <code>gp2</code>, <code>st1</code>, or <code>sc1</code> volumes.)
+     *        Required when the volume type is <code>io1</code>. (Not used with <code>standard</code>, <code>gp2</code>,
+     *        <code>st1</code>, or <code>sc1</code> volumes.)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

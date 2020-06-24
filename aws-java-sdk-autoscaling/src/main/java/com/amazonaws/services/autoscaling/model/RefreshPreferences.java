@@ -37,12 +37,8 @@ public class RefreshPreferences implements Serializable, Cloneable {
     /**
      * <p>
      * The number of seconds until a newly launched instance is configured and ready to use. During this time, Amazon
-     * EC2 Auto Scaling does not immediately move on to the next replacement. The default is to use the value specified
-     * for the health check grace period for the group.
-     * </p>
-     * <p>
-     * Note: While warming up, a newly launched instance is not counted toward the aggregated metrics of the Auto
-     * Scaling group.
+     * EC2 Auto Scaling does not immediately move on to the next replacement. The default is to use the value for the
+     * health check grace period defined for the group.
      * </p>
      */
     private Integer instanceWarmup;
@@ -102,21 +98,14 @@ public class RefreshPreferences implements Serializable, Cloneable {
     /**
      * <p>
      * The number of seconds until a newly launched instance is configured and ready to use. During this time, Amazon
-     * EC2 Auto Scaling does not immediately move on to the next replacement. The default is to use the value specified
-     * for the health check grace period for the group.
-     * </p>
-     * <p>
-     * Note: While warming up, a newly launched instance is not counted toward the aggregated metrics of the Auto
-     * Scaling group.
+     * EC2 Auto Scaling does not immediately move on to the next replacement. The default is to use the value for the
+     * health check grace period defined for the group.
      * </p>
      * 
      * @param instanceWarmup
      *        The number of seconds until a newly launched instance is configured and ready to use. During this time,
      *        Amazon EC2 Auto Scaling does not immediately move on to the next replacement. The default is to use the
-     *        value specified for the health check grace period for the group.</p>
-     *        <p>
-     *        Note: While warming up, a newly launched instance is not counted toward the aggregated metrics of the Auto
-     *        Scaling group.
+     *        value for the health check grace period defined for the group.
      */
 
     public void setInstanceWarmup(Integer instanceWarmup) {
@@ -126,20 +115,13 @@ public class RefreshPreferences implements Serializable, Cloneable {
     /**
      * <p>
      * The number of seconds until a newly launched instance is configured and ready to use. During this time, Amazon
-     * EC2 Auto Scaling does not immediately move on to the next replacement. The default is to use the value specified
-     * for the health check grace period for the group.
-     * </p>
-     * <p>
-     * Note: While warming up, a newly launched instance is not counted toward the aggregated metrics of the Auto
-     * Scaling group.
+     * EC2 Auto Scaling does not immediately move on to the next replacement. The default is to use the value for the
+     * health check grace period defined for the group.
      * </p>
      * 
      * @return The number of seconds until a newly launched instance is configured and ready to use. During this time,
      *         Amazon EC2 Auto Scaling does not immediately move on to the next replacement. The default is to use the
-     *         value specified for the health check grace period for the group.</p>
-     *         <p>
-     *         Note: While warming up, a newly launched instance is not counted toward the aggregated metrics of the
-     *         Auto Scaling group.
+     *         value for the health check grace period defined for the group.
      */
 
     public Integer getInstanceWarmup() {
@@ -149,21 +131,14 @@ public class RefreshPreferences implements Serializable, Cloneable {
     /**
      * <p>
      * The number of seconds until a newly launched instance is configured and ready to use. During this time, Amazon
-     * EC2 Auto Scaling does not immediately move on to the next replacement. The default is to use the value specified
-     * for the health check grace period for the group.
-     * </p>
-     * <p>
-     * Note: While warming up, a newly launched instance is not counted toward the aggregated metrics of the Auto
-     * Scaling group.
+     * EC2 Auto Scaling does not immediately move on to the next replacement. The default is to use the value for the
+     * health check grace period defined for the group.
      * </p>
      * 
      * @param instanceWarmup
      *        The number of seconds until a newly launched instance is configured and ready to use. During this time,
      *        Amazon EC2 Auto Scaling does not immediately move on to the next replacement. The default is to use the
-     *        value specified for the health check grace period for the group.</p>
-     *        <p>
-     *        Note: While warming up, a newly launched instance is not counted toward the aggregated metrics of the Auto
-     *        Scaling group.
+     *        value for the health check grace period defined for the group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Result structure for the get artifact request.
+ * Returns the result structure for the get artifact request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetArtifactUrl" target="_top">AWS API
@@ -28,24 +28,24 @@ public class GetArtifactUrlResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Unique Id for a artifact.
+     * The unique ID for an artifact.
      * </p>
      */
     private String artifactId;
     /**
      * <p>
-     * Presigned url for the artifact.
+     * The presigned URL for the artifact.
      * </p>
      */
     private String artifactUrl;
 
     /**
      * <p>
-     * Unique Id for a artifact.
+     * The unique ID for an artifact.
      * </p>
      * 
      * @param artifactId
-     *        Unique Id for a artifact.
+     *        The unique ID for an artifact.
      */
 
     public void setArtifactId(String artifactId) {
@@ -54,10 +54,10 @@ public class GetArtifactUrlResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Unique Id for a artifact.
+     * The unique ID for an artifact.
      * </p>
      * 
-     * @return Unique Id for a artifact.
+     * @return The unique ID for an artifact.
      */
 
     public String getArtifactId() {
@@ -66,11 +66,11 @@ public class GetArtifactUrlResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Unique Id for a artifact.
+     * The unique ID for an artifact.
      * </p>
      * 
      * @param artifactId
-     *        Unique Id for a artifact.
+     *        The unique ID for an artifact.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,11 +81,11 @@ public class GetArtifactUrlResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Presigned url for the artifact.
+     * The presigned URL for the artifact.
      * </p>
      * 
      * @param artifactUrl
-     *        Presigned url for the artifact.
+     *        The presigned URL for the artifact.
      */
 
     public void setArtifactUrl(String artifactUrl) {
@@ -94,10 +94,10 @@ public class GetArtifactUrlResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Presigned url for the artifact.
+     * The presigned URL for the artifact.
      * </p>
      * 
-     * @return Presigned url for the artifact.
+     * @return The presigned URL for the artifact.
      */
 
     public String getArtifactUrl() {
@@ -106,11 +106,11 @@ public class GetArtifactUrlResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Presigned url for the artifact.
+     * The presigned URL for the artifact.
      * </p>
      * 
      * @param artifactUrl
-     *        Presigned url for the artifact.
+     *        The presigned URL for the artifact.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

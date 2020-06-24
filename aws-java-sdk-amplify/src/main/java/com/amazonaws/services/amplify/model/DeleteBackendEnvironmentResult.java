@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Result structure of a delete backend environment result.
+ * The result structure of the delete backend environment result.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/DeleteBackendEnvironment" target="_top">AWS
@@ -28,18 +28,18 @@ public class DeleteBackendEnvironmentResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Backend environment structure for an Amplify App.
+     * Describes the backend environment for an Amplify app.
      * </p>
      */
     private BackendEnvironment backendEnvironment;
 
     /**
      * <p>
-     * Backend environment structure for an Amplify App.
+     * Describes the backend environment for an Amplify app.
      * </p>
      * 
      * @param backendEnvironment
-     *        Backend environment structure for an Amplify App.
+     *        Describes the backend environment for an Amplify app.
      */
 
     public void setBackendEnvironment(BackendEnvironment backendEnvironment) {
@@ -48,10 +48,10 @@ public class DeleteBackendEnvironmentResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Backend environment structure for an Amplify App.
+     * Describes the backend environment for an Amplify app.
      * </p>
      * 
-     * @return Backend environment structure for an Amplify App.
+     * @return Describes the backend environment for an Amplify app.
      */
 
     public BackendEnvironment getBackendEnvironment() {
@@ -60,11 +60,11 @@ public class DeleteBackendEnvironmentResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Backend environment structure for an Amplify App.
+     * Describes the backend environment for an Amplify app.
      * </p>
      * 
      * @param backendEnvironment
-     *        Backend environment structure for an Amplify App.
+     *        Describes the backend environment for an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

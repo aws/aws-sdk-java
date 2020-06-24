@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class BackupJobMarshaller {
 
+    private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("AccountId").build();
     private static final MarshallingInfo<String> BACKUPJOBID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BackupJobId").build();
     private static final MarshallingInfo<String> BACKUPVAULTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -78,6 +80,7 @@ public class BackupJobMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(backupJob.getAccountId(), ACCOUNTID_BINDING);
             protocolMarshaller.marshall(backupJob.getBackupJobId(), BACKUPJOBID_BINDING);
             protocolMarshaller.marshall(backupJob.getBackupVaultName(), BACKUPVAULTNAME_BINDING);
             protocolMarshaller.marshall(backupJob.getBackupVaultArn(), BACKUPVAULTARN_BINDING);

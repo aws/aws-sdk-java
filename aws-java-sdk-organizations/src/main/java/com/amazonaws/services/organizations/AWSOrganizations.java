@@ -218,7 +218,7 @@ public interface AWSOrganizations {
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
@@ -328,12 +328,12 @@ public interface AWSOrganizations {
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @throws AccessDeniedForDependencyException
      *         The operation that you attempted requires you to have the <code>iam:CreateServiceLinkedRole</code> for
      *         <code>organizations.amazonaws.com</code> permission so that AWS Organizations can create the required
@@ -347,52 +347,27 @@ public interface AWSOrganizations {
     /**
      * <p>
      * Attaches a policy to a root, an organizational unit (OU), or an individual account. How the policy affects
-     * accounts depends on the type of policy:
+     * accounts depends on the type of policy. Refer to the <i>AWS Organizations User Guide</i> for information about
+     * each policy type:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <b>Service control policy (SCP)</b> - An SCP specifies what permissions can be delegated to users in affected
-     * member accounts. The scope of influence for a policy depends on what you attach the policy to:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * If you attach an SCP to a root, it affects all accounts in the organization.
+     * <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY
+     * </a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * If you attach an SCP to an OU, it affects all accounts in that OU and in any child OUs.
+     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">
+     * SERVICE_CONTROL_POLICY</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * If you attach the policy directly to an account, it affects only that account.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * SCPs are JSON policies that specify the maximum permissions for an organization or organizational unit (OU). You
-     * can attach one SCP to a higher level root or OU, and a different SCP to a child OU or to an account. The child
-     * policy can further restrict only the permissions that pass through the parent filter and are available to the
-     * child. An SCP that is attached to a child can't grant a permission that the parent hasn't already granted. For
-     * example, imagine that the parent SCP allows permissions A, B, C, D, and E. The child SCP allows C, D, E, F, and
-     * G. The result is that the accounts affected by the child SCP are allowed to use only C, D, and E. They can't use
-     * A or B because the child OU filtered them out. They also can't use F and G because the parent OU filtered them
-     * out. They can't be granted back by the child SCP; child SCPs can only filter the permissions they receive from
-     * the parent SCP.
-     * </p>
-     * <p>
-     * AWS Organizations attaches a default SCP named <code>"FullAWSAccess</code> to every root, OU, and account. This
-     * default SCP allows all services and actions, enabling any new child OU or account to inherit the permissions of
-     * the parent root or OU. If you detach the default policy, you must replace it with a policy that specifies the
-     * permissions that you want to allow in that OU or account.
-     * </p>
-     * <p>
-     * For more information about how AWS Organizations policies permissions work, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">Using Service
-     * Control Policies</a> in the <i>AWS Organizations User Guide.</i>
+     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">
+     * TAG_POLICY</a>
      * </p>
      * </li>
      * </ul>
@@ -416,10 +391,11 @@ public interface AWSOrganizations {
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to remove
      *         the last service control policy (SCP) from an OU or root, inviting or creating too many accounts to the
      *         organization, or attaching too many policies to an account, OU, or root. This exception includes a reason
-     *         that contains additional information about the violated limit.</p>
+     *         that contains additional information about the violated limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
+     *         </note>
      *         <ul>
      *         <li>
      *         <p>
@@ -433,9 +409,8 @@ public interface AWSOrganizations {
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that doesn't
      *         yet have enough information to exist as a standalone account. This account requires you to first agree to
      *         the AWS Customer Agreement. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a>in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -443,9 +418,8 @@ public interface AWSOrganizations {
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization
      *         that doesn't yet have enough information to exist as a standalone account. This account requires you to
      *         first complete phone verification. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a> in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -472,8 +446,8 @@ public interface AWSOrganizations {
      *         </p>
      *         </note> <important>
      *         <p>
-     *         If you get receive this exception when running a command immediately after creating the organization,
-     *         wait one hour and try again. If after an hour it continues to fail with this error, contact <a
+     *         If you get this exception when running a command immediately after creating the organization, wait one
+     *         hour and try again. After an hour, if the command continues to fail with this error, contact <a
      *         href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.
      *         </p>
      *         </important></li>
@@ -533,7 +507,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide contact a valid
+     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
      *         address and phone number for the master account. Then try the operation again.
      *         </p>
      *         </li>
@@ -629,7 +603,7 @@ public interface AWSOrganizations {
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
@@ -747,14 +721,14 @@ public interface AWSOrganizations {
      * @throws TargetNotFoundException
      *         We can't find a root, OU, or account with the <code>TargetId</code> that you specified.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @throws UnsupportedAPIEndpointException
-     *         This action isn't available in the current Region.
+     *         This action isn't available in the current AWS Region.
      * @throws PolicyChangesInProgressException
      *         Changes to the effective policy are in progress, and its contents can't be returned. Try the operation
      *         again later.
@@ -800,7 +774,7 @@ public interface AWSOrganizations {
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
@@ -908,12 +882,12 @@ public interface AWSOrganizations {
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @sample AWSOrganizations.CancelHandshake
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CancelHandshake" target="_top">AWS
      *      API Documentation</a>
@@ -1028,10 +1002,11 @@ public interface AWSOrganizations {
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to remove
      *         the last service control policy (SCP) from an OU or root, inviting or creating too many accounts to the
      *         organization, or attaching too many policies to an account, OU, or root. This exception includes a reason
-     *         that contains additional information about the violated limit.</p>
+     *         that contains additional information about the violated limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
+     *         </note>
      *         <ul>
      *         <li>
      *         <p>
@@ -1045,9 +1020,8 @@ public interface AWSOrganizations {
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that doesn't
      *         yet have enough information to exist as a standalone account. This account requires you to first agree to
      *         the AWS Customer Agreement. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a>in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -1055,9 +1029,8 @@ public interface AWSOrganizations {
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization
      *         that doesn't yet have enough information to exist as a standalone account. This account requires you to
      *         first complete phone verification. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a> in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -1084,8 +1057,8 @@ public interface AWSOrganizations {
      *         </p>
      *         </note> <important>
      *         <p>
-     *         If you get receive this exception when running a command immediately after creating the organization,
-     *         wait one hour and try again. If after an hour it continues to fail with this error, contact <a
+     *         If you get this exception when running a command immediately after creating the organization, wait one
+     *         hour and try again. After an hour, if the command continues to fail with this error, contact <a
      *         href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.
      *         </p>
      *         </important></li>
@@ -1145,7 +1118,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide contact a valid
+     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
      *         address and phone number for the master account. Then try the operation again.
      *         </p>
      *         </li>
@@ -1239,7 +1212,7 @@ public interface AWSOrganizations {
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
@@ -1351,14 +1324,14 @@ public interface AWSOrganizations {
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @throws UnsupportedAPIEndpointException
-     *         This action isn't available in the current Region.
+     *         This action isn't available in the current AWS Region.
      * @sample AWSOrganizations.CreateAccount
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CreateAccount" target="_top">AWS
      *      API Documentation</a>
@@ -1473,9 +1446,10 @@ public interface AWSOrganizations {
      * <li>
      * <p>
      * When you create an account in an organization using the AWS Organizations console, API, or CLI commands, the
-     * information required for the account to operate as a standalone account, such as a payment method and signing the
-     * end user license agreement (EULA) is <i>not</i> automatically collected. If you must remove an account from your
-     * organization later, you can do so only after you provide the missing information. Follow the steps at <a href=
+     * information required for the account to operate as a standalone account is <i>not</i> automatically collected.
+     * This includes a payment method and signing the end user license agreement (EULA). If you must remove an account
+     * from your organization later, you can do so only after you provide the missing information. Follow the steps at
+     * <a href=
      * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
      * > To leave an organization as a member account</a> in the <i>AWS Organizations User Guide.</i>
      * </p>
@@ -1530,10 +1504,11 @@ public interface AWSOrganizations {
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to remove
      *         the last service control policy (SCP) from an OU or root, inviting or creating too many accounts to the
      *         organization, or attaching too many policies to an account, OU, or root. This exception includes a reason
-     *         that contains additional information about the violated limit.</p>
+     *         that contains additional information about the violated limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
+     *         </note>
      *         <ul>
      *         <li>
      *         <p>
@@ -1547,9 +1522,8 @@ public interface AWSOrganizations {
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that doesn't
      *         yet have enough information to exist as a standalone account. This account requires you to first agree to
      *         the AWS Customer Agreement. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a>in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -1557,9 +1531,8 @@ public interface AWSOrganizations {
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization
      *         that doesn't yet have enough information to exist as a standalone account. This account requires you to
      *         first complete phone verification. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a> in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -1586,8 +1559,8 @@ public interface AWSOrganizations {
      *         </p>
      *         </note> <important>
      *         <p>
-     *         If you get receive this exception when running a command immediately after creating the organization,
-     *         wait one hour and try again. If after an hour it continues to fail with this error, contact <a
+     *         If you get this exception when running a command immediately after creating the organization, wait one
+     *         hour and try again. After an hour, if the command continues to fail with this error, contact <a
      *         href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.
      *         </p>
      *         </important></li>
@@ -1647,7 +1620,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide contact a valid
+     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
      *         address and phone number for the master account. Then try the operation again.
      *         </p>
      *         </li>
@@ -1741,7 +1714,7 @@ public interface AWSOrganizations {
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
@@ -1853,14 +1826,14 @@ public interface AWSOrganizations {
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @throws UnsupportedAPIEndpointException
-     *         This action isn't available in the current Region.
+     *         This action isn't available in the current AWS Region.
      * @sample AWSOrganizations.CreateGovCloudAccount
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CreateGovCloudAccount"
      *      target="_top">AWS API Documentation</a>
@@ -1902,10 +1875,11 @@ public interface AWSOrganizations {
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to remove
      *         the last service control policy (SCP) from an OU or root, inviting or creating too many accounts to the
      *         organization, or attaching too many policies to an account, OU, or root. This exception includes a reason
-     *         that contains additional information about the violated limit.</p>
+     *         that contains additional information about the violated limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
+     *         </note>
      *         <ul>
      *         <li>
      *         <p>
@@ -1919,9 +1893,8 @@ public interface AWSOrganizations {
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that doesn't
      *         yet have enough information to exist as a standalone account. This account requires you to first agree to
      *         the AWS Customer Agreement. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a>in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -1929,9 +1902,8 @@ public interface AWSOrganizations {
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization
      *         that doesn't yet have enough information to exist as a standalone account. This account requires you to
      *         first complete phone verification. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a> in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -1958,8 +1930,8 @@ public interface AWSOrganizations {
      *         </p>
      *         </note> <important>
      *         <p>
-     *         If you get receive this exception when running a command immediately after creating the organization,
-     *         wait one hour and try again. If after an hour it continues to fail with this error, contact <a
+     *         If you get this exception when running a command immediately after creating the organization, wait one
+     *         hour and try again. After an hour, if the command continues to fail with this error, contact <a
      *         href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.
      *         </p>
      *         </important></li>
@@ -2019,7 +1991,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide contact a valid
+     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
      *         address and phone number for the master account. Then try the operation again.
      *         </p>
      *         </li>
@@ -2113,7 +2085,7 @@ public interface AWSOrganizations {
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
@@ -2221,12 +2193,12 @@ public interface AWSOrganizations {
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @throws AccessDeniedForDependencyException
      *         The operation that you attempted requires you to have the <code>iam:CreateServiceLinkedRole</code> for
      *         <code>organizations.amazonaws.com</code> permission so that AWS Organizations can create the required
@@ -2269,10 +2241,11 @@ public interface AWSOrganizations {
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to remove
      *         the last service control policy (SCP) from an OU or root, inviting or creating too many accounts to the
      *         organization, or attaching too many policies to an account, OU, or root. This exception includes a reason
-     *         that contains additional information about the violated limit.</p>
+     *         that contains additional information about the violated limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
+     *         </note>
      *         <ul>
      *         <li>
      *         <p>
@@ -2286,9 +2259,8 @@ public interface AWSOrganizations {
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that doesn't
      *         yet have enough information to exist as a standalone account. This account requires you to first agree to
      *         the AWS Customer Agreement. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a>in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -2296,9 +2268,8 @@ public interface AWSOrganizations {
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization
      *         that doesn't yet have enough information to exist as a standalone account. This account requires you to
      *         first complete phone verification. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a> in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -2325,8 +2296,8 @@ public interface AWSOrganizations {
      *         </p>
      *         </note> <important>
      *         <p>
-     *         If you get receive this exception when running a command immediately after creating the organization,
-     *         wait one hour and try again. If after an hour it continues to fail with this error, contact <a
+     *         If you get this exception when running a command immediately after creating the organization, wait one
+     *         hour and try again. After an hour, if the command continues to fail with this error, contact <a
      *         href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.
      *         </p>
      *         </important></li>
@@ -2386,7 +2357,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide contact a valid
+     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
      *         address and phone number for the master account. Then try the operation again.
      *         </p>
      *         </li>
@@ -2482,7 +2453,7 @@ public interface AWSOrganizations {
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
@@ -2592,12 +2563,12 @@ public interface AWSOrganizations {
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @sample AWSOrganizations.CreateOrganizationalUnit
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CreateOrganizationalUnit"
      *      target="_top">AWS API Documentation</a>
@@ -2634,10 +2605,11 @@ public interface AWSOrganizations {
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to remove
      *         the last service control policy (SCP) from an OU or root, inviting or creating too many accounts to the
      *         organization, or attaching too many policies to an account, OU, or root. This exception includes a reason
-     *         that contains additional information about the violated limit.</p>
+     *         that contains additional information about the violated limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
+     *         </note>
      *         <ul>
      *         <li>
      *         <p>
@@ -2651,9 +2623,8 @@ public interface AWSOrganizations {
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that doesn't
      *         yet have enough information to exist as a standalone account. This account requires you to first agree to
      *         the AWS Customer Agreement. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a>in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -2661,9 +2632,8 @@ public interface AWSOrganizations {
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization
      *         that doesn't yet have enough information to exist as a standalone account. This account requires you to
      *         first complete phone verification. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a> in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -2690,8 +2660,8 @@ public interface AWSOrganizations {
      *         </p>
      *         </note> <important>
      *         <p>
-     *         If you get receive this exception when running a command immediately after creating the organization,
-     *         wait one hour and try again. If after an hour it continues to fail with this error, contact <a
+     *         If you get this exception when running a command immediately after creating the organization, wait one
+     *         hour and try again. After an hour, if the command continues to fail with this error, contact <a
      *         href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.
      *         </p>
      *         </important></li>
@@ -2751,7 +2721,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide contact a valid
+     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
      *         address and phone number for the master account. Then try the operation again.
      *         </p>
      *         </li>
@@ -2847,7 +2817,7 @@ public interface AWSOrganizations {
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
@@ -2962,18 +2932,18 @@ public interface AWSOrganizations {
      *         example, you can enable SCPs only after you enable all features in the organization. For more
      *         information, see <a href=
      *         "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies.html#enable_policies_on_root"
-     *         >Enabling and Disabling a Policy Type on a Root</a> in the <i>AWS Organizations User Guide.</i>
+     *         >Managing AWS Organizations Policies</a>in the <i>AWS Organizations User Guide.</i>
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @throws UnsupportedAPIEndpointException
-     *         This action isn't available in the current Region.
+     *         This action isn't available in the current AWS Region.
      * @sample AWSOrganizations.CreatePolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CreatePolicy" target="_top">AWS API
      *      Documentation</a>
@@ -3017,7 +2987,7 @@ public interface AWSOrganizations {
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
@@ -3125,12 +3095,12 @@ public interface AWSOrganizations {
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @sample AWSOrganizations.DeclineHandshake
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeclineHandshake" target="_top">AWS
      *      API Documentation</a>
@@ -3160,7 +3130,7 @@ public interface AWSOrganizations {
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
@@ -3271,12 +3241,12 @@ public interface AWSOrganizations {
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @sample AWSOrganizations.DeleteOrganization
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeleteOrganization"
      *      target="_top">AWS API Documentation</a>
@@ -3309,7 +3279,7 @@ public interface AWSOrganizations {
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
@@ -3422,12 +3392,12 @@ public interface AWSOrganizations {
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @sample AWSOrganizations.DeleteOrganizationalUnit
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeleteOrganizationalUnit"
      *      target="_top">AWS API Documentation</a>
@@ -3460,7 +3430,7 @@ public interface AWSOrganizations {
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
@@ -3573,14 +3543,14 @@ public interface AWSOrganizations {
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @throws UnsupportedAPIEndpointException
-     *         This action isn't available in the current Region.
+     *         This action isn't available in the current AWS Region.
      * @sample AWSOrganizations.DeletePolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeletePolicy" target="_top">AWS API
      *      Documentation</a>
@@ -3622,10 +3592,11 @@ public interface AWSOrganizations {
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to remove
      *         the last service control policy (SCP) from an OU or root, inviting or creating too many accounts to the
      *         organization, or attaching too many policies to an account, OU, or root. This exception includes a reason
-     *         that contains additional information about the violated limit.</p>
+     *         that contains additional information about the violated limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
+     *         </note>
      *         <ul>
      *         <li>
      *         <p>
@@ -3639,9 +3610,8 @@ public interface AWSOrganizations {
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that doesn't
      *         yet have enough information to exist as a standalone account. This account requires you to first agree to
      *         the AWS Customer Agreement. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a>in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -3649,9 +3619,8 @@ public interface AWSOrganizations {
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization
      *         that doesn't yet have enough information to exist as a standalone account. This account requires you to
      *         first complete phone verification. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a> in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -3678,8 +3647,8 @@ public interface AWSOrganizations {
      *         </p>
      *         </note> <important>
      *         <p>
-     *         If you get receive this exception when running a command immediately after creating the organization,
-     *         wait one hour and try again. If after an hour it continues to fail with this error, contact <a
+     *         If you get this exception when running a command immediately after creating the organization, wait one
+     *         hour and try again. After an hour, if the command continues to fail with this error, contact <a
      *         href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.
      *         </p>
      *         </important></li>
@@ -3739,7 +3708,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide contact a valid
+     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
      *         address and phone number for the master account. Then try the operation again.
      *         </p>
      *         </li>
@@ -3833,7 +3802,7 @@ public interface AWSOrganizations {
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
@@ -3939,16 +3908,16 @@ public interface AWSOrganizations {
      *         </p>
      *         </li>
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws UnsupportedAPIEndpointException
-     *         This action isn't available in the current Region.
+     *         This action isn't available in the current AWS Region.
      * @sample AWSOrganizations.DeregisterDelegatedAdministrator
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeregisterDelegatedAdministrator"
      *      target="_top">AWS API Documentation</a>
@@ -3982,7 +3951,7 @@ public interface AWSOrganizations {
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
@@ -4090,12 +4059,12 @@ public interface AWSOrganizations {
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @sample AWSOrganizations.DescribeAccount
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeAccount" target="_top">AWS
      *      API Documentation</a>
@@ -4128,7 +4097,7 @@ public interface AWSOrganizations {
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
@@ -4236,14 +4205,14 @@ public interface AWSOrganizations {
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @throws UnsupportedAPIEndpointException
-     *         This action isn't available in the current Region.
+     *         This action isn't available in the current AWS Region.
      * @sample AWSOrganizations.DescribeCreateAccountStatus
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeCreateAccountStatus"
      *      target="_top">AWS API Documentation</a>
@@ -4252,14 +4221,15 @@ public interface AWSOrganizations {
 
     /**
      * <p>
-     * Returns the contents of the effective tag policy for the account. The effective tag policy is the aggregation of
-     * any tag policies the account inherits, plus any policy directly that is attached to the account.
+     * Returns the contents of the effective policy for specified policy type and account. The effective policy is the
+     * aggregation of any policies of the specified type that the account inherits, plus any policy of that type that is
+     * directly attached to the account.
      * </p>
      * <p>
-     * This action returns information on tag policies only.
+     * This operation applies only to policy types <i>other</i> than service control policies (SCPs).
      * </p>
      * <p>
-     * For more information on policy inheritance, see <a
+     * For more information about policy inheritance, see <a
      * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies-inheritance.html">How Policy
      * Inheritance Works</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
@@ -4282,10 +4252,11 @@ public interface AWSOrganizations {
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to remove
      *         the last service control policy (SCP) from an OU or root, inviting or creating too many accounts to the
      *         organization, or attaching too many policies to an account, OU, or root. This exception includes a reason
-     *         that contains additional information about the violated limit.</p>
+     *         that contains additional information about the violated limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
+     *         </note>
      *         <ul>
      *         <li>
      *         <p>
@@ -4299,9 +4270,8 @@ public interface AWSOrganizations {
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that doesn't
      *         yet have enough information to exist as a standalone account. This account requires you to first agree to
      *         the AWS Customer Agreement. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a>in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -4309,9 +4279,8 @@ public interface AWSOrganizations {
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization
      *         that doesn't yet have enough information to exist as a standalone account. This account requires you to
      *         first complete phone verification. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a> in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -4338,8 +4307,8 @@ public interface AWSOrganizations {
      *         </p>
      *         </note> <important>
      *         <p>
-     *         If you get receive this exception when running a command immediately after creating the organization,
-     *         wait one hour and try again. If after an hour it continues to fail with this error, contact <a
+     *         If you get this exception when running a command immediately after creating the organization, wait one
+     *         hour and try again. After an hour, if the command continues to fail with this error, contact <a
      *         href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.
      *         </p>
      *         </important></li>
@@ -4399,7 +4368,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide contact a valid
+     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
      *         address and phone number for the master account. Then try the operation again.
      *         </p>
      *         </li>
@@ -4491,12 +4460,12 @@ public interface AWSOrganizations {
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @throws TargetNotFoundException
      *         We can't find a root, OU, or account with the <code>TargetId</code> that you specified.
      * @throws EffectivePolicyNotFoundException
@@ -4510,7 +4479,7 @@ public interface AWSOrganizations {
      *         </p>
      *         <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
@@ -4616,7 +4585,7 @@ public interface AWSOrganizations {
      *         </p>
      *         </li>
      * @throws UnsupportedAPIEndpointException
-     *         This action isn't available in the current Region.
+     *         This action isn't available in the current AWS Region.
      * @sample AWSOrganizations.DescribeEffectivePolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeEffectivePolicy"
      *      target="_top">AWS API Documentation</a>
@@ -4652,7 +4621,7 @@ public interface AWSOrganizations {
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
@@ -4760,12 +4729,12 @@ public interface AWSOrganizations {
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @sample AWSOrganizations.DescribeHandshake
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeHandshake"
      *      target="_top">AWS API Documentation</a>
@@ -4801,12 +4770,12 @@ public interface AWSOrganizations {
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @sample AWSOrganizations.DescribeOrganization
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeOrganization"
      *      target="_top">AWS API Documentation</a>
@@ -4837,7 +4806,7 @@ public interface AWSOrganizations {
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
@@ -4947,12 +4916,12 @@ public interface AWSOrganizations {
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @sample AWSOrganizations.DescribeOrganizationalUnit
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeOrganizationalUnit"
      *      target="_top">AWS API Documentation</a>
@@ -4983,7 +4952,7 @@ public interface AWSOrganizations {
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
@@ -5093,14 +5062,14 @@ public interface AWSOrganizations {
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @throws UnsupportedAPIEndpointException
-     *         This action isn't available in the current Region.
+     *         This action isn't available in the current AWS Region.
      * @sample AWSOrganizations.DescribePolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribePolicy" target="_top">AWS
      *      API Documentation</a>
@@ -5109,21 +5078,25 @@ public interface AWSOrganizations {
 
     /**
      * <p>
-     * Detaches a policy from a target root, organizational unit (OU), or account. If the policy being detached is a
-     * service control policy (SCP), the changes to permissions for IAM users and roles in affected accounts are
-     * immediate.
+     * Detaches a policy from a target root, organizational unit (OU), or account.
      * </p>
+     * <important>
      * <p>
-     * <b>Note:</b> Every root, OU, and account must have at least one SCP attached. If you want to replace the default
-     * <code>FullAWSAccess</code> policy with one that limits the permissions that can be delegated, you must attach the
-     * replacement policy before you can remove the default one. This is the authorization strategy of an
-     * "<a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_about-scps.html#
-     * orgs_policies_whitelist">allow list</a>". If you instead attach a second SCP and leave the
-     * <code>FullAWSAccess</code> SCP still attached, and specify <code>"Effect": "Deny"</code> in the second SCP to
-     * override the <code>"Effect": "Allow"</code> in the <code>FullAWSAccess</code> policy (or any other attached SCP),
-     * you're using the authorization strategy of a
-     * "<a href="https://docs.aws.amazon.com/organizations/latest/userguide/
-     * orgs_manage_policies_about-scps.html#orgs_policies_blacklist">deny list</a>".
+     * If the policy being detached is a service control policy (SCP), the changes to permissions for AWS Identity and
+     * Access Management (IAM) users and roles in affected accounts are immediate.
+     * </p>
+     * </important>
+     * <p>
+     * Every root, OU, and account must have at least one SCP attached. If you want to replace the default
+     * <code>FullAWSAccess</code> policy with an SCP that limits the permissions that can be delegated, you must attach
+     * the replacement SCP before you can remove the default SCP. This is the authorization strategy of an
+     * "<a href="https://docs.aws.amazon.com/organizations/latest/userguide/SCP_strategies.html#orgs_policies_allowlist
+     * ">allow list</a>". If you instead attach a second SCP and leave the <code>FullAWSAccess</code> SCP still
+     * attached, and specify <code>"Effect": "Deny"</code> in the second SCP to override the
+     * <code>"Effect": "Allow"</code> in the <code>FullAWSAccess</code> policy (or any other attached SCP), you're using
+     * the authorization strategy of a
+     * "<a href="https://docs.aws.amazon.com/organizations/latest/userguide/SCP_strategies
+     * .html#orgs_policies_denylist">deny list</a>".
      * </p>
      * <p>
      * This operation can be called only from the organization's master account.
@@ -5145,10 +5118,11 @@ public interface AWSOrganizations {
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to remove
      *         the last service control policy (SCP) from an OU or root, inviting or creating too many accounts to the
      *         organization, or attaching too many policies to an account, OU, or root. This exception includes a reason
-     *         that contains additional information about the violated limit.</p>
+     *         that contains additional information about the violated limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
+     *         </note>
      *         <ul>
      *         <li>
      *         <p>
@@ -5162,9 +5136,8 @@ public interface AWSOrganizations {
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that doesn't
      *         yet have enough information to exist as a standalone account. This account requires you to first agree to
      *         the AWS Customer Agreement. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a>in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -5172,9 +5145,8 @@ public interface AWSOrganizations {
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization
      *         that doesn't yet have enough information to exist as a standalone account. This account requires you to
      *         first complete phone verification. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a> in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -5201,8 +5173,8 @@ public interface AWSOrganizations {
      *         </p>
      *         </note> <important>
      *         <p>
-     *         If you get receive this exception when running a command immediately after creating the organization,
-     *         wait one hour and try again. If after an hour it continues to fail with this error, contact <a
+     *         If you get this exception when running a command immediately after creating the organization, wait one
+     *         hour and try again. After an hour, if the command continues to fail with this error, contact <a
      *         href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.
      *         </p>
      *         </important></li>
@@ -5262,7 +5234,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide contact a valid
+     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
      *         address and phone number for the master account. Then try the operation again.
      *         </p>
      *         </li>
@@ -5356,7 +5328,7 @@ public interface AWSOrganizations {
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
@@ -5470,14 +5442,14 @@ public interface AWSOrganizations {
      * @throws TargetNotFoundException
      *         We can't find a root, OU, or account with the <code>TargetId</code> that you specified.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @throws UnsupportedAPIEndpointException
-     *         This action isn't available in the current Region.
+     *         This action isn't available in the current AWS Region.
      * @throws PolicyChangesInProgressException
      *         Changes to the effective policy are in progress, and its contents can't be returned. Try the operation
      *         again later.
@@ -5537,10 +5509,11 @@ public interface AWSOrganizations {
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to remove
      *         the last service control policy (SCP) from an OU or root, inviting or creating too many accounts to the
      *         organization, or attaching too many policies to an account, OU, or root. This exception includes a reason
-     *         that contains additional information about the violated limit.</p>
+     *         that contains additional information about the violated limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
+     *         </note>
      *         <ul>
      *         <li>
      *         <p>
@@ -5554,9 +5527,8 @@ public interface AWSOrganizations {
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that doesn't
      *         yet have enough information to exist as a standalone account. This account requires you to first agree to
      *         the AWS Customer Agreement. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a>in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -5564,9 +5536,8 @@ public interface AWSOrganizations {
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization
      *         that doesn't yet have enough information to exist as a standalone account. This account requires you to
      *         first complete phone verification. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a> in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -5593,8 +5564,8 @@ public interface AWSOrganizations {
      *         </p>
      *         </note> <important>
      *         <p>
-     *         If you get receive this exception when running a command immediately after creating the organization,
-     *         wait one hour and try again. If after an hour it continues to fail with this error, contact <a
+     *         If you get this exception when running a command immediately after creating the organization, wait one
+     *         hour and try again. After an hour, if the command continues to fail with this error, contact <a
      *         href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.
      *         </p>
      *         </important></li>
@@ -5654,7 +5625,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide contact a valid
+     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
      *         address and phone number for the master account. Then try the operation again.
      *         </p>
      *         </li>
@@ -5748,7 +5719,7 @@ public interface AWSOrganizations {
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
@@ -5856,14 +5827,14 @@ public interface AWSOrganizations {
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @throws UnsupportedAPIEndpointException
-     *         This action isn't available in the current Region.
+     *         This action isn't available in the current AWS Region.
      * @sample AWSOrganizations.DisableAWSServiceAccess
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DisableAWSServiceAccess"
      *      target="_top">AWS API Documentation</a>
@@ -5872,14 +5843,14 @@ public interface AWSOrganizations {
 
     /**
      * <p>
-     * Disables an organizational control policy type in a root. A policy of a certain type can be attached to entities
-     * in a root only if that type is enabled in the root. After you perform this operation, you no longer can attach
+     * Disables an organizational policy type in a root. A policy of a certain type can be attached to entities in a
+     * root only if that type is enabled in the root. After you perform this operation, you no longer can attach
      * policies of the specified type to that root or to any organizational unit (OU) or account in that root. You can
      * undo this by using the <a>EnablePolicyType</a> operation.
      * </p>
      * <p>
-     * This is an asynchronous request that AWS performs in the background. If you disable a policy for a root, it still
-     * appears enabled for the organization if <a
+     * This is an asynchronous request that AWS performs in the background. If you disable a policy type for a root, it
+     * still appears enabled for the organization if <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">all
      * features</a> are enabled for the organization. AWS recommends that you first use <a>ListRoots</a> to see the
      * status of policy types for a specified root, and then use this operation.
@@ -5907,10 +5878,11 @@ public interface AWSOrganizations {
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to remove
      *         the last service control policy (SCP) from an OU or root, inviting or creating too many accounts to the
      *         organization, or attaching too many policies to an account, OU, or root. This exception includes a reason
-     *         that contains additional information about the violated limit.</p>
+     *         that contains additional information about the violated limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
+     *         </note>
      *         <ul>
      *         <li>
      *         <p>
@@ -5924,9 +5896,8 @@ public interface AWSOrganizations {
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that doesn't
      *         yet have enough information to exist as a standalone account. This account requires you to first agree to
      *         the AWS Customer Agreement. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a>in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -5934,9 +5905,8 @@ public interface AWSOrganizations {
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization
      *         that doesn't yet have enough information to exist as a standalone account. This account requires you to
      *         first complete phone verification. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a> in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -5963,8 +5933,8 @@ public interface AWSOrganizations {
      *         </p>
      *         </note> <important>
      *         <p>
-     *         If you get receive this exception when running a command immediately after creating the organization,
-     *         wait one hour and try again. If after an hour it continues to fail with this error, contact <a
+     *         If you get this exception when running a command immediately after creating the organization, wait one
+     *         hour and try again. After an hour, if the command continues to fail with this error, contact <a
      *         href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.
      *         </p>
      *         </important></li>
@@ -6024,7 +5994,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide contact a valid
+     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
      *         address and phone number for the master account. Then try the operation again.
      *         </p>
      *         </li>
@@ -6118,7 +6088,7 @@ public interface AWSOrganizations {
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
@@ -6234,14 +6204,14 @@ public interface AWSOrganizations {
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @throws UnsupportedAPIEndpointException
-     *         This action isn't available in the current Region.
+     *         This action isn't available in the current AWS Region.
      * @throws PolicyChangesInProgressException
      *         Changes to the effective policy are in progress, and its contents can't be returned. Try the operation
      *         again later.
@@ -6296,10 +6266,11 @@ public interface AWSOrganizations {
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to remove
      *         the last service control policy (SCP) from an OU or root, inviting or creating too many accounts to the
      *         organization, or attaching too many policies to an account, OU, or root. This exception includes a reason
-     *         that contains additional information about the violated limit.</p>
+     *         that contains additional information about the violated limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
+     *         </note>
      *         <ul>
      *         <li>
      *         <p>
@@ -6313,9 +6284,8 @@ public interface AWSOrganizations {
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that doesn't
      *         yet have enough information to exist as a standalone account. This account requires you to first agree to
      *         the AWS Customer Agreement. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a>in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -6323,9 +6293,8 @@ public interface AWSOrganizations {
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization
      *         that doesn't yet have enough information to exist as a standalone account. This account requires you to
      *         first complete phone verification. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a> in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -6352,8 +6321,8 @@ public interface AWSOrganizations {
      *         </p>
      *         </note> <important>
      *         <p>
-     *         If you get receive this exception when running a command immediately after creating the organization,
-     *         wait one hour and try again. If after an hour it continues to fail with this error, contact <a
+     *         If you get this exception when running a command immediately after creating the organization, wait one
+     *         hour and try again. After an hour, if the command continues to fail with this error, contact <a
      *         href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.
      *         </p>
      *         </important></li>
@@ -6413,7 +6382,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide contact a valid
+     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
      *         address and phone number for the master account. Then try the operation again.
      *         </p>
      *         </li>
@@ -6507,7 +6476,7 @@ public interface AWSOrganizations {
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
@@ -6615,14 +6584,14 @@ public interface AWSOrganizations {
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @throws UnsupportedAPIEndpointException
-     *         This action isn't available in the current Region.
+     *         This action isn't available in the current AWS Region.
      * @sample AWSOrganizations.EnableAWSServiceAccess
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnableAWSServiceAccess"
      *      target="_top">AWS API Documentation</a>
@@ -6745,7 +6714,7 @@ public interface AWSOrganizations {
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
@@ -6853,12 +6822,12 @@ public interface AWSOrganizations {
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @sample AWSOrganizations.EnableAllFeatures
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnableAllFeatures"
      *      target="_top">AWS API Documentation</a>
@@ -6899,10 +6868,11 @@ public interface AWSOrganizations {
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to remove
      *         the last service control policy (SCP) from an OU or root, inviting or creating too many accounts to the
      *         organization, or attaching too many policies to an account, OU, or root. This exception includes a reason
-     *         that contains additional information about the violated limit.</p>
+     *         that contains additional information about the violated limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
+     *         </note>
      *         <ul>
      *         <li>
      *         <p>
@@ -6916,9 +6886,8 @@ public interface AWSOrganizations {
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that doesn't
      *         yet have enough information to exist as a standalone account. This account requires you to first agree to
      *         the AWS Customer Agreement. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a>in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -6926,9 +6895,8 @@ public interface AWSOrganizations {
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization
      *         that doesn't yet have enough information to exist as a standalone account. This account requires you to
      *         first complete phone verification. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a> in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -6955,8 +6923,8 @@ public interface AWSOrganizations {
      *         </p>
      *         </note> <important>
      *         <p>
-     *         If you get receive this exception when running a command immediately after creating the organization,
-     *         wait one hour and try again. If after an hour it continues to fail with this error, contact <a
+     *         If you get this exception when running a command immediately after creating the organization, wait one
+     *         hour and try again. After an hour, if the command continues to fail with this error, contact <a
      *         href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.
      *         </p>
      *         </important></li>
@@ -7016,7 +6984,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide contact a valid
+     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
      *         address and phone number for the master account. Then try the operation again.
      *         </p>
      *         </li>
@@ -7110,7 +7078,7 @@ public interface AWSOrganizations {
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
@@ -7222,20 +7190,20 @@ public interface AWSOrganizations {
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @throws PolicyTypeNotAvailableForOrganizationException
      *         You can't use the specified policy type with the feature set currently enabled for this organization. For
      *         example, you can enable SCPs only after you enable all features in the organization. For more
      *         information, see <a href=
      *         "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies.html#enable_policies_on_root"
-     *         >Enabling and Disabling a Policy Type on a Root</a> in the <i>AWS Organizations User Guide.</i>
+     *         >Managing AWS Organizations Policies</a>in the <i>AWS Organizations User Guide.</i>
      * @throws UnsupportedAPIEndpointException
-     *         This action isn't available in the current Region.
+     *         This action isn't available in the current AWS Region.
      * @throws PolicyChangesInProgressException
      *         Changes to the effective policy are in progress, and its contents can't be returned. Try the operation
      *         again later.
@@ -7366,7 +7334,7 @@ public interface AWSOrganizations {
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
@@ -7478,12 +7446,12 @@ public interface AWSOrganizations {
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @sample AWSOrganizations.InviteAccountToOrganization
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/InviteAccountToOrganization"
      *      target="_top">AWS API Documentation</a>
@@ -7576,10 +7544,11 @@ public interface AWSOrganizations {
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to remove
      *         the last service control policy (SCP) from an OU or root, inviting or creating too many accounts to the
      *         organization, or attaching too many policies to an account, OU, or root. This exception includes a reason
-     *         that contains additional information about the violated limit.</p>
+     *         that contains additional information about the violated limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
+     *         </note>
      *         <ul>
      *         <li>
      *         <p>
@@ -7593,9 +7562,8 @@ public interface AWSOrganizations {
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that doesn't
      *         yet have enough information to exist as a standalone account. This account requires you to first agree to
      *         the AWS Customer Agreement. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a>in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -7603,9 +7571,8 @@ public interface AWSOrganizations {
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization
      *         that doesn't yet have enough information to exist as a standalone account. This account requires you to
      *         first complete phone verification. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a> in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -7632,8 +7599,8 @@ public interface AWSOrganizations {
      *         </p>
      *         </note> <important>
      *         <p>
-     *         If you get receive this exception when running a command immediately after creating the organization,
-     *         wait one hour and try again. If after an hour it continues to fail with this error, contact <a
+     *         If you get this exception when running a command immediately after creating the organization, wait one
+     *         hour and try again. After an hour, if the command continues to fail with this error, contact <a
      *         href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.
      *         </p>
      *         </important></li>
@@ -7693,7 +7660,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide contact a valid
+     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
      *         address and phone number for the master account. Then try the operation again.
      *         </p>
      *         </li>
@@ -7787,7 +7754,7 @@ public interface AWSOrganizations {
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
@@ -7898,12 +7865,12 @@ public interface AWSOrganizations {
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @sample AWSOrganizations.LeaveOrganization
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/LeaveOrganization"
      *      target="_top">AWS API Documentation</a>
@@ -7941,10 +7908,11 @@ public interface AWSOrganizations {
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to remove
      *         the last service control policy (SCP) from an OU or root, inviting or creating too many accounts to the
      *         organization, or attaching too many policies to an account, OU, or root. This exception includes a reason
-     *         that contains additional information about the violated limit.</p>
+     *         that contains additional information about the violated limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
+     *         </note>
      *         <ul>
      *         <li>
      *         <p>
@@ -7958,9 +7926,8 @@ public interface AWSOrganizations {
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that doesn't
      *         yet have enough information to exist as a standalone account. This account requires you to first agree to
      *         the AWS Customer Agreement. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a>in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -7968,9 +7935,8 @@ public interface AWSOrganizations {
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization
      *         that doesn't yet have enough information to exist as a standalone account. This account requires you to
      *         first complete phone verification. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a> in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -7997,8 +7963,8 @@ public interface AWSOrganizations {
      *         </p>
      *         </note> <important>
      *         <p>
-     *         If you get receive this exception when running a command immediately after creating the organization,
-     *         wait one hour and try again. If after an hour it continues to fail with this error, contact <a
+     *         If you get this exception when running a command immediately after creating the organization, wait one
+     *         hour and try again. After an hour, if the command continues to fail with this error, contact <a
      *         href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.
      *         </p>
      *         </important></li>
@@ -8058,7 +8024,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide contact a valid
+     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
      *         address and phone number for the master account. Then try the operation again.
      *         </p>
      *         </li>
@@ -8152,7 +8118,7 @@ public interface AWSOrganizations {
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
@@ -8260,14 +8226,14 @@ public interface AWSOrganizations {
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @throws UnsupportedAPIEndpointException
-     *         This action isn't available in the current Region.
+     *         This action isn't available in the current AWS Region.
      * @sample AWSOrganizations.ListAWSServiceAccessForOrganization
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListAWSServiceAccessForOrganization"
@@ -8309,7 +8275,7 @@ public interface AWSOrganizations {
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
@@ -8417,12 +8383,12 @@ public interface AWSOrganizations {
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @sample AWSOrganizations.ListAccounts
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListAccounts" target="_top">AWS API
      *      Documentation</a>
@@ -8464,7 +8430,7 @@ public interface AWSOrganizations {
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
@@ -8574,12 +8540,12 @@ public interface AWSOrganizations {
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @sample AWSOrganizations.ListAccountsForParent
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListAccountsForParent"
      *      target="_top">AWS API Documentation</a>
@@ -8619,7 +8585,7 @@ public interface AWSOrganizations {
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
@@ -8729,12 +8695,12 @@ public interface AWSOrganizations {
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @sample AWSOrganizations.ListChildren
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListChildren" target="_top">AWS API
      *      Documentation</a>
@@ -8774,7 +8740,7 @@ public interface AWSOrganizations {
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
@@ -8882,14 +8848,14 @@ public interface AWSOrganizations {
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @throws UnsupportedAPIEndpointException
-     *         This action isn't available in the current Region.
+     *         This action isn't available in the current AWS Region.
      * @sample AWSOrganizations.ListCreateAccountStatus
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListCreateAccountStatus"
      *      target="_top">AWS API Documentation</a>
@@ -8919,10 +8885,11 @@ public interface AWSOrganizations {
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to remove
      *         the last service control policy (SCP) from an OU or root, inviting or creating too many accounts to the
      *         organization, or attaching too many policies to an account, OU, or root. This exception includes a reason
-     *         that contains additional information about the violated limit.</p>
+     *         that contains additional information about the violated limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
+     *         </note>
      *         <ul>
      *         <li>
      *         <p>
@@ -8936,9 +8903,8 @@ public interface AWSOrganizations {
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that doesn't
      *         yet have enough information to exist as a standalone account. This account requires you to first agree to
      *         the AWS Customer Agreement. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a>in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -8946,9 +8912,8 @@ public interface AWSOrganizations {
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization
      *         that doesn't yet have enough information to exist as a standalone account. This account requires you to
      *         first complete phone verification. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a> in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -8975,8 +8940,8 @@ public interface AWSOrganizations {
      *         </p>
      *         </note> <important>
      *         <p>
-     *         If you get receive this exception when running a command immediately after creating the organization,
-     *         wait one hour and try again. If after an hour it continues to fail with this error, contact <a
+     *         If you get this exception when running a command immediately after creating the organization, wait one
+     *         hour and try again. After an hour, if the command continues to fail with this error, contact <a
      *         href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.
      *         </p>
      *         </important></li>
@@ -9036,7 +9001,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide contact a valid
+     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
      *         address and phone number for the master account. Then try the operation again.
      *         </p>
      *         </li>
@@ -9130,7 +9095,7 @@ public interface AWSOrganizations {
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
@@ -9236,16 +9201,16 @@ public interface AWSOrganizations {
      *         </p>
      *         </li>
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws UnsupportedAPIEndpointException
-     *         This action isn't available in the current Region.
+     *         This action isn't available in the current AWS Region.
      * @sample AWSOrganizations.ListDelegatedAdministrators
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListDelegatedAdministrators"
      *      target="_top">AWS API Documentation</a>
@@ -9280,10 +9245,11 @@ public interface AWSOrganizations {
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to remove
      *         the last service control policy (SCP) from an OU or root, inviting or creating too many accounts to the
      *         organization, or attaching too many policies to an account, OU, or root. This exception includes a reason
-     *         that contains additional information about the violated limit.</p>
+     *         that contains additional information about the violated limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
+     *         </note>
      *         <ul>
      *         <li>
      *         <p>
@@ -9297,9 +9263,8 @@ public interface AWSOrganizations {
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that doesn't
      *         yet have enough information to exist as a standalone account. This account requires you to first agree to
      *         the AWS Customer Agreement. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a>in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -9307,9 +9272,8 @@ public interface AWSOrganizations {
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization
      *         that doesn't yet have enough information to exist as a standalone account. This account requires you to
      *         first complete phone verification. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a> in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -9336,8 +9300,8 @@ public interface AWSOrganizations {
      *         </p>
      *         </note> <important>
      *         <p>
-     *         If you get receive this exception when running a command immediately after creating the organization,
-     *         wait one hour and try again. If after an hour it continues to fail with this error, contact <a
+     *         If you get this exception when running a command immediately after creating the organization, wait one
+     *         hour and try again. After an hour, if the command continues to fail with this error, contact <a
      *         href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.
      *         </p>
      *         </important></li>
@@ -9397,7 +9361,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide contact a valid
+     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
      *         address and phone number for the master account. Then try the operation again.
      *         </p>
      *         </li>
@@ -9491,7 +9455,7 @@ public interface AWSOrganizations {
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
@@ -9597,16 +9561,16 @@ public interface AWSOrganizations {
      *         </p>
      *         </li>
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws UnsupportedAPIEndpointException
-     *         This action isn't available in the current Region.
+     *         This action isn't available in the current AWS Region.
      * @sample AWSOrganizations.ListDelegatedServicesForAccount
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListDelegatedServicesForAccount"
      *      target="_top">AWS API Documentation</a>
@@ -9648,7 +9612,7 @@ public interface AWSOrganizations {
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
@@ -9756,12 +9720,12 @@ public interface AWSOrganizations {
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @sample AWSOrganizations.ListHandshakesForAccount
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListHandshakesForAccount"
      *      target="_top">AWS API Documentation</a>
@@ -9808,7 +9772,7 @@ public interface AWSOrganizations {
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
@@ -9916,12 +9880,12 @@ public interface AWSOrganizations {
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @sample AWSOrganizations.ListHandshakesForOrganization
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListHandshakesForOrganization"
      *      target="_top">AWS API Documentation</a>
@@ -9960,7 +9924,7 @@ public interface AWSOrganizations {
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
@@ -10070,12 +10034,12 @@ public interface AWSOrganizations {
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @sample AWSOrganizations.ListOrganizationalUnitsForParent
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListOrganizationalUnitsForParent"
      *      target="_top">AWS API Documentation</a>
@@ -10124,7 +10088,7 @@ public interface AWSOrganizations {
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
@@ -10232,12 +10196,12 @@ public interface AWSOrganizations {
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @sample AWSOrganizations.ListParents
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListParents" target="_top">AWS API
      *      Documentation</a>
@@ -10276,7 +10240,7 @@ public interface AWSOrganizations {
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
@@ -10384,14 +10348,14 @@ public interface AWSOrganizations {
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @throws UnsupportedAPIEndpointException
-     *         This action isn't available in the current Region.
+     *         This action isn't available in the current AWS Region.
      * @sample AWSOrganizations.ListPolicies
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListPolicies" target="_top">AWS API
      *      Documentation</a>
@@ -10431,7 +10395,7 @@ public interface AWSOrganizations {
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
@@ -10541,14 +10505,14 @@ public interface AWSOrganizations {
      * @throws TargetNotFoundException
      *         We can't find a root, OU, or account with the <code>TargetId</code> that you specified.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @throws UnsupportedAPIEndpointException
-     *         This action isn't available in the current Region.
+     *         This action isn't available in the current AWS Region.
      * @sample AWSOrganizations.ListPoliciesForTarget
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListPoliciesForTarget"
      *      target="_top">AWS API Documentation</a>
@@ -10595,7 +10559,7 @@ public interface AWSOrganizations {
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
@@ -10703,12 +10667,12 @@ public interface AWSOrganizations {
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @sample AWSOrganizations.ListRoots
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListRoots" target="_top">AWS API
      *      Documentation</a>
@@ -10744,7 +10708,7 @@ public interface AWSOrganizations {
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
@@ -10852,12 +10816,12 @@ public interface AWSOrganizations {
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @sample AWSOrganizations.ListTagsForResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListTagsForResource"
      *      target="_top">AWS API Documentation</a>
@@ -10896,7 +10860,7 @@ public interface AWSOrganizations {
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
@@ -11006,14 +10970,14 @@ public interface AWSOrganizations {
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @throws UnsupportedAPIEndpointException
-     *         This action isn't available in the current Region.
+     *         This action isn't available in the current AWS Region.
      * @sample AWSOrganizations.ListTargetsForPolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListTargetsForPolicy"
      *      target="_top">AWS API Documentation</a>
@@ -11041,7 +11005,7 @@ public interface AWSOrganizations {
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
@@ -11156,12 +11120,12 @@ public interface AWSOrganizations {
      *         We can't find an AWS account with the <code>AccountId</code> that you specified, or the account whose
      *         credentials you used to make this request isn't a member of an organization.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @throws ConcurrentModificationException
      *         The target of the operation is currently being modified by a different request. Try again later.
      * @throws AWSOrganizationsNotInUseException
@@ -11212,10 +11176,11 @@ public interface AWSOrganizations {
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to remove
      *         the last service control policy (SCP) from an OU or root, inviting or creating too many accounts to the
      *         organization, or attaching too many policies to an account, OU, or root. This exception includes a reason
-     *         that contains additional information about the violated limit.</p>
+     *         that contains additional information about the violated limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
+     *         </note>
      *         <ul>
      *         <li>
      *         <p>
@@ -11229,9 +11194,8 @@ public interface AWSOrganizations {
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that doesn't
      *         yet have enough information to exist as a standalone account. This account requires you to first agree to
      *         the AWS Customer Agreement. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a>in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -11239,9 +11203,8 @@ public interface AWSOrganizations {
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization
      *         that doesn't yet have enough information to exist as a standalone account. This account requires you to
      *         first complete phone verification. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a> in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -11268,8 +11231,8 @@ public interface AWSOrganizations {
      *         </p>
      *         </note> <important>
      *         <p>
-     *         If you get receive this exception when running a command immediately after creating the organization,
-     *         wait one hour and try again. If after an hour it continues to fail with this error, contact <a
+     *         If you get this exception when running a command immediately after creating the organization, wait one
+     *         hour and try again. After an hour, if the command continues to fail with this error, contact <a
      *         href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.
      *         </p>
      *         </important></li>
@@ -11329,7 +11292,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide contact a valid
+     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
      *         address and phone number for the master account. Then try the operation again.
      *         </p>
      *         </li>
@@ -11423,7 +11386,7 @@ public interface AWSOrganizations {
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
@@ -11529,16 +11492,16 @@ public interface AWSOrganizations {
      *         </p>
      *         </li>
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws UnsupportedAPIEndpointException
-     *         This action isn't available in the current Region.
+     *         This action isn't available in the current AWS Region.
      * @sample AWSOrganizations.RegisterDelegatedAdministrator
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/RegisterDelegatedAdministrator"
      *      target="_top">AWS API Documentation</a>
@@ -11593,10 +11556,11 @@ public interface AWSOrganizations {
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to remove
      *         the last service control policy (SCP) from an OU or root, inviting or creating too many accounts to the
      *         organization, or attaching too many policies to an account, OU, or root. This exception includes a reason
-     *         that contains additional information about the violated limit.</p>
+     *         that contains additional information about the violated limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
+     *         </note>
      *         <ul>
      *         <li>
      *         <p>
@@ -11610,9 +11574,8 @@ public interface AWSOrganizations {
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that doesn't
      *         yet have enough information to exist as a standalone account. This account requires you to first agree to
      *         the AWS Customer Agreement. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a>in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -11620,9 +11583,8 @@ public interface AWSOrganizations {
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization
      *         that doesn't yet have enough information to exist as a standalone account. This account requires you to
      *         first complete phone verification. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a> in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -11649,8 +11611,8 @@ public interface AWSOrganizations {
      *         </p>
      *         </note> <important>
      *         <p>
-     *         If you get receive this exception when running a command immediately after creating the organization,
-     *         wait one hour and try again. If after an hour it continues to fail with this error, contact <a
+     *         If you get this exception when running a command immediately after creating the organization, wait one
+     *         hour and try again. After an hour, if the command continues to fail with this error, contact <a
      *         href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.
      *         </p>
      *         </important></li>
@@ -11710,7 +11672,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide contact a valid
+     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
      *         address and phone number for the master account. Then try the operation again.
      *         </p>
      *         </li>
@@ -11804,7 +11766,7 @@ public interface AWSOrganizations {
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
@@ -11915,12 +11877,12 @@ public interface AWSOrganizations {
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @sample AWSOrganizations.RemoveAccountFromOrganization
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/RemoveAccountFromOrganization"
      *      target="_top">AWS API Documentation</a>
@@ -11956,10 +11918,11 @@ public interface AWSOrganizations {
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to remove
      *         the last service control policy (SCP) from an OU or root, inviting or creating too many accounts to the
      *         organization, or attaching too many policies to an account, OU, or root. This exception includes a reason
-     *         that contains additional information about the violated limit.</p>
+     *         that contains additional information about the violated limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
+     *         </note>
      *         <ul>
      *         <li>
      *         <p>
@@ -11973,9 +11936,8 @@ public interface AWSOrganizations {
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that doesn't
      *         yet have enough information to exist as a standalone account. This account requires you to first agree to
      *         the AWS Customer Agreement. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a>in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -11983,9 +11945,8 @@ public interface AWSOrganizations {
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization
      *         that doesn't yet have enough information to exist as a standalone account. This account requires you to
      *         first complete phone verification. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a> in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -12012,8 +11973,8 @@ public interface AWSOrganizations {
      *         </p>
      *         </note> <important>
      *         <p>
-     *         If you get receive this exception when running a command immediately after creating the organization,
-     *         wait one hour and try again. If after an hour it continues to fail with this error, contact <a
+     *         If you get this exception when running a command immediately after creating the organization, wait one
+     *         hour and try again. After an hour, if the command continues to fail with this error, contact <a
      *         href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.
      *         </p>
      *         </important></li>
@@ -12073,7 +12034,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide contact a valid
+     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
      *         address and phone number for the master account. Then try the operation again.
      *         </p>
      *         </li>
@@ -12167,7 +12128,7 @@ public interface AWSOrganizations {
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
@@ -12275,12 +12236,12 @@ public interface AWSOrganizations {
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @sample AWSOrganizations.TagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/TagResource" target="_top">AWS API
      *      Documentation</a>
@@ -12316,10 +12277,11 @@ public interface AWSOrganizations {
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to remove
      *         the last service control policy (SCP) from an OU or root, inviting or creating too many accounts to the
      *         organization, or attaching too many policies to an account, OU, or root. This exception includes a reason
-     *         that contains additional information about the violated limit.</p>
+     *         that contains additional information about the violated limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
+     *         </note>
      *         <ul>
      *         <li>
      *         <p>
@@ -12333,9 +12295,8 @@ public interface AWSOrganizations {
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that doesn't
      *         yet have enough information to exist as a standalone account. This account requires you to first agree to
      *         the AWS Customer Agreement. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a>in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -12343,9 +12304,8 @@ public interface AWSOrganizations {
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization
      *         that doesn't yet have enough information to exist as a standalone account. This account requires you to
      *         first complete phone verification. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a> in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -12372,8 +12332,8 @@ public interface AWSOrganizations {
      *         </p>
      *         </note> <important>
      *         <p>
-     *         If you get receive this exception when running a command immediately after creating the organization,
-     *         wait one hour and try again. If after an hour it continues to fail with this error, contact <a
+     *         If you get this exception when running a command immediately after creating the organization, wait one
+     *         hour and try again. After an hour, if the command continues to fail with this error, contact <a
      *         href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.
      *         </p>
      *         </important></li>
@@ -12433,7 +12393,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide contact a valid
+     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
      *         address and phone number for the master account. Then try the operation again.
      *         </p>
      *         </li>
@@ -12527,7 +12487,7 @@ public interface AWSOrganizations {
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
@@ -12635,12 +12595,12 @@ public interface AWSOrganizations {
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @sample AWSOrganizations.UntagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/UntagResource" target="_top">AWS
      *      API Documentation</a>
@@ -12675,7 +12635,7 @@ public interface AWSOrganizations {
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
@@ -12785,12 +12745,12 @@ public interface AWSOrganizations {
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @sample AWSOrganizations.UpdateOrganizationalUnit
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/UpdateOrganizationalUnit"
      *      target="_top">AWS API Documentation</a>
@@ -12822,10 +12782,11 @@ public interface AWSOrganizations {
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to remove
      *         the last service control policy (SCP) from an OU or root, inviting or creating too many accounts to the
      *         organization, or attaching too many policies to an account, OU, or root. This exception includes a reason
-     *         that contains additional information about the violated limit.</p>
+     *         that contains additional information about the violated limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
+     *         </note>
      *         <ul>
      *         <li>
      *         <p>
@@ -12839,9 +12800,8 @@ public interface AWSOrganizations {
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that doesn't
      *         yet have enough information to exist as a standalone account. This account requires you to first agree to
      *         the AWS Customer Agreement. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a>in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -12849,9 +12809,8 @@ public interface AWSOrganizations {
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization
      *         that doesn't yet have enough information to exist as a standalone account. This account requires you to
      *         first complete phone verification. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a> in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -12878,8 +12837,8 @@ public interface AWSOrganizations {
      *         </p>
      *         </note> <important>
      *         <p>
-     *         If you get receive this exception when running a command immediately after creating the organization,
-     *         wait one hour and try again. If after an hour it continues to fail with this error, contact <a
+     *         If you get this exception when running a command immediately after creating the organization, wait one
+     *         hour and try again. After an hour, if the command continues to fail with this error, contact <a
      *         href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.
      *         </p>
      *         </important></li>
@@ -12939,7 +12898,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide contact a valid
+     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
      *         address and phone number for the master account. Then try the operation again.
      *         </p>
      *         </li>
@@ -13035,7 +12994,7 @@ public interface AWSOrganizations {
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
@@ -13150,14 +13109,14 @@ public interface AWSOrganizations {
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @throws UnsupportedAPIEndpointException
-     *         This action isn't available in the current Region.
+     *         This action isn't available in the current AWS Region.
      * @throws PolicyChangesInProgressException
      *         Changes to the effective policy are in progress, and its contents can't be returned. Try the operation
      *         again later.

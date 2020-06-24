@@ -88,6 +88,11 @@ public class ListBackupJobsRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
+     * <code>EC2</code> for Amazon Elastic Compute Cloud
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>EFS</code> for Amazon Elastic File System
      * </p>
      * </li>
@@ -104,6 +109,12 @@ public class ListBackupJobsRequest extends com.amazonaws.AmazonWebServiceRequest
      * </ul>
      */
     private String byResourceType;
+    /**
+     * <p>
+     * The account ID to list the jobs from. Returns only backup jobs associated with the specified account ID.
+     * </p>
+     */
+    private String byAccountId;
 
     /**
      * <p>
@@ -445,6 +456,11 @@ public class ListBackupJobsRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
+     * <code>EC2</code> for Amazon Elastic Compute Cloud
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>EFS</code> for Amazon Elastic File System
      * </p>
      * </li>
@@ -471,6 +487,11 @@ public class ListBackupJobsRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <li>
      *        <p>
      *        <code>EBS</code> for Amazon Elastic Block Store
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EC2</code> for Amazon Elastic Compute Cloud
      *        </p>
      *        </li>
      *        <li>
@@ -511,6 +532,11 @@ public class ListBackupJobsRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
+     * <code>EC2</code> for Amazon Elastic Compute Cloud
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>EFS</code> for Amazon Elastic File System
      * </p>
      * </li>
@@ -536,6 +562,11 @@ public class ListBackupJobsRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <li>
      *         <p>
      *         <code>EBS</code> for Amazon Elastic Block Store
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>EC2</code> for Amazon Elastic Compute Cloud
      *         </p>
      *         </li>
      *         <li>
@@ -576,6 +607,11 @@ public class ListBackupJobsRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
+     * <code>EC2</code> for Amazon Elastic Compute Cloud
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>EFS</code> for Amazon Elastic File System
      * </p>
      * </li>
@@ -606,6 +642,11 @@ public class ListBackupJobsRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
+     *        <code>EC2</code> for Amazon Elastic Compute Cloud
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>EFS</code> for Amazon Elastic File System
      *        </p>
      *        </li>
@@ -624,6 +665,46 @@ public class ListBackupJobsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     public ListBackupJobsRequest withByResourceType(String byResourceType) {
         setByResourceType(byResourceType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The account ID to list the jobs from. Returns only backup jobs associated with the specified account ID.
+     * </p>
+     * 
+     * @param byAccountId
+     *        The account ID to list the jobs from. Returns only backup jobs associated with the specified account ID.
+     */
+
+    public void setByAccountId(String byAccountId) {
+        this.byAccountId = byAccountId;
+    }
+
+    /**
+     * <p>
+     * The account ID to list the jobs from. Returns only backup jobs associated with the specified account ID.
+     * </p>
+     * 
+     * @return The account ID to list the jobs from. Returns only backup jobs associated with the specified account ID.
+     */
+
+    public String getByAccountId() {
+        return this.byAccountId;
+    }
+
+    /**
+     * <p>
+     * The account ID to list the jobs from. Returns only backup jobs associated with the specified account ID.
+     * </p>
+     * 
+     * @param byAccountId
+     *        The account ID to list the jobs from. Returns only backup jobs associated with the specified account ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListBackupJobsRequest withByAccountId(String byAccountId) {
+        setByAccountId(byAccountId);
         return this;
     }
 
@@ -654,7 +735,9 @@ public class ListBackupJobsRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getByCreatedAfter() != null)
             sb.append("ByCreatedAfter: ").append(getByCreatedAfter()).append(",");
         if (getByResourceType() != null)
-            sb.append("ByResourceType: ").append(getByResourceType());
+            sb.append("ByResourceType: ").append(getByResourceType()).append(",");
+        if (getByAccountId() != null)
+            sb.append("ByAccountId: ").append(getByAccountId());
         sb.append("}");
         return sb.toString();
     }
@@ -701,6 +784,10 @@ public class ListBackupJobsRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getByResourceType() != null && other.getByResourceType().equals(this.getByResourceType()) == false)
             return false;
+        if (other.getByAccountId() == null ^ this.getByAccountId() == null)
+            return false;
+        if (other.getByAccountId() != null && other.getByAccountId().equals(this.getByAccountId()) == false)
+            return false;
         return true;
     }
 
@@ -717,6 +804,7 @@ public class ListBackupJobsRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getByCreatedBefore() == null) ? 0 : getByCreatedBefore().hashCode());
         hashCode = prime * hashCode + ((getByCreatedAfter() == null) ? 0 : getByCreatedAfter().hashCode());
         hashCode = prime * hashCode + ((getByResourceType() == null) ? 0 : getByResourceType().hashCode());
+        hashCode = prime * hashCode + ((getByAccountId() == null) ? 0 : getByAccountId().hashCode());
         return hashCode;
     }
 

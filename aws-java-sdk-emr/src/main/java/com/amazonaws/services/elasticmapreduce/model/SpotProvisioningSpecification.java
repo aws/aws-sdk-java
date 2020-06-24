@@ -19,12 +19,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The launch specification for Spot instances in the instance fleet, which determines the defined duration and
- * provisioning timeout behavior.
+ * The launch specification for Spot instances in the instance fleet, which determines the defined duration,
+ * provisioning timeout behavior, and allocation strategy.
  * </p>
  * <note>
  * <p>
  * The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.
+ * Spot instance allocation strategy is available in Amazon EMR version 5.12.1 and later.
  * </p>
  * </note>
  * 
@@ -62,6 +63,14 @@ public class SpotProvisioningSpecification implements Serializable, Cloneable, S
      * </p>
      */
     private Integer blockDurationMinutes;
+    /**
+     * <p>
+     * Specifies the strategy to use in launching Spot instance fleets. Currently, the only option is capacity-optimized
+     * (the default), which launches instances from Spot instance pools with optimal capacity for the number of
+     * instances that are launching.
+     * </p>
+     */
+    private String allocationStrategy;
 
     /**
      * <p>
@@ -296,6 +305,99 @@ public class SpotProvisioningSpecification implements Serializable, Cloneable, S
     }
 
     /**
+     * <p>
+     * Specifies the strategy to use in launching Spot instance fleets. Currently, the only option is capacity-optimized
+     * (the default), which launches instances from Spot instance pools with optimal capacity for the number of
+     * instances that are launching.
+     * </p>
+     * 
+     * @param allocationStrategy
+     *        Specifies the strategy to use in launching Spot instance fleets. Currently, the only option is
+     *        capacity-optimized (the default), which launches instances from Spot instance pools with optimal capacity
+     *        for the number of instances that are launching.
+     * @see SpotProvisioningAllocationStrategy
+     */
+
+    public void setAllocationStrategy(String allocationStrategy) {
+        this.allocationStrategy = allocationStrategy;
+    }
+
+    /**
+     * <p>
+     * Specifies the strategy to use in launching Spot instance fleets. Currently, the only option is capacity-optimized
+     * (the default), which launches instances from Spot instance pools with optimal capacity for the number of
+     * instances that are launching.
+     * </p>
+     * 
+     * @return Specifies the strategy to use in launching Spot instance fleets. Currently, the only option is
+     *         capacity-optimized (the default), which launches instances from Spot instance pools with optimal capacity
+     *         for the number of instances that are launching.
+     * @see SpotProvisioningAllocationStrategy
+     */
+
+    public String getAllocationStrategy() {
+        return this.allocationStrategy;
+    }
+
+    /**
+     * <p>
+     * Specifies the strategy to use in launching Spot instance fleets. Currently, the only option is capacity-optimized
+     * (the default), which launches instances from Spot instance pools with optimal capacity for the number of
+     * instances that are launching.
+     * </p>
+     * 
+     * @param allocationStrategy
+     *        Specifies the strategy to use in launching Spot instance fleets. Currently, the only option is
+     *        capacity-optimized (the default), which launches instances from Spot instance pools with optimal capacity
+     *        for the number of instances that are launching.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SpotProvisioningAllocationStrategy
+     */
+
+    public SpotProvisioningSpecification withAllocationStrategy(String allocationStrategy) {
+        setAllocationStrategy(allocationStrategy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the strategy to use in launching Spot instance fleets. Currently, the only option is capacity-optimized
+     * (the default), which launches instances from Spot instance pools with optimal capacity for the number of
+     * instances that are launching.
+     * </p>
+     * 
+     * @param allocationStrategy
+     *        Specifies the strategy to use in launching Spot instance fleets. Currently, the only option is
+     *        capacity-optimized (the default), which launches instances from Spot instance pools with optimal capacity
+     *        for the number of instances that are launching.
+     * @see SpotProvisioningAllocationStrategy
+     */
+
+    public void setAllocationStrategy(SpotProvisioningAllocationStrategy allocationStrategy) {
+        withAllocationStrategy(allocationStrategy);
+    }
+
+    /**
+     * <p>
+     * Specifies the strategy to use in launching Spot instance fleets. Currently, the only option is capacity-optimized
+     * (the default), which launches instances from Spot instance pools with optimal capacity for the number of
+     * instances that are launching.
+     * </p>
+     * 
+     * @param allocationStrategy
+     *        Specifies the strategy to use in launching Spot instance fleets. Currently, the only option is
+     *        capacity-optimized (the default), which launches instances from Spot instance pools with optimal capacity
+     *        for the number of instances that are launching.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SpotProvisioningAllocationStrategy
+     */
+
+    public SpotProvisioningSpecification withAllocationStrategy(SpotProvisioningAllocationStrategy allocationStrategy) {
+        this.allocationStrategy = allocationStrategy.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -312,7 +414,9 @@ public class SpotProvisioningSpecification implements Serializable, Cloneable, S
         if (getTimeoutAction() != null)
             sb.append("TimeoutAction: ").append(getTimeoutAction()).append(",");
         if (getBlockDurationMinutes() != null)
-            sb.append("BlockDurationMinutes: ").append(getBlockDurationMinutes());
+            sb.append("BlockDurationMinutes: ").append(getBlockDurationMinutes()).append(",");
+        if (getAllocationStrategy() != null)
+            sb.append("AllocationStrategy: ").append(getAllocationStrategy());
         sb.append("}");
         return sb.toString();
     }
@@ -339,6 +443,10 @@ public class SpotProvisioningSpecification implements Serializable, Cloneable, S
             return false;
         if (other.getBlockDurationMinutes() != null && other.getBlockDurationMinutes().equals(this.getBlockDurationMinutes()) == false)
             return false;
+        if (other.getAllocationStrategy() == null ^ this.getAllocationStrategy() == null)
+            return false;
+        if (other.getAllocationStrategy() != null && other.getAllocationStrategy().equals(this.getAllocationStrategy()) == false)
+            return false;
         return true;
     }
 
@@ -350,6 +458,7 @@ public class SpotProvisioningSpecification implements Serializable, Cloneable, S
         hashCode = prime * hashCode + ((getTimeoutDurationMinutes() == null) ? 0 : getTimeoutDurationMinutes().hashCode());
         hashCode = prime * hashCode + ((getTimeoutAction() == null) ? 0 : getTimeoutAction().hashCode());
         hashCode = prime * hashCode + ((getBlockDurationMinutes() == null) ? 0 : getBlockDurationMinutes().hashCode());
+        hashCode = prime * hashCode + ((getAllocationStrategy() == null) ? 0 : getAllocationStrategy().hashCode());
         return hashCode;
     }
 

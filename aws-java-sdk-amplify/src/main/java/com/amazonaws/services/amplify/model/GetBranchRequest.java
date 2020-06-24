@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Request structure for get branch request.
+ * The request structure for the get branch request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetBranch" target="_top">AWS API
@@ -30,24 +30,24 @@ public class GetBranchRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Unique Id for an Amplify App.
+     * The unique ID for an Amplify app.
      * </p>
      */
     private String appId;
     /**
      * <p>
-     * Name for the branch.
+     * The name for the branch.
      * </p>
      */
     private String branchName;
 
     /**
      * <p>
-     * Unique Id for an Amplify App.
+     * The unique ID for an Amplify app.
      * </p>
      * 
      * @param appId
-     *        Unique Id for an Amplify App.
+     *        The unique ID for an Amplify app.
      */
 
     public void setAppId(String appId) {
@@ -56,10 +56,10 @@ public class GetBranchRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Unique Id for an Amplify App.
+     * The unique ID for an Amplify app.
      * </p>
      * 
-     * @return Unique Id for an Amplify App.
+     * @return The unique ID for an Amplify app.
      */
 
     public String getAppId() {
@@ -68,11 +68,11 @@ public class GetBranchRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Unique Id for an Amplify App.
+     * The unique ID for an Amplify app.
      * </p>
      * 
      * @param appId
-     *        Unique Id for an Amplify App.
+     *        The unique ID for an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class GetBranchRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Name for the branch.
+     * The name for the branch.
      * </p>
      * 
      * @param branchName
-     *        Name for the branch.
+     *        The name for the branch.
      */
 
     public void setBranchName(String branchName) {
@@ -96,10 +96,10 @@ public class GetBranchRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Name for the branch.
+     * The name for the branch.
      * </p>
      * 
-     * @return Name for the branch.
+     * @return The name for the branch.
      */
 
     public String getBranchName() {
@@ -108,11 +108,11 @@ public class GetBranchRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Name for the branch.
+     * The name for the branch.
      * </p>
      * 
      * @param branchName
-     *        Name for the branch.
+     *        The name for the branch.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

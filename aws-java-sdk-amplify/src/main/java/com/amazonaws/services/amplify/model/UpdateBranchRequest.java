@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Request structure for update branch request.
+ * The request structure for the update branch request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/UpdateBranch" target="_top">AWS API
@@ -30,31 +30,31 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Unique Id for an Amplify App.
+     * The unique ID for an Amplify app.
      * </p>
      */
     private String appId;
     /**
      * <p>
-     * Name for the branch.
+     * The name for the branch.
      * </p>
      */
     private String branchName;
     /**
      * <p>
-     * Description for the branch.
+     * The description for the branch.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * Framework for the branch.
+     * The framework for the branch.
      * </p>
      */
     private String framework;
     /**
      * <p>
-     * Stage for the branch.
+     * Describes the current stage for the branch.
      * </p>
      */
     private String stage;
@@ -72,66 +72,66 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
     private Boolean enableAutoBuild;
     /**
      * <p>
-     * Environment Variables for the branch.
+     * The environment variables for the branch.
      * </p>
      */
     private java.util.Map<String, String> environmentVariables;
     /**
      * <p>
-     * Basic Authorization credentials for the branch.
+     * The basic authorization credentials for the branch.
      * </p>
      */
     private String basicAuthCredentials;
     /**
      * <p>
-     * Enables Basic Auth for the branch.
+     * Enables basic authorization for the branch.
      * </p>
      */
     private Boolean enableBasicAuth;
     /**
      * <p>
-     * BuildSpec for the branch.
+     * The build specification (build spec) for the branch.
      * </p>
      */
     private String buildSpec;
     /**
      * <p>
-     * The content TTL for the website in seconds.
+     * The content Time to Live (TTL) for the website in seconds.
      * </p>
      */
     private String ttl;
     /**
      * <p>
-     * Display name for a branch, will use as the default domain prefix.
+     * The display name for a branch. This is used as the default domain prefix.
      * </p>
      */
     private String displayName;
     /**
      * <p>
-     * Enables Pull Request Preview for this branch.
+     * Enables pull request preview for this branch.
      * </p>
      */
     private Boolean enablePullRequestPreview;
     /**
      * <p>
-     * The Amplify Environment name for the pull request.
+     * The Amplify environment name for the pull request.
      * </p>
      */
     private String pullRequestEnvironmentName;
     /**
      * <p>
-     * ARN for a Backend Environment, part of an Amplify App.
+     * The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app.
      * </p>
      */
     private String backendEnvironmentArn;
 
     /**
      * <p>
-     * Unique Id for an Amplify App.
+     * The unique ID for an Amplify app.
      * </p>
      * 
      * @param appId
-     *        Unique Id for an Amplify App.
+     *        The unique ID for an Amplify app.
      */
 
     public void setAppId(String appId) {
@@ -140,10 +140,10 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Unique Id for an Amplify App.
+     * The unique ID for an Amplify app.
      * </p>
      * 
-     * @return Unique Id for an Amplify App.
+     * @return The unique ID for an Amplify app.
      */
 
     public String getAppId() {
@@ -152,11 +152,11 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Unique Id for an Amplify App.
+     * The unique ID for an Amplify app.
      * </p>
      * 
      * @param appId
-     *        Unique Id for an Amplify App.
+     *        The unique ID for an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -167,11 +167,11 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Name for the branch.
+     * The name for the branch.
      * </p>
      * 
      * @param branchName
-     *        Name for the branch.
+     *        The name for the branch.
      */
 
     public void setBranchName(String branchName) {
@@ -180,10 +180,10 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Name for the branch.
+     * The name for the branch.
      * </p>
      * 
-     * @return Name for the branch.
+     * @return The name for the branch.
      */
 
     public String getBranchName() {
@@ -192,11 +192,11 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Name for the branch.
+     * The name for the branch.
      * </p>
      * 
      * @param branchName
-     *        Name for the branch.
+     *        The name for the branch.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -207,11 +207,11 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Description for the branch.
+     * The description for the branch.
      * </p>
      * 
      * @param description
-     *        Description for the branch.
+     *        The description for the branch.
      */
 
     public void setDescription(String description) {
@@ -220,10 +220,10 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Description for the branch.
+     * The description for the branch.
      * </p>
      * 
-     * @return Description for the branch.
+     * @return The description for the branch.
      */
 
     public String getDescription() {
@@ -232,11 +232,11 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Description for the branch.
+     * The description for the branch.
      * </p>
      * 
      * @param description
-     *        Description for the branch.
+     *        The description for the branch.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -247,11 +247,11 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Framework for the branch.
+     * The framework for the branch.
      * </p>
      * 
      * @param framework
-     *        Framework for the branch.
+     *        The framework for the branch.
      */
 
     public void setFramework(String framework) {
@@ -260,10 +260,10 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Framework for the branch.
+     * The framework for the branch.
      * </p>
      * 
-     * @return Framework for the branch.
+     * @return The framework for the branch.
      */
 
     public String getFramework() {
@@ -272,11 +272,11 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Framework for the branch.
+     * The framework for the branch.
      * </p>
      * 
      * @param framework
-     *        Framework for the branch.
+     *        The framework for the branch.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -287,11 +287,11 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Stage for the branch.
+     * Describes the current stage for the branch.
      * </p>
      * 
      * @param stage
-     *        Stage for the branch.
+     *        Describes the current stage for the branch.
      * @see Stage
      */
 
@@ -301,10 +301,10 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Stage for the branch.
+     * Describes the current stage for the branch.
      * </p>
      * 
-     * @return Stage for the branch.
+     * @return Describes the current stage for the branch.
      * @see Stage
      */
 
@@ -314,11 +314,11 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Stage for the branch.
+     * Describes the current stage for the branch.
      * </p>
      * 
      * @param stage
-     *        Stage for the branch.
+     *        Describes the current stage for the branch.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Stage
      */
@@ -330,11 +330,11 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Stage for the branch.
+     * Describes the current stage for the branch.
      * </p>
      * 
      * @param stage
-     *        Stage for the branch.
+     *        Describes the current stage for the branch.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Stage
      */
@@ -450,10 +450,10 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Environment Variables for the branch.
+     * The environment variables for the branch.
      * </p>
      * 
-     * @return Environment Variables for the branch.
+     * @return The environment variables for the branch.
      */
 
     public java.util.Map<String, String> getEnvironmentVariables() {
@@ -462,11 +462,11 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Environment Variables for the branch.
+     * The environment variables for the branch.
      * </p>
      * 
      * @param environmentVariables
-     *        Environment Variables for the branch.
+     *        The environment variables for the branch.
      */
 
     public void setEnvironmentVariables(java.util.Map<String, String> environmentVariables) {
@@ -475,11 +475,11 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Environment Variables for the branch.
+     * The environment variables for the branch.
      * </p>
      * 
      * @param environmentVariables
-     *        Environment Variables for the branch.
+     *        The environment variables for the branch.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -518,11 +518,11 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Basic Authorization credentials for the branch.
+     * The basic authorization credentials for the branch.
      * </p>
      * 
      * @param basicAuthCredentials
-     *        Basic Authorization credentials for the branch.
+     *        The basic authorization credentials for the branch.
      */
 
     public void setBasicAuthCredentials(String basicAuthCredentials) {
@@ -531,10 +531,10 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Basic Authorization credentials for the branch.
+     * The basic authorization credentials for the branch.
      * </p>
      * 
-     * @return Basic Authorization credentials for the branch.
+     * @return The basic authorization credentials for the branch.
      */
 
     public String getBasicAuthCredentials() {
@@ -543,11 +543,11 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Basic Authorization credentials for the branch.
+     * The basic authorization credentials for the branch.
      * </p>
      * 
      * @param basicAuthCredentials
-     *        Basic Authorization credentials for the branch.
+     *        The basic authorization credentials for the branch.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -558,11 +558,11 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Enables Basic Auth for the branch.
+     * Enables basic authorization for the branch.
      * </p>
      * 
      * @param enableBasicAuth
-     *        Enables Basic Auth for the branch.
+     *        Enables basic authorization for the branch.
      */
 
     public void setEnableBasicAuth(Boolean enableBasicAuth) {
@@ -571,10 +571,10 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Enables Basic Auth for the branch.
+     * Enables basic authorization for the branch.
      * </p>
      * 
-     * @return Enables Basic Auth for the branch.
+     * @return Enables basic authorization for the branch.
      */
 
     public Boolean getEnableBasicAuth() {
@@ -583,11 +583,11 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Enables Basic Auth for the branch.
+     * Enables basic authorization for the branch.
      * </p>
      * 
      * @param enableBasicAuth
-     *        Enables Basic Auth for the branch.
+     *        Enables basic authorization for the branch.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -598,10 +598,10 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Enables Basic Auth for the branch.
+     * Enables basic authorization for the branch.
      * </p>
      * 
-     * @return Enables Basic Auth for the branch.
+     * @return Enables basic authorization for the branch.
      */
 
     public Boolean isEnableBasicAuth() {
@@ -610,11 +610,11 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * BuildSpec for the branch.
+     * The build specification (build spec) for the branch.
      * </p>
      * 
      * @param buildSpec
-     *        BuildSpec for the branch.
+     *        The build specification (build spec) for the branch.
      */
 
     public void setBuildSpec(String buildSpec) {
@@ -623,10 +623,10 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * BuildSpec for the branch.
+     * The build specification (build spec) for the branch.
      * </p>
      * 
-     * @return BuildSpec for the branch.
+     * @return The build specification (build spec) for the branch.
      */
 
     public String getBuildSpec() {
@@ -635,11 +635,11 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * BuildSpec for the branch.
+     * The build specification (build spec) for the branch.
      * </p>
      * 
      * @param buildSpec
-     *        BuildSpec for the branch.
+     *        The build specification (build spec) for the branch.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -650,11 +650,11 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The content TTL for the website in seconds.
+     * The content Time to Live (TTL) for the website in seconds.
      * </p>
      * 
      * @param ttl
-     *        The content TTL for the website in seconds.
+     *        The content Time to Live (TTL) for the website in seconds.
      */
 
     public void setTtl(String ttl) {
@@ -663,10 +663,10 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The content TTL for the website in seconds.
+     * The content Time to Live (TTL) for the website in seconds.
      * </p>
      * 
-     * @return The content TTL for the website in seconds.
+     * @return The content Time to Live (TTL) for the website in seconds.
      */
 
     public String getTtl() {
@@ -675,11 +675,11 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The content TTL for the website in seconds.
+     * The content Time to Live (TTL) for the website in seconds.
      * </p>
      * 
      * @param ttl
-     *        The content TTL for the website in seconds.
+     *        The content Time to Live (TTL) for the website in seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -690,11 +690,11 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Display name for a branch, will use as the default domain prefix.
+     * The display name for a branch. This is used as the default domain prefix.
      * </p>
      * 
      * @param displayName
-     *        Display name for a branch, will use as the default domain prefix.
+     *        The display name for a branch. This is used as the default domain prefix.
      */
 
     public void setDisplayName(String displayName) {
@@ -703,10 +703,10 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Display name for a branch, will use as the default domain prefix.
+     * The display name for a branch. This is used as the default domain prefix.
      * </p>
      * 
-     * @return Display name for a branch, will use as the default domain prefix.
+     * @return The display name for a branch. This is used as the default domain prefix.
      */
 
     public String getDisplayName() {
@@ -715,11 +715,11 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Display name for a branch, will use as the default domain prefix.
+     * The display name for a branch. This is used as the default domain prefix.
      * </p>
      * 
      * @param displayName
-     *        Display name for a branch, will use as the default domain prefix.
+     *        The display name for a branch. This is used as the default domain prefix.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -730,11 +730,11 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Enables Pull Request Preview for this branch.
+     * Enables pull request preview for this branch.
      * </p>
      * 
      * @param enablePullRequestPreview
-     *        Enables Pull Request Preview for this branch.
+     *        Enables pull request preview for this branch.
      */
 
     public void setEnablePullRequestPreview(Boolean enablePullRequestPreview) {
@@ -743,10 +743,10 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Enables Pull Request Preview for this branch.
+     * Enables pull request preview for this branch.
      * </p>
      * 
-     * @return Enables Pull Request Preview for this branch.
+     * @return Enables pull request preview for this branch.
      */
 
     public Boolean getEnablePullRequestPreview() {
@@ -755,11 +755,11 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Enables Pull Request Preview for this branch.
+     * Enables pull request preview for this branch.
      * </p>
      * 
      * @param enablePullRequestPreview
-     *        Enables Pull Request Preview for this branch.
+     *        Enables pull request preview for this branch.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -770,10 +770,10 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Enables Pull Request Preview for this branch.
+     * Enables pull request preview for this branch.
      * </p>
      * 
-     * @return Enables Pull Request Preview for this branch.
+     * @return Enables pull request preview for this branch.
      */
 
     public Boolean isEnablePullRequestPreview() {
@@ -782,11 +782,11 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The Amplify Environment name for the pull request.
+     * The Amplify environment name for the pull request.
      * </p>
      * 
      * @param pullRequestEnvironmentName
-     *        The Amplify Environment name for the pull request.
+     *        The Amplify environment name for the pull request.
      */
 
     public void setPullRequestEnvironmentName(String pullRequestEnvironmentName) {
@@ -795,10 +795,10 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The Amplify Environment name for the pull request.
+     * The Amplify environment name for the pull request.
      * </p>
      * 
-     * @return The Amplify Environment name for the pull request.
+     * @return The Amplify environment name for the pull request.
      */
 
     public String getPullRequestEnvironmentName() {
@@ -807,11 +807,11 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The Amplify Environment name for the pull request.
+     * The Amplify environment name for the pull request.
      * </p>
      * 
      * @param pullRequestEnvironmentName
-     *        The Amplify Environment name for the pull request.
+     *        The Amplify environment name for the pull request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -822,11 +822,11 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * ARN for a Backend Environment, part of an Amplify App.
+     * The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app.
      * </p>
      * 
      * @param backendEnvironmentArn
-     *        ARN for a Backend Environment, part of an Amplify App.
+     *        The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app.
      */
 
     public void setBackendEnvironmentArn(String backendEnvironmentArn) {
@@ -835,10 +835,10 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * ARN for a Backend Environment, part of an Amplify App.
+     * The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app.
      * </p>
      * 
-     * @return ARN for a Backend Environment, part of an Amplify App.
+     * @return The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app.
      */
 
     public String getBackendEnvironmentArn() {
@@ -847,11 +847,11 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * ARN for a Backend Environment, part of an Amplify App.
+     * The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app.
      * </p>
      * 
      * @param backendEnvironmentArn
-     *        ARN for a Backend Environment, part of an Amplify App.
+     *        The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -889,7 +889,7 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getEnvironmentVariables() != null)
             sb.append("EnvironmentVariables: ").append(getEnvironmentVariables()).append(",");
         if (getBasicAuthCredentials() != null)
-            sb.append("BasicAuthCredentials: ").append(getBasicAuthCredentials()).append(",");
+            sb.append("BasicAuthCredentials: ").append("***Sensitive Data Redacted***").append(",");
         if (getEnableBasicAuth() != null)
             sb.append("EnableBasicAuth: ").append(getEnableBasicAuth()).append(",");
         if (getBuildSpec() != null)

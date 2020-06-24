@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Result structure for create a new deployment.
+ * The result structure for the create a new deployment request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateDeployment" target="_top">AWS API
@@ -28,31 +28,32 @@ public class CreateDeploymentResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The jobId for this deployment, will supply to start deployment api.
+     * The job ID for this deployment. will supply to start deployment api.
      * </p>
      */
     private String jobId;
     /**
      * <p>
-     * When the fileMap argument is provided in the request, the fileUploadUrls will contain a map of file names to
-     * upload url.
+     * When the <code>fileMap</code> argument is provided in the request, <code>fileUploadUrls</code> will contain a map
+     * of file names to upload URLs.
      * </p>
      */
     private java.util.Map<String, String> fileUploadUrls;
     /**
      * <p>
-     * When the fileMap argument is NOT provided. This zipUploadUrl will be returned.
+     * When the <code>fileMap</code> argument is not provided in the request, this <code>zipUploadUrl</code> is
+     * returned.
      * </p>
      */
     private String zipUploadUrl;
 
     /**
      * <p>
-     * The jobId for this deployment, will supply to start deployment api.
+     * The job ID for this deployment. will supply to start deployment api.
      * </p>
      * 
      * @param jobId
-     *        The jobId for this deployment, will supply to start deployment api.
+     *        The job ID for this deployment. will supply to start deployment api.
      */
 
     public void setJobId(String jobId) {
@@ -61,10 +62,10 @@ public class CreateDeploymentResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The jobId for this deployment, will supply to start deployment api.
+     * The job ID for this deployment. will supply to start deployment api.
      * </p>
      * 
-     * @return The jobId for this deployment, will supply to start deployment api.
+     * @return The job ID for this deployment. will supply to start deployment api.
      */
 
     public String getJobId() {
@@ -73,11 +74,11 @@ public class CreateDeploymentResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The jobId for this deployment, will supply to start deployment api.
+     * The job ID for this deployment. will supply to start deployment api.
      * </p>
      * 
      * @param jobId
-     *        The jobId for this deployment, will supply to start deployment api.
+     *        The job ID for this deployment. will supply to start deployment api.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -88,12 +89,12 @@ public class CreateDeploymentResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * When the fileMap argument is provided in the request, the fileUploadUrls will contain a map of file names to
-     * upload url.
+     * When the <code>fileMap</code> argument is provided in the request, <code>fileUploadUrls</code> will contain a map
+     * of file names to upload URLs.
      * </p>
      * 
-     * @return When the fileMap argument is provided in the request, the fileUploadUrls will contain a map of file names
-     *         to upload url.
+     * @return When the <code>fileMap</code> argument is provided in the request, <code>fileUploadUrls</code> will
+     *         contain a map of file names to upload URLs.
      */
 
     public java.util.Map<String, String> getFileUploadUrls() {
@@ -102,13 +103,13 @@ public class CreateDeploymentResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * When the fileMap argument is provided in the request, the fileUploadUrls will contain a map of file names to
-     * upload url.
+     * When the <code>fileMap</code> argument is provided in the request, <code>fileUploadUrls</code> will contain a map
+     * of file names to upload URLs.
      * </p>
      * 
      * @param fileUploadUrls
-     *        When the fileMap argument is provided in the request, the fileUploadUrls will contain a map of file names
-     *        to upload url.
+     *        When the <code>fileMap</code> argument is provided in the request, <code>fileUploadUrls</code> will
+     *        contain a map of file names to upload URLs.
      */
 
     public void setFileUploadUrls(java.util.Map<String, String> fileUploadUrls) {
@@ -117,13 +118,13 @@ public class CreateDeploymentResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * When the fileMap argument is provided in the request, the fileUploadUrls will contain a map of file names to
-     * upload url.
+     * When the <code>fileMap</code> argument is provided in the request, <code>fileUploadUrls</code> will contain a map
+     * of file names to upload URLs.
      * </p>
      * 
      * @param fileUploadUrls
-     *        When the fileMap argument is provided in the request, the fileUploadUrls will contain a map of file names
-     *        to upload url.
+     *        When the <code>fileMap</code> argument is provided in the request, <code>fileUploadUrls</code> will
+     *        contain a map of file names to upload URLs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -162,11 +163,13 @@ public class CreateDeploymentResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * When the fileMap argument is NOT provided. This zipUploadUrl will be returned.
+     * When the <code>fileMap</code> argument is not provided in the request, this <code>zipUploadUrl</code> is
+     * returned.
      * </p>
      * 
      * @param zipUploadUrl
-     *        When the fileMap argument is NOT provided. This zipUploadUrl will be returned.
+     *        When the <code>fileMap</code> argument is not provided in the request, this <code>zipUploadUrl</code> is
+     *        returned.
      */
 
     public void setZipUploadUrl(String zipUploadUrl) {
@@ -175,10 +178,12 @@ public class CreateDeploymentResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * When the fileMap argument is NOT provided. This zipUploadUrl will be returned.
+     * When the <code>fileMap</code> argument is not provided in the request, this <code>zipUploadUrl</code> is
+     * returned.
      * </p>
      * 
-     * @return When the fileMap argument is NOT provided. This zipUploadUrl will be returned.
+     * @return When the <code>fileMap</code> argument is not provided in the request, this <code>zipUploadUrl</code> is
+     *         returned.
      */
 
     public String getZipUploadUrl() {
@@ -187,11 +192,13 @@ public class CreateDeploymentResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * When the fileMap argument is NOT provided. This zipUploadUrl will be returned.
+     * When the <code>fileMap</code> argument is not provided in the request, this <code>zipUploadUrl</code> is
+     * returned.
      * </p>
      * 
      * @param zipUploadUrl
-     *        When the fileMap argument is NOT provided. This zipUploadUrl will be returned.
+     *        When the <code>fileMap</code> argument is not provided in the request, this <code>zipUploadUrl</code> is
+     *        returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

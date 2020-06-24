@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Exception thrown when an entity has not been found during an operation.
+ * An entity was not found during an operation.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

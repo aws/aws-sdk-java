@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Exception thrown when an operation fails due to a lack of access.
+ * An operation failed due to a lack of access.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

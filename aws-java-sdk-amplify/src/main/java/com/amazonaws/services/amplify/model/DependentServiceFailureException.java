@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Exception thrown when an operation fails due to a dependent service throwing an exception.
+ * An operation failed because a dependent service threw an exception.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

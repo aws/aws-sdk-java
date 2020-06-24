@@ -43,6 +43,8 @@ public class ListCopyJobsRequestMarshaller {
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("resourceType").build();
     private static final MarshallingInfo<String> BYDESTINATIONVAULTARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("destinationVaultArn").build();
+    private static final MarshallingInfo<String> BYACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("accountId").build();
 
     private static final ListCopyJobsRequestMarshaller instance = new ListCopyJobsRequestMarshaller();
 
@@ -68,6 +70,7 @@ public class ListCopyJobsRequestMarshaller {
             protocolMarshaller.marshall(listCopyJobsRequest.getByCreatedAfter(), BYCREATEDAFTER_BINDING);
             protocolMarshaller.marshall(listCopyJobsRequest.getByResourceType(), BYRESOURCETYPE_BINDING);
             protocolMarshaller.marshall(listCopyJobsRequest.getByDestinationVaultArn(), BYDESTINATIONVAULTARN_BINDING);
+            protocolMarshaller.marshall(listCopyJobsRequest.getByAccountId(), BYACCOUNTID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

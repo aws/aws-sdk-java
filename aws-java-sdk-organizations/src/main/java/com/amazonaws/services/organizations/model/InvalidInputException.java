@@ -21,7 +21,7 @@ import javax.annotation.Generated;
  * </p>
  * <note>
  * <p>
- * Some of the reasons in the following list might not be applicable to this specific API or operation:
+ * Some of the reasons in the following list might not be applicable to this specific API or operation.
  * </p>
  * </note>
  * <ul>

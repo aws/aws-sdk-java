@@ -48,6 +48,10 @@ public class DescribeBackupJobResultJsonUnmarshaller implements Unmarshaller<Des
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("AccountId", targetDepth)) {
+                    context.nextToken();
+                    describeBackupJobResult.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("BackupJobId", targetDepth)) {
                     context.nextToken();
                     describeBackupJobResult.setBackupJobId(context.getUnmarshaller(String.class).unmarshall(context));

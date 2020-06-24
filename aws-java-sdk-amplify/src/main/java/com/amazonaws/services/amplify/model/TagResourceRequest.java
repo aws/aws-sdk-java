@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Request structure used to tag resource.
+ * The request structure to tag a resource with a tag key and value.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/TagResource" target="_top">AWS API
@@ -30,24 +30,24 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Resource arn used to tag resource.
+     * The Amazon Resource Name (ARN) to use to tag a resource.
      * </p>
      */
     private String resourceArn;
     /**
      * <p>
-     * Tags used to tag resource.
+     * The tags used to tag the resource.
      * </p>
      */
     private java.util.Map<String, String> tags;
 
     /**
      * <p>
-     * Resource arn used to tag resource.
+     * The Amazon Resource Name (ARN) to use to tag a resource.
      * </p>
      * 
      * @param resourceArn
-     *        Resource arn used to tag resource.
+     *        The Amazon Resource Name (ARN) to use to tag a resource.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -56,10 +56,10 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Resource arn used to tag resource.
+     * The Amazon Resource Name (ARN) to use to tag a resource.
      * </p>
      * 
-     * @return Resource arn used to tag resource.
+     * @return The Amazon Resource Name (ARN) to use to tag a resource.
      */
 
     public String getResourceArn() {
@@ -68,11 +68,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Resource arn used to tag resource.
+     * The Amazon Resource Name (ARN) to use to tag a resource.
      * </p>
      * 
      * @param resourceArn
-     *        Resource arn used to tag resource.
+     *        The Amazon Resource Name (ARN) to use to tag a resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,10 +83,10 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Tags used to tag resource.
+     * The tags used to tag the resource.
      * </p>
      * 
-     * @return Tags used to tag resource.
+     * @return The tags used to tag the resource.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -95,11 +95,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Tags used to tag resource.
+     * The tags used to tag the resource.
      * </p>
      * 
      * @param tags
-     *        Tags used to tag resource.
+     *        The tags used to tag the resource.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -108,11 +108,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Tags used to tag resource.
+     * The tags used to tag the resource.
      * </p>
      * 
      * @param tags
-     *        Tags used to tag resource.
+     *        The tags used to tag the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

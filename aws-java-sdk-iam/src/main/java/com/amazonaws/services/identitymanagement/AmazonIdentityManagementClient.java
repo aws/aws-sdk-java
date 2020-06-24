@@ -330,8 +330,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         The request was rejected because it referenced a resource entity that does not exist. The error message
      *         describes the resource.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.AddClientIDToOpenIDConnectProvider
@@ -384,9 +384,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Adds the specified IAM role to the specified instance profile. An instance profile can contain only one role, and
-     * this limit cannot be increased. You can remove the existing role and then add a different role to an instance
-     * profile. You must then wait for the change to appear across all of AWS because of <a
+     * Adds the specified IAM role to the specified instance profile. An instance profile can contain only one role.
+     * (The number and size of IAM resources in an AWS account are limited. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM and STS Quotas</a> in the
+     * <i>IAM User Guide</i>.) You can remove the existing role and then add a different role to an instance profile.
+     * You must then wait for the change to appear across all of AWS because of <a
      * href="https://en.wikipedia.org/wiki/Eventual_consistency">eventual consistency</a>. To force the change, you must
      * <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateIamInstanceProfile.html">
      * disassociate the instance profile</a> and then <a
@@ -414,8 +416,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @throws EntityAlreadyExistsException
      *         The request was rejected because it attempted to create a resource that already exists.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws UnmodifiableEntityException
      *         The request was rejected because only the service that depends on the service-linked role can modify or
      *         delete the role on your behalf. The error message includes the name of the service that depends on this
@@ -479,8 +481,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         The request was rejected because it referenced a resource entity that does not exist. The error message
      *         describes the resource.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.AddUserToGroup
@@ -549,8 +551,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         The request was rejected because it referenced a resource entity that does not exist. The error message
      *         describes the resource.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @throws PolicyNotAttachableException
@@ -628,8 +630,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         The request was rejected because it referenced a resource entity that does not exist. The error message
      *         describes the resource.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @throws UnmodifiableEntityException
@@ -707,8 +709,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         The request was rejected because it referenced a resource entity that does not exist. The error message
      *         describes the resource.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @throws PolicyNotAttachableException
@@ -781,8 +783,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @throws InvalidUserTypeException
      *         The request was rejected because the type of user for the transaction was incorrect.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws EntityTemporarilyUnmodifiableException
      *         The request was rejected because it referenced an entity that is temporarily unmodifiable, such as a user
      *         name that was deleted and then recreated. The error indicates that the request is likely to succeed if
@@ -849,9 +851,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * to manage AWS account root user credentials. This is true even if the AWS account has no associated users.
      * </p>
      * <p>
-     * For information about limits on the number of keys you can create, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations on IAM
-     * Entities</a> in the <i>IAM User Guide</i>.
+     * The number and size of IAM resources in an AWS account are limited. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM and STS Quotas</a> in the
+     * <i>IAM User Guide</i>.
      * </p>
      * <important>
      * <p>
@@ -867,8 +869,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         The request was rejected because it referenced a resource entity that does not exist. The error message
      *         describes the resource.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.CreateAccessKey
@@ -934,8 +936,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @throws EntityAlreadyExistsException
      *         The request was rejected because it attempted to create a resource that already exists.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.CreateAccountAlias
@@ -989,16 +991,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * Creates a new group.
      * </p>
      * <p>
-     * For information about the number of groups you can create, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations on IAM
-     * Entities</a> in the <i>IAM User Guide</i>.
+     * The number and size of IAM resources in an AWS account are limited. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM and STS Quotas</a> in the
+     * <i>IAM User Guide</i>.
      * </p>
      * 
      * @param createGroupRequest
      * @return Result of the CreateGroup operation returned by the service.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws EntityAlreadyExistsException
      *         The request was rejected because it attempted to create a resource that already exists.
      * @throws NoSuchEntityException
@@ -1057,9 +1059,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About Instance Profiles</a>.
      * </p>
      * <p>
-     * For information about the number of instance profiles you can create, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations on IAM
-     * Entities</a> in the <i>IAM User Guide</i>.
+     * The number and size of IAM resources in an AWS account are limited. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM and STS Quotas</a> in the
+     * <i>IAM User Guide</i>.
      * </p>
      * 
      * @param createInstanceProfileRequest
@@ -1067,8 +1069,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @throws EntityAlreadyExistsException
      *         The request was rejected because it attempted to create a resource that already exists.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.CreateInstanceProfile
@@ -1136,8 +1138,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         The request was rejected because the provided password did not meet the requirements imposed by the
      *         account password policy.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.CreateLoginProfile
@@ -1233,8 +1235,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @throws EntityAlreadyExistsException
      *         The request was rejected because it attempted to create a resource that already exists.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.CreateOpenIDConnectProvider
@@ -1304,8 +1306,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws EntityAlreadyExistsException
      *         The request was rejected because it attempted to create a resource that already exists.
      * @throws MalformedPolicyDocumentException
@@ -1385,8 +1387,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.CreatePolicyVersion
@@ -1438,17 +1440,17 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     /**
      * <p>
      * Creates a new role for your AWS account. For more information about roles, go to <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">IAM Roles</a>. For information
-     * about limitations on role names and the number of roles you can create, go to <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations on IAM
-     * Entities</a> in the <i>IAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">IAM Roles</a>. The number and size
+     * of IAM resources in an AWS account are limited. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM and STS Quotas</a> in the
+     * <i>IAM User Guide</i>.
      * </p>
      * 
      * @param createRoleRequest
      * @return Result of the CreateRole operation returned by the service.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @throws EntityAlreadyExistsException
@@ -1543,8 +1545,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @throws EntityAlreadyExistsException
      *         The request was rejected because it attempted to create a resource that already exists.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.CreateSAMLProvider
@@ -1612,8 +1614,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced a resource entity that does not exist. The error message
      *         describes the resource.
@@ -1688,8 +1690,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param createServiceSpecificCredentialRequest
      * @return Result of the CreateServiceSpecificCredential operation returned by the service.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced a resource entity that does not exist. The error message
      *         describes the resource.
@@ -1747,16 +1749,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * Creates a new IAM user for your AWS account.
      * </p>
      * <p>
-     * For information about limitations on the number of IAM users you can create, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations on IAM
-     * Entities</a> in the <i>IAM User Guide</i>.
+     * The number and size of IAM resources in an AWS account are limited. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM and STS Quotas</a> in the
+     * <i>IAM User Guide</i>.
      * </p>
      * 
      * @param createUserRequest
      * @return Result of the CreateUser operation returned by the service.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws EntityAlreadyExistsException
      *         The request was rejected because it attempted to create a resource that already exists.
      * @throws NoSuchEntityException
@@ -1822,9 +1824,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * MFA Device</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
-     * For information about limits on the number of MFA devices you can create, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations on Entities</a> in
-     * the <i>IAM User Guide</i>.
+     * The number and size of IAM resources in an AWS account are limited. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM and STS Quotas</a> in the
+     * <i>IAM User Guide</i>.
      * </p>
      * <important>
      * <p>
@@ -1838,8 +1840,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param createVirtualMFADeviceRequest
      * @return Result of the CreateVirtualMFADevice operation returned by the service.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws EntityAlreadyExistsException
      *         The request was rejected because it attempted to create a resource that already exists.
      * @throws ServiceFailureException
@@ -1911,8 +1913,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         The request was rejected because it referenced a resource entity that does not exist. The error message
      *         describes the resource.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.DeactivateMFADevice
@@ -1977,8 +1979,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         The request was rejected because it referenced a resource entity that does not exist. The error message
      *         describes the resource.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.DeleteAccessKey
@@ -2040,8 +2042,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         The request was rejected because it referenced a resource entity that does not exist. The error message
      *         describes the resource.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.DeleteAccountAlias
@@ -2101,8 +2103,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         The request was rejected because it referenced a resource entity that does not exist. The error message
      *         describes the resource.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.DeleteAccountPasswordPolicy
@@ -2170,8 +2172,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         The request was rejected because it attempted to delete a resource that has attached subordinate
      *         entities. The error message describes these entities.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.DeleteGroup
@@ -2236,8 +2238,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         The request was rejected because it referenced a resource entity that does not exist. The error message
      *         describes the resource.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.DeleteGroupPolicy
@@ -2311,8 +2313,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         The request was rejected because it attempted to delete a resource that has attached subordinate
      *         entities. The error message describes these entities.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.DeleteInstanceProfile
@@ -2384,8 +2386,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         The request was rejected because it referenced a resource entity that does not exist. The error message
      *         describes the resource.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.DeleteLoginProfile
@@ -2544,8 +2546,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         The request was rejected because it referenced a resource entity that does not exist. The error message
      *         describes the resource.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @throws DeleteConflictException
@@ -2619,8 +2621,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         The request was rejected because it referenced a resource entity that does not exist. The error message
      *         describes the resource.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @throws DeleteConflictException
@@ -2696,8 +2698,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         The request was rejected because it attempted to delete a resource that has attached subordinate
      *         entities. The error message describes these entities.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws UnmodifiableEntityException
      *         The request was rejected because only the service that depends on the service-linked role can modify or
      *         delete the role on your behalf. The error message includes the name of the service that depends on this
@@ -2837,8 +2839,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         The request was rejected because it referenced a resource entity that does not exist. The error message
      *         describes the resource.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws UnmodifiableEntityException
      *         The request was rejected because only the service that depends on the service-linked role can modify or
      *         delete the role on your behalf. The error message includes the name of the service that depends on this
@@ -2912,8 +2914,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced a resource entity that does not exist. The error message
      *         describes the resource.
@@ -3058,8 +3060,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         The request was rejected because it attempted to delete a resource that has attached subordinate
      *         entities. The error message describes these entities.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.DeleteServerCertificate
@@ -3136,8 +3138,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         The request was rejected because it referenced a resource entity that does not exist. The error message
      *         describes the resource.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.DeleteServiceLinkedRole
@@ -3259,8 +3261,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         The request was rejected because it referenced a resource entity that does not exist. The error message
      *         describes the resource.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.DeleteSigningCertificate
@@ -3367,8 +3369,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param deleteUserRequest
      * @return Result of the DeleteUser operation returned by the service.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced a resource entity that does not exist. The error message
      *         describes the resource.
@@ -3506,8 +3508,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         The request was rejected because it referenced a resource entity that does not exist. The error message
      *         describes the resource.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.DeleteUserPolicy
@@ -3576,8 +3578,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         The request was rejected because it attempted to delete a resource that has attached subordinate
      *         entities. The error message describes these entities.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.DeleteVirtualMFADevice
@@ -3643,8 +3645,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         The request was rejected because it referenced a resource entity that does not exist. The error message
      *         describes the resource.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @throws ServiceFailureException
@@ -3712,8 +3714,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         The request was rejected because it referenced a resource entity that does not exist. The error message
      *         describes the resource.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @throws UnmodifiableEntityException
@@ -3785,8 +3787,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         The request was rejected because it referenced a resource entity that does not exist. The error message
      *         describes the resource.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @throws ServiceFailureException
@@ -3855,8 +3857,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         The request was rejected because the authentication code was not recognized. The error message describes
      *         the specific error.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced a resource entity that does not exist. The error message
      *         describes the resource.
@@ -3918,8 +3920,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param generateCredentialReportRequest
      * @return Result of the GenerateCredentialReport operation returned by the service.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.GenerateCredentialReport
@@ -4485,9 +4487,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * Retrieves information about IAM entity usage and IAM quotas in the AWS account.
      * </p>
      * <p>
-     * For information about limitations on IAM entities, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations on IAM
-     * Entities</a> in the <i>IAM User Guide</i>.
+     * The number and size of IAM resources in an AWS account are limited. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM and STS Quotas</a> in the
+     * <i>IAM User Guide</i>.
      * </p>
      * 
      * @param getAccountSummaryRequest
@@ -7996,8 +7998,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param putGroupPolicyRequest
      * @return Result of the PutGroupPolicy operation returned by the service.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws MalformedPolicyDocumentException
      *         The request was rejected because the policy document was malformed. The error message describes the
      *         specific error.
@@ -8167,8 +8169,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param putRolePolicyRequest
      * @return Result of the PutRolePolicy operation returned by the service.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws MalformedPolicyDocumentException
      *         The request was rejected because the policy document was malformed. The error message describes the
      *         specific error.
@@ -8327,8 +8329,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param putUserPolicyRequest
      * @return Result of the PutUserPolicy operation returned by the service.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws MalformedPolicyDocumentException
      *         The request was rejected because the policy document was malformed. The error message describes the
      *         specific error.
@@ -8473,8 +8475,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         The request was rejected because it referenced a resource entity that does not exist. The error message
      *         describes the resource.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws UnmodifiableEntityException
      *         The request was rejected because only the service that depends on the service-linked role can modify or
      *         delete the role on your behalf. The error message includes the name of the service that depends on this
@@ -8538,8 +8540,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         The request was rejected because it referenced a resource entity that does not exist. The error message
      *         describes the resource.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.RemoveUserFromGroup
@@ -8665,8 +8667,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         The request was rejected because it referenced a resource entity that does not exist. The error message
      *         describes the resource.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.ResyncMFADevice
@@ -8737,8 +8739,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.SetDefaultPolicyVersion
@@ -9092,8 +9094,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         The request was rejected because it referenced a resource entity that does not exist. The error message
      *         describes the resource.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @throws ConcurrentModificationException
@@ -9208,8 +9210,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         The request was rejected because it referenced a resource entity that does not exist. The error message
      *         describes the resource.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @throws ConcurrentModificationException
@@ -9408,8 +9410,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         The request was rejected because it referenced a resource entity that does not exist. The error message
      *         describes the resource.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.UpdateAccessKey
@@ -9490,8 +9492,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         The request was rejected because the policy document was malformed. The error message describes the
      *         specific error.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.UpdateAccountPasswordPolicy
@@ -9557,8 +9559,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         The request was rejected because the policy document was malformed. The error message describes the
      *         specific error.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws UnmodifiableEntityException
      *         The request was rejected because only the service that depends on the service-linked role can modify or
      *         delete the role on your behalf. The error message includes the name of the service that depends on this
@@ -9640,8 +9642,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @throws EntityAlreadyExistsException
      *         The request was rejected because it attempted to create a resource that already exists.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.UpdateGroup
@@ -9712,8 +9714,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         The request was rejected because the provided password did not meet the requirements imposed by the
      *         account password policy.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.UpdateLoginProfile
@@ -9987,8 +9989,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.UpdateSAMLProvider
@@ -10138,8 +10140,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @throws EntityAlreadyExistsException
      *         The request was rejected because it attempted to create a resource that already exists.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.UpdateServerCertificate
@@ -10265,8 +10267,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         The request was rejected because it referenced a resource entity that does not exist. The error message
      *         describes the resource.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.UpdateSigningCertificate
@@ -10341,8 +10343,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         The request was rejected because it referenced a resource entity that does not exist. The error message
      *         describes the resource.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws EntityAlreadyExistsException
      *         The request was rejected because it attempted to create a resource that already exists.
      * @throws EntityTemporarilyUnmodifiableException
@@ -10414,8 +10416,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param uploadSSHPublicKeyRequest
      * @return Result of the UploadSSHPublicKey operation returned by the service.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced a resource entity that does not exist. The error message
      *         describes the resource.
@@ -10509,8 +10511,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param uploadServerCertificateRequest
      * @return Result of the UploadServerCertificate operation returned by the service.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws EntityAlreadyExistsException
      *         The request was rejected because it attempted to create a resource that already exists.
      * @throws MalformedCertificateException
@@ -10592,8 +10594,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param uploadSigningCertificateRequest
      * @return Result of the UploadSigningCertificate operation returned by the service.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error message describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account
+     *         limitations. The error message describes the limit exceeded.
      * @throws EntityAlreadyExistsException
      *         The request was rejected because it attempted to create a resource that already exists.
      * @throws MalformedCertificateException

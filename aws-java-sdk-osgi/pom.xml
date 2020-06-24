@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.11.810-SNAPSHOT</version>
+    <version>1.11.810</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-osgi</artifactId>
@@ -15,6 +15,12 @@
 
   <!-- The dependencies section in pom.xml is auto generated. No manual changes are allowed -->
   <dependencies>
+    <dependency>
+        <artifactId>aws-java-sdk-honeycode</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
     <dependency>
         <artifactId>aws-java-sdk-codeartifact</artifactId>
         <groupId>com.amazonaws</groupId>
@@ -1466,6 +1472,10 @@
                               </taglet>
                           </taglets>
                           <groups>
+                              <group>
+                                  <title>Amazon Honeycode</title>
+                                  <packages>com.amazonaws.services.honeycode*</packages>
+                              </group>
                               <group>
                                   <title>CodeArtifact</title>
                                   <packages>com.amazonaws.services.codeartifact*</packages>

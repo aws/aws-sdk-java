@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Result structure for an Amplify App update request.
+ * The result structure for an Amplify app update request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/UpdateApp" target="_top">AWS API
@@ -28,18 +28,18 @@ public class UpdateAppResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * App structure for the updated App.
+     * Represents the updated Amplify app.
      * </p>
      */
     private App app;
 
     /**
      * <p>
-     * App structure for the updated App.
+     * Represents the updated Amplify app.
      * </p>
      * 
      * @param app
-     *        App structure for the updated App.
+     *        Represents the updated Amplify app.
      */
 
     public void setApp(App app) {
@@ -48,10 +48,10 @@ public class UpdateAppResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * App structure for the updated App.
+     * Represents the updated Amplify app.
      * </p>
      * 
-     * @return App structure for the updated App.
+     * @return Represents the updated Amplify app.
      */
 
     public App getApp() {
@@ -60,11 +60,11 @@ public class UpdateAppResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * App structure for the updated App.
+     * Represents the updated Amplify app.
      * </p>
      * 
      * @param app
-     *        App structure for the updated App.
+     *        Represents the updated Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

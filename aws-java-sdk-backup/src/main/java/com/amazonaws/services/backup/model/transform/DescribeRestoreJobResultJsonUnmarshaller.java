@@ -48,6 +48,10 @@ public class DescribeRestoreJobResultJsonUnmarshaller implements Unmarshaller<De
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("AccountId", targetDepth)) {
+                    context.nextToken();
+                    describeRestoreJobResult.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("RestoreJobId", targetDepth)) {
                     context.nextToken();
                     describeRestoreJobResult.setRestoreJobId(context.getUnmarshaller(String.class).unmarshall(context));
@@ -91,6 +95,10 @@ public class DescribeRestoreJobResultJsonUnmarshaller implements Unmarshaller<De
                 if (context.testExpression("CreatedResourceArn", targetDepth)) {
                     context.nextToken();
                     describeRestoreJobResult.setCreatedResourceArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ResourceType", targetDepth)) {
+                    context.nextToken();
+                    describeRestoreJobResult.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

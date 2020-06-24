@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Branch for an Amplify App, which maps to a 3rd party repository branch.
+ * The branch for an Amplify app, which maps to a third-party repository branch.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/Branch" target="_top">AWS API
@@ -30,139 +30,139 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * ARN for a branch, part of an Amplify App.
+     * The Amazon Resource Name (ARN) for a branch that is part of an Amplify app.
      * </p>
      */
     private String branchArn;
     /**
      * <p>
-     * Name for a branch, part of an Amplify App.
+     * The name for the branch that is part of an Amplify app.
      * </p>
      */
     private String branchName;
     /**
      * <p>
-     * Description for a branch, part of an Amplify App.
+     * The description for the branch that is part of an Amplify app.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * Tag for branch for Amplify App.
+     * The tag for the branch of an Amplify app.
      * </p>
      */
     private java.util.Map<String, String> tags;
     /**
      * <p>
-     * Stage for a branch, part of an Amplify App.
+     * The current stage for the branch that is part of an Amplify app.
      * </p>
      */
     private String stage;
     /**
      * <p>
-     * Display name for a branch, will use as the default domain prefix.
+     * The display name for the branch. This is used as the default domain prefix.
      * </p>
      */
     private String displayName;
     /**
      * <p>
-     * Enables notifications for a branch, part of an Amplify App.
+     * Enables notifications for a branch that is part of an Amplify app.
      * </p>
      */
     private Boolean enableNotification;
     /**
      * <p>
-     * Creation date and time for a branch, part of an Amplify App.
+     * The creation date and time for a branch that is part of an Amplify app.
      * </p>
      */
     private java.util.Date createTime;
     /**
      * <p>
-     * Last updated date and time for a branch, part of an Amplify App.
+     * The last updated date and time for a branch that is part of an Amplify app.
      * </p>
      */
     private java.util.Date updateTime;
     /**
      * <p>
-     * Environment Variables specific to a branch, part of an Amplify App.
+     * The environment variables specific to a branch of an Amplify app.
      * </p>
      */
     private java.util.Map<String, String> environmentVariables;
     /**
      * <p>
-     * Enables auto-building on push for a branch, part of an Amplify App.
+     * Enables auto-building on push for a branch of an Amplify app.
      * </p>
      */
     private Boolean enableAutoBuild;
     /**
      * <p>
-     * Custom domains for a branch, part of an Amplify App.
+     * The custom domains for a branch of an Amplify app.
      * </p>
      */
     private java.util.List<String> customDomains;
     /**
      * <p>
-     * Framework for a branch, part of an Amplify App.
+     * The framework for a branch of an Amplify app.
      * </p>
      */
     private String framework;
     /**
      * <p>
-     * Id of the active job for a branch, part of an Amplify App.
+     * The ID of the active job for a branch of an Amplify app.
      * </p>
      */
     private String activeJobId;
     /**
      * <p>
-     * Total number of Jobs part of an Amplify App.
+     * The total number of jobs that are part of an Amplify app.
      * </p>
      */
     private String totalNumberOfJobs;
     /**
      * <p>
-     * Enables Basic Authorization for a branch, part of an Amplify App.
+     * Enables basic authorization for a branch of an Amplify app.
      * </p>
      */
     private Boolean enableBasicAuth;
     /**
      * <p>
-     * Thumbnail URL for the branch.
+     * The thumbnail URL for the branch of an Amplify app.
      * </p>
      */
     private String thumbnailUrl;
     /**
      * <p>
-     * Basic Authorization credentials for a branch, part of an Amplify App.
+     * The basic authorization credentials for a branch of an Amplify app.
      * </p>
      */
     private String basicAuthCredentials;
     /**
      * <p>
-     * BuildSpec content for branch for Amplify App.
+     * The build specification (build spec) content for the branch of an Amplify app.
      * </p>
      */
     private String buildSpec;
     /**
      * <p>
-     * The content TTL for the website in seconds.
+     * The content Time to Live (TTL) for the website in seconds.
      * </p>
      */
     private String ttl;
     /**
      * <p>
-     * List of custom resources that are linked to this branch.
+     * A list of custom resources that are linked to this branch.
      * </p>
      */
     private java.util.List<String> associatedResources;
     /**
      * <p>
-     * Enables Pull Request Preview for this branch.
+     * Enables pull request preview for the branch.
      * </p>
      */
     private Boolean enablePullRequestPreview;
     /**
      * <p>
-     * The Amplify Environment name for the pull request.
+     * The Amplify environment name for the pull request.
      * </p>
      */
     private String pullRequestEnvironmentName;
@@ -180,18 +180,18 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
     private String sourceBranch;
     /**
      * <p>
-     * ARN for a Backend Environment, part of an Amplify App.
+     * The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app.
      * </p>
      */
     private String backendEnvironmentArn;
 
     /**
      * <p>
-     * ARN for a branch, part of an Amplify App.
+     * The Amazon Resource Name (ARN) for a branch that is part of an Amplify app.
      * </p>
      * 
      * @param branchArn
-     *        ARN for a branch, part of an Amplify App.
+     *        The Amazon Resource Name (ARN) for a branch that is part of an Amplify app.
      */
 
     public void setBranchArn(String branchArn) {
@@ -200,10 +200,10 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * ARN for a branch, part of an Amplify App.
+     * The Amazon Resource Name (ARN) for a branch that is part of an Amplify app.
      * </p>
      * 
-     * @return ARN for a branch, part of an Amplify App.
+     * @return The Amazon Resource Name (ARN) for a branch that is part of an Amplify app.
      */
 
     public String getBranchArn() {
@@ -212,11 +212,11 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * ARN for a branch, part of an Amplify App.
+     * The Amazon Resource Name (ARN) for a branch that is part of an Amplify app.
      * </p>
      * 
      * @param branchArn
-     *        ARN for a branch, part of an Amplify App.
+     *        The Amazon Resource Name (ARN) for a branch that is part of an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -227,11 +227,11 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name for a branch, part of an Amplify App.
+     * The name for the branch that is part of an Amplify app.
      * </p>
      * 
      * @param branchName
-     *        Name for a branch, part of an Amplify App.
+     *        The name for the branch that is part of an Amplify app.
      */
 
     public void setBranchName(String branchName) {
@@ -240,10 +240,10 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name for a branch, part of an Amplify App.
+     * The name for the branch that is part of an Amplify app.
      * </p>
      * 
-     * @return Name for a branch, part of an Amplify App.
+     * @return The name for the branch that is part of an Amplify app.
      */
 
     public String getBranchName() {
@@ -252,11 +252,11 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name for a branch, part of an Amplify App.
+     * The name for the branch that is part of an Amplify app.
      * </p>
      * 
      * @param branchName
-     *        Name for a branch, part of an Amplify App.
+     *        The name for the branch that is part of an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -267,11 +267,11 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Description for a branch, part of an Amplify App.
+     * The description for the branch that is part of an Amplify app.
      * </p>
      * 
      * @param description
-     *        Description for a branch, part of an Amplify App.
+     *        The description for the branch that is part of an Amplify app.
      */
 
     public void setDescription(String description) {
@@ -280,10 +280,10 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Description for a branch, part of an Amplify App.
+     * The description for the branch that is part of an Amplify app.
      * </p>
      * 
-     * @return Description for a branch, part of an Amplify App.
+     * @return The description for the branch that is part of an Amplify app.
      */
 
     public String getDescription() {
@@ -292,11 +292,11 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Description for a branch, part of an Amplify App.
+     * The description for the branch that is part of an Amplify app.
      * </p>
      * 
      * @param description
-     *        Description for a branch, part of an Amplify App.
+     *        The description for the branch that is part of an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -307,10 +307,10 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Tag for branch for Amplify App.
+     * The tag for the branch of an Amplify app.
      * </p>
      * 
-     * @return Tag for branch for Amplify App.
+     * @return The tag for the branch of an Amplify app.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -319,11 +319,11 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Tag for branch for Amplify App.
+     * The tag for the branch of an Amplify app.
      * </p>
      * 
      * @param tags
-     *        Tag for branch for Amplify App.
+     *        The tag for the branch of an Amplify app.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -332,11 +332,11 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Tag for branch for Amplify App.
+     * The tag for the branch of an Amplify app.
      * </p>
      * 
      * @param tags
-     *        Tag for branch for Amplify App.
+     *        The tag for the branch of an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -375,11 +375,11 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Stage for a branch, part of an Amplify App.
+     * The current stage for the branch that is part of an Amplify app.
      * </p>
      * 
      * @param stage
-     *        Stage for a branch, part of an Amplify App.
+     *        The current stage for the branch that is part of an Amplify app.
      * @see Stage
      */
 
@@ -389,10 +389,10 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Stage for a branch, part of an Amplify App.
+     * The current stage for the branch that is part of an Amplify app.
      * </p>
      * 
-     * @return Stage for a branch, part of an Amplify App.
+     * @return The current stage for the branch that is part of an Amplify app.
      * @see Stage
      */
 
@@ -402,11 +402,11 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Stage for a branch, part of an Amplify App.
+     * The current stage for the branch that is part of an Amplify app.
      * </p>
      * 
      * @param stage
-     *        Stage for a branch, part of an Amplify App.
+     *        The current stage for the branch that is part of an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Stage
      */
@@ -418,11 +418,11 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Stage for a branch, part of an Amplify App.
+     * The current stage for the branch that is part of an Amplify app.
      * </p>
      * 
      * @param stage
-     *        Stage for a branch, part of an Amplify App.
+     *        The current stage for the branch that is part of an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Stage
      */
@@ -434,11 +434,11 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Display name for a branch, will use as the default domain prefix.
+     * The display name for the branch. This is used as the default domain prefix.
      * </p>
      * 
      * @param displayName
-     *        Display name for a branch, will use as the default domain prefix.
+     *        The display name for the branch. This is used as the default domain prefix.
      */
 
     public void setDisplayName(String displayName) {
@@ -447,10 +447,10 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Display name for a branch, will use as the default domain prefix.
+     * The display name for the branch. This is used as the default domain prefix.
      * </p>
      * 
-     * @return Display name for a branch, will use as the default domain prefix.
+     * @return The display name for the branch. This is used as the default domain prefix.
      */
 
     public String getDisplayName() {
@@ -459,11 +459,11 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Display name for a branch, will use as the default domain prefix.
+     * The display name for the branch. This is used as the default domain prefix.
      * </p>
      * 
      * @param displayName
-     *        Display name for a branch, will use as the default domain prefix.
+     *        The display name for the branch. This is used as the default domain prefix.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -474,11 +474,11 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Enables notifications for a branch, part of an Amplify App.
+     * Enables notifications for a branch that is part of an Amplify app.
      * </p>
      * 
      * @param enableNotification
-     *        Enables notifications for a branch, part of an Amplify App.
+     *        Enables notifications for a branch that is part of an Amplify app.
      */
 
     public void setEnableNotification(Boolean enableNotification) {
@@ -487,10 +487,10 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Enables notifications for a branch, part of an Amplify App.
+     * Enables notifications for a branch that is part of an Amplify app.
      * </p>
      * 
-     * @return Enables notifications for a branch, part of an Amplify App.
+     * @return Enables notifications for a branch that is part of an Amplify app.
      */
 
     public Boolean getEnableNotification() {
@@ -499,11 +499,11 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Enables notifications for a branch, part of an Amplify App.
+     * Enables notifications for a branch that is part of an Amplify app.
      * </p>
      * 
      * @param enableNotification
-     *        Enables notifications for a branch, part of an Amplify App.
+     *        Enables notifications for a branch that is part of an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -514,10 +514,10 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Enables notifications for a branch, part of an Amplify App.
+     * Enables notifications for a branch that is part of an Amplify app.
      * </p>
      * 
-     * @return Enables notifications for a branch, part of an Amplify App.
+     * @return Enables notifications for a branch that is part of an Amplify app.
      */
 
     public Boolean isEnableNotification() {
@@ -526,11 +526,11 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Creation date and time for a branch, part of an Amplify App.
+     * The creation date and time for a branch that is part of an Amplify app.
      * </p>
      * 
      * @param createTime
-     *        Creation date and time for a branch, part of an Amplify App.
+     *        The creation date and time for a branch that is part of an Amplify app.
      */
 
     public void setCreateTime(java.util.Date createTime) {
@@ -539,10 +539,10 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Creation date and time for a branch, part of an Amplify App.
+     * The creation date and time for a branch that is part of an Amplify app.
      * </p>
      * 
-     * @return Creation date and time for a branch, part of an Amplify App.
+     * @return The creation date and time for a branch that is part of an Amplify app.
      */
 
     public java.util.Date getCreateTime() {
@@ -551,11 +551,11 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Creation date and time for a branch, part of an Amplify App.
+     * The creation date and time for a branch that is part of an Amplify app.
      * </p>
      * 
      * @param createTime
-     *        Creation date and time for a branch, part of an Amplify App.
+     *        The creation date and time for a branch that is part of an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -566,11 +566,11 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Last updated date and time for a branch, part of an Amplify App.
+     * The last updated date and time for a branch that is part of an Amplify app.
      * </p>
      * 
      * @param updateTime
-     *        Last updated date and time for a branch, part of an Amplify App.
+     *        The last updated date and time for a branch that is part of an Amplify app.
      */
 
     public void setUpdateTime(java.util.Date updateTime) {
@@ -579,10 +579,10 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Last updated date and time for a branch, part of an Amplify App.
+     * The last updated date and time for a branch that is part of an Amplify app.
      * </p>
      * 
-     * @return Last updated date and time for a branch, part of an Amplify App.
+     * @return The last updated date and time for a branch that is part of an Amplify app.
      */
 
     public java.util.Date getUpdateTime() {
@@ -591,11 +591,11 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Last updated date and time for a branch, part of an Amplify App.
+     * The last updated date and time for a branch that is part of an Amplify app.
      * </p>
      * 
      * @param updateTime
-     *        Last updated date and time for a branch, part of an Amplify App.
+     *        The last updated date and time for a branch that is part of an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -606,10 +606,10 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Environment Variables specific to a branch, part of an Amplify App.
+     * The environment variables specific to a branch of an Amplify app.
      * </p>
      * 
-     * @return Environment Variables specific to a branch, part of an Amplify App.
+     * @return The environment variables specific to a branch of an Amplify app.
      */
 
     public java.util.Map<String, String> getEnvironmentVariables() {
@@ -618,11 +618,11 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Environment Variables specific to a branch, part of an Amplify App.
+     * The environment variables specific to a branch of an Amplify app.
      * </p>
      * 
      * @param environmentVariables
-     *        Environment Variables specific to a branch, part of an Amplify App.
+     *        The environment variables specific to a branch of an Amplify app.
      */
 
     public void setEnvironmentVariables(java.util.Map<String, String> environmentVariables) {
@@ -631,11 +631,11 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Environment Variables specific to a branch, part of an Amplify App.
+     * The environment variables specific to a branch of an Amplify app.
      * </p>
      * 
      * @param environmentVariables
-     *        Environment Variables specific to a branch, part of an Amplify App.
+     *        The environment variables specific to a branch of an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -674,11 +674,11 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Enables auto-building on push for a branch, part of an Amplify App.
+     * Enables auto-building on push for a branch of an Amplify app.
      * </p>
      * 
      * @param enableAutoBuild
-     *        Enables auto-building on push for a branch, part of an Amplify App.
+     *        Enables auto-building on push for a branch of an Amplify app.
      */
 
     public void setEnableAutoBuild(Boolean enableAutoBuild) {
@@ -687,10 +687,10 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Enables auto-building on push for a branch, part of an Amplify App.
+     * Enables auto-building on push for a branch of an Amplify app.
      * </p>
      * 
-     * @return Enables auto-building on push for a branch, part of an Amplify App.
+     * @return Enables auto-building on push for a branch of an Amplify app.
      */
 
     public Boolean getEnableAutoBuild() {
@@ -699,11 +699,11 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Enables auto-building on push for a branch, part of an Amplify App.
+     * Enables auto-building on push for a branch of an Amplify app.
      * </p>
      * 
      * @param enableAutoBuild
-     *        Enables auto-building on push for a branch, part of an Amplify App.
+     *        Enables auto-building on push for a branch of an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -714,10 +714,10 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Enables auto-building on push for a branch, part of an Amplify App.
+     * Enables auto-building on push for a branch of an Amplify app.
      * </p>
      * 
-     * @return Enables auto-building on push for a branch, part of an Amplify App.
+     * @return Enables auto-building on push for a branch of an Amplify app.
      */
 
     public Boolean isEnableAutoBuild() {
@@ -726,10 +726,10 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Custom domains for a branch, part of an Amplify App.
+     * The custom domains for a branch of an Amplify app.
      * </p>
      * 
-     * @return Custom domains for a branch, part of an Amplify App.
+     * @return The custom domains for a branch of an Amplify app.
      */
 
     public java.util.List<String> getCustomDomains() {
@@ -738,11 +738,11 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Custom domains for a branch, part of an Amplify App.
+     * The custom domains for a branch of an Amplify app.
      * </p>
      * 
      * @param customDomains
-     *        Custom domains for a branch, part of an Amplify App.
+     *        The custom domains for a branch of an Amplify app.
      */
 
     public void setCustomDomains(java.util.Collection<String> customDomains) {
@@ -756,7 +756,7 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Custom domains for a branch, part of an Amplify App.
+     * The custom domains for a branch of an Amplify app.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -765,7 +765,7 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param customDomains
-     *        Custom domains for a branch, part of an Amplify App.
+     *        The custom domains for a branch of an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -781,11 +781,11 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Custom domains for a branch, part of an Amplify App.
+     * The custom domains for a branch of an Amplify app.
      * </p>
      * 
      * @param customDomains
-     *        Custom domains for a branch, part of an Amplify App.
+     *        The custom domains for a branch of an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -796,11 +796,11 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Framework for a branch, part of an Amplify App.
+     * The framework for a branch of an Amplify app.
      * </p>
      * 
      * @param framework
-     *        Framework for a branch, part of an Amplify App.
+     *        The framework for a branch of an Amplify app.
      */
 
     public void setFramework(String framework) {
@@ -809,10 +809,10 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Framework for a branch, part of an Amplify App.
+     * The framework for a branch of an Amplify app.
      * </p>
      * 
-     * @return Framework for a branch, part of an Amplify App.
+     * @return The framework for a branch of an Amplify app.
      */
 
     public String getFramework() {
@@ -821,11 +821,11 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Framework for a branch, part of an Amplify App.
+     * The framework for a branch of an Amplify app.
      * </p>
      * 
      * @param framework
-     *        Framework for a branch, part of an Amplify App.
+     *        The framework for a branch of an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -836,11 +836,11 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Id of the active job for a branch, part of an Amplify App.
+     * The ID of the active job for a branch of an Amplify app.
      * </p>
      * 
      * @param activeJobId
-     *        Id of the active job for a branch, part of an Amplify App.
+     *        The ID of the active job for a branch of an Amplify app.
      */
 
     public void setActiveJobId(String activeJobId) {
@@ -849,10 +849,10 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Id of the active job for a branch, part of an Amplify App.
+     * The ID of the active job for a branch of an Amplify app.
      * </p>
      * 
-     * @return Id of the active job for a branch, part of an Amplify App.
+     * @return The ID of the active job for a branch of an Amplify app.
      */
 
     public String getActiveJobId() {
@@ -861,11 +861,11 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Id of the active job for a branch, part of an Amplify App.
+     * The ID of the active job for a branch of an Amplify app.
      * </p>
      * 
      * @param activeJobId
-     *        Id of the active job for a branch, part of an Amplify App.
+     *        The ID of the active job for a branch of an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -876,11 +876,11 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Total number of Jobs part of an Amplify App.
+     * The total number of jobs that are part of an Amplify app.
      * </p>
      * 
      * @param totalNumberOfJobs
-     *        Total number of Jobs part of an Amplify App.
+     *        The total number of jobs that are part of an Amplify app.
      */
 
     public void setTotalNumberOfJobs(String totalNumberOfJobs) {
@@ -889,10 +889,10 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Total number of Jobs part of an Amplify App.
+     * The total number of jobs that are part of an Amplify app.
      * </p>
      * 
-     * @return Total number of Jobs part of an Amplify App.
+     * @return The total number of jobs that are part of an Amplify app.
      */
 
     public String getTotalNumberOfJobs() {
@@ -901,11 +901,11 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Total number of Jobs part of an Amplify App.
+     * The total number of jobs that are part of an Amplify app.
      * </p>
      * 
      * @param totalNumberOfJobs
-     *        Total number of Jobs part of an Amplify App.
+     *        The total number of jobs that are part of an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -916,11 +916,11 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Enables Basic Authorization for a branch, part of an Amplify App.
+     * Enables basic authorization for a branch of an Amplify app.
      * </p>
      * 
      * @param enableBasicAuth
-     *        Enables Basic Authorization for a branch, part of an Amplify App.
+     *        Enables basic authorization for a branch of an Amplify app.
      */
 
     public void setEnableBasicAuth(Boolean enableBasicAuth) {
@@ -929,10 +929,10 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Enables Basic Authorization for a branch, part of an Amplify App.
+     * Enables basic authorization for a branch of an Amplify app.
      * </p>
      * 
-     * @return Enables Basic Authorization for a branch, part of an Amplify App.
+     * @return Enables basic authorization for a branch of an Amplify app.
      */
 
     public Boolean getEnableBasicAuth() {
@@ -941,11 +941,11 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Enables Basic Authorization for a branch, part of an Amplify App.
+     * Enables basic authorization for a branch of an Amplify app.
      * </p>
      * 
      * @param enableBasicAuth
-     *        Enables Basic Authorization for a branch, part of an Amplify App.
+     *        Enables basic authorization for a branch of an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -956,10 +956,10 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Enables Basic Authorization for a branch, part of an Amplify App.
+     * Enables basic authorization for a branch of an Amplify app.
      * </p>
      * 
-     * @return Enables Basic Authorization for a branch, part of an Amplify App.
+     * @return Enables basic authorization for a branch of an Amplify app.
      */
 
     public Boolean isEnableBasicAuth() {
@@ -968,11 +968,11 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Thumbnail URL for the branch.
+     * The thumbnail URL for the branch of an Amplify app.
      * </p>
      * 
      * @param thumbnailUrl
-     *        Thumbnail URL for the branch.
+     *        The thumbnail URL for the branch of an Amplify app.
      */
 
     public void setThumbnailUrl(String thumbnailUrl) {
@@ -981,10 +981,10 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Thumbnail URL for the branch.
+     * The thumbnail URL for the branch of an Amplify app.
      * </p>
      * 
-     * @return Thumbnail URL for the branch.
+     * @return The thumbnail URL for the branch of an Amplify app.
      */
 
     public String getThumbnailUrl() {
@@ -993,11 +993,11 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Thumbnail URL for the branch.
+     * The thumbnail URL for the branch of an Amplify app.
      * </p>
      * 
      * @param thumbnailUrl
-     *        Thumbnail URL for the branch.
+     *        The thumbnail URL for the branch of an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1008,11 +1008,11 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Basic Authorization credentials for a branch, part of an Amplify App.
+     * The basic authorization credentials for a branch of an Amplify app.
      * </p>
      * 
      * @param basicAuthCredentials
-     *        Basic Authorization credentials for a branch, part of an Amplify App.
+     *        The basic authorization credentials for a branch of an Amplify app.
      */
 
     public void setBasicAuthCredentials(String basicAuthCredentials) {
@@ -1021,10 +1021,10 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Basic Authorization credentials for a branch, part of an Amplify App.
+     * The basic authorization credentials for a branch of an Amplify app.
      * </p>
      * 
-     * @return Basic Authorization credentials for a branch, part of an Amplify App.
+     * @return The basic authorization credentials for a branch of an Amplify app.
      */
 
     public String getBasicAuthCredentials() {
@@ -1033,11 +1033,11 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Basic Authorization credentials for a branch, part of an Amplify App.
+     * The basic authorization credentials for a branch of an Amplify app.
      * </p>
      * 
      * @param basicAuthCredentials
-     *        Basic Authorization credentials for a branch, part of an Amplify App.
+     *        The basic authorization credentials for a branch of an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1048,11 +1048,11 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * BuildSpec content for branch for Amplify App.
+     * The build specification (build spec) content for the branch of an Amplify app.
      * </p>
      * 
      * @param buildSpec
-     *        BuildSpec content for branch for Amplify App.
+     *        The build specification (build spec) content for the branch of an Amplify app.
      */
 
     public void setBuildSpec(String buildSpec) {
@@ -1061,10 +1061,10 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * BuildSpec content for branch for Amplify App.
+     * The build specification (build spec) content for the branch of an Amplify app.
      * </p>
      * 
-     * @return BuildSpec content for branch for Amplify App.
+     * @return The build specification (build spec) content for the branch of an Amplify app.
      */
 
     public String getBuildSpec() {
@@ -1073,11 +1073,11 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * BuildSpec content for branch for Amplify App.
+     * The build specification (build spec) content for the branch of an Amplify app.
      * </p>
      * 
      * @param buildSpec
-     *        BuildSpec content for branch for Amplify App.
+     *        The build specification (build spec) content for the branch of an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1088,11 +1088,11 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The content TTL for the website in seconds.
+     * The content Time to Live (TTL) for the website in seconds.
      * </p>
      * 
      * @param ttl
-     *        The content TTL for the website in seconds.
+     *        The content Time to Live (TTL) for the website in seconds.
      */
 
     public void setTtl(String ttl) {
@@ -1101,10 +1101,10 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The content TTL for the website in seconds.
+     * The content Time to Live (TTL) for the website in seconds.
      * </p>
      * 
-     * @return The content TTL for the website in seconds.
+     * @return The content Time to Live (TTL) for the website in seconds.
      */
 
     public String getTtl() {
@@ -1113,11 +1113,11 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The content TTL for the website in seconds.
+     * The content Time to Live (TTL) for the website in seconds.
      * </p>
      * 
      * @param ttl
-     *        The content TTL for the website in seconds.
+     *        The content Time to Live (TTL) for the website in seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1128,10 +1128,10 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * List of custom resources that are linked to this branch.
+     * A list of custom resources that are linked to this branch.
      * </p>
      * 
-     * @return List of custom resources that are linked to this branch.
+     * @return A list of custom resources that are linked to this branch.
      */
 
     public java.util.List<String> getAssociatedResources() {
@@ -1140,11 +1140,11 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * List of custom resources that are linked to this branch.
+     * A list of custom resources that are linked to this branch.
      * </p>
      * 
      * @param associatedResources
-     *        List of custom resources that are linked to this branch.
+     *        A list of custom resources that are linked to this branch.
      */
 
     public void setAssociatedResources(java.util.Collection<String> associatedResources) {
@@ -1158,7 +1158,7 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * List of custom resources that are linked to this branch.
+     * A list of custom resources that are linked to this branch.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1167,7 +1167,7 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param associatedResources
-     *        List of custom resources that are linked to this branch.
+     *        A list of custom resources that are linked to this branch.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1183,11 +1183,11 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * List of custom resources that are linked to this branch.
+     * A list of custom resources that are linked to this branch.
      * </p>
      * 
      * @param associatedResources
-     *        List of custom resources that are linked to this branch.
+     *        A list of custom resources that are linked to this branch.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1198,11 +1198,11 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Enables Pull Request Preview for this branch.
+     * Enables pull request preview for the branch.
      * </p>
      * 
      * @param enablePullRequestPreview
-     *        Enables Pull Request Preview for this branch.
+     *        Enables pull request preview for the branch.
      */
 
     public void setEnablePullRequestPreview(Boolean enablePullRequestPreview) {
@@ -1211,10 +1211,10 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Enables Pull Request Preview for this branch.
+     * Enables pull request preview for the branch.
      * </p>
      * 
-     * @return Enables Pull Request Preview for this branch.
+     * @return Enables pull request preview for the branch.
      */
 
     public Boolean getEnablePullRequestPreview() {
@@ -1223,11 +1223,11 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Enables Pull Request Preview for this branch.
+     * Enables pull request preview for the branch.
      * </p>
      * 
      * @param enablePullRequestPreview
-     *        Enables Pull Request Preview for this branch.
+     *        Enables pull request preview for the branch.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1238,10 +1238,10 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Enables Pull Request Preview for this branch.
+     * Enables pull request preview for the branch.
      * </p>
      * 
-     * @return Enables Pull Request Preview for this branch.
+     * @return Enables pull request preview for the branch.
      */
 
     public Boolean isEnablePullRequestPreview() {
@@ -1250,11 +1250,11 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amplify Environment name for the pull request.
+     * The Amplify environment name for the pull request.
      * </p>
      * 
      * @param pullRequestEnvironmentName
-     *        The Amplify Environment name for the pull request.
+     *        The Amplify environment name for the pull request.
      */
 
     public void setPullRequestEnvironmentName(String pullRequestEnvironmentName) {
@@ -1263,10 +1263,10 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amplify Environment name for the pull request.
+     * The Amplify environment name for the pull request.
      * </p>
      * 
-     * @return The Amplify Environment name for the pull request.
+     * @return The Amplify environment name for the pull request.
      */
 
     public String getPullRequestEnvironmentName() {
@@ -1275,11 +1275,11 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amplify Environment name for the pull request.
+     * The Amplify environment name for the pull request.
      * </p>
      * 
      * @param pullRequestEnvironmentName
-     *        The Amplify Environment name for the pull request.
+     *        The Amplify environment name for the pull request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1370,11 +1370,11 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * ARN for a Backend Environment, part of an Amplify App.
+     * The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app.
      * </p>
      * 
      * @param backendEnvironmentArn
-     *        ARN for a Backend Environment, part of an Amplify App.
+     *        The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app.
      */
 
     public void setBackendEnvironmentArn(String backendEnvironmentArn) {
@@ -1383,10 +1383,10 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * ARN for a Backend Environment, part of an Amplify App.
+     * The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app.
      * </p>
      * 
-     * @return ARN for a Backend Environment, part of an Amplify App.
+     * @return The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app.
      */
 
     public String getBackendEnvironmentArn() {
@@ -1395,11 +1395,11 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * ARN for a Backend Environment, part of an Amplify App.
+     * The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app.
      * </p>
      * 
      * @param backendEnvironmentArn
-     *        ARN for a Backend Environment, part of an Amplify App.
+     *        The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1455,7 +1455,7 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
         if (getThumbnailUrl() != null)
             sb.append("ThumbnailUrl: ").append(getThumbnailUrl()).append(",");
         if (getBasicAuthCredentials() != null)
-            sb.append("BasicAuthCredentials: ").append(getBasicAuthCredentials()).append(",");
+            sb.append("BasicAuthCredentials: ").append("***Sensitive Data Redacted***").append(",");
         if (getBuildSpec() != null)
             sb.append("BuildSpec: ").append(getBuildSpec()).append(",");
         if (getTtl() != null)

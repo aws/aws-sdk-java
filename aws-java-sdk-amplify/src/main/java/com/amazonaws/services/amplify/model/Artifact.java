@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Structure for artifact.
+ * Describes an artifact.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/Artifact" target="_top">AWS API
@@ -30,24 +30,24 @@ public class Artifact implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * File name for the artifact.
+     * The file name for the artifact.
      * </p>
      */
     private String artifactFileName;
     /**
      * <p>
-     * Unique Id for a artifact.
+     * The unique ID for the artifact.
      * </p>
      */
     private String artifactId;
 
     /**
      * <p>
-     * File name for the artifact.
+     * The file name for the artifact.
      * </p>
      * 
      * @param artifactFileName
-     *        File name for the artifact.
+     *        The file name for the artifact.
      */
 
     public void setArtifactFileName(String artifactFileName) {
@@ -56,10 +56,10 @@ public class Artifact implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * File name for the artifact.
+     * The file name for the artifact.
      * </p>
      * 
-     * @return File name for the artifact.
+     * @return The file name for the artifact.
      */
 
     public String getArtifactFileName() {
@@ -68,11 +68,11 @@ public class Artifact implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * File name for the artifact.
+     * The file name for the artifact.
      * </p>
      * 
      * @param artifactFileName
-     *        File name for the artifact.
+     *        The file name for the artifact.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class Artifact implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique Id for a artifact.
+     * The unique ID for the artifact.
      * </p>
      * 
      * @param artifactId
-     *        Unique Id for a artifact.
+     *        The unique ID for the artifact.
      */
 
     public void setArtifactId(String artifactId) {
@@ -96,10 +96,10 @@ public class Artifact implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique Id for a artifact.
+     * The unique ID for the artifact.
      * </p>
      * 
-     * @return Unique Id for a artifact.
+     * @return The unique ID for the artifact.
      */
 
     public String getArtifactId() {
@@ -108,11 +108,11 @@ public class Artifact implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique Id for a artifact.
+     * The unique ID for the artifact.
      * </p>
      * 
      * @param artifactId
-     *        Unique Id for a artifact.
+     *        The unique ID for the artifact.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

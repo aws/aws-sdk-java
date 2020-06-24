@@ -60,6 +60,10 @@ public class SpotProvisioningSpecificationJsonUnmarshaller implements Unmarshall
                     context.nextToken();
                     spotProvisioningSpecification.setBlockDurationMinutes(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("AllocationStrategy", targetDepth)) {
+                    context.nextToken();
+                    spotProvisioningSpecification.setAllocationStrategy(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

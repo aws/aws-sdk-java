@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Result structure for the list Domain Association request.
+ * The result structure for the list domain association request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListDomainAssociations" target="_top">AWS API
@@ -28,24 +28,24 @@ public class ListDomainAssociationsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * List of Domain Associations.
+     * A list of domain associations.
      * </p>
      */
     private java.util.List<DomainAssociation> domainAssociations;
     /**
      * <p>
-     * Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to
-     * fetch more entries.
+     * A pagination token. If non-null, a pagination token is returned in a result. Pass its value in another request to
+     * retrieve more entries.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * List of Domain Associations.
+     * A list of domain associations.
      * </p>
      * 
-     * @return List of Domain Associations.
+     * @return A list of domain associations.
      */
 
     public java.util.List<DomainAssociation> getDomainAssociations() {
@@ -54,11 +54,11 @@ public class ListDomainAssociationsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * List of Domain Associations.
+     * A list of domain associations.
      * </p>
      * 
      * @param domainAssociations
-     *        List of Domain Associations.
+     *        A list of domain associations.
      */
 
     public void setDomainAssociations(java.util.Collection<DomainAssociation> domainAssociations) {
@@ -72,7 +72,7 @@ public class ListDomainAssociationsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * List of Domain Associations.
+     * A list of domain associations.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -81,7 +81,7 @@ public class ListDomainAssociationsResult extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param domainAssociations
-     *        List of Domain Associations.
+     *        A list of domain associations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,11 +97,11 @@ public class ListDomainAssociationsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * List of Domain Associations.
+     * A list of domain associations.
      * </p>
      * 
      * @param domainAssociations
-     *        List of Domain Associations.
+     *        A list of domain associations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,13 +112,13 @@ public class ListDomainAssociationsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to
-     * fetch more entries.
+     * A pagination token. If non-null, a pagination token is returned in a result. Pass its value in another request to
+     * retrieve more entries.
      * </p>
      * 
      * @param nextToken
-     *        Pagination token. If non-null pagination token is returned in a result, then pass its value in another
-     *        request to fetch more entries.
+     *        A pagination token. If non-null, a pagination token is returned in a result. Pass its value in another
+     *        request to retrieve more entries.
      */
 
     public void setNextToken(String nextToken) {
@@ -127,12 +127,12 @@ public class ListDomainAssociationsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to
-     * fetch more entries.
+     * A pagination token. If non-null, a pagination token is returned in a result. Pass its value in another request to
+     * retrieve more entries.
      * </p>
      * 
-     * @return Pagination token. If non-null pagination token is returned in a result, then pass its value in another
-     *         request to fetch more entries.
+     * @return A pagination token. If non-null, a pagination token is returned in a result. Pass its value in another
+     *         request to retrieve more entries.
      */
 
     public String getNextToken() {
@@ -141,13 +141,13 @@ public class ListDomainAssociationsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to
-     * fetch more entries.
+     * A pagination token. If non-null, a pagination token is returned in a result. Pass its value in another request to
+     * retrieve more entries.
      * </p>
      * 
      * @param nextToken
-     *        Pagination token. If non-null pagination token is returned in a result, then pass its value in another
-     *        request to fetch more entries.
+     *        A pagination token. If non-null, a pagination token is returned in a result. Pass its value in another
+     *        request to retrieve more entries.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

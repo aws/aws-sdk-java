@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Request structure for update Domain Association request.
+ * The request structure for the update domain association request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/UpdateDomainAssociation" target="_top">AWS
@@ -30,36 +30,49 @@ public class UpdateDomainAssociationRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Unique Id for an Amplify App.
+     * The unique ID for an Amplify app.
      * </p>
      */
     private String appId;
     /**
      * <p>
-     * Name of the domain.
+     * The name of the domain.
      * </p>
      */
     private String domainName;
     /**
      * <p>
-     * Enables automated creation of Subdomains for branches. (Currently not supported)
+     * Enables the automated creation of subdomains for branches.
      * </p>
      */
     private Boolean enableAutoSubDomain;
     /**
      * <p>
-     * Setting structure for the Subdomain.
+     * Describes the settings for the subdomain.
      * </p>
      */
     private java.util.List<SubDomainSetting> subDomainSettings;
+    /**
+     * <p>
+     * Sets the branch patterns for automatic subdomain creation.
+     * </p>
+     */
+    private java.util.List<String> autoSubDomainCreationPatterns;
+    /**
+     * <p>
+     * The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for
+     * automatically creating subdomains.
+     * </p>
+     */
+    private String autoSubDomainIAMRole;
 
     /**
      * <p>
-     * Unique Id for an Amplify App.
+     * The unique ID for an Amplify app.
      * </p>
      * 
      * @param appId
-     *        Unique Id for an Amplify App.
+     *        The unique ID for an Amplify app.
      */
 
     public void setAppId(String appId) {
@@ -68,10 +81,10 @@ public class UpdateDomainAssociationRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Unique Id for an Amplify App.
+     * The unique ID for an Amplify app.
      * </p>
      * 
-     * @return Unique Id for an Amplify App.
+     * @return The unique ID for an Amplify app.
      */
 
     public String getAppId() {
@@ -80,11 +93,11 @@ public class UpdateDomainAssociationRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Unique Id for an Amplify App.
+     * The unique ID for an Amplify app.
      * </p>
      * 
      * @param appId
-     *        Unique Id for an Amplify App.
+     *        The unique ID for an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +108,11 @@ public class UpdateDomainAssociationRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Name of the domain.
+     * The name of the domain.
      * </p>
      * 
      * @param domainName
-     *        Name of the domain.
+     *        The name of the domain.
      */
 
     public void setDomainName(String domainName) {
@@ -108,10 +121,10 @@ public class UpdateDomainAssociationRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Name of the domain.
+     * The name of the domain.
      * </p>
      * 
-     * @return Name of the domain.
+     * @return The name of the domain.
      */
 
     public String getDomainName() {
@@ -120,11 +133,11 @@ public class UpdateDomainAssociationRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Name of the domain.
+     * The name of the domain.
      * </p>
      * 
      * @param domainName
-     *        Name of the domain.
+     *        The name of the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +148,11 @@ public class UpdateDomainAssociationRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Enables automated creation of Subdomains for branches. (Currently not supported)
+     * Enables the automated creation of subdomains for branches.
      * </p>
      * 
      * @param enableAutoSubDomain
-     *        Enables automated creation of Subdomains for branches. (Currently not supported)
+     *        Enables the automated creation of subdomains for branches.
      */
 
     public void setEnableAutoSubDomain(Boolean enableAutoSubDomain) {
@@ -148,10 +161,10 @@ public class UpdateDomainAssociationRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Enables automated creation of Subdomains for branches. (Currently not supported)
+     * Enables the automated creation of subdomains for branches.
      * </p>
      * 
-     * @return Enables automated creation of Subdomains for branches. (Currently not supported)
+     * @return Enables the automated creation of subdomains for branches.
      */
 
     public Boolean getEnableAutoSubDomain() {
@@ -160,11 +173,11 @@ public class UpdateDomainAssociationRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Enables automated creation of Subdomains for branches. (Currently not supported)
+     * Enables the automated creation of subdomains for branches.
      * </p>
      * 
      * @param enableAutoSubDomain
-     *        Enables automated creation of Subdomains for branches. (Currently not supported)
+     *        Enables the automated creation of subdomains for branches.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -175,10 +188,10 @@ public class UpdateDomainAssociationRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Enables automated creation of Subdomains for branches. (Currently not supported)
+     * Enables the automated creation of subdomains for branches.
      * </p>
      * 
-     * @return Enables automated creation of Subdomains for branches. (Currently not supported)
+     * @return Enables the automated creation of subdomains for branches.
      */
 
     public Boolean isEnableAutoSubDomain() {
@@ -187,10 +200,10 @@ public class UpdateDomainAssociationRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Setting structure for the Subdomain.
+     * Describes the settings for the subdomain.
      * </p>
      * 
-     * @return Setting structure for the Subdomain.
+     * @return Describes the settings for the subdomain.
      */
 
     public java.util.List<SubDomainSetting> getSubDomainSettings() {
@@ -199,11 +212,11 @@ public class UpdateDomainAssociationRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Setting structure for the Subdomain.
+     * Describes the settings for the subdomain.
      * </p>
      * 
      * @param subDomainSettings
-     *        Setting structure for the Subdomain.
+     *        Describes the settings for the subdomain.
      */
 
     public void setSubDomainSettings(java.util.Collection<SubDomainSetting> subDomainSettings) {
@@ -217,7 +230,7 @@ public class UpdateDomainAssociationRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Setting structure for the Subdomain.
+     * Describes the settings for the subdomain.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -226,7 +239,7 @@ public class UpdateDomainAssociationRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param subDomainSettings
-     *        Setting structure for the Subdomain.
+     *        Describes the settings for the subdomain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -242,16 +255,132 @@ public class UpdateDomainAssociationRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Setting structure for the Subdomain.
+     * Describes the settings for the subdomain.
      * </p>
      * 
      * @param subDomainSettings
-     *        Setting structure for the Subdomain.
+     *        Describes the settings for the subdomain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateDomainAssociationRequest withSubDomainSettings(java.util.Collection<SubDomainSetting> subDomainSettings) {
         setSubDomainSettings(subDomainSettings);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Sets the branch patterns for automatic subdomain creation.
+     * </p>
+     * 
+     * @return Sets the branch patterns for automatic subdomain creation.
+     */
+
+    public java.util.List<String> getAutoSubDomainCreationPatterns() {
+        return autoSubDomainCreationPatterns;
+    }
+
+    /**
+     * <p>
+     * Sets the branch patterns for automatic subdomain creation.
+     * </p>
+     * 
+     * @param autoSubDomainCreationPatterns
+     *        Sets the branch patterns for automatic subdomain creation.
+     */
+
+    public void setAutoSubDomainCreationPatterns(java.util.Collection<String> autoSubDomainCreationPatterns) {
+        if (autoSubDomainCreationPatterns == null) {
+            this.autoSubDomainCreationPatterns = null;
+            return;
+        }
+
+        this.autoSubDomainCreationPatterns = new java.util.ArrayList<String>(autoSubDomainCreationPatterns);
+    }
+
+    /**
+     * <p>
+     * Sets the branch patterns for automatic subdomain creation.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAutoSubDomainCreationPatterns(java.util.Collection)} or
+     * {@link #withAutoSubDomainCreationPatterns(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param autoSubDomainCreationPatterns
+     *        Sets the branch patterns for automatic subdomain creation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateDomainAssociationRequest withAutoSubDomainCreationPatterns(String... autoSubDomainCreationPatterns) {
+        if (this.autoSubDomainCreationPatterns == null) {
+            setAutoSubDomainCreationPatterns(new java.util.ArrayList<String>(autoSubDomainCreationPatterns.length));
+        }
+        for (String ele : autoSubDomainCreationPatterns) {
+            this.autoSubDomainCreationPatterns.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Sets the branch patterns for automatic subdomain creation.
+     * </p>
+     * 
+     * @param autoSubDomainCreationPatterns
+     *        Sets the branch patterns for automatic subdomain creation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateDomainAssociationRequest withAutoSubDomainCreationPatterns(java.util.Collection<String> autoSubDomainCreationPatterns) {
+        setAutoSubDomainCreationPatterns(autoSubDomainCreationPatterns);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for
+     * automatically creating subdomains.
+     * </p>
+     * 
+     * @param autoSubDomainIAMRole
+     *        The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for
+     *        automatically creating subdomains.
+     */
+
+    public void setAutoSubDomainIAMRole(String autoSubDomainIAMRole) {
+        this.autoSubDomainIAMRole = autoSubDomainIAMRole;
+    }
+
+    /**
+     * <p>
+     * The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for
+     * automatically creating subdomains.
+     * </p>
+     * 
+     * @return The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for
+     *         automatically creating subdomains.
+     */
+
+    public String getAutoSubDomainIAMRole() {
+        return this.autoSubDomainIAMRole;
+    }
+
+    /**
+     * <p>
+     * The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for
+     * automatically creating subdomains.
+     * </p>
+     * 
+     * @param autoSubDomainIAMRole
+     *        The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for
+     *        automatically creating subdomains.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateDomainAssociationRequest withAutoSubDomainIAMRole(String autoSubDomainIAMRole) {
+        setAutoSubDomainIAMRole(autoSubDomainIAMRole);
         return this;
     }
 
@@ -274,7 +403,11 @@ public class UpdateDomainAssociationRequest extends com.amazonaws.AmazonWebServi
         if (getEnableAutoSubDomain() != null)
             sb.append("EnableAutoSubDomain: ").append(getEnableAutoSubDomain()).append(",");
         if (getSubDomainSettings() != null)
-            sb.append("SubDomainSettings: ").append(getSubDomainSettings());
+            sb.append("SubDomainSettings: ").append(getSubDomainSettings()).append(",");
+        if (getAutoSubDomainCreationPatterns() != null)
+            sb.append("AutoSubDomainCreationPatterns: ").append(getAutoSubDomainCreationPatterns()).append(",");
+        if (getAutoSubDomainIAMRole() != null)
+            sb.append("AutoSubDomainIAMRole: ").append(getAutoSubDomainIAMRole());
         sb.append("}");
         return sb.toString();
     }
@@ -305,6 +438,15 @@ public class UpdateDomainAssociationRequest extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getSubDomainSettings() != null && other.getSubDomainSettings().equals(this.getSubDomainSettings()) == false)
             return false;
+        if (other.getAutoSubDomainCreationPatterns() == null ^ this.getAutoSubDomainCreationPatterns() == null)
+            return false;
+        if (other.getAutoSubDomainCreationPatterns() != null
+                && other.getAutoSubDomainCreationPatterns().equals(this.getAutoSubDomainCreationPatterns()) == false)
+            return false;
+        if (other.getAutoSubDomainIAMRole() == null ^ this.getAutoSubDomainIAMRole() == null)
+            return false;
+        if (other.getAutoSubDomainIAMRole() != null && other.getAutoSubDomainIAMRole().equals(this.getAutoSubDomainIAMRole()) == false)
+            return false;
         return true;
     }
 
@@ -317,6 +459,8 @@ public class UpdateDomainAssociationRequest extends com.amazonaws.AmazonWebServi
         hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
         hashCode = prime * hashCode + ((getEnableAutoSubDomain() == null) ? 0 : getEnableAutoSubDomain().hashCode());
         hashCode = prime * hashCode + ((getSubDomainSettings() == null) ? 0 : getSubDomainSettings().hashCode());
+        hashCode = prime * hashCode + ((getAutoSubDomainCreationPatterns() == null) ? 0 : getAutoSubDomainCreationPatterns().hashCode());
+        hashCode = prime * hashCode + ((getAutoSubDomainIAMRole() == null) ? 0 : getAutoSubDomainIAMRole().hashCode());
         return hashCode;
     }
 

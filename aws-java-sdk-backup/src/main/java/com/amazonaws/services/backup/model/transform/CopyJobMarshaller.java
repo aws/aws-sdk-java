@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class CopyJobMarshaller {
 
+    private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("AccountId").build();
     private static final MarshallingInfo<String> COPYJOBID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("CopyJobId").build();
     private static final MarshallingInfo<String> SOURCEBACKUPVAULTARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -72,6 +74,7 @@ public class CopyJobMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(copyJob.getAccountId(), ACCOUNTID_BINDING);
             protocolMarshaller.marshall(copyJob.getCopyJobId(), COPYJOBID_BINDING);
             protocolMarshaller.marshall(copyJob.getSourceBackupVaultArn(), SOURCEBACKUPVAULTARN_BINDING);
             protocolMarshaller.marshall(copyJob.getSourceRecoveryPointArn(), SOURCERECOVERYPOINTARN_BINDING);

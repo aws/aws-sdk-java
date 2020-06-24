@@ -27,25 +27,69 @@ public class DescribeEffectivePolicyRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The type of policy that you want information about.
+     * The type of policy that you want information about. You can specify one of the following values:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY
+     * </a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">
+     * TAG_POLICY</a>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String policyType;
     /**
      * <p>
      * When you're signed in as the master account, specify the ID of the account that you want details about.
-     * Specifying an organization root or OU as the target is not supported.
+     * Specifying an organization root or organizational unit (OU) as the target is not supported.
      * </p>
      */
     private String targetId;
 
     /**
      * <p>
-     * The type of policy that you want information about.
+     * The type of policy that you want information about. You can specify one of the following values:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY
+     * </a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">
+     * TAG_POLICY</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param policyType
-     *        The type of policy that you want information about.
+     *        The type of policy that you want information about. You can specify one of the following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">
+     *        BACKUP_POLICY</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a
+     *        href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">
+     *        TAG_POLICY</a>
+     *        </p>
+     *        </li>
      * @see EffectivePolicyType
      */
 
@@ -55,10 +99,39 @@ public class DescribeEffectivePolicyRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The type of policy that you want information about.
+     * The type of policy that you want information about. You can specify one of the following values:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY
+     * </a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">
+     * TAG_POLICY</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The type of policy that you want information about.
+     * @return The type of policy that you want information about. You can specify one of the following values:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">
+     *         BACKUP_POLICY</a>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <a
+     *         href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html"
+     *         >TAG_POLICY</a>
+     *         </p>
+     *         </li>
      * @see EffectivePolicyType
      */
 
@@ -68,11 +141,40 @@ public class DescribeEffectivePolicyRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The type of policy that you want information about.
+     * The type of policy that you want information about. You can specify one of the following values:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY
+     * </a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">
+     * TAG_POLICY</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param policyType
-     *        The type of policy that you want information about.
+     *        The type of policy that you want information about. You can specify one of the following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">
+     *        BACKUP_POLICY</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a
+     *        href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">
+     *        TAG_POLICY</a>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EffectivePolicyType
      */
@@ -84,11 +186,40 @@ public class DescribeEffectivePolicyRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The type of policy that you want information about.
+     * The type of policy that you want information about. You can specify one of the following values:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY
+     * </a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">
+     * TAG_POLICY</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param policyType
-     *        The type of policy that you want information about.
+     *        The type of policy that you want information about. You can specify one of the following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">
+     *        BACKUP_POLICY</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a
+     *        href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">
+     *        TAG_POLICY</a>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EffectivePolicyType
      */
@@ -101,12 +232,12 @@ public class DescribeEffectivePolicyRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * When you're signed in as the master account, specify the ID of the account that you want details about.
-     * Specifying an organization root or OU as the target is not supported.
+     * Specifying an organization root or organizational unit (OU) as the target is not supported.
      * </p>
      * 
      * @param targetId
      *        When you're signed in as the master account, specify the ID of the account that you want details about.
-     *        Specifying an organization root or OU as the target is not supported.
+     *        Specifying an organization root or organizational unit (OU) as the target is not supported.
      */
 
     public void setTargetId(String targetId) {
@@ -116,11 +247,11 @@ public class DescribeEffectivePolicyRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * When you're signed in as the master account, specify the ID of the account that you want details about.
-     * Specifying an organization root or OU as the target is not supported.
+     * Specifying an organization root or organizational unit (OU) as the target is not supported.
      * </p>
      * 
      * @return When you're signed in as the master account, specify the ID of the account that you want details about.
-     *         Specifying an organization root or OU as the target is not supported.
+     *         Specifying an organization root or organizational unit (OU) as the target is not supported.
      */
 
     public String getTargetId() {
@@ -130,12 +261,12 @@ public class DescribeEffectivePolicyRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * When you're signed in as the master account, specify the ID of the account that you want details about.
-     * Specifying an organization root or OU as the target is not supported.
+     * Specifying an organization root or organizational unit (OU) as the target is not supported.
      * </p>
      * 
      * @param targetId
      *        When you're signed in as the master account, specify the ID of the account that you want details about.
-     *        Specifying an organization root or OU as the target is not supported.
+     *        Specifying an organization root or organizational unit (OU) as the target is not supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

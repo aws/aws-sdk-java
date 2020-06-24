@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Request structure for list job request.
+ * The request structure for the list jobs request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListJobs" target="_top">AWS API
@@ -30,37 +30,37 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * Unique Id for an Amplify App.
+     * The unique ID for an Amplify app.
      * </p>
      */
     private String appId;
     /**
      * <p>
-     * Name for a branch.
+     * The name for a branch.
      * </p>
      */
     private String branchName;
     /**
      * <p>
-     * Pagination token. Set to null to start listing steps from start. If a non-null pagination token is returned in a
-     * result, then pass its value in here to list more steps.
+     * A pagination token. Set to null to start listing steps from the start. If a non-null pagination token is returned
+     * in a result, pass its value in here to list more steps.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * Maximum number of records to list in a single response.
+     * The maximum number of records to list in a single response.
      * </p>
      */
     private Integer maxResults;
 
     /**
      * <p>
-     * Unique Id for an Amplify App.
+     * The unique ID for an Amplify app.
      * </p>
      * 
      * @param appId
-     *        Unique Id for an Amplify App.
+     *        The unique ID for an Amplify app.
      */
 
     public void setAppId(String appId) {
@@ -69,10 +69,10 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * Unique Id for an Amplify App.
+     * The unique ID for an Amplify app.
      * </p>
      * 
-     * @return Unique Id for an Amplify App.
+     * @return The unique ID for an Amplify app.
      */
 
     public String getAppId() {
@@ -81,11 +81,11 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * Unique Id for an Amplify App.
+     * The unique ID for an Amplify app.
      * </p>
      * 
      * @param appId
-     *        Unique Id for an Amplify App.
+     *        The unique ID for an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,11 +96,11 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * Name for a branch.
+     * The name for a branch.
      * </p>
      * 
      * @param branchName
-     *        Name for a branch.
+     *        The name for a branch.
      */
 
     public void setBranchName(String branchName) {
@@ -109,10 +109,10 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * Name for a branch.
+     * The name for a branch.
      * </p>
      * 
-     * @return Name for a branch.
+     * @return The name for a branch.
      */
 
     public String getBranchName() {
@@ -121,11 +121,11 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * Name for a branch.
+     * The name for a branch.
      * </p>
      * 
      * @param branchName
-     *        Name for a branch.
+     *        The name for a branch.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -136,13 +136,13 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * Pagination token. Set to null to start listing steps from start. If a non-null pagination token is returned in a
-     * result, then pass its value in here to list more steps.
+     * A pagination token. Set to null to start listing steps from the start. If a non-null pagination token is returned
+     * in a result, pass its value in here to list more steps.
      * </p>
      * 
      * @param nextToken
-     *        Pagination token. Set to null to start listing steps from start. If a non-null pagination token is
-     *        returned in a result, then pass its value in here to list more steps.
+     *        A pagination token. Set to null to start listing steps from the start. If a non-null pagination token is
+     *        returned in a result, pass its value in here to list more steps.
      */
 
     public void setNextToken(String nextToken) {
@@ -151,12 +151,12 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * Pagination token. Set to null to start listing steps from start. If a non-null pagination token is returned in a
-     * result, then pass its value in here to list more steps.
+     * A pagination token. Set to null to start listing steps from the start. If a non-null pagination token is returned
+     * in a result, pass its value in here to list more steps.
      * </p>
      * 
-     * @return Pagination token. Set to null to start listing steps from start. If a non-null pagination token is
-     *         returned in a result, then pass its value in here to list more steps.
+     * @return A pagination token. Set to null to start listing steps from the start. If a non-null pagination token is
+     *         returned in a result, pass its value in here to list more steps.
      */
 
     public String getNextToken() {
@@ -165,13 +165,13 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * Pagination token. Set to null to start listing steps from start. If a non-null pagination token is returned in a
-     * result, then pass its value in here to list more steps.
+     * A pagination token. Set to null to start listing steps from the start. If a non-null pagination token is returned
+     * in a result, pass its value in here to list more steps.
      * </p>
      * 
      * @param nextToken
-     *        Pagination token. Set to null to start listing steps from start. If a non-null pagination token is
-     *        returned in a result, then pass its value in here to list more steps.
+     *        A pagination token. Set to null to start listing steps from the start. If a non-null pagination token is
+     *        returned in a result, pass its value in here to list more steps.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -182,11 +182,11 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * Maximum number of records to list in a single response.
+     * The maximum number of records to list in a single response.
      * </p>
      * 
      * @param maxResults
-     *        Maximum number of records to list in a single response.
+     *        The maximum number of records to list in a single response.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -195,10 +195,10 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * Maximum number of records to list in a single response.
+     * The maximum number of records to list in a single response.
      * </p>
      * 
-     * @return Maximum number of records to list in a single response.
+     * @return The maximum number of records to list in a single response.
      */
 
     public Integer getMaxResults() {
@@ -207,11 +207,11 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * Maximum number of records to list in a single response.
+     * The maximum number of records to list in a single response.
      * </p>
      * 
      * @param maxResults
-     *        Maximum number of records to list in a single response.
+     *        The maximum number of records to list in a single response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -38,7 +38,7 @@ public class StartInstanceRefreshRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * A rolling update is an update that is applied to all instances in an Auto Scaling group until all instances have
      * been updated. A rolling update can fail due to failed health checks or if instances are on standby or are
-     * protected from scale-in. If the rolling update process fails, any instances that were already replaced are not
+     * protected from scale in. If the rolling update process fails, any instances that were already replaced are not
      * rolled back to their previous configuration.
      * </p>
      */
@@ -46,6 +46,16 @@ public class StartInstanceRefreshRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * Set of preferences associated with the instance refresh request.
+     * </p>
+     * <p>
+     * If not provided, the default values are used. For <code>MinHealthyPercentage</code>, the default value is
+     * <code>90</code>. For <code>InstanceWarmup</code>, the default is to use the value specified for the health check
+     * grace period for the Auto Scaling group.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_RefreshPreferences.html"
+     * >RefreshPreferences</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.
      * </p>
      */
     private RefreshPreferences preferences;
@@ -97,7 +107,7 @@ public class StartInstanceRefreshRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * A rolling update is an update that is applied to all instances in an Auto Scaling group until all instances have
      * been updated. A rolling update can fail due to failed health checks or if instances are on standby or are
-     * protected from scale-in. If the rolling update process fails, any instances that were already replaced are not
+     * protected from scale in. If the rolling update process fails, any instances that were already replaced are not
      * rolled back to their previous configuration.
      * </p>
      * 
@@ -106,7 +116,7 @@ public class StartInstanceRefreshRequest extends com.amazonaws.AmazonWebServiceR
      *        <p>
      *        A rolling update is an update that is applied to all instances in an Auto Scaling group until all
      *        instances have been updated. A rolling update can fail due to failed health checks or if instances are on
-     *        standby or are protected from scale-in. If the rolling update process fails, any instances that were
+     *        standby or are protected from scale in. If the rolling update process fails, any instances that were
      *        already replaced are not rolled back to their previous configuration.
      * @see RefreshStrategy
      */
@@ -122,7 +132,7 @@ public class StartInstanceRefreshRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * A rolling update is an update that is applied to all instances in an Auto Scaling group until all instances have
      * been updated. A rolling update can fail due to failed health checks or if instances are on standby or are
-     * protected from scale-in. If the rolling update process fails, any instances that were already replaced are not
+     * protected from scale in. If the rolling update process fails, any instances that were already replaced are not
      * rolled back to their previous configuration.
      * </p>
      * 
@@ -130,7 +140,7 @@ public class StartInstanceRefreshRequest extends com.amazonaws.AmazonWebServiceR
      *         <p>
      *         A rolling update is an update that is applied to all instances in an Auto Scaling group until all
      *         instances have been updated. A rolling update can fail due to failed health checks or if instances are on
-     *         standby or are protected from scale-in. If the rolling update process fails, any instances that were
+     *         standby or are protected from scale in. If the rolling update process fails, any instances that were
      *         already replaced are not rolled back to their previous configuration.
      * @see RefreshStrategy
      */
@@ -146,7 +156,7 @@ public class StartInstanceRefreshRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * A rolling update is an update that is applied to all instances in an Auto Scaling group until all instances have
      * been updated. A rolling update can fail due to failed health checks or if instances are on standby or are
-     * protected from scale-in. If the rolling update process fails, any instances that were already replaced are not
+     * protected from scale in. If the rolling update process fails, any instances that were already replaced are not
      * rolled back to their previous configuration.
      * </p>
      * 
@@ -155,7 +165,7 @@ public class StartInstanceRefreshRequest extends com.amazonaws.AmazonWebServiceR
      *        <p>
      *        A rolling update is an update that is applied to all instances in an Auto Scaling group until all
      *        instances have been updated. A rolling update can fail due to failed health checks or if instances are on
-     *        standby or are protected from scale-in. If the rolling update process fails, any instances that were
+     *        standby or are protected from scale in. If the rolling update process fails, any instances that were
      *        already replaced are not rolled back to their previous configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RefreshStrategy
@@ -173,7 +183,7 @@ public class StartInstanceRefreshRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * A rolling update is an update that is applied to all instances in an Auto Scaling group until all instances have
      * been updated. A rolling update can fail due to failed health checks or if instances are on standby or are
-     * protected from scale-in. If the rolling update process fails, any instances that were already replaced are not
+     * protected from scale in. If the rolling update process fails, any instances that were already replaced are not
      * rolled back to their previous configuration.
      * </p>
      * 
@@ -182,7 +192,7 @@ public class StartInstanceRefreshRequest extends com.amazonaws.AmazonWebServiceR
      *        <p>
      *        A rolling update is an update that is applied to all instances in an Auto Scaling group until all
      *        instances have been updated. A rolling update can fail due to failed health checks or if instances are on
-     *        standby or are protected from scale-in. If the rolling update process fails, any instances that were
+     *        standby or are protected from scale in. If the rolling update process fails, any instances that were
      *        already replaced are not rolled back to their previous configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RefreshStrategy
@@ -197,9 +207,28 @@ public class StartInstanceRefreshRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * Set of preferences associated with the instance refresh request.
      * </p>
+     * <p>
+     * If not provided, the default values are used. For <code>MinHealthyPercentage</code>, the default value is
+     * <code>90</code>. For <code>InstanceWarmup</code>, the default is to use the value specified for the health check
+     * grace period for the Auto Scaling group.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_RefreshPreferences.html"
+     * >RefreshPreferences</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.
+     * </p>
      * 
      * @param preferences
-     *        Set of preferences associated with the instance refresh request.
+     *        Set of preferences associated with the instance refresh request.</p>
+     *        <p>
+     *        If not provided, the default values are used. For <code>MinHealthyPercentage</code>, the default value is
+     *        <code>90</code>. For <code>InstanceWarmup</code>, the default is to use the value specified for the health
+     *        check grace period for the Auto Scaling group.
+     *        </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_RefreshPreferences.html"
+     *        >RefreshPreferences</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.
      */
 
     public void setPreferences(RefreshPreferences preferences) {
@@ -210,8 +239,27 @@ public class StartInstanceRefreshRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * Set of preferences associated with the instance refresh request.
      * </p>
+     * <p>
+     * If not provided, the default values are used. For <code>MinHealthyPercentage</code>, the default value is
+     * <code>90</code>. For <code>InstanceWarmup</code>, the default is to use the value specified for the health check
+     * grace period for the Auto Scaling group.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_RefreshPreferences.html"
+     * >RefreshPreferences</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.
+     * </p>
      * 
-     * @return Set of preferences associated with the instance refresh request.
+     * @return Set of preferences associated with the instance refresh request.</p>
+     *         <p>
+     *         If not provided, the default values are used. For <code>MinHealthyPercentage</code>, the default value is
+     *         <code>90</code>. For <code>InstanceWarmup</code>, the default is to use the value specified for the
+     *         health check grace period for the Auto Scaling group.
+     *         </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_RefreshPreferences.html"
+     *         >RefreshPreferences</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.
      */
 
     public RefreshPreferences getPreferences() {
@@ -222,9 +270,28 @@ public class StartInstanceRefreshRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * Set of preferences associated with the instance refresh request.
      * </p>
+     * <p>
+     * If not provided, the default values are used. For <code>MinHealthyPercentage</code>, the default value is
+     * <code>90</code>. For <code>InstanceWarmup</code>, the default is to use the value specified for the health check
+     * grace period for the Auto Scaling group.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_RefreshPreferences.html"
+     * >RefreshPreferences</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.
+     * </p>
      * 
      * @param preferences
-     *        Set of preferences associated with the instance refresh request.
+     *        Set of preferences associated with the instance refresh request.</p>
+     *        <p>
+     *        If not provided, the default values are used. For <code>MinHealthyPercentage</code>, the default value is
+     *        <code>90</code>. For <code>InstanceWarmup</code>, the default is to use the value specified for the health
+     *        check grace period for the Auto Scaling group.
+     *        </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_RefreshPreferences.html"
+     *        >RefreshPreferences</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

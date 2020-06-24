@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Result structure for delete branch request.
+ * The result structure for the delete branch request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/DeleteBranch" target="_top">AWS API
@@ -28,18 +28,18 @@ public class DeleteBranchResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Branch structure for an Amplify App.
+     * The branch for an Amplify app, which maps to a third-party repository branch.
      * </p>
      */
     private Branch branch;
 
     /**
      * <p>
-     * Branch structure for an Amplify App.
+     * The branch for an Amplify app, which maps to a third-party repository branch.
      * </p>
      * 
      * @param branch
-     *        Branch structure for an Amplify App.
+     *        The branch for an Amplify app, which maps to a third-party repository branch.
      */
 
     public void setBranch(Branch branch) {
@@ -48,10 +48,10 @@ public class DeleteBranchResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Branch structure for an Amplify App.
+     * The branch for an Amplify app, which maps to a third-party repository branch.
      * </p>
      * 
-     * @return Branch structure for an Amplify App.
+     * @return The branch for an Amplify app, which maps to a third-party repository branch.
      */
 
     public Branch getBranch() {
@@ -60,11 +60,11 @@ public class DeleteBranchResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Branch structure for an Amplify App.
+     * The branch for an Amplify app, which maps to a third-party repository branch.
      * </p>
      * 
      * @param branch
-     *        Branch structure for an Amplify App.
+     *        The branch for an Amplify app, which maps to a third-party repository branch.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
