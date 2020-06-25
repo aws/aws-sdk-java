@@ -20,7 +20,7 @@ import com.amazonaws.annotation.ThreadSafe;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.PropertyNamingStrategy.PascalCaseStrategy;
+import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 
 /**
  * Unmarshaller for JSON error responses from AWS services.
@@ -34,7 +34,7 @@ public class JsonErrorUnmarshaller extends AbstractErrorUnmarshaller<JsonNode> {
 
     private static final ObjectMapper MAPPER = new ObjectMapper().configure(
             DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false).setPropertyNamingStrategy(
-            new PascalCaseStrategy());
+            PropertyNamingStrategy.PASCAL_CASE_TO_CAMEL_CASE);
 
     private final String handledErrorCode;
 

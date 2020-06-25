@@ -57,7 +57,7 @@ public class AsynchronousAgentDispatcher {
     private AsynchronousAgentDispatcher() {
         this.writer = new ObjectMapper()
                 .setSerializationInclusion(JsonInclude.Include.NON_NULL)
-                .setPropertyNamingStrategy(new PropertyNamingStrategy.PascalCaseStrategy())
+                .setPropertyNamingStrategy(PropertyNamingStrategy.PASCAL_CASE_TO_CAMEL_CASE)
                 .writer();
     }
 
