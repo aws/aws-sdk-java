@@ -168,6 +168,16 @@ public class AbstractAWSGlue implements AWSGlue {
     }
 
     @Override
+    public DeleteColumnStatisticsForPartitionResult deleteColumnStatisticsForPartition(DeleteColumnStatisticsForPartitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteColumnStatisticsForTableResult deleteColumnStatisticsForTable(DeleteColumnStatisticsForTableRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteConnectionResult deleteConnection(DeleteConnectionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -249,6 +259,16 @@ public class AbstractAWSGlue implements AWSGlue {
 
     @Override
     public GetClassifiersResult getClassifiers(GetClassifiersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetColumnStatisticsForPartitionResult getColumnStatisticsForPartition(GetColumnStatisticsForPartitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetColumnStatisticsForTableResult getColumnStatisticsForTable(GetColumnStatisticsForTableRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -589,6 +609,16 @@ public class AbstractAWSGlue implements AWSGlue {
 
     @Override
     public UpdateClassifierResult updateClassifier(UpdateClassifierRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateColumnStatisticsForPartitionResult updateColumnStatisticsForPartition(UpdateColumnStatisticsForPartitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateColumnStatisticsForTableResult updateColumnStatisticsForTable(UpdateColumnStatisticsForTableRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -65,6 +65,12 @@ public class PurchaseHostReservationRequest extends AmazonWebServiceRequest impl
      * </p>
      */
     private String offeringId;
+    /**
+     * <p>
+     * The tags to apply to the Dedicated Host Reservation during purchase.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<TagSpecification> tagSpecifications;
 
     /**
      * <p>
@@ -395,6 +401,79 @@ public class PurchaseHostReservationRequest extends AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
+     * The tags to apply to the Dedicated Host Reservation during purchase.
+     * </p>
+     * 
+     * @return The tags to apply to the Dedicated Host Reservation during purchase.
+     */
+
+    public java.util.List<TagSpecification> getTagSpecifications() {
+        if (tagSpecifications == null) {
+            tagSpecifications = new com.amazonaws.internal.SdkInternalList<TagSpecification>();
+        }
+        return tagSpecifications;
+    }
+
+    /**
+     * <p>
+     * The tags to apply to the Dedicated Host Reservation during purchase.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        The tags to apply to the Dedicated Host Reservation during purchase.
+     */
+
+    public void setTagSpecifications(java.util.Collection<TagSpecification> tagSpecifications) {
+        if (tagSpecifications == null) {
+            this.tagSpecifications = null;
+            return;
+        }
+
+        this.tagSpecifications = new com.amazonaws.internal.SdkInternalList<TagSpecification>(tagSpecifications);
+    }
+
+    /**
+     * <p>
+     * The tags to apply to the Dedicated Host Reservation during purchase.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTagSpecifications(java.util.Collection)} or {@link #withTagSpecifications(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        The tags to apply to the Dedicated Host Reservation during purchase.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PurchaseHostReservationRequest withTagSpecifications(TagSpecification... tagSpecifications) {
+        if (this.tagSpecifications == null) {
+            setTagSpecifications(new com.amazonaws.internal.SdkInternalList<TagSpecification>(tagSpecifications.length));
+        }
+        for (TagSpecification ele : tagSpecifications) {
+            this.tagSpecifications.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags to apply to the Dedicated Host Reservation during purchase.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        The tags to apply to the Dedicated Host Reservation during purchase.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PurchaseHostReservationRequest withTagSpecifications(java.util.Collection<TagSpecification> tagSpecifications) {
+        setTagSpecifications(tagSpecifications);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -426,7 +505,9 @@ public class PurchaseHostReservationRequest extends AmazonWebServiceRequest impl
         if (getLimitPrice() != null)
             sb.append("LimitPrice: ").append(getLimitPrice()).append(",");
         if (getOfferingId() != null)
-            sb.append("OfferingId: ").append(getOfferingId());
+            sb.append("OfferingId: ").append(getOfferingId()).append(",");
+        if (getTagSpecifications() != null)
+            sb.append("TagSpecifications: ").append(getTagSpecifications());
         sb.append("}");
         return sb.toString();
     }
@@ -461,6 +542,10 @@ public class PurchaseHostReservationRequest extends AmazonWebServiceRequest impl
             return false;
         if (other.getOfferingId() != null && other.getOfferingId().equals(this.getOfferingId()) == false)
             return false;
+        if (other.getTagSpecifications() == null ^ this.getTagSpecifications() == null)
+            return false;
+        if (other.getTagSpecifications() != null && other.getTagSpecifications().equals(this.getTagSpecifications()) == false)
+            return false;
         return true;
     }
 
@@ -474,6 +559,7 @@ public class PurchaseHostReservationRequest extends AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getHostIdSet() == null) ? 0 : getHostIdSet().hashCode());
         hashCode = prime * hashCode + ((getLimitPrice() == null) ? 0 : getLimitPrice().hashCode());
         hashCode = prime * hashCode + ((getOfferingId() == null) ? 0 : getOfferingId().hashCode());
+        hashCode = prime * hashCode + ((getTagSpecifications() == null) ? 0 : getTagSpecifications().hashCode());
         return hashCode;
     }
 

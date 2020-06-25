@@ -391,6 +391,34 @@ public class AbstractAWSGlueAsync extends AbstractAWSGlue implements AWSGlueAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteColumnStatisticsForPartitionResult> deleteColumnStatisticsForPartitionAsync(
+            DeleteColumnStatisticsForPartitionRequest request) {
+
+        return deleteColumnStatisticsForPartitionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteColumnStatisticsForPartitionResult> deleteColumnStatisticsForPartitionAsync(
+            DeleteColumnStatisticsForPartitionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteColumnStatisticsForPartitionRequest, DeleteColumnStatisticsForPartitionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteColumnStatisticsForTableResult> deleteColumnStatisticsForTableAsync(DeleteColumnStatisticsForTableRequest request) {
+
+        return deleteColumnStatisticsForTableAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteColumnStatisticsForTableResult> deleteColumnStatisticsForTableAsync(DeleteColumnStatisticsForTableRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteColumnStatisticsForTableRequest, DeleteColumnStatisticsForTableResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteConnectionResult> deleteConnectionAsync(DeleteConnectionRequest request) {
 
         return deleteConnectionAsync(request, null);
@@ -607,6 +635,34 @@ public class AbstractAWSGlueAsync extends AbstractAWSGlue implements AWSGlueAsyn
     @Override
     public java.util.concurrent.Future<GetClassifiersResult> getClassifiersAsync(GetClassifiersRequest request,
             com.amazonaws.handlers.AsyncHandler<GetClassifiersRequest, GetClassifiersResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetColumnStatisticsForPartitionResult> getColumnStatisticsForPartitionAsync(
+            GetColumnStatisticsForPartitionRequest request) {
+
+        return getColumnStatisticsForPartitionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetColumnStatisticsForPartitionResult> getColumnStatisticsForPartitionAsync(
+            GetColumnStatisticsForPartitionRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetColumnStatisticsForPartitionRequest, GetColumnStatisticsForPartitionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetColumnStatisticsForTableResult> getColumnStatisticsForTableAsync(GetColumnStatisticsForTableRequest request) {
+
+        return getColumnStatisticsForTableAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetColumnStatisticsForTableResult> getColumnStatisticsForTableAsync(GetColumnStatisticsForTableRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetColumnStatisticsForTableRequest, GetColumnStatisticsForTableResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1497,6 +1553,34 @@ public class AbstractAWSGlueAsync extends AbstractAWSGlue implements AWSGlueAsyn
     @Override
     public java.util.concurrent.Future<UpdateClassifierResult> updateClassifierAsync(UpdateClassifierRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateClassifierRequest, UpdateClassifierResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateColumnStatisticsForPartitionResult> updateColumnStatisticsForPartitionAsync(
+            UpdateColumnStatisticsForPartitionRequest request) {
+
+        return updateColumnStatisticsForPartitionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateColumnStatisticsForPartitionResult> updateColumnStatisticsForPartitionAsync(
+            UpdateColumnStatisticsForPartitionRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateColumnStatisticsForPartitionRequest, UpdateColumnStatisticsForPartitionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateColumnStatisticsForTableResult> updateColumnStatisticsForTableAsync(UpdateColumnStatisticsForTableRequest request) {
+
+        return updateColumnStatisticsForTableAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateColumnStatisticsForTableResult> updateColumnStatisticsForTableAsync(UpdateColumnStatisticsForTableRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateColumnStatisticsForTableRequest, UpdateColumnStatisticsForTableResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

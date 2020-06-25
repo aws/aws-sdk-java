@@ -41,7 +41,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * The instance type. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
@@ -188,8 +188,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * The user data to make available to the instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running Commands on Your Linux Instance
-     * at Launch</a> (Linux) and <a href=
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running commands on your Linux instance
+     * at launch</a> (Linux) and <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data"
      * >Adding User Data</a> (Windows). If you are using a command line tool, base64-encoding is performed for you, and
      * you can load the text from a file. Otherwise, you must provide base64-encoded text. User data is limited to 16
@@ -332,7 +332,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html">
      * ModifyInstanceCreditSpecification</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-     * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * performance instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * Default: <code>standard</code> (T2 instances) or <code>unlimited</code> (T3/T3a instances)
@@ -342,7 +342,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * The CPU options for the instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing CPU Options</a>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing CPU options</a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      */
@@ -358,7 +358,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * Indicates whether an instance is enabled for hibernation. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      */
@@ -372,8 +372,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * The metadata options for the instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata and User
-     * Data</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user
+     * data</a>.
      * </p>
      */
     private InstanceMetadataOptionsRequest metadataOptions;
@@ -539,7 +539,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * The instance type. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
@@ -548,7 +548,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * 
      * @param instanceType
      *        The instance type. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
      *        <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *        <p>
      *        Default: <code>m1.small</code>
@@ -562,7 +562,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * The instance type. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
@@ -570,7 +570,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * 
      * @return The instance type. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
      *         <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *         <p>
      *         Default: <code>m1.small</code>
@@ -584,7 +584,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * The instance type. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
@@ -593,7 +593,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * 
      * @param instanceType
      *        The instance type. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
      *        <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *        <p>
      *        Default: <code>m1.small</code>
@@ -609,7 +609,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * The instance type. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
@@ -618,7 +618,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * 
      * @param instanceType
      *        The instance type. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
      *        <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *        <p>
      *        Default: <code>m1.small</code>
@@ -632,7 +632,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * The instance type. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
@@ -641,7 +641,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * 
      * @param instanceType
      *        The instance type. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
      *        <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *        <p>
      *        Default: <code>m1.small</code>
@@ -1635,8 +1635,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * The user data to make available to the instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running Commands on Your Linux Instance
-     * at Launch</a> (Linux) and <a href=
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running commands on your Linux instance
+     * at launch</a> (Linux) and <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data"
      * >Adding User Data</a> (Windows). If you are using a command line tool, base64-encoding is performed for you, and
      * you can load the text from a file. Otherwise, you must provide base64-encoded text. User data is limited to 16
@@ -1645,8 +1645,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * 
      * @param userData
      *        The user data to make available to the instance. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running Commands on Your Linux
-     *        Instance at Launch</a> (Linux) and <a href=
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running commands on your Linux
+     *        instance at launch</a> (Linux) and <a href=
      *        "https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data"
      *        >Adding User Data</a> (Windows). If you are using a command line tool, base64-encoding is performed for
      *        you, and you can load the text from a file. Otherwise, you must provide base64-encoded text. User data is
@@ -1660,8 +1660,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * The user data to make available to the instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running Commands on Your Linux Instance
-     * at Launch</a> (Linux) and <a href=
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running commands on your Linux instance
+     * at launch</a> (Linux) and <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data"
      * >Adding User Data</a> (Windows). If you are using a command line tool, base64-encoding is performed for you, and
      * you can load the text from a file. Otherwise, you must provide base64-encoded text. User data is limited to 16
@@ -1669,8 +1669,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * 
      * @return The user data to make available to the instance. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running Commands on Your Linux
-     *         Instance at Launch</a> (Linux) and <a href=
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running commands on your Linux
+     *         instance at launch</a> (Linux) and <a href=
      *         "https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data"
      *         >Adding User Data</a> (Windows). If you are using a command line tool, base64-encoding is performed for
      *         you, and you can load the text from a file. Otherwise, you must provide base64-encoded text. User data is
@@ -1684,8 +1684,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * The user data to make available to the instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running Commands on Your Linux Instance
-     * at Launch</a> (Linux) and <a href=
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running commands on your Linux instance
+     * at launch</a> (Linux) and <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data"
      * >Adding User Data</a> (Windows). If you are using a command line tool, base64-encoding is performed for you, and
      * you can load the text from a file. Otherwise, you must provide base64-encoded text. User data is limited to 16
@@ -1694,8 +1694,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * 
      * @param userData
      *        The user data to make available to the instance. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running Commands on Your Linux
-     *        Instance at Launch</a> (Linux) and <a href=
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running commands on your Linux
+     *        instance at launch</a> (Linux) and <a href=
      *        "https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data"
      *        >Adding User Data</a> (Windows). If you are using a command line tool, base64-encoding is performed for
      *        you, and you can load the text from a file. Otherwise, you must provide base64-encoded text. User data is
@@ -2775,7 +2775,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html">
      * ModifyInstanceCreditSpecification</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-     * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * performance instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * Default: <code>standard</code> (T2 instances) or <code>unlimited</code> (T3/T3a instances)
@@ -2787,7 +2787,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html">
      *        ModifyInstanceCreditSpecification</a>. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-     *        Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *        performance instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *        <p>
      *        Default: <code>standard</code> (T2 instances) or <code>unlimited</code> (T3/T3a instances)
      */
@@ -2803,7 +2803,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html">
      * ModifyInstanceCreditSpecification</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-     * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * performance instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * Default: <code>standard</code> (T2 instances) or <code>unlimited</code> (T3/T3a instances)
@@ -2814,7 +2814,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html">
      *         ModifyInstanceCreditSpecification</a>. For more information, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-     *         Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *         performance instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *         <p>
      *         Default: <code>standard</code> (T2 instances) or <code>unlimited</code> (T3/T3a instances)
      */
@@ -2830,7 +2830,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html">
      * ModifyInstanceCreditSpecification</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-     * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * performance instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * Default: <code>standard</code> (T2 instances) or <code>unlimited</code> (T3/T3a instances)
@@ -2842,7 +2842,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html">
      *        ModifyInstanceCreditSpecification</a>. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-     *        Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *        performance instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *        <p>
      *        Default: <code>standard</code> (T2 instances) or <code>unlimited</code> (T3/T3a instances)
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -2856,14 +2856,14 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * The CPU options for the instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing CPU Options</a>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing CPU options</a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param cpuOptions
      *        The CPU options for the instance. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing CPU
-     *        Options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public void setCpuOptions(CpuOptionsRequest cpuOptions) {
@@ -2873,13 +2873,13 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * The CPU options for the instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing CPU Options</a>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing CPU options</a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @return The CPU options for the instance. For more information, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing CPU
-     *         Options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public CpuOptionsRequest getCpuOptions() {
@@ -2889,14 +2889,14 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * The CPU options for the instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing CPU Options</a>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing CPU options</a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param cpuOptions
      *        The CPU options for the instance. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing CPU
-     *        Options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2960,13 +2960,13 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * Indicates whether an instance is enabled for hibernation. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param hibernationOptions
      *        Indicates whether an instance is enabled for hibernation. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in
      *        the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
@@ -2977,12 +2977,12 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * Indicates whether an instance is enabled for hibernation. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @return Indicates whether an instance is enabled for hibernation. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in
      *         the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
@@ -2993,13 +2993,13 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * Indicates whether an instance is enabled for hibernation. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param hibernationOptions
      *        Indicates whether an instance is enabled for hibernation. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in
      *        the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -3085,14 +3085,14 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * The metadata options for the instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata and User
-     * Data</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user
+     * data</a>.
      * </p>
      * 
      * @param metadataOptions
      *        The metadata options for the instance. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata
-     *        and User Data</a>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata
+     *        and user data</a>.
      */
 
     public void setMetadataOptions(InstanceMetadataOptionsRequest metadataOptions) {
@@ -3102,13 +3102,13 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * The metadata options for the instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata and User
-     * Data</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user
+     * data</a>.
      * </p>
      * 
      * @return The metadata options for the instance. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata
-     *         and User Data</a>.
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata
+     *         and user data</a>.
      */
 
     public InstanceMetadataOptionsRequest getMetadataOptions() {
@@ -3118,14 +3118,14 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * The metadata options for the instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata and User
-     * Data</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user
+     * data</a>.
      * </p>
      * 
      * @param metadataOptions
      *        The metadata options for the instance. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata
-     *        and User Data</a>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata
+     *        and user data</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1593,7 +1593,7 @@ public interface AmazonEC2 {
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement groups</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
@@ -2637,7 +2637,7 @@ public interface AmazonEC2 {
      * <p>
      * Deletes the specified placement group. You must terminate all instances in the placement group before you can
      * delete the placement group. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement groups</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
@@ -3985,7 +3985,7 @@ public interface AmazonEC2 {
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-     * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * performance instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param describeInstanceCreditSpecificationsRequest
@@ -4026,9 +4026,9 @@ public interface AmazonEC2 {
      * <b>Status checks</b> - Amazon EC2 performs status checks on running EC2 instances to identify hardware and
      * software issues. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-system-instance-status-check.html">Status
-     * Checks for Your Instances</a> and <a
+     * checks for your instances</a> and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshooting
-     * Instances with Failed Status Checks</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * instances with failed status checks</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -4036,14 +4036,14 @@ public interface AmazonEC2 {
      * <b>Scheduled events</b> - Amazon EC2 can schedule events (such as reboot, stop, or terminate) for your instances
      * related to hardware issues, software updates, or system maintenance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html">Scheduled
-     * Events for Your Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * events for your instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * </li>
      * <li>
      * <p>
      * <b>Instance state</b> - You can manage your instances from the moment you launch them through their termination.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance Lifecycle</a> in
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance lifecycle</a> in
      * the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * </li>
@@ -4415,7 +4415,7 @@ public interface AmazonEC2 {
     /**
      * <p>
      * Describes the specified placement groups or all of your placement groups. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement groups</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
@@ -6207,7 +6207,7 @@ public interface AmazonEC2 {
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-     * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * performance instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param getDefaultCreditSpecificationRequest
@@ -6576,7 +6576,7 @@ public interface AmazonEC2 {
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-     * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * performance instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param modifyDefaultCreditSpecificationRequest
@@ -6804,7 +6804,7 @@ public interface AmazonEC2 {
      * <p>
      * To modify some attributes, the instance must be stopped. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_ChangingAttributesWhileInstanceStopped.html"
-     * >Modifying Attributes of a Stopped Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * >Modifying attributes of a stopped instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param modifyInstanceAttributeRequest
@@ -6839,7 +6839,7 @@ public interface AmazonEC2 {
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-     * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * performance instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param modifyInstanceCreditSpecificationRequest
@@ -6870,8 +6870,8 @@ public interface AmazonEC2 {
      * instance, the API responds with a state of “pending”. After the parameter modifications are successfully applied
      * to the instance, the state of the modifications changes from “pending” to “applied” in subsequent
      * describe-instances API calls. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata and User
-     * Data</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user
+     * data</a>.
      * </p>
      * 
      * @param modifyInstanceMetadataOptionsRequest
@@ -7456,8 +7456,8 @@ public interface AmazonEC2 {
     /**
      * <p>
      * Enables detailed monitoring for a running instance. Otherwise, basic monitoring is enabled. For more information,
-     * see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring Your Instances
-     * and Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring your instances
+     * and volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * To disable detailed monitoring, see .
@@ -7596,8 +7596,8 @@ public interface AmazonEC2 {
      * </p>
      * <p>
      * For more information about troubleshooting, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html">Getting Console Output and
-     * Rebooting Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html">Getting console output and
+     * rebooting instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param rebootInstancesRequest
@@ -8263,8 +8263,8 @@ public interface AmazonEC2 {
      * <p>
      * Some instance types must be launched into a VPC. If you do not have a default VPC, or if you do not specify a
      * subnet ID, the request fails. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-vpc.html#vpc-only-instance-types">Instance Types
-     * Available Only in a VPC</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-vpc.html#vpc-only-instance-types">Instance types
+     * available only in a VPC</a>.
      * </p>
      * </li>
      * <li>
@@ -8276,13 +8276,13 @@ public interface AmazonEC2 {
      * <li>
      * <p>
      * Not all instance types support IPv6 addresses. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a>.
      * </p>
      * </li>
      * <li>
      * <p>
      * If you don't specify a security group ID, we use the default security group. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Security Groups</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Security groups</a>.
      * </p>
      * </li>
      * <li>
@@ -8304,20 +8304,20 @@ public interface AmazonEC2 {
      * An instance is ready for you to use when it's in the <code>running</code> state. You can check the state of your
      * instance using <a>DescribeInstances</a>. You can tag instances and EBS volumes during launch, after launch, or
      * both. For more information, see <a>CreateTags</a> and <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging Your Amazon EC2 Resources</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging your Amazon EC2 resources</a>.
      * </p>
      * <p>
      * Linux instances have access to the public key of the key pair at boot. You can use this key to provide secure
      * access to the instance. Amazon EC2 public images use this feature to provide secure access without passwords. For
      * more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
-     * Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * For troubleshooting, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_InstanceStraightToTerminated.html">What To Do If
-     * An Instance Immediately Terminates</a>, and <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_InstanceStraightToTerminated.html">What to do if
+     * an instance immediately terminates</a>, and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html"
-     * >Troubleshooting Connecting to Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * >Troubleshooting connecting to your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param runInstancesRequest
@@ -8411,7 +8411,7 @@ public interface AmazonEC2 {
      * <p>
      * For more information about configuring your operating system to generate a crash dump when a kernel panic or stop
      * error occurs, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/diagnostic-interrupt.html">Send a
-     * Diagnostic Interrupt</a> (Linux instances) or <a
+     * diagnostic interrupt</a> (Linux instances) or <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/diagnostic-interrupt.html">Send a Diagnostic
      * Interrupt</a> (Windows instances).
      * </p>
@@ -8447,7 +8447,7 @@ public interface AmazonEC2 {
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html">Stopping
-     * Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param startInstancesRequest
@@ -8494,7 +8494,7 @@ public interface AmazonEC2 {
      * hibernation</a> and it meets the <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation
      * prerequisites</a>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
@@ -8510,7 +8510,7 @@ public interface AmazonEC2 {
      * Instances, but you can specify that Amazon EC2 should hibernate Spot Instances when they are interrupted. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-interruptions.html#hibernate-spot-instances"
-     * >Hibernating Interrupted Spot Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * >Hibernating interrupted Spot Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * When you stop or hibernate an instance, we shut it down. You can restart your instance at any time. Before
@@ -8524,14 +8524,14 @@ public interface AmazonEC2 {
      * an instance, the root device and any other devices attached during the instance launch are automatically deleted.
      * For more information about the differences between rebooting, stopping, hibernating, and terminating instances,
      * see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
-     * Lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * When you stop an instance, we attempt to shut it down forcibly after a short while. If your instance appears
      * stuck in the stopping state after a period of time, there may be an issue with the underlying host computer. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesStopping.html">Troubleshooting
-     * Stopping Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * stopping your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param stopInstancesRequest
@@ -8578,13 +8578,13 @@ public interface AmazonEC2 {
      * root device and any other devices attached to the instance persist. When you terminate an instance, any attached
      * EBS volumes with the <code>DeleteOnTermination</code> block device mapping parameter set to <code>true</code> are
      * automatically deleted. For more information about the differences between stopping and terminating instances, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance Lifecycle</a>
+     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance lifecycle</a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * For more information about troubleshooting, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesShuttingDown.html"
-     * >Troubleshooting Terminating Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * >Troubleshooting terminating your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param terminateInstancesRequest
@@ -8625,8 +8625,8 @@ public interface AmazonEC2 {
     /**
      * <p>
      * Disables detailed monitoring for a running instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring Your Instances and
-     * Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring your instances and
+     * volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param unmonitorInstancesRequest

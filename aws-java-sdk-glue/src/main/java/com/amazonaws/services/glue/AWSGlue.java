@@ -719,6 +719,53 @@ public interface AWSGlue {
 
     /**
      * <p>
+     * Delete the partition column statistics of a column.
+     * </p>
+     * 
+     * @param deleteColumnStatisticsForPartitionRequest
+     * @return Result of the DeleteColumnStatisticsForPartition operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws GlueEncryptionException
+     *         An encryption operation failed.
+     * @sample AWSGlue.DeleteColumnStatisticsForPartition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteColumnStatisticsForPartition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteColumnStatisticsForPartitionResult deleteColumnStatisticsForPartition(
+            DeleteColumnStatisticsForPartitionRequest deleteColumnStatisticsForPartitionRequest);
+
+    /**
+     * <p>
+     * Retrieves table statistics of columns.
+     * </p>
+     * 
+     * @param deleteColumnStatisticsForTableRequest
+     * @return Result of the DeleteColumnStatisticsForTable operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws GlueEncryptionException
+     *         An encryption operation failed.
+     * @sample AWSGlue.DeleteColumnStatisticsForTable
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteColumnStatisticsForTable"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteColumnStatisticsForTableResult deleteColumnStatisticsForTable(DeleteColumnStatisticsForTableRequest deleteColumnStatisticsForTableRequest);
+
+    /**
+     * <p>
      * Deletes a connection from the Data Catalog.
      * </p>
      * 
@@ -1084,6 +1131,52 @@ public interface AWSGlue {
      *      Documentation</a>
      */
     GetClassifiersResult getClassifiers(GetClassifiersRequest getClassifiersRequest);
+
+    /**
+     * <p>
+     * Retrieves partition statistics of columns.
+     * </p>
+     * 
+     * @param getColumnStatisticsForPartitionRequest
+     * @return Result of the GetColumnStatisticsForPartition operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws GlueEncryptionException
+     *         An encryption operation failed.
+     * @sample AWSGlue.GetColumnStatisticsForPartition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetColumnStatisticsForPartition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetColumnStatisticsForPartitionResult getColumnStatisticsForPartition(GetColumnStatisticsForPartitionRequest getColumnStatisticsForPartitionRequest);
+
+    /**
+     * <p>
+     * Retrieves table statistics of columns.
+     * </p>
+     * 
+     * @param getColumnStatisticsForTableRequest
+     * @return Result of the GetColumnStatisticsForTable operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws GlueEncryptionException
+     *         An encryption operation failed.
+     * @sample AWSGlue.GetColumnStatisticsForTable
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetColumnStatisticsForTable"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetColumnStatisticsForTableResult getColumnStatisticsForTable(GetColumnStatisticsForTableRequest getColumnStatisticsForTableRequest);
 
     /**
      * <p>
@@ -2652,6 +2745,53 @@ public interface AWSGlue {
      *      Documentation</a>
      */
     UpdateClassifierResult updateClassifier(UpdateClassifierRequest updateClassifierRequest);
+
+    /**
+     * <p>
+     * Creates or updates partition statistics of columns.
+     * </p>
+     * 
+     * @param updateColumnStatisticsForPartitionRequest
+     * @return Result of the UpdateColumnStatisticsForPartition operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws GlueEncryptionException
+     *         An encryption operation failed.
+     * @sample AWSGlue.UpdateColumnStatisticsForPartition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateColumnStatisticsForPartition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateColumnStatisticsForPartitionResult updateColumnStatisticsForPartition(
+            UpdateColumnStatisticsForPartitionRequest updateColumnStatisticsForPartitionRequest);
+
+    /**
+     * <p>
+     * Creates or updates table statistics of columns.
+     * </p>
+     * 
+     * @param updateColumnStatisticsForTableRequest
+     * @return Result of the UpdateColumnStatisticsForTable operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws GlueEncryptionException
+     *         An encryption operation failed.
+     * @sample AWSGlue.UpdateColumnStatisticsForTable
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateColumnStatisticsForTable"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateColumnStatisticsForTableResult updateColumnStatisticsForTable(UpdateColumnStatisticsForTableRequest updateColumnStatisticsForTableRequest);
 
     /**
      * <p>

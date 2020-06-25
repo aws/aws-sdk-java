@@ -999,6 +999,75 @@ public class AWSGlueAsyncClient extends AWSGlueClient implements AWSGlueAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteColumnStatisticsForPartitionResult> deleteColumnStatisticsForPartitionAsync(
+            DeleteColumnStatisticsForPartitionRequest request) {
+
+        return deleteColumnStatisticsForPartitionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteColumnStatisticsForPartitionResult> deleteColumnStatisticsForPartitionAsync(
+            final DeleteColumnStatisticsForPartitionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteColumnStatisticsForPartitionRequest, DeleteColumnStatisticsForPartitionResult> asyncHandler) {
+        final DeleteColumnStatisticsForPartitionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteColumnStatisticsForPartitionResult>() {
+            @Override
+            public DeleteColumnStatisticsForPartitionResult call() throws Exception {
+                DeleteColumnStatisticsForPartitionResult result = null;
+
+                try {
+                    result = executeDeleteColumnStatisticsForPartition(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteColumnStatisticsForTableResult> deleteColumnStatisticsForTableAsync(DeleteColumnStatisticsForTableRequest request) {
+
+        return deleteColumnStatisticsForTableAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteColumnStatisticsForTableResult> deleteColumnStatisticsForTableAsync(
+            final DeleteColumnStatisticsForTableRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteColumnStatisticsForTableRequest, DeleteColumnStatisticsForTableResult> asyncHandler) {
+        final DeleteColumnStatisticsForTableRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteColumnStatisticsForTableResult>() {
+            @Override
+            public DeleteColumnStatisticsForTableResult call() throws Exception {
+                DeleteColumnStatisticsForTableResult result = null;
+
+                try {
+                    result = executeDeleteColumnStatisticsForTable(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteConnectionResult> deleteConnectionAsync(DeleteConnectionRequest request) {
 
         return deleteConnectionAsync(request, null);
@@ -1544,6 +1613,74 @@ public class AWSGlueAsyncClient extends AWSGlueClient implements AWSGlueAsync {
 
                 try {
                     result = executeGetClassifiers(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetColumnStatisticsForPartitionResult> getColumnStatisticsForPartitionAsync(
+            GetColumnStatisticsForPartitionRequest request) {
+
+        return getColumnStatisticsForPartitionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetColumnStatisticsForPartitionResult> getColumnStatisticsForPartitionAsync(
+            final GetColumnStatisticsForPartitionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetColumnStatisticsForPartitionRequest, GetColumnStatisticsForPartitionResult> asyncHandler) {
+        final GetColumnStatisticsForPartitionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetColumnStatisticsForPartitionResult>() {
+            @Override
+            public GetColumnStatisticsForPartitionResult call() throws Exception {
+                GetColumnStatisticsForPartitionResult result = null;
+
+                try {
+                    result = executeGetColumnStatisticsForPartition(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetColumnStatisticsForTableResult> getColumnStatisticsForTableAsync(GetColumnStatisticsForTableRequest request) {
+
+        return getColumnStatisticsForTableAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetColumnStatisticsForTableResult> getColumnStatisticsForTableAsync(final GetColumnStatisticsForTableRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetColumnStatisticsForTableRequest, GetColumnStatisticsForTableResult> asyncHandler) {
+        final GetColumnStatisticsForTableRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetColumnStatisticsForTableResult>() {
+            @Override
+            public GetColumnStatisticsForTableResult call() throws Exception {
+                GetColumnStatisticsForTableResult result = null;
+
+                try {
+                    result = executeGetColumnStatisticsForTable(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -3794,6 +3931,75 @@ public class AWSGlueAsyncClient extends AWSGlueClient implements AWSGlueAsync {
 
                 try {
                     result = executeUpdateClassifier(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateColumnStatisticsForPartitionResult> updateColumnStatisticsForPartitionAsync(
+            UpdateColumnStatisticsForPartitionRequest request) {
+
+        return updateColumnStatisticsForPartitionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateColumnStatisticsForPartitionResult> updateColumnStatisticsForPartitionAsync(
+            final UpdateColumnStatisticsForPartitionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateColumnStatisticsForPartitionRequest, UpdateColumnStatisticsForPartitionResult> asyncHandler) {
+        final UpdateColumnStatisticsForPartitionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateColumnStatisticsForPartitionResult>() {
+            @Override
+            public UpdateColumnStatisticsForPartitionResult call() throws Exception {
+                UpdateColumnStatisticsForPartitionResult result = null;
+
+                try {
+                    result = executeUpdateColumnStatisticsForPartition(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateColumnStatisticsForTableResult> updateColumnStatisticsForTableAsync(UpdateColumnStatisticsForTableRequest request) {
+
+        return updateColumnStatisticsForTableAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateColumnStatisticsForTableResult> updateColumnStatisticsForTableAsync(
+            final UpdateColumnStatisticsForTableRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateColumnStatisticsForTableRequest, UpdateColumnStatisticsForTableResult> asyncHandler) {
+        final UpdateColumnStatisticsForTableRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateColumnStatisticsForTableResult>() {
+            @Override
+            public UpdateColumnStatisticsForTableResult call() throws Exception {
+                UpdateColumnStatisticsForTableResult result = null;
+
+                try {
+                    result = executeUpdateColumnStatisticsForTable(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

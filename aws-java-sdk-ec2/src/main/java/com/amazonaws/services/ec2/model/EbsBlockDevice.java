@@ -30,7 +30,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * <p>
      * Indicates whether the EBS volume is deleted on instance termination. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html#preserving-volumes-on-termination"
-     * >Preserving Amazon EBS Volumes on Instance Termination</a> in the Amazon Elastic Compute Cloud User Guide.
+     * >Preserving Amazon EBS volumes on instance termination</a> in the Amazon Elastic Compute Cloud User Guide.
      * </p>
      */
     private Boolean deleteOnTermination;
@@ -40,7 +40,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents
      * the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting. For
      * more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * Constraints: Range is 100-16,000 IOPS for <code>gp2</code> volumes and 100 to 64,000IOPS for <code>io1</code>
@@ -119,7 +119,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * Encrypted volumes can only be attached to instances that support Amazon EBS encryption. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances"
-     * >Supported Instance Types</a>.
+     * >Supported instance types</a>.
      * </p>
      * <p>
      * This parameter is not returned by .
@@ -131,13 +131,13 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * <p>
      * Indicates whether the EBS volume is deleted on instance termination. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html#preserving-volumes-on-termination"
-     * >Preserving Amazon EBS Volumes on Instance Termination</a> in the Amazon Elastic Compute Cloud User Guide.
+     * >Preserving Amazon EBS volumes on instance termination</a> in the Amazon Elastic Compute Cloud User Guide.
      * </p>
      * 
      * @param deleteOnTermination
      *        Indicates whether the EBS volume is deleted on instance termination. For more information, see <a href=
      *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html#preserving-volumes-on-termination"
-     *        >Preserving Amazon EBS Volumes on Instance Termination</a> in the Amazon Elastic Compute Cloud User Guide.
+     *        >Preserving Amazon EBS volumes on instance termination</a> in the Amazon Elastic Compute Cloud User Guide.
      */
 
     public void setDeleteOnTermination(Boolean deleteOnTermination) {
@@ -148,12 +148,12 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * <p>
      * Indicates whether the EBS volume is deleted on instance termination. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html#preserving-volumes-on-termination"
-     * >Preserving Amazon EBS Volumes on Instance Termination</a> in the Amazon Elastic Compute Cloud User Guide.
+     * >Preserving Amazon EBS volumes on instance termination</a> in the Amazon Elastic Compute Cloud User Guide.
      * </p>
      * 
      * @return Indicates whether the EBS volume is deleted on instance termination. For more information, see <a href=
      *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html#preserving-volumes-on-termination"
-     *         >Preserving Amazon EBS Volumes on Instance Termination</a> in the Amazon Elastic Compute Cloud User
+     *         >Preserving Amazon EBS volumes on instance termination</a> in the Amazon Elastic Compute Cloud User
      *         Guide.
      */
 
@@ -165,13 +165,13 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * <p>
      * Indicates whether the EBS volume is deleted on instance termination. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html#preserving-volumes-on-termination"
-     * >Preserving Amazon EBS Volumes on Instance Termination</a> in the Amazon Elastic Compute Cloud User Guide.
+     * >Preserving Amazon EBS volumes on instance termination</a> in the Amazon Elastic Compute Cloud User Guide.
      * </p>
      * 
      * @param deleteOnTermination
      *        Indicates whether the EBS volume is deleted on instance termination. For more information, see <a href=
      *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html#preserving-volumes-on-termination"
-     *        >Preserving Amazon EBS Volumes on Instance Termination</a> in the Amazon Elastic Compute Cloud User Guide.
+     *        >Preserving Amazon EBS volumes on instance termination</a> in the Amazon Elastic Compute Cloud User Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -184,12 +184,12 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * <p>
      * Indicates whether the EBS volume is deleted on instance termination. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html#preserving-volumes-on-termination"
-     * >Preserving Amazon EBS Volumes on Instance Termination</a> in the Amazon Elastic Compute Cloud User Guide.
+     * >Preserving Amazon EBS volumes on instance termination</a> in the Amazon Elastic Compute Cloud User Guide.
      * </p>
      * 
      * @return Indicates whether the EBS volume is deleted on instance termination. For more information, see <a href=
      *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html#preserving-volumes-on-termination"
-     *         >Preserving Amazon EBS Volumes on Instance Termination</a> in the Amazon Elastic Compute Cloud User
+     *         >Preserving Amazon EBS volumes on instance termination</a> in the Amazon Elastic Compute Cloud User
      *         Guide.
      */
 
@@ -203,7 +203,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents
      * the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting. For
      * more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * Constraints: Range is 100-16,000 IOPS for <code>gp2</code> volumes and 100 to 64,000IOPS for <code>io1</code>
@@ -223,7 +223,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      *        this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this
      *        represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits
      *        for bursting. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a>
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a>
      *        in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *        <p>
      *        Constraints: Range is 100-16,000 IOPS for <code>gp2</code> volumes and 100 to 64,000IOPS for
@@ -248,7 +248,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents
      * the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting. For
      * more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * Constraints: Range is 100-16,000 IOPS for <code>gp2</code> volumes and 100 to 64,000IOPS for <code>io1</code>
@@ -267,8 +267,8 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      *         this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes,
      *         this represents the baseline performance of the volume and the rate at which the volume accumulates I/O
      *         credits for bursting. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume
-     *         Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume
+     *         types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *         <p>
      *         Constraints: Range is 100-16,000 IOPS for <code>gp2</code> volumes and 100 to 64,000IOPS for
      *         <code>io1</code> volumes in most Regions. Maximum <code>io1</code> IOPS of 64,000 is guaranteed only on
@@ -293,7 +293,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents
      * the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting. For
      * more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * Constraints: Range is 100-16,000 IOPS for <code>gp2</code> volumes and 100 to 64,000IOPS for <code>io1</code>
@@ -313,7 +313,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      *        this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this
      *        represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits
      *        for bursting. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a>
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a>
      *        in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *        <p>
      *        Constraints: Range is 100-16,000 IOPS for <code>gp2</code> volumes and 100 to 64,000IOPS for
@@ -693,7 +693,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * Encrypted volumes can only be attached to instances that support Amazon EBS encryption. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances"
-     * >Supported Instance Types</a>.
+     * >Supported instance types</a>.
      * </p>
      * <p>
      * This parameter is not returned by .
@@ -713,7 +713,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      *        Encrypted volumes can only be attached to instances that support Amazon EBS encryption. For more
      *        information, see <a href=
      *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances"
-     *        >Supported Instance Types</a>.
+     *        >Supported instance types</a>.
      *        </p>
      *        <p>
      *        This parameter is not returned by .
@@ -739,7 +739,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * Encrypted volumes can only be attached to instances that support Amazon EBS encryption. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances"
-     * >Supported Instance Types</a>.
+     * >Supported instance types</a>.
      * </p>
      * <p>
      * This parameter is not returned by .
@@ -758,7 +758,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      *         Encrypted volumes can only be attached to instances that support Amazon EBS encryption. For more
      *         information, see <a href=
      *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances"
-     *         >Supported Instance Types</a>.
+     *         >Supported instance types</a>.
      *         </p>
      *         <p>
      *         This parameter is not returned by .
@@ -784,7 +784,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * Encrypted volumes can only be attached to instances that support Amazon EBS encryption. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances"
-     * >Supported Instance Types</a>.
+     * >Supported instance types</a>.
      * </p>
      * <p>
      * This parameter is not returned by .
@@ -804,7 +804,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      *        Encrypted volumes can only be attached to instances that support Amazon EBS encryption. For more
      *        information, see <a href=
      *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances"
-     *        >Supported Instance Types</a>.
+     *        >Supported instance types</a>.
      *        </p>
      *        <p>
      *        This parameter is not returned by .
@@ -832,7 +832,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * Encrypted volumes can only be attached to instances that support Amazon EBS encryption. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances"
-     * >Supported Instance Types</a>.
+     * >Supported instance types</a>.
      * </p>
      * <p>
      * This parameter is not returned by .
@@ -851,7 +851,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      *         Encrypted volumes can only be attached to instances that support Amazon EBS encryption. For more
      *         information, see <a href=
      *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances"
-     *         >Supported Instance Types</a>.
+     *         >Supported instance types</a>.
      *         </p>
      *         <p>
      *         This parameter is not returned by .

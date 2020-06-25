@@ -1,3 +1,12 @@
+# __1.11.811__ __2020-06-25__
+## __AWS Glue__
+  - ### Features
+    - This release adds new APIs to support column level statistics in AWS Glue Data Catalog
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Added support for tag-on-create for Host Reservations in Dedicated Hosts. You can now specify tags when you create a Host Reservation for a Dedicated Host. For more information about tagging, see AWS Tagging Strategies.
+
 # __1.11.810__ __2020-06-24__
 ## __AWS Amplify__
   - ### Features

@@ -997,6 +997,76 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
+     * Delete the partition column statistics of a column.
+     * </p>
+     * 
+     * @param deleteColumnStatisticsForPartitionRequest
+     * @return A Java Future containing the result of the DeleteColumnStatisticsForPartition operation returned by the
+     *         service.
+     * @sample AWSGlueAsync.DeleteColumnStatisticsForPartition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteColumnStatisticsForPartition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteColumnStatisticsForPartitionResult> deleteColumnStatisticsForPartitionAsync(
+            DeleteColumnStatisticsForPartitionRequest deleteColumnStatisticsForPartitionRequest);
+
+    /**
+     * <p>
+     * Delete the partition column statistics of a column.
+     * </p>
+     * 
+     * @param deleteColumnStatisticsForPartitionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteColumnStatisticsForPartition operation returned by the
+     *         service.
+     * @sample AWSGlueAsyncHandler.DeleteColumnStatisticsForPartition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteColumnStatisticsForPartition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteColumnStatisticsForPartitionResult> deleteColumnStatisticsForPartitionAsync(
+            DeleteColumnStatisticsForPartitionRequest deleteColumnStatisticsForPartitionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteColumnStatisticsForPartitionRequest, DeleteColumnStatisticsForPartitionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves table statistics of columns.
+     * </p>
+     * 
+     * @param deleteColumnStatisticsForTableRequest
+     * @return A Java Future containing the result of the DeleteColumnStatisticsForTable operation returned by the
+     *         service.
+     * @sample AWSGlueAsync.DeleteColumnStatisticsForTable
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteColumnStatisticsForTable"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteColumnStatisticsForTableResult> deleteColumnStatisticsForTableAsync(
+            DeleteColumnStatisticsForTableRequest deleteColumnStatisticsForTableRequest);
+
+    /**
+     * <p>
+     * Retrieves table statistics of columns.
+     * </p>
+     * 
+     * @param deleteColumnStatisticsForTableRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteColumnStatisticsForTable operation returned by the
+     *         service.
+     * @sample AWSGlueAsyncHandler.DeleteColumnStatisticsForTable
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteColumnStatisticsForTable"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteColumnStatisticsForTableResult> deleteColumnStatisticsForTableAsync(
+            DeleteColumnStatisticsForTableRequest deleteColumnStatisticsForTableRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteColumnStatisticsForTableRequest, DeleteColumnStatisticsForTableResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes a connection from the Data Catalog.
      * </p>
      * 
@@ -1583,6 +1653,74 @@ public interface AWSGlueAsync extends AWSGlue {
      */
     java.util.concurrent.Future<GetClassifiersResult> getClassifiersAsync(GetClassifiersRequest getClassifiersRequest,
             com.amazonaws.handlers.AsyncHandler<GetClassifiersRequest, GetClassifiersResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves partition statistics of columns.
+     * </p>
+     * 
+     * @param getColumnStatisticsForPartitionRequest
+     * @return A Java Future containing the result of the GetColumnStatisticsForPartition operation returned by the
+     *         service.
+     * @sample AWSGlueAsync.GetColumnStatisticsForPartition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetColumnStatisticsForPartition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetColumnStatisticsForPartitionResult> getColumnStatisticsForPartitionAsync(
+            GetColumnStatisticsForPartitionRequest getColumnStatisticsForPartitionRequest);
+
+    /**
+     * <p>
+     * Retrieves partition statistics of columns.
+     * </p>
+     * 
+     * @param getColumnStatisticsForPartitionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetColumnStatisticsForPartition operation returned by the
+     *         service.
+     * @sample AWSGlueAsyncHandler.GetColumnStatisticsForPartition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetColumnStatisticsForPartition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetColumnStatisticsForPartitionResult> getColumnStatisticsForPartitionAsync(
+            GetColumnStatisticsForPartitionRequest getColumnStatisticsForPartitionRequest,
+            com.amazonaws.handlers.AsyncHandler<GetColumnStatisticsForPartitionRequest, GetColumnStatisticsForPartitionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves table statistics of columns.
+     * </p>
+     * 
+     * @param getColumnStatisticsForTableRequest
+     * @return A Java Future containing the result of the GetColumnStatisticsForTable operation returned by the service.
+     * @sample AWSGlueAsync.GetColumnStatisticsForTable
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetColumnStatisticsForTable"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetColumnStatisticsForTableResult> getColumnStatisticsForTableAsync(
+            GetColumnStatisticsForTableRequest getColumnStatisticsForTableRequest);
+
+    /**
+     * <p>
+     * Retrieves table statistics of columns.
+     * </p>
+     * 
+     * @param getColumnStatisticsForTableRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetColumnStatisticsForTable operation returned by the service.
+     * @sample AWSGlueAsyncHandler.GetColumnStatisticsForTable
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetColumnStatisticsForTable"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetColumnStatisticsForTableResult> getColumnStatisticsForTableAsync(
+            GetColumnStatisticsForTableRequest getColumnStatisticsForTableRequest,
+            com.amazonaws.handlers.AsyncHandler<GetColumnStatisticsForTableRequest, GetColumnStatisticsForTableResult> asyncHandler);
 
     /**
      * <p>
@@ -3955,6 +4093,76 @@ public interface AWSGlueAsync extends AWSGlue {
      */
     java.util.concurrent.Future<UpdateClassifierResult> updateClassifierAsync(UpdateClassifierRequest updateClassifierRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateClassifierRequest, UpdateClassifierResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates or updates partition statistics of columns.
+     * </p>
+     * 
+     * @param updateColumnStatisticsForPartitionRequest
+     * @return A Java Future containing the result of the UpdateColumnStatisticsForPartition operation returned by the
+     *         service.
+     * @sample AWSGlueAsync.UpdateColumnStatisticsForPartition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateColumnStatisticsForPartition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateColumnStatisticsForPartitionResult> updateColumnStatisticsForPartitionAsync(
+            UpdateColumnStatisticsForPartitionRequest updateColumnStatisticsForPartitionRequest);
+
+    /**
+     * <p>
+     * Creates or updates partition statistics of columns.
+     * </p>
+     * 
+     * @param updateColumnStatisticsForPartitionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateColumnStatisticsForPartition operation returned by the
+     *         service.
+     * @sample AWSGlueAsyncHandler.UpdateColumnStatisticsForPartition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateColumnStatisticsForPartition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateColumnStatisticsForPartitionResult> updateColumnStatisticsForPartitionAsync(
+            UpdateColumnStatisticsForPartitionRequest updateColumnStatisticsForPartitionRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateColumnStatisticsForPartitionRequest, UpdateColumnStatisticsForPartitionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates or updates table statistics of columns.
+     * </p>
+     * 
+     * @param updateColumnStatisticsForTableRequest
+     * @return A Java Future containing the result of the UpdateColumnStatisticsForTable operation returned by the
+     *         service.
+     * @sample AWSGlueAsync.UpdateColumnStatisticsForTable
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateColumnStatisticsForTable"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateColumnStatisticsForTableResult> updateColumnStatisticsForTableAsync(
+            UpdateColumnStatisticsForTableRequest updateColumnStatisticsForTableRequest);
+
+    /**
+     * <p>
+     * Creates or updates table statistics of columns.
+     * </p>
+     * 
+     * @param updateColumnStatisticsForTableRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateColumnStatisticsForTable operation returned by the
+     *         service.
+     * @sample AWSGlueAsyncHandler.UpdateColumnStatisticsForTable
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateColumnStatisticsForTable"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateColumnStatisticsForTableResult> updateColumnStatisticsForTableAsync(
+            UpdateColumnStatisticsForTableRequest updateColumnStatisticsForTableRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateColumnStatisticsForTableRequest, UpdateColumnStatisticsForTableResult> asyncHandler);
 
     /**
      * <p>
