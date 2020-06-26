@@ -259,7 +259,7 @@ final class StandardModelFactories {
             }
             @Override
             public AttributeValue convert(String o) {
-                return o.length() == 0 ? null : super.convert(o);
+                return super.convert(o);
             }
         }
 

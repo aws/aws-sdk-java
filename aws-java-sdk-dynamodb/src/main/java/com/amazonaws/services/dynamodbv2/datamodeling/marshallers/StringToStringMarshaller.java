@@ -35,10 +35,6 @@ public class StringToStringMarshaller implements StringAttributeMarshaller {
     @Override
     public AttributeValue marshall(Object obj) {
         String string = (String) obj;
-        if (string.length() == 0) {
-            // Sticking with the legacy behavior for now.
-            return null;
-        }
 
         return new AttributeValue().withS(string);
     }
