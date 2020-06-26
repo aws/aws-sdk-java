@@ -1,3 +1,24 @@
+# __1.11.812__ __2020-06-26__
+## __AWS CloudFormation__
+  - ### Features
+    - ListStackInstances and DescribeStackInstance now return a new `StackInstanceStatus` object that contains `DetailedStatus` values: a disambiguation of the more generic `Status` value. ListStackInstances output can now be filtered on `DetailedStatus` using the new `Filters` parameter.
+
+## __AWS Database Migration Service__
+  - ### Features
+    - This release contains miscellaneous API documentation updates for AWS DMS in response to several customer reported issues.
+
+## __Amazon Cognito Identity Provider__
+  - ### Features
+    - Don't require Authorization for InitiateAuth and RespondToAuthChallenge.
+
+## __Amazon QuickSight__
+  - ### Features
+    - Added support for cross-region DataSource credentials copying.
+
+## __Amazon SageMaker Service__
+  - ### Features
+    - The new 'ModelClientConfig' parameter being added for CreateTransformJob and DescribeTransformJob api actions enable customers to configure model invocation related parameters such as timeout and retry.
+
 # __1.11.811__ __2020-06-25__
 ## __AWS Glue__
   - ### Features

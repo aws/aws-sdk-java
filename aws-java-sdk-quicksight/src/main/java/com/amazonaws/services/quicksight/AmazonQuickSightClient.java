@@ -249,7 +249,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Creates a dashboard from a template. To first create a template, see the CreateTemplate API operation.
+     * Creates a dashboard from a template. To first create a template, see the <a>CreateTemplate</a> API operation.
      * </p>
      * <p>
      * A dashboard is an entity in QuickSight that identifies QuickSight reports, created from analyses. You can share
@@ -2504,15 +2504,41 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Generates a server-side embeddable URL and authorization code. For this process to work properly, first configure
-     * the dashboards and user permissions. For more information, see <a
+     * Generates a URL and authorization code that you can embed in your web server code. Before you use this command,
+     * make sure that you have configured the dashboards and permissions.
+     * </p>
+     * <p>
+     * Currently, you can use <code>GetDashboardEmbedURL</code> only from the server, not from the user's browser. The
+     * following rules apply to the combination of URL and authorization code:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * They must be used together.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * They can be used one time only.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * They are valid for 5 minutes after you run this command.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The resulting user session is valid for 10 hours.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-dashboards.html">Embedding Amazon QuickSight
      * Dashboards</a> in the <i>Amazon QuickSight User Guide</i> or <a
      * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/qs-dev-embedded-dashboards.html">Embedding
      * Amazon QuickSight Dashboards</a> in the <i>Amazon QuickSight API Reference</i>.
-     * </p>
-     * <p>
-     * Currently, you can use <code>GetDashboardEmbedURL</code> only from the server, not from the user’s browser.
      * </p>
      * 
      * @param getDashboardEmbedUrlRequest

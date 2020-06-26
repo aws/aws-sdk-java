@@ -50,6 +50,12 @@ public class ListStackInstancesRequest extends com.amazonaws.AmazonWebServiceReq
     private Integer maxResults;
     /**
      * <p>
+     * The status that stack instances are filtered by.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<StackInstanceFilter> filters;
+    /**
+     * <p>
      * The name of the AWS account that you want to list stack instances for.
      * </p>
      */
@@ -216,6 +222,79 @@ public class ListStackInstancesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
+     * The status that stack instances are filtered by.
+     * </p>
+     * 
+     * @return The status that stack instances are filtered by.
+     */
+
+    public java.util.List<StackInstanceFilter> getFilters() {
+        if (filters == null) {
+            filters = new com.amazonaws.internal.SdkInternalList<StackInstanceFilter>();
+        }
+        return filters;
+    }
+
+    /**
+     * <p>
+     * The status that stack instances are filtered by.
+     * </p>
+     * 
+     * @param filters
+     *        The status that stack instances are filtered by.
+     */
+
+    public void setFilters(java.util.Collection<StackInstanceFilter> filters) {
+        if (filters == null) {
+            this.filters = null;
+            return;
+        }
+
+        this.filters = new com.amazonaws.internal.SdkInternalList<StackInstanceFilter>(filters);
+    }
+
+    /**
+     * <p>
+     * The status that stack instances are filtered by.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param filters
+     *        The status that stack instances are filtered by.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListStackInstancesRequest withFilters(StackInstanceFilter... filters) {
+        if (this.filters == null) {
+            setFilters(new com.amazonaws.internal.SdkInternalList<StackInstanceFilter>(filters.length));
+        }
+        for (StackInstanceFilter ele : filters) {
+            this.filters.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status that stack instances are filtered by.
+     * </p>
+     * 
+     * @param filters
+     *        The status that stack instances are filtered by.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListStackInstancesRequest withFilters(java.util.Collection<StackInstanceFilter> filters) {
+        setFilters(filters);
+        return this;
+    }
+
+    /**
+     * <p>
      * The name of the AWS account that you want to list stack instances for.
      * </p>
      * 
@@ -312,6 +391,8 @@ public class ListStackInstancesRequest extends com.amazonaws.AmazonWebServiceReq
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getFilters() != null)
+            sb.append("Filters: ").append(getFilters()).append(",");
         if (getStackInstanceAccount() != null)
             sb.append("StackInstanceAccount: ").append(getStackInstanceAccount()).append(",");
         if (getStackInstanceRegion() != null)
@@ -342,6 +423,10 @@ public class ListStackInstancesRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
+        if (other.getFilters() == null ^ this.getFilters() == null)
+            return false;
+        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
+            return false;
         if (other.getStackInstanceAccount() == null ^ this.getStackInstanceAccount() == null)
             return false;
         if (other.getStackInstanceAccount() != null && other.getStackInstanceAccount().equals(this.getStackInstanceAccount()) == false)
@@ -361,6 +446,7 @@ public class ListStackInstancesRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getStackSetName() == null) ? 0 : getStackSetName().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         hashCode = prime * hashCode + ((getStackInstanceAccount() == null) ? 0 : getStackInstanceAccount().hashCode());
         hashCode = prime * hashCode + ((getStackInstanceRegion() == null) ? 0 : getStackInstanceRegion().hashCode());
         return hashCode;

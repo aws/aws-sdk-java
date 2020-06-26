@@ -30,8 +30,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <li>
  * <p>
  * A list of <code>Filter</code> objects. Each filter defines a simple Boolean expression comprised of a resource
- * property name, Boolean operator, and value. A <code>SearchExpression</code> can include only one
- * <code>Contains</code> operator.
+ * property name, Boolean operator, and value.
  * </p>
  * </li>
  * <li>

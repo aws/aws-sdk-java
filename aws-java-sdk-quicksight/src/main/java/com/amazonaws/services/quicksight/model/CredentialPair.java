@@ -40,6 +40,18 @@ public class CredentialPair implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String password;
+    /**
+     * <p>
+     * A set of alternate data source parameters that you want to share for these credentials. The credentials are
+     * applied in tandem with the data source parameters when you copy a data source by using a create or update
+     * request. The API compares the <code>DataSourceParameters</code> structure that's in the request with the
+     * structures in the <code>AlternateDataSourceParameters</code> allowlist. If the structures are an exact match, the
+     * request is allowed to use the new data source with the existing credentials. If the
+     * <code>AlternateDataSourceParameters</code> list is null, the <code>DataSourceParameters</code> originally used
+     * with these <code>Credentials</code> is automatically allowed.
+     * </p>
+     */
+    private java.util.List<DataSourceParameters> alternateDataSourceParameters;
 
     /**
      * <p>
@@ -122,6 +134,124 @@ public class CredentialPair implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A set of alternate data source parameters that you want to share for these credentials. The credentials are
+     * applied in tandem with the data source parameters when you copy a data source by using a create or update
+     * request. The API compares the <code>DataSourceParameters</code> structure that's in the request with the
+     * structures in the <code>AlternateDataSourceParameters</code> allowlist. If the structures are an exact match, the
+     * request is allowed to use the new data source with the existing credentials. If the
+     * <code>AlternateDataSourceParameters</code> list is null, the <code>DataSourceParameters</code> originally used
+     * with these <code>Credentials</code> is automatically allowed.
+     * </p>
+     * 
+     * @return A set of alternate data source parameters that you want to share for these credentials. The credentials
+     *         are applied in tandem with the data source parameters when you copy a data source by using a create or
+     *         update request. The API compares the <code>DataSourceParameters</code> structure that's in the request
+     *         with the structures in the <code>AlternateDataSourceParameters</code> allowlist. If the structures are an
+     *         exact match, the request is allowed to use the new data source with the existing credentials. If the
+     *         <code>AlternateDataSourceParameters</code> list is null, the <code>DataSourceParameters</code> originally
+     *         used with these <code>Credentials</code> is automatically allowed.
+     */
+
+    public java.util.List<DataSourceParameters> getAlternateDataSourceParameters() {
+        return alternateDataSourceParameters;
+    }
+
+    /**
+     * <p>
+     * A set of alternate data source parameters that you want to share for these credentials. The credentials are
+     * applied in tandem with the data source parameters when you copy a data source by using a create or update
+     * request. The API compares the <code>DataSourceParameters</code> structure that's in the request with the
+     * structures in the <code>AlternateDataSourceParameters</code> allowlist. If the structures are an exact match, the
+     * request is allowed to use the new data source with the existing credentials. If the
+     * <code>AlternateDataSourceParameters</code> list is null, the <code>DataSourceParameters</code> originally used
+     * with these <code>Credentials</code> is automatically allowed.
+     * </p>
+     * 
+     * @param alternateDataSourceParameters
+     *        A set of alternate data source parameters that you want to share for these credentials. The credentials
+     *        are applied in tandem with the data source parameters when you copy a data source by using a create or
+     *        update request. The API compares the <code>DataSourceParameters</code> structure that's in the request
+     *        with the structures in the <code>AlternateDataSourceParameters</code> allowlist. If the structures are an
+     *        exact match, the request is allowed to use the new data source with the existing credentials. If the
+     *        <code>AlternateDataSourceParameters</code> list is null, the <code>DataSourceParameters</code> originally
+     *        used with these <code>Credentials</code> is automatically allowed.
+     */
+
+    public void setAlternateDataSourceParameters(java.util.Collection<DataSourceParameters> alternateDataSourceParameters) {
+        if (alternateDataSourceParameters == null) {
+            this.alternateDataSourceParameters = null;
+            return;
+        }
+
+        this.alternateDataSourceParameters = new java.util.ArrayList<DataSourceParameters>(alternateDataSourceParameters);
+    }
+
+    /**
+     * <p>
+     * A set of alternate data source parameters that you want to share for these credentials. The credentials are
+     * applied in tandem with the data source parameters when you copy a data source by using a create or update
+     * request. The API compares the <code>DataSourceParameters</code> structure that's in the request with the
+     * structures in the <code>AlternateDataSourceParameters</code> allowlist. If the structures are an exact match, the
+     * request is allowed to use the new data source with the existing credentials. If the
+     * <code>AlternateDataSourceParameters</code> list is null, the <code>DataSourceParameters</code> originally used
+     * with these <code>Credentials</code> is automatically allowed.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAlternateDataSourceParameters(java.util.Collection)} or
+     * {@link #withAlternateDataSourceParameters(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param alternateDataSourceParameters
+     *        A set of alternate data source parameters that you want to share for these credentials. The credentials
+     *        are applied in tandem with the data source parameters when you copy a data source by using a create or
+     *        update request. The API compares the <code>DataSourceParameters</code> structure that's in the request
+     *        with the structures in the <code>AlternateDataSourceParameters</code> allowlist. If the structures are an
+     *        exact match, the request is allowed to use the new data source with the existing credentials. If the
+     *        <code>AlternateDataSourceParameters</code> list is null, the <code>DataSourceParameters</code> originally
+     *        used with these <code>Credentials</code> is automatically allowed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CredentialPair withAlternateDataSourceParameters(DataSourceParameters... alternateDataSourceParameters) {
+        if (this.alternateDataSourceParameters == null) {
+            setAlternateDataSourceParameters(new java.util.ArrayList<DataSourceParameters>(alternateDataSourceParameters.length));
+        }
+        for (DataSourceParameters ele : alternateDataSourceParameters) {
+            this.alternateDataSourceParameters.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A set of alternate data source parameters that you want to share for these credentials. The credentials are
+     * applied in tandem with the data source parameters when you copy a data source by using a create or update
+     * request. The API compares the <code>DataSourceParameters</code> structure that's in the request with the
+     * structures in the <code>AlternateDataSourceParameters</code> allowlist. If the structures are an exact match, the
+     * request is allowed to use the new data source with the existing credentials. If the
+     * <code>AlternateDataSourceParameters</code> list is null, the <code>DataSourceParameters</code> originally used
+     * with these <code>Credentials</code> is automatically allowed.
+     * </p>
+     * 
+     * @param alternateDataSourceParameters
+     *        A set of alternate data source parameters that you want to share for these credentials. The credentials
+     *        are applied in tandem with the data source parameters when you copy a data source by using a create or
+     *        update request. The API compares the <code>DataSourceParameters</code> structure that's in the request
+     *        with the structures in the <code>AlternateDataSourceParameters</code> allowlist. If the structures are an
+     *        exact match, the request is allowed to use the new data source with the existing credentials. If the
+     *        <code>AlternateDataSourceParameters</code> list is null, the <code>DataSourceParameters</code> originally
+     *        used with these <code>Credentials</code> is automatically allowed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CredentialPair withAlternateDataSourceParameters(java.util.Collection<DataSourceParameters> alternateDataSourceParameters) {
+        setAlternateDataSourceParameters(alternateDataSourceParameters);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -136,7 +266,9 @@ public class CredentialPair implements Serializable, Cloneable, StructuredPojo {
         if (getUsername() != null)
             sb.append("Username: ").append(getUsername()).append(",");
         if (getPassword() != null)
-            sb.append("Password: ").append(getPassword());
+            sb.append("Password: ").append(getPassword()).append(",");
+        if (getAlternateDataSourceParameters() != null)
+            sb.append("AlternateDataSourceParameters: ").append(getAlternateDataSourceParameters());
         sb.append("}");
         return sb.toString();
     }
@@ -159,6 +291,11 @@ public class CredentialPair implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getPassword() != null && other.getPassword().equals(this.getPassword()) == false)
             return false;
+        if (other.getAlternateDataSourceParameters() == null ^ this.getAlternateDataSourceParameters() == null)
+            return false;
+        if (other.getAlternateDataSourceParameters() != null
+                && other.getAlternateDataSourceParameters().equals(this.getAlternateDataSourceParameters()) == false)
+            return false;
         return true;
     }
 
@@ -169,6 +306,7 @@ public class CredentialPair implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getUsername() == null) ? 0 : getUsername().hashCode());
         hashCode = prime * hashCode + ((getPassword() == null) ? 0 : getPassword().hashCode());
+        hashCode = prime * hashCode + ((getAlternateDataSourceParameters() == null) ? 0 : getAlternateDataSourceParameters().hashCode());
         return hashCode;
     }
 

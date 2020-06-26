@@ -68,8 +68,8 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
      * <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
      * <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
      * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
-     * <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
-     * <code>"sqlserver"</code>.
+     * <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * <code>"sqlserver"</code>, and <code>"neptune"</code>.
      * </p>
      */
     private String engineName;
@@ -245,7 +245,7 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
     private ElasticsearchSettings elasticsearchSettings;
     /**
      * <p>
-     * The settings for the MongoDB source endpoint. For more information, see the <code>NeptuneSettings</code>
+     * The settings for the Amazon Neptune target endpoint. For more information, see the <code>NeptuneSettings</code>
      * structure.
      * </p>
      */
@@ -382,8 +382,8 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
      * <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
      * <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
      * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
-     * <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
-     * <code>"sqlserver"</code>.
+     * <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * <code>"sqlserver"</code>, and <code>"neptune"</code>.
      * </p>
      * 
      * @param engineName
@@ -391,8 +391,8 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
      *        <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
      *        <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
      *        <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
-     *        <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
-     *        <code>"sqlserver"</code>.
+     *        <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     *        <code>"sqlserver"</code>, and <code>"neptune"</code>.
      */
 
     public void setEngineName(String engineName) {
@@ -405,8 +405,8 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
      * <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
      * <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
      * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
-     * <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
-     * <code>"sqlserver"</code>.
+     * <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * <code>"sqlserver"</code>, and <code>"neptune"</code>.
      * </p>
      * 
      * @return The database engine name. Valid values, depending on the EndpointType, include <code>"mysql"</code>,
@@ -414,7 +414,7 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
      *         <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
      *         <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
      *         <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
-     *         and <code>"sqlserver"</code>.
+     *         <code>"sqlserver"</code>, and <code>"neptune"</code>.
      */
 
     public String getEngineName() {
@@ -427,8 +427,8 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
      * <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
      * <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
      * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
-     * <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
-     * <code>"sqlserver"</code>.
+     * <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * <code>"sqlserver"</code>, and <code>"neptune"</code>.
      * </p>
      * 
      * @param engineName
@@ -436,8 +436,8 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
      *        <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
      *        <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
      *        <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
-     *        <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
-     *        <code>"sqlserver"</code>.
+     *        <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     *        <code>"sqlserver"</code>, and <code>"neptune"</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1582,13 +1582,13 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The settings for the MongoDB source endpoint. For more information, see the <code>NeptuneSettings</code>
+     * The settings for the Amazon Neptune target endpoint. For more information, see the <code>NeptuneSettings</code>
      * structure.
      * </p>
      * 
      * @param neptuneSettings
-     *        The settings for the MongoDB source endpoint. For more information, see the <code>NeptuneSettings</code>
-     *        structure.
+     *        The settings for the Amazon Neptune target endpoint. For more information, see the
+     *        <code>NeptuneSettings</code> structure.
      */
 
     public void setNeptuneSettings(NeptuneSettings neptuneSettings) {
@@ -1597,12 +1597,12 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The settings for the MongoDB source endpoint. For more information, see the <code>NeptuneSettings</code>
+     * The settings for the Amazon Neptune target endpoint. For more information, see the <code>NeptuneSettings</code>
      * structure.
      * </p>
      * 
-     * @return The settings for the MongoDB source endpoint. For more information, see the <code>NeptuneSettings</code>
-     *         structure.
+     * @return The settings for the Amazon Neptune target endpoint. For more information, see the
+     *         <code>NeptuneSettings</code> structure.
      */
 
     public NeptuneSettings getNeptuneSettings() {
@@ -1611,13 +1611,13 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The settings for the MongoDB source endpoint. For more information, see the <code>NeptuneSettings</code>
+     * The settings for the Amazon Neptune target endpoint. For more information, see the <code>NeptuneSettings</code>
      * structure.
      * </p>
      * 
      * @param neptuneSettings
-     *        The settings for the MongoDB source endpoint. For more information, see the <code>NeptuneSettings</code>
-     *        structure.
+     *        The settings for the Amazon Neptune target endpoint. For more information, see the
+     *        <code>NeptuneSettings</code> structure.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

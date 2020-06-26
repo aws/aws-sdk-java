@@ -51,8 +51,8 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
      * <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
      * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
-     * <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
-     * <code>"sqlserver"</code>.
+     * <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * <code>"sqlserver"</code>, and <code>"neptune"</code>.
      * </p>
      */
     private String engineName;
@@ -184,7 +184,7 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * Settings in JSON format for the target endpoint for Amazon Kinesis Data Streams. For more information about the
      * available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html">Using
      * Amazon Kinesis Data Streams as a Target for AWS Database Migration Service</a> in the <i>AWS Database Migration
-     * User Guide.</i>
+     * Service User Guide.</i>
      * </p>
      */
     private KinesisSettings kinesisSettings;
@@ -192,7 +192,7 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Settings in JSON format for the target Apache Kafka endpoint. For more information about the available settings,
      * see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using Apache Kafka as a
-     * Target for AWS Database Migration Service</a> in the <i>AWS Database Migration User Guide.</i>
+     * Target for AWS Database Migration Service</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      */
     private KafkaSettings kafkaSettings;
@@ -202,7 +202,7 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration"
      * >Extra Connection Attributes When Using Elasticsearch as a Target for AWS DMS</a> in the <i>AWS Database
-     * Migration User Guide.</i>
+     * Migration Service User Guide.</i>
      * </p>
      */
     private ElasticsearchSettings elasticsearchSettings;
@@ -211,9 +211,8 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * Settings in JSON format for the target Amazon Neptune endpoint. For more information about the available
      * settings, see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings"
-     * >https
-     * ://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings</a> in
-     * the <i>AWS Database Migration Service User Guide.</i>
+     * >Specifying Endpoint Settings for Amazon Neptune as a Target</a> in the <i>AWS Database Migration Service User
+     * Guide.</i>
      * </p>
      */
     private NeptuneSettings neptuneSettings;
@@ -385,8 +384,8 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
      * <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
      * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
-     * <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
-     * <code>"sqlserver"</code>.
+     * <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * <code>"sqlserver"</code>, and <code>"neptune"</code>.
      * </p>
      * 
      * @param engineName
@@ -395,7 +394,7 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>,
      *        <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
      *        <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
-     *        <code>"documentdb"</code>, and <code>"sqlserver"</code>.
+     *        <code>"documentdb"</code>, <code>"sqlserver"</code>, and <code>"neptune"</code>.
      */
 
     public void setEngineName(String engineName) {
@@ -408,8 +407,8 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
      * <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
      * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
-     * <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
-     * <code>"sqlserver"</code>.
+     * <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * <code>"sqlserver"</code>, and <code>"neptune"</code>.
      * </p>
      * 
      * @return The type of engine for the endpoint. Valid values, depending on the EndpointType, include
@@ -417,7 +416,7 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>,
      *         <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
      *         <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
-     *         <code>"documentdb"</code>, and <code>"sqlserver"</code>.
+     *         <code>"documentdb"</code>, <code>"sqlserver"</code>, and <code>"neptune"</code>.
      */
 
     public String getEngineName() {
@@ -430,8 +429,8 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
      * <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
      * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
-     * <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
-     * <code>"sqlserver"</code>.
+     * <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * <code>"sqlserver"</code>, and <code>"neptune"</code>.
      * </p>
      * 
      * @param engineName
@@ -440,7 +439,7 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>,
      *        <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
      *        <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
-     *        <code>"documentdb"</code>, and <code>"sqlserver"</code>.
+     *        <code>"documentdb"</code>, <code>"sqlserver"</code>, and <code>"neptune"</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1281,14 +1280,14 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * Settings in JSON format for the target endpoint for Amazon Kinesis Data Streams. For more information about the
      * available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html">Using
      * Amazon Kinesis Data Streams as a Target for AWS Database Migration Service</a> in the <i>AWS Database Migration
-     * User Guide.</i>
+     * Service User Guide.</i>
      * </p>
      * 
      * @param kinesisSettings
      *        Settings in JSON format for the target endpoint for Amazon Kinesis Data Streams. For more information
      *        about the available settings, see <a
      *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html">Using Amazon Kinesis Data
-     *        Streams as a Target for AWS Database Migration Service</a> in the <i>AWS Database Migration User
+     *        Streams as a Target for AWS Database Migration Service</a> in the <i>AWS Database Migration Service User
      *        Guide.</i>
      */
 
@@ -1301,14 +1300,14 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * Settings in JSON format for the target endpoint for Amazon Kinesis Data Streams. For more information about the
      * available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html">Using
      * Amazon Kinesis Data Streams as a Target for AWS Database Migration Service</a> in the <i>AWS Database Migration
-     * User Guide.</i>
+     * Service User Guide.</i>
      * </p>
      * 
      * @return Settings in JSON format for the target endpoint for Amazon Kinesis Data Streams. For more information
      *         about the available settings, see <a
      *         href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html">Using Amazon Kinesis
-     *         Data Streams as a Target for AWS Database Migration Service</a> in the <i>AWS Database Migration User
-     *         Guide.</i>
+     *         Data Streams as a Target for AWS Database Migration Service</a> in the <i>AWS Database Migration Service
+     *         User Guide.</i>
      */
 
     public KinesisSettings getKinesisSettings() {
@@ -1320,14 +1319,14 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * Settings in JSON format for the target endpoint for Amazon Kinesis Data Streams. For more information about the
      * available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html">Using
      * Amazon Kinesis Data Streams as a Target for AWS Database Migration Service</a> in the <i>AWS Database Migration
-     * User Guide.</i>
+     * Service User Guide.</i>
      * </p>
      * 
      * @param kinesisSettings
      *        Settings in JSON format for the target endpoint for Amazon Kinesis Data Streams. For more information
      *        about the available settings, see <a
      *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html">Using Amazon Kinesis Data
-     *        Streams as a Target for AWS Database Migration Service</a> in the <i>AWS Database Migration User
+     *        Streams as a Target for AWS Database Migration Service</a> in the <i>AWS Database Migration Service User
      *        Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1341,14 +1340,14 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Settings in JSON format for the target Apache Kafka endpoint. For more information about the available settings,
      * see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using Apache Kafka as a
-     * Target for AWS Database Migration Service</a> in the <i>AWS Database Migration User Guide.</i>
+     * Target for AWS Database Migration Service</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      * 
      * @param kafkaSettings
      *        Settings in JSON format for the target Apache Kafka endpoint. For more information about the available
      *        settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using
-     *        Apache Kafka as a Target for AWS Database Migration Service</a> in the <i>AWS Database Migration User
-     *        Guide.</i>
+     *        Apache Kafka as a Target for AWS Database Migration Service</a> in the <i>AWS Database Migration Service
+     *        User Guide.</i>
      */
 
     public void setKafkaSettings(KafkaSettings kafkaSettings) {
@@ -1359,13 +1358,13 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Settings in JSON format for the target Apache Kafka endpoint. For more information about the available settings,
      * see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using Apache Kafka as a
-     * Target for AWS Database Migration Service</a> in the <i>AWS Database Migration User Guide.</i>
+     * Target for AWS Database Migration Service</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      * 
      * @return Settings in JSON format for the target Apache Kafka endpoint. For more information about the available
      *         settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using
-     *         Apache Kafka as a Target for AWS Database Migration Service</a> in the <i>AWS Database Migration User
-     *         Guide.</i>
+     *         Apache Kafka as a Target for AWS Database Migration Service</a> in the <i>AWS Database Migration Service
+     *         User Guide.</i>
      */
 
     public KafkaSettings getKafkaSettings() {
@@ -1376,14 +1375,14 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Settings in JSON format for the target Apache Kafka endpoint. For more information about the available settings,
      * see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using Apache Kafka as a
-     * Target for AWS Database Migration Service</a> in the <i>AWS Database Migration User Guide.</i>
+     * Target for AWS Database Migration Service</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      * 
      * @param kafkaSettings
      *        Settings in JSON format for the target Apache Kafka endpoint. For more information about the available
      *        settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using
-     *        Apache Kafka as a Target for AWS Database Migration Service</a> in the <i>AWS Database Migration User
-     *        Guide.</i>
+     *        Apache Kafka as a Target for AWS Database Migration Service</a> in the <i>AWS Database Migration Service
+     *        User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1398,7 +1397,7 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration"
      * >Extra Connection Attributes When Using Elasticsearch as a Target for AWS DMS</a> in the <i>AWS Database
-     * Migration User Guide.</i>
+     * Migration Service User Guide.</i>
      * </p>
      * 
      * @param elasticsearchSettings
@@ -1406,7 +1405,7 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      *        settings, see <a href=
      *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration"
      *        >Extra Connection Attributes When Using Elasticsearch as a Target for AWS DMS</a> in the <i>AWS Database
-     *        Migration User Guide.</i>
+     *        Migration Service User Guide.</i>
      */
 
     public void setElasticsearchSettings(ElasticsearchSettings elasticsearchSettings) {
@@ -1419,14 +1418,14 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration"
      * >Extra Connection Attributes When Using Elasticsearch as a Target for AWS DMS</a> in the <i>AWS Database
-     * Migration User Guide.</i>
+     * Migration Service User Guide.</i>
      * </p>
      * 
      * @return Settings in JSON format for the target Elasticsearch endpoint. For more information about the available
      *         settings, see <a href=
      *         "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration"
      *         >Extra Connection Attributes When Using Elasticsearch as a Target for AWS DMS</a> in the <i>AWS Database
-     *         Migration User Guide.</i>
+     *         Migration Service User Guide.</i>
      */
 
     public ElasticsearchSettings getElasticsearchSettings() {
@@ -1439,7 +1438,7 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration"
      * >Extra Connection Attributes When Using Elasticsearch as a Target for AWS DMS</a> in the <i>AWS Database
-     * Migration User Guide.</i>
+     * Migration Service User Guide.</i>
      * </p>
      * 
      * @param elasticsearchSettings
@@ -1447,7 +1446,7 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      *        settings, see <a href=
      *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration"
      *        >Extra Connection Attributes When Using Elasticsearch as a Target for AWS DMS</a> in the <i>AWS Database
-     *        Migration User Guide.</i>
+     *        Migration Service User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1461,17 +1460,16 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * Settings in JSON format for the target Amazon Neptune endpoint. For more information about the available
      * settings, see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings"
-     * >https
-     * ://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings</a> in
-     * the <i>AWS Database Migration Service User Guide.</i>
+     * >Specifying Endpoint Settings for Amazon Neptune as a Target</a> in the <i>AWS Database Migration Service User
+     * Guide.</i>
      * </p>
      * 
      * @param neptuneSettings
      *        Settings in JSON format for the target Amazon Neptune endpoint. For more information about the available
      *        settings, see <a href=
      *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings"
-     *        >https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.
-     *        EndpointSettings</a> in the <i>AWS Database Migration Service User Guide.</i>
+     *        >Specifying Endpoint Settings for Amazon Neptune as a Target</a> in the <i>AWS Database Migration Service
+     *        User Guide.</i>
      */
 
     public void setNeptuneSettings(NeptuneSettings neptuneSettings) {
@@ -1483,16 +1481,15 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * Settings in JSON format for the target Amazon Neptune endpoint. For more information about the available
      * settings, see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings"
-     * >https
-     * ://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings</a> in
-     * the <i>AWS Database Migration Service User Guide.</i>
+     * >Specifying Endpoint Settings for Amazon Neptune as a Target</a> in the <i>AWS Database Migration Service User
+     * Guide.</i>
      * </p>
      * 
      * @return Settings in JSON format for the target Amazon Neptune endpoint. For more information about the available
      *         settings, see <a href=
      *         "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings"
-     *         >https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.
-     *         EndpointSettings</a> in the <i>AWS Database Migration Service User Guide.</i>
+     *         >Specifying Endpoint Settings for Amazon Neptune as a Target</a> in the <i>AWS Database Migration Service
+     *         User Guide.</i>
      */
 
     public NeptuneSettings getNeptuneSettings() {
@@ -1504,17 +1501,16 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * Settings in JSON format for the target Amazon Neptune endpoint. For more information about the available
      * settings, see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings"
-     * >https
-     * ://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings</a> in
-     * the <i>AWS Database Migration Service User Guide.</i>
+     * >Specifying Endpoint Settings for Amazon Neptune as a Target</a> in the <i>AWS Database Migration Service User
+     * Guide.</i>
      * </p>
      * 
      * @param neptuneSettings
      *        Settings in JSON format for the target Amazon Neptune endpoint. For more information about the available
      *        settings, see <a href=
      *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings"
-     *        >https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.
-     *        EndpointSettings</a> in the <i>AWS Database Migration Service User Guide.</i>
+     *        >Specifying Endpoint Settings for Amazon Neptune as a Target</a> in the <i>AWS Database Migration Service
+     *        User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -35,6 +35,8 @@ public class CreateTransformJobRequestMarshaller {
             .marshallLocationName("ModelName").build();
     private static final MarshallingInfo<Integer> MAXCONCURRENTTRANSFORMS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxConcurrentTransforms").build();
+    private static final MarshallingInfo<StructuredPojo> MODELCLIENTCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ModelClientConfig").build();
     private static final MarshallingInfo<Integer> MAXPAYLOADINMB_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxPayloadInMB").build();
     private static final MarshallingInfo<String> BATCHSTRATEGY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -73,6 +75,7 @@ public class CreateTransformJobRequestMarshaller {
             protocolMarshaller.marshall(createTransformJobRequest.getTransformJobName(), TRANSFORMJOBNAME_BINDING);
             protocolMarshaller.marshall(createTransformJobRequest.getModelName(), MODELNAME_BINDING);
             protocolMarshaller.marshall(createTransformJobRequest.getMaxConcurrentTransforms(), MAXCONCURRENTTRANSFORMS_BINDING);
+            protocolMarshaller.marshall(createTransformJobRequest.getModelClientConfig(), MODELCLIENTCONFIG_BINDING);
             protocolMarshaller.marshall(createTransformJobRequest.getMaxPayloadInMB(), MAXPAYLOADINMB_BINDING);
             protocolMarshaller.marshall(createTransformJobRequest.getBatchStrategy(), BATCHSTRATEGY_BINDING);
             protocolMarshaller.marshall(createTransformJobRequest.getEnvironment(), ENVIRONMENT_BINDING);

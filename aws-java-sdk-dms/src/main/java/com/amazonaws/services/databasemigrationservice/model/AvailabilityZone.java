@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The name of the Availability Zone for use during database migration.
+ * The name of an Availability Zone for use during database migration.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/AvailabilityZone" target="_top">AWS API

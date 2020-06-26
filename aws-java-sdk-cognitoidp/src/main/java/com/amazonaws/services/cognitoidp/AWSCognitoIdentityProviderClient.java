@@ -5299,7 +5299,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
 
             HttpResponseHandler<AmazonWebServiceResponse<InitiateAuthResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new InitiateAuthResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext);
+            response = anonymousInvoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -6146,7 +6146,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
             HttpResponseHandler<AmazonWebServiceResponse<RespondToAuthChallengeResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new RespondToAuthChallengeResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext);
+            response = anonymousInvoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 

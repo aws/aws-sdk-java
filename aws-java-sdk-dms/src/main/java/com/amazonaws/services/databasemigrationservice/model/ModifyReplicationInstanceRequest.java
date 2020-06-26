@@ -46,11 +46,13 @@ public class ModifyReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
     private Boolean applyImmediately;
     /**
      * <p>
-     * The compute and memory capacity of the replication instance.
+     * The compute and memory capacity of the replication instance as defined for the specified replication instance
+     * class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.
      * </p>
      * <p>
-     * Valid Values:
-     * <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large | dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code>
+     * For more information on the settings and capacities for the available replication instance classes, see <a href=
+     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
+     * > Selecting the right AWS DMS replication instance for your migration</a>.
      * </p>
      */
     private String replicationInstanceClass;
@@ -275,18 +277,24 @@ public class ModifyReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The compute and memory capacity of the replication instance.
+     * The compute and memory capacity of the replication instance as defined for the specified replication instance
+     * class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.
      * </p>
      * <p>
-     * Valid Values:
-     * <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large | dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code>
+     * For more information on the settings and capacities for the available replication instance classes, see <a href=
+     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
+     * > Selecting the right AWS DMS replication instance for your migration</a>.
      * </p>
      * 
      * @param replicationInstanceClass
-     *        The compute and memory capacity of the replication instance.</p>
+     *        The compute and memory capacity of the replication instance as defined for the specified replication
+     *        instance class. For example to specify the instance class dms.c4.large, set this parameter to
+     *        <code>"dms.c4.large"</code>.</p>
      *        <p>
-     *        Valid Values:
-     *        <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large | dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code>
+     *        For more information on the settings and capacities for the available replication instance classes, see <a
+     *        href=
+     *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
+     *        > Selecting the right AWS DMS replication instance for your migration</a>.
      */
 
     public void setReplicationInstanceClass(String replicationInstanceClass) {
@@ -295,17 +303,23 @@ public class ModifyReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The compute and memory capacity of the replication instance.
+     * The compute and memory capacity of the replication instance as defined for the specified replication instance
+     * class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.
      * </p>
      * <p>
-     * Valid Values:
-     * <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large | dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code>
+     * For more information on the settings and capacities for the available replication instance classes, see <a href=
+     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
+     * > Selecting the right AWS DMS replication instance for your migration</a>.
      * </p>
      * 
-     * @return The compute and memory capacity of the replication instance.</p>
+     * @return The compute and memory capacity of the replication instance as defined for the specified replication
+     *         instance class. For example to specify the instance class dms.c4.large, set this parameter to
+     *         <code>"dms.c4.large"</code>.</p>
      *         <p>
-     *         Valid Values:
-     *         <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large | dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code>
+     *         For more information on the settings and capacities for the available replication instance classes, see
+     *         <a href=
+     *         "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
+     *         > Selecting the right AWS DMS replication instance for your migration</a>.
      */
 
     public String getReplicationInstanceClass() {
@@ -314,18 +328,24 @@ public class ModifyReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The compute and memory capacity of the replication instance.
+     * The compute and memory capacity of the replication instance as defined for the specified replication instance
+     * class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.
      * </p>
      * <p>
-     * Valid Values:
-     * <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large | dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code>
+     * For more information on the settings and capacities for the available replication instance classes, see <a href=
+     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
+     * > Selecting the right AWS DMS replication instance for your migration</a>.
      * </p>
      * 
      * @param replicationInstanceClass
-     *        The compute and memory capacity of the replication instance.</p>
+     *        The compute and memory capacity of the replication instance as defined for the specified replication
+     *        instance class. For example to specify the instance class dms.c4.large, set this parameter to
+     *        <code>"dms.c4.large"</code>.</p>
      *        <p>
-     *        Valid Values:
-     *        <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large | dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code>
+     *        For more information on the settings and capacities for the available replication instance classes, see <a
+     *        href=
+     *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
+     *        > Selecting the right AWS DMS replication instance for your migration</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

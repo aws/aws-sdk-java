@@ -30,19 +30,19 @@ public class DashboardSearchFilter implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The comparison operator that you want to use as a filter. For example, <code>"Operator": "StringEquals"</code>.
+     * The comparison operator that you want to use as a filter, for example, <code>"Operator": "StringEquals"</code>.
      * </p>
      */
     private String operator;
     /**
      * <p>
-     * The name of the value that you want to use as a filter. For example, <code>"Name": "QUICKSIGHT_USER"</code>.
+     * The name of the value that you want to use as a filter, for example, <code>"Name": "QUICKSIGHT_USER"</code>.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The value of the named item, in this case <code>QUICKSIGHT_USER</code>, that you want to use as a filter. For
+     * The value of the named item, in this case <code>QUICKSIGHT_USER</code>, that you want to use as a filter, for
      * example, <code>"Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>.
      * </p>
      */
@@ -50,11 +50,11 @@ public class DashboardSearchFilter implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The comparison operator that you want to use as a filter. For example, <code>"Operator": "StringEquals"</code>.
+     * The comparison operator that you want to use as a filter, for example, <code>"Operator": "StringEquals"</code>.
      * </p>
      * 
      * @param operator
-     *        The comparison operator that you want to use as a filter. For example,
+     *        The comparison operator that you want to use as a filter, for example,
      *        <code>"Operator": "StringEquals"</code>.
      * @see FilterOperator
      */
@@ -65,10 +65,10 @@ public class DashboardSearchFilter implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The comparison operator that you want to use as a filter. For example, <code>"Operator": "StringEquals"</code>.
+     * The comparison operator that you want to use as a filter, for example, <code>"Operator": "StringEquals"</code>.
      * </p>
      * 
-     * @return The comparison operator that you want to use as a filter. For example,
+     * @return The comparison operator that you want to use as a filter, for example,
      *         <code>"Operator": "StringEquals"</code>.
      * @see FilterOperator
      */
@@ -79,11 +79,11 @@ public class DashboardSearchFilter implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The comparison operator that you want to use as a filter. For example, <code>"Operator": "StringEquals"</code>.
+     * The comparison operator that you want to use as a filter, for example, <code>"Operator": "StringEquals"</code>.
      * </p>
      * 
      * @param operator
-     *        The comparison operator that you want to use as a filter. For example,
+     *        The comparison operator that you want to use as a filter, for example,
      *        <code>"Operator": "StringEquals"</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FilterOperator
@@ -96,11 +96,11 @@ public class DashboardSearchFilter implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The comparison operator that you want to use as a filter. For example, <code>"Operator": "StringEquals"</code>.
+     * The comparison operator that you want to use as a filter, for example, <code>"Operator": "StringEquals"</code>.
      * </p>
      * 
      * @param operator
-     *        The comparison operator that you want to use as a filter. For example,
+     *        The comparison operator that you want to use as a filter, for example,
      *        <code>"Operator": "StringEquals"</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FilterOperator
@@ -113,11 +113,11 @@ public class DashboardSearchFilter implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The name of the value that you want to use as a filter. For example, <code>"Name": "QUICKSIGHT_USER"</code>.
+     * The name of the value that you want to use as a filter, for example, <code>"Name": "QUICKSIGHT_USER"</code>.
      * </p>
      * 
      * @param name
-     *        The name of the value that you want to use as a filter. For example,
+     *        The name of the value that you want to use as a filter, for example,
      *        <code>"Name": "QUICKSIGHT_USER"</code>.
      * @see DashboardFilterAttribute
      */
@@ -128,10 +128,10 @@ public class DashboardSearchFilter implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The name of the value that you want to use as a filter. For example, <code>"Name": "QUICKSIGHT_USER"</code>.
+     * The name of the value that you want to use as a filter, for example, <code>"Name": "QUICKSIGHT_USER"</code>.
      * </p>
      * 
-     * @return The name of the value that you want to use as a filter. For example,
+     * @return The name of the value that you want to use as a filter, for example,
      *         <code>"Name": "QUICKSIGHT_USER"</code>.
      * @see DashboardFilterAttribute
      */
@@ -142,11 +142,11 @@ public class DashboardSearchFilter implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The name of the value that you want to use as a filter. For example, <code>"Name": "QUICKSIGHT_USER"</code>.
+     * The name of the value that you want to use as a filter, for example, <code>"Name": "QUICKSIGHT_USER"</code>.
      * </p>
      * 
      * @param name
-     *        The name of the value that you want to use as a filter. For example,
+     *        The name of the value that you want to use as a filter, for example,
      *        <code>"Name": "QUICKSIGHT_USER"</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DashboardFilterAttribute
@@ -159,11 +159,11 @@ public class DashboardSearchFilter implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The name of the value that you want to use as a filter. For example, <code>"Name": "QUICKSIGHT_USER"</code>.
+     * The name of the value that you want to use as a filter, for example, <code>"Name": "QUICKSIGHT_USER"</code>.
      * </p>
      * 
      * @param name
-     *        The name of the value that you want to use as a filter. For example,
+     *        The name of the value that you want to use as a filter, for example,
      *        <code>"Name": "QUICKSIGHT_USER"</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DashboardFilterAttribute
@@ -176,13 +176,13 @@ public class DashboardSearchFilter implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The value of the named item, in this case <code>QUICKSIGHT_USER</code>, that you want to use as a filter. For
+     * The value of the named item, in this case <code>QUICKSIGHT_USER</code>, that you want to use as a filter, for
      * example, <code>"Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>.
      * </p>
      * 
      * @param value
-     *        The value of the named item, in this case <code>QUICKSIGHT_USER</code>, that you want to use as a filter.
-     *        For example, <code>"Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>.
+     *        The value of the named item, in this case <code>QUICKSIGHT_USER</code>, that you want to use as a filter,
+     *        for example, <code>"Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>.
      */
 
     public void setValue(String value) {
@@ -191,12 +191,12 @@ public class DashboardSearchFilter implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The value of the named item, in this case <code>QUICKSIGHT_USER</code>, that you want to use as a filter. For
+     * The value of the named item, in this case <code>QUICKSIGHT_USER</code>, that you want to use as a filter, for
      * example, <code>"Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>.
      * </p>
      * 
-     * @return The value of the named item, in this case <code>QUICKSIGHT_USER</code>, that you want to use as a filter.
-     *         For example, <code>"Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>.
+     * @return The value of the named item, in this case <code>QUICKSIGHT_USER</code>, that you want to use as a filter,
+     *         for example, <code>"Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>.
      */
 
     public String getValue() {
@@ -205,13 +205,13 @@ public class DashboardSearchFilter implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The value of the named item, in this case <code>QUICKSIGHT_USER</code>, that you want to use as a filter. For
+     * The value of the named item, in this case <code>QUICKSIGHT_USER</code>, that you want to use as a filter, for
      * example, <code>"Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>.
      * </p>
      * 
      * @param value
-     *        The value of the named item, in this case <code>QUICKSIGHT_USER</code>, that you want to use as a filter.
-     *        For example, <code>"Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>.
+     *        The value of the named item, in this case <code>QUICKSIGHT_USER</code>, that you want to use as a filter,
+     *        for example, <code>"Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

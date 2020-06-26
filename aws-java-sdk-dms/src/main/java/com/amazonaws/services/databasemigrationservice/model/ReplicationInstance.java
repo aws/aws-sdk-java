@@ -38,7 +38,7 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * Must contain 1-63 alphanumeric characters or hyphens.
      * </p>
      * </li>
      * <li>
@@ -59,18 +59,87 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
     private String replicationInstanceIdentifier;
     /**
      * <p>
-     * The compute and memory capacity of the replication instance.
+     * The compute and memory capacity of the replication instance as defined for the specified replication instance
+     * class.
      * </p>
      * <p>
-     * Valid Values:
-     * <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large | dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code>
+     * For more information on the settings and capacities for the available replication instance classes, see <a href=
+     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
+     * > Selecting the right AWS DMS replication instance for your migration</a>.
      * </p>
      */
     private String replicationInstanceClass;
     /**
      * <p>
-     * The status of the replication instance.
+     * The status of the replication instance. The possible return values include:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"available"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"creating"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"deleted"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"deleting"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"failed"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"modifying"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"upgrading"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"rebooting"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"resetting-master-credentials"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"storage-full"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"incompatible-credentials"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"incompatible-network"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"maintenance"</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String replicationInstanceStatus;
     /**
@@ -202,7 +271,7 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
     private java.util.Date freeUntil;
     /**
      * <p>
-     * The DNS name servers for the replication instance.
+     * The DNS name servers supported for the replication instance to access your on-premise source or target database.
      * </p>
      */
     private String dnsNameServers;
@@ -217,7 +286,7 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * Must contain 1-63 alphanumeric characters or hyphens.
      * </p>
      * </li>
      * <li>
@@ -243,7 +312,7 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *        Must contain 1-63 alphanumeric characters or hyphens.
      *        </p>
      *        </li>
      *        <li>
@@ -275,7 +344,7 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * Must contain 1-63 alphanumeric characters or hyphens.
      * </p>
      * </li>
      * <li>
@@ -300,7 +369,7 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
      *         <ul>
      *         <li>
      *         <p>
-     *         Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *         Must contain 1-63 alphanumeric characters or hyphens.
      *         </p>
      *         </li>
      *         <li>
@@ -332,7 +401,7 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * Must contain 1-63 alphanumeric characters or hyphens.
      * </p>
      * </li>
      * <li>
@@ -358,7 +427,7 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *        Must contain 1-63 alphanumeric characters or hyphens.
      *        </p>
      *        </li>
      *        <li>
@@ -384,18 +453,23 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The compute and memory capacity of the replication instance.
+     * The compute and memory capacity of the replication instance as defined for the specified replication instance
+     * class.
      * </p>
      * <p>
-     * Valid Values:
-     * <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large | dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code>
+     * For more information on the settings and capacities for the available replication instance classes, see <a href=
+     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
+     * > Selecting the right AWS DMS replication instance for your migration</a>.
      * </p>
      * 
      * @param replicationInstanceClass
-     *        The compute and memory capacity of the replication instance.</p>
+     *        The compute and memory capacity of the replication instance as defined for the specified replication
+     *        instance class.</p>
      *        <p>
-     *        Valid Values:
-     *        <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large | dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code>
+     *        For more information on the settings and capacities for the available replication instance classes, see <a
+     *        href=
+     *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
+     *        > Selecting the right AWS DMS replication instance for your migration</a>.
      */
 
     public void setReplicationInstanceClass(String replicationInstanceClass) {
@@ -404,17 +478,22 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The compute and memory capacity of the replication instance.
+     * The compute and memory capacity of the replication instance as defined for the specified replication instance
+     * class.
      * </p>
      * <p>
-     * Valid Values:
-     * <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large | dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code>
+     * For more information on the settings and capacities for the available replication instance classes, see <a href=
+     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
+     * > Selecting the right AWS DMS replication instance for your migration</a>.
      * </p>
      * 
-     * @return The compute and memory capacity of the replication instance.</p>
+     * @return The compute and memory capacity of the replication instance as defined for the specified replication
+     *         instance class.</p>
      *         <p>
-     *         Valid Values:
-     *         <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large | dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code>
+     *         For more information on the settings and capacities for the available replication instance classes, see
+     *         <a href=
+     *         "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
+     *         > Selecting the right AWS DMS replication instance for your migration</a>.
      */
 
     public String getReplicationInstanceClass() {
@@ -423,18 +502,23 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The compute and memory capacity of the replication instance.
+     * The compute and memory capacity of the replication instance as defined for the specified replication instance
+     * class.
      * </p>
      * <p>
-     * Valid Values:
-     * <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large | dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code>
+     * For more information on the settings and capacities for the available replication instance classes, see <a href=
+     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
+     * > Selecting the right AWS DMS replication instance for your migration</a>.
      * </p>
      * 
      * @param replicationInstanceClass
-     *        The compute and memory capacity of the replication instance.</p>
+     *        The compute and memory capacity of the replication instance as defined for the specified replication
+     *        instance class.</p>
      *        <p>
-     *        Valid Values:
-     *        <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large | dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code>
+     *        For more information on the settings and capacities for the available replication instance classes, see <a
+     *        href=
+     *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
+     *        > Selecting the right AWS DMS replication instance for your migration</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -445,11 +529,144 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The status of the replication instance.
+     * The status of the replication instance. The possible return values include:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"available"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"creating"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"deleted"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"deleting"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"failed"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"modifying"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"upgrading"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"rebooting"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"resetting-master-credentials"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"storage-full"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"incompatible-credentials"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"incompatible-network"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"maintenance"</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param replicationInstanceStatus
-     *        The status of the replication instance.
+     *        The status of the replication instance. The possible return values include:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>"available"</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"creating"</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"deleted"</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"deleting"</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"failed"</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"modifying"</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"upgrading"</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"rebooting"</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"resetting-master-credentials"</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"storage-full"</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"incompatible-credentials"</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"incompatible-network"</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"maintenance"</code>
+     *        </p>
+     *        </li>
      */
 
     public void setReplicationInstanceStatus(String replicationInstanceStatus) {
@@ -458,10 +675,143 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The status of the replication instance.
+     * The status of the replication instance. The possible return values include:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"available"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"creating"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"deleted"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"deleting"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"failed"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"modifying"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"upgrading"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"rebooting"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"resetting-master-credentials"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"storage-full"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"incompatible-credentials"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"incompatible-network"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"maintenance"</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The status of the replication instance.
+     * @return The status of the replication instance. The possible return values include:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>"available"</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>"creating"</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>"deleted"</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>"deleting"</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>"failed"</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>"modifying"</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>"upgrading"</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>"rebooting"</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>"resetting-master-credentials"</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>"storage-full"</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>"incompatible-credentials"</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>"incompatible-network"</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>"maintenance"</code>
+     *         </p>
+     *         </li>
      */
 
     public String getReplicationInstanceStatus() {
@@ -470,11 +820,144 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The status of the replication instance.
+     * The status of the replication instance. The possible return values include:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"available"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"creating"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"deleted"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"deleting"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"failed"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"modifying"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"upgrading"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"rebooting"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"resetting-master-credentials"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"storage-full"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"incompatible-credentials"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"incompatible-network"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"maintenance"</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param replicationInstanceStatus
-     *        The status of the replication instance.
+     *        The status of the replication instance. The possible return values include:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>"available"</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"creating"</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"deleted"</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"deleting"</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"failed"</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"modifying"</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"upgrading"</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"rebooting"</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"resetting-master-credentials"</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"storage-full"</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"incompatible-credentials"</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"incompatible-network"</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"maintenance"</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1442,11 +1925,12 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The DNS name servers for the replication instance.
+     * The DNS name servers supported for the replication instance to access your on-premise source or target database.
      * </p>
      * 
      * @param dnsNameServers
-     *        The DNS name servers for the replication instance.
+     *        The DNS name servers supported for the replication instance to access your on-premise source or target
+     *        database.
      */
 
     public void setDnsNameServers(String dnsNameServers) {
@@ -1455,10 +1939,11 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The DNS name servers for the replication instance.
+     * The DNS name servers supported for the replication instance to access your on-premise source or target database.
      * </p>
      * 
-     * @return The DNS name servers for the replication instance.
+     * @return The DNS name servers supported for the replication instance to access your on-premise source or target
+     *         database.
      */
 
     public String getDnsNameServers() {
@@ -1467,11 +1952,12 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The DNS name servers for the replication instance.
+     * The DNS name servers supported for the replication instance to access your on-premise source or target database.
      * </p>
      * 
      * @param dnsNameServers
-     *        The DNS name servers for the replication instance.
+     *        The DNS name servers supported for the replication instance to access your on-premise source or target
+     *        database.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

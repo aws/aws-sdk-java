@@ -36,7 +36,7 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * Must contain 1-63 alphanumeric characters or hyphens.
      * </p>
      * </li>
      * <li>
@@ -63,11 +63,13 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
     private Integer allocatedStorage;
     /**
      * <p>
-     * The compute and memory capacity of the replication instance as specified by the replication instance class.
+     * The compute and memory capacity of the replication instance as defined for the specified replication instance
+     * class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.
      * </p>
      * <p>
-     * Valid Values:
-     * <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large | dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code>
+     * For more information on the settings and capacities for the available replication instance classes, see <a href=
+     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
+     * > Selecting the right AWS DMS replication instance for your migration</a>.
      * </p>
      */
     private String replicationInstanceClass;
@@ -163,7 +165,10 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
     private Boolean publiclyAccessible;
     /**
      * <p>
-     * A list of DNS name servers supported for the replication instance.
+     * A list of custom DNS name servers supported for the replication instance to access your on-premise source or
+     * target database. This list overrides the default name servers supported by the replication instance. You can
+     * specify a comma-separated list of internet addresses for up to four on-premise DNS name servers. For example:
+     * <code>"1.1.1.1,2.2.2.2,3.3.3.3,4.4.4.4"</code>
      * </p>
      */
     private String dnsNameServers;
@@ -178,7 +183,7 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * Must contain 1-63 alphanumeric characters or hyphens.
      * </p>
      * </li>
      * <li>
@@ -204,7 +209,7 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *        Must contain 1-63 alphanumeric characters or hyphens.
      *        </p>
      *        </li>
      *        <li>
@@ -236,7 +241,7 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * Must contain 1-63 alphanumeric characters or hyphens.
      * </p>
      * </li>
      * <li>
@@ -261,7 +266,7 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      *         <ul>
      *         <li>
      *         <p>
-     *         Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *         Must contain 1-63 alphanumeric characters or hyphens.
      *         </p>
      *         </li>
      *         <li>
@@ -293,7 +298,7 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * Must contain 1-63 alphanumeric characters or hyphens.
      * </p>
      * </li>
      * <li>
@@ -319,7 +324,7 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *        Must contain 1-63 alphanumeric characters or hyphens.
      *        </p>
      *        </li>
      *        <li>
@@ -385,19 +390,24 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The compute and memory capacity of the replication instance as specified by the replication instance class.
+     * The compute and memory capacity of the replication instance as defined for the specified replication instance
+     * class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.
      * </p>
      * <p>
-     * Valid Values:
-     * <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large | dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code>
+     * For more information on the settings and capacities for the available replication instance classes, see <a href=
+     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
+     * > Selecting the right AWS DMS replication instance for your migration</a>.
      * </p>
      * 
      * @param replicationInstanceClass
-     *        The compute and memory capacity of the replication instance as specified by the replication instance
-     *        class.</p>
+     *        The compute and memory capacity of the replication instance as defined for the specified replication
+     *        instance class. For example to specify the instance class dms.c4.large, set this parameter to
+     *        <code>"dms.c4.large"</code>.</p>
      *        <p>
-     *        Valid Values:
-     *        <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large | dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code>
+     *        For more information on the settings and capacities for the available replication instance classes, see <a
+     *        href=
+     *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
+     *        > Selecting the right AWS DMS replication instance for your migration</a>.
      */
 
     public void setReplicationInstanceClass(String replicationInstanceClass) {
@@ -406,18 +416,23 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The compute and memory capacity of the replication instance as specified by the replication instance class.
+     * The compute and memory capacity of the replication instance as defined for the specified replication instance
+     * class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.
      * </p>
      * <p>
-     * Valid Values:
-     * <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large | dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code>
+     * For more information on the settings and capacities for the available replication instance classes, see <a href=
+     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
+     * > Selecting the right AWS DMS replication instance for your migration</a>.
      * </p>
      * 
-     * @return The compute and memory capacity of the replication instance as specified by the replication instance
-     *         class.</p>
+     * @return The compute and memory capacity of the replication instance as defined for the specified replication
+     *         instance class. For example to specify the instance class dms.c4.large, set this parameter to
+     *         <code>"dms.c4.large"</code>.</p>
      *         <p>
-     *         Valid Values:
-     *         <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large | dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code>
+     *         For more information on the settings and capacities for the available replication instance classes, see
+     *         <a href=
+     *         "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
+     *         > Selecting the right AWS DMS replication instance for your migration</a>.
      */
 
     public String getReplicationInstanceClass() {
@@ -426,19 +441,24 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The compute and memory capacity of the replication instance as specified by the replication instance class.
+     * The compute and memory capacity of the replication instance as defined for the specified replication instance
+     * class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.
      * </p>
      * <p>
-     * Valid Values:
-     * <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large | dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code>
+     * For more information on the settings and capacities for the available replication instance classes, see <a href=
+     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
+     * > Selecting the right AWS DMS replication instance for your migration</a>.
      * </p>
      * 
      * @param replicationInstanceClass
-     *        The compute and memory capacity of the replication instance as specified by the replication instance
-     *        class.</p>
+     *        The compute and memory capacity of the replication instance as defined for the specified replication
+     *        instance class. For example to specify the instance class dms.c4.large, set this parameter to
+     *        <code>"dms.c4.large"</code>.</p>
      *        <p>
-     *        Valid Values:
-     *        <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large | dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code>
+     *        For more information on the settings and capacities for the available replication instance classes, see <a
+     *        href=
+     *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
+     *        > Selecting the right AWS DMS replication instance for your migration</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1131,11 +1151,17 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A list of DNS name servers supported for the replication instance.
+     * A list of custom DNS name servers supported for the replication instance to access your on-premise source or
+     * target database. This list overrides the default name servers supported by the replication instance. You can
+     * specify a comma-separated list of internet addresses for up to four on-premise DNS name servers. For example:
+     * <code>"1.1.1.1,2.2.2.2,3.3.3.3,4.4.4.4"</code>
      * </p>
      * 
      * @param dnsNameServers
-     *        A list of DNS name servers supported for the replication instance.
+     *        A list of custom DNS name servers supported for the replication instance to access your on-premise source
+     *        or target database. This list overrides the default name servers supported by the replication instance.
+     *        You can specify a comma-separated list of internet addresses for up to four on-premise DNS name servers.
+     *        For example: <code>"1.1.1.1,2.2.2.2,3.3.3.3,4.4.4.4"</code>
      */
 
     public void setDnsNameServers(String dnsNameServers) {
@@ -1144,10 +1170,16 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A list of DNS name servers supported for the replication instance.
+     * A list of custom DNS name servers supported for the replication instance to access your on-premise source or
+     * target database. This list overrides the default name servers supported by the replication instance. You can
+     * specify a comma-separated list of internet addresses for up to four on-premise DNS name servers. For example:
+     * <code>"1.1.1.1,2.2.2.2,3.3.3.3,4.4.4.4"</code>
      * </p>
      * 
-     * @return A list of DNS name servers supported for the replication instance.
+     * @return A list of custom DNS name servers supported for the replication instance to access your on-premise source
+     *         or target database. This list overrides the default name servers supported by the replication instance.
+     *         You can specify a comma-separated list of internet addresses for up to four on-premise DNS name servers.
+     *         For example: <code>"1.1.1.1,2.2.2.2,3.3.3.3,4.4.4.4"</code>
      */
 
     public String getDnsNameServers() {
@@ -1156,11 +1188,17 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A list of DNS name servers supported for the replication instance.
+     * A list of custom DNS name servers supported for the replication instance to access your on-premise source or
+     * target database. This list overrides the default name servers supported by the replication instance. You can
+     * specify a comma-separated list of internet addresses for up to four on-premise DNS name servers. For example:
+     * <code>"1.1.1.1,2.2.2.2,3.3.3.3,4.4.4.4"</code>
      * </p>
      * 
      * @param dnsNameServers
-     *        A list of DNS name servers supported for the replication instance.
+     *        A list of custom DNS name servers supported for the replication instance to access your on-premise source
+     *        or target database. This list overrides the default name servers supported by the replication instance.
+     *        You can specify a comma-separated list of internet addresses for up to four on-premise DNS name servers.
+     *        For example: <code>"1.1.1.1,2.2.2.2,3.3.3.3,4.4.4.4"</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

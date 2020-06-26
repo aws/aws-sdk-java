@@ -80,6 +80,11 @@ public class StackInstanceStaxUnmarshaller implements Unmarshaller<StackInstance
                     continue;
                 }
 
+                if (context.testExpression("StackInstanceStatus", targetDepth)) {
+                    stackInstance.setStackInstanceStatus(StackInstanceComprehensiveStatusStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("StatusReason", targetDepth)) {
                     stackInstance.setStatusReason(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

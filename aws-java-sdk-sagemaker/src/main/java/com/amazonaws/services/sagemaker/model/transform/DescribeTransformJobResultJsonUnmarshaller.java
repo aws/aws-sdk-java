@@ -72,6 +72,10 @@ public class DescribeTransformJobResultJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     describeTransformJobResult.setMaxConcurrentTransforms(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("ModelClientConfig", targetDepth)) {
+                    context.nextToken();
+                    describeTransformJobResult.setModelClientConfig(ModelClientConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("MaxPayloadInMB", targetDepth)) {
                     context.nextToken();
                     describeTransformJobResult.setMaxPayloadInMB(context.getUnmarshaller(Integer.class).unmarshall(context));

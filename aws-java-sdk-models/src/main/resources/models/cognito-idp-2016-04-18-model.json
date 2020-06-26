@@ -1327,7 +1327,8 @@
         {"shape":"InvalidSmsRoleAccessPolicyException"},
         {"shape":"InvalidSmsRoleTrustRelationshipException"}
       ],
-      "documentation":"<p>Initiates the authentication flow.</p>"
+      "documentation":"<p>Initiates the authentication flow.</p>",
+      "authtype":"none"
     },
     "ListDevices":{
       "name":"ListDevices",
@@ -1559,7 +1560,8 @@
         {"shape":"InternalErrorException"},
         {"shape":"SoftwareTokenMFANotFoundException"}
       ],
-      "documentation":"<p>Responds to the authentication challenge.</p>"
+      "documentation":"<p>Responds to the authentication challenge.</p>",
+      "authtype":"none"
     },
     "SetRiskConfiguration":{
       "name":"SetRiskConfiguration",

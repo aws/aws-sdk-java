@@ -63,10 +63,7 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
      * The authentication type you use to access the MongoDB source endpoint.
      * </p>
      * <p>
-     * Valid values: NO, PASSWORD
-     * </p>
-     * <p>
-     * When NO is selected, user name and password parameters are not used and can be empty.
+     * When when set to <code>"no"</code>, user name and password parameters are not used and can be empty.
      * </p>
      */
     private String authType;
@@ -75,11 +72,9 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
      * The authentication mechanism you use to access the MongoDB source endpoint.
      * </p>
      * <p>
-     * Valid values: DEFAULT, MONGODB_CR, SCRAM_SHA_1
-     * </p>
-     * <p>
-     * DEFAULT – For MongoDB version 2.x, use MONGODB_CR. For MongoDB version 3.x, use SCRAM_SHA_1. This setting isn't
-     * used when authType=No.
+     * For the default value, in MongoDB version 2.x, <code>"default"</code> is <code>"mongodb_cr"</code>. For MongoDB
+     * version 3.x or later, <code>"default"</code> is <code>"scram_sha_1"</code>. This setting isn't used when
+     * <code>AuthType</code> is set to <code>"no"</code>.
      * </p>
      */
     private String authMechanism;
@@ -88,38 +83,36 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
      * Specifies either document or table mode.
      * </p>
      * <p>
-     * Valid values: NONE, ONE
-     * </p>
-     * <p>
-     * Default value is NONE. Specify NONE to use document mode. Specify ONE to use table mode.
+     * Default value is <code>"none"</code>. Specify <code>"none"</code> to use document mode. Specify
+     * <code>"one"</code> to use table mode.
      * </p>
      */
     private String nestingLevel;
     /**
      * <p>
-     * Specifies the document ID. Use this setting when <code>NestingLevel</code> is set to NONE.
+     * Specifies the document ID. Use this setting when <code>NestingLevel</code> is set to <code>"none"</code>.
      * </p>
      * <p>
-     * Default value is false.
+     * Default value is <code>"false"</code>.
      * </p>
      */
     private String extractDocId;
     /**
      * <p>
      * Indicates the number of documents to preview to determine the document organization. Use this setting when
-     * <code>NestingLevel</code> is set to ONE.
+     * <code>NestingLevel</code> is set to <code>"one"</code>.
      * </p>
      * <p>
-     * Must be a positive value greater than 0. Default value is 1000.
+     * Must be a positive value greater than <code>0</code>. Default value is <code>1000</code>.
      * </p>
      */
     private String docsToInvestigate;
     /**
      * <p>
-     * The MongoDB database name. This setting isn't used when <code>authType=NO</code>.
+     * The MongoDB database name. This setting isn't used when <code>AuthType</code> is set to <code>"no"</code>.
      * </p>
      * <p>
-     * The default is admin.
+     * The default is <code>"admin"</code>.
      * </p>
      */
     private String authSource;
@@ -338,19 +331,13 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
      * The authentication type you use to access the MongoDB source endpoint.
      * </p>
      * <p>
-     * Valid values: NO, PASSWORD
-     * </p>
-     * <p>
-     * When NO is selected, user name and password parameters are not used and can be empty.
+     * When when set to <code>"no"</code>, user name and password parameters are not used and can be empty.
      * </p>
      * 
      * @param authType
      *        The authentication type you use to access the MongoDB source endpoint.</p>
      *        <p>
-     *        Valid values: NO, PASSWORD
-     *        </p>
-     *        <p>
-     *        When NO is selected, user name and password parameters are not used and can be empty.
+     *        When when set to <code>"no"</code>, user name and password parameters are not used and can be empty.
      * @see AuthTypeValue
      */
 
@@ -363,18 +350,12 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
      * The authentication type you use to access the MongoDB source endpoint.
      * </p>
      * <p>
-     * Valid values: NO, PASSWORD
-     * </p>
-     * <p>
-     * When NO is selected, user name and password parameters are not used and can be empty.
+     * When when set to <code>"no"</code>, user name and password parameters are not used and can be empty.
      * </p>
      * 
      * @return The authentication type you use to access the MongoDB source endpoint.</p>
      *         <p>
-     *         Valid values: NO, PASSWORD
-     *         </p>
-     *         <p>
-     *         When NO is selected, user name and password parameters are not used and can be empty.
+     *         When when set to <code>"no"</code>, user name and password parameters are not used and can be empty.
      * @see AuthTypeValue
      */
 
@@ -387,19 +368,13 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
      * The authentication type you use to access the MongoDB source endpoint.
      * </p>
      * <p>
-     * Valid values: NO, PASSWORD
-     * </p>
-     * <p>
-     * When NO is selected, user name and password parameters are not used and can be empty.
+     * When when set to <code>"no"</code>, user name and password parameters are not used and can be empty.
      * </p>
      * 
      * @param authType
      *        The authentication type you use to access the MongoDB source endpoint.</p>
      *        <p>
-     *        Valid values: NO, PASSWORD
-     *        </p>
-     *        <p>
-     *        When NO is selected, user name and password parameters are not used and can be empty.
+     *        When when set to <code>"no"</code>, user name and password parameters are not used and can be empty.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthTypeValue
      */
@@ -414,19 +389,13 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
      * The authentication type you use to access the MongoDB source endpoint.
      * </p>
      * <p>
-     * Valid values: NO, PASSWORD
-     * </p>
-     * <p>
-     * When NO is selected, user name and password parameters are not used and can be empty.
+     * When when set to <code>"no"</code>, user name and password parameters are not used and can be empty.
      * </p>
      * 
      * @param authType
      *        The authentication type you use to access the MongoDB source endpoint.</p>
      *        <p>
-     *        Valid values: NO, PASSWORD
-     *        </p>
-     *        <p>
-     *        When NO is selected, user name and password parameters are not used and can be empty.
+     *        When when set to <code>"no"</code>, user name and password parameters are not used and can be empty.
      * @see AuthTypeValue
      */
 
@@ -439,19 +408,13 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
      * The authentication type you use to access the MongoDB source endpoint.
      * </p>
      * <p>
-     * Valid values: NO, PASSWORD
-     * </p>
-     * <p>
-     * When NO is selected, user name and password parameters are not used and can be empty.
+     * When when set to <code>"no"</code>, user name and password parameters are not used and can be empty.
      * </p>
      * 
      * @param authType
      *        The authentication type you use to access the MongoDB source endpoint.</p>
      *        <p>
-     *        Valid values: NO, PASSWORD
-     *        </p>
-     *        <p>
-     *        When NO is selected, user name and password parameters are not used and can be empty.
+     *        When when set to <code>"no"</code>, user name and password parameters are not used and can be empty.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthTypeValue
      */
@@ -466,21 +429,17 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
      * The authentication mechanism you use to access the MongoDB source endpoint.
      * </p>
      * <p>
-     * Valid values: DEFAULT, MONGODB_CR, SCRAM_SHA_1
-     * </p>
-     * <p>
-     * DEFAULT – For MongoDB version 2.x, use MONGODB_CR. For MongoDB version 3.x, use SCRAM_SHA_1. This setting isn't
-     * used when authType=No.
+     * For the default value, in MongoDB version 2.x, <code>"default"</code> is <code>"mongodb_cr"</code>. For MongoDB
+     * version 3.x or later, <code>"default"</code> is <code>"scram_sha_1"</code>. This setting isn't used when
+     * <code>AuthType</code> is set to <code>"no"</code>.
      * </p>
      * 
      * @param authMechanism
      *        The authentication mechanism you use to access the MongoDB source endpoint.</p>
      *        <p>
-     *        Valid values: DEFAULT, MONGODB_CR, SCRAM_SHA_1
-     *        </p>
-     *        <p>
-     *        DEFAULT – For MongoDB version 2.x, use MONGODB_CR. For MongoDB version 3.x, use SCRAM_SHA_1. This setting
-     *        isn't used when authType=No.
+     *        For the default value, in MongoDB version 2.x, <code>"default"</code> is <code>"mongodb_cr"</code>. For
+     *        MongoDB version 3.x or later, <code>"default"</code> is <code>"scram_sha_1"</code>. This setting isn't
+     *        used when <code>AuthType</code> is set to <code>"no"</code>.
      * @see AuthMechanismValue
      */
 
@@ -493,20 +452,16 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
      * The authentication mechanism you use to access the MongoDB source endpoint.
      * </p>
      * <p>
-     * Valid values: DEFAULT, MONGODB_CR, SCRAM_SHA_1
-     * </p>
-     * <p>
-     * DEFAULT – For MongoDB version 2.x, use MONGODB_CR. For MongoDB version 3.x, use SCRAM_SHA_1. This setting isn't
-     * used when authType=No.
+     * For the default value, in MongoDB version 2.x, <code>"default"</code> is <code>"mongodb_cr"</code>. For MongoDB
+     * version 3.x or later, <code>"default"</code> is <code>"scram_sha_1"</code>. This setting isn't used when
+     * <code>AuthType</code> is set to <code>"no"</code>.
      * </p>
      * 
      * @return The authentication mechanism you use to access the MongoDB source endpoint.</p>
      *         <p>
-     *         Valid values: DEFAULT, MONGODB_CR, SCRAM_SHA_1
-     *         </p>
-     *         <p>
-     *         DEFAULT – For MongoDB version 2.x, use MONGODB_CR. For MongoDB version 3.x, use SCRAM_SHA_1. This setting
-     *         isn't used when authType=No.
+     *         For the default value, in MongoDB version 2.x, <code>"default"</code> is <code>"mongodb_cr"</code>. For
+     *         MongoDB version 3.x or later, <code>"default"</code> is <code>"scram_sha_1"</code>. This setting isn't
+     *         used when <code>AuthType</code> is set to <code>"no"</code>.
      * @see AuthMechanismValue
      */
 
@@ -519,21 +474,17 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
      * The authentication mechanism you use to access the MongoDB source endpoint.
      * </p>
      * <p>
-     * Valid values: DEFAULT, MONGODB_CR, SCRAM_SHA_1
-     * </p>
-     * <p>
-     * DEFAULT – For MongoDB version 2.x, use MONGODB_CR. For MongoDB version 3.x, use SCRAM_SHA_1. This setting isn't
-     * used when authType=No.
+     * For the default value, in MongoDB version 2.x, <code>"default"</code> is <code>"mongodb_cr"</code>. For MongoDB
+     * version 3.x or later, <code>"default"</code> is <code>"scram_sha_1"</code>. This setting isn't used when
+     * <code>AuthType</code> is set to <code>"no"</code>.
      * </p>
      * 
      * @param authMechanism
      *        The authentication mechanism you use to access the MongoDB source endpoint.</p>
      *        <p>
-     *        Valid values: DEFAULT, MONGODB_CR, SCRAM_SHA_1
-     *        </p>
-     *        <p>
-     *        DEFAULT – For MongoDB version 2.x, use MONGODB_CR. For MongoDB version 3.x, use SCRAM_SHA_1. This setting
-     *        isn't used when authType=No.
+     *        For the default value, in MongoDB version 2.x, <code>"default"</code> is <code>"mongodb_cr"</code>. For
+     *        MongoDB version 3.x or later, <code>"default"</code> is <code>"scram_sha_1"</code>. This setting isn't
+     *        used when <code>AuthType</code> is set to <code>"no"</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthMechanismValue
      */
@@ -548,21 +499,17 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
      * The authentication mechanism you use to access the MongoDB source endpoint.
      * </p>
      * <p>
-     * Valid values: DEFAULT, MONGODB_CR, SCRAM_SHA_1
-     * </p>
-     * <p>
-     * DEFAULT – For MongoDB version 2.x, use MONGODB_CR. For MongoDB version 3.x, use SCRAM_SHA_1. This setting isn't
-     * used when authType=No.
+     * For the default value, in MongoDB version 2.x, <code>"default"</code> is <code>"mongodb_cr"</code>. For MongoDB
+     * version 3.x or later, <code>"default"</code> is <code>"scram_sha_1"</code>. This setting isn't used when
+     * <code>AuthType</code> is set to <code>"no"</code>.
      * </p>
      * 
      * @param authMechanism
      *        The authentication mechanism you use to access the MongoDB source endpoint.</p>
      *        <p>
-     *        Valid values: DEFAULT, MONGODB_CR, SCRAM_SHA_1
-     *        </p>
-     *        <p>
-     *        DEFAULT – For MongoDB version 2.x, use MONGODB_CR. For MongoDB version 3.x, use SCRAM_SHA_1. This setting
-     *        isn't used when authType=No.
+     *        For the default value, in MongoDB version 2.x, <code>"default"</code> is <code>"mongodb_cr"</code>. For
+     *        MongoDB version 3.x or later, <code>"default"</code> is <code>"scram_sha_1"</code>. This setting isn't
+     *        used when <code>AuthType</code> is set to <code>"no"</code>.
      * @see AuthMechanismValue
      */
 
@@ -575,21 +522,17 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
      * The authentication mechanism you use to access the MongoDB source endpoint.
      * </p>
      * <p>
-     * Valid values: DEFAULT, MONGODB_CR, SCRAM_SHA_1
-     * </p>
-     * <p>
-     * DEFAULT – For MongoDB version 2.x, use MONGODB_CR. For MongoDB version 3.x, use SCRAM_SHA_1. This setting isn't
-     * used when authType=No.
+     * For the default value, in MongoDB version 2.x, <code>"default"</code> is <code>"mongodb_cr"</code>. For MongoDB
+     * version 3.x or later, <code>"default"</code> is <code>"scram_sha_1"</code>. This setting isn't used when
+     * <code>AuthType</code> is set to <code>"no"</code>.
      * </p>
      * 
      * @param authMechanism
      *        The authentication mechanism you use to access the MongoDB source endpoint.</p>
      *        <p>
-     *        Valid values: DEFAULT, MONGODB_CR, SCRAM_SHA_1
-     *        </p>
-     *        <p>
-     *        DEFAULT – For MongoDB version 2.x, use MONGODB_CR. For MongoDB version 3.x, use SCRAM_SHA_1. This setting
-     *        isn't used when authType=No.
+     *        For the default value, in MongoDB version 2.x, <code>"default"</code> is <code>"mongodb_cr"</code>. For
+     *        MongoDB version 3.x or later, <code>"default"</code> is <code>"scram_sha_1"</code>. This setting isn't
+     *        used when <code>AuthType</code> is set to <code>"no"</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthMechanismValue
      */
@@ -604,19 +547,15 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
      * Specifies either document or table mode.
      * </p>
      * <p>
-     * Valid values: NONE, ONE
-     * </p>
-     * <p>
-     * Default value is NONE. Specify NONE to use document mode. Specify ONE to use table mode.
+     * Default value is <code>"none"</code>. Specify <code>"none"</code> to use document mode. Specify
+     * <code>"one"</code> to use table mode.
      * </p>
      * 
      * @param nestingLevel
      *        Specifies either document or table mode. </p>
      *        <p>
-     *        Valid values: NONE, ONE
-     *        </p>
-     *        <p>
-     *        Default value is NONE. Specify NONE to use document mode. Specify ONE to use table mode.
+     *        Default value is <code>"none"</code>. Specify <code>"none"</code> to use document mode. Specify
+     *        <code>"one"</code> to use table mode.
      * @see NestingLevelValue
      */
 
@@ -629,18 +568,14 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
      * Specifies either document or table mode.
      * </p>
      * <p>
-     * Valid values: NONE, ONE
-     * </p>
-     * <p>
-     * Default value is NONE. Specify NONE to use document mode. Specify ONE to use table mode.
+     * Default value is <code>"none"</code>. Specify <code>"none"</code> to use document mode. Specify
+     * <code>"one"</code> to use table mode.
      * </p>
      * 
      * @return Specifies either document or table mode. </p>
      *         <p>
-     *         Valid values: NONE, ONE
-     *         </p>
-     *         <p>
-     *         Default value is NONE. Specify NONE to use document mode. Specify ONE to use table mode.
+     *         Default value is <code>"none"</code>. Specify <code>"none"</code> to use document mode. Specify
+     *         <code>"one"</code> to use table mode.
      * @see NestingLevelValue
      */
 
@@ -653,19 +588,15 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
      * Specifies either document or table mode.
      * </p>
      * <p>
-     * Valid values: NONE, ONE
-     * </p>
-     * <p>
-     * Default value is NONE. Specify NONE to use document mode. Specify ONE to use table mode.
+     * Default value is <code>"none"</code>. Specify <code>"none"</code> to use document mode. Specify
+     * <code>"one"</code> to use table mode.
      * </p>
      * 
      * @param nestingLevel
      *        Specifies either document or table mode. </p>
      *        <p>
-     *        Valid values: NONE, ONE
-     *        </p>
-     *        <p>
-     *        Default value is NONE. Specify NONE to use document mode. Specify ONE to use table mode.
+     *        Default value is <code>"none"</code>. Specify <code>"none"</code> to use document mode. Specify
+     *        <code>"one"</code> to use table mode.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NestingLevelValue
      */
@@ -680,19 +611,15 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
      * Specifies either document or table mode.
      * </p>
      * <p>
-     * Valid values: NONE, ONE
-     * </p>
-     * <p>
-     * Default value is NONE. Specify NONE to use document mode. Specify ONE to use table mode.
+     * Default value is <code>"none"</code>. Specify <code>"none"</code> to use document mode. Specify
+     * <code>"one"</code> to use table mode.
      * </p>
      * 
      * @param nestingLevel
      *        Specifies either document or table mode. </p>
      *        <p>
-     *        Valid values: NONE, ONE
-     *        </p>
-     *        <p>
-     *        Default value is NONE. Specify NONE to use document mode. Specify ONE to use table mode.
+     *        Default value is <code>"none"</code>. Specify <code>"none"</code> to use document mode. Specify
+     *        <code>"one"</code> to use table mode.
      * @see NestingLevelValue
      */
 
@@ -705,19 +632,15 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
      * Specifies either document or table mode.
      * </p>
      * <p>
-     * Valid values: NONE, ONE
-     * </p>
-     * <p>
-     * Default value is NONE. Specify NONE to use document mode. Specify ONE to use table mode.
+     * Default value is <code>"none"</code>. Specify <code>"none"</code> to use document mode. Specify
+     * <code>"one"</code> to use table mode.
      * </p>
      * 
      * @param nestingLevel
      *        Specifies either document or table mode. </p>
      *        <p>
-     *        Valid values: NONE, ONE
-     *        </p>
-     *        <p>
-     *        Default value is NONE. Specify NONE to use document mode. Specify ONE to use table mode.
+     *        Default value is <code>"none"</code>. Specify <code>"none"</code> to use document mode. Specify
+     *        <code>"one"</code> to use table mode.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NestingLevelValue
      */
@@ -729,16 +652,17 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the document ID. Use this setting when <code>NestingLevel</code> is set to NONE.
+     * Specifies the document ID. Use this setting when <code>NestingLevel</code> is set to <code>"none"</code>.
      * </p>
      * <p>
-     * Default value is false.
+     * Default value is <code>"false"</code>.
      * </p>
      * 
      * @param extractDocId
-     *        Specifies the document ID. Use this setting when <code>NestingLevel</code> is set to NONE. </p>
+     *        Specifies the document ID. Use this setting when <code>NestingLevel</code> is set to <code>"none"</code>.
+     *        </p>
      *        <p>
-     *        Default value is false.
+     *        Default value is <code>"false"</code>.
      */
 
     public void setExtractDocId(String extractDocId) {
@@ -747,15 +671,16 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the document ID. Use this setting when <code>NestingLevel</code> is set to NONE.
+     * Specifies the document ID. Use this setting when <code>NestingLevel</code> is set to <code>"none"</code>.
      * </p>
      * <p>
-     * Default value is false.
+     * Default value is <code>"false"</code>.
      * </p>
      * 
-     * @return Specifies the document ID. Use this setting when <code>NestingLevel</code> is set to NONE. </p>
+     * @return Specifies the document ID. Use this setting when <code>NestingLevel</code> is set to <code>"none"</code>.
+     *         </p>
      *         <p>
-     *         Default value is false.
+     *         Default value is <code>"false"</code>.
      */
 
     public String getExtractDocId() {
@@ -764,16 +689,17 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the document ID. Use this setting when <code>NestingLevel</code> is set to NONE.
+     * Specifies the document ID. Use this setting when <code>NestingLevel</code> is set to <code>"none"</code>.
      * </p>
      * <p>
-     * Default value is false.
+     * Default value is <code>"false"</code>.
      * </p>
      * 
      * @param extractDocId
-     *        Specifies the document ID. Use this setting when <code>NestingLevel</code> is set to NONE. </p>
+     *        Specifies the document ID. Use this setting when <code>NestingLevel</code> is set to <code>"none"</code>.
+     *        </p>
      *        <p>
-     *        Default value is false.
+     *        Default value is <code>"false"</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -785,17 +711,17 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Indicates the number of documents to preview to determine the document organization. Use this setting when
-     * <code>NestingLevel</code> is set to ONE.
+     * <code>NestingLevel</code> is set to <code>"one"</code>.
      * </p>
      * <p>
-     * Must be a positive value greater than 0. Default value is 1000.
+     * Must be a positive value greater than <code>0</code>. Default value is <code>1000</code>.
      * </p>
      * 
      * @param docsToInvestigate
      *        Indicates the number of documents to preview to determine the document organization. Use this setting when
-     *        <code>NestingLevel</code> is set to ONE. </p>
+     *        <code>NestingLevel</code> is set to <code>"one"</code>. </p>
      *        <p>
-     *        Must be a positive value greater than 0. Default value is 1000.
+     *        Must be a positive value greater than <code>0</code>. Default value is <code>1000</code>.
      */
 
     public void setDocsToInvestigate(String docsToInvestigate) {
@@ -805,16 +731,16 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Indicates the number of documents to preview to determine the document organization. Use this setting when
-     * <code>NestingLevel</code> is set to ONE.
+     * <code>NestingLevel</code> is set to <code>"one"</code>.
      * </p>
      * <p>
-     * Must be a positive value greater than 0. Default value is 1000.
+     * Must be a positive value greater than <code>0</code>. Default value is <code>1000</code>.
      * </p>
      * 
      * @return Indicates the number of documents to preview to determine the document organization. Use this setting
-     *         when <code>NestingLevel</code> is set to ONE. </p>
+     *         when <code>NestingLevel</code> is set to <code>"one"</code>. </p>
      *         <p>
-     *         Must be a positive value greater than 0. Default value is 1000.
+     *         Must be a positive value greater than <code>0</code>. Default value is <code>1000</code>.
      */
 
     public String getDocsToInvestigate() {
@@ -824,17 +750,17 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Indicates the number of documents to preview to determine the document organization. Use this setting when
-     * <code>NestingLevel</code> is set to ONE.
+     * <code>NestingLevel</code> is set to <code>"one"</code>.
      * </p>
      * <p>
-     * Must be a positive value greater than 0. Default value is 1000.
+     * Must be a positive value greater than <code>0</code>. Default value is <code>1000</code>.
      * </p>
      * 
      * @param docsToInvestigate
      *        Indicates the number of documents to preview to determine the document organization. Use this setting when
-     *        <code>NestingLevel</code> is set to ONE. </p>
+     *        <code>NestingLevel</code> is set to <code>"one"</code>. </p>
      *        <p>
-     *        Must be a positive value greater than 0. Default value is 1000.
+     *        Must be a positive value greater than <code>0</code>. Default value is <code>1000</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -845,16 +771,17 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The MongoDB database name. This setting isn't used when <code>authType=NO</code>.
+     * The MongoDB database name. This setting isn't used when <code>AuthType</code> is set to <code>"no"</code>.
      * </p>
      * <p>
-     * The default is admin.
+     * The default is <code>"admin"</code>.
      * </p>
      * 
      * @param authSource
-     *        The MongoDB database name. This setting isn't used when <code>authType=NO</code>. </p>
+     *        The MongoDB database name. This setting isn't used when <code>AuthType</code> is set to <code>"no"</code>.
+     *        </p>
      *        <p>
-     *        The default is admin.
+     *        The default is <code>"admin"</code>.
      */
 
     public void setAuthSource(String authSource) {
@@ -863,15 +790,16 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The MongoDB database name. This setting isn't used when <code>authType=NO</code>.
+     * The MongoDB database name. This setting isn't used when <code>AuthType</code> is set to <code>"no"</code>.
      * </p>
      * <p>
-     * The default is admin.
+     * The default is <code>"admin"</code>.
      * </p>
      * 
-     * @return The MongoDB database name. This setting isn't used when <code>authType=NO</code>. </p>
+     * @return The MongoDB database name. This setting isn't used when <code>AuthType</code> is set to <code>"no"</code>
+     *         . </p>
      *         <p>
-     *         The default is admin.
+     *         The default is <code>"admin"</code>.
      */
 
     public String getAuthSource() {
@@ -880,16 +808,17 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The MongoDB database name. This setting isn't used when <code>authType=NO</code>.
+     * The MongoDB database name. This setting isn't used when <code>AuthType</code> is set to <code>"no"</code>.
      * </p>
      * <p>
-     * The default is admin.
+     * The default is <code>"admin"</code>.
      * </p>
      * 
      * @param authSource
-     *        The MongoDB database name. This setting isn't used when <code>authType=NO</code>. </p>
+     *        The MongoDB database name. This setting isn't used when <code>AuthType</code> is set to <code>"no"</code>.
+     *        </p>
      *        <p>
-     *        The default is admin.
+     *        The default is <code>"admin"</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

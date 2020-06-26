@@ -43,7 +43,7 @@ public class DeleteTemplateAliasResult extends com.amazonaws.AmazonWebServiceRes
     private String aliasName;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource.
+     * The Amazon Resource Name (ARN) of the template you want to delete.
      * </p>
      */
     private String arn;
@@ -176,11 +176,11 @@ public class DeleteTemplateAliasResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource.
+     * The Amazon Resource Name (ARN) of the template you want to delete.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the resource.
+     *        The Amazon Resource Name (ARN) of the template you want to delete.
      */
 
     public void setArn(String arn) {
@@ -189,10 +189,10 @@ public class DeleteTemplateAliasResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource.
+     * The Amazon Resource Name (ARN) of the template you want to delete.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the resource.
+     * @return The Amazon Resource Name (ARN) of the template you want to delete.
      */
 
     public String getArn() {
@@ -201,11 +201,11 @@ public class DeleteTemplateAliasResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource.
+     * The Amazon Resource Name (ARN) of the template you want to delete.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the resource.
+     *        The Amazon Resource Name (ARN) of the template you want to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

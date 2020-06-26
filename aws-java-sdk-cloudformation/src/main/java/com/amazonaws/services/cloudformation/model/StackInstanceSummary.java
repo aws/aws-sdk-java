@@ -97,6 +97,12 @@ public class StackInstanceSummary implements Serializable, Cloneable {
     private String statusReason;
     /**
      * <p>
+     * The detailed status of the stack instance.
+     * </p>
+     */
+    private StackInstanceComprehensiveStatus stackInstanceStatus;
+    /**
+     * <p>
      * [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OU) IDs that you
      * specified for <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html"
@@ -748,6 +754,46 @@ public class StackInstanceSummary implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The detailed status of the stack instance.
+     * </p>
+     * 
+     * @param stackInstanceStatus
+     *        The detailed status of the stack instance.
+     */
+
+    public void setStackInstanceStatus(StackInstanceComprehensiveStatus stackInstanceStatus) {
+        this.stackInstanceStatus = stackInstanceStatus;
+    }
+
+    /**
+     * <p>
+     * The detailed status of the stack instance.
+     * </p>
+     * 
+     * @return The detailed status of the stack instance.
+     */
+
+    public StackInstanceComprehensiveStatus getStackInstanceStatus() {
+        return this.stackInstanceStatus;
+    }
+
+    /**
+     * <p>
+     * The detailed status of the stack instance.
+     * </p>
+     * 
+     * @param stackInstanceStatus
+     *        The detailed status of the stack instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StackInstanceSummary withStackInstanceStatus(StackInstanceComprehensiveStatus stackInstanceStatus) {
+        setStackInstanceStatus(stackInstanceStatus);
+        return this;
+    }
+
+    /**
+     * <p>
      * [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OU) IDs that you
      * specified for <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html"
@@ -1210,6 +1256,8 @@ public class StackInstanceSummary implements Serializable, Cloneable {
             sb.append("Status: ").append(getStatus()).append(",");
         if (getStatusReason() != null)
             sb.append("StatusReason: ").append(getStatusReason()).append(",");
+        if (getStackInstanceStatus() != null)
+            sb.append("StackInstanceStatus: ").append(getStackInstanceStatus()).append(",");
         if (getOrganizationalUnitId() != null)
             sb.append("OrganizationalUnitId: ").append(getOrganizationalUnitId()).append(",");
         if (getDriftStatus() != null)
@@ -1254,6 +1302,10 @@ public class StackInstanceSummary implements Serializable, Cloneable {
             return false;
         if (other.getStatusReason() != null && other.getStatusReason().equals(this.getStatusReason()) == false)
             return false;
+        if (other.getStackInstanceStatus() == null ^ this.getStackInstanceStatus() == null)
+            return false;
+        if (other.getStackInstanceStatus() != null && other.getStackInstanceStatus().equals(this.getStackInstanceStatus()) == false)
+            return false;
         if (other.getOrganizationalUnitId() == null ^ this.getOrganizationalUnitId() == null)
             return false;
         if (other.getOrganizationalUnitId() != null && other.getOrganizationalUnitId().equals(this.getOrganizationalUnitId()) == false)
@@ -1280,6 +1332,7 @@ public class StackInstanceSummary implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getStackId() == null) ? 0 : getStackId().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getStatusReason() == null) ? 0 : getStatusReason().hashCode());
+        hashCode = prime * hashCode + ((getStackInstanceStatus() == null) ? 0 : getStackInstanceStatus().hashCode());
         hashCode = prime * hashCode + ((getOrganizationalUnitId() == null) ? 0 : getOrganizationalUnitId().hashCode());
         hashCode = prime * hashCode + ((getDriftStatus() == null) ? 0 : getDriftStatus().hashCode());
         hashCode = prime * hashCode + ((getLastDriftCheckTimestamp() == null) ? 0 : getLastDriftCheckTimestamp().hashCode());

@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Data source credentials.
+ * Data source credentials. This is a variant type structure. For this structure to be valid, only one of the attributes
+ * can be non-null.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DataSourceCredentials" target="_top">AWS
@@ -30,18 +31,26 @@ public class DataSourceCredentials implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Credential pair.
+     * Credential pair. For more information, see <a>CredentialPair</a>.
      * </p>
      */
     private CredentialPair credentialPair;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of a data source that has the credential pair that you want to use. When
+     * <code>CopySourceArn</code> is not null, the credential pair from the data source in the ARN is used as the
+     * credentials for the <code>DataSourceCredentials</code> structure.
+     * </p>
+     */
+    private String copySourceArn;
 
     /**
      * <p>
-     * Credential pair.
+     * Credential pair. For more information, see <a>CredentialPair</a>.
      * </p>
      * 
      * @param credentialPair
-     *        Credential pair.
+     *        Credential pair. For more information, see <a>CredentialPair</a>.
      */
 
     public void setCredentialPair(CredentialPair credentialPair) {
@@ -50,10 +59,10 @@ public class DataSourceCredentials implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Credential pair.
+     * Credential pair. For more information, see <a>CredentialPair</a>.
      * </p>
      * 
-     * @return Credential pair.
+     * @return Credential pair. For more information, see <a>CredentialPair</a>.
      */
 
     public CredentialPair getCredentialPair() {
@@ -62,16 +71,68 @@ public class DataSourceCredentials implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Credential pair.
+     * Credential pair. For more information, see <a>CredentialPair</a>.
      * </p>
      * 
      * @param credentialPair
-     *        Credential pair.
+     *        Credential pair. For more information, see <a>CredentialPair</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DataSourceCredentials withCredentialPair(CredentialPair credentialPair) {
         setCredentialPair(credentialPair);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of a data source that has the credential pair that you want to use. When
+     * <code>CopySourceArn</code> is not null, the credential pair from the data source in the ARN is used as the
+     * credentials for the <code>DataSourceCredentials</code> structure.
+     * </p>
+     * 
+     * @param copySourceArn
+     *        The Amazon Resource Name (ARN) of a data source that has the credential pair that you want to use. When
+     *        <code>CopySourceArn</code> is not null, the credential pair from the data source in the ARN is used as the
+     *        credentials for the <code>DataSourceCredentials</code> structure.
+     */
+
+    public void setCopySourceArn(String copySourceArn) {
+        this.copySourceArn = copySourceArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of a data source that has the credential pair that you want to use. When
+     * <code>CopySourceArn</code> is not null, the credential pair from the data source in the ARN is used as the
+     * credentials for the <code>DataSourceCredentials</code> structure.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of a data source that has the credential pair that you want to use. When
+     *         <code>CopySourceArn</code> is not null, the credential pair from the data source in the ARN is used as
+     *         the credentials for the <code>DataSourceCredentials</code> structure.
+     */
+
+    public String getCopySourceArn() {
+        return this.copySourceArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of a data source that has the credential pair that you want to use. When
+     * <code>CopySourceArn</code> is not null, the credential pair from the data source in the ARN is used as the
+     * credentials for the <code>DataSourceCredentials</code> structure.
+     * </p>
+     * 
+     * @param copySourceArn
+     *        The Amazon Resource Name (ARN) of a data source that has the credential pair that you want to use. When
+     *        <code>CopySourceArn</code> is not null, the credential pair from the data source in the ARN is used as the
+     *        credentials for the <code>DataSourceCredentials</code> structure.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataSourceCredentials withCopySourceArn(String copySourceArn) {
+        setCopySourceArn(copySourceArn);
         return this;
     }
 
@@ -88,7 +149,9 @@ public class DataSourceCredentials implements Serializable, Cloneable, Structure
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCredentialPair() != null)
-            sb.append("CredentialPair: ").append(getCredentialPair());
+            sb.append("CredentialPair: ").append(getCredentialPair()).append(",");
+        if (getCopySourceArn() != null)
+            sb.append("CopySourceArn: ").append(getCopySourceArn());
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +170,10 @@ public class DataSourceCredentials implements Serializable, Cloneable, Structure
             return false;
         if (other.getCredentialPair() != null && other.getCredentialPair().equals(this.getCredentialPair()) == false)
             return false;
+        if (other.getCopySourceArn() == null ^ this.getCopySourceArn() == null)
+            return false;
+        if (other.getCopySourceArn() != null && other.getCopySourceArn().equals(this.getCopySourceArn()) == false)
+            return false;
         return true;
     }
 
@@ -116,6 +183,7 @@ public class DataSourceCredentials implements Serializable, Cloneable, Structure
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getCredentialPair() == null) ? 0 : getCredentialPair().hashCode());
+        hashCode = prime * hashCode + ((getCopySourceArn() == null) ? 0 : getCopySourceArn().hashCode());
         return hashCode;
     }
 

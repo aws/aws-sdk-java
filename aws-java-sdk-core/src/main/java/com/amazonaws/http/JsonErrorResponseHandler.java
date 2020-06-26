@@ -194,6 +194,9 @@ public class JsonErrorResponseHandler implements HttpResponseHandler<AmazonServi
             if (headerEntry.getKey().equalsIgnoreCase(X_AMZN_REQUEST_ID_HEADER)) {
                 return headerEntry.getValue();
             }
+            if (headerEntry.getKey().equalsIgnoreCase(X_AMZ_REQUEST_ID_ALTERNATIVE_HEADER)) {
+                return headerEntry.getValue();
+            }
         }
         return null;
     }

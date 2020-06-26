@@ -52,6 +52,10 @@ public class DataSourceCredentialsJsonUnmarshaller implements Unmarshaller<DataS
                     context.nextToken();
                     dataSourceCredentials.setCredentialPair(CredentialPairJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("CopySourceArn", targetDepth)) {
+                    context.nextToken();
+                    dataSourceCredentials.setCopySourceArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

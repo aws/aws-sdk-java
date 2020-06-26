@@ -49,7 +49,11 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      */
     private String labelingJobArn;
-    /** <p/> */
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of an AutoML job.
+     * </p>
+     */
     private String autoMLJobArn;
     /**
      * <p>
@@ -558,9 +562,12 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * <p/>
+     * <p>
+     * The Amazon Resource Name (ARN) of an AutoML job.
+     * </p>
      * 
      * @param autoMLJobArn
+     *        The Amazon Resource Name (ARN) of an AutoML job.
      */
 
     public void setAutoMLJobArn(String autoMLJobArn) {
@@ -568,9 +575,11 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * <p/>
+     * <p>
+     * The Amazon Resource Name (ARN) of an AutoML job.
+     * </p>
      * 
-     * @return
+     * @return The Amazon Resource Name (ARN) of an AutoML job.
      */
 
     public String getAutoMLJobArn() {
@@ -578,9 +587,12 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * <p/>
+     * <p>
+     * The Amazon Resource Name (ARN) of an AutoML job.
+     * </p>
      * 
      * @param autoMLJobArn
+     *        The Amazon Resource Name (ARN) of an AutoML job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

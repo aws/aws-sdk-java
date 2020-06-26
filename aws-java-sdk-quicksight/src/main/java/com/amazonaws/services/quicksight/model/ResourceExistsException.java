@@ -25,7 +25,7 @@ public class ResourceExistsException extends com.amazonaws.services.quicksight.m
 
     /**
      * <p>
-     * The AWS request ID for this request.
+     * The resource type for this request.
      * </p>
      */
     private String resourceType;
@@ -48,11 +48,11 @@ public class ResourceExistsException extends com.amazonaws.services.quicksight.m
 
     /**
      * <p>
-     * The AWS request ID for this request.
+     * The resource type for this request.
      * </p>
      * 
      * @param resourceType
-     *        The AWS request ID for this request.
+     *        The resource type for this request.
      * @see ExceptionResourceType
      */
 
@@ -63,10 +63,10 @@ public class ResourceExistsException extends com.amazonaws.services.quicksight.m
 
     /**
      * <p>
-     * The AWS request ID for this request.
+     * The resource type for this request.
      * </p>
      * 
-     * @return The AWS request ID for this request.
+     * @return The resource type for this request.
      * @see ExceptionResourceType
      */
 
@@ -77,11 +77,11 @@ public class ResourceExistsException extends com.amazonaws.services.quicksight.m
 
     /**
      * <p>
-     * The AWS request ID for this request.
+     * The resource type for this request.
      * </p>
      * 
      * @param resourceType
-     *        The AWS request ID for this request.
+     *        The resource type for this request.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ExceptionResourceType
      */
@@ -93,11 +93,11 @@ public class ResourceExistsException extends com.amazonaws.services.quicksight.m
 
     /**
      * <p>
-     * The AWS request ID for this request.
+     * The resource type for this request.
      * </p>
      * 
      * @param resourceType
-     *        The AWS request ID for this request.
+     *        The resource type for this request.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ExceptionResourceType
      */

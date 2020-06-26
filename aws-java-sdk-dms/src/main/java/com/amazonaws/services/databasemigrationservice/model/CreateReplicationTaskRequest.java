@@ -36,7 +36,7 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 255 alphanumeric characters or hyphens.
+     * Must contain 1-255 alphanumeric characters or hyphens.
      * </p>
      * </li>
      * <li>
@@ -80,7 +80,7 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The table mappings for the task, in JSON format. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using Table
-     * Mapping to Specify Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     * Mapping to Specify Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      */
     private String tableMappings;
@@ -155,7 +155,7 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * Supplemental information that the task requires to migrate the data for certain source and target endpoints. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for
-     * Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     * Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      */
     private String taskData;
@@ -170,7 +170,7 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 255 alphanumeric characters or hyphens.
+     * Must contain 1-255 alphanumeric characters or hyphens.
      * </p>
      * </li>
      * <li>
@@ -193,7 +193,7 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 255 alphanumeric characters or hyphens.
+     *        Must contain 1-255 alphanumeric characters or hyphens.
      *        </p>
      *        </li>
      *        <li>
@@ -222,7 +222,7 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 255 alphanumeric characters or hyphens.
+     * Must contain 1-255 alphanumeric characters or hyphens.
      * </p>
      * </li>
      * <li>
@@ -244,7 +244,7 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      *         <ul>
      *         <li>
      *         <p>
-     *         Must contain from 1 to 255 alphanumeric characters or hyphens.
+     *         Must contain 1-255 alphanumeric characters or hyphens.
      *         </p>
      *         </li>
      *         <li>
@@ -273,7 +273,7 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 255 alphanumeric characters or hyphens.
+     * Must contain 1-255 alphanumeric characters or hyphens.
      * </p>
      * </li>
      * <li>
@@ -296,7 +296,7 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 255 alphanumeric characters or hyphens.
+     *        Must contain 1-255 alphanumeric characters or hyphens.
      *        </p>
      *        </li>
      *        <li>
@@ -519,13 +519,13 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The table mappings for the task, in JSON format. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using Table
-     * Mapping to Specify Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     * Mapping to Specify Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      * 
      * @param tableMappings
      *        The table mappings for the task, in JSON format. For more information, see <a
      *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html"
-     *        >Using Table Mapping to Specify Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     *        >Using Table Mapping to Specify Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
      */
 
     public void setTableMappings(String tableMappings) {
@@ -536,12 +536,13 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The table mappings for the task, in JSON format. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using Table
-     * Mapping to Specify Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     * Mapping to Specify Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      * 
      * @return The table mappings for the task, in JSON format. For more information, see <a
      *         href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html"
-     *         >Using Table Mapping to Specify Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     *         >Using Table Mapping to Specify Task Settings</a> in the <i>AWS Database Migration Service User
+     *         Guide.</i>
      */
 
     public String getTableMappings() {
@@ -552,13 +553,13 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The table mappings for the task, in JSON format. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using Table
-     * Mapping to Specify Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     * Mapping to Specify Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      * 
      * @param tableMappings
      *        The table mappings for the task, in JSON format. For more information, see <a
      *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html"
-     *        >Using Table Mapping to Specify Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     *        >Using Table Mapping to Specify Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1021,14 +1022,14 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * Supplemental information that the task requires to migrate the data for certain source and target endpoints. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for
-     * Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     * Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      * 
      * @param taskData
      *        Supplemental information that the task requires to migrate the data for certain source and target
      *        endpoints. For more information, see <a
      *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental
-     *        Data for Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     *        Data for Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
      */
 
     public void setTaskData(String taskData) {
@@ -1040,13 +1041,13 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * Supplemental information that the task requires to migrate the data for certain source and target endpoints. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for
-     * Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     * Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      * 
      * @return Supplemental information that the task requires to migrate the data for certain source and target
      *         endpoints. For more information, see <a
      *         href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental
-     *         Data for Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     *         Data for Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
      */
 
     public String getTaskData() {
@@ -1058,14 +1059,14 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * Supplemental information that the task requires to migrate the data for certain source and target endpoints. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for
-     * Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     * Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      * 
      * @param taskData
      *        Supplemental information that the task requires to migrate the data for certain source and target
      *        endpoints. For more information, see <a
      *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental
-     *        Data for Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     *        Data for Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

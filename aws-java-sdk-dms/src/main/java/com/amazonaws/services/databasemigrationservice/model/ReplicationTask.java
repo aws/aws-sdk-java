@@ -38,7 +38,7 @@ public class ReplicationTask implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 255 alphanumeric characters or hyphens.
+     * Must contain 1-255 alphanumeric characters or hyphens.
      * </p>
      * </li>
      * <li>
@@ -104,8 +104,31 @@ public class ReplicationTask implements Serializable, Cloneable, StructuredPojo 
     private String lastFailureMessage;
     /**
      * <p>
-     * The reason the replication task was stopped.
+     * The reason the replication task was stopped. This response parameter can return one of the following values:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"STOP_REASON_FULL_LOAD_COMPLETED"</code> – Full-load migration completed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"STOP_REASON_CACHED_CHANGES_APPLIED"</code> – Change data capture (CDC) load completed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"STOP_REASON_CACHED_CHANGES_NOT_APPLIED"</code> – In a full-load and CDC migration, the full-load stopped
+     * as specified before starting the CDC migration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"STOP_REASON_SERVER_TIME"</code> – The migration stopped at the specified server time.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String stopReason;
     /**
@@ -178,7 +201,7 @@ public class ReplicationTask implements Serializable, Cloneable, StructuredPojo 
      * Supplemental information that the task requires to migrate the data for certain source and target endpoints. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for
-     * Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     * Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      */
     private String taskData;
@@ -193,7 +216,7 @@ public class ReplicationTask implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 255 alphanumeric characters or hyphens.
+     * Must contain 1-255 alphanumeric characters or hyphens.
      * </p>
      * </li>
      * <li>
@@ -216,7 +239,7 @@ public class ReplicationTask implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 255 alphanumeric characters or hyphens.
+     *        Must contain 1-255 alphanumeric characters or hyphens.
      *        </p>
      *        </li>
      *        <li>
@@ -245,7 +268,7 @@ public class ReplicationTask implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 255 alphanumeric characters or hyphens.
+     * Must contain 1-255 alphanumeric characters or hyphens.
      * </p>
      * </li>
      * <li>
@@ -267,7 +290,7 @@ public class ReplicationTask implements Serializable, Cloneable, StructuredPojo 
      *         <ul>
      *         <li>
      *         <p>
-     *         Must contain from 1 to 255 alphanumeric characters or hyphens.
+     *         Must contain 1-255 alphanumeric characters or hyphens.
      *         </p>
      *         </li>
      *         <li>
@@ -296,7 +319,7 @@ public class ReplicationTask implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 255 alphanumeric characters or hyphens.
+     * Must contain 1-255 alphanumeric characters or hyphens.
      * </p>
      * </li>
      * <li>
@@ -319,7 +342,7 @@ public class ReplicationTask implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 255 alphanumeric characters or hyphens.
+     *        Must contain 1-255 alphanumeric characters or hyphens.
      *        </p>
      *        </li>
      *        <li>
@@ -695,11 +718,57 @@ public class ReplicationTask implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The reason the replication task was stopped.
+     * The reason the replication task was stopped. This response parameter can return one of the following values:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"STOP_REASON_FULL_LOAD_COMPLETED"</code> – Full-load migration completed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"STOP_REASON_CACHED_CHANGES_APPLIED"</code> – Change data capture (CDC) load completed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"STOP_REASON_CACHED_CHANGES_NOT_APPLIED"</code> – In a full-load and CDC migration, the full-load stopped
+     * as specified before starting the CDC migration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"STOP_REASON_SERVER_TIME"</code> – The migration stopped at the specified server time.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param stopReason
-     *        The reason the replication task was stopped.
+     *        The reason the replication task was stopped. This response parameter can return one of the following
+     *        values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>"STOP_REASON_FULL_LOAD_COMPLETED"</code> – Full-load migration completed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"STOP_REASON_CACHED_CHANGES_APPLIED"</code> – Change data capture (CDC) load completed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"STOP_REASON_CACHED_CHANGES_NOT_APPLIED"</code> – In a full-load and CDC migration, the full-load
+     *        stopped as specified before starting the CDC migration.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"STOP_REASON_SERVER_TIME"</code> – The migration stopped at the specified server time.
+     *        </p>
+     *        </li>
      */
 
     public void setStopReason(String stopReason) {
@@ -708,10 +777,56 @@ public class ReplicationTask implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The reason the replication task was stopped.
+     * The reason the replication task was stopped. This response parameter can return one of the following values:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"STOP_REASON_FULL_LOAD_COMPLETED"</code> – Full-load migration completed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"STOP_REASON_CACHED_CHANGES_APPLIED"</code> – Change data capture (CDC) load completed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"STOP_REASON_CACHED_CHANGES_NOT_APPLIED"</code> – In a full-load and CDC migration, the full-load stopped
+     * as specified before starting the CDC migration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"STOP_REASON_SERVER_TIME"</code> – The migration stopped at the specified server time.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The reason the replication task was stopped.
+     * @return The reason the replication task was stopped. This response parameter can return one of the following
+     *         values:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>"STOP_REASON_FULL_LOAD_COMPLETED"</code> – Full-load migration completed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>"STOP_REASON_CACHED_CHANGES_APPLIED"</code> – Change data capture (CDC) load completed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>"STOP_REASON_CACHED_CHANGES_NOT_APPLIED"</code> – In a full-load and CDC migration, the full-load
+     *         stopped as specified before starting the CDC migration.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>"STOP_REASON_SERVER_TIME"</code> – The migration stopped at the specified server time.
+     *         </p>
+     *         </li>
      */
 
     public String getStopReason() {
@@ -720,11 +835,57 @@ public class ReplicationTask implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The reason the replication task was stopped.
+     * The reason the replication task was stopped. This response parameter can return one of the following values:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"STOP_REASON_FULL_LOAD_COMPLETED"</code> – Full-load migration completed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"STOP_REASON_CACHED_CHANGES_APPLIED"</code> – Change data capture (CDC) load completed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"STOP_REASON_CACHED_CHANGES_NOT_APPLIED"</code> – In a full-load and CDC migration, the full-load stopped
+     * as specified before starting the CDC migration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"STOP_REASON_SERVER_TIME"</code> – The migration stopped at the specified server time.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param stopReason
-     *        The reason the replication task was stopped.
+     *        The reason the replication task was stopped. This response parameter can return one of the following
+     *        values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>"STOP_REASON_FULL_LOAD_COMPLETED"</code> – Full-load migration completed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"STOP_REASON_CACHED_CHANGES_APPLIED"</code> – Change data capture (CDC) load completed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"STOP_REASON_CACHED_CHANGES_NOT_APPLIED"</code> – In a full-load and CDC migration, the full-load
+     *        stopped as specified before starting the CDC migration.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"STOP_REASON_SERVER_TIME"</code> – The migration stopped at the specified server time.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1153,14 +1314,14 @@ public class ReplicationTask implements Serializable, Cloneable, StructuredPojo 
      * Supplemental information that the task requires to migrate the data for certain source and target endpoints. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for
-     * Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     * Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      * 
      * @param taskData
      *        Supplemental information that the task requires to migrate the data for certain source and target
      *        endpoints. For more information, see <a
      *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental
-     *        Data for Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     *        Data for Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
      */
 
     public void setTaskData(String taskData) {
@@ -1172,13 +1333,13 @@ public class ReplicationTask implements Serializable, Cloneable, StructuredPojo 
      * Supplemental information that the task requires to migrate the data for certain source and target endpoints. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for
-     * Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     * Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      * 
      * @return Supplemental information that the task requires to migrate the data for certain source and target
      *         endpoints. For more information, see <a
      *         href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental
-     *         Data for Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     *         Data for Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
      */
 
     public String getTaskData() {
@@ -1190,14 +1351,14 @@ public class ReplicationTask implements Serializable, Cloneable, StructuredPojo 
      * Supplemental information that the task requires to migrate the data for certain source and target endpoints. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for
-     * Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     * Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      * 
      * @param taskData
      *        Supplemental information that the task requires to migrate the data for certain source and target
      *        endpoints. For more information, see <a
      *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental
-     *        Data for Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     *        Data for Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

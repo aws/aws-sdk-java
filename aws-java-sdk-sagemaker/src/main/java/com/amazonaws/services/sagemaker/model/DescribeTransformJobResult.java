@@ -66,6 +66,12 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
     private Integer maxConcurrentTransforms;
     /**
      * <p>
+     * The timeout and maximum number of retries for processing a transform job invocation.
+     * </p>
+     */
+    private ModelClientConfig modelClientConfig;
+    /**
+     * <p>
      * The maximum payload size, in MB, used in the transform job.
      * </p>
      */
@@ -132,7 +138,11 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private String labelingJobArn;
-    /** <p/> */
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the AutoML transform job.
+     * </p>
+     */
     private String autoMLJobArn;
 
     private DataProcessing dataProcessing;
@@ -427,6 +437,46 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
 
     public DescribeTransformJobResult withMaxConcurrentTransforms(Integer maxConcurrentTransforms) {
         setMaxConcurrentTransforms(maxConcurrentTransforms);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The timeout and maximum number of retries for processing a transform job invocation.
+     * </p>
+     * 
+     * @param modelClientConfig
+     *        The timeout and maximum number of retries for processing a transform job invocation.
+     */
+
+    public void setModelClientConfig(ModelClientConfig modelClientConfig) {
+        this.modelClientConfig = modelClientConfig;
+    }
+
+    /**
+     * <p>
+     * The timeout and maximum number of retries for processing a transform job invocation.
+     * </p>
+     * 
+     * @return The timeout and maximum number of retries for processing a transform job invocation.
+     */
+
+    public ModelClientConfig getModelClientConfig() {
+        return this.modelClientConfig;
+    }
+
+    /**
+     * <p>
+     * The timeout and maximum number of retries for processing a transform job invocation.
+     * </p>
+     * 
+     * @param modelClientConfig
+     *        The timeout and maximum number of retries for processing a transform job invocation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTransformJobResult withModelClientConfig(ModelClientConfig modelClientConfig) {
+        setModelClientConfig(modelClientConfig);
         return this;
     }
 
@@ -942,9 +992,12 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * <p/>
+     * <p>
+     * The Amazon Resource Name (ARN) of the AutoML transform job.
+     * </p>
      * 
      * @param autoMLJobArn
+     *        The Amazon Resource Name (ARN) of the AutoML transform job.
      */
 
     public void setAutoMLJobArn(String autoMLJobArn) {
@@ -952,9 +1005,11 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * <p/>
+     * <p>
+     * The Amazon Resource Name (ARN) of the AutoML transform job.
+     * </p>
      * 
-     * @return
+     * @return The Amazon Resource Name (ARN) of the AutoML transform job.
      */
 
     public String getAutoMLJobArn() {
@@ -962,9 +1017,12 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * <p/>
+     * <p>
+     * The Amazon Resource Name (ARN) of the AutoML transform job.
+     * </p>
      * 
      * @param autoMLJobArn
+     *        The Amazon Resource Name (ARN) of the AutoML transform job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1049,6 +1107,8 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
             sb.append("ModelName: ").append(getModelName()).append(",");
         if (getMaxConcurrentTransforms() != null)
             sb.append("MaxConcurrentTransforms: ").append(getMaxConcurrentTransforms()).append(",");
+        if (getModelClientConfig() != null)
+            sb.append("ModelClientConfig: ").append(getModelClientConfig()).append(",");
         if (getMaxPayloadInMB() != null)
             sb.append("MaxPayloadInMB: ").append(getMaxPayloadInMB()).append(",");
         if (getBatchStrategy() != null)
@@ -1112,6 +1172,10 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
         if (other.getMaxConcurrentTransforms() == null ^ this.getMaxConcurrentTransforms() == null)
             return false;
         if (other.getMaxConcurrentTransforms() != null && other.getMaxConcurrentTransforms().equals(this.getMaxConcurrentTransforms()) == false)
+            return false;
+        if (other.getModelClientConfig() == null ^ this.getModelClientConfig() == null)
+            return false;
+        if (other.getModelClientConfig() != null && other.getModelClientConfig().equals(this.getModelClientConfig()) == false)
             return false;
         if (other.getMaxPayloadInMB() == null ^ this.getMaxPayloadInMB() == null)
             return false;
@@ -1179,6 +1243,7 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
         hashCode = prime * hashCode + ((getModelName() == null) ? 0 : getModelName().hashCode());
         hashCode = prime * hashCode + ((getMaxConcurrentTransforms() == null) ? 0 : getMaxConcurrentTransforms().hashCode());
+        hashCode = prime * hashCode + ((getModelClientConfig() == null) ? 0 : getModelClientConfig().hashCode());
         hashCode = prime * hashCode + ((getMaxPayloadInMB() == null) ? 0 : getMaxPayloadInMB().hashCode());
         hashCode = prime * hashCode + ((getBatchStrategy() == null) ? 0 : getBatchStrategy().hashCode());
         hashCode = prime * hashCode + ((getEnvironment() == null) ? 0 : getEnvironment().hashCode());

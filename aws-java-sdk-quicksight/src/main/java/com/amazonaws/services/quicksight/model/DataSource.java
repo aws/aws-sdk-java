@@ -79,6 +79,18 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
     private DataSourceParameters dataSourceParameters;
     /**
      * <p>
+     * A set of alternate data source parameters that you want to share for the credentials stored with this data
+     * source. The credentials are applied in tandem with the data source parameters when you copy a data source by
+     * using a create or update request. The API compares the <code>DataSourceParameters</code> structure that's in the
+     * request with the structures in the <code>AlternateDataSourceParameters</code> allowlist. If the structures are an
+     * exact match, the request is allowed to use the credentials from this existing data source. If the
+     * <code>AlternateDataSourceParameters</code> list is null, the <code>Credentials</code> originally used with this
+     * <code>DataSourceParameters</code> are automatically allowed.
+     * </p>
+     */
+    private java.util.List<DataSourceParameters> alternateDataSourceParameters;
+    /**
+     * <p>
      * The VPC connection information. You need to use this parameter only when you want QuickSight to use a VPC
      * connection when connecting to your underlying source.
      * </p>
@@ -463,6 +475,125 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * A set of alternate data source parameters that you want to share for the credentials stored with this data
+     * source. The credentials are applied in tandem with the data source parameters when you copy a data source by
+     * using a create or update request. The API compares the <code>DataSourceParameters</code> structure that's in the
+     * request with the structures in the <code>AlternateDataSourceParameters</code> allowlist. If the structures are an
+     * exact match, the request is allowed to use the credentials from this existing data source. If the
+     * <code>AlternateDataSourceParameters</code> list is null, the <code>Credentials</code> originally used with this
+     * <code>DataSourceParameters</code> are automatically allowed.
+     * </p>
+     * 
+     * @return A set of alternate data source parameters that you want to share for the credentials stored with this
+     *         data source. The credentials are applied in tandem with the data source parameters when you copy a data
+     *         source by using a create or update request. The API compares the <code>DataSourceParameters</code>
+     *         structure that's in the request with the structures in the <code>AlternateDataSourceParameters</code>
+     *         allowlist. If the structures are an exact match, the request is allowed to use the credentials from this
+     *         existing data source. If the <code>AlternateDataSourceParameters</code> list is null, the
+     *         <code>Credentials</code> originally used with this <code>DataSourceParameters</code> are automatically
+     *         allowed.
+     */
+
+    public java.util.List<DataSourceParameters> getAlternateDataSourceParameters() {
+        return alternateDataSourceParameters;
+    }
+
+    /**
+     * <p>
+     * A set of alternate data source parameters that you want to share for the credentials stored with this data
+     * source. The credentials are applied in tandem with the data source parameters when you copy a data source by
+     * using a create or update request. The API compares the <code>DataSourceParameters</code> structure that's in the
+     * request with the structures in the <code>AlternateDataSourceParameters</code> allowlist. If the structures are an
+     * exact match, the request is allowed to use the credentials from this existing data source. If the
+     * <code>AlternateDataSourceParameters</code> list is null, the <code>Credentials</code> originally used with this
+     * <code>DataSourceParameters</code> are automatically allowed.
+     * </p>
+     * 
+     * @param alternateDataSourceParameters
+     *        A set of alternate data source parameters that you want to share for the credentials stored with this data
+     *        source. The credentials are applied in tandem with the data source parameters when you copy a data source
+     *        by using a create or update request. The API compares the <code>DataSourceParameters</code> structure
+     *        that's in the request with the structures in the <code>AlternateDataSourceParameters</code> allowlist. If
+     *        the structures are an exact match, the request is allowed to use the credentials from this existing data
+     *        source. If the <code>AlternateDataSourceParameters</code> list is null, the <code>Credentials</code>
+     *        originally used with this <code>DataSourceParameters</code> are automatically allowed.
+     */
+
+    public void setAlternateDataSourceParameters(java.util.Collection<DataSourceParameters> alternateDataSourceParameters) {
+        if (alternateDataSourceParameters == null) {
+            this.alternateDataSourceParameters = null;
+            return;
+        }
+
+        this.alternateDataSourceParameters = new java.util.ArrayList<DataSourceParameters>(alternateDataSourceParameters);
+    }
+
+    /**
+     * <p>
+     * A set of alternate data source parameters that you want to share for the credentials stored with this data
+     * source. The credentials are applied in tandem with the data source parameters when you copy a data source by
+     * using a create or update request. The API compares the <code>DataSourceParameters</code> structure that's in the
+     * request with the structures in the <code>AlternateDataSourceParameters</code> allowlist. If the structures are an
+     * exact match, the request is allowed to use the credentials from this existing data source. If the
+     * <code>AlternateDataSourceParameters</code> list is null, the <code>Credentials</code> originally used with this
+     * <code>DataSourceParameters</code> are automatically allowed.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAlternateDataSourceParameters(java.util.Collection)} or
+     * {@link #withAlternateDataSourceParameters(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param alternateDataSourceParameters
+     *        A set of alternate data source parameters that you want to share for the credentials stored with this data
+     *        source. The credentials are applied in tandem with the data source parameters when you copy a data source
+     *        by using a create or update request. The API compares the <code>DataSourceParameters</code> structure
+     *        that's in the request with the structures in the <code>AlternateDataSourceParameters</code> allowlist. If
+     *        the structures are an exact match, the request is allowed to use the credentials from this existing data
+     *        source. If the <code>AlternateDataSourceParameters</code> list is null, the <code>Credentials</code>
+     *        originally used with this <code>DataSourceParameters</code> are automatically allowed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataSource withAlternateDataSourceParameters(DataSourceParameters... alternateDataSourceParameters) {
+        if (this.alternateDataSourceParameters == null) {
+            setAlternateDataSourceParameters(new java.util.ArrayList<DataSourceParameters>(alternateDataSourceParameters.length));
+        }
+        for (DataSourceParameters ele : alternateDataSourceParameters) {
+            this.alternateDataSourceParameters.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A set of alternate data source parameters that you want to share for the credentials stored with this data
+     * source. The credentials are applied in tandem with the data source parameters when you copy a data source by
+     * using a create or update request. The API compares the <code>DataSourceParameters</code> structure that's in the
+     * request with the structures in the <code>AlternateDataSourceParameters</code> allowlist. If the structures are an
+     * exact match, the request is allowed to use the credentials from this existing data source. If the
+     * <code>AlternateDataSourceParameters</code> list is null, the <code>Credentials</code> originally used with this
+     * <code>DataSourceParameters</code> are automatically allowed.
+     * </p>
+     * 
+     * @param alternateDataSourceParameters
+     *        A set of alternate data source parameters that you want to share for the credentials stored with this data
+     *        source. The credentials are applied in tandem with the data source parameters when you copy a data source
+     *        by using a create or update request. The API compares the <code>DataSourceParameters</code> structure
+     *        that's in the request with the structures in the <code>AlternateDataSourceParameters</code> allowlist. If
+     *        the structures are an exact match, the request is allowed to use the credentials from this existing data
+     *        source. If the <code>AlternateDataSourceParameters</code> list is null, the <code>Credentials</code>
+     *        originally used with this <code>DataSourceParameters</code> are automatically allowed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataSource withAlternateDataSourceParameters(java.util.Collection<DataSourceParameters> alternateDataSourceParameters) {
+        setAlternateDataSourceParameters(alternateDataSourceParameters);
+        return this;
+    }
+
+    /**
+     * <p>
      * The VPC connection information. You need to use this parameter only when you want QuickSight to use a VPC
      * connection when connecting to your underlying source.
      * </p>
@@ -615,6 +746,8 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
             sb.append("LastUpdatedTime: ").append(getLastUpdatedTime()).append(",");
         if (getDataSourceParameters() != null)
             sb.append("DataSourceParameters: ").append(getDataSourceParameters()).append(",");
+        if (getAlternateDataSourceParameters() != null)
+            sb.append("AlternateDataSourceParameters: ").append(getAlternateDataSourceParameters()).append(",");
         if (getVpcConnectionProperties() != null)
             sb.append("VpcConnectionProperties: ").append(getVpcConnectionProperties()).append(",");
         if (getSslProperties() != null)
@@ -667,6 +800,11 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDataSourceParameters() != null && other.getDataSourceParameters().equals(this.getDataSourceParameters()) == false)
             return false;
+        if (other.getAlternateDataSourceParameters() == null ^ this.getAlternateDataSourceParameters() == null)
+            return false;
+        if (other.getAlternateDataSourceParameters() != null
+                && other.getAlternateDataSourceParameters().equals(this.getAlternateDataSourceParameters()) == false)
+            return false;
         if (other.getVpcConnectionProperties() == null ^ this.getVpcConnectionProperties() == null)
             return false;
         if (other.getVpcConnectionProperties() != null && other.getVpcConnectionProperties().equals(this.getVpcConnectionProperties()) == false)
@@ -695,6 +833,7 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedTime() == null) ? 0 : getLastUpdatedTime().hashCode());
         hashCode = prime * hashCode + ((getDataSourceParameters() == null) ? 0 : getDataSourceParameters().hashCode());
+        hashCode = prime * hashCode + ((getAlternateDataSourceParameters() == null) ? 0 : getAlternateDataSourceParameters().hashCode());
         hashCode = prime * hashCode + ((getVpcConnectionProperties() == null) ? 0 : getVpcConnectionProperties().hashCode());
         hashCode = prime * hashCode + ((getSslProperties() == null) ? 0 : getSslProperties().hashCode());
         hashCode = prime * hashCode + ((getErrorInfo() == null) ? 0 : getErrorInfo().hashCode());

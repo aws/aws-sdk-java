@@ -101,6 +101,12 @@ public class StackInstance implements Serializable, Cloneable {
     private String status;
     /**
      * <p>
+     * The detailed status of the stack instance.
+     * </p>
+     */
+    private StackInstanceComprehensiveStatus stackInstanceStatus;
+    /**
+     * <p>
      * The explanation for the specific status code that is assigned to this stack instance.
      * </p>
      */
@@ -792,6 +798,46 @@ public class StackInstance implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The detailed status of the stack instance.
+     * </p>
+     * 
+     * @param stackInstanceStatus
+     *        The detailed status of the stack instance.
+     */
+
+    public void setStackInstanceStatus(StackInstanceComprehensiveStatus stackInstanceStatus) {
+        this.stackInstanceStatus = stackInstanceStatus;
+    }
+
+    /**
+     * <p>
+     * The detailed status of the stack instance.
+     * </p>
+     * 
+     * @return The detailed status of the stack instance.
+     */
+
+    public StackInstanceComprehensiveStatus getStackInstanceStatus() {
+        return this.stackInstanceStatus;
+    }
+
+    /**
+     * <p>
+     * The detailed status of the stack instance.
+     * </p>
+     * 
+     * @param stackInstanceStatus
+     *        The detailed status of the stack instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StackInstance withStackInstanceStatus(StackInstanceComprehensiveStatus stackInstanceStatus) {
+        setStackInstanceStatus(stackInstanceStatus);
+        return this;
+    }
+
+    /**
+     * <p>
      * The explanation for the specific status code that is assigned to this stack instance.
      * </p>
      * 
@@ -1294,6 +1340,8 @@ public class StackInstance implements Serializable, Cloneable {
             sb.append("ParameterOverrides: ").append(getParameterOverrides()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
+        if (getStackInstanceStatus() != null)
+            sb.append("StackInstanceStatus: ").append(getStackInstanceStatus()).append(",");
         if (getStatusReason() != null)
             sb.append("StatusReason: ").append(getStatusReason()).append(",");
         if (getOrganizationalUnitId() != null)
@@ -1340,6 +1388,10 @@ public class StackInstance implements Serializable, Cloneable {
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getStackInstanceStatus() == null ^ this.getStackInstanceStatus() == null)
+            return false;
+        if (other.getStackInstanceStatus() != null && other.getStackInstanceStatus().equals(this.getStackInstanceStatus()) == false)
+            return false;
         if (other.getStatusReason() == null ^ this.getStatusReason() == null)
             return false;
         if (other.getStatusReason() != null && other.getStatusReason().equals(this.getStatusReason()) == false)
@@ -1370,6 +1422,7 @@ public class StackInstance implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getStackId() == null) ? 0 : getStackId().hashCode());
         hashCode = prime * hashCode + ((getParameterOverrides() == null) ? 0 : getParameterOverrides().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getStackInstanceStatus() == null) ? 0 : getStackInstanceStatus().hashCode());
         hashCode = prime * hashCode + ((getStatusReason() == null) ? 0 : getStatusReason().hashCode());
         hashCode = prime * hashCode + ((getOrganizationalUnitId() == null) ? 0 : getOrganizationalUnitId().hashCode());
         hashCode = prime * hashCode + ((getDriftStatus() == null) ? 0 : getDriftStatus().hashCode());

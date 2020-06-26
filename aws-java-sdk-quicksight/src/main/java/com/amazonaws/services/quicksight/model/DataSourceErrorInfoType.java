@@ -20,6 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum DataSourceErrorInfoType {
 
+    ACCESS_DENIED("ACCESS_DENIED"),
+    COPY_SOURCE_NOT_FOUND("COPY_SOURCE_NOT_FOUND"),
     TIMEOUT("TIMEOUT"),
     ENGINE_VERSION_NOT_SUPPORTED("ENGINE_VERSION_NOT_SUPPORTED"),
     UNKNOWN_HOST("UNKNOWN_HOST"),
