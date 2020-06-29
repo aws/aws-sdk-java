@@ -33,7 +33,17 @@ public class AbstractAWSCodeStarconnections implements AWSCodeStarconnections {
     }
 
     @Override
+    public CreateHostResult createHost(CreateHostRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteConnectionResult deleteConnection(DeleteConnectionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteHostResult deleteHost(DeleteHostRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -43,7 +53,17 @@ public class AbstractAWSCodeStarconnections implements AWSCodeStarconnections {
     }
 
     @Override
+    public GetHostResult getHost(GetHostRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListConnectionsResult listConnections(ListConnectionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListHostsResult listHosts(ListHostsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -19,12 +19,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The AWS::CodeStarConnections::Connection resource can be used to connect external source providers with services like
- * AWS CodePipeline.
+ * A resource that is used to connect third-party source providers with services like AWS CodePipeline.
  * </p>
  * <p>
- * Note: A connection created through CloudFormation is in `PENDING` status by default. You can make its status
- * `AVAILABLE` by editing the connection in the CodePipeline console.
+ * Note: A connection created through CloudFormation, the CLI, or the SDK is in `PENDING` status by default. You can
+ * make its status `AVAILABLE` by updating the connection in the console.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/Connection" target="_top">AWS
@@ -53,8 +52,8 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
     private String connectionArn;
     /**
      * <p>
-     * The name of the external provider where your third-party code repository is configured. Currently, the valid
-     * provider type is Bitbucket.
+     * The name of the external provider where your third-party code repository is configured. The valid provider type
+     * is Bitbucket.
      * </p>
      */
     private String providerType;
@@ -71,6 +70,12 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String connectionStatus;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the host associated with the connection.
+     * </p>
+     */
+    private String hostArn;
 
     /**
      * <p>
@@ -184,13 +189,13 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the external provider where your third-party code repository is configured. Currently, the valid
-     * provider type is Bitbucket.
+     * The name of the external provider where your third-party code repository is configured. The valid provider type
+     * is Bitbucket.
      * </p>
      * 
      * @param providerType
-     *        The name of the external provider where your third-party code repository is configured. Currently, the
-     *        valid provider type is Bitbucket.
+     *        The name of the external provider where your third-party code repository is configured. The valid provider
+     *        type is Bitbucket.
      * @see ProviderType
      */
 
@@ -200,12 +205,12 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the external provider where your third-party code repository is configured. Currently, the valid
-     * provider type is Bitbucket.
+     * The name of the external provider where your third-party code repository is configured. The valid provider type
+     * is Bitbucket.
      * </p>
      * 
-     * @return The name of the external provider where your third-party code repository is configured. Currently, the
-     *         valid provider type is Bitbucket.
+     * @return The name of the external provider where your third-party code repository is configured. The valid
+     *         provider type is Bitbucket.
      * @see ProviderType
      */
 
@@ -215,13 +220,13 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the external provider where your third-party code repository is configured. Currently, the valid
-     * provider type is Bitbucket.
+     * The name of the external provider where your third-party code repository is configured. The valid provider type
+     * is Bitbucket.
      * </p>
      * 
      * @param providerType
-     *        The name of the external provider where your third-party code repository is configured. Currently, the
-     *        valid provider type is Bitbucket.
+     *        The name of the external provider where your third-party code repository is configured. The valid provider
+     *        type is Bitbucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProviderType
      */
@@ -233,13 +238,13 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the external provider where your third-party code repository is configured. Currently, the valid
-     * provider type is Bitbucket.
+     * The name of the external provider where your third-party code repository is configured. The valid provider type
+     * is Bitbucket.
      * </p>
      * 
      * @param providerType
-     *        The name of the external provider where your third-party code repository is configured. Currently, the
-     *        valid provider type is Bitbucket.
+     *        The name of the external provider where your third-party code repository is configured. The valid provider
+     *        type is Bitbucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProviderType
      */
@@ -355,6 +360,46 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the host associated with the connection.
+     * </p>
+     * 
+     * @param hostArn
+     *        The Amazon Resource Name (ARN) of the host associated with the connection.
+     */
+
+    public void setHostArn(String hostArn) {
+        this.hostArn = hostArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the host associated with the connection.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the host associated with the connection.
+     */
+
+    public String getHostArn() {
+        return this.hostArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the host associated with the connection.
+     * </p>
+     * 
+     * @param hostArn
+     *        The Amazon Resource Name (ARN) of the host associated with the connection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Connection withHostArn(String hostArn) {
+        setHostArn(hostArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -375,7 +420,9 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
         if (getOwnerAccountId() != null)
             sb.append("OwnerAccountId: ").append(getOwnerAccountId()).append(",");
         if (getConnectionStatus() != null)
-            sb.append("ConnectionStatus: ").append(getConnectionStatus());
+            sb.append("ConnectionStatus: ").append(getConnectionStatus()).append(",");
+        if (getHostArn() != null)
+            sb.append("HostArn: ").append(getHostArn());
         sb.append("}");
         return sb.toString();
     }
@@ -410,6 +457,10 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getConnectionStatus() != null && other.getConnectionStatus().equals(this.getConnectionStatus()) == false)
             return false;
+        if (other.getHostArn() == null ^ this.getHostArn() == null)
+            return false;
+        if (other.getHostArn() != null && other.getHostArn().equals(this.getHostArn()) == false)
+            return false;
         return true;
     }
 
@@ -423,6 +474,7 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getProviderType() == null) ? 0 : getProviderType().hashCode());
         hashCode = prime * hashCode + ((getOwnerAccountId() == null) ? 0 : getOwnerAccountId().hashCode());
         hashCode = prime * hashCode + ((getConnectionStatus() == null) ? 0 : getConnectionStatus().hashCode());
+        hashCode = prime * hashCode + ((getHostArn() == null) ? 0 : getHostArn().hashCode());
         return hashCode;
     }
 

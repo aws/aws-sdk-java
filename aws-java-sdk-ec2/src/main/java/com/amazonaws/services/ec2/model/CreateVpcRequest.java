@@ -27,7 +27,9 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
 
     /**
      * <p>
-     * The IPv4 network range for the VPC, in CIDR notation. For example, <code>10.0.0.0/16</code>.
+     * The IPv4 network range for the VPC, in CIDR notation. For example, <code>10.0.0.0/16</code>. We modify the
+     * specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>, we modify it
+     * to <code>100.68.0.0/18</code>.
      * </p>
      */
     private String cidrBlock;
@@ -92,7 +94,9 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
      * initialize any additional object members.
      * 
      * @param cidrBlock
-     *        The IPv4 network range for the VPC, in CIDR notation. For example, <code>10.0.0.0/16</code>.
+     *        The IPv4 network range for the VPC, in CIDR notation. For example, <code>10.0.0.0/16</code>. We modify the
+     *        specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>, we
+     *        modify it to <code>100.68.0.0/18</code>.
      */
     public CreateVpcRequest(String cidrBlock) {
         setCidrBlock(cidrBlock);
@@ -100,11 +104,15 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
 
     /**
      * <p>
-     * The IPv4 network range for the VPC, in CIDR notation. For example, <code>10.0.0.0/16</code>.
+     * The IPv4 network range for the VPC, in CIDR notation. For example, <code>10.0.0.0/16</code>. We modify the
+     * specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>, we modify it
+     * to <code>100.68.0.0/18</code>.
      * </p>
      * 
      * @param cidrBlock
-     *        The IPv4 network range for the VPC, in CIDR notation. For example, <code>10.0.0.0/16</code>.
+     *        The IPv4 network range for the VPC, in CIDR notation. For example, <code>10.0.0.0/16</code>. We modify the
+     *        specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>, we
+     *        modify it to <code>100.68.0.0/18</code>.
      */
 
     public void setCidrBlock(String cidrBlock) {
@@ -113,10 +121,14 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
 
     /**
      * <p>
-     * The IPv4 network range for the VPC, in CIDR notation. For example, <code>10.0.0.0/16</code>.
+     * The IPv4 network range for the VPC, in CIDR notation. For example, <code>10.0.0.0/16</code>. We modify the
+     * specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>, we modify it
+     * to <code>100.68.0.0/18</code>.
      * </p>
      * 
-     * @return The IPv4 network range for the VPC, in CIDR notation. For example, <code>10.0.0.0/16</code>.
+     * @return The IPv4 network range for the VPC, in CIDR notation. For example, <code>10.0.0.0/16</code>. We modify
+     *         the specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>,
+     *         we modify it to <code>100.68.0.0/18</code>.
      */
 
     public String getCidrBlock() {
@@ -125,11 +137,15 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
 
     /**
      * <p>
-     * The IPv4 network range for the VPC, in CIDR notation. For example, <code>10.0.0.0/16</code>.
+     * The IPv4 network range for the VPC, in CIDR notation. For example, <code>10.0.0.0/16</code>. We modify the
+     * specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>, we modify it
+     * to <code>100.68.0.0/18</code>.
      * </p>
      * 
      * @param cidrBlock
-     *        The IPv4 network range for the VPC, in CIDR notation. For example, <code>10.0.0.0/16</code>.
+     *        The IPv4 network range for the VPC, in CIDR notation. For example, <code>10.0.0.0/16</code>. We modify the
+     *        specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>, we
+     *        modify it to <code>100.68.0.0/18</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

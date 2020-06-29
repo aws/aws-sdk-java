@@ -37,6 +37,8 @@ public class ConnectionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OwnerAccountId").build();
     private static final MarshallingInfo<String> CONNECTIONSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConnectionStatus").build();
+    private static final MarshallingInfo<String> HOSTARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("HostArn").build();
 
     private static final ConnectionMarshaller instance = new ConnectionMarshaller();
 
@@ -59,6 +61,7 @@ public class ConnectionMarshaller {
             protocolMarshaller.marshall(connection.getProviderType(), PROVIDERTYPE_BINDING);
             protocolMarshaller.marshall(connection.getOwnerAccountId(), OWNERACCOUNTID_BINDING);
             protocolMarshaller.marshall(connection.getConnectionStatus(), CONNECTIONSTATUS_BINDING);
+            protocolMarshaller.marshall(connection.getHostArn(), HOSTARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

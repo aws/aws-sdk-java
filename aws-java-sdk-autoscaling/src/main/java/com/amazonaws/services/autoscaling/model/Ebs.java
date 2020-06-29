@@ -31,8 +31,7 @@ public class Ebs implements Serializable, Cloneable {
      * The snapshot ID of the volume to use.
      * </p>
      * <p>
-     * <code>SnapshotId</code> is optional if you specify a volume size. If you specify both <code>SnapshotId</code> and
-     * <code>VolumeSize</code>, the volume size must be equal or greater than the size of the snapshot.
+     * You must specify either a <code>VolumeSize</code> or a <code>SnapshotId</code>.
      * </p>
      */
     private String snapshotId;
@@ -49,11 +48,11 @@ public class Ebs implements Serializable, Cloneable {
      * Default: If you create a volume from a snapshot and you don't specify a volume size, the default is the snapshot
      * size.
      * </p>
-     * <note>
      * <p>
-     * At least one of <code>VolumeSize</code> or <code>SnapshotId</code> is required.
+     * You must specify either a <code>VolumeSize</code> or a <code>SnapshotId</code>. If you specify both
+     * <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must be equal or greater than the size of
+     * the snapshot.
      * </p>
-     * </note>
      */
     private Integer volumeSize;
     /**
@@ -127,16 +126,13 @@ public class Ebs implements Serializable, Cloneable {
      * The snapshot ID of the volume to use.
      * </p>
      * <p>
-     * <code>SnapshotId</code> is optional if you specify a volume size. If you specify both <code>SnapshotId</code> and
-     * <code>VolumeSize</code>, the volume size must be equal or greater than the size of the snapshot.
+     * You must specify either a <code>VolumeSize</code> or a <code>SnapshotId</code>.
      * </p>
      * 
      * @param snapshotId
      *        The snapshot ID of the volume to use.</p>
      *        <p>
-     *        <code>SnapshotId</code> is optional if you specify a volume size. If you specify both
-     *        <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must be equal or greater than the
-     *        size of the snapshot.
+     *        You must specify either a <code>VolumeSize</code> or a <code>SnapshotId</code>.
      */
 
     public void setSnapshotId(String snapshotId) {
@@ -148,15 +144,12 @@ public class Ebs implements Serializable, Cloneable {
      * The snapshot ID of the volume to use.
      * </p>
      * <p>
-     * <code>SnapshotId</code> is optional if you specify a volume size. If you specify both <code>SnapshotId</code> and
-     * <code>VolumeSize</code>, the volume size must be equal or greater than the size of the snapshot.
+     * You must specify either a <code>VolumeSize</code> or a <code>SnapshotId</code>.
      * </p>
      * 
      * @return The snapshot ID of the volume to use.</p>
      *         <p>
-     *         <code>SnapshotId</code> is optional if you specify a volume size. If you specify both
-     *         <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must be equal or greater than the
-     *         size of the snapshot.
+     *         You must specify either a <code>VolumeSize</code> or a <code>SnapshotId</code>.
      */
 
     public String getSnapshotId() {
@@ -168,16 +161,13 @@ public class Ebs implements Serializable, Cloneable {
      * The snapshot ID of the volume to use.
      * </p>
      * <p>
-     * <code>SnapshotId</code> is optional if you specify a volume size. If you specify both <code>SnapshotId</code> and
-     * <code>VolumeSize</code>, the volume size must be equal or greater than the size of the snapshot.
+     * You must specify either a <code>VolumeSize</code> or a <code>SnapshotId</code>.
      * </p>
      * 
      * @param snapshotId
      *        The snapshot ID of the volume to use.</p>
      *        <p>
-     *        <code>SnapshotId</code> is optional if you specify a volume size. If you specify both
-     *        <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must be equal or greater than the
-     *        size of the snapshot.
+     *        You must specify either a <code>VolumeSize</code> or a <code>SnapshotId</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -199,11 +189,11 @@ public class Ebs implements Serializable, Cloneable {
      * Default: If you create a volume from a snapshot and you don't specify a volume size, the default is the snapshot
      * size.
      * </p>
-     * <note>
      * <p>
-     * At least one of <code>VolumeSize</code> or <code>SnapshotId</code> is required.
+     * You must specify either a <code>VolumeSize</code> or a <code>SnapshotId</code>. If you specify both
+     * <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must be equal or greater than the size of
+     * the snapshot.
      * </p>
-     * </note>
      * 
      * @param volumeSize
      *        The volume size, in Gibibytes (GiB).</p>
@@ -216,10 +206,10 @@ public class Ebs implements Serializable, Cloneable {
      *        Default: If you create a volume from a snapshot and you don't specify a volume size, the default is the
      *        snapshot size.
      *        </p>
-     *        <note>
      *        <p>
-     *        At least one of <code>VolumeSize</code> or <code>SnapshotId</code> is required.
-     *        </p>
+     *        You must specify either a <code>VolumeSize</code> or a <code>SnapshotId</code>. If you specify both
+     *        <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must be equal or greater than the
+     *        size of the snapshot.
      */
 
     public void setVolumeSize(Integer volumeSize) {
@@ -239,11 +229,11 @@ public class Ebs implements Serializable, Cloneable {
      * Default: If you create a volume from a snapshot and you don't specify a volume size, the default is the snapshot
      * size.
      * </p>
-     * <note>
      * <p>
-     * At least one of <code>VolumeSize</code> or <code>SnapshotId</code> is required.
+     * You must specify either a <code>VolumeSize</code> or a <code>SnapshotId</code>. If you specify both
+     * <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must be equal or greater than the size of
+     * the snapshot.
      * </p>
-     * </note>
      * 
      * @return The volume size, in Gibibytes (GiB).</p>
      *         <p>
@@ -255,10 +245,10 @@ public class Ebs implements Serializable, Cloneable {
      *         Default: If you create a volume from a snapshot and you don't specify a volume size, the default is the
      *         snapshot size.
      *         </p>
-     *         <note>
      *         <p>
-     *         At least one of <code>VolumeSize</code> or <code>SnapshotId</code> is required.
-     *         </p>
+     *         You must specify either a <code>VolumeSize</code> or a <code>SnapshotId</code>. If you specify both
+     *         <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must be equal or greater than the
+     *         size of the snapshot.
      */
 
     public Integer getVolumeSize() {
@@ -278,11 +268,11 @@ public class Ebs implements Serializable, Cloneable {
      * Default: If you create a volume from a snapshot and you don't specify a volume size, the default is the snapshot
      * size.
      * </p>
-     * <note>
      * <p>
-     * At least one of <code>VolumeSize</code> or <code>SnapshotId</code> is required.
+     * You must specify either a <code>VolumeSize</code> or a <code>SnapshotId</code>. If you specify both
+     * <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must be equal or greater than the size of
+     * the snapshot.
      * </p>
-     * </note>
      * 
      * @param volumeSize
      *        The volume size, in Gibibytes (GiB).</p>
@@ -295,10 +285,10 @@ public class Ebs implements Serializable, Cloneable {
      *        Default: If you create a volume from a snapshot and you don't specify a volume size, the default is the
      *        snapshot size.
      *        </p>
-     *        <note>
      *        <p>
-     *        At least one of <code>VolumeSize</code> or <code>SnapshotId</code> is required.
-     *        </p>
+     *        You must specify either a <code>VolumeSize</code> or a <code>SnapshotId</code>. If you specify both
+     *        <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must be equal or greater than the
+     *        size of the snapshot.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

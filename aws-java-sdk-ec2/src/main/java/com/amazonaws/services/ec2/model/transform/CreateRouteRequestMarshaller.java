@@ -48,6 +48,10 @@ public class CreateRouteRequestMarshaller implements Marshaller<Request<CreateRo
             request.addParameter("DestinationIpv6CidrBlock", StringUtils.fromString(createRouteRequest.getDestinationIpv6CidrBlock()));
         }
 
+        if (createRouteRequest.getDestinationPrefixListId() != null) {
+            request.addParameter("DestinationPrefixListId", StringUtils.fromString(createRouteRequest.getDestinationPrefixListId()));
+        }
+
         if (createRouteRequest.getEgressOnlyInternetGatewayId() != null) {
             request.addParameter("EgressOnlyInternetGatewayId", StringUtils.fromString(createRouteRequest.getEgressOnlyInternetGatewayId()));
         }

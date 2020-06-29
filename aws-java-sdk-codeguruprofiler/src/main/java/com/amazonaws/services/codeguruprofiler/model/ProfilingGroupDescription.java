@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The description of a profiling group.
+ * Contains information about a profiling group.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/ProfilingGroupDescription"
@@ -28,17 +28,33 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ProfilingGroupDescription implements Serializable, Cloneable, StructuredPojo {
 
-    /** <p/> */
+    /**
+     * <p>
+     * An <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AgentOrchestrationConfig.html">
+     * <code>AgentOrchestrationConfig</code> </a> object that indicates if the profiling group is enabled for profiled
+     * or not.
+     * </p>
+     */
     private AgentOrchestrationConfig agentOrchestrationConfig;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) identifying the profiling group.
+     * The Amazon Resource Name (ARN) identifying the profiling group resource.
      * </p>
      */
     private String arn;
     /**
      * <p>
-     * The time, in milliseconds since the epoch, when the profiling group was created.
+     * The compute platform of the profiling group. If it is set to <code>AWSLambda</code>, then the profiled
+     * application runs on AWS Lambda. If it is set to <code>Default</code>, then the profiled application runs on a
+     * compute platform that is not AWS Lambda, such an Amazon EC2 instance, an on-premises server, or a different
+     * platform. The default is <code>Default</code>.
+     * </p>
+     */
+    private String computePlatform;
+    /**
+     * <p>
+     * The time when the profiling group was created. Specify using the ISO 8601 format. For example,
+     * 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.
      * </p>
      */
     private java.util.Date createdAt;
@@ -50,21 +66,32 @@ public class ProfilingGroupDescription implements Serializable, Cloneable, Struc
     private String name;
     /**
      * <p>
-     * The status of the profiling group.
+     * A <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingStatus.html">
+     * <code>ProfilingStatus</code> </a> object that includes information about the last time a profile agent pinged
+     * back, the last time a profile was received, and the aggregation period and start time for the most recent
+     * aggregated profile.
      * </p>
      */
     private ProfilingStatus profilingStatus;
     /**
      * <p>
-     * The time, in milliseconds since the epoch, when the profiling group was last updated.
+     * The date and time when the profiling group was last updated. Specify using the ISO 8601 format. For example,
+     * 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.
      * </p>
      */
     private java.util.Date updatedAt;
 
     /**
-     * <p/>
+     * <p>
+     * An <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AgentOrchestrationConfig.html">
+     * <code>AgentOrchestrationConfig</code> </a> object that indicates if the profiling group is enabled for profiled
+     * or not.
+     * </p>
      * 
      * @param agentOrchestrationConfig
+     *        An <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AgentOrchestrationConfig.html">
+     *        <code>AgentOrchestrationConfig</code> </a> object that indicates if the profiling group is enabled for
+     *        profiled or not.
      */
 
     public void setAgentOrchestrationConfig(AgentOrchestrationConfig agentOrchestrationConfig) {
@@ -72,9 +99,15 @@ public class ProfilingGroupDescription implements Serializable, Cloneable, Struc
     }
 
     /**
-     * <p/>
+     * <p>
+     * An <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AgentOrchestrationConfig.html">
+     * <code>AgentOrchestrationConfig</code> </a> object that indicates if the profiling group is enabled for profiled
+     * or not.
+     * </p>
      * 
-     * @return
+     * @return An <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AgentOrchestrationConfig.html">
+     *         <code>AgentOrchestrationConfig</code> </a> object that indicates if the profiling group is enabled for
+     *         profiled or not.
      */
 
     public AgentOrchestrationConfig getAgentOrchestrationConfig() {
@@ -82,9 +115,16 @@ public class ProfilingGroupDescription implements Serializable, Cloneable, Struc
     }
 
     /**
-     * <p/>
+     * <p>
+     * An <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AgentOrchestrationConfig.html">
+     * <code>AgentOrchestrationConfig</code> </a> object that indicates if the profiling group is enabled for profiled
+     * or not.
+     * </p>
      * 
      * @param agentOrchestrationConfig
+     *        An <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AgentOrchestrationConfig.html">
+     *        <code>AgentOrchestrationConfig</code> </a> object that indicates if the profiling group is enabled for
+     *        profiled or not.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +135,11 @@ public class ProfilingGroupDescription implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) identifying the profiling group.
+     * The Amazon Resource Name (ARN) identifying the profiling group resource.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) identifying the profiling group.
+     *        The Amazon Resource Name (ARN) identifying the profiling group resource.
      */
 
     public void setArn(String arn) {
@@ -108,10 +148,10 @@ public class ProfilingGroupDescription implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) identifying the profiling group.
+     * The Amazon Resource Name (ARN) identifying the profiling group resource.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) identifying the profiling group.
+     * @return The Amazon Resource Name (ARN) identifying the profiling group resource.
      */
 
     public String getArn() {
@@ -120,11 +160,11 @@ public class ProfilingGroupDescription implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) identifying the profiling group.
+     * The Amazon Resource Name (ARN) identifying the profiling group resource.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) identifying the profiling group.
+     *        The Amazon Resource Name (ARN) identifying the profiling group resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +175,96 @@ public class ProfilingGroupDescription implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The time, in milliseconds since the epoch, when the profiling group was created.
+     * The compute platform of the profiling group. If it is set to <code>AWSLambda</code>, then the profiled
+     * application runs on AWS Lambda. If it is set to <code>Default</code>, then the profiled application runs on a
+     * compute platform that is not AWS Lambda, such an Amazon EC2 instance, an on-premises server, or a different
+     * platform. The default is <code>Default</code>.
+     * </p>
+     * 
+     * @param computePlatform
+     *        The compute platform of the profiling group. If it is set to <code>AWSLambda</code>, then the profiled
+     *        application runs on AWS Lambda. If it is set to <code>Default</code>, then the profiled application runs
+     *        on a compute platform that is not AWS Lambda, such an Amazon EC2 instance, an on-premises server, or a
+     *        different platform. The default is <code>Default</code>.
+     * @see ComputePlatform
+     */
+
+    public void setComputePlatform(String computePlatform) {
+        this.computePlatform = computePlatform;
+    }
+
+    /**
+     * <p>
+     * The compute platform of the profiling group. If it is set to <code>AWSLambda</code>, then the profiled
+     * application runs on AWS Lambda. If it is set to <code>Default</code>, then the profiled application runs on a
+     * compute platform that is not AWS Lambda, such an Amazon EC2 instance, an on-premises server, or a different
+     * platform. The default is <code>Default</code>.
+     * </p>
+     * 
+     * @return The compute platform of the profiling group. If it is set to <code>AWSLambda</code>, then the profiled
+     *         application runs on AWS Lambda. If it is set to <code>Default</code>, then the profiled application runs
+     *         on a compute platform that is not AWS Lambda, such an Amazon EC2 instance, an on-premises server, or a
+     *         different platform. The default is <code>Default</code>.
+     * @see ComputePlatform
+     */
+
+    public String getComputePlatform() {
+        return this.computePlatform;
+    }
+
+    /**
+     * <p>
+     * The compute platform of the profiling group. If it is set to <code>AWSLambda</code>, then the profiled
+     * application runs on AWS Lambda. If it is set to <code>Default</code>, then the profiled application runs on a
+     * compute platform that is not AWS Lambda, such an Amazon EC2 instance, an on-premises server, or a different
+     * platform. The default is <code>Default</code>.
+     * </p>
+     * 
+     * @param computePlatform
+     *        The compute platform of the profiling group. If it is set to <code>AWSLambda</code>, then the profiled
+     *        application runs on AWS Lambda. If it is set to <code>Default</code>, then the profiled application runs
+     *        on a compute platform that is not AWS Lambda, such an Amazon EC2 instance, an on-premises server, or a
+     *        different platform. The default is <code>Default</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ComputePlatform
+     */
+
+    public ProfilingGroupDescription withComputePlatform(String computePlatform) {
+        setComputePlatform(computePlatform);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The compute platform of the profiling group. If it is set to <code>AWSLambda</code>, then the profiled
+     * application runs on AWS Lambda. If it is set to <code>Default</code>, then the profiled application runs on a
+     * compute platform that is not AWS Lambda, such an Amazon EC2 instance, an on-premises server, or a different
+     * platform. The default is <code>Default</code>.
+     * </p>
+     * 
+     * @param computePlatform
+     *        The compute platform of the profiling group. If it is set to <code>AWSLambda</code>, then the profiled
+     *        application runs on AWS Lambda. If it is set to <code>Default</code>, then the profiled application runs
+     *        on a compute platform that is not AWS Lambda, such an Amazon EC2 instance, an on-premises server, or a
+     *        different platform. The default is <code>Default</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ComputePlatform
+     */
+
+    public ProfilingGroupDescription withComputePlatform(ComputePlatform computePlatform) {
+        this.computePlatform = computePlatform.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The time when the profiling group was created. Specify using the ISO 8601 format. For example,
+     * 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.
      * </p>
      * 
      * @param createdAt
-     *        The time, in milliseconds since the epoch, when the profiling group was created.
+     *        The time when the profiling group was created. Specify using the ISO 8601 format. For example,
+     *        2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -148,10 +273,12 @@ public class ProfilingGroupDescription implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The time, in milliseconds since the epoch, when the profiling group was created.
+     * The time when the profiling group was created. Specify using the ISO 8601 format. For example,
+     * 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.
      * </p>
      * 
-     * @return The time, in milliseconds since the epoch, when the profiling group was created.
+     * @return The time when the profiling group was created. Specify using the ISO 8601 format. For example,
+     *         2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.
      */
 
     public java.util.Date getCreatedAt() {
@@ -160,11 +287,13 @@ public class ProfilingGroupDescription implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The time, in milliseconds since the epoch, when the profiling group was created.
+     * The time when the profiling group was created. Specify using the ISO 8601 format. For example,
+     * 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.
      * </p>
      * 
      * @param createdAt
-     *        The time, in milliseconds since the epoch, when the profiling group was created.
+     *        The time when the profiling group was created. Specify using the ISO 8601 format. For example,
+     *        2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -215,11 +344,17 @@ public class ProfilingGroupDescription implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The status of the profiling group.
+     * A <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingStatus.html">
+     * <code>ProfilingStatus</code> </a> object that includes information about the last time a profile agent pinged
+     * back, the last time a profile was received, and the aggregation period and start time for the most recent
+     * aggregated profile.
      * </p>
      * 
      * @param profilingStatus
-     *        The status of the profiling group.
+     *        A <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingStatus.html">
+     *        <code>ProfilingStatus</code> </a> object that includes information about the last time a profile agent
+     *        pinged back, the last time a profile was received, and the aggregation period and start time for the most
+     *        recent aggregated profile.
      */
 
     public void setProfilingStatus(ProfilingStatus profilingStatus) {
@@ -228,10 +363,16 @@ public class ProfilingGroupDescription implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The status of the profiling group.
+     * A <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingStatus.html">
+     * <code>ProfilingStatus</code> </a> object that includes information about the last time a profile agent pinged
+     * back, the last time a profile was received, and the aggregation period and start time for the most recent
+     * aggregated profile.
      * </p>
      * 
-     * @return The status of the profiling group.
+     * @return A <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingStatus.html">
+     *         <code>ProfilingStatus</code> </a> object that includes information about the last time a profile agent
+     *         pinged back, the last time a profile was received, and the aggregation period and start time for the most
+     *         recent aggregated profile.
      */
 
     public ProfilingStatus getProfilingStatus() {
@@ -240,11 +381,17 @@ public class ProfilingGroupDescription implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The status of the profiling group.
+     * A <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingStatus.html">
+     * <code>ProfilingStatus</code> </a> object that includes information about the last time a profile agent pinged
+     * back, the last time a profile was received, and the aggregation period and start time for the most recent
+     * aggregated profile.
      * </p>
      * 
      * @param profilingStatus
-     *        The status of the profiling group.
+     *        A <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingStatus.html">
+     *        <code>ProfilingStatus</code> </a> object that includes information about the last time a profile agent
+     *        pinged back, the last time a profile was received, and the aggregation period and start time for the most
+     *        recent aggregated profile.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -255,11 +402,13 @@ public class ProfilingGroupDescription implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The time, in milliseconds since the epoch, when the profiling group was last updated.
+     * The date and time when the profiling group was last updated. Specify using the ISO 8601 format. For example,
+     * 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.
      * </p>
      * 
      * @param updatedAt
-     *        The time, in milliseconds since the epoch, when the profiling group was last updated.
+     *        The date and time when the profiling group was last updated. Specify using the ISO 8601 format. For
+     *        example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.
      */
 
     public void setUpdatedAt(java.util.Date updatedAt) {
@@ -268,10 +417,12 @@ public class ProfilingGroupDescription implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The time, in milliseconds since the epoch, when the profiling group was last updated.
+     * The date and time when the profiling group was last updated. Specify using the ISO 8601 format. For example,
+     * 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.
      * </p>
      * 
-     * @return The time, in milliseconds since the epoch, when the profiling group was last updated.
+     * @return The date and time when the profiling group was last updated. Specify using the ISO 8601 format. For
+     *         example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.
      */
 
     public java.util.Date getUpdatedAt() {
@@ -280,11 +431,13 @@ public class ProfilingGroupDescription implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The time, in milliseconds since the epoch, when the profiling group was last updated.
+     * The date and time when the profiling group was last updated. Specify using the ISO 8601 format. For example,
+     * 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.
      * </p>
      * 
      * @param updatedAt
-     *        The time, in milliseconds since the epoch, when the profiling group was last updated.
+     *        The date and time when the profiling group was last updated. Specify using the ISO 8601 format. For
+     *        example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -309,6 +462,8 @@ public class ProfilingGroupDescription implements Serializable, Cloneable, Struc
             sb.append("AgentOrchestrationConfig: ").append(getAgentOrchestrationConfig()).append(",");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
+        if (getComputePlatform() != null)
+            sb.append("ComputePlatform: ").append(getComputePlatform()).append(",");
         if (getCreatedAt() != null)
             sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getName() != null)
@@ -339,6 +494,10 @@ public class ProfilingGroupDescription implements Serializable, Cloneable, Struc
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
+        if (other.getComputePlatform() == null ^ this.getComputePlatform() == null)
+            return false;
+        if (other.getComputePlatform() != null && other.getComputePlatform().equals(this.getComputePlatform()) == false)
+            return false;
         if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
             return false;
         if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
@@ -365,6 +524,7 @@ public class ProfilingGroupDescription implements Serializable, Cloneable, Struc
 
         hashCode = prime * hashCode + ((getAgentOrchestrationConfig() == null) ? 0 : getAgentOrchestrationConfig().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getComputePlatform() == null) ? 0 : getComputePlatform().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getProfilingStatus() == null) ? 0 : getProfilingStatus().hashCode());

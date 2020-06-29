@@ -68,6 +68,10 @@ public class ConnectionJsonUnmarshaller implements Unmarshaller<Connection, Json
                     context.nextToken();
                     connection.setConnectionStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("HostArn", targetDepth)) {
+                    context.nextToken();
+                    connection.setHostArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

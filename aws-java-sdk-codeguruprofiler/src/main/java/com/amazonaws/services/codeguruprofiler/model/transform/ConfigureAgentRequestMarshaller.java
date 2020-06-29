@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.codeguruprofiler.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -29,6 +31,8 @@ public class ConfigureAgentRequestMarshaller {
 
     private static final MarshallingInfo<String> FLEETINSTANCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("fleetInstanceId").build();
+    private static final MarshallingInfo<Map> METADATA_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("metadata").build();
     private static final MarshallingInfo<String> PROFILINGGROUPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("profilingGroupName").build();
 
@@ -49,6 +53,7 @@ public class ConfigureAgentRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(configureAgentRequest.getFleetInstanceId(), FLEETINSTANCEID_BINDING);
+            protocolMarshaller.marshall(configureAgentRequest.getMetadata(), METADATA_BINDING);
             protocolMarshaller.marshall(configureAgentRequest.getProfilingGroupName(), PROFILINGGROUPNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

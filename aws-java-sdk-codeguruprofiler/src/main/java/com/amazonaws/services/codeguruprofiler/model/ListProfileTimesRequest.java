@@ -66,8 +66,26 @@ public class ListProfileTimesRequest extends com.amazonaws.AmazonWebServiceReque
     private String orderBy;
     /**
      * <p>
-     * The aggregation period.
+     * The aggregation period. This specifies the period during which an aggregation profile collects posted agent
+     * profiles for a profiling group. There are 3 valid values.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>P1D</code> — 1 day
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PT1H</code> — 1 hour
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PT5M</code> — 5 minutes
+     * </p>
+     * </li>
+     * </ul>
      */
     private String period;
     /**
@@ -336,11 +354,46 @@ public class ListProfileTimesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The aggregation period.
+     * The aggregation period. This specifies the period during which an aggregation profile collects posted agent
+     * profiles for a profiling group. There are 3 valid values.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>P1D</code> — 1 day
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PT1H</code> — 1 hour
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PT5M</code> — 5 minutes
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param period
-     *        The aggregation period.
+     *        The aggregation period. This specifies the period during which an aggregation profile collects posted
+     *        agent profiles for a profiling group. There are 3 valid values. </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>P1D</code> — 1 day
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PT1H</code> — 1 hour
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PT5M</code> — 5 minutes
+     *        </p>
+     *        </li>
      * @see AggregationPeriod
      */
 
@@ -350,10 +403,45 @@ public class ListProfileTimesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The aggregation period.
+     * The aggregation period. This specifies the period during which an aggregation profile collects posted agent
+     * profiles for a profiling group. There are 3 valid values.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>P1D</code> — 1 day
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PT1H</code> — 1 hour
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PT5M</code> — 5 minutes
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The aggregation period.
+     * @return The aggregation period. This specifies the period during which an aggregation profile collects posted
+     *         agent profiles for a profiling group. There are 3 valid values. </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>P1D</code> — 1 day
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>PT1H</code> — 1 hour
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>PT5M</code> — 5 minutes
+     *         </p>
+     *         </li>
      * @see AggregationPeriod
      */
 
@@ -363,11 +451,46 @@ public class ListProfileTimesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The aggregation period.
+     * The aggregation period. This specifies the period during which an aggregation profile collects posted agent
+     * profiles for a profiling group. There are 3 valid values.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>P1D</code> — 1 day
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PT1H</code> — 1 hour
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PT5M</code> — 5 minutes
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param period
-     *        The aggregation period.
+     *        The aggregation period. This specifies the period during which an aggregation profile collects posted
+     *        agent profiles for a profiling group. There are 3 valid values. </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>P1D</code> — 1 day
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PT1H</code> — 1 hour
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PT5M</code> — 5 minutes
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AggregationPeriod
      */
@@ -379,11 +502,46 @@ public class ListProfileTimesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The aggregation period.
+     * The aggregation period. This specifies the period during which an aggregation profile collects posted agent
+     * profiles for a profiling group. There are 3 valid values.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>P1D</code> — 1 day
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PT1H</code> — 1 hour
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PT5M</code> — 5 minutes
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param period
-     *        The aggregation period.
+     *        The aggregation period. This specifies the period during which an aggregation profile collects posted
+     *        agent profiles for a profiling group. There are 3 valid values. </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>P1D</code> — 1 day
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PT1H</code> — 1 hour
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PT5M</code> — 5 minutes
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AggregationPeriod
      */

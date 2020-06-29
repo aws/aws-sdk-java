@@ -48,6 +48,11 @@ public class AgentConfigurationJsonUnmarshaller implements Unmarshaller<AgentCon
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("agentParameters", targetDepth)) {
+                    context.nextToken();
+                    agentConfiguration.setAgentParameters(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(String.class)).unmarshall(context));
+                }
                 if (context.testExpression("periodInSeconds", targetDepth)) {
                     context.nextToken();
                     agentConfiguration.setPeriodInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));

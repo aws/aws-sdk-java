@@ -39,6 +39,12 @@ public class DeleteRouteRequest extends AmazonWebServiceRequest implements Seria
     private String destinationIpv6CidrBlock;
     /**
      * <p>
+     * The ID of the prefix list for the route.
+     * </p>
+     */
+    private String destinationPrefixListId;
+    /**
+     * <p>
      * The ID of the route table.
      * </p>
      */
@@ -126,6 +132,46 @@ public class DeleteRouteRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
+     * The ID of the prefix list for the route.
+     * </p>
+     * 
+     * @param destinationPrefixListId
+     *        The ID of the prefix list for the route.
+     */
+
+    public void setDestinationPrefixListId(String destinationPrefixListId) {
+        this.destinationPrefixListId = destinationPrefixListId;
+    }
+
+    /**
+     * <p>
+     * The ID of the prefix list for the route.
+     * </p>
+     * 
+     * @return The ID of the prefix list for the route.
+     */
+
+    public String getDestinationPrefixListId() {
+        return this.destinationPrefixListId;
+    }
+
+    /**
+     * <p>
+     * The ID of the prefix list for the route.
+     * </p>
+     * 
+     * @param destinationPrefixListId
+     *        The ID of the prefix list for the route.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteRouteRequest withDestinationPrefixListId(String destinationPrefixListId) {
+        setDestinationPrefixListId(destinationPrefixListId);
+        return this;
+    }
+
+    /**
+     * <p>
      * The ID of the route table.
      * </p>
      * 
@@ -191,6 +237,8 @@ public class DeleteRouteRequest extends AmazonWebServiceRequest implements Seria
             sb.append("DestinationCidrBlock: ").append(getDestinationCidrBlock()).append(",");
         if (getDestinationIpv6CidrBlock() != null)
             sb.append("DestinationIpv6CidrBlock: ").append(getDestinationIpv6CidrBlock()).append(",");
+        if (getDestinationPrefixListId() != null)
+            sb.append("DestinationPrefixListId: ").append(getDestinationPrefixListId()).append(",");
         if (getRouteTableId() != null)
             sb.append("RouteTableId: ").append(getRouteTableId());
         sb.append("}");
@@ -215,6 +263,10 @@ public class DeleteRouteRequest extends AmazonWebServiceRequest implements Seria
             return false;
         if (other.getDestinationIpv6CidrBlock() != null && other.getDestinationIpv6CidrBlock().equals(this.getDestinationIpv6CidrBlock()) == false)
             return false;
+        if (other.getDestinationPrefixListId() == null ^ this.getDestinationPrefixListId() == null)
+            return false;
+        if (other.getDestinationPrefixListId() != null && other.getDestinationPrefixListId().equals(this.getDestinationPrefixListId()) == false)
+            return false;
         if (other.getRouteTableId() == null ^ this.getRouteTableId() == null)
             return false;
         if (other.getRouteTableId() != null && other.getRouteTableId().equals(this.getRouteTableId()) == false)
@@ -229,6 +281,7 @@ public class DeleteRouteRequest extends AmazonWebServiceRequest implements Seria
 
         hashCode = prime * hashCode + ((getDestinationCidrBlock() == null) ? 0 : getDestinationCidrBlock().hashCode());
         hashCode = prime * hashCode + ((getDestinationIpv6CidrBlock() == null) ? 0 : getDestinationIpv6CidrBlock().hashCode());
+        hashCode = prime * hashCode + ((getDestinationPrefixListId() == null) ? 0 : getDestinationPrefixListId().hashCode());
         hashCode = prime * hashCode + ((getRouteTableId() == null) ? 0 : getRouteTableId().hashCode());
         return hashCode;
     }

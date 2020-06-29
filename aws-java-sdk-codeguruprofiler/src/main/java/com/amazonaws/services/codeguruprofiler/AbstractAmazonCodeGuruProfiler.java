@@ -28,6 +28,16 @@ public class AbstractAmazonCodeGuruProfiler implements AmazonCodeGuruProfiler {
     }
 
     @Override
+    public AddNotificationChannelsResult addNotificationChannels(AddNotificationChannelsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public BatchGetFrameMetricDataResult batchGetFrameMetricData(BatchGetFrameMetricDataRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ConfigureAgentResult configureAgent(ConfigureAgentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -48,12 +58,32 @@ public class AbstractAmazonCodeGuruProfiler implements AmazonCodeGuruProfiler {
     }
 
     @Override
+    public GetFindingsReportAccountSummaryResult getFindingsReportAccountSummary(GetFindingsReportAccountSummaryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetNotificationConfigurationResult getNotificationConfiguration(GetNotificationConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetPolicyResult getPolicy(GetPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public GetProfileResult getProfile(GetProfileRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetRecommendationsResult getRecommendations(GetRecommendationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListFindingsReportsResult listFindingsReports(ListFindingsReportsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -78,7 +108,17 @@ public class AbstractAmazonCodeGuruProfiler implements AmazonCodeGuruProfiler {
     }
 
     @Override
+    public RemoveNotificationChannelResult removeNotificationChannel(RemoveNotificationChannelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public RemovePermissionResult removePermission(RemovePermissionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public SubmitFeedbackResult submitFeedback(SubmitFeedbackRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

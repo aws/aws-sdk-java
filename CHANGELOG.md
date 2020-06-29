@@ -1,3 +1,20 @@
+# __1.11.813__ __2020-06-29__
+## __AWS CodeStar connections__
+  - ### Features
+    - Updated and new APIs in support of hosts for connections to installed provider types. New integration with the GitHub Enterprise Server provider type.
+
+## __Amazon CodeGuru Profiler__
+  - ### Features
+    - Amazon CodeGuru Profiler is now generally available. The Profiler helps developers to optimize their software, troubleshoot issues in production, and identify their most expensive lines of code. As part of general availability, we are launching: Profiling of AWS Lambda functions, Anomaly detection in CPU profiles, Color My Code on flame graphs, Expanding presence to 10 AWS regions.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Virtual Private Cloud (VPC) customers can now create and manage their own Prefix Lists to simplify VPC configurations.
+
+## __Auto Scaling__
+  - ### Features
+    - Documentation updates for Amazon EC2 Auto Scaling.
+
 # __1.11.812__ __2020-06-26__
 ## __AWS CloudFormation__
   - ### Features

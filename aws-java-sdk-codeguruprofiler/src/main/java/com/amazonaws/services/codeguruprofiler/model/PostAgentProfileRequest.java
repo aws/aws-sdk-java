@@ -28,17 +28,41 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class PostAgentProfileRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** <p/> */
+    /**
+     * <p>
+     * The submitted profiling data.
+     * </p>
+     */
     private java.nio.ByteBuffer agentProfile;
-    /** <p/> */
+    /**
+     * <p>
+     * The format of the submitted profiling data. The format maps to the <code>Accept</code> and
+     * <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the default .
+     * </p>
+     * 
+     * <pre>
+     * <code> &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;application/json&lt;/code&gt; — standard JSON format &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;application/x-amzn-ion&lt;/code&gt; — the Amazon Ion data format. For more information, see &lt;a href=&quot;http://amzn.github.io/ion-docs/&quot;&gt;Amazon Ion&lt;/a&gt;. &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; </code>
+     * </pre>
+     */
     private String contentType;
-    /** <p/> */
+    /**
+     * <p>
+     * Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental submission of
+     * duplicate profiling data if there are failures and retries.
+     * </p>
+     */
     private String profileToken;
-    /** <p/> */
+    /**
+     * <p>
+     * The name of the profiling group with the aggregated profile that receives the submitted profiling data.
+     * </p>
+     */
     private String profilingGroupName;
 
     /**
-     * <p/>
+     * <p>
+     * The submitted profiling data.
+     * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
      * Users of the SDK should not perform Base64 encoding on this field.
@@ -51,6 +75,7 @@ public class PostAgentProfileRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param agentProfile
+     *        The submitted profiling data.
      */
 
     public void setAgentProfile(java.nio.ByteBuffer agentProfile) {
@@ -58,7 +83,9 @@ public class PostAgentProfileRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * <p/>
+     * <p>
+     * The submitted profiling data.
+     * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
      * using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent
@@ -67,7 +94,7 @@ public class PostAgentProfileRequest extends com.amazonaws.AmazonWebServiceReque
      * {@code position}.
      * </p>
      * 
-     * @return
+     * @return The submitted profiling data.
      */
 
     public java.nio.ByteBuffer getAgentProfile() {
@@ -75,7 +102,9 @@ public class PostAgentProfileRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * <p/>
+     * <p>
+     * The submitted profiling data.
+     * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
      * Users of the SDK should not perform Base64 encoding on this field.
@@ -88,6 +117,7 @@ public class PostAgentProfileRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param agentProfile
+     *        The submitted profiling data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,9 +127,21 @@ public class PostAgentProfileRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * <p/>
+     * <p>
+     * The format of the submitted profiling data. The format maps to the <code>Accept</code> and
+     * <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the default .
+     * </p>
+     * 
+     * <pre>
+     * <code> &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;application/json&lt;/code&gt; — standard JSON format &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;application/x-amzn-ion&lt;/code&gt; — the Amazon Ion data format. For more information, see &lt;a href=&quot;http://amzn.github.io/ion-docs/&quot;&gt;Amazon Ion&lt;/a&gt;. &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; </code>
+     * </pre>
      * 
      * @param contentType
+     *        The format of the submitted profiling data. The format maps to the <code>Accept</code> and
+     *        <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the
+     *        default . </p>
+     * 
+     * <pre><code> &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;application/json&lt;/code&gt; — standard JSON format &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;application/x-amzn-ion&lt;/code&gt; — the Amazon Ion data format. For more information, see &lt;a href=&quot;http://amzn.github.io/ion-docs/&quot;&gt;Amazon Ion&lt;/a&gt;. &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; </code>
      */
 
     public void setContentType(String contentType) {
@@ -107,9 +149,20 @@ public class PostAgentProfileRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * <p/>
+     * <p>
+     * The format of the submitted profiling data. The format maps to the <code>Accept</code> and
+     * <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the default .
+     * </p>
      * 
-     * @return
+     * <pre>
+     * <code> &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;application/json&lt;/code&gt; — standard JSON format &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;application/x-amzn-ion&lt;/code&gt; — the Amazon Ion data format. For more information, see &lt;a href=&quot;http://amzn.github.io/ion-docs/&quot;&gt;Amazon Ion&lt;/a&gt;. &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; </code>
+     * </pre>
+     * 
+     * @return The format of the submitted profiling data. The format maps to the <code>Accept</code> and
+     *         <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the
+     *         default . </p>
+     * 
+     * <pre><code> &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;application/json&lt;/code&gt; — standard JSON format &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;application/x-amzn-ion&lt;/code&gt; — the Amazon Ion data format. For more information, see &lt;a href=&quot;http://amzn.github.io/ion-docs/&quot;&gt;Amazon Ion&lt;/a&gt;. &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; </code>
      */
 
     public String getContentType() {
@@ -117,9 +170,22 @@ public class PostAgentProfileRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * <p/>
+     * <p>
+     * The format of the submitted profiling data. The format maps to the <code>Accept</code> and
+     * <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the default .
+     * </p>
+     * 
+     * <pre>
+     * <code> &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;application/json&lt;/code&gt; — standard JSON format &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;application/x-amzn-ion&lt;/code&gt; — the Amazon Ion data format. For more information, see &lt;a href=&quot;http://amzn.github.io/ion-docs/&quot;&gt;Amazon Ion&lt;/a&gt;. &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; </code>
+     * </pre>
      * 
      * @param contentType
+     *        The format of the submitted profiling data. The format maps to the <code>Accept</code> and
+     *        <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the
+     *        default . </p>
+     * 
+     *        <pre>
+     * <code> &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;application/json&lt;/code&gt; — standard JSON format &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;application/x-amzn-ion&lt;/code&gt; — the Amazon Ion data format. For more information, see &lt;a href=&quot;http://amzn.github.io/ion-docs/&quot;&gt;Amazon Ion&lt;/a&gt;. &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; </code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,9 +195,14 @@ public class PostAgentProfileRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * <p/>
+     * <p>
+     * Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental submission of
+     * duplicate profiling data if there are failures and retries.
+     * </p>
      * 
      * @param profileToken
+     *        Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental
+     *        submission of duplicate profiling data if there are failures and retries.
      */
 
     public void setProfileToken(String profileToken) {
@@ -139,9 +210,13 @@ public class PostAgentProfileRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * <p/>
+     * <p>
+     * Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental submission of
+     * duplicate profiling data if there are failures and retries.
+     * </p>
      * 
-     * @return
+     * @return Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental
+     *         submission of duplicate profiling data if there are failures and retries.
      */
 
     public String getProfileToken() {
@@ -149,9 +224,14 @@ public class PostAgentProfileRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * <p/>
+     * <p>
+     * Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental submission of
+     * duplicate profiling data if there are failures and retries.
+     * </p>
      * 
      * @param profileToken
+     *        Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental
+     *        submission of duplicate profiling data if there are failures and retries.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -161,9 +241,12 @@ public class PostAgentProfileRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * <p/>
+     * <p>
+     * The name of the profiling group with the aggregated profile that receives the submitted profiling data.
+     * </p>
      * 
      * @param profilingGroupName
+     *        The name of the profiling group with the aggregated profile that receives the submitted profiling data.
      */
 
     public void setProfilingGroupName(String profilingGroupName) {
@@ -171,9 +254,11 @@ public class PostAgentProfileRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * <p/>
+     * <p>
+     * The name of the profiling group with the aggregated profile that receives the submitted profiling data.
+     * </p>
      * 
-     * @return
+     * @return The name of the profiling group with the aggregated profile that receives the submitted profiling data.
      */
 
     public String getProfilingGroupName() {
@@ -181,9 +266,12 @@ public class PostAgentProfileRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * <p/>
+     * <p>
+     * The name of the profiling group with the aggregated profile that receives the submitted profiling data.
+     * </p>
      * 
      * @param profilingGroupName
+     *        The name of the profiling group with the aggregated profile that receives the submitted profiling data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

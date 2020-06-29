@@ -31,6 +31,8 @@ public class ProfilingGroupDescriptionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("agentOrchestrationConfig").build();
     private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("arn").build();
+    private static final MarshallingInfo<String> COMPUTEPLATFORM_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("computePlatform").build();
     private static final MarshallingInfo<java.util.Date> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdAt").timestampFormat("iso8601").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -58,6 +60,7 @@ public class ProfilingGroupDescriptionMarshaller {
         try {
             protocolMarshaller.marshall(profilingGroupDescription.getAgentOrchestrationConfig(), AGENTORCHESTRATIONCONFIG_BINDING);
             protocolMarshaller.marshall(profilingGroupDescription.getArn(), ARN_BINDING);
+            protocolMarshaller.marshall(profilingGroupDescription.getComputePlatform(), COMPUTEPLATFORM_BINDING);
             protocolMarshaller.marshall(profilingGroupDescription.getCreatedAt(), CREATEDAT_BINDING);
             protocolMarshaller.marshall(profilingGroupDescription.getName(), NAME_BINDING);
             protocolMarshaller.marshall(profilingGroupDescription.getProfilingStatus(), PROFILINGSTATUS_BINDING);

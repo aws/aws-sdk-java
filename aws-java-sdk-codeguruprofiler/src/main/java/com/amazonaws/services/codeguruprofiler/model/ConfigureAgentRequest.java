@@ -28,15 +28,87 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ConfigureAgentRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** <p/> */
+    /**
+     * <p>
+     * A universally unique identifier (UUID) for a profiling instance. For example, if the profiling instance is an
+     * Amazon EC2 instance, it is the instance ID. If it is an AWS Fargate container, it is the container's task ID.
+     * </p>
+     */
     private String fleetInstanceId;
-    /** <p/> */
+    /**
+     * <p>
+     * Metadata captured about the compute platform the agent is running on. It includes information about sampling and
+     * reporting. The valid fields are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>COMPUTE_PLATFORM</code> - The compute platform on which the agent is running
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AGENT_ID</code> - The ID for an agent instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS_REQUEST_ID</code> - The AWS request ID of a Lambda invocation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EXECUTION_ENVIRONMENT</code> - The execution environment a Lambda function is running on.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LAMBDA_FUNCTION_ARN</code> - The Amazon Resource Name (ARN) that is used to invoke a Lambda function.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LAMBDA_MEMORY_LIMIT_IN_MB</code> - The memory allocated to a Lambda function.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LAMBDA_REMAINING_TIME_IN_MILLISECONDS</code> - The time in milliseconds before execution of a Lambda
+     * function times out.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LAMBDA_TIME_GAP_BETWEEN_INVOKES_IN_MILLISECONDS</code> - The time in milliseconds between two invocations
+     * of a Lambda function.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LAMBDA_PREVIOUS_EXECUTION_TIME_IN_MILLISECONDS</code> - The time in milliseconds for the previous Lambda
+     * invocation.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private java.util.Map<String, String> metadata;
+    /**
+     * <p>
+     * The name of the profiling group for which the configured agent is collecting profiling data.
+     * </p>
+     */
     private String profilingGroupName;
 
     /**
-     * <p/>
+     * <p>
+     * A universally unique identifier (UUID) for a profiling instance. For example, if the profiling instance is an
+     * Amazon EC2 instance, it is the instance ID. If it is an AWS Fargate container, it is the container's task ID.
+     * </p>
      * 
      * @param fleetInstanceId
+     *        A universally unique identifier (UUID) for a profiling instance. For example, if the profiling instance is
+     *        an Amazon EC2 instance, it is the instance ID. If it is an AWS Fargate container, it is the container's
+     *        task ID.
      */
 
     public void setFleetInstanceId(String fleetInstanceId) {
@@ -44,9 +116,14 @@ public class ConfigureAgentRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * <p/>
+     * <p>
+     * A universally unique identifier (UUID) for a profiling instance. For example, if the profiling instance is an
+     * Amazon EC2 instance, it is the instance ID. If it is an AWS Fargate container, it is the container's task ID.
+     * </p>
      * 
-     * @return
+     * @return A universally unique identifier (UUID) for a profiling instance. For example, if the profiling instance
+     *         is an Amazon EC2 instance, it is the instance ID. If it is an AWS Fargate container, it is the
+     *         container's task ID.
      */
 
     public String getFleetInstanceId() {
@@ -54,9 +131,15 @@ public class ConfigureAgentRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * <p/>
+     * <p>
+     * A universally unique identifier (UUID) for a profiling instance. For example, if the profiling instance is an
+     * Amazon EC2 instance, it is the instance ID. If it is an AWS Fargate container, it is the container's task ID.
+     * </p>
      * 
      * @param fleetInstanceId
+     *        A universally unique identifier (UUID) for a profiling instance. For example, if the profiling instance is
+     *        an Amazon EC2 instance, it is the instance ID. If it is an AWS Fargate container, it is the container's
+     *        task ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -66,9 +149,386 @@ public class ConfigureAgentRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * <p/>
+     * <p>
+     * Metadata captured about the compute platform the agent is running on. It includes information about sampling and
+     * reporting. The valid fields are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>COMPUTE_PLATFORM</code> - The compute platform on which the agent is running
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AGENT_ID</code> - The ID for an agent instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS_REQUEST_ID</code> - The AWS request ID of a Lambda invocation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EXECUTION_ENVIRONMENT</code> - The execution environment a Lambda function is running on.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LAMBDA_FUNCTION_ARN</code> - The Amazon Resource Name (ARN) that is used to invoke a Lambda function.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LAMBDA_MEMORY_LIMIT_IN_MB</code> - The memory allocated to a Lambda function.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LAMBDA_REMAINING_TIME_IN_MILLISECONDS</code> - The time in milliseconds before execution of a Lambda
+     * function times out.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LAMBDA_TIME_GAP_BETWEEN_INVOKES_IN_MILLISECONDS</code> - The time in milliseconds between two invocations
+     * of a Lambda function.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LAMBDA_PREVIOUS_EXECUTION_TIME_IN_MILLISECONDS</code> - The time in milliseconds for the previous Lambda
+     * invocation.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Metadata captured about the compute platform the agent is running on. It includes information about
+     *         sampling and reporting. The valid fields are:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>COMPUTE_PLATFORM</code> - The compute platform on which the agent is running
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AGENT_ID</code> - The ID for an agent instance.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AWS_REQUEST_ID</code> - The AWS request ID of a Lambda invocation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>EXECUTION_ENVIRONMENT</code> - The execution environment a Lambda function is running on.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>LAMBDA_FUNCTION_ARN</code> - The Amazon Resource Name (ARN) that is used to invoke a Lambda
+     *         function.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>LAMBDA_MEMORY_LIMIT_IN_MB</code> - The memory allocated to a Lambda function.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>LAMBDA_REMAINING_TIME_IN_MILLISECONDS</code> - The time in milliseconds before execution of a
+     *         Lambda function times out.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>LAMBDA_TIME_GAP_BETWEEN_INVOKES_IN_MILLISECONDS</code> - The time in milliseconds between two
+     *         invocations of a Lambda function.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>LAMBDA_PREVIOUS_EXECUTION_TIME_IN_MILLISECONDS</code> - The time in milliseconds for the previous
+     *         Lambda invocation.
+     *         </p>
+     *         </li>
+     */
+
+    public java.util.Map<String, String> getMetadata() {
+        return metadata;
+    }
+
+    /**
+     * <p>
+     * Metadata captured about the compute platform the agent is running on. It includes information about sampling and
+     * reporting. The valid fields are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>COMPUTE_PLATFORM</code> - The compute platform on which the agent is running
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AGENT_ID</code> - The ID for an agent instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS_REQUEST_ID</code> - The AWS request ID of a Lambda invocation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EXECUTION_ENVIRONMENT</code> - The execution environment a Lambda function is running on.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LAMBDA_FUNCTION_ARN</code> - The Amazon Resource Name (ARN) that is used to invoke a Lambda function.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LAMBDA_MEMORY_LIMIT_IN_MB</code> - The memory allocated to a Lambda function.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LAMBDA_REMAINING_TIME_IN_MILLISECONDS</code> - The time in milliseconds before execution of a Lambda
+     * function times out.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LAMBDA_TIME_GAP_BETWEEN_INVOKES_IN_MILLISECONDS</code> - The time in milliseconds between two invocations
+     * of a Lambda function.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LAMBDA_PREVIOUS_EXECUTION_TIME_IN_MILLISECONDS</code> - The time in milliseconds for the previous Lambda
+     * invocation.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param metadata
+     *        Metadata captured about the compute platform the agent is running on. It includes information about
+     *        sampling and reporting. The valid fields are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>COMPUTE_PLATFORM</code> - The compute platform on which the agent is running
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AGENT_ID</code> - The ID for an agent instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS_REQUEST_ID</code> - The AWS request ID of a Lambda invocation.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EXECUTION_ENVIRONMENT</code> - The execution environment a Lambda function is running on.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LAMBDA_FUNCTION_ARN</code> - The Amazon Resource Name (ARN) that is used to invoke a Lambda
+     *        function.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LAMBDA_MEMORY_LIMIT_IN_MB</code> - The memory allocated to a Lambda function.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LAMBDA_REMAINING_TIME_IN_MILLISECONDS</code> - The time in milliseconds before execution of a Lambda
+     *        function times out.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LAMBDA_TIME_GAP_BETWEEN_INVOKES_IN_MILLISECONDS</code> - The time in milliseconds between two
+     *        invocations of a Lambda function.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LAMBDA_PREVIOUS_EXECUTION_TIME_IN_MILLISECONDS</code> - The time in milliseconds for the previous
+     *        Lambda invocation.
+     *        </p>
+     *        </li>
+     */
+
+    public void setMetadata(java.util.Map<String, String> metadata) {
+        this.metadata = metadata;
+    }
+
+    /**
+     * <p>
+     * Metadata captured about the compute platform the agent is running on. It includes information about sampling and
+     * reporting. The valid fields are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>COMPUTE_PLATFORM</code> - The compute platform on which the agent is running
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AGENT_ID</code> - The ID for an agent instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS_REQUEST_ID</code> - The AWS request ID of a Lambda invocation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EXECUTION_ENVIRONMENT</code> - The execution environment a Lambda function is running on.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LAMBDA_FUNCTION_ARN</code> - The Amazon Resource Name (ARN) that is used to invoke a Lambda function.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LAMBDA_MEMORY_LIMIT_IN_MB</code> - The memory allocated to a Lambda function.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LAMBDA_REMAINING_TIME_IN_MILLISECONDS</code> - The time in milliseconds before execution of a Lambda
+     * function times out.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LAMBDA_TIME_GAP_BETWEEN_INVOKES_IN_MILLISECONDS</code> - The time in milliseconds between two invocations
+     * of a Lambda function.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LAMBDA_PREVIOUS_EXECUTION_TIME_IN_MILLISECONDS</code> - The time in milliseconds for the previous Lambda
+     * invocation.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param metadata
+     *        Metadata captured about the compute platform the agent is running on. It includes information about
+     *        sampling and reporting. The valid fields are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>COMPUTE_PLATFORM</code> - The compute platform on which the agent is running
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AGENT_ID</code> - The ID for an agent instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS_REQUEST_ID</code> - The AWS request ID of a Lambda invocation.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EXECUTION_ENVIRONMENT</code> - The execution environment a Lambda function is running on.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LAMBDA_FUNCTION_ARN</code> - The Amazon Resource Name (ARN) that is used to invoke a Lambda
+     *        function.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LAMBDA_MEMORY_LIMIT_IN_MB</code> - The memory allocated to a Lambda function.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LAMBDA_REMAINING_TIME_IN_MILLISECONDS</code> - The time in milliseconds before execution of a Lambda
+     *        function times out.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LAMBDA_TIME_GAP_BETWEEN_INVOKES_IN_MILLISECONDS</code> - The time in milliseconds between two
+     *        invocations of a Lambda function.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LAMBDA_PREVIOUS_EXECUTION_TIME_IN_MILLISECONDS</code> - The time in milliseconds for the previous
+     *        Lambda invocation.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ConfigureAgentRequest withMetadata(java.util.Map<String, String> metadata) {
+        setMetadata(metadata);
+        return this;
+    }
+
+    /**
+     * Add a single Metadata entry
+     *
+     * @see ConfigureAgentRequest#withMetadata
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ConfigureAgentRequest addMetadataEntry(String key, String value) {
+        if (null == this.metadata) {
+            this.metadata = new java.util.HashMap<String, String>();
+        }
+        if (this.metadata.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.metadata.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Metadata.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ConfigureAgentRequest clearMetadataEntries() {
+        this.metadata = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the profiling group for which the configured agent is collecting profiling data.
+     * </p>
      * 
      * @param profilingGroupName
+     *        The name of the profiling group for which the configured agent is collecting profiling data.
      */
 
     public void setProfilingGroupName(String profilingGroupName) {
@@ -76,9 +536,11 @@ public class ConfigureAgentRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * <p/>
+     * <p>
+     * The name of the profiling group for which the configured agent is collecting profiling data.
+     * </p>
      * 
-     * @return
+     * @return The name of the profiling group for which the configured agent is collecting profiling data.
      */
 
     public String getProfilingGroupName() {
@@ -86,9 +548,12 @@ public class ConfigureAgentRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * <p/>
+     * <p>
+     * The name of the profiling group for which the configured agent is collecting profiling data.
+     * </p>
      * 
      * @param profilingGroupName
+     *        The name of the profiling group for which the configured agent is collecting profiling data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -111,6 +576,8 @@ public class ConfigureAgentRequest extends com.amazonaws.AmazonWebServiceRequest
         sb.append("{");
         if (getFleetInstanceId() != null)
             sb.append("FleetInstanceId: ").append(getFleetInstanceId()).append(",");
+        if (getMetadata() != null)
+            sb.append("Metadata: ").append(getMetadata()).append(",");
         if (getProfilingGroupName() != null)
             sb.append("ProfilingGroupName: ").append(getProfilingGroupName());
         sb.append("}");
@@ -131,6 +598,10 @@ public class ConfigureAgentRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getFleetInstanceId() != null && other.getFleetInstanceId().equals(this.getFleetInstanceId()) == false)
             return false;
+        if (other.getMetadata() == null ^ this.getMetadata() == null)
+            return false;
+        if (other.getMetadata() != null && other.getMetadata().equals(this.getMetadata()) == false)
+            return false;
         if (other.getProfilingGroupName() == null ^ this.getProfilingGroupName() == null)
             return false;
         if (other.getProfilingGroupName() != null && other.getProfilingGroupName().equals(this.getProfilingGroupName()) == false)
@@ -144,6 +615,7 @@ public class ConfigureAgentRequest extends com.amazonaws.AmazonWebServiceRequest
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getFleetInstanceId() == null) ? 0 : getFleetInstanceId().hashCode());
+        hashCode = prime * hashCode + ((getMetadata() == null) ? 0 : getMetadata().hashCode());
         hashCode = prime * hashCode + ((getProfilingGroupName() == null) ? 0 : getProfilingGroupName().hashCode());
         return hashCode;
     }

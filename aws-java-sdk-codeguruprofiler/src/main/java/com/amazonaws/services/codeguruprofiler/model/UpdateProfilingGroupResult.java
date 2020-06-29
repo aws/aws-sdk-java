@@ -28,18 +28,22 @@ public class UpdateProfilingGroupResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Updated information about the profiling group.
+     * A <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     * <code>ProfilingGroupDescription</code> </a> that contains information about the returned updated profiling group.
      * </p>
      */
     private ProfilingGroupDescription profilingGroup;
 
     /**
      * <p>
-     * Updated information about the profiling group.
+     * A <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     * <code>ProfilingGroupDescription</code> </a> that contains information about the returned updated profiling group.
      * </p>
      * 
      * @param profilingGroup
-     *        Updated information about the profiling group.
+     *        A <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     *        <code>ProfilingGroupDescription</code> </a> that contains information about the returned updated profiling
+     *        group.
      */
 
     public void setProfilingGroup(ProfilingGroupDescription profilingGroup) {
@@ -48,10 +52,13 @@ public class UpdateProfilingGroupResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Updated information about the profiling group.
+     * A <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     * <code>ProfilingGroupDescription</code> </a> that contains information about the returned updated profiling group.
      * </p>
      * 
-     * @return Updated information about the profiling group.
+     * @return A <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     *         <code>ProfilingGroupDescription</code> </a> that contains information about the returned updated
+     *         profiling group.
      */
 
     public ProfilingGroupDescription getProfilingGroup() {
@@ -60,11 +67,14 @@ public class UpdateProfilingGroupResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Updated information about the profiling group.
+     * A <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     * <code>ProfilingGroupDescription</code> </a> that contains information about the returned updated profiling group.
      * </p>
      * 
      * @param profilingGroup
-     *        Updated information about the profiling group.
+     *        A <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     *        <code>ProfilingGroupDescription</code> </a> that contains information about the returned updated profiling
+     *        group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

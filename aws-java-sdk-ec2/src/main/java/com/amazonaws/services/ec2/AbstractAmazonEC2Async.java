@@ -917,6 +917,19 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<CreateManagedPrefixListResult> createManagedPrefixListAsync(CreateManagedPrefixListRequest request) {
+
+        return createManagedPrefixListAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateManagedPrefixListResult> createManagedPrefixListAsync(CreateManagedPrefixListRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateManagedPrefixListRequest, CreateManagedPrefixListResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateNatGatewayResult> createNatGatewayAsync(CreateNatGatewayRequest request) {
 
         return createNatGatewayAsync(request, null);
@@ -1575,6 +1588,19 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     public java.util.concurrent.Future<DeleteLocalGatewayRouteTableVpcAssociationResult> deleteLocalGatewayRouteTableVpcAssociationAsync(
             DeleteLocalGatewayRouteTableVpcAssociationRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteLocalGatewayRouteTableVpcAssociationRequest, DeleteLocalGatewayRouteTableVpcAssociationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteManagedPrefixListResult> deleteManagedPrefixListAsync(DeleteManagedPrefixListRequest request) {
+
+        return deleteManagedPrefixListAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteManagedPrefixListResult> deleteManagedPrefixListAsync(DeleteManagedPrefixListRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteManagedPrefixListRequest, DeleteManagedPrefixListResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -3300,6 +3326,19 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     @Override
     public java.util.concurrent.Future<DescribeLocalGatewaysResult> describeLocalGatewaysAsync(DescribeLocalGatewaysRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeLocalGatewaysRequest, DescribeLocalGatewaysResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeManagedPrefixListsResult> describeManagedPrefixListsAsync(DescribeManagedPrefixListsRequest request) {
+
+        return describeManagedPrefixListsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeManagedPrefixListsResult> describeManagedPrefixListsAsync(DescribeManagedPrefixListsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeManagedPrefixListsRequest, DescribeManagedPrefixListsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -5269,6 +5308,34 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<GetManagedPrefixListAssociationsResult> getManagedPrefixListAssociationsAsync(
+            GetManagedPrefixListAssociationsRequest request) {
+
+        return getManagedPrefixListAssociationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetManagedPrefixListAssociationsResult> getManagedPrefixListAssociationsAsync(
+            GetManagedPrefixListAssociationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetManagedPrefixListAssociationsRequest, GetManagedPrefixListAssociationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetManagedPrefixListEntriesResult> getManagedPrefixListEntriesAsync(GetManagedPrefixListEntriesRequest request) {
+
+        return getManagedPrefixListEntriesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetManagedPrefixListEntriesResult> getManagedPrefixListEntriesAsync(GetManagedPrefixListEntriesRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetManagedPrefixListEntriesRequest, GetManagedPrefixListEntriesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetPasswordDataResult> getPasswordDataAsync(GetPasswordDataRequest request) {
 
         return getPasswordDataAsync(request, null);
@@ -5718,6 +5785,19 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     @Override
     public java.util.concurrent.Future<ModifyLaunchTemplateResult> modifyLaunchTemplateAsync(ModifyLaunchTemplateRequest request,
             com.amazonaws.handlers.AsyncHandler<ModifyLaunchTemplateRequest, ModifyLaunchTemplateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyManagedPrefixListResult> modifyManagedPrefixListAsync(ModifyManagedPrefixListRequest request) {
+
+        return modifyManagedPrefixListAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyManagedPrefixListResult> modifyManagedPrefixListAsync(ModifyManagedPrefixListRequest request,
+            com.amazonaws.handlers.AsyncHandler<ModifyManagedPrefixListRequest, ModifyManagedPrefixListResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -6448,6 +6528,21 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     @Override
     public java.util.concurrent.Future<RestoreAddressToClassicResult> restoreAddressToClassicAsync(RestoreAddressToClassicRequest request,
             com.amazonaws.handlers.AsyncHandler<RestoreAddressToClassicRequest, RestoreAddressToClassicResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<RestoreManagedPrefixListVersionResult> restoreManagedPrefixListVersionAsync(
+            RestoreManagedPrefixListVersionRequest request) {
+
+        return restoreManagedPrefixListVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RestoreManagedPrefixListVersionResult> restoreManagedPrefixListVersionAsync(
+            RestoreManagedPrefixListVersionRequest request,
+            com.amazonaws.handlers.AsyncHandler<RestoreManagedPrefixListVersionRequest, RestoreManagedPrefixListVersionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -18,7 +18,11 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <p/>
+ * <p>
+ * Specifies whether profiling is enabled or disabled for a profiling group. It is used by <a
+ * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html"> <code>ConfigureAgent</code>
+ * </a> to enable or disable profiling for a profiling group.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/AgentOrchestrationConfig"
  *      target="_top">AWS API Documentation</a>
@@ -26,13 +30,23 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AgentOrchestrationConfig implements Serializable, Cloneable, StructuredPojo {
 
-    /** <p/> */
+    /**
+     * <p>
+     * A <code>Boolean</code> that specifies whether the profiling agent collects profiling data or not. Set to
+     * <code>true</code> to enable profiling.
+     * </p>
+     */
     private Boolean profilingEnabled;
 
     /**
-     * <p/>
+     * <p>
+     * A <code>Boolean</code> that specifies whether the profiling agent collects profiling data or not. Set to
+     * <code>true</code> to enable profiling.
+     * </p>
      * 
      * @param profilingEnabled
+     *        A <code>Boolean</code> that specifies whether the profiling agent collects profiling data or not. Set to
+     *        <code>true</code> to enable profiling.
      */
 
     public void setProfilingEnabled(Boolean profilingEnabled) {
@@ -40,9 +54,13 @@ public class AgentOrchestrationConfig implements Serializable, Cloneable, Struct
     }
 
     /**
-     * <p/>
+     * <p>
+     * A <code>Boolean</code> that specifies whether the profiling agent collects profiling data or not. Set to
+     * <code>true</code> to enable profiling.
+     * </p>
      * 
-     * @return
+     * @return A <code>Boolean</code> that specifies whether the profiling agent collects profiling data or not. Set to
+     *         <code>true</code> to enable profiling.
      */
 
     public Boolean getProfilingEnabled() {
@@ -50,9 +68,14 @@ public class AgentOrchestrationConfig implements Serializable, Cloneable, Struct
     }
 
     /**
-     * <p/>
+     * <p>
+     * A <code>Boolean</code> that specifies whether the profiling agent collects profiling data or not. Set to
+     * <code>true</code> to enable profiling.
+     * </p>
      * 
      * @param profilingEnabled
+     *        A <code>Boolean</code> that specifies whether the profiling agent collects profiling data or not. Set to
+     *        <code>true</code> to enable profiling.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -62,9 +85,13 @@ public class AgentOrchestrationConfig implements Serializable, Cloneable, Struct
     }
 
     /**
-     * <p/>
+     * <p>
+     * A <code>Boolean</code> that specifies whether the profiling agent collects profiling data or not. Set to
+     * <code>true</code> to enable profiling.
+     * </p>
      * 
-     * @return
+     * @return A <code>Boolean</code> that specifies whether the profiling agent collects profiling data or not. Set to
+     *         <code>true</code> to enable profiling.
      */
 
     public Boolean isProfilingEnabled() {

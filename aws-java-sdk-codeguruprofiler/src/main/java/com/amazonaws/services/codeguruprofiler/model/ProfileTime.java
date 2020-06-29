@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about the profile time.
+ * Contains the start time of a profile.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/ProfileTime" target="_top">AWS API
@@ -30,18 +30,21 @@ public class ProfileTime implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The start time of the profile.
+     * The start time of a profile. It is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z
+     * represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.
      * </p>
      */
     private java.util.Date start;
 
     /**
      * <p>
-     * The start time of the profile.
+     * The start time of a profile. It is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z
+     * represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.
      * </p>
      * 
      * @param start
-     *        The start time of the profile.
+     *        The start time of a profile. It is specified using the ISO 8601 format. For example,
+     *        2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.
      */
 
     public void setStart(java.util.Date start) {
@@ -50,10 +53,12 @@ public class ProfileTime implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The start time of the profile.
+     * The start time of a profile. It is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z
+     * represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.
      * </p>
      * 
-     * @return The start time of the profile.
+     * @return The start time of a profile. It is specified using the ISO 8601 format. For example,
+     *         2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.
      */
 
     public java.util.Date getStart() {
@@ -62,11 +67,13 @@ public class ProfileTime implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The start time of the profile.
+     * The start time of a profile. It is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z
+     * represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.
      * </p>
      * 
      * @param start
-     *        The start time of the profile.
+     *        The start time of a profile. It is specified using the ISO 8601 format. For example,
+     *        2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

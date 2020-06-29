@@ -2379,6 +2379,39 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
     }
 
     @Override
+    public java.util.concurrent.Future<CreateManagedPrefixListResult> createManagedPrefixListAsync(CreateManagedPrefixListRequest request) {
+
+        return createManagedPrefixListAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateManagedPrefixListResult> createManagedPrefixListAsync(final CreateManagedPrefixListRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateManagedPrefixListRequest, CreateManagedPrefixListResult> asyncHandler) {
+        final CreateManagedPrefixListRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateManagedPrefixListResult>() {
+            @Override
+            public CreateManagedPrefixListResult call() throws Exception {
+                CreateManagedPrefixListResult result = null;
+
+                try {
+                    result = executeCreateManagedPrefixList(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateNatGatewayResult> createNatGatewayAsync(CreateNatGatewayRequest request) {
 
         return createNatGatewayAsync(request, null);
@@ -3990,6 +4023,39 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
 
                 try {
                     result = executeDeleteLocalGatewayRouteTableVpcAssociation(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteManagedPrefixListResult> deleteManagedPrefixListAsync(DeleteManagedPrefixListRequest request) {
+
+        return deleteManagedPrefixListAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteManagedPrefixListResult> deleteManagedPrefixListAsync(final DeleteManagedPrefixListRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteManagedPrefixListRequest, DeleteManagedPrefixListResult> asyncHandler) {
+        final DeleteManagedPrefixListRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteManagedPrefixListResult>() {
+            @Override
+            public DeleteManagedPrefixListResult call() throws Exception {
+                DeleteManagedPrefixListResult result = null;
+
+                try {
+                    result = executeDeleteManagedPrefixList(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -7601,6 +7667,39 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
 
                 try {
                     result = executeDescribeLocalGateways(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeManagedPrefixListsResult> describeManagedPrefixListsAsync(DescribeManagedPrefixListsRequest request) {
+
+        return describeManagedPrefixListsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeManagedPrefixListsResult> describeManagedPrefixListsAsync(final DescribeManagedPrefixListsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeManagedPrefixListsRequest, DescribeManagedPrefixListsResult> asyncHandler) {
+        final DescribeManagedPrefixListsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeManagedPrefixListsResult>() {
+            @Override
+            public DescribeManagedPrefixListsResult call() throws Exception {
+                DescribeManagedPrefixListsResult result = null;
+
+                try {
+                    result = executeDescribeManagedPrefixLists(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -11528,6 +11627,74 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
     }
 
     @Override
+    public java.util.concurrent.Future<GetManagedPrefixListAssociationsResult> getManagedPrefixListAssociationsAsync(
+            GetManagedPrefixListAssociationsRequest request) {
+
+        return getManagedPrefixListAssociationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetManagedPrefixListAssociationsResult> getManagedPrefixListAssociationsAsync(
+            final GetManagedPrefixListAssociationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetManagedPrefixListAssociationsRequest, GetManagedPrefixListAssociationsResult> asyncHandler) {
+        final GetManagedPrefixListAssociationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetManagedPrefixListAssociationsResult>() {
+            @Override
+            public GetManagedPrefixListAssociationsResult call() throws Exception {
+                GetManagedPrefixListAssociationsResult result = null;
+
+                try {
+                    result = executeGetManagedPrefixListAssociations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetManagedPrefixListEntriesResult> getManagedPrefixListEntriesAsync(GetManagedPrefixListEntriesRequest request) {
+
+        return getManagedPrefixListEntriesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetManagedPrefixListEntriesResult> getManagedPrefixListEntriesAsync(final GetManagedPrefixListEntriesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetManagedPrefixListEntriesRequest, GetManagedPrefixListEntriesResult> asyncHandler) {
+        final GetManagedPrefixListEntriesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetManagedPrefixListEntriesResult>() {
+            @Override
+            public GetManagedPrefixListEntriesResult call() throws Exception {
+                GetManagedPrefixListEntriesResult result = null;
+
+                try {
+                    result = executeGetManagedPrefixListEntries(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetPasswordDataResult> getPasswordDataAsync(GetPasswordDataRequest request) {
 
         return getPasswordDataAsync(request, null);
@@ -12567,6 +12734,39 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
 
                 try {
                     result = executeModifyLaunchTemplate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyManagedPrefixListResult> modifyManagedPrefixListAsync(ModifyManagedPrefixListRequest request) {
+
+        return modifyManagedPrefixListAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyManagedPrefixListResult> modifyManagedPrefixListAsync(final ModifyManagedPrefixListRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ModifyManagedPrefixListRequest, ModifyManagedPrefixListResult> asyncHandler) {
+        final ModifyManagedPrefixListRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ModifyManagedPrefixListResult>() {
+            @Override
+            public ModifyManagedPrefixListResult call() throws Exception {
+                ModifyManagedPrefixListResult result = null;
+
+                try {
+                    result = executeModifyManagedPrefixList(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -14379,6 +14579,41 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
 
                 try {
                     result = executeRestoreAddressToClassic(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<RestoreManagedPrefixListVersionResult> restoreManagedPrefixListVersionAsync(
+            RestoreManagedPrefixListVersionRequest request) {
+
+        return restoreManagedPrefixListVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RestoreManagedPrefixListVersionResult> restoreManagedPrefixListVersionAsync(
+            final RestoreManagedPrefixListVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RestoreManagedPrefixListVersionRequest, RestoreManagedPrefixListVersionResult> asyncHandler) {
+        final RestoreManagedPrefixListVersionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RestoreManagedPrefixListVersionResult>() {
+            @Override
+            public RestoreManagedPrefixListVersionResult call() throws Exception {
+                RestoreManagedPrefixListVersionResult result = null;
+
+                try {
+                    result = executeRestoreManagedPrefixListVersion(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

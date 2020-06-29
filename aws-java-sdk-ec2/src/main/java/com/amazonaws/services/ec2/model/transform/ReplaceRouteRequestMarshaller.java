@@ -48,6 +48,10 @@ public class ReplaceRouteRequestMarshaller implements Marshaller<Request<Replace
             request.addParameter("DestinationIpv6CidrBlock", StringUtils.fromString(replaceRouteRequest.getDestinationIpv6CidrBlock()));
         }
 
+        if (replaceRouteRequest.getDestinationPrefixListId() != null) {
+            request.addParameter("DestinationPrefixListId", StringUtils.fromString(replaceRouteRequest.getDestinationPrefixListId()));
+        }
+
         if (replaceRouteRequest.getEgressOnlyInternetGatewayId() != null) {
             request.addParameter("EgressOnlyInternetGatewayId", StringUtils.fromString(replaceRouteRequest.getEgressOnlyInternetGatewayId()));
         }

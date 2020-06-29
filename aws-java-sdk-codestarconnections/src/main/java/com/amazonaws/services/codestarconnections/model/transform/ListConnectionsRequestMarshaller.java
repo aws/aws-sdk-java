@@ -29,6 +29,8 @@ public class ListConnectionsRequestMarshaller {
 
     private static final MarshallingInfo<String> PROVIDERTYPEFILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProviderTypeFilter").build();
+    private static final MarshallingInfo<String> HOSTARNFILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HostArnFilter").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -51,6 +53,7 @@ public class ListConnectionsRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(listConnectionsRequest.getProviderTypeFilter(), PROVIDERTYPEFILTER_BINDING);
+            protocolMarshaller.marshall(listConnectionsRequest.getHostArnFilter(), HOSTARNFILTER_BINDING);
             protocolMarshaller.marshall(listConnectionsRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listConnectionsRequest.getNextToken(), NEXTTOKEN_BINDING);
         } catch (Exception e) {

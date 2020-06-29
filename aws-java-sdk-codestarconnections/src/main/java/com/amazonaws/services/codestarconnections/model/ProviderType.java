@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ProviderType {
 
-    Bitbucket("Bitbucket");
+    Bitbucket("Bitbucket"),
+    GitHubEnterpriseServer("GitHubEnterpriseServer");
 
     private String value;
 

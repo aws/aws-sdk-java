@@ -53,7 +53,9 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
     private String availabilityZoneId;
     /**
      * <p>
-     * The IPv4 network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>.
+     * The IPv4 network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>. We modify the
+     * specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>, we modify it
+     * to <code>100.68.0.0/18</code>.
      * </p>
      */
     private String cidrBlock;
@@ -91,7 +93,9 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
      * @param vpcId
      *        The ID of the VPC.
      * @param cidrBlock
-     *        The IPv4 network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>.
+     *        The IPv4 network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>. We modify
+     *        the specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>,
+     *        we modify it to <code>100.68.0.0/18</code>.
      */
     public CreateSubnetRequest(String vpcId, String cidrBlock) {
         setVpcId(vpcId);
@@ -261,11 +265,15 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The IPv4 network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>.
+     * The IPv4 network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>. We modify the
+     * specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>, we modify it
+     * to <code>100.68.0.0/18</code>.
      * </p>
      * 
      * @param cidrBlock
-     *        The IPv4 network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>.
+     *        The IPv4 network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>. We modify
+     *        the specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>,
+     *        we modify it to <code>100.68.0.0/18</code>.
      */
 
     public void setCidrBlock(String cidrBlock) {
@@ -274,10 +282,14 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The IPv4 network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>.
+     * The IPv4 network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>. We modify the
+     * specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>, we modify it
+     * to <code>100.68.0.0/18</code>.
      * </p>
      * 
-     * @return The IPv4 network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>.
+     * @return The IPv4 network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>. We modify
+     *         the specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>,
+     *         we modify it to <code>100.68.0.0/18</code>.
      */
 
     public String getCidrBlock() {
@@ -286,11 +298,15 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The IPv4 network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>.
+     * The IPv4 network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>. We modify the
+     * specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>, we modify it
+     * to <code>100.68.0.0/18</code>.
      * </p>
      * 
      * @param cidrBlock
-     *        The IPv4 network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>.
+     *        The IPv4 network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>. We modify
+     *        the specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>,
+     *        we modify it to <code>100.68.0.0/18</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

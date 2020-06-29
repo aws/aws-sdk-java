@@ -1282,7 +1282,7 @@ public interface AmazonAutoScaling {
 
     /**
      * <p>
-     * Executes the specified policy.
+     * Executes the specified policy. This can be useful for testing the design of your scaling policy.
      * </p>
      * 
      * @param executePolicyRequest

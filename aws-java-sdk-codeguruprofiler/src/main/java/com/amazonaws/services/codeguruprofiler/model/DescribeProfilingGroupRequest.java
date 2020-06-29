@@ -30,18 +30,18 @@ public class DescribeProfilingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The profiling group name.
+     * The name of the profiling group to get information about.
      * </p>
      */
     private String profilingGroupName;
 
     /**
      * <p>
-     * The profiling group name.
+     * The name of the profiling group to get information about.
      * </p>
      * 
      * @param profilingGroupName
-     *        The profiling group name.
+     *        The name of the profiling group to get information about.
      */
 
     public void setProfilingGroupName(String profilingGroupName) {
@@ -50,10 +50,10 @@ public class DescribeProfilingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The profiling group name.
+     * The name of the profiling group to get information about.
      * </p>
      * 
-     * @return The profiling group name.
+     * @return The name of the profiling group to get information about.
      */
 
     public String getProfilingGroupName() {
@@ -62,11 +62,11 @@ public class DescribeProfilingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The profiling group name.
+     * The name of the profiling group to get information about.
      * </p>
      * 
      * @param profilingGroupName
-     *        The profiling group name.
+     *        The name of the profiling group to get information about.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

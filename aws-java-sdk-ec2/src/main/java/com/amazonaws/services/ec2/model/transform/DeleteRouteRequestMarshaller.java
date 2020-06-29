@@ -48,6 +48,10 @@ public class DeleteRouteRequestMarshaller implements Marshaller<Request<DeleteRo
             request.addParameter("DestinationIpv6CidrBlock", StringUtils.fromString(deleteRouteRequest.getDestinationIpv6CidrBlock()));
         }
 
+        if (deleteRouteRequest.getDestinationPrefixListId() != null) {
+            request.addParameter("DestinationPrefixListId", StringUtils.fromString(deleteRouteRequest.getDestinationPrefixListId()));
+        }
+
         if (deleteRouteRequest.getRouteTableId() != null) {
             request.addParameter("RouteTableId", StringUtils.fromString(deleteRouteRequest.getRouteTableId()));
         }

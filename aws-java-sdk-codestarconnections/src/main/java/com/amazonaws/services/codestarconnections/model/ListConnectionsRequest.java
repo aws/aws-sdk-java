@@ -33,6 +33,12 @@ public class ListConnectionsRequest extends com.amazonaws.AmazonWebServiceReques
     private String providerTypeFilter;
     /**
      * <p>
+     * Filters the list of connections to those associated with a specified host.
+     * </p>
+     */
+    private String hostArnFilter;
+    /**
+     * <p>
      * The maximum number of results to return in a single call. To retrieve the remaining results, make another call
      * with the returned <code>nextToken</code> value.
      * </p>
@@ -102,6 +108,46 @@ public class ListConnectionsRequest extends com.amazonaws.AmazonWebServiceReques
 
     public ListConnectionsRequest withProviderTypeFilter(ProviderType providerTypeFilter) {
         this.providerTypeFilter = providerTypeFilter.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Filters the list of connections to those associated with a specified host.
+     * </p>
+     * 
+     * @param hostArnFilter
+     *        Filters the list of connections to those associated with a specified host.
+     */
+
+    public void setHostArnFilter(String hostArnFilter) {
+        this.hostArnFilter = hostArnFilter;
+    }
+
+    /**
+     * <p>
+     * Filters the list of connections to those associated with a specified host.
+     * </p>
+     * 
+     * @return Filters the list of connections to those associated with a specified host.
+     */
+
+    public String getHostArnFilter() {
+        return this.hostArnFilter;
+    }
+
+    /**
+     * <p>
+     * Filters the list of connections to those associated with a specified host.
+     * </p>
+     * 
+     * @param hostArnFilter
+     *        Filters the list of connections to those associated with a specified host.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListConnectionsRequest withHostArnFilter(String hostArnFilter) {
+        setHostArnFilter(hostArnFilter);
         return this;
     }
 
@@ -211,6 +257,8 @@ public class ListConnectionsRequest extends com.amazonaws.AmazonWebServiceReques
         sb.append("{");
         if (getProviderTypeFilter() != null)
             sb.append("ProviderTypeFilter: ").append(getProviderTypeFilter()).append(",");
+        if (getHostArnFilter() != null)
+            sb.append("HostArnFilter: ").append(getHostArnFilter()).append(",");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
@@ -233,6 +281,10 @@ public class ListConnectionsRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getProviderTypeFilter() != null && other.getProviderTypeFilter().equals(this.getProviderTypeFilter()) == false)
             return false;
+        if (other.getHostArnFilter() == null ^ this.getHostArnFilter() == null)
+            return false;
+        if (other.getHostArnFilter() != null && other.getHostArnFilter().equals(this.getHostArnFilter()) == false)
+            return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
@@ -250,6 +302,7 @@ public class ListConnectionsRequest extends com.amazonaws.AmazonWebServiceReques
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getProviderTypeFilter() == null) ? 0 : getProviderTypeFilter().hashCode());
+        hashCode = prime * hashCode + ((getHostArnFilter() == null) ? 0 : getHostArnFilter().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;

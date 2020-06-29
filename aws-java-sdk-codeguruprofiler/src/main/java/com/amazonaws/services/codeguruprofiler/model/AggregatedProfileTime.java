@@ -19,7 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about the time range of the latest available aggregated profile.
+ * Specifies the aggregation period and aggregation start time for an aggregated profile. An aggregated profile is used
+ * to collect posted agent profiles during an aggregation period. There are three possible aggregation periods (1 day, 1
+ * hour, or 5 minutes).
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/AggregatedProfileTime"
@@ -30,24 +32,84 @@ public class AggregatedProfileTime implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The time period.
+     * The aggregation period. This indicates the period during which an aggregation profile collects posted agent
+     * profiles for a profiling group. Use one of three valid durations that are specified using the ISO 8601 format.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>P1D</code> — 1 day
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PT1H</code> — 1 hour
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PT5M</code> — 5 minutes
+     * </p>
+     * </li>
+     * </ul>
      */
     private String period;
     /**
      * <p>
-     * The start time.
+     * The time that aggregation of posted agent profiles for a profiling group starts. The aggregation profile contains
+     * profiles posted by the agent starting at this time for an aggregation period specified by the <code>period</code>
+     * property of the <code>AggregatedProfileTime</code> object.
+     * </p>
+     * <p>
+     * Specify <code>start</code> using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
+     * millisecond past June 1, 2020 1:15:02 PM UTC.
      * </p>
      */
     private java.util.Date start;
 
     /**
      * <p>
-     * The time period.
+     * The aggregation period. This indicates the period during which an aggregation profile collects posted agent
+     * profiles for a profiling group. Use one of three valid durations that are specified using the ISO 8601 format.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>P1D</code> — 1 day
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PT1H</code> — 1 hour
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PT5M</code> — 5 minutes
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param period
-     *        The time period.
+     *        The aggregation period. This indicates the period during which an aggregation profile collects posted
+     *        agent profiles for a profiling group. Use one of three valid durations that are specified using the ISO
+     *        8601 format. </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>P1D</code> — 1 day
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PT1H</code> — 1 hour
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PT5M</code> — 5 minutes
+     *        </p>
+     *        </li>
      * @see AggregationPeriod
      */
 
@@ -57,10 +119,46 @@ public class AggregatedProfileTime implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The time period.
+     * The aggregation period. This indicates the period during which an aggregation profile collects posted agent
+     * profiles for a profiling group. Use one of three valid durations that are specified using the ISO 8601 format.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>P1D</code> — 1 day
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PT1H</code> — 1 hour
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PT5M</code> — 5 minutes
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The time period.
+     * @return The aggregation period. This indicates the period during which an aggregation profile collects posted
+     *         agent profiles for a profiling group. Use one of three valid durations that are specified using the ISO
+     *         8601 format. </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>P1D</code> — 1 day
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>PT1H</code> — 1 hour
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>PT5M</code> — 5 minutes
+     *         </p>
+     *         </li>
      * @see AggregationPeriod
      */
 
@@ -70,11 +168,47 @@ public class AggregatedProfileTime implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The time period.
+     * The aggregation period. This indicates the period during which an aggregation profile collects posted agent
+     * profiles for a profiling group. Use one of three valid durations that are specified using the ISO 8601 format.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>P1D</code> — 1 day
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PT1H</code> — 1 hour
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PT5M</code> — 5 minutes
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param period
-     *        The time period.
+     *        The aggregation period. This indicates the period during which an aggregation profile collects posted
+     *        agent profiles for a profiling group. Use one of three valid durations that are specified using the ISO
+     *        8601 format. </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>P1D</code> — 1 day
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PT1H</code> — 1 hour
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PT5M</code> — 5 minutes
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AggregationPeriod
      */
@@ -86,11 +220,47 @@ public class AggregatedProfileTime implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The time period.
+     * The aggregation period. This indicates the period during which an aggregation profile collects posted agent
+     * profiles for a profiling group. Use one of three valid durations that are specified using the ISO 8601 format.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>P1D</code> — 1 day
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PT1H</code> — 1 hour
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PT5M</code> — 5 minutes
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param period
-     *        The time period.
+     *        The aggregation period. This indicates the period during which an aggregation profile collects posted
+     *        agent profiles for a profiling group. Use one of three valid durations that are specified using the ISO
+     *        8601 format. </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>P1D</code> — 1 day
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PT1H</code> — 1 hour
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PT5M</code> — 5 minutes
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AggregationPeriod
      */
@@ -102,11 +272,22 @@ public class AggregatedProfileTime implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The start time.
+     * The time that aggregation of posted agent profiles for a profiling group starts. The aggregation profile contains
+     * profiles posted by the agent starting at this time for an aggregation period specified by the <code>period</code>
+     * property of the <code>AggregatedProfileTime</code> object.
+     * </p>
+     * <p>
+     * Specify <code>start</code> using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
+     * millisecond past June 1, 2020 1:15:02 PM UTC.
      * </p>
      * 
      * @param start
-     *        The start time.
+     *        The time that aggregation of posted agent profiles for a profiling group starts. The aggregation profile
+     *        contains profiles posted by the agent starting at this time for an aggregation period specified by the
+     *        <code>period</code> property of the <code>AggregatedProfileTime</code> object. </p>
+     *        <p>
+     *        Specify <code>start</code> using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
+     *        millisecond past June 1, 2020 1:15:02 PM UTC.
      */
 
     public void setStart(java.util.Date start) {
@@ -115,10 +296,21 @@ public class AggregatedProfileTime implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The start time.
+     * The time that aggregation of posted agent profiles for a profiling group starts. The aggregation profile contains
+     * profiles posted by the agent starting at this time for an aggregation period specified by the <code>period</code>
+     * property of the <code>AggregatedProfileTime</code> object.
+     * </p>
+     * <p>
+     * Specify <code>start</code> using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
+     * millisecond past June 1, 2020 1:15:02 PM UTC.
      * </p>
      * 
-     * @return The start time.
+     * @return The time that aggregation of posted agent profiles for a profiling group starts. The aggregation profile
+     *         contains profiles posted by the agent starting at this time for an aggregation period specified by the
+     *         <code>period</code> property of the <code>AggregatedProfileTime</code> object. </p>
+     *         <p>
+     *         Specify <code>start</code> using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
+     *         millisecond past June 1, 2020 1:15:02 PM UTC.
      */
 
     public java.util.Date getStart() {
@@ -127,11 +319,22 @@ public class AggregatedProfileTime implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The start time.
+     * The time that aggregation of posted agent profiles for a profiling group starts. The aggregation profile contains
+     * profiles posted by the agent starting at this time for an aggregation period specified by the <code>period</code>
+     * property of the <code>AggregatedProfileTime</code> object.
+     * </p>
+     * <p>
+     * Specify <code>start</code> using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
+     * millisecond past June 1, 2020 1:15:02 PM UTC.
      * </p>
      * 
      * @param start
-     *        The start time.
+     *        The time that aggregation of posted agent profiles for a profiling group starts. The aggregation profile
+     *        contains profiles posted by the agent starting at this time for an aggregation period specified by the
+     *        <code>period</code> property of the <code>AggregatedProfileTime</code> object. </p>
+     *        <p>
+     *        Specify <code>start</code> using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
+     *        millisecond past June 1, 2020 1:15:02 PM UTC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

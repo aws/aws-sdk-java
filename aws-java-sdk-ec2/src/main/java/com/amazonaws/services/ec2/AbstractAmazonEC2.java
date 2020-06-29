@@ -360,6 +360,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public CreateManagedPrefixListResult createManagedPrefixList(CreateManagedPrefixListRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateNatGatewayResult createNatGateway(CreateNatGatewayRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -601,6 +606,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public DeleteLocalGatewayRouteTableVpcAssociationResult deleteLocalGatewayRouteTableVpcAssociation(DeleteLocalGatewayRouteTableVpcAssociationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteManagedPrefixListResult deleteManagedPrefixList(DeleteManagedPrefixListRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -1177,6 +1187,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public DescribeLocalGatewaysResult describeLocalGateways(DescribeLocalGatewaysRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeManagedPrefixListsResult describeManagedPrefixLists(DescribeManagedPrefixListsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -1807,6 +1822,16 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public GetManagedPrefixListAssociationsResult getManagedPrefixListAssociations(GetManagedPrefixListAssociationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetManagedPrefixListEntriesResult getManagedPrefixListEntries(GetManagedPrefixListEntriesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetPasswordDataResult getPasswordData(GetPasswordDataRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1966,6 +1991,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public ModifyLaunchTemplateResult modifyLaunchTemplate(ModifyLaunchTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ModifyManagedPrefixListResult modifyManagedPrefixList(ModifyManagedPrefixListRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -2239,6 +2269,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public RestoreAddressToClassicResult restoreAddressToClassic(RestoreAddressToClassicRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RestoreManagedPrefixListVersionResult restoreManagedPrefixListVersion(RestoreManagedPrefixListVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

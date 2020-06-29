@@ -36,13 +36,21 @@ public class ListProfilingGroupsResult extends com.amazonaws.AmazonWebServiceRes
     private String nextToken;
     /**
      * <p>
-     * Information about profiling group names.
+     * A returned list of profiling group names. A list of the names is returned only if <code>includeDescription</code>
+     * is <code>false</code>, otherwise a list of <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     * <code>ProfilingGroupDescription</code> </a> objects is returned.
      * </p>
      */
     private java.util.List<String> profilingGroupNames;
     /**
      * <p>
-     * Information about profiling groups.
+     * A returned list <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     * <code>ProfilingGroupDescription</code> </a> objects. A list of <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     * <code>ProfilingGroupDescription</code> </a> objects is returned only if <code>includeDescription</code> is
+     * <code>true</code>, otherwise a list of profiling group names is returned.
      * </p>
      */
     private java.util.List<ProfilingGroupDescription> profilingGroups;
@@ -104,10 +112,16 @@ public class ListProfilingGroupsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Information about profiling group names.
+     * A returned list of profiling group names. A list of the names is returned only if <code>includeDescription</code>
+     * is <code>false</code>, otherwise a list of <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     * <code>ProfilingGroupDescription</code> </a> objects is returned.
      * </p>
      * 
-     * @return Information about profiling group names.
+     * @return A returned list of profiling group names. A list of the names is returned only if
+     *         <code>includeDescription</code> is <code>false</code>, otherwise a list of <a
+     *         href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     *         <code>ProfilingGroupDescription</code> </a> objects is returned.
      */
 
     public java.util.List<String> getProfilingGroupNames() {
@@ -116,11 +130,17 @@ public class ListProfilingGroupsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Information about profiling group names.
+     * A returned list of profiling group names. A list of the names is returned only if <code>includeDescription</code>
+     * is <code>false</code>, otherwise a list of <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     * <code>ProfilingGroupDescription</code> </a> objects is returned.
      * </p>
      * 
      * @param profilingGroupNames
-     *        Information about profiling group names.
+     *        A returned list of profiling group names. A list of the names is returned only if
+     *        <code>includeDescription</code> is <code>false</code>, otherwise a list of <a
+     *        href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     *        <code>ProfilingGroupDescription</code> </a> objects is returned.
      */
 
     public void setProfilingGroupNames(java.util.Collection<String> profilingGroupNames) {
@@ -134,7 +154,10 @@ public class ListProfilingGroupsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Information about profiling group names.
+     * A returned list of profiling group names. A list of the names is returned only if <code>includeDescription</code>
+     * is <code>false</code>, otherwise a list of <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     * <code>ProfilingGroupDescription</code> </a> objects is returned.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -143,7 +166,10 @@ public class ListProfilingGroupsResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param profilingGroupNames
-     *        Information about profiling group names.
+     *        A returned list of profiling group names. A list of the names is returned only if
+     *        <code>includeDescription</code> is <code>false</code>, otherwise a list of <a
+     *        href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     *        <code>ProfilingGroupDescription</code> </a> objects is returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -159,11 +185,17 @@ public class ListProfilingGroupsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Information about profiling group names.
+     * A returned list of profiling group names. A list of the names is returned only if <code>includeDescription</code>
+     * is <code>false</code>, otherwise a list of <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     * <code>ProfilingGroupDescription</code> </a> objects is returned.
      * </p>
      * 
      * @param profilingGroupNames
-     *        Information about profiling group names.
+     *        A returned list of profiling group names. A list of the names is returned only if
+     *        <code>includeDescription</code> is <code>false</code>, otherwise a list of <a
+     *        href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     *        <code>ProfilingGroupDescription</code> </a> objects is returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -174,10 +206,20 @@ public class ListProfilingGroupsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Information about profiling groups.
+     * A returned list <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     * <code>ProfilingGroupDescription</code> </a> objects. A list of <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     * <code>ProfilingGroupDescription</code> </a> objects is returned only if <code>includeDescription</code> is
+     * <code>true</code>, otherwise a list of profiling group names is returned.
      * </p>
      * 
-     * @return Information about profiling groups.
+     * @return A returned list <a
+     *         href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     *         <code>ProfilingGroupDescription</code> </a> objects. A list of <a
+     *         href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     *         <code>ProfilingGroupDescription</code> </a> objects is returned only if <code>includeDescription</code>
+     *         is <code>true</code>, otherwise a list of profiling group names is returned.
      */
 
     public java.util.List<ProfilingGroupDescription> getProfilingGroups() {
@@ -186,11 +228,21 @@ public class ListProfilingGroupsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Information about profiling groups.
+     * A returned list <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     * <code>ProfilingGroupDescription</code> </a> objects. A list of <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     * <code>ProfilingGroupDescription</code> </a> objects is returned only if <code>includeDescription</code> is
+     * <code>true</code>, otherwise a list of profiling group names is returned.
      * </p>
      * 
      * @param profilingGroups
-     *        Information about profiling groups.
+     *        A returned list <a
+     *        href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     *        <code>ProfilingGroupDescription</code> </a> objects. A list of <a
+     *        href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     *        <code>ProfilingGroupDescription</code> </a> objects is returned only if <code>includeDescription</code> is
+     *        <code>true</code>, otherwise a list of profiling group names is returned.
      */
 
     public void setProfilingGroups(java.util.Collection<ProfilingGroupDescription> profilingGroups) {
@@ -204,7 +256,12 @@ public class ListProfilingGroupsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Information about profiling groups.
+     * A returned list <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     * <code>ProfilingGroupDescription</code> </a> objects. A list of <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     * <code>ProfilingGroupDescription</code> </a> objects is returned only if <code>includeDescription</code> is
+     * <code>true</code>, otherwise a list of profiling group names is returned.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -213,7 +270,12 @@ public class ListProfilingGroupsResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param profilingGroups
-     *        Information about profiling groups.
+     *        A returned list <a
+     *        href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     *        <code>ProfilingGroupDescription</code> </a> objects. A list of <a
+     *        href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     *        <code>ProfilingGroupDescription</code> </a> objects is returned only if <code>includeDescription</code> is
+     *        <code>true</code>, otherwise a list of profiling group names is returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -229,11 +291,21 @@ public class ListProfilingGroupsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Information about profiling groups.
+     * A returned list <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     * <code>ProfilingGroupDescription</code> </a> objects. A list of <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     * <code>ProfilingGroupDescription</code> </a> objects is returned only if <code>includeDescription</code> is
+     * <code>true</code>, otherwise a list of profiling group names is returned.
      * </p>
      * 
      * @param profilingGroups
-     *        Information about profiling groups.
+     *        A returned list <a
+     *        href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     *        <code>ProfilingGroupDescription</code> </a> objects. A list of <a
+     *        href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     *        <code>ProfilingGroupDescription</code> </a> objects is returned only if <code>includeDescription</code> is
+     *        <code>true</code>, otherwise a list of profiling group names is returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

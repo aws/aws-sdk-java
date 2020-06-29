@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The structure representing the getPolicyResponse.
+ * The structure representing the <code>getPolicyResponse</code>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/GetPolicy" target="_top">AWS API
@@ -28,24 +28,24 @@ public class GetPolicyResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The resource-based policy attached to the <code>ProfilingGroup</code>.
+     * The JSON-formatted resource-based policy attached to the <code>ProfilingGroup</code>.
      * </p>
      */
     private String policy;
     /**
      * <p>
-     * A unique identifier for the current revision of the policy.
+     * A unique identifier for the current revision of the returned policy.
      * </p>
      */
     private String revisionId;
 
     /**
      * <p>
-     * The resource-based policy attached to the <code>ProfilingGroup</code>.
+     * The JSON-formatted resource-based policy attached to the <code>ProfilingGroup</code>.
      * </p>
      * 
      * @param policy
-     *        The resource-based policy attached to the <code>ProfilingGroup</code>.
+     *        The JSON-formatted resource-based policy attached to the <code>ProfilingGroup</code>.
      */
 
     public void setPolicy(String policy) {
@@ -54,10 +54,10 @@ public class GetPolicyResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The resource-based policy attached to the <code>ProfilingGroup</code>.
+     * The JSON-formatted resource-based policy attached to the <code>ProfilingGroup</code>.
      * </p>
      * 
-     * @return The resource-based policy attached to the <code>ProfilingGroup</code>.
+     * @return The JSON-formatted resource-based policy attached to the <code>ProfilingGroup</code>.
      */
 
     public String getPolicy() {
@@ -66,11 +66,11 @@ public class GetPolicyResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The resource-based policy attached to the <code>ProfilingGroup</code>.
+     * The JSON-formatted resource-based policy attached to the <code>ProfilingGroup</code>.
      * </p>
      * 
      * @param policy
-     *        The resource-based policy attached to the <code>ProfilingGroup</code>.
+     *        The JSON-formatted resource-based policy attached to the <code>ProfilingGroup</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,11 +81,11 @@ public class GetPolicyResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * A unique identifier for the current revision of the policy.
+     * A unique identifier for the current revision of the returned policy.
      * </p>
      * 
      * @param revisionId
-     *        A unique identifier for the current revision of the policy.
+     *        A unique identifier for the current revision of the returned policy.
      */
 
     public void setRevisionId(String revisionId) {
@@ -94,10 +94,10 @@ public class GetPolicyResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * A unique identifier for the current revision of the policy.
+     * A unique identifier for the current revision of the returned policy.
      * </p>
      * 
-     * @return A unique identifier for the current revision of the policy.
+     * @return A unique identifier for the current revision of the returned policy.
      */
 
     public String getRevisionId() {
@@ -106,11 +106,11 @@ public class GetPolicyResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * A unique identifier for the current revision of the policy.
+     * A unique identifier for the current revision of the returned policy.
      * </p>
      * 
      * @param revisionId
-     *        A unique identifier for the current revision of the policy.
+     *        A unique identifier for the current revision of the returned policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

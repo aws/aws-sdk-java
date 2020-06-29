@@ -4057,6 +4057,64 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
+     * Creates a managed prefix list. You can specify one or more entries for the prefix list. Each entry consists of a
+     * CIDR block and an optional description.
+     * </p>
+     * <p>
+     * You must specify the maximum number of entries for the prefix list. The maximum number of entries cannot be
+     * changed later.
+     * </p>
+     * 
+     * @param createManagedPrefixListRequest
+     * @return Result of the CreateManagedPrefixList operation returned by the service.
+     * @sample AmazonEC2.CreateManagedPrefixList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateManagedPrefixList" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateManagedPrefixListResult createManagedPrefixList(CreateManagedPrefixListRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateManagedPrefixList(request);
+    }
+
+    @SdkInternalApi
+    final CreateManagedPrefixListResult executeCreateManagedPrefixList(CreateManagedPrefixListRequest createManagedPrefixListRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createManagedPrefixListRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateManagedPrefixListRequest> request = null;
+        Response<CreateManagedPrefixListResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateManagedPrefixListRequestMarshaller().marshall(super.beforeMarshalling(createManagedPrefixListRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateManagedPrefixList");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateManagedPrefixListResult> responseHandler = new StaxResponseHandler<CreateManagedPrefixListResult>(
+                    new CreateManagedPrefixListResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a NAT gateway in the specified public subnet. This action creates a network interface in the specified
      * subnet with a private IP address from the IP address range of the subnet. Internet-bound traffic from a private
      * subnet can be routed to the NAT gateway, therefore enabling instances in the private subnet to connect to the
@@ -4923,14 +4981,12 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Creates a subnet in an existing VPC.
+     * Creates a subnet in a specified VPC.
      * </p>
      * <p>
-     * When you create each subnet, you provide the VPC ID and IPv4 CIDR block for the subnet. After you create a
-     * subnet, you can't change its CIDR block. The size of the subnet's IPv4 CIDR block can be the same as a VPC's IPv4
-     * CIDR block, or a subset of a VPC's IPv4 CIDR block. If you create more than one subnet in a VPC, the subnets'
-     * CIDR blocks must not overlap. The smallest IPv4 subnet (and VPC) you can create uses a /28 netmask (16 IPv4
-     * addresses), and the largest uses a /16 netmask (65,536 IPv4 addresses).
+     * You must specify an IPv4 CIDR block for the subnet. After you create a subnet, you can't change its CIDR block.
+     * The allowed block size is between a /16 netmask (65,536 IP addresses) and /28 netmask (16 IP addresses). The CIDR
+     * block must not overlap with the CIDR block of an existing subnet in the VPC.
      * </p>
      * <p>
      * If you've associated an IPv6 CIDR block with your VPC, you can create a subnet with an IPv6 CIDR block that uses
@@ -4946,10 +5002,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * If you add more than one subnet to a VPC, they're set up in a star topology with a logical router in the middle.
      * </p>
      * <p>
-     * If you launch an instance in a VPC using an Amazon EBS-backed AMI, the IP address doesn't change if you stop and
-     * restart the instance (unlike a similar instance launched outside a VPC, which gets a new IP address when
-     * restarted). It's therefore possible to have a subnet with no running instances (they're all stopped), but no
-     * remaining IP addresses available.
+     * When you stop an instance in a subnet, it retains its private IPv4 address. It's therefore possible to have a
+     * subnet with no running instances (they're all stopped), but no remaining IP addresses available.
      * </p>
      * <p>
      * For more information about subnets, see <a
@@ -7048,6 +7102,60 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteLocalGatewayRouteTableVpcAssociationResult> responseHandler = new StaxResponseHandler<DeleteLocalGatewayRouteTableVpcAssociationResult>(
                     new DeleteLocalGatewayRouteTableVpcAssociationResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the specified managed prefix list. You must first remove all references to the prefix list in your
+     * resources.
+     * </p>
+     * 
+     * @param deleteManagedPrefixListRequest
+     * @return Result of the DeleteManagedPrefixList operation returned by the service.
+     * @sample AmazonEC2.DeleteManagedPrefixList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteManagedPrefixList" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteManagedPrefixListResult deleteManagedPrefixList(DeleteManagedPrefixListRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteManagedPrefixList(request);
+    }
+
+    @SdkInternalApi
+    final DeleteManagedPrefixListResult executeDeleteManagedPrefixList(DeleteManagedPrefixListRequest deleteManagedPrefixListRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteManagedPrefixListRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteManagedPrefixListRequest> request = null;
+        Response<DeleteManagedPrefixListResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteManagedPrefixListRequestMarshaller().marshall(super.beforeMarshalling(deleteManagedPrefixListRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteManagedPrefixList");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteManagedPrefixListResult> responseHandler = new StaxResponseHandler<DeleteManagedPrefixListResult>(
+                    new DeleteManagedPrefixListResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -12543,6 +12651,62 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
+     * Describes your managed prefix lists and any AWS-managed prefix lists.
+     * </p>
+     * <p>
+     * To view the entries for your prefix list, use <a>GetManagedPrefixListEntries</a>.
+     * </p>
+     * 
+     * @param describeManagedPrefixListsRequest
+     * @return Result of the DescribeManagedPrefixLists operation returned by the service.
+     * @sample AmazonEC2.DescribeManagedPrefixLists
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeManagedPrefixLists" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeManagedPrefixListsResult describeManagedPrefixLists(DescribeManagedPrefixListsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeManagedPrefixLists(request);
+    }
+
+    @SdkInternalApi
+    final DescribeManagedPrefixListsResult executeDescribeManagedPrefixLists(DescribeManagedPrefixListsRequest describeManagedPrefixListsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeManagedPrefixListsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeManagedPrefixListsRequest> request = null;
+        Response<DescribeManagedPrefixListsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeManagedPrefixListsRequestMarshaller().marshall(super.beforeMarshalling(describeManagedPrefixListsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeManagedPrefixLists");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeManagedPrefixListsResult> responseHandler = new StaxResponseHandler<DescribeManagedPrefixListsResult>(
+                    new DescribeManagedPrefixListsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Describes your Elastic IP addresses that are being moved to the EC2-VPC platform, or that are being restored to
      * the EC2-Classic platform. This request does not return information about any other Elastic IP addresses in your
      * account.
@@ -12949,9 +13113,10 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     /**
      * <p>
      * Describes available AWS services in a prefix list format, which includes the prefix list name and prefix list ID
-     * of the service and the IP address range for the service. A prefix list ID is required for creating an outbound
-     * security group rule that allows traffic from a VPC to access an AWS service through a gateway VPC endpoint.
-     * Currently, the services that support this action are Amazon S3 and Amazon DynamoDB.
+     * of the service and the IP address range for the service.
+     * </p>
+     * <p>
+     * We recommend that you use <a>DescribeManagedPrefixLists</a> instead.
      * </p>
      * 
      * @param describePrefixListsRequest
@@ -18373,6 +18538,113 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
+     * Gets information about the resources that are associated with the specified managed prefix list.
+     * </p>
+     * 
+     * @param getManagedPrefixListAssociationsRequest
+     * @return Result of the GetManagedPrefixListAssociations operation returned by the service.
+     * @sample AmazonEC2.GetManagedPrefixListAssociations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetManagedPrefixListAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetManagedPrefixListAssociationsResult getManagedPrefixListAssociations(GetManagedPrefixListAssociationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetManagedPrefixListAssociations(request);
+    }
+
+    @SdkInternalApi
+    final GetManagedPrefixListAssociationsResult executeGetManagedPrefixListAssociations(
+            GetManagedPrefixListAssociationsRequest getManagedPrefixListAssociationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getManagedPrefixListAssociationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetManagedPrefixListAssociationsRequest> request = null;
+        Response<GetManagedPrefixListAssociationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetManagedPrefixListAssociationsRequestMarshaller().marshall(super.beforeMarshalling(getManagedPrefixListAssociationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetManagedPrefixListAssociations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetManagedPrefixListAssociationsResult> responseHandler = new StaxResponseHandler<GetManagedPrefixListAssociationsResult>(
+                    new GetManagedPrefixListAssociationsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets information about the entries for a specified managed prefix list.
+     * </p>
+     * 
+     * @param getManagedPrefixListEntriesRequest
+     * @return Result of the GetManagedPrefixListEntries operation returned by the service.
+     * @sample AmazonEC2.GetManagedPrefixListEntries
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetManagedPrefixListEntries"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetManagedPrefixListEntriesResult getManagedPrefixListEntries(GetManagedPrefixListEntriesRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetManagedPrefixListEntries(request);
+    }
+
+    @SdkInternalApi
+    final GetManagedPrefixListEntriesResult executeGetManagedPrefixListEntries(GetManagedPrefixListEntriesRequest getManagedPrefixListEntriesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getManagedPrefixListEntriesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetManagedPrefixListEntriesRequest> request = null;
+        Response<GetManagedPrefixListEntriesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetManagedPrefixListEntriesRequestMarshaller().marshall(super.beforeMarshalling(getManagedPrefixListEntriesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetManagedPrefixListEntries");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetManagedPrefixListEntriesResult> responseHandler = new StaxResponseHandler<GetManagedPrefixListEntriesResult>(
+                    new GetManagedPrefixListEntriesResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves the encrypted administrator password for a running Windows instance.
      * </p>
      * <p>
@@ -20224,6 +20496,66 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyLaunchTemplateResult> responseHandler = new StaxResponseHandler<ModifyLaunchTemplateResult>(
                     new ModifyLaunchTemplateResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Modifies the specified managed prefix list.
+     * </p>
+     * <p>
+     * Adding or removing entries in a prefix list creates a new version of the prefix list. Changing the name of the
+     * prefix list does not affect the version.
+     * </p>
+     * <p>
+     * If you specify a current version number that does not match the true current version number, the request fails.
+     * </p>
+     * 
+     * @param modifyManagedPrefixListRequest
+     * @return Result of the ModifyManagedPrefixList operation returned by the service.
+     * @sample AmazonEC2.ModifyManagedPrefixList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyManagedPrefixList" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ModifyManagedPrefixListResult modifyManagedPrefixList(ModifyManagedPrefixListRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyManagedPrefixList(request);
+    }
+
+    @SdkInternalApi
+    final ModifyManagedPrefixListResult executeModifyManagedPrefixList(ModifyManagedPrefixListRequest modifyManagedPrefixListRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyManagedPrefixListRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyManagedPrefixListRequest> request = null;
+        Response<ModifyManagedPrefixListResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyManagedPrefixListRequestMarshaller().marshall(super.beforeMarshalling(modifyManagedPrefixListRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyManagedPrefixList");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ModifyManagedPrefixListResult> responseHandler = new StaxResponseHandler<ModifyManagedPrefixListResult>(
+                    new ModifyManagedPrefixListResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -23616,6 +23948,60 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<RestoreAddressToClassicResult> responseHandler = new StaxResponseHandler<RestoreAddressToClassicResult>(
                     new RestoreAddressToClassicResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Restores the entries from a previous version of a managed prefix list to a new version of the prefix list.
+     * </p>
+     * 
+     * @param restoreManagedPrefixListVersionRequest
+     * @return Result of the RestoreManagedPrefixListVersion operation returned by the service.
+     * @sample AmazonEC2.RestoreManagedPrefixListVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreManagedPrefixListVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public RestoreManagedPrefixListVersionResult restoreManagedPrefixListVersion(RestoreManagedPrefixListVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeRestoreManagedPrefixListVersion(request);
+    }
+
+    @SdkInternalApi
+    final RestoreManagedPrefixListVersionResult executeRestoreManagedPrefixListVersion(
+            RestoreManagedPrefixListVersionRequest restoreManagedPrefixListVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(restoreManagedPrefixListVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RestoreManagedPrefixListVersionRequest> request = null;
+        Response<RestoreManagedPrefixListVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RestoreManagedPrefixListVersionRequestMarshaller().marshall(super.beforeMarshalling(restoreManagedPrefixListVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RestoreManagedPrefixListVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<RestoreManagedPrefixListVersionResult> responseHandler = new StaxResponseHandler<RestoreManagedPrefixListVersionResult>(
+                    new RestoreManagedPrefixListVersionResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

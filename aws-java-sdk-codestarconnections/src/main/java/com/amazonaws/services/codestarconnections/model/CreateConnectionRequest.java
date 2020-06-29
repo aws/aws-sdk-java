@@ -27,8 +27,8 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the external provider where your third-party code repository is configured. Currently, the valid
-     * provider type is Bitbucket.
+     * The name of the external provider where your third-party code repository is configured. The valid provider type
+     * is Bitbucket.
      * </p>
      */
     private String providerType;
@@ -44,16 +44,22 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the host associated with the connection to be created.
+     * </p>
+     */
+    private String hostArn;
 
     /**
      * <p>
-     * The name of the external provider where your third-party code repository is configured. Currently, the valid
-     * provider type is Bitbucket.
+     * The name of the external provider where your third-party code repository is configured. The valid provider type
+     * is Bitbucket.
      * </p>
      * 
      * @param providerType
-     *        The name of the external provider where your third-party code repository is configured. Currently, the
-     *        valid provider type is Bitbucket.
+     *        The name of the external provider where your third-party code repository is configured. The valid provider
+     *        type is Bitbucket.
      * @see ProviderType
      */
 
@@ -63,12 +69,12 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the external provider where your third-party code repository is configured. Currently, the valid
-     * provider type is Bitbucket.
+     * The name of the external provider where your third-party code repository is configured. The valid provider type
+     * is Bitbucket.
      * </p>
      * 
-     * @return The name of the external provider where your third-party code repository is configured. Currently, the
-     *         valid provider type is Bitbucket.
+     * @return The name of the external provider where your third-party code repository is configured. The valid
+     *         provider type is Bitbucket.
      * @see ProviderType
      */
 
@@ -78,13 +84,13 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the external provider where your third-party code repository is configured. Currently, the valid
-     * provider type is Bitbucket.
+     * The name of the external provider where your third-party code repository is configured. The valid provider type
+     * is Bitbucket.
      * </p>
      * 
      * @param providerType
-     *        The name of the external provider where your third-party code repository is configured. Currently, the
-     *        valid provider type is Bitbucket.
+     *        The name of the external provider where your third-party code repository is configured. The valid provider
+     *        type is Bitbucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProviderType
      */
@@ -96,13 +102,13 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the external provider where your third-party code repository is configured. Currently, the valid
-     * provider type is Bitbucket.
+     * The name of the external provider where your third-party code repository is configured. The valid provider type
+     * is Bitbucket.
      * </p>
      * 
      * @param providerType
-     *        The name of the external provider where your third-party code repository is configured. Currently, the
-     *        valid provider type is Bitbucket.
+     *        The name of the external provider where your third-party code repository is configured. The valid provider
+     *        type is Bitbucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProviderType
      */
@@ -223,6 +229,46 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the host associated with the connection to be created.
+     * </p>
+     * 
+     * @param hostArn
+     *        The Amazon Resource Name (ARN) of the host associated with the connection to be created.
+     */
+
+    public void setHostArn(String hostArn) {
+        this.hostArn = hostArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the host associated with the connection to be created.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the host associated with the connection to be created.
+     */
+
+    public String getHostArn() {
+        return this.hostArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the host associated with the connection to be created.
+     * </p>
+     * 
+     * @param hostArn
+     *        The Amazon Resource Name (ARN) of the host associated with the connection to be created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateConnectionRequest withHostArn(String hostArn) {
+        setHostArn(hostArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -239,7 +285,9 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
         if (getConnectionName() != null)
             sb.append("ConnectionName: ").append(getConnectionName()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getHostArn() != null)
+            sb.append("HostArn: ").append(getHostArn());
         sb.append("}");
         return sb.toString();
     }
@@ -266,6 +314,10 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getHostArn() == null ^ this.getHostArn() == null)
+            return false;
+        if (other.getHostArn() != null && other.getHostArn().equals(this.getHostArn()) == false)
+            return false;
         return true;
     }
 
@@ -277,6 +329,7 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getProviderType() == null) ? 0 : getProviderType().hashCode());
         hashCode = prime * hashCode + ((getConnectionName() == null) ? 0 : getConnectionName().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getHostArn() == null) ? 0 : getHostArn().hashCode());
         return hashCode;
     }
 

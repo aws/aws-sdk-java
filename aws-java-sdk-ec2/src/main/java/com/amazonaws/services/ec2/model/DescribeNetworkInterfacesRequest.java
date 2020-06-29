@@ -118,11 +118,6 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>attachment.nat-gateway-id</code> - The ID of the NAT gateway to which the network interface is attached.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>attachment.status</code> - The status of the attachment (<code>attaching</code> | <code>attached</code> |
      * <code>detaching</code> | <code>detached</code>).
      * </p>
@@ -345,11 +340,6 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>attachment.nat-gateway-id</code> - The ID of the NAT gateway to which the network interface is attached.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>attachment.status</code> - The status of the attachment (<code>attaching</code> | <code>attached</code> |
      * <code>detaching</code> | <code>detached</code>).
      * </p>
@@ -542,12 +532,6 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *         <p>
      *         <code>attachment.instance-owner-id</code> - The owner ID of the instance to which the network interface
      *         is attached.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>attachment.nat-gateway-id</code> - The ID of the NAT gateway to which the network interface is
-     *         attached.
      *         </p>
      *         </li>
      *         <li>
@@ -756,11 +740,6 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>attachment.nat-gateway-id</code> - The ID of the NAT gateway to which the network interface is attached.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>attachment.status</code> - The status of the attachment (<code>attaching</code> | <code>attached</code> |
      * <code>detaching</code> | <code>detached</code>).
      * </p>
@@ -953,12 +932,6 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *        <li>
      *        <p>
      *        <code>attachment.instance-owner-id</code> - The owner ID of the instance to which the network interface is
-     *        attached.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>attachment.nat-gateway-id</code> - The ID of the NAT gateway to which the network interface is
      *        attached.
      *        </p>
      *        </li>
@@ -1170,11 +1143,6 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>attachment.nat-gateway-id</code> - The ID of the NAT gateway to which the network interface is attached.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>attachment.status</code> - The status of the attachment (<code>attaching</code> | <code>attached</code> |
      * <code>detaching</code> | <code>detached</code>).
      * </p>
@@ -1372,12 +1340,6 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *        <li>
      *        <p>
      *        <code>attachment.instance-owner-id</code> - The owner ID of the instance to which the network interface is
-     *        attached.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>attachment.nat-gateway-id</code> - The ID of the NAT gateway to which the network interface is
      *        attached.
      *        </p>
      *        </li>
@@ -1591,11 +1553,6 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>attachment.nat-gateway-id</code> - The ID of the NAT gateway to which the network interface is attached.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>attachment.status</code> - The status of the attachment (<code>attaching</code> | <code>attached</code> |
      * <code>detaching</code> | <code>detached</code>).
      * </p>
@@ -1788,12 +1745,6 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *        <li>
      *        <p>
      *        <code>attachment.instance-owner-id</code> - The owner ID of the instance to which the network interface is
-     *        attached.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>attachment.nat-gateway-id</code> - The ID of the NAT gateway to which the network interface is
      *        attached.
      *        </p>
      *        </li>

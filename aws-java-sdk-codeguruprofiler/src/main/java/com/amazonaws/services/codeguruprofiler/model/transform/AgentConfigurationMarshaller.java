@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.codeguruprofiler.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -27,6 +29,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class AgentConfigurationMarshaller {
 
+    private static final MarshallingInfo<Map> AGENTPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("agentParameters").build();
     private static final MarshallingInfo<Integer> PERIODINSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("periodInSeconds").build();
     private static final MarshallingInfo<Boolean> SHOULDPROFILE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
@@ -48,6 +52,7 @@ public class AgentConfigurationMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(agentConfiguration.getAgentParameters(), AGENTPARAMETERS_BINDING);
             protocolMarshaller.marshall(agentConfiguration.getPeriodInSeconds(), PERIODINSECONDS_BINDING);
             protocolMarshaller.marshall(agentConfiguration.getShouldProfile(), SHOULDPROFILE_BINDING);
         } catch (Exception e) {

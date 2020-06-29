@@ -30,18 +30,18 @@ public class DeleteProfilingGroupRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The profiling group name to delete.
+     * The name of the profiling group to delete.
      * </p>
      */
     private String profilingGroupName;
 
     /**
      * <p>
-     * The profiling group name to delete.
+     * The name of the profiling group to delete.
      * </p>
      * 
      * @param profilingGroupName
-     *        The profiling group name to delete.
+     *        The name of the profiling group to delete.
      */
 
     public void setProfilingGroupName(String profilingGroupName) {
@@ -50,10 +50,10 @@ public class DeleteProfilingGroupRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The profiling group name to delete.
+     * The name of the profiling group to delete.
      * </p>
      * 
-     * @return The profiling group name to delete.
+     * @return The name of the profiling group to delete.
      */
 
     public String getProfilingGroupName() {
@@ -62,11 +62,11 @@ public class DeleteProfilingGroupRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The profiling group name to delete.
+     * The name of the profiling group to delete.
      * </p>
      * 
      * @param profilingGroupName
-     *        The profiling group name to delete.
+     *        The name of the profiling group to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

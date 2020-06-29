@@ -56,6 +56,10 @@ public class ProfilingGroupDescriptionJsonUnmarshaller implements Unmarshaller<P
                     context.nextToken();
                     profilingGroupDescription.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("computePlatform", targetDepth)) {
+                    context.nextToken();
+                    profilingGroupDescription.setComputePlatform(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
                     profilingGroupDescription.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));

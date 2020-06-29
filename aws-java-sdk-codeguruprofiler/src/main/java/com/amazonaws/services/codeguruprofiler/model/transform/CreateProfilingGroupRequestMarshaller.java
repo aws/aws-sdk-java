@@ -34,6 +34,8 @@ public class CreateProfilingGroupRequestMarshaller {
     private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("clientToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
+    private static final MarshallingInfo<String> COMPUTEPLATFORM_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("computePlatform").build();
     private static final MarshallingInfo<String> PROFILINGGROUPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("profilingGroupName").build();
 
@@ -55,6 +57,7 @@ public class CreateProfilingGroupRequestMarshaller {
         try {
             protocolMarshaller.marshall(createProfilingGroupRequest.getAgentOrchestrationConfig(), AGENTORCHESTRATIONCONFIG_BINDING);
             protocolMarshaller.marshall(createProfilingGroupRequest.getClientToken(), CLIENTTOKEN_BINDING);
+            protocolMarshaller.marshall(createProfilingGroupRequest.getComputePlatform(), COMPUTEPLATFORM_BINDING);
             protocolMarshaller.marshall(createProfilingGroupRequest.getProfilingGroupName(), PROFILINGGROUPNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

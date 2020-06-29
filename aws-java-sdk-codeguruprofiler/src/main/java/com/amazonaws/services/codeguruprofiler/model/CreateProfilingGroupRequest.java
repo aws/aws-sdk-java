@@ -30,33 +30,39 @@ public class CreateProfilingGroupRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The agent orchestration configuration.
+     * Specifies whether profiling is enabled or disabled for the created profiling group.
      * </p>
      */
     private AgentOrchestrationConfig agentOrchestrationConfig;
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
-     * </p>
-     * <p>
-     * This parameter specifies a unique identifier for the new profiling group that helps ensure idempotency.
+     * Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental creation of
+     * duplicate profiling groups if there are failures and retries.
      * </p>
      */
     private String clientToken;
     /**
      * <p>
-     * The name of the profiling group.
+     * The compute platform of the profiling group. Use <code>AWSLambda</code> if your application runs on AWS Lambda.
+     * Use <code>Default</code> if your application runs on a compute platform that is not AWS Lambda, such an Amazon
+     * EC2 instance, an on-premises server, or a different platform. If not specified, <code>Default</code> is used.
+     * </p>
+     */
+    private String computePlatform;
+    /**
+     * <p>
+     * The name of the profiling group to create.
      * </p>
      */
     private String profilingGroupName;
 
     /**
      * <p>
-     * The agent orchestration configuration.
+     * Specifies whether profiling is enabled or disabled for the created profiling group.
      * </p>
      * 
      * @param agentOrchestrationConfig
-     *        The agent orchestration configuration.
+     *        Specifies whether profiling is enabled or disabled for the created profiling group.
      */
 
     public void setAgentOrchestrationConfig(AgentOrchestrationConfig agentOrchestrationConfig) {
@@ -65,10 +71,10 @@ public class CreateProfilingGroupRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The agent orchestration configuration.
+     * Specifies whether profiling is enabled or disabled for the created profiling group.
      * </p>
      * 
-     * @return The agent orchestration configuration.
+     * @return Specifies whether profiling is enabled or disabled for the created profiling group.
      */
 
     public AgentOrchestrationConfig getAgentOrchestrationConfig() {
@@ -77,11 +83,11 @@ public class CreateProfilingGroupRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The agent orchestration configuration.
+     * Specifies whether profiling is enabled or disabled for the created profiling group.
      * </p>
      * 
      * @param agentOrchestrationConfig
-     *        The agent orchestration configuration.
+     *        Specifies whether profiling is enabled or disabled for the created profiling group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,16 +98,13 @@ public class CreateProfilingGroupRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
-     * </p>
-     * <p>
-     * This parameter specifies a unique identifier for the new profiling group that helps ensure idempotency.
+     * Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental creation of
+     * duplicate profiling groups if there are failures and retries.
      * </p>
      * 
      * @param clientToken
-     *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-     *        <p>
-     *        This parameter specifies a unique identifier for the new profiling group that helps ensure idempotency.
+     *        Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental creation
+     *        of duplicate profiling groups if there are failures and retries.
      */
 
     public void setClientToken(String clientToken) {
@@ -110,15 +113,12 @@ public class CreateProfilingGroupRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
-     * </p>
-     * <p>
-     * This parameter specifies a unique identifier for the new profiling group that helps ensure idempotency.
+     * Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental creation of
+     * duplicate profiling groups if there are failures and retries.
      * </p>
      * 
-     * @return Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-     *         <p>
-     *         This parameter specifies a unique identifier for the new profiling group that helps ensure idempotency.
+     * @return Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental
+     *         creation of duplicate profiling groups if there are failures and retries.
      */
 
     public String getClientToken() {
@@ -127,16 +127,13 @@ public class CreateProfilingGroupRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
-     * </p>
-     * <p>
-     * This parameter specifies a unique identifier for the new profiling group that helps ensure idempotency.
+     * Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental creation of
+     * duplicate profiling groups if there are failures and retries.
      * </p>
      * 
      * @param clientToken
-     *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-     *        <p>
-     *        This parameter specifies a unique identifier for the new profiling group that helps ensure idempotency.
+     *        Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental creation
+     *        of duplicate profiling groups if there are failures and retries.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -147,11 +144,90 @@ public class CreateProfilingGroupRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the profiling group.
+     * The compute platform of the profiling group. Use <code>AWSLambda</code> if your application runs on AWS Lambda.
+     * Use <code>Default</code> if your application runs on a compute platform that is not AWS Lambda, such an Amazon
+     * EC2 instance, an on-premises server, or a different platform. If not specified, <code>Default</code> is used.
+     * </p>
+     * 
+     * @param computePlatform
+     *        The compute platform of the profiling group. Use <code>AWSLambda</code> if your application runs on AWS
+     *        Lambda. Use <code>Default</code> if your application runs on a compute platform that is not AWS Lambda,
+     *        such an Amazon EC2 instance, an on-premises server, or a different platform. If not specified,
+     *        <code>Default</code> is used.
+     * @see ComputePlatform
+     */
+
+    public void setComputePlatform(String computePlatform) {
+        this.computePlatform = computePlatform;
+    }
+
+    /**
+     * <p>
+     * The compute platform of the profiling group. Use <code>AWSLambda</code> if your application runs on AWS Lambda.
+     * Use <code>Default</code> if your application runs on a compute platform that is not AWS Lambda, such an Amazon
+     * EC2 instance, an on-premises server, or a different platform. If not specified, <code>Default</code> is used.
+     * </p>
+     * 
+     * @return The compute platform of the profiling group. Use <code>AWSLambda</code> if your application runs on AWS
+     *         Lambda. Use <code>Default</code> if your application runs on a compute platform that is not AWS Lambda,
+     *         such an Amazon EC2 instance, an on-premises server, or a different platform. If not specified,
+     *         <code>Default</code> is used.
+     * @see ComputePlatform
+     */
+
+    public String getComputePlatform() {
+        return this.computePlatform;
+    }
+
+    /**
+     * <p>
+     * The compute platform of the profiling group. Use <code>AWSLambda</code> if your application runs on AWS Lambda.
+     * Use <code>Default</code> if your application runs on a compute platform that is not AWS Lambda, such an Amazon
+     * EC2 instance, an on-premises server, or a different platform. If not specified, <code>Default</code> is used.
+     * </p>
+     * 
+     * @param computePlatform
+     *        The compute platform of the profiling group. Use <code>AWSLambda</code> if your application runs on AWS
+     *        Lambda. Use <code>Default</code> if your application runs on a compute platform that is not AWS Lambda,
+     *        such an Amazon EC2 instance, an on-premises server, or a different platform. If not specified,
+     *        <code>Default</code> is used.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ComputePlatform
+     */
+
+    public CreateProfilingGroupRequest withComputePlatform(String computePlatform) {
+        setComputePlatform(computePlatform);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The compute platform of the profiling group. Use <code>AWSLambda</code> if your application runs on AWS Lambda.
+     * Use <code>Default</code> if your application runs on a compute platform that is not AWS Lambda, such an Amazon
+     * EC2 instance, an on-premises server, or a different platform. If not specified, <code>Default</code> is used.
+     * </p>
+     * 
+     * @param computePlatform
+     *        The compute platform of the profiling group. Use <code>AWSLambda</code> if your application runs on AWS
+     *        Lambda. Use <code>Default</code> if your application runs on a compute platform that is not AWS Lambda,
+     *        such an Amazon EC2 instance, an on-premises server, or a different platform. If not specified,
+     *        <code>Default</code> is used.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ComputePlatform
+     */
+
+    public CreateProfilingGroupRequest withComputePlatform(ComputePlatform computePlatform) {
+        this.computePlatform = computePlatform.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the profiling group to create.
      * </p>
      * 
      * @param profilingGroupName
-     *        The name of the profiling group.
+     *        The name of the profiling group to create.
      */
 
     public void setProfilingGroupName(String profilingGroupName) {
@@ -160,10 +236,10 @@ public class CreateProfilingGroupRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the profiling group.
+     * The name of the profiling group to create.
      * </p>
      * 
-     * @return The name of the profiling group.
+     * @return The name of the profiling group to create.
      */
 
     public String getProfilingGroupName() {
@@ -172,11 +248,11 @@ public class CreateProfilingGroupRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the profiling group.
+     * The name of the profiling group to create.
      * </p>
      * 
      * @param profilingGroupName
-     *        The name of the profiling group.
+     *        The name of the profiling group to create.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -201,6 +277,8 @@ public class CreateProfilingGroupRequest extends com.amazonaws.AmazonWebServiceR
             sb.append("AgentOrchestrationConfig: ").append(getAgentOrchestrationConfig()).append(",");
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken()).append(",");
+        if (getComputePlatform() != null)
+            sb.append("ComputePlatform: ").append(getComputePlatform()).append(",");
         if (getProfilingGroupName() != null)
             sb.append("ProfilingGroupName: ").append(getProfilingGroupName());
         sb.append("}");
@@ -225,6 +303,10 @@ public class CreateProfilingGroupRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
+        if (other.getComputePlatform() == null ^ this.getComputePlatform() == null)
+            return false;
+        if (other.getComputePlatform() != null && other.getComputePlatform().equals(this.getComputePlatform()) == false)
+            return false;
         if (other.getProfilingGroupName() == null ^ this.getProfilingGroupName() == null)
             return false;
         if (other.getProfilingGroupName() != null && other.getProfilingGroupName().equals(this.getProfilingGroupName()) == false)
@@ -239,6 +321,7 @@ public class CreateProfilingGroupRequest extends com.amazonaws.AmazonWebServiceR
 
         hashCode = prime * hashCode + ((getAgentOrchestrationConfig() == null) ? 0 : getAgentOrchestrationConfig().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getComputePlatform() == null) ? 0 : getComputePlatform().hashCode());
         hashCode = prime * hashCode + ((getProfilingGroupName() == null) ? 0 : getProfilingGroupName().hashCode());
         return hashCode;
     }

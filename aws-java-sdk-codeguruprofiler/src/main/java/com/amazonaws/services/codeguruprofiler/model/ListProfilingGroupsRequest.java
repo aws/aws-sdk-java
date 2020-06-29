@@ -30,7 +30,10 @@ public class ListProfilingGroupsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A Boolean value indicating whether to include a description.
+     * A <code>Boolean</code> value indicating whether to include a description. If <code>true</code>, then a list of <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     * <code>ProfilingGroupDescription</code> </a> objects that contain detailed information about profiling groups is
+     * returned. If <code>false</code>, then a list of profiling group names is returned.
      * </p>
      */
     private Boolean includeDescription;
@@ -61,11 +64,18 @@ public class ListProfilingGroupsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A Boolean value indicating whether to include a description.
+     * A <code>Boolean</code> value indicating whether to include a description. If <code>true</code>, then a list of <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     * <code>ProfilingGroupDescription</code> </a> objects that contain detailed information about profiling groups is
+     * returned. If <code>false</code>, then a list of profiling group names is returned.
      * </p>
      * 
      * @param includeDescription
-     *        A Boolean value indicating whether to include a description.
+     *        A <code>Boolean</code> value indicating whether to include a description. If <code>true</code>, then a
+     *        list of <a
+     *        href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     *        <code>ProfilingGroupDescription</code> </a> objects that contain detailed information about profiling
+     *        groups is returned. If <code>false</code>, then a list of profiling group names is returned.
      */
 
     public void setIncludeDescription(Boolean includeDescription) {
@@ -74,10 +84,17 @@ public class ListProfilingGroupsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A Boolean value indicating whether to include a description.
+     * A <code>Boolean</code> value indicating whether to include a description. If <code>true</code>, then a list of <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     * <code>ProfilingGroupDescription</code> </a> objects that contain detailed information about profiling groups is
+     * returned. If <code>false</code>, then a list of profiling group names is returned.
      * </p>
      * 
-     * @return A Boolean value indicating whether to include a description.
+     * @return A <code>Boolean</code> value indicating whether to include a description. If <code>true</code>, then a
+     *         list of <a
+     *         href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     *         <code>ProfilingGroupDescription</code> </a> objects that contain detailed information about profiling
+     *         groups is returned. If <code>false</code>, then a list of profiling group names is returned.
      */
 
     public Boolean getIncludeDescription() {
@@ -86,11 +103,18 @@ public class ListProfilingGroupsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A Boolean value indicating whether to include a description.
+     * A <code>Boolean</code> value indicating whether to include a description. If <code>true</code>, then a list of <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     * <code>ProfilingGroupDescription</code> </a> objects that contain detailed information about profiling groups is
+     * returned. If <code>false</code>, then a list of profiling group names is returned.
      * </p>
      * 
      * @param includeDescription
-     *        A Boolean value indicating whether to include a description.
+     *        A <code>Boolean</code> value indicating whether to include a description. If <code>true</code>, then a
+     *        list of <a
+     *        href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     *        <code>ProfilingGroupDescription</code> </a> objects that contain detailed information about profiling
+     *        groups is returned. If <code>false</code>, then a list of profiling group names is returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,10 +125,17 @@ public class ListProfilingGroupsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A Boolean value indicating whether to include a description.
+     * A <code>Boolean</code> value indicating whether to include a description. If <code>true</code>, then a list of <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     * <code>ProfilingGroupDescription</code> </a> objects that contain detailed information about profiling groups is
+     * returned. If <code>false</code>, then a list of profiling group names is returned.
      * </p>
      * 
-     * @return A Boolean value indicating whether to include a description.
+     * @return A <code>Boolean</code> value indicating whether to include a description. If <code>true</code>, then a
+     *         list of <a
+     *         href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     *         <code>ProfilingGroupDescription</code> </a> objects that contain detailed information about profiling
+     *         groups is returned. If <code>false</code>, then a list of profiling group names is returned.
      */
 
     public Boolean isIncludeDescription() {
