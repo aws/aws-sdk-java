@@ -41,6 +41,8 @@ public class ProjectSourceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("auth").build();
     private static final MarshallingInfo<Boolean> REPORTBUILDSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("reportBuildStatus").build();
+    private static final MarshallingInfo<StructuredPojo> BUILDSTATUSCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("buildStatusConfig").build();
     private static final MarshallingInfo<Boolean> INSECURESSL_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("insecureSsl").build();
     private static final MarshallingInfo<String> SOURCEIDENTIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -69,6 +71,7 @@ public class ProjectSourceMarshaller {
             protocolMarshaller.marshall(projectSource.getBuildspec(), BUILDSPEC_BINDING);
             protocolMarshaller.marshall(projectSource.getAuth(), AUTH_BINDING);
             protocolMarshaller.marshall(projectSource.getReportBuildStatus(), REPORTBUILDSTATUS_BINDING);
+            protocolMarshaller.marshall(projectSource.getBuildStatusConfig(), BUILDSTATUSCONFIG_BINDING);
             protocolMarshaller.marshall(projectSource.getInsecureSsl(), INSECURESSL_BINDING);
             protocolMarshaller.marshall(projectSource.getSourceIdentifier(), SOURCEIDENTIFIER_BINDING);
         } catch (Exception e) {

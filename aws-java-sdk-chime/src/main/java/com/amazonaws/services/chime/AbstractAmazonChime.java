@@ -189,6 +189,12 @@ public class AbstractAmazonChime implements AmazonChime {
     }
 
     @Override
+    public DeleteVoiceConnectorEmergencyCallingConfigurationResult deleteVoiceConnectorEmergencyCallingConfiguration(
+            DeleteVoiceConnectorEmergencyCallingConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteVoiceConnectorGroupResult deleteVoiceConnectorGroup(DeleteVoiceConnectorGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -317,6 +323,12 @@ public class AbstractAmazonChime implements AmazonChime {
 
     @Override
     public GetVoiceConnectorResult getVoiceConnector(GetVoiceConnectorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetVoiceConnectorEmergencyCallingConfigurationResult getVoiceConnectorEmergencyCallingConfiguration(
+            GetVoiceConnectorEmergencyCallingConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -452,6 +464,12 @@ public class AbstractAmazonChime implements AmazonChime {
 
     @Override
     public PutRetentionSettingsResult putRetentionSettings(PutRetentionSettingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutVoiceConnectorEmergencyCallingConfigurationResult putVoiceConnectorEmergencyCallingConfiguration(
+            PutVoiceConnectorEmergencyCallingConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

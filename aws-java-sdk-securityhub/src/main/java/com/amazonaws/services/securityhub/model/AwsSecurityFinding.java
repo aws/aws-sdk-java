@@ -196,6 +196,13 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
     private Network network;
     /**
      * <p>
+     * Provides information about a network path that is relevant to a finding. Each entry under
+     * <code>NetworkPath</code> represents a component of that path.
+     * </p>
+     */
+    private java.util.List<NetworkPathComponent> networkPath;
+    /**
+     * <p>
      * The details of process-related information about a finding.
      * </p>
      */
@@ -256,6 +263,12 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private Note note;
+    /**
+     * <p>
+     * Provides a list of vulnerabilities associated with the findings.
+     * </p>
+     */
+    private java.util.List<Vulnerability> vulnerabilities;
 
     /**
      * <p>
@@ -1400,6 +1413,84 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
+     * Provides information about a network path that is relevant to a finding. Each entry under
+     * <code>NetworkPath</code> represents a component of that path.
+     * </p>
+     * 
+     * @return Provides information about a network path that is relevant to a finding. Each entry under
+     *         <code>NetworkPath</code> represents a component of that path.
+     */
+
+    public java.util.List<NetworkPathComponent> getNetworkPath() {
+        return networkPath;
+    }
+
+    /**
+     * <p>
+     * Provides information about a network path that is relevant to a finding. Each entry under
+     * <code>NetworkPath</code> represents a component of that path.
+     * </p>
+     * 
+     * @param networkPath
+     *        Provides information about a network path that is relevant to a finding. Each entry under
+     *        <code>NetworkPath</code> represents a component of that path.
+     */
+
+    public void setNetworkPath(java.util.Collection<NetworkPathComponent> networkPath) {
+        if (networkPath == null) {
+            this.networkPath = null;
+            return;
+        }
+
+        this.networkPath = new java.util.ArrayList<NetworkPathComponent>(networkPath);
+    }
+
+    /**
+     * <p>
+     * Provides information about a network path that is relevant to a finding. Each entry under
+     * <code>NetworkPath</code> represents a component of that path.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setNetworkPath(java.util.Collection)} or {@link #withNetworkPath(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param networkPath
+     *        Provides information about a network path that is relevant to a finding. Each entry under
+     *        <code>NetworkPath</code> represents a component of that path.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsSecurityFinding withNetworkPath(NetworkPathComponent... networkPath) {
+        if (this.networkPath == null) {
+            setNetworkPath(new java.util.ArrayList<NetworkPathComponent>(networkPath.length));
+        }
+        for (NetworkPathComponent ele : networkPath) {
+            this.networkPath.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Provides information about a network path that is relevant to a finding. Each entry under
+     * <code>NetworkPath</code> represents a component of that path.
+     * </p>
+     * 
+     * @param networkPath
+     *        Provides information about a network path that is relevant to a finding. Each entry under
+     *        <code>NetworkPath</code> represents a component of that path.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsSecurityFinding withNetworkPath(java.util.Collection<NetworkPathComponent> networkPath) {
+        setNetworkPath(networkPath);
+        return this;
+    }
+
+    /**
+     * <p>
      * The details of process-related information about a finding.
      * </p>
      * 
@@ -1958,6 +2049,76 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * Provides a list of vulnerabilities associated with the findings.
+     * </p>
+     * 
+     * @return Provides a list of vulnerabilities associated with the findings.
+     */
+
+    public java.util.List<Vulnerability> getVulnerabilities() {
+        return vulnerabilities;
+    }
+
+    /**
+     * <p>
+     * Provides a list of vulnerabilities associated with the findings.
+     * </p>
+     * 
+     * @param vulnerabilities
+     *        Provides a list of vulnerabilities associated with the findings.
+     */
+
+    public void setVulnerabilities(java.util.Collection<Vulnerability> vulnerabilities) {
+        if (vulnerabilities == null) {
+            this.vulnerabilities = null;
+            return;
+        }
+
+        this.vulnerabilities = new java.util.ArrayList<Vulnerability>(vulnerabilities);
+    }
+
+    /**
+     * <p>
+     * Provides a list of vulnerabilities associated with the findings.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setVulnerabilities(java.util.Collection)} or {@link #withVulnerabilities(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param vulnerabilities
+     *        Provides a list of vulnerabilities associated with the findings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsSecurityFinding withVulnerabilities(Vulnerability... vulnerabilities) {
+        if (this.vulnerabilities == null) {
+            setVulnerabilities(new java.util.ArrayList<Vulnerability>(vulnerabilities.length));
+        }
+        for (Vulnerability ele : vulnerabilities) {
+            this.vulnerabilities.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Provides a list of vulnerabilities associated with the findings.
+     * </p>
+     * 
+     * @param vulnerabilities
+     *        Provides a list of vulnerabilities associated with the findings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsSecurityFinding withVulnerabilities(java.util.Collection<Vulnerability> vulnerabilities) {
+        setVulnerabilities(vulnerabilities);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2011,6 +2172,8 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
             sb.append("Malware: ").append(getMalware()).append(",");
         if (getNetwork() != null)
             sb.append("Network: ").append(getNetwork()).append(",");
+        if (getNetworkPath() != null)
+            sb.append("NetworkPath: ").append(getNetworkPath()).append(",");
         if (getProcess() != null)
             sb.append("Process: ").append(getProcess()).append(",");
         if (getThreatIntelIndicators() != null)
@@ -2030,7 +2193,9 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
         if (getRelatedFindings() != null)
             sb.append("RelatedFindings: ").append(getRelatedFindings()).append(",");
         if (getNote() != null)
-            sb.append("Note: ").append(getNote());
+            sb.append("Note: ").append(getNote()).append(",");
+        if (getVulnerabilities() != null)
+            sb.append("Vulnerabilities: ").append(getVulnerabilities());
         sb.append("}");
         return sb.toString();
     }
@@ -2129,6 +2294,10 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getNetwork() != null && other.getNetwork().equals(this.getNetwork()) == false)
             return false;
+        if (other.getNetworkPath() == null ^ this.getNetworkPath() == null)
+            return false;
+        if (other.getNetworkPath() != null && other.getNetworkPath().equals(this.getNetworkPath()) == false)
+            return false;
         if (other.getProcess() == null ^ this.getProcess() == null)
             return false;
         if (other.getProcess() != null && other.getProcess().equals(this.getProcess()) == false)
@@ -2169,6 +2338,10 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getNote() != null && other.getNote().equals(this.getNote()) == false)
             return false;
+        if (other.getVulnerabilities() == null ^ this.getVulnerabilities() == null)
+            return false;
+        if (other.getVulnerabilities() != null && other.getVulnerabilities().equals(this.getVulnerabilities()) == false)
+            return false;
         return true;
     }
 
@@ -2198,6 +2371,7 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getUserDefinedFields() == null) ? 0 : getUserDefinedFields().hashCode());
         hashCode = prime * hashCode + ((getMalware() == null) ? 0 : getMalware().hashCode());
         hashCode = prime * hashCode + ((getNetwork() == null) ? 0 : getNetwork().hashCode());
+        hashCode = prime * hashCode + ((getNetworkPath() == null) ? 0 : getNetworkPath().hashCode());
         hashCode = prime * hashCode + ((getProcess() == null) ? 0 : getProcess().hashCode());
         hashCode = prime * hashCode + ((getThreatIntelIndicators() == null) ? 0 : getThreatIntelIndicators().hashCode());
         hashCode = prime * hashCode + ((getResources() == null) ? 0 : getResources().hashCode());
@@ -2208,6 +2382,7 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getRecordState() == null) ? 0 : getRecordState().hashCode());
         hashCode = prime * hashCode + ((getRelatedFindings() == null) ? 0 : getRelatedFindings().hashCode());
         hashCode = prime * hashCode + ((getNote() == null) ? 0 : getNote().hashCode());
+        hashCode = prime * hashCode + ((getVulnerabilities() == null) ? 0 : getVulnerabilities().hashCode());
         return hashCode;
     }
 

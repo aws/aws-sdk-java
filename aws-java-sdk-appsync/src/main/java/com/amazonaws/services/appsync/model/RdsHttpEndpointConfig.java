@@ -36,7 +36,7 @@ public class RdsHttpEndpointConfig implements Serializable, Cloneable, Structure
     private String awsRegion;
     /**
      * <p>
-     * Amazon RDS cluster identifier.
+     * Amazon RDS cluster ARN.
      * </p>
      */
     private String dbClusterIdentifier;
@@ -101,11 +101,11 @@ public class RdsHttpEndpointConfig implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Amazon RDS cluster identifier.
+     * Amazon RDS cluster ARN.
      * </p>
      * 
      * @param dbClusterIdentifier
-     *        Amazon RDS cluster identifier.
+     *        Amazon RDS cluster ARN.
      */
 
     public void setDbClusterIdentifier(String dbClusterIdentifier) {
@@ -114,10 +114,10 @@ public class RdsHttpEndpointConfig implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Amazon RDS cluster identifier.
+     * Amazon RDS cluster ARN.
      * </p>
      * 
-     * @return Amazon RDS cluster identifier.
+     * @return Amazon RDS cluster ARN.
      */
 
     public String getDbClusterIdentifier() {
@@ -126,11 +126,11 @@ public class RdsHttpEndpointConfig implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Amazon RDS cluster identifier.
+     * Amazon RDS cluster ARN.
      * </p>
      * 
      * @param dbClusterIdentifier
-     *        Amazon RDS cluster identifier.
+     *        Amazon RDS cluster ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -29,6 +29,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ResourceDetailsMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> AWSAUTOSCALINGAUTOSCALINGGROUP_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsAutoScalingAutoScalingGroup").build();
     private static final MarshallingInfo<StructuredPojo> AWSCODEBUILDPROJECT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsCodeBuildProject").build();
     private static final MarshallingInfo<StructuredPojo> AWSCLOUDFRONTDISTRIBUTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -39,6 +41,10 @@ public class ResourceDetailsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsEc2NetworkInterface").build();
     private static final MarshallingInfo<StructuredPojo> AWSEC2SECURITYGROUP_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsEc2SecurityGroup").build();
+    private static final MarshallingInfo<StructuredPojo> AWSEC2VOLUME_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsEc2Volume").build();
+    private static final MarshallingInfo<StructuredPojo> AWSEC2VPC_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsEc2Vpc").build();
     private static final MarshallingInfo<StructuredPojo> AWSELBV2LOADBALANCER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsElbv2LoadBalancer").build();
     private static final MarshallingInfo<StructuredPojo> AWSELASTICSEARCHDOMAIN_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -86,11 +92,14 @@ public class ResourceDetailsMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(resourceDetails.getAwsAutoScalingAutoScalingGroup(), AWSAUTOSCALINGAUTOSCALINGGROUP_BINDING);
             protocolMarshaller.marshall(resourceDetails.getAwsCodeBuildProject(), AWSCODEBUILDPROJECT_BINDING);
             protocolMarshaller.marshall(resourceDetails.getAwsCloudFrontDistribution(), AWSCLOUDFRONTDISTRIBUTION_BINDING);
             protocolMarshaller.marshall(resourceDetails.getAwsEc2Instance(), AWSEC2INSTANCE_BINDING);
             protocolMarshaller.marshall(resourceDetails.getAwsEc2NetworkInterface(), AWSEC2NETWORKINTERFACE_BINDING);
             protocolMarshaller.marshall(resourceDetails.getAwsEc2SecurityGroup(), AWSEC2SECURITYGROUP_BINDING);
+            protocolMarshaller.marshall(resourceDetails.getAwsEc2Volume(), AWSEC2VOLUME_BINDING);
+            protocolMarshaller.marshall(resourceDetails.getAwsEc2Vpc(), AWSEC2VPC_BINDING);
             protocolMarshaller.marshall(resourceDetails.getAwsElbv2LoadBalancer(), AWSELBV2LOADBALANCER_BINDING);
             protocolMarshaller.marshall(resourceDetails.getAwsElasticsearchDomain(), AWSELASTICSEARCHDOMAIN_BINDING);
             protocolMarshaller.marshall(resourceDetails.getAwsS3Bucket(), AWSS3BUCKET_BINDING);

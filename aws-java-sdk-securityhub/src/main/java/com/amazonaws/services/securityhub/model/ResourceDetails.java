@@ -42,6 +42,12 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
+     * Details for an autoscaling group.
+     * </p>
+     */
+    private AwsAutoScalingAutoScalingGroupDetails awsAutoScalingAutoScalingGroup;
+    /**
+     * <p>
      * Details for an AWS CodeBuild project.
      * </p>
      */
@@ -70,6 +76,18 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private AwsEc2SecurityGroupDetails awsEc2SecurityGroup;
+    /**
+     * <p>
+     * Details for an EC2 volume.
+     * </p>
+     */
+    private AwsEc2VolumeDetails awsEc2Volume;
+    /**
+     * <p>
+     * Details for an EC2 VPC.
+     * </p>
+     */
+    private AwsEc2VpcDetails awsEc2Vpc;
     /**
      * <p>
      * Details about a load balancer.
@@ -176,6 +194,46 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
      * </ul>
      */
     private java.util.Map<String, String> other;
+
+    /**
+     * <p>
+     * Details for an autoscaling group.
+     * </p>
+     * 
+     * @param awsAutoScalingAutoScalingGroup
+     *        Details for an autoscaling group.
+     */
+
+    public void setAwsAutoScalingAutoScalingGroup(AwsAutoScalingAutoScalingGroupDetails awsAutoScalingAutoScalingGroup) {
+        this.awsAutoScalingAutoScalingGroup = awsAutoScalingAutoScalingGroup;
+    }
+
+    /**
+     * <p>
+     * Details for an autoscaling group.
+     * </p>
+     * 
+     * @return Details for an autoscaling group.
+     */
+
+    public AwsAutoScalingAutoScalingGroupDetails getAwsAutoScalingAutoScalingGroup() {
+        return this.awsAutoScalingAutoScalingGroup;
+    }
+
+    /**
+     * <p>
+     * Details for an autoscaling group.
+     * </p>
+     * 
+     * @param awsAutoScalingAutoScalingGroup
+     *        Details for an autoscaling group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsAutoScalingAutoScalingGroup(AwsAutoScalingAutoScalingGroupDetails awsAutoScalingAutoScalingGroup) {
+        setAwsAutoScalingAutoScalingGroup(awsAutoScalingAutoScalingGroup);
+        return this;
+    }
 
     /**
      * <p>
@@ -374,6 +432,86 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     public ResourceDetails withAwsEc2SecurityGroup(AwsEc2SecurityGroupDetails awsEc2SecurityGroup) {
         setAwsEc2SecurityGroup(awsEc2SecurityGroup);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Details for an EC2 volume.
+     * </p>
+     * 
+     * @param awsEc2Volume
+     *        Details for an EC2 volume.
+     */
+
+    public void setAwsEc2Volume(AwsEc2VolumeDetails awsEc2Volume) {
+        this.awsEc2Volume = awsEc2Volume;
+    }
+
+    /**
+     * <p>
+     * Details for an EC2 volume.
+     * </p>
+     * 
+     * @return Details for an EC2 volume.
+     */
+
+    public AwsEc2VolumeDetails getAwsEc2Volume() {
+        return this.awsEc2Volume;
+    }
+
+    /**
+     * <p>
+     * Details for an EC2 volume.
+     * </p>
+     * 
+     * @param awsEc2Volume
+     *        Details for an EC2 volume.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsEc2Volume(AwsEc2VolumeDetails awsEc2Volume) {
+        setAwsEc2Volume(awsEc2Volume);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Details for an EC2 VPC.
+     * </p>
+     * 
+     * @param awsEc2Vpc
+     *        Details for an EC2 VPC.
+     */
+
+    public void setAwsEc2Vpc(AwsEc2VpcDetails awsEc2Vpc) {
+        this.awsEc2Vpc = awsEc2Vpc;
+    }
+
+    /**
+     * <p>
+     * Details for an EC2 VPC.
+     * </p>
+     * 
+     * @return Details for an EC2 VPC.
+     */
+
+    public AwsEc2VpcDetails getAwsEc2Vpc() {
+        return this.awsEc2Vpc;
+    }
+
+    /**
+     * <p>
+     * Details for an EC2 VPC.
+     * </p>
+     * 
+     * @param awsEc2Vpc
+     *        Details for an EC2 VPC.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsEc2Vpc(AwsEc2VpcDetails awsEc2Vpc) {
+        setAwsEc2Vpc(awsEc2Vpc);
         return this;
     }
 
@@ -1110,6 +1248,8 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAwsAutoScalingAutoScalingGroup() != null)
+            sb.append("AwsAutoScalingAutoScalingGroup: ").append(getAwsAutoScalingAutoScalingGroup()).append(",");
         if (getAwsCodeBuildProject() != null)
             sb.append("AwsCodeBuildProject: ").append(getAwsCodeBuildProject()).append(",");
         if (getAwsCloudFrontDistribution() != null)
@@ -1120,6 +1260,10 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
             sb.append("AwsEc2NetworkInterface: ").append(getAwsEc2NetworkInterface()).append(",");
         if (getAwsEc2SecurityGroup() != null)
             sb.append("AwsEc2SecurityGroup: ").append(getAwsEc2SecurityGroup()).append(",");
+        if (getAwsEc2Volume() != null)
+            sb.append("AwsEc2Volume: ").append(getAwsEc2Volume()).append(",");
+        if (getAwsEc2Vpc() != null)
+            sb.append("AwsEc2Vpc: ").append(getAwsEc2Vpc()).append(",");
         if (getAwsElbv2LoadBalancer() != null)
             sb.append("AwsElbv2LoadBalancer: ").append(getAwsElbv2LoadBalancer()).append(",");
         if (getAwsElasticsearchDomain() != null)
@@ -1164,6 +1308,11 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
         if (obj instanceof ResourceDetails == false)
             return false;
         ResourceDetails other = (ResourceDetails) obj;
+        if (other.getAwsAutoScalingAutoScalingGroup() == null ^ this.getAwsAutoScalingAutoScalingGroup() == null)
+            return false;
+        if (other.getAwsAutoScalingAutoScalingGroup() != null
+                && other.getAwsAutoScalingAutoScalingGroup().equals(this.getAwsAutoScalingAutoScalingGroup()) == false)
+            return false;
         if (other.getAwsCodeBuildProject() == null ^ this.getAwsCodeBuildProject() == null)
             return false;
         if (other.getAwsCodeBuildProject() != null && other.getAwsCodeBuildProject().equals(this.getAwsCodeBuildProject()) == false)
@@ -1183,6 +1332,14 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
         if (other.getAwsEc2SecurityGroup() == null ^ this.getAwsEc2SecurityGroup() == null)
             return false;
         if (other.getAwsEc2SecurityGroup() != null && other.getAwsEc2SecurityGroup().equals(this.getAwsEc2SecurityGroup()) == false)
+            return false;
+        if (other.getAwsEc2Volume() == null ^ this.getAwsEc2Volume() == null)
+            return false;
+        if (other.getAwsEc2Volume() != null && other.getAwsEc2Volume().equals(this.getAwsEc2Volume()) == false)
+            return false;
+        if (other.getAwsEc2Vpc() == null ^ this.getAwsEc2Vpc() == null)
+            return false;
+        if (other.getAwsEc2Vpc() != null && other.getAwsEc2Vpc().equals(this.getAwsEc2Vpc()) == false)
             return false;
         if (other.getAwsElbv2LoadBalancer() == null ^ this.getAwsElbv2LoadBalancer() == null)
             return false;
@@ -1252,11 +1409,14 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAwsAutoScalingAutoScalingGroup() == null) ? 0 : getAwsAutoScalingAutoScalingGroup().hashCode());
         hashCode = prime * hashCode + ((getAwsCodeBuildProject() == null) ? 0 : getAwsCodeBuildProject().hashCode());
         hashCode = prime * hashCode + ((getAwsCloudFrontDistribution() == null) ? 0 : getAwsCloudFrontDistribution().hashCode());
         hashCode = prime * hashCode + ((getAwsEc2Instance() == null) ? 0 : getAwsEc2Instance().hashCode());
         hashCode = prime * hashCode + ((getAwsEc2NetworkInterface() == null) ? 0 : getAwsEc2NetworkInterface().hashCode());
         hashCode = prime * hashCode + ((getAwsEc2SecurityGroup() == null) ? 0 : getAwsEc2SecurityGroup().hashCode());
+        hashCode = prime * hashCode + ((getAwsEc2Volume() == null) ? 0 : getAwsEc2Volume().hashCode());
+        hashCode = prime * hashCode + ((getAwsEc2Vpc() == null) ? 0 : getAwsEc2Vpc().hashCode());
         hashCode = prime * hashCode + ((getAwsElbv2LoadBalancer() == null) ? 0 : getAwsElbv2LoadBalancer().hashCode());
         hashCode = prime * hashCode + ((getAwsElasticsearchDomain() == null) ? 0 : getAwsElasticsearchDomain().hashCode());
         hashCode = prime * hashCode + ((getAwsS3Bucket() == null) ? 0 : getAwsS3Bucket().hashCode());

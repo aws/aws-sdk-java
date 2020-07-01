@@ -61,6 +61,10 @@ public class AmiDistributionConfigurationJsonUnmarshaller implements Unmarshalle
                     amiDistributionConfiguration.setAmiTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
+                if (context.testExpression("kmsKeyId", targetDepth)) {
+                    context.nextToken();
+                    amiDistributionConfiguration.setKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("launchPermission", targetDepth)) {
                     context.nextToken();
                     amiDistributionConfiguration.setLaunchPermission(LaunchPermissionConfigurationJsonUnmarshaller.getInstance().unmarshall(context));

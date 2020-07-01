@@ -180,6 +180,14 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private Boolean reportBuildStatusOverride;
     /**
      * <p>
+     * Contains information that defines how the build project reports the build status to the source provider. This
+     * option is only used when the source provider is <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>, or
+     * <code>BITBUCKET</code>.
+     * </p>
+     */
+    private BuildStatusConfig buildStatusConfigOverride;
+    /**
+     * <p>
      * A container type for this build that overrides the one specified in the build project.
      * </p>
      */
@@ -253,7 +261,7 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * A unique, case sensitive identifier you provide to ensure the idempotency of the StartBuild request. The token is
-     * included in the StartBuild request and is valid for 12 hours. If you repeat the StartBuild request with the same
+     * included in the StartBuild request and is valid for 5 minutes. If you repeat the StartBuild request with the same
      * token, but change a parameter, AWS CodeBuild returns a parameter mismatch error.
      * </p>
      */
@@ -1445,6 +1453,58 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
+     * Contains information that defines how the build project reports the build status to the source provider. This
+     * option is only used when the source provider is <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>, or
+     * <code>BITBUCKET</code>.
+     * </p>
+     * 
+     * @param buildStatusConfigOverride
+     *        Contains information that defines how the build project reports the build status to the source provider.
+     *        This option is only used when the source provider is <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>,
+     *        or <code>BITBUCKET</code>.
+     */
+
+    public void setBuildStatusConfigOverride(BuildStatusConfig buildStatusConfigOverride) {
+        this.buildStatusConfigOverride = buildStatusConfigOverride;
+    }
+
+    /**
+     * <p>
+     * Contains information that defines how the build project reports the build status to the source provider. This
+     * option is only used when the source provider is <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>, or
+     * <code>BITBUCKET</code>.
+     * </p>
+     * 
+     * @return Contains information that defines how the build project reports the build status to the source provider.
+     *         This option is only used when the source provider is <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>,
+     *         or <code>BITBUCKET</code>.
+     */
+
+    public BuildStatusConfig getBuildStatusConfigOverride() {
+        return this.buildStatusConfigOverride;
+    }
+
+    /**
+     * <p>
+     * Contains information that defines how the build project reports the build status to the source provider. This
+     * option is only used when the source provider is <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>, or
+     * <code>BITBUCKET</code>.
+     * </p>
+     * 
+     * @param buildStatusConfigOverride
+     *        Contains information that defines how the build project reports the build status to the source provider.
+     *        This option is only used when the source provider is <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>,
+     *        or <code>BITBUCKET</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartBuildRequest withBuildStatusConfigOverride(BuildStatusConfig buildStatusConfigOverride) {
+        setBuildStatusConfigOverride(buildStatusConfigOverride);
+        return this;
+    }
+
+    /**
+     * <p>
      * A container type for this build that overrides the one specified in the build project.
      * </p>
      * 
@@ -1962,13 +2022,13 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * A unique, case sensitive identifier you provide to ensure the idempotency of the StartBuild request. The token is
-     * included in the StartBuild request and is valid for 12 hours. If you repeat the StartBuild request with the same
+     * included in the StartBuild request and is valid for 5 minutes. If you repeat the StartBuild request with the same
      * token, but change a parameter, AWS CodeBuild returns a parameter mismatch error.
      * </p>
      * 
      * @param idempotencyToken
      *        A unique, case sensitive identifier you provide to ensure the idempotency of the StartBuild request. The
-     *        token is included in the StartBuild request and is valid for 12 hours. If you repeat the StartBuild
+     *        token is included in the StartBuild request and is valid for 5 minutes. If you repeat the StartBuild
      *        request with the same token, but change a parameter, AWS CodeBuild returns a parameter mismatch error.
      */
 
@@ -1979,12 +2039,12 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * A unique, case sensitive identifier you provide to ensure the idempotency of the StartBuild request. The token is
-     * included in the StartBuild request and is valid for 12 hours. If you repeat the StartBuild request with the same
+     * included in the StartBuild request and is valid for 5 minutes. If you repeat the StartBuild request with the same
      * token, but change a parameter, AWS CodeBuild returns a parameter mismatch error.
      * </p>
      * 
      * @return A unique, case sensitive identifier you provide to ensure the idempotency of the StartBuild request. The
-     *         token is included in the StartBuild request and is valid for 12 hours. If you repeat the StartBuild
+     *         token is included in the StartBuild request and is valid for 5 minutes. If you repeat the StartBuild
      *         request with the same token, but change a parameter, AWS CodeBuild returns a parameter mismatch error.
      */
 
@@ -1995,13 +2055,13 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * A unique, case sensitive identifier you provide to ensure the idempotency of the StartBuild request. The token is
-     * included in the StartBuild request and is valid for 12 hours. If you repeat the StartBuild request with the same
+     * included in the StartBuild request and is valid for 5 minutes. If you repeat the StartBuild request with the same
      * token, but change a parameter, AWS CodeBuild returns a parameter mismatch error.
      * </p>
      * 
      * @param idempotencyToken
      *        A unique, case sensitive identifier you provide to ensure the idempotency of the StartBuild request. The
-     *        token is included in the StartBuild request and is valid for 12 hours. If you repeat the StartBuild
+     *        token is included in the StartBuild request and is valid for 5 minutes. If you repeat the StartBuild
      *        request with the same token, but change a parameter, AWS CodeBuild returns a parameter mismatch error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2324,6 +2384,8 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
             sb.append("InsecureSslOverride: ").append(getInsecureSslOverride()).append(",");
         if (getReportBuildStatusOverride() != null)
             sb.append("ReportBuildStatusOverride: ").append(getReportBuildStatusOverride()).append(",");
+        if (getBuildStatusConfigOverride() != null)
+            sb.append("BuildStatusConfigOverride: ").append(getBuildStatusConfigOverride()).append(",");
         if (getEnvironmentTypeOverride() != null)
             sb.append("EnvironmentTypeOverride: ").append(getEnvironmentTypeOverride()).append(",");
         if (getImageOverride() != null)
@@ -2427,6 +2489,10 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getReportBuildStatusOverride() != null && other.getReportBuildStatusOverride().equals(this.getReportBuildStatusOverride()) == false)
             return false;
+        if (other.getBuildStatusConfigOverride() == null ^ this.getBuildStatusConfigOverride() == null)
+            return false;
+        if (other.getBuildStatusConfigOverride() != null && other.getBuildStatusConfigOverride().equals(this.getBuildStatusConfigOverride()) == false)
+            return false;
         if (other.getEnvironmentTypeOverride() == null ^ this.getEnvironmentTypeOverride() == null)
             return false;
         if (other.getEnvironmentTypeOverride() != null && other.getEnvironmentTypeOverride().equals(this.getEnvironmentTypeOverride()) == false)
@@ -2508,6 +2574,7 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getBuildspecOverride() == null) ? 0 : getBuildspecOverride().hashCode());
         hashCode = prime * hashCode + ((getInsecureSslOverride() == null) ? 0 : getInsecureSslOverride().hashCode());
         hashCode = prime * hashCode + ((getReportBuildStatusOverride() == null) ? 0 : getReportBuildStatusOverride().hashCode());
+        hashCode = prime * hashCode + ((getBuildStatusConfigOverride() == null) ? 0 : getBuildStatusConfigOverride().hashCode());
         hashCode = prime * hashCode + ((getEnvironmentTypeOverride() == null) ? 0 : getEnvironmentTypeOverride().hashCode());
         hashCode = prime * hashCode + ((getImageOverride() == null) ? 0 : getImageOverride().hashCode());
         hashCode = prime * hashCode + ((getComputeTypeOverride() == null) ? 0 : getComputeTypeOverride().hashCode());

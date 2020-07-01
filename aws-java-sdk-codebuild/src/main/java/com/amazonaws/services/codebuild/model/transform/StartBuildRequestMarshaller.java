@@ -58,6 +58,8 @@ public class StartBuildRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("insecureSslOverride").build();
     private static final MarshallingInfo<Boolean> REPORTBUILDSTATUSOVERRIDE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("reportBuildStatusOverride").build();
+    private static final MarshallingInfo<StructuredPojo> BUILDSTATUSCONFIGOVERRIDE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("buildStatusConfigOverride").build();
     private static final MarshallingInfo<String> ENVIRONMENTTYPEOVERRIDE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("environmentTypeOverride").build();
     private static final MarshallingInfo<String> IMAGEOVERRIDE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -118,6 +120,7 @@ public class StartBuildRequestMarshaller {
             protocolMarshaller.marshall(startBuildRequest.getBuildspecOverride(), BUILDSPECOVERRIDE_BINDING);
             protocolMarshaller.marshall(startBuildRequest.getInsecureSslOverride(), INSECURESSLOVERRIDE_BINDING);
             protocolMarshaller.marshall(startBuildRequest.getReportBuildStatusOverride(), REPORTBUILDSTATUSOVERRIDE_BINDING);
+            protocolMarshaller.marshall(startBuildRequest.getBuildStatusConfigOverride(), BUILDSTATUSCONFIGOVERRIDE_BINDING);
             protocolMarshaller.marshall(startBuildRequest.getEnvironmentTypeOverride(), ENVIRONMENTTYPEOVERRIDE_BINDING);
             protocolMarshaller.marshall(startBuildRequest.getImageOverride(), IMAGEOVERRIDE_BINDING);
             protocolMarshaller.marshall(startBuildRequest.getComputeTypeOverride(), COMPUTETYPEOVERRIDE_BINDING);

@@ -134,6 +134,11 @@ public class AwsSecurityFindingJsonUnmarshaller implements Unmarshaller<AwsSecur
                     context.nextToken();
                     awsSecurityFinding.setNetwork(NetworkJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("NetworkPath", targetDepth)) {
+                    context.nextToken();
+                    awsSecurityFinding.setNetworkPath(new ListUnmarshaller<NetworkPathComponent>(NetworkPathComponentJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
+                }
                 if (context.testExpression("Process", targetDepth)) {
                     context.nextToken();
                     awsSecurityFinding.setProcess(ProcessDetailsJsonUnmarshaller.getInstance().unmarshall(context));
@@ -175,6 +180,10 @@ public class AwsSecurityFindingJsonUnmarshaller implements Unmarshaller<AwsSecur
                 if (context.testExpression("Note", targetDepth)) {
                     context.nextToken();
                     awsSecurityFinding.setNote(NoteJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("Vulnerabilities", targetDepth)) {
+                    context.nextToken();
+                    awsSecurityFinding.setVulnerabilities(new ListUnmarshaller<Vulnerability>(VulnerabilityJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

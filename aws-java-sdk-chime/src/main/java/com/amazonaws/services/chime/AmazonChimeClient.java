@@ -2532,6 +2532,79 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
     /**
      * <p>
+     * Deletes the emergency calling configuration details from the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
+     * @param deleteVoiceConnectorEmergencyCallingConfigurationRequest
+     * @return Result of the DeleteVoiceConnectorEmergencyCallingConfiguration operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.DeleteVoiceConnectorEmergencyCallingConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteVoiceConnectorEmergencyCallingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteVoiceConnectorEmergencyCallingConfigurationResult deleteVoiceConnectorEmergencyCallingConfiguration(
+            DeleteVoiceConnectorEmergencyCallingConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteVoiceConnectorEmergencyCallingConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final DeleteVoiceConnectorEmergencyCallingConfigurationResult executeDeleteVoiceConnectorEmergencyCallingConfiguration(
+            DeleteVoiceConnectorEmergencyCallingConfigurationRequest deleteVoiceConnectorEmergencyCallingConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteVoiceConnectorEmergencyCallingConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteVoiceConnectorEmergencyCallingConfigurationRequest> request = null;
+        Response<DeleteVoiceConnectorEmergencyCallingConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteVoiceConnectorEmergencyCallingConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteVoiceConnectorEmergencyCallingConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVoiceConnectorEmergencyCallingConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteVoiceConnectorEmergencyCallingConfigurationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DeleteVoiceConnectorEmergencyCallingConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes the specified Amazon Chime Voice Connector group. Any <code>VoiceConnectorItems</code> and phone numbers
      * associated with the group must be removed before it can be deleted.
      * </p>
@@ -2607,6 +2680,12 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Deletes the origination settings for the specified Amazon Chime Voice Connector.
      * </p>
+     * <note>
+     * <p>
+     * If emergency calling is configured for the Amazon Chime Voice Connector, it must be deleted prior to deleting the
+     * origination settings.
+     * </p>
+     * </note>
      * 
      * @param deleteVoiceConnectorOriginationRequest
      * @return Result of the DeleteVoiceConnectorOrigination operation returned by the service.
@@ -2819,6 +2898,12 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Deletes the termination settings for the specified Amazon Chime Voice Connector.
      * </p>
+     * <note>
+     * <p>
+     * If emergency calling is configured for the Amazon Chime Voice Connector, it must be deleted prior to deleting the
+     * termination settings.
+     * </p>
+     * </note>
      * 
      * @param deleteVoiceConnectorTerminationRequest
      * @return Result of the DeleteVoiceConnectorTermination operation returned by the service.
@@ -4340,6 +4425,79 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
             HttpResponseHandler<AmazonWebServiceResponse<GetVoiceConnectorResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetVoiceConnectorResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets the emergency calling configuration details for the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
+     * @param getVoiceConnectorEmergencyCallingConfigurationRequest
+     * @return Result of the GetVoiceConnectorEmergencyCallingConfiguration operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.GetVoiceConnectorEmergencyCallingConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetVoiceConnectorEmergencyCallingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetVoiceConnectorEmergencyCallingConfigurationResult getVoiceConnectorEmergencyCallingConfiguration(
+            GetVoiceConnectorEmergencyCallingConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetVoiceConnectorEmergencyCallingConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final GetVoiceConnectorEmergencyCallingConfigurationResult executeGetVoiceConnectorEmergencyCallingConfiguration(
+            GetVoiceConnectorEmergencyCallingConfigurationRequest getVoiceConnectorEmergencyCallingConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getVoiceConnectorEmergencyCallingConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetVoiceConnectorEmergencyCallingConfigurationRequest> request = null;
+        Response<GetVoiceConnectorEmergencyCallingConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetVoiceConnectorEmergencyCallingConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getVoiceConnectorEmergencyCallingConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetVoiceConnectorEmergencyCallingConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetVoiceConnectorEmergencyCallingConfigurationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new GetVoiceConnectorEmergencyCallingConfigurationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6226,6 +6384,81 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
     /**
      * <p>
+     * Puts emergency calling configuration details to the specified Amazon Chime Voice Connector, such as emergency
+     * phone numbers and calling countries. Origination and termination settings must be enabled for the Amazon Chime
+     * Voice Connector before emergency calling can be configured.
+     * </p>
+     * 
+     * @param putVoiceConnectorEmergencyCallingConfigurationRequest
+     * @return Result of the PutVoiceConnectorEmergencyCallingConfiguration operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.PutVoiceConnectorEmergencyCallingConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutVoiceConnectorEmergencyCallingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public PutVoiceConnectorEmergencyCallingConfigurationResult putVoiceConnectorEmergencyCallingConfiguration(
+            PutVoiceConnectorEmergencyCallingConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executePutVoiceConnectorEmergencyCallingConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final PutVoiceConnectorEmergencyCallingConfigurationResult executePutVoiceConnectorEmergencyCallingConfiguration(
+            PutVoiceConnectorEmergencyCallingConfigurationRequest putVoiceConnectorEmergencyCallingConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putVoiceConnectorEmergencyCallingConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutVoiceConnectorEmergencyCallingConfigurationRequest> request = null;
+        Response<PutVoiceConnectorEmergencyCallingConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutVoiceConnectorEmergencyCallingConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(putVoiceConnectorEmergencyCallingConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutVoiceConnectorEmergencyCallingConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutVoiceConnectorEmergencyCallingConfigurationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new PutVoiceConnectorEmergencyCallingConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Adds a logging configuration for the specified Amazon Chime Voice Connector. The logging configuration specifies
      * whether SIP message logs are enabled for sending to Amazon CloudWatch Logs.
      * </p>
@@ -6300,6 +6533,12 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Adds origination settings for the specified Amazon Chime Voice Connector.
      * </p>
+     * <note>
+     * <p>
+     * If emergency calling is configured for the Amazon Chime Voice Connector, it must be deleted prior to turning off
+     * origination settings.
+     * </p>
+     * </note>
      * 
      * @param putVoiceConnectorOriginationRequest
      * @return Result of the PutVoiceConnectorOrigination operation returned by the service.
@@ -6514,6 +6753,12 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Adds termination settings for the specified Amazon Chime Voice Connector.
      * </p>
+     * <note>
+     * <p>
+     * If emergency calling is configured for the Amazon Chime Voice Connector, it must be deleted prior to turning off
+     * termination settings.
+     * </p>
+     * </note>
      * 
      * @param putVoiceConnectorTerminationRequest
      * @return Result of the PutVoiceConnectorTermination operation returned by the service.

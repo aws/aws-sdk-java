@@ -56,6 +56,10 @@ public class NetworkJsonUnmarshaller implements Unmarshaller<Network, JsonUnmars
                     context.nextToken();
                     network.setProtocol(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("OpenPortRange", targetDepth)) {
+                    context.nextToken();
+                    network.setOpenPortRange(PortRangeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("SourceIpV4", targetDepth)) {
                     context.nextToken();
                     network.setSourceIpV4(context.getUnmarshaller(String.class).unmarshall(context));

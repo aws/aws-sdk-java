@@ -1184,6 +1184,41 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteVoiceConnectorEmergencyCallingConfigurationResult> deleteVoiceConnectorEmergencyCallingConfigurationAsync(
+            DeleteVoiceConnectorEmergencyCallingConfigurationRequest request) {
+
+        return deleteVoiceConnectorEmergencyCallingConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteVoiceConnectorEmergencyCallingConfigurationResult> deleteVoiceConnectorEmergencyCallingConfigurationAsync(
+            final DeleteVoiceConnectorEmergencyCallingConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteVoiceConnectorEmergencyCallingConfigurationRequest, DeleteVoiceConnectorEmergencyCallingConfigurationResult> asyncHandler) {
+        final DeleteVoiceConnectorEmergencyCallingConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteVoiceConnectorEmergencyCallingConfigurationResult>() {
+            @Override
+            public DeleteVoiceConnectorEmergencyCallingConfigurationResult call() throws Exception {
+                DeleteVoiceConnectorEmergencyCallingConfigurationResult result = null;
+
+                try {
+                    result = executeDeleteVoiceConnectorEmergencyCallingConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteVoiceConnectorGroupResult> deleteVoiceConnectorGroupAsync(DeleteVoiceConnectorGroupRequest request) {
 
         return deleteVoiceConnectorGroupAsync(request, null);
@@ -2042,6 +2077,41 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
 
                 try {
                     result = executeGetVoiceConnector(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetVoiceConnectorEmergencyCallingConfigurationResult> getVoiceConnectorEmergencyCallingConfigurationAsync(
+            GetVoiceConnectorEmergencyCallingConfigurationRequest request) {
+
+        return getVoiceConnectorEmergencyCallingConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetVoiceConnectorEmergencyCallingConfigurationResult> getVoiceConnectorEmergencyCallingConfigurationAsync(
+            final GetVoiceConnectorEmergencyCallingConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetVoiceConnectorEmergencyCallingConfigurationRequest, GetVoiceConnectorEmergencyCallingConfigurationResult> asyncHandler) {
+        final GetVoiceConnectorEmergencyCallingConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetVoiceConnectorEmergencyCallingConfigurationResult>() {
+            @Override
+            public GetVoiceConnectorEmergencyCallingConfigurationResult call() throws Exception {
+                GetVoiceConnectorEmergencyCallingConfigurationResult result = null;
+
+                try {
+                    result = executeGetVoiceConnectorEmergencyCallingConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2941,6 +3011,41 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
 
                 try {
                     result = executePutRetentionSettings(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutVoiceConnectorEmergencyCallingConfigurationResult> putVoiceConnectorEmergencyCallingConfigurationAsync(
+            PutVoiceConnectorEmergencyCallingConfigurationRequest request) {
+
+        return putVoiceConnectorEmergencyCallingConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutVoiceConnectorEmergencyCallingConfigurationResult> putVoiceConnectorEmergencyCallingConfigurationAsync(
+            final PutVoiceConnectorEmergencyCallingConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutVoiceConnectorEmergencyCallingConfigurationRequest, PutVoiceConnectorEmergencyCallingConfigurationResult> asyncHandler) {
+        final PutVoiceConnectorEmergencyCallingConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutVoiceConnectorEmergencyCallingConfigurationResult>() {
+            @Override
+            public PutVoiceConnectorEmergencyCallingConfigurationResult call() throws Exception {
+                PutVoiceConnectorEmergencyCallingConfigurationResult result = null;
+
+                try {
+                    result = executePutVoiceConnectorEmergencyCallingConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

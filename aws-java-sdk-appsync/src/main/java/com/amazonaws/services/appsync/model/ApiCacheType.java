@@ -26,7 +26,15 @@ public enum ApiCacheType {
     R4_XLARGE("R4_XLARGE"),
     R4_2XLARGE("R4_2XLARGE"),
     R4_4XLARGE("R4_4XLARGE"),
-    R4_8XLARGE("R4_8XLARGE");
+    R4_8XLARGE("R4_8XLARGE"),
+    SMALL("SMALL"),
+    MEDIUM("MEDIUM"),
+    LARGE("LARGE"),
+    XLARGE("XLARGE"),
+    LARGE_2X("LARGE_2X"),
+    LARGE_4X("LARGE_4X"),
+    LARGE_8X("LARGE_8X"),
+    LARGE_12X("LARGE_12X");
 
     private String value;
 

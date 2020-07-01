@@ -71,6 +71,8 @@ public class AwsSecurityFindingMarshaller {
             .marshallLocationName("Malware").build();
     private static final MarshallingInfo<StructuredPojo> NETWORK_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Network").build();
+    private static final MarshallingInfo<List> NETWORKPATH_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("NetworkPath").build();
     private static final MarshallingInfo<StructuredPojo> PROCESS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Process").build();
     private static final MarshallingInfo<List> THREATINTELINDICATORS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -91,6 +93,8 @@ public class AwsSecurityFindingMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RelatedFindings").build();
     private static final MarshallingInfo<StructuredPojo> NOTE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Note").build();
+    private static final MarshallingInfo<List> VULNERABILITIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Vulnerabilities").build();
 
     private static final AwsSecurityFindingMarshaller instance = new AwsSecurityFindingMarshaller();
 
@@ -129,6 +133,7 @@ public class AwsSecurityFindingMarshaller {
             protocolMarshaller.marshall(awsSecurityFinding.getUserDefinedFields(), USERDEFINEDFIELDS_BINDING);
             protocolMarshaller.marshall(awsSecurityFinding.getMalware(), MALWARE_BINDING);
             protocolMarshaller.marshall(awsSecurityFinding.getNetwork(), NETWORK_BINDING);
+            protocolMarshaller.marshall(awsSecurityFinding.getNetworkPath(), NETWORKPATH_BINDING);
             protocolMarshaller.marshall(awsSecurityFinding.getProcess(), PROCESS_BINDING);
             protocolMarshaller.marshall(awsSecurityFinding.getThreatIntelIndicators(), THREATINTELINDICATORS_BINDING);
             protocolMarshaller.marshall(awsSecurityFinding.getResources(), RESOURCES_BINDING);
@@ -139,6 +144,7 @@ public class AwsSecurityFindingMarshaller {
             protocolMarshaller.marshall(awsSecurityFinding.getRecordState(), RECORDSTATE_BINDING);
             protocolMarshaller.marshall(awsSecurityFinding.getRelatedFindings(), RELATEDFINDINGS_BINDING);
             protocolMarshaller.marshall(awsSecurityFinding.getNote(), NOTE_BINDING);
+            protocolMarshaller.marshall(awsSecurityFinding.getVulnerabilities(), VULNERABILITIES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

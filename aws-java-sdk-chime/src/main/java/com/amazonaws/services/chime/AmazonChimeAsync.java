@@ -1292,6 +1292,43 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
+     * Deletes the emergency calling configuration details from the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
+     * @param deleteVoiceConnectorEmergencyCallingConfigurationRequest
+     * @return A Java Future containing the result of the DeleteVoiceConnectorEmergencyCallingConfiguration operation
+     *         returned by the service.
+     * @sample AmazonChimeAsync.DeleteVoiceConnectorEmergencyCallingConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteVoiceConnectorEmergencyCallingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteVoiceConnectorEmergencyCallingConfigurationResult> deleteVoiceConnectorEmergencyCallingConfigurationAsync(
+            DeleteVoiceConnectorEmergencyCallingConfigurationRequest deleteVoiceConnectorEmergencyCallingConfigurationRequest);
+
+    /**
+     * <p>
+     * Deletes the emergency calling configuration details from the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
+     * @param deleteVoiceConnectorEmergencyCallingConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteVoiceConnectorEmergencyCallingConfiguration operation
+     *         returned by the service.
+     * @sample AmazonChimeAsyncHandler.DeleteVoiceConnectorEmergencyCallingConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteVoiceConnectorEmergencyCallingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteVoiceConnectorEmergencyCallingConfigurationResult> deleteVoiceConnectorEmergencyCallingConfigurationAsync(
+            DeleteVoiceConnectorEmergencyCallingConfigurationRequest deleteVoiceConnectorEmergencyCallingConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteVoiceConnectorEmergencyCallingConfigurationRequest, DeleteVoiceConnectorEmergencyCallingConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes the specified Amazon Chime Voice Connector group. Any <code>VoiceConnectorItems</code> and phone numbers
      * associated with the group must be removed before it can be deleted.
      * </p>
@@ -1329,6 +1366,12 @@ public interface AmazonChimeAsync extends AmazonChime {
      * <p>
      * Deletes the origination settings for the specified Amazon Chime Voice Connector.
      * </p>
+     * <note>
+     * <p>
+     * If emergency calling is configured for the Amazon Chime Voice Connector, it must be deleted prior to deleting the
+     * origination settings.
+     * </p>
+     * </note>
      * 
      * @param deleteVoiceConnectorOriginationRequest
      * @return A Java Future containing the result of the DeleteVoiceConnectorOrigination operation returned by the
@@ -1344,6 +1387,12 @@ public interface AmazonChimeAsync extends AmazonChime {
      * <p>
      * Deletes the origination settings for the specified Amazon Chime Voice Connector.
      * </p>
+     * <note>
+     * <p>
+     * If emergency calling is configured for the Amazon Chime Voice Connector, it must be deleted prior to deleting the
+     * origination settings.
+     * </p>
+     * </note>
      * 
      * @param deleteVoiceConnectorOriginationRequest
      * @param asyncHandler
@@ -1432,6 +1481,12 @@ public interface AmazonChimeAsync extends AmazonChime {
      * <p>
      * Deletes the termination settings for the specified Amazon Chime Voice Connector.
      * </p>
+     * <note>
+     * <p>
+     * If emergency calling is configured for the Amazon Chime Voice Connector, it must be deleted prior to deleting the
+     * termination settings.
+     * </p>
+     * </note>
      * 
      * @param deleteVoiceConnectorTerminationRequest
      * @return A Java Future containing the result of the DeleteVoiceConnectorTermination operation returned by the
@@ -1447,6 +1502,12 @@ public interface AmazonChimeAsync extends AmazonChime {
      * <p>
      * Deletes the termination settings for the specified Amazon Chime Voice Connector.
      * </p>
+     * <note>
+     * <p>
+     * If emergency calling is configured for the Amazon Chime Voice Connector, it must be deleted prior to deleting the
+     * termination settings.
+     * </p>
+     * </note>
      * 
      * @param deleteVoiceConnectorTerminationRequest
      * @param asyncHandler
@@ -2175,6 +2236,43 @@ public interface AmazonChimeAsync extends AmazonChime {
      */
     java.util.concurrent.Future<GetVoiceConnectorResult> getVoiceConnectorAsync(GetVoiceConnectorRequest getVoiceConnectorRequest,
             com.amazonaws.handlers.AsyncHandler<GetVoiceConnectorRequest, GetVoiceConnectorResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets the emergency calling configuration details for the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
+     * @param getVoiceConnectorEmergencyCallingConfigurationRequest
+     * @return A Java Future containing the result of the GetVoiceConnectorEmergencyCallingConfiguration operation
+     *         returned by the service.
+     * @sample AmazonChimeAsync.GetVoiceConnectorEmergencyCallingConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetVoiceConnectorEmergencyCallingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetVoiceConnectorEmergencyCallingConfigurationResult> getVoiceConnectorEmergencyCallingConfigurationAsync(
+            GetVoiceConnectorEmergencyCallingConfigurationRequest getVoiceConnectorEmergencyCallingConfigurationRequest);
+
+    /**
+     * <p>
+     * Gets the emergency calling configuration details for the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
+     * @param getVoiceConnectorEmergencyCallingConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetVoiceConnectorEmergencyCallingConfiguration operation
+     *         returned by the service.
+     * @sample AmazonChimeAsyncHandler.GetVoiceConnectorEmergencyCallingConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetVoiceConnectorEmergencyCallingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetVoiceConnectorEmergencyCallingConfigurationResult> getVoiceConnectorEmergencyCallingConfigurationAsync(
+            GetVoiceConnectorEmergencyCallingConfigurationRequest getVoiceConnectorEmergencyCallingConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetVoiceConnectorEmergencyCallingConfigurationRequest, GetVoiceConnectorEmergencyCallingConfigurationResult> asyncHandler);
 
     /**
      * <p>
@@ -3091,6 +3189,47 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
+     * Puts emergency calling configuration details to the specified Amazon Chime Voice Connector, such as emergency
+     * phone numbers and calling countries. Origination and termination settings must be enabled for the Amazon Chime
+     * Voice Connector before emergency calling can be configured.
+     * </p>
+     * 
+     * @param putVoiceConnectorEmergencyCallingConfigurationRequest
+     * @return A Java Future containing the result of the PutVoiceConnectorEmergencyCallingConfiguration operation
+     *         returned by the service.
+     * @sample AmazonChimeAsync.PutVoiceConnectorEmergencyCallingConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutVoiceConnectorEmergencyCallingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutVoiceConnectorEmergencyCallingConfigurationResult> putVoiceConnectorEmergencyCallingConfigurationAsync(
+            PutVoiceConnectorEmergencyCallingConfigurationRequest putVoiceConnectorEmergencyCallingConfigurationRequest);
+
+    /**
+     * <p>
+     * Puts emergency calling configuration details to the specified Amazon Chime Voice Connector, such as emergency
+     * phone numbers and calling countries. Origination and termination settings must be enabled for the Amazon Chime
+     * Voice Connector before emergency calling can be configured.
+     * </p>
+     * 
+     * @param putVoiceConnectorEmergencyCallingConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutVoiceConnectorEmergencyCallingConfiguration operation
+     *         returned by the service.
+     * @sample AmazonChimeAsyncHandler.PutVoiceConnectorEmergencyCallingConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutVoiceConnectorEmergencyCallingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutVoiceConnectorEmergencyCallingConfigurationResult> putVoiceConnectorEmergencyCallingConfigurationAsync(
+            PutVoiceConnectorEmergencyCallingConfigurationRequest putVoiceConnectorEmergencyCallingConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<PutVoiceConnectorEmergencyCallingConfigurationRequest, PutVoiceConnectorEmergencyCallingConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
      * Adds a logging configuration for the specified Amazon Chime Voice Connector. The logging configuration specifies
      * whether SIP message logs are enabled for sending to Amazon CloudWatch Logs.
      * </p>
@@ -3130,6 +3269,12 @@ public interface AmazonChimeAsync extends AmazonChime {
      * <p>
      * Adds origination settings for the specified Amazon Chime Voice Connector.
      * </p>
+     * <note>
+     * <p>
+     * If emergency calling is configured for the Amazon Chime Voice Connector, it must be deleted prior to turning off
+     * origination settings.
+     * </p>
+     * </note>
      * 
      * @param putVoiceConnectorOriginationRequest
      * @return A Java Future containing the result of the PutVoiceConnectorOrigination operation returned by the
@@ -3145,6 +3290,12 @@ public interface AmazonChimeAsync extends AmazonChime {
      * <p>
      * Adds origination settings for the specified Amazon Chime Voice Connector.
      * </p>
+     * <note>
+     * <p>
+     * If emergency calling is configured for the Amazon Chime Voice Connector, it must be deleted prior to turning off
+     * origination settings.
+     * </p>
+     * </note>
      * 
      * @param putVoiceConnectorOriginationRequest
      * @param asyncHandler
@@ -3235,6 +3386,12 @@ public interface AmazonChimeAsync extends AmazonChime {
      * <p>
      * Adds termination settings for the specified Amazon Chime Voice Connector.
      * </p>
+     * <note>
+     * <p>
+     * If emergency calling is configured for the Amazon Chime Voice Connector, it must be deleted prior to turning off
+     * termination settings.
+     * </p>
+     * </note>
      * 
      * @param putVoiceConnectorTerminationRequest
      * @return A Java Future containing the result of the PutVoiceConnectorTermination operation returned by the
@@ -3250,6 +3407,12 @@ public interface AmazonChimeAsync extends AmazonChime {
      * <p>
      * Adds termination settings for the specified Amazon Chime Voice Connector.
      * </p>
+     * <note>
+     * <p>
+     * If emergency calling is configured for the Amazon Chime Voice Connector, it must be deleted prior to turning off
+     * termination settings.
+     * </p>
+     * </note>
      * 
      * @param putVoiceConnectorTerminationRequest
      * @param asyncHandler

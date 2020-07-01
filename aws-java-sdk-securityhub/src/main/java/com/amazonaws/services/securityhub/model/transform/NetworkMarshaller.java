@@ -31,6 +31,8 @@ public class NetworkMarshaller {
             .marshallLocationName("Direction").build();
     private static final MarshallingInfo<String> PROTOCOL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Protocol").build();
+    private static final MarshallingInfo<StructuredPojo> OPENPORTRANGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OpenPortRange").build();
     private static final MarshallingInfo<String> SOURCEIPV4_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceIpV4").build();
     private static final MarshallingInfo<String> SOURCEIPV6_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -68,6 +70,7 @@ public class NetworkMarshaller {
         try {
             protocolMarshaller.marshall(network.getDirection(), DIRECTION_BINDING);
             protocolMarshaller.marshall(network.getProtocol(), PROTOCOL_BINDING);
+            protocolMarshaller.marshall(network.getOpenPortRange(), OPENPORTRANGE_BINDING);
             protocolMarshaller.marshall(network.getSourceIpV4(), SOURCEIPV4_BINDING);
             protocolMarshaller.marshall(network.getSourceIpV6(), SOURCEIPV6_BINDING);
             protocolMarshaller.marshall(network.getSourcePort(), SOURCEPORT_BINDING);

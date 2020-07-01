@@ -51,12 +51,12 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>GITHUB</code>: The source code is in a GitHub repository.
+     * <code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud repository.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise repository.
+     * <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise Server repository.
      * </p>
      * </li>
      * <li>
@@ -189,6 +189,14 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
     private Boolean reportBuildStatus;
     /**
      * <p>
+     * Contains information that defines how the build project reports the build status to the source provider. This
+     * option is only used when the source provider is <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>, or
+     * <code>BITBUCKET</code>.
+     * </p>
+     */
+    private BuildStatusConfig buildStatusConfig;
+    /**
+     * <p>
      * Enable this flag to ignore SSL warnings while connecting to the project source code.
      * </p>
      */
@@ -223,12 +231,12 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>GITHUB</code>: The source code is in a GitHub repository.
+     * <code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud repository.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise repository.
+     * <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise Server repository.
      * </p>
      * </li>
      * <li>
@@ -264,12 +272,12 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>GITHUB</code>: The source code is in a GitHub repository.
+     *        <code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud repository.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise repository.
+     *        <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise Server repository.
      *        </p>
      *        </li>
      *        <li>
@@ -312,12 +320,12 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>GITHUB</code>: The source code is in a GitHub repository.
+     * <code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud repository.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise repository.
+     * <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise Server repository.
      * </p>
      * </li>
      * <li>
@@ -352,12 +360,12 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         <code>GITHUB</code>: The source code is in a GitHub repository.
+     *         <code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud repository.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise repository.
+     *         <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise Server repository.
      *         </p>
      *         </li>
      *         <li>
@@ -400,12 +408,12 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>GITHUB</code>: The source code is in a GitHub repository.
+     * <code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud repository.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise repository.
+     * <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise Server repository.
      * </p>
      * </li>
      * <li>
@@ -441,12 +449,12 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>GITHUB</code>: The source code is in a GitHub repository.
+     *        <code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud repository.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise repository.
+     *        <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise Server repository.
      *        </p>
      *        </li>
      *        <li>
@@ -491,12 +499,12 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>GITHUB</code>: The source code is in a GitHub repository.
+     * <code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud repository.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise repository.
+     * <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise Server repository.
      * </p>
      * </li>
      * <li>
@@ -532,12 +540,12 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>GITHUB</code>: The source code is in a GitHub repository.
+     *        <code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud repository.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise repository.
+     *        <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise Server repository.
      *        </p>
      *        </li>
      *        <li>
@@ -580,12 +588,12 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>GITHUB</code>: The source code is in a GitHub repository.
+     * <code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud repository.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise repository.
+     * <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise Server repository.
      * </p>
      * </li>
      * <li>
@@ -621,12 +629,12 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>GITHUB</code>: The source code is in a GitHub repository.
+     *        <code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud repository.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise repository.
+     *        <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise Server repository.
      *        </p>
      *        </li>
      *        <li>
@@ -1379,6 +1387,58 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Contains information that defines how the build project reports the build status to the source provider. This
+     * option is only used when the source provider is <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>, or
+     * <code>BITBUCKET</code>.
+     * </p>
+     * 
+     * @param buildStatusConfig
+     *        Contains information that defines how the build project reports the build status to the source provider.
+     *        This option is only used when the source provider is <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>,
+     *        or <code>BITBUCKET</code>.
+     */
+
+    public void setBuildStatusConfig(BuildStatusConfig buildStatusConfig) {
+        this.buildStatusConfig = buildStatusConfig;
+    }
+
+    /**
+     * <p>
+     * Contains information that defines how the build project reports the build status to the source provider. This
+     * option is only used when the source provider is <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>, or
+     * <code>BITBUCKET</code>.
+     * </p>
+     * 
+     * @return Contains information that defines how the build project reports the build status to the source provider.
+     *         This option is only used when the source provider is <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>,
+     *         or <code>BITBUCKET</code>.
+     */
+
+    public BuildStatusConfig getBuildStatusConfig() {
+        return this.buildStatusConfig;
+    }
+
+    /**
+     * <p>
+     * Contains information that defines how the build project reports the build status to the source provider. This
+     * option is only used when the source provider is <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>, or
+     * <code>BITBUCKET</code>.
+     * </p>
+     * 
+     * @param buildStatusConfig
+     *        Contains information that defines how the build project reports the build status to the source provider.
+     *        This option is only used when the source provider is <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>,
+     *        or <code>BITBUCKET</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProjectSource withBuildStatusConfig(BuildStatusConfig buildStatusConfig) {
+        setBuildStatusConfig(buildStatusConfig);
+        return this;
+    }
+
+    /**
+     * <p>
      * Enable this flag to ignore SSL warnings while connecting to the project source code.
      * </p>
      * 
@@ -1495,6 +1555,8 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
             sb.append("Auth: ").append(getAuth()).append(",");
         if (getReportBuildStatus() != null)
             sb.append("ReportBuildStatus: ").append(getReportBuildStatus()).append(",");
+        if (getBuildStatusConfig() != null)
+            sb.append("BuildStatusConfig: ").append(getBuildStatusConfig()).append(",");
         if (getInsecureSsl() != null)
             sb.append("InsecureSsl: ").append(getInsecureSsl()).append(",");
         if (getSourceIdentifier() != null)
@@ -1541,6 +1603,10 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getReportBuildStatus() != null && other.getReportBuildStatus().equals(this.getReportBuildStatus()) == false)
             return false;
+        if (other.getBuildStatusConfig() == null ^ this.getBuildStatusConfig() == null)
+            return false;
+        if (other.getBuildStatusConfig() != null && other.getBuildStatusConfig().equals(this.getBuildStatusConfig()) == false)
+            return false;
         if (other.getInsecureSsl() == null ^ this.getInsecureSsl() == null)
             return false;
         if (other.getInsecureSsl() != null && other.getInsecureSsl().equals(this.getInsecureSsl()) == false)
@@ -1564,6 +1630,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getBuildspec() == null) ? 0 : getBuildspec().hashCode());
         hashCode = prime * hashCode + ((getAuth() == null) ? 0 : getAuth().hashCode());
         hashCode = prime * hashCode + ((getReportBuildStatus() == null) ? 0 : getReportBuildStatus().hashCode());
+        hashCode = prime * hashCode + ((getBuildStatusConfig() == null) ? 0 : getBuildStatusConfig().hashCode());
         hashCode = prime * hashCode + ((getInsecureSsl() == null) ? 0 : getInsecureSsl().hashCode());
         hashCode = prime * hashCode + ((getSourceIdentifier() == null) ? 0 : getSourceIdentifier().hashCode());
         return hashCode;

@@ -39,7 +39,8 @@ public class UpdateStandardsControlRequest extends com.amazonaws.AmazonWebServic
     private String controlStatus;
     /**
      * <p>
-     * A description of the reason why you are disabling a security standard control.
+     * A description of the reason why you are disabling a security standard control. If you are disabling a control,
+     * then this is required.
      * </p>
      */
     private String disabledReason;
@@ -145,11 +146,13 @@ public class UpdateStandardsControlRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A description of the reason why you are disabling a security standard control.
+     * A description of the reason why you are disabling a security standard control. If you are disabling a control,
+     * then this is required.
      * </p>
      * 
      * @param disabledReason
-     *        A description of the reason why you are disabling a security standard control.
+     *        A description of the reason why you are disabling a security standard control. If you are disabling a
+     *        control, then this is required.
      */
 
     public void setDisabledReason(String disabledReason) {
@@ -158,10 +161,12 @@ public class UpdateStandardsControlRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A description of the reason why you are disabling a security standard control.
+     * A description of the reason why you are disabling a security standard control. If you are disabling a control,
+     * then this is required.
      * </p>
      * 
-     * @return A description of the reason why you are disabling a security standard control.
+     * @return A description of the reason why you are disabling a security standard control. If you are disabling a
+     *         control, then this is required.
      */
 
     public String getDisabledReason() {
@@ -170,11 +175,13 @@ public class UpdateStandardsControlRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A description of the reason why you are disabling a security standard control.
+     * A description of the reason why you are disabling a security standard control. If you are disabling a control,
+     * then this is required.
      * </p>
      * 
      * @param disabledReason
-     *        A description of the reason why you are disabling a security standard control.
+     *        A description of the reason why you are disabling a security standard control. If you are disabling a
+     *        control, then this is required.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

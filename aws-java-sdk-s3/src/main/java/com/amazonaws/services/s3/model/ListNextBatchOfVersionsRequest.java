@@ -72,13 +72,28 @@ public class ListNextBatchOfVersionsRequest extends AmazonWebServiceRequest impl
      * @return A new {@link ListVersionsRequest} object using the previous version listing.
      */
     public ListVersionsRequest toListVersionsRequest() {
-        return new ListVersionsRequest(previousVersionListing.getBucketName(),
-                previousVersionListing.getPrefix(),
-                previousVersionListing.getNextKeyMarker(),
-                previousVersionListing.getNextVersionIdMarker(),
-                previousVersionListing.getDelimiter(),
-                Integer.valueOf(previousVersionListing.getMaxKeys()))
-                .withEncodingType(previousVersionListing.getEncodingType());
+        ListVersionsRequest result = new ListVersionsRequest(previousVersionListing.getBucketName(),
+                                                             previousVersionListing.getPrefix(),
+                                                             previousVersionListing.getNextKeyMarker(),
+                                                             previousVersionListing.getNextVersionIdMarker(),
+                                                             previousVersionListing.getDelimiter(),
+                                                             previousVersionListing.getMaxKeys())
+            .withEncodingType(previousVersionListing.getEncodingType())
+            .withRequestCredentialsProvider(getRequestCredentialsProvider())
+            .withGeneralProgressListener(getGeneralProgressListener())
+            .withRequestMetricCollector(getRequestMetricCollector());
+
+        Integer sdkClientExecutionTimeout = getSdkClientExecutionTimeout();
+        if (sdkClientExecutionTimeout != null) {
+            result.setSdkClientExecutionTimeout(sdkClientExecutionTimeout);
+        }
+
+        Integer sdkRequestTimeout = getSdkRequestTimeout();
+        if (sdkClientExecutionTimeout != null) {
+            result.setSdkRequestTimeout(sdkRequestTimeout);
+        }
+
+        return result;
     }
 
 }

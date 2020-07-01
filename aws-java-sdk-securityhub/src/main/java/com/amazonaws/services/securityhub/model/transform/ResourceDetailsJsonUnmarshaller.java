@@ -48,6 +48,10 @@ public class ResourceDetailsJsonUnmarshaller implements Unmarshaller<ResourceDet
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("AwsAutoScalingAutoScalingGroup", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsAutoScalingAutoScalingGroup(AwsAutoScalingAutoScalingGroupDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("AwsCodeBuildProject", targetDepth)) {
                     context.nextToken();
                     resourceDetails.setAwsCodeBuildProject(AwsCodeBuildProjectDetailsJsonUnmarshaller.getInstance().unmarshall(context));
@@ -67,6 +71,14 @@ public class ResourceDetailsJsonUnmarshaller implements Unmarshaller<ResourceDet
                 if (context.testExpression("AwsEc2SecurityGroup", targetDepth)) {
                     context.nextToken();
                     resourceDetails.setAwsEc2SecurityGroup(AwsEc2SecurityGroupDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AwsEc2Volume", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsEc2Volume(AwsEc2VolumeDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AwsEc2Vpc", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsEc2Vpc(AwsEc2VpcDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AwsElbv2LoadBalancer", targetDepth)) {
                     context.nextToken();

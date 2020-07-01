@@ -48,6 +48,12 @@ public class AmiDistributionConfiguration implements Serializable, Cloneable, St
     private java.util.Map<String, String> amiTags;
     /**
      * <p>
+     * The KMS key identifier used to encrypt the distributed image.
+     * </p>
+     */
+    private String kmsKeyId;
+    /**
+     * <p>
      * Launch permissions can be used to configure which AWS accounts can use the AMI to launch instances.
      * </p>
      */
@@ -203,6 +209,46 @@ public class AmiDistributionConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
+     * The KMS key identifier used to encrypt the distributed image.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        The KMS key identifier used to encrypt the distributed image.
+     */
+
+    public void setKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The KMS key identifier used to encrypt the distributed image.
+     * </p>
+     * 
+     * @return The KMS key identifier used to encrypt the distributed image.
+     */
+
+    public String getKmsKeyId() {
+        return this.kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The KMS key identifier used to encrypt the distributed image.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        The KMS key identifier used to encrypt the distributed image.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AmiDistributionConfiguration withKmsKeyId(String kmsKeyId) {
+        setKmsKeyId(kmsKeyId);
+        return this;
+    }
+
+    /**
+     * <p>
      * Launch permissions can be used to configure which AWS accounts can use the AMI to launch instances.
      * </p>
      * 
@@ -259,6 +305,8 @@ public class AmiDistributionConfiguration implements Serializable, Cloneable, St
             sb.append("Description: ").append(getDescription()).append(",");
         if (getAmiTags() != null)
             sb.append("AmiTags: ").append(getAmiTags()).append(",");
+        if (getKmsKeyId() != null)
+            sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
         if (getLaunchPermission() != null)
             sb.append("LaunchPermission: ").append(getLaunchPermission());
         sb.append("}");
@@ -287,6 +335,10 @@ public class AmiDistributionConfiguration implements Serializable, Cloneable, St
             return false;
         if (other.getAmiTags() != null && other.getAmiTags().equals(this.getAmiTags()) == false)
             return false;
+        if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null)
+            return false;
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
+            return false;
         if (other.getLaunchPermission() == null ^ this.getLaunchPermission() == null)
             return false;
         if (other.getLaunchPermission() != null && other.getLaunchPermission().equals(this.getLaunchPermission()) == false)
@@ -302,6 +354,7 @@ public class AmiDistributionConfiguration implements Serializable, Cloneable, St
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getAmiTags() == null) ? 0 : getAmiTags().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getLaunchPermission() == null) ? 0 : getLaunchPermission().hashCode());
         return hashCode;
     }
