@@ -27,6 +27,86 @@ public class CreateInternetGatewayRequest extends AmazonWebServiceRequest implem
         DryRunSupportedRequest<CreateInternetGatewayRequest> {
 
     /**
+     * <p>
+     * The tags to assign to the internet gateway.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<TagSpecification> tagSpecifications;
+
+    /**
+     * <p>
+     * The tags to assign to the internet gateway.
+     * </p>
+     * 
+     * @return The tags to assign to the internet gateway.
+     */
+
+    public java.util.List<TagSpecification> getTagSpecifications() {
+        if (tagSpecifications == null) {
+            tagSpecifications = new com.amazonaws.internal.SdkInternalList<TagSpecification>();
+        }
+        return tagSpecifications;
+    }
+
+    /**
+     * <p>
+     * The tags to assign to the internet gateway.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        The tags to assign to the internet gateway.
+     */
+
+    public void setTagSpecifications(java.util.Collection<TagSpecification> tagSpecifications) {
+        if (tagSpecifications == null) {
+            this.tagSpecifications = null;
+            return;
+        }
+
+        this.tagSpecifications = new com.amazonaws.internal.SdkInternalList<TagSpecification>(tagSpecifications);
+    }
+
+    /**
+     * <p>
+     * The tags to assign to the internet gateway.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTagSpecifications(java.util.Collection)} or {@link #withTagSpecifications(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        The tags to assign to the internet gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateInternetGatewayRequest withTagSpecifications(TagSpecification... tagSpecifications) {
+        if (this.tagSpecifications == null) {
+            setTagSpecifications(new com.amazonaws.internal.SdkInternalList<TagSpecification>(tagSpecifications.length));
+        }
+        for (TagSpecification ele : tagSpecifications) {
+            this.tagSpecifications.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags to assign to the internet gateway.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        The tags to assign to the internet gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateInternetGatewayRequest withTagSpecifications(java.util.Collection<TagSpecification> tagSpecifications) {
+        setTagSpecifications(tagSpecifications);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -49,6 +129,8 @@ public class CreateInternetGatewayRequest extends AmazonWebServiceRequest implem
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getTagSpecifications() != null)
+            sb.append("TagSpecifications: ").append(getTagSpecifications());
         sb.append("}");
         return sb.toString();
     }
@@ -63,6 +145,10 @@ public class CreateInternetGatewayRequest extends AmazonWebServiceRequest implem
         if (obj instanceof CreateInternetGatewayRequest == false)
             return false;
         CreateInternetGatewayRequest other = (CreateInternetGatewayRequest) obj;
+        if (other.getTagSpecifications() == null ^ this.getTagSpecifications() == null)
+            return false;
+        if (other.getTagSpecifications() != null && other.getTagSpecifications().equals(this.getTagSpecifications()) == false)
+            return false;
         return true;
     }
 
@@ -71,6 +157,7 @@ public class CreateInternetGatewayRequest extends AmazonWebServiceRequest implem
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getTagSpecifications() == null) ? 0 : getTagSpecifications().hashCode());
         return hashCode;
     }
 

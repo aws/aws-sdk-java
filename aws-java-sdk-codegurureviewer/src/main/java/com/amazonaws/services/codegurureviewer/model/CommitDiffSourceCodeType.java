@@ -30,24 +30,24 @@ public class CommitDiffSourceCodeType implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Source Commit SHA.
+     * The SHA of the source commit.
      * </p>
      */
     private String sourceCommit;
     /**
      * <p>
-     * Destination Commit SHA
+     * The SHA of the destination commit.
      * </p>
      */
     private String destinationCommit;
 
     /**
      * <p>
-     * Source Commit SHA.
+     * The SHA of the source commit.
      * </p>
      * 
      * @param sourceCommit
-     *        Source Commit SHA.
+     *        The SHA of the source commit.
      */
 
     public void setSourceCommit(String sourceCommit) {
@@ -56,10 +56,10 @@ public class CommitDiffSourceCodeType implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Source Commit SHA.
+     * The SHA of the source commit.
      * </p>
      * 
-     * @return Source Commit SHA.
+     * @return The SHA of the source commit.
      */
 
     public String getSourceCommit() {
@@ -68,11 +68,11 @@ public class CommitDiffSourceCodeType implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Source Commit SHA.
+     * The SHA of the source commit.
      * </p>
      * 
      * @param sourceCommit
-     *        Source Commit SHA.
+     *        The SHA of the source commit.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class CommitDiffSourceCodeType implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Destination Commit SHA
+     * The SHA of the destination commit.
      * </p>
      * 
      * @param destinationCommit
-     *        Destination Commit SHA
+     *        The SHA of the destination commit.
      */
 
     public void setDestinationCommit(String destinationCommit) {
@@ -96,10 +96,10 @@ public class CommitDiffSourceCodeType implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Destination Commit SHA
+     * The SHA of the destination commit.
      * </p>
      * 
-     * @return Destination Commit SHA
+     * @return The SHA of the destination commit.
      */
 
     public String getDestinationCommit() {
@@ -108,11 +108,11 @@ public class CommitDiffSourceCodeType implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Destination Commit SHA
+     * The SHA of the destination commit.
      * </p>
      * 
      * @param destinationCommit
-     *        Destination Commit SHA
+     *        The SHA of the destination commit.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

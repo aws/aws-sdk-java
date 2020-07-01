@@ -19,7 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about a repository.
+ * Information about an associated AWS CodeCommit repository or an associated repository that is managed by AWS CodeStar
+ * Connections (for example, Bitbucket). This <code>Repository</code> object is not used if your source code is in an
+ * associated GitHub repository.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/Repository" target="_top">AWS API
@@ -36,10 +38,16 @@ public class Repository implements Serializable, Cloneable, StructuredPojo {
     private CodeCommitRepository codeCommit;
     /**
      * <p>
-     * Information about a Bitbucket Cloud repository.
+     * Information about a Bitbucket repository.
      * </p>
      */
     private ThirdPartySourceRepository bitbucket;
+    /**
+     * <p>
+     * Information about a GitHub Enterprise Server repository.
+     * </p>
+     */
+    private ThirdPartySourceRepository gitHubEnterpriseServer;
 
     /**
      * <p>
@@ -83,11 +91,11 @@ public class Repository implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about a Bitbucket Cloud repository.
+     * Information about a Bitbucket repository.
      * </p>
      * 
      * @param bitbucket
-     *        Information about a Bitbucket Cloud repository.
+     *        Information about a Bitbucket repository.
      */
 
     public void setBitbucket(ThirdPartySourceRepository bitbucket) {
@@ -96,10 +104,10 @@ public class Repository implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about a Bitbucket Cloud repository.
+     * Information about a Bitbucket repository.
      * </p>
      * 
-     * @return Information about a Bitbucket Cloud repository.
+     * @return Information about a Bitbucket repository.
      */
 
     public ThirdPartySourceRepository getBitbucket() {
@@ -108,16 +116,56 @@ public class Repository implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about a Bitbucket Cloud repository.
+     * Information about a Bitbucket repository.
      * </p>
      * 
      * @param bitbucket
-     *        Information about a Bitbucket Cloud repository.
+     *        Information about a Bitbucket repository.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Repository withBitbucket(ThirdPartySourceRepository bitbucket) {
         setBitbucket(bitbucket);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about a GitHub Enterprise Server repository.
+     * </p>
+     * 
+     * @param gitHubEnterpriseServer
+     *        Information about a GitHub Enterprise Server repository.
+     */
+
+    public void setGitHubEnterpriseServer(ThirdPartySourceRepository gitHubEnterpriseServer) {
+        this.gitHubEnterpriseServer = gitHubEnterpriseServer;
+    }
+
+    /**
+     * <p>
+     * Information about a GitHub Enterprise Server repository.
+     * </p>
+     * 
+     * @return Information about a GitHub Enterprise Server repository.
+     */
+
+    public ThirdPartySourceRepository getGitHubEnterpriseServer() {
+        return this.gitHubEnterpriseServer;
+    }
+
+    /**
+     * <p>
+     * Information about a GitHub Enterprise Server repository.
+     * </p>
+     * 
+     * @param gitHubEnterpriseServer
+     *        Information about a GitHub Enterprise Server repository.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Repository withGitHubEnterpriseServer(ThirdPartySourceRepository gitHubEnterpriseServer) {
+        setGitHubEnterpriseServer(gitHubEnterpriseServer);
         return this;
     }
 
@@ -136,7 +184,9 @@ public class Repository implements Serializable, Cloneable, StructuredPojo {
         if (getCodeCommit() != null)
             sb.append("CodeCommit: ").append(getCodeCommit()).append(",");
         if (getBitbucket() != null)
-            sb.append("Bitbucket: ").append(getBitbucket());
+            sb.append("Bitbucket: ").append(getBitbucket()).append(",");
+        if (getGitHubEnterpriseServer() != null)
+            sb.append("GitHubEnterpriseServer: ").append(getGitHubEnterpriseServer());
         sb.append("}");
         return sb.toString();
     }
@@ -159,6 +209,10 @@ public class Repository implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getBitbucket() != null && other.getBitbucket().equals(this.getBitbucket()) == false)
             return false;
+        if (other.getGitHubEnterpriseServer() == null ^ this.getGitHubEnterpriseServer() == null)
+            return false;
+        if (other.getGitHubEnterpriseServer() != null && other.getGitHubEnterpriseServer().equals(this.getGitHubEnterpriseServer()) == false)
+            return false;
         return true;
     }
 
@@ -169,6 +223,7 @@ public class Repository implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getCodeCommit() == null) ? 0 : getCodeCommit().hashCode());
         hashCode = prime * hashCode + ((getBitbucket() == null) ? 0 : getBitbucket().hashCode());
+        hashCode = prime * hashCode + ((getGitHubEnterpriseServer() == null) ? 0 : getGitHubEnterpriseServer().hashCode());
         return hashCode;
     }
 

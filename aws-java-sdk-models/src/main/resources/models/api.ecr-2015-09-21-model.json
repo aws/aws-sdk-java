@@ -333,7 +333,8 @@
         {"shape":"LayersNotFoundException"},
         {"shape":"ReferencedImagesNotFoundException"},
         {"shape":"LimitExceededException"},
-        {"shape":"ImageTagAlreadyExistsException"}
+        {"shape":"ImageTagAlreadyExistsException"},
+        {"shape":"ImageDigestDoesNotMatchException"}
       ],
       "documentation":"<p>Creates or updates the image manifest and tags associated with an image.</p> <p>When an image is pushed and all new image layers have been uploaded, the PutImage API is called once to create or update the image manifest and the tags associated with the image.</p> <note> <p>This operation is used by the Amazon ECR proxy and is not generally used by customers for pulling and pushing images. In most cases, you should use the <code>docker</code> CLI to pull, tag, and push images.</p> </note>"
     },
@@ -1281,6 +1282,14 @@
       "member":{"shape":"ImageDetail"}
     },
     "ImageDigest":{"type":"string"},
+    "ImageDigestDoesNotMatchException":{
+      "type":"structure",
+      "members":{
+        "message":{"shape":"ExceptionMessage"}
+      },
+      "documentation":"<p>The specified image digest does not match the digest that Amazon ECR calculated for the image.</p>",
+      "exception":true
+    },
     "ImageFailure":{
       "type":"structure",
       "members":{
@@ -1909,6 +1918,10 @@
         "imageTag":{
           "shape":"ImageTag",
           "documentation":"<p>The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2 Schema 2 or OCI formats.</p>"
+        },
+        "imageDigest":{
+          "shape":"ImageDigest",
+          "documentation":"<p>The image digest of the image manifest corresponding to the image.</p>"
         }
       }
     },

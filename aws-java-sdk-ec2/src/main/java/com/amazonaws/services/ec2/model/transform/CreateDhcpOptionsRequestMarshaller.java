@@ -69,6 +69,41 @@ public class CreateDhcpOptionsRequestMarshaller implements Marshaller<Request<Cr
             }
         }
 
+        com.amazonaws.internal.SdkInternalList<TagSpecification> createDhcpOptionsRequestTagSpecificationsList = (com.amazonaws.internal.SdkInternalList<TagSpecification>) createDhcpOptionsRequest
+                .getTagSpecifications();
+        if (!createDhcpOptionsRequestTagSpecificationsList.isEmpty() || !createDhcpOptionsRequestTagSpecificationsList.isAutoConstruct()) {
+            int tagSpecificationsListIndex = 1;
+
+            for (TagSpecification createDhcpOptionsRequestTagSpecificationsListValue : createDhcpOptionsRequestTagSpecificationsList) {
+
+                if (createDhcpOptionsRequestTagSpecificationsListValue.getResourceType() != null) {
+                    request.addParameter("TagSpecification." + tagSpecificationsListIndex + ".ResourceType",
+                            StringUtils.fromString(createDhcpOptionsRequestTagSpecificationsListValue.getResourceType()));
+                }
+
+                com.amazonaws.internal.SdkInternalList<Tag> tagSpecificationTagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createDhcpOptionsRequestTagSpecificationsListValue
+                        .getTags();
+                if (!tagSpecificationTagsList.isEmpty() || !tagSpecificationTagsList.isAutoConstruct()) {
+                    int tagsListIndex = 1;
+
+                    for (Tag tagSpecificationTagsListValue : tagSpecificationTagsList) {
+
+                        if (tagSpecificationTagsListValue.getKey() != null) {
+                            request.addParameter("TagSpecification." + tagSpecificationsListIndex + ".Tag." + tagsListIndex + ".Key",
+                                    StringUtils.fromString(tagSpecificationTagsListValue.getKey()));
+                        }
+
+                        if (tagSpecificationTagsListValue.getValue() != null) {
+                            request.addParameter("TagSpecification." + tagSpecificationsListIndex + ".Tag." + tagsListIndex + ".Value",
+                                    StringUtils.fromString(tagSpecificationTagsListValue.getValue()));
+                        }
+                        tagsListIndex++;
+                    }
+                }
+                tagSpecificationsListIndex++;
+            }
+        }
+
         return request;
     }
 

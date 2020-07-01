@@ -953,11 +953,6 @@ public interface AmazonRDS {
     DBParameterGroup createDBParameterGroup(CreateDBParameterGroupRequest createDBParameterGroupRequest);
 
     /**
-     * <note>
-     * <p>
-     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
-     * </p>
-     * </note>
      * <p>
      * Creates a new DB proxy.
      * </p>
@@ -1388,11 +1383,6 @@ public interface AmazonRDS {
     DeleteDBParameterGroupResult deleteDBParameterGroup(DeleteDBParameterGroupRequest deleteDBParameterGroupRequest);
 
     /**
-     * <note>
-     * <p>
-     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
-     * </p>
-     * </note>
      * <p>
      * Deletes an existing proxy.
      * </p>
@@ -1550,11 +1540,6 @@ public interface AmazonRDS {
     DeleteOptionGroupResult deleteOptionGroup(DeleteOptionGroupRequest deleteOptionGroupRequest);
 
     /**
-     * <note>
-     * <p>
-     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
-     * </p>
-     * </note>
      * <p>
      * Remove the association between one or more <code>DBProxyTarget</code> data structures and a
      * <code>DBProxyTargetGroup</code>.
@@ -1973,11 +1958,6 @@ public interface AmazonRDS {
     DescribeDBParametersResult describeDBParameters(DescribeDBParametersRequest describeDBParametersRequest);
 
     /**
-     * <note>
-     * <p>
-     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
-     * </p>
-     * </note>
      * <p>
      * Returns information about DB proxies.
      * </p>
@@ -1994,11 +1974,6 @@ public interface AmazonRDS {
     DescribeDBProxiesResult describeDBProxies(DescribeDBProxiesRequest describeDBProxiesRequest);
 
     /**
-     * <note>
-     * <p>
-     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
-     * </p>
-     * </note>
      * <p>
      * Returns information about DB proxy target groups, represented by <code>DBProxyTargetGroup</code> data structures.
      * </p>
@@ -2020,11 +1995,6 @@ public interface AmazonRDS {
     DescribeDBProxyTargetGroupsResult describeDBProxyTargetGroups(DescribeDBProxyTargetGroupsRequest describeDBProxyTargetGroupsRequest);
 
     /**
-     * <note>
-     * <p>
-     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
-     * </p>
-     * </note>
      * <p>
      * Returns information about <code>DBProxyTarget</code> objects. This API supports pagination.
      * </p>
@@ -2926,11 +2896,6 @@ public interface AmazonRDS {
     ModifyDBParameterGroupResult modifyDBParameterGroup(ModifyDBParameterGroupRequest modifyDBParameterGroupRequest);
 
     /**
-     * <note>
-     * <p>
-     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
-     * </p>
-     * </note>
      * <p>
      * Changes the settings for an existing DB proxy.
      * </p>
@@ -2952,11 +2917,6 @@ public interface AmazonRDS {
     ModifyDBProxyResult modifyDBProxy(ModifyDBProxyRequest modifyDBProxyRequest);
 
     /**
-     * <note>
-     * <p>
-     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
-     * </p>
-     * </note>
      * <p>
      * Modifies the properties of a <code>DBProxyTargetGroup</code>.
      * </p>
@@ -3239,11 +3199,6 @@ public interface AmazonRDS {
     DBInstance rebootDBInstance(RebootDBInstanceRequest rebootDBInstanceRequest);
 
     /**
-     * <note>
-     * <p>
-     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
-     * </p>
-     * </note>
      * <p>
      * Associate one or more <code>DBProxyTarget</code> data structures with a <code>DBProxyTargetGroup</code>.
      * </p>

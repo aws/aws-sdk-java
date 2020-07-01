@@ -27,6 +27,12 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
+     * The tags to assign to the subnet.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<TagSpecification> tagSpecifications;
+    /**
+     * <p>
      * The Availability Zone or Local Zone for the subnet.
      * </p>
      * <p>
@@ -100,6 +106,79 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
     public CreateSubnetRequest(String vpcId, String cidrBlock) {
         setVpcId(vpcId);
         setCidrBlock(cidrBlock);
+    }
+
+    /**
+     * <p>
+     * The tags to assign to the subnet.
+     * </p>
+     * 
+     * @return The tags to assign to the subnet.
+     */
+
+    public java.util.List<TagSpecification> getTagSpecifications() {
+        if (tagSpecifications == null) {
+            tagSpecifications = new com.amazonaws.internal.SdkInternalList<TagSpecification>();
+        }
+        return tagSpecifications;
+    }
+
+    /**
+     * <p>
+     * The tags to assign to the subnet.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        The tags to assign to the subnet.
+     */
+
+    public void setTagSpecifications(java.util.Collection<TagSpecification> tagSpecifications) {
+        if (tagSpecifications == null) {
+            this.tagSpecifications = null;
+            return;
+        }
+
+        this.tagSpecifications = new com.amazonaws.internal.SdkInternalList<TagSpecification>(tagSpecifications);
+    }
+
+    /**
+     * <p>
+     * The tags to assign to the subnet.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTagSpecifications(java.util.Collection)} or {@link #withTagSpecifications(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        The tags to assign to the subnet.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSubnetRequest withTagSpecifications(TagSpecification... tagSpecifications) {
+        if (this.tagSpecifications == null) {
+            setTagSpecifications(new com.amazonaws.internal.SdkInternalList<TagSpecification>(tagSpecifications.length));
+        }
+        for (TagSpecification ele : tagSpecifications) {
+            this.tagSpecifications.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags to assign to the subnet.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        The tags to assign to the subnet.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSubnetRequest withTagSpecifications(java.util.Collection<TagSpecification> tagSpecifications) {
+        setTagSpecifications(tagSpecifications);
+        return this;
     }
 
     /**
@@ -464,6 +543,8 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getTagSpecifications() != null)
+            sb.append("TagSpecifications: ").append(getTagSpecifications()).append(",");
         if (getAvailabilityZone() != null)
             sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
         if (getAvailabilityZoneId() != null)
@@ -490,6 +571,10 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
         if (obj instanceof CreateSubnetRequest == false)
             return false;
         CreateSubnetRequest other = (CreateSubnetRequest) obj;
+        if (other.getTagSpecifications() == null ^ this.getTagSpecifications() == null)
+            return false;
+        if (other.getTagSpecifications() != null && other.getTagSpecifications().equals(this.getTagSpecifications()) == false)
+            return false;
         if (other.getAvailabilityZone() == null ^ this.getAvailabilityZone() == null)
             return false;
         if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false)
@@ -522,6 +607,7 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getTagSpecifications() == null) ? 0 : getTagSpecifications().hashCode());
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
         hashCode = prime * hashCode + ((getAvailabilityZoneId() == null) ? 0 : getAvailabilityZoneId().hashCode());
         hashCode = prime * hashCode + ((getCidrBlock() == null) ? 0 : getCidrBlock().hashCode());

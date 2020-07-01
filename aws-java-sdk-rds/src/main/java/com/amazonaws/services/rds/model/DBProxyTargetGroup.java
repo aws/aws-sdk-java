@@ -16,11 +16,6 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
- * <note>
- * <p>
- * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
- * </p>
- * </note>
  * <p>
  * Represents a set of RDS DB instances, Aurora DB clusters, or both that a proxy can connect to. Currently, each target
  * group is associated with exactly one RDS DB instance or Aurora DB cluster.

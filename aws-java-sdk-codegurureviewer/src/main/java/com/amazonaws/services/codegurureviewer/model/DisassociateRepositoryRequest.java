@@ -27,18 +27,24 @@ public class DisassociateRepositoryRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) identifying the association.
+     * The Amazon Resource Name (ARN) of the <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
+     * <code>RepositoryAssociation</code> </a> object.
      * </p>
      */
     private String associationArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) identifying the association.
+     * The Amazon Resource Name (ARN) of the <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
+     * <code>RepositoryAssociation</code> </a> object.
      * </p>
      * 
      * @param associationArn
-     *        The Amazon Resource Name (ARN) identifying the association.
+     *        The Amazon Resource Name (ARN) of the <a
+     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
+     *        <code>RepositoryAssociation</code> </a> object.
      */
 
     public void setAssociationArn(String associationArn) {
@@ -47,10 +53,14 @@ public class DisassociateRepositoryRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) identifying the association.
+     * The Amazon Resource Name (ARN) of the <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
+     * <code>RepositoryAssociation</code> </a> object.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) identifying the association.
+     * @return The Amazon Resource Name (ARN) of the <a
+     *         href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
+     *         <code>RepositoryAssociation</code> </a> object.
      */
 
     public String getAssociationArn() {
@@ -59,11 +69,15 @@ public class DisassociateRepositoryRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) identifying the association.
+     * The Amazon Resource Name (ARN) of the <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
+     * <code>RepositoryAssociation</code> </a> object.
      * </p>
      * 
      * @param associationArn
-     *        The Amazon Resource Name (ARN) identifying the association.
+     *        The Amazon Resource Name (ARN) of the <a
+     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
+     *        <code>RepositoryAssociation</code> </a> object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

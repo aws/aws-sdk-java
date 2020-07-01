@@ -20,6 +20,7 @@ import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.ec2.model.*;
 import com.amazonaws.transform.Marshaller;
+import com.amazonaws.util.StringUtils;
 
 /**
  * CreateInternetGatewayRequest Marshaller
@@ -38,6 +39,41 @@ public class CreateInternetGatewayRequestMarshaller implements Marshaller<Reques
         request.addParameter("Action", "CreateInternetGateway");
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
+
+        com.amazonaws.internal.SdkInternalList<TagSpecification> createInternetGatewayRequestTagSpecificationsList = (com.amazonaws.internal.SdkInternalList<TagSpecification>) createInternetGatewayRequest
+                .getTagSpecifications();
+        if (!createInternetGatewayRequestTagSpecificationsList.isEmpty() || !createInternetGatewayRequestTagSpecificationsList.isAutoConstruct()) {
+            int tagSpecificationsListIndex = 1;
+
+            for (TagSpecification createInternetGatewayRequestTagSpecificationsListValue : createInternetGatewayRequestTagSpecificationsList) {
+
+                if (createInternetGatewayRequestTagSpecificationsListValue.getResourceType() != null) {
+                    request.addParameter("TagSpecification." + tagSpecificationsListIndex + ".ResourceType",
+                            StringUtils.fromString(createInternetGatewayRequestTagSpecificationsListValue.getResourceType()));
+                }
+
+                com.amazonaws.internal.SdkInternalList<Tag> tagSpecificationTagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createInternetGatewayRequestTagSpecificationsListValue
+                        .getTags();
+                if (!tagSpecificationTagsList.isEmpty() || !tagSpecificationTagsList.isAutoConstruct()) {
+                    int tagsListIndex = 1;
+
+                    for (Tag tagSpecificationTagsListValue : tagSpecificationTagsList) {
+
+                        if (tagSpecificationTagsListValue.getKey() != null) {
+                            request.addParameter("TagSpecification." + tagSpecificationsListIndex + ".Tag." + tagsListIndex + ".Key",
+                                    StringUtils.fromString(tagSpecificationTagsListValue.getKey()));
+                        }
+
+                        if (tagSpecificationTagsListValue.getValue() != null) {
+                            request.addParameter("TagSpecification." + tagSpecificationsListIndex + ".Tag." + tagsListIndex + ".Value",
+                                    StringUtils.fromString(tagSpecificationTagsListValue.getValue()));
+                        }
+                        tagsListIndex++;
+                    }
+                }
+                tagSpecificationsListIndex++;
+            }
+        }
 
         return request;
     }

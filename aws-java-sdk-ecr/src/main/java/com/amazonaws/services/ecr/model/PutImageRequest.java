@@ -57,6 +57,12 @@ public class PutImageRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * </p>
      */
     private String imageTag;
+    /**
+     * <p>
+     * The image digest of the image manifest corresponding to the image.
+     * </p>
+     */
+    private String imageDigest;
 
     /**
      * <p>
@@ -277,6 +283,46 @@ public class PutImageRequest extends com.amazonaws.AmazonWebServiceRequest imple
     }
 
     /**
+     * <p>
+     * The image digest of the image manifest corresponding to the image.
+     * </p>
+     * 
+     * @param imageDigest
+     *        The image digest of the image manifest corresponding to the image.
+     */
+
+    public void setImageDigest(String imageDigest) {
+        this.imageDigest = imageDigest;
+    }
+
+    /**
+     * <p>
+     * The image digest of the image manifest corresponding to the image.
+     * </p>
+     * 
+     * @return The image digest of the image manifest corresponding to the image.
+     */
+
+    public String getImageDigest() {
+        return this.imageDigest;
+    }
+
+    /**
+     * <p>
+     * The image digest of the image manifest corresponding to the image.
+     * </p>
+     * 
+     * @param imageDigest
+     *        The image digest of the image manifest corresponding to the image.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutImageRequest withImageDigest(String imageDigest) {
+        setImageDigest(imageDigest);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -297,7 +343,9 @@ public class PutImageRequest extends com.amazonaws.AmazonWebServiceRequest imple
         if (getImageManifestMediaType() != null)
             sb.append("ImageManifestMediaType: ").append(getImageManifestMediaType()).append(",");
         if (getImageTag() != null)
-            sb.append("ImageTag: ").append(getImageTag());
+            sb.append("ImageTag: ").append(getImageTag()).append(",");
+        if (getImageDigest() != null)
+            sb.append("ImageDigest: ").append(getImageDigest());
         sb.append("}");
         return sb.toString();
     }
@@ -332,6 +380,10 @@ public class PutImageRequest extends com.amazonaws.AmazonWebServiceRequest imple
             return false;
         if (other.getImageTag() != null && other.getImageTag().equals(this.getImageTag()) == false)
             return false;
+        if (other.getImageDigest() == null ^ this.getImageDigest() == null)
+            return false;
+        if (other.getImageDigest() != null && other.getImageDigest().equals(this.getImageDigest()) == false)
+            return false;
         return true;
     }
 
@@ -345,6 +397,7 @@ public class PutImageRequest extends com.amazonaws.AmazonWebServiceRequest imple
         hashCode = prime * hashCode + ((getImageManifest() == null) ? 0 : getImageManifest().hashCode());
         hashCode = prime * hashCode + ((getImageManifestMediaType() == null) ? 0 : getImageManifestMediaType().hashCode());
         hashCode = prime * hashCode + ((getImageTag() == null) ? 0 : getImageTag().hashCode());
+        hashCode = prime * hashCode + ((getImageDigest() == null) ? 0 : getImageDigest().hashCode());
         return hashCode;
     }
 

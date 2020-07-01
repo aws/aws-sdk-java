@@ -25,7 +25,7 @@ public class ListRecommendationFeedbackResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Recommendation feedback summaries corresponding to the code reivew ARN.
+     * Recommendation feedback summaries corresponding to the code review ARN.
      * </p>
      */
     private java.util.List<RecommendationFeedbackSummary> recommendationFeedbackSummaries;
@@ -40,10 +40,10 @@ public class ListRecommendationFeedbackResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Recommendation feedback summaries corresponding to the code reivew ARN.
+     * Recommendation feedback summaries corresponding to the code review ARN.
      * </p>
      * 
-     * @return Recommendation feedback summaries corresponding to the code reivew ARN.
+     * @return Recommendation feedback summaries corresponding to the code review ARN.
      */
 
     public java.util.List<RecommendationFeedbackSummary> getRecommendationFeedbackSummaries() {
@@ -52,11 +52,11 @@ public class ListRecommendationFeedbackResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Recommendation feedback summaries corresponding to the code reivew ARN.
+     * Recommendation feedback summaries corresponding to the code review ARN.
      * </p>
      * 
      * @param recommendationFeedbackSummaries
-     *        Recommendation feedback summaries corresponding to the code reivew ARN.
+     *        Recommendation feedback summaries corresponding to the code review ARN.
      */
 
     public void setRecommendationFeedbackSummaries(java.util.Collection<RecommendationFeedbackSummary> recommendationFeedbackSummaries) {
@@ -70,7 +70,7 @@ public class ListRecommendationFeedbackResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Recommendation feedback summaries corresponding to the code reivew ARN.
+     * Recommendation feedback summaries corresponding to the code review ARN.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -79,7 +79,7 @@ public class ListRecommendationFeedbackResult extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param recommendationFeedbackSummaries
-     *        Recommendation feedback summaries corresponding to the code reivew ARN.
+     *        Recommendation feedback summaries corresponding to the code review ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +95,11 @@ public class ListRecommendationFeedbackResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Recommendation feedback summaries corresponding to the code reivew ARN.
+     * Recommendation feedback summaries corresponding to the code review ARN.
      * </p>
      * 
      * @param recommendationFeedbackSummaries
-     *        Recommendation feedback summaries corresponding to the code reivew ARN.
+     *        Recommendation feedback summaries corresponding to the code review ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

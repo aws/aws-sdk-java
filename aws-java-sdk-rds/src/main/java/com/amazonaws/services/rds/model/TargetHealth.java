@@ -16,11 +16,6 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
- * <note>
- * <p>
- * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
- * </p>
- * </note>
  * <p>
  * Information about the connection health of an RDS Proxy target.
  * </p>

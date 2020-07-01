@@ -31,6 +31,12 @@ public class CreateNetworkAclRequest extends AmazonWebServiceRequest implements 
      * </p>
      */
     private String vpcId;
+    /**
+     * <p>
+     * The tags to assign to the network ACL.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<TagSpecification> tagSpecifications;
 
     /**
      * <p>
@@ -73,6 +79,79 @@ public class CreateNetworkAclRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
+     * <p>
+     * The tags to assign to the network ACL.
+     * </p>
+     * 
+     * @return The tags to assign to the network ACL.
+     */
+
+    public java.util.List<TagSpecification> getTagSpecifications() {
+        if (tagSpecifications == null) {
+            tagSpecifications = new com.amazonaws.internal.SdkInternalList<TagSpecification>();
+        }
+        return tagSpecifications;
+    }
+
+    /**
+     * <p>
+     * The tags to assign to the network ACL.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        The tags to assign to the network ACL.
+     */
+
+    public void setTagSpecifications(java.util.Collection<TagSpecification> tagSpecifications) {
+        if (tagSpecifications == null) {
+            this.tagSpecifications = null;
+            return;
+        }
+
+        this.tagSpecifications = new com.amazonaws.internal.SdkInternalList<TagSpecification>(tagSpecifications);
+    }
+
+    /**
+     * <p>
+     * The tags to assign to the network ACL.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTagSpecifications(java.util.Collection)} or {@link #withTagSpecifications(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        The tags to assign to the network ACL.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateNetworkAclRequest withTagSpecifications(TagSpecification... tagSpecifications) {
+        if (this.tagSpecifications == null) {
+            setTagSpecifications(new com.amazonaws.internal.SdkInternalList<TagSpecification>(tagSpecifications.length));
+        }
+        for (TagSpecification ele : tagSpecifications) {
+            this.tagSpecifications.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags to assign to the network ACL.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        The tags to assign to the network ACL.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateNetworkAclRequest withTagSpecifications(java.util.Collection<TagSpecification> tagSpecifications) {
+        setTagSpecifications(tagSpecifications);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -96,7 +175,9 @@ public class CreateNetworkAclRequest extends AmazonWebServiceRequest implements 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVpcId() != null)
-            sb.append("VpcId: ").append(getVpcId());
+            sb.append("VpcId: ").append(getVpcId()).append(",");
+        if (getTagSpecifications() != null)
+            sb.append("TagSpecifications: ").append(getTagSpecifications());
         sb.append("}");
         return sb.toString();
     }
@@ -115,6 +196,10 @@ public class CreateNetworkAclRequest extends AmazonWebServiceRequest implements 
             return false;
         if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
             return false;
+        if (other.getTagSpecifications() == null ^ this.getTagSpecifications() == null)
+            return false;
+        if (other.getTagSpecifications() != null && other.getTagSpecifications().equals(this.getTagSpecifications()) == false)
+            return false;
         return true;
     }
 
@@ -124,6 +209,7 @@ public class CreateNetworkAclRequest extends AmazonWebServiceRequest implements 
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
+        hashCode = prime * hashCode + ((getTagSpecifications() == null) ? 0 : getTagSpecifications().hashCode());
         return hashCode;
     }
 

@@ -27,18 +27,24 @@ public class DescribeCodeReviewRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the code review to describe.
+     * The Amazon Resource Name (ARN) of the <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a>
+     * object.
      * </p>
      */
     private String codeReviewArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the code review to describe.
+     * The Amazon Resource Name (ARN) of the <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a>
+     * object.
      * </p>
      * 
      * @param codeReviewArn
-     *        The Amazon Resource Name (ARN) of the code review to describe.
+     *        The Amazon Resource Name (ARN) of the <a
+     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
+     *        <code>CodeReview</code> </a> object.
      */
 
     public void setCodeReviewArn(String codeReviewArn) {
@@ -47,10 +53,14 @@ public class DescribeCodeReviewRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the code review to describe.
+     * The Amazon Resource Name (ARN) of the <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a>
+     * object.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the code review to describe.
+     * @return The Amazon Resource Name (ARN) of the <a
+     *         href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
+     *         <code>CodeReview</code> </a> object.
      */
 
     public String getCodeReviewArn() {
@@ -59,11 +69,15 @@ public class DescribeCodeReviewRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the code review to describe.
+     * The Amazon Resource Name (ARN) of the <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a>
+     * object.
      * </p>
      * 
      * @param codeReviewArn
-     *        The Amazon Resource Name (ARN) of the code review to describe.
+     *        The Amazon Resource Name (ARN) of the <a
+     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
+     *        <code>CodeReview</code> </a> object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

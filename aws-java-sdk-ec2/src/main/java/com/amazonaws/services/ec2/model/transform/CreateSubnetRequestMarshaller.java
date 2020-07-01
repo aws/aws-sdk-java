@@ -40,6 +40,41 @@ public class CreateSubnetRequestMarshaller implements Marshaller<Request<CreateS
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
+        com.amazonaws.internal.SdkInternalList<TagSpecification> createSubnetRequestTagSpecificationsList = (com.amazonaws.internal.SdkInternalList<TagSpecification>) createSubnetRequest
+                .getTagSpecifications();
+        if (!createSubnetRequestTagSpecificationsList.isEmpty() || !createSubnetRequestTagSpecificationsList.isAutoConstruct()) {
+            int tagSpecificationsListIndex = 1;
+
+            for (TagSpecification createSubnetRequestTagSpecificationsListValue : createSubnetRequestTagSpecificationsList) {
+
+                if (createSubnetRequestTagSpecificationsListValue.getResourceType() != null) {
+                    request.addParameter("TagSpecification." + tagSpecificationsListIndex + ".ResourceType",
+                            StringUtils.fromString(createSubnetRequestTagSpecificationsListValue.getResourceType()));
+                }
+
+                com.amazonaws.internal.SdkInternalList<Tag> tagSpecificationTagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createSubnetRequestTagSpecificationsListValue
+                        .getTags();
+                if (!tagSpecificationTagsList.isEmpty() || !tagSpecificationTagsList.isAutoConstruct()) {
+                    int tagsListIndex = 1;
+
+                    for (Tag tagSpecificationTagsListValue : tagSpecificationTagsList) {
+
+                        if (tagSpecificationTagsListValue.getKey() != null) {
+                            request.addParameter("TagSpecification." + tagSpecificationsListIndex + ".Tag." + tagsListIndex + ".Key",
+                                    StringUtils.fromString(tagSpecificationTagsListValue.getKey()));
+                        }
+
+                        if (tagSpecificationTagsListValue.getValue() != null) {
+                            request.addParameter("TagSpecification." + tagSpecificationsListIndex + ".Tag." + tagsListIndex + ".Value",
+                                    StringUtils.fromString(tagSpecificationTagsListValue.getValue()));
+                        }
+                        tagsListIndex++;
+                    }
+                }
+                tagSpecificationsListIndex++;
+            }
+        }
+
         if (createSubnetRequest.getAvailabilityZone() != null) {
             request.addParameter("AvailabilityZone", StringUtils.fromString(createSubnetRequest.getAvailabilityZone()));
         }

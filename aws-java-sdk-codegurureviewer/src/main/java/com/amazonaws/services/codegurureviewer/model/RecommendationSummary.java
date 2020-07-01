@@ -50,7 +50,7 @@ public class RecommendationSummary implements Serializable, Cloneable, Structure
     /**
      * <p>
      * Last line where the recommendation is applicable in the source commit or source branch. For a single line comment
-     * the start line and end line values will be the same.
+     * the start line and end line values are the same.
      * </p>
      */
     private Integer endLine;
@@ -191,12 +191,12 @@ public class RecommendationSummary implements Serializable, Cloneable, Structure
     /**
      * <p>
      * Last line where the recommendation is applicable in the source commit or source branch. For a single line comment
-     * the start line and end line values will be the same.
+     * the start line and end line values are the same.
      * </p>
      * 
      * @param endLine
      *        Last line where the recommendation is applicable in the source commit or source branch. For a single line
-     *        comment the start line and end line values will be the same.
+     *        comment the start line and end line values are the same.
      */
 
     public void setEndLine(Integer endLine) {
@@ -206,11 +206,11 @@ public class RecommendationSummary implements Serializable, Cloneable, Structure
     /**
      * <p>
      * Last line where the recommendation is applicable in the source commit or source branch. For a single line comment
-     * the start line and end line values will be the same.
+     * the start line and end line values are the same.
      * </p>
      * 
      * @return Last line where the recommendation is applicable in the source commit or source branch. For a single line
-     *         comment the start line and end line values will be the same.
+     *         comment the start line and end line values are the same.
      */
 
     public Integer getEndLine() {
@@ -220,12 +220,12 @@ public class RecommendationSummary implements Serializable, Cloneable, Structure
     /**
      * <p>
      * Last line where the recommendation is applicable in the source commit or source branch. For a single line comment
-     * the start line and end line values will be the same.
+     * the start line and end line values are the same.
      * </p>
      * 
      * @param endLine
      *        Last line where the recommendation is applicable in the source commit or source branch. For a single line
-     *        comment the start line and end line values will be the same.
+     *        comment the start line and end line values are the same.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

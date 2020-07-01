@@ -643,6 +643,8 @@ public interface AmazonECR {
      * @throws ImageTagAlreadyExistsException
      *         The specified image is tagged with a tag that already exists. The repository is configured for tag
      *         immutability.
+     * @throws ImageDigestDoesNotMatchException
+     *         The specified image digest does not match the digest that Amazon ECR calculated for the image.
      * @sample AmazonECR.PutImage
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImage" target="_top">AWS API
      *      Documentation</a>

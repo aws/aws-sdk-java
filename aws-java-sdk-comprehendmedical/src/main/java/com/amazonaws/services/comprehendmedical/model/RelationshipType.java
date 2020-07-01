@@ -36,7 +36,8 @@ public enum RelationshipType {
     ACUITY("ACUITY"),
     TEST_VALUE("TEST_VALUE"),
     TEST_UNITS("TEST_UNITS"),
-    DIRECTION("DIRECTION");
+    DIRECTION("DIRECTION"),
+    SYSTEM_ORGAN_SITE("SYSTEM_ORGAN_SITE");
 
     private String value;
 

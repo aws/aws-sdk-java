@@ -27,9 +27,9 @@ public class ListRecommendationFeedbackRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token
-     * for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments
-     * unchanged.
+     * If <code>nextToken</code> is returned, there are more results available. The value of nextToken is a unique
+     * pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all
+     * other arguments unchanged.
      * </p>
      */
     private String nextToken;
@@ -41,36 +41,43 @@ public class ListRecommendationFeedbackRequest extends com.amazonaws.AmazonWebSe
     private Integer maxResults;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that identifies the code review.
+     * The Amazon Resource Name (ARN) of the <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a>
+     * object.
      * </p>
      */
     private String codeReviewArn;
     /**
      * <p>
-     * Filter on userIds that need to be applied before displaying the result. This can be used to query all the
-     * recommendation feedback for a code review from a given user.
+     * An AWS user's account ID or Amazon Resource Name (ARN). Use this ID to query the recommendation feedback for a
+     * code review from that user.
+     * </p>
+     * <p>
+     * The <code>UserId</code> is an IAM principal that can be specified as an AWS account ID or an Amazon Resource Name
+     * (ARN). For more information, see <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"
+     * > Specifying a Principal</a> in the <i>AWS Identity and Access Management User Guide</i>.
      * </p>
      */
     private java.util.List<String> userIds;
     /**
      * <p>
-     * Filter on recommendationIds that need to be applied before displaying the result. This can be used to query all
-     * the recommendation feedback for a given recommendation.
+     * Used to query the recommendation feedback for a given recommendation.
      * </p>
      */
     private java.util.List<String> recommendationIds;
 
     /**
      * <p>
-     * If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token
-     * for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments
-     * unchanged.
+     * If <code>nextToken</code> is returned, there are more results available. The value of nextToken is a unique
+     * pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all
+     * other arguments unchanged.
      * </p>
      * 
      * @param nextToken
-     *        If nextToken is returned, there are more results available. The value of nextToken is a unique pagination
-     *        token for each page. Make the call again using the returned token to retrieve the next page. Keep all
-     *        other arguments unchanged.
+     *        If <code>nextToken</code> is returned, there are more results available. The value of nextToken is a
+     *        unique pagination token for each page. Make the call again using the returned token to retrieve the next
+     *        page. Keep all other arguments unchanged.
      */
 
     public void setNextToken(String nextToken) {
@@ -79,14 +86,14 @@ public class ListRecommendationFeedbackRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token
-     * for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments
-     * unchanged.
+     * If <code>nextToken</code> is returned, there are more results available. The value of nextToken is a unique
+     * pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all
+     * other arguments unchanged.
      * </p>
      * 
-     * @return If nextToken is returned, there are more results available. The value of nextToken is a unique pagination
-     *         token for each page. Make the call again using the returned token to retrieve the next page. Keep all
-     *         other arguments unchanged.
+     * @return If <code>nextToken</code> is returned, there are more results available. The value of nextToken is a
+     *         unique pagination token for each page. Make the call again using the returned token to retrieve the next
+     *         page. Keep all other arguments unchanged.
      */
 
     public String getNextToken() {
@@ -95,15 +102,15 @@ public class ListRecommendationFeedbackRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token
-     * for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments
-     * unchanged.
+     * If <code>nextToken</code> is returned, there are more results available. The value of nextToken is a unique
+     * pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all
+     * other arguments unchanged.
      * </p>
      * 
      * @param nextToken
-     *        If nextToken is returned, there are more results available. The value of nextToken is a unique pagination
-     *        token for each page. Make the call again using the returned token to retrieve the next page. Keep all
-     *        other arguments unchanged.
+     *        If <code>nextToken</code> is returned, there are more results available. The value of nextToken is a
+     *        unique pagination token for each page. Make the call again using the returned token to retrieve the next
+     *        page. Keep all other arguments unchanged.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -154,11 +161,15 @@ public class ListRecommendationFeedbackRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that identifies the code review.
+     * The Amazon Resource Name (ARN) of the <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a>
+     * object.
      * </p>
      * 
      * @param codeReviewArn
-     *        The Amazon Resource Name (ARN) that identifies the code review.
+     *        The Amazon Resource Name (ARN) of the <a
+     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
+     *        <code>CodeReview</code> </a> object.
      */
 
     public void setCodeReviewArn(String codeReviewArn) {
@@ -167,10 +178,14 @@ public class ListRecommendationFeedbackRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that identifies the code review.
+     * The Amazon Resource Name (ARN) of the <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a>
+     * object.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) that identifies the code review.
+     * @return The Amazon Resource Name (ARN) of the <a
+     *         href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
+     *         <code>CodeReview</code> </a> object.
      */
 
     public String getCodeReviewArn() {
@@ -179,11 +194,15 @@ public class ListRecommendationFeedbackRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that identifies the code review.
+     * The Amazon Resource Name (ARN) of the <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a>
+     * object.
      * </p>
      * 
      * @param codeReviewArn
-     *        The Amazon Resource Name (ARN) that identifies the code review.
+     *        The Amazon Resource Name (ARN) of the <a
+     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
+     *        <code>CodeReview</code> </a> object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -194,12 +213,23 @@ public class ListRecommendationFeedbackRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Filter on userIds that need to be applied before displaying the result. This can be used to query all the
-     * recommendation feedback for a code review from a given user.
+     * An AWS user's account ID or Amazon Resource Name (ARN). Use this ID to query the recommendation feedback for a
+     * code review from that user.
+     * </p>
+     * <p>
+     * The <code>UserId</code> is an IAM principal that can be specified as an AWS account ID or an Amazon Resource Name
+     * (ARN). For more information, see <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"
+     * > Specifying a Principal</a> in the <i>AWS Identity and Access Management User Guide</i>.
      * </p>
      * 
-     * @return Filter on userIds that need to be applied before displaying the result. This can be used to query all the
-     *         recommendation feedback for a code review from a given user.
+     * @return An AWS user's account ID or Amazon Resource Name (ARN). Use this ID to query the recommendation feedback
+     *         for a code review from that user. </p>
+     *         <p>
+     *         The <code>UserId</code> is an IAM principal that can be specified as an AWS account ID or an Amazon
+     *         Resource Name (ARN). For more information, see <a href=
+     *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"
+     *         > Specifying a Principal</a> in the <i>AWS Identity and Access Management User Guide</i>.
      */
 
     public java.util.List<String> getUserIds() {
@@ -208,13 +238,24 @@ public class ListRecommendationFeedbackRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Filter on userIds that need to be applied before displaying the result. This can be used to query all the
-     * recommendation feedback for a code review from a given user.
+     * An AWS user's account ID or Amazon Resource Name (ARN). Use this ID to query the recommendation feedback for a
+     * code review from that user.
+     * </p>
+     * <p>
+     * The <code>UserId</code> is an IAM principal that can be specified as an AWS account ID or an Amazon Resource Name
+     * (ARN). For more information, see <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"
+     * > Specifying a Principal</a> in the <i>AWS Identity and Access Management User Guide</i>.
      * </p>
      * 
      * @param userIds
-     *        Filter on userIds that need to be applied before displaying the result. This can be used to query all the
-     *        recommendation feedback for a code review from a given user.
+     *        An AWS user's account ID or Amazon Resource Name (ARN). Use this ID to query the recommendation feedback
+     *        for a code review from that user. </p>
+     *        <p>
+     *        The <code>UserId</code> is an IAM principal that can be specified as an AWS account ID or an Amazon
+     *        Resource Name (ARN). For more information, see <a href=
+     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"
+     *        > Specifying a Principal</a> in the <i>AWS Identity and Access Management User Guide</i>.
      */
 
     public void setUserIds(java.util.Collection<String> userIds) {
@@ -228,8 +269,14 @@ public class ListRecommendationFeedbackRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Filter on userIds that need to be applied before displaying the result. This can be used to query all the
-     * recommendation feedback for a code review from a given user.
+     * An AWS user's account ID or Amazon Resource Name (ARN). Use this ID to query the recommendation feedback for a
+     * code review from that user.
+     * </p>
+     * <p>
+     * The <code>UserId</code> is an IAM principal that can be specified as an AWS account ID or an Amazon Resource Name
+     * (ARN). For more information, see <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"
+     * > Specifying a Principal</a> in the <i>AWS Identity and Access Management User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -238,8 +285,13 @@ public class ListRecommendationFeedbackRequest extends com.amazonaws.AmazonWebSe
      * </p>
      * 
      * @param userIds
-     *        Filter on userIds that need to be applied before displaying the result. This can be used to query all the
-     *        recommendation feedback for a code review from a given user.
+     *        An AWS user's account ID or Amazon Resource Name (ARN). Use this ID to query the recommendation feedback
+     *        for a code review from that user. </p>
+     *        <p>
+     *        The <code>UserId</code> is an IAM principal that can be specified as an AWS account ID or an Amazon
+     *        Resource Name (ARN). For more information, see <a href=
+     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"
+     *        > Specifying a Principal</a> in the <i>AWS Identity and Access Management User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -255,13 +307,24 @@ public class ListRecommendationFeedbackRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Filter on userIds that need to be applied before displaying the result. This can be used to query all the
-     * recommendation feedback for a code review from a given user.
+     * An AWS user's account ID or Amazon Resource Name (ARN). Use this ID to query the recommendation feedback for a
+     * code review from that user.
+     * </p>
+     * <p>
+     * The <code>UserId</code> is an IAM principal that can be specified as an AWS account ID or an Amazon Resource Name
+     * (ARN). For more information, see <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"
+     * > Specifying a Principal</a> in the <i>AWS Identity and Access Management User Guide</i>.
      * </p>
      * 
      * @param userIds
-     *        Filter on userIds that need to be applied before displaying the result. This can be used to query all the
-     *        recommendation feedback for a code review from a given user.
+     *        An AWS user's account ID or Amazon Resource Name (ARN). Use this ID to query the recommendation feedback
+     *        for a code review from that user. </p>
+     *        <p>
+     *        The <code>UserId</code> is an IAM principal that can be specified as an AWS account ID or an Amazon
+     *        Resource Name (ARN). For more information, see <a href=
+     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"
+     *        > Specifying a Principal</a> in the <i>AWS Identity and Access Management User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -272,12 +335,10 @@ public class ListRecommendationFeedbackRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Filter on recommendationIds that need to be applied before displaying the result. This can be used to query all
-     * the recommendation feedback for a given recommendation.
+     * Used to query the recommendation feedback for a given recommendation.
      * </p>
      * 
-     * @return Filter on recommendationIds that need to be applied before displaying the result. This can be used to
-     *         query all the recommendation feedback for a given recommendation.
+     * @return Used to query the recommendation feedback for a given recommendation.
      */
 
     public java.util.List<String> getRecommendationIds() {
@@ -286,13 +347,11 @@ public class ListRecommendationFeedbackRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Filter on recommendationIds that need to be applied before displaying the result. This can be used to query all
-     * the recommendation feedback for a given recommendation.
+     * Used to query the recommendation feedback for a given recommendation.
      * </p>
      * 
      * @param recommendationIds
-     *        Filter on recommendationIds that need to be applied before displaying the result. This can be used to
-     *        query all the recommendation feedback for a given recommendation.
+     *        Used to query the recommendation feedback for a given recommendation.
      */
 
     public void setRecommendationIds(java.util.Collection<String> recommendationIds) {
@@ -306,8 +365,7 @@ public class ListRecommendationFeedbackRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Filter on recommendationIds that need to be applied before displaying the result. This can be used to query all
-     * the recommendation feedback for a given recommendation.
+     * Used to query the recommendation feedback for a given recommendation.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -316,8 +374,7 @@ public class ListRecommendationFeedbackRequest extends com.amazonaws.AmazonWebSe
      * </p>
      * 
      * @param recommendationIds
-     *        Filter on recommendationIds that need to be applied before displaying the result. This can be used to
-     *        query all the recommendation feedback for a given recommendation.
+     *        Used to query the recommendation feedback for a given recommendation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -333,13 +390,11 @@ public class ListRecommendationFeedbackRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Filter on recommendationIds that need to be applied before displaying the result. This can be used to query all
-     * the recommendation feedback for a given recommendation.
+     * Used to query the recommendation feedback for a given recommendation.
      * </p>
      * 
      * @param recommendationIds
-     *        Filter on recommendationIds that need to be applied before displaying the result. This can be used to
-     *        query all the recommendation feedback for a given recommendation.
+     *        Used to query the recommendation feedback for a given recommendation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

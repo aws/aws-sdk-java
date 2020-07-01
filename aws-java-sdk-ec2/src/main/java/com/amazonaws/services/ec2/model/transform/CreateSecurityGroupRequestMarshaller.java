@@ -52,6 +52,41 @@ public class CreateSecurityGroupRequestMarshaller implements Marshaller<Request<
             request.addParameter("VpcId", StringUtils.fromString(createSecurityGroupRequest.getVpcId()));
         }
 
+        com.amazonaws.internal.SdkInternalList<TagSpecification> createSecurityGroupRequestTagSpecificationsList = (com.amazonaws.internal.SdkInternalList<TagSpecification>) createSecurityGroupRequest
+                .getTagSpecifications();
+        if (!createSecurityGroupRequestTagSpecificationsList.isEmpty() || !createSecurityGroupRequestTagSpecificationsList.isAutoConstruct()) {
+            int tagSpecificationsListIndex = 1;
+
+            for (TagSpecification createSecurityGroupRequestTagSpecificationsListValue : createSecurityGroupRequestTagSpecificationsList) {
+
+                if (createSecurityGroupRequestTagSpecificationsListValue.getResourceType() != null) {
+                    request.addParameter("TagSpecification." + tagSpecificationsListIndex + ".ResourceType",
+                            StringUtils.fromString(createSecurityGroupRequestTagSpecificationsListValue.getResourceType()));
+                }
+
+                com.amazonaws.internal.SdkInternalList<Tag> tagSpecificationTagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createSecurityGroupRequestTagSpecificationsListValue
+                        .getTags();
+                if (!tagSpecificationTagsList.isEmpty() || !tagSpecificationTagsList.isAutoConstruct()) {
+                    int tagsListIndex = 1;
+
+                    for (Tag tagSpecificationTagsListValue : tagSpecificationTagsList) {
+
+                        if (tagSpecificationTagsListValue.getKey() != null) {
+                            request.addParameter("TagSpecification." + tagSpecificationsListIndex + ".Tag." + tagsListIndex + ".Key",
+                                    StringUtils.fromString(tagSpecificationTagsListValue.getKey()));
+                        }
+
+                        if (tagSpecificationTagsListValue.getValue() != null) {
+                            request.addParameter("TagSpecification." + tagSpecificationsListIndex + ".Tag." + tagsListIndex + ".Value",
+                                    StringUtils.fromString(tagSpecificationTagsListValue.getValue()));
+                        }
+                        tagsListIndex++;
+                    }
+                }
+                tagSpecificationsListIndex++;
+            }
+        }
+
         return request;
     }
 

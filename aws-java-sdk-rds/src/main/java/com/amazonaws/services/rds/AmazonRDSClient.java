@@ -2080,11 +2080,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     }
 
     /**
-     * <note>
-     * <p>
-     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
-     * </p>
-     * </note>
      * <p>
      * Creates a new DB proxy.
      * </p>
@@ -3105,11 +3100,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     }
 
     /**
-     * <note>
-     * <p>
-     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
-     * </p>
-     * </note>
      * <p>
      * Deletes an existing proxy.
      * </p>
@@ -3583,11 +3573,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     }
 
     /**
-     * <note>
-     * <p>
-     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
-     * </p>
-     * </note>
      * <p>
      * Remove the association between one or more <code>DBProxyTarget</code> data structures and a
      * <code>DBProxyTargetGroup</code>.
@@ -4675,11 +4660,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     }
 
     /**
-     * <note>
-     * <p>
-     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
-     * </p>
-     * </note>
      * <p>
      * Returns information about DB proxies.
      * </p>
@@ -4736,11 +4716,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     }
 
     /**
-     * <note>
-     * <p>
-     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
-     * </p>
-     * </note>
      * <p>
      * Returns information about DB proxy target groups, represented by <code>DBProxyTargetGroup</code> data structures.
      * </p>
@@ -4802,11 +4777,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     }
 
     /**
-     * <note>
-     * <p>
-     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
-     * </p>
-     * </note>
      * <p>
      * Returns information about <code>DBProxyTarget</code> objects. This API supports pagination.
      * </p>
@@ -7005,11 +6975,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     }
 
     /**
-     * <note>
-     * <p>
-     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
-     * </p>
-     * </note>
      * <p>
      * Changes the settings for an existing DB proxy.
      * </p>
@@ -7070,11 +7035,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     }
 
     /**
-     * <note>
-     * <p>
-     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
-     * </p>
-     * </note>
      * <p>
      * Modifies the properties of a <code>DBProxyTargetGroup</code>.
      * </p>
@@ -7789,11 +7749,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     }
 
     /**
-     * <note>
-     * <p>
-     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
-     * </p>
-     * </note>
      * <p>
      * Associate one or more <code>DBProxyTarget</code> data structures with a <code>DBProxyTargetGroup</code>.
      * </p>

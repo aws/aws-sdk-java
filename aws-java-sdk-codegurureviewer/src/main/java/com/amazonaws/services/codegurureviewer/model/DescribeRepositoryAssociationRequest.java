@@ -27,7 +27,9 @@ public class DescribeRepositoryAssociationRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) identifying the association. You can retrieve this ARN by calling
+     * The Amazon Resource Name (ARN) of the <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
+     * <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling
      * <code>ListRepositories</code>.
      * </p>
      */
@@ -35,12 +37,16 @@ public class DescribeRepositoryAssociationRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) identifying the association. You can retrieve this ARN by calling
+     * The Amazon Resource Name (ARN) of the <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
+     * <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling
      * <code>ListRepositories</code>.
      * </p>
      * 
      * @param associationArn
-     *        The Amazon Resource Name (ARN) identifying the association. You can retrieve this ARN by calling
+     *        The Amazon Resource Name (ARN) of the <a
+     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
+     *        <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling
      *        <code>ListRepositories</code>.
      */
 
@@ -50,11 +56,15 @@ public class DescribeRepositoryAssociationRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) identifying the association. You can retrieve this ARN by calling
+     * The Amazon Resource Name (ARN) of the <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
+     * <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling
      * <code>ListRepositories</code>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) identifying the association. You can retrieve this ARN by calling
+     * @return The Amazon Resource Name (ARN) of the <a
+     *         href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
+     *         <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling
      *         <code>ListRepositories</code>.
      */
 
@@ -64,12 +74,16 @@ public class DescribeRepositoryAssociationRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) identifying the association. You can retrieve this ARN by calling
+     * The Amazon Resource Name (ARN) of the <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
+     * <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling
      * <code>ListRepositories</code>.
      * </p>
      * 
      * @param associationArn
-     *        The Amazon Resource Name (ARN) identifying the association. You can retrieve this ARN by calling
+     *        The Amazon Resource Name (ARN) of the <a
+     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
+     *        <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling
      *        <code>ListRepositories</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -36,7 +36,9 @@ public class CodeReview implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the code review to describe.
+     * The Amazon Resource Name (ARN) of the <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a>
+     * object.
      * </p>
      */
     private String codeReviewArn;
@@ -48,20 +50,44 @@ public class CodeReview implements Serializable, Cloneable, StructuredPojo {
     private String repositoryName;
     /**
      * <p>
-     * The owner of the repository.
+     * The owner of the repository. For an AWS CodeCommit repository, this is the AWS account ID of the account that
+     * owns the repository. For a GitHub or Bitbucket repository, this is the username for the account that owns the
+     * repository.
      * </p>
      */
     private String owner;
     /**
      * <p>
-     * The provider type of the repository association.
+     * The type of repository that contains the reviewed code (for example, GitHub or Bitbucket).
      * </p>
      */
     private String providerType;
     /**
      * <p>
-     * The state of the code review.
+     * The valid code review states are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Completed</code>: The code review is complete.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Pending</code>: The code review started and has not completed or failed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Failed</code>: The code review failed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Deleting</code>: The code review is being deleted.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String state;
     /**
@@ -149,11 +175,15 @@ public class CodeReview implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the code review to describe.
+     * The Amazon Resource Name (ARN) of the <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a>
+     * object.
      * </p>
      * 
      * @param codeReviewArn
-     *        The Amazon Resource Name (ARN) of the code review to describe.
+     *        The Amazon Resource Name (ARN) of the <a
+     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
+     *        <code>CodeReview</code> </a> object.
      */
 
     public void setCodeReviewArn(String codeReviewArn) {
@@ -162,10 +192,14 @@ public class CodeReview implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the code review to describe.
+     * The Amazon Resource Name (ARN) of the <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a>
+     * object.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the code review to describe.
+     * @return The Amazon Resource Name (ARN) of the <a
+     *         href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
+     *         <code>CodeReview</code> </a> object.
      */
 
     public String getCodeReviewArn() {
@@ -174,11 +208,15 @@ public class CodeReview implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the code review to describe.
+     * The Amazon Resource Name (ARN) of the <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a>
+     * object.
      * </p>
      * 
      * @param codeReviewArn
-     *        The Amazon Resource Name (ARN) of the code review to describe.
+     *        The Amazon Resource Name (ARN) of the <a
+     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
+     *        <code>CodeReview</code> </a> object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -229,11 +267,15 @@ public class CodeReview implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The owner of the repository.
+     * The owner of the repository. For an AWS CodeCommit repository, this is the AWS account ID of the account that
+     * owns the repository. For a GitHub or Bitbucket repository, this is the username for the account that owns the
+     * repository.
      * </p>
      * 
      * @param owner
-     *        The owner of the repository.
+     *        The owner of the repository. For an AWS CodeCommit repository, this is the AWS account ID of the account
+     *        that owns the repository. For a GitHub or Bitbucket repository, this is the username for the account that
+     *        owns the repository.
      */
 
     public void setOwner(String owner) {
@@ -242,10 +284,14 @@ public class CodeReview implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The owner of the repository.
+     * The owner of the repository. For an AWS CodeCommit repository, this is the AWS account ID of the account that
+     * owns the repository. For a GitHub or Bitbucket repository, this is the username for the account that owns the
+     * repository.
      * </p>
      * 
-     * @return The owner of the repository.
+     * @return The owner of the repository. For an AWS CodeCommit repository, this is the AWS account ID of the account
+     *         that owns the repository. For a GitHub or Bitbucket repository, this is the username for the account that
+     *         owns the repository.
      */
 
     public String getOwner() {
@@ -254,11 +300,15 @@ public class CodeReview implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The owner of the repository.
+     * The owner of the repository. For an AWS CodeCommit repository, this is the AWS account ID of the account that
+     * owns the repository. For a GitHub or Bitbucket repository, this is the username for the account that owns the
+     * repository.
      * </p>
      * 
      * @param owner
-     *        The owner of the repository.
+     *        The owner of the repository. For an AWS CodeCommit repository, this is the AWS account ID of the account
+     *        that owns the repository. For a GitHub or Bitbucket repository, this is the username for the account that
+     *        owns the repository.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -269,11 +319,11 @@ public class CodeReview implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The provider type of the repository association.
+     * The type of repository that contains the reviewed code (for example, GitHub or Bitbucket).
      * </p>
      * 
      * @param providerType
-     *        The provider type of the repository association.
+     *        The type of repository that contains the reviewed code (for example, GitHub or Bitbucket).
      * @see ProviderType
      */
 
@@ -283,10 +333,10 @@ public class CodeReview implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The provider type of the repository association.
+     * The type of repository that contains the reviewed code (for example, GitHub or Bitbucket).
      * </p>
      * 
-     * @return The provider type of the repository association.
+     * @return The type of repository that contains the reviewed code (for example, GitHub or Bitbucket).
      * @see ProviderType
      */
 
@@ -296,11 +346,11 @@ public class CodeReview implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The provider type of the repository association.
+     * The type of repository that contains the reviewed code (for example, GitHub or Bitbucket).
      * </p>
      * 
      * @param providerType
-     *        The provider type of the repository association.
+     *        The type of repository that contains the reviewed code (for example, GitHub or Bitbucket).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProviderType
      */
@@ -312,11 +362,11 @@ public class CodeReview implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The provider type of the repository association.
+     * The type of repository that contains the reviewed code (for example, GitHub or Bitbucket).
      * </p>
      * 
      * @param providerType
-     *        The provider type of the repository association.
+     *        The type of repository that contains the reviewed code (for example, GitHub or Bitbucket).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProviderType
      */
@@ -328,11 +378,54 @@ public class CodeReview implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The state of the code review.
+     * The valid code review states are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Completed</code>: The code review is complete.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Pending</code>: The code review started and has not completed or failed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Failed</code>: The code review failed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Deleting</code>: The code review is being deleted.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param state
-     *        The state of the code review.
+     *        The valid code review states are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Completed</code>: The code review is complete.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Pending</code>: The code review started and has not completed or failed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Failed</code>: The code review failed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Deleting</code>: The code review is being deleted.
+     *        </p>
+     *        </li>
      * @see JobState
      */
 
@@ -342,10 +435,53 @@ public class CodeReview implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The state of the code review.
+     * The valid code review states are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Completed</code>: The code review is complete.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Pending</code>: The code review started and has not completed or failed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Failed</code>: The code review failed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Deleting</code>: The code review is being deleted.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The state of the code review.
+     * @return The valid code review states are:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>Completed</code>: The code review is complete.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Pending</code>: The code review started and has not completed or failed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Failed</code>: The code review failed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Deleting</code>: The code review is being deleted.
+     *         </p>
+     *         </li>
      * @see JobState
      */
 
@@ -355,11 +491,54 @@ public class CodeReview implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The state of the code review.
+     * The valid code review states are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Completed</code>: The code review is complete.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Pending</code>: The code review started and has not completed or failed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Failed</code>: The code review failed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Deleting</code>: The code review is being deleted.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param state
-     *        The state of the code review.
+     *        The valid code review states are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Completed</code>: The code review is complete.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Pending</code>: The code review started and has not completed or failed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Failed</code>: The code review failed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Deleting</code>: The code review is being deleted.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobState
      */
@@ -371,11 +550,54 @@ public class CodeReview implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The state of the code review.
+     * The valid code review states are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Completed</code>: The code review is complete.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Pending</code>: The code review started and has not completed or failed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Failed</code>: The code review failed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Deleting</code>: The code review is being deleted.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param state
-     *        The state of the code review.
+     *        The valid code review states are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Completed</code>: The code review is complete.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Pending</code>: The code review started and has not completed or failed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Failed</code>: The code review failed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Deleting</code>: The code review is being deleted.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobState
      */

@@ -22,7 +22,8 @@ public enum ProviderType {
 
     CodeCommit("CodeCommit"),
     GitHub("GitHub"),
-    Bitbucket("Bitbucket");
+    Bitbucket("Bitbucket"),
+    GitHubEnterpriseServer("GitHubEnterpriseServer");
 
     private String value;
 

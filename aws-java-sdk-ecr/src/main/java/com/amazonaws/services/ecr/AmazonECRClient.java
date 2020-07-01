@@ -141,6 +141,9 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
                             new JsonErrorShapeMetadata().withErrorCode("LifecyclePolicyNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.ecr.model.transform.LifecyclePolicyNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ImageDigestDoesNotMatchException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ecr.model.transform.ImageDigestDoesNotMatchExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidTagParameterException").withExceptionUnmarshaller(
                                     com.amazonaws.services.ecr.model.transform.InvalidTagParameterExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -1677,6 +1680,8 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
      * @throws ImageTagAlreadyExistsException
      *         The specified image is tagged with a tag that already exists. The repository is configured for tag
      *         immutability.
+     * @throws ImageDigestDoesNotMatchException
+     *         The specified image digest does not match the digest that Amazon ECR calculated for the image.
      * @sample AmazonECR.PutImage
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImage" target="_top">AWS API
      *      Documentation</a>

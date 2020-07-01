@@ -16,11 +16,6 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
- * <note>
- * <p>
- * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
- * </p>
- * </note>
  * <p>
  * Displays the settings that control the size and behavior of the connection pool associated with a
  * <code>DBProxyTarget</code>.
@@ -73,9 +68,6 @@ public class ConnectionPoolConfigurationInfo implements Serializable, Cloneable 
      * <code>SET</code> statements to make sure that each connection has identical settings such as time zone and
      * character set. This setting is empty by default. For multiple statements, use semicolons as the separator. You
      * can also include multiple variables in a single <code>SET</code> statement, such as <code>SET x=1, y=2</code>.
-     * </p>
-     * <p>
-     * <code>InitQuery</code> is not currently supported for PostgreSQL.
      * </p>
      */
     private String initQuery;
@@ -352,18 +344,13 @@ public class ConnectionPoolConfigurationInfo implements Serializable, Cloneable 
      * character set. This setting is empty by default. For multiple statements, use semicolons as the separator. You
      * can also include multiple variables in a single <code>SET</code> statement, such as <code>SET x=1, y=2</code>.
      * </p>
-     * <p>
-     * <code>InitQuery</code> is not currently supported for PostgreSQL.
-     * </p>
      * 
      * @param initQuery
      *        One or more SQL statements for the proxy to run when opening each new database connection. Typically used
      *        with <code>SET</code> statements to make sure that each connection has identical settings such as time
      *        zone and character set. This setting is empty by default. For multiple statements, use semicolons as the
      *        separator. You can also include multiple variables in a single <code>SET</code> statement, such as
-     *        <code>SET x=1, y=2</code>. </p>
-     *        <p>
-     *        <code>InitQuery</code> is not currently supported for PostgreSQL.
+     *        <code>SET x=1, y=2</code>.
      */
 
     public void setInitQuery(String initQuery) {
@@ -377,17 +364,12 @@ public class ConnectionPoolConfigurationInfo implements Serializable, Cloneable 
      * character set. This setting is empty by default. For multiple statements, use semicolons as the separator. You
      * can also include multiple variables in a single <code>SET</code> statement, such as <code>SET x=1, y=2</code>.
      * </p>
-     * <p>
-     * <code>InitQuery</code> is not currently supported for PostgreSQL.
-     * </p>
      * 
      * @return One or more SQL statements for the proxy to run when opening each new database connection. Typically used
      *         with <code>SET</code> statements to make sure that each connection has identical settings such as time
      *         zone and character set. This setting is empty by default. For multiple statements, use semicolons as the
      *         separator. You can also include multiple variables in a single <code>SET</code> statement, such as
-     *         <code>SET x=1, y=2</code>. </p>
-     *         <p>
-     *         <code>InitQuery</code> is not currently supported for PostgreSQL.
+     *         <code>SET x=1, y=2</code>.
      */
 
     public String getInitQuery() {
@@ -401,18 +383,13 @@ public class ConnectionPoolConfigurationInfo implements Serializable, Cloneable 
      * character set. This setting is empty by default. For multiple statements, use semicolons as the separator. You
      * can also include multiple variables in a single <code>SET</code> statement, such as <code>SET x=1, y=2</code>.
      * </p>
-     * <p>
-     * <code>InitQuery</code> is not currently supported for PostgreSQL.
-     * </p>
      * 
      * @param initQuery
      *        One or more SQL statements for the proxy to run when opening each new database connection. Typically used
      *        with <code>SET</code> statements to make sure that each connection has identical settings such as time
      *        zone and character set. This setting is empty by default. For multiple statements, use semicolons as the
      *        separator. You can also include multiple variables in a single <code>SET</code> statement, such as
-     *        <code>SET x=1, y=2</code>. </p>
-     *        <p>
-     *        <code>InitQuery</code> is not currently supported for PostgreSQL.
+     *        <code>SET x=1, y=2</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

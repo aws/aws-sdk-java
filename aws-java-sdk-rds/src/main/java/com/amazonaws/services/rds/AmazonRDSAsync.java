@@ -1298,11 +1298,6 @@ public interface AmazonRDSAsync extends AmazonRDS {
             com.amazonaws.handlers.AsyncHandler<CreateDBParameterGroupRequest, DBParameterGroup> asyncHandler);
 
     /**
-     * <note>
-     * <p>
-     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
-     * </p>
-     * </note>
      * <p>
      * Creates a new DB proxy.
      * </p>
@@ -1316,11 +1311,6 @@ public interface AmazonRDSAsync extends AmazonRDS {
     java.util.concurrent.Future<CreateDBProxyResult> createDBProxyAsync(CreateDBProxyRequest createDBProxyRequest);
 
     /**
-     * <note>
-     * <p>
-     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
-     * </p>
-     * </note>
      * <p>
      * Creates a new DB proxy.
      * </p>
@@ -2039,11 +2029,6 @@ public interface AmazonRDSAsync extends AmazonRDS {
             com.amazonaws.handlers.AsyncHandler<DeleteDBParameterGroupRequest, DeleteDBParameterGroupResult> asyncHandler);
 
     /**
-     * <note>
-     * <p>
-     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
-     * </p>
-     * </note>
      * <p>
      * Deletes an existing proxy.
      * </p>
@@ -2057,11 +2042,6 @@ public interface AmazonRDSAsync extends AmazonRDS {
     java.util.concurrent.Future<DeleteDBProxyResult> deleteDBProxyAsync(DeleteDBProxyRequest deleteDBProxyRequest);
 
     /**
-     * <note>
-     * <p>
-     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
-     * </p>
-     * </note>
      * <p>
      * Deletes an existing proxy.
      * </p>
@@ -2341,11 +2321,6 @@ public interface AmazonRDSAsync extends AmazonRDS {
             com.amazonaws.handlers.AsyncHandler<DeleteOptionGroupRequest, DeleteOptionGroupResult> asyncHandler);
 
     /**
-     * <note>
-     * <p>
-     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
-     * </p>
-     * </note>
      * <p>
      * Remove the association between one or more <code>DBProxyTarget</code> data structures and a
      * <code>DBProxyTargetGroup</code>.
@@ -2360,11 +2335,6 @@ public interface AmazonRDSAsync extends AmazonRDS {
     java.util.concurrent.Future<DeregisterDBProxyTargetsResult> deregisterDBProxyTargetsAsync(DeregisterDBProxyTargetsRequest deregisterDBProxyTargetsRequest);
 
     /**
-     * <note>
-     * <p>
-     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
-     * </p>
-     * </note>
      * <p>
      * Remove the association between one or more <code>DBProxyTarget</code> data structures and a
      * <code>DBProxyTargetGroup</code>.
@@ -3225,11 +3195,6 @@ public interface AmazonRDSAsync extends AmazonRDS {
             com.amazonaws.handlers.AsyncHandler<DescribeDBParametersRequest, DescribeDBParametersResult> asyncHandler);
 
     /**
-     * <note>
-     * <p>
-     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
-     * </p>
-     * </note>
      * <p>
      * Returns information about DB proxies.
      * </p>
@@ -3243,11 +3208,6 @@ public interface AmazonRDSAsync extends AmazonRDS {
     java.util.concurrent.Future<DescribeDBProxiesResult> describeDBProxiesAsync(DescribeDBProxiesRequest describeDBProxiesRequest);
 
     /**
-     * <note>
-     * <p>
-     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
-     * </p>
-     * </note>
      * <p>
      * Returns information about DB proxies.
      * </p>
@@ -3266,11 +3226,6 @@ public interface AmazonRDSAsync extends AmazonRDS {
             com.amazonaws.handlers.AsyncHandler<DescribeDBProxiesRequest, DescribeDBProxiesResult> asyncHandler);
 
     /**
-     * <note>
-     * <p>
-     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
-     * </p>
-     * </note>
      * <p>
      * Returns information about DB proxy target groups, represented by <code>DBProxyTargetGroup</code> data structures.
      * </p>
@@ -3285,11 +3240,6 @@ public interface AmazonRDSAsync extends AmazonRDS {
             DescribeDBProxyTargetGroupsRequest describeDBProxyTargetGroupsRequest);
 
     /**
-     * <note>
-     * <p>
-     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
-     * </p>
-     * </note>
      * <p>
      * Returns information about DB proxy target groups, represented by <code>DBProxyTargetGroup</code> data structures.
      * </p>
@@ -3309,11 +3259,6 @@ public interface AmazonRDSAsync extends AmazonRDS {
             com.amazonaws.handlers.AsyncHandler<DescribeDBProxyTargetGroupsRequest, DescribeDBProxyTargetGroupsResult> asyncHandler);
 
     /**
-     * <note>
-     * <p>
-     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
-     * </p>
-     * </note>
      * <p>
      * Returns information about <code>DBProxyTarget</code> objects. This API supports pagination.
      * </p>
@@ -3327,11 +3272,6 @@ public interface AmazonRDSAsync extends AmazonRDS {
     java.util.concurrent.Future<DescribeDBProxyTargetsResult> describeDBProxyTargetsAsync(DescribeDBProxyTargetsRequest describeDBProxyTargetsRequest);
 
     /**
-     * <note>
-     * <p>
-     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
-     * </p>
-     * </note>
      * <p>
      * Returns information about <code>DBProxyTarget</code> objects. This API supports pagination.
      * </p>
@@ -5017,11 +4957,6 @@ public interface AmazonRDSAsync extends AmazonRDS {
             com.amazonaws.handlers.AsyncHandler<ModifyDBParameterGroupRequest, ModifyDBParameterGroupResult> asyncHandler);
 
     /**
-     * <note>
-     * <p>
-     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
-     * </p>
-     * </note>
      * <p>
      * Changes the settings for an existing DB proxy.
      * </p>
@@ -5035,11 +4970,6 @@ public interface AmazonRDSAsync extends AmazonRDS {
     java.util.concurrent.Future<ModifyDBProxyResult> modifyDBProxyAsync(ModifyDBProxyRequest modifyDBProxyRequest);
 
     /**
-     * <note>
-     * <p>
-     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
-     * </p>
-     * </note>
      * <p>
      * Changes the settings for an existing DB proxy.
      * </p>
@@ -5058,11 +4988,6 @@ public interface AmazonRDSAsync extends AmazonRDS {
             com.amazonaws.handlers.AsyncHandler<ModifyDBProxyRequest, ModifyDBProxyResult> asyncHandler);
 
     /**
-     * <note>
-     * <p>
-     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
-     * </p>
-     * </note>
      * <p>
      * Modifies the properties of a <code>DBProxyTargetGroup</code>.
      * </p>
@@ -5076,11 +5001,6 @@ public interface AmazonRDSAsync extends AmazonRDS {
     java.util.concurrent.Future<ModifyDBProxyTargetGroupResult> modifyDBProxyTargetGroupAsync(ModifyDBProxyTargetGroupRequest modifyDBProxyTargetGroupRequest);
 
     /**
-     * <note>
-     * <p>
-     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
-     * </p>
-     * </note>
      * <p>
      * Modifies the properties of a <code>DBProxyTargetGroup</code>.
      * </p>
@@ -5565,11 +5485,6 @@ public interface AmazonRDSAsync extends AmazonRDS {
             com.amazonaws.handlers.AsyncHandler<RebootDBInstanceRequest, DBInstance> asyncHandler);
 
     /**
-     * <note>
-     * <p>
-     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
-     * </p>
-     * </note>
      * <p>
      * Associate one or more <code>DBProxyTarget</code> data structures with a <code>DBProxyTargetGroup</code>.
      * </p>
@@ -5583,11 +5498,6 @@ public interface AmazonRDSAsync extends AmazonRDS {
     java.util.concurrent.Future<RegisterDBProxyTargetsResult> registerDBProxyTargetsAsync(RegisterDBProxyTargetsRequest registerDBProxyTargetsRequest);
 
     /**
-     * <note>
-     * <p>
-     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
-     * </p>
-     * </note>
      * <p>
      * Associate one or more <code>DBProxyTarget</code> data structures with a <code>DBProxyTargetGroup</code>.
      * </p>

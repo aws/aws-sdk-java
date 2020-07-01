@@ -1189,8 +1189,8 @@ public interface AmazonEC2 {
      * <code>domain-name</code> - If you're using AmazonProvidedDNS in <code>us-east-1</code>, specify
      * <code>ec2.internal</code>. If you're using AmazonProvidedDNS in another Region, specify
      * <code>region.compute.internal</code> (for example, <code>ap-northeast-1.compute.internal</code>). Otherwise,
-     * specify a domain name (for example, <code>MyCompany.com</code>). This value is used to complete unqualified DNS
-     * hostnames. <b>Important</b>: Some Linux operating systems accept multiple domain names separated by spaces.
+     * specify a domain name (for example, <code>ExampleCompany.com</code>). This value is used to complete unqualified
+     * DNS hostnames. <b>Important</b>: Some Linux operating systems accept multiple domain names separated by spaces.
      * However, Windows and other Linux operating systems treat the value as a single domain, which results in
      * unexpected behavior. If your DHCP options set is associated with a VPC that has instances with multiple operating
      * systems, specify only one domain name.
