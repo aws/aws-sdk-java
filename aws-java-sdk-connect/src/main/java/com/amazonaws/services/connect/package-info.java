@@ -24,7 +24,11 @@
  * There are limits to the number of Amazon Connect resources that you can create and limits to the number of requests
  * that you can make per second. For more information, see <a
  * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon Connect
- * Service Limits</a> in the <i>Amazon Connect Administrator Guide</i>.
+ * Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
+ * </p>
+ * <p>
+ * To connect programmatically to an AWS service, you use an endpoint. For a list of Amazon Connect endpoints, see <a
+ * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon Connect Endpoints</a>.
  * </p>
  */
 package com.amazonaws.services.connect;

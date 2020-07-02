@@ -88,26 +88,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Default: false
      * </p>
-     * <p>
-     * Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Redis versions earlier than 2.8.6.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Redis (cluster mode disabled): T1 node types.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Redis (cluster mode enabled): T1 node types.
-     * </p>
-     * </li>
-     * </ul>
      */
     private Boolean automaticFailoverEnabled;
     /**
@@ -944,26 +924,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Default: false
      * </p>
-     * <p>
-     * Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Redis versions earlier than 2.8.6.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Redis (cluster mode disabled): T1 node types.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Redis (cluster mode enabled): T1 node types.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param automaticFailoverEnabled
      *        Specifies whether a read-only replica is automatically promoted to read/write primary if the existing
@@ -973,26 +933,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        </p>
      *        <p>
      *        Default: false
-     *        </p>
-     *        <p>
-     *        Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Redis versions earlier than 2.8.6.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Redis (cluster mode disabled): T1 node types.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Redis (cluster mode enabled): T1 node types.
-     *        </p>
-     *        </li>
      */
 
     public void setAutomaticFailoverEnabled(Boolean automaticFailoverEnabled) {
@@ -1010,26 +950,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Default: false
      * </p>
-     * <p>
-     * Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Redis versions earlier than 2.8.6.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Redis (cluster mode disabled): T1 node types.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Redis (cluster mode enabled): T1 node types.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @return Specifies whether a read-only replica is automatically promoted to read/write primary if the existing
      *         primary fails.</p>
@@ -1039,26 +959,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *         </p>
      *         <p>
      *         Default: false
-     *         </p>
-     *         <p>
-     *         Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         Redis versions earlier than 2.8.6.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Redis (cluster mode disabled): T1 node types.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Redis (cluster mode enabled): T1 node types.
-     *         </p>
-     *         </li>
      */
 
     public Boolean getAutomaticFailoverEnabled() {
@@ -1076,26 +976,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Default: false
      * </p>
-     * <p>
-     * Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Redis versions earlier than 2.8.6.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Redis (cluster mode disabled): T1 node types.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Redis (cluster mode enabled): T1 node types.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param automaticFailoverEnabled
      *        Specifies whether a read-only replica is automatically promoted to read/write primary if the existing
@@ -1105,26 +985,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        </p>
      *        <p>
      *        Default: false
-     *        </p>
-     *        <p>
-     *        Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Redis versions earlier than 2.8.6.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Redis (cluster mode disabled): T1 node types.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Redis (cluster mode enabled): T1 node types.
-     *        </p>
-     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1144,26 +1004,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Default: false
      * </p>
-     * <p>
-     * Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Redis versions earlier than 2.8.6.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Redis (cluster mode disabled): T1 node types.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Redis (cluster mode enabled): T1 node types.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @return Specifies whether a read-only replica is automatically promoted to read/write primary if the existing
      *         primary fails.</p>
@@ -1173,26 +1013,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *         </p>
      *         <p>
      *         Default: false
-     *         </p>
-     *         <p>
-     *         Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         Redis versions earlier than 2.8.6.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Redis (cluster mode disabled): T1 node types.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Redis (cluster mode enabled): T1 node types.
-     *         </p>
-     *         </li>
      */
 
     public Boolean isAutomaticFailoverEnabled() {

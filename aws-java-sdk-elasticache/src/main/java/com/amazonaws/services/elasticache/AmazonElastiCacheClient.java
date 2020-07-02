@@ -1243,12 +1243,10 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      * </p>
      * <p>
      * When a Redis (cluster mode disabled) replication group has been successfully created, you can add one or more
-     * read replicas to it, up to a total of 5 read replicas. You cannot alter a Redis (cluster mode enabled)
-     * replication group after it has been created. However, if you need to increase or decrease the number of node
-     * groups (console: shards), you can avail yourself of ElastiCache for Redis' enhanced backup and restore. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-restoring.html">Restoring From a Backup
-     * with Cluster Resizing</a> in the <i>ElastiCache User Guide</i>.
+     * read replicas to it, up to a total of 5 read replicas. If you need to increase or decrease the number of node
+     * groups (console: shards), you can avail yourself of ElastiCache for Redis' scaling. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Scaling.html">Scaling ElastiCache for Redis
+     * Clusters</a> in the <i>ElastiCache User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -4510,7 +4508,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      * <p>
      * Also see, <a
      * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html#auto-failover-test">Testing
-     * Multi-AZ with Automatic Failover</a> in the <i>ElastiCache User Guide</i>.
+     * Multi-AZ </a> in the <i>ElastiCache User Guide</i>.
      * </p>
      * 
      * @param testFailoverRequest

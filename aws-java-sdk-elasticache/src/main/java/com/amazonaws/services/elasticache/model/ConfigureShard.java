@@ -52,12 +52,12 @@ public class ConfigureShard implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * If Multi-AZ with Automatic Failover is enabled: 1
+     * If Multi-AZ: 1
      * </p>
      * </li>
      * <li>
      * <p>
-     * If Multi-AZ with Automatic Failover is not enable: 0
+     * If Multi-AZ: 0
      * </p>
      * </li>
      * </ul>
@@ -153,12 +153,12 @@ public class ConfigureShard implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * If Multi-AZ with Automatic Failover is enabled: 1
+     * If Multi-AZ: 1
      * </p>
      * </li>
      * <li>
      * <p>
-     * If Multi-AZ with Automatic Failover is not enable: 0
+     * If Multi-AZ: 0
      * </p>
      * </li>
      * </ul>
@@ -185,12 +185,12 @@ public class ConfigureShard implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        If Multi-AZ with Automatic Failover is enabled: 1
+     *        If Multi-AZ: 1
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If Multi-AZ with Automatic Failover is not enable: 0
+     *        If Multi-AZ: 0
      *        </p>
      *        </li>
      *        </ul>
@@ -224,12 +224,12 @@ public class ConfigureShard implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * If Multi-AZ with Automatic Failover is enabled: 1
+     * If Multi-AZ: 1
      * </p>
      * </li>
      * <li>
      * <p>
-     * If Multi-AZ with Automatic Failover is not enable: 0
+     * If Multi-AZ: 0
      * </p>
      * </li>
      * </ul>
@@ -255,12 +255,12 @@ public class ConfigureShard implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         If Multi-AZ with Automatic Failover is enabled: 1
+     *         If Multi-AZ: 1
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         If Multi-AZ with Automatic Failover is not enable: 0
+     *         If Multi-AZ: 0
      *         </p>
      *         </li>
      *         </ul>
@@ -294,12 +294,12 @@ public class ConfigureShard implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * If Multi-AZ with Automatic Failover is enabled: 1
+     * If Multi-AZ: 1
      * </p>
      * </li>
      * <li>
      * <p>
-     * If Multi-AZ with Automatic Failover is not enable: 0
+     * If Multi-AZ: 0
      * </p>
      * </li>
      * </ul>
@@ -326,12 +326,12 @@ public class ConfigureShard implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        If Multi-AZ with Automatic Failover is enabled: 1
+     *        If Multi-AZ: 1
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If Multi-AZ with Automatic Failover is not enable: 0
+     *        If Multi-AZ: 0
      *        </p>
      *        </li>
      *        </ul>

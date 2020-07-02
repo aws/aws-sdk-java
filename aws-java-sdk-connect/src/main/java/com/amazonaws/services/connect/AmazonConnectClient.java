@@ -62,7 +62,11 @@ import com.amazonaws.services.connect.model.transform.*;
  * There are limits to the number of Amazon Connect resources that you can create and limits to the number of requests
  * that you can make per second. For more information, see <a
  * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon Connect
- * Service Limits</a> in the <i>Amazon Connect Administrator Guide</i>.
+ * Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
+ * </p>
+ * <p>
+ * To connect programmatically to an AWS service, you use an endpoint. For a list of Amazon Connect endpoints, see <a
+ * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon Connect Endpoints</a>.
  * </p>
  */
 @ThreadSafe
@@ -173,6 +177,11 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
      * <p>
      * Creates a user account for the specified Amazon Connect instance.
      * </p>
+     * <p>
+     * For information about how to create user accounts using the Amazon Connect console, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/user-management.html">Add Users</a> in the <i>Amazon
+     * Connect Administrator Guide</i>.
+     * </p>
      * 
      * @param createUserRequest
      * @return Result of the CreateUser operation returned by the service.
@@ -239,6 +248,11 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
     /**
      * <p>
      * Deletes a user account from the specified Amazon Connect instance.
+     * </p>
+     * <p>
+     * For information about what happens to a user's data when their account is deleted, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/delete-users.html">Delete Users from Your Amazon
+     * Connect Instance</a> in the <i>Amazon Connect Administrator Guide</i>.
      * </p>
      * 
      * @param deleteUserRequest
@@ -557,9 +571,9 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
      * Gets the real-time metric data from the specified Amazon Connect instance.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-reports.html">Real-time Metrics
-     * Reports</a> in the <i>Amazon Connect Administrator Guide</i>.
+     * For a description of each metric, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html">Real-time Metrics
+     * Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
      * </p>
      * 
      * @param getCurrentMetricDataRequest
@@ -690,9 +704,9 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
      * Gets historical metric data from the specified Amazon Connect instance.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics.html">Historical Metrics
-     * Reports</a> in the <i>Amazon Connect Administrator Guide</i>.
+     * For a description of each historical metric, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
+     * Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
      * </p>
      * 
      * @param getMetricDataRequest
@@ -757,6 +771,11 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
      * <p>
      * Provides information about the contact flows for the specified Amazon Connect instance.
      * </p>
+     * <p>
+     * For more information about contact flows, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-contact-flows.html">Contact Flows</a> in the
+     * <i>Amazon Connect Administrator Guide</i>.
+     * </p>
      * 
      * @param listContactFlowsRequest
      * @return Result of the ListContactFlows operation returned by the service.
@@ -819,6 +838,11 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
     /**
      * <p>
      * Provides information about the hours of operation for the specified Amazon Connect instance.
+     * </p>
+     * <p>
+     * For more information about hours of operation, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/set-hours-operation.html">Set the Hours of Operation
+     * for a Queue</a> in the <i>Amazon Connect Administrator Guide</i>.
      * </p>
      * 
      * @param listHoursOfOperationsRequest
@@ -884,6 +908,11 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
      * <p>
      * Provides information about the phone numbers for the specified Amazon Connect instance.
      * </p>
+     * <p>
+     * For more information about phone numbers, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-center-phone-number.html">Set Up Phone
+     * Numbers for Your Contact Center</a> in the <i>Amazon Connect Administrator Guide</i>.
+     * </p>
      * 
      * @param listPhoneNumbersRequest
      * @return Result of the ListPhoneNumbers operation returned by the service.
@@ -946,6 +975,11 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
     /**
      * <p>
      * Provides information about the queues for the specified Amazon Connect instance.
+     * </p>
+     * <p>
+     * For more information about queues, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-queues-standard-and-agent.html">Queues:
+     * Standard and Agent</a> in the <i>Amazon Connect Administrator Guide</i>.
      * </p>
      * 
      * @param listQueuesRequest
@@ -1010,6 +1044,12 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
      * <p>
      * Provides summary information about the routing profiles for the specified Amazon Connect instance.
      * </p>
+     * <p>
+     * For more information about routing profiles, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing.html">Routing Profiles</a> and <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/routing-profiles.html">Create a Routing Profile</a>
+     * in the <i>Amazon Connect Administrator Guide</i>.
+     * </p>
      * 
      * @param listRoutingProfilesRequest
      * @return Result of the ListRoutingProfiles operation returned by the service.
@@ -1072,6 +1112,11 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
     /**
      * <p>
      * Provides summary information about the security profiles for the specified Amazon Connect instance.
+     * </p>
+     * <p>
+     * For more information about security profiles, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-security-profiles.html">Security Profiles</a>
+     * in the <i>Amazon Connect Administrator Guide</i>.
      * </p>
      * 
      * @param listSecurityProfilesRequest
@@ -1136,6 +1181,11 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
      * <p>
      * Lists the tags for the specified resource.
      * </p>
+     * <p>
+     * For sample policies that use tags, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_id-based-policy-examples.html">Amazon
+     * Connect Identity-Based Policy Examples</a> in the <i>Amazon Connect Administrator Guide</i>.
+     * </p>
      * 
      * @param listTagsForResourceRequest
      * @return Result of the ListTagsForResource operation returned by the service.
@@ -1198,6 +1248,11 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
     /**
      * <p>
      * Provides summary information about the hierarchy groups for the specified Amazon Connect instance.
+     * </p>
+     * <p>
+     * For more information about agent hierarchies, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/agent-hierarchy.html">Set Up Agent Hierarchies</a> in
+     * the <i>Amazon Connect Administrator Guide</i>.
      * </p>
      * 
      * @param listUserHierarchyGroupsRequest
@@ -1336,6 +1391,28 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
      * href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html"
      * >CreateParticipantConnection</a> with WEBSOCKET and CONNECTION_CREDENTIALS.
      * </p>
+     * <p>
+     * A 429 error occurs in two situations:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * API rate limit is exceeded. API TPS throttling returns a <code>TooManyRequests</code> exception from the API
+     * Gateway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">quota for
+     * concurrent active chats</a> is exceeded. Active chat throttling returns a <code>LimitExceededException</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about how chat works, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat.html">Chat</a> in the <i>Amazon Connect
+     * Administrator Guide</i>.
+     * </p>
      * 
      * @param startChatContactRequest
      * @return Result of the StartChatContact operation returned by the service.
@@ -1397,11 +1474,25 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
-     * Initiates a contact flow to place an outbound call to a customer.
+     * This API places an outbound call to a contact, and then initiates the contact flow. It performs the actions in
+     * the contact flow that's specified (in <code>ContactFlowId</code>).
+     * </p>
+     * <p>
+     * Agents are not involved in initiating the outbound API (that is, dialing the contact). If the contact flow places
+     * an outbound call to a contact, and then puts the contact in queue, that's when the call is routed to the agent,
+     * like any other inbound case.
      * </p>
      * <p>
      * There is a 60 second dialing timeout for this operation. If the call is not connected after 60 seconds, it fails.
      * </p>
+     * <note>
+     * <p>
+     * UK numbers with a 447 prefix are not allowed by default. Before you can dial these UK mobile numbers, you must
+     * submit a service quota increase request. For more information, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon Connect
+     * Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param startOutboundVoiceContactRequest
      * @return Result of the StartOutboundVoiceContact operation returned by the service.
@@ -1536,6 +1627,11 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
      * </p>
      * <p>
      * The supported resource type is users.
+     * </p>
+     * <p>
+     * For sample policies that use tags, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_id-based-policy-examples.html">Amazon
+     * Connect Identity-Based Policy Examples</a> in the <i>Amazon Connect Administrator Guide</i>.
      * </p>
      * 
      * @param tagResourceRequest
@@ -1806,6 +1902,16 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
      * <p>
      * Updates the identity information for the specified user.
      * </p>
+     * <important>
+     * <p>
+     * Someone with the ability to invoke <code>UpdateUserIndentityInfo</code> can change the login credentials of other
+     * users by changing their email address. This poses a security risk to your organization. They can change the email
+     * address of a user to the attacker's email address, and then reset the password through email. We strongly
+     * recommend limiting who has the ability to invoke <code>UpdateUserIndentityInfo</code>. For more information, see
+     * <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-best-practices.html">Best
+     * Practices for Security Profiles</a> in the <i>Amazon Connect Administrator Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param updateUserIdentityInfoRequest
      * @return Result of the UpdateUserIdentityInfo operation returned by the service.

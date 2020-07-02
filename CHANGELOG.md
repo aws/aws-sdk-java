@@ -1,3 +1,12 @@
+# __1.11.816__ __2020-07-02__
+## __Amazon Connect Service__
+  - ### Features
+    - Documentation updates for Amazon Connect.
+
+## __Amazon ElastiCache__
+  - ### Features
+    - Documentation updates for elasticache
+
 # __1.11.815__ __2020-07-01__
 ## __AWS AppSync__
   - ### Features
