@@ -54,6 +54,10 @@ public class DescribeTemplateResultJsonUnmarshaller implements Unmarshaller<Desc
                     context.nextToken();
                     describeTemplateResult.setTemplate(TemplateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("RequestId", targetDepth)) {
+                    context.nextToken();
+                    describeTemplateResult.setRequestId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

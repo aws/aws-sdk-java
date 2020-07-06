@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * This data type is used as a response element in the <code>DescribeDBSubnetGroups</code> action.
+ * This data type is used as a response element for the <code>DescribeDBSubnetGroups</code> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/Subnet" target="_top">AWS API Documentation</a>
@@ -27,7 +27,7 @@ public class Subnet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the identifier of the subnet.
+     * The identifier of the subnet.
      * </p>
      */
     private String subnetIdentifier;
@@ -35,18 +35,29 @@ public class Subnet implements Serializable, Cloneable {
     private AvailabilityZone subnetAvailabilityZone;
     /**
      * <p>
-     * Specifies the status of the subnet.
+     * If the subnet is associated with an Outpost, this value specifies the Outpost.
+     * </p>
+     * <p>
+     * For more information about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on AWS Outposts</a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     */
+    private Outpost subnetOutpost;
+    /**
+     * <p>
+     * The status of the subnet.
      * </p>
      */
     private String subnetStatus;
 
     /**
      * <p>
-     * Specifies the identifier of the subnet.
+     * The identifier of the subnet.
      * </p>
      * 
      * @param subnetIdentifier
-     *        Specifies the identifier of the subnet.
+     *        The identifier of the subnet.
      */
 
     public void setSubnetIdentifier(String subnetIdentifier) {
@@ -55,10 +66,10 @@ public class Subnet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the identifier of the subnet.
+     * The identifier of the subnet.
      * </p>
      * 
-     * @return Specifies the identifier of the subnet.
+     * @return The identifier of the subnet.
      */
 
     public String getSubnetIdentifier() {
@@ -67,11 +78,11 @@ public class Subnet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the identifier of the subnet.
+     * The identifier of the subnet.
      * </p>
      * 
      * @param subnetIdentifier
-     *        Specifies the identifier of the subnet.
+     *        The identifier of the subnet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -108,11 +119,78 @@ public class Subnet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the status of the subnet.
+     * If the subnet is associated with an Outpost, this value specifies the Outpost.
+     * </p>
+     * <p>
+     * For more information about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on AWS Outposts</a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     * 
+     * @param subnetOutpost
+     *        If the subnet is associated with an Outpost, this value specifies the Outpost.</p>
+     *        <p>
+     *        For more information about RDS on Outposts, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on AWS
+     *        Outposts</a> in the <i>Amazon RDS User Guide.</i>
+     */
+
+    public void setSubnetOutpost(Outpost subnetOutpost) {
+        this.subnetOutpost = subnetOutpost;
+    }
+
+    /**
+     * <p>
+     * If the subnet is associated with an Outpost, this value specifies the Outpost.
+     * </p>
+     * <p>
+     * For more information about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on AWS Outposts</a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     * 
+     * @return If the subnet is associated with an Outpost, this value specifies the Outpost.</p>
+     *         <p>
+     *         For more information about RDS on Outposts, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on AWS
+     *         Outposts</a> in the <i>Amazon RDS User Guide.</i>
+     */
+
+    public Outpost getSubnetOutpost() {
+        return this.subnetOutpost;
+    }
+
+    /**
+     * <p>
+     * If the subnet is associated with an Outpost, this value specifies the Outpost.
+     * </p>
+     * <p>
+     * For more information about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on AWS Outposts</a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     * 
+     * @param subnetOutpost
+     *        If the subnet is associated with an Outpost, this value specifies the Outpost.</p>
+     *        <p>
+     *        For more information about RDS on Outposts, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on AWS
+     *        Outposts</a> in the <i>Amazon RDS User Guide.</i>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Subnet withSubnetOutpost(Outpost subnetOutpost) {
+        setSubnetOutpost(subnetOutpost);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the subnet.
      * </p>
      * 
      * @param subnetStatus
-     *        Specifies the status of the subnet.
+     *        The status of the subnet.
      */
 
     public void setSubnetStatus(String subnetStatus) {
@@ -121,10 +199,10 @@ public class Subnet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the status of the subnet.
+     * The status of the subnet.
      * </p>
      * 
-     * @return Specifies the status of the subnet.
+     * @return The status of the subnet.
      */
 
     public String getSubnetStatus() {
@@ -133,11 +211,11 @@ public class Subnet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the status of the subnet.
+     * The status of the subnet.
      * </p>
      * 
      * @param subnetStatus
-     *        Specifies the status of the subnet.
+     *        The status of the subnet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -162,6 +240,8 @@ public class Subnet implements Serializable, Cloneable {
             sb.append("SubnetIdentifier: ").append(getSubnetIdentifier()).append(",");
         if (getSubnetAvailabilityZone() != null)
             sb.append("SubnetAvailabilityZone: ").append(getSubnetAvailabilityZone()).append(",");
+        if (getSubnetOutpost() != null)
+            sb.append("SubnetOutpost: ").append(getSubnetOutpost()).append(",");
         if (getSubnetStatus() != null)
             sb.append("SubnetStatus: ").append(getSubnetStatus());
         sb.append("}");
@@ -186,6 +266,10 @@ public class Subnet implements Serializable, Cloneable {
             return false;
         if (other.getSubnetAvailabilityZone() != null && other.getSubnetAvailabilityZone().equals(this.getSubnetAvailabilityZone()) == false)
             return false;
+        if (other.getSubnetOutpost() == null ^ this.getSubnetOutpost() == null)
+            return false;
+        if (other.getSubnetOutpost() != null && other.getSubnetOutpost().equals(this.getSubnetOutpost()) == false)
+            return false;
         if (other.getSubnetStatus() == null ^ this.getSubnetStatus() == null)
             return false;
         if (other.getSubnetStatus() != null && other.getSubnetStatus().equals(this.getSubnetStatus()) == false)
@@ -200,6 +284,7 @@ public class Subnet implements Serializable, Cloneable {
 
         hashCode = prime * hashCode + ((getSubnetIdentifier() == null) ? 0 : getSubnetIdentifier().hashCode());
         hashCode = prime * hashCode + ((getSubnetAvailabilityZone() == null) ? 0 : getSubnetAvailabilityZone().hashCode());
+        hashCode = prime * hashCode + ((getSubnetOutpost() == null) ? 0 : getSubnetOutpost().hashCode());
         hashCode = prime * hashCode + ((getSubnetStatus() == null) ? 0 : getSubnetStatus().hashCode());
         return hashCode;
     }

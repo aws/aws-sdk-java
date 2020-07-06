@@ -409,6 +409,72 @@ public class AmazonQuickSightAsyncClient extends AmazonQuickSightClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<CreateThemeResult> createThemeAsync(CreateThemeRequest request) {
+
+        return createThemeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateThemeResult> createThemeAsync(final CreateThemeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateThemeRequest, CreateThemeResult> asyncHandler) {
+        final CreateThemeRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateThemeResult>() {
+            @Override
+            public CreateThemeResult call() throws Exception {
+                CreateThemeResult result = null;
+
+                try {
+                    result = executeCreateTheme(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateThemeAliasResult> createThemeAliasAsync(CreateThemeAliasRequest request) {
+
+        return createThemeAliasAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateThemeAliasResult> createThemeAliasAsync(final CreateThemeAliasRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateThemeAliasRequest, CreateThemeAliasResult> asyncHandler) {
+        final CreateThemeAliasRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateThemeAliasResult>() {
+            @Override
+            public CreateThemeAliasResult call() throws Exception {
+                CreateThemeAliasResult result = null;
+
+                try {
+                    result = executeCreateThemeAlias(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteDashboardResult> deleteDashboardAsync(DeleteDashboardRequest request) {
 
         return deleteDashboardAsync(request, null);
@@ -657,6 +723,72 @@ public class AmazonQuickSightAsyncClient extends AmazonQuickSightClient implemen
 
                 try {
                     result = executeDeleteTemplateAlias(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteThemeResult> deleteThemeAsync(DeleteThemeRequest request) {
+
+        return deleteThemeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteThemeResult> deleteThemeAsync(final DeleteThemeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteThemeRequest, DeleteThemeResult> asyncHandler) {
+        final DeleteThemeRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteThemeResult>() {
+            @Override
+            public DeleteThemeResult call() throws Exception {
+                DeleteThemeResult result = null;
+
+                try {
+                    result = executeDeleteTheme(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteThemeAliasResult> deleteThemeAliasAsync(DeleteThemeAliasRequest request) {
+
+        return deleteThemeAliasAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteThemeAliasResult> deleteThemeAliasAsync(final DeleteThemeAliasRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteThemeAliasRequest, DeleteThemeAliasResult> asyncHandler) {
+        final DeleteThemeAliasRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteThemeAliasResult>() {
+            @Override
+            public DeleteThemeAliasResult call() throws Exception {
+                DeleteThemeAliasResult result = null;
+
+                try {
+                    result = executeDeleteThemeAlias(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1120,6 +1252,105 @@ public class AmazonQuickSightAsyncClient extends AmazonQuickSightClient implemen
 
                 try {
                     result = executeDescribeTemplatePermissions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeThemeResult> describeThemeAsync(DescribeThemeRequest request) {
+
+        return describeThemeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeThemeResult> describeThemeAsync(final DescribeThemeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeThemeRequest, DescribeThemeResult> asyncHandler) {
+        final DescribeThemeRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeThemeResult>() {
+            @Override
+            public DescribeThemeResult call() throws Exception {
+                DescribeThemeResult result = null;
+
+                try {
+                    result = executeDescribeTheme(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeThemeAliasResult> describeThemeAliasAsync(DescribeThemeAliasRequest request) {
+
+        return describeThemeAliasAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeThemeAliasResult> describeThemeAliasAsync(final DescribeThemeAliasRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeThemeAliasRequest, DescribeThemeAliasResult> asyncHandler) {
+        final DescribeThemeAliasRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeThemeAliasResult>() {
+            @Override
+            public DescribeThemeAliasResult call() throws Exception {
+                DescribeThemeAliasResult result = null;
+
+                try {
+                    result = executeDescribeThemeAlias(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeThemePermissionsResult> describeThemePermissionsAsync(DescribeThemePermissionsRequest request) {
+
+        return describeThemePermissionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeThemePermissionsResult> describeThemePermissionsAsync(final DescribeThemePermissionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeThemePermissionsRequest, DescribeThemePermissionsResult> asyncHandler) {
+        final DescribeThemePermissionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeThemePermissionsResult>() {
+            @Override
+            public DescribeThemePermissionsResult call() throws Exception {
+                DescribeThemePermissionsResult result = null;
+
+                try {
+                    result = executeDescribeThemePermissions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1617,6 +1848,105 @@ public class AmazonQuickSightAsyncClient extends AmazonQuickSightClient implemen
 
                 try {
                     result = executeListTemplates(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListThemeAliasesResult> listThemeAliasesAsync(ListThemeAliasesRequest request) {
+
+        return listThemeAliasesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListThemeAliasesResult> listThemeAliasesAsync(final ListThemeAliasesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListThemeAliasesRequest, ListThemeAliasesResult> asyncHandler) {
+        final ListThemeAliasesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListThemeAliasesResult>() {
+            @Override
+            public ListThemeAliasesResult call() throws Exception {
+                ListThemeAliasesResult result = null;
+
+                try {
+                    result = executeListThemeAliases(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListThemeVersionsResult> listThemeVersionsAsync(ListThemeVersionsRequest request) {
+
+        return listThemeVersionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListThemeVersionsResult> listThemeVersionsAsync(final ListThemeVersionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListThemeVersionsRequest, ListThemeVersionsResult> asyncHandler) {
+        final ListThemeVersionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListThemeVersionsResult>() {
+            @Override
+            public ListThemeVersionsResult call() throws Exception {
+                ListThemeVersionsResult result = null;
+
+                try {
+                    result = executeListThemeVersions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListThemesResult> listThemesAsync(ListThemesRequest request) {
+
+        return listThemesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListThemesResult> listThemesAsync(final ListThemesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListThemesRequest, ListThemesResult> asyncHandler) {
+        final ListThemesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListThemesResult>() {
+            @Override
+            public ListThemesResult call() throws Exception {
+                ListThemesResult result = null;
+
+                try {
+                    result = executeListThemes(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2213,6 +2543,105 @@ public class AmazonQuickSightAsyncClient extends AmazonQuickSightClient implemen
 
                 try {
                     result = executeUpdateTemplatePermissions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateThemeResult> updateThemeAsync(UpdateThemeRequest request) {
+
+        return updateThemeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateThemeResult> updateThemeAsync(final UpdateThemeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateThemeRequest, UpdateThemeResult> asyncHandler) {
+        final UpdateThemeRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateThemeResult>() {
+            @Override
+            public UpdateThemeResult call() throws Exception {
+                UpdateThemeResult result = null;
+
+                try {
+                    result = executeUpdateTheme(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateThemeAliasResult> updateThemeAliasAsync(UpdateThemeAliasRequest request) {
+
+        return updateThemeAliasAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateThemeAliasResult> updateThemeAliasAsync(final UpdateThemeAliasRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateThemeAliasRequest, UpdateThemeAliasResult> asyncHandler) {
+        final UpdateThemeAliasRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateThemeAliasResult>() {
+            @Override
+            public UpdateThemeAliasResult call() throws Exception {
+                UpdateThemeAliasResult result = null;
+
+                try {
+                    result = executeUpdateThemeAlias(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateThemePermissionsResult> updateThemePermissionsAsync(UpdateThemePermissionsRequest request) {
+
+        return updateThemePermissionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateThemePermissionsResult> updateThemePermissionsAsync(final UpdateThemePermissionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateThemePermissionsRequest, UpdateThemePermissionsResult> asyncHandler) {
+        final UpdateThemePermissionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateThemePermissionsResult>() {
+            @Override
+            public UpdateThemePermissionsResult call() throws Exception {
+                UpdateThemePermissionsResult result = null;
+
+                try {
+                    result = executeUpdateThemePermissions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

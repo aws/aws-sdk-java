@@ -499,7 +499,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * The Active Directory directory ID to create the DB instance in.
      * </p>
      * <p>
-     * For Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate users that connect to the DB
+     * For Oracle DB instances, Amazon RDS can use Kerberos authentication to authenticate users that connect to the DB
      * instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos Authentication
      * with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
@@ -3804,7 +3804,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * The Active Directory directory ID to create the DB instance in.
      * </p>
      * <p>
-     * For Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate users that connect to the DB
+     * For Oracle DB instances, Amazon RDS can use Kerberos authentication to authenticate users that connect to the DB
      * instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos Authentication
      * with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
@@ -3820,7 +3820,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * @param domain
      *        The Active Directory directory ID to create the DB instance in.</p>
      *        <p>
-     *        For Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate users that connect to
+     *        For Oracle DB instances, Amazon RDS can use Kerberos authentication to authenticate users that connect to
      *        the DB instance. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos
      *        Authentication with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
@@ -3842,7 +3842,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * The Active Directory directory ID to create the DB instance in.
      * </p>
      * <p>
-     * For Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate users that connect to the DB
+     * For Oracle DB instances, Amazon RDS can use Kerberos authentication to authenticate users that connect to the DB
      * instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos Authentication
      * with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
@@ -3857,7 +3857,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * 
      * @return The Active Directory directory ID to create the DB instance in.</p>
      *         <p>
-     *         For Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate users that connect to
+     *         For Oracle DB instances, Amazon RDS can use Kerberos authentication to authenticate users that connect to
      *         the DB instance. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos
      *         Authentication with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
@@ -3879,7 +3879,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * The Active Directory directory ID to create the DB instance in.
      * </p>
      * <p>
-     * For Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate users that connect to the DB
+     * For Oracle DB instances, Amazon RDS can use Kerberos authentication to authenticate users that connect to the DB
      * instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos Authentication
      * with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
@@ -3895,7 +3895,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * @param domain
      *        The Active Directory directory ID to create the DB instance in.</p>
      *        <p>
-     *        For Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate users that connect to
+     *        For Oracle DB instances, Amazon RDS can use Kerberos authentication to authenticate users that connect to
      *        the DB instance. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos
      *        Authentication with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.

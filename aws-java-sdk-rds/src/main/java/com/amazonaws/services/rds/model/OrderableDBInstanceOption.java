@@ -186,6 +186,17 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
      * </p>
      */
     private Boolean supportsKerberosAuthentication;
+    /**
+     * <p>
+     * Whether a DB instance supports RDS on Outposts.
+     * </p>
+     * <p>
+     * For more information about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on AWS Outposts</a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     */
+    private Boolean outpostCapable;
 
     /**
      * <p>
@@ -1459,6 +1470,94 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Whether a DB instance supports RDS on Outposts.
+     * </p>
+     * <p>
+     * For more information about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on AWS Outposts</a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     * 
+     * @param outpostCapable
+     *        Whether a DB instance supports RDS on Outposts.</p>
+     *        <p>
+     *        For more information about RDS on Outposts, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on AWS
+     *        Outposts</a> in the <i>Amazon RDS User Guide.</i>
+     */
+
+    public void setOutpostCapable(Boolean outpostCapable) {
+        this.outpostCapable = outpostCapable;
+    }
+
+    /**
+     * <p>
+     * Whether a DB instance supports RDS on Outposts.
+     * </p>
+     * <p>
+     * For more information about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on AWS Outposts</a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     * 
+     * @return Whether a DB instance supports RDS on Outposts.</p>
+     *         <p>
+     *         For more information about RDS on Outposts, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on AWS
+     *         Outposts</a> in the <i>Amazon RDS User Guide.</i>
+     */
+
+    public Boolean getOutpostCapable() {
+        return this.outpostCapable;
+    }
+
+    /**
+     * <p>
+     * Whether a DB instance supports RDS on Outposts.
+     * </p>
+     * <p>
+     * For more information about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on AWS Outposts</a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     * 
+     * @param outpostCapable
+     *        Whether a DB instance supports RDS on Outposts.</p>
+     *        <p>
+     *        For more information about RDS on Outposts, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on AWS
+     *        Outposts</a> in the <i>Amazon RDS User Guide.</i>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OrderableDBInstanceOption withOutpostCapable(Boolean outpostCapable) {
+        setOutpostCapable(outpostCapable);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether a DB instance supports RDS on Outposts.
+     * </p>
+     * <p>
+     * For more information about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on AWS Outposts</a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     * 
+     * @return Whether a DB instance supports RDS on Outposts.</p>
+     *         <p>
+     *         For more information about RDS on Outposts, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on AWS
+     *         Outposts</a> in the <i>Amazon RDS User Guide.</i>
+     */
+
+    public Boolean isOutpostCapable() {
+        return this.outpostCapable;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1519,7 +1618,9 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
         if (getSupportsStorageAutoscaling() != null)
             sb.append("SupportsStorageAutoscaling: ").append(getSupportsStorageAutoscaling()).append(",");
         if (getSupportsKerberosAuthentication() != null)
-            sb.append("SupportsKerberosAuthentication: ").append(getSupportsKerberosAuthentication());
+            sb.append("SupportsKerberosAuthentication: ").append(getSupportsKerberosAuthentication()).append(",");
+        if (getOutpostCapable() != null)
+            sb.append("OutpostCapable: ").append(getOutpostCapable());
         sb.append("}");
         return sb.toString();
     }
@@ -1636,6 +1737,10 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
         if (other.getSupportsKerberosAuthentication() != null
                 && other.getSupportsKerberosAuthentication().equals(this.getSupportsKerberosAuthentication()) == false)
             return false;
+        if (other.getOutpostCapable() == null ^ this.getOutpostCapable() == null)
+            return false;
+        if (other.getOutpostCapable() != null && other.getOutpostCapable().equals(this.getOutpostCapable()) == false)
+            return false;
         return true;
     }
 
@@ -1669,6 +1774,7 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getSupportedEngineModes() == null) ? 0 : getSupportedEngineModes().hashCode());
         hashCode = prime * hashCode + ((getSupportsStorageAutoscaling() == null) ? 0 : getSupportsStorageAutoscaling().hashCode());
         hashCode = prime * hashCode + ((getSupportsKerberosAuthentication() == null) ? 0 : getSupportsKerberosAuthentication().hashCode());
+        hashCode = prime * hashCode + ((getOutpostCapable() == null) ? 0 : getOutpostCapable().hashCode());
         return hashCode;
     }
 

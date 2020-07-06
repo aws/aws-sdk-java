@@ -53,6 +53,11 @@ public class SubnetStaxUnmarshaller implements Unmarshaller<Subnet, StaxUnmarsha
                     continue;
                 }
 
+                if (context.testExpression("SubnetOutpost", targetDepth)) {
+                    subnet.setSubnetOutpost(OutpostStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("SubnetStatus", targetDepth)) {
                     subnet.setSubnetStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

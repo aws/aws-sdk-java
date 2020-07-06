@@ -809,6 +809,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
      *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
      *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
      *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
      * @throws InternalFailureException
      *         An internal failure occurred.
      * @sample AmazonQuickSight.CreateTemplate
@@ -878,6 +880,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
      *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
      *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
      *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
      * @throws InternalFailureException
      *         An internal failure occurred.
      * @sample AmazonQuickSight.CreateTemplateAlias
@@ -916,6 +920,157 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateTemplateAliasResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateTemplateAliasResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a theme.
+     * </p>
+     * <p>
+     * A <i>theme</i> is set of configuration options for color and layout. Themes apply to analyses and dashboards. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/themes-in-quicksight.html">Using Themes in Amazon
+     * QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.
+     * </p>
+     * 
+     * @param createThemeRequest
+     * @return Result of the CreateTheme operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceExistsException
+     *         The resource specified already exists.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.CreateTheme
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateTheme" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateThemeResult createTheme(CreateThemeRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateTheme(request);
+    }
+
+    @SdkInternalApi
+    final CreateThemeResult executeCreateTheme(CreateThemeRequest createThemeRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createThemeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateThemeRequest> request = null;
+        Response<CreateThemeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateThemeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createThemeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTheme");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateThemeResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateThemeResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a theme alias for a theme.
+     * </p>
+     * 
+     * @param createThemeAliasRequest
+     * @return Result of the CreateThemeAlias operation returned by the service.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws ResourceExistsException
+     *         The resource specified already exists.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.CreateThemeAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateThemeAlias" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateThemeAliasResult createThemeAlias(CreateThemeAliasRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateThemeAlias(request);
+    }
+
+    @SdkInternalApi
+    final CreateThemeAliasResult executeCreateThemeAlias(CreateThemeAliasRequest createThemeAliasRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createThemeAliasRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateThemeAliasRequest> request = null;
+        Response<CreateThemeAliasResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateThemeAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createThemeAliasRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateThemeAlias");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateThemeAliasResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateThemeAliasResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1424,6 +1579,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
      *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
      *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
      *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
      * @throws InternalFailureException
      *         An internal failure occurred.
      * @sample AmazonQuickSight.DeleteTemplateAlias
@@ -1462,6 +1619,146 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteTemplateAliasResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteTemplateAliasResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a theme.
+     * </p>
+     * 
+     * @param deleteThemeRequest
+     * @return Result of the DeleteTheme operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DeleteTheme
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteTheme" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteThemeResult deleteTheme(DeleteThemeRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteTheme(request);
+    }
+
+    @SdkInternalApi
+    final DeleteThemeResult executeDeleteTheme(DeleteThemeRequest deleteThemeRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteThemeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteThemeRequest> request = null;
+        Response<DeleteThemeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteThemeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteThemeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTheme");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteThemeResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteThemeResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the version of the theme that the specified theme alias points to. If you provide a specific alias, you
+     * delete the version of the theme that the alias points to.
+     * </p>
+     * 
+     * @param deleteThemeAliasRequest
+     * @return Result of the DeleteThemeAlias operation returned by the service.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DeleteThemeAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteThemeAlias" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteThemeAliasResult deleteThemeAlias(DeleteThemeAliasRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteThemeAlias(request);
+    }
+
+    @SdkInternalApi
+    final DeleteThemeAliasResult executeDeleteThemeAlias(DeleteThemeAliasRequest deleteThemeAliasRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteThemeAliasRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteThemeAliasRequest> request = null;
+        Response<DeleteThemeAliasResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteThemeAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteThemeAliasRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteThemeAlias");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteThemeAliasResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteThemeAliasResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2436,6 +2733,217 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Describes a theme.
+     * </p>
+     * 
+     * @param describeThemeRequest
+     * @return Result of the DescribeTheme operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceExistsException
+     *         The resource specified already exists.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DescribeTheme
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeTheme" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeThemeResult describeTheme(DescribeThemeRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTheme(request);
+    }
+
+    @SdkInternalApi
+    final DescribeThemeResult executeDescribeTheme(DescribeThemeRequest describeThemeRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeThemeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeThemeRequest> request = null;
+        Response<DescribeThemeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeThemeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeThemeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTheme");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeThemeResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeThemeResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes the alias for a theme.
+     * </p>
+     * 
+     * @param describeThemeAliasRequest
+     * @return Result of the DescribeThemeAlias operation returned by the service.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DescribeThemeAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeThemeAlias" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeThemeAliasResult describeThemeAlias(DescribeThemeAliasRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeThemeAlias(request);
+    }
+
+    @SdkInternalApi
+    final DescribeThemeAliasResult executeDescribeThemeAlias(DescribeThemeAliasRequest describeThemeAliasRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeThemeAliasRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeThemeAliasRequest> request = null;
+        Response<DescribeThemeAliasResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeThemeAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeThemeAliasRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeThemeAlias");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeThemeAliasResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeThemeAliasResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes the read and write permissions for a theme.
+     * </p>
+     * 
+     * @param describeThemePermissionsRequest
+     * @return Result of the DescribeThemePermissions operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DescribeThemePermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeThemePermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeThemePermissionsResult describeThemePermissions(DescribeThemePermissionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeThemePermissions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeThemePermissionsResult executeDescribeThemePermissions(DescribeThemePermissionsRequest describeThemePermissionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeThemePermissionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeThemePermissionsRequest> request = null;
+        Response<DescribeThemePermissionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeThemePermissionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeThemePermissionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeThemePermissions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeThemePermissionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeThemePermissionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns information about a user, given the user name.
      * </p>
      * 
@@ -3319,6 +3827,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
      * 
      * @param listTemplateAliasesRequest
      * @return Result of the ListTemplateAliases operation returned by the service.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> value isn't valid.
      * @throws ThrottlingException
      *         Access is throttled.
      * @throws ResourceNotFoundException
@@ -3499,6 +4009,219 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
 
             HttpResponseHandler<AmazonWebServiceResponse<ListTemplatesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTemplatesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists all the aliases of a theme.
+     * </p>
+     * 
+     * @param listThemeAliasesRequest
+     * @return Result of the ListThemeAliases operation returned by the service.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> value isn't valid.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.ListThemeAliases
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListThemeAliases" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListThemeAliasesResult listThemeAliases(ListThemeAliasesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListThemeAliases(request);
+    }
+
+    @SdkInternalApi
+    final ListThemeAliasesResult executeListThemeAliases(ListThemeAliasesRequest listThemeAliasesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listThemeAliasesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListThemeAliasesRequest> request = null;
+        Response<ListThemeAliasesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListThemeAliasesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listThemeAliasesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListThemeAliases");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListThemeAliasesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListThemeAliasesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists all the versions of the themes in the current AWS account.
+     * </p>
+     * 
+     * @param listThemeVersionsRequest
+     * @return Result of the ListThemeVersions operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> value isn't valid.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.ListThemeVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListThemeVersions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListThemeVersionsResult listThemeVersions(ListThemeVersionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListThemeVersions(request);
+    }
+
+    @SdkInternalApi
+    final ListThemeVersionsResult executeListThemeVersions(ListThemeVersionsRequest listThemeVersionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listThemeVersionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListThemeVersionsRequest> request = null;
+        Response<ListThemeVersionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListThemeVersionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listThemeVersionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListThemeVersions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListThemeVersionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListThemeVersionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists all the themes in the current AWS account.
+     * </p>
+     * 
+     * @param listThemesRequest
+     * @return Result of the ListThemes operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> value isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.ListThemes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListThemes" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListThemesResult listThemes(ListThemesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListThemes(request);
+    }
+
+    @SdkInternalApi
+    final ListThemesResult executeListThemes(ListThemesRequest listThemesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listThemesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListThemesRequest> request = null;
+        Response<ListThemesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListThemesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listThemesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListThemes");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListThemesResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListThemesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4676,6 +5399,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
      *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
      *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
      *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
      * @throws InternalFailureException
      *         An internal failure occurred.
      * @sample AmazonQuickSight.UpdateTemplateAlias
@@ -4783,6 +5508,321 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
             HttpResponseHandler<AmazonWebServiceResponse<UpdateTemplatePermissionsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdateTemplatePermissionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates a theme.
+     * </p>
+     * 
+     * @param updateThemeRequest
+     * @return Result of the UpdateTheme operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws ResourceExistsException
+     *         The resource specified already exists.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.UpdateTheme
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateTheme" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateThemeResult updateTheme(UpdateThemeRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateTheme(request);
+    }
+
+    @SdkInternalApi
+    final UpdateThemeResult executeUpdateTheme(UpdateThemeRequest updateThemeRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateThemeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateThemeRequest> request = null;
+        Response<UpdateThemeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateThemeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateThemeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateTheme");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateThemeResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateThemeResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates an alias of a theme.
+     * </p>
+     * 
+     * @param updateThemeAliasRequest
+     * @return Result of the UpdateThemeAlias operation returned by the service.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceExistsException
+     *         The resource specified already exists.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.UpdateThemeAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateThemeAlias" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public UpdateThemeAliasResult updateThemeAlias(UpdateThemeAliasRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateThemeAlias(request);
+    }
+
+    @SdkInternalApi
+    final UpdateThemeAliasResult executeUpdateThemeAlias(UpdateThemeAliasRequest updateThemeAliasRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateThemeAliasRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateThemeAliasRequest> request = null;
+        Response<UpdateThemeAliasResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateThemeAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateThemeAliasRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateThemeAlias");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateThemeAliasResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateThemeAliasResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the resource permissions for a theme. Permissions apply to the action to grant or revoke permissions on,
+     * for example <code>"quicksight:DescribeTheme"</code>.
+     * </p>
+     * <p>
+     * Theme permissions apply in groupings. Valid groupings include the following for the three levels of permissions,
+     * which are user, owner, or no permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * User
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"quicksight:DescribeTheme"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:DescribeThemeAlias"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:ListThemeAliases"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:ListThemeVersions"</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Owner
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"quicksight:DescribeTheme"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:DescribeThemeAlias"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:ListThemeAliases"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:ListThemeVersions"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:DeleteTheme"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:UpdateTheme"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:CreateThemeAlias"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:DeleteThemeAlias"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:UpdateThemeAlias"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:UpdateThemePermissions"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:DescribeThemePermissions"</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * To specify no permissions, omit the permissions list.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param updateThemePermissionsRequest
+     * @return Result of the UpdateThemePermissions operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.UpdateThemePermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateThemePermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateThemePermissionsResult updateThemePermissions(UpdateThemePermissionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateThemePermissions(request);
+    }
+
+    @SdkInternalApi
+    final UpdateThemePermissionsResult executeUpdateThemePermissions(UpdateThemePermissionsRequest updateThemePermissionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateThemePermissionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateThemePermissionsRequest> request = null;
+        Response<UpdateThemePermissionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateThemePermissionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateThemePermissionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateThemePermissions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateThemePermissionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateThemePermissionsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

@@ -1,3 +1,16 @@
+# __1.11.817__ __2020-07-06__
+## __AWS IoT SiteWise__
+  - ### Features
+    - This release supports optional start date and end date parameters for the GetAssetPropertyValueHistory API.
+
+## __Amazon QuickSight__
+  - ### Features
+    - Add Theme APIs and update Dashboard APIs to support theme overrides.
+
+## __Amazon Relational Database Service__
+  - ### Features
+    - Adds support for Amazon RDS on AWS Outposts.
+
 # __1.11.816__ __2020-07-02__
 ## __Amazon Connect Service__
   - ### Features

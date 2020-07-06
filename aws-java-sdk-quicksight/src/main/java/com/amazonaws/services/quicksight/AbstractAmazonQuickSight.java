@@ -78,6 +78,16 @@ public class AbstractAmazonQuickSight implements AmazonQuickSight {
     }
 
     @Override
+    public CreateThemeResult createTheme(CreateThemeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateThemeAliasResult createThemeAlias(CreateThemeAliasRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteDashboardResult deleteDashboard(DeleteDashboardRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -114,6 +124,16 @@ public class AbstractAmazonQuickSight implements AmazonQuickSight {
 
     @Override
     public DeleteTemplateAliasResult deleteTemplateAlias(DeleteTemplateAliasRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteThemeResult deleteTheme(DeleteThemeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteThemeAliasResult deleteThemeAlias(DeleteThemeAliasRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -184,6 +204,21 @@ public class AbstractAmazonQuickSight implements AmazonQuickSight {
 
     @Override
     public DescribeTemplatePermissionsResult describeTemplatePermissions(DescribeTemplatePermissionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeThemeResult describeTheme(DescribeThemeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeThemeAliasResult describeThemeAlias(DescribeThemeAliasRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeThemePermissionsResult describeThemePermissions(DescribeThemePermissionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -259,6 +294,21 @@ public class AbstractAmazonQuickSight implements AmazonQuickSight {
 
     @Override
     public ListTemplatesResult listTemplates(ListTemplatesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListThemeAliasesResult listThemeAliases(ListThemeAliasesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListThemeVersionsResult listThemeVersions(ListThemeVersionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListThemesResult listThemes(ListThemesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -349,6 +399,21 @@ public class AbstractAmazonQuickSight implements AmazonQuickSight {
 
     @Override
     public UpdateTemplatePermissionsResult updateTemplatePermissions(UpdateTemplatePermissionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateThemeResult updateTheme(UpdateThemeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateThemeAliasResult updateThemeAlias(UpdateThemeAliasRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateThemePermissionsResult updateThemePermissions(UpdateThemePermissionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

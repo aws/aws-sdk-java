@@ -41,6 +41,8 @@ public class UpdateDashboardRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VersionDescription").build();
     private static final MarshallingInfo<StructuredPojo> DASHBOARDPUBLISHOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DashboardPublishOptions").build();
+    private static final MarshallingInfo<String> THEMEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ThemeArn").build();
 
     private static final UpdateDashboardRequestMarshaller instance = new UpdateDashboardRequestMarshaller();
 
@@ -65,6 +67,7 @@ public class UpdateDashboardRequestMarshaller {
             protocolMarshaller.marshall(updateDashboardRequest.getParameters(), PARAMETERS_BINDING);
             protocolMarshaller.marshall(updateDashboardRequest.getVersionDescription(), VERSIONDESCRIPTION_BINDING);
             protocolMarshaller.marshall(updateDashboardRequest.getDashboardPublishOptions(), DASHBOARDPUBLISHOPTIONS_BINDING);
+            protocolMarshaller.marshall(updateDashboardRequest.getThemeArn(), THEMEARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -100,6 +100,14 @@ public class UpdateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      * </ul>
      */
     private DashboardPublishOptions dashboardPublishOptions;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If you add a value for this
+     * field, it overrides the value that was originally associated with the entity. The theme ARN must exist in the
+     * same AWS account where you create the dashboard.
+     * </p>
+     */
+    private String themeArn;
 
     /**
      * <p>
@@ -577,6 +585,58 @@ public class UpdateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If you add a value for this
+     * field, it overrides the value that was originally associated with the entity. The theme ARN must exist in the
+     * same AWS account where you create the dashboard.
+     * </p>
+     * 
+     * @param themeArn
+     *        The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If you add a value for
+     *        this field, it overrides the value that was originally associated with the entity. The theme ARN must
+     *        exist in the same AWS account where you create the dashboard.
+     */
+
+    public void setThemeArn(String themeArn) {
+        this.themeArn = themeArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If you add a value for this
+     * field, it overrides the value that was originally associated with the entity. The theme ARN must exist in the
+     * same AWS account where you create the dashboard.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If you add a value for
+     *         this field, it overrides the value that was originally associated with the entity. The theme ARN must
+     *         exist in the same AWS account where you create the dashboard.
+     */
+
+    public String getThemeArn() {
+        return this.themeArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If you add a value for this
+     * field, it overrides the value that was originally associated with the entity. The theme ARN must exist in the
+     * same AWS account where you create the dashboard.
+     * </p>
+     * 
+     * @param themeArn
+     *        The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If you add a value for
+     *        this field, it overrides the value that was originally associated with the entity. The theme ARN must
+     *        exist in the same AWS account where you create the dashboard.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateDashboardRequest withThemeArn(String themeArn) {
+        setThemeArn(themeArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -601,7 +661,9 @@ public class UpdateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
         if (getVersionDescription() != null)
             sb.append("VersionDescription: ").append(getVersionDescription()).append(",");
         if (getDashboardPublishOptions() != null)
-            sb.append("DashboardPublishOptions: ").append(getDashboardPublishOptions());
+            sb.append("DashboardPublishOptions: ").append(getDashboardPublishOptions()).append(",");
+        if (getThemeArn() != null)
+            sb.append("ThemeArn: ").append(getThemeArn());
         sb.append("}");
         return sb.toString();
     }
@@ -644,6 +706,10 @@ public class UpdateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getDashboardPublishOptions() != null && other.getDashboardPublishOptions().equals(this.getDashboardPublishOptions()) == false)
             return false;
+        if (other.getThemeArn() == null ^ this.getThemeArn() == null)
+            return false;
+        if (other.getThemeArn() != null && other.getThemeArn().equals(this.getThemeArn()) == false)
+            return false;
         return true;
     }
 
@@ -659,6 +725,7 @@ public class UpdateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
         hashCode = prime * hashCode + ((getVersionDescription() == null) ? 0 : getVersionDescription().hashCode());
         hashCode = prime * hashCode + ((getDashboardPublishOptions() == null) ? 0 : getDashboardPublishOptions().hashCode());
+        hashCode = prime * hashCode + ((getThemeArn() == null) ? 0 : getThemeArn().hashCode());
         return hashCode;
     }
 

@@ -36,6 +36,8 @@ public class DescribeTemplateResult extends com.amazonaws.AmazonWebServiceResult
      */
     private Integer status;
 
+    private String requestId;
+
     /**
      * <p>
      * The template structure for the object you want to describe.
@@ -117,6 +119,32 @@ public class DescribeTemplateResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
+     * @param requestId
+     */
+
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getRequestId() {
+        return this.requestId;
+    }
+
+    /**
+     * @param requestId
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTemplateResult withRequestId(String requestId) {
+        setRequestId(requestId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -131,7 +159,9 @@ public class DescribeTemplateResult extends com.amazonaws.AmazonWebServiceResult
         if (getTemplate() != null)
             sb.append("Template: ").append(getTemplate()).append(",");
         if (getStatus() != null)
-            sb.append("Status: ").append(getStatus());
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getRequestId() != null)
+            sb.append("RequestId: ").append(getRequestId());
         sb.append("}");
         return sb.toString();
     }
@@ -154,6 +184,10 @@ public class DescribeTemplateResult extends com.amazonaws.AmazonWebServiceResult
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getRequestId() == null ^ this.getRequestId() == null)
+            return false;
+        if (other.getRequestId() != null && other.getRequestId().equals(this.getRequestId()) == false)
+            return false;
         return true;
     }
 
@@ -164,6 +198,7 @@ public class DescribeTemplateResult extends com.amazonaws.AmazonWebServiceResult
 
         hashCode = prime * hashCode + ((getTemplate() == null) ? 0 : getTemplate().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getRequestId() == null) ? 0 : getRequestId().hashCode());
         return hashCode;
     }
 

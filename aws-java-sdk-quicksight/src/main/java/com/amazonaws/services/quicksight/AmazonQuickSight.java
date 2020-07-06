@@ -351,6 +351,8 @@ public interface AmazonQuickSight {
      *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
      *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
      *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
      * @throws InternalFailureException
      *         An internal failure occurred.
      * @sample AmazonQuickSight.CreateTemplate
@@ -380,6 +382,8 @@ public interface AmazonQuickSight {
      *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
      *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
      *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
      * @throws InternalFailureException
      *         An internal failure occurred.
      * @sample AmazonQuickSight.CreateTemplateAlias
@@ -387,6 +391,77 @@ public interface AmazonQuickSight {
      *      API Documentation</a>
      */
     CreateTemplateAliasResult createTemplateAlias(CreateTemplateAliasRequest createTemplateAliasRequest);
+
+    /**
+     * <p>
+     * Creates a theme.
+     * </p>
+     * <p>
+     * A <i>theme</i> is set of configuration options for color and layout. Themes apply to analyses and dashboards. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/themes-in-quicksight.html">Using Themes in Amazon
+     * QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.
+     * </p>
+     * 
+     * @param createThemeRequest
+     * @return Result of the CreateTheme operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceExistsException
+     *         The resource specified already exists.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.CreateTheme
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateTheme" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateThemeResult createTheme(CreateThemeRequest createThemeRequest);
+
+    /**
+     * <p>
+     * Creates a theme alias for a theme.
+     * </p>
+     * 
+     * @param createThemeAliasRequest
+     * @return Result of the CreateThemeAlias operation returned by the service.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws ResourceExistsException
+     *         The resource specified already exists.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.CreateThemeAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateThemeAlias" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateThemeAliasResult createThemeAlias(CreateThemeAliasRequest createThemeAliasRequest);
 
     /**
      * <p>
@@ -603,6 +678,8 @@ public interface AmazonQuickSight {
      *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
      *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
      *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
      * @throws InternalFailureException
      *         An internal failure occurred.
      * @sample AmazonQuickSight.DeleteTemplateAlias
@@ -610,6 +687,66 @@ public interface AmazonQuickSight {
      *      API Documentation</a>
      */
     DeleteTemplateAliasResult deleteTemplateAlias(DeleteTemplateAliasRequest deleteTemplateAliasRequest);
+
+    /**
+     * <p>
+     * Deletes a theme.
+     * </p>
+     * 
+     * @param deleteThemeRequest
+     * @return Result of the DeleteTheme operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DeleteTheme
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteTheme" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteThemeResult deleteTheme(DeleteThemeRequest deleteThemeRequest);
+
+    /**
+     * <p>
+     * Deletes the version of the theme that the specified theme alias points to. If you provide a specific alias, you
+     * delete the version of the theme that the alias points to.
+     * </p>
+     * 
+     * @param deleteThemeAliasRequest
+     * @return Result of the DeleteThemeAlias operation returned by the service.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DeleteThemeAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteThemeAlias" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteThemeAliasResult deleteThemeAlias(DeleteThemeAliasRequest deleteThemeAliasRequest);
 
     /**
      * <p>
@@ -999,6 +1136,95 @@ public interface AmazonQuickSight {
      *      target="_top">AWS API Documentation</a>
      */
     DescribeTemplatePermissionsResult describeTemplatePermissions(DescribeTemplatePermissionsRequest describeTemplatePermissionsRequest);
+
+    /**
+     * <p>
+     * Describes a theme.
+     * </p>
+     * 
+     * @param describeThemeRequest
+     * @return Result of the DescribeTheme operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceExistsException
+     *         The resource specified already exists.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DescribeTheme
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeTheme" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeThemeResult describeTheme(DescribeThemeRequest describeThemeRequest);
+
+    /**
+     * <p>
+     * Describes the alias for a theme.
+     * </p>
+     * 
+     * @param describeThemeAliasRequest
+     * @return Result of the DescribeThemeAlias operation returned by the service.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DescribeThemeAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeThemeAlias" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeThemeAliasResult describeThemeAlias(DescribeThemeAliasRequest describeThemeAliasRequest);
+
+    /**
+     * <p>
+     * Describes the read and write permissions for a theme.
+     * </p>
+     * 
+     * @param describeThemePermissionsRequest
+     * @return Result of the DescribeThemePermissions operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DescribeThemePermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeThemePermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeThemePermissionsResult describeThemePermissions(DescribeThemePermissionsRequest describeThemePermissionsRequest);
 
     /**
      * <p>
@@ -1399,6 +1625,8 @@ public interface AmazonQuickSight {
      * 
      * @param listTemplateAliasesRequest
      * @return Result of the ListTemplateAliases operation returned by the service.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> value isn't valid.
      * @throws ThrottlingException
      *         Access is throttled.
      * @throws ResourceNotFoundException
@@ -1468,6 +1696,99 @@ public interface AmazonQuickSight {
      *      Documentation</a>
      */
     ListTemplatesResult listTemplates(ListTemplatesRequest listTemplatesRequest);
+
+    /**
+     * <p>
+     * Lists all the aliases of a theme.
+     * </p>
+     * 
+     * @param listThemeAliasesRequest
+     * @return Result of the ListThemeAliases operation returned by the service.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> value isn't valid.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.ListThemeAliases
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListThemeAliases" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListThemeAliasesResult listThemeAliases(ListThemeAliasesRequest listThemeAliasesRequest);
+
+    /**
+     * <p>
+     * Lists all the versions of the themes in the current AWS account.
+     * </p>
+     * 
+     * @param listThemeVersionsRequest
+     * @return Result of the ListThemeVersions operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> value isn't valid.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.ListThemeVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListThemeVersions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListThemeVersionsResult listThemeVersions(ListThemeVersionsRequest listThemeVersionsRequest);
+
+    /**
+     * <p>
+     * Lists all the themes in the current AWS account.
+     * </p>
+     * 
+     * @param listThemesRequest
+     * @return Result of the ListThemes operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> value isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.ListThemes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListThemes" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListThemesResult listThemes(ListThemesRequest listThemesRequest);
 
     /**
      * <p>
@@ -1985,6 +2306,8 @@ public interface AmazonQuickSight {
      *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
      *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
      *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
      * @throws InternalFailureException
      *         An internal failure occurred.
      * @sample AmazonQuickSight.UpdateTemplateAlias
@@ -2019,6 +2342,200 @@ public interface AmazonQuickSight {
      *      target="_top">AWS API Documentation</a>
      */
     UpdateTemplatePermissionsResult updateTemplatePermissions(UpdateTemplatePermissionsRequest updateTemplatePermissionsRequest);
+
+    /**
+     * <p>
+     * Updates a theme.
+     * </p>
+     * 
+     * @param updateThemeRequest
+     * @return Result of the UpdateTheme operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws ResourceExistsException
+     *         The resource specified already exists.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.UpdateTheme
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateTheme" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateThemeResult updateTheme(UpdateThemeRequest updateThemeRequest);
+
+    /**
+     * <p>
+     * Updates an alias of a theme.
+     * </p>
+     * 
+     * @param updateThemeAliasRequest
+     * @return Result of the UpdateThemeAlias operation returned by the service.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceExistsException
+     *         The resource specified already exists.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.UpdateThemeAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateThemeAlias" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateThemeAliasResult updateThemeAlias(UpdateThemeAliasRequest updateThemeAliasRequest);
+
+    /**
+     * <p>
+     * Updates the resource permissions for a theme. Permissions apply to the action to grant or revoke permissions on,
+     * for example <code>"quicksight:DescribeTheme"</code>.
+     * </p>
+     * <p>
+     * Theme permissions apply in groupings. Valid groupings include the following for the three levels of permissions,
+     * which are user, owner, or no permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * User
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"quicksight:DescribeTheme"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:DescribeThemeAlias"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:ListThemeAliases"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:ListThemeVersions"</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Owner
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"quicksight:DescribeTheme"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:DescribeThemeAlias"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:ListThemeAliases"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:ListThemeVersions"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:DeleteTheme"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:UpdateTheme"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:CreateThemeAlias"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:DeleteThemeAlias"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:UpdateThemeAlias"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:UpdateThemePermissions"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:DescribeThemePermissions"</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * To specify no permissions, omit the permissions list.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param updateThemePermissionsRequest
+     * @return Result of the UpdateThemePermissions operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.UpdateThemePermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateThemePermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateThemePermissionsResult updateThemePermissions(UpdateThemePermissionsRequest updateThemePermissionsRequest);
 
     /**
      * <p>

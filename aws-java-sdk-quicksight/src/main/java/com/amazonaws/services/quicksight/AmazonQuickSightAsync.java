@@ -411,6 +411,80 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
+     * Creates a theme.
+     * </p>
+     * <p>
+     * A <i>theme</i> is set of configuration options for color and layout. Themes apply to analyses and dashboards. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/themes-in-quicksight.html">Using Themes in Amazon
+     * QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.
+     * </p>
+     * 
+     * @param createThemeRequest
+     * @return A Java Future containing the result of the CreateTheme operation returned by the service.
+     * @sample AmazonQuickSightAsync.CreateTheme
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateTheme" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateThemeResult> createThemeAsync(CreateThemeRequest createThemeRequest);
+
+    /**
+     * <p>
+     * Creates a theme.
+     * </p>
+     * <p>
+     * A <i>theme</i> is set of configuration options for color and layout. Themes apply to analyses and dashboards. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/themes-in-quicksight.html">Using Themes in Amazon
+     * QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.
+     * </p>
+     * 
+     * @param createThemeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateTheme operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.CreateTheme
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateTheme" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateThemeResult> createThemeAsync(CreateThemeRequest createThemeRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateThemeRequest, CreateThemeResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a theme alias for a theme.
+     * </p>
+     * 
+     * @param createThemeAliasRequest
+     * @return A Java Future containing the result of the CreateThemeAlias operation returned by the service.
+     * @sample AmazonQuickSightAsync.CreateThemeAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateThemeAlias" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateThemeAliasResult> createThemeAliasAsync(CreateThemeAliasRequest createThemeAliasRequest);
+
+    /**
+     * <p>
+     * Creates a theme alias for a theme.
+     * </p>
+     * 
+     * @param createThemeAliasRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateThemeAlias operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.CreateThemeAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateThemeAlias" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateThemeAliasResult> createThemeAliasAsync(CreateThemeAliasRequest createThemeAliasRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateThemeAliasRequest, CreateThemeAliasResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes a dashboard.
      * </p>
      * 
@@ -660,6 +734,70 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      */
     java.util.concurrent.Future<DeleteTemplateAliasResult> deleteTemplateAliasAsync(DeleteTemplateAliasRequest deleteTemplateAliasRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteTemplateAliasRequest, DeleteTemplateAliasResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a theme.
+     * </p>
+     * 
+     * @param deleteThemeRequest
+     * @return A Java Future containing the result of the DeleteTheme operation returned by the service.
+     * @sample AmazonQuickSightAsync.DeleteTheme
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteTheme" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteThemeResult> deleteThemeAsync(DeleteThemeRequest deleteThemeRequest);
+
+    /**
+     * <p>
+     * Deletes a theme.
+     * </p>
+     * 
+     * @param deleteThemeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteTheme operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.DeleteTheme
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteTheme" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteThemeResult> deleteThemeAsync(DeleteThemeRequest deleteThemeRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteThemeRequest, DeleteThemeResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the version of the theme that the specified theme alias points to. If you provide a specific alias, you
+     * delete the version of the theme that the alias points to.
+     * </p>
+     * 
+     * @param deleteThemeAliasRequest
+     * @return A Java Future containing the result of the DeleteThemeAlias operation returned by the service.
+     * @sample AmazonQuickSightAsync.DeleteThemeAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteThemeAlias" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteThemeAliasResult> deleteThemeAliasAsync(DeleteThemeAliasRequest deleteThemeAliasRequest);
+
+    /**
+     * <p>
+     * Deletes the version of the theme that the specified theme alias points to. If you provide a specific alias, you
+     * delete the version of the theme that the alias points to.
+     * </p>
+     * 
+     * @param deleteThemeAliasRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteThemeAlias operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.DeleteThemeAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteThemeAlias" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteThemeAliasResult> deleteThemeAliasAsync(DeleteThemeAliasRequest deleteThemeAliasRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteThemeAliasRequest, DeleteThemeAliasResult> asyncHandler);
 
     /**
      * <p>
@@ -1116,6 +1254,99 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     java.util.concurrent.Future<DescribeTemplatePermissionsResult> describeTemplatePermissionsAsync(
             DescribeTemplatePermissionsRequest describeTemplatePermissionsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeTemplatePermissionsRequest, DescribeTemplatePermissionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes a theme.
+     * </p>
+     * 
+     * @param describeThemeRequest
+     * @return A Java Future containing the result of the DescribeTheme operation returned by the service.
+     * @sample AmazonQuickSightAsync.DescribeTheme
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeTheme" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeThemeResult> describeThemeAsync(DescribeThemeRequest describeThemeRequest);
+
+    /**
+     * <p>
+     * Describes a theme.
+     * </p>
+     * 
+     * @param describeThemeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeTheme operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.DescribeTheme
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeTheme" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeThemeResult> describeThemeAsync(DescribeThemeRequest describeThemeRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeThemeRequest, DescribeThemeResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the alias for a theme.
+     * </p>
+     * 
+     * @param describeThemeAliasRequest
+     * @return A Java Future containing the result of the DescribeThemeAlias operation returned by the service.
+     * @sample AmazonQuickSightAsync.DescribeThemeAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeThemeAlias" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeThemeAliasResult> describeThemeAliasAsync(DescribeThemeAliasRequest describeThemeAliasRequest);
+
+    /**
+     * <p>
+     * Describes the alias for a theme.
+     * </p>
+     * 
+     * @param describeThemeAliasRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeThemeAlias operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.DescribeThemeAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeThemeAlias" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeThemeAliasResult> describeThemeAliasAsync(DescribeThemeAliasRequest describeThemeAliasRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeThemeAliasRequest, DescribeThemeAliasResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the read and write permissions for a theme.
+     * </p>
+     * 
+     * @param describeThemePermissionsRequest
+     * @return A Java Future containing the result of the DescribeThemePermissions operation returned by the service.
+     * @sample AmazonQuickSightAsync.DescribeThemePermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeThemePermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeThemePermissionsResult> describeThemePermissionsAsync(DescribeThemePermissionsRequest describeThemePermissionsRequest);
+
+    /**
+     * <p>
+     * Describes the read and write permissions for a theme.
+     * </p>
+     * 
+     * @param describeThemePermissionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeThemePermissions operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.DescribeThemePermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeThemePermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeThemePermissionsResult> describeThemePermissionsAsync(DescribeThemePermissionsRequest describeThemePermissionsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeThemePermissionsRequest, DescribeThemePermissionsResult> asyncHandler);
 
     /**
      * <p>
@@ -1661,6 +1892,99 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      */
     java.util.concurrent.Future<ListTemplatesResult> listTemplatesAsync(ListTemplatesRequest listTemplatesRequest,
             com.amazonaws.handlers.AsyncHandler<ListTemplatesRequest, ListTemplatesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists all the aliases of a theme.
+     * </p>
+     * 
+     * @param listThemeAliasesRequest
+     * @return A Java Future containing the result of the ListThemeAliases operation returned by the service.
+     * @sample AmazonQuickSightAsync.ListThemeAliases
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListThemeAliases" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListThemeAliasesResult> listThemeAliasesAsync(ListThemeAliasesRequest listThemeAliasesRequest);
+
+    /**
+     * <p>
+     * Lists all the aliases of a theme.
+     * </p>
+     * 
+     * @param listThemeAliasesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListThemeAliases operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.ListThemeAliases
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListThemeAliases" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListThemeAliasesResult> listThemeAliasesAsync(ListThemeAliasesRequest listThemeAliasesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListThemeAliasesRequest, ListThemeAliasesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists all the versions of the themes in the current AWS account.
+     * </p>
+     * 
+     * @param listThemeVersionsRequest
+     * @return A Java Future containing the result of the ListThemeVersions operation returned by the service.
+     * @sample AmazonQuickSightAsync.ListThemeVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListThemeVersions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListThemeVersionsResult> listThemeVersionsAsync(ListThemeVersionsRequest listThemeVersionsRequest);
+
+    /**
+     * <p>
+     * Lists all the versions of the themes in the current AWS account.
+     * </p>
+     * 
+     * @param listThemeVersionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListThemeVersions operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.ListThemeVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListThemeVersions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListThemeVersionsResult> listThemeVersionsAsync(ListThemeVersionsRequest listThemeVersionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListThemeVersionsRequest, ListThemeVersionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists all the themes in the current AWS account.
+     * </p>
+     * 
+     * @param listThemesRequest
+     * @return A Java Future containing the result of the ListThemes operation returned by the service.
+     * @sample AmazonQuickSightAsync.ListThemes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListThemes" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListThemesResult> listThemesAsync(ListThemesRequest listThemesRequest);
+
+    /**
+     * <p>
+     * Lists all the themes in the current AWS account.
+     * </p>
+     * 
+     * @param listThemesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListThemes operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.ListThemes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListThemes" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListThemesResult> listThemesAsync(ListThemesRequest listThemesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListThemesRequest, ListThemesResult> asyncHandler);
 
     /**
      * <p>
@@ -2297,6 +2621,301 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     java.util.concurrent.Future<UpdateTemplatePermissionsResult> updateTemplatePermissionsAsync(
             UpdateTemplatePermissionsRequest updateTemplatePermissionsRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateTemplatePermissionsRequest, UpdateTemplatePermissionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates a theme.
+     * </p>
+     * 
+     * @param updateThemeRequest
+     * @return A Java Future containing the result of the UpdateTheme operation returned by the service.
+     * @sample AmazonQuickSightAsync.UpdateTheme
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateTheme" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateThemeResult> updateThemeAsync(UpdateThemeRequest updateThemeRequest);
+
+    /**
+     * <p>
+     * Updates a theme.
+     * </p>
+     * 
+     * @param updateThemeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateTheme operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.UpdateTheme
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateTheme" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateThemeResult> updateThemeAsync(UpdateThemeRequest updateThemeRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateThemeRequest, UpdateThemeResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates an alias of a theme.
+     * </p>
+     * 
+     * @param updateThemeAliasRequest
+     * @return A Java Future containing the result of the UpdateThemeAlias operation returned by the service.
+     * @sample AmazonQuickSightAsync.UpdateThemeAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateThemeAlias" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateThemeAliasResult> updateThemeAliasAsync(UpdateThemeAliasRequest updateThemeAliasRequest);
+
+    /**
+     * <p>
+     * Updates an alias of a theme.
+     * </p>
+     * 
+     * @param updateThemeAliasRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateThemeAlias operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.UpdateThemeAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateThemeAlias" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateThemeAliasResult> updateThemeAliasAsync(UpdateThemeAliasRequest updateThemeAliasRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateThemeAliasRequest, UpdateThemeAliasResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the resource permissions for a theme. Permissions apply to the action to grant or revoke permissions on,
+     * for example <code>"quicksight:DescribeTheme"</code>.
+     * </p>
+     * <p>
+     * Theme permissions apply in groupings. Valid groupings include the following for the three levels of permissions,
+     * which are user, owner, or no permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * User
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"quicksight:DescribeTheme"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:DescribeThemeAlias"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:ListThemeAliases"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:ListThemeVersions"</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Owner
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"quicksight:DescribeTheme"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:DescribeThemeAlias"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:ListThemeAliases"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:ListThemeVersions"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:DeleteTheme"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:UpdateTheme"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:CreateThemeAlias"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:DeleteThemeAlias"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:UpdateThemeAlias"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:UpdateThemePermissions"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:DescribeThemePermissions"</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * To specify no permissions, omit the permissions list.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param updateThemePermissionsRequest
+     * @return A Java Future containing the result of the UpdateThemePermissions operation returned by the service.
+     * @sample AmazonQuickSightAsync.UpdateThemePermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateThemePermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateThemePermissionsResult> updateThemePermissionsAsync(UpdateThemePermissionsRequest updateThemePermissionsRequest);
+
+    /**
+     * <p>
+     * Updates the resource permissions for a theme. Permissions apply to the action to grant or revoke permissions on,
+     * for example <code>"quicksight:DescribeTheme"</code>.
+     * </p>
+     * <p>
+     * Theme permissions apply in groupings. Valid groupings include the following for the three levels of permissions,
+     * which are user, owner, or no permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * User
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"quicksight:DescribeTheme"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:DescribeThemeAlias"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:ListThemeAliases"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:ListThemeVersions"</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Owner
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"quicksight:DescribeTheme"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:DescribeThemeAlias"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:ListThemeAliases"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:ListThemeVersions"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:DeleteTheme"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:UpdateTheme"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:CreateThemeAlias"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:DeleteThemeAlias"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:UpdateThemeAlias"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:UpdateThemePermissions"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:DescribeThemePermissions"</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * To specify no permissions, omit the permissions list.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param updateThemePermissionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateThemePermissions operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.UpdateThemePermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateThemePermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateThemePermissionsResult> updateThemePermissionsAsync(UpdateThemePermissionsRequest updateThemePermissionsRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateThemePermissionsRequest, UpdateThemePermissionsResult> asyncHandler);
 
     /**
      * <p>
