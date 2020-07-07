@@ -119,6 +119,8 @@ public interface AmazonElasticFileSystem {
      * @throws AccessPointAlreadyExistsException
      *         Returned if the access point you are trying to create already exists, with the creation token you
      *         provided in the request.
+     * @throws IncorrectFileSystemLifeCycleStateException
+     *         Returned if the file system's lifecycle state is not "available".
      * @throws InternalServerErrorException
      *         Returned if an error occurred on the server side.
      * @throws FileSystemNotFoundException
@@ -645,6 +647,30 @@ public interface AmazonElasticFileSystem {
 
     /**
      * <p>
+     * Returns the backup policy for the specified EFS file system.
+     * </p>
+     * 
+     * @param describeBackupPolicyRequest
+     * @return Result of the DescribeBackupPolicy operation returned by the service.
+     * @throws BadRequestException
+     *         Returned if the request is malformed or contains an error such as an invalid parameter value or a missing
+     *         required parameter.
+     * @throws FileSystemNotFoundException
+     *         Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's AWS account.
+     * @throws InternalServerErrorException
+     *         Returned if an error occurred on the server side.
+     * @throws PolicyNotFoundException
+     *         Returned if the default file system policy is in effect for the EFS file system specified.
+     * @throws ValidationException
+     *         Returned if the AWS Backup service is not available in the region that the request was made.
+     * @sample AmazonElasticFileSystem.DescribeBackupPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeBackupPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeBackupPolicyResult describeBackupPolicy(DescribeBackupPolicyRequest describeBackupPolicyRequest);
+
+    /**
+     * <p>
      * Returns the <code>FileSystemPolicy</code> for the specified EFS file system.
      * </p>
      * <p>
@@ -911,6 +937,30 @@ public interface AmazonElasticFileSystem {
      *      target="_top">AWS API Documentation</a>
      */
     ModifyMountTargetSecurityGroupsResult modifyMountTargetSecurityGroups(ModifyMountTargetSecurityGroupsRequest modifyMountTargetSecurityGroupsRequest);
+
+    /**
+     * <p>
+     * Updates the file system's backup policy. Use this action to start or stop automatic backups of the file system.
+     * </p>
+     * 
+     * @param putBackupPolicyRequest
+     * @return Result of the PutBackupPolicy operation returned by the service.
+     * @throws BadRequestException
+     *         Returned if the request is malformed or contains an error such as an invalid parameter value or a missing
+     *         required parameter.
+     * @throws FileSystemNotFoundException
+     *         Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's AWS account.
+     * @throws IncorrectFileSystemLifeCycleStateException
+     *         Returned if the file system's lifecycle state is not "available".
+     * @throws InternalServerErrorException
+     *         Returned if an error occurred on the server side.
+     * @throws ValidationException
+     *         Returned if the AWS Backup service is not available in the region that the request was made.
+     * @sample AmazonElasticFileSystem.PutBackupPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/PutBackupPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutBackupPolicyResult putBackupPolicy(PutBackupPolicyRequest putBackupPolicyRequest);
 
     /**
      * <p>

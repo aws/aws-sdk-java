@@ -33,6 +33,15 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
     private String policyInJson;
     /**
      * <p>
+     * The ARN of the AWS Glue resource for the resource policy to be set. For more information about AWS Glue resource
+     * ARNs, see the <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">AWS
+     * Glue ARN string pattern</a>
+     * </p>
+     */
+    private String resourceArn;
+    /**
+     * <p>
      * The hash value returned when the previous policy was set using <code>PutResourcePolicy</code>. Its purpose is to
      * prevent concurrent modifications of a policy. Do not use this parameter if no previous policy has been set.
      * </p>
@@ -46,6 +55,18 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private String policyExistsCondition;
+    /**
+     * <p>
+     * Allows you to specify if you want to use both resource-level and account/catalog-level resource policies. A
+     * resource-level policy is a policy attached to an individual resource such as a database or a table.
+     * </p>
+     * <p>
+     * The default value of <code>NO</code> indicates that resource-level policies cannot co-exist with an account-level
+     * policy. A value of <code>YES</code> means the use of both resource-level and account/catalog-level resource
+     * policies is allowed.
+     * </p>
+     */
+    private String enableHybrid;
 
     /**
      * <p>
@@ -84,6 +105,64 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     public PutResourcePolicyRequest withPolicyInJson(String policyInJson) {
         setPolicyInJson(policyInJson);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN of the AWS Glue resource for the resource policy to be set. For more information about AWS Glue resource
+     * ARNs, see the <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">AWS
+     * Glue ARN string pattern</a>
+     * </p>
+     * 
+     * @param resourceArn
+     *        The ARN of the AWS Glue resource for the resource policy to be set. For more information about AWS Glue
+     *        resource ARNs, see the <a href=
+     *        "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id"
+     *        >AWS Glue ARN string pattern</a>
+     */
+
+    public void setResourceArn(String resourceArn) {
+        this.resourceArn = resourceArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the AWS Glue resource for the resource policy to be set. For more information about AWS Glue resource
+     * ARNs, see the <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">AWS
+     * Glue ARN string pattern</a>
+     * </p>
+     * 
+     * @return The ARN of the AWS Glue resource for the resource policy to be set. For more information about AWS Glue
+     *         resource ARNs, see the <a href=
+     *         "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id"
+     *         >AWS Glue ARN string pattern</a>
+     */
+
+    public String getResourceArn() {
+        return this.resourceArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the AWS Glue resource for the resource policy to be set. For more information about AWS Glue resource
+     * ARNs, see the <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">AWS
+     * Glue ARN string pattern</a>
+     * </p>
+     * 
+     * @param resourceArn
+     *        The ARN of the AWS Glue resource for the resource policy to be set. For more information about AWS Glue
+     *        resource ARNs, see the <a href=
+     *        "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id"
+     *        >AWS Glue ARN string pattern</a>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutResourcePolicyRequest withResourceArn(String resourceArn) {
+        setResourceArn(resourceArn);
         return this;
     }
 
@@ -212,6 +291,109 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * Allows you to specify if you want to use both resource-level and account/catalog-level resource policies. A
+     * resource-level policy is a policy attached to an individual resource such as a database or a table.
+     * </p>
+     * <p>
+     * The default value of <code>NO</code> indicates that resource-level policies cannot co-exist with an account-level
+     * policy. A value of <code>YES</code> means the use of both resource-level and account/catalog-level resource
+     * policies is allowed.
+     * </p>
+     * 
+     * @param enableHybrid
+     *        Allows you to specify if you want to use both resource-level and account/catalog-level resource policies.
+     *        A resource-level policy is a policy attached to an individual resource such as a database or a table.</p>
+     *        <p>
+     *        The default value of <code>NO</code> indicates that resource-level policies cannot co-exist with an
+     *        account-level policy. A value of <code>YES</code> means the use of both resource-level and
+     *        account/catalog-level resource policies is allowed.
+     * @see EnableHybridValues
+     */
+
+    public void setEnableHybrid(String enableHybrid) {
+        this.enableHybrid = enableHybrid;
+    }
+
+    /**
+     * <p>
+     * Allows you to specify if you want to use both resource-level and account/catalog-level resource policies. A
+     * resource-level policy is a policy attached to an individual resource such as a database or a table.
+     * </p>
+     * <p>
+     * The default value of <code>NO</code> indicates that resource-level policies cannot co-exist with an account-level
+     * policy. A value of <code>YES</code> means the use of both resource-level and account/catalog-level resource
+     * policies is allowed.
+     * </p>
+     * 
+     * @return Allows you to specify if you want to use both resource-level and account/catalog-level resource policies.
+     *         A resource-level policy is a policy attached to an individual resource such as a database or a table.</p>
+     *         <p>
+     *         The default value of <code>NO</code> indicates that resource-level policies cannot co-exist with an
+     *         account-level policy. A value of <code>YES</code> means the use of both resource-level and
+     *         account/catalog-level resource policies is allowed.
+     * @see EnableHybridValues
+     */
+
+    public String getEnableHybrid() {
+        return this.enableHybrid;
+    }
+
+    /**
+     * <p>
+     * Allows you to specify if you want to use both resource-level and account/catalog-level resource policies. A
+     * resource-level policy is a policy attached to an individual resource such as a database or a table.
+     * </p>
+     * <p>
+     * The default value of <code>NO</code> indicates that resource-level policies cannot co-exist with an account-level
+     * policy. A value of <code>YES</code> means the use of both resource-level and account/catalog-level resource
+     * policies is allowed.
+     * </p>
+     * 
+     * @param enableHybrid
+     *        Allows you to specify if you want to use both resource-level and account/catalog-level resource policies.
+     *        A resource-level policy is a policy attached to an individual resource such as a database or a table.</p>
+     *        <p>
+     *        The default value of <code>NO</code> indicates that resource-level policies cannot co-exist with an
+     *        account-level policy. A value of <code>YES</code> means the use of both resource-level and
+     *        account/catalog-level resource policies is allowed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EnableHybridValues
+     */
+
+    public PutResourcePolicyRequest withEnableHybrid(String enableHybrid) {
+        setEnableHybrid(enableHybrid);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Allows you to specify if you want to use both resource-level and account/catalog-level resource policies. A
+     * resource-level policy is a policy attached to an individual resource such as a database or a table.
+     * </p>
+     * <p>
+     * The default value of <code>NO</code> indicates that resource-level policies cannot co-exist with an account-level
+     * policy. A value of <code>YES</code> means the use of both resource-level and account/catalog-level resource
+     * policies is allowed.
+     * </p>
+     * 
+     * @param enableHybrid
+     *        Allows you to specify if you want to use both resource-level and account/catalog-level resource policies.
+     *        A resource-level policy is a policy attached to an individual resource such as a database or a table.</p>
+     *        <p>
+     *        The default value of <code>NO</code> indicates that resource-level policies cannot co-exist with an
+     *        account-level policy. A value of <code>YES</code> means the use of both resource-level and
+     *        account/catalog-level resource policies is allowed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EnableHybridValues
+     */
+
+    public PutResourcePolicyRequest withEnableHybrid(EnableHybridValues enableHybrid) {
+        this.enableHybrid = enableHybrid.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -225,10 +407,14 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
         sb.append("{");
         if (getPolicyInJson() != null)
             sb.append("PolicyInJson: ").append(getPolicyInJson()).append(",");
+        if (getResourceArn() != null)
+            sb.append("ResourceArn: ").append(getResourceArn()).append(",");
         if (getPolicyHashCondition() != null)
             sb.append("PolicyHashCondition: ").append(getPolicyHashCondition()).append(",");
         if (getPolicyExistsCondition() != null)
-            sb.append("PolicyExistsCondition: ").append(getPolicyExistsCondition());
+            sb.append("PolicyExistsCondition: ").append(getPolicyExistsCondition()).append(",");
+        if (getEnableHybrid() != null)
+            sb.append("EnableHybrid: ").append(getEnableHybrid());
         sb.append("}");
         return sb.toString();
     }
@@ -247,6 +433,10 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getPolicyInJson() != null && other.getPolicyInJson().equals(this.getPolicyInJson()) == false)
             return false;
+        if (other.getResourceArn() == null ^ this.getResourceArn() == null)
+            return false;
+        if (other.getResourceArn() != null && other.getResourceArn().equals(this.getResourceArn()) == false)
+            return false;
         if (other.getPolicyHashCondition() == null ^ this.getPolicyHashCondition() == null)
             return false;
         if (other.getPolicyHashCondition() != null && other.getPolicyHashCondition().equals(this.getPolicyHashCondition()) == false)
@@ -254,6 +444,10 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
         if (other.getPolicyExistsCondition() == null ^ this.getPolicyExistsCondition() == null)
             return false;
         if (other.getPolicyExistsCondition() != null && other.getPolicyExistsCondition().equals(this.getPolicyExistsCondition()) == false)
+            return false;
+        if (other.getEnableHybrid() == null ^ this.getEnableHybrid() == null)
+            return false;
+        if (other.getEnableHybrid() != null && other.getEnableHybrid().equals(this.getEnableHybrid()) == false)
             return false;
         return true;
     }
@@ -264,8 +458,10 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getPolicyInJson() == null) ? 0 : getPolicyInJson().hashCode());
+        hashCode = prime * hashCode + ((getResourceArn() == null) ? 0 : getResourceArn().hashCode());
         hashCode = prime * hashCode + ((getPolicyHashCondition() == null) ? 0 : getPolicyHashCondition().hashCode());
         hashCode = prime * hashCode + ((getPolicyExistsCondition() == null) ? 0 : getPolicyExistsCondition().hashCode());
+        hashCode = prime * hashCode + ((getEnableHybrid() == null) ? 0 : getEnableHybrid().hashCode());
         return hashCode;
     }
 

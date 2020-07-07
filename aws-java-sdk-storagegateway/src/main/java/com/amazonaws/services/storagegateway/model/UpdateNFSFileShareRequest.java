@@ -147,6 +147,23 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private Boolean requesterPays;
+    /**
+     * <p>
+     * The name of the file share. Optional.
+     * </p>
+     * <note>
+     * <p>
+     * <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>.
+     * </p>
+     * </note>
+     */
+    private String fileShareName;
+    /**
+     * <p>
+     * Refresh cache information.
+     * </p>
+     */
+    private CacheAttributes cacheAttributes;
 
     /**
      * <p>
@@ -1033,6 +1050,110 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The name of the file share. Optional.
+     * </p>
+     * <note>
+     * <p>
+     * <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>.
+     * </p>
+     * </note>
+     * 
+     * @param fileShareName
+     *        The name of the file share. Optional.</p> <note>
+     *        <p>
+     *        <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>.
+     *        </p>
+     */
+
+    public void setFileShareName(String fileShareName) {
+        this.fileShareName = fileShareName;
+    }
+
+    /**
+     * <p>
+     * The name of the file share. Optional.
+     * </p>
+     * <note>
+     * <p>
+     * <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>.
+     * </p>
+     * </note>
+     * 
+     * @return The name of the file share. Optional.</p> <note>
+     *         <p>
+     *         <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>.
+     *         </p>
+     */
+
+    public String getFileShareName() {
+        return this.fileShareName;
+    }
+
+    /**
+     * <p>
+     * The name of the file share. Optional.
+     * </p>
+     * <note>
+     * <p>
+     * <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>.
+     * </p>
+     * </note>
+     * 
+     * @param fileShareName
+     *        The name of the file share. Optional.</p> <note>
+     *        <p>
+     *        <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateNFSFileShareRequest withFileShareName(String fileShareName) {
+        setFileShareName(fileShareName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Refresh cache information.
+     * </p>
+     * 
+     * @param cacheAttributes
+     *        Refresh cache information.
+     */
+
+    public void setCacheAttributes(CacheAttributes cacheAttributes) {
+        this.cacheAttributes = cacheAttributes;
+    }
+
+    /**
+     * <p>
+     * Refresh cache information.
+     * </p>
+     * 
+     * @return Refresh cache information.
+     */
+
+    public CacheAttributes getCacheAttributes() {
+        return this.cacheAttributes;
+    }
+
+    /**
+     * <p>
+     * Refresh cache information.
+     * </p>
+     * 
+     * @param cacheAttributes
+     *        Refresh cache information.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateNFSFileShareRequest withCacheAttributes(CacheAttributes cacheAttributes) {
+        setCacheAttributes(cacheAttributes);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1065,7 +1186,11 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
         if (getGuessMIMETypeEnabled() != null)
             sb.append("GuessMIMETypeEnabled: ").append(getGuessMIMETypeEnabled()).append(",");
         if (getRequesterPays() != null)
-            sb.append("RequesterPays: ").append(getRequesterPays());
+            sb.append("RequesterPays: ").append(getRequesterPays()).append(",");
+        if (getFileShareName() != null)
+            sb.append("FileShareName: ").append(getFileShareName()).append(",");
+        if (getCacheAttributes() != null)
+            sb.append("CacheAttributes: ").append(getCacheAttributes());
         sb.append("}");
         return sb.toString();
     }
@@ -1124,6 +1249,14 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getRequesterPays() != null && other.getRequesterPays().equals(this.getRequesterPays()) == false)
             return false;
+        if (other.getFileShareName() == null ^ this.getFileShareName() == null)
+            return false;
+        if (other.getFileShareName() != null && other.getFileShareName().equals(this.getFileShareName()) == false)
+            return false;
+        if (other.getCacheAttributes() == null ^ this.getCacheAttributes() == null)
+            return false;
+        if (other.getCacheAttributes() != null && other.getCacheAttributes().equals(this.getCacheAttributes()) == false)
+            return false;
         return true;
     }
 
@@ -1143,6 +1276,8 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getReadOnly() == null) ? 0 : getReadOnly().hashCode());
         hashCode = prime * hashCode + ((getGuessMIMETypeEnabled() == null) ? 0 : getGuessMIMETypeEnabled().hashCode());
         hashCode = prime * hashCode + ((getRequesterPays() == null) ? 0 : getRequesterPays().hashCode());
+        hashCode = prime * hashCode + ((getFileShareName() == null) ? 0 : getFileShareName().hashCode());
+        hashCode = prime * hashCode + ((getCacheAttributes() == null) ? 0 : getCacheAttributes().hashCode());
         return hashCode;
     }
 

@@ -60,6 +60,10 @@ public class FileSystemDescriptionJsonUnmarshaller implements Unmarshaller<FileS
                     context.nextToken();
                     fileSystemDescription.setFileSystemId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("FileSystemArn", targetDepth)) {
+                    context.nextToken();
+                    fileSystemDescription.setFileSystemArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
                     fileSystemDescription.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));

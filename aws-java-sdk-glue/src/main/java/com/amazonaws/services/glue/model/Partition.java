@@ -76,6 +76,12 @@ public class Partition implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Date lastAnalyzedTime;
+    /**
+     * <p>
+     * The ID of the Data Catalog in which the partition resides.
+     * </p>
+     */
+    private String catalogId;
 
     /**
      * <p>
@@ -456,6 +462,46 @@ public class Partition implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The ID of the Data Catalog in which the partition resides.
+     * </p>
+     * 
+     * @param catalogId
+     *        The ID of the Data Catalog in which the partition resides.
+     */
+
+    public void setCatalogId(String catalogId) {
+        this.catalogId = catalogId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Data Catalog in which the partition resides.
+     * </p>
+     * 
+     * @return The ID of the Data Catalog in which the partition resides.
+     */
+
+    public String getCatalogId() {
+        return this.catalogId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Data Catalog in which the partition resides.
+     * </p>
+     * 
+     * @param catalogId
+     *        The ID of the Data Catalog in which the partition resides.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Partition withCatalogId(String catalogId) {
+        setCatalogId(catalogId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -482,7 +528,9 @@ public class Partition implements Serializable, Cloneable, StructuredPojo {
         if (getParameters() != null)
             sb.append("Parameters: ").append(getParameters()).append(",");
         if (getLastAnalyzedTime() != null)
-            sb.append("LastAnalyzedTime: ").append(getLastAnalyzedTime());
+            sb.append("LastAnalyzedTime: ").append(getLastAnalyzedTime()).append(",");
+        if (getCatalogId() != null)
+            sb.append("CatalogId: ").append(getCatalogId());
         sb.append("}");
         return sb.toString();
     }
@@ -529,6 +577,10 @@ public class Partition implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getLastAnalyzedTime() != null && other.getLastAnalyzedTime().equals(this.getLastAnalyzedTime()) == false)
             return false;
+        if (other.getCatalogId() == null ^ this.getCatalogId() == null)
+            return false;
+        if (other.getCatalogId() != null && other.getCatalogId().equals(this.getCatalogId()) == false)
+            return false;
         return true;
     }
 
@@ -545,6 +597,7 @@ public class Partition implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getStorageDescriptor() == null) ? 0 : getStorageDescriptor().hashCode());
         hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
         hashCode = prime * hashCode + ((getLastAnalyzedTime() == null) ? 0 : getLastAnalyzedTime().hashCode());
+        hashCode = prime * hashCode + ((getCatalogId() == null) ? 0 : getCatalogId().hashCode());
         return hashCode;
     }
 

@@ -45,6 +45,8 @@ public class PartitionMarshaller {
             .marshallLocationName("Parameters").build();
     private static final MarshallingInfo<java.util.Date> LASTANALYZEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastAnalyzedTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> CATALOGID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("CatalogId").build();
 
     private static final PartitionMarshaller instance = new PartitionMarshaller();
 
@@ -70,6 +72,7 @@ public class PartitionMarshaller {
             protocolMarshaller.marshall(partition.getStorageDescriptor(), STORAGEDESCRIPTOR_BINDING);
             protocolMarshaller.marshall(partition.getParameters(), PARAMETERS_BINDING);
             protocolMarshaller.marshall(partition.getLastAnalyzedTime(), LASTANALYZEDTIME_BINDING);
+            protocolMarshaller.marshall(partition.getCatalogId(), CATALOGID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

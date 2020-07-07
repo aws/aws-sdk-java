@@ -63,6 +63,10 @@ public class DataLakeSettingsJsonUnmarshaller implements Unmarshaller<DataLakeSe
                     dataLakeSettings.setCreateTableDefaultPermissions(new ListUnmarshaller<PrincipalPermissions>(PrincipalPermissionsJsonUnmarshaller
                             .getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("TrustedResourceOwners", targetDepth)) {
+                    context.nextToken();
+                    dataLakeSettings.setTrustedResourceOwners(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -90,6 +90,11 @@ public class AbstractAmazonElasticFileSystem implements AmazonElasticFileSystem 
     }
 
     @Override
+    public DescribeBackupPolicyResult describeBackupPolicy(DescribeBackupPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeFileSystemPolicyResult describeFileSystemPolicy(DescribeFileSystemPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -132,6 +137,11 @@ public class AbstractAmazonElasticFileSystem implements AmazonElasticFileSystem 
 
     @Override
     public ModifyMountTargetSecurityGroupsResult modifyMountTargetSecurityGroups(ModifyMountTargetSecurityGroupsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutBackupPolicyResult putBackupPolicy(PutBackupPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -49,6 +49,15 @@ public class FileSystemDescription implements Serializable, Cloneable, Structure
     private String fileSystemId;
     /**
      * <p>
+     * The Amazon Resource Name (ARN) for the EFS file system, in the format
+     * <code>arn:aws:elasticfilesystem:<i>region</i>:<i>account-id</i>:file-system/<i>file-system-id</i> </code>.
+     * Example with sample data:
+     * <code>arn:aws:elasticfilesystem:us-west-2:1111333322228888:file-system/fs-01234567</code>
+     * </p>
+     */
+    private String fileSystemArn;
+    /**
+     * <p>
      * The time that the file system was created, in seconds (since 1970-01-01T00:00:00Z).
      * </p>
      */
@@ -254,6 +263,64 @@ public class FileSystemDescription implements Serializable, Cloneable, Structure
 
     public FileSystemDescription withFileSystemId(String fileSystemId) {
         setFileSystemId(fileSystemId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the EFS file system, in the format
+     * <code>arn:aws:elasticfilesystem:<i>region</i>:<i>account-id</i>:file-system/<i>file-system-id</i> </code>.
+     * Example with sample data:
+     * <code>arn:aws:elasticfilesystem:us-west-2:1111333322228888:file-system/fs-01234567</code>
+     * </p>
+     * 
+     * @param fileSystemArn
+     *        The Amazon Resource Name (ARN) for the EFS file system, in the format
+     *        <code>arn:aws:elasticfilesystem:<i>region</i>:<i>account-id</i>:file-system/<i>file-system-id</i> </code>.
+     *        Example with sample data:
+     *        <code>arn:aws:elasticfilesystem:us-west-2:1111333322228888:file-system/fs-01234567</code>
+     */
+
+    public void setFileSystemArn(String fileSystemArn) {
+        this.fileSystemArn = fileSystemArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the EFS file system, in the format
+     * <code>arn:aws:elasticfilesystem:<i>region</i>:<i>account-id</i>:file-system/<i>file-system-id</i> </code>.
+     * Example with sample data:
+     * <code>arn:aws:elasticfilesystem:us-west-2:1111333322228888:file-system/fs-01234567</code>
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) for the EFS file system, in the format
+     *         <code>arn:aws:elasticfilesystem:<i>region</i>:<i>account-id</i>:file-system/<i>file-system-id</i> </code>
+     *         . Example with sample data:
+     *         <code>arn:aws:elasticfilesystem:us-west-2:1111333322228888:file-system/fs-01234567</code>
+     */
+
+    public String getFileSystemArn() {
+        return this.fileSystemArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the EFS file system, in the format
+     * <code>arn:aws:elasticfilesystem:<i>region</i>:<i>account-id</i>:file-system/<i>file-system-id</i> </code>.
+     * Example with sample data:
+     * <code>arn:aws:elasticfilesystem:us-west-2:1111333322228888:file-system/fs-01234567</code>
+     * </p>
+     * 
+     * @param fileSystemArn
+     *        The Amazon Resource Name (ARN) for the EFS file system, in the format
+     *        <code>arn:aws:elasticfilesystem:<i>region</i>:<i>account-id</i>:file-system/<i>file-system-id</i> </code>.
+     *        Example with sample data:
+     *        <code>arn:aws:elasticfilesystem:us-west-2:1111333322228888:file-system/fs-01234567</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FileSystemDescription withFileSystemArn(String fileSystemArn) {
+        setFileSystemArn(fileSystemArn);
         return this;
     }
 
@@ -982,6 +1049,8 @@ public class FileSystemDescription implements Serializable, Cloneable, Structure
             sb.append("CreationToken: ").append(getCreationToken()).append(",");
         if (getFileSystemId() != null)
             sb.append("FileSystemId: ").append(getFileSystemId()).append(",");
+        if (getFileSystemArn() != null)
+            sb.append("FileSystemArn: ").append(getFileSystemArn()).append(",");
         if (getCreationTime() != null)
             sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getLifeCycleState() != null)
@@ -1029,6 +1098,10 @@ public class FileSystemDescription implements Serializable, Cloneable, Structure
         if (other.getFileSystemId() == null ^ this.getFileSystemId() == null)
             return false;
         if (other.getFileSystemId() != null && other.getFileSystemId().equals(this.getFileSystemId()) == false)
+            return false;
+        if (other.getFileSystemArn() == null ^ this.getFileSystemArn() == null)
+            return false;
+        if (other.getFileSystemArn() != null && other.getFileSystemArn().equals(this.getFileSystemArn()) == false)
             return false;
         if (other.getCreationTime() == null ^ this.getCreationTime() == null)
             return false;
@@ -1085,6 +1158,7 @@ public class FileSystemDescription implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getOwnerId() == null) ? 0 : getOwnerId().hashCode());
         hashCode = prime * hashCode + ((getCreationToken() == null) ? 0 : getCreationToken().hashCode());
         hashCode = prime * hashCode + ((getFileSystemId() == null) ? 0 : getFileSystemId().hashCode());
+        hashCode = prime * hashCode + ((getFileSystemArn() == null) ? 0 : getFileSystemArn().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getLifeCycleState() == null) ? 0 : getLifeCycleState().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());

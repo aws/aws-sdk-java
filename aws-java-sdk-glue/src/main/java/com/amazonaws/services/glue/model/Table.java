@@ -136,6 +136,18 @@ public class Table implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Boolean isRegisteredWithLakeFormation;
+    /**
+     * <p>
+     * A <code>TableIdentifier</code> structure that describes a target table for resource linking.
+     * </p>
+     */
+    private TableIdentifier targetTable;
+    /**
+     * <p>
+     * The ID of the Data Catalog in which the table resides.
+     * </p>
+     */
+    private String catalogId;
 
     /**
      * <p>
@@ -947,6 +959,86 @@ public class Table implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A <code>TableIdentifier</code> structure that describes a target table for resource linking.
+     * </p>
+     * 
+     * @param targetTable
+     *        A <code>TableIdentifier</code> structure that describes a target table for resource linking.
+     */
+
+    public void setTargetTable(TableIdentifier targetTable) {
+        this.targetTable = targetTable;
+    }
+
+    /**
+     * <p>
+     * A <code>TableIdentifier</code> structure that describes a target table for resource linking.
+     * </p>
+     * 
+     * @return A <code>TableIdentifier</code> structure that describes a target table for resource linking.
+     */
+
+    public TableIdentifier getTargetTable() {
+        return this.targetTable;
+    }
+
+    /**
+     * <p>
+     * A <code>TableIdentifier</code> structure that describes a target table for resource linking.
+     * </p>
+     * 
+     * @param targetTable
+     *        A <code>TableIdentifier</code> structure that describes a target table for resource linking.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Table withTargetTable(TableIdentifier targetTable) {
+        setTargetTable(targetTable);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the Data Catalog in which the table resides.
+     * </p>
+     * 
+     * @param catalogId
+     *        The ID of the Data Catalog in which the table resides.
+     */
+
+    public void setCatalogId(String catalogId) {
+        this.catalogId = catalogId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Data Catalog in which the table resides.
+     * </p>
+     * 
+     * @return The ID of the Data Catalog in which the table resides.
+     */
+
+    public String getCatalogId() {
+        return this.catalogId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Data Catalog in which the table resides.
+     * </p>
+     * 
+     * @param catalogId
+     *        The ID of the Data Catalog in which the table resides.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Table withCatalogId(String catalogId) {
+        setCatalogId(catalogId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -991,7 +1083,11 @@ public class Table implements Serializable, Cloneable, StructuredPojo {
         if (getCreatedBy() != null)
             sb.append("CreatedBy: ").append(getCreatedBy()).append(",");
         if (getIsRegisteredWithLakeFormation() != null)
-            sb.append("IsRegisteredWithLakeFormation: ").append(getIsRegisteredWithLakeFormation());
+            sb.append("IsRegisteredWithLakeFormation: ").append(getIsRegisteredWithLakeFormation()).append(",");
+        if (getTargetTable() != null)
+            sb.append("TargetTable: ").append(getTargetTable()).append(",");
+        if (getCatalogId() != null)
+            sb.append("CatalogId: ").append(getCatalogId());
         sb.append("}");
         return sb.toString();
     }
@@ -1075,6 +1171,14 @@ public class Table implements Serializable, Cloneable, StructuredPojo {
         if (other.getIsRegisteredWithLakeFormation() != null
                 && other.getIsRegisteredWithLakeFormation().equals(this.getIsRegisteredWithLakeFormation()) == false)
             return false;
+        if (other.getTargetTable() == null ^ this.getTargetTable() == null)
+            return false;
+        if (other.getTargetTable() != null && other.getTargetTable().equals(this.getTargetTable()) == false)
+            return false;
+        if (other.getCatalogId() == null ^ this.getCatalogId() == null)
+            return false;
+        if (other.getCatalogId() != null && other.getCatalogId().equals(this.getCatalogId()) == false)
+            return false;
         return true;
     }
 
@@ -1100,6 +1204,8 @@ public class Table implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
         hashCode = prime * hashCode + ((getCreatedBy() == null) ? 0 : getCreatedBy().hashCode());
         hashCode = prime * hashCode + ((getIsRegisteredWithLakeFormation() == null) ? 0 : getIsRegisteredWithLakeFormation().hashCode());
+        hashCode = prime * hashCode + ((getTargetTable() == null) ? 0 : getTargetTable().hashCode());
+        hashCode = prime * hashCode + ((getCatalogId() == null) ? 0 : getCatalogId().hashCode());
         return hashCode;
     }
 

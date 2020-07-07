@@ -36,7 +36,7 @@ public class UserDefinedFunction implements Serializable, Cloneable, StructuredP
     private String functionName;
     /**
      * <p>
-     * The name of the database where the function resides.
+     * The name of the catalog database that contains the function.
      * </p>
      */
     private String databaseName;
@@ -70,6 +70,12 @@ public class UserDefinedFunction implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private java.util.List<ResourceUri> resourceUris;
+    /**
+     * <p>
+     * The ID of the Data Catalog in which the function resides.
+     * </p>
+     */
+    private String catalogId;
 
     /**
      * <p>
@@ -113,11 +119,11 @@ public class UserDefinedFunction implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The name of the database where the function resides.
+     * The name of the catalog database that contains the function.
      * </p>
      * 
      * @param databaseName
-     *        The name of the database where the function resides.
+     *        The name of the catalog database that contains the function.
      */
 
     public void setDatabaseName(String databaseName) {
@@ -126,10 +132,10 @@ public class UserDefinedFunction implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The name of the database where the function resides.
+     * The name of the catalog database that contains the function.
      * </p>
      * 
-     * @return The name of the database where the function resides.
+     * @return The name of the catalog database that contains the function.
      */
 
     public String getDatabaseName() {
@@ -138,11 +144,11 @@ public class UserDefinedFunction implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The name of the database where the function resides.
+     * The name of the catalog database that contains the function.
      * </p>
      * 
      * @param databaseName
-     *        The name of the database where the function resides.
+     *        The name of the catalog database that contains the function.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -401,6 +407,46 @@ public class UserDefinedFunction implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The ID of the Data Catalog in which the function resides.
+     * </p>
+     * 
+     * @param catalogId
+     *        The ID of the Data Catalog in which the function resides.
+     */
+
+    public void setCatalogId(String catalogId) {
+        this.catalogId = catalogId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Data Catalog in which the function resides.
+     * </p>
+     * 
+     * @return The ID of the Data Catalog in which the function resides.
+     */
+
+    public String getCatalogId() {
+        return this.catalogId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Data Catalog in which the function resides.
+     * </p>
+     * 
+     * @param catalogId
+     *        The ID of the Data Catalog in which the function resides.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UserDefinedFunction withCatalogId(String catalogId) {
+        setCatalogId(catalogId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -425,7 +471,9 @@ public class UserDefinedFunction implements Serializable, Cloneable, StructuredP
         if (getCreateTime() != null)
             sb.append("CreateTime: ").append(getCreateTime()).append(",");
         if (getResourceUris() != null)
-            sb.append("ResourceUris: ").append(getResourceUris());
+            sb.append("ResourceUris: ").append(getResourceUris()).append(",");
+        if (getCatalogId() != null)
+            sb.append("CatalogId: ").append(getCatalogId());
         sb.append("}");
         return sb.toString();
     }
@@ -468,6 +516,10 @@ public class UserDefinedFunction implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getResourceUris() != null && other.getResourceUris().equals(this.getResourceUris()) == false)
             return false;
+        if (other.getCatalogId() == null ^ this.getCatalogId() == null)
+            return false;
+        if (other.getCatalogId() != null && other.getCatalogId().equals(this.getCatalogId()) == false)
+            return false;
         return true;
     }
 
@@ -483,6 +535,7 @@ public class UserDefinedFunction implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getOwnerType() == null) ? 0 : getOwnerType().hashCode());
         hashCode = prime * hashCode + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
         hashCode = prime * hashCode + ((getResourceUris() == null) ? 0 : getResourceUris().hashCode());
+        hashCode = prime * hashCode + ((getCatalogId() == null) ? 0 : getCatalogId().hashCode());
         return hashCode;
     }
 

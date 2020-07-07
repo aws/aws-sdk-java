@@ -29,6 +29,8 @@ public class DeleteResourcePolicyRequestMarshaller {
 
     private static final MarshallingInfo<String> POLICYHASHCONDITION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PolicyHashCondition").build();
+    private static final MarshallingInfo<String> RESOURCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceArn").build();
 
     private static final DeleteResourcePolicyRequestMarshaller instance = new DeleteResourcePolicyRequestMarshaller();
 
@@ -47,6 +49,7 @@ public class DeleteResourcePolicyRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(deleteResourcePolicyRequest.getPolicyHashCondition(), POLICYHASHCONDITION_BINDING);
+            protocolMarshaller.marshall(deleteResourcePolicyRequest.getResourceArn(), RESOURCEARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

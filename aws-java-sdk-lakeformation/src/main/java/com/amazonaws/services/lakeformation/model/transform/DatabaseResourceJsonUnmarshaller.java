@@ -48,6 +48,10 @@ public class DatabaseResourceJsonUnmarshaller implements Unmarshaller<DatabaseRe
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("CatalogId", targetDepth)) {
+                    context.nextToken();
+                    databaseResource.setCatalogId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
                     databaseResource.setName(context.getUnmarshaller(String.class).unmarshall(context));

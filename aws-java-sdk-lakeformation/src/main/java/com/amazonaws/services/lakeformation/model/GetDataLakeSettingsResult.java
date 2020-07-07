@@ -25,18 +25,18 @@ public class GetDataLakeSettingsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A list of AWS Lake Formation principals.
+     * A structure representing a list of AWS Lake Formation principals designated as data lake administrators.
      * </p>
      */
     private DataLakeSettings dataLakeSettings;
 
     /**
      * <p>
-     * A list of AWS Lake Formation principals.
+     * A structure representing a list of AWS Lake Formation principals designated as data lake administrators.
      * </p>
      * 
      * @param dataLakeSettings
-     *        A list of AWS Lake Formation principals.
+     *        A structure representing a list of AWS Lake Formation principals designated as data lake administrators.
      */
 
     public void setDataLakeSettings(DataLakeSettings dataLakeSettings) {
@@ -45,10 +45,10 @@ public class GetDataLakeSettingsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A list of AWS Lake Formation principals.
+     * A structure representing a list of AWS Lake Formation principals designated as data lake administrators.
      * </p>
      * 
-     * @return A list of AWS Lake Formation principals.
+     * @return A structure representing a list of AWS Lake Formation principals designated as data lake administrators.
      */
 
     public DataLakeSettings getDataLakeSettings() {
@@ -57,11 +57,11 @@ public class GetDataLakeSettingsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A list of AWS Lake Formation principals.
+     * A structure representing a list of AWS Lake Formation principals designated as data lake administrators.
      * </p>
      * 
      * @param dataLakeSettings
-     *        A list of AWS Lake Formation principals.
+     *        A structure representing a list of AWS Lake Formation principals designated as data lake administrators.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

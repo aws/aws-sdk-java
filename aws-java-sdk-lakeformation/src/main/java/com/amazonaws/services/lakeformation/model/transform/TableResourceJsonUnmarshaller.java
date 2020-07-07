@@ -48,6 +48,10 @@ public class TableResourceJsonUnmarshaller implements Unmarshaller<TableResource
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("CatalogId", targetDepth)) {
+                    context.nextToken();
+                    tableResource.setCatalogId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("DatabaseName", targetDepth)) {
                     context.nextToken();
                     tableResource.setDatabaseName(context.getUnmarshaller(String.class).unmarshall(context));
@@ -55,6 +59,10 @@ public class TableResourceJsonUnmarshaller implements Unmarshaller<TableResource
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
                     tableResource.setName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("TableWildcard", targetDepth)) {
+                    context.nextToken();
+                    tableResource.setTableWildcard(TableWildcardJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

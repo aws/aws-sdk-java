@@ -125,8 +125,9 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     private Boolean sMBACLEnabled;
     /**
      * <p>
-     * A list of users in the Active Directory that have administrator rights to the file share. A group must be
-     * prefixed with the @ character. For example, <code>@group1</code>. Can only be set if Authentication is set to
+     * A list of users or groups in the Active Directory that have administrator rights to the file share. A group must
+     * be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>,
+     * <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.
      * </p>
      */
@@ -134,7 +135,8 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * A list of users or groups in the Active Directory that are allowed to access the file share. A group must be
-     * prefixed with the @ character. For example, <code>@group1</code>. Can only be set if Authentication is set to
+     * prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>,
+     * <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.
      * </p>
      */
@@ -142,7 +144,8 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * A list of users or groups in the Active Directory that are not allowed to access the file share. A group must be
-     * prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set to
+     * prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>,
+     * <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.
      * </p>
      */
@@ -153,6 +156,31 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private String auditDestinationARN;
+    /**
+     * <p>
+     * The case of an object name in an Amazon S3 bucket. For <code>ClientSpecified</code>, the client determines the
+     * case sensitivity. For <code>CaseSensitive</code>, the gateway determines the case sensitivity. The default value
+     * is <code>ClientSpecified</code>.
+     * </p>
+     */
+    private String caseSensitivity;
+    /**
+     * <p>
+     * The name of the file share. Optional.
+     * </p>
+     * <note>
+     * <p>
+     * <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>.
+     * </p>
+     * </note>
+     */
+    private String fileShareName;
+    /**
+     * <p>
+     * Refresh cache information.
+     * </p>
+     */
+    private CacheAttributes cacheAttributes;
 
     /**
      * <p>
@@ -882,14 +910,16 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A list of users in the Active Directory that have administrator rights to the file share. A group must be
-     * prefixed with the @ character. For example, <code>@group1</code>. Can only be set if Authentication is set to
+     * A list of users or groups in the Active Directory that have administrator rights to the file share. A group must
+     * be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>,
+     * <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.
      * </p>
      * 
-     * @return A list of users in the Active Directory that have administrator rights to the file share. A group must be
-     *         prefixed with the @ character. For example, <code>@group1</code>. Can only be set if Authentication is
-     *         set to <code>ActiveDirectory</code>.
+     * @return A list of users or groups in the Active Directory that have administrator rights to the file share. A
+     *         group must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>,
+     *         <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if
+     *         Authentication is set to <code>ActiveDirectory</code>.
      */
 
     public java.util.List<String> getAdminUserList() {
@@ -901,15 +931,17 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A list of users in the Active Directory that have administrator rights to the file share. A group must be
-     * prefixed with the @ character. For example, <code>@group1</code>. Can only be set if Authentication is set to
+     * A list of users or groups in the Active Directory that have administrator rights to the file share. A group must
+     * be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>,
+     * <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.
      * </p>
      * 
      * @param adminUserList
-     *        A list of users in the Active Directory that have administrator rights to the file share. A group must be
-     *        prefixed with the @ character. For example, <code>@group1</code>. Can only be set if Authentication is set
-     *        to <code>ActiveDirectory</code>.
+     *        A list of users or groups in the Active Directory that have administrator rights to the file share. A
+     *        group must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>,
+     *        <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if
+     *        Authentication is set to <code>ActiveDirectory</code>.
      */
 
     public void setAdminUserList(java.util.Collection<String> adminUserList) {
@@ -923,8 +955,9 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A list of users in the Active Directory that have administrator rights to the file share. A group must be
-     * prefixed with the @ character. For example, <code>@group1</code>. Can only be set if Authentication is set to
+     * A list of users or groups in the Active Directory that have administrator rights to the file share. A group must
+     * be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>,
+     * <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.
      * </p>
      * <p>
@@ -934,9 +967,10 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param adminUserList
-     *        A list of users in the Active Directory that have administrator rights to the file share. A group must be
-     *        prefixed with the @ character. For example, <code>@group1</code>. Can only be set if Authentication is set
-     *        to <code>ActiveDirectory</code>.
+     *        A list of users or groups in the Active Directory that have administrator rights to the file share. A
+     *        group must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>,
+     *        <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if
+     *        Authentication is set to <code>ActiveDirectory</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -952,15 +986,17 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A list of users in the Active Directory that have administrator rights to the file share. A group must be
-     * prefixed with the @ character. For example, <code>@group1</code>. Can only be set if Authentication is set to
+     * A list of users or groups in the Active Directory that have administrator rights to the file share. A group must
+     * be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>,
+     * <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.
      * </p>
      * 
      * @param adminUserList
-     *        A list of users in the Active Directory that have administrator rights to the file share. A group must be
-     *        prefixed with the @ character. For example, <code>@group1</code>. Can only be set if Authentication is set
-     *        to <code>ActiveDirectory</code>.
+     *        A list of users or groups in the Active Directory that have administrator rights to the file share. A
+     *        group must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>,
+     *        <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if
+     *        Authentication is set to <code>ActiveDirectory</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -972,13 +1008,15 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * A list of users or groups in the Active Directory that are allowed to access the file share. A group must be
-     * prefixed with the @ character. For example, <code>@group1</code>. Can only be set if Authentication is set to
+     * prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>,
+     * <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.
      * </p>
      * 
      * @return A list of users or groups in the Active Directory that are allowed to access the file share. A group must
-     *         be prefixed with the @ character. For example, <code>@group1</code>. Can only be set if Authentication is
-     *         set to <code>ActiveDirectory</code>.
+     *         be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>,
+     *         <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if
+     *         Authentication is set to <code>ActiveDirectory</code>.
      */
 
     public java.util.List<String> getValidUserList() {
@@ -991,14 +1029,16 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * A list of users or groups in the Active Directory that are allowed to access the file share. A group must be
-     * prefixed with the @ character. For example, <code>@group1</code>. Can only be set if Authentication is set to
+     * prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>,
+     * <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.
      * </p>
      * 
      * @param validUserList
      *        A list of users or groups in the Active Directory that are allowed to access the file share. A group must
-     *        be prefixed with the @ character. For example, <code>@group1</code>. Can only be set if Authentication is
-     *        set to <code>ActiveDirectory</code>.
+     *        be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>,
+     *        <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if
+     *        Authentication is set to <code>ActiveDirectory</code>.
      */
 
     public void setValidUserList(java.util.Collection<String> validUserList) {
@@ -1013,7 +1053,8 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * A list of users or groups in the Active Directory that are allowed to access the file share. A group must be
-     * prefixed with the @ character. For example, <code>@group1</code>. Can only be set if Authentication is set to
+     * prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>,
+     * <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.
      * </p>
      * <p>
@@ -1024,8 +1065,9 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      * 
      * @param validUserList
      *        A list of users or groups in the Active Directory that are allowed to access the file share. A group must
-     *        be prefixed with the @ character. For example, <code>@group1</code>. Can only be set if Authentication is
-     *        set to <code>ActiveDirectory</code>.
+     *        be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>,
+     *        <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if
+     *        Authentication is set to <code>ActiveDirectory</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1042,14 +1084,16 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * A list of users or groups in the Active Directory that are allowed to access the file share. A group must be
-     * prefixed with the @ character. For example, <code>@group1</code>. Can only be set if Authentication is set to
+     * prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>,
+     * <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.
      * </p>
      * 
      * @param validUserList
      *        A list of users or groups in the Active Directory that are allowed to access the file share. A group must
-     *        be prefixed with the @ character. For example, <code>@group1</code>. Can only be set if Authentication is
-     *        set to <code>ActiveDirectory</code>.
+     *        be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>,
+     *        <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if
+     *        Authentication is set to <code>ActiveDirectory</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1061,12 +1105,14 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * A list of users or groups in the Active Directory that are not allowed to access the file share. A group must be
-     * prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set to
+     * prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>,
+     * <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.
      * </p>
      * 
      * @return A list of users or groups in the Active Directory that are not allowed to access the file share. A group
-     *         must be prefixed with the @ character. For example <code>@group1</code>. Can only be set if
+     *         must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>,
+     *         <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if
      *         Authentication is set to <code>ActiveDirectory</code>.
      */
 
@@ -1080,14 +1126,16 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * A list of users or groups in the Active Directory that are not allowed to access the file share. A group must be
-     * prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set to
+     * prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>,
+     * <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.
      * </p>
      * 
      * @param invalidUserList
      *        A list of users or groups in the Active Directory that are not allowed to access the file share. A group
-     *        must be prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication
-     *        is set to <code>ActiveDirectory</code>.
+     *        must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>,
+     *        <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if
+     *        Authentication is set to <code>ActiveDirectory</code>.
      */
 
     public void setInvalidUserList(java.util.Collection<String> invalidUserList) {
@@ -1102,7 +1150,8 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * A list of users or groups in the Active Directory that are not allowed to access the file share. A group must be
-     * prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set to
+     * prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>,
+     * <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.
      * </p>
      * <p>
@@ -1113,8 +1162,9 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      * 
      * @param invalidUserList
      *        A list of users or groups in the Active Directory that are not allowed to access the file share. A group
-     *        must be prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication
-     *        is set to <code>ActiveDirectory</code>.
+     *        must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>,
+     *        <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if
+     *        Authentication is set to <code>ActiveDirectory</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1131,14 +1181,16 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * A list of users or groups in the Active Directory that are not allowed to access the file share. A group must be
-     * prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set to
+     * prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>,
+     * <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.
      * </p>
      * 
      * @param invalidUserList
      *        A list of users or groups in the Active Directory that are not allowed to access the file share. A group
-     *        must be prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication
-     *        is set to <code>ActiveDirectory</code>.
+     *        must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>,
+     *        <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if
+     *        Authentication is set to <code>ActiveDirectory</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1188,6 +1240,185 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The case of an object name in an Amazon S3 bucket. For <code>ClientSpecified</code>, the client determines the
+     * case sensitivity. For <code>CaseSensitive</code>, the gateway determines the case sensitivity. The default value
+     * is <code>ClientSpecified</code>.
+     * </p>
+     * 
+     * @param caseSensitivity
+     *        The case of an object name in an Amazon S3 bucket. For <code>ClientSpecified</code>, the client determines
+     *        the case sensitivity. For <code>CaseSensitive</code>, the gateway determines the case sensitivity. The
+     *        default value is <code>ClientSpecified</code>.
+     * @see CaseSensitivity
+     */
+
+    public void setCaseSensitivity(String caseSensitivity) {
+        this.caseSensitivity = caseSensitivity;
+    }
+
+    /**
+     * <p>
+     * The case of an object name in an Amazon S3 bucket. For <code>ClientSpecified</code>, the client determines the
+     * case sensitivity. For <code>CaseSensitive</code>, the gateway determines the case sensitivity. The default value
+     * is <code>ClientSpecified</code>.
+     * </p>
+     * 
+     * @return The case of an object name in an Amazon S3 bucket. For <code>ClientSpecified</code>, the client
+     *         determines the case sensitivity. For <code>CaseSensitive</code>, the gateway determines the case
+     *         sensitivity. The default value is <code>ClientSpecified</code>.
+     * @see CaseSensitivity
+     */
+
+    public String getCaseSensitivity() {
+        return this.caseSensitivity;
+    }
+
+    /**
+     * <p>
+     * The case of an object name in an Amazon S3 bucket. For <code>ClientSpecified</code>, the client determines the
+     * case sensitivity. For <code>CaseSensitive</code>, the gateway determines the case sensitivity. The default value
+     * is <code>ClientSpecified</code>.
+     * </p>
+     * 
+     * @param caseSensitivity
+     *        The case of an object name in an Amazon S3 bucket. For <code>ClientSpecified</code>, the client determines
+     *        the case sensitivity. For <code>CaseSensitive</code>, the gateway determines the case sensitivity. The
+     *        default value is <code>ClientSpecified</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CaseSensitivity
+     */
+
+    public UpdateSMBFileShareRequest withCaseSensitivity(String caseSensitivity) {
+        setCaseSensitivity(caseSensitivity);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The case of an object name in an Amazon S3 bucket. For <code>ClientSpecified</code>, the client determines the
+     * case sensitivity. For <code>CaseSensitive</code>, the gateway determines the case sensitivity. The default value
+     * is <code>ClientSpecified</code>.
+     * </p>
+     * 
+     * @param caseSensitivity
+     *        The case of an object name in an Amazon S3 bucket. For <code>ClientSpecified</code>, the client determines
+     *        the case sensitivity. For <code>CaseSensitive</code>, the gateway determines the case sensitivity. The
+     *        default value is <code>ClientSpecified</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CaseSensitivity
+     */
+
+    public UpdateSMBFileShareRequest withCaseSensitivity(CaseSensitivity caseSensitivity) {
+        this.caseSensitivity = caseSensitivity.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the file share. Optional.
+     * </p>
+     * <note>
+     * <p>
+     * <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>.
+     * </p>
+     * </note>
+     * 
+     * @param fileShareName
+     *        The name of the file share. Optional.</p> <note>
+     *        <p>
+     *        <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>.
+     *        </p>
+     */
+
+    public void setFileShareName(String fileShareName) {
+        this.fileShareName = fileShareName;
+    }
+
+    /**
+     * <p>
+     * The name of the file share. Optional.
+     * </p>
+     * <note>
+     * <p>
+     * <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>.
+     * </p>
+     * </note>
+     * 
+     * @return The name of the file share. Optional.</p> <note>
+     *         <p>
+     *         <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>.
+     *         </p>
+     */
+
+    public String getFileShareName() {
+        return this.fileShareName;
+    }
+
+    /**
+     * <p>
+     * The name of the file share. Optional.
+     * </p>
+     * <note>
+     * <p>
+     * <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>.
+     * </p>
+     * </note>
+     * 
+     * @param fileShareName
+     *        The name of the file share. Optional.</p> <note>
+     *        <p>
+     *        <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateSMBFileShareRequest withFileShareName(String fileShareName) {
+        setFileShareName(fileShareName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Refresh cache information.
+     * </p>
+     * 
+     * @param cacheAttributes
+     *        Refresh cache information.
+     */
+
+    public void setCacheAttributes(CacheAttributes cacheAttributes) {
+        this.cacheAttributes = cacheAttributes;
+    }
+
+    /**
+     * <p>
+     * Refresh cache information.
+     * </p>
+     * 
+     * @return Refresh cache information.
+     */
+
+    public CacheAttributes getCacheAttributes() {
+        return this.cacheAttributes;
+    }
+
+    /**
+     * <p>
+     * Refresh cache information.
+     * </p>
+     * 
+     * @param cacheAttributes
+     *        Refresh cache information.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateSMBFileShareRequest withCacheAttributes(CacheAttributes cacheAttributes) {
+        setCacheAttributes(cacheAttributes);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1224,7 +1455,13 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
         if (getInvalidUserList() != null)
             sb.append("InvalidUserList: ").append(getInvalidUserList()).append(",");
         if (getAuditDestinationARN() != null)
-            sb.append("AuditDestinationARN: ").append(getAuditDestinationARN());
+            sb.append("AuditDestinationARN: ").append(getAuditDestinationARN()).append(",");
+        if (getCaseSensitivity() != null)
+            sb.append("CaseSensitivity: ").append(getCaseSensitivity()).append(",");
+        if (getFileShareName() != null)
+            sb.append("FileShareName: ").append(getFileShareName()).append(",");
+        if (getCacheAttributes() != null)
+            sb.append("CacheAttributes: ").append(getCacheAttributes());
         sb.append("}");
         return sb.toString();
     }
@@ -1291,6 +1528,18 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getAuditDestinationARN() != null && other.getAuditDestinationARN().equals(this.getAuditDestinationARN()) == false)
             return false;
+        if (other.getCaseSensitivity() == null ^ this.getCaseSensitivity() == null)
+            return false;
+        if (other.getCaseSensitivity() != null && other.getCaseSensitivity().equals(this.getCaseSensitivity()) == false)
+            return false;
+        if (other.getFileShareName() == null ^ this.getFileShareName() == null)
+            return false;
+        if (other.getFileShareName() != null && other.getFileShareName().equals(this.getFileShareName()) == false)
+            return false;
+        if (other.getCacheAttributes() == null ^ this.getCacheAttributes() == null)
+            return false;
+        if (other.getCacheAttributes() != null && other.getCacheAttributes().equals(this.getCacheAttributes()) == false)
+            return false;
         return true;
     }
 
@@ -1312,6 +1561,9 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getValidUserList() == null) ? 0 : getValidUserList().hashCode());
         hashCode = prime * hashCode + ((getInvalidUserList() == null) ? 0 : getInvalidUserList().hashCode());
         hashCode = prime * hashCode + ((getAuditDestinationARN() == null) ? 0 : getAuditDestinationARN().hashCode());
+        hashCode = prime * hashCode + ((getCaseSensitivity() == null) ? 0 : getCaseSensitivity().hashCode());
+        hashCode = prime * hashCode + ((getFileShareName() == null) ? 0 : getFileShareName().hashCode());
+        hashCode = prime * hashCode + ((getCacheAttributes() == null) ? 0 : getCacheAttributes().hashCode());
         return hashCode;
     }
 

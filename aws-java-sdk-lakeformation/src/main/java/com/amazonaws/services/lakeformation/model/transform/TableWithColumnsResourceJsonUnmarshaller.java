@@ -48,6 +48,10 @@ public class TableWithColumnsResourceJsonUnmarshaller implements Unmarshaller<Ta
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("CatalogId", targetDepth)) {
+                    context.nextToken();
+                    tableWithColumnsResource.setCatalogId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("DatabaseName", targetDepth)) {
                     context.nextToken();
                     tableWithColumnsResource.setDatabaseName(context.getUnmarshaller(String.class).unmarshall(context));

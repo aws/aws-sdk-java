@@ -83,6 +83,12 @@ public class CreateMountTargetResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      */
     private String availabilityZoneName;
+    /**
+     * <p>
+     * The Virtual Private Cloud (VPC) ID that the mount target is configured in.
+     * </p>
+     */
+    private String vpcId;
 
     /**
      * <p>
@@ -499,6 +505,46 @@ public class CreateMountTargetResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
+     * <p>
+     * The Virtual Private Cloud (VPC) ID that the mount target is configured in.
+     * </p>
+     * 
+     * @param vpcId
+     *        The Virtual Private Cloud (VPC) ID that the mount target is configured in.
+     */
+
+    public void setVpcId(String vpcId) {
+        this.vpcId = vpcId;
+    }
+
+    /**
+     * <p>
+     * The Virtual Private Cloud (VPC) ID that the mount target is configured in.
+     * </p>
+     * 
+     * @return The Virtual Private Cloud (VPC) ID that the mount target is configured in.
+     */
+
+    public String getVpcId() {
+        return this.vpcId;
+    }
+
+    /**
+     * <p>
+     * The Virtual Private Cloud (VPC) ID that the mount target is configured in.
+     * </p>
+     * 
+     * @param vpcId
+     *        The Virtual Private Cloud (VPC) ID that the mount target is configured in.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateMountTargetResult withVpcId(String vpcId) {
+        setVpcId(vpcId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -527,7 +573,9 @@ public class CreateMountTargetResult extends com.amazonaws.AmazonWebServiceResul
         if (getAvailabilityZoneId() != null)
             sb.append("AvailabilityZoneId: ").append(getAvailabilityZoneId()).append(",");
         if (getAvailabilityZoneName() != null)
-            sb.append("AvailabilityZoneName: ").append(getAvailabilityZoneName());
+            sb.append("AvailabilityZoneName: ").append(getAvailabilityZoneName()).append(",");
+        if (getVpcId() != null)
+            sb.append("VpcId: ").append(getVpcId());
         sb.append("}");
         return sb.toString();
     }
@@ -578,6 +626,10 @@ public class CreateMountTargetResult extends com.amazonaws.AmazonWebServiceResul
             return false;
         if (other.getAvailabilityZoneName() != null && other.getAvailabilityZoneName().equals(this.getAvailabilityZoneName()) == false)
             return false;
+        if (other.getVpcId() == null ^ this.getVpcId() == null)
+            return false;
+        if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
+            return false;
         return true;
     }
 
@@ -595,6 +647,7 @@ public class CreateMountTargetResult extends com.amazonaws.AmazonWebServiceResul
         hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode());
         hashCode = prime * hashCode + ((getAvailabilityZoneId() == null) ? 0 : getAvailabilityZoneId().hashCode());
         hashCode = prime * hashCode + ((getAvailabilityZoneName() == null) ? 0 : getAvailabilityZoneName().hashCode());
+        hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
         return hashCode;
     }
 

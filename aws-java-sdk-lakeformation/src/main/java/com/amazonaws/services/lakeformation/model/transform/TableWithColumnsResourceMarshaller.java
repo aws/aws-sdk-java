@@ -28,6 +28,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class TableWithColumnsResourceMarshaller {
 
+    private static final MarshallingInfo<String> CATALOGID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("CatalogId").build();
     private static final MarshallingInfo<String> DATABASENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DatabaseName").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -53,6 +55,7 @@ public class TableWithColumnsResourceMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(tableWithColumnsResource.getCatalogId(), CATALOGID_BINDING);
             protocolMarshaller.marshall(tableWithColumnsResource.getDatabaseName(), DATABASENAME_BINDING);
             protocolMarshaller.marshall(tableWithColumnsResource.getName(), NAME_BINDING);
             protocolMarshaller.marshall(tableWithColumnsResource.getColumnNames(), COLUMNNAMES_BINDING);

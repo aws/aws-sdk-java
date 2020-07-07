@@ -76,6 +76,10 @@ public class UserDefinedFunctionJsonUnmarshaller implements Unmarshaller<UserDef
                     context.nextToken();
                     userDefinedFunction.setResourceUris(new ListUnmarshaller<ResourceUri>(ResourceUriJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("CatalogId", targetDepth)) {
+                    context.nextToken();
+                    userDefinedFunction.setCatalogId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

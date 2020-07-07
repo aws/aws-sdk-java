@@ -107,6 +107,12 @@ public class TableInput implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Map<String, String> parameters;
+    /**
+     * <p>
+     * A <code>TableIdentifier</code> structure that describes a target table for resource linking.
+     * </p>
+     */
+    private TableIdentifier targetTable;
 
     /**
      * <p>
@@ -703,6 +709,46 @@ public class TableInput implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A <code>TableIdentifier</code> structure that describes a target table for resource linking.
+     * </p>
+     * 
+     * @param targetTable
+     *        A <code>TableIdentifier</code> structure that describes a target table for resource linking.
+     */
+
+    public void setTargetTable(TableIdentifier targetTable) {
+        this.targetTable = targetTable;
+    }
+
+    /**
+     * <p>
+     * A <code>TableIdentifier</code> structure that describes a target table for resource linking.
+     * </p>
+     * 
+     * @return A <code>TableIdentifier</code> structure that describes a target table for resource linking.
+     */
+
+    public TableIdentifier getTargetTable() {
+        return this.targetTable;
+    }
+
+    /**
+     * <p>
+     * A <code>TableIdentifier</code> structure that describes a target table for resource linking.
+     * </p>
+     * 
+     * @param targetTable
+     *        A <code>TableIdentifier</code> structure that describes a target table for resource linking.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TableInput withTargetTable(TableIdentifier targetTable) {
+        setTargetTable(targetTable);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -737,7 +783,9 @@ public class TableInput implements Serializable, Cloneable, StructuredPojo {
         if (getTableType() != null)
             sb.append("TableType: ").append(getTableType()).append(",");
         if (getParameters() != null)
-            sb.append("Parameters: ").append(getParameters());
+            sb.append("Parameters: ").append(getParameters()).append(",");
+        if (getTargetTable() != null)
+            sb.append("TargetTable: ").append(getTargetTable());
         sb.append("}");
         return sb.toString();
     }
@@ -800,6 +848,10 @@ public class TableInput implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getParameters() != null && other.getParameters().equals(this.getParameters()) == false)
             return false;
+        if (other.getTargetTable() == null ^ this.getTargetTable() == null)
+            return false;
+        if (other.getTargetTable() != null && other.getTargetTable().equals(this.getTargetTable()) == false)
+            return false;
         return true;
     }
 
@@ -820,6 +872,7 @@ public class TableInput implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getViewExpandedText() == null) ? 0 : getViewExpandedText().hashCode());
         hashCode = prime * hashCode + ((getTableType() == null) ? 0 : getTableType().hashCode());
         hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
+        hashCode = prime * hashCode + ((getTargetTable() == null) ? 0 : getTargetTable().hashCode());
         return hashCode;
     }
 

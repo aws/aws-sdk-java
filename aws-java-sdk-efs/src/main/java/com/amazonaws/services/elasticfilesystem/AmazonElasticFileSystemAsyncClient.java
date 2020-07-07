@@ -595,6 +595,39 @@ public class AmazonElasticFileSystemAsyncClient extends AmazonElasticFileSystemC
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeBackupPolicyResult> describeBackupPolicyAsync(DescribeBackupPolicyRequest request) {
+
+        return describeBackupPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeBackupPolicyResult> describeBackupPolicyAsync(final DescribeBackupPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeBackupPolicyRequest, DescribeBackupPolicyResult> asyncHandler) {
+        final DescribeBackupPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeBackupPolicyResult>() {
+            @Override
+            public DescribeBackupPolicyResult call() throws Exception {
+                DescribeBackupPolicyResult result = null;
+
+                try {
+                    result = executeDescribeBackupPolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeFileSystemPolicyResult> describeFileSystemPolicyAsync(DescribeFileSystemPolicyRequest request) {
 
         return describeFileSystemPolicyAsync(request, null);
@@ -873,6 +906,39 @@ public class AmazonElasticFileSystemAsyncClient extends AmazonElasticFileSystemC
 
                 try {
                     result = executeModifyMountTargetSecurityGroups(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutBackupPolicyResult> putBackupPolicyAsync(PutBackupPolicyRequest request) {
+
+        return putBackupPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutBackupPolicyResult> putBackupPolicyAsync(final PutBackupPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutBackupPolicyRequest, PutBackupPolicyResult> asyncHandler) {
+        final PutBackupPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutBackupPolicyResult>() {
+            @Override
+            public PutBackupPolicyResult call() throws Exception {
+                PutBackupPolicyResult result = null;
+
+                try {
+                    result = executePutBackupPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

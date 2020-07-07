@@ -34,8 +34,7 @@ public class CreateDistributionWithTagsResult extends com.amazonaws.AmazonWebSer
     private Distribution distribution;
     /**
      * <p>
-     * The fully qualified URI of the new distribution resource just created. For example:
-     * <code>https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5</code>.
+     * The fully qualified URI of the new distribution resource just created.
      * </p>
      */
     private String location;
@@ -88,13 +87,11 @@ public class CreateDistributionWithTagsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The fully qualified URI of the new distribution resource just created. For example:
-     * <code>https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5</code>.
+     * The fully qualified URI of the new distribution resource just created.
      * </p>
      * 
      * @param location
-     *        The fully qualified URI of the new distribution resource just created. For example:
-     *        <code>https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5</code>.
+     *        The fully qualified URI of the new distribution resource just created.
      */
 
     public void setLocation(String location) {
@@ -103,12 +100,10 @@ public class CreateDistributionWithTagsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The fully qualified URI of the new distribution resource just created. For example:
-     * <code>https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5</code>.
+     * The fully qualified URI of the new distribution resource just created.
      * </p>
      * 
-     * @return The fully qualified URI of the new distribution resource just created. For example:
-     *         <code>https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5</code>.
+     * @return The fully qualified URI of the new distribution resource just created.
      */
 
     public String getLocation() {
@@ -117,13 +112,11 @@ public class CreateDistributionWithTagsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The fully qualified URI of the new distribution resource just created. For example:
-     * <code>https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5</code>.
+     * The fully qualified URI of the new distribution resource just created.
      * </p>
      * 
      * @param location
-     *        The fully qualified URI of the new distribution resource just created. For example:
-     *        <code>https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5</code>.
+     *        The fully qualified URI of the new distribution resource just created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -65,6 +65,26 @@ public class SearchTablesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private Integer maxResults;
+    /**
+     * <p>
+     * Allows you to specify that you want to search the tables shared with your account. The allowable values are
+     * <code>FOREIGN</code> or <code>ALL</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If set to <code>FOREIGN</code>, will search the tables shared with your account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local
+     * account.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String resourceShareType;
 
     /**
      * <p>
@@ -390,6 +410,173 @@ public class SearchTablesRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * Allows you to specify that you want to search the tables shared with your account. The allowable values are
+     * <code>FOREIGN</code> or <code>ALL</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If set to <code>FOREIGN</code>, will search the tables shared with your account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local
+     * account.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param resourceShareType
+     *        Allows you to specify that you want to search the tables shared with your account. The allowable values
+     *        are <code>FOREIGN</code> or <code>ALL</code>. </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If set to <code>FOREIGN</code>, will search the tables shared with your account.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor
+     *        local account.
+     *        </p>
+     *        </li>
+     * @see ResourceShareType
+     */
+
+    public void setResourceShareType(String resourceShareType) {
+        this.resourceShareType = resourceShareType;
+    }
+
+    /**
+     * <p>
+     * Allows you to specify that you want to search the tables shared with your account. The allowable values are
+     * <code>FOREIGN</code> or <code>ALL</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If set to <code>FOREIGN</code>, will search the tables shared with your account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local
+     * account.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Allows you to specify that you want to search the tables shared with your account. The allowable values
+     *         are <code>FOREIGN</code> or <code>ALL</code>. </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         If set to <code>FOREIGN</code>, will search the tables shared with your account.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor
+     *         local account.
+     *         </p>
+     *         </li>
+     * @see ResourceShareType
+     */
+
+    public String getResourceShareType() {
+        return this.resourceShareType;
+    }
+
+    /**
+     * <p>
+     * Allows you to specify that you want to search the tables shared with your account. The allowable values are
+     * <code>FOREIGN</code> or <code>ALL</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If set to <code>FOREIGN</code>, will search the tables shared with your account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local
+     * account.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param resourceShareType
+     *        Allows you to specify that you want to search the tables shared with your account. The allowable values
+     *        are <code>FOREIGN</code> or <code>ALL</code>. </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If set to <code>FOREIGN</code>, will search the tables shared with your account.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor
+     *        local account.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ResourceShareType
+     */
+
+    public SearchTablesRequest withResourceShareType(String resourceShareType) {
+        setResourceShareType(resourceShareType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Allows you to specify that you want to search the tables shared with your account. The allowable values are
+     * <code>FOREIGN</code> or <code>ALL</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If set to <code>FOREIGN</code>, will search the tables shared with your account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local
+     * account.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param resourceShareType
+     *        Allows you to specify that you want to search the tables shared with your account. The allowable values
+     *        are <code>FOREIGN</code> or <code>ALL</code>. </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If set to <code>FOREIGN</code>, will search the tables shared with your account.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor
+     *        local account.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ResourceShareType
+     */
+
+    public SearchTablesRequest withResourceShareType(ResourceShareType resourceShareType) {
+        this.resourceShareType = resourceShareType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -412,7 +599,9 @@ public class SearchTablesRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getSortCriteria() != null)
             sb.append("SortCriteria: ").append(getSortCriteria()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults());
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getResourceShareType() != null)
+            sb.append("ResourceShareType: ").append(getResourceShareType());
         sb.append("}");
         return sb.toString();
     }
@@ -451,6 +640,10 @@ public class SearchTablesRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
+        if (other.getResourceShareType() == null ^ this.getResourceShareType() == null)
+            return false;
+        if (other.getResourceShareType() != null && other.getResourceShareType().equals(this.getResourceShareType()) == false)
+            return false;
         return true;
     }
 
@@ -465,6 +658,7 @@ public class SearchTablesRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getSearchText() == null) ? 0 : getSearchText().hashCode());
         hashCode = prime * hashCode + ((getSortCriteria() == null) ? 0 : getSortCriteria().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getResourceShareType() == null) ? 0 : getResourceShareType().hashCode());
         return hashCode;
     }
 

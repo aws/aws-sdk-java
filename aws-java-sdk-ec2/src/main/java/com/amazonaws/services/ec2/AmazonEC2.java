@@ -6589,9 +6589,8 @@ public interface AmazonEC2 {
      * Enables or disables an Availability Zone group for your account.
      * </p>
      * <p>
-     * Use <a href=
-     * "https://docs.aws.amazon.com/AWSEC2ApiDocReef/build/server-root/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html"
-     * >describe-availability-zones</a> to view the value for <code>GroupName</code>.
+     * Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">
+     * DescribeAvailabilityZones</a> to view the value for <code>GroupName</code>.
      * </p>
      * 
      * @param modifyAvailabilityZoneGroupRequest

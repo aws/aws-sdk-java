@@ -26,6 +26,74 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class GetResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
+     * <p>
+     * The ARN of the AWS Glue resource for the resource policy to be retrieved. For more information about AWS Glue
+     * resource ARNs, see the <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">AWS
+     * Glue ARN string pattern</a>
+     * </p>
+     */
+    private String resourceArn;
+
+    /**
+     * <p>
+     * The ARN of the AWS Glue resource for the resource policy to be retrieved. For more information about AWS Glue
+     * resource ARNs, see the <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">AWS
+     * Glue ARN string pattern</a>
+     * </p>
+     * 
+     * @param resourceArn
+     *        The ARN of the AWS Glue resource for the resource policy to be retrieved. For more information about AWS
+     *        Glue resource ARNs, see the <a href=
+     *        "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id"
+     *        >AWS Glue ARN string pattern</a>
+     */
+
+    public void setResourceArn(String resourceArn) {
+        this.resourceArn = resourceArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the AWS Glue resource for the resource policy to be retrieved. For more information about AWS Glue
+     * resource ARNs, see the <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">AWS
+     * Glue ARN string pattern</a>
+     * </p>
+     * 
+     * @return The ARN of the AWS Glue resource for the resource policy to be retrieved. For more information about AWS
+     *         Glue resource ARNs, see the <a href=
+     *         "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id"
+     *         >AWS Glue ARN string pattern</a>
+     */
+
+    public String getResourceArn() {
+        return this.resourceArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the AWS Glue resource for the resource policy to be retrieved. For more information about AWS Glue
+     * resource ARNs, see the <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">AWS
+     * Glue ARN string pattern</a>
+     * </p>
+     * 
+     * @param resourceArn
+     *        The ARN of the AWS Glue resource for the resource policy to be retrieved. For more information about AWS
+     *        Glue resource ARNs, see the <a href=
+     *        "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id"
+     *        >AWS Glue ARN string pattern</a>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetResourcePolicyRequest withResourceArn(String resourceArn) {
+        setResourceArn(resourceArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -37,6 +105,8 @@ public class GetResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getResourceArn() != null)
+            sb.append("ResourceArn: ").append(getResourceArn());
         sb.append("}");
         return sb.toString();
     }
@@ -51,6 +121,10 @@ public class GetResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
         if (obj instanceof GetResourcePolicyRequest == false)
             return false;
         GetResourcePolicyRequest other = (GetResourcePolicyRequest) obj;
+        if (other.getResourceArn() == null ^ this.getResourceArn() == null)
+            return false;
+        if (other.getResourceArn() != null && other.getResourceArn().equals(this.getResourceArn()) == false)
+            return false;
         return true;
     }
 
@@ -59,6 +133,7 @@ public class GetResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getResourceArn() == null) ? 0 : getResourceArn().hashCode());
         return hashCode;
     }
 

@@ -39,7 +39,7 @@ import javax.annotation.Generated;
  * <li>
  * <p>
  * To accept HTTPS connections from only viewers that support SNI, set <code>SSLSupportMethod</code> to
- * <code>sni-only</code>. This is recommended. Most browsers and clients released after 2010 support SNI.
+ * <code>sni-only</code>. This is recommended. Most browsers and clients support SNI.
  * </p>
  * </li>
  * <li>
@@ -164,7 +164,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * <p>
      * <code>sni-only</code> – The distribution accepts HTTPS connections from only viewers that support <a
      * href="https://en.wikipedia.org/wiki/Server_Name_Indication">server name indication (SNI)</a>. This is
-     * recommended. Most browsers and clients released after 2010 support SNI.
+     * recommended. Most browsers and clients support SNI.
      * </p>
      * </li>
      * <li>
@@ -210,10 +210,6 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * On the CloudFront console, this setting is called <b>Security Policy</b>.
      * </p>
      * </note>
-     * <p>
-     * We recommend that you specify <code>TLSv1.2_2018</code> unless your viewers are using browsers or devices that
-     * don’t support TLSv1.2.
-     * </p>
      * <p>
      * When you’re using SNI only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must specify
      * <code>TLSv1</code> or higher.
@@ -663,7 +659,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * <p>
      * <code>sni-only</code> – The distribution accepts HTTPS connections from only viewers that support <a
      * href="https://en.wikipedia.org/wiki/Server_Name_Indication">server name indication (SNI)</a>. This is
-     * recommended. Most browsers and clients released after 2010 support SNI.
+     * recommended. Most browsers and clients support SNI.
      * </p>
      * </li>
      * <li>
@@ -686,7 +682,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        <p>
      *        <code>sni-only</code> – The distribution accepts HTTPS connections from only viewers that support <a
      *        href="https://en.wikipedia.org/wiki/Server_Name_Indication">server name indication (SNI)</a>. This is
-     *        recommended. Most browsers and clients released after 2010 support SNI.
+     *        recommended. Most browsers and clients support SNI.
      *        </p>
      *        </li>
      *        <li>
@@ -716,7 +712,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * <p>
      * <code>sni-only</code> – The distribution accepts HTTPS connections from only viewers that support <a
      * href="https://en.wikipedia.org/wiki/Server_Name_Indication">server name indication (SNI)</a>. This is
-     * recommended. Most browsers and clients released after 2010 support SNI.
+     * recommended. Most browsers and clients support SNI.
      * </p>
      * </li>
      * <li>
@@ -738,7 +734,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *         <p>
      *         <code>sni-only</code> – The distribution accepts HTTPS connections from only viewers that support <a
      *         href="https://en.wikipedia.org/wiki/Server_Name_Indication">server name indication (SNI)</a>. This is
-     *         recommended. Most browsers and clients released after 2010 support SNI.
+     *         recommended. Most browsers and clients support SNI.
      *         </p>
      *         </li>
      *         <li>
@@ -768,7 +764,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * <p>
      * <code>sni-only</code> – The distribution accepts HTTPS connections from only viewers that support <a
      * href="https://en.wikipedia.org/wiki/Server_Name_Indication">server name indication (SNI)</a>. This is
-     * recommended. Most browsers and clients released after 2010 support SNI.
+     * recommended. Most browsers and clients support SNI.
      * </p>
      * </li>
      * <li>
@@ -791,7 +787,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        <p>
      *        <code>sni-only</code> – The distribution accepts HTTPS connections from only viewers that support <a
      *        href="https://en.wikipedia.org/wiki/Server_Name_Indication">server name indication (SNI)</a>. This is
-     *        recommended. Most browsers and clients released after 2010 support SNI.
+     *        recommended. Most browsers and clients support SNI.
      *        </p>
      *        </li>
      *        <li>
@@ -823,7 +819,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * <p>
      * <code>sni-only</code> – The distribution accepts HTTPS connections from only viewers that support <a
      * href="https://en.wikipedia.org/wiki/Server_Name_Indication">server name indication (SNI)</a>. This is
-     * recommended. Most browsers and clients released after 2010 support SNI.
+     * recommended. Most browsers and clients support SNI.
      * </p>
      * </li>
      * <li>
@@ -846,7 +842,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        <p>
      *        <code>sni-only</code> – The distribution accepts HTTPS connections from only viewers that support <a
      *        href="https://en.wikipedia.org/wiki/Server_Name_Indication">server name indication (SNI)</a>. This is
-     *        recommended. Most browsers and clients released after 2010 support SNI.
+     *        recommended. Most browsers and clients support SNI.
      *        </p>
      *        </li>
      *        <li>
@@ -876,7 +872,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * <p>
      * <code>sni-only</code> – The distribution accepts HTTPS connections from only viewers that support <a
      * href="https://en.wikipedia.org/wiki/Server_Name_Indication">server name indication (SNI)</a>. This is
-     * recommended. Most browsers and clients released after 2010 support SNI.
+     * recommended. Most browsers and clients support SNI.
      * </p>
      * </li>
      * <li>
@@ -899,7 +895,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        <p>
      *        <code>sni-only</code> – The distribution accepts HTTPS connections from only viewers that support <a
      *        href="https://en.wikipedia.org/wiki/Server_Name_Indication">server name indication (SNI)</a>. This is
-     *        recommended. Most browsers and clients released after 2010 support SNI.
+     *        recommended. Most browsers and clients support SNI.
      *        </p>
      *        </li>
      *        <li>
@@ -952,10 +948,6 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * </p>
      * </note>
      * <p>
-     * We recommend that you specify <code>TLSv1.2_2018</code> unless your viewers are using browsers or devices that
-     * don’t support TLSv1.2.
-     * </p>
-     * <p>
      * When you’re using SNI only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must specify
      * <code>TLSv1</code> or higher.
      * </p>
@@ -994,10 +986,6 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        On the CloudFront console, this setting is called <b>Security Policy</b>.
      *        </p>
      *        </note>
-     *        <p>
-     *        We recommend that you specify <code>TLSv1.2_2018</code> unless your viewers are using browsers or devices
-     *        that don’t support TLSv1.2.
-     *        </p>
      *        <p>
      *        When you’re using SNI only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must
      *        specify <code>TLSv1</code> or higher.
@@ -1044,10 +1032,6 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * </p>
      * </note>
      * <p>
-     * We recommend that you specify <code>TLSv1.2_2018</code> unless your viewers are using browsers or devices that
-     * don’t support TLSv1.2.
-     * </p>
-     * <p>
      * When you’re using SNI only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must specify
      * <code>TLSv1</code> or higher.
      * </p>
@@ -1085,10 +1069,6 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *         On the CloudFront console, this setting is called <b>Security Policy</b>.
      *         </p>
      *         </note>
-     *         <p>
-     *         We recommend that you specify <code>TLSv1.2_2018</code> unless your viewers are using browsers or devices
-     *         that don’t support TLSv1.2.
-     *         </p>
      *         <p>
      *         When you’re using SNI only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must
      *         specify <code>TLSv1</code> or higher.
@@ -1135,10 +1115,6 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * </p>
      * </note>
      * <p>
-     * We recommend that you specify <code>TLSv1.2_2018</code> unless your viewers are using browsers or devices that
-     * don’t support TLSv1.2.
-     * </p>
-     * <p>
      * When you’re using SNI only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must specify
      * <code>TLSv1</code> or higher.
      * </p>
@@ -1177,10 +1153,6 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        On the CloudFront console, this setting is called <b>Security Policy</b>.
      *        </p>
      *        </note>
-     *        <p>
-     *        We recommend that you specify <code>TLSv1.2_2018</code> unless your viewers are using browsers or devices
-     *        that don’t support TLSv1.2.
-     *        </p>
      *        <p>
      *        When you’re using SNI only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must
      *        specify <code>TLSv1</code> or higher.
@@ -1229,10 +1201,6 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * </p>
      * </note>
      * <p>
-     * We recommend that you specify <code>TLSv1.2_2018</code> unless your viewers are using browsers or devices that
-     * don’t support TLSv1.2.
-     * </p>
-     * <p>
      * When you’re using SNI only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must specify
      * <code>TLSv1</code> or higher.
      * </p>
@@ -1271,10 +1239,6 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        On the CloudFront console, this setting is called <b>Security Policy</b>.
      *        </p>
      *        </note>
-     *        <p>
-     *        We recommend that you specify <code>TLSv1.2_2018</code> unless your viewers are using browsers or devices
-     *        that don’t support TLSv1.2.
-     *        </p>
      *        <p>
      *        When you’re using SNI only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must
      *        specify <code>TLSv1</code> or higher.
@@ -1321,10 +1285,6 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * </p>
      * </note>
      * <p>
-     * We recommend that you specify <code>TLSv1.2_2018</code> unless your viewers are using browsers or devices that
-     * don’t support TLSv1.2.
-     * </p>
-     * <p>
      * When you’re using SNI only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must specify
      * <code>TLSv1</code> or higher.
      * </p>
@@ -1363,10 +1323,6 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        On the CloudFront console, this setting is called <b>Security Policy</b>.
      *        </p>
      *        </note>
-     *        <p>
-     *        We recommend that you specify <code>TLSv1.2_2018</code> unless your viewers are using browsers or devices
-     *        that don’t support TLSv1.2.
-     *        </p>
      *        <p>
      *        When you’re using SNI only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must
      *        specify <code>TLSv1</code> or higher.

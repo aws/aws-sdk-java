@@ -27,6 +27,9 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class GetResourcePolicyRequestMarshaller {
 
+    private static final MarshallingInfo<String> RESOURCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceArn").build();
+
     private static final GetResourcePolicyRequestMarshaller instance = new GetResourcePolicyRequestMarshaller();
 
     public static GetResourcePolicyRequestMarshaller getInstance() {
@@ -43,6 +46,7 @@ public class GetResourcePolicyRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(getResourcePolicyRequest.getResourceArn(), RESOURCEARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

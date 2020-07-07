@@ -54,6 +54,12 @@ public class UpdateSMBFileShareRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InvalidUserList").build();
     private static final MarshallingInfo<String> AUDITDESTINATIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AuditDestinationARN").build();
+    private static final MarshallingInfo<String> CASESENSITIVITY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CaseSensitivity").build();
+    private static final MarshallingInfo<String> FILESHARENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FileShareName").build();
+    private static final MarshallingInfo<StructuredPojo> CACHEATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CacheAttributes").build();
 
     private static final UpdateSMBFileShareRequestMarshaller instance = new UpdateSMBFileShareRequestMarshaller();
 
@@ -84,6 +90,9 @@ public class UpdateSMBFileShareRequestMarshaller {
             protocolMarshaller.marshall(updateSMBFileShareRequest.getValidUserList(), VALIDUSERLIST_BINDING);
             protocolMarshaller.marshall(updateSMBFileShareRequest.getInvalidUserList(), INVALIDUSERLIST_BINDING);
             protocolMarshaller.marshall(updateSMBFileShareRequest.getAuditDestinationARN(), AUDITDESTINATIONARN_BINDING);
+            protocolMarshaller.marshall(updateSMBFileShareRequest.getCaseSensitivity(), CASESENSITIVITY_BINDING);
+            protocolMarshaller.marshall(updateSMBFileShareRequest.getFileShareName(), FILESHARENAME_BINDING);
+            protocolMarshaller.marshall(updateSMBFileShareRequest.getCacheAttributes(), CACHEATTRIBUTES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

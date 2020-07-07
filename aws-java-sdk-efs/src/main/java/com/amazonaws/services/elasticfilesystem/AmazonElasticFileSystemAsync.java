@@ -950,6 +950,37 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
 
     /**
      * <p>
+     * Returns the backup policy for the specified EFS file system.
+     * </p>
+     * 
+     * @param describeBackupPolicyRequest
+     * @return A Java Future containing the result of the DescribeBackupPolicy operation returned by the service.
+     * @sample AmazonElasticFileSystemAsync.DescribeBackupPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeBackupPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeBackupPolicyResult> describeBackupPolicyAsync(DescribeBackupPolicyRequest describeBackupPolicyRequest);
+
+    /**
+     * <p>
+     * Returns the backup policy for the specified EFS file system.
+     * </p>
+     * 
+     * @param describeBackupPolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeBackupPolicy operation returned by the service.
+     * @sample AmazonElasticFileSystemAsyncHandler.DescribeBackupPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeBackupPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeBackupPolicyResult> describeBackupPolicyAsync(DescribeBackupPolicyRequest describeBackupPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeBackupPolicyRequest, DescribeBackupPolicyResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns the <code>FileSystemPolicy</code> for the specified EFS file system.
      * </p>
      * <p>
@@ -1400,6 +1431,37 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
     java.util.concurrent.Future<ModifyMountTargetSecurityGroupsResult> modifyMountTargetSecurityGroupsAsync(
             ModifyMountTargetSecurityGroupsRequest modifyMountTargetSecurityGroupsRequest,
             com.amazonaws.handlers.AsyncHandler<ModifyMountTargetSecurityGroupsRequest, ModifyMountTargetSecurityGroupsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the file system's backup policy. Use this action to start or stop automatic backups of the file system.
+     * </p>
+     * 
+     * @param putBackupPolicyRequest
+     * @return A Java Future containing the result of the PutBackupPolicy operation returned by the service.
+     * @sample AmazonElasticFileSystemAsync.PutBackupPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/PutBackupPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutBackupPolicyResult> putBackupPolicyAsync(PutBackupPolicyRequest putBackupPolicyRequest);
+
+    /**
+     * <p>
+     * Updates the file system's backup policy. Use this action to start or stop automatic backups of the file system.
+     * </p>
+     * 
+     * @param putBackupPolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutBackupPolicy operation returned by the service.
+     * @sample AmazonElasticFileSystemAsyncHandler.PutBackupPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/PutBackupPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutBackupPolicyResult> putBackupPolicyAsync(PutBackupPolicyRequest putBackupPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<PutBackupPolicyRequest, PutBackupPolicyResult> asyncHandler);
 
     /**
      * <p>

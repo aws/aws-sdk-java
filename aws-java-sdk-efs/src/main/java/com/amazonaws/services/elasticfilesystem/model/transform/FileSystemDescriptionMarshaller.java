@@ -34,6 +34,8 @@ public class FileSystemDescriptionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreationToken").build();
     private static final MarshallingInfo<String> FILESYSTEMID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FileSystemId").build();
+    private static final MarshallingInfo<String> FILESYSTEMARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FileSystemArn").build();
     private static final MarshallingInfo<java.util.Date> CREATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreationTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> LIFECYCLESTATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -76,6 +78,7 @@ public class FileSystemDescriptionMarshaller {
             protocolMarshaller.marshall(fileSystemDescription.getOwnerId(), OWNERID_BINDING);
             protocolMarshaller.marshall(fileSystemDescription.getCreationToken(), CREATIONTOKEN_BINDING);
             protocolMarshaller.marshall(fileSystemDescription.getFileSystemId(), FILESYSTEMID_BINDING);
+            protocolMarshaller.marshall(fileSystemDescription.getFileSystemArn(), FILESYSTEMARN_BINDING);
             protocolMarshaller.marshall(fileSystemDescription.getCreationTime(), CREATIONTIME_BINDING);
             protocolMarshaller.marshall(fileSystemDescription.getLifeCycleState(), LIFECYCLESTATE_BINDING);
             protocolMarshaller.marshall(fileSystemDescription.getName(), NAME_BINDING);

@@ -60,6 +60,10 @@ public class UpdateFileSystemResultJsonUnmarshaller implements Unmarshaller<Upda
                     context.nextToken();
                     updateFileSystemResult.setFileSystemId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("FileSystemArn", targetDepth)) {
+                    context.nextToken();
+                    updateFileSystemResult.setFileSystemArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
                     updateFileSystemResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));

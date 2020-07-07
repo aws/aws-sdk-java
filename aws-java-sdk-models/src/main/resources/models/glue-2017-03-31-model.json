@@ -1189,6 +1189,22 @@
       ],
       "documentation":"<p>Gets code to perform a specified mapping.</p>"
     },
+    "GetResourcePolicies":{
+      "name":"GetResourcePolicies",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"GetResourcePoliciesRequest"},
+      "output":{"shape":"GetResourcePoliciesResponse"},
+      "errors":[
+        {"shape":"InternalServiceException"},
+        {"shape":"OperationTimeoutException"},
+        {"shape":"InvalidInputException"},
+        {"shape":"GlueEncryptionException"}
+      ],
+      "documentation":"<p>Retrieves the security configurations for the resource policies set on individual resources, and also the account-level policy.</p>"
+    },
     "GetResourcePolicy":{
       "name":"GetResourcePolicy",
       "http":{
@@ -3211,7 +3227,7 @@
         },
         "ConnectionType":{
           "shape":"ConnectionType",
-          "documentation":"<p>The type of the connection. Currently, only JDBC is supported; SFTP is not supported.</p>"
+          "documentation":"<p>The type of the connection. Currently, SFTP is not supported.</p>"
         },
         "MatchCriteria":{
           "shape":"MatchCriteria",
@@ -4508,9 +4524,31 @@
         "CreateTableDefaultPermissions":{
           "shape":"PrincipalPermissionsList",
           "documentation":"<p>Creates a set of default permissions on the table for principals. </p>"
+        },
+        "TargetDatabase":{
+          "shape":"DatabaseIdentifier",
+          "documentation":"<p>A <code>DatabaseIdentifier</code> structure that describes a target database for resource linking.</p>"
+        },
+        "CatalogId":{
+          "shape":"CatalogIdString",
+          "documentation":"<p>The ID of the Data Catalog in which the database resides.</p>"
         }
       },
       "documentation":"<p>The <code>Database</code> object represents a logical grouping of tables that might reside in a Hive metastore or an RDBMS.</p>"
+    },
+    "DatabaseIdentifier":{
+      "type":"structure",
+      "members":{
+        "CatalogId":{
+          "shape":"CatalogIdString",
+          "documentation":"<p>The ID of the Data Catalog in which the database resides.</p>"
+        },
+        "DatabaseName":{
+          "shape":"NameString",
+          "documentation":"<p>The name of the catalog database.</p>"
+        }
+      },
+      "documentation":"<p>A structure that describes a target database for resource linking.</p>"
     },
     "DatabaseInput":{
       "type":"structure",
@@ -4535,6 +4573,10 @@
         "CreateTableDefaultPermissions":{
           "shape":"PrincipalPermissionsList",
           "documentation":"<p>Creates a set of default permissions on the table for principals. </p>"
+        },
+        "TargetDatabase":{
+          "shape":"DatabaseIdentifier",
+          "documentation":"<p>A <code>DatabaseIdentifier</code> structure that describes a target database for resource linking.</p>"
         }
       },
       "documentation":"<p>The structure used to create or update a database.</p>"
@@ -4853,6 +4895,10 @@
         "PolicyHashCondition":{
           "shape":"HashString",
           "documentation":"<p>The hash value returned when this policy was set.</p>"
+        },
+        "ResourceArn":{
+          "shape":"GlueResourceArn",
+          "documentation":"<p>The ARN of the AWS Glue resource for the resource policy to be deleted.</p>"
         }
       }
     },
@@ -5209,6 +5255,13 @@
     "EdgeList":{
       "type":"list",
       "member":{"shape":"Edge"}
+    },
+    "EnableHybridValues":{
+      "type":"string",
+      "enum":[
+        "TRUE",
+        "FALSE"
+      ]
     },
     "EncryptionAtRest":{
       "type":"structure",
@@ -5596,7 +5649,7 @@
         },
         "ConnectionType":{
           "shape":"ConnectionType",
-          "documentation":"<p>The type of connections to return. Currently, only JDBC is supported; SFTP is not supported.</p>"
+          "documentation":"<p>The type of connections to return. Currently, SFTP is not supported.</p>"
         }
       },
       "documentation":"<p>Filters the connection definitions that are returned by the <code>GetConnections</code> API operation.</p>"
@@ -5769,6 +5822,10 @@
         "MaxResults":{
           "shape":"PageSize",
           "documentation":"<p>The maximum number of databases to return in one response.</p>"
+        },
+        "ResourceShareType":{
+          "shape":"ResourceShareType",
+          "documentation":"<p>Allows you to specify that you want to list the databases shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p> <ul> <li> <p>If set to <code>FOREIGN</code>, will list the databases shared with your account. </p> </li> <li> <p>If set to <code>ALL</code>, will list the databases shared with your account, as well as the databases in yor local account. </p> </li> </ul>"
         }
       }
     },
@@ -6360,9 +6417,43 @@
         }
       }
     },
+    "GetResourcePoliciesRequest":{
+      "type":"structure",
+      "members":{
+        "NextToken":{
+          "shape":"Token",
+          "documentation":"<p>A continuation token, if this is a continuation request.</p>"
+        },
+        "MaxResults":{
+          "shape":"PageSize",
+          "documentation":"<p>The maximum size of a list to return.</p>"
+        }
+      }
+    },
+    "GetResourcePoliciesResponse":{
+      "type":"structure",
+      "members":{
+        "GetResourcePoliciesResponseList":{
+          "shape":"GetResourcePoliciesResponseList",
+          "documentation":"<p>A list of the individual resource policies and the account-level resource policy.</p>"
+        },
+        "NextToken":{
+          "shape":"Token",
+          "documentation":"<p>A continuation token, if the returned list does not contain the last resource policy available.</p>"
+        }
+      }
+    },
+    "GetResourcePoliciesResponseList":{
+      "type":"list",
+      "member":{"shape":"GluePolicy"}
+    },
     "GetResourcePolicyRequest":{
       "type":"structure",
       "members":{
+        "ResourceArn":{
+          "shape":"GlueResourceArn",
+          "documentation":"<p>The ARN of the AWS Glue resource for the resource policy to be retrieved. For more information about AWS Glue resource ARNs, see the <a href=\"https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id\">AWS Glue ARN string pattern</a> </p>"
+        }
       }
     },
     "GetResourcePolicyResponse":{
@@ -6841,6 +6932,28 @@
       },
       "documentation":"<p>An encryption operation failed.</p>",
       "exception":true
+    },
+    "GluePolicy":{
+      "type":"structure",
+      "members":{
+        "PolicyInJson":{
+          "shape":"PolicyJsonString",
+          "documentation":"<p>Contains the requested policy document, in JSON format.</p>"
+        },
+        "PolicyHash":{
+          "shape":"HashString",
+          "documentation":"<p>Contains the hash value associated with this policy.</p>"
+        },
+        "CreateTime":{
+          "shape":"Timestamp",
+          "documentation":"<p>The date and time at which the policy was created.</p>"
+        },
+        "UpdateTime":{
+          "shape":"Timestamp",
+          "documentation":"<p>The date and time at which the policy was last updated.</p>"
+        }
+      },
+      "documentation":"<p>A structure for returning a resource policy.</p>"
     },
     "GlueResourceArn":{
       "type":"string",
@@ -8113,6 +8226,10 @@
         "LastAnalyzedTime":{
           "shape":"Timestamp",
           "documentation":"<p>The last time at which column statistics were computed for this partition.</p>"
+        },
+        "CatalogId":{
+          "shape":"CatalogIdString",
+          "documentation":"<p>The ID of the Data Catalog in which the partition resides.</p>"
         }
       },
       "documentation":"<p>Represents a slice of table data.</p>"
@@ -8342,6 +8459,10 @@
           "shape":"PolicyJsonString",
           "documentation":"<p>Contains the policy document to set, in JSON format.</p>"
         },
+        "ResourceArn":{
+          "shape":"GlueResourceArn",
+          "documentation":"<p>The ARN of the AWS Glue resource for the resource policy to be set. For more information about AWS Glue resource ARNs, see the <a href=\"https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id\">AWS Glue ARN string pattern</a> </p>"
+        },
         "PolicyHashCondition":{
           "shape":"HashString",
           "documentation":"<p>The hash value returned when the previous policy was set using <code>PutResourcePolicy</code>. Its purpose is to prevent concurrent modifications of a policy. Do not use this parameter if no previous policy has been set.</p>"
@@ -8349,6 +8470,10 @@
         "PolicyExistsCondition":{
           "shape":"ExistCondition",
           "documentation":"<p>A value of <code>MUST_EXIST</code> is used to update a policy. A value of <code>NOT_EXIST</code> is used to create a new policy. If a value of <code>NONE</code> or a null value is used, the call will not depend on the existence of a policy.</p>"
+        },
+        "EnableHybrid":{
+          "shape":"EnableHybridValues",
+          "documentation":"<p>Allows you to specify if you want to use both resource-level and account/catalog-level resource policies. A resource-level policy is a policy attached to an individual resource such as a database or a table.</p> <p>The default value of <code>NO</code> indicates that resource-level policies cannot co-exist with an account-level policy. A value of <code>YES</code> means the use of both resource-level and account/catalog-level resource policies is allowed.</p>"
         }
       }
     },
@@ -8431,6 +8556,13 @@
       },
       "documentation":"<p>A resource numerical limit was exceeded.</p>",
       "exception":true
+    },
+    "ResourceShareType":{
+      "type":"string",
+      "enum":[
+        "FOREIGN",
+        "ALL"
+      ]
     },
     "ResourceType":{
       "type":"string",
@@ -8628,6 +8760,10 @@
         "MaxResults":{
           "shape":"PageSize",
           "documentation":"<p>The maximum number of tables to return in a single response.</p>"
+        },
+        "ResourceShareType":{
+          "shape":"ResourceShareType",
+          "documentation":"<p>Allows you to specify that you want to search the tables shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p> <ul> <li> <p>If set to <code>FOREIGN</code>, will search the tables shared with your account. </p> </li> <li> <p>If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local account. </p> </li> </ul>"
         }
       }
     },
@@ -9214,6 +9350,14 @@
         "IsRegisteredWithLakeFormation":{
           "shape":"Boolean",
           "documentation":"<p>Indicates whether the table has been registered with AWS Lake Formation.</p>"
+        },
+        "TargetTable":{
+          "shape":"TableIdentifier",
+          "documentation":"<p>A <code>TableIdentifier</code> structure that describes a target table for resource linking.</p>"
+        },
+        "CatalogId":{
+          "shape":"CatalogIdString",
+          "documentation":"<p>The ID of the Data Catalog in which the table resides.</p>"
         }
       },
       "documentation":"<p>Represents a collection of related data organized in columns and rows.</p>"
@@ -9235,6 +9379,24 @@
     "TableErrors":{
       "type":"list",
       "member":{"shape":"TableError"}
+    },
+    "TableIdentifier":{
+      "type":"structure",
+      "members":{
+        "CatalogId":{
+          "shape":"CatalogIdString",
+          "documentation":"<p>The ID of the Data Catalog in which the table resides.</p>"
+        },
+        "DatabaseName":{
+          "shape":"NameString",
+          "documentation":"<p>The name of the catalog database that contains the target table.</p>"
+        },
+        "Name":{
+          "shape":"NameString",
+          "documentation":"<p>The name of the target table.</p>"
+        }
+      },
+      "documentation":"<p>A structure that describes a target table for resource linking.</p>"
     },
     "TableInput":{
       "type":"structure",
@@ -9287,6 +9449,10 @@
         "Parameters":{
           "shape":"ParametersMap",
           "documentation":"<p>These key-value pairs define properties associated with the table.</p>"
+        },
+        "TargetTable":{
+          "shape":"TableIdentifier",
+          "documentation":"<p>A <code>TableIdentifier</code> structure that describes a target table for resource linking.</p>"
         }
       },
       "documentation":"<p>A structure used to define a table.</p>"
@@ -10416,7 +10582,7 @@
         },
         "DatabaseName":{
           "shape":"NameString",
-          "documentation":"<p>The name of the database where the function resides.</p>"
+          "documentation":"<p>The name of the catalog database that contains the function.</p>"
         },
         "ClassName":{
           "shape":"NameString",
@@ -10437,6 +10603,10 @@
         "ResourceUris":{
           "shape":"ResourceUriList",
           "documentation":"<p>The resource URIs for the function.</p>"
+        },
+        "CatalogId":{
+          "shape":"CatalogIdString",
+          "documentation":"<p>The ID of the Data Catalog in which the function resides.</p>"
         }
       },
       "documentation":"<p>Represents the equivalent of a Hive user-defined function (<code>UDF</code>) definition.</p>"

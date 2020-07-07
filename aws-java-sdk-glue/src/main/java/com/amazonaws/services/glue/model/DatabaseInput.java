@@ -61,6 +61,12 @@ public class DatabaseInput implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<PrincipalPermissions> createTableDefaultPermissions;
+    /**
+     * <p>
+     * A <code>DatabaseIdentifier</code> structure that describes a target database for resource linking.
+     * </p>
+     */
+    private DatabaseIdentifier targetDatabase;
 
     /**
      * <p>
@@ -336,6 +342,46 @@ public class DatabaseInput implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A <code>DatabaseIdentifier</code> structure that describes a target database for resource linking.
+     * </p>
+     * 
+     * @param targetDatabase
+     *        A <code>DatabaseIdentifier</code> structure that describes a target database for resource linking.
+     */
+
+    public void setTargetDatabase(DatabaseIdentifier targetDatabase) {
+        this.targetDatabase = targetDatabase;
+    }
+
+    /**
+     * <p>
+     * A <code>DatabaseIdentifier</code> structure that describes a target database for resource linking.
+     * </p>
+     * 
+     * @return A <code>DatabaseIdentifier</code> structure that describes a target database for resource linking.
+     */
+
+    public DatabaseIdentifier getTargetDatabase() {
+        return this.targetDatabase;
+    }
+
+    /**
+     * <p>
+     * A <code>DatabaseIdentifier</code> structure that describes a target database for resource linking.
+     * </p>
+     * 
+     * @param targetDatabase
+     *        A <code>DatabaseIdentifier</code> structure that describes a target database for resource linking.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DatabaseInput withTargetDatabase(DatabaseIdentifier targetDatabase) {
+        setTargetDatabase(targetDatabase);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -356,7 +402,9 @@ public class DatabaseInput implements Serializable, Cloneable, StructuredPojo {
         if (getParameters() != null)
             sb.append("Parameters: ").append(getParameters()).append(",");
         if (getCreateTableDefaultPermissions() != null)
-            sb.append("CreateTableDefaultPermissions: ").append(getCreateTableDefaultPermissions());
+            sb.append("CreateTableDefaultPermissions: ").append(getCreateTableDefaultPermissions()).append(",");
+        if (getTargetDatabase() != null)
+            sb.append("TargetDatabase: ").append(getTargetDatabase());
         sb.append("}");
         return sb.toString();
     }
@@ -392,6 +440,10 @@ public class DatabaseInput implements Serializable, Cloneable, StructuredPojo {
         if (other.getCreateTableDefaultPermissions() != null
                 && other.getCreateTableDefaultPermissions().equals(this.getCreateTableDefaultPermissions()) == false)
             return false;
+        if (other.getTargetDatabase() == null ^ this.getTargetDatabase() == null)
+            return false;
+        if (other.getTargetDatabase() != null && other.getTargetDatabase().equals(this.getTargetDatabase()) == false)
+            return false;
         return true;
     }
 
@@ -405,6 +457,7 @@ public class DatabaseInput implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getLocationUri() == null) ? 0 : getLocationUri().hashCode());
         hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
         hashCode = prime * hashCode + ((getCreateTableDefaultPermissions() == null) ? 0 : getCreateTableDefaultPermissions().hashCode());
+        hashCode = prime * hashCode + ((getTargetDatabase() == null) ? 0 : getTargetDatabase().hashCode());
         return hashCode;
     }
 

@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The AWS Lake Formation principal.
+ * A structure representing a list of AWS Lake Formation principals designated as data lake administrators and lists of
+ * principal permission entries for default create database and default create table permissions.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DataLakeSettings" target="_top">AWS API
@@ -30,29 +31,41 @@ public class DataLakeSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A list of AWS Lake Formation principals.
+     * A list of AWS Lake Formation principals. Supported principals are IAM users or IAM roles.
      * </p>
      */
     private java.util.List<DataLakePrincipal> dataLakeAdmins;
     /**
      * <p>
-     * A list of up to three principal permissions entries for default create database permissions.
+     * A structure representing a list of up to three principal permissions entries for default create database
+     * permissions.
      * </p>
      */
     private java.util.List<PrincipalPermissions> createDatabaseDefaultPermissions;
     /**
      * <p>
-     * A list of up to three principal permissions entries for default create table permissions.
+     * A structure representing a list of up to three principal permissions entries for default create table
+     * permissions.
      * </p>
      */
     private java.util.List<PrincipalPermissions> createTableDefaultPermissions;
+    /**
+     * <p>
+     * A list of the resource-owning account IDs that the caller's account can use to share their user access details
+     * (user ARNs). The user ARNs can be logged in the resource owner's AWS CloudTrail log.
+     * </p>
+     * <p>
+     * You may want to specify this property when you are in a high-trust boundary, such as the same team or company.
+     * </p>
+     */
+    private java.util.List<String> trustedResourceOwners;
 
     /**
      * <p>
-     * A list of AWS Lake Formation principals.
+     * A list of AWS Lake Formation principals. Supported principals are IAM users or IAM roles.
      * </p>
      * 
-     * @return A list of AWS Lake Formation principals.
+     * @return A list of AWS Lake Formation principals. Supported principals are IAM users or IAM roles.
      */
 
     public java.util.List<DataLakePrincipal> getDataLakeAdmins() {
@@ -61,11 +74,11 @@ public class DataLakeSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A list of AWS Lake Formation principals.
+     * A list of AWS Lake Formation principals. Supported principals are IAM users or IAM roles.
      * </p>
      * 
      * @param dataLakeAdmins
-     *        A list of AWS Lake Formation principals.
+     *        A list of AWS Lake Formation principals. Supported principals are IAM users or IAM roles.
      */
 
     public void setDataLakeAdmins(java.util.Collection<DataLakePrincipal> dataLakeAdmins) {
@@ -79,7 +92,7 @@ public class DataLakeSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A list of AWS Lake Formation principals.
+     * A list of AWS Lake Formation principals. Supported principals are IAM users or IAM roles.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -88,7 +101,7 @@ public class DataLakeSettings implements Serializable, Cloneable, StructuredPojo
      * </p>
      * 
      * @param dataLakeAdmins
-     *        A list of AWS Lake Formation principals.
+     *        A list of AWS Lake Formation principals. Supported principals are IAM users or IAM roles.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -104,11 +117,11 @@ public class DataLakeSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A list of AWS Lake Formation principals.
+     * A list of AWS Lake Formation principals. Supported principals are IAM users or IAM roles.
      * </p>
      * 
      * @param dataLakeAdmins
-     *        A list of AWS Lake Formation principals.
+     *        A list of AWS Lake Formation principals. Supported principals are IAM users or IAM roles.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -119,10 +132,12 @@ public class DataLakeSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A list of up to three principal permissions entries for default create database permissions.
+     * A structure representing a list of up to three principal permissions entries for default create database
+     * permissions.
      * </p>
      * 
-     * @return A list of up to three principal permissions entries for default create database permissions.
+     * @return A structure representing a list of up to three principal permissions entries for default create database
+     *         permissions.
      */
 
     public java.util.List<PrincipalPermissions> getCreateDatabaseDefaultPermissions() {
@@ -131,11 +146,13 @@ public class DataLakeSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A list of up to three principal permissions entries for default create database permissions.
+     * A structure representing a list of up to three principal permissions entries for default create database
+     * permissions.
      * </p>
      * 
      * @param createDatabaseDefaultPermissions
-     *        A list of up to three principal permissions entries for default create database permissions.
+     *        A structure representing a list of up to three principal permissions entries for default create database
+     *        permissions.
      */
 
     public void setCreateDatabaseDefaultPermissions(java.util.Collection<PrincipalPermissions> createDatabaseDefaultPermissions) {
@@ -149,7 +166,8 @@ public class DataLakeSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A list of up to three principal permissions entries for default create database permissions.
+     * A structure representing a list of up to three principal permissions entries for default create database
+     * permissions.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -158,7 +176,8 @@ public class DataLakeSettings implements Serializable, Cloneable, StructuredPojo
      * </p>
      * 
      * @param createDatabaseDefaultPermissions
-     *        A list of up to three principal permissions entries for default create database permissions.
+     *        A structure representing a list of up to three principal permissions entries for default create database
+     *        permissions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -174,11 +193,13 @@ public class DataLakeSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A list of up to three principal permissions entries for default create database permissions.
+     * A structure representing a list of up to three principal permissions entries for default create database
+     * permissions.
      * </p>
      * 
      * @param createDatabaseDefaultPermissions
-     *        A list of up to three principal permissions entries for default create database permissions.
+     *        A structure representing a list of up to three principal permissions entries for default create database
+     *        permissions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -189,10 +210,12 @@ public class DataLakeSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A list of up to three principal permissions entries for default create table permissions.
+     * A structure representing a list of up to three principal permissions entries for default create table
+     * permissions.
      * </p>
      * 
-     * @return A list of up to three principal permissions entries for default create table permissions.
+     * @return A structure representing a list of up to three principal permissions entries for default create table
+     *         permissions.
      */
 
     public java.util.List<PrincipalPermissions> getCreateTableDefaultPermissions() {
@@ -201,11 +224,13 @@ public class DataLakeSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A list of up to three principal permissions entries for default create table permissions.
+     * A structure representing a list of up to three principal permissions entries for default create table
+     * permissions.
      * </p>
      * 
      * @param createTableDefaultPermissions
-     *        A list of up to three principal permissions entries for default create table permissions.
+     *        A structure representing a list of up to three principal permissions entries for default create table
+     *        permissions.
      */
 
     public void setCreateTableDefaultPermissions(java.util.Collection<PrincipalPermissions> createTableDefaultPermissions) {
@@ -219,7 +244,8 @@ public class DataLakeSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A list of up to three principal permissions entries for default create table permissions.
+     * A structure representing a list of up to three principal permissions entries for default create table
+     * permissions.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -228,7 +254,8 @@ public class DataLakeSettings implements Serializable, Cloneable, StructuredPojo
      * </p>
      * 
      * @param createTableDefaultPermissions
-     *        A list of up to three principal permissions entries for default create table permissions.
+     *        A structure representing a list of up to three principal permissions entries for default create table
+     *        permissions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -244,16 +271,120 @@ public class DataLakeSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A list of up to three principal permissions entries for default create table permissions.
+     * A structure representing a list of up to three principal permissions entries for default create table
+     * permissions.
      * </p>
      * 
      * @param createTableDefaultPermissions
-     *        A list of up to three principal permissions entries for default create table permissions.
+     *        A structure representing a list of up to three principal permissions entries for default create table
+     *        permissions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DataLakeSettings withCreateTableDefaultPermissions(java.util.Collection<PrincipalPermissions> createTableDefaultPermissions) {
         setCreateTableDefaultPermissions(createTableDefaultPermissions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of the resource-owning account IDs that the caller's account can use to share their user access details
+     * (user ARNs). The user ARNs can be logged in the resource owner's AWS CloudTrail log.
+     * </p>
+     * <p>
+     * You may want to specify this property when you are in a high-trust boundary, such as the same team or company.
+     * </p>
+     * 
+     * @return A list of the resource-owning account IDs that the caller's account can use to share their user access
+     *         details (user ARNs). The user ARNs can be logged in the resource owner's AWS CloudTrail log.</p>
+     *         <p>
+     *         You may want to specify this property when you are in a high-trust boundary, such as the same team or
+     *         company.
+     */
+
+    public java.util.List<String> getTrustedResourceOwners() {
+        return trustedResourceOwners;
+    }
+
+    /**
+     * <p>
+     * A list of the resource-owning account IDs that the caller's account can use to share their user access details
+     * (user ARNs). The user ARNs can be logged in the resource owner's AWS CloudTrail log.
+     * </p>
+     * <p>
+     * You may want to specify this property when you are in a high-trust boundary, such as the same team or company.
+     * </p>
+     * 
+     * @param trustedResourceOwners
+     *        A list of the resource-owning account IDs that the caller's account can use to share their user access
+     *        details (user ARNs). The user ARNs can be logged in the resource owner's AWS CloudTrail log.</p>
+     *        <p>
+     *        You may want to specify this property when you are in a high-trust boundary, such as the same team or
+     *        company.
+     */
+
+    public void setTrustedResourceOwners(java.util.Collection<String> trustedResourceOwners) {
+        if (trustedResourceOwners == null) {
+            this.trustedResourceOwners = null;
+            return;
+        }
+
+        this.trustedResourceOwners = new java.util.ArrayList<String>(trustedResourceOwners);
+    }
+
+    /**
+     * <p>
+     * A list of the resource-owning account IDs that the caller's account can use to share their user access details
+     * (user ARNs). The user ARNs can be logged in the resource owner's AWS CloudTrail log.
+     * </p>
+     * <p>
+     * You may want to specify this property when you are in a high-trust boundary, such as the same team or company.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTrustedResourceOwners(java.util.Collection)} or
+     * {@link #withTrustedResourceOwners(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param trustedResourceOwners
+     *        A list of the resource-owning account IDs that the caller's account can use to share their user access
+     *        details (user ARNs). The user ARNs can be logged in the resource owner's AWS CloudTrail log.</p>
+     *        <p>
+     *        You may want to specify this property when you are in a high-trust boundary, such as the same team or
+     *        company.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataLakeSettings withTrustedResourceOwners(String... trustedResourceOwners) {
+        if (this.trustedResourceOwners == null) {
+            setTrustedResourceOwners(new java.util.ArrayList<String>(trustedResourceOwners.length));
+        }
+        for (String ele : trustedResourceOwners) {
+            this.trustedResourceOwners.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of the resource-owning account IDs that the caller's account can use to share their user access details
+     * (user ARNs). The user ARNs can be logged in the resource owner's AWS CloudTrail log.
+     * </p>
+     * <p>
+     * You may want to specify this property when you are in a high-trust boundary, such as the same team or company.
+     * </p>
+     * 
+     * @param trustedResourceOwners
+     *        A list of the resource-owning account IDs that the caller's account can use to share their user access
+     *        details (user ARNs). The user ARNs can be logged in the resource owner's AWS CloudTrail log.</p>
+     *        <p>
+     *        You may want to specify this property when you are in a high-trust boundary, such as the same team or
+     *        company.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataLakeSettings withTrustedResourceOwners(java.util.Collection<String> trustedResourceOwners) {
+        setTrustedResourceOwners(trustedResourceOwners);
         return this;
     }
 
@@ -274,7 +405,9 @@ public class DataLakeSettings implements Serializable, Cloneable, StructuredPojo
         if (getCreateDatabaseDefaultPermissions() != null)
             sb.append("CreateDatabaseDefaultPermissions: ").append(getCreateDatabaseDefaultPermissions()).append(",");
         if (getCreateTableDefaultPermissions() != null)
-            sb.append("CreateTableDefaultPermissions: ").append(getCreateTableDefaultPermissions());
+            sb.append("CreateTableDefaultPermissions: ").append(getCreateTableDefaultPermissions()).append(",");
+        if (getTrustedResourceOwners() != null)
+            sb.append("TrustedResourceOwners: ").append(getTrustedResourceOwners());
         sb.append("}");
         return sb.toString();
     }
@@ -303,6 +436,10 @@ public class DataLakeSettings implements Serializable, Cloneable, StructuredPojo
         if (other.getCreateTableDefaultPermissions() != null
                 && other.getCreateTableDefaultPermissions().equals(this.getCreateTableDefaultPermissions()) == false)
             return false;
+        if (other.getTrustedResourceOwners() == null ^ this.getTrustedResourceOwners() == null)
+            return false;
+        if (other.getTrustedResourceOwners() != null && other.getTrustedResourceOwners().equals(this.getTrustedResourceOwners()) == false)
+            return false;
         return true;
     }
 
@@ -314,6 +451,7 @@ public class DataLakeSettings implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getDataLakeAdmins() == null) ? 0 : getDataLakeAdmins().hashCode());
         hashCode = prime * hashCode + ((getCreateDatabaseDefaultPermissions() == null) ? 0 : getCreateDatabaseDefaultPermissions().hashCode());
         hashCode = prime * hashCode + ((getCreateTableDefaultPermissions() == null) ? 0 : getCreateTableDefaultPermissions().hashCode());
+        hashCode = prime * hashCode + ((getTrustedResourceOwners() == null) ? 0 : getTrustedResourceOwners().hashCode());
         return hashCode;
     }
 

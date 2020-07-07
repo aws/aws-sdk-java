@@ -27,10 +27,14 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class TableResourceMarshaller {
 
+    private static final MarshallingInfo<String> CATALOGID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("CatalogId").build();
     private static final MarshallingInfo<String> DATABASENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DatabaseName").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
+    private static final MarshallingInfo<StructuredPojo> TABLEWILDCARD_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TableWildcard").build();
 
     private static final TableResourceMarshaller instance = new TableResourceMarshaller();
 
@@ -48,8 +52,10 @@ public class TableResourceMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(tableResource.getCatalogId(), CATALOGID_BINDING);
             protocolMarshaller.marshall(tableResource.getDatabaseName(), DATABASENAME_BINDING);
             protocolMarshaller.marshall(tableResource.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(tableResource.getTableWildcard(), TABLEWILDCARD_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -128,9 +128,21 @@ public class SMBFileShareInfoJsonUnmarshaller implements Unmarshaller<SMBFileSha
                     context.nextToken();
                     sMBFileShareInfo.setAuthentication(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("CaseSensitivity", targetDepth)) {
+                    context.nextToken();
+                    sMBFileShareInfo.setCaseSensitivity(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
                     sMBFileShareInfo.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("FileShareName", targetDepth)) {
+                    context.nextToken();
+                    sMBFileShareInfo.setFileShareName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("CacheAttributes", targetDepth)) {
+                    context.nextToken();
+                    sMBFileShareInfo.setCacheAttributes(CacheAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

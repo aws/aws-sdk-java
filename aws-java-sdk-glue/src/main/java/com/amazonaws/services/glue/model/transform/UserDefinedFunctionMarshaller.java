@@ -42,6 +42,8 @@ public class UserDefinedFunctionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreateTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<List> RESOURCEURIS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ResourceUris").build();
+    private static final MarshallingInfo<String> CATALOGID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("CatalogId").build();
 
     private static final UserDefinedFunctionMarshaller instance = new UserDefinedFunctionMarshaller();
 
@@ -66,6 +68,7 @@ public class UserDefinedFunctionMarshaller {
             protocolMarshaller.marshall(userDefinedFunction.getOwnerType(), OWNERTYPE_BINDING);
             protocolMarshaller.marshall(userDefinedFunction.getCreateTime(), CREATETIME_BINDING);
             protocolMarshaller.marshall(userDefinedFunction.getResourceUris(), RESOURCEURIS_BINDING);
+            protocolMarshaller.marshall(userDefinedFunction.getCatalogId(), CATALOGID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

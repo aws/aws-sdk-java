@@ -34,6 +34,8 @@ public class DataLakeSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreateDatabaseDefaultPermissions").build();
     private static final MarshallingInfo<List> CREATETABLEDEFAULTPERMISSIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreateTableDefaultPermissions").build();
+    private static final MarshallingInfo<List> TRUSTEDRESOURCEOWNERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TrustedResourceOwners").build();
 
     private static final DataLakeSettingsMarshaller instance = new DataLakeSettingsMarshaller();
 
@@ -54,6 +56,7 @@ public class DataLakeSettingsMarshaller {
             protocolMarshaller.marshall(dataLakeSettings.getDataLakeAdmins(), DATALAKEADMINS_BINDING);
             protocolMarshaller.marshall(dataLakeSettings.getCreateDatabaseDefaultPermissions(), CREATEDATABASEDEFAULTPERMISSIONS_BINDING);
             protocolMarshaller.marshall(dataLakeSettings.getCreateTableDefaultPermissions(), CREATETABLEDEFAULTPERMISSIONS_BINDING);
+            protocolMarshaller.marshall(dataLakeSettings.getTrustedResourceOwners(), TRUSTEDRESOURCEOWNERS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

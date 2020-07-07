@@ -48,6 +48,10 @@ public class DataLocationResourceJsonUnmarshaller implements Unmarshaller<DataLo
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("CatalogId", targetDepth)) {
+                    context.nextToken();
+                    dataLocationResource.setCatalogId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("ResourceArn", targetDepth)) {
                     context.nextToken();
                     dataLocationResource.setResourceArn(context.getUnmarshaller(String.class).unmarshall(context));

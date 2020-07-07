@@ -42,7 +42,7 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
     private String description;
     /**
      * <p>
-     * The type of the connection. Currently, only JDBC is supported; SFTP is not supported.
+     * The type of the connection. Currently, SFTP is not supported.
      * </p>
      */
     private String connectionType;
@@ -275,11 +275,11 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the connection. Currently, only JDBC is supported; SFTP is not supported.
+     * The type of the connection. Currently, SFTP is not supported.
      * </p>
      * 
      * @param connectionType
-     *        The type of the connection. Currently, only JDBC is supported; SFTP is not supported.
+     *        The type of the connection. Currently, SFTP is not supported.
      * @see ConnectionType
      */
 
@@ -289,10 +289,10 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the connection. Currently, only JDBC is supported; SFTP is not supported.
+     * The type of the connection. Currently, SFTP is not supported.
      * </p>
      * 
-     * @return The type of the connection. Currently, only JDBC is supported; SFTP is not supported.
+     * @return The type of the connection. Currently, SFTP is not supported.
      * @see ConnectionType
      */
 
@@ -302,11 +302,11 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the connection. Currently, only JDBC is supported; SFTP is not supported.
+     * The type of the connection. Currently, SFTP is not supported.
      * </p>
      * 
      * @param connectionType
-     *        The type of the connection. Currently, only JDBC is supported; SFTP is not supported.
+     *        The type of the connection. Currently, SFTP is not supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConnectionType
      */
@@ -318,11 +318,11 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the connection. Currently, only JDBC is supported; SFTP is not supported.
+     * The type of the connection. Currently, SFTP is not supported.
      * </p>
      * 
      * @param connectionType
-     *        The type of the connection. Currently, only JDBC is supported; SFTP is not supported.
+     *        The type of the connection. Currently, SFTP is not supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConnectionType
      */

@@ -31,6 +31,12 @@ public class DeleteResourcePolicyRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private String policyHashCondition;
+    /**
+     * <p>
+     * The ARN of the AWS Glue resource for the resource policy to be deleted.
+     * </p>
+     */
+    private String resourceArn;
 
     /**
      * <p>
@@ -73,6 +79,46 @@ public class DeleteResourcePolicyRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The ARN of the AWS Glue resource for the resource policy to be deleted.
+     * </p>
+     * 
+     * @param resourceArn
+     *        The ARN of the AWS Glue resource for the resource policy to be deleted.
+     */
+
+    public void setResourceArn(String resourceArn) {
+        this.resourceArn = resourceArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the AWS Glue resource for the resource policy to be deleted.
+     * </p>
+     * 
+     * @return The ARN of the AWS Glue resource for the resource policy to be deleted.
+     */
+
+    public String getResourceArn() {
+        return this.resourceArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the AWS Glue resource for the resource policy to be deleted.
+     * </p>
+     * 
+     * @param resourceArn
+     *        The ARN of the AWS Glue resource for the resource policy to be deleted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteResourcePolicyRequest withResourceArn(String resourceArn) {
+        setResourceArn(resourceArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -85,7 +131,9 @@ public class DeleteResourcePolicyRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPolicyHashCondition() != null)
-            sb.append("PolicyHashCondition: ").append(getPolicyHashCondition());
+            sb.append("PolicyHashCondition: ").append(getPolicyHashCondition()).append(",");
+        if (getResourceArn() != null)
+            sb.append("ResourceArn: ").append(getResourceArn());
         sb.append("}");
         return sb.toString();
     }
@@ -104,6 +152,10 @@ public class DeleteResourcePolicyRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getPolicyHashCondition() != null && other.getPolicyHashCondition().equals(this.getPolicyHashCondition()) == false)
             return false;
+        if (other.getResourceArn() == null ^ this.getResourceArn() == null)
+            return false;
+        if (other.getResourceArn() != null && other.getResourceArn().equals(this.getResourceArn()) == false)
+            return false;
         return true;
     }
 
@@ -113,6 +165,7 @@ public class DeleteResourcePolicyRequest extends com.amazonaws.AmazonWebServiceR
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getPolicyHashCondition() == null) ? 0 : getPolicyHashCondition().hashCode());
+        hashCode = prime * hashCode + ((getResourceArn() == null) ? 0 : getResourceArn().hashCode());
         return hashCode;
     }
 

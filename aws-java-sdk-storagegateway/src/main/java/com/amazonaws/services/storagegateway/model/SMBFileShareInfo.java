@@ -125,7 +125,8 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * A list of users or groups in the Active Directory that have administrator rights to the file share. A group must
-     * be prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set to
+     * be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>,
+     * <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.
      * </p>
      */
@@ -133,7 +134,8 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * A list of users or groups in the Active Directory that are allowed to access the file share. A group must be
-     * prefixed with the @ character. For example, <code>@group1</code>. Can only be set if Authentication is set to
+     * prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>,
+     * <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.
      * </p>
      */
@@ -141,7 +143,8 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * A list of users or groups in the Active Directory that are not allowed to access the file share. A group must be
-     * prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set to
+     * prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>,
+     * <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.
      * </p>
      */
@@ -156,12 +159,37 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
     private String authentication;
     /**
      * <p>
+     * The case of an object name in an Amazon S3 bucket. For <code>ClientSpecified</code>, the client determines the
+     * case sensitivity. For <code>CaseSensitive</code>, the gateway determines the case sensitivity. The default value
+     * is <code>ClientSpecified</code>.
+     * </p>
+     */
+    private String caseSensitivity;
+    /**
+     * <p>
      * A list of up to 50 tags assigned to the SMB file share, sorted alphabetically by key name. Each tag is a
      * key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the
      * <code>ListTagsForResource</code> API operation.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
+     * The name of the file share. Optional.
+     * </p>
+     * <note>
+     * <p>
+     * <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>.
+     * </p>
+     * </note>
+     */
+    private String fileShareName;
+    /**
+     * <p>
+     * Refresh cache information.
+     * </p>
+     */
+    private CacheAttributes cacheAttributes;
 
     /**
      * @param fileShareARN
@@ -979,12 +1007,14 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * A list of users or groups in the Active Directory that have administrator rights to the file share. A group must
-     * be prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set to
+     * be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>,
+     * <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.
      * </p>
      * 
      * @return A list of users or groups in the Active Directory that have administrator rights to the file share. A
-     *         group must be prefixed with the @ character. For example <code>@group1</code>. Can only be set if
+     *         group must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>,
+     *         <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if
      *         Authentication is set to <code>ActiveDirectory</code>.
      */
 
@@ -998,13 +1028,15 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * A list of users or groups in the Active Directory that have administrator rights to the file share. A group must
-     * be prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set to
+     * be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>,
+     * <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.
      * </p>
      * 
      * @param adminUserList
      *        A list of users or groups in the Active Directory that have administrator rights to the file share. A
-     *        group must be prefixed with the @ character. For example <code>@group1</code>. Can only be set if
+     *        group must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>,
+     *        <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if
      *        Authentication is set to <code>ActiveDirectory</code>.
      */
 
@@ -1020,7 +1052,8 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * A list of users or groups in the Active Directory that have administrator rights to the file share. A group must
-     * be prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set to
+     * be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>,
+     * <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.
      * </p>
      * <p>
@@ -1031,7 +1064,8 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
      * 
      * @param adminUserList
      *        A list of users or groups in the Active Directory that have administrator rights to the file share. A
-     *        group must be prefixed with the @ character. For example <code>@group1</code>. Can only be set if
+     *        group must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>,
+     *        <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if
      *        Authentication is set to <code>ActiveDirectory</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1049,13 +1083,15 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * A list of users or groups in the Active Directory that have administrator rights to the file share. A group must
-     * be prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set to
+     * be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>,
+     * <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.
      * </p>
      * 
      * @param adminUserList
      *        A list of users or groups in the Active Directory that have administrator rights to the file share. A
-     *        group must be prefixed with the @ character. For example <code>@group1</code>. Can only be set if
+     *        group must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>,
+     *        <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if
      *        Authentication is set to <code>ActiveDirectory</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1068,13 +1104,15 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * A list of users or groups in the Active Directory that are allowed to access the file share. A group must be
-     * prefixed with the @ character. For example, <code>@group1</code>. Can only be set if Authentication is set to
+     * prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>,
+     * <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.
      * </p>
      * 
      * @return A list of users or groups in the Active Directory that are allowed to access the file share. A group must
-     *         be prefixed with the @ character. For example, <code>@group1</code>. Can only be set if Authentication is
-     *         set to <code>ActiveDirectory</code>.
+     *         be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>,
+     *         <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if
+     *         Authentication is set to <code>ActiveDirectory</code>.
      */
 
     public java.util.List<String> getValidUserList() {
@@ -1087,14 +1125,16 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * A list of users or groups in the Active Directory that are allowed to access the file share. A group must be
-     * prefixed with the @ character. For example, <code>@group1</code>. Can only be set if Authentication is set to
+     * prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>,
+     * <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.
      * </p>
      * 
      * @param validUserList
      *        A list of users or groups in the Active Directory that are allowed to access the file share. A group must
-     *        be prefixed with the @ character. For example, <code>@group1</code>. Can only be set if Authentication is
-     *        set to <code>ActiveDirectory</code>.
+     *        be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>,
+     *        <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if
+     *        Authentication is set to <code>ActiveDirectory</code>.
      */
 
     public void setValidUserList(java.util.Collection<String> validUserList) {
@@ -1109,7 +1149,8 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * A list of users or groups in the Active Directory that are allowed to access the file share. A group must be
-     * prefixed with the @ character. For example, <code>@group1</code>. Can only be set if Authentication is set to
+     * prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>,
+     * <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.
      * </p>
      * <p>
@@ -1120,8 +1161,9 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
      * 
      * @param validUserList
      *        A list of users or groups in the Active Directory that are allowed to access the file share. A group must
-     *        be prefixed with the @ character. For example, <code>@group1</code>. Can only be set if Authentication is
-     *        set to <code>ActiveDirectory</code>.
+     *        be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>,
+     *        <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if
+     *        Authentication is set to <code>ActiveDirectory</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1138,14 +1180,16 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * A list of users or groups in the Active Directory that are allowed to access the file share. A group must be
-     * prefixed with the @ character. For example, <code>@group1</code>. Can only be set if Authentication is set to
+     * prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>,
+     * <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.
      * </p>
      * 
      * @param validUserList
      *        A list of users or groups in the Active Directory that are allowed to access the file share. A group must
-     *        be prefixed with the @ character. For example, <code>@group1</code>. Can only be set if Authentication is
-     *        set to <code>ActiveDirectory</code>.
+     *        be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>,
+     *        <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if
+     *        Authentication is set to <code>ActiveDirectory</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1157,12 +1201,14 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * A list of users or groups in the Active Directory that are not allowed to access the file share. A group must be
-     * prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set to
+     * prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>,
+     * <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.
      * </p>
      * 
      * @return A list of users or groups in the Active Directory that are not allowed to access the file share. A group
-     *         must be prefixed with the @ character. For example <code>@group1</code>. Can only be set if
+     *         must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>,
+     *         <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if
      *         Authentication is set to <code>ActiveDirectory</code>.
      */
 
@@ -1176,14 +1222,16 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * A list of users or groups in the Active Directory that are not allowed to access the file share. A group must be
-     * prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set to
+     * prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>,
+     * <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.
      * </p>
      * 
      * @param invalidUserList
      *        A list of users or groups in the Active Directory that are not allowed to access the file share. A group
-     *        must be prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication
-     *        is set to <code>ActiveDirectory</code>.
+     *        must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>,
+     *        <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if
+     *        Authentication is set to <code>ActiveDirectory</code>.
      */
 
     public void setInvalidUserList(java.util.Collection<String> invalidUserList) {
@@ -1198,7 +1246,8 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * A list of users or groups in the Active Directory that are not allowed to access the file share. A group must be
-     * prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set to
+     * prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>,
+     * <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.
      * </p>
      * <p>
@@ -1209,8 +1258,9 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
      * 
      * @param invalidUserList
      *        A list of users or groups in the Active Directory that are not allowed to access the file share. A group
-     *        must be prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication
-     *        is set to <code>ActiveDirectory</code>.
+     *        must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>,
+     *        <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if
+     *        Authentication is set to <code>ActiveDirectory</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1227,14 +1277,16 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * A list of users or groups in the Active Directory that are not allowed to access the file share. A group must be
-     * prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set to
+     * prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>,
+     * <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.
      * </p>
      * 
      * @param invalidUserList
      *        A list of users or groups in the Active Directory that are not allowed to access the file share. A group
-     *        must be prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication
-     *        is set to <code>ActiveDirectory</code>.
+     *        must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>,
+     *        <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if
+     *        Authentication is set to <code>ActiveDirectory</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1306,6 +1358,81 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
 
     public SMBFileShareInfo withAuthentication(String authentication) {
         setAuthentication(authentication);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The case of an object name in an Amazon S3 bucket. For <code>ClientSpecified</code>, the client determines the
+     * case sensitivity. For <code>CaseSensitive</code>, the gateway determines the case sensitivity. The default value
+     * is <code>ClientSpecified</code>.
+     * </p>
+     * 
+     * @param caseSensitivity
+     *        The case of an object name in an Amazon S3 bucket. For <code>ClientSpecified</code>, the client determines
+     *        the case sensitivity. For <code>CaseSensitive</code>, the gateway determines the case sensitivity. The
+     *        default value is <code>ClientSpecified</code>.
+     * @see CaseSensitivity
+     */
+
+    public void setCaseSensitivity(String caseSensitivity) {
+        this.caseSensitivity = caseSensitivity;
+    }
+
+    /**
+     * <p>
+     * The case of an object name in an Amazon S3 bucket. For <code>ClientSpecified</code>, the client determines the
+     * case sensitivity. For <code>CaseSensitive</code>, the gateway determines the case sensitivity. The default value
+     * is <code>ClientSpecified</code>.
+     * </p>
+     * 
+     * @return The case of an object name in an Amazon S3 bucket. For <code>ClientSpecified</code>, the client
+     *         determines the case sensitivity. For <code>CaseSensitive</code>, the gateway determines the case
+     *         sensitivity. The default value is <code>ClientSpecified</code>.
+     * @see CaseSensitivity
+     */
+
+    public String getCaseSensitivity() {
+        return this.caseSensitivity;
+    }
+
+    /**
+     * <p>
+     * The case of an object name in an Amazon S3 bucket. For <code>ClientSpecified</code>, the client determines the
+     * case sensitivity. For <code>CaseSensitive</code>, the gateway determines the case sensitivity. The default value
+     * is <code>ClientSpecified</code>.
+     * </p>
+     * 
+     * @param caseSensitivity
+     *        The case of an object name in an Amazon S3 bucket. For <code>ClientSpecified</code>, the client determines
+     *        the case sensitivity. For <code>CaseSensitive</code>, the gateway determines the case sensitivity. The
+     *        default value is <code>ClientSpecified</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CaseSensitivity
+     */
+
+    public SMBFileShareInfo withCaseSensitivity(String caseSensitivity) {
+        setCaseSensitivity(caseSensitivity);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The case of an object name in an Amazon S3 bucket. For <code>ClientSpecified</code>, the client determines the
+     * case sensitivity. For <code>CaseSensitive</code>, the gateway determines the case sensitivity. The default value
+     * is <code>ClientSpecified</code>.
+     * </p>
+     * 
+     * @param caseSensitivity
+     *        The case of an object name in an Amazon S3 bucket. For <code>ClientSpecified</code>, the client determines
+     *        the case sensitivity. For <code>CaseSensitive</code>, the gateway determines the case sensitivity. The
+     *        default value is <code>ClientSpecified</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CaseSensitivity
+     */
+
+    public SMBFileShareInfo withCaseSensitivity(CaseSensitivity caseSensitivity) {
+        this.caseSensitivity = caseSensitivity.toString();
         return this;
     }
 
@@ -1399,6 +1526,110 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The name of the file share. Optional.
+     * </p>
+     * <note>
+     * <p>
+     * <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>.
+     * </p>
+     * </note>
+     * 
+     * @param fileShareName
+     *        The name of the file share. Optional.</p> <note>
+     *        <p>
+     *        <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>.
+     *        </p>
+     */
+
+    public void setFileShareName(String fileShareName) {
+        this.fileShareName = fileShareName;
+    }
+
+    /**
+     * <p>
+     * The name of the file share. Optional.
+     * </p>
+     * <note>
+     * <p>
+     * <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>.
+     * </p>
+     * </note>
+     * 
+     * @return The name of the file share. Optional.</p> <note>
+     *         <p>
+     *         <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>.
+     *         </p>
+     */
+
+    public String getFileShareName() {
+        return this.fileShareName;
+    }
+
+    /**
+     * <p>
+     * The name of the file share. Optional.
+     * </p>
+     * <note>
+     * <p>
+     * <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>.
+     * </p>
+     * </note>
+     * 
+     * @param fileShareName
+     *        The name of the file share. Optional.</p> <note>
+     *        <p>
+     *        <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SMBFileShareInfo withFileShareName(String fileShareName) {
+        setFileShareName(fileShareName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Refresh cache information.
+     * </p>
+     * 
+     * @param cacheAttributes
+     *        Refresh cache information.
+     */
+
+    public void setCacheAttributes(CacheAttributes cacheAttributes) {
+        this.cacheAttributes = cacheAttributes;
+    }
+
+    /**
+     * <p>
+     * Refresh cache information.
+     * </p>
+     * 
+     * @return Refresh cache information.
+     */
+
+    public CacheAttributes getCacheAttributes() {
+        return this.cacheAttributes;
+    }
+
+    /**
+     * <p>
+     * Refresh cache information.
+     * </p>
+     * 
+     * @param cacheAttributes
+     *        Refresh cache information.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SMBFileShareInfo withCacheAttributes(CacheAttributes cacheAttributes) {
+        setCacheAttributes(cacheAttributes);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1450,8 +1681,14 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
             sb.append("AuditDestinationARN: ").append(getAuditDestinationARN()).append(",");
         if (getAuthentication() != null)
             sb.append("Authentication: ").append(getAuthentication()).append(",");
+        if (getCaseSensitivity() != null)
+            sb.append("CaseSensitivity: ").append(getCaseSensitivity()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getFileShareName() != null)
+            sb.append("FileShareName: ").append(getFileShareName()).append(",");
+        if (getCacheAttributes() != null)
+            sb.append("CacheAttributes: ").append(getCacheAttributes());
         sb.append("}");
         return sb.toString();
     }
@@ -1546,9 +1783,21 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getAuthentication() != null && other.getAuthentication().equals(this.getAuthentication()) == false)
             return false;
+        if (other.getCaseSensitivity() == null ^ this.getCaseSensitivity() == null)
+            return false;
+        if (other.getCaseSensitivity() != null && other.getCaseSensitivity().equals(this.getCaseSensitivity()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
+        if (other.getFileShareName() == null ^ this.getFileShareName() == null)
+            return false;
+        if (other.getFileShareName() != null && other.getFileShareName().equals(this.getFileShareName()) == false)
+            return false;
+        if (other.getCacheAttributes() == null ^ this.getCacheAttributes() == null)
+            return false;
+        if (other.getCacheAttributes() != null && other.getCacheAttributes().equals(this.getCacheAttributes()) == false)
             return false;
         return true;
     }
@@ -1578,7 +1827,10 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getInvalidUserList() == null) ? 0 : getInvalidUserList().hashCode());
         hashCode = prime * hashCode + ((getAuditDestinationARN() == null) ? 0 : getAuditDestinationARN().hashCode());
         hashCode = prime * hashCode + ((getAuthentication() == null) ? 0 : getAuthentication().hashCode());
+        hashCode = prime * hashCode + ((getCaseSensitivity() == null) ? 0 : getCaseSensitivity().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getFileShareName() == null) ? 0 : getFileShareName().hashCode());
+        hashCode = prime * hashCode + ((getCacheAttributes() == null) ? 0 : getCacheAttributes().hashCode());
         return hashCode;
     }
 

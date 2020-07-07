@@ -24,7 +24,8 @@ public enum MinimumProtocolVersion {
     TLSv1("TLSv1"),
     TLSv1_2016("TLSv1_2016"),
     TLSv11_2016("TLSv1.1_2016"),
-    TLSv12_2018("TLSv1.2_2018");
+    TLSv12_2018("TLSv1.2_2018"),
+    TLSv12_2019("TLSv1.2_2019");
 
     private String value;
 

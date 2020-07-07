@@ -131,6 +131,9 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
                             new JsonErrorShapeMetadata().withErrorCode("MountTargetNotFound").withExceptionUnmarshaller(
                                     com.amazonaws.services.elasticfilesystem.model.transform.MountTargetNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.elasticfilesystem.model.transform.ValidationExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("SubnetNotFound").withExceptionUnmarshaller(
                                     com.amazonaws.services.elasticfilesystem.model.transform.SubnetNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -382,6 +385,8 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
      * @throws AccessPointAlreadyExistsException
      *         Returned if the access point you are trying to create already exists, with the creation token you
      *         provided in the request.
+     * @throws IncorrectFileSystemLifeCycleStateException
+     *         Returned if the file system's lifecycle state is not "available".
      * @throws InternalServerErrorException
      *         Returned if an error occurred on the server side.
      * @throws FileSystemNotFoundException
@@ -1309,6 +1314,70 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
 
     /**
      * <p>
+     * Returns the backup policy for the specified EFS file system.
+     * </p>
+     * 
+     * @param describeBackupPolicyRequest
+     * @return Result of the DescribeBackupPolicy operation returned by the service.
+     * @throws BadRequestException
+     *         Returned if the request is malformed or contains an error such as an invalid parameter value or a missing
+     *         required parameter.
+     * @throws FileSystemNotFoundException
+     *         Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's AWS account.
+     * @throws InternalServerErrorException
+     *         Returned if an error occurred on the server side.
+     * @throws PolicyNotFoundException
+     *         Returned if the default file system policy is in effect for the EFS file system specified.
+     * @throws ValidationException
+     *         Returned if the AWS Backup service is not available in the region that the request was made.
+     * @sample AmazonElasticFileSystem.DescribeBackupPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeBackupPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeBackupPolicyResult describeBackupPolicy(DescribeBackupPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeBackupPolicy(request);
+    }
+
+    @SdkInternalApi
+    final DescribeBackupPolicyResult executeDescribeBackupPolicy(DescribeBackupPolicyRequest describeBackupPolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeBackupPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeBackupPolicyRequest> request = null;
+        Response<DescribeBackupPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeBackupPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeBackupPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EFS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeBackupPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeBackupPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeBackupPolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns the <code>FileSystemPolicy</code> for the specified EFS file system.
      * </p>
      * <p>
@@ -1894,6 +1963,70 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
             HttpResponseHandler<AmazonWebServiceResponse<ModifyMountTargetSecurityGroupsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ModifyMountTargetSecurityGroupsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the file system's backup policy. Use this action to start or stop automatic backups of the file system.
+     * </p>
+     * 
+     * @param putBackupPolicyRequest
+     * @return Result of the PutBackupPolicy operation returned by the service.
+     * @throws BadRequestException
+     *         Returned if the request is malformed or contains an error such as an invalid parameter value or a missing
+     *         required parameter.
+     * @throws FileSystemNotFoundException
+     *         Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's AWS account.
+     * @throws IncorrectFileSystemLifeCycleStateException
+     *         Returned if the file system's lifecycle state is not "available".
+     * @throws InternalServerErrorException
+     *         Returned if an error occurred on the server side.
+     * @throws ValidationException
+     *         Returned if the AWS Backup service is not available in the region that the request was made.
+     * @sample AmazonElasticFileSystem.PutBackupPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/PutBackupPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public PutBackupPolicyResult putBackupPolicy(PutBackupPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executePutBackupPolicy(request);
+    }
+
+    @SdkInternalApi
+    final PutBackupPolicyResult executePutBackupPolicy(PutBackupPolicyRequest putBackupPolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putBackupPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutBackupPolicyRequest> request = null;
+        Response<PutBackupPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutBackupPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putBackupPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EFS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutBackupPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutBackupPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutBackupPolicyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

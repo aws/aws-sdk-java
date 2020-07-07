@@ -124,7 +124,7 @@ public interface AWSLakeFormation {
 
     /**
      * <p>
-     * The AWS Lake Formation principal.
+     * Retrieves the list of the data lake administrators of a Lake Formation-managed data lake.
      * </p>
      * 
      * @param getDataLakeSettingsRequest
@@ -143,7 +143,8 @@ public interface AWSLakeFormation {
 
     /**
      * <p>
-     * Returns the permissions for a specified table or database resource located at a path in Amazon S3.
+     * Returns the Lake Formation permissions for a specified table or database resource located at a path in Amazon S3.
+     * <code>GetEffectivePermissionsForPath</code> will not return databases and tables if the catalog is encrypted.
      * </p>
      * 
      * @param getEffectivePermissionsForPathRequest
@@ -169,8 +170,8 @@ public interface AWSLakeFormation {
      * </p>
      * <p>
      * For information about permissions, see <a
-     * href="https://docs-aws.amazon.com/michigan/latest/dg/security-data-access.html">Security and Access Control to
-     * Metadata and Data</a>.
+     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control
+     * to Metadata and Data</a>.
      * </p>
      * 
      * @param grantPermissionsRequest
@@ -197,8 +198,8 @@ public interface AWSLakeFormation {
      * </p>
      * <p>
      * For information about permissions, see <a
-     * href="https://docs-aws.amazon.com/michigan/latest/dg/security-data-access.html">Security and Access Control to
-     * Metadata and Data</a>.
+     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control
+     * to Metadata and Data</a>.
      * </p>
      * 
      * @param listPermissionsRequest
@@ -236,7 +237,14 @@ public interface AWSLakeFormation {
 
     /**
      * <p>
-     * The AWS Lake Formation principal.
+     * Sets the list of data lake administrators who have admin privileges on all resources managed by Lake Formation.
+     * For more information on admin privileges, see <a
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/lake-formation-permissions.html">Granting Lake
+     * Formation Permissions</a>.
+     * </p>
+     * <p>
+     * This API replaces the current list of data lake admins with the new list being passed. To add an admin, fetch the
+     * current list and add the new admin to that list and pass that list in this API.
      * </p>
      * 
      * @param putDataLakeSettingsRequest
@@ -261,6 +269,19 @@ public interface AWSLakeFormation {
      * When you register the first Amazon S3 path, the service-linked role and a new inline policy are created on your
      * behalf. Lake Formation adds the first path to the inline policy and attaches it to the service-linked role. When
      * you register subsequent paths, Lake Formation adds the path to the existing policy.
+     * </p>
+     * <p>
+     * The following request registers a new location and gives AWS Lake Formation permission to use the service-linked
+     * role to access that location.
+     * </p>
+     * <p>
+     * <code>ResourceArn = arn:aws:s3:::my-bucket UseServiceLinkedRole = true</code>
+     * </p>
+     * <p>
+     * If <code>UseServiceLinkedRole</code> is not set to true, you must provide or set the <code>RoleArn</code>:
+     * </p>
+     * <p>
+     * <code>arn:aws:iam::12345:role/my-data-access-role</code>
      * </p>
      * 
      * @param registerResourceRequest

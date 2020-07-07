@@ -62,8 +62,14 @@ public class CreateSMBFileShareRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AuditDestinationARN").build();
     private static final MarshallingInfo<String> AUTHENTICATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Authentication").build();
+    private static final MarshallingInfo<String> CASESENSITIVITY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CaseSensitivity").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<String> FILESHARENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FileShareName").build();
+    private static final MarshallingInfo<StructuredPojo> CACHEATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CacheAttributes").build();
 
     private static final CreateSMBFileShareRequestMarshaller instance = new CreateSMBFileShareRequestMarshaller();
 
@@ -98,7 +104,10 @@ public class CreateSMBFileShareRequestMarshaller {
             protocolMarshaller.marshall(createSMBFileShareRequest.getInvalidUserList(), INVALIDUSERLIST_BINDING);
             protocolMarshaller.marshall(createSMBFileShareRequest.getAuditDestinationARN(), AUDITDESTINATIONARN_BINDING);
             protocolMarshaller.marshall(createSMBFileShareRequest.getAuthentication(), AUTHENTICATION_BINDING);
+            protocolMarshaller.marshall(createSMBFileShareRequest.getCaseSensitivity(), CASESENSITIVITY_BINDING);
             protocolMarshaller.marshall(createSMBFileShareRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createSMBFileShareRequest.getFileShareName(), FILESHARENAME_BINDING);
+            protocolMarshaller.marshall(createSMBFileShareRequest.getCacheAttributes(), CACHEATTRIBUTES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
