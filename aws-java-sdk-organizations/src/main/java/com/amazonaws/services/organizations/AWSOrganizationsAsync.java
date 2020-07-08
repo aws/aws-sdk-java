@@ -142,6 +142,12 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * <ul>
      * <li>
      * <p>
+     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
+     * AISERVICES_OPT_OUT_POLICY</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <a
      * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY
      * </a>
@@ -179,6 +185,12 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * each policy type:
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
+     * AISERVICES_OPT_OUT_POLICY</a>
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <a

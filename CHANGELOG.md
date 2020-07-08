@@ -1,3 +1,20 @@
+# __1.11.819__ __2020-07-08__
+## __AWS Cost Explorer Service__
+  - ### Features
+    - Customers can now see Instance Name alongside each rightsizing recommendation.
+
+## __AWS Organizations__
+  - ### Features
+    - AI services opt out policies enable you to control what AI service data is collected and stored for the accounts in your organization. By default, AWS artificial intelligence (AI) services collect and store data as part of operating and supporting the continuous improvement life cycle for each service. You can use these policies to opt out of this process for all of your AWS accounts to ensure that your data is not persisted within AWS AI service data stores or used for service improvements.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - EC2 Spot now enables customers to tag their Spot Instances Requests on creation.
+
+## __Amazon Forecast Service__
+  - ### Features
+    - With this release, Amazon Forecast now supports the ability to add a tag to any resource via the launch of three new APIs: TagResouce, UntagResource and ListTagsForResource. A tag is a simple label consisting of a customer-defined key and an optional value allowing for easier resource management.
+
 # __1.11.818__ __2020-07-07__
 ## __AWS Glue__
   - ### Features

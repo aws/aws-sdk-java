@@ -360,6 +360,41 @@ public class RequestSpotInstancesRequestMarshaller implements Marshaller<Request
             request.addParameter("ValidUntil", StringUtils.fromDate(requestSpotInstancesRequest.getValidUntil()));
         }
 
+        com.amazonaws.internal.SdkInternalList<TagSpecification> requestSpotInstancesRequestTagSpecificationsList = (com.amazonaws.internal.SdkInternalList<TagSpecification>) requestSpotInstancesRequest
+                .getTagSpecifications();
+        if (!requestSpotInstancesRequestTagSpecificationsList.isEmpty() || !requestSpotInstancesRequestTagSpecificationsList.isAutoConstruct()) {
+            int tagSpecificationsListIndex = 1;
+
+            for (TagSpecification requestSpotInstancesRequestTagSpecificationsListValue : requestSpotInstancesRequestTagSpecificationsList) {
+
+                if (requestSpotInstancesRequestTagSpecificationsListValue.getResourceType() != null) {
+                    request.addParameter("TagSpecification." + tagSpecificationsListIndex + ".ResourceType",
+                            StringUtils.fromString(requestSpotInstancesRequestTagSpecificationsListValue.getResourceType()));
+                }
+
+                com.amazonaws.internal.SdkInternalList<Tag> tagSpecificationTagsList = (com.amazonaws.internal.SdkInternalList<Tag>) requestSpotInstancesRequestTagSpecificationsListValue
+                        .getTags();
+                if (!tagSpecificationTagsList.isEmpty() || !tagSpecificationTagsList.isAutoConstruct()) {
+                    int tagsListIndex = 1;
+
+                    for (Tag tagSpecificationTagsListValue : tagSpecificationTagsList) {
+
+                        if (tagSpecificationTagsListValue.getKey() != null) {
+                            request.addParameter("TagSpecification." + tagSpecificationsListIndex + ".Tag." + tagsListIndex + ".Key",
+                                    StringUtils.fromString(tagSpecificationTagsListValue.getKey()));
+                        }
+
+                        if (tagSpecificationTagsListValue.getValue() != null) {
+                            request.addParameter("TagSpecification." + tagSpecificationsListIndex + ".Tag." + tagsListIndex + ".Value",
+                                    StringUtils.fromString(tagSpecificationTagsListValue.getValue()));
+                        }
+                        tagsListIndex++;
+                    }
+                }
+                tagSpecificationsListIndex++;
+            }
+        }
+
         if (requestSpotInstancesRequest.getInstanceInterruptionBehavior() != null) {
             request.addParameter("InstanceInterruptionBehavior", StringUtils.fromString(requestSpotInstancesRequest.getInstanceInterruptionBehavior()));
         }

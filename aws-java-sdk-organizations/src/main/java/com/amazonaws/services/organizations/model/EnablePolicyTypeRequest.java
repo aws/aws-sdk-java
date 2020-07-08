@@ -43,6 +43,12 @@ public class EnablePolicyTypeRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
+     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
+     * AISERVICES_OPT_OUT_POLICY</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <a
      * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY
      * </a>
@@ -138,6 +144,12 @@ public class EnablePolicyTypeRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
+     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
+     * AISERVICES_OPT_OUT_POLICY</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <a
      * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY
      * </a>
@@ -160,6 +172,12 @@ public class EnablePolicyTypeRequest extends com.amazonaws.AmazonWebServiceReque
      * @param policyType
      *        The policy type that you want to enable. You can specify one of the following values:</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
+     *        AISERVICES_OPT_OUT_POLICY</a>
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">
@@ -193,6 +211,12 @@ public class EnablePolicyTypeRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
+     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
+     * AISERVICES_OPT_OUT_POLICY</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <a
      * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY
      * </a>
@@ -214,6 +238,12 @@ public class EnablePolicyTypeRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @return The policy type that you want to enable. You can specify one of the following values:</p>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
+     *         AISERVICES_OPT_OUT_POLICY</a>
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">
@@ -247,6 +277,12 @@ public class EnablePolicyTypeRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
+     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
+     * AISERVICES_OPT_OUT_POLICY</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <a
      * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY
      * </a>
@@ -269,6 +305,12 @@ public class EnablePolicyTypeRequest extends com.amazonaws.AmazonWebServiceReque
      * @param policyType
      *        The policy type that you want to enable. You can specify one of the following values:</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
+     *        AISERVICES_OPT_OUT_POLICY</a>
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">
@@ -304,6 +346,12 @@ public class EnablePolicyTypeRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
+     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
+     * AISERVICES_OPT_OUT_POLICY</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <a
      * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY
      * </a>
@@ -326,6 +374,12 @@ public class EnablePolicyTypeRequest extends com.amazonaws.AmazonWebServiceReque
      * @param policyType
      *        The policy type that you want to enable. You can specify one of the following values:</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
+     *        AISERVICES_OPT_OUT_POLICY</a>
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">
@@ -359,6 +413,12 @@ public class EnablePolicyTypeRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
+     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
+     * AISERVICES_OPT_OUT_POLICY</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <a
      * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY
      * </a>
@@ -381,6 +441,12 @@ public class EnablePolicyTypeRequest extends com.amazonaws.AmazonWebServiceReque
      * @param policyType
      *        The policy type that you want to enable. You can specify one of the following values:</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
+     *        AISERVICES_OPT_OUT_POLICY</a>
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">

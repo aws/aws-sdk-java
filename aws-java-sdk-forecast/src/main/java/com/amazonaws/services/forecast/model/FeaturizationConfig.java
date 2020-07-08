@@ -27,7 +27,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * You define featurization using the <code>FeaturizationConfig</code> object. You specify an array of transformations,
  * one for each field that you want to featurize. You then include the <code>FeaturizationConfig</code> object in your
  * <code>CreatePredictor</code> request. Amazon Forecast applies the featurization to the
- * <code>TARGET_TIME_SERIES</code> dataset before model training.
+ * <code>TARGET_TIME_SERIES</code> and <code>RELATED_TIME_SERIES</code> datasets before model training.
  * </p>
  * <p>
  * You can create multiple featurization configurations. For example, you might call the <code>CreatePredictor</code>
@@ -76,8 +76,7 @@ public class FeaturizationConfig implements Serializable, Cloneable, StructuredP
     private java.util.List<String> forecastDimensions;
     /**
      * <p>
-     * An array of featurization (transformation) information for the fields of a dataset. Only a single featurization
-     * is supported.
+     * An array of featurization (transformation) information for the fields of a dataset.
      * </p>
      */
     private java.util.List<Featurization> featurizations;
@@ -339,12 +338,10 @@ public class FeaturizationConfig implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * An array of featurization (transformation) information for the fields of a dataset. Only a single featurization
-     * is supported.
+     * An array of featurization (transformation) information for the fields of a dataset.
      * </p>
      * 
-     * @return An array of featurization (transformation) information for the fields of a dataset. Only a single
-     *         featurization is supported.
+     * @return An array of featurization (transformation) information for the fields of a dataset.
      */
 
     public java.util.List<Featurization> getFeaturizations() {
@@ -353,13 +350,11 @@ public class FeaturizationConfig implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * An array of featurization (transformation) information for the fields of a dataset. Only a single featurization
-     * is supported.
+     * An array of featurization (transformation) information for the fields of a dataset.
      * </p>
      * 
      * @param featurizations
-     *        An array of featurization (transformation) information for the fields of a dataset. Only a single
-     *        featurization is supported.
+     *        An array of featurization (transformation) information for the fields of a dataset.
      */
 
     public void setFeaturizations(java.util.Collection<Featurization> featurizations) {
@@ -373,8 +368,7 @@ public class FeaturizationConfig implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * An array of featurization (transformation) information for the fields of a dataset. Only a single featurization
-     * is supported.
+     * An array of featurization (transformation) information for the fields of a dataset.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -383,8 +377,7 @@ public class FeaturizationConfig implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param featurizations
-     *        An array of featurization (transformation) information for the fields of a dataset. Only a single
-     *        featurization is supported.
+     *        An array of featurization (transformation) information for the fields of a dataset.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -400,13 +393,11 @@ public class FeaturizationConfig implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * An array of featurization (transformation) information for the fields of a dataset. Only a single featurization
-     * is supported.
+     * An array of featurization (transformation) information for the fields of a dataset.
      * </p>
      * 
      * @param featurizations
-     *        An array of featurization (transformation) information for the fields of a dataset. Only a single
-     *        featurization is supported.
+     *        An array of featurization (transformation) information for the fields of a dataset.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -3896,7 +3896,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Creates a data feed for Spot Instances, enabling you to view Spot Instance usage logs. You can create one data
      * feed per AWS account. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot Instance Data Feed</a> in
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot Instance data feed</a> in
      * the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
@@ -3915,7 +3915,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Creates a data feed for Spot Instances, enabling you to view Spot Instance usage logs. You can create one data
      * feed per AWS account. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot Instance Data Feed</a> in
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot Instance data feed</a> in
      * the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
@@ -11069,7 +11069,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Describes the data feed for Spot Instances. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot Instance Data Feed</a> in
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot Instance data feed</a> in
      * the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
@@ -11087,7 +11087,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Describes the data feed for Spot Instances. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot Instance Data Feed</a> in
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot Instance data feed</a> in
      * the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
@@ -11349,7 +11349,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Describes the Spot price history. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html">Spot Instance
-     * Pricing History</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * pricing history</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * <p>
      * When you specify a start and end time, this operation returns the prices of the instance types within the time
@@ -11370,7 +11370,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Describes the Spot price history. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html">Spot Instance
-     * Pricing History</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * pricing history</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * <p>
      * When you specify a start and end time, this operation returns the prices of the instance types within the time
@@ -18429,7 +18429,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html">Spot Fleet Requests</a> in
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html">Spot Fleet requests</a> in
      * the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
@@ -18472,7 +18472,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html">Spot Fleet Requests</a> in
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html">Spot Fleet requests</a> in
      * the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
@@ -18496,7 +18496,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
-     * Instance Requests</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * Instance requests</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
      * @param requestSpotInstancesRequest
@@ -18514,7 +18514,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
-     * Instance Requests</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * Instance requests</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
      * @param requestSpotInstancesRequest

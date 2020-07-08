@@ -37,7 +37,7 @@ public class DescribeForecastResult extends com.amazonaws.AmazonWebServiceResult
     private String forecastName;
     /**
      * <p>
-     * The quantiles at which proababilistic forecasts were generated.
+     * The quantiles at which probabilistic forecasts were generated.
      * </p>
      */
     private java.util.List<String> forecastTypes;
@@ -184,10 +184,10 @@ public class DescribeForecastResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The quantiles at which proababilistic forecasts were generated.
+     * The quantiles at which probabilistic forecasts were generated.
      * </p>
      * 
-     * @return The quantiles at which proababilistic forecasts were generated.
+     * @return The quantiles at which probabilistic forecasts were generated.
      */
 
     public java.util.List<String> getForecastTypes() {
@@ -196,11 +196,11 @@ public class DescribeForecastResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The quantiles at which proababilistic forecasts were generated.
+     * The quantiles at which probabilistic forecasts were generated.
      * </p>
      * 
      * @param forecastTypes
-     *        The quantiles at which proababilistic forecasts were generated.
+     *        The quantiles at which probabilistic forecasts were generated.
      */
 
     public void setForecastTypes(java.util.Collection<String> forecastTypes) {
@@ -214,7 +214,7 @@ public class DescribeForecastResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The quantiles at which proababilistic forecasts were generated.
+     * The quantiles at which probabilistic forecasts were generated.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -223,7 +223,7 @@ public class DescribeForecastResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      * 
      * @param forecastTypes
-     *        The quantiles at which proababilistic forecasts were generated.
+     *        The quantiles at which probabilistic forecasts were generated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -239,11 +239,11 @@ public class DescribeForecastResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The quantiles at which proababilistic forecasts were generated.
+     * The quantiles at which probabilistic forecasts were generated.
      * </p>
      * 
      * @param forecastTypes
-     *        The quantiles at which proababilistic forecasts were generated.
+     *        The quantiles at which probabilistic forecasts were generated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -13,7 +13,7 @@
 package com.amazonaws.services.forecast.model.transform;
 
 import java.util.Map;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -51,6 +51,8 @@ public class CreatePredictorRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FeaturizationConfig").build();
     private static final MarshallingInfo<StructuredPojo> ENCRYPTIONCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EncryptionConfig").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreatePredictorRequestMarshaller instance = new CreatePredictorRequestMarshaller();
 
@@ -79,6 +81,7 @@ public class CreatePredictorRequestMarshaller {
             protocolMarshaller.marshall(createPredictorRequest.getInputDataConfig(), INPUTDATACONFIG_BINDING);
             protocolMarshaller.marshall(createPredictorRequest.getFeaturizationConfig(), FEATURIZATIONCONFIG_BINDING);
             protocolMarshaller.marshall(createPredictorRequest.getEncryptionConfig(), ENCRYPTIONCONFIG_BINDING);
+            protocolMarshaller.marshall(createPredictorRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

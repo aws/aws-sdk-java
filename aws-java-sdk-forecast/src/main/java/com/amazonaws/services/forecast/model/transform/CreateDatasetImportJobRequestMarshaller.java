@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.forecast.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -35,6 +36,8 @@ public class CreateDatasetImportJobRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataSource").build();
     private static final MarshallingInfo<String> TIMESTAMPFORMAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TimestampFormat").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateDatasetImportJobRequestMarshaller instance = new CreateDatasetImportJobRequestMarshaller();
 
@@ -56,6 +59,7 @@ public class CreateDatasetImportJobRequestMarshaller {
             protocolMarshaller.marshall(createDatasetImportJobRequest.getDatasetArn(), DATASETARN_BINDING);
             protocolMarshaller.marshall(createDatasetImportJobRequest.getDataSource(), DATASOURCE_BINDING);
             protocolMarshaller.marshall(createDatasetImportJobRequest.getTimestampFormat(), TIMESTAMPFORMAT_BINDING);
+            protocolMarshaller.marshall(createDatasetImportJobRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

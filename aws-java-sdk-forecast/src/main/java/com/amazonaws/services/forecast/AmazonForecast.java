@@ -75,9 +75,8 @@ public interface AmazonForecast {
      * To get a list of all your datasets, use the <a>ListDatasets</a> operation.
      * </p>
      * <p>
-     * For example Forecast datasets, see the <a
-     * href="https://github.com/aws-samples/amazon-forecast-samples/tree/master/data">Amazon Forecast Sample GitHub
-     * repository</a>.
+     * For example Forecast datasets, see the <a href="https://github.com/aws-samples/amazon-forecast-samples">Amazon
+     * Forecast Sample GitHub repository</a>.
      * </p>
      * <note>
      * <p>
@@ -147,7 +146,8 @@ public interface AmazonForecast {
      * </p>
      * <p>
      * You must specify a <a>DataSource</a> object that includes an AWS Identity and Access Management (IAM) role that
-     * Amazon Forecast can assume to access the data. For more information, see <a>aws-forecast-iam-roles</a>.
+     * Amazon Forecast can assume to access the data, as Amazon Forecast makes a copy of your data and processes it in
+     * an internal AWS system. For more information, see <a>aws-forecast-iam-roles</a>.
      * </p>
      * <p>
      * The training data must be in CSV format. The delimiter must be a comma (,).
@@ -155,6 +155,11 @@ public interface AmazonForecast {
      * <p>
      * You can specify the path to a specific CSV file, the S3 bucket, or to a folder in the S3 bucket. For the latter
      * two cases, Amazon Forecast imports all files up to the limit of 10,000 files.
+     * </p>
+     * <p>
+     * Because dataset imports are not aggregated, your most recent dataset import is the one that is used when training
+     * a predictor or generating a forecast. Make sure that your most recent dataset import contains all of the data you
+     * want to model off of, and not just the new data collected since the previous import.
      * </p>
      * <p>
      * To get a list of all your dataset import jobs, filtered by specified criteria, use the
@@ -189,8 +194,7 @@ public interface AmazonForecast {
      * </p>
      * <p>
      * The range of the forecast is determined by the <code>ForecastHorizon</code> value, which you specify in the
-     * <a>CreatePredictor</a> request, multiplied by the <code>DataFrequency</code> value, which you specify in the
-     * <a>CreateDataset</a> request. When you query a forecast, you can request a specific date range within the
+     * <a>CreatePredictor</a> request. When you query a forecast, you can request a specific date range within the
      * forecast.
      * </p>
      * <p>
@@ -237,7 +241,7 @@ public interface AmazonForecast {
      * S3) bucket. The forecast file name will match the following conventions:
      * </p>
      * <p>
-     * &lt;ForecastExportJobName&gt;_&lt;ExportTimestamp&gt;_&lt;PageNumber&gt;
+     * &lt;ForecastExportJobName&gt;_&lt;ExportTimestamp&gt;_&lt;PartNumber&gt;
      * </p>
      * <p>
      * where the &lt;ExportTimestamp&gt; component is in Java SimpleDateFormat (yyyy-MM-ddTHH-mm-ssZ).
@@ -379,6 +383,12 @@ public interface AmazonForecast {
      * datasets that have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>. To get the status use the
      * <a>DescribeDataset</a> operation.
      * </p>
+     * <note>
+     * <p>
+     * Forecast does not automatically update any dataset groups that contain the deleted dataset. In order to update
+     * the dataset group, use the operation, omitting the deleted dataset's ARN.
+     * </p>
+     * </note>
      * 
      * @param deleteDatasetRequest
      * @return Result of the DeleteDataset operation returned by the service.
@@ -953,6 +963,64 @@ public interface AmazonForecast {
      *      Documentation</a>
      */
     ListPredictorsResult listPredictors(ListPredictorsRequest listPredictorsRequest);
+
+    /**
+     * <p>
+     * Lists the tags for an Amazon Forecast resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.
+     * @throws InvalidInputException
+     *         We can't process the request because it includes an invalid value or a value that exceeds the valid
+     *         range.
+     * @sample AmazonForecast.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Associates the specified tags to a resource with the specified <code>resourceArn</code>. If existing tags on a
+     * resource are not specified in the request parameters, they are not changed. When a resource is deleted, the tags
+     * associated with that resource are also deleted.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.
+     * @throws LimitExceededException
+     *         The limit on the number of resources per account has been exceeded.
+     * @throws InvalidInputException
+     *         We can't process the request because it includes an invalid value or a value that exceeds the valid
+     *         range.
+     * @sample AmazonForecast.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Deletes the specified tags from a resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.
+     * @throws InvalidInputException
+     *         We can't process the request because it includes an invalid value or a value that exceeds the valid
+     *         range.
+     * @sample AmazonForecast.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * <p>

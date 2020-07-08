@@ -66,9 +66,8 @@ public interface AmazonForecastAsync extends AmazonForecast {
      * To get a list of all your datasets, use the <a>ListDatasets</a> operation.
      * </p>
      * <p>
-     * For example Forecast datasets, see the <a
-     * href="https://github.com/aws-samples/amazon-forecast-samples/tree/master/data">Amazon Forecast Sample GitHub
-     * repository</a>.
+     * For example Forecast datasets, see the <a href="https://github.com/aws-samples/amazon-forecast-samples">Amazon
+     * Forecast Sample GitHub repository</a>.
      * </p>
      * <note>
      * <p>
@@ -119,9 +118,8 @@ public interface AmazonForecastAsync extends AmazonForecast {
      * To get a list of all your datasets, use the <a>ListDatasets</a> operation.
      * </p>
      * <p>
-     * For example Forecast datasets, see the <a
-     * href="https://github.com/aws-samples/amazon-forecast-samples/tree/master/data">Amazon Forecast Sample GitHub
-     * repository</a>.
+     * For example Forecast datasets, see the <a href="https://github.com/aws-samples/amazon-forecast-samples">Amazon
+     * Forecast Sample GitHub repository</a>.
      * </p>
      * <note>
      * <p>
@@ -210,7 +208,8 @@ public interface AmazonForecastAsync extends AmazonForecast {
      * </p>
      * <p>
      * You must specify a <a>DataSource</a> object that includes an AWS Identity and Access Management (IAM) role that
-     * Amazon Forecast can assume to access the data. For more information, see <a>aws-forecast-iam-roles</a>.
+     * Amazon Forecast can assume to access the data, as Amazon Forecast makes a copy of your data and processes it in
+     * an internal AWS system. For more information, see <a>aws-forecast-iam-roles</a>.
      * </p>
      * <p>
      * The training data must be in CSV format. The delimiter must be a comma (,).
@@ -218,6 +217,11 @@ public interface AmazonForecastAsync extends AmazonForecast {
      * <p>
      * You can specify the path to a specific CSV file, the S3 bucket, or to a folder in the S3 bucket. For the latter
      * two cases, Amazon Forecast imports all files up to the limit of 10,000 files.
+     * </p>
+     * <p>
+     * Because dataset imports are not aggregated, your most recent dataset import is the one that is used when training
+     * a predictor or generating a forecast. Make sure that your most recent dataset import contains all of the data you
+     * want to model off of, and not just the new data collected since the previous import.
      * </p>
      * <p>
      * To get a list of all your dataset import jobs, filtered by specified criteria, use the
@@ -240,7 +244,8 @@ public interface AmazonForecastAsync extends AmazonForecast {
      * </p>
      * <p>
      * You must specify a <a>DataSource</a> object that includes an AWS Identity and Access Management (IAM) role that
-     * Amazon Forecast can assume to access the data. For more information, see <a>aws-forecast-iam-roles</a>.
+     * Amazon Forecast can assume to access the data, as Amazon Forecast makes a copy of your data and processes it in
+     * an internal AWS system. For more information, see <a>aws-forecast-iam-roles</a>.
      * </p>
      * <p>
      * The training data must be in CSV format. The delimiter must be a comma (,).
@@ -248,6 +253,11 @@ public interface AmazonForecastAsync extends AmazonForecast {
      * <p>
      * You can specify the path to a specific CSV file, the S3 bucket, or to a folder in the S3 bucket. For the latter
      * two cases, Amazon Forecast imports all files up to the limit of 10,000 files.
+     * </p>
+     * <p>
+     * Because dataset imports are not aggregated, your most recent dataset import is the one that is used when training
+     * a predictor or generating a forecast. Make sure that your most recent dataset import contains all of the data you
+     * want to model off of, and not just the new data collected since the previous import.
      * </p>
      * <p>
      * To get a list of all your dataset import jobs, filtered by specified criteria, use the
@@ -276,8 +286,7 @@ public interface AmazonForecastAsync extends AmazonForecast {
      * </p>
      * <p>
      * The range of the forecast is determined by the <code>ForecastHorizon</code> value, which you specify in the
-     * <a>CreatePredictor</a> request, multiplied by the <code>DataFrequency</code> value, which you specify in the
-     * <a>CreateDataset</a> request. When you query a forecast, you can request a specific date range within the
+     * <a>CreatePredictor</a> request. When you query a forecast, you can request a specific date range within the
      * forecast.
      * </p>
      * <p>
@@ -316,8 +325,7 @@ public interface AmazonForecastAsync extends AmazonForecast {
      * </p>
      * <p>
      * The range of the forecast is determined by the <code>ForecastHorizon</code> value, which you specify in the
-     * <a>CreatePredictor</a> request, multiplied by the <code>DataFrequency</code> value, which you specify in the
-     * <a>CreateDataset</a> request. When you query a forecast, you can request a specific date range within the
+     * <a>CreatePredictor</a> request. When you query a forecast, you can request a specific date range within the
      * forecast.
      * </p>
      * <p>
@@ -358,7 +366,7 @@ public interface AmazonForecastAsync extends AmazonForecast {
      * S3) bucket. The forecast file name will match the following conventions:
      * </p>
      * <p>
-     * &lt;ForecastExportJobName&gt;_&lt;ExportTimestamp&gt;_&lt;PageNumber&gt;
+     * &lt;ForecastExportJobName&gt;_&lt;ExportTimestamp&gt;_&lt;PartNumber&gt;
      * </p>
      * <p>
      * where the &lt;ExportTimestamp&gt; component is in Java SimpleDateFormat (yyyy-MM-ddTHH-mm-ssZ).
@@ -395,7 +403,7 @@ public interface AmazonForecastAsync extends AmazonForecast {
      * S3) bucket. The forecast file name will match the following conventions:
      * </p>
      * <p>
-     * &lt;ForecastExportJobName&gt;_&lt;ExportTimestamp&gt;_&lt;PageNumber&gt;
+     * &lt;ForecastExportJobName&gt;_&lt;ExportTimestamp&gt;_&lt;PartNumber&gt;
      * </p>
      * <p>
      * where the &lt;ExportTimestamp&gt; component is in Java SimpleDateFormat (yyyy-MM-ddTHH-mm-ssZ).
@@ -608,6 +616,12 @@ public interface AmazonForecastAsync extends AmazonForecast {
      * datasets that have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>. To get the status use the
      * <a>DescribeDataset</a> operation.
      * </p>
+     * <note>
+     * <p>
+     * Forecast does not automatically update any dataset groups that contain the deleted dataset. In order to update
+     * the dataset group, use the operation, omitting the deleted dataset's ARN.
+     * </p>
+     * </note>
      * 
      * @param deleteDatasetRequest
      * @return A Java Future containing the result of the DeleteDataset operation returned by the service.
@@ -623,6 +637,12 @@ public interface AmazonForecastAsync extends AmazonForecast {
      * datasets that have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>. To get the status use the
      * <a>DescribeDataset</a> operation.
      * </p>
+     * <note>
+     * <p>
+     * Forecast does not automatically update any dataset groups that contain the deleted dataset. In order to update
+     * the dataset group, use the operation, omitting the deleted dataset's ARN.
+     * </p>
+     * </note>
      * 
      * @param deleteDatasetRequest
      * @param asyncHandler
@@ -1654,6 +1674,103 @@ public interface AmazonForecastAsync extends AmazonForecast {
      */
     java.util.concurrent.Future<ListPredictorsResult> listPredictorsAsync(ListPredictorsRequest listPredictorsRequest,
             com.amazonaws.handlers.AsyncHandler<ListPredictorsRequest, ListPredictorsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the tags for an Amazon Forecast resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AmazonForecastAsync.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Lists the tags for an Amazon Forecast resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AmazonForecastAsyncHandler.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Associates the specified tags to a resource with the specified <code>resourceArn</code>. If existing tags on a
+     * resource are not specified in the request parameters, they are not changed. When a resource is deleted, the tags
+     * associated with that resource are also deleted.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonForecastAsync.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Associates the specified tags to a resource with the specified <code>resourceArn</code>. If existing tags on a
+     * resource are not specified in the request parameters, they are not changed. When a resource is deleted, the tags
+     * associated with that resource are also deleted.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonForecastAsyncHandler.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the specified tags from a resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonForecastAsync.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Deletes the specified tags from a resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonForecastAsyncHandler.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
 
     /**
      * <p>

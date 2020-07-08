@@ -55,6 +55,12 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
+     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
+     * AISERVICES_OPT_OUT_POLICY</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <a
      * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY
      * </a>
@@ -230,6 +236,12 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
+     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
+     * AISERVICES_OPT_OUT_POLICY</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <a
      * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY
      * </a>
@@ -252,6 +264,12 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @param type
      *        The type of policy to create. You can specify one of the following values:</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
+     *        AISERVICES_OPT_OUT_POLICY</a>
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">
@@ -285,6 +303,12 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
+     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
+     * AISERVICES_OPT_OUT_POLICY</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <a
      * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY
      * </a>
@@ -306,6 +330,12 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @return The type of policy to create. You can specify one of the following values:</p>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
+     *         AISERVICES_OPT_OUT_POLICY</a>
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">
@@ -339,6 +369,12 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
+     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
+     * AISERVICES_OPT_OUT_POLICY</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <a
      * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY
      * </a>
@@ -361,6 +397,12 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @param type
      *        The type of policy to create. You can specify one of the following values:</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
+     *        AISERVICES_OPT_OUT_POLICY</a>
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">
@@ -396,6 +438,12 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
+     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
+     * AISERVICES_OPT_OUT_POLICY</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <a
      * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY
      * </a>
@@ -418,6 +466,12 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @param type
      *        The type of policy to create. You can specify one of the following values:</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
+     *        AISERVICES_OPT_OUT_POLICY</a>
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">
@@ -451,6 +505,12 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
+     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
+     * AISERVICES_OPT_OUT_POLICY</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <a
      * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY
      * </a>
@@ -473,6 +533,12 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @param type
      *        The type of policy to create. You can specify one of the following values:</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
+     *        AISERVICES_OPT_OUT_POLICY</a>
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">

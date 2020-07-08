@@ -39,13 +39,66 @@ public class CreateForecastRequest extends com.amazonaws.AmazonWebServiceRequest
     private String predictorArn;
     /**
      * <p>
-     * The quantiles at which probabilistic forecasts are generated. You can specify up to 5 quantiles per forecast.
-     * Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>. The mean
-     * forecast is different from the median (0.50) when the distribution is not symmetric (e.g. Beta, Negative
-     * Binomial). The default value is <code>["0.1", "0.5", "0.9"]</code>.
+     * The quantiles at which probabilistic forecasts are generated. <b>You can currently specify up to 5 quantiles per
+     * forecast</b>. Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>.
+     * The mean forecast is different from the median (0.50) when the distribution is not symmetric (for example, Beta
+     * and Negative Binomial). The default value is <code>["0.1", "0.5", "0.9"]</code>.
      * </p>
      */
     private java.util.List<String> forecastTypes;
+    /**
+     * <p>
+     * The optional metadata that you apply to the forecast to help you categorize and organize them. Each tag consists
+     * of a key and an optional value, both of which you define.
+     * </p>
+     * <p>
+     * The following basic restrictions apply to tags:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Maximum number of tags per resource - 50.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For each resource, each tag key must be unique, and each tag key can have only one value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum key length - 128 Unicode characters in UTF-8.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum value length - 256 Unicode characters in UTF-8.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If your tagging schema is used across multiple services and resources, remember that other services may have
+     * restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable
+     * in UTF-8, and the following characters: + - = . _ : / @.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tag keys and values are case sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
+     * keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this
+     * prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be
+     * a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not
+     * count against your tags per resource limit.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -129,16 +182,17 @@ public class CreateForecastRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The quantiles at which probabilistic forecasts are generated. You can specify up to 5 quantiles per forecast.
-     * Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>. The mean
-     * forecast is different from the median (0.50) when the distribution is not symmetric (e.g. Beta, Negative
-     * Binomial). The default value is <code>["0.1", "0.5", "0.9"]</code>.
+     * The quantiles at which probabilistic forecasts are generated. <b>You can currently specify up to 5 quantiles per
+     * forecast</b>. Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>.
+     * The mean forecast is different from the median (0.50) when the distribution is not symmetric (for example, Beta
+     * and Negative Binomial). The default value is <code>["0.1", "0.5", "0.9"]</code>.
      * </p>
      * 
-     * @return The quantiles at which probabilistic forecasts are generated. You can specify up to 5 quantiles per
-     *         forecast. Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and
-     *         <code>mean</code>. The mean forecast is different from the median (0.50) when the distribution is not
-     *         symmetric (e.g. Beta, Negative Binomial). The default value is <code>["0.1", "0.5", "0.9"]</code>.
+     * @return The quantiles at which probabilistic forecasts are generated. <b>You can currently specify up to 5
+     *         quantiles per forecast</b>. Accepted values include <code>0.01 to 0.99</code> (increments of .01 only)
+     *         and <code>mean</code>. The mean forecast is different from the median (0.50) when the distribution is not
+     *         symmetric (for example, Beta and Negative Binomial). The default value is
+     *         <code>["0.1", "0.5", "0.9"]</code>.
      */
 
     public java.util.List<String> getForecastTypes() {
@@ -147,17 +201,18 @@ public class CreateForecastRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The quantiles at which probabilistic forecasts are generated. You can specify up to 5 quantiles per forecast.
-     * Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>. The mean
-     * forecast is different from the median (0.50) when the distribution is not symmetric (e.g. Beta, Negative
-     * Binomial). The default value is <code>["0.1", "0.5", "0.9"]</code>.
+     * The quantiles at which probabilistic forecasts are generated. <b>You can currently specify up to 5 quantiles per
+     * forecast</b>. Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>.
+     * The mean forecast is different from the median (0.50) when the distribution is not symmetric (for example, Beta
+     * and Negative Binomial). The default value is <code>["0.1", "0.5", "0.9"]</code>.
      * </p>
      * 
      * @param forecastTypes
-     *        The quantiles at which probabilistic forecasts are generated. You can specify up to 5 quantiles per
-     *        forecast. Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>
-     *        . The mean forecast is different from the median (0.50) when the distribution is not symmetric (e.g. Beta,
-     *        Negative Binomial). The default value is <code>["0.1", "0.5", "0.9"]</code>.
+     *        The quantiles at which probabilistic forecasts are generated. <b>You can currently specify up to 5
+     *        quantiles per forecast</b>. Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and
+     *        <code>mean</code>. The mean forecast is different from the median (0.50) when the distribution is not
+     *        symmetric (for example, Beta and Negative Binomial). The default value is
+     *        <code>["0.1", "0.5", "0.9"]</code>.
      */
 
     public void setForecastTypes(java.util.Collection<String> forecastTypes) {
@@ -171,10 +226,10 @@ public class CreateForecastRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The quantiles at which probabilistic forecasts are generated. You can specify up to 5 quantiles per forecast.
-     * Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>. The mean
-     * forecast is different from the median (0.50) when the distribution is not symmetric (e.g. Beta, Negative
-     * Binomial). The default value is <code>["0.1", "0.5", "0.9"]</code>.
+     * The quantiles at which probabilistic forecasts are generated. <b>You can currently specify up to 5 quantiles per
+     * forecast</b>. Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>.
+     * The mean forecast is different from the median (0.50) when the distribution is not symmetric (for example, Beta
+     * and Negative Binomial). The default value is <code>["0.1", "0.5", "0.9"]</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -183,10 +238,11 @@ public class CreateForecastRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param forecastTypes
-     *        The quantiles at which probabilistic forecasts are generated. You can specify up to 5 quantiles per
-     *        forecast. Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>
-     *        . The mean forecast is different from the median (0.50) when the distribution is not symmetric (e.g. Beta,
-     *        Negative Binomial). The default value is <code>["0.1", "0.5", "0.9"]</code>.
+     *        The quantiles at which probabilistic forecasts are generated. <b>You can currently specify up to 5
+     *        quantiles per forecast</b>. Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and
+     *        <code>mean</code>. The mean forecast is different from the median (0.50) when the distribution is not
+     *        symmetric (for example, Beta and Negative Binomial). The default value is
+     *        <code>["0.1", "0.5", "0.9"]</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -202,22 +258,465 @@ public class CreateForecastRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The quantiles at which probabilistic forecasts are generated. You can specify up to 5 quantiles per forecast.
-     * Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>. The mean
-     * forecast is different from the median (0.50) when the distribution is not symmetric (e.g. Beta, Negative
-     * Binomial). The default value is <code>["0.1", "0.5", "0.9"]</code>.
+     * The quantiles at which probabilistic forecasts are generated. <b>You can currently specify up to 5 quantiles per
+     * forecast</b>. Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>.
+     * The mean forecast is different from the median (0.50) when the distribution is not symmetric (for example, Beta
+     * and Negative Binomial). The default value is <code>["0.1", "0.5", "0.9"]</code>.
      * </p>
      * 
      * @param forecastTypes
-     *        The quantiles at which probabilistic forecasts are generated. You can specify up to 5 quantiles per
-     *        forecast. Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>
-     *        . The mean forecast is different from the median (0.50) when the distribution is not symmetric (e.g. Beta,
-     *        Negative Binomial). The default value is <code>["0.1", "0.5", "0.9"]</code>.
+     *        The quantiles at which probabilistic forecasts are generated. <b>You can currently specify up to 5
+     *        quantiles per forecast</b>. Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and
+     *        <code>mean</code>. The mean forecast is different from the median (0.50) when the distribution is not
+     *        symmetric (for example, Beta and Negative Binomial). The default value is
+     *        <code>["0.1", "0.5", "0.9"]</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateForecastRequest withForecastTypes(java.util.Collection<String> forecastTypes) {
         setForecastTypes(forecastTypes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The optional metadata that you apply to the forecast to help you categorize and organize them. Each tag consists
+     * of a key and an optional value, both of which you define.
+     * </p>
+     * <p>
+     * The following basic restrictions apply to tags:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Maximum number of tags per resource - 50.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For each resource, each tag key must be unique, and each tag key can have only one value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum key length - 128 Unicode characters in UTF-8.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum value length - 256 Unicode characters in UTF-8.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If your tagging schema is used across multiple services and resources, remember that other services may have
+     * restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable
+     * in UTF-8, and the following characters: + - = . _ : / @.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tag keys and values are case sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
+     * keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this
+     * prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be
+     * a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not
+     * count against your tags per resource limit.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The optional metadata that you apply to the forecast to help you categorize and organize them. Each tag
+     *         consists of a key and an optional value, both of which you define.</p>
+     *         <p>
+     *         The following basic restrictions apply to tags:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Maximum number of tags per resource - 50.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For each resource, each tag key must be unique, and each tag key can have only one value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Maximum key length - 128 Unicode characters in UTF-8.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Maximum value length - 256 Unicode characters in UTF-8.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If your tagging schema is used across multiple services and resources, remember that other services may
+     *         have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces
+     *         representable in UTF-8, and the following characters: + - = . _ : / @.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Tag keys and values are case sensitive.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a
+     *         prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix.
+     *         Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then
+     *         Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the
+     *         key prefix of <code>aws</code> do not count against your tags per resource limit.
+     *         </p>
+     *         </li>
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The optional metadata that you apply to the forecast to help you categorize and organize them. Each tag consists
+     * of a key and an optional value, both of which you define.
+     * </p>
+     * <p>
+     * The following basic restrictions apply to tags:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Maximum number of tags per resource - 50.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For each resource, each tag key must be unique, and each tag key can have only one value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum key length - 128 Unicode characters in UTF-8.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum value length - 256 Unicode characters in UTF-8.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If your tagging schema is used across multiple services and resources, remember that other services may have
+     * restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable
+     * in UTF-8, and the following characters: + - = . _ : / @.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tag keys and values are case sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
+     * keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this
+     * prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be
+     * a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not
+     * count against your tags per resource limit.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param tags
+     *        The optional metadata that you apply to the forecast to help you categorize and organize them. Each tag
+     *        consists of a key and an optional value, both of which you define.</p>
+     *        <p>
+     *        The following basic restrictions apply to tags:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Maximum number of tags per resource - 50.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For each resource, each tag key must be unique, and each tag key can have only one value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Maximum key length - 128 Unicode characters in UTF-8.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Maximum value length - 256 Unicode characters in UTF-8.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If your tagging schema is used across multiple services and resources, remember that other services may
+     *        have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces
+     *        representable in UTF-8, and the following characters: + - = . _ : / @.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Tag keys and values are case sensitive.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix
+     *        for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can
+     *        have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast
+     *        considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix
+     *        of <code>aws</code> do not count against your tags per resource limit.
+     *        </p>
+     *        </li>
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The optional metadata that you apply to the forecast to help you categorize and organize them. Each tag consists
+     * of a key and an optional value, both of which you define.
+     * </p>
+     * <p>
+     * The following basic restrictions apply to tags:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Maximum number of tags per resource - 50.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For each resource, each tag key must be unique, and each tag key can have only one value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum key length - 128 Unicode characters in UTF-8.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum value length - 256 Unicode characters in UTF-8.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If your tagging schema is used across multiple services and resources, remember that other services may have
+     * restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable
+     * in UTF-8, and the following characters: + - = . _ : / @.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tag keys and values are case sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
+     * keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this
+     * prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be
+     * a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not
+     * count against your tags per resource limit.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The optional metadata that you apply to the forecast to help you categorize and organize them. Each tag
+     *        consists of a key and an optional value, both of which you define.</p>
+     *        <p>
+     *        The following basic restrictions apply to tags:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Maximum number of tags per resource - 50.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For each resource, each tag key must be unique, and each tag key can have only one value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Maximum key length - 128 Unicode characters in UTF-8.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Maximum value length - 256 Unicode characters in UTF-8.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If your tagging schema is used across multiple services and resources, remember that other services may
+     *        have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces
+     *        representable in UTF-8, and the following characters: + - = . _ : / @.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Tag keys and values are case sensitive.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix
+     *        for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can
+     *        have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast
+     *        considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix
+     *        of <code>aws</code> do not count against your tags per resource limit.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateForecastRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The optional metadata that you apply to the forecast to help you categorize and organize them. Each tag consists
+     * of a key and an optional value, both of which you define.
+     * </p>
+     * <p>
+     * The following basic restrictions apply to tags:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Maximum number of tags per resource - 50.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For each resource, each tag key must be unique, and each tag key can have only one value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum key length - 128 Unicode characters in UTF-8.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum value length - 256 Unicode characters in UTF-8.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If your tagging schema is used across multiple services and resources, remember that other services may have
+     * restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable
+     * in UTF-8, and the following characters: + - = . _ : / @.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tag keys and values are case sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
+     * keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this
+     * prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be
+     * a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not
+     * count against your tags per resource limit.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param tags
+     *        The optional metadata that you apply to the forecast to help you categorize and organize them. Each tag
+     *        consists of a key and an optional value, both of which you define.</p>
+     *        <p>
+     *        The following basic restrictions apply to tags:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Maximum number of tags per resource - 50.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For each resource, each tag key must be unique, and each tag key can have only one value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Maximum key length - 128 Unicode characters in UTF-8.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Maximum value length - 256 Unicode characters in UTF-8.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If your tagging schema is used across multiple services and resources, remember that other services may
+     *        have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces
+     *        representable in UTF-8, and the following characters: + - = . _ : / @.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Tag keys and values are case sensitive.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix
+     *        for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can
+     *        have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast
+     *        considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix
+     *        of <code>aws</code> do not count against your tags per resource limit.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateForecastRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
         return this;
     }
 
@@ -238,7 +737,9 @@ public class CreateForecastRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getPredictorArn() != null)
             sb.append("PredictorArn: ").append(getPredictorArn()).append(",");
         if (getForecastTypes() != null)
-            sb.append("ForecastTypes: ").append(getForecastTypes());
+            sb.append("ForecastTypes: ").append(getForecastTypes()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -265,6 +766,10 @@ public class CreateForecastRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getForecastTypes() != null && other.getForecastTypes().equals(this.getForecastTypes()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -276,6 +781,7 @@ public class CreateForecastRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getForecastName() == null) ? 0 : getForecastName().hashCode());
         hashCode = prime * hashCode + ((getPredictorArn() == null) ? 0 : getPredictorArn().hashCode());
         hashCode = prime * hashCode + ((getForecastTypes() == null) ? 0 : getForecastTypes().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

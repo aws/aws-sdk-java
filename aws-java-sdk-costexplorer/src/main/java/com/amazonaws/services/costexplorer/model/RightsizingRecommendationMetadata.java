@@ -36,7 +36,7 @@ public class RightsizingRecommendationMetadata implements Serializable, Cloneabl
     private String recommendationId;
     /**
      * <p>
-     * The time stamp for when Amazon Web Services made this recommendation.
+     * The timestamp for when Amazon Web Services made this recommendation.
      * </p>
      */
     private String generationTimestamp;
@@ -89,11 +89,11 @@ public class RightsizingRecommendationMetadata implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The time stamp for when Amazon Web Services made this recommendation.
+     * The timestamp for when Amazon Web Services made this recommendation.
      * </p>
      * 
      * @param generationTimestamp
-     *        The time stamp for when Amazon Web Services made this recommendation.
+     *        The timestamp for when Amazon Web Services made this recommendation.
      */
 
     public void setGenerationTimestamp(String generationTimestamp) {
@@ -102,10 +102,10 @@ public class RightsizingRecommendationMetadata implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The time stamp for when Amazon Web Services made this recommendation.
+     * The timestamp for when Amazon Web Services made this recommendation.
      * </p>
      * 
-     * @return The time stamp for when Amazon Web Services made this recommendation.
+     * @return The timestamp for when Amazon Web Services made this recommendation.
      */
 
     public String getGenerationTimestamp() {
@@ -114,11 +114,11 @@ public class RightsizingRecommendationMetadata implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The time stamp for when Amazon Web Services made this recommendation.
+     * The timestamp for when Amazon Web Services made this recommendation.
      * </p>
      * 
      * @param generationTimestamp
-     *        The time stamp for when Amazon Web Services made this recommendation.
+     *        The timestamp for when Amazon Web Services made this recommendation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

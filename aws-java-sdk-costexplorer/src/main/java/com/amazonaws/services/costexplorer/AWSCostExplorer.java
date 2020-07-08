@@ -377,13 +377,13 @@ public interface AWSCostExplorer {
 
     /**
      * <p>
-     * Creates recommendations that helps you save cost by identifying idle and underutilized Amazon EC2 instances.
+     * Creates recommendations that help you save cost by identifying idle and underutilized Amazon EC2 instances.
      * </p>
      * <p>
      * Recommendations are generated to either downsize or terminate instances, along with providing savings detail and
      * metrics. For details on calculation and function, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-what-is.html">Optimizing Your Cost with
-     * Rightsizing Recommendations</a>.
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-rightsizing.html">Optimizing Your Cost with
+     * Rightsizing Recommendations</a> in the <i>AWS Billing and Cost Management User Guide</i>.
      * </p>
      * 
      * @param getRightsizingRecommendationRequest

@@ -36,6 +36,12 @@ public class CurrentInstance implements Serializable, Cloneable, StructuredPojo 
     private String resourceId;
     /**
      * <p>
+     * The name you've given an instance. This field will show as blank if you haven't given the instance a name.
+     * </p>
+     */
+    private String instanceName;
+    /**
+     * <p>
      * Cost allocation resource tags applied to the instance.
      * </p>
      */
@@ -126,6 +132,47 @@ public class CurrentInstance implements Serializable, Cloneable, StructuredPojo 
 
     public CurrentInstance withResourceId(String resourceId) {
         setResourceId(resourceId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name you've given an instance. This field will show as blank if you haven't given the instance a name.
+     * </p>
+     * 
+     * @param instanceName
+     *        The name you've given an instance. This field will show as blank if you haven't given the instance a name.
+     */
+
+    public void setInstanceName(String instanceName) {
+        this.instanceName = instanceName;
+    }
+
+    /**
+     * <p>
+     * The name you've given an instance. This field will show as blank if you haven't given the instance a name.
+     * </p>
+     * 
+     * @return The name you've given an instance. This field will show as blank if you haven't given the instance a
+     *         name.
+     */
+
+    public String getInstanceName() {
+        return this.instanceName;
+    }
+
+    /**
+     * <p>
+     * The name you've given an instance. This field will show as blank if you haven't given the instance a name.
+     * </p>
+     * 
+     * @param instanceName
+     *        The name you've given an instance. This field will show as blank if you haven't given the instance a name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CurrentInstance withInstanceName(String instanceName) {
+        setInstanceName(instanceName);
         return this;
     }
 
@@ -533,6 +580,8 @@ public class CurrentInstance implements Serializable, Cloneable, StructuredPojo 
         sb.append("{");
         if (getResourceId() != null)
             sb.append("ResourceId: ").append(getResourceId()).append(",");
+        if (getInstanceName() != null)
+            sb.append("InstanceName: ").append(getInstanceName()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getResourceDetails() != null)
@@ -568,6 +617,10 @@ public class CurrentInstance implements Serializable, Cloneable, StructuredPojo 
         if (other.getResourceId() == null ^ this.getResourceId() == null)
             return false;
         if (other.getResourceId() != null && other.getResourceId().equals(this.getResourceId()) == false)
+            return false;
+        if (other.getInstanceName() == null ^ this.getInstanceName() == null)
+            return false;
+        if (other.getInstanceName() != null && other.getInstanceName().equals(this.getInstanceName()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
@@ -618,6 +671,7 @@ public class CurrentInstance implements Serializable, Cloneable, StructuredPojo 
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
+        hashCode = prime * hashCode + ((getInstanceName() == null) ? 0 : getInstanceName().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getResourceDetails() == null) ? 0 : getResourceDetails().hashCode());
         hashCode = prime * hashCode + ((getResourceUtilization() == null) ? 0 : getResourceUtilization().hashCode());

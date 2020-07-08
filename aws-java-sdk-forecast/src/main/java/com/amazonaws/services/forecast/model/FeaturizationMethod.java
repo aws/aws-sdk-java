@@ -20,8 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Provides information about the method that featurizes (transforms) a dataset field. The method is part of the
- * <code>FeaturizationPipeline</code> of the <a>Featurization</a> object. If you don't specify
- * <code>FeaturizationMethodParameters</code>, Amazon Forecast uses default parameters.
+ * <code>FeaturizationPipeline</code> of the <a>Featurization</a> object.
  * </p>
  * <p>
  * The following is an example of how you specify a <code>FeaturizationMethod</code> object.
@@ -33,7 +32,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <code>"FeaturizationMethodName": "filling",</code>
  * </p>
  * <p>
- * <code>"FeaturizationMethodParameters": {"aggregation": "avg", "backfill": "nan"}</code>
+ * <code>"FeaturizationMethodParameters": {"aggregation": "sum", "middlefill": "zero", "backfill": "zero"}</code>
  * </p>
  * <p>
  * <code>}</code>
@@ -53,8 +52,12 @@ public class FeaturizationMethod implements Serializable, Cloneable, StructuredP
     private String featurizationMethodName;
     /**
      * <p>
-     * The method parameters (key-value pairs). Specify these parameters to override the default values. The following
-     * list shows the parameters and their valid values. Bold signifies the default value.
+     * The method parameters (key-value pairs), which are a map of override parameters. Specify these parameters to
+     * override the default values. Related Time Series attributes do not accept aggregation parameters.
+     * </p>
+     * <p>
+     * The following list shows the parameters and their valid values for the "filling" featurization method for a
+     * <b>Target Time Series</b> dataset. Bold signifies the default value.
      * </p>
      * <ul>
      * <li>
@@ -69,12 +72,38 @@ public class FeaturizationMethod implements Serializable, Cloneable, StructuredP
      * </li>
      * <li>
      * <p>
-     * <code>middlefill</code>: <b>zero</b>, <code>nan</code> (not a number)
+     * <code>middlefill</code>: <b>zero</b>, <code>nan</code> (not a number), <code>value</code>, <code>median</code>,
+     * <code>mean</code>, <code>min</code>, <code>max</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>backfill</code>: <b>zero</b>, <code>nan</code>
+     * <code>backfill</code>: <b>zero</b>, <code>nan</code>, <code>value</code>, <code>median</code>, <code>mean</code>,
+     * <code>min</code>, <code>max</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The following list shows the parameters and their valid values for a <b>Related Time Series</b> featurization
+     * method (there are no defaults):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>middlefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>,
+     * <code>min</code>, <code>max</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>backfill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>,
+     * <code>min</code>, <code>max</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>futurefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>,
+     * <code>min</code>, <code>max</code>
      * </p>
      * </li>
      * </ul>
@@ -142,8 +171,12 @@ public class FeaturizationMethod implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The method parameters (key-value pairs). Specify these parameters to override the default values. The following
-     * list shows the parameters and their valid values. Bold signifies the default value.
+     * The method parameters (key-value pairs), which are a map of override parameters. Specify these parameters to
+     * override the default values. Related Time Series attributes do not accept aggregation parameters.
+     * </p>
+     * <p>
+     * The following list shows the parameters and their valid values for the "filling" featurization method for a
+     * <b>Target Time Series</b> dataset. Bold signifies the default value.
      * </p>
      * <ul>
      * <li>
@@ -158,18 +191,48 @@ public class FeaturizationMethod implements Serializable, Cloneable, StructuredP
      * </li>
      * <li>
      * <p>
-     * <code>middlefill</code>: <b>zero</b>, <code>nan</code> (not a number)
+     * <code>middlefill</code>: <b>zero</b>, <code>nan</code> (not a number), <code>value</code>, <code>median</code>,
+     * <code>mean</code>, <code>min</code>, <code>max</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>backfill</code>: <b>zero</b>, <code>nan</code>
+     * <code>backfill</code>: <b>zero</b>, <code>nan</code>, <code>value</code>, <code>median</code>, <code>mean</code>,
+     * <code>min</code>, <code>max</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The following list shows the parameters and their valid values for a <b>Related Time Series</b> featurization
+     * method (there are no defaults):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>middlefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>,
+     * <code>min</code>, <code>max</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>backfill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>,
+     * <code>min</code>, <code>max</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>futurefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>,
+     * <code>min</code>, <code>max</code>
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The method parameters (key-value pairs). Specify these parameters to override the default values. The
-     *         following list shows the parameters and their valid values. Bold signifies the default value.</p>
+     * @return The method parameters (key-value pairs), which are a map of override parameters. Specify these parameters
+     *         to override the default values. Related Time Series attributes do not accept aggregation parameters.</p>
+     *         <p>
+     *         The following list shows the parameters and their valid values for the "filling" featurization method for
+     *         a <b>Target Time Series</b> dataset. Bold signifies the default value.
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -184,12 +247,38 @@ public class FeaturizationMethod implements Serializable, Cloneable, StructuredP
      *         </li>
      *         <li>
      *         <p>
-     *         <code>middlefill</code>: <b>zero</b>, <code>nan</code> (not a number)
+     *         <code>middlefill</code>: <b>zero</b>, <code>nan</code> (not a number), <code>value</code>,
+     *         <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>backfill</code>: <b>zero</b>, <code>nan</code>
+     *         <code>backfill</code>: <b>zero</b>, <code>nan</code>, <code>value</code>, <code>median</code>,
+     *         <code>mean</code>, <code>min</code>, <code>max</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         The following list shows the parameters and their valid values for a <b>Related Time Series</b>
+     *         featurization method (there are no defaults):
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>middlefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>,
+     *         <code>min</code>, <code>max</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>backfill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>,
+     *         <code>min</code>, <code>max</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>futurefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>,
+     *         <code>min</code>, <code>max</code>
      *         </p>
      *         </li>
      */
@@ -200,8 +289,12 @@ public class FeaturizationMethod implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The method parameters (key-value pairs). Specify these parameters to override the default values. The following
-     * list shows the parameters and their valid values. Bold signifies the default value.
+     * The method parameters (key-value pairs), which are a map of override parameters. Specify these parameters to
+     * override the default values. Related Time Series attributes do not accept aggregation parameters.
+     * </p>
+     * <p>
+     * The following list shows the parameters and their valid values for the "filling" featurization method for a
+     * <b>Target Time Series</b> dataset. Bold signifies the default value.
      * </p>
      * <ul>
      * <li>
@@ -216,19 +309,49 @@ public class FeaturizationMethod implements Serializable, Cloneable, StructuredP
      * </li>
      * <li>
      * <p>
-     * <code>middlefill</code>: <b>zero</b>, <code>nan</code> (not a number)
+     * <code>middlefill</code>: <b>zero</b>, <code>nan</code> (not a number), <code>value</code>, <code>median</code>,
+     * <code>mean</code>, <code>min</code>, <code>max</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>backfill</code>: <b>zero</b>, <code>nan</code>
+     * <code>backfill</code>: <b>zero</b>, <code>nan</code>, <code>value</code>, <code>median</code>, <code>mean</code>,
+     * <code>min</code>, <code>max</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The following list shows the parameters and their valid values for a <b>Related Time Series</b> featurization
+     * method (there are no defaults):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>middlefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>,
+     * <code>min</code>, <code>max</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>backfill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>,
+     * <code>min</code>, <code>max</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>futurefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>,
+     * <code>min</code>, <code>max</code>
      * </p>
      * </li>
      * </ul>
      * 
      * @param featurizationMethodParameters
-     *        The method parameters (key-value pairs). Specify these parameters to override the default values. The
-     *        following list shows the parameters and their valid values. Bold signifies the default value.</p>
+     *        The method parameters (key-value pairs), which are a map of override parameters. Specify these parameters
+     *        to override the default values. Related Time Series attributes do not accept aggregation parameters.</p>
+     *        <p>
+     *        The following list shows the parameters and their valid values for the "filling" featurization method for
+     *        a <b>Target Time Series</b> dataset. Bold signifies the default value.
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -243,12 +366,38 @@ public class FeaturizationMethod implements Serializable, Cloneable, StructuredP
      *        </li>
      *        <li>
      *        <p>
-     *        <code>middlefill</code>: <b>zero</b>, <code>nan</code> (not a number)
+     *        <code>middlefill</code>: <b>zero</b>, <code>nan</code> (not a number), <code>value</code>,
+     *        <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>backfill</code>: <b>zero</b>, <code>nan</code>
+     *        <code>backfill</code>: <b>zero</b>, <code>nan</code>, <code>value</code>, <code>median</code>,
+     *        <code>mean</code>, <code>min</code>, <code>max</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The following list shows the parameters and their valid values for a <b>Related Time Series</b>
+     *        featurization method (there are no defaults):
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>middlefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>,
+     *        <code>min</code>, <code>max</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>backfill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>,
+     *        <code>min</code>, <code>max</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>futurefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>,
+     *        <code>min</code>, <code>max</code>
      *        </p>
      *        </li>
      */
@@ -259,8 +408,12 @@ public class FeaturizationMethod implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The method parameters (key-value pairs). Specify these parameters to override the default values. The following
-     * list shows the parameters and their valid values. Bold signifies the default value.
+     * The method parameters (key-value pairs), which are a map of override parameters. Specify these parameters to
+     * override the default values. Related Time Series attributes do not accept aggregation parameters.
+     * </p>
+     * <p>
+     * The following list shows the parameters and their valid values for the "filling" featurization method for a
+     * <b>Target Time Series</b> dataset. Bold signifies the default value.
      * </p>
      * <ul>
      * <li>
@@ -275,19 +428,49 @@ public class FeaturizationMethod implements Serializable, Cloneable, StructuredP
      * </li>
      * <li>
      * <p>
-     * <code>middlefill</code>: <b>zero</b>, <code>nan</code> (not a number)
+     * <code>middlefill</code>: <b>zero</b>, <code>nan</code> (not a number), <code>value</code>, <code>median</code>,
+     * <code>mean</code>, <code>min</code>, <code>max</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>backfill</code>: <b>zero</b>, <code>nan</code>
+     * <code>backfill</code>: <b>zero</b>, <code>nan</code>, <code>value</code>, <code>median</code>, <code>mean</code>,
+     * <code>min</code>, <code>max</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The following list shows the parameters and their valid values for a <b>Related Time Series</b> featurization
+     * method (there are no defaults):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>middlefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>,
+     * <code>min</code>, <code>max</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>backfill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>,
+     * <code>min</code>, <code>max</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>futurefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>,
+     * <code>min</code>, <code>max</code>
      * </p>
      * </li>
      * </ul>
      * 
      * @param featurizationMethodParameters
-     *        The method parameters (key-value pairs). Specify these parameters to override the default values. The
-     *        following list shows the parameters and their valid values. Bold signifies the default value.</p>
+     *        The method parameters (key-value pairs), which are a map of override parameters. Specify these parameters
+     *        to override the default values. Related Time Series attributes do not accept aggregation parameters.</p>
+     *        <p>
+     *        The following list shows the parameters and their valid values for the "filling" featurization method for
+     *        a <b>Target Time Series</b> dataset. Bold signifies the default value.
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -302,12 +485,38 @@ public class FeaturizationMethod implements Serializable, Cloneable, StructuredP
      *        </li>
      *        <li>
      *        <p>
-     *        <code>middlefill</code>: <b>zero</b>, <code>nan</code> (not a number)
+     *        <code>middlefill</code>: <b>zero</b>, <code>nan</code> (not a number), <code>value</code>,
+     *        <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>backfill</code>: <b>zero</b>, <code>nan</code>
+     *        <code>backfill</code>: <b>zero</b>, <code>nan</code>, <code>value</code>, <code>median</code>,
+     *        <code>mean</code>, <code>min</code>, <code>max</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The following list shows the parameters and their valid values for a <b>Related Time Series</b>
+     *        featurization method (there are no defaults):
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>middlefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>,
+     *        <code>min</code>, <code>max</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>backfill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>,
+     *        <code>min</code>, <code>max</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>futurefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>,
+     *        <code>min</code>, <code>max</code>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

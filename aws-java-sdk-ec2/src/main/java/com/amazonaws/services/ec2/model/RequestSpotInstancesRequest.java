@@ -135,6 +135,15 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
     private java.util.Date validUntil;
     /**
      * <p>
+     * The key-value pair for tagging the Spot Instance request on creation. The value for <code>ResourceType</code>
+     * must be <code>spot-instances-request</code>, otherwise the Spot Instance request fails. To tag the Spot Instance
+     * request after it has been created, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<TagSpecification> tagSpecifications;
+    /**
+     * <p>
      * The behavior when a Spot Instance is interrupted. The default is <code>terminate</code>.
      * </p>
      */
@@ -872,6 +881,103 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
+     * The key-value pair for tagging the Spot Instance request on creation. The value for <code>ResourceType</code>
+     * must be <code>spot-instances-request</code>, otherwise the Spot Instance request fails. To tag the Spot Instance
+     * request after it has been created, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
+     * </p>
+     * 
+     * @return The key-value pair for tagging the Spot Instance request on creation. The value for
+     *         <code>ResourceType</code> must be <code>spot-instances-request</code>, otherwise the Spot Instance
+     *         request fails. To tag the Spot Instance request after it has been created, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
+     */
+
+    public java.util.List<TagSpecification> getTagSpecifications() {
+        if (tagSpecifications == null) {
+            tagSpecifications = new com.amazonaws.internal.SdkInternalList<TagSpecification>();
+        }
+        return tagSpecifications;
+    }
+
+    /**
+     * <p>
+     * The key-value pair for tagging the Spot Instance request on creation. The value for <code>ResourceType</code>
+     * must be <code>spot-instances-request</code>, otherwise the Spot Instance request fails. To tag the Spot Instance
+     * request after it has been created, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        The key-value pair for tagging the Spot Instance request on creation. The value for
+     *        <code>ResourceType</code> must be <code>spot-instances-request</code>, otherwise the Spot Instance request
+     *        fails. To tag the Spot Instance request after it has been created, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
+     */
+
+    public void setTagSpecifications(java.util.Collection<TagSpecification> tagSpecifications) {
+        if (tagSpecifications == null) {
+            this.tagSpecifications = null;
+            return;
+        }
+
+        this.tagSpecifications = new com.amazonaws.internal.SdkInternalList<TagSpecification>(tagSpecifications);
+    }
+
+    /**
+     * <p>
+     * The key-value pair for tagging the Spot Instance request on creation. The value for <code>ResourceType</code>
+     * must be <code>spot-instances-request</code>, otherwise the Spot Instance request fails. To tag the Spot Instance
+     * request after it has been created, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTagSpecifications(java.util.Collection)} or {@link #withTagSpecifications(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        The key-value pair for tagging the Spot Instance request on creation. The value for
+     *        <code>ResourceType</code> must be <code>spot-instances-request</code>, otherwise the Spot Instance request
+     *        fails. To tag the Spot Instance request after it has been created, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RequestSpotInstancesRequest withTagSpecifications(TagSpecification... tagSpecifications) {
+        if (this.tagSpecifications == null) {
+            setTagSpecifications(new com.amazonaws.internal.SdkInternalList<TagSpecification>(tagSpecifications.length));
+        }
+        for (TagSpecification ele : tagSpecifications) {
+            this.tagSpecifications.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The key-value pair for tagging the Spot Instance request on creation. The value for <code>ResourceType</code>
+     * must be <code>spot-instances-request</code>, otherwise the Spot Instance request fails. To tag the Spot Instance
+     * request after it has been created, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        The key-value pair for tagging the Spot Instance request on creation. The value for
+     *        <code>ResourceType</code> must be <code>spot-instances-request</code>, otherwise the Spot Instance request
+     *        fails. To tag the Spot Instance request after it has been created, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RequestSpotInstancesRequest withTagSpecifications(java.util.Collection<TagSpecification> tagSpecifications) {
+        setTagSpecifications(tagSpecifications);
+        return this;
+    }
+
+    /**
+     * <p>
      * The behavior when a Spot Instance is interrupted. The default is <code>terminate</code>.
      * </p>
      * 
@@ -986,6 +1092,8 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
             sb.append("ValidFrom: ").append(getValidFrom()).append(",");
         if (getValidUntil() != null)
             sb.append("ValidUntil: ").append(getValidUntil()).append(",");
+        if (getTagSpecifications() != null)
+            sb.append("TagSpecifications: ").append(getTagSpecifications()).append(",");
         if (getInstanceInterruptionBehavior() != null)
             sb.append("InstanceInterruptionBehavior: ").append(getInstanceInterruptionBehavior());
         sb.append("}");
@@ -1042,6 +1150,10 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
             return false;
         if (other.getValidUntil() != null && other.getValidUntil().equals(this.getValidUntil()) == false)
             return false;
+        if (other.getTagSpecifications() == null ^ this.getTagSpecifications() == null)
+            return false;
+        if (other.getTagSpecifications() != null && other.getTagSpecifications().equals(this.getTagSpecifications()) == false)
+            return false;
         if (other.getInstanceInterruptionBehavior() == null ^ this.getInstanceInterruptionBehavior() == null)
             return false;
         if (other.getInstanceInterruptionBehavior() != null && other.getInstanceInterruptionBehavior().equals(this.getInstanceInterruptionBehavior()) == false)
@@ -1064,6 +1176,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getValidFrom() == null) ? 0 : getValidFrom().hashCode());
         hashCode = prime * hashCode + ((getValidUntil() == null) ? 0 : getValidUntil().hashCode());
+        hashCode = prime * hashCode + ((getTagSpecifications() == null) ? 0 : getTagSpecifications().hashCode());
         hashCode = prime * hashCode + ((getInstanceInterruptionBehavior() == null) ? 0 : getInstanceInterruptionBehavior().hashCode());
         return hashCode;
     }

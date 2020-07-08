@@ -51,6 +51,9 @@ public class CapacityReservationSpecification implements Serializable, Cloneable
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * When <code>CapacityReservationPreference</code> is not specified, it defaults to <code>open</code>.
+     * </p>
      */
     private String capacityReservationPreference;
     /**
@@ -78,6 +81,9 @@ public class CapacityReservationSpecification implements Serializable, Cloneable
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * When <code>CapacityReservationPreference</code> is not specified, it defaults to <code>open</code>.
+     * </p>
      * 
      * @param capacityReservationPreference
      *        Indicates the instance's Capacity Reservation preferences. Possible preferences include:</p>
@@ -94,6 +100,9 @@ public class CapacityReservationSpecification implements Serializable, Cloneable
      *        instance runs as an On-Demand Instance.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        When <code>CapacityReservationPreference</code> is not specified, it defaults to <code>open</code>.
      * @see CapacityReservationPreference
      */
 
@@ -119,6 +128,9 @@ public class CapacityReservationSpecification implements Serializable, Cloneable
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * When <code>CapacityReservationPreference</code> is not specified, it defaults to <code>open</code>.
+     * </p>
      * 
      * @return Indicates the instance's Capacity Reservation preferences. Possible preferences include:</p>
      *         <ul>
@@ -134,6 +146,9 @@ public class CapacityReservationSpecification implements Serializable, Cloneable
      *         instance runs as an On-Demand Instance.
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         When <code>CapacityReservationPreference</code> is not specified, it defaults to <code>open</code>.
      * @see CapacityReservationPreference
      */
 
@@ -159,6 +174,9 @@ public class CapacityReservationSpecification implements Serializable, Cloneable
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * When <code>CapacityReservationPreference</code> is not specified, it defaults to <code>open</code>.
+     * </p>
      * 
      * @param capacityReservationPreference
      *        Indicates the instance's Capacity Reservation preferences. Possible preferences include:</p>
@@ -175,6 +193,9 @@ public class CapacityReservationSpecification implements Serializable, Cloneable
      *        instance runs as an On-Demand Instance.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        When <code>CapacityReservationPreference</code> is not specified, it defaults to <code>open</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CapacityReservationPreference
      */
@@ -202,6 +223,9 @@ public class CapacityReservationSpecification implements Serializable, Cloneable
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * When <code>CapacityReservationPreference</code> is not specified, it defaults to <code>open</code>.
+     * </p>
      * 
      * @param capacityReservationPreference
      *        Indicates the instance's Capacity Reservation preferences. Possible preferences include:</p>
@@ -218,6 +242,9 @@ public class CapacityReservationSpecification implements Serializable, Cloneable
      *        instance runs as an On-Demand Instance.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        When <code>CapacityReservationPreference</code> is not specified, it defaults to <code>open</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CapacityReservationPreference
      */

@@ -33,7 +33,7 @@ public class GetSavingsPlansPurchaseRecommendationRequest extends com.amazonaws.
     private String savingsPlansType;
     /**
      * <p>
-     * The savings plan recommendation term used to generated these recommendations.
+     * The savings plan recommendation term used to generate these recommendations.
      * </p>
      */
     private String termInYears;
@@ -147,11 +147,11 @@ public class GetSavingsPlansPurchaseRecommendationRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The savings plan recommendation term used to generated these recommendations.
+     * The savings plan recommendation term used to generate these recommendations.
      * </p>
      * 
      * @param termInYears
-     *        The savings plan recommendation term used to generated these recommendations.
+     *        The savings plan recommendation term used to generate these recommendations.
      * @see TermInYears
      */
 
@@ -161,10 +161,10 @@ public class GetSavingsPlansPurchaseRecommendationRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The savings plan recommendation term used to generated these recommendations.
+     * The savings plan recommendation term used to generate these recommendations.
      * </p>
      * 
-     * @return The savings plan recommendation term used to generated these recommendations.
+     * @return The savings plan recommendation term used to generate these recommendations.
      * @see TermInYears
      */
 
@@ -174,11 +174,11 @@ public class GetSavingsPlansPurchaseRecommendationRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The savings plan recommendation term used to generated these recommendations.
+     * The savings plan recommendation term used to generate these recommendations.
      * </p>
      * 
      * @param termInYears
-     *        The savings plan recommendation term used to generated these recommendations.
+     *        The savings plan recommendation term used to generate these recommendations.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TermInYears
      */
@@ -190,11 +190,11 @@ public class GetSavingsPlansPurchaseRecommendationRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The savings plan recommendation term used to generated these recommendations.
+     * The savings plan recommendation term used to generate these recommendations.
      * </p>
      * 
      * @param termInYears
-     *        The savings plan recommendation term used to generated these recommendations.
+     *        The savings plan recommendation term used to generate these recommendations.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TermInYears
      */

@@ -30,6 +30,8 @@ public class CurrentInstanceMarshaller {
 
     private static final MarshallingInfo<String> RESOURCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceId").build();
+    private static final MarshallingInfo<String> INSTANCENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceName").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
     private static final MarshallingInfo<StructuredPojo> RESOURCEDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -66,6 +68,7 @@ public class CurrentInstanceMarshaller {
 
         try {
             protocolMarshaller.marshall(currentInstance.getResourceId(), RESOURCEID_BINDING);
+            protocolMarshaller.marshall(currentInstance.getInstanceName(), INSTANCENAME_BINDING);
             protocolMarshaller.marshall(currentInstance.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(currentInstance.getResourceDetails(), RESOURCEDETAILS_BINDING);
             protocolMarshaller.marshall(currentInstance.getResourceUtilization(), RESOURCEUTILIZATION_BINDING);

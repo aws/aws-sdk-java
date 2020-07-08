@@ -32,6 +32,12 @@ public class DescribeEffectivePolicyRequest extends com.amazonaws.AmazonWebServi
      * <ul>
      * <li>
      * <p>
+     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
+     * AISERVICES_OPT_OUT_POLICY</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <a
      * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY
      * </a>
@@ -61,6 +67,12 @@ public class DescribeEffectivePolicyRequest extends com.amazonaws.AmazonWebServi
      * <ul>
      * <li>
      * <p>
+     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
+     * AISERVICES_OPT_OUT_POLICY</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <a
      * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY
      * </a>
@@ -77,6 +89,12 @@ public class DescribeEffectivePolicyRequest extends com.amazonaws.AmazonWebServi
      * @param policyType
      *        The type of policy that you want information about. You can specify one of the following values:</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
+     *        AISERVICES_OPT_OUT_POLICY</a>
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">
@@ -104,6 +122,12 @@ public class DescribeEffectivePolicyRequest extends com.amazonaws.AmazonWebServi
      * <ul>
      * <li>
      * <p>
+     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
+     * AISERVICES_OPT_OUT_POLICY</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <a
      * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY
      * </a>
@@ -119,6 +143,12 @@ public class DescribeEffectivePolicyRequest extends com.amazonaws.AmazonWebServi
      * 
      * @return The type of policy that you want information about. You can specify one of the following values:</p>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
+     *         AISERVICES_OPT_OUT_POLICY</a>
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">
@@ -146,6 +176,12 @@ public class DescribeEffectivePolicyRequest extends com.amazonaws.AmazonWebServi
      * <ul>
      * <li>
      * <p>
+     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
+     * AISERVICES_OPT_OUT_POLICY</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <a
      * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY
      * </a>
@@ -162,6 +198,12 @@ public class DescribeEffectivePolicyRequest extends com.amazonaws.AmazonWebServi
      * @param policyType
      *        The type of policy that you want information about. You can specify one of the following values:</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
+     *        AISERVICES_OPT_OUT_POLICY</a>
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">
@@ -191,6 +233,12 @@ public class DescribeEffectivePolicyRequest extends com.amazonaws.AmazonWebServi
      * <ul>
      * <li>
      * <p>
+     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
+     * AISERVICES_OPT_OUT_POLICY</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <a
      * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY
      * </a>
@@ -207,6 +255,12 @@ public class DescribeEffectivePolicyRequest extends com.amazonaws.AmazonWebServi
      * @param policyType
      *        The type of policy that you want information about. You can specify one of the following values:</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
+     *        AISERVICES_OPT_OUT_POLICY</a>
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">
