@@ -86,7 +86,9 @@ public class AttributeJsonUnmarshaller implements Unmarshaller<Attribute, JsonUn
                 }
                 if (context.testExpression("Traits", targetDepth)) {
                     context.nextToken();
-                    attribute.setTraits(new ListUnmarshaller<Trait>(TraitJsonUnmarshaller.getInstance()).unmarshall(context));
+                    attribute.setTraits(new ListUnmarshaller<Trait>(TraitJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

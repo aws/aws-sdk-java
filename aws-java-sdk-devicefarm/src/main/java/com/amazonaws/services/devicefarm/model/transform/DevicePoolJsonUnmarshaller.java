@@ -66,7 +66,9 @@ public class DevicePoolJsonUnmarshaller implements Unmarshaller<DevicePool, Json
                 }
                 if (context.testExpression("rules", targetDepth)) {
                     context.nextToken();
-                    devicePool.setRules(new ListUnmarshaller<Rule>(RuleJsonUnmarshaller.getInstance()).unmarshall(context));
+                    devicePool.setRules(new ListUnmarshaller<Rule>(RuleJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("maxDevices", targetDepth)) {
                     context.nextToken();

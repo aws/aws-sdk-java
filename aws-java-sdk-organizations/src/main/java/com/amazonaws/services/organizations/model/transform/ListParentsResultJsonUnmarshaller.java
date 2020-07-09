@@ -50,7 +50,9 @@ public class ListParentsResultJsonUnmarshaller implements Unmarshaller<ListParen
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Parents", targetDepth)) {
                     context.nextToken();
-                    listParentsResult.setParents(new ListUnmarshaller<Parent>(ParentJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listParentsResult.setParents(new ListUnmarshaller<Parent>(ParentJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

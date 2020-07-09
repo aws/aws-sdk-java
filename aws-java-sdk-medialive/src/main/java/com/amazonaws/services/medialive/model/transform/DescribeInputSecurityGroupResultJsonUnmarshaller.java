@@ -58,7 +58,9 @@ public class DescribeInputSecurityGroupResultJsonUnmarshaller implements Unmarsh
                 }
                 if (context.testExpression("inputs", targetDepth)) {
                     context.nextToken();
-                    describeInputSecurityGroupResult.setInputs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    describeInputSecurityGroupResult.setInputs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("state", targetDepth)) {
                     context.nextToken();
@@ -72,7 +74,9 @@ public class DescribeInputSecurityGroupResultJsonUnmarshaller implements Unmarsh
                 if (context.testExpression("whitelistRules", targetDepth)) {
                     context.nextToken();
                     describeInputSecurityGroupResult.setWhitelistRules(new ListUnmarshaller<InputWhitelistRule>(InputWhitelistRuleJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

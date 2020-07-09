@@ -52,7 +52,9 @@ public class DescribeConfigurationsResultJsonUnmarshaller implements Unmarshalle
                 if (context.testExpression("configurations", targetDepth)) {
                     context.nextToken();
                     describeConfigurationsResult.setConfigurations(new ListUnmarshaller<java.util.Map<String, String>>(new MapUnmarshaller<String, String>(
-                            context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))).unmarshall(context));
+                            context.getUnmarshaller(String.class), context.getUnmarshaller(String.class)))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

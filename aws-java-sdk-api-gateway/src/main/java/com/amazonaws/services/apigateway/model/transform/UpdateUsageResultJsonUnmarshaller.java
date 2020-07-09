@@ -67,7 +67,11 @@ public class UpdateUsageResultJsonUnmarshaller implements Unmarshaller<UpdateUsa
                 if (context.testExpression("values", targetDepth)) {
                     context.nextToken();
                     updateUsageResult.setItems(new MapUnmarshaller<String, java.util.List<java.util.List<Long>>>(context.getUnmarshaller(String.class),
-                            new ListUnmarshaller<java.util.List<Long>>(new ListUnmarshaller<Long>(context.getUnmarshaller(Long.class)))).unmarshall(context));
+                            new ListUnmarshaller<java.util.List<Long>>(new ListUnmarshaller<Long>(context.getUnmarshaller(Long.class))
+
+                            )
+
+                    ).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

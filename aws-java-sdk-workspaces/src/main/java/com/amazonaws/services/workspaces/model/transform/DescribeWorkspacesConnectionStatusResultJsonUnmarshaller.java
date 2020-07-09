@@ -52,7 +52,9 @@ public class DescribeWorkspacesConnectionStatusResultJsonUnmarshaller implements
                 if (context.testExpression("WorkspacesConnectionStatus", targetDepth)) {
                     context.nextToken();
                     describeWorkspacesConnectionStatusResult.setWorkspacesConnectionStatus(new ListUnmarshaller<WorkspaceConnectionStatus>(
-                            WorkspaceConnectionStatusJsonUnmarshaller.getInstance()).unmarshall(context));
+                            WorkspaceConnectionStatusJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

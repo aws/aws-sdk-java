@@ -51,7 +51,8 @@ public class ListCodeReviewsResultJsonUnmarshaller implements Unmarshaller<ListC
                 if (context.testExpression("CodeReviewSummaries", targetDepth)) {
                     context.nextToken();
                     listCodeReviewsResult.setCodeReviewSummaries(new ListUnmarshaller<CodeReviewSummary>(CodeReviewSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

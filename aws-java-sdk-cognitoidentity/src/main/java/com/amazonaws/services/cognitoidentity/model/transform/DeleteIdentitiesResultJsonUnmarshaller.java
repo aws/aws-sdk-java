@@ -51,7 +51,9 @@ public class DeleteIdentitiesResultJsonUnmarshaller implements Unmarshaller<Dele
                 if (context.testExpression("UnprocessedIdentityIds", targetDepth)) {
                     context.nextToken();
                     deleteIdentitiesResult.setUnprocessedIdentityIds(new ListUnmarshaller<UnprocessedIdentityId>(UnprocessedIdentityIdJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

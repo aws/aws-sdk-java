@@ -50,8 +50,9 @@ public class DescribeEnvironmentsResultJsonUnmarshaller implements Unmarshaller<
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("environments", targetDepth)) {
                     context.nextToken();
-                    describeEnvironmentsResult
-                            .setEnvironments(new ListUnmarshaller<Environment>(EnvironmentJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeEnvironmentsResult.setEnvironments(new ListUnmarshaller<Environment>(EnvironmentJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

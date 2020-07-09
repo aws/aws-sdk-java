@@ -51,7 +51,8 @@ public class SearchResourcesResultJsonUnmarshaller implements Unmarshaller<Searc
                 if (context.testExpression("ResourceIdentifiers", targetDepth)) {
                     context.nextToken();
                     searchResourcesResult.setResourceIdentifiers(new ListUnmarshaller<ResourceIdentifier>(ResourceIdentifierJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();
@@ -59,7 +60,9 @@ public class SearchResourcesResultJsonUnmarshaller implements Unmarshaller<Searc
                 }
                 if (context.testExpression("QueryErrors", targetDepth)) {
                     context.nextToken();
-                    searchResourcesResult.setQueryErrors(new ListUnmarshaller<QueryError>(QueryErrorJsonUnmarshaller.getInstance()).unmarshall(context));
+                    searchResourcesResult.setQueryErrors(new ListUnmarshaller<QueryError>(QueryErrorJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

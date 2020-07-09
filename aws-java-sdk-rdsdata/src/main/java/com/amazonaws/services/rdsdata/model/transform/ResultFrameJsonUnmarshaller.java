@@ -50,7 +50,9 @@ public class ResultFrameJsonUnmarshaller implements Unmarshaller<ResultFrame, Js
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("records", targetDepth)) {
                     context.nextToken();
-                    resultFrame.setRecords(new ListUnmarshaller<Record>(RecordJsonUnmarshaller.getInstance()).unmarshall(context));
+                    resultFrame.setRecords(new ListUnmarshaller<Record>(RecordJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("resultSetMetadata", targetDepth)) {
                     context.nextToken();

@@ -51,7 +51,8 @@ public class DescribeScalingPoliciesResultJsonUnmarshaller implements Unmarshall
                 if (context.testExpression("ScalingPolicies", targetDepth)) {
                     context.nextToken();
                     describeScalingPoliciesResult.setScalingPolicies(new ListUnmarshaller<ScalingPolicy>(ScalingPolicyJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

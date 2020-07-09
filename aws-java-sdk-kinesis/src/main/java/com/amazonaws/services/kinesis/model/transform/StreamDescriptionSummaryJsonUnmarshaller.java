@@ -71,7 +71,8 @@ public class StreamDescriptionSummaryJsonUnmarshaller implements Unmarshaller<St
                 if (context.testExpression("EnhancedMonitoring", targetDepth)) {
                     context.nextToken();
                     streamDescriptionSummary.setEnhancedMonitoring(new ListUnmarshaller<EnhancedMetrics>(EnhancedMetricsJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("EncryptionType", targetDepth)) {
                     context.nextToken();

@@ -51,7 +51,8 @@ public class GetBuiltinIntentsResultJsonUnmarshaller implements Unmarshaller<Get
                 if (context.testExpression("intents", targetDepth)) {
                     context.nextToken();
                     getBuiltinIntentsResult.setIntents(new ListUnmarshaller<BuiltinIntentMetadata>(BuiltinIntentMetadataJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

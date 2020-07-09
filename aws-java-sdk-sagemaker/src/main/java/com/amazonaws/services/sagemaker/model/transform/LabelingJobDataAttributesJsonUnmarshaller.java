@@ -50,7 +50,9 @@ public class LabelingJobDataAttributesJsonUnmarshaller implements Unmarshaller<L
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ContentClassifiers", targetDepth)) {
                     context.nextToken();
-                    labelingJobDataAttributes.setContentClassifiers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    labelingJobDataAttributes.setContentClassifiers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

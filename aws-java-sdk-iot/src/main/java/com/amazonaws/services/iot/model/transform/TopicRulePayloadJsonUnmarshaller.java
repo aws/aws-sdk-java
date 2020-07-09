@@ -58,7 +58,9 @@ public class TopicRulePayloadJsonUnmarshaller implements Unmarshaller<TopicRuleP
                 }
                 if (context.testExpression("actions", targetDepth)) {
                     context.nextToken();
-                    topicRulePayload.setActions(new ListUnmarshaller<Action>(ActionJsonUnmarshaller.getInstance()).unmarshall(context));
+                    topicRulePayload.setActions(new ListUnmarshaller<Action>(ActionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ruleDisabled", targetDepth)) {
                     context.nextToken();

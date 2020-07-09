@@ -54,7 +54,9 @@ public class PatchSourceJsonUnmarshaller implements Unmarshaller<PatchSource, Js
                 }
                 if (context.testExpression("Products", targetDepth)) {
                     context.nextToken();
-                    patchSource.setProducts(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    patchSource.setProducts(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Configuration", targetDepth)) {
                     context.nextToken();

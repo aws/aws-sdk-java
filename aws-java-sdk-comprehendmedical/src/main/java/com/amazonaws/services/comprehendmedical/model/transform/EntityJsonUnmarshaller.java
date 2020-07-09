@@ -78,11 +78,15 @@ public class EntityJsonUnmarshaller implements Unmarshaller<Entity, JsonUnmarsha
                 }
                 if (context.testExpression("Traits", targetDepth)) {
                     context.nextToken();
-                    entity.setTraits(new ListUnmarshaller<Trait>(TraitJsonUnmarshaller.getInstance()).unmarshall(context));
+                    entity.setTraits(new ListUnmarshaller<Trait>(TraitJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Attributes", targetDepth)) {
                     context.nextToken();
-                    entity.setAttributes(new ListUnmarshaller<Attribute>(AttributeJsonUnmarshaller.getInstance()).unmarshall(context));
+                    entity.setAttributes(new ListUnmarshaller<Attribute>(AttributeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

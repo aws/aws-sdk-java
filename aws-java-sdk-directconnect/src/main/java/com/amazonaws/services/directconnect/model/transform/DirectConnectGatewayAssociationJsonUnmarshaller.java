@@ -75,7 +75,9 @@ public class DirectConnectGatewayAssociationJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("allowedPrefixesToDirectConnectGateway", targetDepth)) {
                     context.nextToken();
                     directConnectGatewayAssociation.setAllowedPrefixesToDirectConnectGateway(new ListUnmarshaller<RouteFilterPrefix>(
-                            RouteFilterPrefixJsonUnmarshaller.getInstance()).unmarshall(context));
+                            RouteFilterPrefixJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("virtualGatewayId", targetDepth)) {
                     context.nextToken();

@@ -54,7 +54,9 @@ public class WarningJsonUnmarshaller implements Unmarshaller<Warning, JsonUnmars
                 }
                 if (context.testExpression("Pages", targetDepth)) {
                     context.nextToken();
-                    warning.setPages(new ListUnmarshaller<Integer>(context.getUnmarshaller(Integer.class)).unmarshall(context));
+                    warning.setPages(new ListUnmarshaller<Integer>(context.getUnmarshaller(Integer.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

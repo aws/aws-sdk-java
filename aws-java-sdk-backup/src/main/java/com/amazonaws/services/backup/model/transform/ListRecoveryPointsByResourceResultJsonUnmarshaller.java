@@ -55,7 +55,9 @@ public class ListRecoveryPointsByResourceResultJsonUnmarshaller implements Unmar
                 if (context.testExpression("RecoveryPoints", targetDepth)) {
                     context.nextToken();
                     listRecoveryPointsByResourceResult.setRecoveryPoints(new ListUnmarshaller<RecoveryPointByResource>(RecoveryPointByResourceJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

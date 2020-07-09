@@ -50,7 +50,9 @@ public class ActivitiesResponseJsonUnmarshaller implements Unmarshaller<Activiti
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Item", targetDepth)) {
                     context.nextToken();
-                    activitiesResponse.setItem(new ListUnmarshaller<ActivityResponse>(ActivityResponseJsonUnmarshaller.getInstance()).unmarshall(context));
+                    activitiesResponse.setItem(new ListUnmarshaller<ActivityResponse>(ActivityResponseJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

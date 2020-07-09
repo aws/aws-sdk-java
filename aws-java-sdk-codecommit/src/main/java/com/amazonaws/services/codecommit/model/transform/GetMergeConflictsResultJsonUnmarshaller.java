@@ -67,7 +67,8 @@ public class GetMergeConflictsResultJsonUnmarshaller implements Unmarshaller<Get
                 if (context.testExpression("conflictMetadataList", targetDepth)) {
                     context.nextToken();
                     getMergeConflictsResult.setConflictMetadataList(new ListUnmarshaller<ConflictMetadata>(ConflictMetadataJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

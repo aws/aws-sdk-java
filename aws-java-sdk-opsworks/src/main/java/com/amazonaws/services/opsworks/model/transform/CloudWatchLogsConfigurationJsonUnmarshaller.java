@@ -55,7 +55,9 @@ public class CloudWatchLogsConfigurationJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("LogStreams", targetDepth)) {
                     context.nextToken();
                     cloudWatchLogsConfiguration.setLogStreams(new ListUnmarshaller<CloudWatchLogsLogStream>(CloudWatchLogsLogStreamJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

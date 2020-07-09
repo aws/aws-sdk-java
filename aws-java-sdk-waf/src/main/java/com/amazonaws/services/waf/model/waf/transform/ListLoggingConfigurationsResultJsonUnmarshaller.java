@@ -51,7 +51,9 @@ public class ListLoggingConfigurationsResultJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("LoggingConfigurations", targetDepth)) {
                     context.nextToken();
                     listLoggingConfigurationsResult.setLoggingConfigurations(new ListUnmarshaller<LoggingConfiguration>(LoggingConfigurationJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextMarker", targetDepth)) {
                     context.nextToken();

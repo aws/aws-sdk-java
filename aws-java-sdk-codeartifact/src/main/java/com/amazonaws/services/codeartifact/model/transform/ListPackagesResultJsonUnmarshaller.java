@@ -50,7 +50,9 @@ public class ListPackagesResultJsonUnmarshaller implements Unmarshaller<ListPack
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("packages", targetDepth)) {
                     context.nextToken();
-                    listPackagesResult.setPackages(new ListUnmarshaller<PackageSummary>(PackageSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listPackagesResult.setPackages(new ListUnmarshaller<PackageSummary>(PackageSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

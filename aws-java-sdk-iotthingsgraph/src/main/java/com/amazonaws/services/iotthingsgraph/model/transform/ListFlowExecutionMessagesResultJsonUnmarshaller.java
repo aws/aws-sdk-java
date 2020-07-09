@@ -51,7 +51,8 @@ public class ListFlowExecutionMessagesResultJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("messages", targetDepth)) {
                     context.nextToken();
                     listFlowExecutionMessagesResult.setMessages(new ListUnmarshaller<FlowExecutionMessage>(FlowExecutionMessageJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

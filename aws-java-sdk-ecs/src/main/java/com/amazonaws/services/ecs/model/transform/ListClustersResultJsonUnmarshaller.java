@@ -50,7 +50,9 @@ public class ListClustersResultJsonUnmarshaller implements Unmarshaller<ListClus
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("clusterArns", targetDepth)) {
                     context.nextToken();
-                    listClustersResult.setClusterArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    listClustersResult.setClusterArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

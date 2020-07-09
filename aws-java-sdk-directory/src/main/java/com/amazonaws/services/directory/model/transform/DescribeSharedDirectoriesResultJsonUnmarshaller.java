@@ -51,7 +51,8 @@ public class DescribeSharedDirectoriesResultJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("SharedDirectories", targetDepth)) {
                     context.nextToken();
                     describeSharedDirectoriesResult.setSharedDirectories(new ListUnmarshaller<SharedDirectory>(SharedDirectoryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

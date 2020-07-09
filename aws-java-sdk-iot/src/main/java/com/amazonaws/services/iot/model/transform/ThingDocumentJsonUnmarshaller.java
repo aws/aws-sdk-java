@@ -62,7 +62,9 @@ public class ThingDocumentJsonUnmarshaller implements Unmarshaller<ThingDocument
                 }
                 if (context.testExpression("thingGroupNames", targetDepth)) {
                     context.nextToken();
-                    thingDocument.setThingGroupNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    thingDocument.setThingGroupNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("attributes", targetDepth)) {
                     context.nextToken();

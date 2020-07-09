@@ -51,7 +51,9 @@ public class DescribeSavingsPlansOfferingsResultJsonUnmarshaller implements Unma
                 if (context.testExpression("searchResults", targetDepth)) {
                     context.nextToken();
                     describeSavingsPlansOfferingsResult.setSearchResults(new ListUnmarshaller<SavingsPlanOffering>(SavingsPlanOfferingJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

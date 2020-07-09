@@ -54,12 +54,16 @@ public class DeleteMultiplexResultJsonUnmarshaller implements Unmarshaller<Delet
                 }
                 if (context.testExpression("availabilityZones", targetDepth)) {
                     context.nextToken();
-                    deleteMultiplexResult.setAvailabilityZones(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    deleteMultiplexResult.setAvailabilityZones(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("destinations", targetDepth)) {
                     context.nextToken();
                     deleteMultiplexResult.setDestinations(new ListUnmarshaller<MultiplexOutputDestination>(MultiplexOutputDestinationJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();

@@ -50,7 +50,9 @@ public class ListMembersResultJsonUnmarshaller implements Unmarshaller<ListMembe
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Members", targetDepth)) {
                     context.nextToken();
-                    listMembersResult.setMembers(new ListUnmarshaller<Member>(MemberJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listMembersResult.setMembers(new ListUnmarshaller<Member>(MemberJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

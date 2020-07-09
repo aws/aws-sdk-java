@@ -62,16 +62,22 @@ public class OneDriveConfigurationJsonUnmarshaller implements Unmarshaller<OneDr
                 }
                 if (context.testExpression("InclusionPatterns", targetDepth)) {
                     context.nextToken();
-                    oneDriveConfiguration.setInclusionPatterns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    oneDriveConfiguration.setInclusionPatterns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ExclusionPatterns", targetDepth)) {
                     context.nextToken();
-                    oneDriveConfiguration.setExclusionPatterns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    oneDriveConfiguration.setExclusionPatterns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("FieldMappings", targetDepth)) {
                     context.nextToken();
                     oneDriveConfiguration.setFieldMappings(new ListUnmarshaller<DataSourceToIndexFieldMapping>(DataSourceToIndexFieldMappingJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

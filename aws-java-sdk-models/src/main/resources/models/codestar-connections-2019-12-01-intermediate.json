@@ -518,6 +518,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarconnections.model.Connection",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -579,6 +580,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the connection. Connection names must be unique in an AWS user account.</p>\n@param connectionName The name of the connection. Connection names must be unique in an AWS user account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -647,6 +649,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the connection. The ARN is used as the connection reference when the connection is shared between AWS services.</p> <note> <p>The ARN is never reused if the connection is deleted.</p> </note>\n@param connectionArn The Amazon Resource Name (ARN) of the connection. The ARN is used as the connection reference when the connection is shared between AWS services.</p> <note> <p>The ARN is never reused if the connection is deleted.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -715,6 +718,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the external provider where your third-party code repository is configured. The valid provider type is Bitbucket.</p>\n@param providerType The name of the external provider where your third-party code repository is configured. The valid provider type is Bitbucket.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ProviderType*/",
@@ -783,6 +787,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier of the external provider where your third-party code repository is configured. For Bitbucket, this is the account ID of the owner of the Bitbucket repository.</p>\n@param ownerAccountId The identifier of the external provider where your third-party code repository is configured. For Bitbucket, this is the account ID of the owner of the Bitbucket repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -851,6 +856,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The current status of the connection. </p>\n@param connectionStatus The current status of the connection.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ConnectionStatus*/",
@@ -919,6 +925,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the host associated with the connection.</p>\n@param hostArn The Amazon Resource Name (ARN) of the host associated with the connection.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -989,6 +996,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the connection. The ARN is used as the connection reference when the connection is shared between AWS services.</p> <note> <p>The ARN is never reused if the connection is deleted.</p> </note>\n@param connectionArn The Amazon Resource Name (ARN) of the connection. The ARN is used as the connection reference when the connection is shared between AWS services.</p> <note> <p>The ARN is never reused if the connection is deleted.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1058,6 +1066,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the connection. Connection names must be unique in an AWS user account.</p>\n@param connectionName The name of the connection. Connection names must be unique in an AWS user account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1127,6 +1136,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The current status of the connection. </p>\n@param connectionStatus The current status of the connection.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ConnectionStatus*/",
@@ -1196,6 +1206,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the host associated with the connection.</p>\n@param hostArn The Amazon Resource Name (ARN) of the host associated with the connection.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1265,6 +1276,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier of the external provider where your third-party code repository is configured. For Bitbucket, this is the account ID of the owner of the Bitbucket repository.</p>\n@param ownerAccountId The identifier of the external provider where your third-party code repository is configured. For Bitbucket, this is the account ID of the owner of the Bitbucket repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1334,6 +1346,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the external provider where your third-party code repository is configured. The valid provider type is Bitbucket.</p>\n@param providerType The name of the external provider where your third-party code repository is configured. The valid provider type is Bitbucket.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ProviderType*/",
@@ -1349,6 +1362,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.codestarconnections.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1392,6 +1406,7 @@
         "value" : "ERROR"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarconnections.enum.ConnectionStatus",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1400,6 +1415,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.codestarconnections.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1434,6 +1450,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarconnections.request.CreateConnectionRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1502,6 +1519,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the external provider where your third-party code repository is configured. The valid provider type is Bitbucket.</p>\n@param providerType The name of the external provider where your third-party code repository is configured. The valid provider type is Bitbucket.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ProviderType*/",
@@ -1570,6 +1588,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the connection to be created. The name must be unique in the calling AWS account.</p>\n@param connectionName The name of the connection to be created. The name must be unique in the calling AWS account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1677,6 +1696,7 @@
               "variableSetterType" : "Tag"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1721,6 +1741,7 @@
           "variableSetterType" : "java.util.Collection<Tag>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The key-value pair to use when tagging the resource.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags The key-value pair to use when tagging the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1789,6 +1810,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the host associated with the connection to be created.</p>\n@param hostArn The Amazon Resource Name (ARN) of the host associated with the connection to be created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1859,6 +1881,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the connection to be created. The name must be unique in the calling AWS account.</p>\n@param connectionName The name of the connection to be created. The name must be unique in the calling AWS account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1928,6 +1951,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the host associated with the connection to be created.</p>\n@param hostArn The Amazon Resource Name (ARN) of the host associated with the connection to be created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1997,6 +2021,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the external provider where your third-party code repository is configured. The valid provider type is Bitbucket.</p>\n@param providerType The name of the external provider where your third-party code repository is configured. The valid provider type is Bitbucket.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ProviderType*/",
@@ -2105,6 +2130,7 @@
                 "variableSetterType" : "Tag"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2149,6 +2175,7 @@
             "variableSetterType" : "java.util.Collection<Tag>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The key-value pair to use when tagging the resource.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags The key-value pair to use when tagging the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2164,6 +2191,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.codestarconnections.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ConnectionName" ],
@@ -2195,6 +2223,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarconnections.response.CreateConnectionResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2256,6 +2285,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the connection to be created. The ARN is used as the connection reference when the connection is shared between AWS services.</p> <note> <p>The ARN is never reused if the connection is deleted.</p> </note>\n@param connectionArn The Amazon Resource Name (ARN) of the connection to be created. The ARN is used as the connection reference when the connection is shared between AWS services.</p> <note> <p>The ARN is never reused if the connection is deleted.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2363,6 +2393,7 @@
               "variableSetterType" : "Tag"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2407,6 +2438,7 @@
           "variableSetterType" : "java.util.Collection<Tag>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies the tags applied to the resource.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags Specifies the tags applied to the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2477,6 +2509,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the connection to be created. The ARN is used as the connection reference when the connection is shared between AWS services.</p> <note> <p>The ARN is never reused if the connection is deleted.</p> </note>\n@param connectionArn The Amazon Resource Name (ARN) of the connection to be created. The ARN is used as the connection reference when the connection is shared between AWS services.</p> <note> <p>The ARN is never reused if the connection is deleted.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2585,6 +2618,7 @@
                 "variableSetterType" : "Tag"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2629,6 +2663,7 @@
             "variableSetterType" : "java.util.Collection<Tag>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies the tags applied to the resource.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags Specifies the tags applied to the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2644,6 +2679,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.codestarconnections.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ConnectionArn" ],
@@ -2678,6 +2714,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarconnections.request.CreateHostRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2746,6 +2783,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the host to be created. The name must be unique in the calling AWS account.</p>\n@param name The name of the host to be created. The name must be unique in the calling AWS account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2814,6 +2852,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the installed provider to be associated with your connection. The host resource represents the infrastructure where your provider type is installed. The valid provider type is GitHub Enterprise Server.</p>\n@param providerType The name of the installed provider to be associated with your connection. The host resource represents the infrastructure where your provider type is installed. The valid provider type is GitHub Enterprise Server.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ProviderType*/",
@@ -2882,6 +2921,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The endpoint of the infrastructure to be represented by the host after it is created.</p>\n@param providerEndpoint The endpoint of the infrastructure to be represented by the host after it is created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2950,6 +2990,7 @@
           "variableSetterType" : "VpcConfiguration"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The VPC configuration to be provisioned for the host. A VPC must be configured and the infrastructure to be represented by the host must already be connected to the VPC.</p>\n@param vpcConfiguration The VPC configuration to be provisioned for the host. A VPC must be configured and the infrastructure to be represented by the host must already be connected to the VPC.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3020,6 +3061,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the host to be created. The name must be unique in the calling AWS account.</p>\n@param name The name of the host to be created. The name must be unique in the calling AWS account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3089,6 +3131,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The endpoint of the infrastructure to be represented by the host after it is created.</p>\n@param providerEndpoint The endpoint of the infrastructure to be represented by the host after it is created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3158,6 +3201,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the installed provider to be associated with your connection. The host resource represents the infrastructure where your provider type is installed. The valid provider type is GitHub Enterprise Server.</p>\n@param providerType The name of the installed provider to be associated with your connection. The host resource represents the infrastructure where your provider type is installed. The valid provider type is GitHub Enterprise Server.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ProviderType*/",
@@ -3227,6 +3271,7 @@
             "variableSetterType" : "VpcConfiguration"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The VPC configuration to be provisioned for the host. A VPC must be configured and the infrastructure to be represented by the host must already be connected to the VPC.</p>\n@param vpcConfiguration The VPC configuration to be provisioned for the host. A VPC must be configured and the infrastructure to be represented by the host must already be connected to the VPC.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3242,6 +3287,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.codestarconnections.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Name", "ProviderType", "ProviderEndpoint" ],
@@ -3273,6 +3319,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarconnections.response.CreateHostResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3334,6 +3381,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the host to be created.</p>\n@param hostArn The Amazon Resource Name (ARN) of the host to be created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3404,6 +3452,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the host to be created.</p>\n@param hostArn The Amazon Resource Name (ARN) of the host to be created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3419,6 +3468,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.codestarconnections.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3453,6 +3503,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarconnections.request.DeleteConnectionRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3521,6 +3572,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the connection to be deleted.</p> <note> <p>The ARN is never reused if the connection is deleted.</p> </note>\n@param connectionArn The Amazon Resource Name (ARN) of the connection to be deleted.</p> <note> <p>The ARN is never reused if the connection is deleted.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3591,6 +3643,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the connection to be deleted.</p> <note> <p>The ARN is never reused if the connection is deleted.</p> </note>\n@param connectionArn The Amazon Resource Name (ARN) of the connection to be deleted.</p> <note> <p>The ARN is never reused if the connection is deleted.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3606,6 +3659,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.codestarconnections.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ConnectionArn" ],
@@ -3637,6 +3691,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarconnections.response.DeleteConnectionResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3645,6 +3700,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.codestarconnections.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3679,6 +3735,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarconnections.request.DeleteHostRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3747,6 +3804,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the host to be deleted.</p>\n@param hostArn The Amazon Resource Name (ARN) of the host to be deleted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3817,6 +3875,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the host to be deleted.</p>\n@param hostArn The Amazon Resource Name (ARN) of the host to be deleted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3832,6 +3891,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.codestarconnections.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "HostArn" ],
@@ -3863,6 +3923,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarconnections.response.DeleteHostResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3871,6 +3932,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.codestarconnections.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3905,6 +3967,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarconnections.request.GetConnectionRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3973,6 +4036,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of a connection.</p>\n@param connectionArn The Amazon Resource Name (ARN) of a connection.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4043,6 +4107,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of a connection.</p>\n@param connectionArn The Amazon Resource Name (ARN) of a connection.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4058,6 +4123,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.codestarconnections.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ConnectionArn" ],
@@ -4089,6 +4155,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarconnections.response.GetConnectionResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4150,6 +4217,7 @@
           "variableSetterType" : "Connection"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The connection details, such as status, owner, and provider type.</p>\n@param connection The connection details, such as status, owner, and provider type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4220,6 +4288,7 @@
             "variableSetterType" : "Connection"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The connection details, such as status, owner, and provider type.</p>\n@param connection The connection details, such as status, owner, and provider type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4235,6 +4304,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.codestarconnections.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4269,6 +4339,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarconnections.request.GetHostRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4337,6 +4408,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the requested host.</p>\n@param hostArn The Amazon Resource Name (ARN) of the requested host.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4407,6 +4479,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the requested host.</p>\n@param hostArn The Amazon Resource Name (ARN) of the requested host.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4422,6 +4495,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.codestarconnections.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "HostArn" ],
@@ -4453,6 +4527,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarconnections.response.GetHostResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4514,6 +4589,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the requested host.</p>\n@param name The name of the requested host.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4582,6 +4658,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The status of the requested host.</p>\n@param status The status of the requested host.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4650,6 +4727,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The provider type of the requested host, such as GitHub Enterprise Server.</p>\n@param providerType The provider type of the requested host, such as GitHub Enterprise Server.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ProviderType*/",
@@ -4718,6 +4796,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The endpoint of the infrastructure represented by the requested host.</p>\n@param providerEndpoint The endpoint of the infrastructure represented by the requested host.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4786,6 +4865,7 @@
           "variableSetterType" : "VpcConfiguration"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The VPC configuration of the requested host.</p>\n@param vpcConfiguration The VPC configuration of the requested host.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4856,6 +4936,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the requested host.</p>\n@param name The name of the requested host.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4925,6 +5006,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The endpoint of the infrastructure represented by the requested host.</p>\n@param providerEndpoint The endpoint of the infrastructure represented by the requested host.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4994,6 +5076,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The provider type of the requested host, such as GitHub Enterprise Server.</p>\n@param providerType The provider type of the requested host, such as GitHub Enterprise Server.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ProviderType*/",
@@ -5063,6 +5146,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The status of the requested host.</p>\n@param status The status of the requested host.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5132,6 +5216,7 @@
             "variableSetterType" : "VpcConfiguration"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The VPC configuration of the requested host.</p>\n@param vpcConfiguration The VPC configuration of the requested host.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5147,6 +5232,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.codestarconnections.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -5181,6 +5267,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarconnections.model.Host",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5242,6 +5329,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the host.</p>\n@param name The name of the host.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5310,6 +5398,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the host.</p>\n@param hostArn The Amazon Resource Name (ARN) of the host.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5378,6 +5467,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the installed provider to be associated with your connection. The host resource represents the infrastructure where your provider type is installed. The valid provider type is GitHub Enterprise Server.</p>\n@param providerType The name of the installed provider to be associated with your connection. The host resource represents the infrastructure where your provider type is installed. The valid provider type is GitHub Enterprise Server.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ProviderType*/",
@@ -5446,6 +5536,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The endpoint of the infrastructure where your provider type is installed.</p>\n@param providerEndpoint The endpoint of the infrastructure where your provider type is installed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5514,6 +5605,7 @@
           "variableSetterType" : "VpcConfiguration"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The VPC configuration provisioned for the host.</p>\n@param vpcConfiguration The VPC configuration provisioned for the host.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5582,6 +5674,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The status of the host, such as PENDING, AVAILABLE, VPC_CONFIG_DELETING, VPC_CONFIG_INITIALIZING, and VPC_CONFIG_FAILED_INITIALIZATION.</p>\n@param status The status of the host, such as PENDING, AVAILABLE, VPC_CONFIG_DELETING, VPC_CONFIG_INITIALIZING, and VPC_CONFIG_FAILED_INITIALIZATION.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5650,6 +5743,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The status description for the host.</p>\n@param statusMessage The status description for the host.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5720,6 +5814,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the host.</p>\n@param hostArn The Amazon Resource Name (ARN) of the host.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5789,6 +5884,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the host.</p>\n@param name The name of the host.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5858,6 +5954,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The endpoint of the infrastructure where your provider type is installed.</p>\n@param providerEndpoint The endpoint of the infrastructure where your provider type is installed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5927,6 +6024,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the installed provider to be associated with your connection. The host resource represents the infrastructure where your provider type is installed. The valid provider type is GitHub Enterprise Server.</p>\n@param providerType The name of the installed provider to be associated with your connection. The host resource represents the infrastructure where your provider type is installed. The valid provider type is GitHub Enterprise Server.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ProviderType*/",
@@ -5996,6 +6094,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The status of the host, such as PENDING, AVAILABLE, VPC_CONFIG_DELETING, VPC_CONFIG_INITIALIZING, and VPC_CONFIG_FAILED_INITIALIZATION.</p>\n@param status The status of the host, such as PENDING, AVAILABLE, VPC_CONFIG_DELETING, VPC_CONFIG_INITIALIZING, and VPC_CONFIG_FAILED_INITIALIZATION.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6065,6 +6164,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The status description for the host.</p>\n@param statusMessage The status description for the host.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6134,6 +6234,7 @@
             "variableSetterType" : "VpcConfiguration"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The VPC configuration provisioned for the host.</p>\n@param vpcConfiguration The VPC configuration provisioned for the host.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6149,6 +6250,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.codestarconnections.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6183,6 +6285,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "LimitExceededException",
+      "fullyQualifiedName" : "com.amazonaws.services.codestarconnections.exception.LimitExceededException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6191,6 +6294,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.codestarconnections.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6222,6 +6326,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarconnections.request.ListConnectionsRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6290,6 +6395,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Filters the list of connections to those associated with a specified provider, such as Bitbucket.</p>\n@param providerTypeFilter Filters the list of connections to those associated with a specified provider, such as Bitbucket.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ProviderType*/",
@@ -6358,6 +6464,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Filters the list of connections to those associated with a specified host.</p>\n@param hostArnFilter Filters the list of connections to those associated with a specified host.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6426,6 +6533,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>\n@param maxResults The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6494,6 +6602,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The token that was returned from the previous <code>ListConnections</code> call, which can be used to return the next set of connections in the list.</p>\n@param nextToken The token that was returned from the previous <code>ListConnections</code> call, which can be used to return the next set of connections in the list.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6564,6 +6673,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Filters the list of connections to those associated with a specified host.</p>\n@param hostArnFilter Filters the list of connections to those associated with a specified host.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6633,6 +6743,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>\n@param maxResults The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6702,6 +6813,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The token that was returned from the previous <code>ListConnections</code> call, which can be used to return the next set of connections in the list.</p>\n@param nextToken The token that was returned from the previous <code>ListConnections</code> call, which can be used to return the next set of connections in the list.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6771,6 +6883,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Filters the list of connections to those associated with a specified provider, such as Bitbucket.</p>\n@param providerTypeFilter Filters the list of connections to those associated with a specified provider, such as Bitbucket.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ProviderType*/",
@@ -6786,6 +6899,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.codestarconnections.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6817,6 +6931,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarconnections.response.ListConnectionsResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6917,6 +7032,7 @@
               "variableSetterType" : "Connection"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6961,6 +7077,7 @@
           "variableSetterType" : "java.util.Collection<Connection>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of connections and the details for each connection, such as status, owner, and provider type.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setConnections(java.util.Collection)} or {@link #withConnections(java.util.Collection)} if you want to override the existing values.</p>\n@param connections A list of connections and the details for each connection, such as status, owner, and provider type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7029,6 +7146,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A token that can be used in the next <code>ListConnections</code> call. To view all items in the list, continue to call this operation with each subsequent token until no more <code>nextToken</code> values are returned.</p>\n@param nextToken A token that can be used in the next <code>ListConnections</code> call. To view all items in the list, continue to call this operation with each subsequent token until no more <code>nextToken</code> values are returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7138,6 +7256,7 @@
                 "variableSetterType" : "Connection"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7182,6 +7301,7 @@
             "variableSetterType" : "java.util.Collection<Connection>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of connections and the details for each connection, such as status, owner, and provider type.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setConnections(java.util.Collection)} or {@link #withConnections(java.util.Collection)} if you want to override the existing values.</p>\n@param connections A list of connections and the details for each connection, such as status, owner, and provider type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7251,6 +7371,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A token that can be used in the next <code>ListConnections</code> call. To view all items in the list, continue to call this operation with each subsequent token until no more <code>nextToken</code> values are returned.</p>\n@param nextToken A token that can be used in the next <code>ListConnections</code> call. To view all items in the list, continue to call this operation with each subsequent token until no more <code>nextToken</code> values are returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7266,6 +7387,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.codestarconnections.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -7300,6 +7422,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarconnections.request.ListHostsRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7368,6 +7491,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>\n@param maxResults The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7436,6 +7560,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The token that was returned from the previous <code>ListHosts</code> call, which can be used to return the next set of hosts in the list.</p>\n@param nextToken The token that was returned from the previous <code>ListHosts</code> call, which can be used to return the next set of hosts in the list.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7506,6 +7631,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>\n@param maxResults The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7575,6 +7701,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The token that was returned from the previous <code>ListHosts</code> call, which can be used to return the next set of hosts in the list.</p>\n@param nextToken The token that was returned from the previous <code>ListHosts</code> call, which can be used to return the next set of hosts in the list.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7590,6 +7717,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.codestarconnections.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -7621,6 +7749,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarconnections.response.ListHostsResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7721,6 +7850,7 @@
               "variableSetterType" : "Host"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7765,6 +7895,7 @@
           "variableSetterType" : "java.util.Collection<Host>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of hosts and the details for each host, such as status, endpoint, and provider type.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setHosts(java.util.Collection)} or {@link #withHosts(java.util.Collection)} if you want to override the existing values.</p>\n@param hosts A list of hosts and the details for each host, such as status, endpoint, and provider type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7833,6 +7964,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A token that can be used in the next <code>ListHosts</code> call. To view all items in the list, continue to call this operation with each subsequent token until no more <code>nextToken</code> values are returned.</p>\n@param nextToken A token that can be used in the next <code>ListHosts</code> call. To view all items in the list, continue to call this operation with each subsequent token until no more <code>nextToken</code> values are returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7942,6 +8074,7 @@
                 "variableSetterType" : "Host"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7986,6 +8119,7 @@
             "variableSetterType" : "java.util.Collection<Host>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of hosts and the details for each host, such as status, endpoint, and provider type.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setHosts(java.util.Collection)} or {@link #withHosts(java.util.Collection)} if you want to override the existing values.</p>\n@param hosts A list of hosts and the details for each host, such as status, endpoint, and provider type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8055,6 +8189,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A token that can be used in the next <code>ListHosts</code> call. To view all items in the list, continue to call this operation with each subsequent token until no more <code>nextToken</code> values are returned.</p>\n@param nextToken A token that can be used in the next <code>ListHosts</code> call. To view all items in the list, continue to call this operation with each subsequent token until no more <code>nextToken</code> values are returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8070,6 +8205,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.codestarconnections.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -8104,6 +8240,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarconnections.request.ListTagsForResourceRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8172,6 +8309,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource for which you want to get information about tags, if any.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource for which you want to get information about tags, if any.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8242,6 +8380,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource for which you want to get information about tags, if any.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource for which you want to get information about tags, if any.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8257,6 +8396,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.codestarconnections.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ResourceArn" ],
@@ -8288,6 +8428,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarconnections.response.ListTagsForResourceResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8388,6 +8529,7 @@
               "variableSetterType" : "Tag"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8432,6 +8574,7 @@
           "variableSetterType" : "java.util.Collection<Tag>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of tag key and value pairs associated with the specified resource.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags A list of tag key and value pairs associated with the specified resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8541,6 +8684,7 @@
                 "variableSetterType" : "Tag"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8585,6 +8729,7 @@
             "variableSetterType" : "java.util.Collection<Tag>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of tag key and value pairs associated with the specified resource.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags A list of tag key and value pairs associated with the specified resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8600,6 +8745,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.codestarconnections.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -8640,6 +8786,7 @@
         "value" : "GitHubEnterpriseServer"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarconnections.enum.ProviderType",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8648,6 +8795,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.codestarconnections.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -8682,6 +8830,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ResourceNotFoundException",
+      "fullyQualifiedName" : "com.amazonaws.services.codestarconnections.exception.ResourceNotFoundException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8690,6 +8839,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.codestarconnections.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -8721,6 +8871,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ResourceUnavailableException",
+      "fullyQualifiedName" : "com.amazonaws.services.codestarconnections.exception.ResourceUnavailableException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8729,6 +8880,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.codestarconnections.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -8760,6 +8912,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarconnections.model.Tag",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8821,6 +8974,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The tag's key.</p>\n@param key The tag's key.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8889,6 +9043,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The tag's value.</p>\n@param value The tag's value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8959,6 +9114,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The tag's key.</p>\n@param key The tag's key.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9028,6 +9184,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The tag's value.</p>\n@param value The tag's value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9043,6 +9200,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.codestarconnections.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Key", "Value" ],
@@ -9077,6 +9235,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarconnections.request.TagResourceRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -9145,6 +9304,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource to which you want to add or update tags.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource to which you want to add or update tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9252,6 +9412,7 @@
               "variableSetterType" : "Tag"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9296,6 +9457,7 @@
           "variableSetterType" : "java.util.Collection<Tag>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The tags you want to modify or add to the resource.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags The tags you want to modify or add to the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9366,6 +9528,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource to which you want to add or update tags.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource to which you want to add or update tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9474,6 +9637,7 @@
                 "variableSetterType" : "Tag"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9518,6 +9682,7 @@
             "variableSetterType" : "java.util.Collection<Tag>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The tags you want to modify or add to the resource.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags The tags you want to modify or add to the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9533,6 +9698,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.codestarconnections.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ResourceArn", "Tags" ],
@@ -9564,6 +9730,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarconnections.response.TagResourceResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -9572,6 +9739,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.codestarconnections.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -9606,6 +9774,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarconnections.request.UntagResourceRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -9674,6 +9843,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource to remove tags from.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource to remove tags from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9781,6 +9951,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9825,6 +9996,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The list of keys for the tags to be removed from the resource.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagKeys(java.util.Collection)} or {@link #withTagKeys(java.util.Collection)} if you want to override the existing values.</p>\n@param tagKeys The list of keys for the tags to be removed from the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9895,6 +10067,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource to remove tags from.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource to remove tags from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10003,6 +10176,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10047,6 +10221,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The list of keys for the tags to be removed from the resource.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagKeys(java.util.Collection)} or {@link #withTagKeys(java.util.Collection)} if you want to override the existing values.</p>\n@param tagKeys The list of keys for the tags to be removed from the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10062,6 +10237,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.codestarconnections.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ResourceArn", "TagKeys" ],
@@ -10093,6 +10269,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarconnections.response.UntagResourceResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -10101,6 +10278,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.codestarconnections.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -10135,6 +10313,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarconnections.model.VpcConfiguration",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -10196,6 +10375,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the Amazon VPC connected to the infrastructure where your provider type is installed.</p>\n@param vpcId The ID of the Amazon VPC connected to the infrastructure where your provider type is installed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10303,6 +10483,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10347,6 +10528,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the subnet or subnets associated with the Amazon VPC connected to the infrastructure where your provider type is installed.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSubnetIds(java.util.Collection)} or {@link #withSubnetIds(java.util.Collection)} if you want to override the existing values.</p>\n@param subnetIds The ID of the subnet or subnets associated with the Amazon VPC connected to the infrastructure where your provider type is installed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10454,6 +10636,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10498,6 +10681,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the security group or security groups associated with the Amazon VPC connected to the infrastructure where your provider type is installed.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSecurityGroupIds(java.util.Collection)} or {@link #withSecurityGroupIds(java.util.Collection)} if you want to override the existing values.</p>\n@param securityGroupIds The ID of the security group or security groups associated with the Amazon VPC connected to the infrastructure where your provider type is installed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10566,6 +10750,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The value of the Transport Layer Security (TLS) certificate associated with the infrastructure where your provider type is installed.</p>\n@param tlsCertificate The value of the Transport Layer Security (TLS) certificate associated with the infrastructure where your provider type is installed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10675,6 +10860,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10719,6 +10905,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the security group or security groups associated with the Amazon VPC connected to the infrastructure where your provider type is installed.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSecurityGroupIds(java.util.Collection)} or {@link #withSecurityGroupIds(java.util.Collection)} if you want to override the existing values.</p>\n@param securityGroupIds The ID of the security group or security groups associated with the Amazon VPC connected to the infrastructure where your provider type is installed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10827,6 +11014,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10871,6 +11059,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the subnet or subnets associated with the Amazon VPC connected to the infrastructure where your provider type is installed.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSubnetIds(java.util.Collection)} or {@link #withSubnetIds(java.util.Collection)} if you want to override the existing values.</p>\n@param subnetIds The ID of the subnet or subnets associated with the Amazon VPC connected to the infrastructure where your provider type is installed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10940,6 +11129,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The value of the Transport Layer Security (TLS) certificate associated with the infrastructure where your provider type is installed.</p>\n@param tlsCertificate The value of the Transport Layer Security (TLS) certificate associated with the infrastructure where your provider type is installed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11009,6 +11199,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the Amazon VPC connected to the infrastructure where your provider type is installed.</p>\n@param vpcId The ID of the Amazon VPC connected to the infrastructure where your provider type is installed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11024,6 +11215,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.codestarconnections.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "VpcId", "SubnetIds", "SecurityGroupIds" ],

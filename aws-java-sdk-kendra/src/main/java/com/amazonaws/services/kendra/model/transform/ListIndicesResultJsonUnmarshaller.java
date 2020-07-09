@@ -51,7 +51,9 @@ public class ListIndicesResultJsonUnmarshaller implements Unmarshaller<ListIndic
                 if (context.testExpression("IndexConfigurationSummaryItems", targetDepth)) {
                     context.nextToken();
                     listIndicesResult.setIndexConfigurationSummaryItems(new ListUnmarshaller<IndexConfigurationSummary>(
-                            IndexConfigurationSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                            IndexConfigurationSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

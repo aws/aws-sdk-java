@@ -87,7 +87,9 @@ public class AssociationDescriptionJsonUnmarshaller implements Unmarshaller<Asso
                 if (context.testExpression("Parameters", targetDepth)) {
                     context.nextToken();
                     associationDescription.setParameters(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
-                            new ListUnmarshaller<String>(context.getUnmarshaller(String.class))).unmarshall(context));
+                            new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    ).unmarshall(context));
                 }
                 if (context.testExpression("AssociationId", targetDepth)) {
                     context.nextToken();
@@ -95,7 +97,9 @@ public class AssociationDescriptionJsonUnmarshaller implements Unmarshaller<Asso
                 }
                 if (context.testExpression("Targets", targetDepth)) {
                     context.nextToken();
-                    associationDescription.setTargets(new ListUnmarshaller<Target>(TargetJsonUnmarshaller.getInstance()).unmarshall(context));
+                    associationDescription.setTargets(new ListUnmarshaller<Target>(TargetJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ScheduleExpression", targetDepth)) {
                     context.nextToken();

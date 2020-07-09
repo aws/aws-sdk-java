@@ -59,7 +59,9 @@ public class CredentialPairJsonUnmarshaller implements Unmarshaller<CredentialPa
                 if (context.testExpression("AlternateDataSourceParameters", targetDepth)) {
                     context.nextToken();
                     credentialPair.setAlternateDataSourceParameters(new ListUnmarshaller<DataSourceParameters>(DataSourceParametersJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

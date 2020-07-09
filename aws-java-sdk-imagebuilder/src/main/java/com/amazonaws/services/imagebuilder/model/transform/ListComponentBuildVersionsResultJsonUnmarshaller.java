@@ -55,7 +55,9 @@ public class ListComponentBuildVersionsResultJsonUnmarshaller implements Unmarsh
                 if (context.testExpression("componentSummaryList", targetDepth)) {
                     context.nextToken();
                     listComponentBuildVersionsResult.setComponentSummaryList(new ListUnmarshaller<ComponentSummary>(ComponentSummaryJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

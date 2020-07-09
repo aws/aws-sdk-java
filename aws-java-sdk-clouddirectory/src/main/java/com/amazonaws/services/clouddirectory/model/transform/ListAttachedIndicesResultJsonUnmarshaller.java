@@ -51,7 +51,8 @@ public class ListAttachedIndicesResultJsonUnmarshaller implements Unmarshaller<L
                 if (context.testExpression("IndexAttachments", targetDepth)) {
                     context.nextToken();
                     listAttachedIndicesResult.setIndexAttachments(new ListUnmarshaller<IndexAttachment>(IndexAttachmentJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

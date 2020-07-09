@@ -51,7 +51,9 @@ public class ListAssociationVersionsResultJsonUnmarshaller implements Unmarshall
                 if (context.testExpression("AssociationVersions", targetDepth)) {
                     context.nextToken();
                     listAssociationVersionsResult.setAssociationVersions(new ListUnmarshaller<AssociationVersionInfo>(AssociationVersionInfoJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

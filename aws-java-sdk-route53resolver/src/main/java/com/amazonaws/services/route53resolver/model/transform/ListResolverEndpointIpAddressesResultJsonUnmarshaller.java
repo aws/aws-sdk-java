@@ -59,7 +59,9 @@ public class ListResolverEndpointIpAddressesResultJsonUnmarshaller implements Un
                 if (context.testExpression("IpAddresses", targetDepth)) {
                     context.nextToken();
                     listResolverEndpointIpAddressesResult.setIpAddresses(new ListUnmarshaller<IpAddressResponse>(IpAddressResponseJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

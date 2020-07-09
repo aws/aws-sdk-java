@@ -50,8 +50,9 @@ public class GetObjectInformationResultJsonUnmarshaller implements Unmarshaller<
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SchemaFacets", targetDepth)) {
                     context.nextToken();
-                    getObjectInformationResult
-                            .setSchemaFacets(new ListUnmarshaller<SchemaFacet>(SchemaFacetJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getObjectInformationResult.setSchemaFacets(new ListUnmarshaller<SchemaFacet>(SchemaFacetJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ObjectIdentifier", targetDepth)) {
                     context.nextToken();

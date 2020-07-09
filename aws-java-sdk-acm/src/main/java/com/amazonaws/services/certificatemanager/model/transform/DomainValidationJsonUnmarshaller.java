@@ -54,7 +54,9 @@ public class DomainValidationJsonUnmarshaller implements Unmarshaller<DomainVali
                 }
                 if (context.testExpression("ValidationEmails", targetDepth)) {
                     context.nextToken();
-                    domainValidation.setValidationEmails(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    domainValidation.setValidationEmails(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ValidationDomain", targetDepth)) {
                     context.nextToken();

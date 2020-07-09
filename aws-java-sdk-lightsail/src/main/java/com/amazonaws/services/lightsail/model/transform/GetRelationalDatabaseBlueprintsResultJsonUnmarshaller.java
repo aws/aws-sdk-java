@@ -51,7 +51,9 @@ public class GetRelationalDatabaseBlueprintsResultJsonUnmarshaller implements Un
                 if (context.testExpression("blueprints", targetDepth)) {
                     context.nextToken();
                     getRelationalDatabaseBlueprintsResult.setBlueprints(new ListUnmarshaller<RelationalDatabaseBlueprint>(
-                            RelationalDatabaseBlueprintJsonUnmarshaller.getInstance()).unmarshall(context));
+                            RelationalDatabaseBlueprintJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextPageToken", targetDepth)) {
                     context.nextToken();

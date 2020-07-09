@@ -51,7 +51,9 @@ public class ListForecastExportJobsResultJsonUnmarshaller implements Unmarshalle
                 if (context.testExpression("ForecastExportJobs", targetDepth)) {
                     context.nextToken();
                     listForecastExportJobsResult.setForecastExportJobs(new ListUnmarshaller<ForecastExportJobSummary>(ForecastExportJobSummaryJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

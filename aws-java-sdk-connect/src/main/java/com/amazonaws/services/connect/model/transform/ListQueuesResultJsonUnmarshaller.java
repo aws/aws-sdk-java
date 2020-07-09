@@ -50,7 +50,9 @@ public class ListQueuesResultJsonUnmarshaller implements Unmarshaller<ListQueues
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("QueueSummaryList", targetDepth)) {
                     context.nextToken();
-                    listQueuesResult.setQueueSummaryList(new ListUnmarshaller<QueueSummary>(QueueSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listQueuesResult.setQueueSummaryList(new ListUnmarshaller<QueueSummary>(QueueSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

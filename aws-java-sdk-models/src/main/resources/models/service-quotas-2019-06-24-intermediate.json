@@ -1079,6 +1079,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "AWSServiceAccessNotEnabledException",
+      "fullyQualifiedName" : "com.amazonaws.services.servicequotas.exception.AWSServiceAccessNotEnabledException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1087,6 +1088,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.servicequotas.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1118,6 +1120,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "AccessDeniedException",
+      "fullyQualifiedName" : "com.amazonaws.services.servicequotas.exception.AccessDeniedException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1126,6 +1129,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.servicequotas.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1157,6 +1161,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.servicequotas.request.AssociateServiceQuotaTemplateRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1172,6 +1177,7 @@
       },
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.servicequotas.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1203,6 +1209,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.servicequotas.response.AssociateServiceQuotaTemplateResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1211,6 +1218,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.servicequotas.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1245,6 +1253,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.servicequotas.request.DeleteServiceQuotaIncreaseRequestFromTemplateRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1313,6 +1322,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies the code for the service that you want to delete.</p>\n@param serviceCode Specifies the code for the service that you want to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1381,6 +1391,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies the code for the quota that you want to delete.</p>\n@param quotaCode Specifies the code for the quota that you want to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1449,6 +1460,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies the AWS Region for the quota that you want to delete.</p>\n@param awsRegion Specifies the AWS Region for the quota that you want to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1519,6 +1531,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies the AWS Region for the quota that you want to delete.</p>\n@param awsRegion Specifies the AWS Region for the quota that you want to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1588,6 +1601,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies the code for the quota that you want to delete.</p>\n@param quotaCode Specifies the code for the quota that you want to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1657,6 +1671,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies the code for the service that you want to delete.</p>\n@param serviceCode Specifies the code for the service that you want to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1672,6 +1687,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.servicequotas.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ServiceCode", "QuotaCode", "AwsRegion" ],
@@ -1703,6 +1719,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.servicequotas.response.DeleteServiceQuotaIncreaseRequestFromTemplateResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1711,6 +1728,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.servicequotas.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1745,6 +1763,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "DependencyAccessDeniedException",
+      "fullyQualifiedName" : "com.amazonaws.services.servicequotas.exception.DependencyAccessDeniedException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1753,6 +1772,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.servicequotas.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1784,6 +1804,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.servicequotas.request.DisassociateServiceQuotaTemplateRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1799,6 +1820,7 @@
       },
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.servicequotas.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1830,6 +1852,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.servicequotas.response.DisassociateServiceQuotaTemplateResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1838,6 +1861,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.servicequotas.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1884,6 +1908,7 @@
         "value" : "SERVICE_QUOTA_NOT_AVAILABLE_ERROR"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.servicequotas.enum.ErrorCode",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1892,6 +1917,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.servicequotas.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1926,6 +1952,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.servicequotas.model.ErrorReason",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1987,6 +2014,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Service Quotas returns the following error values. </p> <p> <code>DEPENDENCY_ACCESS_DENIED_ERROR</code> is returned when the caller does not have permission to call the service or service quota. To resolve the error, you need permission to access the service or service quota.</p> <p> <code>DEPENDENCY_THROTTLING_ERROR</code> is returned when the service being called is throttling Service Quotas.</p> <p> <code>DEPENDENCY_SERVICE_ERROR</code> is returned when the service being called has availability issues.</p> <p> <code>SERVICE_QUOTA_NOT_AVAILABLE_ERROR</code> is returned when there was an error in Service Quotas.</p>\n@param errorCode Service Quotas returns the following error values. </p> <p> <code>DEPENDENCY_ACCESS_DENIED_ERROR</code> is returned when the caller does not have permission to call the service or service quota. To resolve the error, you need permission to access the service or service quota.</p> <p> <code>DEPENDENCY_THROTTLING_ERROR</code> is returned when the service being called is throttling Service Quotas.</p> <p> <code>DEPENDENCY_SERVICE_ERROR</code> is returned when the service being called has availability issues.</p> <p> <code>SERVICE_QUOTA_NOT_AVAILABLE_ERROR</code> is returned when there was an error in Service Quotas.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ErrorCode*/",
@@ -2055,6 +2083,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The error message that provides more detail.</p>\n@param errorMessage The error message that provides more detail.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2125,6 +2154,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Service Quotas returns the following error values. </p> <p> <code>DEPENDENCY_ACCESS_DENIED_ERROR</code> is returned when the caller does not have permission to call the service or service quota. To resolve the error, you need permission to access the service or service quota.</p> <p> <code>DEPENDENCY_THROTTLING_ERROR</code> is returned when the service being called is throttling Service Quotas.</p> <p> <code>DEPENDENCY_SERVICE_ERROR</code> is returned when the service being called has availability issues.</p> <p> <code>SERVICE_QUOTA_NOT_AVAILABLE_ERROR</code> is returned when there was an error in Service Quotas.</p>\n@param errorCode Service Quotas returns the following error values. </p> <p> <code>DEPENDENCY_ACCESS_DENIED_ERROR</code> is returned when the caller does not have permission to call the service or service quota. To resolve the error, you need permission to access the service or service quota.</p> <p> <code>DEPENDENCY_THROTTLING_ERROR</code> is returned when the service being called is throttling Service Quotas.</p> <p> <code>DEPENDENCY_SERVICE_ERROR</code> is returned when the service being called has availability issues.</p> <p> <code>SERVICE_QUOTA_NOT_AVAILABLE_ERROR</code> is returned when there was an error in Service Quotas.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ErrorCode*/",
@@ -2194,6 +2224,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The error message that provides more detail.</p>\n@param errorMessage The error message that provides more detail.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2209,6 +2240,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.servicequotas.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2243,6 +2275,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.servicequotas.request.GetAWSDefaultServiceQuotaRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2311,6 +2344,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies the service that you want to use.</p>\n@param serviceCode Specifies the service that you want to use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2379,6 +2413,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Identifies the service quota you want to select.</p>\n@param quotaCode Identifies the service quota you want to select.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2449,6 +2484,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Identifies the service quota you want to select.</p>\n@param quotaCode Identifies the service quota you want to select.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2518,6 +2554,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies the service that you want to use.</p>\n@param serviceCode Specifies the service that you want to use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2533,6 +2570,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.servicequotas.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ServiceCode", "QuotaCode" ],
@@ -2564,6 +2602,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.servicequotas.response.GetAWSDefaultServiceQuotaResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2625,6 +2664,7 @@
           "variableSetterType" : "ServiceQuota"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Returns the <a>ServiceQuota</a> object which contains all values for a quota.</p>\n@param quota Returns the <a>ServiceQuota</a> object which contains all values for a quota.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2695,6 +2735,7 @@
             "variableSetterType" : "ServiceQuota"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Returns the <a>ServiceQuota</a> object which contains all values for a quota.</p>\n@param quota Returns the <a>ServiceQuota</a> object which contains all values for a quota.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2710,6 +2751,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.servicequotas.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2744,6 +2786,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.servicequotas.request.GetAssociationForServiceQuotaTemplateRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2759,6 +2802,7 @@
       },
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.servicequotas.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2790,6 +2834,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.servicequotas.response.GetAssociationForServiceQuotaTemplateResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2851,6 +2896,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies whether the template is <code>ASSOCIATED</code> or <code>DISASSOCIATED</code>. If the template is <code>ASSOCIATED</code>, then it requests service quota increases for all new accounts created in your organization. </p>\n@param serviceQuotaTemplateAssociationStatus Specifies whether the template is <code>ASSOCIATED</code> or <code>DISASSOCIATED</code>. If the template is <code>ASSOCIATED</code>, then it requests service quota increases for all new accounts created in your organization.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ServiceQuotaTemplateAssociationStatus*/",
@@ -2921,6 +2967,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies whether the template is <code>ASSOCIATED</code> or <code>DISASSOCIATED</code>. If the template is <code>ASSOCIATED</code>, then it requests service quota increases for all new accounts created in your organization. </p>\n@param serviceQuotaTemplateAssociationStatus Specifies whether the template is <code>ASSOCIATED</code> or <code>DISASSOCIATED</code>. If the template is <code>ASSOCIATED</code>, then it requests service quota increases for all new accounts created in your organization.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ServiceQuotaTemplateAssociationStatus*/",
@@ -2936,6 +2983,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.servicequotas.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2970,6 +3018,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.servicequotas.request.GetRequestedServiceQuotaChangeRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3038,6 +3087,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Identifies the quota increase request.</p>\n@param requestId Identifies the quota increase request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3108,6 +3158,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Identifies the quota increase request.</p>\n@param requestId Identifies the quota increase request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3123,6 +3174,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.servicequotas.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "RequestId" ],
@@ -3154,6 +3206,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.servicequotas.response.GetRequestedServiceQuotaChangeResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3215,6 +3268,7 @@
           "variableSetterType" : "RequestedServiceQuotaChange"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Returns the <code>RequestedServiceQuotaChange</code> object for the specific increase request.</p>\n@param requestedQuota Returns the <code>RequestedServiceQuotaChange</code> object for the specific increase request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3285,6 +3339,7 @@
             "variableSetterType" : "RequestedServiceQuotaChange"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Returns the <code>RequestedServiceQuotaChange</code> object for the specific increase request.</p>\n@param requestedQuota Returns the <code>RequestedServiceQuotaChange</code> object for the specific increase request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3300,6 +3355,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.servicequotas.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3334,6 +3390,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.servicequotas.request.GetServiceQuotaIncreaseRequestFromTemplateRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3402,6 +3459,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies the service that you want to use.</p>\n@param serviceCode Specifies the service that you want to use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3470,6 +3528,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies the quota you want.</p>\n@param quotaCode Specifies the quota you want.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3538,6 +3597,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies the AWS Region for the quota that you want to use.</p>\n@param awsRegion Specifies the AWS Region for the quota that you want to use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3608,6 +3668,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies the AWS Region for the quota that you want to use.</p>\n@param awsRegion Specifies the AWS Region for the quota that you want to use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3677,6 +3738,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies the quota you want.</p>\n@param quotaCode Specifies the quota you want.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3746,6 +3808,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies the service that you want to use.</p>\n@param serviceCode Specifies the service that you want to use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3761,6 +3824,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.servicequotas.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ServiceCode", "QuotaCode", "AwsRegion" ],
@@ -3792,6 +3856,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.servicequotas.response.GetServiceQuotaIncreaseRequestFromTemplateResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3853,6 +3918,7 @@
           "variableSetterType" : "ServiceQuotaIncreaseRequestInTemplate"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>This object contains the details about the quota increase request.</p>\n@param serviceQuotaIncreaseRequestInTemplate This object contains the details about the quota increase request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3923,6 +3989,7 @@
             "variableSetterType" : "ServiceQuotaIncreaseRequestInTemplate"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>This object contains the details about the quota increase request.</p>\n@param serviceQuotaIncreaseRequestInTemplate This object contains the details about the quota increase request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3938,6 +4005,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.servicequotas.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3972,6 +4040,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.servicequotas.request.GetServiceQuotaRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4040,6 +4109,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies the service that you want to use.</p>\n@param serviceCode Specifies the service that you want to use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4108,6 +4178,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Identifies the service quota you want to select.</p>\n@param quotaCode Identifies the service quota you want to select.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4178,6 +4249,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Identifies the service quota you want to select.</p>\n@param quotaCode Identifies the service quota you want to select.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4247,6 +4319,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies the service that you want to use.</p>\n@param serviceCode Specifies the service that you want to use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4262,6 +4335,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.servicequotas.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ServiceCode", "QuotaCode" ],
@@ -4293,6 +4367,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.servicequotas.response.GetServiceQuotaResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4354,6 +4429,7 @@
           "variableSetterType" : "ServiceQuota"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Returns the <a>ServiceQuota</a> object which contains all values for a quota.</p>\n@param quota Returns the <a>ServiceQuota</a> object which contains all values for a quota.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4424,6 +4500,7 @@
             "variableSetterType" : "ServiceQuota"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Returns the <a>ServiceQuota</a> object which contains all values for a quota.</p>\n@param quota Returns the <a>ServiceQuota</a> object which contains all values for a quota.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4439,6 +4516,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.servicequotas.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4473,6 +4551,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "IllegalArgumentException",
+      "fullyQualifiedName" : "com.amazonaws.services.servicequotas.exception.IllegalArgumentException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4481,6 +4560,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.servicequotas.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4512,6 +4592,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InvalidPaginationTokenException",
+      "fullyQualifiedName" : "com.amazonaws.services.servicequotas.exception.InvalidPaginationTokenException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4520,6 +4601,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.servicequotas.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4551,6 +4633,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InvalidResourceStateException",
+      "fullyQualifiedName" : "com.amazonaws.services.servicequotas.exception.InvalidResourceStateException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4559,6 +4642,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.servicequotas.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4590,6 +4674,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.servicequotas.request.ListAWSDefaultServiceQuotasRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4658,6 +4743,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies the service that you want to use.</p>\n@param serviceCode Specifies the service that you want to use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4726,6 +4812,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>(Optional) Use this parameter in a request if you receive a <code>NextToken</code> response in a previous request that indicates that there's more output available. In a subsequent call, set it to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from. If additional items exist beyond the specified maximum, the <code>NextToken</code> element is present and has a value (isn't null). Include that value as the <code>NextToken</code> request parameter in the call to the operation to get the next part of the results. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>\n@param nextToken (Optional) Use this parameter in a request if you receive a <code>NextToken</code> response in a previous request that indicates that there's more output available. In a subsequent call, set it to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from. If additional items exist beyond the specified maximum, the <code>NextToken</code> element is present and has a value (isn't null). Include that value as the <code>NextToken</code> request parameter in the call to the operation to get the next part of the results. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4794,6 +4881,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>(Optional) Limits the number of results that you want to include in the response. If you don't include this parameter, the response defaults to a value that's specific to the operation. If additional items exist beyond the specified maximum, the <code>NextToken</code> element is present and has a value (isn't null). Include that value as the <code>NextToken</code> request parameter in the call to the operation to get the next part of the results. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>\n@param maxResults (Optional) Limits the number of results that you want to include in the response. If you don't include this parameter, the response defaults to a value that's specific to the operation. If additional items exist beyond the specified maximum, the <code>NextToken</code> element is present and has a value (isn't null). Include that value as the <code>NextToken</code> request parameter in the call to the operation to get the next part of the results. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4864,6 +4952,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>(Optional) Limits the number of results that you want to include in the response. If you don't include this parameter, the response defaults to a value that's specific to the operation. If additional items exist beyond the specified maximum, the <code>NextToken</code> element is present and has a value (isn't null). Include that value as the <code>NextToken</code> request parameter in the call to the operation to get the next part of the results. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>\n@param maxResults (Optional) Limits the number of results that you want to include in the response. If you don't include this parameter, the response defaults to a value that's specific to the operation. If additional items exist beyond the specified maximum, the <code>NextToken</code> element is present and has a value (isn't null). Include that value as the <code>NextToken</code> request parameter in the call to the operation to get the next part of the results. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4933,6 +5022,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>(Optional) Use this parameter in a request if you receive a <code>NextToken</code> response in a previous request that indicates that there's more output available. In a subsequent call, set it to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from. If additional items exist beyond the specified maximum, the <code>NextToken</code> element is present and has a value (isn't null). Include that value as the <code>NextToken</code> request parameter in the call to the operation to get the next part of the results. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>\n@param nextToken (Optional) Use this parameter in a request if you receive a <code>NextToken</code> response in a previous request that indicates that there's more output available. In a subsequent call, set it to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from. If additional items exist beyond the specified maximum, the <code>NextToken</code> element is present and has a value (isn't null). Include that value as the <code>NextToken</code> request parameter in the call to the operation to get the next part of the results. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5002,6 +5092,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies the service that you want to use.</p>\n@param serviceCode Specifies the service that you want to use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5017,6 +5108,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.servicequotas.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ServiceCode" ],
@@ -5048,6 +5140,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.servicequotas.response.ListAWSDefaultServiceQuotasResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5109,6 +5202,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>(Optional) Use this parameter in a request if you receive a <code>NextToken</code> response in a previous request that indicates that there's more output available. In a subsequent call, set it to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>\n@param nextToken (Optional) Use this parameter in a request if you receive a <code>NextToken</code> response in a previous request that indicates that there's more output available. In a subsequent call, set it to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5216,6 +5310,7 @@
               "variableSetterType" : "ServiceQuota"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5260,6 +5355,7 @@
           "variableSetterType" : "java.util.Collection<ServiceQuota>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of the quotas in the account with the AWS default values. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setQuotas(java.util.Collection)} or {@link #withQuotas(java.util.Collection)} if you want to override the existing values.</p>\n@param quotas A list of the quotas in the account with the AWS default values.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5330,6 +5426,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>(Optional) Use this parameter in a request if you receive a <code>NextToken</code> response in a previous request that indicates that there's more output available. In a subsequent call, set it to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>\n@param nextToken (Optional) Use this parameter in a request if you receive a <code>NextToken</code> response in a previous request that indicates that there's more output available. In a subsequent call, set it to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5438,6 +5535,7 @@
                 "variableSetterType" : "ServiceQuota"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5482,6 +5580,7 @@
             "variableSetterType" : "java.util.Collection<ServiceQuota>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of the quotas in the account with the AWS default values. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setQuotas(java.util.Collection)} or {@link #withQuotas(java.util.Collection)} if you want to override the existing values.</p>\n@param quotas A list of the quotas in the account with the AWS default values.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5497,6 +5596,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.servicequotas.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -5531,6 +5631,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.servicequotas.request.ListRequestedServiceQuotaChangeHistoryByQuotaRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5599,6 +5700,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies the service that you want to use.</p>\n@param serviceCode Specifies the service that you want to use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5667,6 +5769,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies the service quota that you want to use</p>\n@param quotaCode Specifies the service quota that you want to use\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5735,6 +5838,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies the status value of the quota increase request.</p>\n@param status Specifies the status value of the quota increase request.\n@return Returns a reference to this object so that method calls can be chained together.\n@see RequestStatus*/",
@@ -5803,6 +5907,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>(Optional) Use this parameter in a request if you receive a <code>NextToken</code> response in a previous request that indicates that there's more output available. In a subsequent call, set it to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>\n@param nextToken (Optional) Use this parameter in a request if you receive a <code>NextToken</code> response in a previous request that indicates that there's more output available. In a subsequent call, set it to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5871,6 +5976,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>(Optional) Limits the number of results that you want to include in the response. If you don't include this parameter, the response defaults to a value that's specific to the operation. If additional items exist beyond the specified maximum, the <code>NextToken</code> element is present and has a value (isn't null). Include that value as the <code>NextToken</code> request parameter in the call to the operation to get the next part of the results. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>\n@param maxResults (Optional) Limits the number of results that you want to include in the response. If you don't include this parameter, the response defaults to a value that's specific to the operation. If additional items exist beyond the specified maximum, the <code>NextToken</code> element is present and has a value (isn't null). Include that value as the <code>NextToken</code> request parameter in the call to the operation to get the next part of the results. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5941,6 +6047,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>(Optional) Limits the number of results that you want to include in the response. If you don't include this parameter, the response defaults to a value that's specific to the operation. If additional items exist beyond the specified maximum, the <code>NextToken</code> element is present and has a value (isn't null). Include that value as the <code>NextToken</code> request parameter in the call to the operation to get the next part of the results. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>\n@param maxResults (Optional) Limits the number of results that you want to include in the response. If you don't include this parameter, the response defaults to a value that's specific to the operation. If additional items exist beyond the specified maximum, the <code>NextToken</code> element is present and has a value (isn't null). Include that value as the <code>NextToken</code> request parameter in the call to the operation to get the next part of the results. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6010,6 +6117,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>(Optional) Use this parameter in a request if you receive a <code>NextToken</code> response in a previous request that indicates that there's more output available. In a subsequent call, set it to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>\n@param nextToken (Optional) Use this parameter in a request if you receive a <code>NextToken</code> response in a previous request that indicates that there's more output available. In a subsequent call, set it to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6079,6 +6187,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies the service quota that you want to use</p>\n@param quotaCode Specifies the service quota that you want to use\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6148,6 +6257,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies the service that you want to use.</p>\n@param serviceCode Specifies the service that you want to use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6217,6 +6327,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies the status value of the quota increase request.</p>\n@param status Specifies the status value of the quota increase request.\n@return Returns a reference to this object so that method calls can be chained together.\n@see RequestStatus*/",
@@ -6232,6 +6343,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.servicequotas.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ServiceCode", "QuotaCode" ],
@@ -6263,6 +6375,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.servicequotas.response.ListRequestedServiceQuotaChangeHistoryByQuotaResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6324,6 +6437,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If present in the response, this value indicates there's more output available that what's included in the current response. This can occur even when the response includes no values at all, such as when you ask for a filtered view of a very long list. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to continue processing and get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back empty (as <code>null</code>).</p>\n@param nextToken If present in the response, this value indicates there's more output available that what's included in the current response. This can occur even when the response includes no values at all, such as when you ask for a filtered view of a very long list. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to continue processing and get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back empty (as <code>null</code>).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6431,6 +6545,7 @@
               "variableSetterType" : "RequestedServiceQuotaChange"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6475,6 +6590,7 @@
           "variableSetterType" : "java.util.Collection<RequestedServiceQuotaChange>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Returns a list of service quota requests.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRequestedQuotas(java.util.Collection)} or {@link #withRequestedQuotas(java.util.Collection)} if you want to override the existing values.</p>\n@param requestedQuotas Returns a list of service quota requests.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6545,6 +6661,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If present in the response, this value indicates there's more output available that what's included in the current response. This can occur even when the response includes no values at all, such as when you ask for a filtered view of a very long list. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to continue processing and get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back empty (as <code>null</code>).</p>\n@param nextToken If present in the response, this value indicates there's more output available that what's included in the current response. This can occur even when the response includes no values at all, such as when you ask for a filtered view of a very long list. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to continue processing and get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back empty (as <code>null</code>).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6653,6 +6770,7 @@
                 "variableSetterType" : "RequestedServiceQuotaChange"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6697,6 +6815,7 @@
             "variableSetterType" : "java.util.Collection<RequestedServiceQuotaChange>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Returns a list of service quota requests.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRequestedQuotas(java.util.Collection)} or {@link #withRequestedQuotas(java.util.Collection)} if you want to override the existing values.</p>\n@param requestedQuotas Returns a list of service quota requests.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6712,6 +6831,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.servicequotas.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6746,6 +6866,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.servicequotas.request.ListRequestedServiceQuotaChangeHistoryRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6814,6 +6935,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies the service that you want to use.</p>\n@param serviceCode Specifies the service that you want to use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6882,6 +7004,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies the status value of the quota increase request.</p>\n@param status Specifies the status value of the quota increase request.\n@return Returns a reference to this object so that method calls can be chained together.\n@see RequestStatus*/",
@@ -6950,6 +7073,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>(Optional) Use this parameter in a request if you receive a <code>NextToken</code> response in a previous request that indicates that there's more output available. In a subsequent call, set it to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>\n@param nextToken (Optional) Use this parameter in a request if you receive a <code>NextToken</code> response in a previous request that indicates that there's more output available. In a subsequent call, set it to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7018,6 +7142,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>(Optional) Limits the number of results that you want to include in the response. If you don't include this parameter, the response defaults to a value that's specific to the operation. If additional items exist beyond the specified maximum, the <code>NextToken</code> element is present and has a value (isn't null). Include that value as the <code>NextToken</code> request parameter in the call to the operation to get the next part of the results. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>\n@param maxResults (Optional) Limits the number of results that you want to include in the response. If you don't include this parameter, the response defaults to a value that's specific to the operation. If additional items exist beyond the specified maximum, the <code>NextToken</code> element is present and has a value (isn't null). Include that value as the <code>NextToken</code> request parameter in the call to the operation to get the next part of the results. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7088,6 +7213,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>(Optional) Limits the number of results that you want to include in the response. If you don't include this parameter, the response defaults to a value that's specific to the operation. If additional items exist beyond the specified maximum, the <code>NextToken</code> element is present and has a value (isn't null). Include that value as the <code>NextToken</code> request parameter in the call to the operation to get the next part of the results. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>\n@param maxResults (Optional) Limits the number of results that you want to include in the response. If you don't include this parameter, the response defaults to a value that's specific to the operation. If additional items exist beyond the specified maximum, the <code>NextToken</code> element is present and has a value (isn't null). Include that value as the <code>NextToken</code> request parameter in the call to the operation to get the next part of the results. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7157,6 +7283,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>(Optional) Use this parameter in a request if you receive a <code>NextToken</code> response in a previous request that indicates that there's more output available. In a subsequent call, set it to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>\n@param nextToken (Optional) Use this parameter in a request if you receive a <code>NextToken</code> response in a previous request that indicates that there's more output available. In a subsequent call, set it to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7226,6 +7353,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies the service that you want to use.</p>\n@param serviceCode Specifies the service that you want to use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7295,6 +7423,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies the status value of the quota increase request.</p>\n@param status Specifies the status value of the quota increase request.\n@return Returns a reference to this object so that method calls can be chained together.\n@see RequestStatus*/",
@@ -7310,6 +7439,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.servicequotas.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -7341,6 +7471,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.servicequotas.response.ListRequestedServiceQuotaChangeHistoryResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7402,6 +7533,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If present in the response, this value indicates there's more output available that what's included in the current response. This can occur even when the response includes no values at all, such as when you ask for a filtered view of a very long list. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to continue processing and get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back empty (as <code>null</code>).</p>\n@param nextToken If present in the response, this value indicates there's more output available that what's included in the current response. This can occur even when the response includes no values at all, such as when you ask for a filtered view of a very long list. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to continue processing and get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back empty (as <code>null</code>).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7509,6 +7641,7 @@
               "variableSetterType" : "RequestedServiceQuotaChange"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7553,6 +7686,7 @@
           "variableSetterType" : "java.util.Collection<RequestedServiceQuotaChange>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Returns a list of service quota requests.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRequestedQuotas(java.util.Collection)} or {@link #withRequestedQuotas(java.util.Collection)} if you want to override the existing values.</p>\n@param requestedQuotas Returns a list of service quota requests.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7623,6 +7757,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If present in the response, this value indicates there's more output available that what's included in the current response. This can occur even when the response includes no values at all, such as when you ask for a filtered view of a very long list. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to continue processing and get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back empty (as <code>null</code>).</p>\n@param nextToken If present in the response, this value indicates there's more output available that what's included in the current response. This can occur even when the response includes no values at all, such as when you ask for a filtered view of a very long list. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to continue processing and get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back empty (as <code>null</code>).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7731,6 +7866,7 @@
                 "variableSetterType" : "RequestedServiceQuotaChange"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7775,6 +7911,7 @@
             "variableSetterType" : "java.util.Collection<RequestedServiceQuotaChange>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Returns a list of service quota requests.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRequestedQuotas(java.util.Collection)} or {@link #withRequestedQuotas(java.util.Collection)} if you want to override the existing values.</p>\n@param requestedQuotas Returns a list of service quota requests.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7790,6 +7927,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.servicequotas.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -7824,6 +7962,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.servicequotas.request.ListServiceQuotaIncreaseRequestsInTemplateRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7892,6 +8031,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier for a service. When performing an operation, use the <code>ServiceCode</code> to specify a particular service. </p>\n@param serviceCode The identifier for a service. When performing an operation, use the <code>ServiceCode</code> to specify a particular service.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7960,6 +8100,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies the AWS Region for the quota that you want to use.</p>\n@param awsRegion Specifies the AWS Region for the quota that you want to use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8028,6 +8169,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>(Optional) Use this parameter in a request if you receive a <code>NextToken</code> response in a previous request that indicates that there's more output available. In a subsequent call, set it to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>\n@param nextToken (Optional) Use this parameter in a request if you receive a <code>NextToken</code> response in a previous request that indicates that there's more output available. In a subsequent call, set it to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8096,6 +8238,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>(Optional) Limits the number of results that you want to include in the response. If you don't include this parameter, the response defaults to a value that's specific to the operation. If additional items exist beyond the specified maximum, the <code>NextToken</code> element is present and has a value (isn't null). Include that value as the <code>NextToken</code> request parameter in the call to the operation to get the next part of the results. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>\n@param maxResults (Optional) Limits the number of results that you want to include in the response. If you don't include this parameter, the response defaults to a value that's specific to the operation. If additional items exist beyond the specified maximum, the <code>NextToken</code> element is present and has a value (isn't null). Include that value as the <code>NextToken</code> request parameter in the call to the operation to get the next part of the results. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8166,6 +8309,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies the AWS Region for the quota that you want to use.</p>\n@param awsRegion Specifies the AWS Region for the quota that you want to use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8235,6 +8379,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>(Optional) Limits the number of results that you want to include in the response. If you don't include this parameter, the response defaults to a value that's specific to the operation. If additional items exist beyond the specified maximum, the <code>NextToken</code> element is present and has a value (isn't null). Include that value as the <code>NextToken</code> request parameter in the call to the operation to get the next part of the results. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>\n@param maxResults (Optional) Limits the number of results that you want to include in the response. If you don't include this parameter, the response defaults to a value that's specific to the operation. If additional items exist beyond the specified maximum, the <code>NextToken</code> element is present and has a value (isn't null). Include that value as the <code>NextToken</code> request parameter in the call to the operation to get the next part of the results. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8304,6 +8449,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>(Optional) Use this parameter in a request if you receive a <code>NextToken</code> response in a previous request that indicates that there's more output available. In a subsequent call, set it to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>\n@param nextToken (Optional) Use this parameter in a request if you receive a <code>NextToken</code> response in a previous request that indicates that there's more output available. In a subsequent call, set it to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8373,6 +8519,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier for a service. When performing an operation, use the <code>ServiceCode</code> to specify a particular service. </p>\n@param serviceCode The identifier for a service. When performing an operation, use the <code>ServiceCode</code> to specify a particular service.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8388,6 +8535,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.servicequotas.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -8419,6 +8567,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.servicequotas.response.ListServiceQuotaIncreaseRequestsInTemplateResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8519,6 +8668,7 @@
               "variableSetterType" : "ServiceQuotaIncreaseRequestInTemplate"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8563,6 +8713,7 @@
           "variableSetterType" : "java.util.Collection<ServiceQuotaIncreaseRequestInTemplate>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Returns the list of values of the quota increase request in the template.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setServiceQuotaIncreaseRequestInTemplateList(java.util.Collection)} or {@link #withServiceQuotaIncreaseRequestInTemplateList(java.util.Collection)} if you want to override the existing values.</p>\n@param serviceQuotaIncreaseRequestInTemplateList Returns the list of values of the quota increase request in the template.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8631,6 +8782,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If present in the response, this value indicates there's more output available that what's included in the current response. This can occur even when the response includes no values at all, such as when you ask for a filtered view of a very long list. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to continue processing and get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back empty (as <code>null</code>).</p>\n@param nextToken If present in the response, this value indicates there's more output available that what's included in the current response. This can occur even when the response includes no values at all, such as when you ask for a filtered view of a very long list. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to continue processing and get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back empty (as <code>null</code>).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8701,6 +8853,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If present in the response, this value indicates there's more output available that what's included in the current response. This can occur even when the response includes no values at all, such as when you ask for a filtered view of a very long list. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to continue processing and get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back empty (as <code>null</code>).</p>\n@param nextToken If present in the response, this value indicates there's more output available that what's included in the current response. This can occur even when the response includes no values at all, such as when you ask for a filtered view of a very long list. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to continue processing and get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back empty (as <code>null</code>).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8809,6 +8962,7 @@
                 "variableSetterType" : "ServiceQuotaIncreaseRequestInTemplate"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8853,6 +9007,7 @@
             "variableSetterType" : "java.util.Collection<ServiceQuotaIncreaseRequestInTemplate>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Returns the list of values of the quota increase request in the template.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setServiceQuotaIncreaseRequestInTemplateList(java.util.Collection)} or {@link #withServiceQuotaIncreaseRequestInTemplateList(java.util.Collection)} if you want to override the existing values.</p>\n@param serviceQuotaIncreaseRequestInTemplateList Returns the list of values of the quota increase request in the template.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8868,6 +9023,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.servicequotas.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -8902,6 +9058,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.servicequotas.request.ListServiceQuotasRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8970,6 +9127,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier for a service. When performing an operation, use the <code>ServiceCode</code> to specify a particular service. </p>\n@param serviceCode The identifier for a service. When performing an operation, use the <code>ServiceCode</code> to specify a particular service.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9038,6 +9196,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>(Optional) Use this parameter in a request if you receive a <code>NextToken</code> response in a previous request that indicates that there's more output available. In a subsequent call, set it to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>\n@param nextToken (Optional) Use this parameter in a request if you receive a <code>NextToken</code> response in a previous request that indicates that there's more output available. In a subsequent call, set it to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9106,6 +9265,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>(Optional) Limits the number of results that you want to include in the response. If you don't include this parameter, the response defaults to a value that's specific to the operation. If additional items exist beyond the specified maximum, the <code>NextToken</code> element is present and has a value (isn't null). Include that value as the <code>NextToken</code> request parameter in the call to the operation to get the next part of the results. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>\n@param maxResults (Optional) Limits the number of results that you want to include in the response. If you don't include this parameter, the response defaults to a value that's specific to the operation. If additional items exist beyond the specified maximum, the <code>NextToken</code> element is present and has a value (isn't null). Include that value as the <code>NextToken</code> request parameter in the call to the operation to get the next part of the results. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9176,6 +9336,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>(Optional) Limits the number of results that you want to include in the response. If you don't include this parameter, the response defaults to a value that's specific to the operation. If additional items exist beyond the specified maximum, the <code>NextToken</code> element is present and has a value (isn't null). Include that value as the <code>NextToken</code> request parameter in the call to the operation to get the next part of the results. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>\n@param maxResults (Optional) Limits the number of results that you want to include in the response. If you don't include this parameter, the response defaults to a value that's specific to the operation. If additional items exist beyond the specified maximum, the <code>NextToken</code> element is present and has a value (isn't null). Include that value as the <code>NextToken</code> request parameter in the call to the operation to get the next part of the results. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9245,6 +9406,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>(Optional) Use this parameter in a request if you receive a <code>NextToken</code> response in a previous request that indicates that there's more output available. In a subsequent call, set it to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>\n@param nextToken (Optional) Use this parameter in a request if you receive a <code>NextToken</code> response in a previous request that indicates that there's more output available. In a subsequent call, set it to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9314,6 +9476,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier for a service. When performing an operation, use the <code>ServiceCode</code> to specify a particular service. </p>\n@param serviceCode The identifier for a service. When performing an operation, use the <code>ServiceCode</code> to specify a particular service.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9329,6 +9492,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.servicequotas.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ServiceCode" ],
@@ -9360,6 +9524,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.servicequotas.response.ListServiceQuotasResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -9421,6 +9586,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If present in the response, this value indicates there's more output available that what's included in the current response. This can occur even when the response includes no values at all, such as when you ask for a filtered view of a very long list. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to continue processing and get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back empty (as <code>null</code>).</p>\n@param nextToken If present in the response, this value indicates there's more output available that what's included in the current response. This can occur even when the response includes no values at all, such as when you ask for a filtered view of a very long list. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to continue processing and get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back empty (as <code>null</code>).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9528,6 +9694,7 @@
               "variableSetterType" : "ServiceQuota"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9572,6 +9739,7 @@
           "variableSetterType" : "java.util.Collection<ServiceQuota>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The response information for a quota lists all attribute information for the quota. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setQuotas(java.util.Collection)} or {@link #withQuotas(java.util.Collection)} if you want to override the existing values.</p>\n@param quotas The response information for a quota lists all attribute information for the quota.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9642,6 +9810,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If present in the response, this value indicates there's more output available that what's included in the current response. This can occur even when the response includes no values at all, such as when you ask for a filtered view of a very long list. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to continue processing and get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back empty (as <code>null</code>).</p>\n@param nextToken If present in the response, this value indicates there's more output available that what's included in the current response. This can occur even when the response includes no values at all, such as when you ask for a filtered view of a very long list. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to continue processing and get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back empty (as <code>null</code>).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9750,6 +9919,7 @@
                 "variableSetterType" : "ServiceQuota"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9794,6 +9964,7 @@
             "variableSetterType" : "java.util.Collection<ServiceQuota>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The response information for a quota lists all attribute information for the quota. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setQuotas(java.util.Collection)} or {@link #withQuotas(java.util.Collection)} if you want to override the existing values.</p>\n@param quotas The response information for a quota lists all attribute information for the quota.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9809,6 +9980,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.servicequotas.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -9843,6 +10015,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.servicequotas.request.ListServicesRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -9911,6 +10084,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>(Optional) Use this parameter in a request if you receive a <code>NextToken</code> response in a previous request that indicates that there's more output available. In a subsequent call, set it to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>\n@param nextToken (Optional) Use this parameter in a request if you receive a <code>NextToken</code> response in a previous request that indicates that there's more output available. In a subsequent call, set it to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9979,6 +10153,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>(Optional) Limits the number of results that you want to include in the response. If you don't include this parameter, the response defaults to a value that's specific to the operation. If additional items exist beyond the specified maximum, the <code>NextToken</code> element is present and has a value (isn't null). Include that value as the <code>NextToken</code> request parameter in the call to the operation to get the next part of the results. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>\n@param maxResults (Optional) Limits the number of results that you want to include in the response. If you don't include this parameter, the response defaults to a value that's specific to the operation. If additional items exist beyond the specified maximum, the <code>NextToken</code> element is present and has a value (isn't null). Include that value as the <code>NextToken</code> request parameter in the call to the operation to get the next part of the results. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10049,6 +10224,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>(Optional) Limits the number of results that you want to include in the response. If you don't include this parameter, the response defaults to a value that's specific to the operation. If additional items exist beyond the specified maximum, the <code>NextToken</code> element is present and has a value (isn't null). Include that value as the <code>NextToken</code> request parameter in the call to the operation to get the next part of the results. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>\n@param maxResults (Optional) Limits the number of results that you want to include in the response. If you don't include this parameter, the response defaults to a value that's specific to the operation. If additional items exist beyond the specified maximum, the <code>NextToken</code> element is present and has a value (isn't null). Include that value as the <code>NextToken</code> request parameter in the call to the operation to get the next part of the results. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10118,6 +10294,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>(Optional) Use this parameter in a request if you receive a <code>NextToken</code> response in a previous request that indicates that there's more output available. In a subsequent call, set it to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>\n@param nextToken (Optional) Use this parameter in a request if you receive a <code>NextToken</code> response in a previous request that indicates that there's more output available. In a subsequent call, set it to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10133,6 +10310,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.servicequotas.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -10164,6 +10342,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.servicequotas.response.ListServicesResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -10225,6 +10404,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If present in the response, this value indicates there's more output available that what's included in the current response. This can occur even when the response includes no values at all, such as when you ask for a filtered view of a very long list. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to continue processing and get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back empty (as <code>null</code>).</p>\n@param nextToken If present in the response, this value indicates there's more output available that what's included in the current response. This can occur even when the response includes no values at all, such as when you ask for a filtered view of a very long list. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to continue processing and get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back empty (as <code>null</code>).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10332,6 +10512,7 @@
               "variableSetterType" : "ServiceInfo"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10376,6 +10557,7 @@
           "variableSetterType" : "java.util.Collection<ServiceInfo>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Returns a list of services. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setServices(java.util.Collection)} or {@link #withServices(java.util.Collection)} if you want to override the existing values.</p>\n@param services Returns a list of services.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10446,6 +10628,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If present in the response, this value indicates there's more output available that what's included in the current response. This can occur even when the response includes no values at all, such as when you ask for a filtered view of a very long list. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to continue processing and get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back empty (as <code>null</code>).</p>\n@param nextToken If present in the response, this value indicates there's more output available that what's included in the current response. This can occur even when the response includes no values at all, such as when you ask for a filtered view of a very long list. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to continue processing and get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back empty (as <code>null</code>).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10554,6 +10737,7 @@
                 "variableSetterType" : "ServiceInfo"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10598,6 +10782,7 @@
             "variableSetterType" : "java.util.Collection<ServiceInfo>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Returns a list of services. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setServices(java.util.Collection)} or {@link #withServices(java.util.Collection)} if you want to override the existing values.</p>\n@param services Returns a list of services.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10613,6 +10798,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.servicequotas.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -10647,6 +10833,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.servicequotas.model.MetricInfo",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -10708,6 +10895,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The namespace of the metric. The namespace is a container for CloudWatch metrics. You can specify a name for the namespace when you create a metric.</p>\n@param metricNamespace The namespace of the metric. The namespace is a container for CloudWatch metrics. You can specify a name for the namespace when you create a metric.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10776,6 +10964,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the CloudWatch metric that measures usage of a service quota. This is a required field.</p>\n@param metricName The name of the CloudWatch metric that measures usage of a service quota. This is a required field.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10889,6 +11078,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10927,6 +11117,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A dimension is a name/value pair that is part of the identity of a metric. Every metric has specific characteristics that describe it, and you can think of dimensions as categories for those characteristics. These dimensions are part of the CloudWatch Metric Identity that measures usage against a particular service quota.</p>\n@param metricDimensions A dimension is a name/value pair that is part of the identity of a metric. Every metric has specific characteristics that describe it, and you can think of dimensions as categories for those characteristics. These dimensions are part of the CloudWatch Metric Identity that measures usage against a particular service quota.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10995,6 +11186,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Statistics are metric data aggregations over specified periods of time. This is the recommended statistic to use when comparing usage in the CloudWatch Metric against your Service Quota.</p>\n@param metricStatisticRecommendation Statistics are metric data aggregations over specified periods of time. This is the recommended statistic to use when comparing usage in the CloudWatch Metric against your Service Quota.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11110,6 +11302,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11148,6 +11341,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A dimension is a name/value pair that is part of the identity of a metric. Every metric has specific characteristics that describe it, and you can think of dimensions as categories for those characteristics. These dimensions are part of the CloudWatch Metric Identity that measures usage against a particular service quota.</p>\n@param metricDimensions A dimension is a name/value pair that is part of the identity of a metric. Every metric has specific characteristics that describe it, and you can think of dimensions as categories for those characteristics. These dimensions are part of the CloudWatch Metric Identity that measures usage against a particular service quota.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11217,6 +11411,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the CloudWatch metric that measures usage of a service quota. This is a required field.</p>\n@param metricName The name of the CloudWatch metric that measures usage of a service quota. This is a required field.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11286,6 +11481,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The namespace of the metric. The namespace is a container for CloudWatch metrics. You can specify a name for the namespace when you create a metric.</p>\n@param metricNamespace The namespace of the metric. The namespace is a container for CloudWatch metrics. You can specify a name for the namespace when you create a metric.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11355,6 +11551,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Statistics are metric data aggregations over specified periods of time. This is the recommended statistic to use when comparing usage in the CloudWatch Metric against your Service Quota.</p>\n@param metricStatisticRecommendation Statistics are metric data aggregations over specified periods of time. This is the recommended statistic to use when comparing usage in the CloudWatch Metric against your Service Quota.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11370,6 +11567,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.servicequotas.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -11404,6 +11602,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "NoAvailableOrganizationException",
+      "fullyQualifiedName" : "com.amazonaws.services.servicequotas.exception.NoAvailableOrganizationException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -11412,6 +11611,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.servicequotas.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -11443,6 +11643,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "NoSuchResourceException",
+      "fullyQualifiedName" : "com.amazonaws.services.servicequotas.exception.NoSuchResourceException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -11451,6 +11652,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.servicequotas.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -11482,6 +11684,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "OrganizationNotInAllFeaturesModeException",
+      "fullyQualifiedName" : "com.amazonaws.services.servicequotas.exception.OrganizationNotInAllFeaturesModeException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -11490,6 +11693,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.servicequotas.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -11542,6 +11746,7 @@
         "value" : "WEEK"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.servicequotas.enum.PeriodUnit",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -11550,6 +11755,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.servicequotas.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -11584,6 +11790,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.servicequotas.request.PutServiceQuotaIncreaseRequestIntoTemplateRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -11652,6 +11859,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies the service quota that you want to use.</p>\n@param quotaCode Specifies the service quota that you want to use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11720,6 +11928,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies the service that you want to use.</p>\n@param serviceCode Specifies the service that you want to use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11788,6 +11997,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies the AWS Region for the quota. </p>\n@param awsRegion Specifies the AWS Region for the quota.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11856,6 +12066,7 @@
           "variableSetterType" : "Double"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies the new, increased value for the quota. </p>\n@param desiredValue Specifies the new, increased value for the quota.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11926,6 +12137,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies the AWS Region for the quota. </p>\n@param awsRegion Specifies the AWS Region for the quota.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11995,6 +12207,7 @@
             "variableSetterType" : "Double"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies the new, increased value for the quota. </p>\n@param desiredValue Specifies the new, increased value for the quota.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12064,6 +12277,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies the service quota that you want to use.</p>\n@param quotaCode Specifies the service quota that you want to use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12133,6 +12347,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies the service that you want to use.</p>\n@param serviceCode Specifies the service that you want to use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12148,6 +12363,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.servicequotas.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "QuotaCode", "ServiceCode", "AwsRegion", "DesiredValue" ],
@@ -12179,6 +12395,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.servicequotas.response.PutServiceQuotaIncreaseRequestIntoTemplateResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -12240,6 +12457,7 @@
           "variableSetterType" : "ServiceQuotaIncreaseRequestInTemplate"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A structure that contains information about one service quota increase request.</p>\n@param serviceQuotaIncreaseRequestInTemplate A structure that contains information about one service quota increase request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12310,6 +12528,7 @@
             "variableSetterType" : "ServiceQuotaIncreaseRequestInTemplate"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A structure that contains information about one service quota increase request.</p>\n@param serviceQuotaIncreaseRequestInTemplate A structure that contains information about one service quota increase request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12325,6 +12544,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.servicequotas.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -12359,6 +12579,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "QuotaExceededException",
+      "fullyQualifiedName" : "com.amazonaws.services.servicequotas.exception.QuotaExceededException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -12367,6 +12588,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.servicequotas.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -12398,6 +12620,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.servicequotas.model.QuotaPeriod",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -12459,6 +12682,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The value of a period.</p>\n@param periodValue The value of a period.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12527,6 +12751,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The time unit of a period.</p>\n@param periodUnit The time unit of a period.\n@return Returns a reference to this object so that method calls can be chained together.\n@see PeriodUnit*/",
@@ -12597,6 +12822,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The time unit of a period.</p>\n@param periodUnit The time unit of a period.\n@return Returns a reference to this object so that method calls can be chained together.\n@see PeriodUnit*/",
@@ -12666,6 +12892,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The value of a period.</p>\n@param periodValue The value of a period.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12681,6 +12908,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.servicequotas.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -12715,6 +12943,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.servicequotas.request.RequestServiceQuotaIncreaseRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -12783,6 +13012,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies the service that you want to use.</p>\n@param serviceCode Specifies the service that you want to use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12851,6 +13081,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies the service quota that you want to use.</p>\n@param quotaCode Specifies the service quota that you want to use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12919,6 +13150,7 @@
           "variableSetterType" : "Double"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies the value submitted in the service quota increase request. </p>\n@param desiredValue Specifies the value submitted in the service quota increase request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12989,6 +13221,7 @@
             "variableSetterType" : "Double"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies the value submitted in the service quota increase request. </p>\n@param desiredValue Specifies the value submitted in the service quota increase request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13058,6 +13291,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies the service quota that you want to use.</p>\n@param quotaCode Specifies the service quota that you want to use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13127,6 +13361,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies the service that you want to use.</p>\n@param serviceCode Specifies the service that you want to use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13142,6 +13377,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.servicequotas.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ServiceCode", "QuotaCode", "DesiredValue" ],
@@ -13173,6 +13409,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.servicequotas.response.RequestServiceQuotaIncreaseResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -13234,6 +13471,7 @@
           "variableSetterType" : "RequestedServiceQuotaChange"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Returns a list of service quota requests.</p>\n@param requestedQuota Returns a list of service quota requests.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13304,6 +13542,7 @@
             "variableSetterType" : "RequestedServiceQuotaChange"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Returns a list of service quota requests.</p>\n@param requestedQuota Returns a list of service quota requests.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13319,6 +13558,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.servicequotas.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -13368,6 +13608,7 @@
         "value" : "CASE_CLOSED"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.servicequotas.enum.RequestStatus",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -13376,6 +13617,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.servicequotas.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -13410,6 +13652,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.servicequotas.model.RequestedServiceQuotaChange",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -13471,6 +13714,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier of a requested service quota change.</p>\n@param id The unique identifier of a requested service quota change.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13539,6 +13783,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The case Id for the service quota increase request.</p>\n@param caseId The case Id for the service quota increase request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13607,6 +13852,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies the service that you want to use.</p>\n@param serviceCode Specifies the service that you want to use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13675,6 +13921,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the AWS service specified in the increase request. </p>\n@param serviceName The name of the AWS service specified in the increase request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13743,6 +13990,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies the service quota that you want to use.</p>\n@param quotaCode Specifies the service quota that you want to use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13811,6 +14059,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Name of the service quota.</p>\n@param quotaName Name of the service quota.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13879,6 +14128,7 @@
           "variableSetterType" : "Double"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>New increased value for the service quota.</p>\n@param desiredValue New increased value for the service quota.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13947,6 +14197,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>State of the service quota increase request.</p>\n@param status State of the service quota increase request.\n@return Returns a reference to this object so that method calls can be chained together.\n@see RequestStatus*/",
@@ -14015,6 +14266,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date and time when the service quota increase request was received and the case Id was created. </p>\n@param created The date and time when the service quota increase request was received and the case Id was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14083,6 +14335,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date and time of the most recent change in the service quota increase request.</p>\n@param lastUpdated The date and time of the most recent change in the service quota increase request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14151,6 +14404,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The IAM identity who submitted the service quota increase request.</p>\n@param requester The IAM identity who submitted the service quota increase request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14219,6 +14473,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the service quota.</p>\n@param quotaArn The Amazon Resource Name (ARN) of the service quota.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14287,6 +14542,7 @@
           "variableSetterType" : "Boolean"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Identifies if the quota is global.</p>\n@param globalQuota Identifies if the quota is global.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14355,6 +14611,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies the unit used for the quota.</p>\n@param unit Specifies the unit used for the quota.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14425,6 +14682,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The case Id for the service quota increase request.</p>\n@param caseId The case Id for the service quota increase request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14494,6 +14752,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date and time when the service quota increase request was received and the case Id was created. </p>\n@param created The date and time when the service quota increase request was received and the case Id was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14563,6 +14822,7 @@
             "variableSetterType" : "Double"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>New increased value for the service quota.</p>\n@param desiredValue New increased value for the service quota.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14632,6 +14892,7 @@
             "variableSetterType" : "Boolean"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Identifies if the quota is global.</p>\n@param globalQuota Identifies if the quota is global.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14701,6 +14962,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier of a requested service quota change.</p>\n@param id The unique identifier of a requested service quota change.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14770,6 +15032,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date and time of the most recent change in the service quota increase request.</p>\n@param lastUpdated The date and time of the most recent change in the service quota increase request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14839,6 +15102,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the service quota.</p>\n@param quotaArn The Amazon Resource Name (ARN) of the service quota.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14908,6 +15172,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies the service quota that you want to use.</p>\n@param quotaCode Specifies the service quota that you want to use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14977,6 +15242,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Name of the service quota.</p>\n@param quotaName Name of the service quota.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15046,6 +15312,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The IAM identity who submitted the service quota increase request.</p>\n@param requester The IAM identity who submitted the service quota increase request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15115,6 +15382,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies the service that you want to use.</p>\n@param serviceCode Specifies the service that you want to use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15184,6 +15452,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the AWS service specified in the increase request. </p>\n@param serviceName The name of the AWS service specified in the increase request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15253,6 +15522,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>State of the service quota increase request.</p>\n@param status State of the service quota increase request.\n@return Returns a reference to this object so that method calls can be chained together.\n@see RequestStatus*/",
@@ -15322,6 +15592,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies the unit used for the quota.</p>\n@param unit Specifies the unit used for the quota.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15337,6 +15608,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.servicequotas.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -15371,6 +15643,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ResourceAlreadyExistsException",
+      "fullyQualifiedName" : "com.amazonaws.services.servicequotas.exception.ResourceAlreadyExistsException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -15379,6 +15652,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.servicequotas.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -15410,6 +15684,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ServiceException",
+      "fullyQualifiedName" : "com.amazonaws.services.servicequotas.exception.ServiceException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -15418,6 +15693,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.servicequotas.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -15449,6 +15725,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.servicequotas.model.ServiceInfo",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -15510,6 +15787,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies the service that you want to use.</p>\n@param serviceCode Specifies the service that you want to use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15578,6 +15856,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the AWS service specified in the increase request. </p>\n@param serviceName The name of the AWS service specified in the increase request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15648,6 +15927,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies the service that you want to use.</p>\n@param serviceCode Specifies the service that you want to use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15717,6 +15997,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the AWS service specified in the increase request. </p>\n@param serviceName The name of the AWS service specified in the increase request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15732,6 +16013,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.servicequotas.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -15766,6 +16048,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.servicequotas.model.ServiceQuota",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -15827,6 +16110,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies the service that you want to use.</p>\n@param serviceCode Specifies the service that you want to use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15895,6 +16179,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the AWS service specified in the increase request. </p>\n@param serviceName The name of the AWS service specified in the increase request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15963,6 +16248,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the service quota.</p>\n@param quotaArn The Amazon Resource Name (ARN) of the service quota.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16031,6 +16317,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The code identifier for the service quota specified.</p>\n@param quotaCode The code identifier for the service quota specified.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16099,6 +16386,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name identifier of the service quota.</p>\n@param quotaName The name identifier of the service quota.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16167,6 +16455,7 @@
           "variableSetterType" : "Double"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The value of service quota.</p>\n@param value The value of service quota.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16235,6 +16524,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unit of measurement for the value of the service quota.</p>\n@param unit The unit of measurement for the value of the service quota.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16303,6 +16593,7 @@
           "variableSetterType" : "Boolean"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies if the quota value can be increased.</p>\n@param adjustable Specifies if the quota value can be increased.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16371,6 +16662,7 @@
           "variableSetterType" : "Boolean"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies if the quota is global.</p>\n@param globalQuota Specifies if the quota is global.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16439,6 +16731,7 @@
           "variableSetterType" : "MetricInfo"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies the details about the measurement. </p>\n@param usageMetric Specifies the details about the measurement.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16507,6 +16800,7 @@
           "variableSetterType" : "QuotaPeriod"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Identifies the unit and value of how time is measured.</p>\n@param period Identifies the unit and value of how time is measured.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16575,6 +16869,7 @@
           "variableSetterType" : "ErrorReason"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies the <code>ErrorCode</code> and <code>ErrorMessage</code> when success isn't achieved.</p>\n@param errorReason Specifies the <code>ErrorCode</code> and <code>ErrorMessage</code> when success isn't achieved.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16645,6 +16940,7 @@
             "variableSetterType" : "Boolean"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies if the quota value can be increased.</p>\n@param adjustable Specifies if the quota value can be increased.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16714,6 +17010,7 @@
             "variableSetterType" : "ErrorReason"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies the <code>ErrorCode</code> and <code>ErrorMessage</code> when success isn't achieved.</p>\n@param errorReason Specifies the <code>ErrorCode</code> and <code>ErrorMessage</code> when success isn't achieved.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16783,6 +17080,7 @@
             "variableSetterType" : "Boolean"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies if the quota is global.</p>\n@param globalQuota Specifies if the quota is global.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16852,6 +17150,7 @@
             "variableSetterType" : "QuotaPeriod"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Identifies the unit and value of how time is measured.</p>\n@param period Identifies the unit and value of how time is measured.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16921,6 +17220,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the service quota.</p>\n@param quotaArn The Amazon Resource Name (ARN) of the service quota.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16990,6 +17290,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The code identifier for the service quota specified.</p>\n@param quotaCode The code identifier for the service quota specified.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17059,6 +17360,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name identifier of the service quota.</p>\n@param quotaName The name identifier of the service quota.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17128,6 +17430,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies the service that you want to use.</p>\n@param serviceCode Specifies the service that you want to use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17197,6 +17500,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the AWS service specified in the increase request. </p>\n@param serviceName The name of the AWS service specified in the increase request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17266,6 +17570,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unit of measurement for the value of the service quota.</p>\n@param unit The unit of measurement for the value of the service quota.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17335,6 +17640,7 @@
             "variableSetterType" : "MetricInfo"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies the details about the measurement. </p>\n@param usageMetric Specifies the details about the measurement.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17404,6 +17710,7 @@
             "variableSetterType" : "Double"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The value of service quota.</p>\n@param value The value of service quota.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17419,6 +17726,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.servicequotas.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -17453,6 +17761,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.servicequotas.model.ServiceQuotaIncreaseRequestInTemplate",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -17514,6 +17823,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The code identifier for the AWS service specified in the increase request.</p>\n@param serviceCode The code identifier for the AWS service specified in the increase request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17582,6 +17892,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the AWS service specified in the increase request. </p>\n@param serviceName The name of the AWS service specified in the increase request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17650,6 +17961,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The code identifier for the service quota specified in the increase request.</p>\n@param quotaCode The code identifier for the service quota specified in the increase request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17718,6 +18030,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the service quota in the increase request.</p>\n@param quotaName The name of the service quota in the increase request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17786,6 +18099,7 @@
           "variableSetterType" : "Double"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Identifies the new, increased value of the service quota in the increase request. </p>\n@param desiredValue Identifies the new, increased value of the service quota in the increase request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17854,6 +18168,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The AWS Region where the increase request occurs.</p>\n@param awsRegion The AWS Region where the increase request occurs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17922,6 +18237,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unit of measure for the increase request.</p>\n@param unit The unit of measure for the increase request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17990,6 +18306,7 @@
           "variableSetterType" : "Boolean"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies if the quota is a global quota.</p>\n@param globalQuota Specifies if the quota is a global quota.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18060,6 +18377,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The AWS Region where the increase request occurs.</p>\n@param awsRegion The AWS Region where the increase request occurs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18129,6 +18447,7 @@
             "variableSetterType" : "Double"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Identifies the new, increased value of the service quota in the increase request. </p>\n@param desiredValue Identifies the new, increased value of the service quota in the increase request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18198,6 +18517,7 @@
             "variableSetterType" : "Boolean"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies if the quota is a global quota.</p>\n@param globalQuota Specifies if the quota is a global quota.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18267,6 +18587,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The code identifier for the service quota specified in the increase request.</p>\n@param quotaCode The code identifier for the service quota specified in the increase request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18336,6 +18657,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the service quota in the increase request.</p>\n@param quotaName The name of the service quota in the increase request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18405,6 +18727,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The code identifier for the AWS service specified in the increase request.</p>\n@param serviceCode The code identifier for the AWS service specified in the increase request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18474,6 +18797,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the AWS service specified in the increase request. </p>\n@param serviceName The name of the AWS service specified in the increase request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18543,6 +18867,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unit of measure for the increase request.</p>\n@param unit The unit of measure for the increase request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18558,6 +18883,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.servicequotas.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -18598,6 +18924,7 @@
         "value" : "DISASSOCIATED"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.servicequotas.enum.ServiceQuotaTemplateAssociationStatus",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -18606,6 +18933,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.servicequotas.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -18640,6 +18968,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ServiceQuotaTemplateNotInUseException",
+      "fullyQualifiedName" : "com.amazonaws.services.servicequotas.exception.ServiceQuotaTemplateNotInUseException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -18648,6 +18977,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.servicequotas.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -18679,6 +19009,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "TemplatesNotAvailableInRegionException",
+      "fullyQualifiedName" : "com.amazonaws.services.servicequotas.exception.TemplatesNotAvailableInRegionException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -18687,6 +19018,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.servicequotas.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -18718,6 +19050,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "TooManyRequestsException",
+      "fullyQualifiedName" : "com.amazonaws.services.servicequotas.exception.TooManyRequestsException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -18726,6 +19059,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.servicequotas.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,

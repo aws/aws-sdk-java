@@ -50,11 +50,15 @@ public class StartTaskResultJsonUnmarshaller implements Unmarshaller<StartTaskRe
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("tasks", targetDepth)) {
                     context.nextToken();
-                    startTaskResult.setTasks(new ListUnmarshaller<Task>(TaskJsonUnmarshaller.getInstance()).unmarshall(context));
+                    startTaskResult.setTasks(new ListUnmarshaller<Task>(TaskJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("failures", targetDepth)) {
                     context.nextToken();
-                    startTaskResult.setFailures(new ListUnmarshaller<Failure>(FailureJsonUnmarshaller.getInstance()).unmarshall(context));
+                    startTaskResult.setFailures(new ListUnmarshaller<Failure>(FailureJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

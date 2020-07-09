@@ -56,7 +56,9 @@ public class LoadBalancerTlsCertificateRenewalSummaryJsonUnmarshaller implements
                 if (context.testExpression("domainValidationOptions", targetDepth)) {
                     context.nextToken();
                     loadBalancerTlsCertificateRenewalSummary.setDomainValidationOptions(new ListUnmarshaller<LoadBalancerTlsCertificateDomainValidationOption>(
-                            LoadBalancerTlsCertificateDomainValidationOptionJsonUnmarshaller.getInstance()).unmarshall(context));
+                            LoadBalancerTlsCertificateDomainValidationOptionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

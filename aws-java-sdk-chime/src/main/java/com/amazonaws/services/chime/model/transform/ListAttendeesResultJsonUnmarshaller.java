@@ -50,7 +50,9 @@ public class ListAttendeesResultJsonUnmarshaller implements Unmarshaller<ListAtt
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Attendees", targetDepth)) {
                     context.nextToken();
-                    listAttendeesResult.setAttendees(new ListUnmarshaller<Attendee>(AttendeeJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listAttendeesResult.setAttendees(new ListUnmarshaller<Attendee>(AttendeeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

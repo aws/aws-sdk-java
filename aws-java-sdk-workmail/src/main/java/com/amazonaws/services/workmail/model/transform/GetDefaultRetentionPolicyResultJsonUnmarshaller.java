@@ -63,7 +63,9 @@ public class GetDefaultRetentionPolicyResultJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("FolderConfigurations", targetDepth)) {
                     context.nextToken();
                     getDefaultRetentionPolicyResult.setFolderConfigurations(new ListUnmarshaller<FolderConfiguration>(FolderConfigurationJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

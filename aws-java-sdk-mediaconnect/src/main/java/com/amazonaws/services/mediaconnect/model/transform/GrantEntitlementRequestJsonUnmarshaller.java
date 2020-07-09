@@ -66,7 +66,9 @@ public class GrantEntitlementRequestJsonUnmarshaller implements Unmarshaller<Gra
                 }
                 if (context.testExpression("subscribers", targetDepth)) {
                     context.nextToken();
-                    grantEntitlementRequest.setSubscribers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    grantEntitlementRequest.setSubscribers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

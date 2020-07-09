@@ -51,7 +51,9 @@ public class BatchUpdateDetectorResultJsonUnmarshaller implements Unmarshaller<B
                 if (context.testExpression("batchUpdateDetectorErrorEntries", targetDepth)) {
                     context.nextToken();
                     batchUpdateDetectorResult.setBatchUpdateDetectorErrorEntries(new ListUnmarshaller<BatchUpdateDetectorErrorEntry>(
-                            BatchUpdateDetectorErrorEntryJsonUnmarshaller.getInstance()).unmarshall(context));
+                            BatchUpdateDetectorErrorEntryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

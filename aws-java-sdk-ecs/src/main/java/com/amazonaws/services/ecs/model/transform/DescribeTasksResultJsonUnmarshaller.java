@@ -50,11 +50,15 @@ public class DescribeTasksResultJsonUnmarshaller implements Unmarshaller<Describ
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("tasks", targetDepth)) {
                     context.nextToken();
-                    describeTasksResult.setTasks(new ListUnmarshaller<Task>(TaskJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeTasksResult.setTasks(new ListUnmarshaller<Task>(TaskJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("failures", targetDepth)) {
                     context.nextToken();
-                    describeTasksResult.setFailures(new ListUnmarshaller<Failure>(FailureJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeTasksResult.setFailures(new ListUnmarshaller<Failure>(FailureJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

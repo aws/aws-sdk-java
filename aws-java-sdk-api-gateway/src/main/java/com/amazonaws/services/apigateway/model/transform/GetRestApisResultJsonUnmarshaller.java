@@ -54,7 +54,9 @@ public class GetRestApisResultJsonUnmarshaller implements Unmarshaller<GetRestAp
                 }
                 if (context.testExpression("item", targetDepth)) {
                     context.nextToken();
-                    getRestApisResult.setItems(new ListUnmarshaller<RestApi>(RestApiJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getRestApisResult.setItems(new ListUnmarshaller<RestApi>(RestApiJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

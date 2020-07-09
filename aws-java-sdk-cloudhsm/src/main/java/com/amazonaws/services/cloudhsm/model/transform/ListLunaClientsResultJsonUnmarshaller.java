@@ -50,7 +50,9 @@ public class ListLunaClientsResultJsonUnmarshaller implements Unmarshaller<ListL
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ClientList", targetDepth)) {
                     context.nextToken();
-                    listLunaClientsResult.setClientList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    listLunaClientsResult.setClientList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

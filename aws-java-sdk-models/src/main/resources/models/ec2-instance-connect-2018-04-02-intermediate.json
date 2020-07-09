@@ -152,6 +152,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "AuthException",
+      "fullyQualifiedName" : "com.amazonaws.services.ec2instanceconnect.exception.AuthException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -160,6 +161,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.ec2instanceconnect.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -191,6 +193,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "EC2InstanceNotFoundException",
+      "fullyQualifiedName" : "com.amazonaws.services.ec2instanceconnect.exception.EC2InstanceNotFoundException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -199,6 +202,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.ec2instanceconnect.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -230,6 +234,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InvalidArgsException",
+      "fullyQualifiedName" : "com.amazonaws.services.ec2instanceconnect.exception.InvalidArgsException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -238,6 +243,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.ec2instanceconnect.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -269,6 +275,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.ec2instanceconnect.request.SendSSHPublicKeyRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -337,6 +344,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The EC2 instance you wish to publish the SSH key to.</p>\n@param instanceId The EC2 instance you wish to publish the SSH key to.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -405,6 +413,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The OS user on the EC2 instance whom the key may be used to authenticate as.</p>\n@param instanceOSUser The OS user on the EC2 instance whom the key may be used to authenticate as.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -473,6 +482,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The public key to be published to the instance. To use it after publication you must have the matching private key.</p>\n@param sSHPublicKey The public key to be published to the instance. To use it after publication you must have the matching private key.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -541,6 +551,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The availability zone the EC2 instance was launched in.</p>\n@param availabilityZone The availability zone the EC2 instance was launched in.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -611,6 +622,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The availability zone the EC2 instance was launched in.</p>\n@param availabilityZone The availability zone the EC2 instance was launched in.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -680,6 +692,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The EC2 instance you wish to publish the SSH key to.</p>\n@param instanceId The EC2 instance you wish to publish the SSH key to.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -749,6 +762,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The OS user on the EC2 instance whom the key may be used to authenticate as.</p>\n@param instanceOSUser The OS user on the EC2 instance whom the key may be used to authenticate as.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -818,6 +832,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The public key to be published to the instance. To use it after publication you must have the matching private key.</p>\n@param sSHPublicKey The public key to be published to the instance. To use it after publication you must have the matching private key.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -833,6 +848,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.ec2instanceconnect.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "InstanceId", "InstanceOSUser", "SSHPublicKey", "AvailabilityZone" ],
@@ -864,6 +880,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.ec2instanceconnect.response.SendSSHPublicKeyResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -925,6 +942,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The request ID as logged by EC2 Connect. Please provide this when contacting AWS Support.</p>\n@param requestId The request ID as logged by EC2 Connect. Please provide this when contacting AWS Support.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -993,6 +1011,7 @@
           "variableSetterType" : "Boolean"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Indicates request success.</p>\n@param success Indicates request success.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1063,6 +1082,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The request ID as logged by EC2 Connect. Please provide this when contacting AWS Support.</p>\n@param requestId The request ID as logged by EC2 Connect. Please provide this when contacting AWS Support.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1132,6 +1152,7 @@
             "variableSetterType" : "Boolean"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Indicates request success.</p>\n@param success Indicates request success.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1147,6 +1168,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.ec2instanceconnect.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1181,6 +1203,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ServiceException",
+      "fullyQualifiedName" : "com.amazonaws.services.ec2instanceconnect.exception.ServiceException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1189,6 +1212,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.ec2instanceconnect.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1220,6 +1244,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ThrottlingException",
+      "fullyQualifiedName" : "com.amazonaws.services.ec2instanceconnect.exception.ThrottlingException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1228,6 +1253,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.ec2instanceconnect.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,

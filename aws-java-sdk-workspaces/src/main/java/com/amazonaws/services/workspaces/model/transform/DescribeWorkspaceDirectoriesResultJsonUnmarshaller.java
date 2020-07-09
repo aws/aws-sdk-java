@@ -51,7 +51,9 @@ public class DescribeWorkspaceDirectoriesResultJsonUnmarshaller implements Unmar
                 if (context.testExpression("Directories", targetDepth)) {
                     context.nextToken();
                     describeWorkspaceDirectoriesResult
-                            .setDirectories(new ListUnmarshaller<WorkspaceDirectory>(WorkspaceDirectoryJsonUnmarshaller.getInstance()).unmarshall(context));
+                            .setDirectories(new ListUnmarshaller<WorkspaceDirectory>(WorkspaceDirectoryJsonUnmarshaller.getInstance())
+
+                            .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

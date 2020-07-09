@@ -51,7 +51,9 @@ public class DescribeProjectVersionsResultJsonUnmarshaller implements Unmarshall
                 if (context.testExpression("ProjectVersionDescriptions", targetDepth)) {
                     context.nextToken();
                     describeProjectVersionsResult.setProjectVersionDescriptions(new ListUnmarshaller<ProjectVersionDescription>(
-                            ProjectVersionDescriptionJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ProjectVersionDescriptionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

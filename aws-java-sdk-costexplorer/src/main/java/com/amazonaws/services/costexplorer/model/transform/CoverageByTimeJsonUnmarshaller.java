@@ -55,7 +55,8 @@ public class CoverageByTimeJsonUnmarshaller implements Unmarshaller<CoverageByTi
                 if (context.testExpression("Groups", targetDepth)) {
                     context.nextToken();
                     coverageByTime.setGroups(new ListUnmarshaller<ReservationCoverageGroup>(ReservationCoverageGroupJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Total", targetDepth)) {
                     context.nextToken();

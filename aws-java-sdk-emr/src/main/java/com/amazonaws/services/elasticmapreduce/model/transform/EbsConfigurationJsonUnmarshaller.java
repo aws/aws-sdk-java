@@ -51,7 +51,8 @@ public class EbsConfigurationJsonUnmarshaller implements Unmarshaller<EbsConfigu
                 if (context.testExpression("EbsBlockDeviceConfigs", targetDepth)) {
                     context.nextToken();
                     ebsConfiguration.setEbsBlockDeviceConfigs(new ListUnmarshaller<EbsBlockDeviceConfig>(EbsBlockDeviceConfigJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("EbsOptimized", targetDepth)) {
                     context.nextToken();

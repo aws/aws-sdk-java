@@ -51,7 +51,9 @@ public class ListProvisionedCapacityResultJsonUnmarshaller implements Unmarshall
                 if (context.testExpression("ProvisionedCapacityList", targetDepth)) {
                     context.nextToken();
                     listProvisionedCapacityResult.setProvisionedCapacityList(new ListUnmarshaller<ProvisionedCapacityDescription>(
-                            ProvisionedCapacityDescriptionJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ProvisionedCapacityDescriptionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

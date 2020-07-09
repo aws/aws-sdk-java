@@ -51,7 +51,9 @@ public class ListChangeSetsResultJsonUnmarshaller implements Unmarshaller<ListCh
                 if (context.testExpression("ChangeSetSummaryList", targetDepth)) {
                     context.nextToken();
                     listChangeSetsResult.setChangeSetSummaryList(new ListUnmarshaller<ChangeSetSummaryListItem>(ChangeSetSummaryListItemJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

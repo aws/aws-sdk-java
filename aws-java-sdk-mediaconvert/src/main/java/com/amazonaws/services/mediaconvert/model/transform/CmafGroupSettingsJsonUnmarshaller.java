@@ -51,7 +51,8 @@ public class CmafGroupSettingsJsonUnmarshaller implements Unmarshaller<CmafGroup
                 if (context.testExpression("additionalManifests", targetDepth)) {
                     context.nextToken();
                     cmafGroupSettings.setAdditionalManifests(new ListUnmarshaller<CmafAdditionalManifest>(CmafAdditionalManifestJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("baseUrl", targetDepth)) {
                     context.nextToken();

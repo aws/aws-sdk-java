@@ -54,11 +54,15 @@ public class AwsCodeBuildProjectVpcConfigJsonUnmarshaller implements Unmarshalle
                 }
                 if (context.testExpression("Subnets", targetDepth)) {
                     context.nextToken();
-                    awsCodeBuildProjectVpcConfig.setSubnets(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    awsCodeBuildProjectVpcConfig.setSubnets(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("SecurityGroupIds", targetDepth)) {
                     context.nextToken();
-                    awsCodeBuildProjectVpcConfig.setSecurityGroupIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    awsCodeBuildProjectVpcConfig.setSecurityGroupIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

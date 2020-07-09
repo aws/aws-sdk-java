@@ -51,7 +51,9 @@ public class BatchPutMessageResultJsonUnmarshaller implements Unmarshaller<Batch
                 if (context.testExpression("BatchPutMessageErrorEntries", targetDepth)) {
                     context.nextToken();
                     batchPutMessageResult.setBatchPutMessageErrorEntries(new ListUnmarshaller<BatchPutMessageErrorEntry>(
-                            BatchPutMessageErrorEntryJsonUnmarshaller.getInstance()).unmarshall(context));
+                            BatchPutMessageErrorEntryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

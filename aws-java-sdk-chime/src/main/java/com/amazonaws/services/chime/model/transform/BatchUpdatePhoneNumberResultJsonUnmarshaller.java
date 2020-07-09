@@ -51,7 +51,8 @@ public class BatchUpdatePhoneNumberResultJsonUnmarshaller implements Unmarshalle
                 if (context.testExpression("PhoneNumberErrors", targetDepth)) {
                     context.nextToken();
                     batchUpdatePhoneNumberResult.setPhoneNumberErrors(new ListUnmarshaller<PhoneNumberError>(PhoneNumberErrorJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

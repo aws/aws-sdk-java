@@ -70,7 +70,9 @@ public class JobTemplateJsonUnmarshaller implements Unmarshaller<JobTemplate, Js
                 }
                 if (context.testExpression("hopDestinations", targetDepth)) {
                     context.nextToken();
-                    jobTemplate.setHopDestinations(new ListUnmarshaller<HopDestination>(HopDestinationJsonUnmarshaller.getInstance()).unmarshall(context));
+                    jobTemplate.setHopDestinations(new ListUnmarshaller<HopDestination>(HopDestinationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("lastUpdated", targetDepth)) {
                     context.nextToken();

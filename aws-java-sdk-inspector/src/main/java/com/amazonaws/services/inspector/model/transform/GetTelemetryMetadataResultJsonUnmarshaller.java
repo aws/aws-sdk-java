@@ -51,7 +51,8 @@ public class GetTelemetryMetadataResultJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("telemetryMetadata", targetDepth)) {
                     context.nextToken();
                     getTelemetryMetadataResult.setTelemetryMetadata(new ListUnmarshaller<TelemetryMetadata>(TelemetryMetadataJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

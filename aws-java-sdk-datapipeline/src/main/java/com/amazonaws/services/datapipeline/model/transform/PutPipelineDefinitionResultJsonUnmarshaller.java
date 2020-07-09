@@ -51,12 +51,14 @@ public class PutPipelineDefinitionResultJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("validationErrors", targetDepth)) {
                     context.nextToken();
                     putPipelineDefinitionResult.setValidationErrors(new ListUnmarshaller<ValidationError>(ValidationErrorJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("validationWarnings", targetDepth)) {
                     context.nextToken();
                     putPipelineDefinitionResult.setValidationWarnings(new ListUnmarshaller<ValidationWarning>(ValidationWarningJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("errored", targetDepth)) {
                     context.nextToken();

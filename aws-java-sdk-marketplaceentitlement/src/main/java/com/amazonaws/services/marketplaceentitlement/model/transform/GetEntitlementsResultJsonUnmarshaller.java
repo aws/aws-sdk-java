@@ -50,7 +50,9 @@ public class GetEntitlementsResultJsonUnmarshaller implements Unmarshaller<GetEn
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Entitlements", targetDepth)) {
                     context.nextToken();
-                    getEntitlementsResult.setEntitlements(new ListUnmarshaller<Entitlement>(EntitlementJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getEntitlementsResult.setEntitlements(new ListUnmarshaller<Entitlement>(EntitlementJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

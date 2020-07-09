@@ -80,7 +80,9 @@ public class DataSetJsonUnmarshaller implements Unmarshaller<DataSet, JsonUnmars
                 }
                 if (context.testExpression("OutputColumns", targetDepth)) {
                     context.nextToken();
-                    dataSet.setOutputColumns(new ListUnmarshaller<OutputColumn>(OutputColumnJsonUnmarshaller.getInstance()).unmarshall(context));
+                    dataSet.setOutputColumns(new ListUnmarshaller<OutputColumn>(OutputColumnJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ImportMode", targetDepth)) {
                     context.nextToken();
@@ -92,7 +94,9 @@ public class DataSetJsonUnmarshaller implements Unmarshaller<DataSet, JsonUnmars
                 }
                 if (context.testExpression("ColumnGroups", targetDepth)) {
                     context.nextToken();
-                    dataSet.setColumnGroups(new ListUnmarshaller<ColumnGroup>(ColumnGroupJsonUnmarshaller.getInstance()).unmarshall(context));
+                    dataSet.setColumnGroups(new ListUnmarshaller<ColumnGroup>(ColumnGroupJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("RowLevelPermissionDataSet", targetDepth)) {
                     context.nextToken();

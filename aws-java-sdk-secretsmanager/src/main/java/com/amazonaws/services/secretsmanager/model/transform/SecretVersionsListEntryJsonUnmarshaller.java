@@ -54,7 +54,9 @@ public class SecretVersionsListEntryJsonUnmarshaller implements Unmarshaller<Sec
                 }
                 if (context.testExpression("VersionStages", targetDepth)) {
                     context.nextToken();
-                    secretVersionsListEntry.setVersionStages(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    secretVersionsListEntry.setVersionStages(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("LastAccessedDate", targetDepth)) {
                     context.nextToken();

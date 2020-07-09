@@ -50,7 +50,9 @@ public class TrafficRouteJsonUnmarshaller implements Unmarshaller<TrafficRoute, 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("listenerArns", targetDepth)) {
                     context.nextToken();
-                    trafficRoute.setListenerArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    trafficRoute.setListenerArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

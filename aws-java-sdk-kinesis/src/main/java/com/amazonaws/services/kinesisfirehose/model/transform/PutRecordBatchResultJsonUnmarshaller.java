@@ -59,7 +59,9 @@ public class PutRecordBatchResultJsonUnmarshaller implements Unmarshaller<PutRec
                 if (context.testExpression("RequestResponses", targetDepth)) {
                     context.nextToken();
                     putRecordBatchResult.setRequestResponses(new ListUnmarshaller<PutRecordBatchResponseEntry>(PutRecordBatchResponseEntryJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

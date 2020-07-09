@@ -59,7 +59,8 @@ public class ListQualificationTypesResultJsonUnmarshaller implements Unmarshalle
                 if (context.testExpression("QualificationTypes", targetDepth)) {
                     context.nextToken();
                     listQualificationTypesResult.setQualificationTypes(new ListUnmarshaller<QualificationType>(QualificationTypeJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

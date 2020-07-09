@@ -50,7 +50,9 @@ public class ListDevicePoolsResultJsonUnmarshaller implements Unmarshaller<ListD
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("devicePools", targetDepth)) {
                     context.nextToken();
-                    listDevicePoolsResult.setDevicePools(new ListUnmarshaller<DevicePool>(DevicePoolJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listDevicePoolsResult.setDevicePools(new ListUnmarshaller<DevicePool>(DevicePoolJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

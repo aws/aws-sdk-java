@@ -50,7 +50,9 @@ public class HealthCheckJsonUnmarshaller implements Unmarshaller<HealthCheck, Js
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("command", targetDepth)) {
                     context.nextToken();
-                    healthCheck.setCommand(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    healthCheck.setCommand(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("interval", targetDepth)) {
                     context.nextToken();

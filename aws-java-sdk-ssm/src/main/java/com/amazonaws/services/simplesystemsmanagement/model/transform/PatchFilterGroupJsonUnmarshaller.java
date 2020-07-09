@@ -50,7 +50,9 @@ public class PatchFilterGroupJsonUnmarshaller implements Unmarshaller<PatchFilte
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("PatchFilters", targetDepth)) {
                     context.nextToken();
-                    patchFilterGroup.setPatchFilters(new ListUnmarshaller<PatchFilter>(PatchFilterJsonUnmarshaller.getInstance()).unmarshall(context));
+                    patchFilterGroup.setPatchFilters(new ListUnmarshaller<PatchFilter>(PatchFilterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

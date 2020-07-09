@@ -51,7 +51,8 @@ public class SalesforceKnowledgeArticleConfigurationJsonUnmarshaller implements 
                 if (context.testExpression("IncludedStates", targetDepth)) {
                     context.nextToken();
                     salesforceKnowledgeArticleConfiguration.setIncludedStates(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("StandardKnowledgeArticleTypeConfiguration", targetDepth)) {
                     context.nextToken();
@@ -63,7 +64,9 @@ public class SalesforceKnowledgeArticleConfigurationJsonUnmarshaller implements 
                     context.nextToken();
                     salesforceKnowledgeArticleConfiguration
                             .setCustomKnowledgeArticleTypeConfigurations(new ListUnmarshaller<SalesforceCustomKnowledgeArticleTypeConfiguration>(
-                                    SalesforceCustomKnowledgeArticleTypeConfigurationJsonUnmarshaller.getInstance()).unmarshall(context));
+                                    SalesforceCustomKnowledgeArticleTypeConfigurationJsonUnmarshaller.getInstance())
+
+                            .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -51,7 +51,9 @@ public class DescribeEventCategoriesResultJsonUnmarshaller implements Unmarshall
                 if (context.testExpression("EventCategoryGroupList", targetDepth)) {
                     context.nextToken();
                     describeEventCategoriesResult.setEventCategoryGroupList(new ListUnmarshaller<EventCategoryGroup>(EventCategoryGroupJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

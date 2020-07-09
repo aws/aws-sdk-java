@@ -55,7 +55,8 @@ public class PipelineSummaryJsonUnmarshaller implements Unmarshaller<PipelineSum
                 if (context.testExpression("reprocessingSummaries", targetDepth)) {
                     context.nextToken();
                     pipelineSummary.setReprocessingSummaries(new ListUnmarshaller<ReprocessingSummary>(ReprocessingSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("creationTime", targetDepth)) {
                     context.nextToken();

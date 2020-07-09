@@ -58,7 +58,9 @@ public class ErrorDetailJsonUnmarshaller implements Unmarshaller<ErrorDetail, Js
                 }
                 if (context.testExpression("resourceIds", targetDepth)) {
                     context.nextToken();
-                    errorDetail.setResourceIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    errorDetail.setResourceIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

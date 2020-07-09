@@ -66,11 +66,15 @@ public class WorkspaceDirectoryJsonUnmarshaller implements Unmarshaller<Workspac
                 }
                 if (context.testExpression("SubnetIds", targetDepth)) {
                     context.nextToken();
-                    workspaceDirectory.setSubnetIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    workspaceDirectory.setSubnetIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("DnsIpAddresses", targetDepth)) {
                     context.nextToken();
-                    workspaceDirectory.setDnsIpAddresses(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    workspaceDirectory.setDnsIpAddresses(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("CustomerUserName", targetDepth)) {
                     context.nextToken();
@@ -98,7 +102,9 @@ public class WorkspaceDirectoryJsonUnmarshaller implements Unmarshaller<Workspac
                 }
                 if (context.testExpression("ipGroupIds", targetDepth)) {
                     context.nextToken();
-                    workspaceDirectory.setIpGroupIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    workspaceDirectory.setIpGroupIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("WorkspaceAccessProperties", targetDepth)) {
                     context.nextToken();

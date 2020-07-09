@@ -59,12 +59,14 @@ public class DescribeDimensionKeysResultJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("PartitionKeys", targetDepth)) {
                     context.nextToken();
                     describeDimensionKeysResult.setPartitionKeys(new ListUnmarshaller<ResponsePartitionKey>(ResponsePartitionKeyJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Keys", targetDepth)) {
                     context.nextToken();
                     describeDimensionKeysResult.setKeys(new ListUnmarshaller<DimensionKeyDescription>(DimensionKeyDescriptionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

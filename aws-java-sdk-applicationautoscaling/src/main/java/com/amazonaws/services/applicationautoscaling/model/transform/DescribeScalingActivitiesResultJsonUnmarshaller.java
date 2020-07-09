@@ -51,7 +51,8 @@ public class DescribeScalingActivitiesResultJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("ScalingActivities", targetDepth)) {
                     context.nextToken();
                     describeScalingActivitiesResult.setScalingActivities(new ListUnmarshaller<ScalingActivity>(ScalingActivityJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

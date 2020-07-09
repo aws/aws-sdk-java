@@ -50,7 +50,9 @@ public class ListInputsResultJsonUnmarshaller implements Unmarshaller<ListInputs
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("inputs", targetDepth)) {
                     context.nextToken();
-                    listInputsResult.setInputs(new ListUnmarshaller<Input>(InputJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listInputsResult.setInputs(new ListUnmarshaller<Input>(InputJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

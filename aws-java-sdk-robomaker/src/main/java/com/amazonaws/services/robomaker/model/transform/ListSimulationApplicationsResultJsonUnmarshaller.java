@@ -51,7 +51,9 @@ public class ListSimulationApplicationsResultJsonUnmarshaller implements Unmarsh
                 if (context.testExpression("simulationApplicationSummaries", targetDepth)) {
                     context.nextToken();
                     listSimulationApplicationsResult.setSimulationApplicationSummaries(new ListUnmarshaller<SimulationApplicationSummary>(
-                            SimulationApplicationSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                            SimulationApplicationSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

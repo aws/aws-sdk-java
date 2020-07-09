@@ -58,7 +58,9 @@ public class InstanceSnapshotInfoJsonUnmarshaller implements Unmarshaller<Instan
                 }
                 if (context.testExpression("fromDiskInfo", targetDepth)) {
                     context.nextToken();
-                    instanceSnapshotInfo.setFromDiskInfo(new ListUnmarshaller<DiskInfo>(DiskInfoJsonUnmarshaller.getInstance()).unmarshall(context));
+                    instanceSnapshotInfo.setFromDiskInfo(new ListUnmarshaller<DiskInfo>(DiskInfoJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

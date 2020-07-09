@@ -50,7 +50,9 @@ public class InputDefinitionJsonUnmarshaller implements Unmarshaller<InputDefini
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("attributes", targetDepth)) {
                     context.nextToken();
-                    inputDefinition.setAttributes(new ListUnmarshaller<Attribute>(AttributeJsonUnmarshaller.getInstance()).unmarshall(context));
+                    inputDefinition.setAttributes(new ListUnmarshaller<Attribute>(AttributeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

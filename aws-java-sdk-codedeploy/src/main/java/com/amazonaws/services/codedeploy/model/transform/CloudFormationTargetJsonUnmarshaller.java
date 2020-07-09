@@ -63,7 +63,8 @@ public class CloudFormationTargetJsonUnmarshaller implements Unmarshaller<CloudF
                 if (context.testExpression("lifecycleEvents", targetDepth)) {
                     context.nextToken();
                     cloudFormationTarget.setLifecycleEvents(new ListUnmarshaller<LifecycleEvent>(LifecycleEventJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();

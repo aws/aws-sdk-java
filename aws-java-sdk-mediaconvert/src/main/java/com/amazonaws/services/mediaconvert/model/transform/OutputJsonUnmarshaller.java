@@ -50,12 +50,15 @@ public class OutputJsonUnmarshaller implements Unmarshaller<Output, JsonUnmarsha
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("audioDescriptions", targetDepth)) {
                     context.nextToken();
-                    output.setAudioDescriptions(new ListUnmarshaller<AudioDescription>(AudioDescriptionJsonUnmarshaller.getInstance()).unmarshall(context));
+                    output.setAudioDescriptions(new ListUnmarshaller<AudioDescription>(AudioDescriptionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("captionDescriptions", targetDepth)) {
                     context.nextToken();
                     output.setCaptionDescriptions(new ListUnmarshaller<CaptionDescription>(CaptionDescriptionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("containerSettings", targetDepth)) {
                     context.nextToken();

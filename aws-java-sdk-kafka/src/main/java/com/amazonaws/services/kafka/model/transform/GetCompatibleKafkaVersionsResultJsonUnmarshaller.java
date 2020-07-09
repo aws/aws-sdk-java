@@ -51,7 +51,9 @@ public class GetCompatibleKafkaVersionsResultJsonUnmarshaller implements Unmarsh
                 if (context.testExpression("compatibleKafkaVersions", targetDepth)) {
                     context.nextToken();
                     getCompatibleKafkaVersionsResult.setCompatibleKafkaVersions(new ListUnmarshaller<CompatibleKafkaVersion>(
-                            CompatibleKafkaVersionJsonUnmarshaller.getInstance()).unmarshall(context));
+                            CompatibleKafkaVersionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

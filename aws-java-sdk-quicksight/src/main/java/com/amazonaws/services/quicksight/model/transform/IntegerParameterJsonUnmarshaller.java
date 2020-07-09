@@ -54,7 +54,9 @@ public class IntegerParameterJsonUnmarshaller implements Unmarshaller<IntegerPar
                 }
                 if (context.testExpression("Values", targetDepth)) {
                     context.nextToken();
-                    integerParameter.setValues(new ListUnmarshaller<Long>(context.getUnmarshaller(Long.class)).unmarshall(context));
+                    integerParameter.setValues(new ListUnmarshaller<Long>(context.getUnmarshaller(Long.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

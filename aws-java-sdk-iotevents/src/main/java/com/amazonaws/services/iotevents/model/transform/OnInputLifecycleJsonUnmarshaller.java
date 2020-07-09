@@ -50,12 +50,15 @@ public class OnInputLifecycleJsonUnmarshaller implements Unmarshaller<OnInputLif
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("events", targetDepth)) {
                     context.nextToken();
-                    onInputLifecycle.setEvents(new ListUnmarshaller<Event>(EventJsonUnmarshaller.getInstance()).unmarshall(context));
+                    onInputLifecycle.setEvents(new ListUnmarshaller<Event>(EventJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("transitionEvents", targetDepth)) {
                     context.nextToken();
                     onInputLifecycle.setTransitionEvents(new ListUnmarshaller<TransitionEvent>(TransitionEventJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

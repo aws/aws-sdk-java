@@ -51,7 +51,9 @@ public class DescribeComplianceByResourceResultJsonUnmarshaller implements Unmar
                 if (context.testExpression("ComplianceByResources", targetDepth)) {
                     context.nextToken();
                     describeComplianceByResourceResult.setComplianceByResources(new ListUnmarshaller<ComplianceByResource>(ComplianceByResourceJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

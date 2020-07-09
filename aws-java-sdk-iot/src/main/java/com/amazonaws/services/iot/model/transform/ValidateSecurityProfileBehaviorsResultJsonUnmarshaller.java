@@ -55,7 +55,9 @@ public class ValidateSecurityProfileBehaviorsResultJsonUnmarshaller implements U
                 if (context.testExpression("validationErrors", targetDepth)) {
                     context.nextToken();
                     validateSecurityProfileBehaviorsResult.setValidationErrors(new ListUnmarshaller<ValidationError>(ValidationErrorJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

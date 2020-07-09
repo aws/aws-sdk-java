@@ -50,7 +50,9 @@ public class GetDetectorsResultJsonUnmarshaller implements Unmarshaller<GetDetec
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("detectors", targetDepth)) {
                     context.nextToken();
-                    getDetectorsResult.setDetectors(new ListUnmarshaller<Detector>(DetectorJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getDetectorsResult.setDetectors(new ListUnmarshaller<Detector>(DetectorJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

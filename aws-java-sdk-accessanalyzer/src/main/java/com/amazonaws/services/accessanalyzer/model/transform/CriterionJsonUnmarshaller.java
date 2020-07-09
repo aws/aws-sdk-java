@@ -50,11 +50,15 @@ public class CriterionJsonUnmarshaller implements Unmarshaller<Criterion, JsonUn
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("contains", targetDepth)) {
                     context.nextToken();
-                    criterion.setContains(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    criterion.setContains(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("eq", targetDepth)) {
                     context.nextToken();
-                    criterion.setEq(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    criterion.setEq(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("exists", targetDepth)) {
                     context.nextToken();
@@ -62,7 +66,9 @@ public class CriterionJsonUnmarshaller implements Unmarshaller<Criterion, JsonUn
                 }
                 if (context.testExpression("neq", targetDepth)) {
                     context.nextToken();
-                    criterion.setNeq(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    criterion.setNeq(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -54,7 +54,9 @@ public class InstanceHardwareJsonUnmarshaller implements Unmarshaller<InstanceHa
                 }
                 if (context.testExpression("disks", targetDepth)) {
                     context.nextToken();
-                    instanceHardware.setDisks(new ListUnmarshaller<Disk>(DiskJsonUnmarshaller.getInstance()).unmarshall(context));
+                    instanceHardware.setDisks(new ListUnmarshaller<Disk>(DiskJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ramSizeInGb", targetDepth)) {
                     context.nextToken();

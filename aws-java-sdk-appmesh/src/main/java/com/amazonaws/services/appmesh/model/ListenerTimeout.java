@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * An object that represents timeouts for different protocols.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListenerTimeout" target="_top">AWS API
  *      Documentation</a>
@@ -26,11 +29,23 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class ListenerTimeout implements Serializable, Cloneable, StructuredPojo {
 
     private GrpcTimeout grpc;
-
+    /**
+     * <p>
+     * An object that represents types of timeouts.
+     * </p>
+     */
     private HttpTimeout http;
-
+    /**
+     * <p>
+     * An object that represents types of timeouts.
+     * </p>
+     */
     private HttpTimeout http2;
-
+    /**
+     * <p>
+     * An object that represents types of timeouts.
+     * </p>
+     */
     private TcpTimeout tcp;
 
     /**
@@ -60,7 +75,12 @@ public class ListenerTimeout implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * An object that represents types of timeouts.
+     * </p>
+     * 
      * @param http
+     *        An object that represents types of timeouts.
      */
 
     public void setHttp(HttpTimeout http) {
@@ -68,7 +88,11 @@ public class ListenerTimeout implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * @return
+     * <p>
+     * An object that represents types of timeouts.
+     * </p>
+     * 
+     * @return An object that represents types of timeouts.
      */
 
     public HttpTimeout getHttp() {
@@ -76,7 +100,12 @@ public class ListenerTimeout implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * An object that represents types of timeouts.
+     * </p>
+     * 
      * @param http
+     *        An object that represents types of timeouts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,7 +115,12 @@ public class ListenerTimeout implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * An object that represents types of timeouts.
+     * </p>
+     * 
      * @param http2
+     *        An object that represents types of timeouts.
      */
 
     public void setHttp2(HttpTimeout http2) {
@@ -94,7 +128,11 @@ public class ListenerTimeout implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * @return
+     * <p>
+     * An object that represents types of timeouts.
+     * </p>
+     * 
+     * @return An object that represents types of timeouts.
      */
 
     public HttpTimeout getHttp2() {
@@ -102,7 +140,12 @@ public class ListenerTimeout implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * An object that represents types of timeouts.
+     * </p>
+     * 
      * @param http2
+     *        An object that represents types of timeouts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,7 +155,12 @@ public class ListenerTimeout implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * An object that represents types of timeouts.
+     * </p>
+     * 
      * @param tcp
+     *        An object that represents types of timeouts.
      */
 
     public void setTcp(TcpTimeout tcp) {
@@ -120,7 +168,11 @@ public class ListenerTimeout implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * @return
+     * <p>
+     * An object that represents types of timeouts.
+     * </p>
+     * 
+     * @return An object that represents types of timeouts.
      */
 
     public TcpTimeout getTcp() {
@@ -128,7 +180,12 @@ public class ListenerTimeout implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * An object that represents types of timeouts.
+     * </p>
+     * 
      * @param tcp
+     *        An object that represents types of timeouts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

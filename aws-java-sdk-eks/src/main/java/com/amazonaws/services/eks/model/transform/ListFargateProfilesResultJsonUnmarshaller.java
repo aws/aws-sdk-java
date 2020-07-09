@@ -50,7 +50,9 @@ public class ListFargateProfilesResultJsonUnmarshaller implements Unmarshaller<L
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("fargateProfileNames", targetDepth)) {
                     context.nextToken();
-                    listFargateProfilesResult.setFargateProfileNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    listFargateProfilesResult.setFargateProfileNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

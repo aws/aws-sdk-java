@@ -58,7 +58,9 @@ public class GetPipelineStateResultJsonUnmarshaller implements Unmarshaller<GetP
                 }
                 if (context.testExpression("stageStates", targetDepth)) {
                     context.nextToken();
-                    getPipelineStateResult.setStageStates(new ListUnmarshaller<StageState>(StageStateJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getPipelineStateResult.setStageStates(new ListUnmarshaller<StageState>(StageStateJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("created", targetDepth)) {
                     context.nextToken();

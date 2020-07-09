@@ -54,7 +54,9 @@ public class ListReservationsResultJsonUnmarshaller implements Unmarshaller<List
                 }
                 if (context.testExpression("reservations", targetDepth)) {
                     context.nextToken();
-                    listReservationsResult.setReservations(new ListUnmarshaller<Reservation>(ReservationJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listReservationsResult.setReservations(new ListUnmarshaller<Reservation>(ReservationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -51,7 +51,9 @@ public class GetRelationalDatabaseEventsResultJsonUnmarshaller implements Unmars
                 if (context.testExpression("relationalDatabaseEvents", targetDepth)) {
                     context.nextToken();
                     getRelationalDatabaseEventsResult.setRelationalDatabaseEvents(new ListUnmarshaller<RelationalDatabaseEvent>(
-                            RelationalDatabaseEventJsonUnmarshaller.getInstance()).unmarshall(context));
+                            RelationalDatabaseEventJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextPageToken", targetDepth)) {
                     context.nextToken();

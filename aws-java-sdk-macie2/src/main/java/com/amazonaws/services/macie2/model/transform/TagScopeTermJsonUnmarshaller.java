@@ -58,7 +58,9 @@ public class TagScopeTermJsonUnmarshaller implements Unmarshaller<TagScopeTerm, 
                 }
                 if (context.testExpression("tagValues", targetDepth)) {
                     context.nextToken();
-                    tagScopeTerm.setTagValues(new ListUnmarshaller<TagValuePair>(TagValuePairJsonUnmarshaller.getInstance()).unmarshall(context));
+                    tagScopeTerm.setTagValues(new ListUnmarshaller<TagValuePair>(TagValuePairJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("target", targetDepth)) {
                     context.nextToken();

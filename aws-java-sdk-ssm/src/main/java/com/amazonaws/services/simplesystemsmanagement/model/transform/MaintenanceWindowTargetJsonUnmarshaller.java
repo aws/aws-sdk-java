@@ -62,7 +62,9 @@ public class MaintenanceWindowTargetJsonUnmarshaller implements Unmarshaller<Mai
                 }
                 if (context.testExpression("Targets", targetDepth)) {
                     context.nextToken();
-                    maintenanceWindowTarget.setTargets(new ListUnmarshaller<Target>(TargetJsonUnmarshaller.getInstance()).unmarshall(context));
+                    maintenanceWindowTarget.setTargets(new ListUnmarshaller<Target>(TargetJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("OwnerInformation", targetDepth)) {
                     context.nextToken();

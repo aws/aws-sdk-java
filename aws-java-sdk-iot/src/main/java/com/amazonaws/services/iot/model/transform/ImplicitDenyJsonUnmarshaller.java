@@ -50,7 +50,9 @@ public class ImplicitDenyJsonUnmarshaller implements Unmarshaller<ImplicitDeny, 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("policies", targetDepth)) {
                     context.nextToken();
-                    implicitDeny.setPolicies(new ListUnmarshaller<Policy>(PolicyJsonUnmarshaller.getInstance()).unmarshall(context));
+                    implicitDeny.setPolicies(new ListUnmarshaller<Policy>(PolicyJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

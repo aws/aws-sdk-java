@@ -54,12 +54,15 @@ public class DescribeInputResultJsonUnmarshaller implements Unmarshaller<Describ
                 }
                 if (context.testExpression("attachedChannels", targetDepth)) {
                     context.nextToken();
-                    describeInputResult.setAttachedChannels(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    describeInputResult.setAttachedChannels(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("destinations", targetDepth)) {
                     context.nextToken();
                     describeInputResult.setDestinations(new ListUnmarshaller<InputDestination>(InputDestinationJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
@@ -72,7 +75,8 @@ public class DescribeInputResultJsonUnmarshaller implements Unmarshaller<Describ
                 if (context.testExpression("inputDevices", targetDepth)) {
                     context.nextToken();
                     describeInputResult.setInputDevices(new ListUnmarshaller<InputDeviceSettings>(InputDeviceSettingsJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("inputSourceType", targetDepth)) {
                     context.nextToken();
@@ -81,7 +85,8 @@ public class DescribeInputResultJsonUnmarshaller implements Unmarshaller<Describ
                 if (context.testExpression("mediaConnectFlows", targetDepth)) {
                     context.nextToken();
                     describeInputResult.setMediaConnectFlows(new ListUnmarshaller<MediaConnectFlow>(MediaConnectFlowJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
@@ -93,11 +98,15 @@ public class DescribeInputResultJsonUnmarshaller implements Unmarshaller<Describ
                 }
                 if (context.testExpression("securityGroups", targetDepth)) {
                     context.nextToken();
-                    describeInputResult.setSecurityGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    describeInputResult.setSecurityGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("sources", targetDepth)) {
                     context.nextToken();
-                    describeInputResult.setSources(new ListUnmarshaller<InputSource>(InputSourceJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeInputResult.setSources(new ListUnmarshaller<InputSource>(InputSourceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("state", targetDepth)) {
                     context.nextToken();

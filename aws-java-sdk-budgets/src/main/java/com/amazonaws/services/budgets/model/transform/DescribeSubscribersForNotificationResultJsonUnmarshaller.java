@@ -52,7 +52,8 @@ public class DescribeSubscribersForNotificationResultJsonUnmarshaller implements
                 if (context.testExpression("Subscribers", targetDepth)) {
                     context.nextToken();
                     describeSubscribersForNotificationResult.setSubscribers(new ListUnmarshaller<Subscriber>(SubscriberJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

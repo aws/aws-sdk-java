@@ -54,7 +54,9 @@ public class AppliedTerminologyJsonUnmarshaller implements Unmarshaller<AppliedT
                 }
                 if (context.testExpression("Terms", targetDepth)) {
                     context.nextToken();
-                    appliedTerminology.setTerms(new ListUnmarshaller<Term>(TermJsonUnmarshaller.getInstance()).unmarshall(context));
+                    appliedTerminology.setTerms(new ListUnmarshaller<Term>(TermJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

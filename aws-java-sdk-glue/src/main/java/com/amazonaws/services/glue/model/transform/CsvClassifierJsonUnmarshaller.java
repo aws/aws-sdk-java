@@ -78,7 +78,9 @@ public class CsvClassifierJsonUnmarshaller implements Unmarshaller<CsvClassifier
                 }
                 if (context.testExpression("Header", targetDepth)) {
                     context.nextToken();
-                    csvClassifier.setHeader(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    csvClassifier.setHeader(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("DisableValueTrimming", targetDepth)) {
                     context.nextToken();

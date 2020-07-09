@@ -54,11 +54,15 @@ public class DimensionValuesJsonUnmarshaller implements Unmarshaller<DimensionVa
                 }
                 if (context.testExpression("Values", targetDepth)) {
                     context.nextToken();
-                    dimensionValues.setValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    dimensionValues.setValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("MatchOptions", targetDepth)) {
                     context.nextToken();
-                    dimensionValues.setMatchOptions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    dimensionValues.setMatchOptions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

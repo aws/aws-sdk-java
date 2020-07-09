@@ -54,7 +54,9 @@ public class BackupPlanJsonUnmarshaller implements Unmarshaller<BackupPlan, Json
                 }
                 if (context.testExpression("Rules", targetDepth)) {
                     context.nextToken();
-                    backupPlan.setRules(new ListUnmarshaller<BackupRule>(BackupRuleJsonUnmarshaller.getInstance()).unmarshall(context));
+                    backupPlan.setRules(new ListUnmarshaller<BackupRule>(BackupRuleJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

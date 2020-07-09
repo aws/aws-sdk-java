@@ -51,7 +51,8 @@ public class DescribeBrokerEngineTypesResultJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("brokerEngineTypes", targetDepth)) {
                     context.nextToken();
                     describeBrokerEngineTypesResult.setBrokerEngineTypes(new ListUnmarshaller<BrokerEngineType>(BrokerEngineTypeJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("maxResults", targetDepth)) {
                     context.nextToken();

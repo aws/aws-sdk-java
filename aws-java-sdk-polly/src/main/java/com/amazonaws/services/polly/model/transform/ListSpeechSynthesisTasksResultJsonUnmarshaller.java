@@ -55,7 +55,8 @@ public class ListSpeechSynthesisTasksResultJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("SynthesisTasks", targetDepth)) {
                     context.nextToken();
                     listSpeechSynthesisTasksResult.setSynthesisTasks(new ListUnmarshaller<SynthesisTask>(SynthesisTaskJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

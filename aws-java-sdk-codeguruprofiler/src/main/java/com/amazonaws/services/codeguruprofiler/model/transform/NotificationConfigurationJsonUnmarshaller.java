@@ -50,7 +50,9 @@ public class NotificationConfigurationJsonUnmarshaller implements Unmarshaller<N
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("channels", targetDepth)) {
                     context.nextToken();
-                    notificationConfiguration.setChannels(new ListUnmarshaller<Channel>(ChannelJsonUnmarshaller.getInstance()).unmarshall(context));
+                    notificationConfiguration.setChannels(new ListUnmarshaller<Channel>(ChannelJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

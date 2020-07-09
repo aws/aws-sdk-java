@@ -50,7 +50,9 @@ public class UnindexedFaceJsonUnmarshaller implements Unmarshaller<UnindexedFace
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Reasons", targetDepth)) {
                     context.nextToken();
-                    unindexedFace.setReasons(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    unindexedFace.setReasons(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("FaceDetail", targetDepth)) {
                     context.nextToken();

@@ -58,7 +58,9 @@ public class CreateDevEndpointResultJsonUnmarshaller implements Unmarshaller<Cre
                 }
                 if (context.testExpression("SecurityGroupIds", targetDepth)) {
                     context.nextToken();
-                    createDevEndpointResult.setSecurityGroupIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    createDevEndpointResult.setSecurityGroupIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("SubnetId", targetDepth)) {
                     context.nextToken();

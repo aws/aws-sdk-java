@@ -51,7 +51,9 @@ public class IotSiteWiseActionJsonUnmarshaller implements Unmarshaller<IotSiteWi
                 if (context.testExpression("putAssetPropertyValueEntries", targetDepth)) {
                     context.nextToken();
                     iotSiteWiseAction.setPutAssetPropertyValueEntries(new ListUnmarshaller<PutAssetPropertyValueEntry>(
-                            PutAssetPropertyValueEntryJsonUnmarshaller.getInstance()).unmarshall(context));
+                            PutAssetPropertyValueEntryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("roleArn", targetDepth)) {
                     context.nextToken();

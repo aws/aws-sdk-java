@@ -50,7 +50,9 @@ public class LoggingJsonUnmarshaller implements Unmarshaller<Logging, JsonUnmars
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("clusterLogging", targetDepth)) {
                     context.nextToken();
-                    logging.setClusterLogging(new ListUnmarshaller<LogSetup>(LogSetupJsonUnmarshaller.getInstance()).unmarshall(context));
+                    logging.setClusterLogging(new ListUnmarshaller<LogSetup>(LogSetupJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

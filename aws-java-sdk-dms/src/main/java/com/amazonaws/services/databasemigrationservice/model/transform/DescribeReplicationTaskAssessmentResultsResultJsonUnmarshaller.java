@@ -60,7 +60,9 @@ public class DescribeReplicationTaskAssessmentResultsResultJsonUnmarshaller impl
                 if (context.testExpression("ReplicationTaskAssessmentResults", targetDepth)) {
                     context.nextToken();
                     describeReplicationTaskAssessmentResultsResult.setReplicationTaskAssessmentResults(new ListUnmarshaller<ReplicationTaskAssessmentResult>(
-                            ReplicationTaskAssessmentResultJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ReplicationTaskAssessmentResultJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

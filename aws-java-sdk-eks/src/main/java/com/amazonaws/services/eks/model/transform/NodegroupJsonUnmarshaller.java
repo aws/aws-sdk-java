@@ -86,11 +86,15 @@ public class NodegroupJsonUnmarshaller implements Unmarshaller<Nodegroup, JsonUn
                 }
                 if (context.testExpression("instanceTypes", targetDepth)) {
                     context.nextToken();
-                    nodegroup.setInstanceTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    nodegroup.setInstanceTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("subnets", targetDepth)) {
                     context.nextToken();
-                    nodegroup.setSubnets(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    nodegroup.setSubnets(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("remoteAccess", targetDepth)) {
                     context.nextToken();

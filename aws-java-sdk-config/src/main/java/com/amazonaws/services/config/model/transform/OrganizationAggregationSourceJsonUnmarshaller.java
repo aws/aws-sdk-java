@@ -54,7 +54,9 @@ public class OrganizationAggregationSourceJsonUnmarshaller implements Unmarshall
                 }
                 if (context.testExpression("AwsRegions", targetDepth)) {
                     context.nextToken();
-                    organizationAggregationSource.setAwsRegions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    organizationAggregationSource.setAwsRegions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("AllAwsRegions", targetDepth)) {
                     context.nextToken();

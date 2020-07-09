@@ -50,7 +50,9 @@ public class DescribeCanariesResultJsonUnmarshaller implements Unmarshaller<Desc
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Canaries", targetDepth)) {
                     context.nextToken();
-                    describeCanariesResult.setCanaries(new ListUnmarshaller<Canary>(CanaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeCanariesResult.setCanaries(new ListUnmarshaller<Canary>(CanaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

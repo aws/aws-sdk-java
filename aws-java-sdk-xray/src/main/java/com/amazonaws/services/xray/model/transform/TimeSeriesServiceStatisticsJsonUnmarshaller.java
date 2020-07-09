@@ -63,7 +63,8 @@ public class TimeSeriesServiceStatisticsJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("ResponseTimeHistogram", targetDepth)) {
                     context.nextToken();
                     timeSeriesServiceStatistics.setResponseTimeHistogram(new ListUnmarshaller<HistogramEntry>(HistogramEntryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

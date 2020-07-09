@@ -50,7 +50,9 @@ public class GetApiKeysResultJsonUnmarshaller implements Unmarshaller<GetApiKeys
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("warnings", targetDepth)) {
                     context.nextToken();
-                    getApiKeysResult.setWarnings(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    getApiKeysResult.setWarnings(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("position", targetDepth)) {
                     context.nextToken();
@@ -58,7 +60,9 @@ public class GetApiKeysResultJsonUnmarshaller implements Unmarshaller<GetApiKeys
                 }
                 if (context.testExpression("item", targetDepth)) {
                     context.nextToken();
-                    getApiKeysResult.setItems(new ListUnmarshaller<ApiKey>(ApiKeyJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getApiKeysResult.setItems(new ListUnmarshaller<ApiKey>(ApiKeyJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

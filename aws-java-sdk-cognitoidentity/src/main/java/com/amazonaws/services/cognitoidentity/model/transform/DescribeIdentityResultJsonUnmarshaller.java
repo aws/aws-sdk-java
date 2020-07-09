@@ -54,7 +54,9 @@ public class DescribeIdentityResultJsonUnmarshaller implements Unmarshaller<Desc
                 }
                 if (context.testExpression("Logins", targetDepth)) {
                     context.nextToken();
-                    describeIdentityResult.setLogins(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    describeIdentityResult.setLogins(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("CreationDate", targetDepth)) {
                     context.nextToken();

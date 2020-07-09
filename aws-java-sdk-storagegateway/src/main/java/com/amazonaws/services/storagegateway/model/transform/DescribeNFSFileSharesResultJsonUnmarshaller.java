@@ -51,7 +51,8 @@ public class DescribeNFSFileSharesResultJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("NFSFileShareInfoList", targetDepth)) {
                     context.nextToken();
                     describeNFSFileSharesResult.setNFSFileShareInfoList(new ListUnmarshaller<NFSFileShareInfo>(NFSFileShareInfoJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

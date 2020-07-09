@@ -51,7 +51,8 @@ public class ListLaunchPathsResultJsonUnmarshaller implements Unmarshaller<ListL
                 if (context.testExpression("LaunchPathSummaries", targetDepth)) {
                     context.nextToken();
                     listLaunchPathsResult.setLaunchPathSummaries(new ListUnmarshaller<LaunchPathSummary>(LaunchPathSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextPageToken", targetDepth)) {
                     context.nextToken();

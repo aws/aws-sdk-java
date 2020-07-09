@@ -51,12 +51,14 @@ public class BatchDescribeSimulationJobResultJsonUnmarshaller implements Unmarsh
                 if (context.testExpression("jobs", targetDepth)) {
                     context.nextToken();
                     batchDescribeSimulationJobResult.setJobs(new ListUnmarshaller<SimulationJob>(SimulationJobJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("unprocessedJobs", targetDepth)) {
                     context.nextToken();
-                    batchDescribeSimulationJobResult
-                            .setUnprocessedJobs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    batchDescribeSimulationJobResult.setUnprocessedJobs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

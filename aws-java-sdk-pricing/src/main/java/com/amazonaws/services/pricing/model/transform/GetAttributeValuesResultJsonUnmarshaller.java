@@ -51,7 +51,8 @@ public class GetAttributeValuesResultJsonUnmarshaller implements Unmarshaller<Ge
                 if (context.testExpression("AttributeValues", targetDepth)) {
                     context.nextToken();
                     getAttributeValuesResult.setAttributeValues(new ListUnmarshaller<AttributeValue>(AttributeValueJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

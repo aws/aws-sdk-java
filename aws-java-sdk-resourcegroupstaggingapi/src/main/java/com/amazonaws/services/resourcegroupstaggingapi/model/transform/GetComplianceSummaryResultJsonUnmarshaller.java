@@ -50,7 +50,9 @@ public class GetComplianceSummaryResultJsonUnmarshaller implements Unmarshaller<
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SummaryList", targetDepth)) {
                     context.nextToken();
-                    getComplianceSummaryResult.setSummaryList(new ListUnmarshaller<Summary>(SummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getComplianceSummaryResult.setSummaryList(new ListUnmarshaller<Summary>(SummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("PaginationToken", targetDepth)) {
                     context.nextToken();

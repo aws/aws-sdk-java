@@ -62,7 +62,9 @@ public class PutSecretValueResultJsonUnmarshaller implements Unmarshaller<PutSec
                 }
                 if (context.testExpression("VersionStages", targetDepth)) {
                     context.nextToken();
-                    putSecretValueResult.setVersionStages(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    putSecretValueResult.setVersionStages(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

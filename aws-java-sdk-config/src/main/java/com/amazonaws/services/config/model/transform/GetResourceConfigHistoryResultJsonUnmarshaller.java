@@ -51,7 +51,9 @@ public class GetResourceConfigHistoryResultJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("configurationItems", targetDepth)) {
                     context.nextToken();
                     getResourceConfigHistoryResult.setConfigurationItems(new ListUnmarshaller<ConfigurationItem>(ConfigurationItemJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

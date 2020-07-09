@@ -52,7 +52,8 @@ public class GetScalingPlanResourceForecastDataResultJsonUnmarshaller implements
                 if (context.testExpression("Datapoints", targetDepth)) {
                     context.nextToken();
                     getScalingPlanResourceForecastDataResult.setDatapoints(new ListUnmarshaller<Datapoint>(DatapointJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

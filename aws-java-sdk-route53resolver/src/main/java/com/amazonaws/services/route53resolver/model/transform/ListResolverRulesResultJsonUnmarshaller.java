@@ -58,8 +58,9 @@ public class ListResolverRulesResultJsonUnmarshaller implements Unmarshaller<Lis
                 }
                 if (context.testExpression("ResolverRules", targetDepth)) {
                     context.nextToken();
-                    listResolverRulesResult
-                            .setResolverRules(new ListUnmarshaller<ResolverRule>(ResolverRuleJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listResolverRulesResult.setResolverRules(new ListUnmarshaller<ResolverRule>(ResolverRuleJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

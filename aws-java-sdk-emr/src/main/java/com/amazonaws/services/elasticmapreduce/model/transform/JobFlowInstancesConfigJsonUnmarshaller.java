@@ -63,12 +63,14 @@ public class JobFlowInstancesConfigJsonUnmarshaller implements Unmarshaller<JobF
                 if (context.testExpression("InstanceGroups", targetDepth)) {
                     context.nextToken();
                     jobFlowInstancesConfig.setInstanceGroups(new ListUnmarshaller<InstanceGroupConfig>(InstanceGroupConfigJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("InstanceFleets", targetDepth)) {
                     context.nextToken();
                     jobFlowInstancesConfig.setInstanceFleets(new ListUnmarshaller<InstanceFleetConfig>(InstanceFleetConfigJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Ec2KeyName", targetDepth)) {
                     context.nextToken();
@@ -96,7 +98,9 @@ public class JobFlowInstancesConfigJsonUnmarshaller implements Unmarshaller<JobF
                 }
                 if (context.testExpression("Ec2SubnetIds", targetDepth)) {
                     context.nextToken();
-                    jobFlowInstancesConfig.setEc2SubnetIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    jobFlowInstancesConfig.setEc2SubnetIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("EmrManagedMasterSecurityGroup", targetDepth)) {
                     context.nextToken();
@@ -113,12 +117,14 @@ public class JobFlowInstancesConfigJsonUnmarshaller implements Unmarshaller<JobF
                 if (context.testExpression("AdditionalMasterSecurityGroups", targetDepth)) {
                     context.nextToken();
                     jobFlowInstancesConfig.setAdditionalMasterSecurityGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("AdditionalSlaveSecurityGroups", targetDepth)) {
                     context.nextToken();
                     jobFlowInstancesConfig.setAdditionalSlaveSecurityGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

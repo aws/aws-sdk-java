@@ -50,7 +50,9 @@ public class ListOfferingsResultJsonUnmarshaller implements Unmarshaller<ListOff
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("offerings", targetDepth)) {
                     context.nextToken();
-                    listOfferingsResult.setOfferings(new ListUnmarshaller<Offering>(OfferingJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listOfferingsResult.setOfferings(new ListUnmarshaller<Offering>(OfferingJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

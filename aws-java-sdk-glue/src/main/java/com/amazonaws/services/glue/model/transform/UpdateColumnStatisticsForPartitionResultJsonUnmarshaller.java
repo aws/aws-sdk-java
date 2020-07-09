@@ -52,7 +52,9 @@ public class UpdateColumnStatisticsForPartitionResultJsonUnmarshaller implements
                 if (context.testExpression("Errors", targetDepth)) {
                     context.nextToken();
                     updateColumnStatisticsForPartitionResult.setErrors(new ListUnmarshaller<ColumnStatisticsError>(ColumnStatisticsErrorJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -70,12 +70,15 @@ public class ResourceChangeJsonUnmarshaller implements Unmarshaller<ResourceChan
                 }
                 if (context.testExpression("Scope", targetDepth)) {
                     context.nextToken();
-                    resourceChange.setScope(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    resourceChange.setScope(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Details", targetDepth)) {
                     context.nextToken();
                     resourceChange.setDetails(new ListUnmarshaller<ResourceChangeDetail>(ResourceChangeDetailJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

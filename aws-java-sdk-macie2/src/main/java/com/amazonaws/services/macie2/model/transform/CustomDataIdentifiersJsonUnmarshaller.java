@@ -51,7 +51,8 @@ public class CustomDataIdentifiersJsonUnmarshaller implements Unmarshaller<Custo
                 if (context.testExpression("detections", targetDepth)) {
                     context.nextToken();
                     customDataIdentifiers.setDetections(new ListUnmarshaller<CustomDetection>(CustomDetectionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("totalCount", targetDepth)) {
                     context.nextToken();

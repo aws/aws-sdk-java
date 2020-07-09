@@ -51,7 +51,8 @@ public class ListTableMetadataResultJsonUnmarshaller implements Unmarshaller<Lis
                 if (context.testExpression("TableMetadataList", targetDepth)) {
                     context.nextToken();
                     listTableMetadataResult.setTableMetadataList(new ListUnmarshaller<TableMetadata>(TableMetadataJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

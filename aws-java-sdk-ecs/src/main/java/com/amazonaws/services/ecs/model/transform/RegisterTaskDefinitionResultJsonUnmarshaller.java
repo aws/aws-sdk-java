@@ -54,7 +54,9 @@ public class RegisterTaskDefinitionResultJsonUnmarshaller implements Unmarshalle
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
-                    registerTaskDefinitionResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    registerTaskDefinitionResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

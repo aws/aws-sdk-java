@@ -50,7 +50,9 @@ public class ListResourcesResultJsonUnmarshaller implements Unmarshaller<ListRes
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ResourceInfoList", targetDepth)) {
                     context.nextToken();
-                    listResourcesResult.setResourceInfoList(new ListUnmarshaller<ResourceInfo>(ResourceInfoJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listResourcesResult.setResourceInfoList(new ListUnmarshaller<ResourceInfo>(ResourceInfoJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

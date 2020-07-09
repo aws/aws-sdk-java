@@ -50,12 +50,15 @@ public class RecognizeCelebritiesResultJsonUnmarshaller implements Unmarshaller<
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CelebrityFaces", targetDepth)) {
                     context.nextToken();
-                    recognizeCelebritiesResult.setCelebrityFaces(new ListUnmarshaller<Celebrity>(CelebrityJsonUnmarshaller.getInstance()).unmarshall(context));
+                    recognizeCelebritiesResult.setCelebrityFaces(new ListUnmarshaller<Celebrity>(CelebrityJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("UnrecognizedFaces", targetDepth)) {
                     context.nextToken();
                     recognizeCelebritiesResult.setUnrecognizedFaces(new ListUnmarshaller<ComparedFace>(ComparedFaceJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("OrientationCorrection", targetDepth)) {
                     context.nextToken();

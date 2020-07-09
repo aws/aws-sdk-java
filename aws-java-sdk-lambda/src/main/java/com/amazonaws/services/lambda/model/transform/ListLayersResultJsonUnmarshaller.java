@@ -54,7 +54,9 @@ public class ListLayersResultJsonUnmarshaller implements Unmarshaller<ListLayers
                 }
                 if (context.testExpression("Layers", targetDepth)) {
                     context.nextToken();
-                    listLayersResult.setLayers(new ListUnmarshaller<LayersListItem>(LayersListItemJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listLayersResult.setLayers(new ListUnmarshaller<LayersListItem>(LayersListItemJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

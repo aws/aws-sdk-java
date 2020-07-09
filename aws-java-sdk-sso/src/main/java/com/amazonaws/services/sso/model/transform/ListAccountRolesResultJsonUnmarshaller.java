@@ -54,7 +54,9 @@ public class ListAccountRolesResultJsonUnmarshaller implements Unmarshaller<List
                 }
                 if (context.testExpression("roleList", targetDepth)) {
                     context.nextToken();
-                    listAccountRolesResult.setRoleList(new ListUnmarshaller<RoleInfo>(RoleInfoJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listAccountRolesResult.setRoleList(new ListUnmarshaller<RoleInfo>(RoleInfoJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

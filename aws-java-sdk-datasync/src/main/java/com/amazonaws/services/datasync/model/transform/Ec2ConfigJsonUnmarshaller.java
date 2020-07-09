@@ -54,7 +54,9 @@ public class Ec2ConfigJsonUnmarshaller implements Unmarshaller<Ec2Config, JsonUn
                 }
                 if (context.testExpression("SecurityGroupArns", targetDepth)) {
                     context.nextToken();
-                    ec2Config.setSecurityGroupArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    ec2Config.setSecurityGroupArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

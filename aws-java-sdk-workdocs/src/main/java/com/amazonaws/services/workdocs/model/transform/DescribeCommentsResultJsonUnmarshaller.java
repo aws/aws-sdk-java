@@ -50,7 +50,9 @@ public class DescribeCommentsResultJsonUnmarshaller implements Unmarshaller<Desc
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Comments", targetDepth)) {
                     context.nextToken();
-                    describeCommentsResult.setComments(new ListUnmarshaller<Comment>(CommentJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeCommentsResult.setComments(new ListUnmarshaller<Comment>(CommentJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Marker", targetDepth)) {
                     context.nextToken();

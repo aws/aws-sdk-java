@@ -50,7 +50,9 @@ public class ListPublicKeysResultJsonUnmarshaller implements Unmarshaller<ListPu
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("PublicKeyList", targetDepth)) {
                     context.nextToken();
-                    listPublicKeysResult.setPublicKeyList(new ListUnmarshaller<PublicKey>(PublicKeyJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listPublicKeysResult.setPublicKeyList(new ListUnmarshaller<PublicKey>(PublicKeyJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

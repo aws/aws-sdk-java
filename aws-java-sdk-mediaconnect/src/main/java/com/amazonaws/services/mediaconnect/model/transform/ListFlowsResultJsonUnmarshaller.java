@@ -50,7 +50,9 @@ public class ListFlowsResultJsonUnmarshaller implements Unmarshaller<ListFlowsRe
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("flows", targetDepth)) {
                     context.nextToken();
-                    listFlowsResult.setFlows(new ListUnmarshaller<ListedFlow>(ListedFlowJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listFlowsResult.setFlows(new ListUnmarshaller<ListedFlow>(ListedFlowJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

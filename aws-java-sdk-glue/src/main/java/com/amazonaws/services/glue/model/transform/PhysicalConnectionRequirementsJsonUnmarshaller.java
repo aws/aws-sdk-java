@@ -55,7 +55,8 @@ public class PhysicalConnectionRequirementsJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("SecurityGroupIdList", targetDepth)) {
                     context.nextToken();
                     physicalConnectionRequirements.setSecurityGroupIdList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("AvailabilityZone", targetDepth)) {
                     context.nextToken();

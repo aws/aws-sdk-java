@@ -63,7 +63,9 @@ public class GetContentModerationResultJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("ModerationLabels", targetDepth)) {
                     context.nextToken();
                     getContentModerationResult.setModerationLabels(new ListUnmarshaller<ContentModerationDetection>(ContentModerationDetectionJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

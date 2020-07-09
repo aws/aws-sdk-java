@@ -58,11 +58,15 @@ public class TerminationJsonUnmarshaller implements Unmarshaller<Termination, Js
                 }
                 if (context.testExpression("CallingRegions", targetDepth)) {
                     context.nextToken();
-                    termination.setCallingRegions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    termination.setCallingRegions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("CidrAllowedList", targetDepth)) {
                     context.nextToken();
-                    termination.setCidrAllowedList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    termination.setCidrAllowedList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Disabled", targetDepth)) {
                     context.nextToken();

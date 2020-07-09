@@ -52,7 +52,9 @@ public class DescribeConfigRuleEvaluationStatusResultJsonUnmarshaller implements
                 if (context.testExpression("ConfigRulesEvaluationStatus", targetDepth)) {
                     context.nextToken();
                     describeConfigRuleEvaluationStatusResult.setConfigRulesEvaluationStatus(new ListUnmarshaller<ConfigRuleEvaluationStatus>(
-                            ConfigRuleEvaluationStatusJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ConfigRuleEvaluationStatusJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

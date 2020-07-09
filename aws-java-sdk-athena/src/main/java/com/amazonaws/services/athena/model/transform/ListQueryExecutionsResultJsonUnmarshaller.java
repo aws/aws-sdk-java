@@ -50,7 +50,9 @@ public class ListQueryExecutionsResultJsonUnmarshaller implements Unmarshaller<L
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("QueryExecutionIds", targetDepth)) {
                     context.nextToken();
-                    listQueryExecutionsResult.setQueryExecutionIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    listQueryExecutionsResult.setQueryExecutionIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

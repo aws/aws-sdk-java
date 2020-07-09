@@ -58,7 +58,9 @@ public class VirtualInterfaceTestHistoryJsonUnmarshaller implements Unmarshaller
                 }
                 if (context.testExpression("bgpPeers", targetDepth)) {
                     context.nextToken();
-                    virtualInterfaceTestHistory.setBgpPeers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    virtualInterfaceTestHistory.setBgpPeers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();

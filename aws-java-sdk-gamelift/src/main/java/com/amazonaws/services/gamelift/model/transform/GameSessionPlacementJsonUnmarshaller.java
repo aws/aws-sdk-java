@@ -62,7 +62,9 @@ public class GameSessionPlacementJsonUnmarshaller implements Unmarshaller<GameSe
                 }
                 if (context.testExpression("GameProperties", targetDepth)) {
                     context.nextToken();
-                    gameSessionPlacement.setGameProperties(new ListUnmarshaller<GameProperty>(GamePropertyJsonUnmarshaller.getInstance()).unmarshall(context));
+                    gameSessionPlacement.setGameProperties(new ListUnmarshaller<GameProperty>(GamePropertyJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("MaximumPlayerSessionCount", targetDepth)) {
                     context.nextToken();
@@ -87,7 +89,8 @@ public class GameSessionPlacementJsonUnmarshaller implements Unmarshaller<GameSe
                 if (context.testExpression("PlayerLatencies", targetDepth)) {
                     context.nextToken();
                     gameSessionPlacement.setPlayerLatencies(new ListUnmarshaller<PlayerLatency>(PlayerLatencyJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
                     context.nextToken();
@@ -112,7 +115,8 @@ public class GameSessionPlacementJsonUnmarshaller implements Unmarshaller<GameSe
                 if (context.testExpression("PlacedPlayerSessions", targetDepth)) {
                     context.nextToken();
                     gameSessionPlacement.setPlacedPlayerSessions(new ListUnmarshaller<PlacedPlayerSession>(PlacedPlayerSessionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("GameSessionData", targetDepth)) {
                     context.nextToken();

@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum RateBasedStatementAggregateKeyType {
 
-    IP("IP");
+    IP("IP"),
+    FORWARDED_IP("FORWARDED_IP");
 
     private String value;
 

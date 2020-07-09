@@ -54,7 +54,9 @@ public class DescribeTestCasesResultJsonUnmarshaller implements Unmarshaller<Des
                 }
                 if (context.testExpression("testCases", targetDepth)) {
                     context.nextToken();
-                    describeTestCasesResult.setTestCases(new ListUnmarshaller<TestCase>(TestCaseJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeTestCasesResult.setTestCases(new ListUnmarshaller<TestCase>(TestCaseJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

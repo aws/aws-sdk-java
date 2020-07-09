@@ -51,7 +51,9 @@ public class ListCodeRepositoriesResultJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("CodeRepositorySummaryList", targetDepth)) {
                     context.nextToken();
                     listCodeRepositoriesResult.setCodeRepositorySummaryList(new ListUnmarshaller<CodeRepositorySummary>(CodeRepositorySummaryJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

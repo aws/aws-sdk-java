@@ -54,7 +54,9 @@ public class InstanceNetworkingJsonUnmarshaller implements Unmarshaller<Instance
                 }
                 if (context.testExpression("ports", targetDepth)) {
                     context.nextToken();
-                    instanceNetworking.setPorts(new ListUnmarshaller<InstancePortInfo>(InstancePortInfoJsonUnmarshaller.getInstance()).unmarshall(context));
+                    instanceNetworking.setPorts(new ListUnmarshaller<InstancePortInfo>(InstancePortInfoJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

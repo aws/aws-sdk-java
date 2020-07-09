@@ -66,7 +66,9 @@ public class RegexPatternSetJsonUnmarshaller implements Unmarshaller<RegexPatter
                 }
                 if (context.testExpression("RegularExpressionList", targetDepth)) {
                     context.nextToken();
-                    regexPatternSet.setRegularExpressionList(new ListUnmarshaller<Regex>(RegexJsonUnmarshaller.getInstance()).unmarshall(context));
+                    regexPatternSet.setRegularExpressionList(new ListUnmarshaller<Regex>(RegexJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

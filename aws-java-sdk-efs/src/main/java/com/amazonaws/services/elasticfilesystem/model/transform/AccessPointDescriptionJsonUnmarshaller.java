@@ -58,7 +58,9 @@ public class AccessPointDescriptionJsonUnmarshaller implements Unmarshaller<Acce
                 }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
-                    accessPointDescription.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    accessPointDescription.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("AccessPointId", targetDepth)) {
                     context.nextToken();

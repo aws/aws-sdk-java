@@ -51,7 +51,8 @@ public class ListOperationsResultJsonUnmarshaller implements Unmarshaller<ListOp
                 if (context.testExpression("Operations", targetDepth)) {
                     context.nextToken();
                     listOperationsResult.setOperations(new ListUnmarshaller<OperationSummary>(OperationSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextPageMarker", targetDepth)) {
                     context.nextToken();

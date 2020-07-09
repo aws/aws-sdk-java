@@ -58,13 +58,15 @@ public class ChannelSummaryJsonUnmarshaller implements Unmarshaller<ChannelSumma
                 }
                 if (context.testExpression("destinations", targetDepth)) {
                     context.nextToken();
-                    channelSummary
-                            .setDestinations(new ListUnmarshaller<OutputDestination>(OutputDestinationJsonUnmarshaller.getInstance()).unmarshall(context));
+                    channelSummary.setDestinations(new ListUnmarshaller<OutputDestination>(OutputDestinationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("egressEndpoints", targetDepth)) {
                     context.nextToken();
                     channelSummary.setEgressEndpoints(new ListUnmarshaller<ChannelEgressEndpoint>(ChannelEgressEndpointJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
@@ -72,8 +74,9 @@ public class ChannelSummaryJsonUnmarshaller implements Unmarshaller<ChannelSumma
                 }
                 if (context.testExpression("inputAttachments", targetDepth)) {
                     context.nextToken();
-                    channelSummary
-                            .setInputAttachments(new ListUnmarshaller<InputAttachment>(InputAttachmentJsonUnmarshaller.getInstance()).unmarshall(context));
+                    channelSummary.setInputAttachments(new ListUnmarshaller<InputAttachment>(InputAttachmentJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("inputSpecification", targetDepth)) {
                     context.nextToken();

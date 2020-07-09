@@ -63,7 +63,8 @@ public class ResourceServerTypeJsonUnmarshaller implements Unmarshaller<Resource
                 if (context.testExpression("Scopes", targetDepth)) {
                     context.nextToken();
                     resourceServerType.setScopes(new ListUnmarshaller<ResourceServerScopeType>(ResourceServerScopeTypeJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

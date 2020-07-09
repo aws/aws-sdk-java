@@ -74,7 +74,9 @@ public class DiskSnapshotJsonUnmarshaller implements Unmarshaller<DiskSnapshot, 
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
-                    diskSnapshot.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    diskSnapshot.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("sizeInGb", targetDepth)) {
                     context.nextToken();

@@ -63,7 +63,8 @@ public class GetBulkDeploymentStatusResultJsonUnmarshaller implements Unmarshall
                 if (context.testExpression("ErrorDetails", targetDepth)) {
                     context.nextToken();
                     getBulkDeploymentStatusResult.setErrorDetails(new ListUnmarshaller<ErrorDetail>(ErrorDetailJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ErrorMessage", targetDepth)) {
                     context.nextToken();

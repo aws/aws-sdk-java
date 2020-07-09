@@ -51,7 +51,9 @@ public class GetTransitGatewayRegistrationsResultJsonUnmarshaller implements Unm
                 if (context.testExpression("TransitGatewayRegistrations", targetDepth)) {
                     context.nextToken();
                     getTransitGatewayRegistrationsResult.setTransitGatewayRegistrations(new ListUnmarshaller<TransitGatewayRegistration>(
-                            TransitGatewayRegistrationJsonUnmarshaller.getInstance()).unmarshall(context));
+                            TransitGatewayRegistrationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

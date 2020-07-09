@@ -70,7 +70,9 @@ public class ProxySessionJsonUnmarshaller implements Unmarshaller<ProxySession, 
                 }
                 if (context.testExpression("Capabilities", targetDepth)) {
                     context.nextToken();
-                    proxySession.setCapabilities(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    proxySession.setCapabilities(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("CreatedTimestamp", targetDepth)) {
                     context.nextToken();
@@ -86,7 +88,9 @@ public class ProxySessionJsonUnmarshaller implements Unmarshaller<ProxySession, 
                 }
                 if (context.testExpression("Participants", targetDepth)) {
                     context.nextToken();
-                    proxySession.setParticipants(new ListUnmarshaller<Participant>(ParticipantJsonUnmarshaller.getInstance()).unmarshall(context));
+                    proxySession.setParticipants(new ListUnmarshaller<Participant>(ParticipantJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NumberSelectionBehavior", targetDepth)) {
                     context.nextToken();

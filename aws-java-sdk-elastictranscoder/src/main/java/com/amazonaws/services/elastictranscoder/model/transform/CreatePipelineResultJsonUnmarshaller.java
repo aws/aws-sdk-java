@@ -54,7 +54,9 @@ public class CreatePipelineResultJsonUnmarshaller implements Unmarshaller<Create
                 }
                 if (context.testExpression("Warnings", targetDepth)) {
                     context.nextToken();
-                    createPipelineResult.setWarnings(new ListUnmarshaller<Warning>(WarningJsonUnmarshaller.getInstance()).unmarshall(context));
+                    createPipelineResult.setWarnings(new ListUnmarshaller<Warning>(WarningJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

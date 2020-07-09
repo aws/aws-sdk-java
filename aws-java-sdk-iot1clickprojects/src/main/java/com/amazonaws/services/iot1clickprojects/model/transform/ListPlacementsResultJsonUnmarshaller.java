@@ -51,7 +51,8 @@ public class ListPlacementsResultJsonUnmarshaller implements Unmarshaller<ListPl
                 if (context.testExpression("placements", targetDepth)) {
                     context.nextToken();
                     listPlacementsResult.setPlacements(new ListUnmarshaller<PlacementSummary>(PlacementSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

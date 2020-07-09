@@ -50,7 +50,9 @@ public class GetSubscriptionAttributesResult extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <code>FilterPolicy</code> – The filter policy JSON that is assigned to the subscription.
+     * <code>FilterPolicy</code> – The filter policy JSON that is assigned to the subscription. For more information,
+     * see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-message-filtering.html">Amazon SNS Message
+     * Filtering</a> in the <i>Amazon SNS Developer Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -116,7 +118,9 @@ public class GetSubscriptionAttributesResult extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <code>FilterPolicy</code> – The filter policy JSON that is assigned to the subscription.
+     * <code>FilterPolicy</code> – The filter policy JSON that is assigned to the subscription. For more information,
+     * see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-message-filtering.html">Amazon SNS Message
+     * Filtering</a> in the <i>Amazon SNS Developer Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -177,7 +181,9 @@ public class GetSubscriptionAttributesResult extends com.amazonaws.AmazonWebServ
      *         </li>
      *         <li>
      *         <p>
-     *         <code>FilterPolicy</code> – The filter policy JSON that is assigned to the subscription.
+     *         <code>FilterPolicy</code> – The filter policy JSON that is assigned to the subscription. For more
+     *         information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-message-filtering.html">Amazon
+     *         SNS Message Filtering</a> in the <i>Amazon SNS Developer Guide</i>.
      *         </p>
      *         </li>
      *         <li>
@@ -251,7 +257,9 @@ public class GetSubscriptionAttributesResult extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <code>FilterPolicy</code> – The filter policy JSON that is assigned to the subscription.
+     * <code>FilterPolicy</code> – The filter policy JSON that is assigned to the subscription. For more information,
+     * see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-message-filtering.html">Amazon SNS Message
+     * Filtering</a> in the <i>Amazon SNS Developer Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -313,7 +321,9 @@ public class GetSubscriptionAttributesResult extends com.amazonaws.AmazonWebServ
      *        </li>
      *        <li>
      *        <p>
-     *        <code>FilterPolicy</code> – The filter policy JSON that is assigned to the subscription.
+     *        <code>FilterPolicy</code> – The filter policy JSON that is assigned to the subscription. For more
+     *        information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-message-filtering.html">Amazon SNS
+     *        Message Filtering</a> in the <i>Amazon SNS Developer Guide</i>.
      *        </p>
      *        </li>
      *        <li>
@@ -381,7 +391,9 @@ public class GetSubscriptionAttributesResult extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <code>FilterPolicy</code> – The filter policy JSON that is assigned to the subscription.
+     * <code>FilterPolicy</code> – The filter policy JSON that is assigned to the subscription. For more information,
+     * see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-message-filtering.html">Amazon SNS Message
+     * Filtering</a> in the <i>Amazon SNS Developer Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -443,7 +455,9 @@ public class GetSubscriptionAttributesResult extends com.amazonaws.AmazonWebServ
      *        </li>
      *        <li>
      *        <p>
-     *        <code>FilterPolicy</code> – The filter policy JSON that is assigned to the subscription.
+     *        <code>FilterPolicy</code> – The filter policy JSON that is assigned to the subscription. For more
+     *        information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-message-filtering.html">Amazon SNS
+     *        Message Filtering</a> in the <i>Amazon SNS Developer Guide</i>.
      *        </p>
      *        </li>
      *        <li>

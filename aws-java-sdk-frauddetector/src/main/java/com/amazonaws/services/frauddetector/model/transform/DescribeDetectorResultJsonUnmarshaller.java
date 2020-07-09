@@ -55,7 +55,9 @@ public class DescribeDetectorResultJsonUnmarshaller implements Unmarshaller<Desc
                 if (context.testExpression("detectorVersionSummaries", targetDepth)) {
                     context.nextToken();
                     describeDetectorResult.setDetectorVersionSummaries(new ListUnmarshaller<DetectorVersionSummary>(DetectorVersionSummaryJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

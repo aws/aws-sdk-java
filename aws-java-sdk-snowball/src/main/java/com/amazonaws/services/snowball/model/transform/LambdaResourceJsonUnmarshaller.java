@@ -55,7 +55,8 @@ public class LambdaResourceJsonUnmarshaller implements Unmarshaller<LambdaResour
                 if (context.testExpression("EventTriggers", targetDepth)) {
                     context.nextToken();
                     lambdaResource.setEventTriggers(new ListUnmarshaller<EventTriggerDefinition>(EventTriggerDefinitionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

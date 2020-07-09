@@ -54,7 +54,9 @@ public class CatalogTargetJsonUnmarshaller implements Unmarshaller<CatalogTarget
                 }
                 if (context.testExpression("Tables", targetDepth)) {
                     context.nextToken();
-                    catalogTarget.setTables(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    catalogTarget.setTables(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

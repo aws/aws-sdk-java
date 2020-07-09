@@ -54,7 +54,9 @@ public class FaultRootCauseServiceJsonUnmarshaller implements Unmarshaller<Fault
                 }
                 if (context.testExpression("Names", targetDepth)) {
                     context.nextToken();
-                    faultRootCauseService.setNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    faultRootCauseService.setNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
                     context.nextToken();
@@ -67,7 +69,8 @@ public class FaultRootCauseServiceJsonUnmarshaller implements Unmarshaller<Fault
                 if (context.testExpression("EntityPath", targetDepth)) {
                     context.nextToken();
                     faultRootCauseService.setEntityPath(new ListUnmarshaller<FaultRootCauseEntity>(FaultRootCauseEntityJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Inferred", targetDepth)) {
                     context.nextToken();

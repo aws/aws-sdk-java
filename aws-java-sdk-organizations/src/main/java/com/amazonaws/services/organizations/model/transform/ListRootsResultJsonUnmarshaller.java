@@ -50,7 +50,9 @@ public class ListRootsResultJsonUnmarshaller implements Unmarshaller<ListRootsRe
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Roots", targetDepth)) {
                     context.nextToken();
-                    listRootsResult.setRoots(new ListUnmarshaller<Root>(RootJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listRootsResult.setRoots(new ListUnmarshaller<Root>(RootJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

@@ -50,7 +50,9 @@ public class ListGroupsResultJsonUnmarshaller implements Unmarshaller<ListGroups
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Groups", targetDepth)) {
                     context.nextToken();
-                    listGroupsResult.setGroups(new ListUnmarshaller<GroupInformation>(GroupInformationJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listGroupsResult.setGroups(new ListUnmarshaller<GroupInformation>(GroupInformationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

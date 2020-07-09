@@ -67,7 +67,9 @@ public class AutoScalingSettingsDescriptionJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("ScalingPolicies", targetDepth)) {
                     context.nextToken();
                     autoScalingSettingsDescription.setScalingPolicies(new ListUnmarshaller<AutoScalingPolicyDescription>(
-                            AutoScalingPolicyDescriptionJsonUnmarshaller.getInstance()).unmarshall(context));
+                            AutoScalingPolicyDescriptionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

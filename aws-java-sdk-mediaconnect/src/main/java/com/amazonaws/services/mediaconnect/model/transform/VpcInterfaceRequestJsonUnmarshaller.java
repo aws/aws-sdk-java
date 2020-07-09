@@ -58,7 +58,9 @@ public class VpcInterfaceRequestJsonUnmarshaller implements Unmarshaller<VpcInte
                 }
                 if (context.testExpression("securityGroupIds", targetDepth)) {
                     context.nextToken();
-                    vpcInterfaceRequest.setSecurityGroupIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    vpcInterfaceRequest.setSecurityGroupIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("subnetId", targetDepth)) {
                     context.nextToken();

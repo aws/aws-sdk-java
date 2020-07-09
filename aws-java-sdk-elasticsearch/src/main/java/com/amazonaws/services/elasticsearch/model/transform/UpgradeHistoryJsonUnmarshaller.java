@@ -62,7 +62,9 @@ public class UpgradeHistoryJsonUnmarshaller implements Unmarshaller<UpgradeHisto
                 }
                 if (context.testExpression("StepsList", targetDepth)) {
                     context.nextToken();
-                    upgradeHistory.setStepsList(new ListUnmarshaller<UpgradeStepItem>(UpgradeStepItemJsonUnmarshaller.getInstance()).unmarshall(context));
+                    upgradeHistory.setStepsList(new ListUnmarshaller<UpgradeStepItem>(UpgradeStepItemJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

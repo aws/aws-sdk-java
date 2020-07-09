@@ -55,7 +55,8 @@ public class NodeOverridesJsonUnmarshaller implements Unmarshaller<NodeOverrides
                 if (context.testExpression("nodePropertyOverrides", targetDepth)) {
                     context.nextToken();
                     nodeOverrides.setNodePropertyOverrides(new ListUnmarshaller<NodePropertyOverride>(NodePropertyOverrideJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -55,7 +55,8 @@ public class HumanLoopActivationOutputJsonUnmarshaller implements Unmarshaller<H
                 if (context.testExpression("HumanLoopActivationReasons", targetDepth)) {
                     context.nextToken();
                     humanLoopActivationOutput.setHumanLoopActivationReasons(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("HumanLoopActivationConditionsEvaluationResults", targetDepth)) {
                     context.nextToken();

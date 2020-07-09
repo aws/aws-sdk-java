@@ -90,11 +90,15 @@ public class FaceDetailJsonUnmarshaller implements Unmarshaller<FaceDetail, Json
                 }
                 if (context.testExpression("Emotions", targetDepth)) {
                     context.nextToken();
-                    faceDetail.setEmotions(new ListUnmarshaller<Emotion>(EmotionJsonUnmarshaller.getInstance()).unmarshall(context));
+                    faceDetail.setEmotions(new ListUnmarshaller<Emotion>(EmotionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Landmarks", targetDepth)) {
                     context.nextToken();
-                    faceDetail.setLandmarks(new ListUnmarshaller<Landmark>(LandmarkJsonUnmarshaller.getInstance()).unmarshall(context));
+                    faceDetail.setLandmarks(new ListUnmarshaller<Landmark>(LandmarkJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Pose", targetDepth)) {
                     context.nextToken();

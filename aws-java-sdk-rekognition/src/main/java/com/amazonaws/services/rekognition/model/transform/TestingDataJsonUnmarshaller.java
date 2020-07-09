@@ -50,7 +50,9 @@ public class TestingDataJsonUnmarshaller implements Unmarshaller<TestingData, Js
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Assets", targetDepth)) {
                     context.nextToken();
-                    testingData.setAssets(new ListUnmarshaller<Asset>(AssetJsonUnmarshaller.getInstance()).unmarshall(context));
+                    testingData.setAssets(new ListUnmarshaller<Asset>(AssetJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("AutoCreate", targetDepth)) {
                     context.nextToken();

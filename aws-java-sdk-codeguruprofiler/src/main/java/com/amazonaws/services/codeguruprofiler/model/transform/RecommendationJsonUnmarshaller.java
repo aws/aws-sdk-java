@@ -70,7 +70,9 @@ public class RecommendationJsonUnmarshaller implements Unmarshaller<Recommendati
                 }
                 if (context.testExpression("topMatches", targetDepth)) {
                     context.nextToken();
-                    recommendation.setTopMatches(new ListUnmarshaller<Match>(MatchJsonUnmarshaller.getInstance()).unmarshall(context));
+                    recommendation.setTopMatches(new ListUnmarshaller<Match>(MatchJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

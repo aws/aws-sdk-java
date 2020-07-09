@@ -51,7 +51,9 @@ public class ListGroupCertificateAuthoritiesResultJsonUnmarshaller implements Un
                 if (context.testExpression("GroupCertificateAuthorities", targetDepth)) {
                     context.nextToken();
                     listGroupCertificateAuthoritiesResult.setGroupCertificateAuthorities(new ListUnmarshaller<GroupCertificateAuthorityProperties>(
-                            GroupCertificateAuthorityPropertiesJsonUnmarshaller.getInstance()).unmarshall(context));
+                            GroupCertificateAuthorityPropertiesJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

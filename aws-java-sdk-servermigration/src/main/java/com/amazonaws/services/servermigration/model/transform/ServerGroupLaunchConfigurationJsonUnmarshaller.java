@@ -59,7 +59,9 @@ public class ServerGroupLaunchConfigurationJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("serverLaunchConfigurations", targetDepth)) {
                     context.nextToken();
                     serverGroupLaunchConfiguration.setServerLaunchConfigurations(new ListUnmarshaller<ServerLaunchConfiguration>(
-                            ServerLaunchConfigurationJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ServerLaunchConfigurationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

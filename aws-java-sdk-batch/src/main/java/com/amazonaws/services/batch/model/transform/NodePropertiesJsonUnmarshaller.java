@@ -59,7 +59,8 @@ public class NodePropertiesJsonUnmarshaller implements Unmarshaller<NodeProperti
                 if (context.testExpression("nodeRangeProperties", targetDepth)) {
                     context.nextToken();
                     nodeProperties.setNodeRangeProperties(new ListUnmarshaller<NodeRangeProperty>(NodeRangePropertyJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

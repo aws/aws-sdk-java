@@ -99,7 +99,8 @@ public class ReservedElasticsearchInstanceJsonUnmarshaller implements Unmarshall
                 if (context.testExpression("RecurringCharges", targetDepth)) {
                     context.nextToken();
                     reservedElasticsearchInstance.setRecurringCharges(new ListUnmarshaller<RecurringCharge>(RecurringChargeJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

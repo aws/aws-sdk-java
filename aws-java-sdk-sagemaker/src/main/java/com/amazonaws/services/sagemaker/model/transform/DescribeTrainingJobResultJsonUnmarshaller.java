@@ -99,7 +99,9 @@ public class DescribeTrainingJobResultJsonUnmarshaller implements Unmarshaller<D
                 }
                 if (context.testExpression("InputDataConfig", targetDepth)) {
                     context.nextToken();
-                    describeTrainingJobResult.setInputDataConfig(new ListUnmarshaller<Channel>(ChannelJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeTrainingJobResult.setInputDataConfig(new ListUnmarshaller<Channel>(ChannelJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("OutputDataConfig", targetDepth)) {
                     context.nextToken();
@@ -136,12 +138,15 @@ public class DescribeTrainingJobResultJsonUnmarshaller implements Unmarshaller<D
                 if (context.testExpression("SecondaryStatusTransitions", targetDepth)) {
                     context.nextToken();
                     describeTrainingJobResult.setSecondaryStatusTransitions(new ListUnmarshaller<SecondaryStatusTransition>(
-                            SecondaryStatusTransitionJsonUnmarshaller.getInstance()).unmarshall(context));
+                            SecondaryStatusTransitionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("FinalMetricDataList", targetDepth)) {
                     context.nextToken();
                     describeTrainingJobResult.setFinalMetricDataList(new ListUnmarshaller<MetricData>(MetricDataJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("EnableNetworkIsolation", targetDepth)) {
                     context.nextToken();
@@ -178,7 +183,9 @@ public class DescribeTrainingJobResultJsonUnmarshaller implements Unmarshaller<D
                 if (context.testExpression("DebugRuleConfigurations", targetDepth)) {
                     context.nextToken();
                     describeTrainingJobResult.setDebugRuleConfigurations(new ListUnmarshaller<DebugRuleConfiguration>(DebugRuleConfigurationJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("TensorBoardOutputConfig", targetDepth)) {
                     context.nextToken();
@@ -187,7 +194,9 @@ public class DescribeTrainingJobResultJsonUnmarshaller implements Unmarshaller<D
                 if (context.testExpression("DebugRuleEvaluationStatuses", targetDepth)) {
                     context.nextToken();
                     describeTrainingJobResult.setDebugRuleEvaluationStatuses(new ListUnmarshaller<DebugRuleEvaluationStatus>(
-                            DebugRuleEvaluationStatusJsonUnmarshaller.getInstance()).unmarshall(context));
+                            DebugRuleEvaluationStatusJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

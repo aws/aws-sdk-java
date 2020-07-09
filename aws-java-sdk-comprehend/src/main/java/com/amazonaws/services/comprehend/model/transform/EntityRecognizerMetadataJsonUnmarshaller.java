@@ -63,7 +63,9 @@ public class EntityRecognizerMetadataJsonUnmarshaller implements Unmarshaller<En
                 if (context.testExpression("EntityTypes", targetDepth)) {
                     context.nextToken();
                     entityRecognizerMetadata.setEntityTypes(new ListUnmarshaller<EntityRecognizerMetadataEntityTypesListItem>(
-                            EntityRecognizerMetadataEntityTypesListItemJsonUnmarshaller.getInstance()).unmarshall(context));
+                            EntityRecognizerMetadataEntityTypesListItemJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

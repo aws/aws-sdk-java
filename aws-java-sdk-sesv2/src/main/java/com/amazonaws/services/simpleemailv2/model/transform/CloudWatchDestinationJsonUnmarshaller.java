@@ -51,7 +51,9 @@ public class CloudWatchDestinationJsonUnmarshaller implements Unmarshaller<Cloud
                 if (context.testExpression("DimensionConfigurations", targetDepth)) {
                     context.nextToken();
                     cloudWatchDestination.setDimensionConfigurations(new ListUnmarshaller<CloudWatchDimensionConfiguration>(
-                            CloudWatchDimensionConfigurationJsonUnmarshaller.getInstance()).unmarshall(context));
+                            CloudWatchDimensionConfigurationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

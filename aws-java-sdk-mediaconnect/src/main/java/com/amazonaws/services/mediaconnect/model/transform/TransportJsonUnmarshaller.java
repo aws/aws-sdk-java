@@ -50,7 +50,9 @@ public class TransportJsonUnmarshaller implements Unmarshaller<Transport, JsonUn
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("cidrAllowList", targetDepth)) {
                     context.nextToken();
-                    transport.setCidrAllowList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    transport.setCidrAllowList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("maxBitrate", targetDepth)) {
                     context.nextToken();

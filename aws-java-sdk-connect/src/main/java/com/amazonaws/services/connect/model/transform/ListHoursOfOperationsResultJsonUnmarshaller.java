@@ -51,7 +51,9 @@ public class ListHoursOfOperationsResultJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("HoursOfOperationSummaryList", targetDepth)) {
                     context.nextToken();
                     listHoursOfOperationsResult.setHoursOfOperationSummaryList(new ListUnmarshaller<HoursOfOperationSummary>(
-                            HoursOfOperationSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                            HoursOfOperationSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

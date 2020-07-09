@@ -51,7 +51,8 @@ public class ListApplicationStatesResultJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("ApplicationStateList", targetDepth)) {
                     context.nextToken();
                     listApplicationStatesResult.setApplicationStateList(new ListUnmarshaller<ApplicationState>(ApplicationStateJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

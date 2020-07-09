@@ -50,11 +50,15 @@ public class WorkflowGraphJsonUnmarshaller implements Unmarshaller<WorkflowGraph
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Nodes", targetDepth)) {
                     context.nextToken();
-                    workflowGraph.setNodes(new ListUnmarshaller<Node>(NodeJsonUnmarshaller.getInstance()).unmarshall(context));
+                    workflowGraph.setNodes(new ListUnmarshaller<Node>(NodeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Edges", targetDepth)) {
                     context.nextToken();
-                    workflowGraph.setEdges(new ListUnmarshaller<Edge>(EdgeJsonUnmarshaller.getInstance()).unmarshall(context));
+                    workflowGraph.setEdges(new ListUnmarshaller<Edge>(EdgeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

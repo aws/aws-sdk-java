@@ -50,7 +50,9 @@ public class ListTagsResultJsonUnmarshaller implements Unmarshaller<ListTagsResu
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ResourceTagList", targetDepth)) {
                     context.nextToken();
-                    listTagsResult.setResourceTagList(new ListUnmarshaller<ResourceTag>(ResourceTagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listTagsResult.setResourceTagList(new ListUnmarshaller<ResourceTag>(ResourceTagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

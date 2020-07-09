@@ -110,7 +110,9 @@ public class AllocateConnectionOnInterconnectResultJsonUnmarshaller implements U
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
-                    allocateConnectionOnInterconnectResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    allocateConnectionOnInterconnectResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("providerName", targetDepth)) {
                     context.nextToken();

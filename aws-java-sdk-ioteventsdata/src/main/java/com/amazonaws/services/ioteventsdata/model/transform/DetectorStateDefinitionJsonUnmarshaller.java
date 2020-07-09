@@ -55,11 +55,14 @@ public class DetectorStateDefinitionJsonUnmarshaller implements Unmarshaller<Det
                 if (context.testExpression("variables", targetDepth)) {
                     context.nextToken();
                     detectorStateDefinition.setVariables(new ListUnmarshaller<VariableDefinition>(VariableDefinitionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("timers", targetDepth)) {
                     context.nextToken();
-                    detectorStateDefinition.setTimers(new ListUnmarshaller<TimerDefinition>(TimerDefinitionJsonUnmarshaller.getInstance()).unmarshall(context));
+                    detectorStateDefinition.setTimers(new ListUnmarshaller<TimerDefinition>(TimerDefinitionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -59,7 +59,8 @@ public class OrganizationCustomRuleMetadataJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("OrganizationConfigRuleTriggerTypes", targetDepth)) {
                     context.nextToken();
                     organizationCustomRuleMetadata.setOrganizationConfigRuleTriggerTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("InputParameters", targetDepth)) {
                     context.nextToken();
@@ -72,7 +73,8 @@ public class OrganizationCustomRuleMetadataJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("ResourceTypesScope", targetDepth)) {
                     context.nextToken();
                     organizationCustomRuleMetadata.setResourceTypesScope(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ResourceIdScope", targetDepth)) {
                     context.nextToken();

@@ -51,7 +51,8 @@ public class GlobalTableDescriptionJsonUnmarshaller implements Unmarshaller<Glob
                 if (context.testExpression("ReplicationGroup", targetDepth)) {
                     context.nextToken();
                     globalTableDescription.setReplicationGroup(new ListUnmarshaller<ReplicaDescription>(ReplicaDescriptionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("GlobalTableArn", targetDepth)) {
                     context.nextToken();

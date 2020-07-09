@@ -63,7 +63,8 @@ public class PolicyComplianceDetailJsonUnmarshaller implements Unmarshaller<Poli
                 if (context.testExpression("Violators", targetDepth)) {
                     context.nextToken();
                     policyComplianceDetail.setViolators(new ListUnmarshaller<ComplianceViolator>(ComplianceViolatorJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("EvaluationLimitExceeded", targetDepth)) {
                     context.nextToken();

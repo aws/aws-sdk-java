@@ -51,8 +51,9 @@ public class ListUniqueProblemsResultJsonUnmarshaller implements Unmarshaller<Li
                 if (context.testExpression("uniqueProblems", targetDepth)) {
                     context.nextToken();
                     listUniqueProblemsResult.setUniqueProblems(new MapUnmarshaller<String, java.util.List<UniqueProblem>>(
-                            context.getUnmarshaller(String.class), new ListUnmarshaller<UniqueProblem>(UniqueProblemJsonUnmarshaller.getInstance()))
-                            .unmarshall(context));
+                            context.getUnmarshaller(String.class), new ListUnmarshaller<UniqueProblem>(UniqueProblemJsonUnmarshaller.getInstance())
+
+                    ).unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

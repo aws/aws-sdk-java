@@ -51,7 +51,8 @@ public class S3JobDefinitionJsonUnmarshaller implements Unmarshaller<S3JobDefini
                 if (context.testExpression("bucketDefinitions", targetDepth)) {
                     context.nextToken();
                     s3JobDefinition.setBucketDefinitions(new ListUnmarshaller<S3BucketDefinitionForJob>(S3BucketDefinitionForJobJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("scoping", targetDepth)) {
                     context.nextToken();

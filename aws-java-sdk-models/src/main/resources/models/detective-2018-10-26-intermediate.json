@@ -659,6 +659,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.detective.request.AcceptInvitationRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -727,6 +728,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the behavior graph that the member account is accepting the invitation for.</p> <p>The member account status in the behavior graph must be <code>INVITED</code>.</p>\n@param graphArn The ARN of the behavior graph that the member account is accepting the invitation for.</p> <p>The member account status in the behavior graph must be <code>INVITED</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -797,6 +799,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the behavior graph that the member account is accepting the invitation for.</p> <p>The member account status in the behavior graph must be <code>INVITED</code>.</p>\n@param graphArn The ARN of the behavior graph that the member account is accepting the invitation for.</p> <p>The member account status in the behavior graph must be <code>INVITED</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -812,6 +815,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.detective.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "GraphArn" ],
@@ -843,6 +847,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.detective.response.AcceptInvitationResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -851,6 +856,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.detective.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -885,6 +891,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.detective.model.Account",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -946,6 +953,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The account identifier of the AWS account.</p>\n@param accountId The account identifier of the AWS account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1014,6 +1022,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The AWS account root user email address for the AWS account.</p>\n@param emailAddress The AWS account root user email address for the AWS account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1084,6 +1093,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The account identifier of the AWS account.</p>\n@param accountId The account identifier of the AWS account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1153,6 +1163,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The AWS account root user email address for the AWS account.</p>\n@param emailAddress The AWS account root user email address for the AWS account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1168,6 +1179,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.detective.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "AccountId", "EmailAddress" ],
@@ -1202,6 +1214,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ConflictException",
+      "fullyQualifiedName" : "com.amazonaws.services.detective.exception.ConflictException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1210,6 +1223,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.detective.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1241,6 +1255,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.detective.request.CreateGraphRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1256,6 +1271,7 @@
       },
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.detective.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1287,6 +1303,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.detective.response.CreateGraphResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1348,6 +1365,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the new behavior graph.</p>\n@param graphArn The ARN of the new behavior graph.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1418,6 +1436,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the new behavior graph.</p>\n@param graphArn The ARN of the new behavior graph.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1433,6 +1452,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.detective.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1467,6 +1487,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.detective.request.CreateMembersRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1535,6 +1556,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the behavior graph to invite the member accounts to contribute their data to.</p>\n@param graphArn The ARN of the behavior graph to invite the member accounts to contribute their data to.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1603,6 +1625,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Customized message text to include in the invitation email message to the invited member accounts.</p>\n@param message Customized message text to include in the invitation email message to the invited member accounts.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1710,6 +1733,7 @@
               "variableSetterType" : "Account"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1754,6 +1778,7 @@
           "variableSetterType" : "java.util.Collection<Account>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The list of AWS accounts to invite to become member accounts in the behavior graph. For each invited account, the account list contains the account identifier and the AWS account root user email address.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAccounts(java.util.Collection)} or {@link #withAccounts(java.util.Collection)} if you want to override the existing values.</p>\n@param accounts The list of AWS accounts to invite to become member accounts in the behavior graph. For each invited account, the account list contains the account identifier and the AWS account root user email address.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1863,6 +1888,7 @@
                 "variableSetterType" : "Account"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1907,6 +1933,7 @@
             "variableSetterType" : "java.util.Collection<Account>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The list of AWS accounts to invite to become member accounts in the behavior graph. For each invited account, the account list contains the account identifier and the AWS account root user email address.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAccounts(java.util.Collection)} or {@link #withAccounts(java.util.Collection)} if you want to override the existing values.</p>\n@param accounts The list of AWS accounts to invite to become member accounts in the behavior graph. For each invited account, the account list contains the account identifier and the AWS account root user email address.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1976,6 +2003,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the behavior graph to invite the member accounts to contribute their data to.</p>\n@param graphArn The ARN of the behavior graph to invite the member accounts to contribute their data to.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2045,6 +2073,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Customized message text to include in the invitation email message to the invited member accounts.</p>\n@param message Customized message text to include in the invitation email message to the invited member accounts.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2060,6 +2089,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.detective.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "GraphArn", "Accounts" ],
@@ -2091,6 +2121,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.detective.response.CreateMembersResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2191,6 +2222,7 @@
               "variableSetterType" : "MemberDetail"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2235,6 +2267,7 @@
           "variableSetterType" : "java.util.Collection<MemberDetail>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The set of member account invitation requests that Detective was able to process. This includes accounts that are being verified, that failed verification, and that passed verification and are being sent an invitation.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setMembers(java.util.Collection)} or {@link #withMembers(java.util.Collection)} if you want to override the existing values.</p>\n@param members The set of member account invitation requests that Detective was able to process. This includes accounts that are being verified, that failed verification, and that passed verification and are being sent an invitation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2342,6 +2375,7 @@
               "variableSetterType" : "UnprocessedAccount"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2386,6 +2420,7 @@
           "variableSetterType" : "java.util.Collection<UnprocessedAccount>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The list of accounts for which Detective was unable to process the invitation request. For each account, the list provides the reason why the request could not be processed. The list includes accounts that are already member accounts in the behavior graph.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setUnprocessedAccounts(java.util.Collection)} or {@link #withUnprocessedAccounts(java.util.Collection)} if you want to override the existing values.</p>\n@param unprocessedAccounts The list of accounts for which Detective was unable to process the invitation request. For each account, the list provides the reason why the request could not be processed. The list includes accounts that are already member accounts in the behavior graph.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2495,6 +2530,7 @@
                 "variableSetterType" : "MemberDetail"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2539,6 +2575,7 @@
             "variableSetterType" : "java.util.Collection<MemberDetail>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The set of member account invitation requests that Detective was able to process. This includes accounts that are being verified, that failed verification, and that passed verification and are being sent an invitation.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setMembers(java.util.Collection)} or {@link #withMembers(java.util.Collection)} if you want to override the existing values.</p>\n@param members The set of member account invitation requests that Detective was able to process. This includes accounts that are being verified, that failed verification, and that passed verification and are being sent an invitation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2647,6 +2684,7 @@
                 "variableSetterType" : "UnprocessedAccount"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2691,6 +2729,7 @@
             "variableSetterType" : "java.util.Collection<UnprocessedAccount>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The list of accounts for which Detective was unable to process the invitation request. For each account, the list provides the reason why the request could not be processed. The list includes accounts that are already member accounts in the behavior graph.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setUnprocessedAccounts(java.util.Collection)} or {@link #withUnprocessedAccounts(java.util.Collection)} if you want to override the existing values.</p>\n@param unprocessedAccounts The list of accounts for which Detective was unable to process the invitation request. For each account, the list provides the reason why the request could not be processed. The list includes accounts that are already member accounts in the behavior graph.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2706,6 +2745,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.detective.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2740,6 +2780,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.detective.request.DeleteGraphRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2808,6 +2849,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the behavior graph to disable.</p>\n@param graphArn The ARN of the behavior graph to disable.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2878,6 +2920,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the behavior graph to disable.</p>\n@param graphArn The ARN of the behavior graph to disable.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2893,6 +2936,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.detective.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "GraphArn" ],
@@ -2924,6 +2968,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.detective.response.DeleteGraphResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2932,6 +2977,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.detective.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2966,6 +3012,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.detective.request.DeleteMembersRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3034,6 +3081,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the behavior graph to delete members from.</p>\n@param graphArn The ARN of the behavior graph to delete members from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3141,6 +3189,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3185,6 +3234,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The list of AWS account identifiers for the member accounts to delete from the behavior graph.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAccountIds(java.util.Collection)} or {@link #withAccountIds(java.util.Collection)} if you want to override the existing values.</p>\n@param accountIds The list of AWS account identifiers for the member accounts to delete from the behavior graph.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3294,6 +3344,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3338,6 +3389,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The list of AWS account identifiers for the member accounts to delete from the behavior graph.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAccountIds(java.util.Collection)} or {@link #withAccountIds(java.util.Collection)} if you want to override the existing values.</p>\n@param accountIds The list of AWS account identifiers for the member accounts to delete from the behavior graph.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3407,6 +3459,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the behavior graph to delete members from.</p>\n@param graphArn The ARN of the behavior graph to delete members from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3422,6 +3475,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.detective.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "GraphArn", "AccountIds" ],
@@ -3453,6 +3507,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.detective.response.DeleteMembersResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3553,6 +3608,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3597,6 +3653,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The list of AWS account identifiers for the member accounts that Detective successfully deleted from the behavior graph.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAccountIds(java.util.Collection)} or {@link #withAccountIds(java.util.Collection)} if you want to override the existing values.</p>\n@param accountIds The list of AWS account identifiers for the member accounts that Detective successfully deleted from the behavior graph.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3704,6 +3761,7 @@
               "variableSetterType" : "UnprocessedAccount"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3748,6 +3806,7 @@
           "variableSetterType" : "java.util.Collection<UnprocessedAccount>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The list of member accounts that Detective was not able to delete from the behavior graph. For each member account, provides the reason that the deletion could not be processed.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setUnprocessedAccounts(java.util.Collection)} or {@link #withUnprocessedAccounts(java.util.Collection)} if you want to override the existing values.</p>\n@param unprocessedAccounts The list of member accounts that Detective was not able to delete from the behavior graph. For each member account, provides the reason that the deletion could not be processed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3857,6 +3916,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3901,6 +3961,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The list of AWS account identifiers for the member accounts that Detective successfully deleted from the behavior graph.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAccountIds(java.util.Collection)} or {@link #withAccountIds(java.util.Collection)} if you want to override the existing values.</p>\n@param accountIds The list of AWS account identifiers for the member accounts that Detective successfully deleted from the behavior graph.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4009,6 +4070,7 @@
                 "variableSetterType" : "UnprocessedAccount"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4053,6 +4115,7 @@
             "variableSetterType" : "java.util.Collection<UnprocessedAccount>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The list of member accounts that Detective was not able to delete from the behavior graph. For each member account, provides the reason that the deletion could not be processed.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setUnprocessedAccounts(java.util.Collection)} or {@link #withUnprocessedAccounts(java.util.Collection)} if you want to override the existing values.</p>\n@param unprocessedAccounts The list of member accounts that Detective was not able to delete from the behavior graph. For each member account, provides the reason that the deletion could not be processed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4068,6 +4131,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.detective.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4102,6 +4166,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.detective.request.DisassociateMembershipRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4170,6 +4235,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the behavior graph to remove the member account from.</p> <p>The member account's member status in the behavior graph must be <code>ENABLED</code>.</p>\n@param graphArn The ARN of the behavior graph to remove the member account from.</p> <p>The member account's member status in the behavior graph must be <code>ENABLED</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4240,6 +4306,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the behavior graph to remove the member account from.</p> <p>The member account's member status in the behavior graph must be <code>ENABLED</code>.</p>\n@param graphArn The ARN of the behavior graph to remove the member account from.</p> <p>The member account's member status in the behavior graph must be <code>ENABLED</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4255,6 +4322,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.detective.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "GraphArn" ],
@@ -4286,6 +4354,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.detective.response.DisassociateMembershipResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4294,6 +4363,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.detective.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4328,6 +4398,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.detective.request.GetMembersRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4396,6 +4467,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the behavior graph for which to request the member details.</p>\n@param graphArn The ARN of the behavior graph for which to request the member details.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4503,6 +4575,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4547,6 +4620,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The list of AWS account identifiers for the member account for which to return member details.</p> <p>You cannot use <code>GetMembers</code> to retrieve information about member accounts that were removed from the behavior graph.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAccountIds(java.util.Collection)} or {@link #withAccountIds(java.util.Collection)} if you want to override the existing values.</p>\n@param accountIds The list of AWS account identifiers for the member account for which to return member details.</p> <p>You cannot use <code>GetMembers</code> to retrieve information about member accounts that were removed from the behavior graph.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4656,6 +4730,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4700,6 +4775,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The list of AWS account identifiers for the member account for which to return member details.</p> <p>You cannot use <code>GetMembers</code> to retrieve information about member accounts that were removed from the behavior graph.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAccountIds(java.util.Collection)} or {@link #withAccountIds(java.util.Collection)} if you want to override the existing values.</p>\n@param accountIds The list of AWS account identifiers for the member account for which to return member details.</p> <p>You cannot use <code>GetMembers</code> to retrieve information about member accounts that were removed from the behavior graph.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4769,6 +4845,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the behavior graph for which to request the member details.</p>\n@param graphArn The ARN of the behavior graph for which to request the member details.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4784,6 +4861,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.detective.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "GraphArn", "AccountIds" ],
@@ -4815,6 +4893,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.detective.response.GetMembersResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4915,6 +4994,7 @@
               "variableSetterType" : "MemberDetail"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4959,6 +5039,7 @@
           "variableSetterType" : "java.util.Collection<MemberDetail>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The member account details that Detective is returning in response to the request.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setMemberDetails(java.util.Collection)} or {@link #withMemberDetails(java.util.Collection)} if you want to override the existing values.</p>\n@param memberDetails The member account details that Detective is returning in response to the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5066,6 +5147,7 @@
               "variableSetterType" : "UnprocessedAccount"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5110,6 +5192,7 @@
           "variableSetterType" : "java.util.Collection<UnprocessedAccount>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The requested member accounts for which Detective was unable to return member details.</p> <p>For each account, provides the reason why the request could not be processed.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setUnprocessedAccounts(java.util.Collection)} or {@link #withUnprocessedAccounts(java.util.Collection)} if you want to override the existing values.</p>\n@param unprocessedAccounts The requested member accounts for which Detective was unable to return member details.</p> <p>For each account, provides the reason why the request could not be processed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5219,6 +5302,7 @@
                 "variableSetterType" : "MemberDetail"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5263,6 +5347,7 @@
             "variableSetterType" : "java.util.Collection<MemberDetail>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The member account details that Detective is returning in response to the request.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setMemberDetails(java.util.Collection)} or {@link #withMemberDetails(java.util.Collection)} if you want to override the existing values.</p>\n@param memberDetails The member account details that Detective is returning in response to the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5371,6 +5456,7 @@
                 "variableSetterType" : "UnprocessedAccount"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5415,6 +5501,7 @@
             "variableSetterType" : "java.util.Collection<UnprocessedAccount>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The requested member accounts for which Detective was unable to return member details.</p> <p>For each account, provides the reason why the request could not be processed.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setUnprocessedAccounts(java.util.Collection)} or {@link #withUnprocessedAccounts(java.util.Collection)} if you want to override the existing values.</p>\n@param unprocessedAccounts The requested member accounts for which Detective was unable to return member details.</p> <p>For each account, provides the reason why the request could not be processed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5430,6 +5517,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.detective.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -5464,6 +5552,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.detective.model.Graph",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5525,6 +5614,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the behavior graph.</p>\n@param arn The ARN of the behavior graph.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5593,6 +5683,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date and time that the behavior graph was created. The value is in milliseconds since the epoch.</p>\n@param createdTime The date and time that the behavior graph was created. The value is in milliseconds since the epoch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5663,6 +5754,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the behavior graph.</p>\n@param arn The ARN of the behavior graph.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5732,6 +5824,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date and time that the behavior graph was created. The value is in milliseconds since the epoch.</p>\n@param createdTime The date and time that the behavior graph was created. The value is in milliseconds since the epoch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5747,6 +5840,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.detective.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -5781,6 +5875,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InternalServerException",
+      "fullyQualifiedName" : "com.amazonaws.services.detective.exception.InternalServerException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5789,6 +5884,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.detective.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -5820,6 +5916,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.detective.request.ListGraphsRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5888,6 +5985,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.</p>\n@param nextToken For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5956,6 +6054,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of graphs to return at a time. The total must be less than the overall limit on the number of results to return, which is currently 200.</p>\n@param maxResults The maximum number of graphs to return at a time. The total must be less than the overall limit on the number of results to return, which is currently 200.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6026,6 +6125,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of graphs to return at a time. The total must be less than the overall limit on the number of results to return, which is currently 200.</p>\n@param maxResults The maximum number of graphs to return at a time. The total must be less than the overall limit on the number of results to return, which is currently 200.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6095,6 +6195,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.</p>\n@param nextToken For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6110,6 +6211,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.detective.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6141,6 +6243,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.detective.response.ListGraphsResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6241,6 +6344,7 @@
               "variableSetterType" : "Graph"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6285,6 +6389,7 @@
           "variableSetterType" : "java.util.Collection<Graph>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of behavior graphs that the account is a master for.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setGraphList(java.util.Collection)} or {@link #withGraphList(java.util.Collection)} if you want to override the existing values.</p>\n@param graphList A list of behavior graphs that the account is a master for.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6353,6 +6458,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If there are more behavior graphs remaining in the results, then this is the pagination token to use to request the next page of behavior graphs.</p>\n@param nextToken If there are more behavior graphs remaining in the results, then this is the pagination token to use to request the next page of behavior graphs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6462,6 +6568,7 @@
                 "variableSetterType" : "Graph"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6506,6 +6613,7 @@
             "variableSetterType" : "java.util.Collection<Graph>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of behavior graphs that the account is a master for.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setGraphList(java.util.Collection)} or {@link #withGraphList(java.util.Collection)} if you want to override the existing values.</p>\n@param graphList A list of behavior graphs that the account is a master for.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6575,6 +6683,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If there are more behavior graphs remaining in the results, then this is the pagination token to use to request the next page of behavior graphs.</p>\n@param nextToken If there are more behavior graphs remaining in the results, then this is the pagination token to use to request the next page of behavior graphs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6590,6 +6699,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.detective.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6624,6 +6734,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.detective.request.ListInvitationsRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6692,6 +6803,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>For requests to retrieve the next page of results, the pagination token that was returned with the previous page of results. The initial request does not include a pagination token.</p>\n@param nextToken For requests to retrieve the next page of results, the pagination token that was returned with the previous page of results. The initial request does not include a pagination token.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6760,6 +6872,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of behavior graph invitations to return in the response. The total must be less than the overall limit on the number of results to return, which is currently 200.</p>\n@param maxResults The maximum number of behavior graph invitations to return in the response. The total must be less than the overall limit on the number of results to return, which is currently 200.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6830,6 +6943,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of behavior graph invitations to return in the response. The total must be less than the overall limit on the number of results to return, which is currently 200.</p>\n@param maxResults The maximum number of behavior graph invitations to return in the response. The total must be less than the overall limit on the number of results to return, which is currently 200.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6899,6 +7013,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>For requests to retrieve the next page of results, the pagination token that was returned with the previous page of results. The initial request does not include a pagination token.</p>\n@param nextToken For requests to retrieve the next page of results, the pagination token that was returned with the previous page of results. The initial request does not include a pagination token.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6914,6 +7029,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.detective.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6945,6 +7061,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.detective.response.ListInvitationsResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7045,6 +7162,7 @@
               "variableSetterType" : "MemberDetail"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7089,6 +7207,7 @@
           "variableSetterType" : "java.util.Collection<MemberDetail>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The list of behavior graphs for which the member account has open or accepted invitations.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setInvitations(java.util.Collection)} or {@link #withInvitations(java.util.Collection)} if you want to override the existing values.</p>\n@param invitations The list of behavior graphs for which the member account has open or accepted invitations.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7157,6 +7276,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If there are more behavior graphs remaining in the results, then this is the pagination token to use to request the next page of behavior graphs.</p>\n@param nextToken If there are more behavior graphs remaining in the results, then this is the pagination token to use to request the next page of behavior graphs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7266,6 +7386,7 @@
                 "variableSetterType" : "MemberDetail"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7310,6 +7431,7 @@
             "variableSetterType" : "java.util.Collection<MemberDetail>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The list of behavior graphs for which the member account has open or accepted invitations.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setInvitations(java.util.Collection)} or {@link #withInvitations(java.util.Collection)} if you want to override the existing values.</p>\n@param invitations The list of behavior graphs for which the member account has open or accepted invitations.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7379,6 +7501,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If there are more behavior graphs remaining in the results, then this is the pagination token to use to request the next page of behavior graphs.</p>\n@param nextToken If there are more behavior graphs remaining in the results, then this is the pagination token to use to request the next page of behavior graphs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7394,6 +7517,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.detective.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -7428,6 +7552,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.detective.request.ListMembersRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7496,6 +7621,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the behavior graph for which to retrieve the list of member accounts.</p>\n@param graphArn The ARN of the behavior graph for which to retrieve the list of member accounts.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7564,6 +7690,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>For requests to retrieve the next page of member account results, the pagination token that was returned with the previous page of results. The initial request does not include a pagination token.</p>\n@param nextToken For requests to retrieve the next page of member account results, the pagination token that was returned with the previous page of results. The initial request does not include a pagination token.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7632,6 +7759,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of member accounts to include in the response. The total must be less than the overall limit on the number of results to return, which is currently 200.</p>\n@param maxResults The maximum number of member accounts to include in the response. The total must be less than the overall limit on the number of results to return, which is currently 200.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7702,6 +7830,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the behavior graph for which to retrieve the list of member accounts.</p>\n@param graphArn The ARN of the behavior graph for which to retrieve the list of member accounts.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7771,6 +7900,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of member accounts to include in the response. The total must be less than the overall limit on the number of results to return, which is currently 200.</p>\n@param maxResults The maximum number of member accounts to include in the response. The total must be less than the overall limit on the number of results to return, which is currently 200.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7840,6 +7970,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>For requests to retrieve the next page of member account results, the pagination token that was returned with the previous page of results. The initial request does not include a pagination token.</p>\n@param nextToken For requests to retrieve the next page of member account results, the pagination token that was returned with the previous page of results. The initial request does not include a pagination token.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7855,6 +7986,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.detective.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "GraphArn" ],
@@ -7886,6 +8018,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.detective.response.ListMembersResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7986,6 +8119,7 @@
               "variableSetterType" : "MemberDetail"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8030,6 +8164,7 @@
           "variableSetterType" : "java.util.Collection<MemberDetail>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The list of member accounts in the behavior graph.</p> <p>The results include member accounts that did not pass verification and member accounts that have not yet accepted the invitation to the behavior graph. The results do not include member accounts that were removed from the behavior graph.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setMemberDetails(java.util.Collection)} or {@link #withMemberDetails(java.util.Collection)} if you want to override the existing values.</p>\n@param memberDetails The list of member accounts in the behavior graph.</p> <p>The results include member accounts that did not pass verification and member accounts that have not yet accepted the invitation to the behavior graph. The results do not include member accounts that were removed from the behavior graph.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8098,6 +8233,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If there are more member accounts remaining in the results, then this is the pagination token to use to request the next page of member accounts.</p>\n@param nextToken If there are more member accounts remaining in the results, then this is the pagination token to use to request the next page of member accounts.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8207,6 +8343,7 @@
                 "variableSetterType" : "MemberDetail"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8251,6 +8388,7 @@
             "variableSetterType" : "java.util.Collection<MemberDetail>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The list of member accounts in the behavior graph.</p> <p>The results include member accounts that did not pass verification and member accounts that have not yet accepted the invitation to the behavior graph. The results do not include member accounts that were removed from the behavior graph.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setMemberDetails(java.util.Collection)} or {@link #withMemberDetails(java.util.Collection)} if you want to override the existing values.</p>\n@param memberDetails The list of member accounts in the behavior graph.</p> <p>The results include member accounts that did not pass verification and member accounts that have not yet accepted the invitation to the behavior graph. The results do not include member accounts that were removed from the behavior graph.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8320,6 +8458,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If there are more member accounts remaining in the results, then this is the pagination token to use to request the next page of member accounts.</p>\n@param nextToken If there are more member accounts remaining in the results, then this is the pagination token to use to request the next page of member accounts.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8335,6 +8474,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.detective.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -8369,6 +8509,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.detective.model.MemberDetail",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8430,6 +8571,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The AWS account identifier for the member account.</p>\n@param accountId The AWS account identifier for the member account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8498,6 +8640,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The AWS account root user email address for the member account.</p>\n@param emailAddress The AWS account root user email address for the member account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8566,6 +8709,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the behavior graph that the member account was invited to.</p>\n@param graphArn The ARN of the behavior graph that the member account was invited to.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8634,6 +8778,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The AWS account identifier of the master account for the behavior graph.</p>\n@param masterId The AWS account identifier of the master account for the behavior graph.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8702,6 +8847,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The current membership status of the member account. The status can have one of the following values:</p> <ul> <li> <p> <code>INVITED</code> - Indicates that the member was sent an invitation but has not yet responded.</p> </li> <li> <p> <code>VERIFICATION_IN_PROGRESS</code> - Indicates that Detective is verifying that the account identifier and email address provided for the member account match. If they do match, then Detective sends the invitation. If the email address and account identifier don't match, then the member cannot be added to the behavior graph.</p> </li> <li> <p> <code>VERIFICATION_FAILED</code> - Indicates that the account and email address provided for the member account do not match, and Detective did not send an invitation to the account.</p> </li> <li> <p> <code>ENABLED</code> - Indicates that the member account accepted the invitation to contribute to the behavior graph.</p> </li> <li> <p> <code>ACCEPTED_BUT_DISABLED</code> - Indicates that the member account accepted the invitation but is prevented from contributing data to the behavior graph. <code>DisabledReason</code> provides the reason why the member account is not enabled.</p> </li> </ul> <p>Member accounts that declined an invitation or that were removed from the behavior graph are not included.</p>\n@param status The current membership status of the member account. The status can have one of the following values:</p> <ul> <li> <p> <code>INVITED</code> - Indicates that the member was sent an invitation but has not yet responded.</p> </li> <li> <p> <code>VERIFICATION_IN_PROGRESS</code> - Indicates that Detective is verifying that the account identifier and email address provided for the member account match. If they do match, then Detective sends the invitation. If the email address and account identifier don't match, then the member cannot be added to the behavior graph.</p> </li> <li> <p> <code>VERIFICATION_FAILED</code> - Indicates that the account and email address provided for the member account do not match, and Detective did not send an invitation to the account.</p> </li> <li> <p> <code>ENABLED</code> - Indicates that the member account accepted the invitation to contribute to the behavior graph.</p> </li> <li> <p> <code>ACCEPTED_BUT_DISABLED</code> - Indicates that the member account accepted the invitation but is prevented from contributing data to the behavior graph. <code>DisabledReason</code> provides the reason why the member account is not enabled.</p> </li> </ul> <p>Member accounts that declined an invitation or that were removed from the behavior graph are not included.\n@return Returns a reference to this object so that method calls can be chained together.\n@see MemberStatus*/",
@@ -8770,6 +8916,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>For member accounts with a status of <code>ACCEPTED_BUT_DISABLED</code>, the reason that the member account is not enabled.</p> <p>The reason can have one of the following values:</p> <ul> <li> <p> <code>VOLUME_TOO_HIGH</code> - Indicates that adding the member account would cause the data volume for the behavior graph to be too high.</p> </li> <li> <p> <code>VOLUME_UNKNOWN</code> - Indicates that Detective is unable to verify the data volume for the member account. This is usually because the member account is not enrolled in Amazon GuardDuty. </p> </li> </ul>\n@param disabledReason For member accounts with a status of <code>ACCEPTED_BUT_DISABLED</code>, the reason that the member account is not enabled.</p> <p>The reason can have one of the following values:</p> <ul> <li> <p> <code>VOLUME_TOO_HIGH</code> - Indicates that adding the member account would cause the data volume for the behavior graph to be too high.</p> </li> <li> <p> <code>VOLUME_UNKNOWN</code> - Indicates that Detective is unable to verify the data volume for the member account. This is usually because the member account is not enrolled in Amazon GuardDuty. </p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see MemberDisabledReason*/",
@@ -8838,6 +8985,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date and time that Detective sent the invitation to the member account. The value is in milliseconds since the epoch.</p>\n@param invitedTime The date and time that Detective sent the invitation to the member account. The value is in milliseconds since the epoch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8906,6 +9054,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date and time that the member account was last updated. The value is in milliseconds since the epoch.</p>\n@param updatedTime The date and time that the member account was last updated. The value is in milliseconds since the epoch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8974,6 +9123,7 @@
           "variableSetterType" : "Double"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The member account data volume as a percentage of the maximum allowed data volume. 0 indicates 0 percent, and 100 indicates 100 percent.</p> <p>Note that this is not the percentage of the behavior graph data volume.</p> <p>For example, the data volume for the behavior graph is 80 GB per day. The maximum data volume is 160 GB per day. If the data volume for the member account is 40 GB per day, then <code>PercentOfGraphUtilization</code> is 25. It represents 25% of the maximum allowed data volume. </p>\n@param percentOfGraphUtilization The member account data volume as a percentage of the maximum allowed data volume. 0 indicates 0 percent, and 100 indicates 100 percent.</p> <p>Note that this is not the percentage of the behavior graph data volume.</p> <p>For example, the data volume for the behavior graph is 80 GB per day. The maximum data volume is 160 GB per day. If the data volume for the member account is 40 GB per day, then <code>PercentOfGraphUtilization</code> is 25. It represents 25% of the maximum allowed data volume.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9042,6 +9192,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date and time when the graph utilization percentage was last updated.</p>\n@param percentOfGraphUtilizationUpdatedTime The date and time when the graph utilization percentage was last updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9112,6 +9263,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The AWS account identifier for the member account.</p>\n@param accountId The AWS account identifier for the member account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9181,6 +9333,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>For member accounts with a status of <code>ACCEPTED_BUT_DISABLED</code>, the reason that the member account is not enabled.</p> <p>The reason can have one of the following values:</p> <ul> <li> <p> <code>VOLUME_TOO_HIGH</code> - Indicates that adding the member account would cause the data volume for the behavior graph to be too high.</p> </li> <li> <p> <code>VOLUME_UNKNOWN</code> - Indicates that Detective is unable to verify the data volume for the member account. This is usually because the member account is not enrolled in Amazon GuardDuty. </p> </li> </ul>\n@param disabledReason For member accounts with a status of <code>ACCEPTED_BUT_DISABLED</code>, the reason that the member account is not enabled.</p> <p>The reason can have one of the following values:</p> <ul> <li> <p> <code>VOLUME_TOO_HIGH</code> - Indicates that adding the member account would cause the data volume for the behavior graph to be too high.</p> </li> <li> <p> <code>VOLUME_UNKNOWN</code> - Indicates that Detective is unable to verify the data volume for the member account. This is usually because the member account is not enrolled in Amazon GuardDuty. </p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see MemberDisabledReason*/",
@@ -9250,6 +9403,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The AWS account root user email address for the member account.</p>\n@param emailAddress The AWS account root user email address for the member account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9319,6 +9473,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the behavior graph that the member account was invited to.</p>\n@param graphArn The ARN of the behavior graph that the member account was invited to.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9388,6 +9543,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date and time that Detective sent the invitation to the member account. The value is in milliseconds since the epoch.</p>\n@param invitedTime The date and time that Detective sent the invitation to the member account. The value is in milliseconds since the epoch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9457,6 +9613,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The AWS account identifier of the master account for the behavior graph.</p>\n@param masterId The AWS account identifier of the master account for the behavior graph.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9526,6 +9683,7 @@
             "variableSetterType" : "Double"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The member account data volume as a percentage of the maximum allowed data volume. 0 indicates 0 percent, and 100 indicates 100 percent.</p> <p>Note that this is not the percentage of the behavior graph data volume.</p> <p>For example, the data volume for the behavior graph is 80 GB per day. The maximum data volume is 160 GB per day. If the data volume for the member account is 40 GB per day, then <code>PercentOfGraphUtilization</code> is 25. It represents 25% of the maximum allowed data volume. </p>\n@param percentOfGraphUtilization The member account data volume as a percentage of the maximum allowed data volume. 0 indicates 0 percent, and 100 indicates 100 percent.</p> <p>Note that this is not the percentage of the behavior graph data volume.</p> <p>For example, the data volume for the behavior graph is 80 GB per day. The maximum data volume is 160 GB per day. If the data volume for the member account is 40 GB per day, then <code>PercentOfGraphUtilization</code> is 25. It represents 25% of the maximum allowed data volume.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9595,6 +9753,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date and time when the graph utilization percentage was last updated.</p>\n@param percentOfGraphUtilizationUpdatedTime The date and time when the graph utilization percentage was last updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9664,6 +9823,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The current membership status of the member account. The status can have one of the following values:</p> <ul> <li> <p> <code>INVITED</code> - Indicates that the member was sent an invitation but has not yet responded.</p> </li> <li> <p> <code>VERIFICATION_IN_PROGRESS</code> - Indicates that Detective is verifying that the account identifier and email address provided for the member account match. If they do match, then Detective sends the invitation. If the email address and account identifier don't match, then the member cannot be added to the behavior graph.</p> </li> <li> <p> <code>VERIFICATION_FAILED</code> - Indicates that the account and email address provided for the member account do not match, and Detective did not send an invitation to the account.</p> </li> <li> <p> <code>ENABLED</code> - Indicates that the member account accepted the invitation to contribute to the behavior graph.</p> </li> <li> <p> <code>ACCEPTED_BUT_DISABLED</code> - Indicates that the member account accepted the invitation but is prevented from contributing data to the behavior graph. <code>DisabledReason</code> provides the reason why the member account is not enabled.</p> </li> </ul> <p>Member accounts that declined an invitation or that were removed from the behavior graph are not included.</p>\n@param status The current membership status of the member account. The status can have one of the following values:</p> <ul> <li> <p> <code>INVITED</code> - Indicates that the member was sent an invitation but has not yet responded.</p> </li> <li> <p> <code>VERIFICATION_IN_PROGRESS</code> - Indicates that Detective is verifying that the account identifier and email address provided for the member account match. If they do match, then Detective sends the invitation. If the email address and account identifier don't match, then the member cannot be added to the behavior graph.</p> </li> <li> <p> <code>VERIFICATION_FAILED</code> - Indicates that the account and email address provided for the member account do not match, and Detective did not send an invitation to the account.</p> </li> <li> <p> <code>ENABLED</code> - Indicates that the member account accepted the invitation to contribute to the behavior graph.</p> </li> <li> <p> <code>ACCEPTED_BUT_DISABLED</code> - Indicates that the member account accepted the invitation but is prevented from contributing data to the behavior graph. <code>DisabledReason</code> provides the reason why the member account is not enabled.</p> </li> </ul> <p>Member accounts that declined an invitation or that were removed from the behavior graph are not included.\n@return Returns a reference to this object so that method calls can be chained together.\n@see MemberStatus*/",
@@ -9733,6 +9893,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date and time that the member account was last updated. The value is in milliseconds since the epoch.</p>\n@param updatedTime The date and time that the member account was last updated. The value is in milliseconds since the epoch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9748,6 +9909,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.detective.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -9788,6 +9950,7 @@
         "value" : "VOLUME_UNKNOWN"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.detective.enum.MemberDisabledReason",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -9796,6 +9959,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.detective.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -9845,6 +10009,7 @@
         "value" : "ACCEPTED_BUT_DISABLED"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.detective.enum.MemberStatus",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -9853,6 +10018,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.detective.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -9887,6 +10053,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.detective.request.RejectInvitationRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -9955,6 +10122,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the behavior graph to reject the invitation to.</p> <p>The member account's current member status in the behavior graph must be <code>INVITED</code>.</p>\n@param graphArn The ARN of the behavior graph to reject the invitation to.</p> <p>The member account's current member status in the behavior graph must be <code>INVITED</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10025,6 +10193,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the behavior graph to reject the invitation to.</p> <p>The member account's current member status in the behavior graph must be <code>INVITED</code>.</p>\n@param graphArn The ARN of the behavior graph to reject the invitation to.</p> <p>The member account's current member status in the behavior graph must be <code>INVITED</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10040,6 +10209,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.detective.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "GraphArn" ],
@@ -10071,6 +10241,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.detective.response.RejectInvitationResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -10079,6 +10250,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.detective.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -10113,6 +10285,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ResourceNotFoundException",
+      "fullyQualifiedName" : "com.amazonaws.services.detective.exception.ResourceNotFoundException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -10121,6 +10294,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.detective.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -10152,6 +10326,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ServiceQuotaExceededException",
+      "fullyQualifiedName" : "com.amazonaws.services.detective.exception.ServiceQuotaExceededException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -10160,6 +10335,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.detective.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -10191,6 +10367,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.detective.request.StartMonitoringMemberRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -10259,6 +10436,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the behavior graph.</p>\n@param graphArn The ARN of the behavior graph.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10327,6 +10505,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The account ID of the member account to try to enable.</p> <p>The account must be an invited member account with a status of <code>ACCEPTED_BUT_DISABLED</code>. </p>\n@param accountId The account ID of the member account to try to enable.</p> <p>The account must be an invited member account with a status of <code>ACCEPTED_BUT_DISABLED</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10397,6 +10576,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The account ID of the member account to try to enable.</p> <p>The account must be an invited member account with a status of <code>ACCEPTED_BUT_DISABLED</code>. </p>\n@param accountId The account ID of the member account to try to enable.</p> <p>The account must be an invited member account with a status of <code>ACCEPTED_BUT_DISABLED</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10466,6 +10646,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the behavior graph.</p>\n@param graphArn The ARN of the behavior graph.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10481,6 +10662,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.detective.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "GraphArn", "AccountId" ],
@@ -10512,6 +10694,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.detective.response.StartMonitoringMemberResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -10520,6 +10703,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.detective.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -10554,6 +10738,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.detective.model.UnprocessedAccount",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -10615,6 +10800,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The AWS account identifier of the member account that was not processed.</p>\n@param accountId The AWS account identifier of the member account that was not processed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10683,6 +10869,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The reason that the member account request could not be processed.</p>\n@param reason The reason that the member account request could not be processed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10753,6 +10940,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The AWS account identifier of the member account that was not processed.</p>\n@param accountId The AWS account identifier of the member account that was not processed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10822,6 +11010,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The reason that the member account request could not be processed.</p>\n@param reason The reason that the member account request could not be processed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10837,6 +11026,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.detective.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -10871,6 +11061,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ValidationException",
+      "fullyQualifiedName" : "com.amazonaws.services.detective.exception.ValidationException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -10879,6 +11070,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.detective.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,

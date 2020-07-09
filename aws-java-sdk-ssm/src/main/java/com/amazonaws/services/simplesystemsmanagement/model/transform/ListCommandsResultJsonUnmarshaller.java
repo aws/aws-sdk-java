@@ -50,7 +50,9 @@ public class ListCommandsResultJsonUnmarshaller implements Unmarshaller<ListComm
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Commands", targetDepth)) {
                     context.nextToken();
-                    listCommandsResult.setCommands(new ListUnmarshaller<Command>(CommandJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listCommandsResult.setCommands(new ListUnmarshaller<Command>(CommandJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

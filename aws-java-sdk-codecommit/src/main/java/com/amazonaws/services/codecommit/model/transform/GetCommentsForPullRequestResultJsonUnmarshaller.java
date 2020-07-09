@@ -51,7 +51,9 @@ public class GetCommentsForPullRequestResultJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("commentsForPullRequestData", targetDepth)) {
                     context.nextToken();
                     getCommentsForPullRequestResult.setCommentsForPullRequestData(new ListUnmarshaller<CommentsForPullRequest>(
-                            CommentsForPullRequestJsonUnmarshaller.getInstance()).unmarshall(context));
+                            CommentsForPullRequestJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

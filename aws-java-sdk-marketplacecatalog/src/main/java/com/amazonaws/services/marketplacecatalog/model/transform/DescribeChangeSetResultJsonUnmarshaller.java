@@ -78,7 +78,9 @@ public class DescribeChangeSetResultJsonUnmarshaller implements Unmarshaller<Des
                 }
                 if (context.testExpression("ChangeSet", targetDepth)) {
                     context.nextToken();
-                    describeChangeSetResult.setChangeSet(new ListUnmarshaller<ChangeSummary>(ChangeSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeChangeSetResult.setChangeSet(new ListUnmarshaller<ChangeSummary>(ChangeSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

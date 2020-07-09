@@ -53,7 +53,9 @@ public class DescribeMaintenanceWindowExecutionTasksResultJsonUnmarshaller imple
                     context.nextToken();
                     describeMaintenanceWindowExecutionTasksResult
                             .setWindowExecutionTaskIdentities(new ListUnmarshaller<MaintenanceWindowExecutionTaskIdentity>(
-                                    MaintenanceWindowExecutionTaskIdentityJsonUnmarshaller.getInstance()).unmarshall(context));
+                                    MaintenanceWindowExecutionTaskIdentityJsonUnmarshaller.getInstance())
+
+                            .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

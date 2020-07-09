@@ -62,7 +62,9 @@ public class ListUsersResultJsonUnmarshaller implements Unmarshaller<ListUsersRe
                 }
                 if (context.testExpression("users", targetDepth)) {
                     context.nextToken();
-                    listUsersResult.setUsers(new ListUnmarshaller<UserSummary>(UserSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listUsersResult.setUsers(new ListUnmarshaller<UserSummary>(UserSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -54,7 +54,9 @@ public class ListLogPatternsResultJsonUnmarshaller implements Unmarshaller<ListL
                 }
                 if (context.testExpression("LogPatterns", targetDepth)) {
                     context.nextToken();
-                    listLogPatternsResult.setLogPatterns(new ListUnmarshaller<LogPattern>(LogPatternJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listLogPatternsResult.setLogPatterns(new ListUnmarshaller<LogPattern>(LogPatternJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

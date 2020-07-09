@@ -51,7 +51,8 @@ public class DescribeStandardsControlsResultJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("Controls", targetDepth)) {
                     context.nextToken();
                     describeStandardsControlsResult.setControls(new ListUnmarshaller<StandardsControl>(StandardsControlJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

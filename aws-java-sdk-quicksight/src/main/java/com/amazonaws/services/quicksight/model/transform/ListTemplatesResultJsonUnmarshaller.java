@@ -53,7 +53,8 @@ public class ListTemplatesResultJsonUnmarshaller implements Unmarshaller<ListTem
                 if (context.testExpression("TemplateSummaryList", targetDepth)) {
                     context.nextToken();
                     listTemplatesResult.setTemplateSummaryList(new ListUnmarshaller<TemplateSummary>(TemplateSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

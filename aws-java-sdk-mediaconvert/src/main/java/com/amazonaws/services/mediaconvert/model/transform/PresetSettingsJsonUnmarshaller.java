@@ -51,13 +51,15 @@ public class PresetSettingsJsonUnmarshaller implements Unmarshaller<PresetSettin
                 if (context.testExpression("audioDescriptions", targetDepth)) {
                     context.nextToken();
                     presetSettings.setAudioDescriptions(new ListUnmarshaller<AudioDescription>(AudioDescriptionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("captionDescriptions", targetDepth)) {
                     context.nextToken();
                     presetSettings
                             .setCaptionDescriptions(new ListUnmarshaller<CaptionDescriptionPreset>(CaptionDescriptionPresetJsonUnmarshaller.getInstance())
-                                    .unmarshall(context));
+
+                            .unmarshall(context));
                 }
                 if (context.testExpression("containerSettings", targetDepth)) {
                     context.nextToken();

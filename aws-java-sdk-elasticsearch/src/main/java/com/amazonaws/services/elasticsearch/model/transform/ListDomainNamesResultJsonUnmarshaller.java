@@ -50,7 +50,9 @@ public class ListDomainNamesResultJsonUnmarshaller implements Unmarshaller<ListD
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DomainNames", targetDepth)) {
                     context.nextToken();
-                    listDomainNamesResult.setDomainNames(new ListUnmarshaller<DomainInfo>(DomainInfoJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listDomainNamesResult.setDomainNames(new ListUnmarshaller<DomainInfo>(DomainInfoJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

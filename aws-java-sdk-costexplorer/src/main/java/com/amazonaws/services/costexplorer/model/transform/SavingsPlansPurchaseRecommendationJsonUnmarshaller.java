@@ -72,7 +72,9 @@ public class SavingsPlansPurchaseRecommendationJsonUnmarshaller implements Unmar
                     context.nextToken();
                     savingsPlansPurchaseRecommendation
                             .setSavingsPlansPurchaseRecommendationDetails(new ListUnmarshaller<SavingsPlansPurchaseRecommendationDetail>(
-                                    SavingsPlansPurchaseRecommendationDetailJsonUnmarshaller.getInstance()).unmarshall(context));
+                                    SavingsPlansPurchaseRecommendationDetailJsonUnmarshaller.getInstance())
+
+                            .unmarshall(context));
                 }
                 if (context.testExpression("SavingsPlansPurchaseRecommendationSummary", targetDepth)) {
                     context.nextToken();

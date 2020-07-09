@@ -51,7 +51,9 @@ public class DescribeHomeRegionControlsResultJsonUnmarshaller implements Unmarsh
                 if (context.testExpression("HomeRegionControls", targetDepth)) {
                     context.nextToken();
                     describeHomeRegionControlsResult.setHomeRegionControls(new ListUnmarshaller<HomeRegionControl>(HomeRegionControlJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

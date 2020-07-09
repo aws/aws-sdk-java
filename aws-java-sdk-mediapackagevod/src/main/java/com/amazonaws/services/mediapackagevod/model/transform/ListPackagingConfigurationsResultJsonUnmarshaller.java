@@ -55,7 +55,9 @@ public class ListPackagingConfigurationsResultJsonUnmarshaller implements Unmars
                 if (context.testExpression("packagingConfigurations", targetDepth)) {
                     context.nextToken();
                     listPackagingConfigurationsResult.setPackagingConfigurations(new ListUnmarshaller<PackagingConfiguration>(
-                            PackagingConfigurationJsonUnmarshaller.getInstance()).unmarshall(context));
+                            PackagingConfigurationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -51,12 +51,14 @@ public class ListJobsFilterCriteriaJsonUnmarshaller implements Unmarshaller<List
                 if (context.testExpression("excludes", targetDepth)) {
                     context.nextToken();
                     listJobsFilterCriteria.setExcludes(new ListUnmarshaller<ListJobsFilterTerm>(ListJobsFilterTermJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("includes", targetDepth)) {
                     context.nextToken();
                     listJobsFilterCriteria.setIncludes(new ListUnmarshaller<ListJobsFilterTerm>(ListJobsFilterTermJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

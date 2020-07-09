@@ -66,11 +66,15 @@ public class TableMetadataJsonUnmarshaller implements Unmarshaller<TableMetadata
                 }
                 if (context.testExpression("Columns", targetDepth)) {
                     context.nextToken();
-                    tableMetadata.setColumns(new ListUnmarshaller<Column>(ColumnJsonUnmarshaller.getInstance()).unmarshall(context));
+                    tableMetadata.setColumns(new ListUnmarshaller<Column>(ColumnJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("PartitionKeys", targetDepth)) {
                     context.nextToken();
-                    tableMetadata.setPartitionKeys(new ListUnmarshaller<Column>(ColumnJsonUnmarshaller.getInstance()).unmarshall(context));
+                    tableMetadata.setPartitionKeys(new ListUnmarshaller<Column>(ColumnJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Parameters", targetDepth)) {
                     context.nextToken();

@@ -51,7 +51,8 @@ public class SearchProductsAsAdminResultJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("ProductViewDetails", targetDepth)) {
                     context.nextToken();
                     searchProductsAsAdminResult.setProductViewDetails(new ListUnmarshaller<ProductViewDetail>(ProductViewDetailJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextPageToken", targetDepth)) {
                     context.nextToken();

@@ -55,7 +55,8 @@ public class ListByteMatchSetsResultJsonUnmarshaller implements Unmarshaller<Lis
                 if (context.testExpression("ByteMatchSets", targetDepth)) {
                     context.nextToken();
                     listByteMatchSetsResult.setByteMatchSets(new ListUnmarshaller<ByteMatchSetSummary>(ByteMatchSetSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

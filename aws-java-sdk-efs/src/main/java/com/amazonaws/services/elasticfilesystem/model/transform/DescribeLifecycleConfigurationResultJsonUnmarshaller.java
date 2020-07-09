@@ -51,7 +51,9 @@ public class DescribeLifecycleConfigurationResultJsonUnmarshaller implements Unm
                 if (context.testExpression("LifecyclePolicies", targetDepth)) {
                     context.nextToken();
                     describeLifecycleConfigurationResult.setLifecyclePolicies(new ListUnmarshaller<LifecyclePolicy>(LifecyclePolicyJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

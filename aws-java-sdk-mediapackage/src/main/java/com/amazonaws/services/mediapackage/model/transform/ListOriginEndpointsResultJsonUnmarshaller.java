@@ -55,7 +55,8 @@ public class ListOriginEndpointsResultJsonUnmarshaller implements Unmarshaller<L
                 if (context.testExpression("originEndpoints", targetDepth)) {
                     context.nextToken();
                     listOriginEndpointsResult.setOriginEndpoints(new ListUnmarshaller<OriginEndpoint>(OriginEndpointJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

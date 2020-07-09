@@ -50,8 +50,9 @@ public class DescribeJobQueuesResultJsonUnmarshaller implements Unmarshaller<Des
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("jobQueues", targetDepth)) {
                     context.nextToken();
-                    describeJobQueuesResult
-                            .setJobQueues(new ListUnmarshaller<JobQueueDetail>(JobQueueDetailJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeJobQueuesResult.setJobQueues(new ListUnmarshaller<JobQueueDetail>(JobQueueDetailJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

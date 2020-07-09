@@ -82,7 +82,9 @@ public class TunnelJsonUnmarshaller implements Unmarshaller<Tunnel, JsonUnmarsha
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
-                    tunnel.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    tunnel.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();

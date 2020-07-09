@@ -25,24 +25,24 @@ public class PutResourcePolicyResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The ARN of the secret that the resource-based policy was retrieved for.
+     * The ARN of the secret retrieved by the resource-based policy.
      * </p>
      */
     private String aRN;
     /**
      * <p>
-     * The friendly name of the secret that the resource-based policy was retrieved for.
+     * The friendly name of the secret that the retrieved by the resource-based policy.
      * </p>
      */
     private String name;
 
     /**
      * <p>
-     * The ARN of the secret that the resource-based policy was retrieved for.
+     * The ARN of the secret retrieved by the resource-based policy.
      * </p>
      * 
      * @param aRN
-     *        The ARN of the secret that the resource-based policy was retrieved for.
+     *        The ARN of the secret retrieved by the resource-based policy.
      */
 
     public void setARN(String aRN) {
@@ -51,10 +51,10 @@ public class PutResourcePolicyResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The ARN of the secret that the resource-based policy was retrieved for.
+     * The ARN of the secret retrieved by the resource-based policy.
      * </p>
      * 
-     * @return The ARN of the secret that the resource-based policy was retrieved for.
+     * @return The ARN of the secret retrieved by the resource-based policy.
      */
 
     public String getARN() {
@@ -63,11 +63,11 @@ public class PutResourcePolicyResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The ARN of the secret that the resource-based policy was retrieved for.
+     * The ARN of the secret retrieved by the resource-based policy.
      * </p>
      * 
      * @param aRN
-     *        The ARN of the secret that the resource-based policy was retrieved for.
+     *        The ARN of the secret retrieved by the resource-based policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -78,11 +78,11 @@ public class PutResourcePolicyResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The friendly name of the secret that the resource-based policy was retrieved for.
+     * The friendly name of the secret that the retrieved by the resource-based policy.
      * </p>
      * 
      * @param name
-     *        The friendly name of the secret that the resource-based policy was retrieved for.
+     *        The friendly name of the secret that the retrieved by the resource-based policy.
      */
 
     public void setName(String name) {
@@ -91,10 +91,10 @@ public class PutResourcePolicyResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The friendly name of the secret that the resource-based policy was retrieved for.
+     * The friendly name of the secret that the retrieved by the resource-based policy.
      * </p>
      * 
-     * @return The friendly name of the secret that the resource-based policy was retrieved for.
+     * @return The friendly name of the secret that the retrieved by the resource-based policy.
      */
 
     public String getName() {
@@ -103,11 +103,11 @@ public class PutResourcePolicyResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The friendly name of the secret that the resource-based policy was retrieved for.
+     * The friendly name of the secret that the retrieved by the resource-based policy.
      * </p>
      * 
      * @param name
-     *        The friendly name of the secret that the resource-based policy was retrieved for.
+     *        The friendly name of the secret that the retrieved by the resource-based policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

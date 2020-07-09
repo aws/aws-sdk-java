@@ -62,16 +62,21 @@ public class GetDetectorVersionResultJsonUnmarshaller implements Unmarshaller<Ge
                 }
                 if (context.testExpression("externalModelEndpoints", targetDepth)) {
                     context.nextToken();
-                    getDetectorVersionResult.setExternalModelEndpoints(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    getDetectorVersionResult.setExternalModelEndpoints(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("modelVersions", targetDepth)) {
                     context.nextToken();
                     getDetectorVersionResult.setModelVersions(new ListUnmarshaller<ModelVersion>(ModelVersionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("rules", targetDepth)) {
                     context.nextToken();
-                    getDetectorVersionResult.setRules(new ListUnmarshaller<Rule>(RuleJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getDetectorVersionResult.setRules(new ListUnmarshaller<Rule>(RuleJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();

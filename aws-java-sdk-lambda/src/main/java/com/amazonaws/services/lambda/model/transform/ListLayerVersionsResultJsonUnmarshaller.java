@@ -55,7 +55,8 @@ public class ListLayerVersionsResultJsonUnmarshaller implements Unmarshaller<Lis
                 if (context.testExpression("LayerVersions", targetDepth)) {
                     context.nextToken();
                     listLayerVersionsResult.setLayerVersions(new ListUnmarshaller<LayerVersionsListItem>(LayerVersionsListItemJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -51,7 +51,9 @@ public class ListRxNormInferenceJobsResultJsonUnmarshaller implements Unmarshall
                 if (context.testExpression("ComprehendMedicalAsyncJobPropertiesList", targetDepth)) {
                     context.nextToken();
                     listRxNormInferenceJobsResult.setComprehendMedicalAsyncJobPropertiesList(new ListUnmarshaller<ComprehendMedicalAsyncJobProperties>(
-                            ComprehendMedicalAsyncJobPropertiesJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ComprehendMedicalAsyncJobPropertiesJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

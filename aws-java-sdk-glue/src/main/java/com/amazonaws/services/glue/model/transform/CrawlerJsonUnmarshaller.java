@@ -70,7 +70,9 @@ public class CrawlerJsonUnmarshaller implements Unmarshaller<Crawler, JsonUnmars
                 }
                 if (context.testExpression("Classifiers", targetDepth)) {
                     context.nextToken();
-                    crawler.setClassifiers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    crawler.setClassifiers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("SchemaChangePolicy", targetDepth)) {
                     context.nextToken();

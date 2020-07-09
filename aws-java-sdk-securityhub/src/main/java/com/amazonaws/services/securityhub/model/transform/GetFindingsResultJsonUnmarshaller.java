@@ -51,7 +51,8 @@ public class GetFindingsResultJsonUnmarshaller implements Unmarshaller<GetFindin
                 if (context.testExpression("Findings", targetDepth)) {
                     context.nextToken();
                     getFindingsResult.setFindings(new ListUnmarshaller<AwsSecurityFinding>(AwsSecurityFindingJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

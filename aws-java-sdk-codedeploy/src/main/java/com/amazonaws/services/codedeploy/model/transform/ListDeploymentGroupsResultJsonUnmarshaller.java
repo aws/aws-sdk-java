@@ -54,7 +54,9 @@ public class ListDeploymentGroupsResultJsonUnmarshaller implements Unmarshaller<
                 }
                 if (context.testExpression("deploymentGroups", targetDepth)) {
                     context.nextToken();
-                    listDeploymentGroupsResult.setDeploymentGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    listDeploymentGroupsResult.setDeploymentGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

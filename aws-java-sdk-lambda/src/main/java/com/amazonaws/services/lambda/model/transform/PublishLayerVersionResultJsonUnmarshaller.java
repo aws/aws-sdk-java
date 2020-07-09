@@ -74,7 +74,9 @@ public class PublishLayerVersionResultJsonUnmarshaller implements Unmarshaller<P
                 }
                 if (context.testExpression("CompatibleRuntimes", targetDepth)) {
                     context.nextToken();
-                    publishLayerVersionResult.setCompatibleRuntimes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    publishLayerVersionResult.setCompatibleRuntimes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("LicenseInfo", targetDepth)) {
                     context.nextToken();

@@ -59,7 +59,9 @@ public class RemediationExecutionStatusJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("StepDetails", targetDepth)) {
                     context.nextToken();
                     remediationExecutionStatus.setStepDetails(new ListUnmarshaller<RemediationExecutionStep>(RemediationExecutionStepJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("InvocationTime", targetDepth)) {
                     context.nextToken();

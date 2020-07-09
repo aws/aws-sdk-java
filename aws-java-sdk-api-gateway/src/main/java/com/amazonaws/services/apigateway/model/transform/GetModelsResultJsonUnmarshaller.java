@@ -54,7 +54,9 @@ public class GetModelsResultJsonUnmarshaller implements Unmarshaller<GetModelsRe
                 }
                 if (context.testExpression("item", targetDepth)) {
                     context.nextToken();
-                    getModelsResult.setItems(new ListUnmarshaller<Model>(ModelJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getModelsResult.setItems(new ListUnmarshaller<Model>(ModelJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

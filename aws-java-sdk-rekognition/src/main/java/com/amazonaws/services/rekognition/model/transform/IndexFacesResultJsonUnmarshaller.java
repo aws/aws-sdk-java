@@ -50,7 +50,9 @@ public class IndexFacesResultJsonUnmarshaller implements Unmarshaller<IndexFaces
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FaceRecords", targetDepth)) {
                     context.nextToken();
-                    indexFacesResult.setFaceRecords(new ListUnmarshaller<FaceRecord>(FaceRecordJsonUnmarshaller.getInstance()).unmarshall(context));
+                    indexFacesResult.setFaceRecords(new ListUnmarshaller<FaceRecord>(FaceRecordJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("OrientationCorrection", targetDepth)) {
                     context.nextToken();
@@ -62,7 +64,9 @@ public class IndexFacesResultJsonUnmarshaller implements Unmarshaller<IndexFaces
                 }
                 if (context.testExpression("UnindexedFaces", targetDepth)) {
                     context.nextToken();
-                    indexFacesResult.setUnindexedFaces(new ListUnmarshaller<UnindexedFace>(UnindexedFaceJsonUnmarshaller.getInstance()).unmarshall(context));
+                    indexFacesResult.setUnindexedFaces(new ListUnmarshaller<UnindexedFace>(UnindexedFaceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

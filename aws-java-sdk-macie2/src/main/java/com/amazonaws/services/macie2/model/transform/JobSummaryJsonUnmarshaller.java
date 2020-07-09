@@ -51,7 +51,8 @@ public class JobSummaryJsonUnmarshaller implements Unmarshaller<JobSummary, Json
                 if (context.testExpression("bucketDefinitions", targetDepth)) {
                     context.nextToken();
                     jobSummary.setBucketDefinitions(new ListUnmarshaller<S3BucketDefinitionForJob>(S3BucketDefinitionForJobJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();

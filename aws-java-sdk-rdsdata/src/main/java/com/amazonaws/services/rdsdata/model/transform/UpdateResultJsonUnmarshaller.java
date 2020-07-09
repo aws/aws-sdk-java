@@ -50,7 +50,9 @@ public class UpdateResultJsonUnmarshaller implements Unmarshaller<UpdateResult, 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("generatedFields", targetDepth)) {
                     context.nextToken();
-                    updateResult.setGeneratedFields(new ListUnmarshaller<Field>(FieldJsonUnmarshaller.getInstance()).unmarshall(context));
+                    updateResult.setGeneratedFields(new ListUnmarshaller<Field>(FieldJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

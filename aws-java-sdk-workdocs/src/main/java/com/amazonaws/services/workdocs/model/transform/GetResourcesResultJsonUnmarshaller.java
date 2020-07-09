@@ -50,11 +50,15 @@ public class GetResourcesResultJsonUnmarshaller implements Unmarshaller<GetResou
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Folders", targetDepth)) {
                     context.nextToken();
-                    getResourcesResult.setFolders(new ListUnmarshaller<FolderMetadata>(FolderMetadataJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getResourcesResult.setFolders(new ListUnmarshaller<FolderMetadata>(FolderMetadataJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Documents", targetDepth)) {
                     context.nextToken();
-                    getResourcesResult.setDocuments(new ListUnmarshaller<DocumentMetadata>(DocumentMetadataJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getResourcesResult.setDocuments(new ListUnmarshaller<DocumentMetadata>(DocumentMetadataJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Marker", targetDepth)) {
                     context.nextToken();

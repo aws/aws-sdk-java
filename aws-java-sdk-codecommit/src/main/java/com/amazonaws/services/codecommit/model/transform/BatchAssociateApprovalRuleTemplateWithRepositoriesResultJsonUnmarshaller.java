@@ -52,13 +52,17 @@ public class BatchAssociateApprovalRuleTemplateWithRepositoriesResultJsonUnmarsh
                 if (context.testExpression("associatedRepositoryNames", targetDepth)) {
                     context.nextToken();
                     batchAssociateApprovalRuleTemplateWithRepositoriesResult.setAssociatedRepositoryNames(new ListUnmarshaller<String>(context
-                            .getUnmarshaller(String.class)).unmarshall(context));
+                            .getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("errors", targetDepth)) {
                     context.nextToken();
                     batchAssociateApprovalRuleTemplateWithRepositoriesResult
                             .setErrors(new ListUnmarshaller<BatchAssociateApprovalRuleTemplateWithRepositoriesError>(
-                                    BatchAssociateApprovalRuleTemplateWithRepositoriesErrorJsonUnmarshaller.getInstance()).unmarshall(context));
+                                    BatchAssociateApprovalRuleTemplateWithRepositoriesErrorJsonUnmarshaller.getInstance())
+
+                            .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

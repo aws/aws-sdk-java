@@ -50,7 +50,9 @@ public class ListRecordsResultJsonUnmarshaller implements Unmarshaller<ListRecor
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Records", targetDepth)) {
                     context.nextToken();
-                    listRecordsResult.setRecords(new ListUnmarshaller<Record>(RecordJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listRecordsResult.setRecords(new ListUnmarshaller<Record>(RecordJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();
@@ -70,7 +72,9 @@ public class ListRecordsResultJsonUnmarshaller implements Unmarshaller<ListRecor
                 }
                 if (context.testExpression("MergedDatasetNames", targetDepth)) {
                     context.nextToken();
-                    listRecordsResult.setMergedDatasetNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    listRecordsResult.setMergedDatasetNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("DatasetExists", targetDepth)) {
                     context.nextToken();

@@ -51,7 +51,8 @@ public class ListPortfoliosForProductResultJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("PortfolioDetails", targetDepth)) {
                     context.nextToken();
                     listPortfoliosForProductResult.setPortfolioDetails(new ListUnmarshaller<PortfolioDetail>(PortfolioDetailJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextPageToken", targetDepth)) {
                     context.nextToken();

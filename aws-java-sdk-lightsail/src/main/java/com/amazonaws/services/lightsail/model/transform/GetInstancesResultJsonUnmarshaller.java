@@ -50,7 +50,9 @@ public class GetInstancesResultJsonUnmarshaller implements Unmarshaller<GetInsta
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("instances", targetDepth)) {
                     context.nextToken();
-                    getInstancesResult.setInstances(new ListUnmarshaller<Instance>(InstanceJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getInstancesResult.setInstances(new ListUnmarshaller<Instance>(InstanceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextPageToken", targetDepth)) {
                     context.nextToken();

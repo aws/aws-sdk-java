@@ -50,7 +50,9 @@ public class ListBootstrapActionsResultJsonUnmarshaller implements Unmarshaller<
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BootstrapActions", targetDepth)) {
                     context.nextToken();
-                    listBootstrapActionsResult.setBootstrapActions(new ListUnmarshaller<Command>(CommandJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listBootstrapActionsResult.setBootstrapActions(new ListUnmarshaller<Command>(CommandJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Marker", targetDepth)) {
                     context.nextToken();

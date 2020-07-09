@@ -55,7 +55,8 @@ public class GetResourcesResultJsonUnmarshaller implements Unmarshaller<GetResou
                 if (context.testExpression("ResourceTagMappingList", targetDepth)) {
                     context.nextToken();
                     getResourcesResult.setResourceTagMappingList(new ListUnmarshaller<ResourceTagMapping>(ResourceTagMappingJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

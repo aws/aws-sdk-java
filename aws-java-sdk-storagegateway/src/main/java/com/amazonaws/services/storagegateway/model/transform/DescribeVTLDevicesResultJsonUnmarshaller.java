@@ -54,7 +54,9 @@ public class DescribeVTLDevicesResultJsonUnmarshaller implements Unmarshaller<De
                 }
                 if (context.testExpression("VTLDevices", targetDepth)) {
                     context.nextToken();
-                    describeVTLDevicesResult.setVTLDevices(new ListUnmarshaller<VTLDevice>(VTLDeviceJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeVTLDevicesResult.setVTLDevices(new ListUnmarshaller<VTLDevice>(VTLDeviceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Marker", targetDepth)) {
                     context.nextToken();

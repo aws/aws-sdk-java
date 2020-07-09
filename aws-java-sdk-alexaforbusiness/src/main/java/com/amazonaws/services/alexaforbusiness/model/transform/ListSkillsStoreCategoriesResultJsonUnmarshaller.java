@@ -50,7 +50,9 @@ public class ListSkillsStoreCategoriesResultJsonUnmarshaller implements Unmarsha
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CategoryList", targetDepth)) {
                     context.nextToken();
-                    listSkillsStoreCategoriesResult.setCategoryList(new ListUnmarshaller<Category>(CategoryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listSkillsStoreCategoriesResult.setCategoryList(new ListUnmarshaller<Category>(CategoryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

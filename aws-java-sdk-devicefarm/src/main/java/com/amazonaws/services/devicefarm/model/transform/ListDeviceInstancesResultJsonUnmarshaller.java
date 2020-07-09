@@ -51,7 +51,8 @@ public class ListDeviceInstancesResultJsonUnmarshaller implements Unmarshaller<L
                 if (context.testExpression("deviceInstances", targetDepth)) {
                     context.nextToken();
                     listDeviceInstancesResult.setDeviceInstances(new ListUnmarshaller<DeviceInstance>(DeviceInstanceJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

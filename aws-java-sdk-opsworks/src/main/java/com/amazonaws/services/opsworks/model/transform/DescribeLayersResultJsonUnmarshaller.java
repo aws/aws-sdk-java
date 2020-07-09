@@ -50,7 +50,9 @@ public class DescribeLayersResultJsonUnmarshaller implements Unmarshaller<Descri
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Layers", targetDepth)) {
                     context.nextToken();
-                    describeLayersResult.setLayers(new ListUnmarshaller<Layer>(LayerJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeLayersResult.setLayers(new ListUnmarshaller<Layer>(LayerJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

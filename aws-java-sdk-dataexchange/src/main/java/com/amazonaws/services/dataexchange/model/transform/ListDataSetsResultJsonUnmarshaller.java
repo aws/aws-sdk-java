@@ -50,7 +50,9 @@ public class ListDataSetsResultJsonUnmarshaller implements Unmarshaller<ListData
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DataSets", targetDepth)) {
                     context.nextToken();
-                    listDataSetsResult.setDataSets(new ListUnmarshaller<DataSetEntry>(DataSetEntryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listDataSetsResult.setDataSets(new ListUnmarshaller<DataSetEntry>(DataSetEntryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

@@ -54,7 +54,9 @@ public class EntityFilterJsonUnmarshaller implements Unmarshaller<EntityFilter, 
                 }
                 if (context.testExpression("value", targetDepth)) {
                     context.nextToken();
-                    entityFilter.setValue(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    entityFilter.setValue(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

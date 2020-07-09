@@ -55,7 +55,9 @@ public class FailedDeleteRemediationExceptionsBatchJsonUnmarshaller implements U
                 if (context.testExpression("FailedItems", targetDepth)) {
                     context.nextToken();
                     failedDeleteRemediationExceptionsBatch.setFailedItems(new ListUnmarshaller<RemediationExceptionResourceKey>(
-                            RemediationExceptionResourceKeyJsonUnmarshaller.getInstance()).unmarshall(context));
+                            RemediationExceptionResourceKeyJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

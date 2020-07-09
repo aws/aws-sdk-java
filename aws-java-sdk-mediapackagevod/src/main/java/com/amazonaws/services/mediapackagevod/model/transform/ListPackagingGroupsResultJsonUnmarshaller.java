@@ -55,7 +55,8 @@ public class ListPackagingGroupsResultJsonUnmarshaller implements Unmarshaller<L
                 if (context.testExpression("packagingGroups", targetDepth)) {
                     context.nextToken();
                     listPackagingGroupsResult.setPackagingGroups(new ListUnmarshaller<PackagingGroup>(PackagingGroupJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

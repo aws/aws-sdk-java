@@ -51,7 +51,8 @@ public class DescribeFleetPortSettingsResultJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("InboundPermissions", targetDepth)) {
                     context.nextToken();
                     describeFleetPortSettingsResult.setInboundPermissions(new ListUnmarshaller<IpPermission>(IpPermissionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

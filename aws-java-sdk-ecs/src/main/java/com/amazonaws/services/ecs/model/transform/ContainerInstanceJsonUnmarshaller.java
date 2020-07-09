@@ -70,11 +70,15 @@ public class ContainerInstanceJsonUnmarshaller implements Unmarshaller<Container
                 }
                 if (context.testExpression("remainingResources", targetDepth)) {
                     context.nextToken();
-                    containerInstance.setRemainingResources(new ListUnmarshaller<Resource>(ResourceJsonUnmarshaller.getInstance()).unmarshall(context));
+                    containerInstance.setRemainingResources(new ListUnmarshaller<Resource>(ResourceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("registeredResources", targetDepth)) {
                     context.nextToken();
-                    containerInstance.setRegisteredResources(new ListUnmarshaller<Resource>(ResourceJsonUnmarshaller.getInstance()).unmarshall(context));
+                    containerInstance.setRegisteredResources(new ListUnmarshaller<Resource>(ResourceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
@@ -102,7 +106,9 @@ public class ContainerInstanceJsonUnmarshaller implements Unmarshaller<Container
                 }
                 if (context.testExpression("attributes", targetDepth)) {
                     context.nextToken();
-                    containerInstance.setAttributes(new ListUnmarshaller<Attribute>(AttributeJsonUnmarshaller.getInstance()).unmarshall(context));
+                    containerInstance.setAttributes(new ListUnmarshaller<Attribute>(AttributeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("registeredAt", targetDepth)) {
                     context.nextToken();
@@ -110,11 +116,15 @@ public class ContainerInstanceJsonUnmarshaller implements Unmarshaller<Container
                 }
                 if (context.testExpression("attachments", targetDepth)) {
                     context.nextToken();
-                    containerInstance.setAttachments(new ListUnmarshaller<Attachment>(AttachmentJsonUnmarshaller.getInstance()).unmarshall(context));
+                    containerInstance.setAttachments(new ListUnmarshaller<Attachment>(AttachmentJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
-                    containerInstance.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    containerInstance.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

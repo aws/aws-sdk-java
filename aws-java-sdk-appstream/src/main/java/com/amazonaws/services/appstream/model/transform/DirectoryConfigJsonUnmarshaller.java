@@ -55,7 +55,8 @@ public class DirectoryConfigJsonUnmarshaller implements Unmarshaller<DirectoryCo
                 if (context.testExpression("OrganizationalUnitDistinguishedNames", targetDepth)) {
                     context.nextToken();
                     directoryConfig.setOrganizationalUnitDistinguishedNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ServiceAccountCredentials", targetDepth)) {
                     context.nextToken();

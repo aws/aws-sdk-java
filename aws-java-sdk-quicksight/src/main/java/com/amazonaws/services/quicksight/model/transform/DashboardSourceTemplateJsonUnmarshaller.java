@@ -51,7 +51,8 @@ public class DashboardSourceTemplateJsonUnmarshaller implements Unmarshaller<Das
                 if (context.testExpression("DataSetReferences", targetDepth)) {
                     context.nextToken();
                     dashboardSourceTemplate.setDataSetReferences(new ListUnmarshaller<DataSetReference>(DataSetReferenceJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Arn", targetDepth)) {
                     context.nextToken();

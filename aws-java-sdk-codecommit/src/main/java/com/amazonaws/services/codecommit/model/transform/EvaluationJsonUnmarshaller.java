@@ -58,11 +58,15 @@ public class EvaluationJsonUnmarshaller implements Unmarshaller<Evaluation, Json
                 }
                 if (context.testExpression("approvalRulesSatisfied", targetDepth)) {
                     context.nextToken();
-                    evaluation.setApprovalRulesSatisfied(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    evaluation.setApprovalRulesSatisfied(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("approvalRulesNotSatisfied", targetDepth)) {
                     context.nextToken();
-                    evaluation.setApprovalRulesNotSatisfied(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    evaluation.setApprovalRulesNotSatisfied(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -58,7 +58,9 @@ public class CreateJobPlaylistJsonUnmarshaller implements Unmarshaller<CreateJob
                 }
                 if (context.testExpression("OutputKeys", targetDepth)) {
                     context.nextToken();
-                    createJobPlaylist.setOutputKeys(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    createJobPlaylist.setOutputKeys(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("HlsContentProtection", targetDepth)) {
                     context.nextToken();

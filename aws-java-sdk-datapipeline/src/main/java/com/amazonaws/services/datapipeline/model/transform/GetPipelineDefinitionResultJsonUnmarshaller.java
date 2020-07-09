@@ -51,17 +51,20 @@ public class GetPipelineDefinitionResultJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("pipelineObjects", targetDepth)) {
                     context.nextToken();
                     getPipelineDefinitionResult.setPipelineObjects(new ListUnmarshaller<PipelineObject>(PipelineObjectJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("parameterObjects", targetDepth)) {
                     context.nextToken();
                     getPipelineDefinitionResult.setParameterObjects(new ListUnmarshaller<ParameterObject>(ParameterObjectJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("parameterValues", targetDepth)) {
                     context.nextToken();
                     getPipelineDefinitionResult.setParameterValues(new ListUnmarshaller<ParameterValue>(ParameterValueJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

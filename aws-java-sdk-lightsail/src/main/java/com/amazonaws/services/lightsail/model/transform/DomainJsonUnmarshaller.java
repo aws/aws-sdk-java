@@ -74,11 +74,15 @@ public class DomainJsonUnmarshaller implements Unmarshaller<Domain, JsonUnmarsha
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
-                    domain.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    domain.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("domainEntries", targetDepth)) {
                     context.nextToken();
-                    domain.setDomainEntries(new ListUnmarshaller<DomainEntry>(DomainEntryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    domain.setDomainEntries(new ListUnmarshaller<DomainEntry>(DomainEntryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

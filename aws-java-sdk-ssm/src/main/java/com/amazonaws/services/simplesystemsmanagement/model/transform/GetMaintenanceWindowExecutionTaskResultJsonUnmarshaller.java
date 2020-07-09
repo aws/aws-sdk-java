@@ -74,7 +74,9 @@ public class GetMaintenanceWindowExecutionTaskResultJsonUnmarshaller implements 
                     getMaintenanceWindowExecutionTaskResult
                             .setTaskParameters(new ListUnmarshaller<java.util.Map<String, MaintenanceWindowTaskParameterValueExpression>>(
                                     new MapUnmarshaller<String, MaintenanceWindowTaskParameterValueExpression>(context.getUnmarshaller(String.class),
-                                            MaintenanceWindowTaskParameterValueExpressionJsonUnmarshaller.getInstance())).unmarshall(context));
+                                            MaintenanceWindowTaskParameterValueExpressionJsonUnmarshaller.getInstance()))
+
+                            .unmarshall(context));
                 }
                 if (context.testExpression("Priority", targetDepth)) {
                     context.nextToken();

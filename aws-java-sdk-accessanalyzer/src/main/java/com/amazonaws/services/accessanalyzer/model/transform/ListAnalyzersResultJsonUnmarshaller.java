@@ -50,7 +50,9 @@ public class ListAnalyzersResultJsonUnmarshaller implements Unmarshaller<ListAna
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("analyzers", targetDepth)) {
                     context.nextToken();
-                    listAnalyzersResult.setAnalyzers(new ListUnmarshaller<AnalyzerSummary>(AnalyzerSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listAnalyzersResult.setAnalyzers(new ListUnmarshaller<AnalyzerSummary>(AnalyzerSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

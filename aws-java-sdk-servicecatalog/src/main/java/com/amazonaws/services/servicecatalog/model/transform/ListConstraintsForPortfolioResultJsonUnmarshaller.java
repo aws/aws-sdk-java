@@ -51,7 +51,9 @@ public class ListConstraintsForPortfolioResultJsonUnmarshaller implements Unmars
                 if (context.testExpression("ConstraintDetails", targetDepth)) {
                     context.nextToken();
                     listConstraintsForPortfolioResult.setConstraintDetails(new ListUnmarshaller<ConstraintDetail>(ConstraintDetailJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextPageToken", targetDepth)) {
                     context.nextToken();

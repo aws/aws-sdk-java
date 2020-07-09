@@ -51,7 +51,8 @@ public class DescribeProcessingJobResultJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("ProcessingInputs", targetDepth)) {
                     context.nextToken();
                     describeProcessingJobResult.setProcessingInputs(new ListUnmarshaller<ProcessingInput>(ProcessingInputJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ProcessingOutputConfig", targetDepth)) {
                     context.nextToken();

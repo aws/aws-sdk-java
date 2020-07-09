@@ -51,7 +51,8 @@ public class GetReservationCoverageResultJsonUnmarshaller implements Unmarshalle
                 if (context.testExpression("CoveragesByTime", targetDepth)) {
                     context.nextToken();
                     getReservationCoverageResult.setCoveragesByTime(new ListUnmarshaller<CoverageByTime>(CoverageByTimeJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Total", targetDepth)) {
                     context.nextToken();

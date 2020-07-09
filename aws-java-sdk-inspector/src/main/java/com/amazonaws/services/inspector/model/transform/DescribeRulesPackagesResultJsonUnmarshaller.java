@@ -51,7 +51,8 @@ public class DescribeRulesPackagesResultJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("rulesPackages", targetDepth)) {
                     context.nextToken();
                     describeRulesPackagesResult.setRulesPackages(new ListUnmarshaller<RulesPackage>(RulesPackageJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("failedItems", targetDepth)) {
                     context.nextToken();

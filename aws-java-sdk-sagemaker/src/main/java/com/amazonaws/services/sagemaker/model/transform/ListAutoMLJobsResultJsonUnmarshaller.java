@@ -51,7 +51,8 @@ public class ListAutoMLJobsResultJsonUnmarshaller implements Unmarshaller<ListAu
                 if (context.testExpression("AutoMLJobSummaries", targetDepth)) {
                     context.nextToken();
                     listAutoMLJobsResult.setAutoMLJobSummaries(new ListUnmarshaller<AutoMLJobSummary>(AutoMLJobSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

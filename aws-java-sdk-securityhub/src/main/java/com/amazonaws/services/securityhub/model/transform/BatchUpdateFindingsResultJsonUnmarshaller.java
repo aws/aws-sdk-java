@@ -51,12 +51,16 @@ public class BatchUpdateFindingsResultJsonUnmarshaller implements Unmarshaller<B
                 if (context.testExpression("ProcessedFindings", targetDepth)) {
                     context.nextToken();
                     batchUpdateFindingsResult.setProcessedFindings(new ListUnmarshaller<AwsSecurityFindingIdentifier>(
-                            AwsSecurityFindingIdentifierJsonUnmarshaller.getInstance()).unmarshall(context));
+                            AwsSecurityFindingIdentifierJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("UnprocessedFindings", targetDepth)) {
                     context.nextToken();
                     batchUpdateFindingsResult.setUnprocessedFindings(new ListUnmarshaller<BatchUpdateFindingsUnprocessedFinding>(
-                            BatchUpdateFindingsUnprocessedFindingJsonUnmarshaller.getInstance()).unmarshall(context));
+                            BatchUpdateFindingsUnprocessedFindingJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

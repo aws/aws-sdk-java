@@ -54,7 +54,9 @@ public class DescribeParametersResultJsonUnmarshaller implements Unmarshaller<De
                 }
                 if (context.testExpression("Parameters", targetDepth)) {
                     context.nextToken();
-                    describeParametersResult.setParameters(new ListUnmarshaller<Parameter>(ParameterJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeParametersResult.setParameters(new ListUnmarshaller<Parameter>(ParameterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

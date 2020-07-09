@@ -55,7 +55,8 @@ public class GetDomainStatisticsReportResultJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("DailyVolumes", targetDepth)) {
                     context.nextToken();
                     getDomainStatisticsReportResult.setDailyVolumes(new ListUnmarshaller<DailyVolume>(DailyVolumeJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

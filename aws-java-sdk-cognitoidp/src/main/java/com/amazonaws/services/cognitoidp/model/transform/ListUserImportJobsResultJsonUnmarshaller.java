@@ -51,7 +51,8 @@ public class ListUserImportJobsResultJsonUnmarshaller implements Unmarshaller<Li
                 if (context.testExpression("UserImportJobs", targetDepth)) {
                     context.nextToken();
                     listUserImportJobsResult.setUserImportJobs(new ListUnmarshaller<UserImportJobType>(UserImportJobTypeJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("PaginationToken", targetDepth)) {
                     context.nextToken();

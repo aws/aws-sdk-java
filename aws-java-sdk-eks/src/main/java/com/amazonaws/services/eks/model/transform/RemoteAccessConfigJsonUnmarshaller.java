@@ -54,7 +54,9 @@ public class RemoteAccessConfigJsonUnmarshaller implements Unmarshaller<RemoteAc
                 }
                 if (context.testExpression("sourceSecurityGroups", targetDepth)) {
                     context.nextToken();
-                    remoteAccessConfig.setSourceSecurityGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    remoteAccessConfig.setSourceSecurityGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -62,7 +62,9 @@ public class RateBasedRuleJsonUnmarshaller implements Unmarshaller<RateBasedRule
                 }
                 if (context.testExpression("MatchPredicates", targetDepth)) {
                     context.nextToken();
-                    rateBasedRule.setMatchPredicates(new ListUnmarshaller<Predicate>(PredicateJsonUnmarshaller.getInstance()).unmarshall(context));
+                    rateBasedRule.setMatchPredicates(new ListUnmarshaller<Predicate>(PredicateJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("RateKey", targetDepth)) {
                     context.nextToken();

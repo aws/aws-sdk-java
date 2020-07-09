@@ -63,7 +63,9 @@ public class GetSdkTypeResultJsonUnmarshaller implements Unmarshaller<GetSdkType
                 if (context.testExpression("configurationProperties", targetDepth)) {
                     context.nextToken();
                     getSdkTypeResult.setConfigurationProperties(new ListUnmarshaller<SdkConfigurationProperty>(SdkConfigurationPropertyJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

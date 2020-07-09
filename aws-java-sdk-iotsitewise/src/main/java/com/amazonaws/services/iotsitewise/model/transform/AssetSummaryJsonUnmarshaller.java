@@ -78,7 +78,9 @@ public class AssetSummaryJsonUnmarshaller implements Unmarshaller<AssetSummary, 
                 }
                 if (context.testExpression("hierarchies", targetDepth)) {
                     context.nextToken();
-                    assetSummary.setHierarchies(new ListUnmarshaller<AssetHierarchy>(AssetHierarchyJsonUnmarshaller.getInstance()).unmarshall(context));
+                    assetSummary.setHierarchies(new ListUnmarshaller<AssetHierarchy>(AssetHierarchyJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

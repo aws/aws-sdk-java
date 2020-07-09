@@ -59,7 +59,8 @@ public class BatchGetApplicationRevisionsResultJsonUnmarshaller implements Unmar
                 if (context.testExpression("revisions", targetDepth)) {
                     context.nextToken();
                     batchGetApplicationRevisionsResult.setRevisions(new ListUnmarshaller<RevisionInfo>(RevisionInfoJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

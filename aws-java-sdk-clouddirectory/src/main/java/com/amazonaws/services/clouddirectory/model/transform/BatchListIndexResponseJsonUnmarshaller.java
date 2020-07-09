@@ -51,7 +51,8 @@ public class BatchListIndexResponseJsonUnmarshaller implements Unmarshaller<Batc
                 if (context.testExpression("IndexAttachments", targetDepth)) {
                     context.nextToken();
                     batchListIndexResponse.setIndexAttachments(new ListUnmarshaller<IndexAttachment>(IndexAttachmentJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

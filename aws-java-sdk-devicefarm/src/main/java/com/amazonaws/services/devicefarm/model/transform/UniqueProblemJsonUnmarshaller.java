@@ -54,7 +54,9 @@ public class UniqueProblemJsonUnmarshaller implements Unmarshaller<UniqueProblem
                 }
                 if (context.testExpression("problems", targetDepth)) {
                     context.nextToken();
-                    uniqueProblem.setProblems(new ListUnmarshaller<Problem>(ProblemJsonUnmarshaller.getInstance()).unmarshall(context));
+                    uniqueProblem.setProblems(new ListUnmarshaller<Problem>(ProblemJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

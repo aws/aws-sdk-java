@@ -56,6 +56,8 @@ public class TypeUtils {
 
     private final static Map<String, String> marshallingTypeMappings = new HashMap<>();
 
+    private final static List<String> reservedClassNames = new ArrayList<>();
+
     static {
         dataTypeMappings.put("string", String.class.getSimpleName());
         dataTypeMappings.put("boolean", Boolean.class.getSimpleName());
@@ -99,6 +101,8 @@ public class TypeUtils {
         marshallingTypeMappings.put("InputStream", "STREAM");
         marshallingTypeMappings.put("Short", "SHORT");
         marshallingTypeMappings.put(null, "NULL");
+
+        reservedClassNames.add("Package");
     }
 
     private final NamingStrategy namingStrategy;
@@ -175,5 +179,9 @@ public class TypeUtils {
             }
             return dataType;
         }
+    }
+
+    public static boolean isReserved(String shapeName) {
+        return reservedClassNames.contains(shapeName);
     }
 }

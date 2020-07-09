@@ -55,7 +55,9 @@ public class EndpointBatchItemJsonUnmarshaller implements Unmarshaller<EndpointB
                 if (context.testExpression("Attributes", targetDepth)) {
                     context.nextToken();
                     endpointBatchItem.setAttributes(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
-                            new ListUnmarshaller<String>(context.getUnmarshaller(String.class))).unmarshall(context));
+                            new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    ).unmarshall(context));
                 }
                 if (context.testExpression("ChannelType", targetDepth)) {
                     context.nextToken();

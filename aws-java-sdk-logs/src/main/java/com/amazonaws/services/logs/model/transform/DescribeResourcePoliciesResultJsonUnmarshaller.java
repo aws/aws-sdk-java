@@ -51,7 +51,8 @@ public class DescribeResourcePoliciesResultJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("resourcePolicies", targetDepth)) {
                     context.nextToken();
                     describeResourcePoliciesResult.setResourcePolicies(new ListUnmarshaller<ResourcePolicy>(ResourcePolicyJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

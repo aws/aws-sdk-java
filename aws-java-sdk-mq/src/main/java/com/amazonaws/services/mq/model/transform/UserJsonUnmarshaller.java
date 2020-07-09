@@ -54,7 +54,9 @@ public class UserJsonUnmarshaller implements Unmarshaller<User, JsonUnmarshaller
                 }
                 if (context.testExpression("groups", targetDepth)) {
                     context.nextToken();
-                    user.setGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    user.setGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("password", targetDepth)) {
                     context.nextToken();

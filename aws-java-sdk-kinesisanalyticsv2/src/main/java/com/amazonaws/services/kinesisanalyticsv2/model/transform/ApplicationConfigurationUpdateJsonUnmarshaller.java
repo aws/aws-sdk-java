@@ -75,7 +75,9 @@ public class ApplicationConfigurationUpdateJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("VpcConfigurationUpdates", targetDepth)) {
                     context.nextToken();
                     applicationConfigurationUpdate.setVpcConfigurationUpdates(new ListUnmarshaller<VpcConfigurationUpdate>(
-                            VpcConfigurationUpdateJsonUnmarshaller.getInstance()).unmarshall(context));
+                            VpcConfigurationUpdateJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -83,7 +83,9 @@ public class MaintenanceWindowRunCommandParametersJsonUnmarshaller implements Un
                 if (context.testExpression("Parameters", targetDepth)) {
                     context.nextToken();
                     maintenanceWindowRunCommandParameters.setParameters(new MapUnmarshaller<String, java.util.List<String>>(context
-                            .getUnmarshaller(String.class), new ListUnmarshaller<String>(context.getUnmarshaller(String.class))).unmarshall(context));
+                            .getUnmarshaller(String.class), new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    ).unmarshall(context));
                 }
                 if (context.testExpression("ServiceRoleArn", targetDepth)) {
                     context.nextToken();

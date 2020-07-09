@@ -50,11 +50,15 @@ public class ConditionJsonUnmarshaller implements Unmarshaller<Condition, JsonUn
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("eq", targetDepth)) {
                     context.nextToken();
-                    condition.setEq(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    condition.setEq(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("neq", targetDepth)) {
                     context.nextToken();
-                    condition.setNeq(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    condition.setNeq(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("gt", targetDepth)) {
                     context.nextToken();
@@ -74,11 +78,15 @@ public class ConditionJsonUnmarshaller implements Unmarshaller<Condition, JsonUn
                 }
                 if (context.testExpression("equals", targetDepth)) {
                     context.nextToken();
-                    condition.setEquals(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    condition.setEquals(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("notEquals", targetDepth)) {
                     context.nextToken();
-                    condition.setNotEquals(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    condition.setNotEquals(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("greaterThan", targetDepth)) {
                     context.nextToken();

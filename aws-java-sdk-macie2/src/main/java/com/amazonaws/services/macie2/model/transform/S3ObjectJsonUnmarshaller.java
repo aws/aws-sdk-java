@@ -90,7 +90,9 @@ public class S3ObjectJsonUnmarshaller implements Unmarshaller<S3Object, JsonUnma
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
-                    s3Object.setTags(new ListUnmarshaller<KeyValuePair>(KeyValuePairJsonUnmarshaller.getInstance()).unmarshall(context));
+                    s3Object.setTags(new ListUnmarshaller<KeyValuePair>(KeyValuePairJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("versionId", targetDepth)) {
                     context.nextToken();

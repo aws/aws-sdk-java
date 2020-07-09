@@ -54,7 +54,9 @@ public class ClientPolicyTlsJsonUnmarshaller implements Unmarshaller<ClientPolic
                 }
                 if (context.testExpression("ports", targetDepth)) {
                     context.nextToken();
-                    clientPolicyTls.setPorts(new ListUnmarshaller<Integer>(context.getUnmarshaller(Integer.class)).unmarshall(context));
+                    clientPolicyTls.setPorts(new ListUnmarshaller<Integer>(context.getUnmarshaller(Integer.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("validation", targetDepth)) {
                     context.nextToken();

@@ -51,7 +51,9 @@ public class ListCertificateAuthoritiesResultJsonUnmarshaller implements Unmarsh
                 if (context.testExpression("CertificateAuthorities", targetDepth)) {
                     context.nextToken();
                     listCertificateAuthoritiesResult.setCertificateAuthorities(new ListUnmarshaller<CertificateAuthority>(CertificateAuthorityJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

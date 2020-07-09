@@ -50,7 +50,9 @@ public class GetDomainsResultJsonUnmarshaller implements Unmarshaller<GetDomains
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("domains", targetDepth)) {
                     context.nextToken();
-                    getDomainsResult.setDomains(new ListUnmarshaller<Domain>(DomainJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getDomainsResult.setDomains(new ListUnmarshaller<Domain>(DomainJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextPageToken", targetDepth)) {
                     context.nextToken();

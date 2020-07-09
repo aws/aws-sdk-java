@@ -50,7 +50,9 @@ public class ListSkillsResultJsonUnmarshaller implements Unmarshaller<ListSkills
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SkillSummaries", targetDepth)) {
                     context.nextToken();
-                    listSkillsResult.setSkillSummaries(new ListUnmarshaller<SkillSummary>(SkillSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listSkillsResult.setSkillSummaries(new ListUnmarshaller<SkillSummary>(SkillSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

@@ -1,3 +1,5 @@
+<#assign shapeFqcn = shapeFqcn/>
+<#assign packageName = packageName/>
 ${fileHeader}
 package ${transformPackage};
 
@@ -17,10 +19,10 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ${shape.shapeName} JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ${shape.shapeName}JsonUnmarshaller implements Unmarshaller<${shape.shapeName}, JsonUnmarshallerContext> {
+public class ${shape.shapeName}JsonUnmarshaller implements Unmarshaller<${shapeFqcn}, JsonUnmarshallerContext> {
 
-    public ${shape.shapeName} unmarshall(JsonUnmarshallerContext context) throws Exception {
-        ${shape.shapeName} ${shape.variable.variableName} = new ${shape.shapeName}();
+    public ${shapeFqcn} unmarshall(JsonUnmarshallerContext context) throws Exception {
+        ${shapeFqcn} ${shape.variable.variableName} = new ${shapeFqcn}();
 
 <#if shape.hasHeaderMember >
         if (context.isStartOfDocument()) {
@@ -65,7 +67,7 @@ public class ${shape.shapeName}JsonUnmarshaller implements Unmarshaller<${shape.
         <@PayloadUnmarshallerMacro.content shape />
      </#if>
 <#elseif shape.unboundMembers?has_content || (shape.hasNoMembers() && shape.shapeType != "Response") >
-    <@PayloadUnmarshallerMacro.content shape />
+    <@PayloadUnmarshallerMacro.content shape packageName/>
 </#if>
 
         return ${shape.variable.variableName};

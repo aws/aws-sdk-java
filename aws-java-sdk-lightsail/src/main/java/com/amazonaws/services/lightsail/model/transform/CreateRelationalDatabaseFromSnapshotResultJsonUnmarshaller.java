@@ -52,7 +52,8 @@ public class CreateRelationalDatabaseFromSnapshotResultJsonUnmarshaller implemen
                 if (context.testExpression("operations", targetDepth)) {
                     context.nextToken();
                     createRelationalDatabaseFromSnapshotResult.setOperations(new ListUnmarshaller<Operation>(OperationJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

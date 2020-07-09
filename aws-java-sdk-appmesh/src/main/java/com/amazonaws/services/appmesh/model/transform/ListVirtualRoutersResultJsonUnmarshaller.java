@@ -55,7 +55,8 @@ public class ListVirtualRoutersResultJsonUnmarshaller implements Unmarshaller<Li
                 if (context.testExpression("virtualRouters", targetDepth)) {
                     context.nextToken();
                     listVirtualRoutersResult.setVirtualRouters(new ListUnmarshaller<VirtualRouterRef>(VirtualRouterRefJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

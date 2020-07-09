@@ -51,7 +51,9 @@ public class ListMitigationActionsResultJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("actionIdentifiers", targetDepth)) {
                     context.nextToken();
                     listMitigationActionsResult.setActionIdentifiers(new ListUnmarshaller<MitigationActionIdentifier>(
-                            MitigationActionIdentifierJsonUnmarshaller.getInstance()).unmarshall(context));
+                            MitigationActionIdentifierJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

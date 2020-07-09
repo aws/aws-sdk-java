@@ -50,11 +50,15 @@ public class VpcConfigRequestJsonUnmarshaller implements Unmarshaller<VpcConfigR
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("subnetIds", targetDepth)) {
                     context.nextToken();
-                    vpcConfigRequest.setSubnetIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    vpcConfigRequest.setSubnetIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("securityGroupIds", targetDepth)) {
                     context.nextToken();
-                    vpcConfigRequest.setSecurityGroupIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    vpcConfigRequest.setSecurityGroupIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("endpointPublicAccess", targetDepth)) {
                     context.nextToken();
@@ -66,7 +70,9 @@ public class VpcConfigRequestJsonUnmarshaller implements Unmarshaller<VpcConfigR
                 }
                 if (context.testExpression("publicAccessCidrs", targetDepth)) {
                     context.nextToken();
-                    vpcConfigRequest.setPublicAccessCidrs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    vpcConfigRequest.setPublicAccessCidrs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

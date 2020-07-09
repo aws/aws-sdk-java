@@ -107,11 +107,15 @@ public class ConfigurationItemJsonUnmarshaller implements Unmarshaller<Configura
                 }
                 if (context.testExpression("relatedEvents", targetDepth)) {
                     context.nextToken();
-                    configurationItem.setRelatedEvents(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    configurationItem.setRelatedEvents(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("relationships", targetDepth)) {
                     context.nextToken();
-                    configurationItem.setRelationships(new ListUnmarshaller<Relationship>(RelationshipJsonUnmarshaller.getInstance()).unmarshall(context));
+                    configurationItem.setRelationships(new ListUnmarshaller<Relationship>(RelationshipJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("configuration", targetDepth)) {
                     context.nextToken();

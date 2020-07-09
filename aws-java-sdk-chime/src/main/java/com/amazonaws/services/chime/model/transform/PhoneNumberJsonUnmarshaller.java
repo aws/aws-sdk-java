@@ -75,7 +75,8 @@ public class PhoneNumberJsonUnmarshaller implements Unmarshaller<PhoneNumber, Js
                 if (context.testExpression("Associations", targetDepth)) {
                     context.nextToken();
                     phoneNumber.setAssociations(new ListUnmarshaller<PhoneNumberAssociation>(PhoneNumberAssociationJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("CallingName", targetDepth)) {
                     context.nextToken();

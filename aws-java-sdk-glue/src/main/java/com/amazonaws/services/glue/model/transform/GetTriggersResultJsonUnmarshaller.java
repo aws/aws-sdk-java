@@ -50,7 +50,9 @@ public class GetTriggersResultJsonUnmarshaller implements Unmarshaller<GetTrigge
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Triggers", targetDepth)) {
                     context.nextToken();
-                    getTriggersResult.setTriggers(new ListUnmarshaller<Trigger>(TriggerJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getTriggersResult.setTriggers(new ListUnmarshaller<Trigger>(TriggerJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

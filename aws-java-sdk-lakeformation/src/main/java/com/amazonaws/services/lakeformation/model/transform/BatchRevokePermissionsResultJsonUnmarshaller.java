@@ -51,7 +51,9 @@ public class BatchRevokePermissionsResultJsonUnmarshaller implements Unmarshalle
                 if (context.testExpression("Failures", targetDepth)) {
                     context.nextToken();
                     batchRevokePermissionsResult.setFailures(new ListUnmarshaller<BatchPermissionsFailureEntry>(BatchPermissionsFailureEntryJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

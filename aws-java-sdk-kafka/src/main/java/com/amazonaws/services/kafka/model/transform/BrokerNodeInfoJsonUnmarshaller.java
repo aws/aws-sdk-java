@@ -70,7 +70,9 @@ public class BrokerNodeInfoJsonUnmarshaller implements Unmarshaller<BrokerNodeIn
                 }
                 if (context.testExpression("endpoints", targetDepth)) {
                     context.nextToken();
-                    brokerNodeInfo.setEndpoints(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    brokerNodeInfo.setEndpoints(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

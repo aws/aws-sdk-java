@@ -50,7 +50,9 @@ public class GetApiMappingsResultJsonUnmarshaller implements Unmarshaller<GetApi
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("items", targetDepth)) {
                     context.nextToken();
-                    getApiMappingsResult.setItems(new ListUnmarshaller<ApiMapping>(ApiMappingJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getApiMappingsResult.setItems(new ListUnmarshaller<ApiMapping>(ApiMappingJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

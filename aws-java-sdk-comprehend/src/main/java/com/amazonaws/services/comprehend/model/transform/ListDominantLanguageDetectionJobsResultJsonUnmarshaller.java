@@ -52,7 +52,9 @@ public class ListDominantLanguageDetectionJobsResultJsonUnmarshaller implements 
                     context.nextToken();
                     listDominantLanguageDetectionJobsResult
                             .setDominantLanguageDetectionJobPropertiesList(new ListUnmarshaller<DominantLanguageDetectionJobProperties>(
-                                    DominantLanguageDetectionJobPropertiesJsonUnmarshaller.getInstance()).unmarshall(context));
+                                    DominantLanguageDetectionJobPropertiesJsonUnmarshaller.getInstance())
+
+                            .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

@@ -55,7 +55,8 @@ public class ListVirtualServicesResultJsonUnmarshaller implements Unmarshaller<L
                 if (context.testExpression("virtualServices", targetDepth)) {
                     context.nextToken();
                     listVirtualServicesResult.setVirtualServices(new ListUnmarshaller<VirtualServiceRef>(VirtualServiceRefJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

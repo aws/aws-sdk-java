@@ -59,7 +59,9 @@ public class CreateDomainNameResultJsonUnmarshaller implements Unmarshaller<Crea
                 if (context.testExpression("domainNameConfigurations", targetDepth)) {
                     context.nextToken();
                     createDomainNameResult.setDomainNameConfigurations(new ListUnmarshaller<DomainNameConfiguration>(DomainNameConfigurationJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();

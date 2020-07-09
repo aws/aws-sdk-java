@@ -51,7 +51,9 @@ public class GetBotChannelAssociationsResultJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("botChannelAssociations", targetDepth)) {
                     context.nextToken();
                     getBotChannelAssociationsResult.setBotChannelAssociations(new ListUnmarshaller<BotChannelAssociation>(BotChannelAssociationJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

@@ -51,7 +51,9 @@ public class DescribeInstanceInformationResultJsonUnmarshaller implements Unmars
                 if (context.testExpression("InstanceInformationList", targetDepth)) {
                     context.nextToken();
                     describeInstanceInformationResult.setInstanceInformationList(new ListUnmarshaller<InstanceInformation>(InstanceInformationJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

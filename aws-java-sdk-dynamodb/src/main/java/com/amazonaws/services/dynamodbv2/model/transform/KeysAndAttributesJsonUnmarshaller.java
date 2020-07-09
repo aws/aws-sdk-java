@@ -52,11 +52,15 @@ public class KeysAndAttributesJsonUnmarshaller implements Unmarshaller<KeysAndAt
                 if (context.testExpression("Keys", targetDepth)) {
                     context.nextToken();
                     keysAndAttributes.setKeys(new ListUnmarshaller<java.util.Map<String, AttributeValue>>(new MapUnmarshaller<String, AttributeValue>(context
-                            .getUnmarshaller(String.class), AttributeValueJsonUnmarshaller.getInstance())).unmarshall(context));
+                            .getUnmarshaller(String.class), AttributeValueJsonUnmarshaller.getInstance()))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("AttributesToGet", targetDepth)) {
                     context.nextToken();
-                    keysAndAttributes.setAttributesToGet(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    keysAndAttributes.setAttributesToGet(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ConsistentRead", targetDepth)) {
                     context.nextToken();

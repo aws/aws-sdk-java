@@ -55,12 +55,14 @@ public class EnableEnhancedMonitoringResultJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("CurrentShardLevelMetrics", targetDepth)) {
                     context.nextToken();
                     enableEnhancedMonitoringResult.setCurrentShardLevelMetrics(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("DesiredShardLevelMetrics", targetDepth)) {
                     context.nextToken();
                     enableEnhancedMonitoringResult.setDesiredShardLevelMetrics(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -51,12 +51,14 @@ public class DescribeFolderContentsResultJsonUnmarshaller implements Unmarshalle
                 if (context.testExpression("Folders", targetDepth)) {
                     context.nextToken();
                     describeFolderContentsResult.setFolders(new ListUnmarshaller<FolderMetadata>(FolderMetadataJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Documents", targetDepth)) {
                     context.nextToken();
                     describeFolderContentsResult.setDocuments(new ListUnmarshaller<DocumentMetadata>(DocumentMetadataJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Marker", targetDepth)) {
                     context.nextToken();

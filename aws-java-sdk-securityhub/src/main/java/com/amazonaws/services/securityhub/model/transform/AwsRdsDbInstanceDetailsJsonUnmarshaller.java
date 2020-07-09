@@ -51,7 +51,9 @@ public class AwsRdsDbInstanceDetailsJsonUnmarshaller implements Unmarshaller<Aws
                 if (context.testExpression("AssociatedRoles", targetDepth)) {
                     context.nextToken();
                     awsRdsDbInstanceDetails.setAssociatedRoles(new ListUnmarshaller<AwsRdsDbInstanceAssociatedRole>(
-                            AwsRdsDbInstanceAssociatedRoleJsonUnmarshaller.getInstance()).unmarshall(context));
+                            AwsRdsDbInstanceAssociatedRoleJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("CACertificateIdentifier", targetDepth)) {
                     context.nextToken();
@@ -124,7 +126,9 @@ public class AwsRdsDbInstanceDetailsJsonUnmarshaller implements Unmarshaller<Aws
                 if (context.testExpression("VpcSecurityGroups", targetDepth)) {
                     context.nextToken();
                     awsRdsDbInstanceDetails.setVpcSecurityGroups(new ListUnmarshaller<AwsRdsDbInstanceVpcSecurityGroup>(
-                            AwsRdsDbInstanceVpcSecurityGroupJsonUnmarshaller.getInstance()).unmarshall(context));
+                            AwsRdsDbInstanceVpcSecurityGroupJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

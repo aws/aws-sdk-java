@@ -51,7 +51,8 @@ public class DescribeEventAggregatesResultJsonUnmarshaller implements Unmarshall
                 if (context.testExpression("eventAggregates", targetDepth)) {
                     context.nextToken();
                     describeEventAggregatesResult.setEventAggregates(new ListUnmarshaller<EventAggregate>(EventAggregateJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

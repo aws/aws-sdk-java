@@ -55,7 +55,8 @@ public class DescribeSavingsPlanRatesResultJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("searchResults", targetDepth)) {
                     context.nextToken();
                     describeSavingsPlanRatesResult.setSearchResults(new ListUnmarshaller<SavingsPlanRate>(SavingsPlanRateJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

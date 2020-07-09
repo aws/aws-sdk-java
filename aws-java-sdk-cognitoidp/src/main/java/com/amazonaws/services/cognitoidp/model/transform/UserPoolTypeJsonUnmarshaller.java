@@ -79,19 +79,26 @@ public class UserPoolTypeJsonUnmarshaller implements Unmarshaller<UserPoolType, 
                 if (context.testExpression("SchemaAttributes", targetDepth)) {
                     context.nextToken();
                     userPoolType.setSchemaAttributes(new ListUnmarshaller<SchemaAttributeType>(SchemaAttributeTypeJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("AutoVerifiedAttributes", targetDepth)) {
                     context.nextToken();
-                    userPoolType.setAutoVerifiedAttributes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    userPoolType.setAutoVerifiedAttributes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("AliasAttributes", targetDepth)) {
                     context.nextToken();
-                    userPoolType.setAliasAttributes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    userPoolType.setAliasAttributes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("UsernameAttributes", targetDepth)) {
                     context.nextToken();
-                    userPoolType.setUsernameAttributes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    userPoolType.setUsernameAttributes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("SmsVerificationMessage", targetDepth)) {
                     context.nextToken();

@@ -50,7 +50,9 @@ public class ListIpRoutesResultJsonUnmarshaller implements Unmarshaller<ListIpRo
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("IpRoutesInfo", targetDepth)) {
                     context.nextToken();
-                    listIpRoutesResult.setIpRoutesInfo(new ListUnmarshaller<IpRouteInfo>(IpRouteInfoJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listIpRoutesResult.setIpRoutesInfo(new ListUnmarshaller<IpRouteInfo>(IpRouteInfoJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

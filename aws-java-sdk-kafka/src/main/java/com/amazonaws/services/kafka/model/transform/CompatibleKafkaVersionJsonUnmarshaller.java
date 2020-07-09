@@ -54,7 +54,9 @@ public class CompatibleKafkaVersionJsonUnmarshaller implements Unmarshaller<Comp
                 }
                 if (context.testExpression("targetVersions", targetDepth)) {
                     context.nextToken();
-                    compatibleKafkaVersion.setTargetVersions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    compatibleKafkaVersion.setTargetVersions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

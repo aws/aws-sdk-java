@@ -54,7 +54,9 @@ public class InputCaptionsJsonUnmarshaller implements Unmarshaller<InputCaptions
                 }
                 if (context.testExpression("CaptionSources", targetDepth)) {
                     context.nextToken();
-                    inputCaptions.setCaptionSources(new ListUnmarshaller<CaptionSource>(CaptionSourceJsonUnmarshaller.getInstance()).unmarshall(context));
+                    inputCaptions.setCaptionSources(new ListUnmarshaller<CaptionSource>(CaptionSourceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

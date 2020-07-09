@@ -51,7 +51,9 @@ public class ListOrganizationPortfolioAccessResultJsonUnmarshaller implements Un
                 if (context.testExpression("OrganizationNodes", targetDepth)) {
                     context.nextToken();
                     listOrganizationPortfolioAccessResult.setOrganizationNodes(new ListUnmarshaller<OrganizationNode>(OrganizationNodeJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextPageToken", targetDepth)) {
                     context.nextToken();

@@ -59,7 +59,8 @@ public class DescribeLocationFsxWindowsResultJsonUnmarshaller implements Unmarsh
                 if (context.testExpression("SecurityGroupArns", targetDepth)) {
                     context.nextToken();
                     describeLocationFsxWindowsResult.setSecurityGroupArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();

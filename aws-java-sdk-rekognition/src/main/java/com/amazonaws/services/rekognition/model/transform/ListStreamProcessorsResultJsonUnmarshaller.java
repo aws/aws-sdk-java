@@ -55,7 +55,8 @@ public class ListStreamProcessorsResultJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("StreamProcessors", targetDepth)) {
                     context.nextToken();
                     listStreamProcessorsResult.setStreamProcessors(new ListUnmarshaller<StreamProcessor>(StreamProcessorJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

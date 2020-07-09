@@ -59,7 +59,9 @@ public class BudgetPerformanceHistoryJsonUnmarshaller implements Unmarshaller<Bu
                 if (context.testExpression("CostFilters", targetDepth)) {
                     context.nextToken();
                     budgetPerformanceHistory.setCostFilters(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
-                            new ListUnmarshaller<String>(context.getUnmarshaller(String.class))).unmarshall(context));
+                            new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    ).unmarshall(context));
                 }
                 if (context.testExpression("CostTypes", targetDepth)) {
                     context.nextToken();
@@ -72,7 +74,9 @@ public class BudgetPerformanceHistoryJsonUnmarshaller implements Unmarshaller<Bu
                 if (context.testExpression("BudgetedAndActualAmountsList", targetDepth)) {
                     context.nextToken();
                     budgetPerformanceHistory.setBudgetedAndActualAmountsList(new ListUnmarshaller<BudgetedAndActualAmounts>(
-                            BudgetedAndActualAmountsJsonUnmarshaller.getInstance()).unmarshall(context));
+                            BudgetedAndActualAmountsJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

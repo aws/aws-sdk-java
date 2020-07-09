@@ -59,7 +59,9 @@ public class StreamingConfigurationJsonUnmarshaller implements Unmarshaller<Stre
                 if (context.testExpression("StreamingNotificationTargets", targetDepth)) {
                     context.nextToken();
                     streamingConfiguration.setStreamingNotificationTargets(new ListUnmarshaller<StreamingNotificationTarget>(
-                            StreamingNotificationTargetJsonUnmarshaller.getInstance()).unmarshall(context));
+                            StreamingNotificationTargetJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

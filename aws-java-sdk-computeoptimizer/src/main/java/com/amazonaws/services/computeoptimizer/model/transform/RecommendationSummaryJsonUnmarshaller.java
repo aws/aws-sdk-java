@@ -50,7 +50,9 @@ public class RecommendationSummaryJsonUnmarshaller implements Unmarshaller<Recom
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("summaries", targetDepth)) {
                     context.nextToken();
-                    recommendationSummary.setSummaries(new ListUnmarshaller<Summary>(SummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    recommendationSummary.setSummaries(new ListUnmarshaller<Summary>(SummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("recommendationResourceType", targetDepth)) {
                     context.nextToken();

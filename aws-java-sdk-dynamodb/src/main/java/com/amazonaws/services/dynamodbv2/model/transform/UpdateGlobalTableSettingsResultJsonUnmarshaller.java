@@ -55,7 +55,9 @@ public class UpdateGlobalTableSettingsResultJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("ReplicaSettings", targetDepth)) {
                     context.nextToken();
                     updateGlobalTableSettingsResult.setReplicaSettings(new ListUnmarshaller<ReplicaSettingsDescription>(
-                            ReplicaSettingsDescriptionJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ReplicaSettingsDescriptionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

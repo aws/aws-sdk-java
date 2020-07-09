@@ -50,7 +50,9 @@ public class GetDedicatedIpsResultJsonUnmarshaller implements Unmarshaller<GetDe
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DedicatedIps", targetDepth)) {
                     context.nextToken();
-                    getDedicatedIpsResult.setDedicatedIps(new ListUnmarshaller<DedicatedIp>(DedicatedIpJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getDedicatedIpsResult.setDedicatedIps(new ListUnmarshaller<DedicatedIp>(DedicatedIpJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

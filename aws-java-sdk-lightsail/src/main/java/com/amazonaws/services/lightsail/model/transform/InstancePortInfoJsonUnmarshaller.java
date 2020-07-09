@@ -78,11 +78,15 @@ public class InstancePortInfoJsonUnmarshaller implements Unmarshaller<InstancePo
                 }
                 if (context.testExpression("cidrs", targetDepth)) {
                     context.nextToken();
-                    instancePortInfo.setCidrs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    instancePortInfo.setCidrs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("cidrListAliases", targetDepth)) {
                     context.nextToken();
-                    instancePortInfo.setCidrListAliases(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    instancePortInfo.setCidrListAliases(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

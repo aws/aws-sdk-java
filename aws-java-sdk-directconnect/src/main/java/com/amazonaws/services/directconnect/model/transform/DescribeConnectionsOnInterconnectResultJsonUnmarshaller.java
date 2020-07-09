@@ -51,7 +51,8 @@ public class DescribeConnectionsOnInterconnectResultJsonUnmarshaller implements 
                 if (context.testExpression("connections", targetDepth)) {
                     context.nextToken();
                     describeConnectionsOnInterconnectResult.setConnections(new ListUnmarshaller<Connection>(ConnectionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -54,7 +54,9 @@ public class MultiplexSummaryJsonUnmarshaller implements Unmarshaller<MultiplexS
                 }
                 if (context.testExpression("availabilityZones", targetDepth)) {
                     context.nextToken();
-                    multiplexSummary.setAvailabilityZones(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    multiplexSummary.setAvailabilityZones(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();

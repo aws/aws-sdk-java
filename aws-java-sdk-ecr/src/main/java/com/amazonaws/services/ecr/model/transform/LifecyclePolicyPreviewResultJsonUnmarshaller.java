@@ -50,7 +50,9 @@ public class LifecyclePolicyPreviewResultJsonUnmarshaller implements Unmarshalle
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("imageTags", targetDepth)) {
                     context.nextToken();
-                    lifecyclePolicyPreviewResult.setImageTags(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    lifecyclePolicyPreviewResult.setImageTags(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("imageDigest", targetDepth)) {
                     context.nextToken();

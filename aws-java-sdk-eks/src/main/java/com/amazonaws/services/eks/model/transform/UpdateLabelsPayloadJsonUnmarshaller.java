@@ -55,7 +55,9 @@ public class UpdateLabelsPayloadJsonUnmarshaller implements Unmarshaller<UpdateL
                 }
                 if (context.testExpression("removeLabels", targetDepth)) {
                     context.nextToken();
-                    updateLabelsPayload.setRemoveLabels(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    updateLabelsPayload.setRemoveLabels(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

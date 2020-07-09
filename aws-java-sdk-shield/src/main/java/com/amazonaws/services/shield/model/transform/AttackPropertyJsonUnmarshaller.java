@@ -58,7 +58,9 @@ public class AttackPropertyJsonUnmarshaller implements Unmarshaller<AttackProper
                 }
                 if (context.testExpression("TopContributors", targetDepth)) {
                     context.nextToken();
-                    attackProperty.setTopContributors(new ListUnmarshaller<Contributor>(ContributorJsonUnmarshaller.getInstance()).unmarshall(context));
+                    attackProperty.setTopContributors(new ListUnmarshaller<Contributor>(ContributorJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Unit", targetDepth)) {
                     context.nextToken();

@@ -62,7 +62,9 @@ public class ProxyJsonUnmarshaller implements Unmarshaller<Proxy, JsonUnmarshall
                 }
                 if (context.testExpression("PhoneNumberCountries", targetDepth)) {
                     context.nextToken();
-                    proxy.setPhoneNumberCountries(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    proxy.setPhoneNumberCountries(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

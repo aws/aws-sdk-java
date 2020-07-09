@@ -51,17 +51,23 @@ public class HyperParameterRangesJsonUnmarshaller implements Unmarshaller<HyperP
                 if (context.testExpression("integerHyperParameterRanges", targetDepth)) {
                     context.nextToken();
                     hyperParameterRanges.setIntegerHyperParameterRanges(new ListUnmarshaller<IntegerHyperParameterRange>(
-                            IntegerHyperParameterRangeJsonUnmarshaller.getInstance()).unmarshall(context));
+                            IntegerHyperParameterRangeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("continuousHyperParameterRanges", targetDepth)) {
                     context.nextToken();
                     hyperParameterRanges.setContinuousHyperParameterRanges(new ListUnmarshaller<ContinuousHyperParameterRange>(
-                            ContinuousHyperParameterRangeJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ContinuousHyperParameterRangeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("categoricalHyperParameterRanges", targetDepth)) {
                     context.nextToken();
                     hyperParameterRanges.setCategoricalHyperParameterRanges(new ListUnmarshaller<CategoricalHyperParameterRange>(
-                            CategoricalHyperParameterRangeJsonUnmarshaller.getInstance()).unmarshall(context));
+                            CategoricalHyperParameterRangeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

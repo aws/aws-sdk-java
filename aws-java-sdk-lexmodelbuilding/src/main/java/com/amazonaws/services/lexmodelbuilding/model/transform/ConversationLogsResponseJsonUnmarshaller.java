@@ -51,7 +51,8 @@ public class ConversationLogsResponseJsonUnmarshaller implements Unmarshaller<Co
                 if (context.testExpression("logSettings", targetDepth)) {
                     context.nextToken();
                     conversationLogsResponse.setLogSettings(new ListUnmarshaller<LogSettingsResponse>(LogSettingsResponseJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("iamRoleArn", targetDepth)) {
                     context.nextToken();

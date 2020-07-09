@@ -50,7 +50,9 @@ public class ListUsersResultJsonUnmarshaller implements Unmarshaller<ListUsersRe
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("UserSummaryList", targetDepth)) {
                     context.nextToken();
-                    listUsersResult.setUserSummaryList(new ListUnmarshaller<UserSummary>(UserSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listUsersResult.setUserSummaryList(new ListUnmarshaller<UserSummary>(UserSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

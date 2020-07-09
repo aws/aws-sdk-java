@@ -50,7 +50,9 @@ public class DeviceSelectionResultJsonUnmarshaller implements Unmarshaller<Devic
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("filters", targetDepth)) {
                     context.nextToken();
-                    deviceSelectionResult.setFilters(new ListUnmarshaller<DeviceFilter>(DeviceFilterJsonUnmarshaller.getInstance()).unmarshall(context));
+                    deviceSelectionResult.setFilters(new ListUnmarshaller<DeviceFilter>(DeviceFilterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("matchedDevicesCount", targetDepth)) {
                     context.nextToken();

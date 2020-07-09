@@ -50,11 +50,15 @@ public class SkewedInfoJsonUnmarshaller implements Unmarshaller<SkewedInfo, Json
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SkewedColumnNames", targetDepth)) {
                     context.nextToken();
-                    skewedInfo.setSkewedColumnNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    skewedInfo.setSkewedColumnNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("SkewedColumnValues", targetDepth)) {
                     context.nextToken();
-                    skewedInfo.setSkewedColumnValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    skewedInfo.setSkewedColumnValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("SkewedColumnValueLocationMaps", targetDepth)) {
                     context.nextToken();

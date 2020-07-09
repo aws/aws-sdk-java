@@ -50,7 +50,9 @@ public class GetVariablesResultJsonUnmarshaller implements Unmarshaller<GetVaria
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("variables", targetDepth)) {
                     context.nextToken();
-                    getVariablesResult.setVariables(new ListUnmarshaller<Variable>(VariableJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getVariablesResult.setVariables(new ListUnmarshaller<Variable>(VariableJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

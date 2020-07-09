@@ -50,15 +50,21 @@ public class CustomerArtifactPathsJsonUnmarshaller implements Unmarshaller<Custo
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("iosPaths", targetDepth)) {
                     context.nextToken();
-                    customerArtifactPaths.setIosPaths(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    customerArtifactPaths.setIosPaths(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("androidPaths", targetDepth)) {
                     context.nextToken();
-                    customerArtifactPaths.setAndroidPaths(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    customerArtifactPaths.setAndroidPaths(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("deviceHostPaths", targetDepth)) {
                     context.nextToken();
-                    customerArtifactPaths.setDeviceHostPaths(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    customerArtifactPaths.setDeviceHostPaths(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

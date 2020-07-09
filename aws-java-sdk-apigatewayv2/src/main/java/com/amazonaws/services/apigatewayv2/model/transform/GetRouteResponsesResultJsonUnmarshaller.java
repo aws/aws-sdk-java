@@ -50,7 +50,9 @@ public class GetRouteResponsesResultJsonUnmarshaller implements Unmarshaller<Get
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("items", targetDepth)) {
                     context.nextToken();
-                    getRouteResponsesResult.setItems(new ListUnmarshaller<RouteResponse>(RouteResponseJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getRouteResponsesResult.setItems(new ListUnmarshaller<RouteResponse>(RouteResponseJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

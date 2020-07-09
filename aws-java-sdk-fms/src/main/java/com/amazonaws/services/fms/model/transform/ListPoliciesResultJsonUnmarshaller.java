@@ -50,7 +50,9 @@ public class ListPoliciesResultJsonUnmarshaller implements Unmarshaller<ListPoli
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("PolicyList", targetDepth)) {
                     context.nextToken();
-                    listPoliciesResult.setPolicyList(new ListUnmarshaller<PolicySummary>(PolicySummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listPoliciesResult.setPolicyList(new ListUnmarshaller<PolicySummary>(PolicySummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

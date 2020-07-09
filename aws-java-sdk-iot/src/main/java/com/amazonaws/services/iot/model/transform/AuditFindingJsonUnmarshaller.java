@@ -78,7 +78,9 @@ public class AuditFindingJsonUnmarshaller implements Unmarshaller<AuditFinding, 
                 }
                 if (context.testExpression("relatedResources", targetDepth)) {
                     context.nextToken();
-                    auditFinding.setRelatedResources(new ListUnmarshaller<RelatedResource>(RelatedResourceJsonUnmarshaller.getInstance()).unmarshall(context));
+                    auditFinding.setRelatedResources(new ListUnmarshaller<RelatedResource>(RelatedResourceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("reasonForNonCompliance", targetDepth)) {
                     context.nextToken();

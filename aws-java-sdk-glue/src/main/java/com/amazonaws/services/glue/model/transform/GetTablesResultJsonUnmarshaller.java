@@ -50,7 +50,9 @@ public class GetTablesResultJsonUnmarshaller implements Unmarshaller<GetTablesRe
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TableList", targetDepth)) {
                     context.nextToken();
-                    getTablesResult.setTableList(new ListUnmarshaller<Table>(TableJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getTablesResult.setTableList(new ListUnmarshaller<Table>(TableJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

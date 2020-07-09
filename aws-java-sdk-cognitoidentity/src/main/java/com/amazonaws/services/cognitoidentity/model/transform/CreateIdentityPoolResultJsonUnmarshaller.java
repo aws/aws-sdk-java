@@ -76,16 +76,21 @@ public class CreateIdentityPoolResultJsonUnmarshaller implements Unmarshaller<Cr
                 if (context.testExpression("OpenIdConnectProviderARNs", targetDepth)) {
                     context.nextToken();
                     createIdentityPoolResult.setOpenIdConnectProviderARNs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("CognitoIdentityProviders", targetDepth)) {
                     context.nextToken();
                     createIdentityPoolResult.setCognitoIdentityProviders(new ListUnmarshaller<CognitoIdentityProvider>(CognitoIdentityProviderJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("SamlProviderARNs", targetDepth)) {
                     context.nextToken();
-                    createIdentityPoolResult.setSamlProviderARNs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    createIdentityPoolResult.setSamlProviderARNs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("IdentityPoolTags", targetDepth)) {
                     context.nextToken();

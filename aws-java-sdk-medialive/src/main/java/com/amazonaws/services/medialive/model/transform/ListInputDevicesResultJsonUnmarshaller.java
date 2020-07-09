@@ -51,7 +51,8 @@ public class ListInputDevicesResultJsonUnmarshaller implements Unmarshaller<List
                 if (context.testExpression("inputDevices", targetDepth)) {
                     context.nextToken();
                     listInputDevicesResult.setInputDevices(new ListUnmarshaller<InputDeviceSummary>(InputDeviceSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

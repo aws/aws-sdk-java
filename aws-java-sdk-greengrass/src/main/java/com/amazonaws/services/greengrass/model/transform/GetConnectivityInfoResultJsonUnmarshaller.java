@@ -51,7 +51,8 @@ public class GetConnectivityInfoResultJsonUnmarshaller implements Unmarshaller<G
                 if (context.testExpression("ConnectivityInfo", targetDepth)) {
                     context.nextToken();
                     getConnectivityInfoResult.setConnectivityInfo(new ListUnmarshaller<ConnectivityInfo>(ConnectivityInfoJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("message", targetDepth)) {
                     context.nextToken();

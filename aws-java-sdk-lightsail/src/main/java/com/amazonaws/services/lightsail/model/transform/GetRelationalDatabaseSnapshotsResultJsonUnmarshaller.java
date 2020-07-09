@@ -51,7 +51,9 @@ public class GetRelationalDatabaseSnapshotsResultJsonUnmarshaller implements Unm
                 if (context.testExpression("relationalDatabaseSnapshots", targetDepth)) {
                     context.nextToken();
                     getRelationalDatabaseSnapshotsResult.setRelationalDatabaseSnapshots(new ListUnmarshaller<RelationalDatabaseSnapshot>(
-                            RelationalDatabaseSnapshotJsonUnmarshaller.getInstance()).unmarshall(context));
+                            RelationalDatabaseSnapshotJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextPageToken", targetDepth)) {
                     context.nextToken();

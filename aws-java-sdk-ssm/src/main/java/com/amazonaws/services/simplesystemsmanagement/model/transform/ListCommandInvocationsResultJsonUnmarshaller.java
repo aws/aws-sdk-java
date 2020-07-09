@@ -51,7 +51,8 @@ public class ListCommandInvocationsResultJsonUnmarshaller implements Unmarshalle
                 if (context.testExpression("CommandInvocations", targetDepth)) {
                     context.nextToken();
                     listCommandInvocationsResult.setCommandInvocations(new ListUnmarshaller<CommandInvocation>(CommandInvocationJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

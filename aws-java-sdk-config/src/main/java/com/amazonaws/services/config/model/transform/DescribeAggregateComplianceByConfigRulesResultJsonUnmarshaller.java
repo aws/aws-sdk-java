@@ -52,7 +52,9 @@ public class DescribeAggregateComplianceByConfigRulesResultJsonUnmarshaller impl
                 if (context.testExpression("AggregateComplianceByConfigRules", targetDepth)) {
                     context.nextToken();
                     describeAggregateComplianceByConfigRulesResult.setAggregateComplianceByConfigRules(new ListUnmarshaller<AggregateComplianceByConfigRule>(
-                            AggregateComplianceByConfigRuleJsonUnmarshaller.getInstance()).unmarshall(context));
+                            AggregateComplianceByConfigRuleJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

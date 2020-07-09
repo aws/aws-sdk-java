@@ -51,7 +51,9 @@ public class DescribeDirectConnectGatewaysResultJsonUnmarshaller implements Unma
                 if (context.testExpression("directConnectGateways", targetDepth)) {
                     context.nextToken();
                     describeDirectConnectGatewaysResult.setDirectConnectGateways(new ListUnmarshaller<DirectConnectGateway>(
-                            DirectConnectGatewayJsonUnmarshaller.getInstance()).unmarshall(context));
+                            DirectConnectGatewayJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

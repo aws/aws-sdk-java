@@ -50,7 +50,9 @@ public class ListCrawlersResultJsonUnmarshaller implements Unmarshaller<ListCraw
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CrawlerNames", targetDepth)) {
                     context.nextToken();
-                    listCrawlersResult.setCrawlerNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    listCrawlersResult.setCrawlerNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

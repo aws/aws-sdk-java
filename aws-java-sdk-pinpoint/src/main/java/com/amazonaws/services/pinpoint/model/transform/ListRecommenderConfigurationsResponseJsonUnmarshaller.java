@@ -51,7 +51,9 @@ public class ListRecommenderConfigurationsResponseJsonUnmarshaller implements Un
                 if (context.testExpression("Item", targetDepth)) {
                     context.nextToken();
                     listRecommenderConfigurationsResponse.setItem(new ListUnmarshaller<RecommenderConfigurationResponse>(
-                            RecommenderConfigurationResponseJsonUnmarshaller.getInstance()).unmarshall(context));
+                            RecommenderConfigurationResponseJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

@@ -70,7 +70,9 @@ public class InstanceTypeConfigJsonUnmarshaller implements Unmarshaller<Instance
                 }
                 if (context.testExpression("Configurations", targetDepth)) {
                     context.nextToken();
-                    instanceTypeConfig.setConfigurations(new ListUnmarshaller<Configuration>(ConfigurationJsonUnmarshaller.getInstance()).unmarshall(context));
+                    instanceTypeConfig.setConfigurations(new ListUnmarshaller<Configuration>(ConfigurationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

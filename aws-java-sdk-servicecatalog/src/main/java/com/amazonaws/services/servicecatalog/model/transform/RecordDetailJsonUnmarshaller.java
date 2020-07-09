@@ -94,11 +94,15 @@ public class RecordDetailJsonUnmarshaller implements Unmarshaller<RecordDetail, 
                 }
                 if (context.testExpression("RecordErrors", targetDepth)) {
                     context.nextToken();
-                    recordDetail.setRecordErrors(new ListUnmarshaller<RecordError>(RecordErrorJsonUnmarshaller.getInstance()).unmarshall(context));
+                    recordDetail.setRecordErrors(new ListUnmarshaller<RecordError>(RecordErrorJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("RecordTags", targetDepth)) {
                     context.nextToken();
-                    recordDetail.setRecordTags(new ListUnmarshaller<RecordTag>(RecordTagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    recordDetail.setRecordTags(new ListUnmarshaller<RecordTag>(RecordTagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

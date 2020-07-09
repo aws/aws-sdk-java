@@ -51,7 +51,9 @@ public class ListClusterOperationsResultJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("clusterOperationInfoList", targetDepth)) {
                     context.nextToken();
                     listClusterOperationsResult.setClusterOperationInfoList(new ListUnmarshaller<ClusterOperationInfo>(ClusterOperationInfoJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

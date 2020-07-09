@@ -51,7 +51,9 @@ public class GetSamplingStatisticSummariesResultJsonUnmarshaller implements Unma
                 if (context.testExpression("SamplingStatisticSummaries", targetDepth)) {
                     context.nextToken();
                     getSamplingStatisticSummariesResult.setSamplingStatisticSummaries(new ListUnmarshaller<SamplingStatisticSummary>(
-                            SamplingStatisticSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                            SamplingStatisticSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

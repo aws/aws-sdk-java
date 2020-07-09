@@ -51,7 +51,8 @@ public class ListOfferingPromotionsResultJsonUnmarshaller implements Unmarshalle
                 if (context.testExpression("offeringPromotions", targetDepth)) {
                     context.nextToken();
                     listOfferingPromotionsResult.setOfferingPromotions(new ListUnmarshaller<OfferingPromotion>(OfferingPromotionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

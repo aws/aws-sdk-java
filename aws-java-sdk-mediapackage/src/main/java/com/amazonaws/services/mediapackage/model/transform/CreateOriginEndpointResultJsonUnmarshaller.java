@@ -111,7 +111,9 @@ public class CreateOriginEndpointResultJsonUnmarshaller implements Unmarshaller<
                 }
                 if (context.testExpression("whitelist", targetDepth)) {
                     context.nextToken();
-                    createOriginEndpointResult.setWhitelist(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    createOriginEndpointResult.setWhitelist(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

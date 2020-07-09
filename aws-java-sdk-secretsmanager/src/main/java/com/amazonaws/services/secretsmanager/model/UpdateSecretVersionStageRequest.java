@@ -27,8 +27,8 @@ public class UpdateSecretVersionStageRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Specifies the secret with the version whose list of staging labels you want to modify. You can specify either the
-     * Amazon Resource Name (ARN) or the friendly name of the secret.
+     * Specifies the secret with the version with the list of staging labels you want to modify. You can specify either
+     * the Amazon Resource Name (ARN) or the friendly name of the secret.
      * </p>
      * <note>
      * <p>
@@ -38,8 +38,14 @@ public class UpdateSecretVersionStageRequest extends com.amazonaws.AmazonWebServ
      * secret. However, if your secret has a name that ends in a hyphen followed by six characters (before Secrets
      * Manager adds the hyphen and six characters to the ARN) and you try to use that as a partial ARN, then those
      * characters cause Secrets Manager to assume that you’re specifying a complete ARN. This confusion can cause
-     * unexpected results. To avoid this situation, we recommend that you don’t create secret names that end with a
-     * hyphen followed by six characters.
+     * unexpected results. To avoid this situation, we recommend that you don’t create secret names ending with a hyphen
+     * followed by six characters.
+     * </p>
+     * <p>
+     * If you specify an incomplete ARN without the random suffix, and instead provide the 'friendly name', you
+     * <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager, you
+     * receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your
+     * permissions.
      * </p>
      * </note>
      */
@@ -61,7 +67,7 @@ public class UpdateSecretVersionStageRequest extends com.amazonaws.AmazonWebServ
     private String removeFromVersionId;
     /**
      * <p>
-     * (Optional) The secret version ID that you want to add the staging label to. If you want to remove a label from a
+     * (Optional) The secret version ID that you want to add the staging label. If you want to remove a label from a
      * version, then do not specify this parameter.
      * </p>
      * <p>
@@ -73,8 +79,8 @@ public class UpdateSecretVersionStageRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Specifies the secret with the version whose list of staging labels you want to modify. You can specify either the
-     * Amazon Resource Name (ARN) or the friendly name of the secret.
+     * Specifies the secret with the version with the list of staging labels you want to modify. You can specify either
+     * the Amazon Resource Name (ARN) or the friendly name of the secret.
      * </p>
      * <note>
      * <p>
@@ -84,13 +90,19 @@ public class UpdateSecretVersionStageRequest extends com.amazonaws.AmazonWebServ
      * secret. However, if your secret has a name that ends in a hyphen followed by six characters (before Secrets
      * Manager adds the hyphen and six characters to the ARN) and you try to use that as a partial ARN, then those
      * characters cause Secrets Manager to assume that you’re specifying a complete ARN. This confusion can cause
-     * unexpected results. To avoid this situation, we recommend that you don’t create secret names that end with a
-     * hyphen followed by six characters.
+     * unexpected results. To avoid this situation, we recommend that you don’t create secret names ending with a hyphen
+     * followed by six characters.
+     * </p>
+     * <p>
+     * If you specify an incomplete ARN without the random suffix, and instead provide the 'friendly name', you
+     * <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager, you
+     * receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your
+     * permissions.
      * </p>
      * </note>
      * 
      * @param secretId
-     *        Specifies the secret with the version whose list of staging labels you want to modify. You can specify
+     *        Specifies the secret with the version with the list of staging labels you want to modify. You can specify
      *        either the Amazon Resource Name (ARN) or the friendly name of the secret.</p> <note>
      *        <p>
      *        If you specify an ARN, we generally recommend that you specify a complete ARN. You can specify a partial
@@ -100,7 +112,13 @@ public class UpdateSecretVersionStageRequest extends com.amazonaws.AmazonWebServ
      *        characters (before Secrets Manager adds the hyphen and six characters to the ARN) and you try to use that
      *        as a partial ARN, then those characters cause Secrets Manager to assume that you’re specifying a complete
      *        ARN. This confusion can cause unexpected results. To avoid this situation, we recommend that you don’t
-     *        create secret names that end with a hyphen followed by six characters.
+     *        create secret names ending with a hyphen followed by six characters.
+     *        </p>
+     *        <p>
+     *        If you specify an incomplete ARN without the random suffix, and instead provide the 'friendly name', you
+     *        <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager,
+     *        you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending
+     *        on your permissions.
      *        </p>
      */
 
@@ -110,8 +128,8 @@ public class UpdateSecretVersionStageRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Specifies the secret with the version whose list of staging labels you want to modify. You can specify either the
-     * Amazon Resource Name (ARN) or the friendly name of the secret.
+     * Specifies the secret with the version with the list of staging labels you want to modify. You can specify either
+     * the Amazon Resource Name (ARN) or the friendly name of the secret.
      * </p>
      * <note>
      * <p>
@@ -121,12 +139,18 @@ public class UpdateSecretVersionStageRequest extends com.amazonaws.AmazonWebServ
      * secret. However, if your secret has a name that ends in a hyphen followed by six characters (before Secrets
      * Manager adds the hyphen and six characters to the ARN) and you try to use that as a partial ARN, then those
      * characters cause Secrets Manager to assume that you’re specifying a complete ARN. This confusion can cause
-     * unexpected results. To avoid this situation, we recommend that you don’t create secret names that end with a
-     * hyphen followed by six characters.
+     * unexpected results. To avoid this situation, we recommend that you don’t create secret names ending with a hyphen
+     * followed by six characters.
+     * </p>
+     * <p>
+     * If you specify an incomplete ARN without the random suffix, and instead provide the 'friendly name', you
+     * <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager, you
+     * receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your
+     * permissions.
      * </p>
      * </note>
      * 
-     * @return Specifies the secret with the version whose list of staging labels you want to modify. You can specify
+     * @return Specifies the secret with the version with the list of staging labels you want to modify. You can specify
      *         either the Amazon Resource Name (ARN) or the friendly name of the secret.</p> <note>
      *         <p>
      *         If you specify an ARN, we generally recommend that you specify a complete ARN. You can specify a partial
@@ -136,7 +160,13 @@ public class UpdateSecretVersionStageRequest extends com.amazonaws.AmazonWebServ
      *         six characters (before Secrets Manager adds the hyphen and six characters to the ARN) and you try to use
      *         that as a partial ARN, then those characters cause Secrets Manager to assume that you’re specifying a
      *         complete ARN. This confusion can cause unexpected results. To avoid this situation, we recommend that you
-     *         don’t create secret names that end with a hyphen followed by six characters.
+     *         don’t create secret names ending with a hyphen followed by six characters.
+     *         </p>
+     *         <p>
+     *         If you specify an incomplete ARN without the random suffix, and instead provide the 'friendly name', you
+     *         <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager,
+     *         you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending
+     *         on your permissions.
      *         </p>
      */
 
@@ -146,8 +176,8 @@ public class UpdateSecretVersionStageRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Specifies the secret with the version whose list of staging labels you want to modify. You can specify either the
-     * Amazon Resource Name (ARN) or the friendly name of the secret.
+     * Specifies the secret with the version with the list of staging labels you want to modify. You can specify either
+     * the Amazon Resource Name (ARN) or the friendly name of the secret.
      * </p>
      * <note>
      * <p>
@@ -157,13 +187,19 @@ public class UpdateSecretVersionStageRequest extends com.amazonaws.AmazonWebServ
      * secret. However, if your secret has a name that ends in a hyphen followed by six characters (before Secrets
      * Manager adds the hyphen and six characters to the ARN) and you try to use that as a partial ARN, then those
      * characters cause Secrets Manager to assume that you’re specifying a complete ARN. This confusion can cause
-     * unexpected results. To avoid this situation, we recommend that you don’t create secret names that end with a
-     * hyphen followed by six characters.
+     * unexpected results. To avoid this situation, we recommend that you don’t create secret names ending with a hyphen
+     * followed by six characters.
+     * </p>
+     * <p>
+     * If you specify an incomplete ARN without the random suffix, and instead provide the 'friendly name', you
+     * <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager, you
+     * receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your
+     * permissions.
      * </p>
      * </note>
      * 
      * @param secretId
-     *        Specifies the secret with the version whose list of staging labels you want to modify. You can specify
+     *        Specifies the secret with the version with the list of staging labels you want to modify. You can specify
      *        either the Amazon Resource Name (ARN) or the friendly name of the secret.</p> <note>
      *        <p>
      *        If you specify an ARN, we generally recommend that you specify a complete ARN. You can specify a partial
@@ -173,7 +209,13 @@ public class UpdateSecretVersionStageRequest extends com.amazonaws.AmazonWebServ
      *        characters (before Secrets Manager adds the hyphen and six characters to the ARN) and you try to use that
      *        as a partial ARN, then those characters cause Secrets Manager to assume that you’re specifying a complete
      *        ARN. This confusion can cause unexpected results. To avoid this situation, we recommend that you don’t
-     *        create secret names that end with a hyphen followed by six characters.
+     *        create secret names ending with a hyphen followed by six characters.
+     *        </p>
+     *        <p>
+     *        If you specify an incomplete ARN without the random suffix, and instead provide the 'friendly name', you
+     *        <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager,
+     *        you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending
+     *        on your permissions.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -286,7 +328,7 @@ public class UpdateSecretVersionStageRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Optional) The secret version ID that you want to add the staging label to. If you want to remove a label from a
+     * (Optional) The secret version ID that you want to add the staging label. If you want to remove a label from a
      * version, then do not specify this parameter.
      * </p>
      * <p>
@@ -295,7 +337,7 @@ public class UpdateSecretVersionStageRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param moveToVersionId
-     *        (Optional) The secret version ID that you want to add the staging label to. If you want to remove a label
+     *        (Optional) The secret version ID that you want to add the staging label. If you want to remove a label
      *        from a version, then do not specify this parameter.</p>
      *        <p>
      *        If the staging label is already attached to a different version of the secret, then you must also specify
@@ -308,7 +350,7 @@ public class UpdateSecretVersionStageRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Optional) The secret version ID that you want to add the staging label to. If you want to remove a label from a
+     * (Optional) The secret version ID that you want to add the staging label. If you want to remove a label from a
      * version, then do not specify this parameter.
      * </p>
      * <p>
@@ -316,7 +358,7 @@ public class UpdateSecretVersionStageRequest extends com.amazonaws.AmazonWebServ
      * <code>RemoveFromVersionId</code> parameter.
      * </p>
      * 
-     * @return (Optional) The secret version ID that you want to add the staging label to. If you want to remove a label
+     * @return (Optional) The secret version ID that you want to add the staging label. If you want to remove a label
      *         from a version, then do not specify this parameter.</p>
      *         <p>
      *         If the staging label is already attached to a different version of the secret, then you must also specify
@@ -329,7 +371,7 @@ public class UpdateSecretVersionStageRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Optional) The secret version ID that you want to add the staging label to. If you want to remove a label from a
+     * (Optional) The secret version ID that you want to add the staging label. If you want to remove a label from a
      * version, then do not specify this parameter.
      * </p>
      * <p>
@@ -338,7 +380,7 @@ public class UpdateSecretVersionStageRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param moveToVersionId
-     *        (Optional) The secret version ID that you want to add the staging label to. If you want to remove a label
+     *        (Optional) The secret version ID that you want to add the staging label. If you want to remove a label
      *        from a version, then do not specify this parameter.</p>
      *        <p>
      *        If the staging label is already attached to a different version of the secret, then you must also specify

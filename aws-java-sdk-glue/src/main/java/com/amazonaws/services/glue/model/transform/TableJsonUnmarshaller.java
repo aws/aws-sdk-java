@@ -90,7 +90,9 @@ public class TableJsonUnmarshaller implements Unmarshaller<Table, JsonUnmarshall
                 }
                 if (context.testExpression("PartitionKeys", targetDepth)) {
                     context.nextToken();
-                    table.setPartitionKeys(new ListUnmarshaller<Column>(ColumnJsonUnmarshaller.getInstance()).unmarshall(context));
+                    table.setPartitionKeys(new ListUnmarshaller<Column>(ColumnJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ViewOriginalText", targetDepth)) {
                     context.nextToken();

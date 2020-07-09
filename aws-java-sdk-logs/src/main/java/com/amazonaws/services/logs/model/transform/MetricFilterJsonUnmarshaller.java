@@ -59,7 +59,8 @@ public class MetricFilterJsonUnmarshaller implements Unmarshaller<MetricFilter, 
                 if (context.testExpression("metricTransformations", targetDepth)) {
                     context.nextToken();
                     metricFilter.setMetricTransformations(new ListUnmarshaller<MetricTransformation>(MetricTransformationJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("creationTime", targetDepth)) {
                     context.nextToken();

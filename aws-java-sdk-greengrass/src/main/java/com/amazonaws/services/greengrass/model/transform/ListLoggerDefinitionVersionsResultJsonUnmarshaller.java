@@ -55,7 +55,8 @@ public class ListLoggerDefinitionVersionsResultJsonUnmarshaller implements Unmar
                 if (context.testExpression("Versions", targetDepth)) {
                     context.nextToken();
                     listLoggerDefinitionVersionsResult.setVersions(new ListUnmarshaller<VersionInformation>(VersionInformationJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

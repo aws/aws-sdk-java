@@ -67,11 +67,15 @@ public class OrganizationConformancePackJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("ConformancePackInputParameters", targetDepth)) {
                     context.nextToken();
                     organizationConformancePack.setConformancePackInputParameters(new ListUnmarshaller<ConformancePackInputParameter>(
-                            ConformancePackInputParameterJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ConformancePackInputParameterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ExcludedAccounts", targetDepth)) {
                     context.nextToken();
-                    organizationConformancePack.setExcludedAccounts(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    organizationConformancePack.setExcludedAccounts(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("LastUpdateTime", targetDepth)) {
                     context.nextToken();

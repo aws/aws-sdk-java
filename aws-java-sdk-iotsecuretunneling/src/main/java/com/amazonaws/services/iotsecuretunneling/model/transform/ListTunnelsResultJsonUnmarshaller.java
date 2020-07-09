@@ -50,7 +50,9 @@ public class ListTunnelsResultJsonUnmarshaller implements Unmarshaller<ListTunne
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("tunnelSummaries", targetDepth)) {
                     context.nextToken();
-                    listTunnelsResult.setTunnelSummaries(new ListUnmarshaller<TunnelSummary>(TunnelSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listTunnelsResult.setTunnelSummaries(new ListUnmarshaller<TunnelSummary>(TunnelSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

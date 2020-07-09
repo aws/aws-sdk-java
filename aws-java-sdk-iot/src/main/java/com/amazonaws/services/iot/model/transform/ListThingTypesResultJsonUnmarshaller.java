@@ -51,7 +51,8 @@ public class ListThingTypesResultJsonUnmarshaller implements Unmarshaller<ListTh
                 if (context.testExpression("thingTypes", targetDepth)) {
                     context.nextToken();
                     listThingTypesResult.setThingTypes(new ListUnmarshaller<ThingTypeDefinition>(ThingTypeDefinitionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

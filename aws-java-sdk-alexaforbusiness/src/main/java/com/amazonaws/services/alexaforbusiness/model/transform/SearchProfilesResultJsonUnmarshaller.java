@@ -50,7 +50,9 @@ public class SearchProfilesResultJsonUnmarshaller implements Unmarshaller<Search
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Profiles", targetDepth)) {
                     context.nextToken();
-                    searchProfilesResult.setProfiles(new ListUnmarshaller<ProfileData>(ProfileDataJsonUnmarshaller.getInstance()).unmarshall(context));
+                    searchProfilesResult.setProfiles(new ListUnmarshaller<ProfileData>(ProfileDataJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

@@ -51,7 +51,9 @@ public class GetRelationalDatabaseParametersResultJsonUnmarshaller implements Un
                 if (context.testExpression("parameters", targetDepth)) {
                     context.nextToken();
                     getRelationalDatabaseParametersResult.setParameters(new ListUnmarshaller<RelationalDatabaseParameter>(
-                            RelationalDatabaseParameterJsonUnmarshaller.getInstance()).unmarshall(context));
+                            RelationalDatabaseParameterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextPageToken", targetDepth)) {
                     context.nextToken();

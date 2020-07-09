@@ -54,7 +54,9 @@ public class TextWithHighlightsJsonUnmarshaller implements Unmarshaller<TextWith
                 }
                 if (context.testExpression("Highlights", targetDepth)) {
                     context.nextToken();
-                    textWithHighlights.setHighlights(new ListUnmarshaller<Highlight>(HighlightJsonUnmarshaller.getInstance()).unmarshall(context));
+                    textWithHighlights.setHighlights(new ListUnmarshaller<Highlight>(HighlightJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

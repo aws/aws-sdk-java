@@ -82,7 +82,9 @@ public class CreateApiKeyResultJsonUnmarshaller implements Unmarshaller<CreateAp
                 }
                 if (context.testExpression("stageKeys", targetDepth)) {
                     context.nextToken();
-                    createApiKeyResult.setStageKeys(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    createApiKeyResult.setStageKeys(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();

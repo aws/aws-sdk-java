@@ -107,7 +107,7 @@ public class App implements Serializable, Cloneable, StructuredPojo {
     private Boolean enableBranchAutoBuild;
     /**
      * <p>
-     * Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git repository.
+     * Automatically disconnect a branch in the Amplify Console when you delete a branch from your Git repository.
      * </p>
      */
     private Boolean enableBranchAutoDeletion;
@@ -772,11 +772,11 @@ public class App implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git repository.
+     * Automatically disconnect a branch in the Amplify Console when you delete a branch from your Git repository.
      * </p>
      * 
      * @param enableBranchAutoDeletion
-     *        Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git
+     *        Automatically disconnect a branch in the Amplify Console when you delete a branch from your Git
      *        repository.
      */
 
@@ -786,10 +786,10 @@ public class App implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git repository.
+     * Automatically disconnect a branch in the Amplify Console when you delete a branch from your Git repository.
      * </p>
      * 
-     * @return Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git
+     * @return Automatically disconnect a branch in the Amplify Console when you delete a branch from your Git
      *         repository.
      */
 
@@ -799,11 +799,11 @@ public class App implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git repository.
+     * Automatically disconnect a branch in the Amplify Console when you delete a branch from your Git repository.
      * </p>
      * 
      * @param enableBranchAutoDeletion
-     *        Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git
+     *        Automatically disconnect a branch in the Amplify Console when you delete a branch from your Git
      *        repository.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -815,10 +815,10 @@ public class App implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git repository.
+     * Automatically disconnect a branch in the Amplify Console when you delete a branch from your Git repository.
      * </p>
      * 
-     * @return Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git
+     * @return Automatically disconnect a branch in the Amplify Console when you delete a branch from your Git
      *         repository.
      */
 

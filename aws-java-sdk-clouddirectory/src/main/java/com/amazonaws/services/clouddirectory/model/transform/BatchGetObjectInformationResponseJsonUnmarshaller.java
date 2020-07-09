@@ -51,7 +51,8 @@ public class BatchGetObjectInformationResponseJsonUnmarshaller implements Unmars
                 if (context.testExpression("SchemaFacets", targetDepth)) {
                     context.nextToken();
                     batchGetObjectInformationResponse.setSchemaFacets(new ListUnmarshaller<SchemaFacet>(SchemaFacetJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ObjectIdentifier", targetDepth)) {
                     context.nextToken();

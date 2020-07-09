@@ -75,7 +75,9 @@ public class ReplicaDescriptionJsonUnmarshaller implements Unmarshaller<ReplicaD
                 if (context.testExpression("GlobalSecondaryIndexes", targetDepth)) {
                     context.nextToken();
                     replicaDescription.setGlobalSecondaryIndexes(new ListUnmarshaller<ReplicaGlobalSecondaryIndexDescription>(
-                            ReplicaGlobalSecondaryIndexDescriptionJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ReplicaGlobalSecondaryIndexDescriptionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

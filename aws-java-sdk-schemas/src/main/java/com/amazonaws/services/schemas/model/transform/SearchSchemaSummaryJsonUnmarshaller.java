@@ -63,7 +63,9 @@ public class SearchSchemaSummaryJsonUnmarshaller implements Unmarshaller<SearchS
                 if (context.testExpression("SchemaVersions", targetDepth)) {
                     context.nextToken();
                     searchSchemaSummary.setSchemaVersions(new ListUnmarshaller<SearchSchemaVersionSummary>(SearchSchemaVersionSummaryJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

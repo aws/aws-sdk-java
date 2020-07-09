@@ -110,7 +110,8 @@ public class TrialComponentJsonUnmarshaller implements Unmarshaller<TrialCompone
                 if (context.testExpression("Metrics", targetDepth)) {
                     context.nextToken();
                     trialComponent.setMetrics(new ListUnmarshaller<TrialComponentMetricSummary>(TrialComponentMetricSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("SourceDetail", targetDepth)) {
                     context.nextToken();
@@ -118,11 +119,15 @@ public class TrialComponentJsonUnmarshaller implements Unmarshaller<TrialCompone
                 }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
-                    trialComponent.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    trialComponent.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Parents", targetDepth)) {
                     context.nextToken();
-                    trialComponent.setParents(new ListUnmarshaller<Parent>(ParentJsonUnmarshaller.getInstance()).unmarshall(context));
+                    trialComponent.setParents(new ListUnmarshaller<Parent>(ParentJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

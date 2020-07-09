@@ -51,7 +51,8 @@ public class DescribeRuntimeVersionsResultJsonUnmarshaller implements Unmarshall
                 if (context.testExpression("RuntimeVersions", targetDepth)) {
                     context.nextToken();
                     describeRuntimeVersionsResult.setRuntimeVersions(new ListUnmarshaller<RuntimeVersion>(RuntimeVersionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

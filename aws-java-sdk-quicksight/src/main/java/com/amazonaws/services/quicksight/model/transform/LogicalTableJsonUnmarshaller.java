@@ -55,7 +55,8 @@ public class LogicalTableJsonUnmarshaller implements Unmarshaller<LogicalTable, 
                 if (context.testExpression("DataTransforms", targetDepth)) {
                     context.nextToken();
                     logicalTable.setDataTransforms(new ListUnmarshaller<TransformOperation>(TransformOperationJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Source", targetDepth)) {
                     context.nextToken();

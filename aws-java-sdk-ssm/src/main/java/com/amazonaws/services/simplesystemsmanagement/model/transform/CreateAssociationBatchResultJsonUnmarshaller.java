@@ -51,12 +51,15 @@ public class CreateAssociationBatchResultJsonUnmarshaller implements Unmarshalle
                 if (context.testExpression("Successful", targetDepth)) {
                     context.nextToken();
                     createAssociationBatchResult.setSuccessful(new ListUnmarshaller<AssociationDescription>(AssociationDescriptionJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Failed", targetDepth)) {
                     context.nextToken();
                     createAssociationBatchResult.setFailed(new ListUnmarshaller<FailedCreateAssociation>(FailedCreateAssociationJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

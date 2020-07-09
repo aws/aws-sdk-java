@@ -238,6 +238,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.apigatewaymanagementapi.request.DeleteConnectionRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -306,6 +307,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param connectionId \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -376,6 +378,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param connectionId \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -391,6 +394,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.apigatewaymanagementapi.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ConnectionId" ],
@@ -422,6 +426,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.apigatewaymanagementapi.response.DeleteConnectionResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -430,6 +435,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.apigatewaymanagementapi.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -464,6 +470,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ForbiddenException",
+      "fullyQualifiedName" : "com.amazonaws.services.apigatewaymanagementapi.exception.ForbiddenException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -472,6 +479,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.apigatewaymanagementapi.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -503,6 +511,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.apigatewaymanagementapi.request.GetConnectionRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -571,6 +580,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param connectionId \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -641,6 +651,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param connectionId \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -656,6 +667,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.apigatewaymanagementapi.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ConnectionId" ],
@@ -687,6 +699,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.apigatewaymanagementapi.response.GetConnectionResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -748,6 +761,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The time in ISO 8601 format for when the connection was established.</p>\n@param connectedAt The time in ISO 8601 format for when the connection was established.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -816,6 +830,7 @@
           "variableSetterType" : "Identity"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param identity \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -884,6 +899,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The time in ISO 8601 format for when the connection was last active.</p>\n@param lastActiveAt The time in ISO 8601 format for when the connection was last active.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -954,6 +970,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The time in ISO 8601 format for when the connection was established.</p>\n@param connectedAt The time in ISO 8601 format for when the connection was established.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1023,6 +1040,7 @@
             "variableSetterType" : "Identity"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param identity \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1092,6 +1110,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The time in ISO 8601 format for when the connection was last active.</p>\n@param lastActiveAt The time in ISO 8601 format for when the connection was last active.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1107,6 +1126,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.apigatewaymanagementapi.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1141,6 +1161,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "GoneException",
+      "fullyQualifiedName" : "com.amazonaws.services.apigatewaymanagementapi.exception.GoneException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1149,6 +1170,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.apigatewaymanagementapi.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1180,6 +1202,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.apigatewaymanagementapi.model.Identity",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1241,6 +1264,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The source IP address of the TCP connection making the request to API Gateway.</p>\n@param sourceIp The source IP address of the TCP connection making the request to API Gateway.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1309,6 +1333,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The User Agent of the API caller.</p>\n@param userAgent The User Agent of the API caller.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1379,6 +1404,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The source IP address of the TCP connection making the request to API Gateway.</p>\n@param sourceIp The source IP address of the TCP connection making the request to API Gateway.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1448,6 +1474,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The User Agent of the API caller.</p>\n@param userAgent The User Agent of the API caller.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1463,6 +1490,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.apigatewaymanagementapi.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "SourceIp", "UserAgent" ],
@@ -1497,6 +1525,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "LimitExceededException",
+      "fullyQualifiedName" : "com.amazonaws.services.apigatewaymanagementapi.exception.LimitExceededException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1505,6 +1534,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.apigatewaymanagementapi.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1536,6 +1566,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "PayloadTooLargeException",
+      "fullyQualifiedName" : "com.amazonaws.services.apigatewaymanagementapi.exception.PayloadTooLargeException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1544,6 +1575,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.apigatewaymanagementapi.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1575,6 +1607,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.apigatewaymanagementapi.request.PostToConnectionRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : true,
       "hasRequiresLengthMember" : false,
@@ -1643,6 +1676,7 @@
           "variableSetterType" : "java.nio.ByteBuffer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The data to be sent to the client specified by its connection id.</p>\n@param data The data to be sent to the client specified by its connection id.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1711,6 +1745,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier of the connection that a specific client is using.</p>\n@param connectionId The identifier of the connection that a specific client is using.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1781,6 +1816,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier of the connection that a specific client is using.</p>\n@param connectionId The identifier of the connection that a specific client is using.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1850,6 +1886,7 @@
             "variableSetterType" : "java.nio.ByteBuffer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The data to be sent to the client specified by its connection id.</p>\n@param data The data to be sent to the client specified by its connection id.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1865,6 +1902,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.apigatewaymanagementapi.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ConnectionId", "Data" ],
@@ -1896,6 +1934,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.apigatewaymanagementapi.response.PostToConnectionResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1904,6 +1943,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.apigatewaymanagementapi.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,

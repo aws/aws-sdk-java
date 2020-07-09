@@ -54,7 +54,9 @@ public class FilterJsonUnmarshaller implements Unmarshaller<Filter, JsonUnmarsha
                 }
                 if (context.testExpression("values", targetDepth)) {
                     context.nextToken();
-                    filter.setValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    filter.setValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("condition", targetDepth)) {
                     context.nextToken();

@@ -54,7 +54,9 @@ public class OpsFilterJsonUnmarshaller implements Unmarshaller<OpsFilter, JsonUn
                 }
                 if (context.testExpression("Values", targetDepth)) {
                     context.nextToken();
-                    opsFilter.setValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    opsFilter.setValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
                     context.nextToken();

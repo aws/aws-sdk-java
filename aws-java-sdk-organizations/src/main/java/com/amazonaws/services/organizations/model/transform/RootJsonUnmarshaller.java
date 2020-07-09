@@ -62,7 +62,9 @@ public class RootJsonUnmarshaller implements Unmarshaller<Root, JsonUnmarshaller
                 }
                 if (context.testExpression("PolicyTypes", targetDepth)) {
                     context.nextToken();
-                    root.setPolicyTypes(new ListUnmarshaller<PolicyTypeSummary>(PolicyTypeSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    root.setPolicyTypes(new ListUnmarshaller<PolicyTypeSummary>(PolicyTypeSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

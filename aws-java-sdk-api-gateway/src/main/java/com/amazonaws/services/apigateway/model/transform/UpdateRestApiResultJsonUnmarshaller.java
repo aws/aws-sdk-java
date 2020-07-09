@@ -70,11 +70,15 @@ public class UpdateRestApiResultJsonUnmarshaller implements Unmarshaller<UpdateR
                 }
                 if (context.testExpression("warnings", targetDepth)) {
                     context.nextToken();
-                    updateRestApiResult.setWarnings(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    updateRestApiResult.setWarnings(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("binaryMediaTypes", targetDepth)) {
                     context.nextToken();
-                    updateRestApiResult.setBinaryMediaTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    updateRestApiResult.setBinaryMediaTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("minimumCompressionSize", targetDepth)) {
                     context.nextToken();

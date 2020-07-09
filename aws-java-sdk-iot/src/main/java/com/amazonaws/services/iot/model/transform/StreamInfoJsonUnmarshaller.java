@@ -66,7 +66,9 @@ public class StreamInfoJsonUnmarshaller implements Unmarshaller<StreamInfo, Json
                 }
                 if (context.testExpression("files", targetDepth)) {
                     context.nextToken();
-                    streamInfo.setFiles(new ListUnmarshaller<StreamFile>(StreamFileJsonUnmarshaller.getInstance()).unmarshall(context));
+                    streamInfo.setFiles(new ListUnmarshaller<StreamFile>(StreamFileJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();

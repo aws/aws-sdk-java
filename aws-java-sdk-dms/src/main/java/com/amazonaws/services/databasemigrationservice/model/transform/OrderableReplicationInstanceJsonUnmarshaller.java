@@ -78,7 +78,9 @@ public class OrderableReplicationInstanceJsonUnmarshaller implements Unmarshalle
                 }
                 if (context.testExpression("AvailabilityZones", targetDepth)) {
                     context.nextToken();
-                    orderableReplicationInstance.setAvailabilityZones(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    orderableReplicationInstance.setAvailabilityZones(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ReleaseStatus", targetDepth)) {
                     context.nextToken();

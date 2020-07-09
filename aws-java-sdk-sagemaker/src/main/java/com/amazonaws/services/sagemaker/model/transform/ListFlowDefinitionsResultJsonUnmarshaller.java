@@ -51,7 +51,9 @@ public class ListFlowDefinitionsResultJsonUnmarshaller implements Unmarshaller<L
                 if (context.testExpression("FlowDefinitionSummaries", targetDepth)) {
                     context.nextToken();
                     listFlowDefinitionsResult.setFlowDefinitionSummaries(new ListUnmarshaller<FlowDefinitionSummary>(FlowDefinitionSummaryJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

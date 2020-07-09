@@ -51,7 +51,8 @@ public class ListThingGroupsResultJsonUnmarshaller implements Unmarshaller<ListT
                 if (context.testExpression("thingGroups", targetDepth)) {
                     context.nextToken();
                     listThingGroupsResult.setThingGroups(new ListUnmarshaller<GroupNameAndArn>(GroupNameAndArnJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

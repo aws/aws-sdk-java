@@ -50,7 +50,9 @@ public class HttpRouteMatchJsonUnmarshaller implements Unmarshaller<HttpRouteMat
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("headers", targetDepth)) {
                     context.nextToken();
-                    httpRouteMatch.setHeaders(new ListUnmarshaller<HttpRouteHeader>(HttpRouteHeaderJsonUnmarshaller.getInstance()).unmarshall(context));
+                    httpRouteMatch.setHeaders(new ListUnmarshaller<HttpRouteHeader>(HttpRouteHeaderJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("method", targetDepth)) {
                     context.nextToken();

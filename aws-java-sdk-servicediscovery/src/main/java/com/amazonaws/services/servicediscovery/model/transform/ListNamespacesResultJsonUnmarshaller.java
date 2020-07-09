@@ -51,7 +51,8 @@ public class ListNamespacesResultJsonUnmarshaller implements Unmarshaller<ListNa
                 if (context.testExpression("Namespaces", targetDepth)) {
                     context.nextToken();
                     listNamespacesResult.setNamespaces(new ListUnmarshaller<NamespaceSummary>(NamespaceSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

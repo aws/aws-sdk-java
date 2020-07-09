@@ -51,7 +51,8 @@ public class ListTestGridProjectsResultJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("testGridProjects", targetDepth)) {
                     context.nextToken();
                     listTestGridProjectsResult.setTestGridProjects(new ListUnmarshaller<TestGridProject>(TestGridProjectJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

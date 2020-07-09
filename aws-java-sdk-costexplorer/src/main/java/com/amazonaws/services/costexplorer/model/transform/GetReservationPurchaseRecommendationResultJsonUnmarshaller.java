@@ -57,7 +57,9 @@ public class GetReservationPurchaseRecommendationResultJsonUnmarshaller implemen
                 if (context.testExpression("Recommendations", targetDepth)) {
                     context.nextToken();
                     getReservationPurchaseRecommendationResult.setRecommendations(new ListUnmarshaller<ReservationPurchaseRecommendation>(
-                            ReservationPurchaseRecommendationJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ReservationPurchaseRecommendationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextPageToken", targetDepth)) {
                     context.nextToken();

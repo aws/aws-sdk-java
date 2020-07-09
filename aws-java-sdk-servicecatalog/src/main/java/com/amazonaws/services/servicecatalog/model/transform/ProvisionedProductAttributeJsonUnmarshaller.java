@@ -86,7 +86,9 @@ public class ProvisionedProductAttributeJsonUnmarshaller implements Unmarshaller
                 }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
-                    provisionedProductAttribute.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    provisionedProductAttribute.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("PhysicalId", targetDepth)) {
                     context.nextToken();

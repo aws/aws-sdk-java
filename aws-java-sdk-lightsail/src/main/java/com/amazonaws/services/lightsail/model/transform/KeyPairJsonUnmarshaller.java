@@ -74,7 +74,9 @@ public class KeyPairJsonUnmarshaller implements Unmarshaller<KeyPair, JsonUnmars
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
-                    keyPair.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    keyPair.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("fingerprint", targetDepth)) {
                     context.nextToken();

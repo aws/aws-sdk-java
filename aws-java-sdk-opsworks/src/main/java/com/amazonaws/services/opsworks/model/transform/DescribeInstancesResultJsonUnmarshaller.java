@@ -50,7 +50,9 @@ public class DescribeInstancesResultJsonUnmarshaller implements Unmarshaller<Des
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Instances", targetDepth)) {
                     context.nextToken();
-                    describeInstancesResult.setInstances(new ListUnmarshaller<Instance>(InstanceJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeInstancesResult.setInstances(new ListUnmarshaller<Instance>(InstanceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

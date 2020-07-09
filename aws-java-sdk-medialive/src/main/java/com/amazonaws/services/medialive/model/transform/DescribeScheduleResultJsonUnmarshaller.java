@@ -55,7 +55,8 @@ public class DescribeScheduleResultJsonUnmarshaller implements Unmarshaller<Desc
                 if (context.testExpression("scheduleActions", targetDepth)) {
                     context.nextToken();
                     describeScheduleResult.setScheduleActions(new ListUnmarshaller<ScheduleAction>(ScheduleActionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

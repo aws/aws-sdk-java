@@ -62,7 +62,9 @@ public class NotificationSpecificationJsonUnmarshaller implements Unmarshaller<N
                 }
                 if (context.testExpression("EventTypes", targetDepth)) {
                     context.nextToken();
-                    notificationSpecification.setEventTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    notificationSpecification.setEventTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

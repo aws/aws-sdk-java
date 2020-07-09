@@ -78,7 +78,9 @@ public class ComponentJsonUnmarshaller implements Unmarshaller<Component, JsonUn
                 }
                 if (context.testExpression("supportedOsVersions", targetDepth)) {
                     context.nextToken();
-                    component.setSupportedOsVersions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    component.setSupportedOsVersions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("owner", targetDepth)) {
                     context.nextToken();

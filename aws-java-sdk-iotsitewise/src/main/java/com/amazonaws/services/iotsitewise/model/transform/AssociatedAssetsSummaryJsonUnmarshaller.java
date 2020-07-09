@@ -79,7 +79,8 @@ public class AssociatedAssetsSummaryJsonUnmarshaller implements Unmarshaller<Ass
                 if (context.testExpression("hierarchies", targetDepth)) {
                     context.nextToken();
                     associatedAssetsSummary.setHierarchies(new ListUnmarshaller<AssetHierarchy>(AssetHierarchyJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

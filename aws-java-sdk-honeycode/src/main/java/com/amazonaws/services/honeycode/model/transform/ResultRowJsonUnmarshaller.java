@@ -54,7 +54,9 @@ public class ResultRowJsonUnmarshaller implements Unmarshaller<ResultRow, JsonUn
                 }
                 if (context.testExpression("dataItems", targetDepth)) {
                     context.nextToken();
-                    resultRow.setDataItems(new ListUnmarshaller<DataItem>(DataItemJsonUnmarshaller.getInstance()).unmarshall(context));
+                    resultRow.setDataItems(new ListUnmarshaller<DataItem>(DataItemJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

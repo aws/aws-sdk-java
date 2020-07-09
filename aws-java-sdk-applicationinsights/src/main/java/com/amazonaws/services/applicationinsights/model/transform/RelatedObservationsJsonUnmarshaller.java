@@ -50,7 +50,9 @@ public class RelatedObservationsJsonUnmarshaller implements Unmarshaller<Related
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ObservationList", targetDepth)) {
                     context.nextToken();
-                    relatedObservations.setObservationList(new ListUnmarshaller<Observation>(ObservationJsonUnmarshaller.getInstance()).unmarshall(context));
+                    relatedObservations.setObservationList(new ListUnmarshaller<Observation>(ObservationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

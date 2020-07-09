@@ -50,7 +50,9 @@ public class OnPremConfigJsonUnmarshaller implements Unmarshaller<OnPremConfig, 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AgentArns", targetDepth)) {
                     context.nextToken();
-                    onPremConfig.setAgentArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    onPremConfig.setAgentArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

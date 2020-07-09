@@ -50,7 +50,9 @@ public class ListFragmentsResultJsonUnmarshaller implements Unmarshaller<ListFra
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Fragments", targetDepth)) {
                     context.nextToken();
-                    listFragmentsResult.setFragments(new ListUnmarshaller<Fragment>(FragmentJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listFragmentsResult.setFragments(new ListUnmarshaller<Fragment>(FragmentJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

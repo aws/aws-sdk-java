@@ -70,7 +70,9 @@ public class ComputeResourceJsonUnmarshaller implements Unmarshaller<ComputeReso
                 }
                 if (context.testExpression("instanceTypes", targetDepth)) {
                     context.nextToken();
-                    computeResource.setInstanceTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    computeResource.setInstanceTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("imageId", targetDepth)) {
                     context.nextToken();
@@ -78,11 +80,15 @@ public class ComputeResourceJsonUnmarshaller implements Unmarshaller<ComputeReso
                 }
                 if (context.testExpression("subnets", targetDepth)) {
                     context.nextToken();
-                    computeResource.setSubnets(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    computeResource.setSubnets(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("securityGroupIds", targetDepth)) {
                     context.nextToken();
-                    computeResource.setSecurityGroupIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    computeResource.setSecurityGroupIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ec2KeyPair", targetDepth)) {
                     context.nextToken();

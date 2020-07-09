@@ -66,7 +66,9 @@ public class ScheduleRunConfigurationJsonUnmarshaller implements Unmarshaller<Sc
                 }
                 if (context.testExpression("vpceConfigurationArns", targetDepth)) {
                     context.nextToken();
-                    scheduleRunConfiguration.setVpceConfigurationArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    scheduleRunConfiguration.setVpceConfigurationArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("customerArtifactPaths", targetDepth)) {
                     context.nextToken();
@@ -78,7 +80,9 @@ public class ScheduleRunConfigurationJsonUnmarshaller implements Unmarshaller<Sc
                 }
                 if (context.testExpression("auxiliaryApps", targetDepth)) {
                     context.nextToken();
-                    scheduleRunConfiguration.setAuxiliaryApps(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    scheduleRunConfiguration.setAuxiliaryApps(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("billingMethod", targetDepth)) {
                     context.nextToken();

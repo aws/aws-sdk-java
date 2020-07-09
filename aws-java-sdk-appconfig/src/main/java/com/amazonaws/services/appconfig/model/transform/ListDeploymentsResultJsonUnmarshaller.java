@@ -50,8 +50,9 @@ public class ListDeploymentsResultJsonUnmarshaller implements Unmarshaller<ListD
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Items", targetDepth)) {
                     context.nextToken();
-                    listDeploymentsResult
-                            .setItems(new ListUnmarshaller<DeploymentSummary>(DeploymentSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listDeploymentsResult.setItems(new ListUnmarshaller<DeploymentSummary>(DeploymentSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

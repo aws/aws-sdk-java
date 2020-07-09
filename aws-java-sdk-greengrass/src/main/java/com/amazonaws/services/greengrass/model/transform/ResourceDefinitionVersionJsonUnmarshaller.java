@@ -50,7 +50,9 @@ public class ResourceDefinitionVersionJsonUnmarshaller implements Unmarshaller<R
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Resources", targetDepth)) {
                     context.nextToken();
-                    resourceDefinitionVersion.setResources(new ListUnmarshaller<Resource>(ResourceJsonUnmarshaller.getInstance()).unmarshall(context));
+                    resourceDefinitionVersion.setResources(new ListUnmarshaller<Resource>(ResourceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -50,7 +50,9 @@ public class ListGraphsResultJsonUnmarshaller implements Unmarshaller<ListGraphs
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("GraphList", targetDepth)) {
                     context.nextToken();
-                    listGraphsResult.setGraphList(new ListUnmarshaller<Graph>(GraphJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listGraphsResult.setGraphList(new ListUnmarshaller<Graph>(GraphJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

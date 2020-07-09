@@ -50,7 +50,9 @@ public class DescribeElasticIpsResultJsonUnmarshaller implements Unmarshaller<De
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ElasticIps", targetDepth)) {
                     context.nextToken();
-                    describeElasticIpsResult.setElasticIps(new ListUnmarshaller<ElasticIp>(ElasticIpJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeElasticIpsResult.setElasticIps(new ListUnmarshaller<ElasticIp>(ElasticIpJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

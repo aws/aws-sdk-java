@@ -51,7 +51,8 @@ public class BatchGetDeploymentInstancesResultJsonUnmarshaller implements Unmars
                 if (context.testExpression("instancesSummary", targetDepth)) {
                     context.nextToken();
                     batchGetDeploymentInstancesResult.setInstancesSummary(new ListUnmarshaller<InstanceSummary>(InstanceSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("errorMessage", targetDepth)) {
                     context.nextToken();

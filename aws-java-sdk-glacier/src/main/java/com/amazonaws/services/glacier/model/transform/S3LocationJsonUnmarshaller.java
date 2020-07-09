@@ -66,7 +66,9 @@ public class S3LocationJsonUnmarshaller implements Unmarshaller<S3Location, Json
                 }
                 if (context.testExpression("AccessControlList", targetDepth)) {
                     context.nextToken();
-                    s3Location.setAccessControlList(new ListUnmarshaller<Grant>(GrantJsonUnmarshaller.getInstance()).unmarshall(context));
+                    s3Location.setAccessControlList(new ListUnmarshaller<Grant>(GrantJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Tagging", targetDepth)) {
                     context.nextToken();

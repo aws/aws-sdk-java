@@ -66,7 +66,9 @@ public class WebACLJsonUnmarshaller implements Unmarshaller<WebACL, JsonUnmarsha
                 }
                 if (context.testExpression("Rules", targetDepth)) {
                     context.nextToken();
-                    webACL.setRules(new ListUnmarshaller<ActivatedRule>(ActivatedRuleJsonUnmarshaller.getInstance()).unmarshall(context));
+                    webACL.setRules(new ListUnmarshaller<ActivatedRule>(ActivatedRuleJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("WebACLArn", targetDepth)) {
                     context.nextToken();

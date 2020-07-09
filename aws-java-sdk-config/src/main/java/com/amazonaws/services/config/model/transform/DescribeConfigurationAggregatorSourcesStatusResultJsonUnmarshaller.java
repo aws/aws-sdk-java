@@ -52,7 +52,9 @@ public class DescribeConfigurationAggregatorSourcesStatusResultJsonUnmarshaller 
                 if (context.testExpression("AggregatedSourceStatusList", targetDepth)) {
                     context.nextToken();
                     describeConfigurationAggregatorSourcesStatusResult.setAggregatedSourceStatusList(new ListUnmarshaller<AggregatedSourceStatus>(
-                            AggregatedSourceStatusJsonUnmarshaller.getInstance()).unmarshall(context));
+                            AggregatedSourceStatusJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

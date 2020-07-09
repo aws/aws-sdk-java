@@ -74,7 +74,9 @@ public class GetLayerVersionByArnResultJsonUnmarshaller implements Unmarshaller<
                 }
                 if (context.testExpression("CompatibleRuntimes", targetDepth)) {
                     context.nextToken();
-                    getLayerVersionByArnResult.setCompatibleRuntimes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    getLayerVersionByArnResult.setCompatibleRuntimes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("LicenseInfo", targetDepth)) {
                     context.nextToken();

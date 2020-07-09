@@ -44,7 +44,7 @@ public class ClassifierMetadata implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The number of documents in the input data that were used to test the classifier. Typically this is 10 to 20
-     * percent of the input documents.
+     * percent of the input documents, up to 10,000 documents.
      * </p>
      */
     private Integer numberOfTestDocuments;
@@ -144,12 +144,12 @@ public class ClassifierMetadata implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The number of documents in the input data that were used to test the classifier. Typically this is 10 to 20
-     * percent of the input documents.
+     * percent of the input documents, up to 10,000 documents.
      * </p>
      * 
      * @param numberOfTestDocuments
      *        The number of documents in the input data that were used to test the classifier. Typically this is 10 to
-     *        20 percent of the input documents.
+     *        20 percent of the input documents, up to 10,000 documents.
      */
 
     public void setNumberOfTestDocuments(Integer numberOfTestDocuments) {
@@ -159,11 +159,11 @@ public class ClassifierMetadata implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The number of documents in the input data that were used to test the classifier. Typically this is 10 to 20
-     * percent of the input documents.
+     * percent of the input documents, up to 10,000 documents.
      * </p>
      * 
      * @return The number of documents in the input data that were used to test the classifier. Typically this is 10 to
-     *         20 percent of the input documents.
+     *         20 percent of the input documents, up to 10,000 documents.
      */
 
     public Integer getNumberOfTestDocuments() {
@@ -173,12 +173,12 @@ public class ClassifierMetadata implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The number of documents in the input data that were used to test the classifier. Typically this is 10 to 20
-     * percent of the input documents.
+     * percent of the input documents, up to 10,000 documents.
      * </p>
      * 
      * @param numberOfTestDocuments
      *        The number of documents in the input data that were used to test the classifier. Typically this is 10 to
-     *        20 percent of the input documents.
+     *        20 percent of the input documents, up to 10,000 documents.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

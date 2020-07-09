@@ -55,7 +55,8 @@ public class GetExclusionsPreviewResultJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("exclusionPreviews", targetDepth)) {
                     context.nextToken();
                     getExclusionsPreviewResult.setExclusionPreviews(new ListUnmarshaller<ExclusionPreview>(ExclusionPreviewJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

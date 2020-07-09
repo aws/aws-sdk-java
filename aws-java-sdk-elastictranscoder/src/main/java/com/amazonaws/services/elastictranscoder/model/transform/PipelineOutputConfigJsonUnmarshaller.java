@@ -58,7 +58,9 @@ public class PipelineOutputConfigJsonUnmarshaller implements Unmarshaller<Pipeli
                 }
                 if (context.testExpression("Permissions", targetDepth)) {
                     context.nextToken();
-                    pipelineOutputConfig.setPermissions(new ListUnmarshaller<Permission>(PermissionJsonUnmarshaller.getInstance()).unmarshall(context));
+                    pipelineOutputConfig.setPermissions(new ListUnmarshaller<Permission>(PermissionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -50,7 +50,9 @@ public class DescribeSnapshotsResultJsonUnmarshaller implements Unmarshaller<Des
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Snapshots", targetDepth)) {
                     context.nextToken();
-                    describeSnapshotsResult.setSnapshots(new ListUnmarshaller<Snapshot>(SnapshotJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeSnapshotsResult.setSnapshots(new ListUnmarshaller<Snapshot>(SnapshotJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

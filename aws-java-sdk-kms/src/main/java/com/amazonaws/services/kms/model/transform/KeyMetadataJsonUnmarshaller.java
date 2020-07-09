@@ -114,11 +114,15 @@ public class KeyMetadataJsonUnmarshaller implements Unmarshaller<KeyMetadata, Js
                 }
                 if (context.testExpression("EncryptionAlgorithms", targetDepth)) {
                     context.nextToken();
-                    keyMetadata.setEncryptionAlgorithms(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    keyMetadata.setEncryptionAlgorithms(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("SigningAlgorithms", targetDepth)) {
                     context.nextToken();
-                    keyMetadata.setSigningAlgorithms(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    keyMetadata.setSigningAlgorithms(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -66,7 +66,9 @@ public class ModelJsonUnmarshaller implements Unmarshaller<Model, JsonUnmarshall
                 }
                 if (context.testExpression("modelVariables", targetDepth)) {
                     context.nextToken();
-                    model.setModelVariables(new ListUnmarshaller<ModelVariable>(ModelVariableJsonUnmarshaller.getInstance()).unmarshall(context));
+                    model.setModelVariables(new ListUnmarshaller<ModelVariable>(ModelVariableJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("labelSchema", targetDepth)) {
                     context.nextToken();

@@ -50,7 +50,9 @@ public class TestAuthorizationResultJsonUnmarshaller implements Unmarshaller<Tes
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("authResults", targetDepth)) {
                     context.nextToken();
-                    testAuthorizationResult.setAuthResults(new ListUnmarshaller<AuthResult>(AuthResultJsonUnmarshaller.getInstance()).unmarshall(context));
+                    testAuthorizationResult.setAuthResults(new ListUnmarshaller<AuthResult>(AuthResultJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

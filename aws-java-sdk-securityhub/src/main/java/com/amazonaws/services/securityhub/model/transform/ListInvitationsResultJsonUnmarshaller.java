@@ -50,7 +50,9 @@ public class ListInvitationsResultJsonUnmarshaller implements Unmarshaller<ListI
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Invitations", targetDepth)) {
                     context.nextToken();
-                    listInvitationsResult.setInvitations(new ListUnmarshaller<Invitation>(InvitationJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listInvitationsResult.setInvitations(new ListUnmarshaller<Invitation>(InvitationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

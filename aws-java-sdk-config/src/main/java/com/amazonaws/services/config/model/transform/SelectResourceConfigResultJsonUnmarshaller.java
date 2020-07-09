@@ -50,7 +50,9 @@ public class SelectResourceConfigResultJsonUnmarshaller implements Unmarshaller<
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Results", targetDepth)) {
                     context.nextToken();
-                    selectResourceConfigResult.setResults(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    selectResourceConfigResult.setResults(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("QueryInfo", targetDepth)) {
                     context.nextToken();

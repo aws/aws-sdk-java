@@ -62,11 +62,15 @@ public class ThirdPartyJobDataJsonUnmarshaller implements Unmarshaller<ThirdPart
                 }
                 if (context.testExpression("inputArtifacts", targetDepth)) {
                     context.nextToken();
-                    thirdPartyJobData.setInputArtifacts(new ListUnmarshaller<Artifact>(ArtifactJsonUnmarshaller.getInstance()).unmarshall(context));
+                    thirdPartyJobData.setInputArtifacts(new ListUnmarshaller<Artifact>(ArtifactJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("outputArtifacts", targetDepth)) {
                     context.nextToken();
-                    thirdPartyJobData.setOutputArtifacts(new ListUnmarshaller<Artifact>(ArtifactJsonUnmarshaller.getInstance()).unmarshall(context));
+                    thirdPartyJobData.setOutputArtifacts(new ListUnmarshaller<Artifact>(ArtifactJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("artifactCredentials", targetDepth)) {
                     context.nextToken();

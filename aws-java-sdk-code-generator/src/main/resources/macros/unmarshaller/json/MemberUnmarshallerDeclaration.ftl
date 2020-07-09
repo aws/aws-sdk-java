@@ -1,4 +1,4 @@
-<#macro content memberModel >
+<#macro content memberModel packageName="" >
     <#if memberModel.unmarshallingType?? >
         context.getUnmarshaller(${memberModel.variable.variableType}.class,
                                 JsonUnmarshallerContext.UnmarshallerType.${memberModel.unmarshallingType})
@@ -13,18 +13,24 @@
         <#if memberModel.listModel.listMemberModel?has_content >
             <#local memberUnmarshaller >
                 <#-- recursion -->
-                <@content memberModel.listModel.listMemberModel />
+                <@content memberModel.listModel.listMemberModel packageName/>
             </#local>
         <#else>
             <#local memberUnmarshaller = "context.getUnmarshaller(${memberModel.listModel.simpleType}.class)" />
         </#if>
-        new ListUnmarshaller<${memberModel.listModel.memberType}>(${memberUnmarshaller})
+
+        <#if memberModel.listModel.getListMemberModel().shouldFullyQualify!false && packageName?has_content>
+            new ListUnmarshaller<${packageName}.${memberModel.listModel.memberType}>(${memberUnmarshaller})
+        <#else>
+            new ListUnmarshaller<${memberModel.listModel.memberType}>(${memberUnmarshaller})
+        </#if>
+
     <#elseif memberModel.map >
         <#local keyUnmarshaller = "context.getUnmarshaller(${memberModel.mapModel.keyType}.class)" />
         <#if memberModel.mapModel.valueModel?has_content >
             <#local valueUnmarshaller >
                 <#-- recursion -->
-                <@content memberModel.mapModel.valueModel />
+                <@content memberModel.mapModel.valueModel packageName/>
             </#local>
         <#else>
             <#local valueUnmarshaller = "context.getUnmarshaller

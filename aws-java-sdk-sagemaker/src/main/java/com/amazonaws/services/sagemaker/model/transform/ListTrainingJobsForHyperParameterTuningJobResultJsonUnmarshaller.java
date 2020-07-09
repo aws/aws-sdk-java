@@ -52,7 +52,9 @@ public class ListTrainingJobsForHyperParameterTuningJobResultJsonUnmarshaller im
                 if (context.testExpression("TrainingJobSummaries", targetDepth)) {
                     context.nextToken();
                     listTrainingJobsForHyperParameterTuningJobResult.setTrainingJobSummaries(new ListUnmarshaller<HyperParameterTrainingJobSummary>(
-                            HyperParameterTrainingJobSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                            HyperParameterTrainingJobSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

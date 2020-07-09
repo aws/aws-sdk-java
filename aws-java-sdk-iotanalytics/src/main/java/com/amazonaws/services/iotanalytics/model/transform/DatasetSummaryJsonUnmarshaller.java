@@ -66,12 +66,15 @@ public class DatasetSummaryJsonUnmarshaller implements Unmarshaller<DatasetSumma
                 }
                 if (context.testExpression("triggers", targetDepth)) {
                     context.nextToken();
-                    datasetSummary.setTriggers(new ListUnmarshaller<DatasetTrigger>(DatasetTriggerJsonUnmarshaller.getInstance()).unmarshall(context));
+                    datasetSummary.setTriggers(new ListUnmarshaller<DatasetTrigger>(DatasetTriggerJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("actions", targetDepth)) {
                     context.nextToken();
                     datasetSummary.setActions(new ListUnmarshaller<DatasetActionSummary>(DatasetActionSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

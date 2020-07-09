@@ -55,7 +55,8 @@ public class PredictorExecutionJsonUnmarshaller implements Unmarshaller<Predicto
                 if (context.testExpression("TestWindows", targetDepth)) {
                     context.nextToken();
                     predictorExecution.setTestWindows(new ListUnmarshaller<TestWindowSummary>(TestWindowSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

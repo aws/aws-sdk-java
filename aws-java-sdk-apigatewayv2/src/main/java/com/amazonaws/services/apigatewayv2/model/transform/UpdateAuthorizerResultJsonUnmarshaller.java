@@ -70,7 +70,9 @@ public class UpdateAuthorizerResultJsonUnmarshaller implements Unmarshaller<Upda
                 }
                 if (context.testExpression("identitySource", targetDepth)) {
                     context.nextToken();
-                    updateAuthorizerResult.setIdentitySource(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    updateAuthorizerResult.setIdentitySource(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("identityValidationExpression", targetDepth)) {
                     context.nextToken();

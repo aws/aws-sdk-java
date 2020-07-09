@@ -62,7 +62,9 @@ public class ConnectorJsonUnmarshaller implements Unmarshaller<Connector, JsonUn
                 }
                 if (context.testExpression("capabilityList", targetDepth)) {
                     context.nextToken();
-                    connector.setCapabilityList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    connector.setCapabilityList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("vmManagerName", targetDepth)) {
                     context.nextToken();

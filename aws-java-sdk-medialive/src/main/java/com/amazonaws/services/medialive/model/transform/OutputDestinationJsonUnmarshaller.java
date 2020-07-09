@@ -55,7 +55,9 @@ public class OutputDestinationJsonUnmarshaller implements Unmarshaller<OutputDes
                 if (context.testExpression("mediaPackageSettings", targetDepth)) {
                     context.nextToken();
                     outputDestination.setMediaPackageSettings(new ListUnmarshaller<MediaPackageOutputDestinationSettings>(
-                            MediaPackageOutputDestinationSettingsJsonUnmarshaller.getInstance()).unmarshall(context));
+                            MediaPackageOutputDestinationSettingsJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("multiplexSettings", targetDepth)) {
                     context.nextToken();
@@ -64,7 +66,8 @@ public class OutputDestinationJsonUnmarshaller implements Unmarshaller<OutputDes
                 if (context.testExpression("settings", targetDepth)) {
                     context.nextToken();
                     outputDestination.setSettings(new ListUnmarshaller<OutputDestinationSettings>(OutputDestinationSettingsJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

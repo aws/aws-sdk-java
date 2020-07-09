@@ -55,7 +55,9 @@ public class DescribeProductViewResultJsonUnmarshaller implements Unmarshaller<D
                 if (context.testExpression("ProvisioningArtifacts", targetDepth)) {
                     context.nextToken();
                     describeProductViewResult.setProvisioningArtifacts(new ListUnmarshaller<ProvisioningArtifact>(ProvisioningArtifactJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

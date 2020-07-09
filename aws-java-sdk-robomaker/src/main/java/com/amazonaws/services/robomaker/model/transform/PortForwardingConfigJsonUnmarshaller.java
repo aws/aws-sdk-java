@@ -50,7 +50,9 @@ public class PortForwardingConfigJsonUnmarshaller implements Unmarshaller<PortFo
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("portMappings", targetDepth)) {
                     context.nextToken();
-                    portForwardingConfig.setPortMappings(new ListUnmarshaller<PortMapping>(PortMappingJsonUnmarshaller.getInstance()).unmarshall(context));
+                    portForwardingConfig.setPortMappings(new ListUnmarshaller<PortMapping>(PortMappingJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

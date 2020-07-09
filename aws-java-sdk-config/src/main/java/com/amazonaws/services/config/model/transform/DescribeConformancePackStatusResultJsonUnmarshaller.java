@@ -51,7 +51,9 @@ public class DescribeConformancePackStatusResultJsonUnmarshaller implements Unma
                 if (context.testExpression("ConformancePackStatusDetails", targetDepth)) {
                     context.nextToken();
                     describeConformancePackStatusResult.setConformancePackStatusDetails(new ListUnmarshaller<ConformancePackStatusDetail>(
-                            ConformancePackStatusDetailJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ConformancePackStatusDetailJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

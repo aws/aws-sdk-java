@@ -50,7 +50,9 @@ public class DescribeBackupsResultJsonUnmarshaller implements Unmarshaller<Descr
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Backups", targetDepth)) {
                     context.nextToken();
-                    describeBackupsResult.setBackups(new ListUnmarshaller<Backup>(BackupJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeBackupsResult.setBackups(new ListUnmarshaller<Backup>(BackupJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

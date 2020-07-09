@@ -55,7 +55,8 @@ public class GlobalSecondaryIndexJsonUnmarshaller implements Unmarshaller<Global
                 if (context.testExpression("KeySchema", targetDepth)) {
                     context.nextToken();
                     globalSecondaryIndex.setKeySchema(new ListUnmarshaller<KeySchemaElement>(KeySchemaElementJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Projection", targetDepth)) {
                     context.nextToken();

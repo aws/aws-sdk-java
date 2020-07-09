@@ -54,11 +54,15 @@ public class VpcConfigurationUpdateJsonUnmarshaller implements Unmarshaller<VpcC
                 }
                 if (context.testExpression("SubnetIdUpdates", targetDepth)) {
                     context.nextToken();
-                    vpcConfigurationUpdate.setSubnetIdUpdates(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    vpcConfigurationUpdate.setSubnetIdUpdates(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("SecurityGroupIdUpdates", targetDepth)) {
                     context.nextToken();
-                    vpcConfigurationUpdate.setSecurityGroupIdUpdates(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    vpcConfigurationUpdate.setSecurityGroupIdUpdates(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

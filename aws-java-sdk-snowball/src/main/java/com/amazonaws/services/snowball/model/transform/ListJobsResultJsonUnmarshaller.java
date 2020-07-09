@@ -50,7 +50,9 @@ public class ListJobsResultJsonUnmarshaller implements Unmarshaller<ListJobsResu
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("JobListEntries", targetDepth)) {
                     context.nextToken();
-                    listJobsResult.setJobListEntries(new ListUnmarshaller<JobListEntry>(JobListEntryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listJobsResult.setJobListEntries(new ListUnmarshaller<JobListEntry>(JobListEntryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

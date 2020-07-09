@@ -62,7 +62,9 @@ public class GetJobResultJsonUnmarshaller implements Unmarshaller<GetJobResult, 
                 }
                 if (context.testExpression("Errors", targetDepth)) {
                     context.nextToken();
-                    getJobResult.setErrors(new ListUnmarshaller<JobError>(JobErrorJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getJobResult.setErrors(new ListUnmarshaller<JobError>(JobErrorJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Id", targetDepth)) {
                     context.nextToken();

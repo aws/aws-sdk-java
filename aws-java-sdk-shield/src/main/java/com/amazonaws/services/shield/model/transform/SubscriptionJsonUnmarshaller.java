@@ -66,7 +66,9 @@ public class SubscriptionJsonUnmarshaller implements Unmarshaller<Subscription, 
                 }
                 if (context.testExpression("Limits", targetDepth)) {
                     context.nextToken();
-                    subscription.setLimits(new ListUnmarshaller<Limit>(LimitJsonUnmarshaller.getInstance()).unmarshall(context));
+                    subscription.setLimits(new ListUnmarshaller<Limit>(LimitJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ProactiveEngagementStatus", targetDepth)) {
                     context.nextToken();

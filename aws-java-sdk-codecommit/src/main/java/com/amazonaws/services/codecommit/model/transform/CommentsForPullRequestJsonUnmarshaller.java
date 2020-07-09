@@ -78,7 +78,9 @@ public class CommentsForPullRequestJsonUnmarshaller implements Unmarshaller<Comm
                 }
                 if (context.testExpression("comments", targetDepth)) {
                     context.nextToken();
-                    commentsForPullRequest.setComments(new ListUnmarshaller<Comment>(CommentJsonUnmarshaller.getInstance()).unmarshall(context));
+                    commentsForPullRequest.setComments(new ListUnmarshaller<Comment>(CommentJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

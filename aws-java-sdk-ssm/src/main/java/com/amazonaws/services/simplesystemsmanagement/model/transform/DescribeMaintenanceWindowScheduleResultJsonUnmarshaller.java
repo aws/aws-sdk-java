@@ -51,7 +51,9 @@ public class DescribeMaintenanceWindowScheduleResultJsonUnmarshaller implements 
                 if (context.testExpression("ScheduledWindowExecutions", targetDepth)) {
                     context.nextToken();
                     describeMaintenanceWindowScheduleResult.setScheduledWindowExecutions(new ListUnmarshaller<ScheduledWindowExecution>(
-                            ScheduledWindowExecutionJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ScheduledWindowExecutionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

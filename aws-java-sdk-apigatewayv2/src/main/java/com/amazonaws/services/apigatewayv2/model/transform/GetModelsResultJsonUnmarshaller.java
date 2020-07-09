@@ -50,7 +50,9 @@ public class GetModelsResultJsonUnmarshaller implements Unmarshaller<GetModelsRe
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("items", targetDepth)) {
                     context.nextToken();
-                    getModelsResult.setItems(new ListUnmarshaller<Model>(ModelJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getModelsResult.setItems(new ListUnmarshaller<Model>(ModelJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

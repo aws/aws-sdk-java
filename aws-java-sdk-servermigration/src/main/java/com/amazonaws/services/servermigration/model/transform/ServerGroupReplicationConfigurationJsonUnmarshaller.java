@@ -55,7 +55,9 @@ public class ServerGroupReplicationConfigurationJsonUnmarshaller implements Unma
                 if (context.testExpression("serverReplicationConfigurations", targetDepth)) {
                     context.nextToken();
                     serverGroupReplicationConfiguration.setServerReplicationConfigurations(new ListUnmarshaller<ServerReplicationConfiguration>(
-                            ServerReplicationConfigurationJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ServerReplicationConfigurationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

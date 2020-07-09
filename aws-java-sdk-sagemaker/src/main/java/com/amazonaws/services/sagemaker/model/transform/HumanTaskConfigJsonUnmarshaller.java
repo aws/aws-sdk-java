@@ -62,7 +62,9 @@ public class HumanTaskConfigJsonUnmarshaller implements Unmarshaller<HumanTaskCo
                 }
                 if (context.testExpression("TaskKeywords", targetDepth)) {
                     context.nextToken();
-                    humanTaskConfig.setTaskKeywords(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    humanTaskConfig.setTaskKeywords(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("TaskTitle", targetDepth)) {
                     context.nextToken();

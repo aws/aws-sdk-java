@@ -59,7 +59,8 @@ public class DescribeContributorInsightsResultJsonUnmarshaller implements Unmars
                 if (context.testExpression("ContributorInsightsRuleList", targetDepth)) {
                     context.nextToken();
                     describeContributorInsightsResult.setContributorInsightsRuleList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ContributorInsightsStatus", targetDepth)) {
                     context.nextToken();

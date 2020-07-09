@@ -62,7 +62,9 @@ public class VpcLinkJsonUnmarshaller implements Unmarshaller<VpcLink, JsonUnmars
                 }
                 if (context.testExpression("targetArns", targetDepth)) {
                     context.nextToken();
-                    vpcLink.setTargetArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    vpcLink.setTargetArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();

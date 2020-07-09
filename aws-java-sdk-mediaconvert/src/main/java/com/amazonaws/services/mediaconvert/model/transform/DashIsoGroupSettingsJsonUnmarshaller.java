@@ -51,7 +51,9 @@ public class DashIsoGroupSettingsJsonUnmarshaller implements Unmarshaller<DashIs
                 if (context.testExpression("additionalManifests", targetDepth)) {
                     context.nextToken();
                     dashIsoGroupSettings.setAdditionalManifests(new ListUnmarshaller<DashAdditionalManifest>(DashAdditionalManifestJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("baseUrl", targetDepth)) {
                     context.nextToken();

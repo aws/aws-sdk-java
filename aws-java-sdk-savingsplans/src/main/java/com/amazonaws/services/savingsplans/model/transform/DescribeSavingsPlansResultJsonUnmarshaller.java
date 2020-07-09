@@ -50,8 +50,9 @@ public class DescribeSavingsPlansResultJsonUnmarshaller implements Unmarshaller<
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("savingsPlans", targetDepth)) {
                     context.nextToken();
-                    describeSavingsPlansResult
-                            .setSavingsPlans(new ListUnmarshaller<SavingsPlan>(SavingsPlanJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeSavingsPlansResult.setSavingsPlans(new ListUnmarshaller<SavingsPlan>(SavingsPlanJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

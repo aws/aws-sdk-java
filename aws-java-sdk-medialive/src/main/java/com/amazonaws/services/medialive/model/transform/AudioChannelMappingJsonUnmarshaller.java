@@ -51,7 +51,8 @@ public class AudioChannelMappingJsonUnmarshaller implements Unmarshaller<AudioCh
                 if (context.testExpression("inputChannelLevels", targetDepth)) {
                     context.nextToken();
                     audioChannelMapping.setInputChannelLevels(new ListUnmarshaller<InputChannelLevel>(InputChannelLevelJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("outputChannel", targetDepth)) {
                     context.nextToken();

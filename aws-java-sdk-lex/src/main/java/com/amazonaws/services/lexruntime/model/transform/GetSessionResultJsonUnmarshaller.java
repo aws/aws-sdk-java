@@ -51,7 +51,8 @@ public class GetSessionResultJsonUnmarshaller implements Unmarshaller<GetSession
                 if (context.testExpression("recentIntentSummaryView", targetDepth)) {
                     context.nextToken();
                     getSessionResult.setRecentIntentSummaryView(new ListUnmarshaller<IntentSummary>(IntentSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("sessionAttributes", targetDepth)) {
                     context.nextToken();

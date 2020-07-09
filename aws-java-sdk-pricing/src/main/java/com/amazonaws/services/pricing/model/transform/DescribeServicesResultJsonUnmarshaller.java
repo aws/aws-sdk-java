@@ -50,7 +50,9 @@ public class DescribeServicesResultJsonUnmarshaller implements Unmarshaller<Desc
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Services", targetDepth)) {
                     context.nextToken();
-                    describeServicesResult.setServices(new ListUnmarshaller<Service>(ServiceJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeServicesResult.setServices(new ListUnmarshaller<Service>(ServiceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("FormatVersion", targetDepth)) {
                     context.nextToken();

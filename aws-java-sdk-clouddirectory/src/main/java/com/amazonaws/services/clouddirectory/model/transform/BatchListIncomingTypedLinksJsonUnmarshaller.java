@@ -55,7 +55,9 @@ public class BatchListIncomingTypedLinksJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("FilterAttributeRanges", targetDepth)) {
                     context.nextToken();
                     batchListIncomingTypedLinks.setFilterAttributeRanges(new ListUnmarshaller<TypedLinkAttributeRange>(TypedLinkAttributeRangeJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("FilterTypedLink", targetDepth)) {
                     context.nextToken();

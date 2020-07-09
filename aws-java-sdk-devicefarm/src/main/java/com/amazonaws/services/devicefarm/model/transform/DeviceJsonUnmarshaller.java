@@ -126,7 +126,9 @@ public class DeviceJsonUnmarshaller implements Unmarshaller<Device, JsonUnmarsha
                 }
                 if (context.testExpression("instances", targetDepth)) {
                     context.nextToken();
-                    device.setInstances(new ListUnmarshaller<DeviceInstance>(DeviceInstanceJsonUnmarshaller.getInstance()).unmarshall(context));
+                    device.setInstances(new ListUnmarshaller<DeviceInstance>(DeviceInstanceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("availability", targetDepth)) {
                     context.nextToken();

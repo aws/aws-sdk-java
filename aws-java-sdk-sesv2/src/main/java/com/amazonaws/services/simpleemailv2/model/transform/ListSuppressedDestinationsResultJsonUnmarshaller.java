@@ -51,7 +51,9 @@ public class ListSuppressedDestinationsResultJsonUnmarshaller implements Unmarsh
                 if (context.testExpression("SuppressedDestinationSummaries", targetDepth)) {
                     context.nextToken();
                     listSuppressedDestinationsResult.setSuppressedDestinationSummaries(new ListUnmarshaller<SuppressedDestinationSummary>(
-                            SuppressedDestinationSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                            SuppressedDestinationSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

@@ -51,7 +51,8 @@ public class DescribeWorkspaceBundlesResultJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("Bundles", targetDepth)) {
                     context.nextToken();
                     describeWorkspaceBundlesResult.setBundles(new ListUnmarshaller<WorkspaceBundle>(WorkspaceBundleJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

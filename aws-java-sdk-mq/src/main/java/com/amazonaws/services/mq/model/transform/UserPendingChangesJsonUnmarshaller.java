@@ -54,7 +54,9 @@ public class UserPendingChangesJsonUnmarshaller implements Unmarshaller<UserPend
                 }
                 if (context.testExpression("groups", targetDepth)) {
                     context.nextToken();
-                    userPendingChanges.setGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    userPendingChanges.setGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("pendingChange", targetDepth)) {
                     context.nextToken();

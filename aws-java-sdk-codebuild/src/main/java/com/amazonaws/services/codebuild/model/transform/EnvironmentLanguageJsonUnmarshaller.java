@@ -54,7 +54,9 @@ public class EnvironmentLanguageJsonUnmarshaller implements Unmarshaller<Environ
                 }
                 if (context.testExpression("images", targetDepth)) {
                     context.nextToken();
-                    environmentLanguage.setImages(new ListUnmarshaller<EnvironmentImage>(EnvironmentImageJsonUnmarshaller.getInstance()).unmarshall(context));
+                    environmentLanguage.setImages(new ListUnmarshaller<EnvironmentImage>(EnvironmentImageJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

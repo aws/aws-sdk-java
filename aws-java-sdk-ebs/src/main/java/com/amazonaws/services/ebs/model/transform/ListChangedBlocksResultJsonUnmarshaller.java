@@ -50,8 +50,9 @@ public class ListChangedBlocksResultJsonUnmarshaller implements Unmarshaller<Lis
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ChangedBlocks", targetDepth)) {
                     context.nextToken();
-                    listChangedBlocksResult
-                            .setChangedBlocks(new ListUnmarshaller<ChangedBlock>(ChangedBlockJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listChangedBlocksResult.setChangedBlocks(new ListUnmarshaller<ChangedBlock>(ChangedBlockJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ExpiryTime", targetDepth)) {
                     context.nextToken();

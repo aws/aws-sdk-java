@@ -54,11 +54,15 @@ public class ComplianceJsonUnmarshaller implements Unmarshaller<Compliance, Json
                 }
                 if (context.testExpression("RelatedRequirements", targetDepth)) {
                     context.nextToken();
-                    compliance.setRelatedRequirements(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    compliance.setRelatedRequirements(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("StatusReasons", targetDepth)) {
                     context.nextToken();
-                    compliance.setStatusReasons(new ListUnmarshaller<StatusReason>(StatusReasonJsonUnmarshaller.getInstance()).unmarshall(context));
+                    compliance.setStatusReasons(new ListUnmarshaller<StatusReason>(StatusReasonJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -51,7 +51,9 @@ public class GetCloudFormationStackRecordsResultJsonUnmarshaller implements Unma
                 if (context.testExpression("cloudFormationStackRecords", targetDepth)) {
                     context.nextToken();
                     getCloudFormationStackRecordsResult.setCloudFormationStackRecords(new ListUnmarshaller<CloudFormationStackRecord>(
-                            CloudFormationStackRecordJsonUnmarshaller.getInstance()).unmarshall(context));
+                            CloudFormationStackRecordJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextPageToken", targetDepth)) {
                     context.nextToken();

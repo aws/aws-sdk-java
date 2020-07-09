@@ -136,6 +136,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.workmailmessageflow.request.GetRawMessageContentRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -204,6 +205,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier of the email message to retrieve.</p>\n@param messageId The identifier of the email message to retrieve.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -274,6 +276,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier of the email message to retrieve.</p>\n@param messageId The identifier of the email message to retrieve.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -289,6 +292,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.workmailmessageflow.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "messageId" ],
@@ -320,6 +324,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.workmailmessageflow.response.GetRawMessageContentResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : true,
       "hasRequiresLengthMember" : false,
@@ -381,6 +386,7 @@
           "variableSetterType" : "java.io.InputStream"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The raw content of the email message, in MIME format.</p>\n@param messageContent The raw content of the email message, in MIME format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -451,6 +457,7 @@
             "variableSetterType" : "java.io.InputStream"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The raw content of the email message, in MIME format.</p>\n@param messageContent The raw content of the email message, in MIME format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -466,6 +473,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.workmailmessageflow.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "messageContent" ],
@@ -500,6 +508,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ResourceNotFoundException",
+      "fullyQualifiedName" : "com.amazonaws.services.workmailmessageflow.exception.ResourceNotFoundException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -508,6 +517,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.workmailmessageflow.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,

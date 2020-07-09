@@ -54,7 +54,9 @@ public class BadRequestExceptionUnmarshaller extends EnhancedJsonErrorUnmarshall
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ErrorDetails", targetDepth)) {
                     context.nextToken();
-                    badRequestException.setErrorDetails(new ListUnmarshaller<ErrorDetail>(ErrorDetailJsonUnmarshaller.getInstance()).unmarshall(context));
+                    badRequestException.setErrorDetails(new ListUnmarshaller<ErrorDetail>(ErrorDetailJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

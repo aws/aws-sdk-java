@@ -50,11 +50,15 @@ public class NetworkPathComponentDetailsJsonUnmarshaller implements Unmarshaller
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Address", targetDepth)) {
                     context.nextToken();
-                    networkPathComponentDetails.setAddress(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    networkPathComponentDetails.setAddress(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("PortRanges", targetDepth)) {
                     context.nextToken();
-                    networkPathComponentDetails.setPortRanges(new ListUnmarshaller<PortRange>(PortRangeJsonUnmarshaller.getInstance()).unmarshall(context));
+                    networkPathComponentDetails.setPortRanges(new ListUnmarshaller<PortRange>(PortRangeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

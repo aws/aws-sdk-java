@@ -63,7 +63,8 @@ public class AlgorithmSpecificationJsonUnmarshaller implements Unmarshaller<Algo
                 if (context.testExpression("MetricDefinitions", targetDepth)) {
                     context.nextToken();
                     algorithmSpecification.setMetricDefinitions(new ListUnmarshaller<MetricDefinition>(MetricDefinitionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("EnableSageMakerMetricsTimeSeries", targetDepth)) {
                     context.nextToken();

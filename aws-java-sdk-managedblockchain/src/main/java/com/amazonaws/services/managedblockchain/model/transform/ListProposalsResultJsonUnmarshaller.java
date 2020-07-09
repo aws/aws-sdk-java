@@ -50,7 +50,9 @@ public class ListProposalsResultJsonUnmarshaller implements Unmarshaller<ListPro
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Proposals", targetDepth)) {
                     context.nextToken();
-                    listProposalsResult.setProposals(new ListUnmarshaller<ProposalSummary>(ProposalSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listProposalsResult.setProposals(new ListUnmarshaller<ProposalSummary>(ProposalSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

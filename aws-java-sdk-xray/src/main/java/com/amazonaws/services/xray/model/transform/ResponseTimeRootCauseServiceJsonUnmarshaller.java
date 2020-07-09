@@ -54,7 +54,9 @@ public class ResponseTimeRootCauseServiceJsonUnmarshaller implements Unmarshalle
                 }
                 if (context.testExpression("Names", targetDepth)) {
                     context.nextToken();
-                    responseTimeRootCauseService.setNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    responseTimeRootCauseService.setNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
                     context.nextToken();
@@ -67,7 +69,9 @@ public class ResponseTimeRootCauseServiceJsonUnmarshaller implements Unmarshalle
                 if (context.testExpression("EntityPath", targetDepth)) {
                     context.nextToken();
                     responseTimeRootCauseService.setEntityPath(new ListUnmarshaller<ResponseTimeRootCauseEntity>(ResponseTimeRootCauseEntityJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Inferred", targetDepth)) {
                     context.nextToken();

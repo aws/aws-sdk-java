@@ -54,7 +54,9 @@ public class ListRoutesResultJsonUnmarshaller implements Unmarshaller<ListRoutes
                 }
                 if (context.testExpression("routes", targetDepth)) {
                     context.nextToken();
-                    listRoutesResult.setRoutes(new ListUnmarshaller<RouteRef>(RouteRefJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listRoutesResult.setRoutes(new ListUnmarshaller<RouteRef>(RouteRefJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

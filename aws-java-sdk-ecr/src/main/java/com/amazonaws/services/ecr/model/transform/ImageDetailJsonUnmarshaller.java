@@ -62,7 +62,9 @@ public class ImageDetailJsonUnmarshaller implements Unmarshaller<ImageDetail, Js
                 }
                 if (context.testExpression("imageTags", targetDepth)) {
                     context.nextToken();
-                    imageDetail.setImageTags(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    imageDetail.setImageTags(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("imageSizeInBytes", targetDepth)) {
                     context.nextToken();

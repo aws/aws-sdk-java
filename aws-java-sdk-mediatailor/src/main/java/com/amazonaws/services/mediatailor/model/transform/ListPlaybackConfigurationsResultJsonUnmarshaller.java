@@ -51,7 +51,8 @@ public class ListPlaybackConfigurationsResultJsonUnmarshaller implements Unmarsh
                 if (context.testExpression("Items", targetDepth)) {
                     context.nextToken();
                     listPlaybackConfigurationsResult.setItems(new ListUnmarshaller<PlaybackConfiguration>(PlaybackConfigurationJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

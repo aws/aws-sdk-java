@@ -54,7 +54,9 @@ public class ResourcePermissionJsonUnmarshaller implements Unmarshaller<Resource
                 }
                 if (context.testExpression("Actions", targetDepth)) {
                     context.nextToken();
-                    resourcePermission.setActions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    resourcePermission.setActions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

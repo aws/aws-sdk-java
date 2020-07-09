@@ -50,7 +50,9 @@ public class DescribeBucketsResultJsonUnmarshaller implements Unmarshaller<Descr
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("buckets", targetDepth)) {
                     context.nextToken();
-                    describeBucketsResult.setBuckets(new ListUnmarshaller<BucketMetadata>(BucketMetadataJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeBucketsResult.setBuckets(new ListUnmarshaller<BucketMetadata>(BucketMetadataJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

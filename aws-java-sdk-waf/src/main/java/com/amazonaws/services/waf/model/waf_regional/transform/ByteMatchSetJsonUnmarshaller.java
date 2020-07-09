@@ -58,7 +58,9 @@ public class ByteMatchSetJsonUnmarshaller implements Unmarshaller<ByteMatchSet, 
                 }
                 if (context.testExpression("ByteMatchTuples", targetDepth)) {
                     context.nextToken();
-                    byteMatchSet.setByteMatchTuples(new ListUnmarshaller<ByteMatchTuple>(ByteMatchTupleJsonUnmarshaller.getInstance()).unmarshall(context));
+                    byteMatchSet.setByteMatchTuples(new ListUnmarshaller<ByteMatchTuple>(ByteMatchTupleJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

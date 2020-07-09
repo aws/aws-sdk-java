@@ -62,7 +62,9 @@ public class UpdateUsagePlanResultJsonUnmarshaller implements Unmarshaller<Updat
                 }
                 if (context.testExpression("apiStages", targetDepth)) {
                     context.nextToken();
-                    updateUsagePlanResult.setApiStages(new ListUnmarshaller<ApiStage>(ApiStageJsonUnmarshaller.getInstance()).unmarshall(context));
+                    updateUsagePlanResult.setApiStages(new ListUnmarshaller<ApiStage>(ApiStageJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("throttle", targetDepth)) {
                     context.nextToken();

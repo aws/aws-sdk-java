@@ -51,7 +51,9 @@ public class ListEntityRecognizersResultJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("EntityRecognizerPropertiesList", targetDepth)) {
                     context.nextToken();
                     listEntityRecognizersResult.setEntityRecognizerPropertiesList(new ListUnmarshaller<EntityRecognizerProperties>(
-                            EntityRecognizerPropertiesJsonUnmarshaller.getInstance()).unmarshall(context));
+                            EntityRecognizerPropertiesJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

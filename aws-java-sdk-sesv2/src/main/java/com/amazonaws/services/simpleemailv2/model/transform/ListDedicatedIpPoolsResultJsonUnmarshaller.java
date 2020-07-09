@@ -50,7 +50,9 @@ public class ListDedicatedIpPoolsResultJsonUnmarshaller implements Unmarshaller<
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DedicatedIpPools", targetDepth)) {
                     context.nextToken();
-                    listDedicatedIpPoolsResult.setDedicatedIpPools(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    listDedicatedIpPoolsResult.setDedicatedIpPools(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

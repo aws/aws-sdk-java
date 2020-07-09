@@ -62,7 +62,9 @@ public class JobTemplateSettingsJsonUnmarshaller implements Unmarshaller<JobTemp
                 }
                 if (context.testExpression("inputs", targetDepth)) {
                     context.nextToken();
-                    jobTemplateSettings.setInputs(new ListUnmarshaller<InputTemplate>(InputTemplateJsonUnmarshaller.getInstance()).unmarshall(context));
+                    jobTemplateSettings.setInputs(new ListUnmarshaller<InputTemplate>(InputTemplateJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("motionImageInserter", targetDepth)) {
                     context.nextToken();
@@ -74,7 +76,9 @@ public class JobTemplateSettingsJsonUnmarshaller implements Unmarshaller<JobTemp
                 }
                 if (context.testExpression("outputGroups", targetDepth)) {
                     context.nextToken();
-                    jobTemplateSettings.setOutputGroups(new ListUnmarshaller<OutputGroup>(OutputGroupJsonUnmarshaller.getInstance()).unmarshall(context));
+                    jobTemplateSettings.setOutputGroups(new ListUnmarshaller<OutputGroup>(OutputGroupJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("timecodeConfig", targetDepth)) {
                     context.nextToken();

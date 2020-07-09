@@ -51,7 +51,9 @@ public class Scte35TimeSignalScheduleActionSettingsJsonUnmarshaller implements U
                 if (context.testExpression("scte35Descriptors", targetDepth)) {
                     context.nextToken();
                     scte35TimeSignalScheduleActionSettings.setScte35Descriptors(new ListUnmarshaller<Scte35Descriptor>(Scte35DescriptorJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

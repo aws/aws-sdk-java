@@ -51,7 +51,8 @@ public class ModifyRecommendationDetailJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("TargetInstances", targetDepth)) {
                     context.nextToken();
                     modifyRecommendationDetail.setTargetInstances(new ListUnmarshaller<TargetInstance>(TargetInstanceJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

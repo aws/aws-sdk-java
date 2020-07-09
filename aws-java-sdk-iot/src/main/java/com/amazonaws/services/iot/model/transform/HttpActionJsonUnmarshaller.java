@@ -58,7 +58,9 @@ public class HttpActionJsonUnmarshaller implements Unmarshaller<HttpAction, Json
                 }
                 if (context.testExpression("headers", targetDepth)) {
                     context.nextToken();
-                    httpAction.setHeaders(new ListUnmarshaller<HttpActionHeader>(HttpActionHeaderJsonUnmarshaller.getInstance()).unmarshall(context));
+                    httpAction.setHeaders(new ListUnmarshaller<HttpActionHeader>(HttpActionHeaderJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("auth", targetDepth)) {
                     context.nextToken();

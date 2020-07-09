@@ -50,7 +50,9 @@ public class ListAssociationsResultJsonUnmarshaller implements Unmarshaller<List
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Associations", targetDepth)) {
                     context.nextToken();
-                    listAssociationsResult.setAssociations(new ListUnmarshaller<Association>(AssociationJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listAssociationsResult.setAssociations(new ListUnmarshaller<Association>(AssociationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

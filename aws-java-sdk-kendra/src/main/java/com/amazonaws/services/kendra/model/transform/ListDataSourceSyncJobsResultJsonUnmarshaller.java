@@ -51,7 +51,8 @@ public class ListDataSourceSyncJobsResultJsonUnmarshaller implements Unmarshalle
                 if (context.testExpression("History", targetDepth)) {
                     context.nextToken();
                     listDataSourceSyncJobsResult.setHistory(new ListUnmarshaller<DataSourceSyncJob>(DataSourceSyncJobJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

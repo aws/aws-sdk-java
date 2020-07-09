@@ -59,7 +59,8 @@ public class InstanceGroupModifyConfigJsonUnmarshaller implements Unmarshaller<I
                 if (context.testExpression("EC2InstanceIdsToTerminate", targetDepth)) {
                     context.nextToken();
                     instanceGroupModifyConfig.setEC2InstanceIdsToTerminate(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ShrinkPolicy", targetDepth)) {
                     context.nextToken();
@@ -68,7 +69,8 @@ public class InstanceGroupModifyConfigJsonUnmarshaller implements Unmarshaller<I
                 if (context.testExpression("Configurations", targetDepth)) {
                     context.nextToken();
                     instanceGroupModifyConfig.setConfigurations(new ListUnmarshaller<Configuration>(ConfigurationJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -54,7 +54,9 @@ public class ReactionForCommentJsonUnmarshaller implements Unmarshaller<Reaction
                 }
                 if (context.testExpression("reactionUsers", targetDepth)) {
                     context.nextToken();
-                    reactionForComment.setReactionUsers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    reactionForComment.setReactionUsers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("reactionsFromDeletedUsersCount", targetDepth)) {
                     context.nextToken();

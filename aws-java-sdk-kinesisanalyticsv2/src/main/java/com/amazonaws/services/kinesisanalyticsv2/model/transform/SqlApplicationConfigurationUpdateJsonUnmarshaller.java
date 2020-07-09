@@ -51,17 +51,21 @@ public class SqlApplicationConfigurationUpdateJsonUnmarshaller implements Unmars
                 if (context.testExpression("InputUpdates", targetDepth)) {
                     context.nextToken();
                     sqlApplicationConfigurationUpdate.setInputUpdates(new ListUnmarshaller<InputUpdate>(InputUpdateJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("OutputUpdates", targetDepth)) {
                     context.nextToken();
                     sqlApplicationConfigurationUpdate.setOutputUpdates(new ListUnmarshaller<OutputUpdate>(OutputUpdateJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ReferenceDataSourceUpdates", targetDepth)) {
                     context.nextToken();
                     sqlApplicationConfigurationUpdate.setReferenceDataSourceUpdates(new ListUnmarshaller<ReferenceDataSourceUpdate>(
-                            ReferenceDataSourceUpdateJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ReferenceDataSourceUpdateJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

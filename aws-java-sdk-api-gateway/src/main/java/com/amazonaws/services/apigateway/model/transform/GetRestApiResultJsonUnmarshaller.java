@@ -70,11 +70,15 @@ public class GetRestApiResultJsonUnmarshaller implements Unmarshaller<GetRestApi
                 }
                 if (context.testExpression("warnings", targetDepth)) {
                     context.nextToken();
-                    getRestApiResult.setWarnings(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    getRestApiResult.setWarnings(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("binaryMediaTypes", targetDepth)) {
                     context.nextToken();
-                    getRestApiResult.setBinaryMediaTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    getRestApiResult.setBinaryMediaTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("minimumCompressionSize", targetDepth)) {
                     context.nextToken();

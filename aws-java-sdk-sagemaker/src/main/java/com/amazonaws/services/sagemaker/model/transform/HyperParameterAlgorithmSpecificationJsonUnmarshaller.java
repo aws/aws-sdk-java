@@ -63,7 +63,9 @@ public class HyperParameterAlgorithmSpecificationJsonUnmarshaller implements Unm
                 if (context.testExpression("MetricDefinitions", targetDepth)) {
                     context.nextToken();
                     hyperParameterAlgorithmSpecification.setMetricDefinitions(new ListUnmarshaller<MetricDefinition>(MetricDefinitionJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

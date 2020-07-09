@@ -51,7 +51,9 @@ public class MsSmoothGroupSettingsJsonUnmarshaller implements Unmarshaller<MsSmo
                 if (context.testExpression("additionalManifests", targetDepth)) {
                     context.nextToken();
                     msSmoothGroupSettings.setAdditionalManifests(new ListUnmarshaller<MsSmoothAdditionalManifest>(MsSmoothAdditionalManifestJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("audioDeduplication", targetDepth)) {
                     context.nextToken();

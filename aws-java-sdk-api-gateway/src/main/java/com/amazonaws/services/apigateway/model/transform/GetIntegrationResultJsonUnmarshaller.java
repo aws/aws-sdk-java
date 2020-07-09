@@ -100,7 +100,9 @@ public class GetIntegrationResultJsonUnmarshaller implements Unmarshaller<GetInt
                 }
                 if (context.testExpression("cacheKeyParameters", targetDepth)) {
                     context.nextToken();
-                    getIntegrationResult.setCacheKeyParameters(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    getIntegrationResult.setCacheKeyParameters(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("integrationResponses", targetDepth)) {
                     context.nextToken();

@@ -50,7 +50,9 @@ public class DetectCustomLabelsResultJsonUnmarshaller implements Unmarshaller<De
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CustomLabels", targetDepth)) {
                     context.nextToken();
-                    detectCustomLabelsResult.setCustomLabels(new ListUnmarshaller<CustomLabel>(CustomLabelJsonUnmarshaller.getInstance()).unmarshall(context));
+                    detectCustomLabelsResult.setCustomLabels(new ListUnmarshaller<CustomLabel>(CustomLabelJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

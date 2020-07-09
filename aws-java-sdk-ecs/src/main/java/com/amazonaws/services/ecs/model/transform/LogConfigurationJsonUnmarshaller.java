@@ -59,7 +59,9 @@ public class LogConfigurationJsonUnmarshaller implements Unmarshaller<LogConfigu
                 }
                 if (context.testExpression("secretOptions", targetDepth)) {
                     context.nextToken();
-                    logConfiguration.setSecretOptions(new ListUnmarshaller<Secret>(SecretJsonUnmarshaller.getInstance()).unmarshall(context));
+                    logConfiguration.setSecretOptions(new ListUnmarshaller<Secret>(SecretJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

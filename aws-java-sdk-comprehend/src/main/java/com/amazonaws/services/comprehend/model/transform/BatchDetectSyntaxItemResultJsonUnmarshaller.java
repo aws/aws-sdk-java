@@ -55,7 +55,8 @@ public class BatchDetectSyntaxItemResultJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("SyntaxTokens", targetDepth)) {
                     context.nextToken();
                     batchDetectSyntaxItemResult.setSyntaxTokens(new ListUnmarshaller<SyntaxToken>(SyntaxTokenJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

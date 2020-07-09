@@ -50,7 +50,9 @@ public class PromptJsonUnmarshaller implements Unmarshaller<Prompt, JsonUnmarsha
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("messages", targetDepth)) {
                     context.nextToken();
-                    prompt.setMessages(new ListUnmarshaller<Message>(MessageJsonUnmarshaller.getInstance()).unmarshall(context));
+                    prompt.setMessages(new ListUnmarshaller<Message>(MessageJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("maxAttempts", targetDepth)) {
                     context.nextToken();

@@ -51,7 +51,8 @@ public class ListAssessmentTemplatesResultJsonUnmarshaller implements Unmarshall
                 if (context.testExpression("assessmentTemplateArns", targetDepth)) {
                     context.nextToken();
                     listAssessmentTemplatesResult.setAssessmentTemplateArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

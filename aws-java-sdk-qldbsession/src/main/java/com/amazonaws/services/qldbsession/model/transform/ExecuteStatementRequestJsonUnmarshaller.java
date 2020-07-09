@@ -58,7 +58,9 @@ public class ExecuteStatementRequestJsonUnmarshaller implements Unmarshaller<Exe
                 }
                 if (context.testExpression("Parameters", targetDepth)) {
                     context.nextToken();
-                    executeStatementRequest.setParameters(new ListUnmarshaller<ValueHolder>(ValueHolderJsonUnmarshaller.getInstance()).unmarshall(context));
+                    executeStatementRequest.setParameters(new ListUnmarshaller<ValueHolder>(ValueHolderJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

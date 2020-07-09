@@ -61,7 +61,9 @@ public class DescribeDataSourcePermissionsResultJsonUnmarshaller implements Unma
                 if (context.testExpression("Permissions", targetDepth)) {
                     context.nextToken();
                     describeDataSourcePermissionsResult.setPermissions(new ListUnmarshaller<ResourcePermission>(ResourcePermissionJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("RequestId", targetDepth)) {
                     context.nextToken();

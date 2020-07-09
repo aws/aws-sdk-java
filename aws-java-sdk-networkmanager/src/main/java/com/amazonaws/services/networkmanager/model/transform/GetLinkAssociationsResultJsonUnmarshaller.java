@@ -51,7 +51,8 @@ public class GetLinkAssociationsResultJsonUnmarshaller implements Unmarshaller<G
                 if (context.testExpression("LinkAssociations", targetDepth)) {
                     context.nextToken();
                     getLinkAssociationsResult.setLinkAssociations(new ListUnmarshaller<LinkAssociation>(LinkAssociationJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

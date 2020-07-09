@@ -58,7 +58,9 @@ public class XssMatchSetJsonUnmarshaller implements Unmarshaller<XssMatchSet, Js
                 }
                 if (context.testExpression("XssMatchTuples", targetDepth)) {
                     context.nextToken();
-                    xssMatchSet.setXssMatchTuples(new ListUnmarshaller<XssMatchTuple>(XssMatchTupleJsonUnmarshaller.getInstance()).unmarshall(context));
+                    xssMatchSet.setXssMatchTuples(new ListUnmarshaller<XssMatchTuple>(XssMatchTupleJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

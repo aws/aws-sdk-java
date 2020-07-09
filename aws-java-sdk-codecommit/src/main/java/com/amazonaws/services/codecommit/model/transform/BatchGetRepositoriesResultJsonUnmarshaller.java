@@ -51,11 +51,14 @@ public class BatchGetRepositoriesResultJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("repositories", targetDepth)) {
                     context.nextToken();
                     batchGetRepositoriesResult.setRepositories(new ListUnmarshaller<RepositoryMetadata>(RepositoryMetadataJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("repositoriesNotFound", targetDepth)) {
                     context.nextToken();
-                    batchGetRepositoriesResult.setRepositoriesNotFound(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    batchGetRepositoriesResult.setRepositoriesNotFound(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -51,7 +51,8 @@ public class TableDescriptionJsonUnmarshaller implements Unmarshaller<TableDescr
                 if (context.testExpression("AttributeDefinitions", targetDepth)) {
                     context.nextToken();
                     tableDescription.setAttributeDefinitions(new ListUnmarshaller<AttributeDefinition>(AttributeDefinitionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("TableName", targetDepth)) {
                     context.nextToken();
@@ -59,7 +60,9 @@ public class TableDescriptionJsonUnmarshaller implements Unmarshaller<TableDescr
                 }
                 if (context.testExpression("KeySchema", targetDepth)) {
                     context.nextToken();
-                    tableDescription.setKeySchema(new ListUnmarshaller<KeySchemaElement>(KeySchemaElementJsonUnmarshaller.getInstance()).unmarshall(context));
+                    tableDescription.setKeySchema(new ListUnmarshaller<KeySchemaElement>(KeySchemaElementJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("TableStatus", targetDepth)) {
                     context.nextToken();
@@ -96,12 +99,16 @@ public class TableDescriptionJsonUnmarshaller implements Unmarshaller<TableDescr
                 if (context.testExpression("LocalSecondaryIndexes", targetDepth)) {
                     context.nextToken();
                     tableDescription.setLocalSecondaryIndexes(new ListUnmarshaller<LocalSecondaryIndexDescription>(
-                            LocalSecondaryIndexDescriptionJsonUnmarshaller.getInstance()).unmarshall(context));
+                            LocalSecondaryIndexDescriptionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("GlobalSecondaryIndexes", targetDepth)) {
                     context.nextToken();
                     tableDescription.setGlobalSecondaryIndexes(new ListUnmarshaller<GlobalSecondaryIndexDescription>(
-                            GlobalSecondaryIndexDescriptionJsonUnmarshaller.getInstance()).unmarshall(context));
+                            GlobalSecondaryIndexDescriptionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("StreamSpecification", targetDepth)) {
                     context.nextToken();
@@ -121,8 +128,9 @@ public class TableDescriptionJsonUnmarshaller implements Unmarshaller<TableDescr
                 }
                 if (context.testExpression("Replicas", targetDepth)) {
                     context.nextToken();
-                    tableDescription
-                            .setReplicas(new ListUnmarshaller<ReplicaDescription>(ReplicaDescriptionJsonUnmarshaller.getInstance()).unmarshall(context));
+                    tableDescription.setReplicas(new ListUnmarshaller<ReplicaDescription>(ReplicaDescriptionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("RestoreSummary", targetDepth)) {
                     context.nextToken();

@@ -50,7 +50,9 @@ public class GetBlueprintsResultJsonUnmarshaller implements Unmarshaller<GetBlue
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("blueprints", targetDepth)) {
                     context.nextToken();
-                    getBlueprintsResult.setBlueprints(new ListUnmarshaller<Blueprint>(BlueprintJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getBlueprintsResult.setBlueprints(new ListUnmarshaller<Blueprint>(BlueprintJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextPageToken", targetDepth)) {
                     context.nextToken();

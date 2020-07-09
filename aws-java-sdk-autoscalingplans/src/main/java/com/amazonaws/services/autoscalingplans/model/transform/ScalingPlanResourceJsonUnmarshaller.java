@@ -70,8 +70,9 @@ public class ScalingPlanResourceJsonUnmarshaller implements Unmarshaller<Scaling
                 }
                 if (context.testExpression("ScalingPolicies", targetDepth)) {
                     context.nextToken();
-                    scalingPlanResource
-                            .setScalingPolicies(new ListUnmarshaller<ScalingPolicy>(ScalingPolicyJsonUnmarshaller.getInstance()).unmarshall(context));
+                    scalingPlanResource.setScalingPolicies(new ListUnmarshaller<ScalingPolicy>(ScalingPolicyJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ScalingStatusCode", targetDepth)) {
                     context.nextToken();

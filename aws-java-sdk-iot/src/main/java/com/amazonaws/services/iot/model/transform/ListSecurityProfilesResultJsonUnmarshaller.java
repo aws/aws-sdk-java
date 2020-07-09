@@ -51,7 +51,9 @@ public class ListSecurityProfilesResultJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("securityProfileIdentifiers", targetDepth)) {
                     context.nextToken();
                     listSecurityProfilesResult.setSecurityProfileIdentifiers(new ListUnmarshaller<SecurityProfileIdentifier>(
-                            SecurityProfileIdentifierJsonUnmarshaller.getInstance()).unmarshall(context));
+                            SecurityProfileIdentifierJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

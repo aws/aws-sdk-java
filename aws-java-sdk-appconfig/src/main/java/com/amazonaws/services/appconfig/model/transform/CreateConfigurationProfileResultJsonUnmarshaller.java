@@ -74,8 +74,9 @@ public class CreateConfigurationProfileResultJsonUnmarshaller implements Unmarsh
                 }
                 if (context.testExpression("Validators", targetDepth)) {
                     context.nextToken();
-                    createConfigurationProfileResult
-                            .setValidators(new ListUnmarshaller<Validator>(ValidatorJsonUnmarshaller.getInstance()).unmarshall(context));
+                    createConfigurationProfileResult.setValidators(new ListUnmarshaller<Validator>(ValidatorJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

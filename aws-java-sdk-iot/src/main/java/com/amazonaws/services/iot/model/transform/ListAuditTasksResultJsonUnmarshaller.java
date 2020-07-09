@@ -50,7 +50,9 @@ public class ListAuditTasksResultJsonUnmarshaller implements Unmarshaller<ListAu
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("tasks", targetDepth)) {
                     context.nextToken();
-                    listAuditTasksResult.setTasks(new ListUnmarshaller<AuditTaskMetadata>(AuditTaskMetadataJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listAuditTasksResult.setTasks(new ListUnmarshaller<AuditTaskMetadata>(AuditTaskMetadataJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

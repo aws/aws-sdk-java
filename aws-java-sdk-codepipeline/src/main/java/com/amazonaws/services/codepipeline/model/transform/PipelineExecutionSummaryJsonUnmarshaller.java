@@ -67,7 +67,8 @@ public class PipelineExecutionSummaryJsonUnmarshaller implements Unmarshaller<Pi
                 if (context.testExpression("sourceRevisions", targetDepth)) {
                     context.nextToken();
                     pipelineExecutionSummary.setSourceRevisions(new ListUnmarshaller<SourceRevision>(SourceRevisionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("trigger", targetDepth)) {
                     context.nextToken();

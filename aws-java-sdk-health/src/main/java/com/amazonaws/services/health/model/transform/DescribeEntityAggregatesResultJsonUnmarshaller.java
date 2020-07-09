@@ -51,7 +51,8 @@ public class DescribeEntityAggregatesResultJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("entityAggregates", targetDepth)) {
                     context.nextToken();
                     describeEntityAggregatesResult.setEntityAggregates(new ListUnmarshaller<EntityAggregate>(EntityAggregateJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

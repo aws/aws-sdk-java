@@ -50,7 +50,9 @@ public class ListStreamsResultJsonUnmarshaller implements Unmarshaller<ListStrea
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Streams", targetDepth)) {
                     context.nextToken();
-                    listStreamsResult.setStreams(new ListUnmarshaller<Stream>(StreamJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listStreamsResult.setStreams(new ListUnmarshaller<Stream>(StreamJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("LastEvaluatedStreamArn", targetDepth)) {
                     context.nextToken();

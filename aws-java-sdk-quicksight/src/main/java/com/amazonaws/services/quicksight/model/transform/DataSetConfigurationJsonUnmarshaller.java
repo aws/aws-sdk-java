@@ -59,7 +59,8 @@ public class DataSetConfigurationJsonUnmarshaller implements Unmarshaller<DataSe
                 if (context.testExpression("ColumnGroupSchemaList", targetDepth)) {
                     context.nextToken();
                     dataSetConfiguration.setColumnGroupSchemaList(new ListUnmarshaller<ColumnGroupSchema>(ColumnGroupSchemaJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

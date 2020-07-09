@@ -62,7 +62,9 @@ public class JobSettingsJsonUnmarshaller implements Unmarshaller<JobSettings, Js
                 }
                 if (context.testExpression("inputs", targetDepth)) {
                     context.nextToken();
-                    jobSettings.setInputs(new ListUnmarshaller<Input>(InputJsonUnmarshaller.getInstance()).unmarshall(context));
+                    jobSettings.setInputs(new ListUnmarshaller<Input>(InputJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("motionImageInserter", targetDepth)) {
                     context.nextToken();
@@ -74,7 +76,9 @@ public class JobSettingsJsonUnmarshaller implements Unmarshaller<JobSettings, Js
                 }
                 if (context.testExpression("outputGroups", targetDepth)) {
                     context.nextToken();
-                    jobSettings.setOutputGroups(new ListUnmarshaller<OutputGroup>(OutputGroupJsonUnmarshaller.getInstance()).unmarshall(context));
+                    jobSettings.setOutputGroups(new ListUnmarshaller<OutputGroup>(OutputGroupJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("timecodeConfig", targetDepth)) {
                     context.nextToken();

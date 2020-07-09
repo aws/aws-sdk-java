@@ -51,7 +51,9 @@ public class DescribeCustomKeyStoresResultJsonUnmarshaller implements Unmarshall
                 if (context.testExpression("CustomKeyStores", targetDepth)) {
                     context.nextToken();
                     describeCustomKeyStoresResult.setCustomKeyStores(new ListUnmarshaller<CustomKeyStoresListEntry>(CustomKeyStoresListEntryJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextMarker", targetDepth)) {
                     context.nextToken();

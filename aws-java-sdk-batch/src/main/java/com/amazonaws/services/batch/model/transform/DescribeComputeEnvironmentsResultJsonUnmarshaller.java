@@ -51,7 +51,9 @@ public class DescribeComputeEnvironmentsResultJsonUnmarshaller implements Unmars
                 if (context.testExpression("computeEnvironments", targetDepth)) {
                     context.nextToken();
                     describeComputeEnvironmentsResult.setComputeEnvironments(new ListUnmarshaller<ComputeEnvironmentDetail>(
-                            ComputeEnvironmentDetailJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ComputeEnvironmentDetailJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

@@ -54,7 +54,9 @@ public class ListLocalDisksResultJsonUnmarshaller implements Unmarshaller<ListLo
                 }
                 if (context.testExpression("Disks", targetDepth)) {
                     context.nextToken();
-                    listLocalDisksResult.setDisks(new ListUnmarshaller<Disk>(DiskJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listLocalDisksResult.setDisks(new ListUnmarshaller<Disk>(DiskJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

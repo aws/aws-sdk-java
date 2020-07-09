@@ -63,7 +63,8 @@ public class ParameterJsonUnmarshaller implements Unmarshaller<Parameter, JsonUn
                 if (context.testExpression("NodeTypeSpecificValues", targetDepth)) {
                     context.nextToken();
                     parameter.setNodeTypeSpecificValues(new ListUnmarshaller<NodeTypeSpecificValue>(NodeTypeSpecificValueJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
                     context.nextToken();

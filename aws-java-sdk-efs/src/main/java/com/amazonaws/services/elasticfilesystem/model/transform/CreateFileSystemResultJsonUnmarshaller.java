@@ -106,7 +106,9 @@ public class CreateFileSystemResultJsonUnmarshaller implements Unmarshaller<Crea
                 }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
-                    createFileSystemResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    createFileSystemResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

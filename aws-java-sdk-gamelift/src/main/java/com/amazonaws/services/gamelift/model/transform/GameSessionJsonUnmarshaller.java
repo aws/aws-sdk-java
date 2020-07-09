@@ -90,7 +90,9 @@ public class GameSessionJsonUnmarshaller implements Unmarshaller<GameSession, Js
                 }
                 if (context.testExpression("GameProperties", targetDepth)) {
                     context.nextToken();
-                    gameSession.setGameProperties(new ListUnmarshaller<GameProperty>(GamePropertyJsonUnmarshaller.getInstance()).unmarshall(context));
+                    gameSession.setGameProperties(new ListUnmarshaller<GameProperty>(GamePropertyJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("IpAddress", targetDepth)) {
                     context.nextToken();

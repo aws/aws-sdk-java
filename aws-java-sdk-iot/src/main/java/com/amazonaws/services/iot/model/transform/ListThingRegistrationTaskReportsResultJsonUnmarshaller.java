@@ -51,7 +51,8 @@ public class ListThingRegistrationTaskReportsResultJsonUnmarshaller implements U
                 if (context.testExpression("resourceLinks", targetDepth)) {
                     context.nextToken();
                     listThingRegistrationTaskReportsResult.setResourceLinks(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("reportType", targetDepth)) {
                     context.nextToken();

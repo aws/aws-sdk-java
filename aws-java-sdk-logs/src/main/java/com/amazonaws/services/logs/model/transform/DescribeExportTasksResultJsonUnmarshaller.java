@@ -50,7 +50,9 @@ public class DescribeExportTasksResultJsonUnmarshaller implements Unmarshaller<D
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("exportTasks", targetDepth)) {
                     context.nextToken();
-                    describeExportTasksResult.setExportTasks(new ListUnmarshaller<ExportTask>(ExportTaskJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeExportTasksResult.setExportTasks(new ListUnmarshaller<ExportTask>(ExportTaskJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

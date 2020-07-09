@@ -70,7 +70,9 @@ public class GetPatchBaselineResultJsonUnmarshaller implements Unmarshaller<GetP
                 }
                 if (context.testExpression("ApprovedPatches", targetDepth)) {
                     context.nextToken();
-                    getPatchBaselineResult.setApprovedPatches(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    getPatchBaselineResult.setApprovedPatches(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ApprovedPatchesComplianceLevel", targetDepth)) {
                     context.nextToken();
@@ -82,7 +84,9 @@ public class GetPatchBaselineResultJsonUnmarshaller implements Unmarshaller<GetP
                 }
                 if (context.testExpression("RejectedPatches", targetDepth)) {
                     context.nextToken();
-                    getPatchBaselineResult.setRejectedPatches(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    getPatchBaselineResult.setRejectedPatches(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("RejectedPatchesAction", targetDepth)) {
                     context.nextToken();
@@ -90,7 +94,9 @@ public class GetPatchBaselineResultJsonUnmarshaller implements Unmarshaller<GetP
                 }
                 if (context.testExpression("PatchGroups", targetDepth)) {
                     context.nextToken();
-                    getPatchBaselineResult.setPatchGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    getPatchBaselineResult.setPatchGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("CreatedDate", targetDepth)) {
                     context.nextToken();
@@ -106,7 +112,9 @@ public class GetPatchBaselineResultJsonUnmarshaller implements Unmarshaller<GetP
                 }
                 if (context.testExpression("Sources", targetDepth)) {
                     context.nextToken();
-                    getPatchBaselineResult.setSources(new ListUnmarshaller<PatchSource>(PatchSourceJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getPatchBaselineResult.setSources(new ListUnmarshaller<PatchSource>(PatchSourceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -87,7 +87,8 @@ public class InstanceDetailsJsonUnmarshaller implements Unmarshaller<InstanceDet
                 if (context.testExpression("networkInterfaces", targetDepth)) {
                     context.nextToken();
                     instanceDetails.setNetworkInterfaces(new ListUnmarshaller<NetworkInterface>(NetworkInterfaceJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("platform", targetDepth)) {
                     context.nextToken();
@@ -95,11 +96,15 @@ public class InstanceDetailsJsonUnmarshaller implements Unmarshaller<InstanceDet
                 }
                 if (context.testExpression("productCodes", targetDepth)) {
                     context.nextToken();
-                    instanceDetails.setProductCodes(new ListUnmarshaller<ProductCode>(ProductCodeJsonUnmarshaller.getInstance()).unmarshall(context));
+                    instanceDetails.setProductCodes(new ListUnmarshaller<ProductCode>(ProductCodeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
-                    instanceDetails.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    instanceDetails.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -51,7 +51,9 @@ public class ListInputSecurityGroupsResultJsonUnmarshaller implements Unmarshall
                 if (context.testExpression("inputSecurityGroups", targetDepth)) {
                     context.nextToken();
                     listInputSecurityGroupsResult.setInputSecurityGroups(new ListUnmarshaller<InputSecurityGroup>(InputSecurityGroupJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

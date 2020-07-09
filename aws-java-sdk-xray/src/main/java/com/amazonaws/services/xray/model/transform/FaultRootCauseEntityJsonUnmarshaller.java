@@ -55,7 +55,8 @@ public class FaultRootCauseEntityJsonUnmarshaller implements Unmarshaller<FaultR
                 if (context.testExpression("Exceptions", targetDepth)) {
                     context.nextToken();
                     faultRootCauseEntity.setExceptions(new ListUnmarshaller<RootCauseException>(RootCauseExceptionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Remote", targetDepth)) {
                     context.nextToken();

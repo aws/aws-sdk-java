@@ -50,7 +50,9 @@ public class DashPackageJsonUnmarshaller implements Unmarshaller<DashPackage, Js
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("adTriggers", targetDepth)) {
                     context.nextToken();
-                    dashPackage.setAdTriggers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    dashPackage.setAdTriggers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("adsOnDeliveryRestrictions", targetDepth)) {
                     context.nextToken();
@@ -78,7 +80,9 @@ public class DashPackageJsonUnmarshaller implements Unmarshaller<DashPackage, Js
                 }
                 if (context.testExpression("periodTriggers", targetDepth)) {
                     context.nextToken();
-                    dashPackage.setPeriodTriggers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    dashPackage.setPeriodTriggers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("profile", targetDepth)) {
                     context.nextToken();

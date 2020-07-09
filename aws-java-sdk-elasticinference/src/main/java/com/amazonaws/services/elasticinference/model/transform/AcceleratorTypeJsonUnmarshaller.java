@@ -58,7 +58,9 @@ public class AcceleratorTypeJsonUnmarshaller implements Unmarshaller<Accelerator
                 }
                 if (context.testExpression("throughputInfo", targetDepth)) {
                     context.nextToken();
-                    acceleratorType.setThroughputInfo(new ListUnmarshaller<KeyValuePair>(KeyValuePairJsonUnmarshaller.getInstance()).unmarshall(context));
+                    acceleratorType.setThroughputInfo(new ListUnmarshaller<KeyValuePair>(KeyValuePairJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -50,7 +50,9 @@ public class ListByoipCidrsResultJsonUnmarshaller implements Unmarshaller<ListBy
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ByoipCidrs", targetDepth)) {
                     context.nextToken();
-                    listByoipCidrsResult.setByoipCidrs(new ListUnmarshaller<ByoipCidr>(ByoipCidrJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listByoipCidrsResult.setByoipCidrs(new ListUnmarshaller<ByoipCidr>(ByoipCidrJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

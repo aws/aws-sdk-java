@@ -58,7 +58,9 @@ public class UsageRecordJsonUnmarshaller implements Unmarshaller<UsageRecord, Js
                 }
                 if (context.testExpression("usage", targetDepth)) {
                     context.nextToken();
-                    usageRecord.setUsage(new ListUnmarshaller<UsageByAccount>(UsageByAccountJsonUnmarshaller.getInstance()).unmarshall(context));
+                    usageRecord.setUsage(new ListUnmarshaller<UsageByAccount>(UsageByAccountJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -54,7 +54,9 @@ public class ConfigurationsJsonUnmarshaller implements Unmarshaller<Configuratio
                 }
                 if (context.testExpression("history", targetDepth)) {
                     context.nextToken();
-                    configurations.setHistory(new ListUnmarshaller<ConfigurationId>(ConfigurationIdJsonUnmarshaller.getInstance()).unmarshall(context));
+                    configurations.setHistory(new ListUnmarshaller<ConfigurationId>(ConfigurationIdJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("pending", targetDepth)) {
                     context.nextToken();

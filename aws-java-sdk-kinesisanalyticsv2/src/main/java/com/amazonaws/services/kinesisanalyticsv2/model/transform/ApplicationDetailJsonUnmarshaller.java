@@ -92,7 +92,9 @@ public class ApplicationDetailJsonUnmarshaller implements Unmarshaller<Applicati
                 if (context.testExpression("CloudWatchLoggingOptionDescriptions", targetDepth)) {
                     context.nextToken();
                     applicationDetail.setCloudWatchLoggingOptionDescriptions(new ListUnmarshaller<CloudWatchLoggingOptionDescription>(
-                            CloudWatchLoggingOptionDescriptionJsonUnmarshaller.getInstance()).unmarshall(context));
+                            CloudWatchLoggingOptionDescriptionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

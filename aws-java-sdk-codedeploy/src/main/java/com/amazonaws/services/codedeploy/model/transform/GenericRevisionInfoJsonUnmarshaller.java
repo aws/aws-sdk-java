@@ -54,7 +54,9 @@ public class GenericRevisionInfoJsonUnmarshaller implements Unmarshaller<Generic
                 }
                 if (context.testExpression("deploymentGroups", targetDepth)) {
                     context.nextToken();
-                    genericRevisionInfo.setDeploymentGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    genericRevisionInfo.setDeploymentGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("firstUsedTime", targetDepth)) {
                     context.nextToken();

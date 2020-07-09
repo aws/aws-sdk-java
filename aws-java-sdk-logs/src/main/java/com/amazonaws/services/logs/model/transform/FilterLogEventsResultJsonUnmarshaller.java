@@ -50,12 +50,15 @@ public class FilterLogEventsResultJsonUnmarshaller implements Unmarshaller<Filte
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("events", targetDepth)) {
                     context.nextToken();
-                    filterLogEventsResult.setEvents(new ListUnmarshaller<FilteredLogEvent>(FilteredLogEventJsonUnmarshaller.getInstance()).unmarshall(context));
+                    filterLogEventsResult.setEvents(new ListUnmarshaller<FilteredLogEvent>(FilteredLogEventJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("searchedLogStreams", targetDepth)) {
                     context.nextToken();
                     filterLogEventsResult.setSearchedLogStreams(new ListUnmarshaller<SearchedLogStream>(SearchedLogStreamJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

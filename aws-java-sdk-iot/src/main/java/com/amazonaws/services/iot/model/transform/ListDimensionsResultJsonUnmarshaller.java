@@ -50,7 +50,9 @@ public class ListDimensionsResultJsonUnmarshaller implements Unmarshaller<ListDi
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("dimensionNames", targetDepth)) {
                     context.nextToken();
-                    listDimensionsResult.setDimensionNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    listDimensionsResult.setDimensionNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

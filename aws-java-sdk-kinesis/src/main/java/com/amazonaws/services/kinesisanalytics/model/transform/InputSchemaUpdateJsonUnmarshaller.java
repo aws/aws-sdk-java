@@ -58,8 +58,9 @@ public class InputSchemaUpdateJsonUnmarshaller implements Unmarshaller<InputSche
                 }
                 if (context.testExpression("RecordColumnUpdates", targetDepth)) {
                     context.nextToken();
-                    inputSchemaUpdate
-                            .setRecordColumnUpdates(new ListUnmarshaller<RecordColumn>(RecordColumnJsonUnmarshaller.getInstance()).unmarshall(context));
+                    inputSchemaUpdate.setRecordColumnUpdates(new ListUnmarshaller<RecordColumn>(RecordColumnJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

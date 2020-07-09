@@ -51,7 +51,9 @@ public class ListTerminologiesResultJsonUnmarshaller implements Unmarshaller<Lis
                 if (context.testExpression("TerminologyPropertiesList", targetDepth)) {
                     context.nextToken();
                     listTerminologiesResult.setTerminologyPropertiesList(new ListUnmarshaller<TerminologyProperties>(TerminologyPropertiesJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

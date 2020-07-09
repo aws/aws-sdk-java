@@ -51,7 +51,9 @@ public class NotifyWorkersResultJsonUnmarshaller implements Unmarshaller<NotifyW
                 if (context.testExpression("NotifyWorkersFailureStatuses", targetDepth)) {
                     context.nextToken();
                     notifyWorkersResult.setNotifyWorkersFailureStatuses(new ListUnmarshaller<NotifyWorkersFailureStatus>(
-                            NotifyWorkersFailureStatusJsonUnmarshaller.getInstance()).unmarshall(context));
+                            NotifyWorkersFailureStatusJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -50,7 +50,9 @@ public class LogSetupJsonUnmarshaller implements Unmarshaller<LogSetup, JsonUnma
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("types", targetDepth)) {
                     context.nextToken();
-                    logSetup.setTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    logSetup.setTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("enabled", targetDepth)) {
                     context.nextToken();

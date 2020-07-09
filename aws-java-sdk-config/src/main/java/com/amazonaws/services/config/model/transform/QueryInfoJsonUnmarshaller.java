@@ -50,7 +50,9 @@ public class QueryInfoJsonUnmarshaller implements Unmarshaller<QueryInfo, JsonUn
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SelectFields", targetDepth)) {
                     context.nextToken();
-                    queryInfo.setSelectFields(new ListUnmarshaller<FieldInfo>(FieldInfoJsonUnmarshaller.getInstance()).unmarshall(context));
+                    queryInfo.setSelectFields(new ListUnmarshaller<FieldInfo>(FieldInfoJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -51,7 +51,8 @@ public class ListIdentityPoolUsageResultJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("IdentityPoolUsages", targetDepth)) {
                     context.nextToken();
                     listIdentityPoolUsageResult.setIdentityPoolUsages(new ListUnmarshaller<IdentityPoolUsage>(IdentityPoolUsageJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("MaxResults", targetDepth)) {
                     context.nextToken();

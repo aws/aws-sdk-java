@@ -51,7 +51,8 @@ public class ListS3ResourcesResultJsonUnmarshaller implements Unmarshaller<ListS
                 if (context.testExpression("s3Resources", targetDepth)) {
                     context.nextToken();
                     listS3ResourcesResult.setS3Resources(new ListUnmarshaller<S3ResourceClassification>(S3ResourceClassificationJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

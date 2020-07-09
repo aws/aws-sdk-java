@@ -55,12 +55,14 @@ public class GetCostAndUsageWithResourcesResultJsonUnmarshaller implements Unmar
                 if (context.testExpression("GroupDefinitions", targetDepth)) {
                     context.nextToken();
                     getCostAndUsageWithResourcesResult.setGroupDefinitions(new ListUnmarshaller<GroupDefinition>(GroupDefinitionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ResultsByTime", targetDepth)) {
                     context.nextToken();
                     getCostAndUsageWithResourcesResult.setResultsByTime(new ListUnmarshaller<ResultByTime>(ResultByTimeJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

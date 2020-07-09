@@ -50,7 +50,9 @@ public class DescribeFindingsResultJsonUnmarshaller implements Unmarshaller<Desc
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("findings", targetDepth)) {
                     context.nextToken();
-                    describeFindingsResult.setFindings(new ListUnmarshaller<Finding>(FindingJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeFindingsResult.setFindings(new ListUnmarshaller<Finding>(FindingJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("failedItems", targetDepth)) {
                     context.nextToken();

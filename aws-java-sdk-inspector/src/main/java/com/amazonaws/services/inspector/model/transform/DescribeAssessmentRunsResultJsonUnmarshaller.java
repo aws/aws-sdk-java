@@ -51,7 +51,8 @@ public class DescribeAssessmentRunsResultJsonUnmarshaller implements Unmarshalle
                 if (context.testExpression("assessmentRuns", targetDepth)) {
                     context.nextToken();
                     describeAssessmentRunsResult.setAssessmentRuns(new ListUnmarshaller<AssessmentRun>(AssessmentRunJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("failedItems", targetDepth)) {
                     context.nextToken();

@@ -50,7 +50,9 @@ public class ListContainersResultJsonUnmarshaller implements Unmarshaller<ListCo
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Containers", targetDepth)) {
                     context.nextToken();
-                    listContainersResult.setContainers(new ListUnmarshaller<Container>(ContainerJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listContainersResult.setContainers(new ListUnmarshaller<Container>(ContainerJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

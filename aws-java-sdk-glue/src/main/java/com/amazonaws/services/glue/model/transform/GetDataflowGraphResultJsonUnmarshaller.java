@@ -50,11 +50,15 @@ public class GetDataflowGraphResultJsonUnmarshaller implements Unmarshaller<GetD
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DagNodes", targetDepth)) {
                     context.nextToken();
-                    getDataflowGraphResult.setDagNodes(new ListUnmarshaller<CodeGenNode>(CodeGenNodeJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getDataflowGraphResult.setDagNodes(new ListUnmarshaller<CodeGenNode>(CodeGenNodeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("DagEdges", targetDepth)) {
                     context.nextToken();
-                    getDataflowGraphResult.setDagEdges(new ListUnmarshaller<CodeGenEdge>(CodeGenEdgeJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getDataflowGraphResult.setDagEdges(new ListUnmarshaller<CodeGenEdge>(CodeGenEdgeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

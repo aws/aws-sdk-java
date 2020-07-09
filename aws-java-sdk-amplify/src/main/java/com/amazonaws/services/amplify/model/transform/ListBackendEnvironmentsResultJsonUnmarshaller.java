@@ -51,7 +51,9 @@ public class ListBackendEnvironmentsResultJsonUnmarshaller implements Unmarshall
                 if (context.testExpression("backendEnvironments", targetDepth)) {
                     context.nextToken();
                     listBackendEnvironmentsResult.setBackendEnvironments(new ListUnmarshaller<BackendEnvironment>(BackendEnvironmentJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

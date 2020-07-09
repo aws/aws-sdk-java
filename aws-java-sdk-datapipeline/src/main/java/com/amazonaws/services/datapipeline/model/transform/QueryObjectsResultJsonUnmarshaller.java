@@ -50,7 +50,9 @@ public class QueryObjectsResultJsonUnmarshaller implements Unmarshaller<QueryObj
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ids", targetDepth)) {
                     context.nextToken();
-                    queryObjectsResult.setIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    queryObjectsResult.setIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("marker", targetDepth)) {
                     context.nextToken();

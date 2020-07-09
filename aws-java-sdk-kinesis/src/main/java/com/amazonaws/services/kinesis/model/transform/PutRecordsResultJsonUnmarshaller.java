@@ -55,7 +55,8 @@ public class PutRecordsResultJsonUnmarshaller implements Unmarshaller<PutRecords
                 if (context.testExpression("Records", targetDepth)) {
                     context.nextToken();
                     putRecordsResult.setRecords(new ListUnmarshaller<PutRecordsResultEntry>(PutRecordsResultEntryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("EncryptionType", targetDepth)) {
                     context.nextToken();

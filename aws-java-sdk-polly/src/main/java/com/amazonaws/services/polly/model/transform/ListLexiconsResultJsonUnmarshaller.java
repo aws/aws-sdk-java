@@ -51,7 +51,8 @@ public class ListLexiconsResultJsonUnmarshaller implements Unmarshaller<ListLexi
                 if (context.testExpression("Lexicons", targetDepth)) {
                     context.nextToken();
                     listLexiconsResult.setLexicons(new ListUnmarshaller<LexiconDescription>(LexiconDescriptionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

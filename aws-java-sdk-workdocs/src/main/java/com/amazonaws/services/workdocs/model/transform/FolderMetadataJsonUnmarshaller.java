@@ -82,7 +82,9 @@ public class FolderMetadataJsonUnmarshaller implements Unmarshaller<FolderMetada
                 }
                 if (context.testExpression("Labels", targetDepth)) {
                     context.nextToken();
-                    folderMetadata.setLabels(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    folderMetadata.setLabels(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Size", targetDepth)) {
                     context.nextToken();

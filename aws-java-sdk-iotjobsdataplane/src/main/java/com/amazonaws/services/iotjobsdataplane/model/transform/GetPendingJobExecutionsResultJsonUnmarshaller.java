@@ -51,12 +51,15 @@ public class GetPendingJobExecutionsResultJsonUnmarshaller implements Unmarshall
                 if (context.testExpression("inProgressJobs", targetDepth)) {
                     context.nextToken();
                     getPendingJobExecutionsResult
-                            .setInProgressJobs(new ListUnmarshaller<JobExecutionSummary>(JobExecutionSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                            .setInProgressJobs(new ListUnmarshaller<JobExecutionSummary>(JobExecutionSummaryJsonUnmarshaller.getInstance())
+
+                            .unmarshall(context));
                 }
                 if (context.testExpression("queuedJobs", targetDepth)) {
                     context.nextToken();
                     getPendingJobExecutionsResult.setQueuedJobs(new ListUnmarshaller<JobExecutionSummary>(JobExecutionSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

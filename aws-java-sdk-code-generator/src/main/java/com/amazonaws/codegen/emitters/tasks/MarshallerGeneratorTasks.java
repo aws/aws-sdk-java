@@ -19,6 +19,7 @@ import static com.amazonaws.codegen.utils.FunctionalUtils.safeFunction;
 import com.amazonaws.codegen.emitters.FreemarkerGeneratorTask;
 import com.amazonaws.codegen.emitters.GeneratorTask;
 import com.amazonaws.codegen.emitters.GeneratorTaskParams;
+import com.amazonaws.codegen.internal.TypeUtils;
 import com.amazonaws.codegen.model.intermediate.Metadata;
 import com.amazonaws.codegen.model.intermediate.Protocol;
 import com.amazonaws.codegen.model.intermediate.ShapeModel;
@@ -66,27 +67,33 @@ public class MarshallerGeneratorTasks extends BaseGeneratorTasks {
     }
 
     private Stream<GeneratorTask> createTask(String javaShapeName, ShapeModel shapeModel) throws Exception {
+        String shapeFqcn = javaShapeName;
+        if (TypeUtils.isReserved(javaShapeName)) {
+            shapeFqcn = shapeModel.getFullyQualifiedName();
+        }
+
         if (shapeModel.getShapeType() == ShapeType.Request && metadata.isJsonProtocol()) {
             return Stream.of(
-                    createMarshallerTask(javaShapeName,
+                    createMarshallerTask(javaShapeName, shapeFqcn,
                                          freemarker.getRequestMarshallerTemplate(),
                                          javaShapeName + "ProtocolMarshaller"),
-                    createMarshallerTask(javaShapeName,
+                    createMarshallerTask(javaShapeName, shapeFqcn,
                                          freemarker.getModelMarshallerTemplate(),
                                          javaShapeName + "Marshaller"));
         } else {
             return Stream.of(
-                    createMarshallerTask(javaShapeName,
+                    createMarshallerTask(javaShapeName, shapeFqcn,
                                          freemarker.getModelMarshallerTemplate(),
                                          javaShapeName + "Marshaller"));
         }
     }
 
-    private GeneratorTask createMarshallerTask(String javaShapeName, Template template, String marshallerClassName) throws
+    private GeneratorTask createMarshallerTask(String javaShapeName, String shapeFullyQualifiedName, Template template, String marshallerClassName) throws
                                                                                                                     IOException {
         Map<String, Object> marshallerDataModel = ImmutableMapParameter.<String, Object>builder()
                 .put("fileHeader", model.getFileHeader())
                 .put("shapeName", javaShapeName)
+                .put("shapeFqcn", shapeFullyQualifiedName)
                 .put("shapes", shapes)
                 .put("metadata", metadata)
                 .put("transformPackage", model.getTransformPackage())

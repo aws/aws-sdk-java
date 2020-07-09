@@ -50,7 +50,9 @@ public class DescribeBudgetsResultJsonUnmarshaller implements Unmarshaller<Descr
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Budgets", targetDepth)) {
                     context.nextToken();
-                    describeBudgetsResult.setBudgets(new ListUnmarshaller<Budget>(BudgetJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeBudgetsResult.setBudgets(new ListUnmarshaller<Budget>(BudgetJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

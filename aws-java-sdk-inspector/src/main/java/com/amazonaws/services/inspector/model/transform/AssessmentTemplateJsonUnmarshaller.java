@@ -66,12 +66,15 @@ public class AssessmentTemplateJsonUnmarshaller implements Unmarshaller<Assessme
                 }
                 if (context.testExpression("rulesPackageArns", targetDepth)) {
                     context.nextToken();
-                    assessmentTemplate.setRulesPackageArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    assessmentTemplate.setRulesPackageArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("userAttributesForFindings", targetDepth)) {
                     context.nextToken();
                     assessmentTemplate.setUserAttributesForFindings(new ListUnmarshaller<Attribute>(AttributeJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("lastAssessmentRunArn", targetDepth)) {
                     context.nextToken();

@@ -62,12 +62,16 @@ public class DescribeNotebookInstanceLifecycleConfigResultJsonUnmarshaller imple
                 if (context.testExpression("OnCreate", targetDepth)) {
                     context.nextToken();
                     describeNotebookInstanceLifecycleConfigResult.setOnCreate(new ListUnmarshaller<NotebookInstanceLifecycleHook>(
-                            NotebookInstanceLifecycleHookJsonUnmarshaller.getInstance()).unmarshall(context));
+                            NotebookInstanceLifecycleHookJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("OnStart", targetDepth)) {
                     context.nextToken();
                     describeNotebookInstanceLifecycleConfigResult.setOnStart(new ListUnmarshaller<NotebookInstanceLifecycleHook>(
-                            NotebookInstanceLifecycleHookJsonUnmarshaller.getInstance()).unmarshall(context));
+                            NotebookInstanceLifecycleHookJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
                     context.nextToken();

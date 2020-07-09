@@ -71,7 +71,8 @@ public class AuthEventTypeJsonUnmarshaller implements Unmarshaller<AuthEventType
                 if (context.testExpression("ChallengeResponses", targetDepth)) {
                     context.nextToken();
                     authEventType.setChallengeResponses(new ListUnmarshaller<ChallengeResponseType>(ChallengeResponseTypeJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("EventContextData", targetDepth)) {
                     context.nextToken();

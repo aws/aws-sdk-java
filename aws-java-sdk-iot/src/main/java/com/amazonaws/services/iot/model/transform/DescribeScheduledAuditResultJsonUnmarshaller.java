@@ -62,7 +62,9 @@ public class DescribeScheduledAuditResultJsonUnmarshaller implements Unmarshalle
                 }
                 if (context.testExpression("targetCheckNames", targetDepth)) {
                     context.nextToken();
-                    describeScheduledAuditResult.setTargetCheckNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    describeScheduledAuditResult.setTargetCheckNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("scheduledAuditName", targetDepth)) {
                     context.nextToken();

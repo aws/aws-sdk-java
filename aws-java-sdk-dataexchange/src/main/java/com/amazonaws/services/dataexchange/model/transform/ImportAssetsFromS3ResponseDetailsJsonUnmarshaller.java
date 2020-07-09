@@ -51,7 +51,8 @@ public class ImportAssetsFromS3ResponseDetailsJsonUnmarshaller implements Unmars
                 if (context.testExpression("AssetSources", targetDepth)) {
                     context.nextToken();
                     importAssetsFromS3ResponseDetails.setAssetSources(new ListUnmarshaller<AssetSourceEntry>(AssetSourceEntryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("DataSetId", targetDepth)) {
                     context.nextToken();

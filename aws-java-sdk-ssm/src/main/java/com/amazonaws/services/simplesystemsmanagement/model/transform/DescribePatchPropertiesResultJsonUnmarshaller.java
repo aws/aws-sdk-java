@@ -52,7 +52,9 @@ public class DescribePatchPropertiesResultJsonUnmarshaller implements Unmarshall
                 if (context.testExpression("Properties", targetDepth)) {
                     context.nextToken();
                     describePatchPropertiesResult.setProperties(new ListUnmarshaller<java.util.Map<String, String>>(new MapUnmarshaller<String, String>(context
-                            .getUnmarshaller(String.class), context.getUnmarshaller(String.class))).unmarshall(context));
+                            .getUnmarshaller(String.class), context.getUnmarshaller(String.class)))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

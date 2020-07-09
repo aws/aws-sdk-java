@@ -51,7 +51,8 @@ public class ListApplicationSnapshotsResultJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("SnapshotSummaries", targetDepth)) {
                     context.nextToken();
                     listApplicationSnapshotsResult.setSnapshotSummaries(new ListUnmarshaller<SnapshotDetails>(SnapshotDetailsJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

@@ -50,8 +50,9 @@ public class ListCertificatesByCAResultJsonUnmarshaller implements Unmarshaller<
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("certificates", targetDepth)) {
                     context.nextToken();
-                    listCertificatesByCAResult
-                            .setCertificates(new ListUnmarshaller<Certificate>(CertificateJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listCertificatesByCAResult.setCertificates(new ListUnmarshaller<Certificate>(CertificateJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextMarker", targetDepth)) {
                     context.nextToken();

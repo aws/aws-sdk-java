@@ -55,7 +55,9 @@ public class ListConnectorDefinitionVersionsResultJsonUnmarshaller implements Un
                 if (context.testExpression("Versions", targetDepth)) {
                     context.nextToken();
                     listConnectorDefinitionVersionsResult
-                            .setVersions(new ListUnmarshaller<VersionInformation>(VersionInformationJsonUnmarshaller.getInstance()).unmarshall(context));
+                            .setVersions(new ListUnmarshaller<VersionInformation>(VersionInformationJsonUnmarshaller.getInstance())
+
+                            .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

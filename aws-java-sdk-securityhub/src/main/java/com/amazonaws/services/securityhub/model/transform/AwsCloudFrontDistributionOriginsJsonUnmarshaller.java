@@ -51,7 +51,9 @@ public class AwsCloudFrontDistributionOriginsJsonUnmarshaller implements Unmarsh
                 if (context.testExpression("Items", targetDepth)) {
                     context.nextToken();
                     awsCloudFrontDistributionOrigins.setItems(new ListUnmarshaller<AwsCloudFrontDistributionOriginItem>(
-                            AwsCloudFrontDistributionOriginItemJsonUnmarshaller.getInstance()).unmarshall(context));
+                            AwsCloudFrontDistributionOriginItemJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

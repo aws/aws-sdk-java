@@ -51,7 +51,9 @@ public class ListJournalS3ExportsResultJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("JournalS3Exports", targetDepth)) {
                     context.nextToken();
                     listJournalS3ExportsResult.setJournalS3Exports(new ListUnmarshaller<JournalS3ExportDescription>(JournalS3ExportDescriptionJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

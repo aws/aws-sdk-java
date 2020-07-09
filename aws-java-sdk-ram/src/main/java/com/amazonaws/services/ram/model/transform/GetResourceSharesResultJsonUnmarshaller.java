@@ -51,7 +51,8 @@ public class GetResourceSharesResultJsonUnmarshaller implements Unmarshaller<Get
                 if (context.testExpression("resourceShares", targetDepth)) {
                     context.nextToken();
                     getResourceSharesResult.setResourceShares(new ListUnmarshaller<ResourceShare>(ResourceShareJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

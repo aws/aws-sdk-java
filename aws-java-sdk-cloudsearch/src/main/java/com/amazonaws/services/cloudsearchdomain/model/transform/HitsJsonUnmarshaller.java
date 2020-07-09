@@ -62,7 +62,9 @@ public class HitsJsonUnmarshaller implements Unmarshaller<Hits, JsonUnmarshaller
                 }
                 if (context.testExpression("hit", targetDepth)) {
                     context.nextToken();
-                    hits.setHit(new ListUnmarshaller<Hit>(HitJsonUnmarshaller.getInstance()).unmarshall(context));
+                    hits.setHit(new ListUnmarshaller<Hit>(HitJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

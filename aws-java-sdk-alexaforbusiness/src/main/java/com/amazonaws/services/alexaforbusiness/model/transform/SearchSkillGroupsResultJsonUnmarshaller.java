@@ -51,7 +51,8 @@ public class SearchSkillGroupsResultJsonUnmarshaller implements Unmarshaller<Sea
                 if (context.testExpression("SkillGroups", targetDepth)) {
                     context.nextToken();
                     searchSkillGroupsResult.setSkillGroups(new ListUnmarshaller<SkillGroupData>(SkillGroupDataJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

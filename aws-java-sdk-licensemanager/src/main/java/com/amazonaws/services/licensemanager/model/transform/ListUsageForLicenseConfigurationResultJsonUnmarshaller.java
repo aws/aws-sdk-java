@@ -51,7 +51,9 @@ public class ListUsageForLicenseConfigurationResultJsonUnmarshaller implements U
                 if (context.testExpression("LicenseConfigurationUsageList", targetDepth)) {
                     context.nextToken();
                     listUsageForLicenseConfigurationResult.setLicenseConfigurationUsageList(new ListUnmarshaller<LicenseConfigurationUsage>(
-                            LicenseConfigurationUsageJsonUnmarshaller.getInstance()).unmarshall(context));
+                            LicenseConfigurationUsageJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

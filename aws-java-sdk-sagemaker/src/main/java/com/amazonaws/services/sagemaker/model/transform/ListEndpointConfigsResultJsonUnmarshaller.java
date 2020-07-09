@@ -51,7 +51,9 @@ public class ListEndpointConfigsResultJsonUnmarshaller implements Unmarshaller<L
                 if (context.testExpression("EndpointConfigs", targetDepth)) {
                     context.nextToken();
                     listEndpointConfigsResult.setEndpointConfigs(new ListUnmarshaller<EndpointConfigSummary>(EndpointConfigSummaryJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

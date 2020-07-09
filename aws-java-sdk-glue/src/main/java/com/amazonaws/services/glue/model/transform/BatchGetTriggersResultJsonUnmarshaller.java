@@ -50,11 +50,15 @@ public class BatchGetTriggersResultJsonUnmarshaller implements Unmarshaller<Batc
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Triggers", targetDepth)) {
                     context.nextToken();
-                    batchGetTriggersResult.setTriggers(new ListUnmarshaller<Trigger>(TriggerJsonUnmarshaller.getInstance()).unmarshall(context));
+                    batchGetTriggersResult.setTriggers(new ListUnmarshaller<Trigger>(TriggerJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("TriggersNotFound", targetDepth)) {
                     context.nextToken();
-                    batchGetTriggersResult.setTriggersNotFound(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    batchGetTriggersResult.setTriggersNotFound(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

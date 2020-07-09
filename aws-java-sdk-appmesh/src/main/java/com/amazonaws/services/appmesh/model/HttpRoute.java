@@ -46,7 +46,11 @@ public class HttpRoute implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private HttpRetryPolicy retryPolicy;
-
+    /**
+     * <p>
+     * An object that represents types of timeouts.
+     * </p>
+     */
     private HttpTimeout timeout;
 
     /**
@@ -170,7 +174,12 @@ public class HttpRoute implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * An object that represents types of timeouts.
+     * </p>
+     * 
      * @param timeout
+     *        An object that represents types of timeouts.
      */
 
     public void setTimeout(HttpTimeout timeout) {
@@ -178,7 +187,11 @@ public class HttpRoute implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * An object that represents types of timeouts.
+     * </p>
+     * 
+     * @return An object that represents types of timeouts.
      */
 
     public HttpTimeout getTimeout() {
@@ -186,7 +199,12 @@ public class HttpRoute implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * An object that represents types of timeouts.
+     * </p>
+     * 
      * @param timeout
+     *        An object that represents types of timeouts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

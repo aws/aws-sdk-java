@@ -74,7 +74,9 @@ public class RelationalDatabaseJsonUnmarshaller implements Unmarshaller<Relation
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
-                    relationalDatabase.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    relationalDatabase.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("relationalDatabaseBlueprintId", targetDepth)) {
                     context.nextToken();
@@ -147,7 +149,9 @@ public class RelationalDatabaseJsonUnmarshaller implements Unmarshaller<Relation
                 if (context.testExpression("pendingMaintenanceActions", targetDepth)) {
                     context.nextToken();
                     relationalDatabase.setPendingMaintenanceActions(new ListUnmarshaller<PendingMaintenanceAction>(PendingMaintenanceActionJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("caCertificateIdentifier", targetDepth)) {
                     context.nextToken();

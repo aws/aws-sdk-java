@@ -51,7 +51,9 @@ public class DescribeComplianceByConfigRuleResultJsonUnmarshaller implements Unm
                 if (context.testExpression("ComplianceByConfigRules", targetDepth)) {
                     context.nextToken();
                     describeComplianceByConfigRuleResult.setComplianceByConfigRules(new ListUnmarshaller<ComplianceByConfigRule>(
-                            ComplianceByConfigRuleJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ComplianceByConfigRuleJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

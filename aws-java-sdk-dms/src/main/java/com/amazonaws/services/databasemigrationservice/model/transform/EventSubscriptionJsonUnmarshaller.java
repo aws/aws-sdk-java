@@ -74,11 +74,15 @@ public class EventSubscriptionJsonUnmarshaller implements Unmarshaller<EventSubs
                 }
                 if (context.testExpression("SourceIdsList", targetDepth)) {
                     context.nextToken();
-                    eventSubscription.setSourceIdsList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    eventSubscription.setSourceIdsList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("EventCategoriesList", targetDepth)) {
                     context.nextToken();
-                    eventSubscription.setEventCategoriesList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    eventSubscription.setEventCategoriesList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Enabled", targetDepth)) {
                     context.nextToken();

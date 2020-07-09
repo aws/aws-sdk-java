@@ -75,7 +75,8 @@ public class OrganizationJsonUnmarshaller implements Unmarshaller<Organization, 
                 if (context.testExpression("AvailablePolicyTypes", targetDepth)) {
                     context.nextToken();
                     organization.setAvailablePolicyTypes(new ListUnmarshaller<PolicyTypeSummary>(PolicyTypeSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

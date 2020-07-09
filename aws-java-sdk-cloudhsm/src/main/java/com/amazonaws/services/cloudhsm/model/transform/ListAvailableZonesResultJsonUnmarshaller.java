@@ -50,7 +50,9 @@ public class ListAvailableZonesResultJsonUnmarshaller implements Unmarshaller<Li
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AZList", targetDepth)) {
                     context.nextToken();
-                    listAvailableZonesResult.setAZList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    listAvailableZonesResult.setAZList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

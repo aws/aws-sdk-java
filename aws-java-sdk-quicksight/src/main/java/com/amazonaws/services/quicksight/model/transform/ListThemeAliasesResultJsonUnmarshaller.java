@@ -52,7 +52,9 @@ public class ListThemeAliasesResultJsonUnmarshaller implements Unmarshaller<List
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ThemeAliasList", targetDepth)) {
                     context.nextToken();
-                    listThemeAliasesResult.setThemeAliasList(new ListUnmarshaller<ThemeAlias>(ThemeAliasJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listThemeAliasesResult.setThemeAliasList(new ListUnmarshaller<ThemeAlias>(ThemeAliasJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("RequestId", targetDepth)) {
                     context.nextToken();

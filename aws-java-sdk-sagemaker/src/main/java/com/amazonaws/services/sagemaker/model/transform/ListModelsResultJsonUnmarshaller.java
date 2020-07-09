@@ -50,7 +50,9 @@ public class ListModelsResultJsonUnmarshaller implements Unmarshaller<ListModels
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Models", targetDepth)) {
                     context.nextToken();
-                    listModelsResult.setModels(new ListUnmarshaller<ModelSummary>(ModelSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listModelsResult.setModels(new ListUnmarshaller<ModelSummary>(ModelSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

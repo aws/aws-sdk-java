@@ -51,7 +51,9 @@ public class BatchAssociateUserStackResultJsonUnmarshaller implements Unmarshall
                 if (context.testExpression("errors", targetDepth)) {
                     context.nextToken();
                     batchAssociateUserStackResult.setErrors(new ListUnmarshaller<UserStackAssociationError>(UserStackAssociationErrorJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

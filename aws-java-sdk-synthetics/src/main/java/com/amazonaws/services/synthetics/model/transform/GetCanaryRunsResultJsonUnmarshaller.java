@@ -50,7 +50,9 @@ public class GetCanaryRunsResultJsonUnmarshaller implements Unmarshaller<GetCana
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CanaryRuns", targetDepth)) {
                     context.nextToken();
-                    getCanaryRunsResult.setCanaryRuns(new ListUnmarshaller<CanaryRun>(CanaryRunJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getCanaryRunsResult.setCanaryRuns(new ListUnmarshaller<CanaryRun>(CanaryRunJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

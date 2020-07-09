@@ -51,7 +51,8 @@ public class GetCommentReactionsResultJsonUnmarshaller implements Unmarshaller<G
                 if (context.testExpression("reactionsForComment", targetDepth)) {
                     context.nextToken();
                     getCommentReactionsResult.setReactionsForComment(new ListUnmarshaller<ReactionForComment>(ReactionForCommentJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

@@ -50,7 +50,9 @@ public class SearchContactsResultJsonUnmarshaller implements Unmarshaller<Search
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Contacts", targetDepth)) {
                     context.nextToken();
-                    searchContactsResult.setContacts(new ListUnmarshaller<ContactData>(ContactDataJsonUnmarshaller.getInstance()).unmarshall(context));
+                    searchContactsResult.setContacts(new ListUnmarshaller<ContactData>(ContactDataJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

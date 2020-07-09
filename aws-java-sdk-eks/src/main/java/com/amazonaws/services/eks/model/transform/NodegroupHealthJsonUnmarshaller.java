@@ -50,7 +50,9 @@ public class NodegroupHealthJsonUnmarshaller implements Unmarshaller<NodegroupHe
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("issues", targetDepth)) {
                     context.nextToken();
-                    nodegroupHealth.setIssues(new ListUnmarshaller<Issue>(IssueJsonUnmarshaller.getInstance()).unmarshall(context));
+                    nodegroupHealth.setIssues(new ListUnmarshaller<Issue>(IssueJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -25,24 +25,24 @@ public class UpdateSecretVersionStageResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The ARN of the secret with the staging label that was modified.
+     * The ARN of the secret with the modified staging label.
      * </p>
      */
     private String aRN;
     /**
      * <p>
-     * The friendly name of the secret with the staging label that was modified.
+     * The friendly name of the secret with the modified staging label.
      * </p>
      */
     private String name;
 
     /**
      * <p>
-     * The ARN of the secret with the staging label that was modified.
+     * The ARN of the secret with the modified staging label.
      * </p>
      * 
      * @param aRN
-     *        The ARN of the secret with the staging label that was modified.
+     *        The ARN of the secret with the modified staging label.
      */
 
     public void setARN(String aRN) {
@@ -51,10 +51,10 @@ public class UpdateSecretVersionStageResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The ARN of the secret with the staging label that was modified.
+     * The ARN of the secret with the modified staging label.
      * </p>
      * 
-     * @return The ARN of the secret with the staging label that was modified.
+     * @return The ARN of the secret with the modified staging label.
      */
 
     public String getARN() {
@@ -63,11 +63,11 @@ public class UpdateSecretVersionStageResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The ARN of the secret with the staging label that was modified.
+     * The ARN of the secret with the modified staging label.
      * </p>
      * 
      * @param aRN
-     *        The ARN of the secret with the staging label that was modified.
+     *        The ARN of the secret with the modified staging label.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -78,11 +78,11 @@ public class UpdateSecretVersionStageResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The friendly name of the secret with the staging label that was modified.
+     * The friendly name of the secret with the modified staging label.
      * </p>
      * 
      * @param name
-     *        The friendly name of the secret with the staging label that was modified.
+     *        The friendly name of the secret with the modified staging label.
      */
 
     public void setName(String name) {
@@ -91,10 +91,10 @@ public class UpdateSecretVersionStageResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The friendly name of the secret with the staging label that was modified.
+     * The friendly name of the secret with the modified staging label.
      * </p>
      * 
-     * @return The friendly name of the secret with the staging label that was modified.
+     * @return The friendly name of the secret with the modified staging label.
      */
 
     public String getName() {
@@ -103,11 +103,11 @@ public class UpdateSecretVersionStageResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The friendly name of the secret with the staging label that was modified.
+     * The friendly name of the secret with the modified staging label.
      * </p>
      * 
      * @param name
-     *        The friendly name of the secret with the staging label that was modified.
+     *        The friendly name of the secret with the modified staging label.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

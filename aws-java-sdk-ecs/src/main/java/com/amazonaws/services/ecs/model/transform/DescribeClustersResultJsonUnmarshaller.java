@@ -50,11 +50,15 @@ public class DescribeClustersResultJsonUnmarshaller implements Unmarshaller<Desc
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("clusters", targetDepth)) {
                     context.nextToken();
-                    describeClustersResult.setClusters(new ListUnmarshaller<Cluster>(ClusterJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeClustersResult.setClusters(new ListUnmarshaller<Cluster>(ClusterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("failures", targetDepth)) {
                     context.nextToken();
-                    describeClustersResult.setFailures(new ListUnmarshaller<Failure>(FailureJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeClustersResult.setFailures(new ListUnmarshaller<Failure>(FailureJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

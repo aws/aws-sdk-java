@@ -51,17 +51,23 @@ public class SqlApplicationConfigurationDescriptionJsonUnmarshaller implements U
                 if (context.testExpression("InputDescriptions", targetDepth)) {
                     context.nextToken();
                     sqlApplicationConfigurationDescription.setInputDescriptions(new ListUnmarshaller<InputDescription>(InputDescriptionJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("OutputDescriptions", targetDepth)) {
                     context.nextToken();
                     sqlApplicationConfigurationDescription.setOutputDescriptions(new ListUnmarshaller<OutputDescription>(OutputDescriptionJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ReferenceDataSourceDescriptions", targetDepth)) {
                     context.nextToken();
                     sqlApplicationConfigurationDescription.setReferenceDataSourceDescriptions(new ListUnmarshaller<ReferenceDataSourceDescription>(
-                            ReferenceDataSourceDescriptionJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ReferenceDataSourceDescriptionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

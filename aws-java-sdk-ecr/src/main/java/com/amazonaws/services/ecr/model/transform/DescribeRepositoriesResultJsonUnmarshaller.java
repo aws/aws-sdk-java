@@ -50,7 +50,9 @@ public class DescribeRepositoriesResultJsonUnmarshaller implements Unmarshaller<
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("repositories", targetDepth)) {
                     context.nextToken();
-                    describeRepositoriesResult.setRepositories(new ListUnmarshaller<Repository>(RepositoryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeRepositoriesResult.setRepositories(new ListUnmarshaller<Repository>(RepositoryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

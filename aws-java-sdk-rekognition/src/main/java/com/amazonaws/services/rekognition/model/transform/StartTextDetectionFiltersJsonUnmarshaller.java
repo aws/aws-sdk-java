@@ -55,7 +55,8 @@ public class StartTextDetectionFiltersJsonUnmarshaller implements Unmarshaller<S
                 if (context.testExpression("RegionsOfInterest", targetDepth)) {
                     context.nextToken();
                     startTextDetectionFilters.setRegionsOfInterest(new ListUnmarshaller<RegionOfInterest>(RegionOfInterestJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

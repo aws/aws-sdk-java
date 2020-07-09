@@ -59,12 +59,14 @@ public class GetSegmentDetectionResultJsonUnmarshaller implements Unmarshaller<G
                 if (context.testExpression("VideoMetadata", targetDepth)) {
                     context.nextToken();
                     getSegmentDetectionResult.setVideoMetadata(new ListUnmarshaller<VideoMetadata>(VideoMetadataJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("AudioMetadata", targetDepth)) {
                     context.nextToken();
                     getSegmentDetectionResult.setAudioMetadata(new ListUnmarshaller<AudioMetadata>(AudioMetadataJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();
@@ -73,12 +75,14 @@ public class GetSegmentDetectionResultJsonUnmarshaller implements Unmarshaller<G
                 if (context.testExpression("Segments", targetDepth)) {
                     context.nextToken();
                     getSegmentDetectionResult.setSegments(new ListUnmarshaller<SegmentDetection>(SegmentDetectionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("SelectedSegmentTypes", targetDepth)) {
                     context.nextToken();
                     getSegmentDetectionResult.setSelectedSegmentTypes(new ListUnmarshaller<SegmentTypeInfo>(SegmentTypeInfoJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

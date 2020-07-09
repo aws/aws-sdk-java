@@ -67,12 +67,14 @@ public class InstanceTypeSpecificationJsonUnmarshaller implements Unmarshaller<I
                 if (context.testExpression("Configurations", targetDepth)) {
                     context.nextToken();
                     instanceTypeSpecification.setConfigurations(new ListUnmarshaller<Configuration>(ConfigurationJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("EbsBlockDevices", targetDepth)) {
                     context.nextToken();
                     instanceTypeSpecification.setEbsBlockDevices(new ListUnmarshaller<EbsBlockDevice>(EbsBlockDeviceJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("EbsOptimized", targetDepth)) {
                     context.nextToken();

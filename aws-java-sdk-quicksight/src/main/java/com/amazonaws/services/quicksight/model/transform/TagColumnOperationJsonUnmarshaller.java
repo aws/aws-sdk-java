@@ -54,7 +54,9 @@ public class TagColumnOperationJsonUnmarshaller implements Unmarshaller<TagColum
                 }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
-                    tagColumnOperation.setTags(new ListUnmarshaller<ColumnTag>(ColumnTagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    tagColumnOperation.setTags(new ListUnmarshaller<ColumnTag>(ColumnTagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

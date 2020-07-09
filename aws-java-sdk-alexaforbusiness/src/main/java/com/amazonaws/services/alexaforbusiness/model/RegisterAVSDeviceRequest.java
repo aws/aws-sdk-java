@@ -57,6 +57,12 @@ public class RegisterAVSDeviceRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private String amazonId;
+    /**
+     * <p>
+     * The ARN of the room with which to associate your AVS device.
+     * </p>
+     */
+    private String roomArn;
 
     /**
      * <p>
@@ -271,6 +277,46 @@ public class RegisterAVSDeviceRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * The ARN of the room with which to associate your AVS device.
+     * </p>
+     * 
+     * @param roomArn
+     *        The ARN of the room with which to associate your AVS device.
+     */
+
+    public void setRoomArn(String roomArn) {
+        this.roomArn = roomArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the room with which to associate your AVS device.
+     * </p>
+     * 
+     * @return The ARN of the room with which to associate your AVS device.
+     */
+
+    public String getRoomArn() {
+        return this.roomArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the room with which to associate your AVS device.
+     * </p>
+     * 
+     * @param roomArn
+     *        The ARN of the room with which to associate your AVS device.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterAVSDeviceRequest withRoomArn(String roomArn) {
+        setRoomArn(roomArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -291,7 +337,9 @@ public class RegisterAVSDeviceRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getDeviceSerialNumber() != null)
             sb.append("DeviceSerialNumber: ").append(getDeviceSerialNumber()).append(",");
         if (getAmazonId() != null)
-            sb.append("AmazonId: ").append(getAmazonId());
+            sb.append("AmazonId: ").append(getAmazonId()).append(",");
+        if (getRoomArn() != null)
+            sb.append("RoomArn: ").append(getRoomArn());
         sb.append("}");
         return sb.toString();
     }
@@ -326,6 +374,10 @@ public class RegisterAVSDeviceRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getAmazonId() != null && other.getAmazonId().equals(this.getAmazonId()) == false)
             return false;
+        if (other.getRoomArn() == null ^ this.getRoomArn() == null)
+            return false;
+        if (other.getRoomArn() != null && other.getRoomArn().equals(this.getRoomArn()) == false)
+            return false;
         return true;
     }
 
@@ -339,6 +391,7 @@ public class RegisterAVSDeviceRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getProductId() == null) ? 0 : getProductId().hashCode());
         hashCode = prime * hashCode + ((getDeviceSerialNumber() == null) ? 0 : getDeviceSerialNumber().hashCode());
         hashCode = prime * hashCode + ((getAmazonId() == null) ? 0 : getAmazonId().hashCode());
+        hashCode = prime * hashCode + ((getRoomArn() == null) ? 0 : getRoomArn().hashCode());
         return hashCode;
     }
 

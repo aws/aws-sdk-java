@@ -51,7 +51,9 @@ public class ListSimulationJobBatchesResultJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("simulationJobBatchSummaries", targetDepth)) {
                     context.nextToken();
                     listSimulationJobBatchesResult.setSimulationJobBatchSummaries(new ListUnmarshaller<SimulationJobBatchSummary>(
-                            SimulationJobBatchSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                            SimulationJobBatchSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

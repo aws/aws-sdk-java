@@ -51,7 +51,8 @@ public class ListBillingGroupsResultJsonUnmarshaller implements Unmarshaller<Lis
                 if (context.testExpression("billingGroups", targetDepth)) {
                     context.nextToken();
                     listBillingGroupsResult.setBillingGroups(new ListUnmarshaller<GroupNameAndArn>(GroupNameAndArnJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

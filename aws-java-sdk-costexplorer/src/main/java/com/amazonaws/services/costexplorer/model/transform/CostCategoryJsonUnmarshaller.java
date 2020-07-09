@@ -70,7 +70,9 @@ public class CostCategoryJsonUnmarshaller implements Unmarshaller<CostCategory, 
                 }
                 if (context.testExpression("Rules", targetDepth)) {
                     context.nextToken();
-                    costCategory.setRules(new ListUnmarshaller<CostCategoryRule>(CostCategoryRuleJsonUnmarshaller.getInstance()).unmarshall(context));
+                    costCategory.setRules(new ListUnmarshaller<CostCategoryRule>(CostCategoryRuleJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

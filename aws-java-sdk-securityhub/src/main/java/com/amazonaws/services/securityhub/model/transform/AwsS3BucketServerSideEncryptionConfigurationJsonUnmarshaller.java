@@ -52,7 +52,9 @@ public class AwsS3BucketServerSideEncryptionConfigurationJsonUnmarshaller implem
                 if (context.testExpression("Rules", targetDepth)) {
                     context.nextToken();
                     awsS3BucketServerSideEncryptionConfiguration.setRules(new ListUnmarshaller<AwsS3BucketServerSideEncryptionRule>(
-                            AwsS3BucketServerSideEncryptionRuleJsonUnmarshaller.getInstance()).unmarshall(context));
+                            AwsS3BucketServerSideEncryptionRuleJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

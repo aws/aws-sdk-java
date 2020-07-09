@@ -62,7 +62,9 @@ public class ConfigurationJsonUnmarshaller implements Unmarshaller<Configuration
                 }
                 if (context.testExpression("kafkaVersions", targetDepth)) {
                     context.nextToken();
-                    configuration.setKafkaVersions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    configuration.setKafkaVersions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("latestRevision", targetDepth)) {
                     context.nextToken();

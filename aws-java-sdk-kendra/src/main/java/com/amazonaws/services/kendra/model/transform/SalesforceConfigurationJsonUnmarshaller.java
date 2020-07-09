@@ -59,7 +59,9 @@ public class SalesforceConfigurationJsonUnmarshaller implements Unmarshaller<Sal
                 if (context.testExpression("StandardObjectConfigurations", targetDepth)) {
                     context.nextToken();
                     salesforceConfiguration.setStandardObjectConfigurations(new ListUnmarshaller<SalesforceStandardObjectConfiguration>(
-                            SalesforceStandardObjectConfigurationJsonUnmarshaller.getInstance()).unmarshall(context));
+                            SalesforceStandardObjectConfigurationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("KnowledgeArticleConfiguration", targetDepth)) {
                     context.nextToken();
@@ -82,12 +84,14 @@ public class SalesforceConfigurationJsonUnmarshaller implements Unmarshaller<Sal
                 if (context.testExpression("IncludeAttachmentFilePatterns", targetDepth)) {
                     context.nextToken();
                     salesforceConfiguration.setIncludeAttachmentFilePatterns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ExcludeAttachmentFilePatterns", targetDepth)) {
                     context.nextToken();
                     salesforceConfiguration.setExcludeAttachmentFilePatterns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

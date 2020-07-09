@@ -50,7 +50,9 @@ public class OneDriveUsersJsonUnmarshaller implements Unmarshaller<OneDriveUsers
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("OneDriveUserList", targetDepth)) {
                     context.nextToken();
-                    oneDriveUsers.setOneDriveUserList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    oneDriveUsers.setOneDriveUserList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("OneDriveUserS3Path", targetDepth)) {
                     context.nextToken();

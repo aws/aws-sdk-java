@@ -66,7 +66,9 @@ public class DecisionTaskJsonUnmarshaller implements Unmarshaller<DecisionTask, 
                 }
                 if (context.testExpression("events", targetDepth)) {
                     context.nextToken();
-                    decisionTask.setEvents(new ListUnmarshaller<HistoryEvent>(HistoryEventJsonUnmarshaller.getInstance()).unmarshall(context));
+                    decisionTask.setEvents(new ListUnmarshaller<HistoryEvent>(HistoryEventJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextPageToken", targetDepth)) {
                     context.nextToken();

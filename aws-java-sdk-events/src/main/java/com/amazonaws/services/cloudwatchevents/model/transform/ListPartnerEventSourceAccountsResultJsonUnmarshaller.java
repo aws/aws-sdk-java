@@ -51,7 +51,9 @@ public class ListPartnerEventSourceAccountsResultJsonUnmarshaller implements Unm
                 if (context.testExpression("PartnerEventSourceAccounts", targetDepth)) {
                     context.nextToken();
                     listPartnerEventSourceAccountsResult.setPartnerEventSourceAccounts(new ListUnmarshaller<PartnerEventSourceAccount>(
-                            PartnerEventSourceAccountJsonUnmarshaller.getInstance()).unmarshall(context));
+                            PartnerEventSourceAccountJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

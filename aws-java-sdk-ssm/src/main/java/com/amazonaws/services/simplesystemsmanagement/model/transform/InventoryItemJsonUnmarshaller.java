@@ -68,7 +68,9 @@ public class InventoryItemJsonUnmarshaller implements Unmarshaller<InventoryItem
                 if (context.testExpression("Content", targetDepth)) {
                     context.nextToken();
                     inventoryItem.setContent(new ListUnmarshaller<java.util.Map<String, String>>(new MapUnmarshaller<String, String>(context
-                            .getUnmarshaller(String.class), context.getUnmarshaller(String.class))).unmarshall(context));
+                            .getUnmarshaller(String.class), context.getUnmarshaller(String.class)))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Context", targetDepth)) {
                     context.nextToken();

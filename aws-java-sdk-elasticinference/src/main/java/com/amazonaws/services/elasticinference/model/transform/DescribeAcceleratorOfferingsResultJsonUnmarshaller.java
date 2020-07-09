@@ -51,7 +51,9 @@ public class DescribeAcceleratorOfferingsResultJsonUnmarshaller implements Unmar
                 if (context.testExpression("acceleratorTypeOfferings", targetDepth)) {
                     context.nextToken();
                     describeAcceleratorOfferingsResult.setAcceleratorTypeOfferings(new ListUnmarshaller<AcceleratorTypeOffering>(
-                            AcceleratorTypeOfferingJsonUnmarshaller.getInstance()).unmarshall(context));
+                            AcceleratorTypeOfferingJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -83,7 +83,9 @@ public class ScalingPolicyJsonUnmarshaller implements Unmarshaller<ScalingPolicy
                 }
                 if (context.testExpression("Alarms", targetDepth)) {
                     context.nextToken();
-                    scalingPolicy.setAlarms(new ListUnmarshaller<Alarm>(AlarmJsonUnmarshaller.getInstance()).unmarshall(context));
+                    scalingPolicy.setAlarms(new ListUnmarshaller<Alarm>(AlarmJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();

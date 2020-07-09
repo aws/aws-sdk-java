@@ -51,7 +51,9 @@ public class ListCreateAccountStatusResultJsonUnmarshaller implements Unmarshall
                 if (context.testExpression("CreateAccountStatuses", targetDepth)) {
                     context.nextToken();
                     listCreateAccountStatusResult.setCreateAccountStatuses(new ListUnmarshaller<CreateAccountStatus>(CreateAccountStatusJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

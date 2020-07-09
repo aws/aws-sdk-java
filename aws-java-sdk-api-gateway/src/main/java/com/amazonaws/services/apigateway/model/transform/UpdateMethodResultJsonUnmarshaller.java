@@ -93,7 +93,9 @@ public class UpdateMethodResultJsonUnmarshaller implements Unmarshaller<UpdateMe
                 }
                 if (context.testExpression("authorizationScopes", targetDepth)) {
                     context.nextToken();
-                    updateMethodResult.setAuthorizationScopes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    updateMethodResult.setAuthorizationScopes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

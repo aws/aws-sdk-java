@@ -50,12 +50,15 @@ public class GetMembersResultJsonUnmarshaller implements Unmarshaller<GetMembers
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MemberDetails", targetDepth)) {
                     context.nextToken();
-                    getMembersResult.setMemberDetails(new ListUnmarshaller<MemberDetail>(MemberDetailJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getMembersResult.setMemberDetails(new ListUnmarshaller<MemberDetail>(MemberDetailJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("UnprocessedAccounts", targetDepth)) {
                     context.nextToken();
                     getMembersResult.setUnprocessedAccounts(new ListUnmarshaller<UnprocessedAccount>(UnprocessedAccountJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

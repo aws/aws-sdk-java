@@ -50,8 +50,9 @@ public class ListKafkaVersionsResultJsonUnmarshaller implements Unmarshaller<Lis
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("kafkaVersions", targetDepth)) {
                     context.nextToken();
-                    listKafkaVersionsResult
-                            .setKafkaVersions(new ListUnmarshaller<KafkaVersion>(KafkaVersionJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listKafkaVersionsResult.setKafkaVersions(new ListUnmarshaller<KafkaVersion>(KafkaVersionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

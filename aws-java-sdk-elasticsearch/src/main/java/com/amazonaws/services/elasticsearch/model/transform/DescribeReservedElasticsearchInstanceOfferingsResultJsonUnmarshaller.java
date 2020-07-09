@@ -57,7 +57,9 @@ public class DescribeReservedElasticsearchInstanceOfferingsResultJsonUnmarshalle
                     context.nextToken();
                     describeReservedElasticsearchInstanceOfferingsResult
                             .setReservedElasticsearchInstanceOfferings(new ListUnmarshaller<ReservedElasticsearchInstanceOffering>(
-                                    ReservedElasticsearchInstanceOfferingJsonUnmarshaller.getInstance()).unmarshall(context));
+                                    ReservedElasticsearchInstanceOfferingJsonUnmarshaller.getInstance())
+
+                            .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

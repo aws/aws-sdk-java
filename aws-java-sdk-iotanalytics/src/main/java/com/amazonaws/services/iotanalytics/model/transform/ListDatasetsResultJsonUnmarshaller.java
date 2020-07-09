@@ -51,7 +51,8 @@ public class ListDatasetsResultJsonUnmarshaller implements Unmarshaller<ListData
                 if (context.testExpression("datasetSummaries", targetDepth)) {
                     context.nextToken();
                     listDatasetsResult.setDatasetSummaries(new ListUnmarshaller<DatasetSummary>(DatasetSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

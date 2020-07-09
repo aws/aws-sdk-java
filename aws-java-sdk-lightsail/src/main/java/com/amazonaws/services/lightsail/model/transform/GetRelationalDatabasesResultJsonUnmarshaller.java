@@ -51,7 +51,9 @@ public class GetRelationalDatabasesResultJsonUnmarshaller implements Unmarshalle
                 if (context.testExpression("relationalDatabases", targetDepth)) {
                     context.nextToken();
                     getRelationalDatabasesResult.setRelationalDatabases(new ListUnmarshaller<RelationalDatabase>(RelationalDatabaseJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextPageToken", targetDepth)) {
                     context.nextToken();

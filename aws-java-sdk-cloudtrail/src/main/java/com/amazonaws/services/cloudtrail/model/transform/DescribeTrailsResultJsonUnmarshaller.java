@@ -50,7 +50,9 @@ public class DescribeTrailsResultJsonUnmarshaller implements Unmarshaller<Descri
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("trailList", targetDepth)) {
                     context.nextToken();
-                    describeTrailsResult.setTrailList(new ListUnmarshaller<Trail>(TrailJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeTrailsResult.setTrailList(new ListUnmarshaller<Trail>(TrailJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

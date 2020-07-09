@@ -62,7 +62,9 @@ public class RelationalTableJsonUnmarshaller implements Unmarshaller<RelationalT
                 }
                 if (context.testExpression("InputColumns", targetDepth)) {
                     context.nextToken();
-                    relationalTable.setInputColumns(new ListUnmarshaller<InputColumn>(InputColumnJsonUnmarshaller.getInstance()).unmarshall(context));
+                    relationalTable.setInputColumns(new ListUnmarshaller<InputColumn>(InputColumnJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

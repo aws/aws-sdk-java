@@ -671,6 +671,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "AccessDeniedException",
+      "fullyQualifiedName" : "com.amazonaws.services.signer.exception.AccessDeniedException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -679,6 +680,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.signer.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -710,6 +712,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "BadRequestException",
+      "fullyQualifiedName" : "com.amazonaws.services.signer.exception.BadRequestException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -718,6 +721,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.signer.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -749,6 +753,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.signer.request.CancelSigningProfileRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -817,6 +822,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the signing profile to be canceled.</p>\n@param profileName The name of the signing profile to be canceled.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -887,6 +893,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the signing profile to be canceled.</p>\n@param profileName The name of the signing profile to be canceled.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -902,6 +909,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.signer.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "profileName" ],
@@ -933,6 +941,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.signer.response.CancelSigningProfileResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -941,6 +950,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.signer.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -978,6 +988,7 @@
         "value" : "AWSIoT"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.signer.enum.Category",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -986,6 +997,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.signer.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1020,6 +1032,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.signer.request.DescribeSigningJobRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1088,6 +1101,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the signing job on input.</p>\n@param jobId The ID of the signing job on input.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1158,6 +1172,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the signing job on input.</p>\n@param jobId The ID of the signing job on input.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1173,6 +1188,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.signer.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "jobId" ],
@@ -1204,6 +1220,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.signer.response.DescribeSigningJobResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1265,6 +1282,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the signing job on output.</p>\n@param jobId The ID of the signing job on output.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1333,6 +1351,7 @@
           "variableSetterType" : "Source"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The object that contains the name of your S3 bucket or your raw code.</p>\n@param source The object that contains the name of your S3 bucket or your raw code.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1401,6 +1420,7 @@
           "variableSetterType" : "SigningMaterial"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of your code signing certificate.</p>\n@param signingMaterial The Amazon Resource Name (ARN) of your code signing certificate.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1469,6 +1489,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The microcontroller platform to which your signed code image will be distributed.</p>\n@param platformId The microcontroller platform to which your signed code image will be distributed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1537,6 +1558,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the profile that initiated the signing operation.</p>\n@param profileName The name of the profile that initiated the signing operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1605,6 +1627,7 @@
           "variableSetterType" : "SigningPlatformOverrides"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of any overrides that were applied to the signing operation.</p>\n@param overrides A list of any overrides that were applied to the signing operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1718,6 +1741,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1756,6 +1780,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Map of user-assigned key-value pairs used during signing. These values contain any information that you specified for use in your signing job. </p>\n@param signingParameters Map of user-assigned key-value pairs used during signing. These values contain any information that you specified for use in your signing job.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1824,6 +1849,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Date and time that the signing job was created.</p>\n@param createdAt Date and time that the signing job was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1892,6 +1918,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Date and time that the signing job was completed.</p>\n@param completedAt Date and time that the signing job was completed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1960,6 +1987,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The IAM principal that requested the signing job.</p>\n@param requestedBy The IAM principal that requested the signing job.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2028,6 +2056,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Status of the signing job.</p>\n@param status Status of the signing job.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SigningStatus*/",
@@ -2096,6 +2125,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>String value that contains the status reason.</p>\n@param statusReason String value that contains the status reason.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2164,6 +2194,7 @@
           "variableSetterType" : "SignedObject"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Name of the S3 bucket where the signed code image is saved by code signing.</p>\n@param signedObject Name of the S3 bucket where the signed code image is saved by code signing.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2234,6 +2265,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Date and time that the signing job was completed.</p>\n@param completedAt Date and time that the signing job was completed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2303,6 +2335,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Date and time that the signing job was created.</p>\n@param createdAt Date and time that the signing job was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2372,6 +2405,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the signing job on output.</p>\n@param jobId The ID of the signing job on output.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2441,6 +2475,7 @@
             "variableSetterType" : "SigningPlatformOverrides"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of any overrides that were applied to the signing operation.</p>\n@param overrides A list of any overrides that were applied to the signing operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2510,6 +2545,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The microcontroller platform to which your signed code image will be distributed.</p>\n@param platformId The microcontroller platform to which your signed code image will be distributed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2579,6 +2615,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the profile that initiated the signing operation.</p>\n@param profileName The name of the profile that initiated the signing operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2648,6 +2685,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The IAM principal that requested the signing job.</p>\n@param requestedBy The IAM principal that requested the signing job.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2717,6 +2755,7 @@
             "variableSetterType" : "SignedObject"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Name of the S3 bucket where the signed code image is saved by code signing.</p>\n@param signedObject Name of the S3 bucket where the signed code image is saved by code signing.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2786,6 +2825,7 @@
             "variableSetterType" : "SigningMaterial"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of your code signing certificate.</p>\n@param signingMaterial The Amazon Resource Name (ARN) of your code signing certificate.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2900,6 +2940,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2938,6 +2979,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Map of user-assigned key-value pairs used during signing. These values contain any information that you specified for use in your signing job. </p>\n@param signingParameters Map of user-assigned key-value pairs used during signing. These values contain any information that you specified for use in your signing job.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3007,6 +3049,7 @@
             "variableSetterType" : "Source"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The object that contains the name of your S3 bucket or your raw code.</p>\n@param source The object that contains the name of your S3 bucket or your raw code.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3076,6 +3119,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Status of the signing job.</p>\n@param status Status of the signing job.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SigningStatus*/",
@@ -3145,6 +3189,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>String value that contains the status reason.</p>\n@param statusReason String value that contains the status reason.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3160,6 +3205,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.signer.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3194,6 +3240,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.signer.model.Destination",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3255,6 +3302,7 @@
           "variableSetterType" : "S3Destination"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The <code>S3Destination</code> object.</p>\n@param s3 The <code>S3Destination</code> object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3325,6 +3373,7 @@
             "variableSetterType" : "S3Destination"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The <code>S3Destination</code> object.</p>\n@param s3 The <code>S3Destination</code> object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3340,6 +3389,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.signer.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3380,6 +3430,7 @@
         "value" : "ECDSA"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.signer.enum.EncryptionAlgorithm",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3388,6 +3439,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.signer.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3422,6 +3474,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.signer.model.EncryptionAlgorithmOptions",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3522,6 +3575,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see EncryptionAlgorithm*/",
@@ -3566,6 +3620,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The set of accepted encryption algorithms that are allowed in a code signing job.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAllowedValues(java.util.Collection)} or {@link #withAllowedValues(java.util.Collection)} if you want to override the existing values.</p>\n@param allowedValues The set of accepted encryption algorithms that are allowed in a code signing job.\n@return Returns a reference to this object so that method calls can be chained together.\n@see EncryptionAlgorithm*/",
@@ -3634,6 +3689,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The default encryption algorithm that is used by a code signing job.</p>\n@param defaultValue The default encryption algorithm that is used by a code signing job.\n@return Returns a reference to this object so that method calls can be chained together.\n@see EncryptionAlgorithm*/",
@@ -3743,6 +3799,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see EncryptionAlgorithm*/",
@@ -3787,6 +3844,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The set of accepted encryption algorithms that are allowed in a code signing job.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAllowedValues(java.util.Collection)} or {@link #withAllowedValues(java.util.Collection)} if you want to override the existing values.</p>\n@param allowedValues The set of accepted encryption algorithms that are allowed in a code signing job.\n@return Returns a reference to this object so that method calls can be chained together.\n@see EncryptionAlgorithm*/",
@@ -3856,6 +3914,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The default encryption algorithm that is used by a code signing job.</p>\n@param defaultValue The default encryption algorithm that is used by a code signing job.\n@return Returns a reference to this object so that method calls can be chained together.\n@see EncryptionAlgorithm*/",
@@ -3871,6 +3930,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.signer.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "allowedValues", "defaultValue" ],
@@ -3905,6 +3965,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.signer.request.GetSigningPlatformRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3973,6 +4034,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the target signing platform.</p>\n@param platformId The ID of the target signing platform.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4043,6 +4105,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the target signing platform.</p>\n@param platformId The ID of the target signing platform.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4058,6 +4121,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.signer.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "platformId" ],
@@ -4089,6 +4153,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.signer.response.GetSigningPlatformResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4150,6 +4215,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the target signing platform.</p>\n@param platformId The ID of the target signing platform.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4218,6 +4284,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The display name of the target signing platform.</p>\n@param displayName The display name of the target signing platform.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4286,6 +4353,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of partner entities that use the target signing platform.</p>\n@param partner A list of partner entities that use the target signing platform.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4354,6 +4422,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The validation template that is used by the target signing platform.</p>\n@param target The validation template that is used by the target signing platform.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4422,6 +4491,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The category type of the target signing platform.</p>\n@param category The category type of the target signing platform.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Category*/",
@@ -4490,6 +4560,7 @@
           "variableSetterType" : "SigningConfiguration"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of configurations applied to the target platform at signing.</p>\n@param signingConfiguration A list of configurations applied to the target platform at signing.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4558,6 +4629,7 @@
           "variableSetterType" : "SigningImageFormat"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The format of the target platform's signing image.</p>\n@param signingImageFormat The format of the target platform's signing image.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4626,6 +4698,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum size (in MB) of the payload that can be signed by the target platform.</p>\n@param maxSizeInMB The maximum size (in MB) of the payload that can be signed by the target platform.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4696,6 +4769,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The category type of the target signing platform.</p>\n@param category The category type of the target signing platform.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Category*/",
@@ -4765,6 +4839,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The display name of the target signing platform.</p>\n@param displayName The display name of the target signing platform.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4834,6 +4909,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum size (in MB) of the payload that can be signed by the target platform.</p>\n@param maxSizeInMB The maximum size (in MB) of the payload that can be signed by the target platform.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4903,6 +4979,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of partner entities that use the target signing platform.</p>\n@param partner A list of partner entities that use the target signing platform.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4972,6 +5049,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the target signing platform.</p>\n@param platformId The ID of the target signing platform.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5041,6 +5119,7 @@
             "variableSetterType" : "SigningConfiguration"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of configurations applied to the target platform at signing.</p>\n@param signingConfiguration A list of configurations applied to the target platform at signing.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5110,6 +5189,7 @@
             "variableSetterType" : "SigningImageFormat"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The format of the target platform's signing image.</p>\n@param signingImageFormat The format of the target platform's signing image.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5179,6 +5259,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The validation template that is used by the target signing platform.</p>\n@param target The validation template that is used by the target signing platform.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5194,6 +5275,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.signer.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -5228,6 +5310,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.signer.request.GetSigningProfileRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5296,6 +5379,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the target signing profile.</p>\n@param profileName The name of the target signing profile.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5366,6 +5450,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the target signing profile.</p>\n@param profileName The name of the target signing profile.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5381,6 +5466,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.signer.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "profileName" ],
@@ -5412,6 +5498,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.signer.response.GetSigningProfileResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5473,6 +5560,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the target signing profile.</p>\n@param profileName The name of the target signing profile.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5541,6 +5629,7 @@
           "variableSetterType" : "SigningMaterial"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the certificate that the target profile uses for signing operations.</p>\n@param signingMaterial The ARN of the certificate that the target profile uses for signing operations.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5609,6 +5698,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the platform that is used by the target signing profile.</p>\n@param platformId The ID of the platform that is used by the target signing profile.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5677,6 +5767,7 @@
           "variableSetterType" : "SigningPlatformOverrides"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of overrides applied by the target signing profile for signing operations.</p>\n@param overrides A list of overrides applied by the target signing profile for signing operations.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5790,6 +5881,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5828,6 +5920,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A map of key-value pairs for signing operations that is attached to the target signing profile.</p>\n@param signingParameters A map of key-value pairs for signing operations that is attached to the target signing profile.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5896,6 +5989,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The status of the target signing profile.</p>\n@param status The status of the target signing profile.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SigningProfileStatus*/",
@@ -5964,6 +6058,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) for the signing profile.</p>\n@param arn The Amazon Resource Name (ARN) for the signing profile.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6077,6 +6172,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6115,6 +6211,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of tags associated with the signing profile.</p>\n@param tags A list of tags associated with the signing profile.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6185,6 +6282,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) for the signing profile.</p>\n@param arn The Amazon Resource Name (ARN) for the signing profile.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6254,6 +6352,7 @@
             "variableSetterType" : "SigningPlatformOverrides"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of overrides applied by the target signing profile for signing operations.</p>\n@param overrides A list of overrides applied by the target signing profile for signing operations.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6323,6 +6422,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the platform that is used by the target signing profile.</p>\n@param platformId The ID of the platform that is used by the target signing profile.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6392,6 +6492,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the target signing profile.</p>\n@param profileName The name of the target signing profile.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6461,6 +6562,7 @@
             "variableSetterType" : "SigningMaterial"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the certificate that the target profile uses for signing operations.</p>\n@param signingMaterial The ARN of the certificate that the target profile uses for signing operations.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6575,6 +6677,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6613,6 +6716,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A map of key-value pairs for signing operations that is attached to the target signing profile.</p>\n@param signingParameters A map of key-value pairs for signing operations that is attached to the target signing profile.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6682,6 +6786,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The status of the target signing profile.</p>\n@param status The status of the target signing profile.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SigningProfileStatus*/",
@@ -6796,6 +6901,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6834,6 +6940,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of tags associated with the signing profile.</p>\n@param tags A list of tags associated with the signing profile.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6849,6 +6956,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.signer.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6889,6 +6997,7 @@
         "value" : "SHA256"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.signer.enum.HashAlgorithm",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6897,6 +7006,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.signer.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6931,6 +7041,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.signer.model.HashAlgorithmOptions",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7031,6 +7142,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see HashAlgorithm*/",
@@ -7075,6 +7187,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The set of accepted hash algorithms allowed in a code signing job.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAllowedValues(java.util.Collection)} or {@link #withAllowedValues(java.util.Collection)} if you want to override the existing values.</p>\n@param allowedValues The set of accepted hash algorithms allowed in a code signing job.\n@return Returns a reference to this object so that method calls can be chained together.\n@see HashAlgorithm*/",
@@ -7143,6 +7256,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The default hash algorithm that is used in a code signing job.</p>\n@param defaultValue The default hash algorithm that is used in a code signing job.\n@return Returns a reference to this object so that method calls can be chained together.\n@see HashAlgorithm*/",
@@ -7252,6 +7366,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see HashAlgorithm*/",
@@ -7296,6 +7411,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The set of accepted hash algorithms allowed in a code signing job.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAllowedValues(java.util.Collection)} or {@link #withAllowedValues(java.util.Collection)} if you want to override the existing values.</p>\n@param allowedValues The set of accepted hash algorithms allowed in a code signing job.\n@return Returns a reference to this object so that method calls can be chained together.\n@see HashAlgorithm*/",
@@ -7365,6 +7481,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The default hash algorithm that is used in a code signing job.</p>\n@param defaultValue The default hash algorithm that is used in a code signing job.\n@return Returns a reference to this object so that method calls can be chained together.\n@see HashAlgorithm*/",
@@ -7380,6 +7497,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.signer.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "allowedValues", "defaultValue" ],
@@ -7423,6 +7541,7 @@
         "value" : "JSONDetached"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.signer.enum.ImageFormat",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7431,6 +7550,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.signer.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -7465,6 +7585,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InternalServiceErrorException",
+      "fullyQualifiedName" : "com.amazonaws.services.signer.exception.InternalServiceErrorException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7473,6 +7594,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.signer.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -7504,6 +7626,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.signer.request.ListSigningJobsRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7572,6 +7695,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A status value with which to filter your results.</p>\n@param status A status value with which to filter your results.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SigningStatus*/",
@@ -7640,6 +7764,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of microcontroller platform that you specified for the distribution of your code image.</p>\n@param platformId The ID of microcontroller platform that you specified for the distribution of your code image.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7708,6 +7833,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The IAM principal that requested the signing job.</p>\n@param requestedBy The IAM principal that requested the signing job.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7776,6 +7902,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies the maximum number of items to return in the response. Use this parameter when paginating results. If additional items exist beyond the number you specify, the <code>nextToken</code> element is set in the response. Use the <code>nextToken</code> value in a subsequent request to retrieve additional items. </p>\n@param maxResults Specifies the maximum number of items to return in the response. Use this parameter when paginating results. If additional items exist beyond the number you specify, the <code>nextToken</code> element is set in the response. Use the <code>nextToken</code> value in a subsequent request to retrieve additional items.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7844,6 +7971,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>String for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.</p>\n@param nextToken String for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7914,6 +8042,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies the maximum number of items to return in the response. Use this parameter when paginating results. If additional items exist beyond the number you specify, the <code>nextToken</code> element is set in the response. Use the <code>nextToken</code> value in a subsequent request to retrieve additional items. </p>\n@param maxResults Specifies the maximum number of items to return in the response. Use this parameter when paginating results. If additional items exist beyond the number you specify, the <code>nextToken</code> element is set in the response. Use the <code>nextToken</code> value in a subsequent request to retrieve additional items.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7983,6 +8112,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>String for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.</p>\n@param nextToken String for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8052,6 +8182,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of microcontroller platform that you specified for the distribution of your code image.</p>\n@param platformId The ID of microcontroller platform that you specified for the distribution of your code image.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8121,6 +8252,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The IAM principal that requested the signing job.</p>\n@param requestedBy The IAM principal that requested the signing job.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8190,6 +8322,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A status value with which to filter your results.</p>\n@param status A status value with which to filter your results.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SigningStatus*/",
@@ -8205,6 +8338,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.signer.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -8236,6 +8370,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.signer.response.ListSigningJobsResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8336,6 +8471,7 @@
               "variableSetterType" : "SigningJob"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8380,6 +8516,7 @@
           "variableSetterType" : "java.util.Collection<SigningJob>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of your signing jobs.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setJobs(java.util.Collection)} or {@link #withJobs(java.util.Collection)} if you want to override the existing values.</p>\n@param jobs A list of your signing jobs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8448,6 +8585,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>String for specifying the next set of paginated results.</p>\n@param nextToken String for specifying the next set of paginated results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8557,6 +8695,7 @@
                 "variableSetterType" : "SigningJob"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8601,6 +8740,7 @@
             "variableSetterType" : "java.util.Collection<SigningJob>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of your signing jobs.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setJobs(java.util.Collection)} or {@link #withJobs(java.util.Collection)} if you want to override the existing values.</p>\n@param jobs A list of your signing jobs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8670,6 +8810,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>String for specifying the next set of paginated results.</p>\n@param nextToken String for specifying the next set of paginated results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8685,6 +8826,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.signer.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -8719,6 +8861,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.signer.request.ListSigningPlatformsRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8787,6 +8930,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The category type of a signing platform.</p>\n@param category The category type of a signing platform.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8855,6 +8999,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Any partner entities connected to a signing platform.</p>\n@param partner Any partner entities connected to a signing platform.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8923,6 +9068,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The validation template that is used by the target signing platform.</p>\n@param target The validation template that is used by the target signing platform.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8991,6 +9137,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of results to be returned by this operation.</p>\n@param maxResults The maximum number of results to be returned by this operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9059,6 +9206,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Value for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.</p>\n@param nextToken Value for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9129,6 +9277,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The category type of a signing platform.</p>\n@param category The category type of a signing platform.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9198,6 +9347,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of results to be returned by this operation.</p>\n@param maxResults The maximum number of results to be returned by this operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9267,6 +9417,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Value for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.</p>\n@param nextToken Value for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9336,6 +9487,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Any partner entities connected to a signing platform.</p>\n@param partner Any partner entities connected to a signing platform.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9405,6 +9557,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The validation template that is used by the target signing platform.</p>\n@param target The validation template that is used by the target signing platform.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9420,6 +9573,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.signer.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -9451,6 +9605,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.signer.response.ListSigningPlatformsResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -9551,6 +9706,7 @@
               "variableSetterType" : "SigningPlatform"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9595,6 +9751,7 @@
           "variableSetterType" : "java.util.Collection<SigningPlatform>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of all platforms that match the request parameters.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPlatforms(java.util.Collection)} or {@link #withPlatforms(java.util.Collection)} if you want to override the existing values.</p>\n@param platforms A list of all platforms that match the request parameters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9663,6 +9820,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Value for specifying the next set of paginated results to return.</p>\n@param nextToken Value for specifying the next set of paginated results to return.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9733,6 +9891,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Value for specifying the next set of paginated results to return.</p>\n@param nextToken Value for specifying the next set of paginated results to return.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9841,6 +10000,7 @@
                 "variableSetterType" : "SigningPlatform"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9885,6 +10045,7 @@
             "variableSetterType" : "java.util.Collection<SigningPlatform>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of all platforms that match the request parameters.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPlatforms(java.util.Collection)} or {@link #withPlatforms(java.util.Collection)} if you want to override the existing values.</p>\n@param platforms A list of all platforms that match the request parameters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9900,6 +10061,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.signer.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -9934,6 +10096,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.signer.request.ListSigningProfilesRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -10002,6 +10165,7 @@
           "variableSetterType" : "Boolean"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Designates whether to include profiles with the status of <code>CANCELED</code>.</p>\n@param includeCanceled Designates whether to include profiles with the status of <code>CANCELED</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10070,6 +10234,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of profiles to be returned.</p>\n@param maxResults The maximum number of profiles to be returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10138,6 +10303,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Value for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.</p>\n@param nextToken Value for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10208,6 +10374,7 @@
             "variableSetterType" : "Boolean"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Designates whether to include profiles with the status of <code>CANCELED</code>.</p>\n@param includeCanceled Designates whether to include profiles with the status of <code>CANCELED</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10277,6 +10444,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of profiles to be returned.</p>\n@param maxResults The maximum number of profiles to be returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10346,6 +10514,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Value for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.</p>\n@param nextToken Value for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10361,6 +10530,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.signer.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -10392,6 +10562,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.signer.response.ListSigningProfilesResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -10492,6 +10663,7 @@
               "variableSetterType" : "SigningProfile"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10536,6 +10708,7 @@
           "variableSetterType" : "java.util.Collection<SigningProfile>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of profiles that are available in the AWS account. This includes profiles with the status of <code>CANCELED</code> if the <code>includeCanceled</code> parameter is set to <code>true</code>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setProfiles(java.util.Collection)} or {@link #withProfiles(java.util.Collection)} if you want to override the existing values.</p>\n@param profiles A list of profiles that are available in the AWS account. This includes profiles with the status of <code>CANCELED</code> if the <code>includeCanceled</code> parameter is set to <code>true</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10604,6 +10777,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Value for specifying the next set of paginated results to return.</p>\n@param nextToken Value for specifying the next set of paginated results to return.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10674,6 +10848,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Value for specifying the next set of paginated results to return.</p>\n@param nextToken Value for specifying the next set of paginated results to return.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10782,6 +10957,7 @@
                 "variableSetterType" : "SigningProfile"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10826,6 +11002,7 @@
             "variableSetterType" : "java.util.Collection<SigningProfile>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of profiles that are available in the AWS account. This includes profiles with the status of <code>CANCELED</code> if the <code>includeCanceled</code> parameter is set to <code>true</code>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setProfiles(java.util.Collection)} or {@link #withProfiles(java.util.Collection)} if you want to override the existing values.</p>\n@param profiles A list of profiles that are available in the AWS account. This includes profiles with the status of <code>CANCELED</code> if the <code>includeCanceled</code> parameter is set to <code>true</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10841,6 +11018,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.signer.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -10875,6 +11053,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.signer.request.ListTagsForResourceRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -10943,6 +11122,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) for the signing profile.</p>\n@param resourceArn The Amazon Resource Name (ARN) for the signing profile.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11013,6 +11193,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) for the signing profile.</p>\n@param resourceArn The Amazon Resource Name (ARN) for the signing profile.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11028,6 +11209,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.signer.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "resourceArn" ],
@@ -11059,6 +11241,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.signer.response.ListTagsForResourceResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -11165,6 +11348,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11203,6 +11387,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of tags associated with the signing profile.</p>\n@param tags A list of tags associated with the signing profile.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11318,6 +11503,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11356,6 +11542,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of tags associated with the signing profile.</p>\n@param tags A list of tags associated with the signing profile.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11371,6 +11558,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.signer.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -11405,6 +11593,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "NotFoundException",
+      "fullyQualifiedName" : "com.amazonaws.services.signer.exception.NotFoundException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -11413,6 +11602,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.signer.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -11444,6 +11634,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.signer.request.PutSigningProfileRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -11512,6 +11703,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the signing profile to be created.</p>\n@param profileName The name of the signing profile to be created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11580,6 +11772,7 @@
           "variableSetterType" : "SigningMaterial"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The AWS Certificate Manager certificate that will be used to sign code with the new signing profile.</p>\n@param signingMaterial The AWS Certificate Manager certificate that will be used to sign code with the new signing profile.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11648,6 +11841,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the signing platform to be created.</p>\n@param platformId The ID of the signing platform to be created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11716,6 +11910,7 @@
           "variableSetterType" : "SigningPlatformOverrides"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A subfield of <code>platform</code>. This specifies any different configuration options that you want to apply to the chosen platform (such as a different <code>hash-algorithm</code> or <code>signing-algorithm</code>).</p>\n@param overrides A subfield of <code>platform</code>. This specifies any different configuration options that you want to apply to the chosen platform (such as a different <code>hash-algorithm</code> or <code>signing-algorithm</code>).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11829,6 +12024,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11867,6 +12063,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Map of key-value pairs for signing. These can include any information that you want to use during signing.</p>\n@param signingParameters Map of key-value pairs for signing. These can include any information that you want to use during signing.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11980,6 +12177,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12018,6 +12216,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Tags to be associated with the signing profile that is being created.</p>\n@param tags Tags to be associated with the signing profile that is being created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12088,6 +12287,7 @@
             "variableSetterType" : "SigningPlatformOverrides"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A subfield of <code>platform</code>. This specifies any different configuration options that you want to apply to the chosen platform (such as a different <code>hash-algorithm</code> or <code>signing-algorithm</code>).</p>\n@param overrides A subfield of <code>platform</code>. This specifies any different configuration options that you want to apply to the chosen platform (such as a different <code>hash-algorithm</code> or <code>signing-algorithm</code>).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12157,6 +12357,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the signing platform to be created.</p>\n@param platformId The ID of the signing platform to be created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12226,6 +12427,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the signing profile to be created.</p>\n@param profileName The name of the signing profile to be created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12295,6 +12497,7 @@
             "variableSetterType" : "SigningMaterial"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The AWS Certificate Manager certificate that will be used to sign code with the new signing profile.</p>\n@param signingMaterial The AWS Certificate Manager certificate that will be used to sign code with the new signing profile.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12409,6 +12612,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12447,6 +12651,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Map of key-value pairs for signing. These can include any information that you want to use during signing.</p>\n@param signingParameters Map of key-value pairs for signing. These can include any information that you want to use during signing.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12561,6 +12766,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12599,6 +12805,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Tags to be associated with the signing profile that is being created.</p>\n@param tags Tags to be associated with the signing profile that is being created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12614,6 +12821,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.signer.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "profileName", "signingMaterial", "platformId" ],
@@ -12645,6 +12853,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.signer.response.PutSigningProfileResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -12706,6 +12915,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the signing profile created.</p>\n@param arn The Amazon Resource Name (ARN) of the signing profile created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12776,6 +12986,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the signing profile created.</p>\n@param arn The Amazon Resource Name (ARN) of the signing profile created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12791,6 +13002,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.signer.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -12825,6 +13037,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ResourceNotFoundException",
+      "fullyQualifiedName" : "com.amazonaws.services.signer.exception.ResourceNotFoundException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -12833,6 +13046,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.signer.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -12864,6 +13078,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.signer.model.S3Destination",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -12925,6 +13140,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Name of the S3 bucket.</p>\n@param bucketName Name of the S3 bucket.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12993,6 +13209,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An Amazon S3 prefix that you can use to limit responses to those that begin with the specified prefix.</p>\n@param prefix An Amazon S3 prefix that you can use to limit responses to those that begin with the specified prefix.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13063,6 +13280,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Name of the S3 bucket.</p>\n@param bucketName Name of the S3 bucket.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13132,6 +13350,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An Amazon S3 prefix that you can use to limit responses to those that begin with the specified prefix.</p>\n@param prefix An Amazon S3 prefix that you can use to limit responses to those that begin with the specified prefix.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13147,6 +13366,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.signer.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -13181,6 +13401,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.signer.model.S3SignedObject",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -13242,6 +13463,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Name of the S3 bucket.</p>\n@param bucketName Name of the S3 bucket.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13310,6 +13532,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Key name that uniquely identifies a signed code image in your bucket.</p>\n@param key Key name that uniquely identifies a signed code image in your bucket.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13380,6 +13603,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Name of the S3 bucket.</p>\n@param bucketName Name of the S3 bucket.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13449,6 +13673,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Key name that uniquely identifies a signed code image in your bucket.</p>\n@param key Key name that uniquely identifies a signed code image in your bucket.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13464,6 +13689,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.signer.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -13498,6 +13724,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.signer.model.S3Source",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -13559,6 +13786,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Name of the S3 bucket.</p>\n@param bucketName Name of the S3 bucket.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13627,6 +13855,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Key name of the bucket object that contains your unsigned code.</p>\n@param key Key name of the bucket object that contains your unsigned code.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13695,6 +13924,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Version of your source image in your version enabled S3 bucket.</p>\n@param version Version of your source image in your version enabled S3 bucket.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13765,6 +13995,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Name of the S3 bucket.</p>\n@param bucketName Name of the S3 bucket.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13834,6 +14065,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Key name of the bucket object that contains your unsigned code.</p>\n@param key Key name of the bucket object that contains your unsigned code.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13903,6 +14135,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Version of your source image in your version enabled S3 bucket.</p>\n@param version Version of your source image in your version enabled S3 bucket.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13918,6 +14151,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.signer.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "bucketName", "key", "version" ],
@@ -13952,6 +14186,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.signer.model.SignedObject",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -14013,6 +14248,7 @@
           "variableSetterType" : "S3SignedObject"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The <code>S3SignedObject</code>.</p>\n@param s3 The <code>S3SignedObject</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14083,6 +14319,7 @@
             "variableSetterType" : "S3SignedObject"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The <code>S3SignedObject</code>.</p>\n@param s3 The <code>S3SignedObject</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14098,6 +14335,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.signer.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -14132,6 +14370,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.signer.model.SigningConfiguration",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -14193,6 +14432,7 @@
           "variableSetterType" : "EncryptionAlgorithmOptions"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The encryption algorithm options that are available for a code signing job.</p>\n@param encryptionAlgorithmOptions The encryption algorithm options that are available for a code signing job.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14261,6 +14501,7 @@
           "variableSetterType" : "HashAlgorithmOptions"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The hash algorithm options that are available for a code signing job.</p>\n@param hashAlgorithmOptions The hash algorithm options that are available for a code signing job.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14331,6 +14572,7 @@
             "variableSetterType" : "EncryptionAlgorithmOptions"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The encryption algorithm options that are available for a code signing job.</p>\n@param encryptionAlgorithmOptions The encryption algorithm options that are available for a code signing job.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14400,6 +14642,7 @@
             "variableSetterType" : "HashAlgorithmOptions"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The hash algorithm options that are available for a code signing job.</p>\n@param hashAlgorithmOptions The hash algorithm options that are available for a code signing job.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14415,6 +14658,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.signer.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "encryptionAlgorithmOptions", "hashAlgorithmOptions" ],
@@ -14449,6 +14693,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.signer.model.SigningConfigurationOverrides",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -14510,6 +14755,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A specified override of the default encryption algorithm that is used in a code signing job.</p>\n@param encryptionAlgorithm A specified override of the default encryption algorithm that is used in a code signing job.\n@return Returns a reference to this object so that method calls can be chained together.\n@see EncryptionAlgorithm*/",
@@ -14578,6 +14824,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A specified override of the default hash algorithm that is used in a code signing job.</p>\n@param hashAlgorithm A specified override of the default hash algorithm that is used in a code signing job.\n@return Returns a reference to this object so that method calls can be chained together.\n@see HashAlgorithm*/",
@@ -14648,6 +14895,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A specified override of the default encryption algorithm that is used in a code signing job.</p>\n@param encryptionAlgorithm A specified override of the default encryption algorithm that is used in a code signing job.\n@return Returns a reference to this object so that method calls can be chained together.\n@see EncryptionAlgorithm*/",
@@ -14717,6 +14965,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A specified override of the default hash algorithm that is used in a code signing job.</p>\n@param hashAlgorithm A specified override of the default hash algorithm that is used in a code signing job.\n@return Returns a reference to this object so that method calls can be chained together.\n@see HashAlgorithm*/",
@@ -14732,6 +14981,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.signer.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -14766,6 +15016,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.signer.model.SigningImageFormat",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -14866,6 +15117,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see ImageFormat*/",
@@ -14910,6 +15162,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The supported formats of a code signing image.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSupportedFormats(java.util.Collection)} or {@link #withSupportedFormats(java.util.Collection)} if you want to override the existing values.</p>\n@param supportedFormats The supported formats of a code signing image.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ImageFormat*/",
@@ -14978,6 +15231,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The default format of a code signing image.</p>\n@param defaultFormat The default format of a code signing image.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ImageFormat*/",
@@ -15048,6 +15302,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The default format of a code signing image.</p>\n@param defaultFormat The default format of a code signing image.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ImageFormat*/",
@@ -15156,6 +15411,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see ImageFormat*/",
@@ -15200,6 +15456,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The supported formats of a code signing image.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSupportedFormats(java.util.Collection)} or {@link #withSupportedFormats(java.util.Collection)} if you want to override the existing values.</p>\n@param supportedFormats The supported formats of a code signing image.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ImageFormat*/",
@@ -15215,6 +15472,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.signer.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "supportedFormats", "defaultFormat" ],
@@ -15249,6 +15507,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.signer.model.SigningJob",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -15310,6 +15569,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the signing job.</p>\n@param jobId The ID of the signing job.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15378,6 +15638,7 @@
           "variableSetterType" : "Source"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A <code>Source</code> that contains information about a signing job's code image source.</p>\n@param source A <code>Source</code> that contains information about a signing job's code image source.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15446,6 +15707,7 @@
           "variableSetterType" : "SignedObject"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A <code>SignedObject</code> structure that contains information about a signing job's signed code image.</p>\n@param signedObject A <code>SignedObject</code> structure that contains information about a signing job's signed code image.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15514,6 +15776,7 @@
           "variableSetterType" : "SigningMaterial"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A <code>SigningMaterial</code> object that contains the Amazon Resource Name (ARN) of the certificate used for the signing job.</p>\n@param signingMaterial A <code>SigningMaterial</code> object that contains the Amazon Resource Name (ARN) of the certificate used for the signing job.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15582,6 +15845,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date and time that the signing job was created.</p>\n@param createdAt The date and time that the signing job was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15650,6 +15914,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The status of the signing job.</p>\n@param status The status of the signing job.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SigningStatus*/",
@@ -15720,6 +15985,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date and time that the signing job was created.</p>\n@param createdAt The date and time that the signing job was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15789,6 +16055,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the signing job.</p>\n@param jobId The ID of the signing job.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15858,6 +16125,7 @@
             "variableSetterType" : "SignedObject"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A <code>SignedObject</code> structure that contains information about a signing job's signed code image.</p>\n@param signedObject A <code>SignedObject</code> structure that contains information about a signing job's signed code image.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15927,6 +16195,7 @@
             "variableSetterType" : "SigningMaterial"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A <code>SigningMaterial</code> object that contains the Amazon Resource Name (ARN) of the certificate used for the signing job.</p>\n@param signingMaterial A <code>SigningMaterial</code> object that contains the Amazon Resource Name (ARN) of the certificate used for the signing job.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15996,6 +16265,7 @@
             "variableSetterType" : "Source"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A <code>Source</code> that contains information about a signing job's code image source.</p>\n@param source A <code>Source</code> that contains information about a signing job's code image source.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16065,6 +16335,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The status of the signing job.</p>\n@param status The status of the signing job.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SigningStatus*/",
@@ -16080,6 +16351,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.signer.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -16114,6 +16386,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.signer.model.SigningMaterial",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -16175,6 +16448,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the certificates that is used to sign your code.</p>\n@param certificateArn The Amazon Resource Name (ARN) of the certificates that is used to sign your code.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16245,6 +16519,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the certificates that is used to sign your code.</p>\n@param certificateArn The Amazon Resource Name (ARN) of the certificates that is used to sign your code.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16260,6 +16535,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.signer.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "certificateArn" ],
@@ -16294,6 +16570,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.signer.model.SigningPlatform",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -16355,6 +16632,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of a code signing; platform.</p>\n@param platformId The ID of a code signing; platform.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16423,6 +16701,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The display name of a code signing platform.</p>\n@param displayName The display name of a code signing platform.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16491,6 +16770,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Any partner entities linked to a code signing platform.</p>\n@param partner Any partner entities linked to a code signing platform.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16559,6 +16839,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The types of targets that can be signed by a code signing platform.</p>\n@param target The types of targets that can be signed by a code signing platform.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16627,6 +16908,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The category of a code signing platform.</p>\n@param category The category of a code signing platform.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Category*/",
@@ -16695,6 +16977,7 @@
           "variableSetterType" : "SigningConfiguration"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The configuration of a code signing platform. This includes the designated hash algorithm and encryption algorithm of a signing platform.</p>\n@param signingConfiguration The configuration of a code signing platform. This includes the designated hash algorithm and encryption algorithm of a signing platform.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16763,6 +17046,7 @@
           "variableSetterType" : "SigningImageFormat"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param signingImageFormat \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16831,6 +17115,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum size (in MB) of code that can be signed by a code signing platform.</p>\n@param maxSizeInMB The maximum size (in MB) of code that can be signed by a code signing platform.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16901,6 +17186,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The category of a code signing platform.</p>\n@param category The category of a code signing platform.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Category*/",
@@ -16970,6 +17256,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The display name of a code signing platform.</p>\n@param displayName The display name of a code signing platform.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17039,6 +17326,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum size (in MB) of code that can be signed by a code signing platform.</p>\n@param maxSizeInMB The maximum size (in MB) of code that can be signed by a code signing platform.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17108,6 +17396,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Any partner entities linked to a code signing platform.</p>\n@param partner Any partner entities linked to a code signing platform.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17177,6 +17466,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of a code signing; platform.</p>\n@param platformId The ID of a code signing; platform.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17246,6 +17536,7 @@
             "variableSetterType" : "SigningConfiguration"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The configuration of a code signing platform. This includes the designated hash algorithm and encryption algorithm of a signing platform.</p>\n@param signingConfiguration The configuration of a code signing platform. This includes the designated hash algorithm and encryption algorithm of a signing platform.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17315,6 +17606,7 @@
             "variableSetterType" : "SigningImageFormat"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param signingImageFormat \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17384,6 +17676,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The types of targets that can be signed by a code signing platform.</p>\n@param target The types of targets that can be signed by a code signing platform.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17399,6 +17692,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.signer.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -17433,6 +17727,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.signer.model.SigningPlatformOverrides",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -17494,6 +17789,7 @@
           "variableSetterType" : "SigningConfigurationOverrides"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A signing configuration that overrides the default encryption or hash algorithm of a signing job.</p>\n@param signingConfiguration A signing configuration that overrides the default encryption or hash algorithm of a signing job.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17562,6 +17858,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A signed image is a JSON object. When overriding the default signing platform configuration, a customer can select either of two signing formats, <code>JSONEmbedded</code> or <code>JSONDetached</code>. (A third format value, <code>JSON</code>, is reserved for future use.) With <code>JSONEmbedded</code>, the signing image has the payload embedded in it. With <code>JSONDetached</code>, the payload is not be embedded in the signing image.</p>\n@param signingImageFormat A signed image is a JSON object. When overriding the default signing platform configuration, a customer can select either of two signing formats, <code>JSONEmbedded</code> or <code>JSONDetached</code>. (A third format value, <code>JSON</code>, is reserved for future use.) With <code>JSONEmbedded</code>, the signing image has the payload embedded in it. With <code>JSONDetached</code>, the payload is not be embedded in the signing image.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ImageFormat*/",
@@ -17632,6 +17929,7 @@
             "variableSetterType" : "SigningConfigurationOverrides"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A signing configuration that overrides the default encryption or hash algorithm of a signing job.</p>\n@param signingConfiguration A signing configuration that overrides the default encryption or hash algorithm of a signing job.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17701,6 +17999,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A signed image is a JSON object. When overriding the default signing platform configuration, a customer can select either of two signing formats, <code>JSONEmbedded</code> or <code>JSONDetached</code>. (A third format value, <code>JSON</code>, is reserved for future use.) With <code>JSONEmbedded</code>, the signing image has the payload embedded in it. With <code>JSONDetached</code>, the payload is not be embedded in the signing image.</p>\n@param signingImageFormat A signed image is a JSON object. When overriding the default signing platform configuration, a customer can select either of two signing formats, <code>JSONEmbedded</code> or <code>JSONDetached</code>. (A third format value, <code>JSON</code>, is reserved for future use.) With <code>JSONEmbedded</code>, the signing image has the payload embedded in it. With <code>JSONDetached</code>, the payload is not be embedded in the signing image.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ImageFormat*/",
@@ -17716,6 +18015,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.signer.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -17750,6 +18050,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.signer.model.SigningProfile",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -17811,6 +18112,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the signing profile.</p>\n@param profileName The name of the signing profile.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17879,6 +18181,7 @@
           "variableSetterType" : "SigningMaterial"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ACM certificate that is available for use by a signing profile.</p>\n@param signingMaterial The ACM certificate that is available for use by a signing profile.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17947,6 +18250,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of a platform that is available for use by a signing profile.</p>\n@param platformId The ID of a platform that is available for use by a signing profile.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18060,6 +18364,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18098,6 +18403,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The parameters that are available for use by a code signing user.</p>\n@param signingParameters The parameters that are available for use by a code signing user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18166,6 +18472,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The status of a code signing profile.</p>\n@param status The status of a code signing profile.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SigningProfileStatus*/",
@@ -18234,6 +18541,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) for the signing profile.</p>\n@param arn The Amazon Resource Name (ARN) for the signing profile.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18347,6 +18655,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18385,6 +18694,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of tags associated with the signing profile.</p>\n@param tags A list of tags associated with the signing profile.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18455,6 +18765,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) for the signing profile.</p>\n@param arn The Amazon Resource Name (ARN) for the signing profile.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18524,6 +18835,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of a platform that is available for use by a signing profile.</p>\n@param platformId The ID of a platform that is available for use by a signing profile.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18593,6 +18905,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the signing profile.</p>\n@param profileName The name of the signing profile.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18662,6 +18975,7 @@
             "variableSetterType" : "SigningMaterial"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ACM certificate that is available for use by a signing profile.</p>\n@param signingMaterial The ACM certificate that is available for use by a signing profile.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18776,6 +19090,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18814,6 +19129,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The parameters that are available for use by a code signing user.</p>\n@param signingParameters The parameters that are available for use by a code signing user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18883,6 +19199,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The status of a code signing profile.</p>\n@param status The status of a code signing profile.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SigningProfileStatus*/",
@@ -18997,6 +19314,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19035,6 +19353,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of tags associated with the signing profile.</p>\n@param tags A list of tags associated with the signing profile.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19050,6 +19369,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.signer.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -19090,6 +19410,7 @@
         "value" : "Canceled"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.signer.enum.SigningProfileStatus",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -19098,6 +19419,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.signer.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -19141,6 +19463,7 @@
         "value" : "Succeeded"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.signer.enum.SigningStatus",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -19149,6 +19472,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.signer.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -19183,6 +19507,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.signer.model.Source",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -19244,6 +19569,7 @@
           "variableSetterType" : "S3Source"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The <code>S3Source</code> object.</p>\n@param s3 The <code>S3Source</code> object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19314,6 +19640,7 @@
             "variableSetterType" : "S3Source"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The <code>S3Source</code> object.</p>\n@param s3 The <code>S3Source</code> object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19329,6 +19656,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.signer.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -19363,6 +19691,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.signer.request.StartSigningJobRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -19431,6 +19760,7 @@
           "variableSetterType" : "Source"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The S3 bucket that contains the object to sign or a BLOB that contains your raw code.</p>\n@param source The S3 bucket that contains the object to sign or a BLOB that contains your raw code.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19499,6 +19829,7 @@
           "variableSetterType" : "Destination"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The S3 bucket in which to save your signed object. The destination contains the name of your bucket and an optional prefix.</p>\n@param destination The S3 bucket in which to save your signed object. The destination contains the name of your bucket and an optional prefix.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19567,6 +19898,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the signing profile.</p>\n@param profileName The name of the signing profile.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19635,6 +19967,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>String that identifies the signing request. All calls after the first that use this token return the same response as the first call.</p>\n@param clientRequestToken String that identifies the signing request. All calls after the first that use this token return the same response as the first call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19705,6 +20038,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>String that identifies the signing request. All calls after the first that use this token return the same response as the first call.</p>\n@param clientRequestToken String that identifies the signing request. All calls after the first that use this token return the same response as the first call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19774,6 +20108,7 @@
             "variableSetterType" : "Destination"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The S3 bucket in which to save your signed object. The destination contains the name of your bucket and an optional prefix.</p>\n@param destination The S3 bucket in which to save your signed object. The destination contains the name of your bucket and an optional prefix.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19843,6 +20178,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the signing profile.</p>\n@param profileName The name of the signing profile.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19912,6 +20248,7 @@
             "variableSetterType" : "Source"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The S3 bucket that contains the object to sign or a BLOB that contains your raw code.</p>\n@param source The S3 bucket that contains the object to sign or a BLOB that contains your raw code.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19927,6 +20264,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.signer.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "source", "destination", "clientRequestToken" ],
@@ -19958,6 +20296,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.signer.response.StartSigningJobResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -20019,6 +20358,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of your signing job.</p>\n@param jobId The ID of your signing job.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20089,6 +20429,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of your signing job.</p>\n@param jobId The ID of your signing job.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20104,6 +20445,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.signer.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -20138,6 +20480,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.signer.request.TagResourceRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -20206,6 +20549,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) for the signing profile.</p>\n@param resourceArn The Amazon Resource Name (ARN) for the signing profile.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20319,6 +20663,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20357,6 +20702,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>One or more tags to be associated with the signing profile.</p>\n@param tags One or more tags to be associated with the signing profile.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20427,6 +20773,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) for the signing profile.</p>\n@param resourceArn The Amazon Resource Name (ARN) for the signing profile.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20541,6 +20888,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20579,6 +20927,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>One or more tags to be associated with the signing profile.</p>\n@param tags One or more tags to be associated with the signing profile.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20594,6 +20943,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.signer.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "resourceArn", "tags" ],
@@ -20625,6 +20975,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.signer.response.TagResourceResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -20633,6 +20984,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.signer.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -20667,6 +21019,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ThrottlingException",
+      "fullyQualifiedName" : "com.amazonaws.services.signer.exception.ThrottlingException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -20675,6 +21028,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.signer.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -20706,6 +21060,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.signer.request.UntagResourceRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -20774,6 +21129,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) for the signing profile.</p>\n@param resourceArn The Amazon Resource Name (ARN) for the signing profile.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20881,6 +21237,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20925,6 +21282,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of tag keys to be removed from the signing profile.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagKeys(java.util.Collection)} or {@link #withTagKeys(java.util.Collection)} if you want to override the existing values.</p>\n@param tagKeys A list of tag keys to be removed from the signing profile.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20995,6 +21353,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) for the signing profile.</p>\n@param resourceArn The Amazon Resource Name (ARN) for the signing profile.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -21103,6 +21462,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -21147,6 +21507,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of tag keys to be removed from the signing profile.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagKeys(java.util.Collection)} or {@link #withTagKeys(java.util.Collection)} if you want to override the existing values.</p>\n@param tagKeys A list of tag keys to be removed from the signing profile.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -21162,6 +21523,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.signer.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "resourceArn", "tagKeys" ],
@@ -21193,6 +21555,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.signer.response.UntagResourceResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -21201,6 +21564,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.signer.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -21235,6 +21599,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ValidationException",
+      "fullyQualifiedName" : "com.amazonaws.services.signer.exception.ValidationException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -21243,6 +21608,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.signer.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,

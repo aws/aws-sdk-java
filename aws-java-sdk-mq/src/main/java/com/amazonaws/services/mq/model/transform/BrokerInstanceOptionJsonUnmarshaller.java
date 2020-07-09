@@ -51,7 +51,8 @@ public class BrokerInstanceOptionJsonUnmarshaller implements Unmarshaller<Broker
                 if (context.testExpression("availabilityZones", targetDepth)) {
                     context.nextToken();
                     brokerInstanceOption.setAvailabilityZones(new ListUnmarshaller<AvailabilityZone>(AvailabilityZoneJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("engineType", targetDepth)) {
                     context.nextToken();
@@ -67,11 +68,15 @@ public class BrokerInstanceOptionJsonUnmarshaller implements Unmarshaller<Broker
                 }
                 if (context.testExpression("supportedDeploymentModes", targetDepth)) {
                     context.nextToken();
-                    brokerInstanceOption.setSupportedDeploymentModes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    brokerInstanceOption.setSupportedDeploymentModes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("supportedEngineVersions", targetDepth)) {
                     context.nextToken();
-                    brokerInstanceOption.setSupportedEngineVersions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    brokerInstanceOption.setSupportedEngineVersions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

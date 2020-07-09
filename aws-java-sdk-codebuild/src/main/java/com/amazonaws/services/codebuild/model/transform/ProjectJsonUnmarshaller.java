@@ -66,7 +66,9 @@ public class ProjectJsonUnmarshaller implements Unmarshaller<Project, JsonUnmars
                 }
                 if (context.testExpression("secondarySources", targetDepth)) {
                     context.nextToken();
-                    project.setSecondarySources(new ListUnmarshaller<ProjectSource>(ProjectSourceJsonUnmarshaller.getInstance()).unmarshall(context));
+                    project.setSecondarySources(new ListUnmarshaller<ProjectSource>(ProjectSourceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("sourceVersion", targetDepth)) {
                     context.nextToken();
@@ -75,7 +77,8 @@ public class ProjectJsonUnmarshaller implements Unmarshaller<Project, JsonUnmars
                 if (context.testExpression("secondarySourceVersions", targetDepth)) {
                     context.nextToken();
                     project.setSecondarySourceVersions(new ListUnmarshaller<ProjectSourceVersion>(ProjectSourceVersionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("artifacts", targetDepth)) {
                     context.nextToken();
@@ -83,7 +86,9 @@ public class ProjectJsonUnmarshaller implements Unmarshaller<Project, JsonUnmars
                 }
                 if (context.testExpression("secondaryArtifacts", targetDepth)) {
                     context.nextToken();
-                    project.setSecondaryArtifacts(new ListUnmarshaller<ProjectArtifacts>(ProjectArtifactsJsonUnmarshaller.getInstance()).unmarshall(context));
+                    project.setSecondaryArtifacts(new ListUnmarshaller<ProjectArtifacts>(ProjectArtifactsJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("cache", targetDepth)) {
                     context.nextToken();
@@ -111,7 +116,9 @@ public class ProjectJsonUnmarshaller implements Unmarshaller<Project, JsonUnmars
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
-                    project.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    project.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("created", targetDepth)) {
                     context.nextToken();
@@ -140,7 +147,8 @@ public class ProjectJsonUnmarshaller implements Unmarshaller<Project, JsonUnmars
                 if (context.testExpression("fileSystemLocations", targetDepth)) {
                     context.nextToken();
                     project.setFileSystemLocations(new ListUnmarshaller<ProjectFileSystemLocation>(ProjectFileSystemLocationJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

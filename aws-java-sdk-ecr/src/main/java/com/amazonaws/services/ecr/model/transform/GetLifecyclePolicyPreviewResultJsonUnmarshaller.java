@@ -71,7 +71,9 @@ public class GetLifecyclePolicyPreviewResultJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("previewResults", targetDepth)) {
                     context.nextToken();
                     getLifecyclePolicyPreviewResult.setPreviewResults(new ListUnmarshaller<LifecyclePolicyPreviewResult>(
-                            LifecyclePolicyPreviewResultJsonUnmarshaller.getInstance()).unmarshall(context));
+                            LifecyclePolicyPreviewResultJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("summary", targetDepth)) {
                     context.nextToken();

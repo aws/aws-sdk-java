@@ -54,7 +54,9 @@ public class SavingsPlanFilterJsonUnmarshaller implements Unmarshaller<SavingsPl
                 }
                 if (context.testExpression("values", targetDepth)) {
                     context.nextToken();
-                    savingsPlanFilter.setValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    savingsPlanFilter.setValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

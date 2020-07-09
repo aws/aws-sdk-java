@@ -51,12 +51,15 @@ public class TestRepositoryTriggersResultJsonUnmarshaller implements Unmarshalle
                 if (context.testExpression("successfulExecutions", targetDepth)) {
                     context.nextToken();
                     testRepositoryTriggersResult.setSuccessfulExecutions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("failedExecutions", targetDepth)) {
                     context.nextToken();
                     testRepositoryTriggersResult.setFailedExecutions(new ListUnmarshaller<RepositoryTriggerExecutionFailure>(
-                            RepositoryTriggerExecutionFailureJsonUnmarshaller.getInstance()).unmarshall(context));
+                            RepositoryTriggerExecutionFailureJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

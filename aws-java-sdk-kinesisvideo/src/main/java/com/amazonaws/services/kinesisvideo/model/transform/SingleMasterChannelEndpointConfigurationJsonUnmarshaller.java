@@ -52,7 +52,8 @@ public class SingleMasterChannelEndpointConfigurationJsonUnmarshaller implements
                 if (context.testExpression("Protocols", targetDepth)) {
                     context.nextToken();
                     singleMasterChannelEndpointConfiguration.setProtocols(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Role", targetDepth)) {
                     context.nextToken();

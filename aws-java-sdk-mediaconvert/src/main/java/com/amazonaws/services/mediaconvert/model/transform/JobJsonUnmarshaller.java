@@ -82,7 +82,9 @@ public class JobJsonUnmarshaller implements Unmarshaller<Job, JsonUnmarshallerCo
                 }
                 if (context.testExpression("hopDestinations", targetDepth)) {
                     context.nextToken();
-                    job.setHopDestinations(new ListUnmarshaller<HopDestination>(HopDestinationJsonUnmarshaller.getInstance()).unmarshall(context));
+                    job.setHopDestinations(new ListUnmarshaller<HopDestination>(HopDestinationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
@@ -102,7 +104,9 @@ public class JobJsonUnmarshaller implements Unmarshaller<Job, JsonUnmarshallerCo
                 }
                 if (context.testExpression("outputGroupDetails", targetDepth)) {
                     context.nextToken();
-                    job.setOutputGroupDetails(new ListUnmarshaller<OutputGroupDetail>(OutputGroupDetailJsonUnmarshaller.getInstance()).unmarshall(context));
+                    job.setOutputGroupDetails(new ListUnmarshaller<OutputGroupDetail>(OutputGroupDetailJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("priority", targetDepth)) {
                     context.nextToken();
@@ -114,7 +118,9 @@ public class JobJsonUnmarshaller implements Unmarshaller<Job, JsonUnmarshallerCo
                 }
                 if (context.testExpression("queueTransitions", targetDepth)) {
                     context.nextToken();
-                    job.setQueueTransitions(new ListUnmarshaller<QueueTransition>(QueueTransitionJsonUnmarshaller.getInstance()).unmarshall(context));
+                    job.setQueueTransitions(new ListUnmarshaller<QueueTransition>(QueueTransitionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("retryCount", targetDepth)) {
                     context.nextToken();

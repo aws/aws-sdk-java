@@ -78,7 +78,9 @@ public class GrantListEntryJsonUnmarshaller implements Unmarshaller<GrantListEnt
                 }
                 if (context.testExpression("Operations", targetDepth)) {
                     context.nextToken();
-                    grantListEntry.setOperations(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    grantListEntry.setOperations(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Constraints", targetDepth)) {
                     context.nextToken();

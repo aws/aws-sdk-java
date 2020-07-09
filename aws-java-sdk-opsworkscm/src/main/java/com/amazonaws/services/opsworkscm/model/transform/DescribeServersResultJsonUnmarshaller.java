@@ -50,7 +50,9 @@ public class DescribeServersResultJsonUnmarshaller implements Unmarshaller<Descr
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Servers", targetDepth)) {
                     context.nextToken();
-                    describeServersResult.setServers(new ListUnmarshaller<Server>(ServerJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeServersResult.setServers(new ListUnmarshaller<Server>(ServerJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

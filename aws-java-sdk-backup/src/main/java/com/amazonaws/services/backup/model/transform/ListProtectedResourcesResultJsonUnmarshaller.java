@@ -51,7 +51,8 @@ public class ListProtectedResourcesResultJsonUnmarshaller implements Unmarshalle
                 if (context.testExpression("Results", targetDepth)) {
                     context.nextToken();
                     listProtectedResourcesResult.setResults(new ListUnmarshaller<ProtectedResource>(ProtectedResourceJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

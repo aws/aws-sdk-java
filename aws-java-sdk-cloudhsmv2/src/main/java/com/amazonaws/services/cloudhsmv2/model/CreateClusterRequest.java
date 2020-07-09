@@ -57,7 +57,11 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private String sourceBackupId;
-
+    /**
+     * <p>
+     * Tags to apply to the CloudHSM cluster during creation.
+     * </p>
+     */
     private java.util.List<Tag> tagList;
 
     /**
@@ -317,7 +321,11 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * @return
+     * <p>
+     * Tags to apply to the CloudHSM cluster during creation.
+     * </p>
+     * 
+     * @return Tags to apply to the CloudHSM cluster during creation.
      */
 
     public java.util.List<Tag> getTagList() {
@@ -325,7 +333,12 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * Tags to apply to the CloudHSM cluster during creation.
+     * </p>
+     * 
      * @param tagList
+     *        Tags to apply to the CloudHSM cluster during creation.
      */
 
     public void setTagList(java.util.Collection<Tag> tagList) {
@@ -339,12 +352,16 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
+     * Tags to apply to the CloudHSM cluster during creation.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override
      * the existing values.
      * </p>
      * 
      * @param tagList
+     *        Tags to apply to the CloudHSM cluster during creation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -359,7 +376,12 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * Tags to apply to the CloudHSM cluster during creation.
+     * </p>
+     * 
      * @param tagList
+     *        Tags to apply to the CloudHSM cluster during creation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -51,7 +51,9 @@ public class DescribeEnvironmentMembershipsResultJsonUnmarshaller implements Unm
                 if (context.testExpression("memberships", targetDepth)) {
                     context.nextToken();
                     describeEnvironmentMembershipsResult
-                            .setMemberships(new ListUnmarshaller<EnvironmentMember>(EnvironmentMemberJsonUnmarshaller.getInstance()).unmarshall(context));
+                            .setMemberships(new ListUnmarshaller<EnvironmentMember>(EnvironmentMemberJsonUnmarshaller.getInstance())
+
+                            .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

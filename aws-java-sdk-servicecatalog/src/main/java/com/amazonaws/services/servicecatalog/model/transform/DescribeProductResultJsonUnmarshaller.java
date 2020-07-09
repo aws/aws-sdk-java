@@ -55,15 +55,21 @@ public class DescribeProductResultJsonUnmarshaller implements Unmarshaller<Descr
                 if (context.testExpression("ProvisioningArtifacts", targetDepth)) {
                     context.nextToken();
                     describeProductResult.setProvisioningArtifacts(new ListUnmarshaller<ProvisioningArtifact>(ProvisioningArtifactJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Budgets", targetDepth)) {
                     context.nextToken();
-                    describeProductResult.setBudgets(new ListUnmarshaller<BudgetDetail>(BudgetDetailJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeProductResult.setBudgets(new ListUnmarshaller<BudgetDetail>(BudgetDetailJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("LaunchPaths", targetDepth)) {
                     context.nextToken();
-                    describeProductResult.setLaunchPaths(new ListUnmarshaller<LaunchPath>(LaunchPathJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeProductResult.setLaunchPaths(new ListUnmarshaller<LaunchPath>(LaunchPathJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

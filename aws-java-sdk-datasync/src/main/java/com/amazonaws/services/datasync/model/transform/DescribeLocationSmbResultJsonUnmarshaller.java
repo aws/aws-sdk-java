@@ -58,7 +58,9 @@ public class DescribeLocationSmbResultJsonUnmarshaller implements Unmarshaller<D
                 }
                 if (context.testExpression("AgentArns", targetDepth)) {
                     context.nextToken();
-                    describeLocationSmbResult.setAgentArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    describeLocationSmbResult.setAgentArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("User", targetDepth)) {
                     context.nextToken();

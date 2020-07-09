@@ -51,7 +51,9 @@ public class DisassociateResourceShareResultJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("resourceShareAssociations", targetDepth)) {
                     context.nextToken();
                     disassociateResourceShareResult.setResourceShareAssociations(new ListUnmarshaller<ResourceShareAssociation>(
-                            ResourceShareAssociationJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ResourceShareAssociationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("clientToken", targetDepth)) {
                     context.nextToken();

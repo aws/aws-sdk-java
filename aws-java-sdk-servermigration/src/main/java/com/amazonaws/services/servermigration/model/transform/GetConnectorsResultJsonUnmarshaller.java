@@ -50,7 +50,9 @@ public class GetConnectorsResultJsonUnmarshaller implements Unmarshaller<GetConn
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("connectorList", targetDepth)) {
                     context.nextToken();
-                    getConnectorsResult.setConnectorList(new ListUnmarshaller<Connector>(ConnectorJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getConnectorsResult.setConnectorList(new ListUnmarshaller<Connector>(ConnectorJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

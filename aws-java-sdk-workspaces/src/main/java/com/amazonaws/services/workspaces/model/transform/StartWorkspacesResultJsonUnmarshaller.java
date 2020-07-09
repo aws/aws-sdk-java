@@ -51,7 +51,9 @@ public class StartWorkspacesResultJsonUnmarshaller implements Unmarshaller<Start
                 if (context.testExpression("FailedRequests", targetDepth)) {
                     context.nextToken();
                     startWorkspacesResult.setFailedRequests(new ListUnmarshaller<FailedWorkspaceChangeRequest>(FailedWorkspaceChangeRequestJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

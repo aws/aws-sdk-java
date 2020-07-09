@@ -52,7 +52,9 @@ public class DescribeConfigurationRecorderStatusResultJsonUnmarshaller implement
                 if (context.testExpression("ConfigurationRecordersStatus", targetDepth)) {
                     context.nextToken();
                     describeConfigurationRecorderStatusResult.setConfigurationRecordersStatus(new ListUnmarshaller<ConfigurationRecorderStatus>(
-                            ConfigurationRecorderStatusJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ConfigurationRecorderStatusJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

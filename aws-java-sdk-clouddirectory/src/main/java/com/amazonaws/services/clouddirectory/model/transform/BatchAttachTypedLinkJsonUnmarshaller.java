@@ -63,7 +63,8 @@ public class BatchAttachTypedLinkJsonUnmarshaller implements Unmarshaller<BatchA
                 if (context.testExpression("Attributes", targetDepth)) {
                     context.nextToken();
                     batchAttachTypedLink.setAttributes(new ListUnmarshaller<AttributeNameAndValue>(AttributeNameAndValueJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

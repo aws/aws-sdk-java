@@ -51,7 +51,9 @@ public class ListOrganizationsResultJsonUnmarshaller implements Unmarshaller<Lis
                 if (context.testExpression("OrganizationSummaries", targetDepth)) {
                     context.nextToken();
                     listOrganizationsResult.setOrganizationSummaries(new ListUnmarshaller<OrganizationSummary>(OrganizationSummaryJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

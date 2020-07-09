@@ -51,7 +51,8 @@ public class ListCACertificatesResultJsonUnmarshaller implements Unmarshaller<Li
                 if (context.testExpression("certificates", targetDepth)) {
                     context.nextToken();
                     listCACertificatesResult.setCertificates(new ListUnmarshaller<CACertificate>(CACertificateJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextMarker", targetDepth)) {
                     context.nextToken();

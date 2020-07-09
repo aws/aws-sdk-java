@@ -54,7 +54,9 @@ public class ListReportsForReportGroupResultJsonUnmarshaller implements Unmarsha
                 }
                 if (context.testExpression("reports", targetDepth)) {
                     context.nextToken();
-                    listReportsForReportGroupResult.setReports(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    listReportsForReportGroupResult.setReports(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

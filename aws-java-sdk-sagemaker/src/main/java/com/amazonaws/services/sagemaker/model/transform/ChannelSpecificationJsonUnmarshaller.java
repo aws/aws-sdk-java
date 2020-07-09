@@ -62,15 +62,21 @@ public class ChannelSpecificationJsonUnmarshaller implements Unmarshaller<Channe
                 }
                 if (context.testExpression("SupportedContentTypes", targetDepth)) {
                     context.nextToken();
-                    channelSpecification.setSupportedContentTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    channelSpecification.setSupportedContentTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("SupportedCompressionTypes", targetDepth)) {
                     context.nextToken();
-                    channelSpecification.setSupportedCompressionTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    channelSpecification.setSupportedCompressionTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("SupportedInputModes", targetDepth)) {
                     context.nextToken();
-                    channelSpecification.setSupportedInputModes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    channelSpecification.setSupportedInputModes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

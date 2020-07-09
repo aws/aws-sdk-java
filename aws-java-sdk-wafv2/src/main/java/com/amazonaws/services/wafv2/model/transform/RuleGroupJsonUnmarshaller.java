@@ -70,7 +70,9 @@ public class RuleGroupJsonUnmarshaller implements Unmarshaller<RuleGroup, JsonUn
                 }
                 if (context.testExpression("Rules", targetDepth)) {
                     context.nextToken();
-                    ruleGroup.setRules(new ListUnmarshaller<Rule>(RuleJsonUnmarshaller.getInstance()).unmarshall(context));
+                    ruleGroup.setRules(new ListUnmarshaller<Rule>(RuleJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("VisibilityConfig", targetDepth)) {
                     context.nextToken();

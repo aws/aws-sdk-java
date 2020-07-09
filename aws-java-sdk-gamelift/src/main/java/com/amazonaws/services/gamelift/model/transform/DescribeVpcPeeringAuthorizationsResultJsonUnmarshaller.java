@@ -51,7 +51,9 @@ public class DescribeVpcPeeringAuthorizationsResultJsonUnmarshaller implements U
                 if (context.testExpression("VpcPeeringAuthorizations", targetDepth)) {
                     context.nextToken();
                     describeVpcPeeringAuthorizationsResult.setVpcPeeringAuthorizations(new ListUnmarshaller<VpcPeeringAuthorization>(
-                            VpcPeeringAuthorizationJsonUnmarshaller.getInstance()).unmarshall(context));
+                            VpcPeeringAuthorizationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

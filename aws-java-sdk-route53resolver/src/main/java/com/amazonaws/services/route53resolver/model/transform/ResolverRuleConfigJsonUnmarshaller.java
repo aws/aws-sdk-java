@@ -54,7 +54,9 @@ public class ResolverRuleConfigJsonUnmarshaller implements Unmarshaller<Resolver
                 }
                 if (context.testExpression("TargetIps", targetDepth)) {
                     context.nextToken();
-                    resolverRuleConfig.setTargetIps(new ListUnmarshaller<TargetAddress>(TargetAddressJsonUnmarshaller.getInstance()).unmarshall(context));
+                    resolverRuleConfig.setTargetIps(new ListUnmarshaller<TargetAddress>(TargetAddressJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ResolverEndpointId", targetDepth)) {
                     context.nextToken();

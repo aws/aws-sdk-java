@@ -51,7 +51,8 @@ public class EnvironmentPropertyUpdatesJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("PropertyGroups", targetDepth)) {
                     context.nextToken();
                     environmentPropertyUpdates.setPropertyGroups(new ListUnmarshaller<PropertyGroup>(PropertyGroupJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

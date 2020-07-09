@@ -55,7 +55,8 @@ public class ListImageRecipesResultJsonUnmarshaller implements Unmarshaller<List
                 if (context.testExpression("imageRecipeSummaryList", targetDepth)) {
                     context.nextToken();
                     listImageRecipesResult.setImageRecipeSummaryList(new ListUnmarshaller<ImageRecipeSummary>(ImageRecipeSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

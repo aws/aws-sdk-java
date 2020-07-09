@@ -51,7 +51,8 @@ public class GetInventoryResultJsonUnmarshaller implements Unmarshaller<GetInven
                 if (context.testExpression("Entities", targetDepth)) {
                     context.nextToken();
                     getInventoryResult.setEntities(new ListUnmarshaller<InventoryResultEntity>(InventoryResultEntityJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

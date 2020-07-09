@@ -58,7 +58,9 @@ public class UpgradeStepItemJsonUnmarshaller implements Unmarshaller<UpgradeStep
                 }
                 if (context.testExpression("Issues", targetDepth)) {
                     context.nextToken();
-                    upgradeStepItem.setIssues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    upgradeStepItem.setIssues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ProgressPercent", targetDepth)) {
                     context.nextToken();

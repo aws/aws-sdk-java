@@ -51,7 +51,8 @@ public class ProcessingOutputConfigJsonUnmarshaller implements Unmarshaller<Proc
                 if (context.testExpression("Outputs", targetDepth)) {
                     context.nextToken();
                     processingOutputConfig.setOutputs(new ListUnmarshaller<ProcessingOutput>(ProcessingOutputJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("KmsKeyId", targetDepth)) {
                     context.nextToken();

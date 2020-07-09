@@ -50,7 +50,9 @@ public class DescribeConfigRulesResultJsonUnmarshaller implements Unmarshaller<D
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ConfigRules", targetDepth)) {
                     context.nextToken();
-                    describeConfigRulesResult.setConfigRules(new ListUnmarshaller<ConfigRule>(ConfigRuleJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeConfigRulesResult.setConfigRules(new ListUnmarshaller<ConfigRule>(ConfigRuleJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

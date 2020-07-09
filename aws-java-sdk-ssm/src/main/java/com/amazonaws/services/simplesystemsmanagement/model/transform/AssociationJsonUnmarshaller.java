@@ -70,7 +70,9 @@ public class AssociationJsonUnmarshaller implements Unmarshaller<Association, Js
                 }
                 if (context.testExpression("Targets", targetDepth)) {
                     context.nextToken();
-                    association.setTargets(new ListUnmarshaller<Target>(TargetJsonUnmarshaller.getInstance()).unmarshall(context));
+                    association.setTargets(new ListUnmarshaller<Target>(TargetJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("LastExecutionDate", targetDepth)) {
                     context.nextToken();

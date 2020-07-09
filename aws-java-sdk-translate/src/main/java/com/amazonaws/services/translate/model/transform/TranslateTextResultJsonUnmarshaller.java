@@ -63,7 +63,8 @@ public class TranslateTextResultJsonUnmarshaller implements Unmarshaller<Transla
                 if (context.testExpression("AppliedTerminologies", targetDepth)) {
                     context.nextToken();
                     translateTextResult.setAppliedTerminologies(new ListUnmarshaller<AppliedTerminology>(AppliedTerminologyJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

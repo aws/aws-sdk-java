@@ -70,7 +70,9 @@ public class InstanceTargetJsonUnmarshaller implements Unmarshaller<InstanceTarg
                 }
                 if (context.testExpression("lifecycleEvents", targetDepth)) {
                     context.nextToken();
-                    instanceTarget.setLifecycleEvents(new ListUnmarshaller<LifecycleEvent>(LifecycleEventJsonUnmarshaller.getInstance()).unmarshall(context));
+                    instanceTarget.setLifecycleEvents(new ListUnmarshaller<LifecycleEvent>(LifecycleEventJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("instanceLabel", targetDepth)) {
                     context.nextToken();

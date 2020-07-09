@@ -54,11 +54,15 @@ public class CreateAppResultJsonUnmarshaller implements Unmarshaller<CreateAppRe
                 }
                 if (context.testExpression("serverGroups", targetDepth)) {
                     context.nextToken();
-                    createAppResult.setServerGroups(new ListUnmarshaller<ServerGroup>(ServerGroupJsonUnmarshaller.getInstance()).unmarshall(context));
+                    createAppResult.setServerGroups(new ListUnmarshaller<ServerGroup>(ServerGroupJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
-                    createAppResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    createAppResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -51,7 +51,9 @@ public class ListComponentsResultJsonUnmarshaller implements Unmarshaller<ListCo
                 if (context.testExpression("ApplicationComponentList", targetDepth)) {
                     context.nextToken();
                     listComponentsResult.setApplicationComponentList(new ListUnmarshaller<ApplicationComponent>(ApplicationComponentJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

@@ -51,7 +51,8 @@ public class ListMultipartUploadsResultJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("UploadsList", targetDepth)) {
                     context.nextToken();
                     listMultipartUploadsResult.setUploadsList(new ListUnmarshaller<UploadListElement>(UploadListElementJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Marker", targetDepth)) {
                     context.nextToken();

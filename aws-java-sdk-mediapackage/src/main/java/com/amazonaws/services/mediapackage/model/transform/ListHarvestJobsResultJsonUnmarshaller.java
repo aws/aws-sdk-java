@@ -50,7 +50,9 @@ public class ListHarvestJobsResultJsonUnmarshaller implements Unmarshaller<ListH
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("harvestJobs", targetDepth)) {
                     context.nextToken();
-                    listHarvestJobsResult.setHarvestJobs(new ListUnmarshaller<HarvestJob>(HarvestJobJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listHarvestJobsResult.setHarvestJobs(new ListUnmarshaller<HarvestJob>(HarvestJobJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

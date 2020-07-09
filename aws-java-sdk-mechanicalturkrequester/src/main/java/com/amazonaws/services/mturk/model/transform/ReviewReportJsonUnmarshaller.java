@@ -51,12 +51,14 @@ public class ReviewReportJsonUnmarshaller implements Unmarshaller<ReviewReport, 
                 if (context.testExpression("ReviewResults", targetDepth)) {
                     context.nextToken();
                     reviewReport.setReviewResults(new ListUnmarshaller<ReviewResultDetail>(ReviewResultDetailJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ReviewActions", targetDepth)) {
                     context.nextToken();
                     reviewReport.setReviewActions(new ListUnmarshaller<ReviewActionDetail>(ReviewActionDetailJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

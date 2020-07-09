@@ -66,11 +66,15 @@ public class EdgeJsonUnmarshaller implements Unmarshaller<Edge, JsonUnmarshaller
                 }
                 if (context.testExpression("ResponseTimeHistogram", targetDepth)) {
                     context.nextToken();
-                    edge.setResponseTimeHistogram(new ListUnmarshaller<HistogramEntry>(HistogramEntryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    edge.setResponseTimeHistogram(new ListUnmarshaller<HistogramEntry>(HistogramEntryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Aliases", targetDepth)) {
                     context.nextToken();
-                    edge.setAliases(new ListUnmarshaller<Alias>(AliasJsonUnmarshaller.getInstance()).unmarshall(context));
+                    edge.setAliases(new ListUnmarshaller<Alias>(AliasJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

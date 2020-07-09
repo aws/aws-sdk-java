@@ -51,7 +51,9 @@ public class ListRecommendationsResultJsonUnmarshaller implements Unmarshaller<L
                 if (context.testExpression("RecommendationSummaries", targetDepth)) {
                     context.nextToken();
                     listRecommendationsResult.setRecommendationSummaries(new ListUnmarshaller<RecommendationSummary>(RecommendationSummaryJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

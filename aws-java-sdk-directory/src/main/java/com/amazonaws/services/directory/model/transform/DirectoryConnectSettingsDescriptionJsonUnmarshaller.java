@@ -54,7 +54,9 @@ public class DirectoryConnectSettingsDescriptionJsonUnmarshaller implements Unma
                 }
                 if (context.testExpression("SubnetIds", targetDepth)) {
                     context.nextToken();
-                    directoryConnectSettingsDescription.setSubnetIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    directoryConnectSettingsDescription.setSubnetIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("CustomerUserName", targetDepth)) {
                     context.nextToken();
@@ -67,11 +69,14 @@ public class DirectoryConnectSettingsDescriptionJsonUnmarshaller implements Unma
                 if (context.testExpression("AvailabilityZones", targetDepth)) {
                     context.nextToken();
                     directoryConnectSettingsDescription.setAvailabilityZones(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ConnectIps", targetDepth)) {
                     context.nextToken();
-                    directoryConnectSettingsDescription.setConnectIps(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    directoryConnectSettingsDescription.setConnectIps(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

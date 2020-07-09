@@ -62,7 +62,9 @@ public class CustomSqlJsonUnmarshaller implements Unmarshaller<CustomSql, JsonUn
                 }
                 if (context.testExpression("Columns", targetDepth)) {
                     context.nextToken();
-                    customSql.setColumns(new ListUnmarshaller<InputColumn>(InputColumnJsonUnmarshaller.getInstance()).unmarshall(context));
+                    customSql.setColumns(new ListUnmarshaller<InputColumn>(InputColumnJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

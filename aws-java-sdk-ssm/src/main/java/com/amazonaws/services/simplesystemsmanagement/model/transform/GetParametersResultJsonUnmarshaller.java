@@ -50,11 +50,15 @@ public class GetParametersResultJsonUnmarshaller implements Unmarshaller<GetPara
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Parameters", targetDepth)) {
                     context.nextToken();
-                    getParametersResult.setParameters(new ListUnmarshaller<Parameter>(ParameterJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getParametersResult.setParameters(new ListUnmarshaller<Parameter>(ParameterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("InvalidParameters", targetDepth)) {
                     context.nextToken();
-                    getParametersResult.setInvalidParameters(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    getParametersResult.setInvalidParameters(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

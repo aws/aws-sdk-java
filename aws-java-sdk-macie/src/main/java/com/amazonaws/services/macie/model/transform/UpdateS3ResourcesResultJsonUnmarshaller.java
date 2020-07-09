@@ -51,7 +51,8 @@ public class UpdateS3ResourcesResultJsonUnmarshaller implements Unmarshaller<Upd
                 if (context.testExpression("failedS3Resources", targetDepth)) {
                     context.nextToken();
                     updateS3ResourcesResult.setFailedS3Resources(new ListUnmarshaller<FailedS3Resource>(FailedS3ResourceJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

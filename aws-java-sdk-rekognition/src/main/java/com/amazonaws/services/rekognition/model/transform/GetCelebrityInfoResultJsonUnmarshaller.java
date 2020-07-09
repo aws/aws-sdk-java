@@ -50,7 +50,9 @@ public class GetCelebrityInfoResultJsonUnmarshaller implements Unmarshaller<GetC
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Urls", targetDepth)) {
                     context.nextToken();
-                    getCelebrityInfoResult.setUrls(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    getCelebrityInfoResult.setUrls(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();

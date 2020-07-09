@@ -58,7 +58,9 @@ public class ComparedFaceJsonUnmarshaller implements Unmarshaller<ComparedFace, 
                 }
                 if (context.testExpression("Landmarks", targetDepth)) {
                     context.nextToken();
-                    comparedFace.setLandmarks(new ListUnmarshaller<Landmark>(LandmarkJsonUnmarshaller.getInstance()).unmarshall(context));
+                    comparedFace.setLandmarks(new ListUnmarshaller<Landmark>(LandmarkJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Pose", targetDepth)) {
                     context.nextToken();

@@ -50,11 +50,15 @@ public class ProvisioningPreferencesJsonUnmarshaller implements Unmarshaller<Pro
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StackSetAccounts", targetDepth)) {
                     context.nextToken();
-                    provisioningPreferences.setStackSetAccounts(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    provisioningPreferences.setStackSetAccounts(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("StackSetRegions", targetDepth)) {
                     context.nextToken();
-                    provisioningPreferences.setStackSetRegions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    provisioningPreferences.setStackSetRegions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("StackSetFailureToleranceCount", targetDepth)) {
                     context.nextToken();

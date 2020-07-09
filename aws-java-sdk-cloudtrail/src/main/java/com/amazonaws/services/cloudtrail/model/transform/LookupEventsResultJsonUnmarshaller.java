@@ -50,7 +50,9 @@ public class LookupEventsResultJsonUnmarshaller implements Unmarshaller<LookupEv
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Events", targetDepth)) {
                     context.nextToken();
-                    lookupEventsResult.setEvents(new ListUnmarshaller<Event>(EventJsonUnmarshaller.getInstance()).unmarshall(context));
+                    lookupEventsResult.setEvents(new ListUnmarshaller<Event>(EventJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

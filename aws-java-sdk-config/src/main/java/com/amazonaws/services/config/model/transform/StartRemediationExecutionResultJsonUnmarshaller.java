@@ -55,7 +55,8 @@ public class StartRemediationExecutionResultJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("FailedItems", targetDepth)) {
                     context.nextToken();
                     startRemediationExecutionResult.setFailedItems(new ListUnmarshaller<ResourceKey>(ResourceKeyJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -53,7 +53,9 @@ public class ListThemeVersionsResultJsonUnmarshaller implements Unmarshaller<Lis
                 if (context.testExpression("ThemeVersionSummaryList", targetDepth)) {
                     context.nextToken();
                     listThemeVersionsResult.setThemeVersionSummaryList(new ListUnmarshaller<ThemeVersionSummary>(ThemeVersionSummaryJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

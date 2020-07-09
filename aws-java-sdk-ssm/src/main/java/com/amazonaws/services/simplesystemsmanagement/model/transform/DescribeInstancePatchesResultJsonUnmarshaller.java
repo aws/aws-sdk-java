@@ -51,7 +51,8 @@ public class DescribeInstancePatchesResultJsonUnmarshaller implements Unmarshall
                 if (context.testExpression("Patches", targetDepth)) {
                     context.nextToken();
                     describeInstancePatchesResult.setPatches(new ListUnmarshaller<PatchComplianceData>(PatchComplianceDataJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

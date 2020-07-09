@@ -50,7 +50,9 @@ public class ListProtectionsResultJsonUnmarshaller implements Unmarshaller<ListP
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Protections", targetDepth)) {
                     context.nextToken();
-                    listProtectionsResult.setProtections(new ListUnmarshaller<Protection>(ProtectionJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listProtectionsResult.setProtections(new ListUnmarshaller<Protection>(ProtectionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

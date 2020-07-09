@@ -52,7 +52,9 @@ public class ListLicenseSpecificationsForResourceResultJsonUnmarshaller implemen
                 if (context.testExpression("LicenseSpecifications", targetDepth)) {
                     context.nextToken();
                     listLicenseSpecificationsForResourceResult.setLicenseSpecifications(new ListUnmarshaller<LicenseSpecification>(
-                            LicenseSpecificationJsonUnmarshaller.getInstance()).unmarshall(context));
+                            LicenseSpecificationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

@@ -59,7 +59,9 @@ public class AwsEc2NetworkInterfaceDetailsJsonUnmarshaller implements Unmarshall
                 if (context.testExpression("SecurityGroups", targetDepth)) {
                     context.nextToken();
                     awsEc2NetworkInterfaceDetails.setSecurityGroups(new ListUnmarshaller<AwsEc2NetworkInterfaceSecurityGroup>(
-                            AwsEc2NetworkInterfaceSecurityGroupJsonUnmarshaller.getInstance()).unmarshall(context));
+                            AwsEc2NetworkInterfaceSecurityGroupJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("SourceDestCheck", targetDepth)) {
                     context.nextToken();

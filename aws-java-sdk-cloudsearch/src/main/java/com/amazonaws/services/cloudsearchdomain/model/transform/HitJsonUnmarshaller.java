@@ -55,7 +55,9 @@ public class HitJsonUnmarshaller implements Unmarshaller<Hit, JsonUnmarshallerCo
                 if (context.testExpression("fields", targetDepth)) {
                     context.nextToken();
                     hit.setFields(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class), new ListUnmarshaller<String>(
-                            context.getUnmarshaller(String.class))).unmarshall(context));
+                            context.getUnmarshaller(String.class))
+
+                    ).unmarshall(context));
                 }
                 if (context.testExpression("exprs", targetDepth)) {
                     context.nextToken();

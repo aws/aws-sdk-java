@@ -62,7 +62,9 @@ public class WorkspacesIpGroupJsonUnmarshaller implements Unmarshaller<Workspace
                 }
                 if (context.testExpression("userRules", targetDepth)) {
                     context.nextToken();
-                    workspacesIpGroup.setUserRules(new ListUnmarshaller<IpRuleItem>(IpRuleItemJsonUnmarshaller.getInstance()).unmarshall(context));
+                    workspacesIpGroup.setUserRules(new ListUnmarshaller<IpRuleItem>(IpRuleItemJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

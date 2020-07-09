@@ -54,7 +54,9 @@ public class SensitiveDataItemJsonUnmarshaller implements Unmarshaller<Sensitive
                 }
                 if (context.testExpression("detections", targetDepth)) {
                     context.nextToken();
-                    sensitiveDataItem.setDetections(new ListUnmarshaller<DefaultDetection>(DefaultDetectionJsonUnmarshaller.getInstance()).unmarshall(context));
+                    sensitiveDataItem.setDetections(new ListUnmarshaller<DefaultDetection>(DefaultDetectionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("totalCount", targetDepth)) {
                     context.nextToken();

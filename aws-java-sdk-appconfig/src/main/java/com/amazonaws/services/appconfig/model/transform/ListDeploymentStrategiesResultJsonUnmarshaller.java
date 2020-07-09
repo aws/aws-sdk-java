@@ -51,7 +51,8 @@ public class ListDeploymentStrategiesResultJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("Items", targetDepth)) {
                     context.nextToken();
                     listDeploymentStrategiesResult.setItems(new ListUnmarshaller<DeploymentStrategy>(DeploymentStrategyJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

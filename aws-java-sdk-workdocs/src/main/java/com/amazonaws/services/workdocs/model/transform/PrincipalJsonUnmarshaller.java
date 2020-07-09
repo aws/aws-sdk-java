@@ -58,7 +58,9 @@ public class PrincipalJsonUnmarshaller implements Unmarshaller<Principal, JsonUn
                 }
                 if (context.testExpression("Roles", targetDepth)) {
                     context.nextToken();
-                    principal.setRoles(new ListUnmarshaller<PermissionInfo>(PermissionInfoJsonUnmarshaller.getInstance()).unmarshall(context));
+                    principal.setRoles(new ListUnmarshaller<PermissionInfo>(PermissionInfoJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

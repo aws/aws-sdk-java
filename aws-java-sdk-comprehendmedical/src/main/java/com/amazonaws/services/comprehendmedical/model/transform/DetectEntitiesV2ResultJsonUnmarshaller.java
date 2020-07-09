@@ -50,12 +50,15 @@ public class DetectEntitiesV2ResultJsonUnmarshaller implements Unmarshaller<Dete
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Entities", targetDepth)) {
                     context.nextToken();
-                    detectEntitiesV2Result.setEntities(new ListUnmarshaller<Entity>(EntityJsonUnmarshaller.getInstance()).unmarshall(context));
+                    detectEntitiesV2Result.setEntities(new ListUnmarshaller<Entity>(EntityJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("UnmappedAttributes", targetDepth)) {
                     context.nextToken();
                     detectEntitiesV2Result.setUnmappedAttributes(new ListUnmarshaller<UnmappedAttribute>(UnmappedAttributeJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("PaginationToken", targetDepth)) {
                     context.nextToken();

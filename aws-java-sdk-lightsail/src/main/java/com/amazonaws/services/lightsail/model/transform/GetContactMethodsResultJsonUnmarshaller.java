@@ -51,7 +51,8 @@ public class GetContactMethodsResultJsonUnmarshaller implements Unmarshaller<Get
                 if (context.testExpression("contactMethods", targetDepth)) {
                     context.nextToken();
                     getContactMethodsResult.setContactMethods(new ListUnmarshaller<ContactMethod>(ContactMethodJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

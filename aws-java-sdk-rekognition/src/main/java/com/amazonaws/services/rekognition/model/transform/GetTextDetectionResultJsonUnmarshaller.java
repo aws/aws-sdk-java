@@ -63,7 +63,8 @@ public class GetTextDetectionResultJsonUnmarshaller implements Unmarshaller<GetT
                 if (context.testExpression("TextDetections", targetDepth)) {
                     context.nextToken();
                     getTextDetectionResult.setTextDetections(new ListUnmarshaller<TextDetectionResult>(TextDetectionResultJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

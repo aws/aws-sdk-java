@@ -50,7 +50,9 @@ public class GetDisksResultJsonUnmarshaller implements Unmarshaller<GetDisksResu
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("disks", targetDepth)) {
                     context.nextToken();
-                    getDisksResult.setDisks(new ListUnmarshaller<Disk>(DiskJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getDisksResult.setDisks(new ListUnmarshaller<Disk>(DiskJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextPageToken", targetDepth)) {
                     context.nextToken();

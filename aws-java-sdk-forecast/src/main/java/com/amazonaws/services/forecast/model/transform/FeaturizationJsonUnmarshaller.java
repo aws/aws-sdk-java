@@ -55,7 +55,8 @@ public class FeaturizationJsonUnmarshaller implements Unmarshaller<Featurization
                 if (context.testExpression("FeaturizationPipeline", targetDepth)) {
                     context.nextToken();
                     featurization.setFeaturizationPipeline(new ListUnmarshaller<FeaturizationMethod>(FeaturizationMethodJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

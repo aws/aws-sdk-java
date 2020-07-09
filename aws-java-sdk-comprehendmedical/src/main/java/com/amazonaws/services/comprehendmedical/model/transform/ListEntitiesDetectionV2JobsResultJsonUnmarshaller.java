@@ -51,7 +51,9 @@ public class ListEntitiesDetectionV2JobsResultJsonUnmarshaller implements Unmars
                 if (context.testExpression("ComprehendMedicalAsyncJobPropertiesList", targetDepth)) {
                     context.nextToken();
                     listEntitiesDetectionV2JobsResult.setComprehendMedicalAsyncJobPropertiesList(new ListUnmarshaller<ComprehendMedicalAsyncJobProperties>(
-                            ComprehendMedicalAsyncJobPropertiesJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ComprehendMedicalAsyncJobPropertiesJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

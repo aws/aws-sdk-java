@@ -55,7 +55,8 @@ public class StepScalingPolicyConfigurationJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("StepAdjustments", targetDepth)) {
                     context.nextToken();
                     stepScalingPolicyConfiguration.setStepAdjustments(new ListUnmarshaller<StepAdjustment>(StepAdjustmentJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("MinAdjustmentMagnitude", targetDepth)) {
                     context.nextToken();

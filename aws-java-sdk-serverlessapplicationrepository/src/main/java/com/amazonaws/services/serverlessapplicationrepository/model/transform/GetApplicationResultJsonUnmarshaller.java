@@ -74,7 +74,9 @@ public class GetApplicationResultJsonUnmarshaller implements Unmarshaller<GetApp
                 }
                 if (context.testExpression("labels", targetDepth)) {
                     context.nextToken();
-                    getApplicationResult.setLabels(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    getApplicationResult.setLabels(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("licenseUrl", targetDepth)) {
                     context.nextToken();

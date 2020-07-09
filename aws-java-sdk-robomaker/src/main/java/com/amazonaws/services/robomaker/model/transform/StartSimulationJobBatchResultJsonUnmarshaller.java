@@ -79,17 +79,23 @@ public class StartSimulationJobBatchResultJsonUnmarshaller implements Unmarshall
                 if (context.testExpression("failedRequests", targetDepth)) {
                     context.nextToken();
                     startSimulationJobBatchResult.setFailedRequests(new ListUnmarshaller<FailedCreateSimulationJobRequest>(
-                            FailedCreateSimulationJobRequestJsonUnmarshaller.getInstance()).unmarshall(context));
+                            FailedCreateSimulationJobRequestJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("pendingRequests", targetDepth)) {
                     context.nextToken();
                     startSimulationJobBatchResult.setPendingRequests(new ListUnmarshaller<SimulationJobRequest>(SimulationJobRequestJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("createdRequests", targetDepth)) {
                     context.nextToken();
                     startSimulationJobBatchResult.setCreatedRequests(new ListUnmarshaller<SimulationJobSummary>(SimulationJobSummaryJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();

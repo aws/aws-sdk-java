@@ -960,8 +960,8 @@ public interface AmazonEventBridgeAsync extends AmazonEventBridge {
     /**
      * <p>
      * Running <code>PutPermission</code> permits the specified AWS account or AWS organization to put events to the
-     * specified <i>event bus</i>. CloudWatch Events rules in your account are triggered by these events arriving to an
-     * event bus in your account.
+     * specified <i>event bus</i>. Amazon EventBridge (CloudWatch Events) rules in your account are triggered by these
+     * events arriving to an event bus in your account.
      * </p>
      * <p>
      * For another account to send events to your account, that external account must have an EventBridge rule with your
@@ -995,8 +995,8 @@ public interface AmazonEventBridgeAsync extends AmazonEventBridge {
     /**
      * <p>
      * Running <code>PutPermission</code> permits the specified AWS account or AWS organization to put events to the
-     * specified <i>event bus</i>. CloudWatch Events rules in your account are triggered by these events arriving to an
-     * event bus in your account.
+     * specified <i>event bus</i>. Amazon EventBridge (CloudWatch Events) rules in your account are triggered by these
+     * events arriving to an event bus in your account.
      * </p>
      * <p>
      * For another account to send events to your account, that external account must have an EventBridge rule with your
@@ -1256,6 +1256,11 @@ public interface AmazonEventBridgeAsync extends AmazonEventBridge {
      * The default event bus of another AWS account
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Amazon API Gateway REST APIs
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Creating rules with built-in targets is supported only in the AWS Management Console. The built-in targets are
@@ -1269,10 +1274,11 @@ public interface AmazonEventBridgeAsync extends AmazonEventBridge {
      * <code>RunCommandParameters</code> field.
      * </p>
      * <p>
-     * To be able to make API calls against the resources that you own, Amazon CloudWatch Events needs the appropriate
-     * permissions. For AWS Lambda and Amazon SNS resources, EventBridge relies on resource-based policies. For EC2
-     * instances, Kinesis data streams, and AWS Step Functions state machines, EventBridge relies on IAM roles that you
-     * specify in the <code>RoleARN</code> argument in <code>PutTargets</code>. For more information, see <a
+     * To be able to make API calls against the resources that you own, Amazon EventBridge (CloudWatch Events) needs the
+     * appropriate permissions. For AWS Lambda and Amazon SNS resources, EventBridge relies on resource-based policies.
+     * For EC2 instances, Kinesis data streams, AWS Step Functions state machines and API Gateway REST APIs, EventBridge
+     * relies on IAM roles that you specify in the <code>RoleARN</code> argument in <code>PutTargets</code>. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html"
      * >Authentication and Access Control</a> in the <i>Amazon EventBridge User Guide</i>.
      * </p>
@@ -1282,8 +1288,8 @@ public interface AmazonEventBridgeAsync extends AmazonEventBridge {
      * send the matched events to the other account, specify that account's event bus as the <code>Arn</code> value when
      * you run <code>PutTargets</code>. If your account sends events to another account, your account is charged for
      * each sent event. Each event sent to another account is charged as a custom event. The account receiving the event
-     * is not charged. For more information, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
-     * Pricing</a>.
+     * is not charged. For more information, see <a href="https://aws.amazon.com/eventbridge/pricing/">Amazon
+     * EventBridge (CloudWatch Events) Pricing</a>.
      * </p>
      * <note>
      * <p>
@@ -1441,6 +1447,11 @@ public interface AmazonEventBridgeAsync extends AmazonEventBridge {
      * The default event bus of another AWS account
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Amazon API Gateway REST APIs
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Creating rules with built-in targets is supported only in the AWS Management Console. The built-in targets are
@@ -1454,10 +1465,11 @@ public interface AmazonEventBridgeAsync extends AmazonEventBridge {
      * <code>RunCommandParameters</code> field.
      * </p>
      * <p>
-     * To be able to make API calls against the resources that you own, Amazon CloudWatch Events needs the appropriate
-     * permissions. For AWS Lambda and Amazon SNS resources, EventBridge relies on resource-based policies. For EC2
-     * instances, Kinesis data streams, and AWS Step Functions state machines, EventBridge relies on IAM roles that you
-     * specify in the <code>RoleARN</code> argument in <code>PutTargets</code>. For more information, see <a
+     * To be able to make API calls against the resources that you own, Amazon EventBridge (CloudWatch Events) needs the
+     * appropriate permissions. For AWS Lambda and Amazon SNS resources, EventBridge relies on resource-based policies.
+     * For EC2 instances, Kinesis data streams, AWS Step Functions state machines and API Gateway REST APIs, EventBridge
+     * relies on IAM roles that you specify in the <code>RoleARN</code> argument in <code>PutTargets</code>. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html"
      * >Authentication and Access Control</a> in the <i>Amazon EventBridge User Guide</i>.
      * </p>
@@ -1467,8 +1479,8 @@ public interface AmazonEventBridgeAsync extends AmazonEventBridge {
      * send the matched events to the other account, specify that account's event bus as the <code>Arn</code> value when
      * you run <code>PutTargets</code>. If your account sends events to another account, your account is charged for
      * each sent event. Each event sent to another account is charged as a custom event. The account receiving the event
-     * is not charged. For more information, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
-     * Pricing</a>.
+     * is not charged. For more information, see <a href="https://aws.amazon.com/eventbridge/pricing/">Amazon
+     * EventBridge (CloudWatch Events) Pricing</a>.
      * </p>
      * <note>
      * <p>
@@ -1734,8 +1746,8 @@ public interface AmazonEventBridgeAsync extends AmazonEventBridge {
 
     /**
      * <p>
-     * Removes one or more tags from the specified EventBridge resource. In CloudWatch Events, rules and event buses can
-     * be tagged.
+     * Removes one or more tags from the specified EventBridge resource. In Amazon EventBridge (CloudWatch Events, rules
+     * and event buses can be tagged.
      * </p>
      * 
      * @param untagResourceRequest
@@ -1748,8 +1760,8 @@ public interface AmazonEventBridgeAsync extends AmazonEventBridge {
 
     /**
      * <p>
-     * Removes one or more tags from the specified EventBridge resource. In CloudWatch Events, rules and event buses can
-     * be tagged.
+     * Removes one or more tags from the specified EventBridge resource. In Amazon EventBridge (CloudWatch Events, rules
+     * and event buses can be tagged.
      * </p>
      * 
      * @param untagResourceRequest

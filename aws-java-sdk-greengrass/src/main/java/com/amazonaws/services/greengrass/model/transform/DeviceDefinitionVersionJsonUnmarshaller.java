@@ -50,7 +50,9 @@ public class DeviceDefinitionVersionJsonUnmarshaller implements Unmarshaller<Dev
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Devices", targetDepth)) {
                     context.nextToken();
-                    deviceDefinitionVersion.setDevices(new ListUnmarshaller<Device>(DeviceJsonUnmarshaller.getInstance()).unmarshall(context));
+                    deviceDefinitionVersion.setDevices(new ListUnmarshaller<Device>(DeviceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

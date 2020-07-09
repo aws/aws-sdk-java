@@ -51,7 +51,8 @@ public class ErrorRootCauseJsonUnmarshaller implements Unmarshaller<ErrorRootCau
                 if (context.testExpression("Services", targetDepth)) {
                     context.nextToken();
                     errorRootCause.setServices(new ListUnmarshaller<ErrorRootCauseService>(ErrorRootCauseServiceJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ClientImpacting", targetDepth)) {
                     context.nextToken();

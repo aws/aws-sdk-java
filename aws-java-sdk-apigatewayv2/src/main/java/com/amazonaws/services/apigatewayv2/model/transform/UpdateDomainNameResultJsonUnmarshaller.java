@@ -59,7 +59,9 @@ public class UpdateDomainNameResultJsonUnmarshaller implements Unmarshaller<Upda
                 if (context.testExpression("domainNameConfigurations", targetDepth)) {
                     context.nextToken();
                     updateDomainNameResult.setDomainNameConfigurations(new ListUnmarshaller<DomainNameConfiguration>(DomainNameConfigurationJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();

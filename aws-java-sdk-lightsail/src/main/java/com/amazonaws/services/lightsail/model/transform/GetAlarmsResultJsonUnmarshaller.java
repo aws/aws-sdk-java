@@ -50,7 +50,9 @@ public class GetAlarmsResultJsonUnmarshaller implements Unmarshaller<GetAlarmsRe
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("alarms", targetDepth)) {
                     context.nextToken();
-                    getAlarmsResult.setAlarms(new ListUnmarshaller<Alarm>(AlarmJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getAlarmsResult.setAlarms(new ListUnmarshaller<Alarm>(AlarmJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextPageToken", targetDepth)) {
                     context.nextToken();

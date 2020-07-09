@@ -82,7 +82,9 @@ public class ApplicationConfigurationDescriptionJsonUnmarshaller implements Unma
                 if (context.testExpression("VpcConfigurationDescriptions", targetDepth)) {
                     context.nextToken();
                     applicationConfigurationDescription.setVpcConfigurationDescriptions(new ListUnmarshaller<VpcConfigurationDescription>(
-                            VpcConfigurationDescriptionJsonUnmarshaller.getInstance()).unmarshall(context));
+                            VpcConfigurationDescriptionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

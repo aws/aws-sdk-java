@@ -52,6 +52,10 @@ public class IPSetReferenceStatementJsonUnmarshaller implements Unmarshaller<IPS
                     context.nextToken();
                     iPSetReferenceStatement.setARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("IPSetForwardedIPConfig", targetDepth)) {
+                    context.nextToken();
+                    iPSetReferenceStatement.setIPSetForwardedIPConfig(IPSetForwardedIPConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

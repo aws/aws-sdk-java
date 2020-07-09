@@ -52,7 +52,8 @@ public class DescribeAffectedAccountsForOrganizationResultJsonUnmarshaller imple
                 if (context.testExpression("affectedAccounts", targetDepth)) {
                     context.nextToken();
                     describeAffectedAccountsForOrganizationResult.setAffectedAccounts(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("eventScopeCode", targetDepth)) {
                     context.nextToken();

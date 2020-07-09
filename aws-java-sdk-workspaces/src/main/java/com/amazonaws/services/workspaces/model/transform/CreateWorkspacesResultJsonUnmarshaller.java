@@ -51,11 +51,15 @@ public class CreateWorkspacesResultJsonUnmarshaller implements Unmarshaller<Crea
                 if (context.testExpression("FailedRequests", targetDepth)) {
                     context.nextToken();
                     createWorkspacesResult.setFailedRequests(new ListUnmarshaller<FailedCreateWorkspaceRequest>(FailedCreateWorkspaceRequestJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("PendingRequests", targetDepth)) {
                     context.nextToken();
-                    createWorkspacesResult.setPendingRequests(new ListUnmarshaller<Workspace>(WorkspaceJsonUnmarshaller.getInstance()).unmarshall(context));
+                    createWorkspacesResult.setPendingRequests(new ListUnmarshaller<Workspace>(WorkspaceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

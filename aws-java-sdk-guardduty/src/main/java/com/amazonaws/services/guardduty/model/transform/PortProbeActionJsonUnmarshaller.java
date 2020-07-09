@@ -55,7 +55,8 @@ public class PortProbeActionJsonUnmarshaller implements Unmarshaller<PortProbeAc
                 if (context.testExpression("portProbeDetails", targetDepth)) {
                     context.nextToken();
                     portProbeAction.setPortProbeDetails(new ListUnmarshaller<PortProbeDetail>(PortProbeDetailJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -55,7 +55,8 @@ public class ListVirtualNodesResultJsonUnmarshaller implements Unmarshaller<List
                 if (context.testExpression("virtualNodes", targetDepth)) {
                     context.nextToken();
                     listVirtualNodesResult.setVirtualNodes(new ListUnmarshaller<VirtualNodeRef>(VirtualNodeRefJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

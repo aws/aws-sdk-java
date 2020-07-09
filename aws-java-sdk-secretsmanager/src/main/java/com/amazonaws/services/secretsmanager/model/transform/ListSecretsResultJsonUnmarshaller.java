@@ -50,7 +50,9 @@ public class ListSecretsResultJsonUnmarshaller implements Unmarshaller<ListSecre
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SecretList", targetDepth)) {
                     context.nextToken();
-                    listSecretsResult.setSecretList(new ListUnmarshaller<SecretListEntry>(SecretListEntryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listSecretsResult.setSecretList(new ListUnmarshaller<SecretListEntry>(SecretListEntryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

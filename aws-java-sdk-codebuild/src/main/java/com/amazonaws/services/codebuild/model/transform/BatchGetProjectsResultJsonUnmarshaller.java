@@ -50,11 +50,15 @@ public class BatchGetProjectsResultJsonUnmarshaller implements Unmarshaller<Batc
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("projects", targetDepth)) {
                     context.nextToken();
-                    batchGetProjectsResult.setProjects(new ListUnmarshaller<Project>(ProjectJsonUnmarshaller.getInstance()).unmarshall(context));
+                    batchGetProjectsResult.setProjects(new ListUnmarshaller<Project>(ProjectJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("projectsNotFound", targetDepth)) {
                     context.nextToken();
-                    batchGetProjectsResult.setProjectsNotFound(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    batchGetProjectsResult.setProjectsNotFound(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

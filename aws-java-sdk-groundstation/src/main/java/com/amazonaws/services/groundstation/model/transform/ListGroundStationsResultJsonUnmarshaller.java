@@ -51,7 +51,8 @@ public class ListGroundStationsResultJsonUnmarshaller implements Unmarshaller<Li
                 if (context.testExpression("groundStationList", targetDepth)) {
                     context.nextToken();
                     listGroundStationsResult.setGroundStationList(new ListUnmarshaller<GroundStationData>(GroundStationDataJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

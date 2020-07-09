@@ -54,7 +54,9 @@ public class MssPackageJsonUnmarshaller implements Unmarshaller<MssPackage, Json
                 }
                 if (context.testExpression("mssManifests", targetDepth)) {
                     context.nextToken();
-                    mssPackage.setMssManifests(new ListUnmarshaller<MssManifest>(MssManifestJsonUnmarshaller.getInstance()).unmarshall(context));
+                    mssPackage.setMssManifests(new ListUnmarshaller<MssManifest>(MssManifestJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("segmentDurationSeconds", targetDepth)) {
                     context.nextToken();

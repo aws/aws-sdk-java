@@ -50,7 +50,9 @@ public class GetStagesResultJsonUnmarshaller implements Unmarshaller<GetStagesRe
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("items", targetDepth)) {
                     context.nextToken();
-                    getStagesResult.setItems(new ListUnmarshaller<Stage>(StageJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getStagesResult.setItems(new ListUnmarshaller<Stage>(StageJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

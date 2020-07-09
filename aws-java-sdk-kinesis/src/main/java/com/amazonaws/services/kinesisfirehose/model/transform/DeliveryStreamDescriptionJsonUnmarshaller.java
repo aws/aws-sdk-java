@@ -93,7 +93,8 @@ public class DeliveryStreamDescriptionJsonUnmarshaller implements Unmarshaller<D
                     context.nextToken();
                     deliveryStreamDescription
                             .setDestinations(new ListUnmarshaller<DestinationDescription>(DestinationDescriptionJsonUnmarshaller.getInstance())
-                                    .unmarshall(context));
+
+                            .unmarshall(context));
                 }
                 if (context.testExpression("HasMoreDestinations", targetDepth)) {
                     context.nextToken();

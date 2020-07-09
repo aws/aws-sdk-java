@@ -51,7 +51,8 @@ public class SubscriptionDefinitionVersionJsonUnmarshaller implements Unmarshall
                 if (context.testExpression("Subscriptions", targetDepth)) {
                     context.nextToken();
                     subscriptionDefinitionVersion.setSubscriptions(new ListUnmarshaller<Subscription>(SubscriptionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

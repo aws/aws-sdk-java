@@ -58,7 +58,9 @@ public class DescribeForecastResultJsonUnmarshaller implements Unmarshaller<Desc
                 }
                 if (context.testExpression("ForecastTypes", targetDepth)) {
                     context.nextToken();
-                    describeForecastResult.setForecastTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    describeForecastResult.setForecastTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("PredictorArn", targetDepth)) {
                     context.nextToken();

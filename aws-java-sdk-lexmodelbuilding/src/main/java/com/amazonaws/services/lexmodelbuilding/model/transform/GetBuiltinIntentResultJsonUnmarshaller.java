@@ -54,12 +54,15 @@ public class GetBuiltinIntentResultJsonUnmarshaller implements Unmarshaller<GetB
                 }
                 if (context.testExpression("supportedLocales", targetDepth)) {
                     context.nextToken();
-                    getBuiltinIntentResult.setSupportedLocales(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    getBuiltinIntentResult.setSupportedLocales(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("slots", targetDepth)) {
                     context.nextToken();
                     getBuiltinIntentResult.setSlots(new ListUnmarshaller<BuiltinIntentSlot>(BuiltinIntentSlotJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

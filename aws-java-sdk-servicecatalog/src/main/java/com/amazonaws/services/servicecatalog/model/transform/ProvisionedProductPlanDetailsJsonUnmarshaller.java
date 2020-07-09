@@ -94,16 +94,22 @@ public class ProvisionedProductPlanDetailsJsonUnmarshaller implements Unmarshall
                 }
                 if (context.testExpression("NotificationArns", targetDepth)) {
                     context.nextToken();
-                    provisionedProductPlanDetails.setNotificationArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    provisionedProductPlanDetails.setNotificationArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ProvisioningParameters", targetDepth)) {
                     context.nextToken();
                     provisionedProductPlanDetails.setProvisioningParameters(new ListUnmarshaller<UpdateProvisioningParameter>(
-                            UpdateProvisioningParameterJsonUnmarshaller.getInstance()).unmarshall(context));
+                            UpdateProvisioningParameterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
-                    provisionedProductPlanDetails.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    provisionedProductPlanDetails.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("StatusMessage", targetDepth)) {
                     context.nextToken();

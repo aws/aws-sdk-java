@@ -50,7 +50,9 @@ public class AnomalyJsonUnmarshaller implements Unmarshaller<Anomaly, JsonUnmars
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("instances", targetDepth)) {
                     context.nextToken();
-                    anomaly.setInstances(new ListUnmarshaller<AnomalyInstance>(AnomalyInstanceJsonUnmarshaller.getInstance()).unmarshall(context));
+                    anomaly.setInstances(new ListUnmarshaller<AnomalyInstance>(AnomalyInstanceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("metric", targetDepth)) {
                     context.nextToken();

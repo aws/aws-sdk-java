@@ -59,7 +59,9 @@ public class ResultByTimeJsonUnmarshaller implements Unmarshaller<ResultByTime, 
                 }
                 if (context.testExpression("Groups", targetDepth)) {
                     context.nextToken();
-                    resultByTime.setGroups(new ListUnmarshaller<Group>(GroupJsonUnmarshaller.getInstance()).unmarshall(context));
+                    resultByTime.setGroups(new ListUnmarshaller<Group>(GroupJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Estimated", targetDepth)) {
                     context.nextToken();

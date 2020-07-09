@@ -51,7 +51,9 @@ public class GetCustomerGatewayAssociationsResultJsonUnmarshaller implements Unm
                 if (context.testExpression("CustomerGatewayAssociations", targetDepth)) {
                     context.nextToken();
                     getCustomerGatewayAssociationsResult.setCustomerGatewayAssociations(new ListUnmarshaller<CustomerGatewayAssociation>(
-                            CustomerGatewayAssociationJsonUnmarshaller.getInstance()).unmarshall(context));
+                            CustomerGatewayAssociationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

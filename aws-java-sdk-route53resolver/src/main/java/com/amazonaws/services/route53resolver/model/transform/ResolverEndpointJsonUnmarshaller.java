@@ -66,7 +66,9 @@ public class ResolverEndpointJsonUnmarshaller implements Unmarshaller<ResolverEn
                 }
                 if (context.testExpression("SecurityGroupIds", targetDepth)) {
                     context.nextToken();
-                    resolverEndpoint.setSecurityGroupIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    resolverEndpoint.setSecurityGroupIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Direction", targetDepth)) {
                     context.nextToken();

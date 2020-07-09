@@ -692,6 +692,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "AlreadyExistsException",
+      "fullyQualifiedName" : "com.amazonaws.services.lakeformation.exception.AlreadyExistsException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -700,6 +701,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.lakeformation.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -731,6 +733,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.lakeformation.request.BatchGrantPermissionsRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -799,6 +802,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>\n@param catalogId The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -906,6 +910,7 @@
               "variableSetterType" : "BatchPermissionsRequestEntry"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -950,6 +955,7 @@
           "variableSetterType" : "java.util.Collection<BatchPermissionsRequestEntry>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of up to 20 entries for resource permissions to be granted by batch operation to the principal.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEntries(java.util.Collection)} or {@link #withEntries(java.util.Collection)} if you want to override the existing values.</p>\n@param entries A list of up to 20 entries for resource permissions to be granted by batch operation to the principal.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1020,6 +1026,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>\n@param catalogId The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1128,6 +1135,7 @@
                 "variableSetterType" : "BatchPermissionsRequestEntry"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1172,6 +1180,7 @@
             "variableSetterType" : "java.util.Collection<BatchPermissionsRequestEntry>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of up to 20 entries for resource permissions to be granted by batch operation to the principal.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEntries(java.util.Collection)} or {@link #withEntries(java.util.Collection)} if you want to override the existing values.</p>\n@param entries A list of up to 20 entries for resource permissions to be granted by batch operation to the principal.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1187,6 +1196,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.lakeformation.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Entries" ],
@@ -1218,6 +1228,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.lakeformation.response.BatchGrantPermissionsResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1318,6 +1329,7 @@
               "variableSetterType" : "BatchPermissionsFailureEntry"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1362,6 +1374,7 @@
           "variableSetterType" : "java.util.Collection<BatchPermissionsFailureEntry>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of failures to grant permissions to the resources.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFailures(java.util.Collection)} or {@link #withFailures(java.util.Collection)} if you want to override the existing values.</p>\n@param failures A list of failures to grant permissions to the resources.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1471,6 +1484,7 @@
                 "variableSetterType" : "BatchPermissionsFailureEntry"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1515,6 +1529,7 @@
             "variableSetterType" : "java.util.Collection<BatchPermissionsFailureEntry>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of failures to grant permissions to the resources.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFailures(java.util.Collection)} or {@link #withFailures(java.util.Collection)} if you want to override the existing values.</p>\n@param failures A list of failures to grant permissions to the resources.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1530,6 +1545,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.lakeformation.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1564,6 +1580,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.lakeformation.model.BatchPermissionsFailureEntry",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1625,6 +1642,7 @@
           "variableSetterType" : "BatchPermissionsRequestEntry"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An identifier for an entry of the batch request.</p>\n@param requestEntry An identifier for an entry of the batch request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1693,6 +1711,7 @@
           "variableSetterType" : "ErrorDetail"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An error message that applies to the failure of the entry.</p>\n@param error An error message that applies to the failure of the entry.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1763,6 +1782,7 @@
             "variableSetterType" : "ErrorDetail"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An error message that applies to the failure of the entry.</p>\n@param error An error message that applies to the failure of the entry.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1832,6 +1852,7 @@
             "variableSetterType" : "BatchPermissionsRequestEntry"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An identifier for an entry of the batch request.</p>\n@param requestEntry An identifier for an entry of the batch request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1847,6 +1868,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.lakeformation.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1881,6 +1903,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.lakeformation.model.BatchPermissionsRequestEntry",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1942,6 +1965,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A unique identifier for the batch permissions request entry.</p>\n@param id A unique identifier for the batch permissions request entry.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2010,6 +2034,7 @@
           "variableSetterType" : "DataLakePrincipal"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The principal to be granted a permission.</p>\n@param principal The principal to be granted a permission.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2078,6 +2103,7 @@
           "variableSetterType" : "Resource"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The resource to which the principal is to be granted a permission.</p>\n@param resource The resource to which the principal is to be granted a permission.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2185,6 +2211,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see Permission*/",
@@ -2229,6 +2256,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The permissions to be granted.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPermissions(java.util.Collection)} or {@link #withPermissions(java.util.Collection)} if you want to override the existing values.</p>\n@param permissions The permissions to be granted.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Permission*/",
@@ -2336,6 +2364,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see Permission*/",
@@ -2380,6 +2409,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Indicates if the option to pass permissions is granted.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPermissionsWithGrantOption(java.util.Collection)} or {@link #withPermissionsWithGrantOption(java.util.Collection)} if you want to override the existing values.</p>\n@param permissionsWithGrantOption Indicates if the option to pass permissions is granted.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Permission*/",
@@ -2450,6 +2480,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A unique identifier for the batch permissions request entry.</p>\n@param id A unique identifier for the batch permissions request entry.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2558,6 +2589,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see Permission*/",
@@ -2602,6 +2634,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The permissions to be granted.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPermissions(java.util.Collection)} or {@link #withPermissions(java.util.Collection)} if you want to override the existing values.</p>\n@param permissions The permissions to be granted.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Permission*/",
@@ -2710,6 +2743,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see Permission*/",
@@ -2754,6 +2788,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Indicates if the option to pass permissions is granted.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPermissionsWithGrantOption(java.util.Collection)} or {@link #withPermissionsWithGrantOption(java.util.Collection)} if you want to override the existing values.</p>\n@param permissionsWithGrantOption Indicates if the option to pass permissions is granted.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Permission*/",
@@ -2823,6 +2858,7 @@
             "variableSetterType" : "DataLakePrincipal"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The principal to be granted a permission.</p>\n@param principal The principal to be granted a permission.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2892,6 +2928,7 @@
             "variableSetterType" : "Resource"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The resource to which the principal is to be granted a permission.</p>\n@param resource The resource to which the principal is to be granted a permission.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2907,6 +2944,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.lakeformation.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Id" ],
@@ -2941,6 +2979,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.lakeformation.request.BatchRevokePermissionsRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3009,6 +3048,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>\n@param catalogId The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3116,6 +3156,7 @@
               "variableSetterType" : "BatchPermissionsRequestEntry"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3160,6 +3201,7 @@
           "variableSetterType" : "java.util.Collection<BatchPermissionsRequestEntry>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of up to 20 entries for resource permissions to be revoked by batch operation to the principal.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEntries(java.util.Collection)} or {@link #withEntries(java.util.Collection)} if you want to override the existing values.</p>\n@param entries A list of up to 20 entries for resource permissions to be revoked by batch operation to the principal.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3230,6 +3272,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>\n@param catalogId The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3338,6 +3381,7 @@
                 "variableSetterType" : "BatchPermissionsRequestEntry"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3382,6 +3426,7 @@
             "variableSetterType" : "java.util.Collection<BatchPermissionsRequestEntry>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of up to 20 entries for resource permissions to be revoked by batch operation to the principal.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEntries(java.util.Collection)} or {@link #withEntries(java.util.Collection)} if you want to override the existing values.</p>\n@param entries A list of up to 20 entries for resource permissions to be revoked by batch operation to the principal.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3397,6 +3442,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.lakeformation.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Entries" ],
@@ -3428,6 +3474,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.lakeformation.response.BatchRevokePermissionsResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3528,6 +3575,7 @@
               "variableSetterType" : "BatchPermissionsFailureEntry"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3572,6 +3620,7 @@
           "variableSetterType" : "java.util.Collection<BatchPermissionsFailureEntry>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of failures to revoke permissions to the resources.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFailures(java.util.Collection)} or {@link #withFailures(java.util.Collection)} if you want to override the existing values.</p>\n@param failures A list of failures to revoke permissions to the resources.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3681,6 +3730,7 @@
                 "variableSetterType" : "BatchPermissionsFailureEntry"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3725,6 +3775,7 @@
             "variableSetterType" : "java.util.Collection<BatchPermissionsFailureEntry>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of failures to revoke permissions to the resources.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFailures(java.util.Collection)} or {@link #withFailures(java.util.Collection)} if you want to override the existing values.</p>\n@param failures A list of failures to revoke permissions to the resources.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3740,6 +3791,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.lakeformation.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3774,6 +3826,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.lakeformation.model.CatalogResource",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3782,6 +3835,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.lakeformation.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3816,6 +3870,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.lakeformation.model.ColumnWildcard",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3916,6 +3971,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3960,6 +4016,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Excludes column names. Any column with this name will be excluded.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setExcludedColumnNames(java.util.Collection)} or {@link #withExcludedColumnNames(java.util.Collection)} if you want to override the existing values.</p>\n@param excludedColumnNames Excludes column names. Any column with this name will be excluded.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4069,6 +4126,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4113,6 +4171,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Excludes column names. Any column with this name will be excluded.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setExcludedColumnNames(java.util.Collection)} or {@link #withExcludedColumnNames(java.util.Collection)} if you want to override the existing values.</p>\n@param excludedColumnNames Excludes column names. Any column with this name will be excluded.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4128,6 +4187,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.lakeformation.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4195,6 +4255,7 @@
         "value" : "BETWEEN"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.lakeformation.enum.ComparisonOperator",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4203,6 +4264,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.lakeformation.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4237,6 +4299,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ConcurrentModificationException",
+      "fullyQualifiedName" : "com.amazonaws.services.lakeformation.exception.ConcurrentModificationException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4245,6 +4308,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.lakeformation.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4276,6 +4340,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.lakeformation.model.DataLakePrincipal",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4337,6 +4402,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An identifier for the AWS Lake Formation principal.</p>\n@param dataLakePrincipalIdentifier An identifier for the AWS Lake Formation principal.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4407,6 +4473,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An identifier for the AWS Lake Formation principal.</p>\n@param dataLakePrincipalIdentifier An identifier for the AWS Lake Formation principal.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4422,6 +4489,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.lakeformation.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4468,6 +4536,7 @@
         "value" : "DATA_LOCATION"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.lakeformation.enum.DataLakeResourceType",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4476,6 +4545,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.lakeformation.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4510,6 +4580,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.lakeformation.model.DataLakeSettings",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4610,6 +4681,7 @@
               "variableSetterType" : "DataLakePrincipal"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4654,6 +4726,7 @@
           "variableSetterType" : "java.util.Collection<DataLakePrincipal>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of AWS Lake Formation principals. Supported principals are IAM users or IAM roles.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDataLakeAdmins(java.util.Collection)} or {@link #withDataLakeAdmins(java.util.Collection)} if you want to override the existing values.</p>\n@param dataLakeAdmins A list of AWS Lake Formation principals. Supported principals are IAM users or IAM roles.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4761,6 +4834,7 @@
               "variableSetterType" : "PrincipalPermissions"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4805,6 +4879,7 @@
           "variableSetterType" : "java.util.Collection<PrincipalPermissions>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A structure representing a list of up to three principal permissions entries for default create database permissions.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCreateDatabaseDefaultPermissions(java.util.Collection)} or {@link #withCreateDatabaseDefaultPermissions(java.util.Collection)} if you want to override the existing values.</p>\n@param createDatabaseDefaultPermissions A structure representing a list of up to three principal permissions entries for default create database permissions.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4912,6 +4987,7 @@
               "variableSetterType" : "PrincipalPermissions"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4956,6 +5032,7 @@
           "variableSetterType" : "java.util.Collection<PrincipalPermissions>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A structure representing a list of up to three principal permissions entries for default create table permissions.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCreateTableDefaultPermissions(java.util.Collection)} or {@link #withCreateTableDefaultPermissions(java.util.Collection)} if you want to override the existing values.</p>\n@param createTableDefaultPermissions A structure representing a list of up to three principal permissions entries for default create table permissions.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5063,6 +5140,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5107,6 +5185,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of the resource-owning account IDs that the caller's account can use to share their user access details (user ARNs). The user ARNs can be logged in the resource owner's AWS CloudTrail log.</p> <p>You may want to specify this property when you are in a high-trust boundary, such as the same team or company. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTrustedResourceOwners(java.util.Collection)} or {@link #withTrustedResourceOwners(java.util.Collection)} if you want to override the existing values.</p>\n@param trustedResourceOwners A list of the resource-owning account IDs that the caller's account can use to share their user access details (user ARNs). The user ARNs can be logged in the resource owner's AWS CloudTrail log.</p> <p>You may want to specify this property when you are in a high-trust boundary, such as the same team or company.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5216,6 +5295,7 @@
                 "variableSetterType" : "PrincipalPermissions"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5260,6 +5340,7 @@
             "variableSetterType" : "java.util.Collection<PrincipalPermissions>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A structure representing a list of up to three principal permissions entries for default create database permissions.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCreateDatabaseDefaultPermissions(java.util.Collection)} or {@link #withCreateDatabaseDefaultPermissions(java.util.Collection)} if you want to override the existing values.</p>\n@param createDatabaseDefaultPermissions A structure representing a list of up to three principal permissions entries for default create database permissions.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5368,6 +5449,7 @@
                 "variableSetterType" : "PrincipalPermissions"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5412,6 +5494,7 @@
             "variableSetterType" : "java.util.Collection<PrincipalPermissions>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A structure representing a list of up to three principal permissions entries for default create table permissions.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCreateTableDefaultPermissions(java.util.Collection)} or {@link #withCreateTableDefaultPermissions(java.util.Collection)} if you want to override the existing values.</p>\n@param createTableDefaultPermissions A structure representing a list of up to three principal permissions entries for default create table permissions.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5520,6 +5603,7 @@
                 "variableSetterType" : "DataLakePrincipal"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5564,6 +5648,7 @@
             "variableSetterType" : "java.util.Collection<DataLakePrincipal>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of AWS Lake Formation principals. Supported principals are IAM users or IAM roles.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDataLakeAdmins(java.util.Collection)} or {@link #withDataLakeAdmins(java.util.Collection)} if you want to override the existing values.</p>\n@param dataLakeAdmins A list of AWS Lake Formation principals. Supported principals are IAM users or IAM roles.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5672,6 +5757,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5716,6 +5802,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of the resource-owning account IDs that the caller's account can use to share their user access details (user ARNs). The user ARNs can be logged in the resource owner's AWS CloudTrail log.</p> <p>You may want to specify this property when you are in a high-trust boundary, such as the same team or company. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTrustedResourceOwners(java.util.Collection)} or {@link #withTrustedResourceOwners(java.util.Collection)} if you want to override the existing values.</p>\n@param trustedResourceOwners A list of the resource-owning account IDs that the caller's account can use to share their user access details (user ARNs). The user ARNs can be logged in the resource owner's AWS CloudTrail log.</p> <p>You may want to specify this property when you are in a high-trust boundary, such as the same team or company.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5731,6 +5818,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.lakeformation.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -5765,6 +5853,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.lakeformation.model.DataLocationResource",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5826,6 +5915,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier for the Data Catalog where the location is registered with AWS Lake Formation. By default, it is the account ID of the caller.</p>\n@param catalogId The identifier for the Data Catalog where the location is registered with AWS Lake Formation. By default, it is the account ID of the caller.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5894,6 +5984,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that uniquely identifies the data location resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) that uniquely identifies the data location resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5964,6 +6055,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier for the Data Catalog where the location is registered with AWS Lake Formation. By default, it is the account ID of the caller.</p>\n@param catalogId The identifier for the Data Catalog where the location is registered with AWS Lake Formation. By default, it is the account ID of the caller.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6033,6 +6125,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that uniquely identifies the data location resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) that uniquely identifies the data location resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6048,6 +6141,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.lakeformation.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ResourceArn" ],
@@ -6082,6 +6176,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.lakeformation.model.DatabaseResource",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6143,6 +6238,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier for the Data Catalog. By default, it is the account ID of the caller.</p>\n@param catalogId The identifier for the Data Catalog. By default, it is the account ID of the caller.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6211,6 +6307,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the database resource. Unique to the Data Catalog.</p>\n@param name The name of the database resource. Unique to the Data Catalog.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6281,6 +6378,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier for the Data Catalog. By default, it is the account ID of the caller.</p>\n@param catalogId The identifier for the Data Catalog. By default, it is the account ID of the caller.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6350,6 +6448,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the database resource. Unique to the Data Catalog.</p>\n@param name The name of the database resource. Unique to the Data Catalog.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6365,6 +6464,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.lakeformation.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Name" ],
@@ -6399,6 +6499,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.lakeformation.request.DeregisterResourceRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6467,6 +6568,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource that you want to deregister.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource that you want to deregister.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6537,6 +6639,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource that you want to deregister.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource that you want to deregister.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6552,6 +6655,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.lakeformation.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ResourceArn" ],
@@ -6583,6 +6687,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.lakeformation.response.DeregisterResourceResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6591,6 +6696,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.lakeformation.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6625,6 +6731,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.lakeformation.request.DescribeResourceRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6693,6 +6800,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The resource ARN.</p>\n@param resourceArn The resource ARN.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6763,6 +6871,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The resource ARN.</p>\n@param resourceArn The resource ARN.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6778,6 +6887,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.lakeformation.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ResourceArn" ],
@@ -6809,6 +6919,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.lakeformation.response.DescribeResourceResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6870,6 +6981,7 @@
           "variableSetterType" : "ResourceInfo"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A structure containing information about an AWS Lake Formation resource.</p>\n@param resourceInfo A structure containing information about an AWS Lake Formation resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6940,6 +7052,7 @@
             "variableSetterType" : "ResourceInfo"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A structure containing information about an AWS Lake Formation resource.</p>\n@param resourceInfo A structure containing information about an AWS Lake Formation resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6955,6 +7068,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.lakeformation.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6989,6 +7103,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "EntityNotFoundException",
+      "fullyQualifiedName" : "com.amazonaws.services.lakeformation.exception.EntityNotFoundException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6997,6 +7112,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.lakeformation.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -7028,6 +7144,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.lakeformation.model.ErrorDetail",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7089,6 +7206,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The code associated with this error.</p>\n@param errorCode The code associated with this error.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7157,6 +7275,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A message describing the error.</p>\n@param errorMessage A message describing the error.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7227,6 +7346,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The code associated with this error.</p>\n@param errorCode The code associated with this error.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7296,6 +7416,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A message describing the error.</p>\n@param errorMessage A message describing the error.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7311,6 +7432,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.lakeformation.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -7354,6 +7476,7 @@
         "value" : "LAST_MODIFIED"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.lakeformation.enum.FieldNameString",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7362,6 +7485,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.lakeformation.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -7396,6 +7520,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.lakeformation.model.FilterCondition",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7457,6 +7582,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The field to filter in the filter condition.</p>\n@param field The field to filter in the filter condition.\n@return Returns a reference to this object so that method calls can be chained together.\n@see FieldNameString*/",
@@ -7525,6 +7651,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The comparison operator used in the filter condition.</p>\n@param comparisonOperator The comparison operator used in the filter condition.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ComparisonOperator*/",
@@ -7632,6 +7759,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7676,6 +7804,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A string with values used in evaluating the filter condition.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setStringValueList(java.util.Collection)} or {@link #withStringValueList(java.util.Collection)} if you want to override the existing values.</p>\n@param stringValueList A string with values used in evaluating the filter condition.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7746,6 +7875,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The comparison operator used in the filter condition.</p>\n@param comparisonOperator The comparison operator used in the filter condition.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ComparisonOperator*/",
@@ -7815,6 +7945,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The field to filter in the filter condition.</p>\n@param field The field to filter in the filter condition.\n@return Returns a reference to this object so that method calls can be chained together.\n@see FieldNameString*/",
@@ -7923,6 +8054,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7967,6 +8099,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A string with values used in evaluating the filter condition.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setStringValueList(java.util.Collection)} or {@link #withStringValueList(java.util.Collection)} if you want to override the existing values.</p>\n@param stringValueList A string with values used in evaluating the filter condition.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7982,6 +8115,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.lakeformation.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -8016,6 +8150,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.lakeformation.request.GetDataLakeSettingsRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8084,6 +8219,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>\n@param catalogId The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8154,6 +8290,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>\n@param catalogId The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8169,6 +8306,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.lakeformation.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -8200,6 +8338,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.lakeformation.response.GetDataLakeSettingsResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8261,6 +8400,7 @@
           "variableSetterType" : "DataLakeSettings"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A structure representing a list of AWS Lake Formation principals designated as data lake administrators.</p>\n@param dataLakeSettings A structure representing a list of AWS Lake Formation principals designated as data lake administrators.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8331,6 +8471,7 @@
             "variableSetterType" : "DataLakeSettings"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A structure representing a list of AWS Lake Formation principals designated as data lake administrators.</p>\n@param dataLakeSettings A structure representing a list of AWS Lake Formation principals designated as data lake administrators.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8346,6 +8487,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.lakeformation.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -8380,6 +8522,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.lakeformation.request.GetEffectivePermissionsForPathRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8448,6 +8591,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>\n@param catalogId The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8516,6 +8660,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource for which you want to get permissions.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource for which you want to get permissions.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8584,6 +8729,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A continuation token, if this is not the first call to retrieve this list.</p>\n@param nextToken A continuation token, if this is not the first call to retrieve this list.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8652,6 +8798,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of results to return.</p>\n@param maxResults The maximum number of results to return.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8722,6 +8869,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>\n@param catalogId The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8791,6 +8939,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of results to return.</p>\n@param maxResults The maximum number of results to return.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8860,6 +9009,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A continuation token, if this is not the first call to retrieve this list.</p>\n@param nextToken A continuation token, if this is not the first call to retrieve this list.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8929,6 +9079,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource for which you want to get permissions.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource for which you want to get permissions.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8944,6 +9095,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.lakeformation.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ResourceArn" ],
@@ -8975,6 +9127,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.lakeformation.response.GetEffectivePermissionsForPathResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -9075,6 +9228,7 @@
               "variableSetterType" : "PrincipalResourcePermissions"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9119,6 +9273,7 @@
           "variableSetterType" : "java.util.Collection<PrincipalResourcePermissions>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of the permissions for the specified table or database resource located at the path in Amazon S3.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPermissions(java.util.Collection)} or {@link #withPermissions(java.util.Collection)} if you want to override the existing values.</p>\n@param permissions A list of the permissions for the specified table or database resource located at the path in Amazon S3.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9187,6 +9342,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A continuation token, if this is not the first call to retrieve this list.</p>\n@param nextToken A continuation token, if this is not the first call to retrieve this list.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9257,6 +9413,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A continuation token, if this is not the first call to retrieve this list.</p>\n@param nextToken A continuation token, if this is not the first call to retrieve this list.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9365,6 +9522,7 @@
                 "variableSetterType" : "PrincipalResourcePermissions"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9409,6 +9567,7 @@
             "variableSetterType" : "java.util.Collection<PrincipalResourcePermissions>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of the permissions for the specified table or database resource located at the path in Amazon S3.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPermissions(java.util.Collection)} or {@link #withPermissions(java.util.Collection)} if you want to override the existing values.</p>\n@param permissions A list of the permissions for the specified table or database resource located at the path in Amazon S3.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9424,6 +9583,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.lakeformation.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -9458,6 +9618,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.lakeformation.request.GrantPermissionsRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -9526,6 +9687,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>\n@param catalogId The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9594,6 +9756,7 @@
           "variableSetterType" : "DataLakePrincipal"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The principal to be granted the permissions on the resource. Supported principals are IAM users or IAM roles, and they are defined by their principal type and their ARN.</p> <p>Note that if you define a resource with a particular ARN, then later delete, and recreate a resource with that same ARN, the resource maintains the permissions already granted. </p>\n@param principal The principal to be granted the permissions on the resource. Supported principals are IAM users or IAM roles, and they are defined by their principal type and their ARN.</p> <p>Note that if you define a resource with a particular ARN, then later delete, and recreate a resource with that same ARN, the resource maintains the permissions already granted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9662,6 +9825,7 @@
           "variableSetterType" : "Resource"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The resource to which permissions are to be granted. Resources in AWS Lake Formation are the Data Catalog, databases, and tables.</p>\n@param resource The resource to which permissions are to be granted. Resources in AWS Lake Formation are the Data Catalog, databases, and tables.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9769,6 +9933,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see Permission*/",
@@ -9813,6 +9978,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The permissions granted to the principal on the resource. AWS Lake Formation defines privileges to grant and revoke access to metadata in the Data Catalog and data organized in underlying data storage such as Amazon S3. AWS Lake Formation requires that each principal be authorized to perform a specific task on AWS Lake Formation resources. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPermissions(java.util.Collection)} or {@link #withPermissions(java.util.Collection)} if you want to override the existing values.</p>\n@param permissions The permissions granted to the principal on the resource. AWS Lake Formation defines privileges to grant and revoke access to metadata in the Data Catalog and data organized in underlying data storage such as Amazon S3. AWS Lake Formation requires that each principal be authorized to perform a specific task on AWS Lake Formation resources.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Permission*/",
@@ -9920,6 +10086,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see Permission*/",
@@ -9964,6 +10131,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Indicates a list of the granted permissions that the principal may pass to other users. These permissions may only be a subset of the permissions granted in the <code>Privileges</code>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPermissionsWithGrantOption(java.util.Collection)} or {@link #withPermissionsWithGrantOption(java.util.Collection)} if you want to override the existing values.</p>\n@param permissionsWithGrantOption Indicates a list of the granted permissions that the principal may pass to other users. These permissions may only be a subset of the permissions granted in the <code>Privileges</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Permission*/",
@@ -10034,6 +10202,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>\n@param catalogId The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10142,6 +10311,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see Permission*/",
@@ -10186,6 +10356,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The permissions granted to the principal on the resource. AWS Lake Formation defines privileges to grant and revoke access to metadata in the Data Catalog and data organized in underlying data storage such as Amazon S3. AWS Lake Formation requires that each principal be authorized to perform a specific task on AWS Lake Formation resources. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPermissions(java.util.Collection)} or {@link #withPermissions(java.util.Collection)} if you want to override the existing values.</p>\n@param permissions The permissions granted to the principal on the resource. AWS Lake Formation defines privileges to grant and revoke access to metadata in the Data Catalog and data organized in underlying data storage such as Amazon S3. AWS Lake Formation requires that each principal be authorized to perform a specific task on AWS Lake Formation resources.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Permission*/",
@@ -10294,6 +10465,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see Permission*/",
@@ -10338,6 +10510,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Indicates a list of the granted permissions that the principal may pass to other users. These permissions may only be a subset of the permissions granted in the <code>Privileges</code>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPermissionsWithGrantOption(java.util.Collection)} or {@link #withPermissionsWithGrantOption(java.util.Collection)} if you want to override the existing values.</p>\n@param permissionsWithGrantOption Indicates a list of the granted permissions that the principal may pass to other users. These permissions may only be a subset of the permissions granted in the <code>Privileges</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Permission*/",
@@ -10407,6 +10580,7 @@
             "variableSetterType" : "DataLakePrincipal"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The principal to be granted the permissions on the resource. Supported principals are IAM users or IAM roles, and they are defined by their principal type and their ARN.</p> <p>Note that if you define a resource with a particular ARN, then later delete, and recreate a resource with that same ARN, the resource maintains the permissions already granted. </p>\n@param principal The principal to be granted the permissions on the resource. Supported principals are IAM users or IAM roles, and they are defined by their principal type and their ARN.</p> <p>Note that if you define a resource with a particular ARN, then later delete, and recreate a resource with that same ARN, the resource maintains the permissions already granted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10476,6 +10650,7 @@
             "variableSetterType" : "Resource"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The resource to which permissions are to be granted. Resources in AWS Lake Formation are the Data Catalog, databases, and tables.</p>\n@param resource The resource to which permissions are to be granted. Resources in AWS Lake Formation are the Data Catalog, databases, and tables.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10491,6 +10666,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.lakeformation.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Principal", "Resource", "Permissions" ],
@@ -10522,6 +10698,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.lakeformation.response.GrantPermissionsResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -10530,6 +10707,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.lakeformation.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -10564,6 +10742,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InternalServiceException",
+      "fullyQualifiedName" : "com.amazonaws.services.lakeformation.exception.InternalServiceException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -10572,6 +10751,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.lakeformation.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -10603,6 +10783,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InvalidInputException",
+      "fullyQualifiedName" : "com.amazonaws.services.lakeformation.exception.InvalidInputException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -10611,6 +10792,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.lakeformation.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -10642,6 +10824,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.lakeformation.request.ListPermissionsRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -10710,6 +10893,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>\n@param catalogId The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10778,6 +10962,7 @@
           "variableSetterType" : "DataLakePrincipal"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies a principal to filter the permissions returned.</p>\n@param principal Specifies a principal to filter the permissions returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10846,6 +11031,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies a resource type to filter the permissions returned.</p>\n@param resourceType Specifies a resource type to filter the permissions returned.\n@return Returns a reference to this object so that method calls can be chained together.\n@see DataLakeResourceType*/",
@@ -10914,6 +11100,7 @@
           "variableSetterType" : "Resource"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A resource where you will get a list of the principal permissions.</p> <p>This operation does not support getting privileges on a table with columns. Instead, call this operation on the table, and the operation returns the table and the table w columns.</p>\n@param resource A resource where you will get a list of the principal permissions.</p> <p>This operation does not support getting privileges on a table with columns. Instead, call this operation on the table, and the operation returns the table and the table w columns.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10982,6 +11169,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A continuation token, if this is not the first call to retrieve this list.</p>\n@param nextToken A continuation token, if this is not the first call to retrieve this list.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11050,6 +11238,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of results to return.</p>\n@param maxResults The maximum number of results to return.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11120,6 +11309,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>\n@param catalogId The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11189,6 +11379,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of results to return.</p>\n@param maxResults The maximum number of results to return.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11258,6 +11449,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A continuation token, if this is not the first call to retrieve this list.</p>\n@param nextToken A continuation token, if this is not the first call to retrieve this list.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11327,6 +11519,7 @@
             "variableSetterType" : "DataLakePrincipal"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies a principal to filter the permissions returned.</p>\n@param principal Specifies a principal to filter the permissions returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11396,6 +11589,7 @@
             "variableSetterType" : "Resource"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A resource where you will get a list of the principal permissions.</p> <p>This operation does not support getting privileges on a table with columns. Instead, call this operation on the table, and the operation returns the table and the table w columns.</p>\n@param resource A resource where you will get a list of the principal permissions.</p> <p>This operation does not support getting privileges on a table with columns. Instead, call this operation on the table, and the operation returns the table and the table w columns.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11465,6 +11659,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies a resource type to filter the permissions returned.</p>\n@param resourceType Specifies a resource type to filter the permissions returned.\n@return Returns a reference to this object so that method calls can be chained together.\n@see DataLakeResourceType*/",
@@ -11480,6 +11675,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.lakeformation.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -11511,6 +11707,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.lakeformation.response.ListPermissionsResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -11611,6 +11808,7 @@
               "variableSetterType" : "PrincipalResourcePermissions"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11655,6 +11853,7 @@
           "variableSetterType" : "java.util.Collection<PrincipalResourcePermissions>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of principals and their permissions on the resource for the specified principal and resource types.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPrincipalResourcePermissions(java.util.Collection)} or {@link #withPrincipalResourcePermissions(java.util.Collection)} if you want to override the existing values.</p>\n@param principalResourcePermissions A list of principals and their permissions on the resource for the specified principal and resource types.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11723,6 +11922,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A continuation token, if this is not the first call to retrieve this list.</p>\n@param nextToken A continuation token, if this is not the first call to retrieve this list.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11793,6 +11993,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A continuation token, if this is not the first call to retrieve this list.</p>\n@param nextToken A continuation token, if this is not the first call to retrieve this list.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11901,6 +12102,7 @@
                 "variableSetterType" : "PrincipalResourcePermissions"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11945,6 +12147,7 @@
             "variableSetterType" : "java.util.Collection<PrincipalResourcePermissions>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of principals and their permissions on the resource for the specified principal and resource types.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPrincipalResourcePermissions(java.util.Collection)} or {@link #withPrincipalResourcePermissions(java.util.Collection)} if you want to override the existing values.</p>\n@param principalResourcePermissions A list of principals and their permissions on the resource for the specified principal and resource types.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11960,6 +12163,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.lakeformation.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -11994,6 +12198,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.lakeformation.request.ListResourcesRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -12101,6 +12306,7 @@
               "variableSetterType" : "FilterCondition"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12145,6 +12351,7 @@
           "variableSetterType" : "java.util.Collection<FilterCondition>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Any applicable row-level and/or column-level filtering conditions for the resources.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFilterConditionList(java.util.Collection)} or {@link #withFilterConditionList(java.util.Collection)} if you want to override the existing values.</p>\n@param filterConditionList Any applicable row-level and/or column-level filtering conditions for the resources.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12213,6 +12420,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of resource results.</p>\n@param maxResults The maximum number of resource results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12281,6 +12489,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A continuation token, if this is not the first call to retrieve these resources.</p>\n@param nextToken A continuation token, if this is not the first call to retrieve these resources.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12390,6 +12599,7 @@
                 "variableSetterType" : "FilterCondition"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12434,6 +12644,7 @@
             "variableSetterType" : "java.util.Collection<FilterCondition>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Any applicable row-level and/or column-level filtering conditions for the resources.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFilterConditionList(java.util.Collection)} or {@link #withFilterConditionList(java.util.Collection)} if you want to override the existing values.</p>\n@param filterConditionList Any applicable row-level and/or column-level filtering conditions for the resources.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12503,6 +12714,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of resource results.</p>\n@param maxResults The maximum number of resource results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12572,6 +12784,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A continuation token, if this is not the first call to retrieve these resources.</p>\n@param nextToken A continuation token, if this is not the first call to retrieve these resources.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12587,6 +12800,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.lakeformation.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -12618,6 +12832,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.lakeformation.response.ListResourcesResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -12718,6 +12933,7 @@
               "variableSetterType" : "ResourceInfo"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12762,6 +12978,7 @@
           "variableSetterType" : "java.util.Collection<ResourceInfo>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A summary of the data lake resources.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setResourceInfoList(java.util.Collection)} or {@link #withResourceInfoList(java.util.Collection)} if you want to override the existing values.</p>\n@param resourceInfoList A summary of the data lake resources.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12830,6 +13047,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A continuation token, if this is not the first call to retrieve these resources.</p>\n@param nextToken A continuation token, if this is not the first call to retrieve these resources.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12900,6 +13118,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A continuation token, if this is not the first call to retrieve these resources.</p>\n@param nextToken A continuation token, if this is not the first call to retrieve these resources.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13008,6 +13227,7 @@
                 "variableSetterType" : "ResourceInfo"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13052,6 +13272,7 @@
             "variableSetterType" : "java.util.Collection<ResourceInfo>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A summary of the data lake resources.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setResourceInfoList(java.util.Collection)} or {@link #withResourceInfoList(java.util.Collection)} if you want to override the existing values.</p>\n@param resourceInfoList A summary of the data lake resources.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13067,6 +13288,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.lakeformation.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -13101,6 +13323,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "OperationTimeoutException",
+      "fullyQualifiedName" : "com.amazonaws.services.lakeformation.exception.OperationTimeoutException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -13109,6 +13332,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.lakeformation.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -13170,6 +13394,7 @@
         "value" : "DATA_LOCATION_ACCESS"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.lakeformation.enum.Permission",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -13178,6 +13403,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.lakeformation.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -13212,6 +13438,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.lakeformation.model.PrincipalPermissions",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -13273,6 +13500,7 @@
           "variableSetterType" : "DataLakePrincipal"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The principal who is granted permissions.</p>\n@param principal The principal who is granted permissions.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13380,6 +13608,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see Permission*/",
@@ -13424,6 +13653,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The permissions that are granted to the principal.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPermissions(java.util.Collection)} or {@link #withPermissions(java.util.Collection)} if you want to override the existing values.</p>\n@param permissions The permissions that are granted to the principal.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Permission*/",
@@ -13533,6 +13763,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see Permission*/",
@@ -13577,6 +13808,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The permissions that are granted to the principal.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPermissions(java.util.Collection)} or {@link #withPermissions(java.util.Collection)} if you want to override the existing values.</p>\n@param permissions The permissions that are granted to the principal.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Permission*/",
@@ -13646,6 +13878,7 @@
             "variableSetterType" : "DataLakePrincipal"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The principal who is granted permissions.</p>\n@param principal The principal who is granted permissions.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13661,6 +13894,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.lakeformation.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -13695,6 +13929,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.lakeformation.model.PrincipalResourcePermissions",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -13756,6 +13991,7 @@
           "variableSetterType" : "DataLakePrincipal"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Data Lake principal to be granted or revoked permissions.</p>\n@param principal The Data Lake principal to be granted or revoked permissions.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13824,6 +14060,7 @@
           "variableSetterType" : "Resource"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The resource where permissions are to be granted or revoked.</p>\n@param resource The resource where permissions are to be granted or revoked.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13931,6 +14168,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see Permission*/",
@@ -13975,6 +14213,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The permissions to be granted or revoked on the resource.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPermissions(java.util.Collection)} or {@link #withPermissions(java.util.Collection)} if you want to override the existing values.</p>\n@param permissions The permissions to be granted or revoked on the resource.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Permission*/",
@@ -14082,6 +14321,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see Permission*/",
@@ -14126,6 +14366,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Indicates whether to grant the ability to grant permissions (as a subset of permissions granted).</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPermissionsWithGrantOption(java.util.Collection)} or {@link #withPermissionsWithGrantOption(java.util.Collection)} if you want to override the existing values.</p>\n@param permissionsWithGrantOption Indicates whether to grant the ability to grant permissions (as a subset of permissions granted).\n@return Returns a reference to this object so that method calls can be chained together.\n@see Permission*/",
@@ -14235,6 +14476,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see Permission*/",
@@ -14279,6 +14521,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The permissions to be granted or revoked on the resource.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPermissions(java.util.Collection)} or {@link #withPermissions(java.util.Collection)} if you want to override the existing values.</p>\n@param permissions The permissions to be granted or revoked on the resource.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Permission*/",
@@ -14387,6 +14630,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see Permission*/",
@@ -14431,6 +14675,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Indicates whether to grant the ability to grant permissions (as a subset of permissions granted).</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPermissionsWithGrantOption(java.util.Collection)} or {@link #withPermissionsWithGrantOption(java.util.Collection)} if you want to override the existing values.</p>\n@param permissionsWithGrantOption Indicates whether to grant the ability to grant permissions (as a subset of permissions granted).\n@return Returns a reference to this object so that method calls can be chained together.\n@see Permission*/",
@@ -14500,6 +14745,7 @@
             "variableSetterType" : "DataLakePrincipal"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Data Lake principal to be granted or revoked permissions.</p>\n@param principal The Data Lake principal to be granted or revoked permissions.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14569,6 +14815,7 @@
             "variableSetterType" : "Resource"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The resource where permissions are to be granted or revoked.</p>\n@param resource The resource where permissions are to be granted or revoked.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14584,6 +14831,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.lakeformation.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -14618,6 +14866,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.lakeformation.request.PutDataLakeSettingsRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -14686,6 +14935,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>\n@param catalogId The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14754,6 +15004,7 @@
           "variableSetterType" : "DataLakeSettings"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A structure representing a list of AWS Lake Formation principals designated as data lake administrators.</p>\n@param dataLakeSettings A structure representing a list of AWS Lake Formation principals designated as data lake administrators.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14824,6 +15075,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>\n@param catalogId The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14893,6 +15145,7 @@
             "variableSetterType" : "DataLakeSettings"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A structure representing a list of AWS Lake Formation principals designated as data lake administrators.</p>\n@param dataLakeSettings A structure representing a list of AWS Lake Formation principals designated as data lake administrators.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14908,6 +15161,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.lakeformation.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "DataLakeSettings" ],
@@ -14939,6 +15193,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.lakeformation.response.PutDataLakeSettingsResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -14947,6 +15202,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.lakeformation.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -14981,6 +15237,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.lakeformation.request.RegisterResourceRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -15049,6 +15306,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource that you want to register.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource that you want to register.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15117,6 +15375,7 @@
           "variableSetterType" : "Boolean"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Designates an AWS Identity and Access Management (IAM) service-linked role by registering this role with the Data Catalog. A service-linked role is a unique type of IAM role that is linked directly to Lake Formation.</p> <p>For more information, see <a href=\"https://docs-aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html\">Using Service-Linked Roles for Lake Formation</a>.</p>\n@param useServiceLinkedRole Designates an AWS Identity and Access Management (IAM) service-linked role by registering this role with the Data Catalog. A service-linked role is a unique type of IAM role that is linked directly to Lake Formation.</p> <p>For more information, see <a href=\"https://docs-aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html\">Using Service-Linked Roles for Lake Formation</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15185,6 +15444,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier for the role that registers the resource.</p>\n@param roleArn The identifier for the role that registers the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15255,6 +15515,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource that you want to register.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource that you want to register.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15324,6 +15585,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier for the role that registers the resource.</p>\n@param roleArn The identifier for the role that registers the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15393,6 +15655,7 @@
             "variableSetterType" : "Boolean"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Designates an AWS Identity and Access Management (IAM) service-linked role by registering this role with the Data Catalog. A service-linked role is a unique type of IAM role that is linked directly to Lake Formation.</p> <p>For more information, see <a href=\"https://docs-aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html\">Using Service-Linked Roles for Lake Formation</a>.</p>\n@param useServiceLinkedRole Designates an AWS Identity and Access Management (IAM) service-linked role by registering this role with the Data Catalog. A service-linked role is a unique type of IAM role that is linked directly to Lake Formation.</p> <p>For more information, see <a href=\"https://docs-aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html\">Using Service-Linked Roles for Lake Formation</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15408,6 +15671,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.lakeformation.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ResourceArn" ],
@@ -15439,6 +15703,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.lakeformation.response.RegisterResourceResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -15447,6 +15712,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.lakeformation.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -15481,6 +15747,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.lakeformation.model.Resource",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -15542,6 +15809,7 @@
           "variableSetterType" : "CatalogResource"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>\n@param catalog The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15610,6 +15878,7 @@
           "variableSetterType" : "DatabaseResource"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The database for the resource. Unique to the Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database permissions to a principal. </p>\n@param database The database for the resource. Unique to the Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database permissions to a principal.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15678,6 +15947,7 @@
           "variableSetterType" : "TableResource"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The table for the resource. A table is a metadata definition that represents your data. You can Grant and Revoke table privileges to a principal. </p>\n@param table The table for the resource. A table is a metadata definition that represents your data. You can Grant and Revoke table privileges to a principal.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15746,6 +16016,7 @@
           "variableSetterType" : "TableWithColumnsResource"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The table with columns for the resource. A principal with permissions to this resource can select metadata from the columns of a table in the Data Catalog and the underlying data in Amazon S3.</p>\n@param tableWithColumns The table with columns for the resource. A principal with permissions to this resource can select metadata from the columns of a table in the Data Catalog and the underlying data in Amazon S3.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15814,6 +16085,7 @@
           "variableSetterType" : "DataLocationResource"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The location of an Amazon S3 path where permissions are granted or revoked. </p>\n@param dataLocation The location of an Amazon S3 path where permissions are granted or revoked.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15884,6 +16156,7 @@
             "variableSetterType" : "CatalogResource"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>\n@param catalog The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15953,6 +16226,7 @@
             "variableSetterType" : "DataLocationResource"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The location of an Amazon S3 path where permissions are granted or revoked. </p>\n@param dataLocation The location of an Amazon S3 path where permissions are granted or revoked.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16022,6 +16296,7 @@
             "variableSetterType" : "DatabaseResource"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The database for the resource. Unique to the Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database permissions to a principal. </p>\n@param database The database for the resource. Unique to the Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database permissions to a principal.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16091,6 +16366,7 @@
             "variableSetterType" : "TableResource"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The table for the resource. A table is a metadata definition that represents your data. You can Grant and Revoke table privileges to a principal. </p>\n@param table The table for the resource. A table is a metadata definition that represents your data. You can Grant and Revoke table privileges to a principal.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16160,6 +16436,7 @@
             "variableSetterType" : "TableWithColumnsResource"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The table with columns for the resource. A principal with permissions to this resource can select metadata from the columns of a table in the Data Catalog and the underlying data in Amazon S3.</p>\n@param tableWithColumns The table with columns for the resource. A principal with permissions to this resource can select metadata from the columns of a table in the Data Catalog and the underlying data in Amazon S3.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16175,6 +16452,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.lakeformation.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -16209,6 +16487,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.lakeformation.model.ResourceInfo",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -16270,6 +16549,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16338,6 +16618,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The IAM role that registered a resource.</p>\n@param roleArn The IAM role that registered a resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16406,6 +16687,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date and time the resource was last modified.</p>\n@param lastModified The date and time the resource was last modified.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16476,6 +16758,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date and time the resource was last modified.</p>\n@param lastModified The date and time the resource was last modified.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16545,6 +16828,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16614,6 +16898,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The IAM role that registered a resource.</p>\n@param roleArn The IAM role that registered a resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16629,6 +16914,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.lakeformation.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -16663,6 +16949,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.lakeformation.request.RevokePermissionsRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -16731,6 +17018,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>\n@param catalogId The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16799,6 +17087,7 @@
           "variableSetterType" : "DataLakePrincipal"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The principal to be revoked permissions on the resource.</p>\n@param principal The principal to be revoked permissions on the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16867,6 +17156,7 @@
           "variableSetterType" : "Resource"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The resource to which permissions are to be revoked.</p>\n@param resource The resource to which permissions are to be revoked.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16974,6 +17264,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see Permission*/",
@@ -17018,6 +17309,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The permissions revoked to the principal on the resource. For information about permissions, see <a href=\"https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html\">Security and Access Control to Metadata and Data</a>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPermissions(java.util.Collection)} or {@link #withPermissions(java.util.Collection)} if you want to override the existing values.</p>\n@param permissions The permissions revoked to the principal on the resource. For information about permissions, see <a href=\"https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html\">Security and Access Control to Metadata and Data</a>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Permission*/",
@@ -17125,6 +17417,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see Permission*/",
@@ -17169,6 +17462,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Indicates a list of permissions for which to revoke the grant option allowing the principal to pass permissions to other principals.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPermissionsWithGrantOption(java.util.Collection)} or {@link #withPermissionsWithGrantOption(java.util.Collection)} if you want to override the existing values.</p>\n@param permissionsWithGrantOption Indicates a list of permissions for which to revoke the grant option allowing the principal to pass permissions to other principals.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Permission*/",
@@ -17239,6 +17533,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>\n@param catalogId The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17347,6 +17642,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see Permission*/",
@@ -17391,6 +17687,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The permissions revoked to the principal on the resource. For information about permissions, see <a href=\"https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html\">Security and Access Control to Metadata and Data</a>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPermissions(java.util.Collection)} or {@link #withPermissions(java.util.Collection)} if you want to override the existing values.</p>\n@param permissions The permissions revoked to the principal on the resource. For information about permissions, see <a href=\"https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html\">Security and Access Control to Metadata and Data</a>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Permission*/",
@@ -17499,6 +17796,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see Permission*/",
@@ -17543,6 +17841,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Indicates a list of permissions for which to revoke the grant option allowing the principal to pass permissions to other principals.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPermissionsWithGrantOption(java.util.Collection)} or {@link #withPermissionsWithGrantOption(java.util.Collection)} if you want to override the existing values.</p>\n@param permissionsWithGrantOption Indicates a list of permissions for which to revoke the grant option allowing the principal to pass permissions to other principals.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Permission*/",
@@ -17612,6 +17911,7 @@
             "variableSetterType" : "DataLakePrincipal"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The principal to be revoked permissions on the resource.</p>\n@param principal The principal to be revoked permissions on the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17681,6 +17981,7 @@
             "variableSetterType" : "Resource"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The resource to which permissions are to be revoked.</p>\n@param resource The resource to which permissions are to be revoked.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17696,6 +17997,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.lakeformation.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Principal", "Resource", "Permissions" ],
@@ -17727,6 +18029,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.lakeformation.response.RevokePermissionsResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -17735,6 +18038,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.lakeformation.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -17769,6 +18073,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.lakeformation.model.TableResource",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -17830,6 +18135,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier for the Data Catalog. By default, it is the account ID of the caller.</p>\n@param catalogId The identifier for the Data Catalog. By default, it is the account ID of the caller.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17898,6 +18204,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the database for the table. Unique to a Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database privileges to a principal. </p>\n@param databaseName The name of the database for the table. Unique to a Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database privileges to a principal.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17966,6 +18273,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the table.</p>\n@param name The name of the table.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18034,6 +18342,7 @@
           "variableSetterType" : "TableWildcard"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A wildcard object representing every table under a database.</p> <p>At least one of <code>TableResource$Name</code> or <code>TableResource$TableWildcard</code> is required.</p>\n@param tableWildcard A wildcard object representing every table under a database.</p> <p>At least one of <code>TableResource$Name</code> or <code>TableResource$TableWildcard</code> is required.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18104,6 +18413,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier for the Data Catalog. By default, it is the account ID of the caller.</p>\n@param catalogId The identifier for the Data Catalog. By default, it is the account ID of the caller.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18173,6 +18483,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the database for the table. Unique to a Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database privileges to a principal. </p>\n@param databaseName The name of the database for the table. Unique to a Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database privileges to a principal.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18242,6 +18553,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the table.</p>\n@param name The name of the table.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18311,6 +18623,7 @@
             "variableSetterType" : "TableWildcard"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A wildcard object representing every table under a database.</p> <p>At least one of <code>TableResource$Name</code> or <code>TableResource$TableWildcard</code> is required.</p>\n@param tableWildcard A wildcard object representing every table under a database.</p> <p>At least one of <code>TableResource$Name</code> or <code>TableResource$TableWildcard</code> is required.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18326,6 +18639,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.lakeformation.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "DatabaseName" ],
@@ -18360,6 +18674,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.lakeformation.model.TableWildcard",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -18368,6 +18683,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.lakeformation.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -18402,6 +18718,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.lakeformation.model.TableWithColumnsResource",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -18463,6 +18780,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier for the Data Catalog. By default, it is the account ID of the caller.</p>\n@param catalogId The identifier for the Data Catalog. By default, it is the account ID of the caller.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18531,6 +18849,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the database for the table with columns resource. Unique to the Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database privileges to a principal. </p>\n@param databaseName The name of the database for the table with columns resource. Unique to the Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database privileges to a principal.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18599,6 +18918,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the table resource. A table is a metadata definition that represents your data. You can Grant and Revoke table privileges to a principal. </p>\n@param name The name of the table resource. A table is a metadata definition that represents your data. You can Grant and Revoke table privileges to a principal.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18706,6 +19026,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18750,6 +19071,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The list of column names for the table. At least one of <code>ColumnNames</code> or <code>ColumnWildcard</code> is required.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setColumnNames(java.util.Collection)} or {@link #withColumnNames(java.util.Collection)} if you want to override the existing values.</p>\n@param columnNames The list of column names for the table. At least one of <code>ColumnNames</code> or <code>ColumnWildcard</code> is required.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18818,6 +19140,7 @@
           "variableSetterType" : "ColumnWildcard"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A wildcard specified by a <code>ColumnWildcard</code> object. At least one of <code>ColumnNames</code> or <code>ColumnWildcard</code> is required.</p>\n@param columnWildcard A wildcard specified by a <code>ColumnWildcard</code> object. At least one of <code>ColumnNames</code> or <code>ColumnWildcard</code> is required.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18888,6 +19211,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier for the Data Catalog. By default, it is the account ID of the caller.</p>\n@param catalogId The identifier for the Data Catalog. By default, it is the account ID of the caller.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18996,6 +19320,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19040,6 +19365,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The list of column names for the table. At least one of <code>ColumnNames</code> or <code>ColumnWildcard</code> is required.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setColumnNames(java.util.Collection)} or {@link #withColumnNames(java.util.Collection)} if you want to override the existing values.</p>\n@param columnNames The list of column names for the table. At least one of <code>ColumnNames</code> or <code>ColumnWildcard</code> is required.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19109,6 +19435,7 @@
             "variableSetterType" : "ColumnWildcard"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A wildcard specified by a <code>ColumnWildcard</code> object. At least one of <code>ColumnNames</code> or <code>ColumnWildcard</code> is required.</p>\n@param columnWildcard A wildcard specified by a <code>ColumnWildcard</code> object. At least one of <code>ColumnNames</code> or <code>ColumnWildcard</code> is required.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19178,6 +19505,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the database for the table with columns resource. Unique to the Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database privileges to a principal. </p>\n@param databaseName The name of the database for the table with columns resource. Unique to the Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database privileges to a principal.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19247,6 +19575,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the table resource. A table is a metadata definition that represents your data. You can Grant and Revoke table privileges to a principal. </p>\n@param name The name of the table resource. A table is a metadata definition that represents your data. You can Grant and Revoke table privileges to a principal.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19262,6 +19591,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.lakeformation.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "DatabaseName", "Name" ],
@@ -19296,6 +19626,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.lakeformation.request.UpdateResourceRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -19364,6 +19695,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The new role to use for the given resource registered in AWS Lake Formation.</p>\n@param roleArn The new role to use for the given resource registered in AWS Lake Formation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19432,6 +19764,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The resource ARN.</p>\n@param resourceArn The resource ARN.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19502,6 +19835,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The resource ARN.</p>\n@param resourceArn The resource ARN.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19571,6 +19905,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The new role to use for the given resource registered in AWS Lake Formation.</p>\n@param roleArn The new role to use for the given resource registered in AWS Lake Formation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19586,6 +19921,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.lakeformation.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "RoleArn", "ResourceArn" ],
@@ -19617,6 +19953,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.lakeformation.response.UpdateResourceResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -19625,6 +19962,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.lakeformation.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,

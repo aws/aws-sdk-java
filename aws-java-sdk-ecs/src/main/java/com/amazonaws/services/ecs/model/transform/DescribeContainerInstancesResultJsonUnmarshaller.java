@@ -51,11 +51,15 @@ public class DescribeContainerInstancesResultJsonUnmarshaller implements Unmarsh
                 if (context.testExpression("containerInstances", targetDepth)) {
                     context.nextToken();
                     describeContainerInstancesResult.setContainerInstances(new ListUnmarshaller<ContainerInstance>(ContainerInstanceJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("failures", targetDepth)) {
                     context.nextToken();
-                    describeContainerInstancesResult.setFailures(new ListUnmarshaller<Failure>(FailureJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeContainerInstancesResult.setFailures(new ListUnmarshaller<Failure>(FailureJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

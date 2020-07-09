@@ -73,7 +73,8 @@ public class ActionExecutionInputJsonUnmarshaller implements Unmarshaller<Action
                 if (context.testExpression("inputArtifacts", targetDepth)) {
                     context.nextToken();
                     actionExecutionInput.setInputArtifacts(new ListUnmarshaller<ArtifactDetail>(ArtifactDetailJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("namespace", targetDepth)) {
                     context.nextToken();

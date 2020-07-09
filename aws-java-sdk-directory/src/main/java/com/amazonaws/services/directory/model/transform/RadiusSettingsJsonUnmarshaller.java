@@ -50,7 +50,9 @@ public class RadiusSettingsJsonUnmarshaller implements Unmarshaller<RadiusSettin
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RadiusServers", targetDepth)) {
                     context.nextToken();
-                    radiusSettings.setRadiusServers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    radiusSettings.setRadiusServers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("RadiusPort", targetDepth)) {
                     context.nextToken();

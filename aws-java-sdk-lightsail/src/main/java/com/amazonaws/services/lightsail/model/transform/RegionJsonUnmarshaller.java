@@ -66,12 +66,15 @@ public class RegionJsonUnmarshaller implements Unmarshaller<Region, JsonUnmarsha
                 }
                 if (context.testExpression("availabilityZones", targetDepth)) {
                     context.nextToken();
-                    region.setAvailabilityZones(new ListUnmarshaller<AvailabilityZone>(AvailabilityZoneJsonUnmarshaller.getInstance()).unmarshall(context));
+                    region.setAvailabilityZones(new ListUnmarshaller<AvailabilityZone>(AvailabilityZoneJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("relationalDatabaseAvailabilityZones", targetDepth)) {
                     context.nextToken();
                     region.setRelationalDatabaseAvailabilityZones(new ListUnmarshaller<AvailabilityZone>(AvailabilityZoneJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

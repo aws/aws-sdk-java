@@ -54,7 +54,9 @@ public class ReviewPolicyJsonUnmarshaller implements Unmarshaller<ReviewPolicy, 
                 }
                 if (context.testExpression("Parameters", targetDepth)) {
                     context.nextToken();
-                    reviewPolicy.setParameters(new ListUnmarshaller<PolicyParameter>(PolicyParameterJsonUnmarshaller.getInstance()).unmarshall(context));
+                    reviewPolicy.setParameters(new ListUnmarshaller<PolicyParameter>(PolicyParameterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

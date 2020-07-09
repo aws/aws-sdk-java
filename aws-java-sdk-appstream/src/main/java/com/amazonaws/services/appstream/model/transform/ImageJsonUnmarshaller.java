@@ -94,7 +94,9 @@ public class ImageJsonUnmarshaller implements Unmarshaller<Image, JsonUnmarshall
                 }
                 if (context.testExpression("Applications", targetDepth)) {
                     context.nextToken();
-                    image.setApplications(new ListUnmarshaller<Application>(ApplicationJsonUnmarshaller.getInstance()).unmarshall(context));
+                    image.setApplications(new ListUnmarshaller<Application>(ApplicationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("CreatedTime", targetDepth)) {
                     context.nextToken();

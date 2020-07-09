@@ -53,8 +53,9 @@ public class BatchGetItemResultJsonUnmarshaller implements Unmarshaller<BatchGet
                     context.nextToken();
                     batchGetItemResult.setResponses(new MapUnmarshaller<String, java.util.List<java.util.Map<String, AttributeValue>>>(context
                             .getUnmarshaller(String.class), new ListUnmarshaller<java.util.Map<String, AttributeValue>>(
-                            new MapUnmarshaller<String, AttributeValue>(context.getUnmarshaller(String.class), AttributeValueJsonUnmarshaller.getInstance())))
-                            .unmarshall(context));
+                            new MapUnmarshaller<String, AttributeValue>(context.getUnmarshaller(String.class), AttributeValueJsonUnmarshaller.getInstance()))
+
+                    ).unmarshall(context));
                 }
                 if (context.testExpression("UnprocessedKeys", targetDepth)) {
                     context.nextToken();
@@ -64,7 +65,8 @@ public class BatchGetItemResultJsonUnmarshaller implements Unmarshaller<BatchGet
                 if (context.testExpression("ConsumedCapacity", targetDepth)) {
                     context.nextToken();
                     batchGetItemResult.setConsumedCapacity(new ListUnmarshaller<ConsumedCapacity>(ConsumedCapacityJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

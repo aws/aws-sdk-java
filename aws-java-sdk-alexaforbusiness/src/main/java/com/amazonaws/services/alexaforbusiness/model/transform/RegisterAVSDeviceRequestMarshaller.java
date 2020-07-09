@@ -37,6 +37,8 @@ public class RegisterAVSDeviceRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeviceSerialNumber").build();
     private static final MarshallingInfo<String> AMAZONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("AmazonId").build();
+    private static final MarshallingInfo<String> ROOMARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("RoomArn").build();
 
     private static final RegisterAVSDeviceRequestMarshaller instance = new RegisterAVSDeviceRequestMarshaller();
 
@@ -59,6 +61,7 @@ public class RegisterAVSDeviceRequestMarshaller {
             protocolMarshaller.marshall(registerAVSDeviceRequest.getProductId(), PRODUCTID_BINDING);
             protocolMarshaller.marshall(registerAVSDeviceRequest.getDeviceSerialNumber(), DEVICESERIALNUMBER_BINDING);
             protocolMarshaller.marshall(registerAVSDeviceRequest.getAmazonId(), AMAZONID_BINDING);
+            protocolMarshaller.marshall(registerAVSDeviceRequest.getRoomArn(), ROOMARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

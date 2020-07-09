@@ -54,12 +54,16 @@ public class ListProfilingGroupsResultJsonUnmarshaller implements Unmarshaller<L
                 }
                 if (context.testExpression("profilingGroupNames", targetDepth)) {
                     context.nextToken();
-                    listProfilingGroupsResult.setProfilingGroupNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    listProfilingGroupsResult.setProfilingGroupNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("profilingGroups", targetDepth)) {
                     context.nextToken();
                     listProfilingGroupsResult.setProfilingGroups(new ListUnmarshaller<ProfilingGroupDescription>(ProfilingGroupDescriptionJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

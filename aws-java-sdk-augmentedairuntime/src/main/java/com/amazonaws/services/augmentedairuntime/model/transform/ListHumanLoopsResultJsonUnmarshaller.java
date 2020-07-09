@@ -51,7 +51,8 @@ public class ListHumanLoopsResultJsonUnmarshaller implements Unmarshaller<ListHu
                 if (context.testExpression("HumanLoopSummaries", targetDepth)) {
                     context.nextToken();
                     listHumanLoopsResult.setHumanLoopSummaries(new ListUnmarshaller<HumanLoopSummary>(HumanLoopSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

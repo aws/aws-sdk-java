@@ -66,7 +66,9 @@ public class SkillsStoreSkillJsonUnmarshaller implements Unmarshaller<SkillsStor
                 }
                 if (context.testExpression("SampleUtterances", targetDepth)) {
                     context.nextToken();
-                    skillsStoreSkill.setSampleUtterances(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    skillsStoreSkill.setSampleUtterances(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("SkillDetails", targetDepth)) {
                     context.nextToken();

@@ -51,13 +51,15 @@ public class TransactWriteItemsResultJsonUnmarshaller implements Unmarshaller<Tr
                 if (context.testExpression("ConsumedCapacity", targetDepth)) {
                     context.nextToken();
                     transactWriteItemsResult.setConsumedCapacity(new ListUnmarshaller<ConsumedCapacity>(ConsumedCapacityJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ItemCollectionMetrics", targetDepth)) {
                     context.nextToken();
                     transactWriteItemsResult.setItemCollectionMetrics(new MapUnmarshaller<String, java.util.List<ItemCollectionMetrics>>(context
-                            .getUnmarshaller(String.class), new ListUnmarshaller<ItemCollectionMetrics>(ItemCollectionMetricsJsonUnmarshaller.getInstance()))
-                            .unmarshall(context));
+                            .getUnmarshaller(String.class), new ListUnmarshaller<ItemCollectionMetrics>(ItemCollectionMetricsJsonUnmarshaller.getInstance())
+
+                    ).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

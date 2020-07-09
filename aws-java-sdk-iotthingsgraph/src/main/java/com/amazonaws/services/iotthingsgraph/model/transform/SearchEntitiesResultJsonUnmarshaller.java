@@ -51,7 +51,8 @@ public class SearchEntitiesResultJsonUnmarshaller implements Unmarshaller<Search
                 if (context.testExpression("descriptions", targetDepth)) {
                     context.nextToken();
                     searchEntitiesResult.setDescriptions(new ListUnmarshaller<EntityDescription>(EntityDescriptionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

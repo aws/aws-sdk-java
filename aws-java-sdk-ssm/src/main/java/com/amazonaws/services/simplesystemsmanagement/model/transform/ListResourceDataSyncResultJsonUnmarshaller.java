@@ -51,7 +51,9 @@ public class ListResourceDataSyncResultJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("ResourceDataSyncItems", targetDepth)) {
                     context.nextToken();
                     listResourceDataSyncResult.setResourceDataSyncItems(new ListUnmarshaller<ResourceDataSyncItem>(ResourceDataSyncItemJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

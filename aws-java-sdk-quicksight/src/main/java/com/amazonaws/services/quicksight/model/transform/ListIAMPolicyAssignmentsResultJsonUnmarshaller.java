@@ -53,7 +53,9 @@ public class ListIAMPolicyAssignmentsResultJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("IAMPolicyAssignments", targetDepth)) {
                     context.nextToken();
                     listIAMPolicyAssignmentsResult.setIAMPolicyAssignments(new ListUnmarshaller<IAMPolicyAssignmentSummary>(
-                            IAMPolicyAssignmentSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                            IAMPolicyAssignmentSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

@@ -52,7 +52,9 @@ public class ListConfigurationsResultJsonUnmarshaller implements Unmarshaller<Li
                 if (context.testExpression("configurations", targetDepth)) {
                     context.nextToken();
                     listConfigurationsResult.setConfigurations(new ListUnmarshaller<java.util.Map<String, String>>(new MapUnmarshaller<String, String>(context
-                            .getUnmarshaller(String.class), context.getUnmarshaller(String.class))).unmarshall(context));
+                            .getUnmarshaller(String.class), context.getUnmarshaller(String.class)))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

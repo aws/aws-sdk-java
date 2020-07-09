@@ -51,7 +51,9 @@ public class ListSubscribedWorkteamsResultJsonUnmarshaller implements Unmarshall
                 if (context.testExpression("SubscribedWorkteams", targetDepth)) {
                     context.nextToken();
                     listSubscribedWorkteamsResult.setSubscribedWorkteams(new ListUnmarshaller<SubscribedWorkteam>(SubscribedWorkteamJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

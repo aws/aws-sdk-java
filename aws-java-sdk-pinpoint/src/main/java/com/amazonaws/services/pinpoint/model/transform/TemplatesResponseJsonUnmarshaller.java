@@ -50,7 +50,9 @@ public class TemplatesResponseJsonUnmarshaller implements Unmarshaller<Templates
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Item", targetDepth)) {
                     context.nextToken();
-                    templatesResponse.setItem(new ListUnmarshaller<TemplateResponse>(TemplateResponseJsonUnmarshaller.getInstance()).unmarshall(context));
+                    templatesResponse.setItem(new ListUnmarshaller<TemplateResponse>(TemplateResponseJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

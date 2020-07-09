@@ -54,7 +54,9 @@ public class InventoryFilterJsonUnmarshaller implements Unmarshaller<InventoryFi
                 }
                 if (context.testExpression("Values", targetDepth)) {
                     context.nextToken();
-                    inventoryFilter.setValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    inventoryFilter.setValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
                     context.nextToken();

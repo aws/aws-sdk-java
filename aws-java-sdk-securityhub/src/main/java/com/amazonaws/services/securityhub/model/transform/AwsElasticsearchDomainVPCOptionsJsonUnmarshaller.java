@@ -51,16 +51,20 @@ public class AwsElasticsearchDomainVPCOptionsJsonUnmarshaller implements Unmarsh
                 if (context.testExpression("AvailabilityZones", targetDepth)) {
                     context.nextToken();
                     awsElasticsearchDomainVPCOptions.setAvailabilityZones(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("SecurityGroupIds", targetDepth)) {
                     context.nextToken();
                     awsElasticsearchDomainVPCOptions.setSecurityGroupIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("SubnetIds", targetDepth)) {
                     context.nextToken();
-                    awsElasticsearchDomainVPCOptions.setSubnetIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    awsElasticsearchDomainVPCOptions.setSubnetIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("VPCId", targetDepth)) {
                     context.nextToken();

@@ -54,7 +54,9 @@ public class DataResourceJsonUnmarshaller implements Unmarshaller<DataResource, 
                 }
                 if (context.testExpression("Values", targetDepth)) {
                     context.nextToken();
-                    dataResource.setValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    dataResource.setValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

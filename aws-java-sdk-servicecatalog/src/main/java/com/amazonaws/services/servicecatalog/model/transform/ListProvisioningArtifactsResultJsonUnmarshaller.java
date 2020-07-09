@@ -51,7 +51,9 @@ public class ListProvisioningArtifactsResultJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("ProvisioningArtifactDetails", targetDepth)) {
                     context.nextToken();
                     listProvisioningArtifactsResult.setProvisioningArtifactDetails(new ListUnmarshaller<ProvisioningArtifactDetail>(
-                            ProvisioningArtifactDetailJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ProvisioningArtifactDetailJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextPageToken", targetDepth)) {
                     context.nextToken();

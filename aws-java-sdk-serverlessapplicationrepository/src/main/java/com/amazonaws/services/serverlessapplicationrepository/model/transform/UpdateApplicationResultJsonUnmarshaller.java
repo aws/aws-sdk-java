@@ -74,7 +74,9 @@ public class UpdateApplicationResultJsonUnmarshaller implements Unmarshaller<Upd
                 }
                 if (context.testExpression("labels", targetDepth)) {
                     context.nextToken();
-                    updateApplicationResult.setLabels(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    updateApplicationResult.setLabels(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("licenseUrl", targetDepth)) {
                     context.nextToken();

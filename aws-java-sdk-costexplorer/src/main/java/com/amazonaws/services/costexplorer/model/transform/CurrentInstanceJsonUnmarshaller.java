@@ -58,7 +58,9 @@ public class CurrentInstanceJsonUnmarshaller implements Unmarshaller<CurrentInst
                 }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
-                    currentInstance.setTags(new ListUnmarshaller<TagValues>(TagValuesJsonUnmarshaller.getInstance()).unmarshall(context));
+                    currentInstance.setTags(new ListUnmarshaller<TagValues>(TagValuesJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ResourceDetails", targetDepth)) {
                     context.nextToken();

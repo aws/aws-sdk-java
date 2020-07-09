@@ -55,7 +55,8 @@ public class ListComponentsResultJsonUnmarshaller implements Unmarshaller<ListCo
                 if (context.testExpression("componentVersionList", targetDepth)) {
                     context.nextToken();
                     listComponentsResult.setComponentVersionList(new ListUnmarshaller<ComponentVersion>(ComponentVersionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

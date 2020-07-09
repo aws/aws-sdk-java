@@ -51,7 +51,9 @@ public class GetSavingsPlansCoverageResultJsonUnmarshaller implements Unmarshall
                 if (context.testExpression("SavingsPlansCoverages", targetDepth)) {
                     context.nextToken();
                     getSavingsPlansCoverageResult.setSavingsPlansCoverages(new ListUnmarshaller<SavingsPlansCoverage>(SavingsPlansCoverageJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientConstructors", "ClientMutationMethods" ],
+    "deprecatedSuppressions" : [ "ClientConstructors", "EnumSetterOverload", "ClientMutationMethods" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -354,6 +354,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iotsecuretunneling.request.CloseTunnelRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -422,6 +423,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the tunnel to close.</p>\n@param tunnelId The ID of the tunnel to close.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -490,6 +492,7 @@
           "variableSetterType" : "Boolean"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>When set to true, AWS IoT Secure Tunneling deletes the tunnel data immediately.</p>\n@param delete When set to true, AWS IoT Secure Tunneling deletes the tunnel data immediately.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -560,6 +563,7 @@
             "variableSetterType" : "Boolean"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>When set to true, AWS IoT Secure Tunneling deletes the tunnel data immediately.</p>\n@param delete When set to true, AWS IoT Secure Tunneling deletes the tunnel data immediately.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -629,6 +633,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the tunnel to close.</p>\n@param tunnelId The ID of the tunnel to close.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -644,6 +649,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iotsecuretunneling.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "tunnelId" ],
@@ -675,6 +681,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iotsecuretunneling.response.CloseTunnelResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -683,6 +690,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.iotsecuretunneling.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -717,6 +725,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iotsecuretunneling.model.ConnectionState",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -778,6 +787,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The connection status of the tunnel. Valid values are <code>CONNECTED</code> and <code>DISCONNECTED</code>.</p>\n@param status The connection status of the tunnel. Valid values are <code>CONNECTED</code> and <code>DISCONNECTED</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ConnectionStatus*/",
@@ -846,6 +856,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The last time the connection status was updated.</p>\n@param lastUpdatedAt The last time the connection status was updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -916,6 +927,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The last time the connection status was updated.</p>\n@param lastUpdatedAt The last time the connection status was updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -985,6 +997,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The connection status of the tunnel. Valid values are <code>CONNECTED</code> and <code>DISCONNECTED</code>.</p>\n@param status The connection status of the tunnel. Valid values are <code>CONNECTED</code> and <code>DISCONNECTED</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ConnectionStatus*/",
@@ -1000,6 +1013,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iotsecuretunneling.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1040,6 +1054,7 @@
         "value" : "DISCONNECTED"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iotsecuretunneling.enum.ConnectionStatus",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1048,6 +1063,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.iotsecuretunneling.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1082,6 +1098,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iotsecuretunneling.request.DescribeTunnelRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1150,6 +1167,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The tunnel to describe.</p>\n@param tunnelId The tunnel to describe.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1220,6 +1238,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The tunnel to describe.</p>\n@param tunnelId The tunnel to describe.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1235,6 +1254,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iotsecuretunneling.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "tunnelId" ],
@@ -1266,6 +1286,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iotsecuretunneling.response.DescribeTunnelResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1327,6 +1348,7 @@
           "variableSetterType" : "Tunnel"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The tunnel being described.</p>\n@param tunnel The tunnel being described.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1397,6 +1419,7 @@
             "variableSetterType" : "Tunnel"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The tunnel being described.</p>\n@param tunnel The tunnel being described.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1412,6 +1435,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iotsecuretunneling.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1446,6 +1470,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iotsecuretunneling.model.DestinationConfig",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1507,6 +1532,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the IoT thing to which you want to connect.</p>\n@param thingName The name of the IoT thing to which you want to connect.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1614,6 +1640,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1658,6 +1685,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of service names that identity the target application. Currently, you can only specify a single name. The AWS IoT client running on the destination device reads this value and uses it to look up a port or an IP address and a port. The AWS IoT client instantiates the local proxy which uses this information to connect to the destination application.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setServices(java.util.Collection)} or {@link #withServices(java.util.Collection)} if you want to override the existing values.</p>\n@param services A list of service names that identity the target application. Currently, you can only specify a single name. The AWS IoT client running on the destination device reads this value and uses it to look up a port or an IP address and a port. The AWS IoT client instantiates the local proxy which uses this information to connect to the destination application.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1767,6 +1795,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1811,6 +1840,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of service names that identity the target application. Currently, you can only specify a single name. The AWS IoT client running on the destination device reads this value and uses it to look up a port or an IP address and a port. The AWS IoT client instantiates the local proxy which uses this information to connect to the destination application.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setServices(java.util.Collection)} or {@link #withServices(java.util.Collection)} if you want to override the existing values.</p>\n@param services A list of service names that identity the target application. Currently, you can only specify a single name. The AWS IoT client running on the destination device reads this value and uses it to look up a port or an IP address and a port. The AWS IoT client instantiates the local proxy which uses this information to connect to the destination application.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1880,6 +1910,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the IoT thing to which you want to connect.</p>\n@param thingName The name of the IoT thing to which you want to connect.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1895,6 +1926,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iotsecuretunneling.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "thingName", "services" ],
@@ -1929,6 +1961,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "LimitExceededException",
+      "fullyQualifiedName" : "com.amazonaws.services.iotsecuretunneling.exception.LimitExceededException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1937,6 +1970,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.iotsecuretunneling.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1968,6 +2002,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iotsecuretunneling.request.ListTagsForResourceRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2036,6 +2071,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The resource ARN.</p>\n@param resourceArn The resource ARN.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2106,6 +2142,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The resource ARN.</p>\n@param resourceArn The resource ARN.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2121,6 +2158,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iotsecuretunneling.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "resourceArn" ],
@@ -2152,6 +2190,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iotsecuretunneling.response.ListTagsForResourceResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2252,6 +2291,7 @@
               "variableSetterType" : "Tag"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2296,6 +2336,7 @@
           "variableSetterType" : "java.util.Collection<Tag>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The tags for the specified resource.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags The tags for the specified resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2405,6 +2446,7 @@
                 "variableSetterType" : "Tag"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2449,6 +2491,7 @@
             "variableSetterType" : "java.util.Collection<Tag>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The tags for the specified resource.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags The tags for the specified resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2464,6 +2507,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iotsecuretunneling.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2498,6 +2542,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iotsecuretunneling.request.ListTunnelsRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2566,6 +2611,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the IoT thing associated with the destination device.</p>\n@param thingName The name of the IoT thing associated with the destination device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2634,6 +2680,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of results to return at once.</p>\n@param maxResults The maximum number of results to return at once.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2702,6 +2749,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A token to retrieve the next set of results.</p>\n@param nextToken A token to retrieve the next set of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2772,6 +2820,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of results to return at once.</p>\n@param maxResults The maximum number of results to return at once.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2841,6 +2890,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A token to retrieve the next set of results.</p>\n@param nextToken A token to retrieve the next set of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2910,6 +2960,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the IoT thing associated with the destination device.</p>\n@param thingName The name of the IoT thing associated with the destination device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2925,6 +2976,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iotsecuretunneling.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2956,6 +3008,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iotsecuretunneling.response.ListTunnelsResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3056,6 +3109,7 @@
               "variableSetterType" : "TunnelSummary"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3100,6 +3154,7 @@
           "variableSetterType" : "java.util.Collection<TunnelSummary>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A short description of the tunnels in an AWS account.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTunnelSummaries(java.util.Collection)} or {@link #withTunnelSummaries(java.util.Collection)} if you want to override the existing values.</p>\n@param tunnelSummaries A short description of the tunnels in an AWS account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3168,6 +3223,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A token to used to retrieve the next set of results.</p>\n@param nextToken A token to used to retrieve the next set of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3238,6 +3294,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A token to used to retrieve the next set of results.</p>\n@param nextToken A token to used to retrieve the next set of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3346,6 +3403,7 @@
                 "variableSetterType" : "TunnelSummary"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3390,6 +3448,7 @@
             "variableSetterType" : "java.util.Collection<TunnelSummary>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A short description of the tunnels in an AWS account.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTunnelSummaries(java.util.Collection)} or {@link #withTunnelSummaries(java.util.Collection)} if you want to override the existing values.</p>\n@param tunnelSummaries A short description of the tunnels in an AWS account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3405,6 +3464,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iotsecuretunneling.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3439,6 +3499,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iotsecuretunneling.request.OpenTunnelRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3507,6 +3568,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A short text description of the tunnel. </p>\n@param description A short text description of the tunnel.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3614,6 +3676,7 @@
               "variableSetterType" : "Tag"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3658,6 +3721,7 @@
           "variableSetterType" : "java.util.Collection<Tag>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A collection of tag metadata.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags A collection of tag metadata.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3726,6 +3790,7 @@
           "variableSetterType" : "DestinationConfig"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The destination configuration for the OpenTunnel request.</p>\n@param destinationConfig The destination configuration for the OpenTunnel request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3794,6 +3859,7 @@
           "variableSetterType" : "TimeoutConfig"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Timeout configuration for a tunnel.</p>\n@param timeoutConfig Timeout configuration for a tunnel.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3864,6 +3930,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A short text description of the tunnel. </p>\n@param description A short text description of the tunnel.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3933,6 +4000,7 @@
             "variableSetterType" : "DestinationConfig"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The destination configuration for the OpenTunnel request.</p>\n@param destinationConfig The destination configuration for the OpenTunnel request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4041,6 +4109,7 @@
                 "variableSetterType" : "Tag"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4085,6 +4154,7 @@
             "variableSetterType" : "java.util.Collection<Tag>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A collection of tag metadata.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags A collection of tag metadata.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4154,6 +4224,7 @@
             "variableSetterType" : "TimeoutConfig"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Timeout configuration for a tunnel.</p>\n@param timeoutConfig Timeout configuration for a tunnel.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4169,6 +4240,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iotsecuretunneling.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4200,6 +4272,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iotsecuretunneling.response.OpenTunnelResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4261,6 +4334,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A unique alpha-numeric tunnel ID.</p>\n@param tunnelId A unique alpha-numeric tunnel ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4329,6 +4403,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name for the tunnel. The tunnel ARN format is <code>arn:aws:tunnel:&lt;region&gt;:&lt;account-id&gt;:tunnel/&lt;tunnel-id&gt;</code> </p>\n@param tunnelArn The Amazon Resource Name for the tunnel. The tunnel ARN format is <code>arn:aws:tunnel:&lt;region&gt;:&lt;account-id&gt;:tunnel/&lt;tunnel-id&gt;</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4397,6 +4472,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The access token the source local proxy uses to connect to AWS IoT Secure Tunneling.</p>\n@param sourceAccessToken The access token the source local proxy uses to connect to AWS IoT Secure Tunneling.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4465,6 +4541,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The access token the destination local proxy uses to connect to AWS IoT Secure Tunneling.</p>\n@param destinationAccessToken The access token the destination local proxy uses to connect to AWS IoT Secure Tunneling.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4535,6 +4612,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The access token the destination local proxy uses to connect to AWS IoT Secure Tunneling.</p>\n@param destinationAccessToken The access token the destination local proxy uses to connect to AWS IoT Secure Tunneling.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4604,6 +4682,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The access token the source local proxy uses to connect to AWS IoT Secure Tunneling.</p>\n@param sourceAccessToken The access token the source local proxy uses to connect to AWS IoT Secure Tunneling.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4673,6 +4752,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name for the tunnel. The tunnel ARN format is <code>arn:aws:tunnel:&lt;region&gt;:&lt;account-id&gt;:tunnel/&lt;tunnel-id&gt;</code> </p>\n@param tunnelArn The Amazon Resource Name for the tunnel. The tunnel ARN format is <code>arn:aws:tunnel:&lt;region&gt;:&lt;account-id&gt;:tunnel/&lt;tunnel-id&gt;</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4742,6 +4822,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A unique alpha-numeric tunnel ID.</p>\n@param tunnelId A unique alpha-numeric tunnel ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4757,6 +4838,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iotsecuretunneling.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4791,6 +4873,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ResourceNotFoundException",
+      "fullyQualifiedName" : "com.amazonaws.services.iotsecuretunneling.exception.ResourceNotFoundException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4799,6 +4882,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.iotsecuretunneling.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4830,6 +4914,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iotsecuretunneling.model.Tag",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4891,6 +4976,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The key of the tag.</p>\n@param key The key of the tag.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4959,6 +5045,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The value of the tag.</p>\n@param value The value of the tag.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5029,6 +5116,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The key of the tag.</p>\n@param key The key of the tag.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5098,6 +5186,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The value of the tag.</p>\n@param value The value of the tag.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5113,6 +5202,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iotsecuretunneling.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "key", "value" ],
@@ -5147,6 +5237,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iotsecuretunneling.request.TagResourceRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5215,6 +5306,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the resource.</p>\n@param resourceArn The ARN of the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5322,6 +5414,7 @@
               "variableSetterType" : "Tag"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5366,6 +5459,7 @@
           "variableSetterType" : "java.util.Collection<Tag>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The tags for the resource.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags The tags for the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5436,6 +5530,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the resource.</p>\n@param resourceArn The ARN of the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5544,6 +5639,7 @@
                 "variableSetterType" : "Tag"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5588,6 +5684,7 @@
             "variableSetterType" : "java.util.Collection<Tag>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The tags for the resource.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags The tags for the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5603,6 +5700,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iotsecuretunneling.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "resourceArn", "tags" ],
@@ -5634,6 +5732,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iotsecuretunneling.response.TagResourceResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5642,6 +5741,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.iotsecuretunneling.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -5676,6 +5776,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iotsecuretunneling.model.TimeoutConfig",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5737,6 +5838,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum amount of time (in minutes) a tunnel can remain open. If not specified, maxLifetimeTimeoutMinutes defaults to 720 minutes. Valid values are from 1 minute to 12 hours (720 minutes) </p>\n@param maxLifetimeTimeoutMinutes The maximum amount of time (in minutes) a tunnel can remain open. If not specified, maxLifetimeTimeoutMinutes defaults to 720 minutes. Valid values are from 1 minute to 12 hours (720 minutes)\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5807,6 +5909,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum amount of time (in minutes) a tunnel can remain open. If not specified, maxLifetimeTimeoutMinutes defaults to 720 minutes. Valid values are from 1 minute to 12 hours (720 minutes) </p>\n@param maxLifetimeTimeoutMinutes The maximum amount of time (in minutes) a tunnel can remain open. If not specified, maxLifetimeTimeoutMinutes defaults to 720 minutes. Valid values are from 1 minute to 12 hours (720 minutes)\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5822,6 +5925,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iotsecuretunneling.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -5856,6 +5960,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iotsecuretunneling.model.Tunnel",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5917,6 +6022,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A unique alpha-numeric ID that identifies a tunnel.</p>\n@param tunnelId A unique alpha-numeric ID that identifies a tunnel.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5985,6 +6091,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of a tunnel. The tunnel ARN format is <code>arn:aws:tunnel:&lt;region&gt;:&lt;account-id&gt;:tunnel/&lt;tunnel-id&gt;</code> </p>\n@param tunnelArn The Amazon Resource Name (ARN) of a tunnel. The tunnel ARN format is <code>arn:aws:tunnel:&lt;region&gt;:&lt;account-id&gt;:tunnel/&lt;tunnel-id&gt;</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6053,6 +6160,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The status of a tunnel. Valid values are: Open and Closed.</p>\n@param status The status of a tunnel. Valid values are: Open and Closed.\n@return Returns a reference to this object so that method calls can be chained together.\n@see TunnelStatus*/",
@@ -6121,6 +6229,7 @@
           "variableSetterType" : "ConnectionState"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The connection state of the source application.</p>\n@param sourceConnectionState The connection state of the source application.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6189,6 +6298,7 @@
           "variableSetterType" : "ConnectionState"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The connection state of the destination application.</p>\n@param destinationConnectionState The connection state of the destination application.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6257,6 +6367,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A description of the tunnel.</p>\n@param description A description of the tunnel.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6325,6 +6436,7 @@
           "variableSetterType" : "DestinationConfig"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The destination configuration that specifies the thing name of the destination device and a service name that the local proxy uses to connect to the destination application.</p>\n@param destinationConfig The destination configuration that specifies the thing name of the destination device and a service name that the local proxy uses to connect to the destination application.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6393,6 +6505,7 @@
           "variableSetterType" : "TimeoutConfig"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Timeout configuration for the tunnel.</p>\n@param timeoutConfig Timeout configuration for the tunnel.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6500,6 +6613,7 @@
               "variableSetterType" : "Tag"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6544,6 +6658,7 @@
           "variableSetterType" : "java.util.Collection<Tag>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of tag metadata associated with the secure tunnel.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags A list of tag metadata associated with the secure tunnel.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6612,6 +6727,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The time when the tunnel was created.</p>\n@param createdAt The time when the tunnel was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6680,6 +6796,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The last time the tunnel was updated.</p>\n@param lastUpdatedAt The last time the tunnel was updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6750,6 +6867,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The time when the tunnel was created.</p>\n@param createdAt The time when the tunnel was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6819,6 +6937,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A description of the tunnel.</p>\n@param description A description of the tunnel.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6888,6 +7007,7 @@
             "variableSetterType" : "DestinationConfig"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The destination configuration that specifies the thing name of the destination device and a service name that the local proxy uses to connect to the destination application.</p>\n@param destinationConfig The destination configuration that specifies the thing name of the destination device and a service name that the local proxy uses to connect to the destination application.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6957,6 +7077,7 @@
             "variableSetterType" : "ConnectionState"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The connection state of the destination application.</p>\n@param destinationConnectionState The connection state of the destination application.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7026,6 +7147,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The last time the tunnel was updated.</p>\n@param lastUpdatedAt The last time the tunnel was updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7095,6 +7217,7 @@
             "variableSetterType" : "ConnectionState"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The connection state of the source application.</p>\n@param sourceConnectionState The connection state of the source application.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7164,6 +7287,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The status of a tunnel. Valid values are: Open and Closed.</p>\n@param status The status of a tunnel. Valid values are: Open and Closed.\n@return Returns a reference to this object so that method calls can be chained together.\n@see TunnelStatus*/",
@@ -7272,6 +7396,7 @@
                 "variableSetterType" : "Tag"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7316,6 +7441,7 @@
             "variableSetterType" : "java.util.Collection<Tag>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of tag metadata associated with the secure tunnel.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags A list of tag metadata associated with the secure tunnel.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7385,6 +7511,7 @@
             "variableSetterType" : "TimeoutConfig"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Timeout configuration for the tunnel.</p>\n@param timeoutConfig Timeout configuration for the tunnel.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7454,6 +7581,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of a tunnel. The tunnel ARN format is <code>arn:aws:tunnel:&lt;region&gt;:&lt;account-id&gt;:tunnel/&lt;tunnel-id&gt;</code> </p>\n@param tunnelArn The Amazon Resource Name (ARN) of a tunnel. The tunnel ARN format is <code>arn:aws:tunnel:&lt;region&gt;:&lt;account-id&gt;:tunnel/&lt;tunnel-id&gt;</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7523,6 +7651,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A unique alpha-numeric ID that identifies a tunnel.</p>\n@param tunnelId A unique alpha-numeric ID that identifies a tunnel.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7538,6 +7667,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iotsecuretunneling.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -7578,6 +7708,7 @@
         "value" : "CLOSED"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iotsecuretunneling.enum.TunnelStatus",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7586,6 +7717,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.iotsecuretunneling.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -7620,6 +7752,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iotsecuretunneling.model.TunnelSummary",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7681,6 +7814,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique alpha-numeric identifier for the tunnel.</p>\n@param tunnelId The unique alpha-numeric identifier for the tunnel.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7749,6 +7883,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name of the tunnel. The tunnel ARN format is <code>arn:aws:tunnel:&lt;region&gt;:&lt;account-id&gt;:tunnel/&lt;tunnel-id&gt;</code> </p>\n@param tunnelArn The Amazon Resource Name of the tunnel. The tunnel ARN format is <code>arn:aws:tunnel:&lt;region&gt;:&lt;account-id&gt;:tunnel/&lt;tunnel-id&gt;</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7817,6 +7952,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The status of a tunnel. Valid values are: Open and Closed.</p>\n@param status The status of a tunnel. Valid values are: Open and Closed.\n@return Returns a reference to this object so that method calls can be chained together.\n@see TunnelStatus*/",
@@ -7885,6 +8021,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A description of the tunnel.</p>\n@param description A description of the tunnel.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7953,6 +8090,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The time the tunnel was created.</p>\n@param createdAt The time the tunnel was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8021,6 +8159,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The time the tunnel was last updated.</p>\n@param lastUpdatedAt The time the tunnel was last updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8091,6 +8230,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The time the tunnel was created.</p>\n@param createdAt The time the tunnel was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8160,6 +8300,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A description of the tunnel.</p>\n@param description A description of the tunnel.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8229,6 +8370,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The time the tunnel was last updated.</p>\n@param lastUpdatedAt The time the tunnel was last updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8298,6 +8440,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The status of a tunnel. Valid values are: Open and Closed.</p>\n@param status The status of a tunnel. Valid values are: Open and Closed.\n@return Returns a reference to this object so that method calls can be chained together.\n@see TunnelStatus*/",
@@ -8367,6 +8510,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name of the tunnel. The tunnel ARN format is <code>arn:aws:tunnel:&lt;region&gt;:&lt;account-id&gt;:tunnel/&lt;tunnel-id&gt;</code> </p>\n@param tunnelArn The Amazon Resource Name of the tunnel. The tunnel ARN format is <code>arn:aws:tunnel:&lt;region&gt;:&lt;account-id&gt;:tunnel/&lt;tunnel-id&gt;</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8436,6 +8580,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique alpha-numeric identifier for the tunnel.</p>\n@param tunnelId The unique alpha-numeric identifier for the tunnel.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8451,6 +8596,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iotsecuretunneling.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -8485,6 +8631,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iotsecuretunneling.request.UntagResourceRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8553,6 +8700,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The resource ARN.</p>\n@param resourceArn The resource ARN.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8660,6 +8808,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8704,6 +8853,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The keys of the tags to remove.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagKeys(java.util.Collection)} or {@link #withTagKeys(java.util.Collection)} if you want to override the existing values.</p>\n@param tagKeys The keys of the tags to remove.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8774,6 +8924,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The resource ARN.</p>\n@param resourceArn The resource ARN.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8882,6 +9033,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8926,6 +9078,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The keys of the tags to remove.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagKeys(java.util.Collection)} or {@link #withTagKeys(java.util.Collection)} if you want to override the existing values.</p>\n@param tagKeys The keys of the tags to remove.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8941,6 +9094,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iotsecuretunneling.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "resourceArn", "tagKeys" ],
@@ -8972,6 +9126,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iotsecuretunneling.response.UntagResourceResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8980,6 +9135,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.iotsecuretunneling.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,

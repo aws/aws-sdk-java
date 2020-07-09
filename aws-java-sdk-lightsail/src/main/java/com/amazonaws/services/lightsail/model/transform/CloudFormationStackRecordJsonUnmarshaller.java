@@ -75,7 +75,9 @@ public class CloudFormationStackRecordJsonUnmarshaller implements Unmarshaller<C
                 if (context.testExpression("sourceInfo", targetDepth)) {
                     context.nextToken();
                     cloudFormationStackRecord.setSourceInfo(new ListUnmarshaller<CloudFormationStackRecordSourceInfo>(
-                            CloudFormationStackRecordSourceInfoJsonUnmarshaller.getInstance()).unmarshall(context));
+                            CloudFormationStackRecordSourceInfoJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("destinationInfo", targetDepth)) {
                     context.nextToken();

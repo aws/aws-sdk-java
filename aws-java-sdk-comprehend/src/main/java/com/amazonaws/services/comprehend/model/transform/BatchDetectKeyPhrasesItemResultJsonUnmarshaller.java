@@ -54,7 +54,9 @@ public class BatchDetectKeyPhrasesItemResultJsonUnmarshaller implements Unmarsha
                 }
                 if (context.testExpression("KeyPhrases", targetDepth)) {
                     context.nextToken();
-                    batchDetectKeyPhrasesItemResult.setKeyPhrases(new ListUnmarshaller<KeyPhrase>(KeyPhraseJsonUnmarshaller.getInstance()).unmarshall(context));
+                    batchDetectKeyPhrasesItemResult.setKeyPhrases(new ListUnmarshaller<KeyPhrase>(KeyPhraseJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

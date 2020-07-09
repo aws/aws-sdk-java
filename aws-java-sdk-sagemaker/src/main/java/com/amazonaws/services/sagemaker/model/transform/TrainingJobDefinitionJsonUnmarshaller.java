@@ -59,7 +59,9 @@ public class TrainingJobDefinitionJsonUnmarshaller implements Unmarshaller<Train
                 }
                 if (context.testExpression("InputDataConfig", targetDepth)) {
                     context.nextToken();
-                    trainingJobDefinition.setInputDataConfig(new ListUnmarshaller<Channel>(ChannelJsonUnmarshaller.getInstance()).unmarshall(context));
+                    trainingJobDefinition.setInputDataConfig(new ListUnmarshaller<Channel>(ChannelJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("OutputDataConfig", targetDepth)) {
                     context.nextToken();

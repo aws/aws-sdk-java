@@ -118,11 +118,15 @@ public class AlarmJsonUnmarshaller implements Unmarshaller<Alarm, JsonUnmarshall
                 }
                 if (context.testExpression("contactProtocols", targetDepth)) {
                     context.nextToken();
-                    alarm.setContactProtocols(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    alarm.setContactProtocols(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("notificationTriggers", targetDepth)) {
                     context.nextToken();
-                    alarm.setNotificationTriggers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    alarm.setNotificationTriggers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("notificationEnabled", targetDepth)) {
                     context.nextToken();

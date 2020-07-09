@@ -54,7 +54,9 @@ public class ViewBillingResultJsonUnmarshaller implements Unmarshaller<ViewBilli
                 }
                 if (context.testExpression("BillingRecords", targetDepth)) {
                     context.nextToken();
-                    viewBillingResult.setBillingRecords(new ListUnmarshaller<BillingRecord>(BillingRecordJsonUnmarshaller.getInstance()).unmarshall(context));
+                    viewBillingResult.setBillingRecords(new ListUnmarshaller<BillingRecord>(BillingRecordJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

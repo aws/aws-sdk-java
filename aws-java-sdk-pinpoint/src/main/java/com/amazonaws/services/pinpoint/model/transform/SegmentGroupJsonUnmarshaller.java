@@ -50,11 +50,15 @@ public class SegmentGroupJsonUnmarshaller implements Unmarshaller<SegmentGroup, 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Dimensions", targetDepth)) {
                     context.nextToken();
-                    segmentGroup.setDimensions(new ListUnmarshaller<SegmentDimensions>(SegmentDimensionsJsonUnmarshaller.getInstance()).unmarshall(context));
+                    segmentGroup.setDimensions(new ListUnmarshaller<SegmentDimensions>(SegmentDimensionsJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("SourceSegments", targetDepth)) {
                     context.nextToken();
-                    segmentGroup.setSourceSegments(new ListUnmarshaller<SegmentReference>(SegmentReferenceJsonUnmarshaller.getInstance()).unmarshall(context));
+                    segmentGroup.setSourceSegments(new ListUnmarshaller<SegmentReference>(SegmentReferenceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("SourceType", targetDepth)) {
                     context.nextToken();

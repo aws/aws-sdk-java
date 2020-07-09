@@ -27,6 +27,19 @@ public class AbstractAmazonEBSAsync extends AbstractAmazonEBS implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<CompleteSnapshotResult> completeSnapshotAsync(CompleteSnapshotRequest request) {
+
+        return completeSnapshotAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CompleteSnapshotResult> completeSnapshotAsync(CompleteSnapshotRequest request,
+            com.amazonaws.handlers.AsyncHandler<CompleteSnapshotRequest, CompleteSnapshotResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetSnapshotBlockResult> getSnapshotBlockAsync(GetSnapshotBlockRequest request) {
 
         return getSnapshotBlockAsync(request, null);
@@ -61,6 +74,32 @@ public class AbstractAmazonEBSAsync extends AbstractAmazonEBS implements AmazonE
     @Override
     public java.util.concurrent.Future<ListSnapshotBlocksResult> listSnapshotBlocksAsync(ListSnapshotBlocksRequest request,
             com.amazonaws.handlers.AsyncHandler<ListSnapshotBlocksRequest, ListSnapshotBlocksResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutSnapshotBlockResult> putSnapshotBlockAsync(PutSnapshotBlockRequest request) {
+
+        return putSnapshotBlockAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutSnapshotBlockResult> putSnapshotBlockAsync(PutSnapshotBlockRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutSnapshotBlockRequest, PutSnapshotBlockResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartSnapshotResult> startSnapshotAsync(StartSnapshotRequest request) {
+
+        return startSnapshotAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartSnapshotResult> startSnapshotAsync(StartSnapshotRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartSnapshotRequest, StartSnapshotResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -54,7 +54,9 @@ public class DescribeClustersResultJsonUnmarshaller implements Unmarshaller<Desc
                 }
                 if (context.testExpression("Clusters", targetDepth)) {
                     context.nextToken();
-                    describeClustersResult.setClusters(new ListUnmarshaller<Cluster>(ClusterJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeClustersResult.setClusters(new ListUnmarshaller<Cluster>(ClusterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

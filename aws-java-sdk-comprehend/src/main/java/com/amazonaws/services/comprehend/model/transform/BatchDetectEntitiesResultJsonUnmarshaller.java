@@ -51,12 +51,15 @@ public class BatchDetectEntitiesResultJsonUnmarshaller implements Unmarshaller<B
                 if (context.testExpression("ResultList", targetDepth)) {
                     context.nextToken();
                     batchDetectEntitiesResult.setResultList(new ListUnmarshaller<BatchDetectEntitiesItemResult>(BatchDetectEntitiesItemResultJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ErrorList", targetDepth)) {
                     context.nextToken();
                     batchDetectEntitiesResult.setErrorList(new ListUnmarshaller<BatchItemError>(BatchItemErrorJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

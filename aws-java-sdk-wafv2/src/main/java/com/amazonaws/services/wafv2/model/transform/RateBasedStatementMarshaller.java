@@ -33,6 +33,8 @@ public class RateBasedStatementMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AggregateKeyType").build();
     private static final MarshallingInfo<StructuredPojo> SCOPEDOWNSTATEMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ScopeDownStatement").build();
+    private static final MarshallingInfo<StructuredPojo> FORWARDEDIPCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ForwardedIPConfig").build();
 
     private static final RateBasedStatementMarshaller instance = new RateBasedStatementMarshaller();
 
@@ -53,6 +55,7 @@ public class RateBasedStatementMarshaller {
             protocolMarshaller.marshall(rateBasedStatement.getLimit(), LIMIT_BINDING);
             protocolMarshaller.marshall(rateBasedStatement.getAggregateKeyType(), AGGREGATEKEYTYPE_BINDING);
             protocolMarshaller.marshall(rateBasedStatement.getScopeDownStatement(), SCOPEDOWNSTATEMENT_BINDING);
+            protocolMarshaller.marshall(rateBasedStatement.getForwardedIPConfig(), FORWARDEDIPCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -118,8 +118,9 @@ public class ReplicationJobJsonUnmarshaller implements Unmarshaller<ReplicationJ
                 }
                 if (context.testExpression("replicationRunList", targetDepth)) {
                     context.nextToken();
-                    replicationJob
-                            .setReplicationRunList(new ListUnmarshaller<ReplicationRun>(ReplicationRunJsonUnmarshaller.getInstance()).unmarshall(context));
+                    replicationJob.setReplicationRunList(new ListUnmarshaller<ReplicationRun>(ReplicationRunJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -50,7 +50,9 @@ public class ListTargetsForPolicyResultJsonUnmarshaller implements Unmarshaller<
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("targets", targetDepth)) {
                     context.nextToken();
-                    listTargetsForPolicyResult.setTargets(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    listTargetsForPolicyResult.setTargets(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextMarker", targetDepth)) {
                     context.nextToken();

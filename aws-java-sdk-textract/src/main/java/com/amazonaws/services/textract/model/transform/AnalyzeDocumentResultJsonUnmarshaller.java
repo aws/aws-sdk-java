@@ -54,7 +54,9 @@ public class AnalyzeDocumentResultJsonUnmarshaller implements Unmarshaller<Analy
                 }
                 if (context.testExpression("Blocks", targetDepth)) {
                     context.nextToken();
-                    analyzeDocumentResult.setBlocks(new ListUnmarshaller<Block>(BlockJsonUnmarshaller.getInstance()).unmarshall(context));
+                    analyzeDocumentResult.setBlocks(new ListUnmarshaller<Block>(BlockJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("HumanLoopActivationOutput", targetDepth)) {
                     context.nextToken();

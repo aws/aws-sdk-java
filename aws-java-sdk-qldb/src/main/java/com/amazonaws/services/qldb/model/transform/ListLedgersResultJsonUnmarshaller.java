@@ -50,7 +50,9 @@ public class ListLedgersResultJsonUnmarshaller implements Unmarshaller<ListLedge
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Ledgers", targetDepth)) {
                     context.nextToken();
-                    listLedgersResult.setLedgers(new ListUnmarshaller<LedgerSummary>(LedgerSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listLedgersResult.setLedgers(new ListUnmarshaller<LedgerSummary>(LedgerSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

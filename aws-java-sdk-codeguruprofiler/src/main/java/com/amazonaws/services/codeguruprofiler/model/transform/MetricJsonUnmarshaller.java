@@ -54,7 +54,9 @@ public class MetricJsonUnmarshaller implements Unmarshaller<Metric, JsonUnmarsha
                 }
                 if (context.testExpression("threadStates", targetDepth)) {
                     context.nextToken();
-                    metric.setThreadStates(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    metric.setThreadStates(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
                     context.nextToken();

@@ -70,7 +70,9 @@ public class ComponentVersionJsonUnmarshaller implements Unmarshaller<ComponentV
                 }
                 if (context.testExpression("supportedOsVersions", targetDepth)) {
                     context.nextToken();
-                    componentVersion.setSupportedOsVersions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    componentVersion.setSupportedOsVersions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
                     context.nextToken();

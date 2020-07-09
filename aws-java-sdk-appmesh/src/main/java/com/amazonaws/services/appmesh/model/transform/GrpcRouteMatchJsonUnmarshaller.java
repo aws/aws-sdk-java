@@ -50,7 +50,9 @@ public class GrpcRouteMatchJsonUnmarshaller implements Unmarshaller<GrpcRouteMat
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("metadata", targetDepth)) {
                     context.nextToken();
-                    grpcRouteMatch.setMetadata(new ListUnmarshaller<GrpcRouteMetadata>(GrpcRouteMetadataJsonUnmarshaller.getInstance()).unmarshall(context));
+                    grpcRouteMatch.setMetadata(new ListUnmarshaller<GrpcRouteMetadata>(GrpcRouteMetadataJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("methodName", targetDepth)) {
                     context.nextToken();

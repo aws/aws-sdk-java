@@ -58,7 +58,9 @@ public class GetServersResultJsonUnmarshaller implements Unmarshaller<GetServers
                 }
                 if (context.testExpression("serverList", targetDepth)) {
                     context.nextToken();
-                    getServersResult.setServerList(new ListUnmarshaller<Server>(ServerJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getServersResult.setServerList(new ListUnmarshaller<Server>(ServerJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

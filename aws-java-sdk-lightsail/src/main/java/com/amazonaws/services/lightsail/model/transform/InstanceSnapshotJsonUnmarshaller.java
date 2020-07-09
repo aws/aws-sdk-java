@@ -74,7 +74,9 @@ public class InstanceSnapshotJsonUnmarshaller implements Unmarshaller<InstanceSn
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
-                    instanceSnapshot.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    instanceSnapshot.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("state", targetDepth)) {
                     context.nextToken();
@@ -86,7 +88,9 @@ public class InstanceSnapshotJsonUnmarshaller implements Unmarshaller<InstanceSn
                 }
                 if (context.testExpression("fromAttachedDisks", targetDepth)) {
                     context.nextToken();
-                    instanceSnapshot.setFromAttachedDisks(new ListUnmarshaller<Disk>(DiskJsonUnmarshaller.getInstance()).unmarshall(context));
+                    instanceSnapshot.setFromAttachedDisks(new ListUnmarshaller<Disk>(DiskJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("fromInstanceName", targetDepth)) {
                     context.nextToken();

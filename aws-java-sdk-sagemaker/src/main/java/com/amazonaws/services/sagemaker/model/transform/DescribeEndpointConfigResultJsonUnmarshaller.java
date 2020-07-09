@@ -59,7 +59,8 @@ public class DescribeEndpointConfigResultJsonUnmarshaller implements Unmarshalle
                 if (context.testExpression("ProductionVariants", targetDepth)) {
                     context.nextToken();
                     describeEndpointConfigResult.setProductionVariants(new ListUnmarshaller<ProductionVariant>(ProductionVariantJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("DataCaptureConfig", targetDepth)) {
                     context.nextToken();

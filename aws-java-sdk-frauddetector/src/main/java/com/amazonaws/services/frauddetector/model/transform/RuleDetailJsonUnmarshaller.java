@@ -74,7 +74,9 @@ public class RuleDetailJsonUnmarshaller implements Unmarshaller<RuleDetail, Json
                 }
                 if (context.testExpression("outcomes", targetDepth)) {
                     context.nextToken();
-                    ruleDetail.setOutcomes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    ruleDetail.setOutcomes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedTime", targetDepth)) {
                     context.nextToken();

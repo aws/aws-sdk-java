@@ -51,7 +51,9 @@ public class ListOutgoingTypedLinksResultJsonUnmarshaller implements Unmarshalle
                 if (context.testExpression("TypedLinkSpecifiers", targetDepth)) {
                     context.nextToken();
                     listOutgoingTypedLinksResult.setTypedLinkSpecifiers(new ListUnmarshaller<TypedLinkSpecifier>(TypedLinkSpecifierJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

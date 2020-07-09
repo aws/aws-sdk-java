@@ -55,7 +55,9 @@ public class DescribeProvisionedProductResultJsonUnmarshaller implements Unmarsh
                 if (context.testExpression("CloudWatchDashboards", targetDepth)) {
                     context.nextToken();
                     describeProvisionedProductResult.setCloudWatchDashboards(new ListUnmarshaller<CloudWatchDashboard>(CloudWatchDashboardJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

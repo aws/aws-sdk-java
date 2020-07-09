@@ -361,6 +361,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.elasticinference.model.AcceleratorType",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -422,6 +423,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> The name of the Elastic Inference Accelerator type. </p>\n@param acceleratorTypeName The name of the Elastic Inference Accelerator type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -490,6 +492,7 @@
           "variableSetterType" : "MemoryInfo"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> The memory information of the Elastic Inference Accelerator type. </p>\n@param memoryInfo The memory information of the Elastic Inference Accelerator type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -597,6 +600,7 @@
               "variableSetterType" : "KeyValuePair"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -641,6 +645,7 @@
           "variableSetterType" : "java.util.Collection<KeyValuePair>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> The throughput information of the Elastic Inference Accelerator type. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setThroughputInfo(java.util.Collection)} or {@link #withThroughputInfo(java.util.Collection)} if you want to override the existing values.</p>\n@param throughputInfo The throughput information of the Elastic Inference Accelerator type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -711,6 +716,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> The name of the Elastic Inference Accelerator type. </p>\n@param acceleratorTypeName The name of the Elastic Inference Accelerator type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -780,6 +786,7 @@
             "variableSetterType" : "MemoryInfo"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> The memory information of the Elastic Inference Accelerator type. </p>\n@param memoryInfo The memory information of the Elastic Inference Accelerator type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -888,6 +895,7 @@
                 "variableSetterType" : "KeyValuePair"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -932,6 +940,7 @@
             "variableSetterType" : "java.util.Collection<KeyValuePair>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> The throughput information of the Elastic Inference Accelerator type. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setThroughputInfo(java.util.Collection)} or {@link #withThroughputInfo(java.util.Collection)} if you want to override the existing values.</p>\n@param throughputInfo The throughput information of the Elastic Inference Accelerator type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -947,6 +956,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.elasticinference.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -981,6 +991,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.elasticinference.model.AcceleratorTypeOffering",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1042,6 +1053,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> The name of the Elastic Inference Accelerator type. </p>\n@param acceleratorType The name of the Elastic Inference Accelerator type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1110,6 +1122,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> The location type for the offering. It can assume the following values: region: defines that the offering is at the regional level. availability-zone: defines that the offering is at the availability zone level. availability-zone-id: defines that the offering is at the availability zone level, defined by the availability zone id. </p>\n@param locationType The location type for the offering. It can assume the following values: region: defines that the offering is at the regional level. availability-zone: defines that the offering is at the availability zone level. availability-zone-id: defines that the offering is at the availability zone level, defined by the availability zone id.\n@return Returns a reference to this object so that method calls can be chained together.\n@see LocationType*/",
@@ -1178,6 +1191,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> The location for the offering. It will return either the region, availability zone or availability zone id for the offering depending on the locationType value. </p>\n@param location The location for the offering. It will return either the region, availability zone or availability zone id for the offering depending on the locationType value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1248,6 +1262,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> The name of the Elastic Inference Accelerator type. </p>\n@param acceleratorType The name of the Elastic Inference Accelerator type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1317,6 +1332,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> The location for the offering. It will return either the region, availability zone or availability zone id for the offering depending on the locationType value. </p>\n@param location The location for the offering. It will return either the region, availability zone or availability zone id for the offering depending on the locationType value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1386,6 +1402,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> The location type for the offering. It can assume the following values: region: defines that the offering is at the regional level. availability-zone: defines that the offering is at the availability zone level. availability-zone-id: defines that the offering is at the availability zone level, defined by the availability zone id. </p>\n@param locationType The location type for the offering. It can assume the following values: region: defines that the offering is at the regional level. availability-zone: defines that the offering is at the availability zone level. availability-zone-id: defines that the offering is at the availability zone level, defined by the availability zone id.\n@return Returns a reference to this object so that method calls can be chained together.\n@see LocationType*/",
@@ -1401,6 +1418,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.elasticinference.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1435,6 +1453,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "BadRequestException",
+      "fullyQualifiedName" : "com.amazonaws.services.elasticinference.exception.BadRequestException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1443,6 +1462,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.elasticinference.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1474,6 +1494,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.elasticinference.request.DescribeAcceleratorOfferingsRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1542,6 +1563,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> The location type that you want to describe accelerator type offerings for. It can assume the following values: region: will return the accelerator type offering at the regional level. availability-zone: will return the accelerator type offering at the availability zone level. availability-zone-id: will return the accelerator type offering at the availability zone level returning the availability zone id. </p>\n@param locationType The location type that you want to describe accelerator type offerings for. It can assume the following values: region: will return the accelerator type offering at the regional level. availability-zone: will return the accelerator type offering at the availability zone level. availability-zone-id: will return the accelerator type offering at the availability zone level returning the availability zone id.\n@return Returns a reference to this object so that method calls can be chained together.\n@see LocationType*/",
@@ -1649,6 +1671,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1693,6 +1716,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> The list of accelerator types to describe. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAcceleratorTypes(java.util.Collection)} or {@link #withAcceleratorTypes(java.util.Collection)} if you want to override the existing values.</p>\n@param acceleratorTypes The list of accelerator types to describe.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1802,6 +1826,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1846,6 +1871,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> The list of accelerator types to describe. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAcceleratorTypes(java.util.Collection)} or {@link #withAcceleratorTypes(java.util.Collection)} if you want to override the existing values.</p>\n@param acceleratorTypes The list of accelerator types to describe.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1915,6 +1941,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> The location type that you want to describe accelerator type offerings for. It can assume the following values: region: will return the accelerator type offering at the regional level. availability-zone: will return the accelerator type offering at the availability zone level. availability-zone-id: will return the accelerator type offering at the availability zone level returning the availability zone id. </p>\n@param locationType The location type that you want to describe accelerator type offerings for. It can assume the following values: region: will return the accelerator type offering at the regional level. availability-zone: will return the accelerator type offering at the availability zone level. availability-zone-id: will return the accelerator type offering at the availability zone level returning the availability zone id.\n@return Returns a reference to this object so that method calls can be chained together.\n@see LocationType*/",
@@ -1930,6 +1957,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.elasticinference.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "locationType" ],
@@ -1961,6 +1989,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.elasticinference.response.DescribeAcceleratorOfferingsResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2061,6 +2090,7 @@
               "variableSetterType" : "AcceleratorTypeOffering"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2105,6 +2135,7 @@
           "variableSetterType" : "java.util.Collection<AcceleratorTypeOffering>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> The list of accelerator type offerings for a specific location. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAcceleratorTypeOfferings(java.util.Collection)} or {@link #withAcceleratorTypeOfferings(java.util.Collection)} if you want to override the existing values.</p>\n@param acceleratorTypeOfferings The list of accelerator type offerings for a specific location.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2214,6 +2245,7 @@
                 "variableSetterType" : "AcceleratorTypeOffering"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2258,6 +2290,7 @@
             "variableSetterType" : "java.util.Collection<AcceleratorTypeOffering>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> The list of accelerator type offerings for a specific location. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAcceleratorTypeOfferings(java.util.Collection)} or {@link #withAcceleratorTypeOfferings(java.util.Collection)} if you want to override the existing values.</p>\n@param acceleratorTypeOfferings The list of accelerator type offerings for a specific location.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2273,6 +2306,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.elasticinference.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2307,6 +2341,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.elasticinference.request.DescribeAcceleratorTypesRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2322,6 +2357,7 @@
       },
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.elasticinference.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2353,6 +2389,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.elasticinference.response.DescribeAcceleratorTypesResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2453,6 +2490,7 @@
               "variableSetterType" : "AcceleratorType"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2497,6 +2535,7 @@
           "variableSetterType" : "java.util.Collection<AcceleratorType>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> The available accelerator types. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAcceleratorTypes(java.util.Collection)} or {@link #withAcceleratorTypes(java.util.Collection)} if you want to override the existing values.</p>\n@param acceleratorTypes The available accelerator types.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2606,6 +2645,7 @@
                 "variableSetterType" : "AcceleratorType"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2650,6 +2690,7 @@
             "variableSetterType" : "java.util.Collection<AcceleratorType>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> The available accelerator types. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAcceleratorTypes(java.util.Collection)} or {@link #withAcceleratorTypes(java.util.Collection)} if you want to override the existing values.</p>\n@param acceleratorTypes The available accelerator types.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2665,6 +2706,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.elasticinference.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2699,6 +2741,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.elasticinference.request.DescribeAcceleratorsRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2806,6 +2849,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2850,6 +2894,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> The IDs of the accelerators to describe. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAcceleratorIds(java.util.Collection)} or {@link #withAcceleratorIds(java.util.Collection)} if you want to override the existing values.</p>\n@param acceleratorIds The IDs of the accelerators to describe.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2957,6 +3002,7 @@
               "variableSetterType" : "Filter"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3001,6 +3047,7 @@
           "variableSetterType" : "java.util.Collection<Filter>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> One or more filters. Filter names and values are case-sensitive. Valid filter names are: accelerator-types: can provide a list of accelerator type names to filter for. instance-id: can provide a list of EC2 instance ids to filter for. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override the existing values.</p>\n@param filters One or more filters. Filter names and values are case-sensitive. Valid filter names are: accelerator-types: can provide a list of accelerator type names to filter for. instance-id: can provide a list of EC2 instance ids to filter for.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3069,6 +3116,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> The total number of items to return in the command's output. If the total number of items available is more than the value specified, a NextToken is provided in the command's output. To resume pagination, provide the NextToken value in the starting-token argument of a subsequent command. Do not use the NextToken response element directly outside of the AWS CLI. </p>\n@param maxResults The total number of items to return in the command's output. If the total number of items available is more than the value specified, a NextToken is provided in the command's output. To resume pagination, provide the NextToken value in the starting-token argument of a subsequent command. Do not use the NextToken response element directly outside of the AWS CLI.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3137,6 +3185,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>\n@param nextToken A token to specify where to start paginating. This is the NextToken from a previously truncated response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3246,6 +3295,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3290,6 +3340,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> The IDs of the accelerators to describe. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAcceleratorIds(java.util.Collection)} or {@link #withAcceleratorIds(java.util.Collection)} if you want to override the existing values.</p>\n@param acceleratorIds The IDs of the accelerators to describe.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3398,6 +3449,7 @@
                 "variableSetterType" : "Filter"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3442,6 +3494,7 @@
             "variableSetterType" : "java.util.Collection<Filter>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> One or more filters. Filter names and values are case-sensitive. Valid filter names are: accelerator-types: can provide a list of accelerator type names to filter for. instance-id: can provide a list of EC2 instance ids to filter for. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override the existing values.</p>\n@param filters One or more filters. Filter names and values are case-sensitive. Valid filter names are: accelerator-types: can provide a list of accelerator type names to filter for. instance-id: can provide a list of EC2 instance ids to filter for.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3511,6 +3564,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> The total number of items to return in the command's output. If the total number of items available is more than the value specified, a NextToken is provided in the command's output. To resume pagination, provide the NextToken value in the starting-token argument of a subsequent command. Do not use the NextToken response element directly outside of the AWS CLI. </p>\n@param maxResults The total number of items to return in the command's output. If the total number of items available is more than the value specified, a NextToken is provided in the command's output. To resume pagination, provide the NextToken value in the starting-token argument of a subsequent command. Do not use the NextToken response element directly outside of the AWS CLI.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3580,6 +3634,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>\n@param nextToken A token to specify where to start paginating. This is the NextToken from a previously truncated response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3595,6 +3650,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.elasticinference.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3626,6 +3682,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.elasticinference.response.DescribeAcceleratorsResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3726,6 +3783,7 @@
               "variableSetterType" : "ElasticInferenceAccelerator"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3770,6 +3828,7 @@
           "variableSetterType" : "java.util.Collection<ElasticInferenceAccelerator>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> The details of the Elastic Inference Accelerators. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAcceleratorSet(java.util.Collection)} or {@link #withAcceleratorSet(java.util.Collection)} if you want to override the existing values.</p>\n@param acceleratorSet The details of the Elastic Inference Accelerators.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3838,6 +3897,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>\n@param nextToken A token to specify where to start paginating. This is the NextToken from a previously truncated response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3947,6 +4007,7 @@
                 "variableSetterType" : "ElasticInferenceAccelerator"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3991,6 +4052,7 @@
             "variableSetterType" : "java.util.Collection<ElasticInferenceAccelerator>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> The details of the Elastic Inference Accelerators. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAcceleratorSet(java.util.Collection)} or {@link #withAcceleratorSet(java.util.Collection)} if you want to override the existing values.</p>\n@param acceleratorSet The details of the Elastic Inference Accelerators.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4060,6 +4122,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>\n@param nextToken A token to specify where to start paginating. This is the NextToken from a previously truncated response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4075,6 +4138,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.elasticinference.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4109,6 +4173,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.elasticinference.model.ElasticInferenceAccelerator",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4170,6 +4235,7 @@
           "variableSetterType" : "ElasticInferenceAcceleratorHealth"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> The health of the Elastic Inference Accelerator. </p>\n@param acceleratorHealth The health of the Elastic Inference Accelerator.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4238,6 +4304,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> The type of the Elastic Inference Accelerator. </p>\n@param acceleratorType The type of the Elastic Inference Accelerator.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4306,6 +4373,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> The ID of the Elastic Inference Accelerator. </p>\n@param acceleratorId The ID of the Elastic Inference Accelerator.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4374,6 +4442,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> The availability zone where the Elastic Inference Accelerator is present. </p>\n@param availabilityZone The availability zone where the Elastic Inference Accelerator is present.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4442,6 +4511,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> The ARN of the resource that the Elastic Inference Accelerator is attached to. </p>\n@param attachedResource The ARN of the resource that the Elastic Inference Accelerator is attached to.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4512,6 +4582,7 @@
             "variableSetterType" : "ElasticInferenceAcceleratorHealth"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> The health of the Elastic Inference Accelerator. </p>\n@param acceleratorHealth The health of the Elastic Inference Accelerator.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4581,6 +4652,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> The ID of the Elastic Inference Accelerator. </p>\n@param acceleratorId The ID of the Elastic Inference Accelerator.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4650,6 +4722,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> The type of the Elastic Inference Accelerator. </p>\n@param acceleratorType The type of the Elastic Inference Accelerator.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4719,6 +4792,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> The ARN of the resource that the Elastic Inference Accelerator is attached to. </p>\n@param attachedResource The ARN of the resource that the Elastic Inference Accelerator is attached to.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4788,6 +4862,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> The availability zone where the Elastic Inference Accelerator is present. </p>\n@param availabilityZone The availability zone where the Elastic Inference Accelerator is present.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4803,6 +4878,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.elasticinference.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4837,6 +4913,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.elasticinference.model.ElasticInferenceAcceleratorHealth",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4898,6 +4975,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> The health status of the Elastic Inference Accelerator. </p>\n@param status The health status of the Elastic Inference Accelerator.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4968,6 +5046,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> The health status of the Elastic Inference Accelerator. </p>\n@param status The health status of the Elastic Inference Accelerator.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4983,6 +5062,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.elasticinference.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -5017,6 +5097,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.elasticinference.model.Filter",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5078,6 +5159,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> The filter name for the Elastic Inference Accelerator list. It can assume the following values: accelerator-type: the type of Elastic Inference Accelerator to filter for. instance-id: an EC2 instance id to filter for. </p>\n@param name The filter name for the Elastic Inference Accelerator list. It can assume the following values: accelerator-type: the type of Elastic Inference Accelerator to filter for. instance-id: an EC2 instance id to filter for.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5185,6 +5267,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5229,6 +5312,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> The values for the filter of the Elastic Inference Accelerator list. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValues(java.util.Collection)} or {@link #withValues(java.util.Collection)} if you want to override the existing values.</p>\n@param values The values for the filter of the Elastic Inference Accelerator list.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5299,6 +5383,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> The filter name for the Elastic Inference Accelerator list. It can assume the following values: accelerator-type: the type of Elastic Inference Accelerator to filter for. instance-id: an EC2 instance id to filter for. </p>\n@param name The filter name for the Elastic Inference Accelerator list. It can assume the following values: accelerator-type: the type of Elastic Inference Accelerator to filter for. instance-id: an EC2 instance id to filter for.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5407,6 +5492,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5451,6 +5537,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> The values for the filter of the Elastic Inference Accelerator list. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValues(java.util.Collection)} or {@link #withValues(java.util.Collection)} if you want to override the existing values.</p>\n@param values The values for the filter of the Elastic Inference Accelerator list.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5466,6 +5553,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.elasticinference.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -5500,6 +5588,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InternalServerException",
+      "fullyQualifiedName" : "com.amazonaws.services.elasticinference.exception.InternalServerException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5508,6 +5597,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.elasticinference.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -5539,6 +5629,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.elasticinference.model.KeyValuePair",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5600,6 +5691,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> The throughput value of the Elastic Inference Accelerator type. It can assume the following values: TFLOPS16bit: the throughput expressed in 16bit TeraFLOPS. TFLOPS32bit: the throughput expressed in 32bit TeraFLOPS. </p>\n@param key The throughput value of the Elastic Inference Accelerator type. It can assume the following values: TFLOPS16bit: the throughput expressed in 16bit TeraFLOPS. TFLOPS32bit: the throughput expressed in 32bit TeraFLOPS.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5668,6 +5760,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> The throughput value of the Elastic Inference Accelerator type. </p>\n@param value The throughput value of the Elastic Inference Accelerator type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5738,6 +5831,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> The throughput value of the Elastic Inference Accelerator type. It can assume the following values: TFLOPS16bit: the throughput expressed in 16bit TeraFLOPS. TFLOPS32bit: the throughput expressed in 32bit TeraFLOPS. </p>\n@param key The throughput value of the Elastic Inference Accelerator type. It can assume the following values: TFLOPS16bit: the throughput expressed in 16bit TeraFLOPS. TFLOPS32bit: the throughput expressed in 32bit TeraFLOPS.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5807,6 +5901,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> The throughput value of the Elastic Inference Accelerator type. </p>\n@param value The throughput value of the Elastic Inference Accelerator type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5822,6 +5917,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.elasticinference.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -5856,6 +5952,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.elasticinference.request.ListTagsForResourceRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5924,6 +6021,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> The ARN of the Elastic Inference Accelerator to list the tags for. </p>\n@param resourceArn The ARN of the Elastic Inference Accelerator to list the tags for.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5994,6 +6092,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> The ARN of the Elastic Inference Accelerator to list the tags for. </p>\n@param resourceArn The ARN of the Elastic Inference Accelerator to list the tags for.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6009,6 +6108,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.elasticinference.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "resourceArn" ],
@@ -6040,6 +6140,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.elasticinference.response.ListTagsForResourceResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6146,6 +6247,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6184,6 +6286,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> The tags of the Elastic Inference Accelerator. </p>\n@param tags The tags of the Elastic Inference Accelerator.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6299,6 +6402,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6337,6 +6441,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> The tags of the Elastic Inference Accelerator. </p>\n@param tags The tags of the Elastic Inference Accelerator.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6352,6 +6457,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.elasticinference.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6395,6 +6501,7 @@
         "value" : "availability-zone-id"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.elasticinference.enum.LocationType",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6403,6 +6510,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.elasticinference.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6437,6 +6545,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.elasticinference.model.MemoryInfo",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6498,6 +6607,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> The size in mebibytes of the Elastic Inference Accelerator type. </p>\n@param sizeInMiB The size in mebibytes of the Elastic Inference Accelerator type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6568,6 +6678,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> The size in mebibytes of the Elastic Inference Accelerator type. </p>\n@param sizeInMiB The size in mebibytes of the Elastic Inference Accelerator type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6583,6 +6694,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.elasticinference.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6617,6 +6729,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ResourceNotFoundException",
+      "fullyQualifiedName" : "com.amazonaws.services.elasticinference.exception.ResourceNotFoundException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6625,6 +6738,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.elasticinference.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6656,6 +6770,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.elasticinference.request.TagResourceRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6724,6 +6839,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> The ARN of the Elastic Inference Accelerator to tag. </p>\n@param resourceArn The ARN of the Elastic Inference Accelerator to tag.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6837,6 +6953,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6875,6 +6992,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> The tags to add to the Elastic Inference Accelerator. </p>\n@param tags The tags to add to the Elastic Inference Accelerator.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6945,6 +7063,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> The ARN of the Elastic Inference Accelerator to tag. </p>\n@param resourceArn The ARN of the Elastic Inference Accelerator to tag.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7059,6 +7178,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7097,6 +7217,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> The tags to add to the Elastic Inference Accelerator. </p>\n@param tags The tags to add to the Elastic Inference Accelerator.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7112,6 +7233,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.elasticinference.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "resourceArn", "tags" ],
@@ -7143,6 +7265,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.elasticinference.response.TagResourceResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7151,6 +7274,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.elasticinference.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -7185,6 +7309,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.elasticinference.request.UntagResourceRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7253,6 +7378,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> The ARN of the Elastic Inference Accelerator to untag. </p>\n@param resourceArn The ARN of the Elastic Inference Accelerator to untag.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7360,6 +7486,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7404,6 +7531,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> The list of tags to remove from the Elastic Inference Accelerator. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagKeys(java.util.Collection)} or {@link #withTagKeys(java.util.Collection)} if you want to override the existing values.</p>\n@param tagKeys The list of tags to remove from the Elastic Inference Accelerator.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7474,6 +7602,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> The ARN of the Elastic Inference Accelerator to untag. </p>\n@param resourceArn The ARN of the Elastic Inference Accelerator to untag.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7582,6 +7711,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7626,6 +7756,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> The list of tags to remove from the Elastic Inference Accelerator. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagKeys(java.util.Collection)} or {@link #withTagKeys(java.util.Collection)} if you want to override the existing values.</p>\n@param tagKeys The list of tags to remove from the Elastic Inference Accelerator.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7641,6 +7772,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.elasticinference.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "resourceArn", "tagKeys" ],
@@ -7672,6 +7804,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.elasticinference.response.UntagResourceResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7680,6 +7813,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.elasticinference.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,

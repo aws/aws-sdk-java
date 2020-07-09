@@ -59,7 +59,8 @@ public class DescribedUserJsonUnmarshaller implements Unmarshaller<DescribedUser
                 if (context.testExpression("HomeDirectoryMappings", targetDepth)) {
                     context.nextToken();
                     describedUser.setHomeDirectoryMappings(new ListUnmarshaller<HomeDirectoryMapEntry>(HomeDirectoryMapEntryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("HomeDirectoryType", targetDepth)) {
                     context.nextToken();
@@ -75,11 +76,15 @@ public class DescribedUserJsonUnmarshaller implements Unmarshaller<DescribedUser
                 }
                 if (context.testExpression("SshPublicKeys", targetDepth)) {
                     context.nextToken();
-                    describedUser.setSshPublicKeys(new ListUnmarshaller<SshPublicKey>(SshPublicKeyJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describedUser.setSshPublicKeys(new ListUnmarshaller<SshPublicKey>(SshPublicKeyJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
-                    describedUser.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describedUser.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("UserName", targetDepth)) {
                     context.nextToken();

@@ -58,7 +58,9 @@ public class GetBotResultJsonUnmarshaller implements Unmarshaller<GetBotResult, 
                 }
                 if (context.testExpression("intents", targetDepth)) {
                     context.nextToken();
-                    getBotResult.setIntents(new ListUnmarshaller<Intent>(IntentJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getBotResult.setIntents(new ListUnmarshaller<Intent>(IntentJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("clarificationPrompt", targetDepth)) {
                     context.nextToken();

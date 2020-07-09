@@ -51,7 +51,9 @@ public class PutRemediationExceptionsResultJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("FailedBatches", targetDepth)) {
                     context.nextToken();
                     putRemediationExceptionsResult.setFailedBatches(new ListUnmarshaller<FailedRemediationExceptionBatch>(
-                            FailedRemediationExceptionBatchJsonUnmarshaller.getInstance()).unmarshall(context));
+                            FailedRemediationExceptionBatchJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

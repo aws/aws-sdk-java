@@ -56,7 +56,8 @@ public class DescribeProvisionedProductPlanResultJsonUnmarshaller implements Unm
                 if (context.testExpression("ResourceChanges", targetDepth)) {
                     context.nextToken();
                     describeProvisionedProductPlanResult.setResourceChanges(new ListUnmarshaller<ResourceChange>(ResourceChangeJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextPageToken", targetDepth)) {
                     context.nextToken();

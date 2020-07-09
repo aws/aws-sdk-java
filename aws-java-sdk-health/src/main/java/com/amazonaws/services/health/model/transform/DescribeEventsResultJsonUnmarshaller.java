@@ -50,7 +50,9 @@ public class DescribeEventsResultJsonUnmarshaller implements Unmarshaller<Descri
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("events", targetDepth)) {
                     context.nextToken();
-                    describeEventsResult.setEvents(new ListUnmarshaller<Event>(EventJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeEventsResult.setEvents(new ListUnmarshaller<Event>(EventJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

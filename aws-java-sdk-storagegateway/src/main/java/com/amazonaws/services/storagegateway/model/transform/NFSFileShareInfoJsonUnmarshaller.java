@@ -98,7 +98,9 @@ public class NFSFileShareInfoJsonUnmarshaller implements Unmarshaller<NFSFileSha
                 }
                 if (context.testExpression("ClientList", targetDepth)) {
                     context.nextToken();
-                    nFSFileShareInfo.setClientList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    nFSFileShareInfo.setClientList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Squash", targetDepth)) {
                     context.nextToken();
@@ -118,7 +120,9 @@ public class NFSFileShareInfoJsonUnmarshaller implements Unmarshaller<NFSFileSha
                 }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
-                    nFSFileShareInfo.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    nFSFileShareInfo.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("FileShareName", targetDepth)) {
                     context.nextToken();

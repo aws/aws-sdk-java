@@ -50,11 +50,15 @@ public class TargetInstancesJsonUnmarshaller implements Unmarshaller<TargetInsta
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("tagFilters", targetDepth)) {
                     context.nextToken();
-                    targetInstances.setTagFilters(new ListUnmarshaller<EC2TagFilter>(EC2TagFilterJsonUnmarshaller.getInstance()).unmarshall(context));
+                    targetInstances.setTagFilters(new ListUnmarshaller<EC2TagFilter>(EC2TagFilterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("autoScalingGroups", targetDepth)) {
                     context.nextToken();
-                    targetInstances.setAutoScalingGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    targetInstances.setAutoScalingGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ec2TagSet", targetDepth)) {
                     context.nextToken();

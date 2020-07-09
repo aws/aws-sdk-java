@@ -89,7 +89,9 @@ public class GraphqlApiJsonUnmarshaller implements Unmarshaller<GraphqlApi, Json
                 if (context.testExpression("additionalAuthenticationProviders", targetDepth)) {
                     context.nextToken();
                     graphqlApi.setAdditionalAuthenticationProviders(new ListUnmarshaller<AdditionalAuthenticationProvider>(
-                            AdditionalAuthenticationProviderJsonUnmarshaller.getInstance()).unmarshall(context));
+                            AdditionalAuthenticationProviderJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("xrayEnabled", targetDepth)) {
                     context.nextToken();

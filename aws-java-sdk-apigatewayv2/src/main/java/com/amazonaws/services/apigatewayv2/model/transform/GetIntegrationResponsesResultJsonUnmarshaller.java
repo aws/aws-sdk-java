@@ -51,7 +51,8 @@ public class GetIntegrationResponsesResultJsonUnmarshaller implements Unmarshall
                 if (context.testExpression("items", targetDepth)) {
                     context.nextToken();
                     getIntegrationResponsesResult.setItems(new ListUnmarshaller<IntegrationResponse>(IntegrationResponseJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

@@ -54,7 +54,9 @@ public class GetTranscriptResultJsonUnmarshaller implements Unmarshaller<GetTran
                 }
                 if (context.testExpression("Transcript", targetDepth)) {
                     context.nextToken();
-                    getTranscriptResult.setTranscript(new ListUnmarshaller<Item>(ItemJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getTranscriptResult.setTranscript(new ListUnmarshaller<Item>(ItemJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

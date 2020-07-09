@@ -71,7 +71,9 @@ public class SystemInstanceDescriptionJsonUnmarshaller implements Unmarshaller<S
                 if (context.testExpression("validatedDependencyRevisions", targetDepth)) {
                     context.nextToken();
                     systemInstanceDescription.setValidatedDependencyRevisions(new ListUnmarshaller<DependencyRevision>(DependencyRevisionJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("flowActionsRoleArn", targetDepth)) {
                     context.nextToken();

@@ -54,7 +54,9 @@ public class ListOfferingsResultJsonUnmarshaller implements Unmarshaller<ListOff
                 }
                 if (context.testExpression("offerings", targetDepth)) {
                     context.nextToken();
-                    listOfferingsResult.setOfferings(new ListUnmarshaller<Offering>(OfferingJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listOfferingsResult.setOfferings(new ListUnmarshaller<Offering>(OfferingJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

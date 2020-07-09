@@ -50,7 +50,9 @@ public class GetBotVersionsResultJsonUnmarshaller implements Unmarshaller<GetBot
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("bots", targetDepth)) {
                     context.nextToken();
-                    getBotVersionsResult.setBots(new ListUnmarshaller<BotMetadata>(BotMetadataJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getBotVersionsResult.setBots(new ListUnmarshaller<BotMetadata>(BotMetadataJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

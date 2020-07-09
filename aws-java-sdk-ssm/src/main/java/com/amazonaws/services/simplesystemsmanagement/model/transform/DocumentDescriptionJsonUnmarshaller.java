@@ -95,11 +95,14 @@ public class DocumentDescriptionJsonUnmarshaller implements Unmarshaller<Documen
                 if (context.testExpression("Parameters", targetDepth)) {
                     context.nextToken();
                     documentDescription.setParameters(new ListUnmarshaller<DocumentParameter>(DocumentParameterJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("PlatformTypes", targetDepth)) {
                     context.nextToken();
-                    documentDescription.setPlatformTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    documentDescription.setPlatformTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("DocumentType", targetDepth)) {
                     context.nextToken();
@@ -127,16 +130,22 @@ public class DocumentDescriptionJsonUnmarshaller implements Unmarshaller<Documen
                 }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
-                    documentDescription.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    documentDescription.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("AttachmentsInformation", targetDepth)) {
                     context.nextToken();
                     documentDescription.setAttachmentsInformation(new ListUnmarshaller<AttachmentInformation>(AttachmentInformationJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Requires", targetDepth)) {
                     context.nextToken();
-                    documentDescription.setRequires(new ListUnmarshaller<DocumentRequires>(DocumentRequiresJsonUnmarshaller.getInstance()).unmarshall(context));
+                    documentDescription.setRequires(new ListUnmarshaller<DocumentRequires>(DocumentRequiresJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

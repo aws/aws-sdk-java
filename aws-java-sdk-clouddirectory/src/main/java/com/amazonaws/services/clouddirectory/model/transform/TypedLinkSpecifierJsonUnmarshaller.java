@@ -63,7 +63,9 @@ public class TypedLinkSpecifierJsonUnmarshaller implements Unmarshaller<TypedLin
                 if (context.testExpression("IdentityAttributeValues", targetDepth)) {
                     context.nextToken();
                     typedLinkSpecifier.setIdentityAttributeValues(new ListUnmarshaller<AttributeNameAndValue>(AttributeNameAndValueJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

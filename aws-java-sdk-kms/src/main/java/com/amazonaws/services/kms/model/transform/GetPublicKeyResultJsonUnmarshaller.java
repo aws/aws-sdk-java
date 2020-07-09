@@ -66,11 +66,15 @@ public class GetPublicKeyResultJsonUnmarshaller implements Unmarshaller<GetPubli
                 }
                 if (context.testExpression("EncryptionAlgorithms", targetDepth)) {
                     context.nextToken();
-                    getPublicKeyResult.setEncryptionAlgorithms(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    getPublicKeyResult.setEncryptionAlgorithms(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("SigningAlgorithms", targetDepth)) {
                     context.nextToken();
-                    getPublicKeyResult.setSigningAlgorithms(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    getPublicKeyResult.setSigningAlgorithms(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

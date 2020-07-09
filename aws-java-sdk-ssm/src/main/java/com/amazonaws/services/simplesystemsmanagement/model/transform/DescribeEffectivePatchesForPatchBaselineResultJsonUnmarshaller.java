@@ -52,7 +52,9 @@ public class DescribeEffectivePatchesForPatchBaselineResultJsonUnmarshaller impl
                 if (context.testExpression("EffectivePatches", targetDepth)) {
                     context.nextToken();
                     describeEffectivePatchesForPatchBaselineResult.setEffectivePatches(new ListUnmarshaller<EffectivePatch>(EffectivePatchJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

@@ -48,6 +48,9 @@ public class RenderUiTemplateRequest extends com.amazonaws.AmazonWebServiceReque
      * The <code>HumanTaskUiArn</code> of the worker UI that you want to render. Do not provide a
      * <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code> parameter.
      * </p>
+     * <p>
+     * See a list of available Human Ui Amazon Resource Names (ARNs) in <a>UiConfig</a>.
+     * </p>
      */
     private String humanTaskUiArn;
 
@@ -176,10 +179,15 @@ public class RenderUiTemplateRequest extends com.amazonaws.AmazonWebServiceReque
      * The <code>HumanTaskUiArn</code> of the worker UI that you want to render. Do not provide a
      * <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code> parameter.
      * </p>
+     * <p>
+     * See a list of available Human Ui Amazon Resource Names (ARNs) in <a>UiConfig</a>.
+     * </p>
      * 
      * @param humanTaskUiArn
      *        The <code>HumanTaskUiArn</code> of the worker UI that you want to render. Do not provide a
-     *        <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code> parameter.
+     *        <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code> parameter.</p>
+     *        <p>
+     *        See a list of available Human Ui Amazon Resource Names (ARNs) in <a>UiConfig</a>.
      */
 
     public void setHumanTaskUiArn(String humanTaskUiArn) {
@@ -191,9 +199,14 @@ public class RenderUiTemplateRequest extends com.amazonaws.AmazonWebServiceReque
      * The <code>HumanTaskUiArn</code> of the worker UI that you want to render. Do not provide a
      * <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code> parameter.
      * </p>
+     * <p>
+     * See a list of available Human Ui Amazon Resource Names (ARNs) in <a>UiConfig</a>.
+     * </p>
      * 
      * @return The <code>HumanTaskUiArn</code> of the worker UI that you want to render. Do not provide a
-     *         <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code> parameter.
+     *         <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code> parameter.</p>
+     *         <p>
+     *         See a list of available Human Ui Amazon Resource Names (ARNs) in <a>UiConfig</a>.
      */
 
     public String getHumanTaskUiArn() {
@@ -205,10 +218,15 @@ public class RenderUiTemplateRequest extends com.amazonaws.AmazonWebServiceReque
      * The <code>HumanTaskUiArn</code> of the worker UI that you want to render. Do not provide a
      * <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code> parameter.
      * </p>
+     * <p>
+     * See a list of available Human Ui Amazon Resource Names (ARNs) in <a>UiConfig</a>.
+     * </p>
      * 
      * @param humanTaskUiArn
      *        The <code>HumanTaskUiArn</code> of the worker UI that you want to render. Do not provide a
-     *        <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code> parameter.
+     *        <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code> parameter.</p>
+     *        <p>
+     *        See a list of available Human Ui Amazon Resource Names (ARNs) in <a>UiConfig</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

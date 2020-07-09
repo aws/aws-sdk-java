@@ -51,7 +51,8 @@ public class DescribeResourcePermissionsResultJsonUnmarshaller implements Unmars
                 if (context.testExpression("Principals", targetDepth)) {
                     context.nextToken();
                     describeResourcePermissionsResult.setPrincipals(new ListUnmarshaller<Principal>(PrincipalJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Marker", targetDepth)) {
                     context.nextToken();

@@ -110,7 +110,9 @@ public class DisassociateConnectionFromLagResultJsonUnmarshaller implements Unma
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
-                    disassociateConnectionFromLagResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    disassociateConnectionFromLagResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("providerName", targetDepth)) {
                     context.nextToken();

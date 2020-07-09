@@ -50,7 +50,9 @@ public class ListNodegroupsResultJsonUnmarshaller implements Unmarshaller<ListNo
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("nodegroups", targetDepth)) {
                     context.nextToken();
-                    listNodegroupsResult.setNodegroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    listNodegroupsResult.setNodegroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

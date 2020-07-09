@@ -78,7 +78,9 @@ public class ProjectDetailsJsonUnmarshaller implements Unmarshaller<ProjectDetai
                 }
                 if (context.testExpression("resources", targetDepth)) {
                     context.nextToken();
-                    projectDetails.setResources(new ListUnmarshaller<Resource>(ResourceJsonUnmarshaller.getInstance()).unmarshall(context));
+                    projectDetails.setResources(new ListUnmarshaller<Resource>(ResourceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

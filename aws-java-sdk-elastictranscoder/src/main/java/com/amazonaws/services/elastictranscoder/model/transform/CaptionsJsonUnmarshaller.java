@@ -54,11 +54,15 @@ public class CaptionsJsonUnmarshaller implements Unmarshaller<Captions, JsonUnma
                 }
                 if (context.testExpression("CaptionSources", targetDepth)) {
                     context.nextToken();
-                    captions.setCaptionSources(new ListUnmarshaller<CaptionSource>(CaptionSourceJsonUnmarshaller.getInstance()).unmarshall(context));
+                    captions.setCaptionSources(new ListUnmarshaller<CaptionSource>(CaptionSourceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("CaptionFormats", targetDepth)) {
                     context.nextToken();
-                    captions.setCaptionFormats(new ListUnmarshaller<CaptionFormat>(CaptionFormatJsonUnmarshaller.getInstance()).unmarshall(context));
+                    captions.setCaptionFormats(new ListUnmarshaller<CaptionFormat>(CaptionFormatJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

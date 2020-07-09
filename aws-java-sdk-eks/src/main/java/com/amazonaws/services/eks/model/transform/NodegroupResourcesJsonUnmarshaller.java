@@ -51,7 +51,8 @@ public class NodegroupResourcesJsonUnmarshaller implements Unmarshaller<Nodegrou
                 if (context.testExpression("autoScalingGroups", targetDepth)) {
                     context.nextToken();
                     nodegroupResources.setAutoScalingGroups(new ListUnmarshaller<AutoScalingGroup>(AutoScalingGroupJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("remoteAccessSecurityGroup", targetDepth)) {
                     context.nextToken();

@@ -62,7 +62,9 @@ public class ClusterJsonUnmarshaller implements Unmarshaller<Cluster, JsonUnmars
                 }
                 if (context.testExpression("Hsms", targetDepth)) {
                     context.nextToken();
-                    cluster.setHsms(new ListUnmarshaller<Hsm>(HsmJsonUnmarshaller.getInstance()).unmarshall(context));
+                    cluster.setHsms(new ListUnmarshaller<Hsm>(HsmJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("HsmType", targetDepth)) {
                     context.nextToken();
@@ -103,7 +105,9 @@ public class ClusterJsonUnmarshaller implements Unmarshaller<Cluster, JsonUnmars
                 }
                 if (context.testExpression("TagList", targetDepth)) {
                     context.nextToken();
-                    cluster.setTagList(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    cluster.setTagList(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -50,11 +50,15 @@ public class AwsVpcConfigurationJsonUnmarshaller implements Unmarshaller<AwsVpcC
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("subnets", targetDepth)) {
                     context.nextToken();
-                    awsVpcConfiguration.setSubnets(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    awsVpcConfiguration.setSubnets(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("securityGroups", targetDepth)) {
                     context.nextToken();
-                    awsVpcConfiguration.setSecurityGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    awsVpcConfiguration.setSecurityGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("assignPublicIp", targetDepth)) {
                     context.nextToken();

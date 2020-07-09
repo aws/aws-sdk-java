@@ -66,7 +66,9 @@ public class GetLabelDetectionResultJsonUnmarshaller implements Unmarshaller<Get
                 }
                 if (context.testExpression("Labels", targetDepth)) {
                     context.nextToken();
-                    getLabelDetectionResult.setLabels(new ListUnmarshaller<LabelDetection>(LabelDetectionJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getLabelDetectionResult.setLabels(new ListUnmarshaller<LabelDetection>(LabelDetectionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("LabelModelVersion", targetDepth)) {
                     context.nextToken();

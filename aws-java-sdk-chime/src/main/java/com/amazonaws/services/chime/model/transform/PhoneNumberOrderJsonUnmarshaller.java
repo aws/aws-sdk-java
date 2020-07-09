@@ -63,7 +63,8 @@ public class PhoneNumberOrderJsonUnmarshaller implements Unmarshaller<PhoneNumbe
                 if (context.testExpression("OrderedPhoneNumbers", targetDepth)) {
                     context.nextToken();
                     phoneNumberOrder.setOrderedPhoneNumbers(new ListUnmarshaller<OrderedPhoneNumber>(OrderedPhoneNumberJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("CreatedTimestamp", targetDepth)) {
                     context.nextToken();

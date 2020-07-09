@@ -51,7 +51,8 @@ public class IndexAttachmentJsonUnmarshaller implements Unmarshaller<IndexAttach
                 if (context.testExpression("IndexedAttributes", targetDepth)) {
                     context.nextToken();
                     indexAttachment.setIndexedAttributes(new ListUnmarshaller<AttributeKeyAndValue>(AttributeKeyAndValueJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ObjectIdentifier", targetDepth)) {
                     context.nextToken();

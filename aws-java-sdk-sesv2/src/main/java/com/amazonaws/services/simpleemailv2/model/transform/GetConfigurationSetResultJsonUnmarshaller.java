@@ -70,7 +70,9 @@ public class GetConfigurationSetResultJsonUnmarshaller implements Unmarshaller<G
                 }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
-                    getConfigurationSetResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getConfigurationSetResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("SuppressionOptions", targetDepth)) {
                     context.nextToken();

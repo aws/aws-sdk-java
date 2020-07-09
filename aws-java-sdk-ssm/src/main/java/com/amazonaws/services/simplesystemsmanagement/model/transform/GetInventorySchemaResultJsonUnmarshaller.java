@@ -51,7 +51,8 @@ public class GetInventorySchemaResultJsonUnmarshaller implements Unmarshaller<Ge
                 if (context.testExpression("Schemas", targetDepth)) {
                     context.nextToken();
                     getInventorySchemaResult.setSchemas(new ListUnmarshaller<InventoryItemSchema>(InventoryItemSchemaJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

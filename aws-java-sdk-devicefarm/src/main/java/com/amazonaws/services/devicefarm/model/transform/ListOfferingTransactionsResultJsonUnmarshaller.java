@@ -51,7 +51,9 @@ public class ListOfferingTransactionsResultJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("offeringTransactions", targetDepth)) {
                     context.nextToken();
                     listOfferingTransactionsResult.setOfferingTransactions(new ListUnmarshaller<OfferingTransaction>(OfferingTransactionJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

@@ -55,7 +55,8 @@ public class MonitoringJobDefinitionJsonUnmarshaller implements Unmarshaller<Mon
                 if (context.testExpression("MonitoringInputs", targetDepth)) {
                     context.nextToken();
                     monitoringJobDefinition.setMonitoringInputs(new ListUnmarshaller<MonitoringInput>(MonitoringInputJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("MonitoringOutputConfig", targetDepth)) {
                     context.nextToken();

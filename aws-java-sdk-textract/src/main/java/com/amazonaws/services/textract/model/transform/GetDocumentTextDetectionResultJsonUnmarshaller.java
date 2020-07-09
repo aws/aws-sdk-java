@@ -62,11 +62,15 @@ public class GetDocumentTextDetectionResultJsonUnmarshaller implements Unmarshal
                 }
                 if (context.testExpression("Blocks", targetDepth)) {
                     context.nextToken();
-                    getDocumentTextDetectionResult.setBlocks(new ListUnmarshaller<Block>(BlockJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getDocumentTextDetectionResult.setBlocks(new ListUnmarshaller<Block>(BlockJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Warnings", targetDepth)) {
                     context.nextToken();
-                    getDocumentTextDetectionResult.setWarnings(new ListUnmarshaller<Warning>(WarningJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getDocumentTextDetectionResult.setWarnings(new ListUnmarshaller<Warning>(WarningJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("StatusMessage", targetDepth)) {
                     context.nextToken();

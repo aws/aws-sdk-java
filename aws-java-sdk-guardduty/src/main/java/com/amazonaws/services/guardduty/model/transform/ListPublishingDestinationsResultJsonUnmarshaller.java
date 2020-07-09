@@ -51,7 +51,8 @@ public class ListPublishingDestinationsResultJsonUnmarshaller implements Unmarsh
                 if (context.testExpression("destinations", targetDepth)) {
                     context.nextToken();
                     listPublishingDestinationsResult.setDestinations(new ListUnmarshaller<Destination>(DestinationJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

@@ -62,7 +62,9 @@ public class AttachmentJsonUnmarshaller implements Unmarshaller<Attachment, Json
                 }
                 if (context.testExpression("details", targetDepth)) {
                     context.nextToken();
-                    attachment.setDetails(new ListUnmarshaller<KeyValuePair>(KeyValuePairJsonUnmarshaller.getInstance()).unmarshall(context));
+                    attachment.setDetails(new ListUnmarshaller<KeyValuePair>(KeyValuePairJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

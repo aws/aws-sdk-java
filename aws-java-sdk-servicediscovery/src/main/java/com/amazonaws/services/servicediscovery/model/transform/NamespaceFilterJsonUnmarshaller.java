@@ -54,7 +54,9 @@ public class NamespaceFilterJsonUnmarshaller implements Unmarshaller<NamespaceFi
                 }
                 if (context.testExpression("Values", targetDepth)) {
                     context.nextToken();
-                    namespaceFilter.setValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    namespaceFilter.setValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Condition", targetDepth)) {
                     context.nextToken();

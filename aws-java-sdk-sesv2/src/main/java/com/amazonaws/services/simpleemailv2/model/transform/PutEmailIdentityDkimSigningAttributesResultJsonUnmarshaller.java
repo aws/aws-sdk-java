@@ -56,7 +56,8 @@ public class PutEmailIdentityDkimSigningAttributesResultJsonUnmarshaller impleme
                 if (context.testExpression("DkimTokens", targetDepth)) {
                     context.nextToken();
                     putEmailIdentityDkimSigningAttributesResult.setDkimTokens(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

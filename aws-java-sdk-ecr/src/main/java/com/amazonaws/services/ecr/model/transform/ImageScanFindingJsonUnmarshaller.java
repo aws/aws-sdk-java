@@ -66,7 +66,9 @@ public class ImageScanFindingJsonUnmarshaller implements Unmarshaller<ImageScanF
                 }
                 if (context.testExpression("attributes", targetDepth)) {
                     context.nextToken();
-                    imageScanFinding.setAttributes(new ListUnmarshaller<Attribute>(AttributeJsonUnmarshaller.getInstance()).unmarshall(context));
+                    imageScanFinding.setAttributes(new ListUnmarshaller<Attribute>(AttributeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -63,7 +63,8 @@ public class LoggingOptionsJsonUnmarshaller implements Unmarshaller<LoggingOptio
                 if (context.testExpression("detectorDebugOptions", targetDepth)) {
                     context.nextToken();
                     loggingOptions.setDetectorDebugOptions(new ListUnmarshaller<DetectorDebugOption>(DetectorDebugOptionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

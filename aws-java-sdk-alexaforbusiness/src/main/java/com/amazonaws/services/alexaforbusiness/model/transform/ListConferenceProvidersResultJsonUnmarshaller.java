@@ -51,7 +51,9 @@ public class ListConferenceProvidersResultJsonUnmarshaller implements Unmarshall
                 if (context.testExpression("ConferenceProviders", targetDepth)) {
                     context.nextToken();
                     listConferenceProvidersResult.setConferenceProviders(new ListUnmarshaller<ConferenceProvider>(ConferenceProviderJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

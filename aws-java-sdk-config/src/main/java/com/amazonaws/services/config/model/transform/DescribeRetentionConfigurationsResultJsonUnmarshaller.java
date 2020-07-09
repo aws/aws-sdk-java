@@ -51,7 +51,9 @@ public class DescribeRetentionConfigurationsResultJsonUnmarshaller implements Un
                 if (context.testExpression("RetentionConfigurations", targetDepth)) {
                     context.nextToken();
                     describeRetentionConfigurationsResult.setRetentionConfigurations(new ListUnmarshaller<RetentionConfiguration>(
-                            RetentionConfigurationJsonUnmarshaller.getInstance()).unmarshall(context));
+                            RetentionConfigurationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

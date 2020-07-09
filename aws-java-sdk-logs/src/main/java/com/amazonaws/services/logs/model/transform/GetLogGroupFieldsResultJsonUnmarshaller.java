@@ -51,7 +51,8 @@ public class GetLogGroupFieldsResultJsonUnmarshaller implements Unmarshaller<Get
                 if (context.testExpression("logGroupFields", targetDepth)) {
                     context.nextToken();
                     getLogGroupFieldsResult.setLogGroupFields(new ListUnmarshaller<LogGroupField>(LogGroupFieldJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

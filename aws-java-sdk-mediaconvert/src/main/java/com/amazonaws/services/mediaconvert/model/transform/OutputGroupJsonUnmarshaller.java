@@ -62,7 +62,9 @@ public class OutputGroupJsonUnmarshaller implements Unmarshaller<OutputGroup, Js
                 }
                 if (context.testExpression("outputs", targetDepth)) {
                     context.nextToken();
-                    outputGroup.setOutputs(new ListUnmarshaller<Output>(OutputJsonUnmarshaller.getInstance()).unmarshall(context));
+                    outputGroup.setOutputs(new ListUnmarshaller<Output>(OutputJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

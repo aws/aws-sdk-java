@@ -66,7 +66,9 @@ public class GenericAttachmentJsonUnmarshaller implements Unmarshaller<GenericAt
                 }
                 if (context.testExpression("buttons", targetDepth)) {
                     context.nextToken();
-                    genericAttachment.setButtons(new ListUnmarshaller<Button>(ButtonJsonUnmarshaller.getInstance()).unmarshall(context));
+                    genericAttachment.setButtons(new ListUnmarshaller<Button>(ButtonJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

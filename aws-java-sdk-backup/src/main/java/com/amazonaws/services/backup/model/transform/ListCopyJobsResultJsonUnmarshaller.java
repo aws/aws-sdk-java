@@ -50,7 +50,9 @@ public class ListCopyJobsResultJsonUnmarshaller implements Unmarshaller<ListCopy
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CopyJobs", targetDepth)) {
                     context.nextToken();
-                    listCopyJobsResult.setCopyJobs(new ListUnmarshaller<CopyJob>(CopyJobJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listCopyJobsResult.setCopyJobs(new ListUnmarshaller<CopyJob>(CopyJobJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

@@ -49,6 +49,8 @@ public class TargetMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BatchParameters").build();
     private static final MarshallingInfo<StructuredPojo> SQSPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SqsParameters").build();
+    private static final MarshallingInfo<StructuredPojo> HTTPPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HttpParameters").build();
 
     private static final TargetMarshaller instance = new TargetMarshaller();
 
@@ -77,6 +79,7 @@ public class TargetMarshaller {
             protocolMarshaller.marshall(target.getEcsParameters(), ECSPARAMETERS_BINDING);
             protocolMarshaller.marshall(target.getBatchParameters(), BATCHPARAMETERS_BINDING);
             protocolMarshaller.marshall(target.getSqsParameters(), SQSPARAMETERS_BINDING);
+            protocolMarshaller.marshall(target.getHttpParameters(), HTTPPARAMETERS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

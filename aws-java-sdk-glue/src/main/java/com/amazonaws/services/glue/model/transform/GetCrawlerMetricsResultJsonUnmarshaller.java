@@ -51,7 +51,8 @@ public class GetCrawlerMetricsResultJsonUnmarshaller implements Unmarshaller<Get
                 if (context.testExpression("CrawlerMetricsList", targetDepth)) {
                     context.nextToken();
                     getCrawlerMetricsResult.setCrawlerMetricsList(new ListUnmarshaller<CrawlerMetrics>(CrawlerMetricsJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

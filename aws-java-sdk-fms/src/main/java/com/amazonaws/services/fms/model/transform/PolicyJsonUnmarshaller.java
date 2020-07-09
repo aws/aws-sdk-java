@@ -70,11 +70,15 @@ public class PolicyJsonUnmarshaller implements Unmarshaller<Policy, JsonUnmarsha
                 }
                 if (context.testExpression("ResourceTypeList", targetDepth)) {
                     context.nextToken();
-                    policy.setResourceTypeList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    policy.setResourceTypeList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ResourceTags", targetDepth)) {
                     context.nextToken();
-                    policy.setResourceTags(new ListUnmarshaller<ResourceTag>(ResourceTagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    policy.setResourceTags(new ListUnmarshaller<ResourceTag>(ResourceTagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ExcludeResourceTags", targetDepth)) {
                     context.nextToken();
@@ -87,12 +91,16 @@ public class PolicyJsonUnmarshaller implements Unmarshaller<Policy, JsonUnmarsha
                 if (context.testExpression("IncludeMap", targetDepth)) {
                     context.nextToken();
                     policy.setIncludeMap(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
-                            new ListUnmarshaller<String>(context.getUnmarshaller(String.class))).unmarshall(context));
+                            new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    ).unmarshall(context));
                 }
                 if (context.testExpression("ExcludeMap", targetDepth)) {
                     context.nextToken();
                     policy.setExcludeMap(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
-                            new ListUnmarshaller<String>(context.getUnmarshaller(String.class))).unmarshall(context));
+                            new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    ).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

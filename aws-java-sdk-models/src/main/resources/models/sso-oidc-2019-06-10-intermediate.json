@@ -278,6 +278,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "AccessDeniedException",
+      "fullyQualifiedName" : "com.amazonaws.services.ssooidc.exception.AccessDeniedException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -339,6 +340,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param error \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -407,6 +409,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param error_description \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -477,6 +480,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param error \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -546,6 +550,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param error_description \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -561,6 +566,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.ssooidc.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -592,6 +598,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "AuthorizationPendingException",
+      "fullyQualifiedName" : "com.amazonaws.services.ssooidc.exception.AuthorizationPendingException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -653,6 +660,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param error \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -721,6 +729,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param error_description \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -791,6 +800,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param error \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -860,6 +870,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param error_description \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -875,6 +886,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.ssooidc.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -906,6 +918,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.ssooidc.request.CreateTokenRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -974,6 +987,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier string for each client. This value should come from the persisted result of the <a>RegisterClient</a> API.</p>\n@param clientId The unique identifier string for each client. This value should come from the persisted result of the <a>RegisterClient</a> API.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1042,6 +1056,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A secret string generated for the client. This value should come from the persisted result of the <a>RegisterClient</a> API.</p>\n@param clientSecret A secret string generated for the client. This value should come from the persisted result of the <a>RegisterClient</a> API.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1110,6 +1125,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Supports grant types for authorization code, refresh token, and device code request.</p>\n@param grantType Supports grant types for authorization code, refresh token, and device code request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1178,6 +1194,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Used only when calling this API for the device code grant type. This short-term code is used to identify this authentication attempt. This should come from an in-memory reference to the result of the <a>StartDeviceAuthorization</a> API.</p>\n@param deviceCode Used only when calling this API for the device code grant type. This short-term code is used to identify this authentication attempt. This should come from an in-memory reference to the result of the <a>StartDeviceAuthorization</a> API.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1246,6 +1263,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The authorization code received from the authorization service. This parameter is required to perform an authorization grant request to get access to a token.</p>\n@param code The authorization code received from the authorization service. This parameter is required to perform an authorization grant request to get access to a token.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1314,6 +1332,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The token used to obtain an access token in the event that the access token is invalid or expired. This token is not issued by the service.</p>\n@param refreshToken The token used to obtain an access token in the event that the access token is invalid or expired. This token is not issued by the service.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1421,6 +1440,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1465,6 +1485,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The list of scopes that is defined by the client. Upon authorization, this list is used to restrict permissions when granting an access token.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setScope(java.util.Collection)} or {@link #withScope(java.util.Collection)} if you want to override the existing values.</p>\n@param scope The list of scopes that is defined by the client. Upon authorization, this list is used to restrict permissions when granting an access token.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1533,6 +1554,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The location of the application that will receive the authorization code. Users authorize the service to send the request to this location.</p>\n@param redirectUri The location of the application that will receive the authorization code. Users authorize the service to send the request to this location.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1603,6 +1625,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier string for each client. This value should come from the persisted result of the <a>RegisterClient</a> API.</p>\n@param clientId The unique identifier string for each client. This value should come from the persisted result of the <a>RegisterClient</a> API.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1672,6 +1695,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A secret string generated for the client. This value should come from the persisted result of the <a>RegisterClient</a> API.</p>\n@param clientSecret A secret string generated for the client. This value should come from the persisted result of the <a>RegisterClient</a> API.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1741,6 +1765,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The authorization code received from the authorization service. This parameter is required to perform an authorization grant request to get access to a token.</p>\n@param code The authorization code received from the authorization service. This parameter is required to perform an authorization grant request to get access to a token.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1810,6 +1835,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Used only when calling this API for the device code grant type. This short-term code is used to identify this authentication attempt. This should come from an in-memory reference to the result of the <a>StartDeviceAuthorization</a> API.</p>\n@param deviceCode Used only when calling this API for the device code grant type. This short-term code is used to identify this authentication attempt. This should come from an in-memory reference to the result of the <a>StartDeviceAuthorization</a> API.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1879,6 +1905,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Supports grant types for authorization code, refresh token, and device code request.</p>\n@param grantType Supports grant types for authorization code, refresh token, and device code request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1948,6 +1975,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The location of the application that will receive the authorization code. Users authorize the service to send the request to this location.</p>\n@param redirectUri The location of the application that will receive the authorization code. Users authorize the service to send the request to this location.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2017,6 +2045,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The token used to obtain an access token in the event that the access token is invalid or expired. This token is not issued by the service.</p>\n@param refreshToken The token used to obtain an access token in the event that the access token is invalid or expired. This token is not issued by the service.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2125,6 +2154,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2169,6 +2199,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The list of scopes that is defined by the client. Upon authorization, this list is used to restrict permissions when granting an access token.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setScope(java.util.Collection)} or {@link #withScope(java.util.Collection)} if you want to override the existing values.</p>\n@param scope The list of scopes that is defined by the client. Upon authorization, this list is used to restrict permissions when granting an access token.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2184,6 +2215,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.ssooidc.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "clientId", "clientSecret", "grantType", "deviceCode" ],
@@ -2215,6 +2247,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.ssooidc.response.CreateTokenResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2276,6 +2309,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An opaque token to access AWS SSO resources assigned to a user.</p>\n@param accessToken An opaque token to access AWS SSO resources assigned to a user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2344,6 +2378,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Used to notify the client that the returned token is an access token. The supported type is <code>BearerToken</code>.</p>\n@param tokenType Used to notify the client that the returned token is an access token. The supported type is <code>BearerToken</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2412,6 +2447,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Indicates the time in seconds when an access token will expire.</p>\n@param expiresIn Indicates the time in seconds when an access token will expire.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2480,6 +2516,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A token that, if present, can be used to refresh a previously issued access token that might have expired.</p>\n@param refreshToken A token that, if present, can be used to refresh a previously issued access token that might have expired.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2548,6 +2585,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier of the user that associated with the access token, if present.</p>\n@param idToken The identifier of the user that associated with the access token, if present.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2618,6 +2656,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An opaque token to access AWS SSO resources assigned to a user.</p>\n@param accessToken An opaque token to access AWS SSO resources assigned to a user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2687,6 +2726,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Indicates the time in seconds when an access token will expire.</p>\n@param expiresIn Indicates the time in seconds when an access token will expire.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2756,6 +2796,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier of the user that associated with the access token, if present.</p>\n@param idToken The identifier of the user that associated with the access token, if present.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2825,6 +2866,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A token that, if present, can be used to refresh a previously issued access token that might have expired.</p>\n@param refreshToken A token that, if present, can be used to refresh a previously issued access token that might have expired.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2894,6 +2936,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Used to notify the client that the returned token is an access token. The supported type is <code>BearerToken</code>.</p>\n@param tokenType Used to notify the client that the returned token is an access token. The supported type is <code>BearerToken</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2909,6 +2952,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.ssooidc.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2943,6 +2987,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ExpiredTokenException",
+      "fullyQualifiedName" : "com.amazonaws.services.ssooidc.exception.ExpiredTokenException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3004,6 +3049,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param error \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3072,6 +3118,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param error_description \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3142,6 +3189,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param error \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3211,6 +3259,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param error_description \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3226,6 +3275,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.ssooidc.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3257,6 +3307,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InternalServerException",
+      "fullyQualifiedName" : "com.amazonaws.services.ssooidc.exception.InternalServerException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3318,6 +3369,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param error \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3386,6 +3438,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param error_description \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3456,6 +3509,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param error \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3525,6 +3579,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param error_description \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3540,6 +3595,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.ssooidc.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3571,6 +3627,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InvalidClientException",
+      "fullyQualifiedName" : "com.amazonaws.services.ssooidc.exception.InvalidClientException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3632,6 +3689,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param error \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3700,6 +3758,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param error_description \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3770,6 +3829,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param error \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3839,6 +3899,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param error_description \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3854,6 +3915,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.ssooidc.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3885,6 +3947,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InvalidClientMetadataException",
+      "fullyQualifiedName" : "com.amazonaws.services.ssooidc.exception.InvalidClientMetadataException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3946,6 +4009,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param error \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4014,6 +4078,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param error_description \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4084,6 +4149,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param error \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4153,6 +4219,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param error_description \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4168,6 +4235,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.ssooidc.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4199,6 +4267,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InvalidGrantException",
+      "fullyQualifiedName" : "com.amazonaws.services.ssooidc.exception.InvalidGrantException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4260,6 +4329,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param error \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4328,6 +4398,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param error_description \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4398,6 +4469,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param error \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4467,6 +4539,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param error_description \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4482,6 +4555,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.ssooidc.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4513,6 +4587,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InvalidRequestException",
+      "fullyQualifiedName" : "com.amazonaws.services.ssooidc.exception.InvalidRequestException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4574,6 +4649,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param error \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4642,6 +4718,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param error_description \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4712,6 +4789,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param error \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4781,6 +4859,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param error_description \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4796,6 +4875,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.ssooidc.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4827,6 +4907,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InvalidScopeException",
+      "fullyQualifiedName" : "com.amazonaws.services.ssooidc.exception.InvalidScopeException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4888,6 +4969,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param error \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4956,6 +5038,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param error_description \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5026,6 +5109,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param error \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5095,6 +5179,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param error_description \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5110,6 +5195,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.ssooidc.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -5141,6 +5227,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.ssooidc.request.RegisterClientRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5209,6 +5296,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The friendly name of the client.</p>\n@param clientName The friendly name of the client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5277,6 +5365,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The type of client. The service supports only <code>public</code> as a client type. Anything other than public will be rejected by the service.</p>\n@param clientType The type of client. The service supports only <code>public</code> as a client type. Anything other than public will be rejected by the service.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5384,6 +5473,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5428,6 +5518,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The list of scopes that are defined by the client. Upon authorization, this list is used to restrict permissions when granting an access token.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setScopes(java.util.Collection)} or {@link #withScopes(java.util.Collection)} if you want to override the existing values.</p>\n@param scopes The list of scopes that are defined by the client. Upon authorization, this list is used to restrict permissions when granting an access token.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5498,6 +5589,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The friendly name of the client.</p>\n@param clientName The friendly name of the client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5567,6 +5659,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The type of client. The service supports only <code>public</code> as a client type. Anything other than public will be rejected by the service.</p>\n@param clientType The type of client. The service supports only <code>public</code> as a client type. Anything other than public will be rejected by the service.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5675,6 +5768,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5719,6 +5813,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The list of scopes that are defined by the client. Upon authorization, this list is used to restrict permissions when granting an access token.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setScopes(java.util.Collection)} or {@link #withScopes(java.util.Collection)} if you want to override the existing values.</p>\n@param scopes The list of scopes that are defined by the client. Upon authorization, this list is used to restrict permissions when granting an access token.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5734,6 +5829,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.ssooidc.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "clientName", "clientType" ],
@@ -5765,6 +5861,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.ssooidc.response.RegisterClientResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5826,6 +5923,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier string for each client. This client uses this identifier to get authenticated by the service in subsequent calls.</p>\n@param clientId The unique identifier string for each client. This client uses this identifier to get authenticated by the service in subsequent calls.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5894,6 +5992,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A secret string generated for the client. The client will use this string to get authenticated by the service in subsequent calls.</p>\n@param clientSecret A secret string generated for the client. The client will use this string to get authenticated by the service in subsequent calls.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5962,6 +6061,7 @@
           "variableSetterType" : "Long"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Indicates the time at which the <code>clientId</code> and <code>clientSecret</code> were issued.</p>\n@param clientIdIssuedAt Indicates the time at which the <code>clientId</code> and <code>clientSecret</code> were issued.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6030,6 +6130,7 @@
           "variableSetterType" : "Long"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Indicates the time at which the <code>clientId</code> and <code>clientSecret</code> will become invalid.</p>\n@param clientSecretExpiresAt Indicates the time at which the <code>clientId</code> and <code>clientSecret</code> will become invalid.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6098,6 +6199,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The endpoint where the client can request authorization.</p>\n@param authorizationEndpoint The endpoint where the client can request authorization.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6166,6 +6268,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The endpoint where the client can get an access token.</p>\n@param tokenEndpoint The endpoint where the client can get an access token.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6236,6 +6339,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The endpoint where the client can request authorization.</p>\n@param authorizationEndpoint The endpoint where the client can request authorization.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6305,6 +6409,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier string for each client. This client uses this identifier to get authenticated by the service in subsequent calls.</p>\n@param clientId The unique identifier string for each client. This client uses this identifier to get authenticated by the service in subsequent calls.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6374,6 +6479,7 @@
             "variableSetterType" : "Long"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Indicates the time at which the <code>clientId</code> and <code>clientSecret</code> were issued.</p>\n@param clientIdIssuedAt Indicates the time at which the <code>clientId</code> and <code>clientSecret</code> were issued.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6443,6 +6549,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A secret string generated for the client. The client will use this string to get authenticated by the service in subsequent calls.</p>\n@param clientSecret A secret string generated for the client. The client will use this string to get authenticated by the service in subsequent calls.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6512,6 +6619,7 @@
             "variableSetterType" : "Long"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Indicates the time at which the <code>clientId</code> and <code>clientSecret</code> will become invalid.</p>\n@param clientSecretExpiresAt Indicates the time at which the <code>clientId</code> and <code>clientSecret</code> will become invalid.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6581,6 +6689,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The endpoint where the client can get an access token.</p>\n@param tokenEndpoint The endpoint where the client can get an access token.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6596,6 +6705,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.ssooidc.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6630,6 +6740,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "SlowDownException",
+      "fullyQualifiedName" : "com.amazonaws.services.ssooidc.exception.SlowDownException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6691,6 +6802,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param error \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6759,6 +6871,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param error_description \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6829,6 +6942,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param error \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6898,6 +7012,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param error_description \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6913,6 +7028,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.ssooidc.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6944,6 +7060,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.ssooidc.request.StartDeviceAuthorizationRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7012,6 +7129,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier string for the client that is registered with AWS SSO. This value should come from the persisted result of the <a>RegisterClient</a> API operation.</p>\n@param clientId The unique identifier string for the client that is registered with AWS SSO. This value should come from the persisted result of the <a>RegisterClient</a> API operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7080,6 +7198,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A secret string that is generated for the client. This value should come from the persisted result of the <a>RegisterClient</a> API operation.</p>\n@param clientSecret A secret string that is generated for the client. This value should come from the persisted result of the <a>RegisterClient</a> API operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7148,6 +7267,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The URL for the AWS SSO user portal. For more information, see <a href=\"https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html\">Using the User Portal</a> in the <i>AWS Single Sign-On User Guide</i>.</p>\n@param startUrl The URL for the AWS SSO user portal. For more information, see <a href=\"https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html\">Using the User Portal</a> in the <i>AWS Single Sign-On User Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7218,6 +7338,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier string for the client that is registered with AWS SSO. This value should come from the persisted result of the <a>RegisterClient</a> API operation.</p>\n@param clientId The unique identifier string for the client that is registered with AWS SSO. This value should come from the persisted result of the <a>RegisterClient</a> API operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7287,6 +7408,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A secret string that is generated for the client. This value should come from the persisted result of the <a>RegisterClient</a> API operation.</p>\n@param clientSecret A secret string that is generated for the client. This value should come from the persisted result of the <a>RegisterClient</a> API operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7356,6 +7478,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The URL for the AWS SSO user portal. For more information, see <a href=\"https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html\">Using the User Portal</a> in the <i>AWS Single Sign-On User Guide</i>.</p>\n@param startUrl The URL for the AWS SSO user portal. For more information, see <a href=\"https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html\">Using the User Portal</a> in the <i>AWS Single Sign-On User Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7371,6 +7494,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.ssooidc.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "clientId", "clientSecret", "startUrl" ],
@@ -7402,6 +7526,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.ssooidc.response.StartDeviceAuthorizationResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7463,6 +7588,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The short-lived code that is used by the device when polling for a session token.</p>\n@param deviceCode The short-lived code that is used by the device when polling for a session token.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7531,6 +7657,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A one-time user verification code. This is needed to authorize an in-use device.</p>\n@param userCode A one-time user verification code. This is needed to authorize an in-use device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7599,6 +7726,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The URI of the verification page that takes the <code>userCode</code> to authorize the device.</p>\n@param verificationUri The URI of the verification page that takes the <code>userCode</code> to authorize the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7667,6 +7795,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An alternate URL that the client can use to automatically launch a browser. This process skips the manual step in which the user visits the verification page and enters their code.</p>\n@param verificationUriComplete An alternate URL that the client can use to automatically launch a browser. This process skips the manual step in which the user visits the verification page and enters their code.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7735,6 +7864,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Indicates the number of seconds in which the verification code will become invalid.</p>\n@param expiresIn Indicates the number of seconds in which the verification code will become invalid.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7803,6 +7933,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Indicates the number of seconds the client must wait between attempts when polling for a session.</p>\n@param interval Indicates the number of seconds the client must wait between attempts when polling for a session.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7873,6 +8004,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The short-lived code that is used by the device when polling for a session token.</p>\n@param deviceCode The short-lived code that is used by the device when polling for a session token.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7942,6 +8074,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Indicates the number of seconds in which the verification code will become invalid.</p>\n@param expiresIn Indicates the number of seconds in which the verification code will become invalid.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8011,6 +8144,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Indicates the number of seconds the client must wait between attempts when polling for a session.</p>\n@param interval Indicates the number of seconds the client must wait between attempts when polling for a session.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8080,6 +8214,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A one-time user verification code. This is needed to authorize an in-use device.</p>\n@param userCode A one-time user verification code. This is needed to authorize an in-use device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8149,6 +8284,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The URI of the verification page that takes the <code>userCode</code> to authorize the device.</p>\n@param verificationUri The URI of the verification page that takes the <code>userCode</code> to authorize the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8218,6 +8354,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An alternate URL that the client can use to automatically launch a browser. This process skips the manual step in which the user visits the verification page and enters their code.</p>\n@param verificationUriComplete An alternate URL that the client can use to automatically launch a browser. This process skips the manual step in which the user visits the verification page and enters their code.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8233,6 +8370,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.ssooidc.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -8267,6 +8405,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "UnauthorizedClientException",
+      "fullyQualifiedName" : "com.amazonaws.services.ssooidc.exception.UnauthorizedClientException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8328,6 +8467,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param error \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8396,6 +8536,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param error_description \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8466,6 +8607,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param error \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8535,6 +8677,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param error_description \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8550,6 +8693,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.ssooidc.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -8581,6 +8725,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "UnsupportedGrantTypeException",
+      "fullyQualifiedName" : "com.amazonaws.services.ssooidc.exception.UnsupportedGrantTypeException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8642,6 +8787,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param error \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8710,6 +8856,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param error_description \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8780,6 +8927,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param error \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8849,6 +8997,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param error_description \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8864,6 +9013,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.ssooidc.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,

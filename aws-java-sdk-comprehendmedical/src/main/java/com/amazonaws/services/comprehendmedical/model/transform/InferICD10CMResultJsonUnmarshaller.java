@@ -50,7 +50,9 @@ public class InferICD10CMResultJsonUnmarshaller implements Unmarshaller<InferICD
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Entities", targetDepth)) {
                     context.nextToken();
-                    inferICD10CMResult.setEntities(new ListUnmarshaller<ICD10CMEntity>(ICD10CMEntityJsonUnmarshaller.getInstance()).unmarshall(context));
+                    inferICD10CMResult.setEntities(new ListUnmarshaller<ICD10CMEntity>(ICD10CMEntityJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("PaginationToken", targetDepth)) {
                     context.nextToken();

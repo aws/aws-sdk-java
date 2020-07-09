@@ -55,7 +55,8 @@ public class DescribeOpsItemsResultJsonUnmarshaller implements Unmarshaller<Desc
                 if (context.testExpression("OpsItemSummaries", targetDepth)) {
                     context.nextToken();
                     describeOpsItemsResult.setOpsItemSummaries(new ListUnmarshaller<OpsItemSummary>(OpsItemSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

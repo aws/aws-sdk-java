@@ -86,11 +86,15 @@ public class ContainerJsonUnmarshaller implements Unmarshaller<Container, JsonUn
                 }
                 if (context.testExpression("networkBindings", targetDepth)) {
                     context.nextToken();
-                    container.setNetworkBindings(new ListUnmarshaller<NetworkBinding>(NetworkBindingJsonUnmarshaller.getInstance()).unmarshall(context));
+                    container.setNetworkBindings(new ListUnmarshaller<NetworkBinding>(NetworkBindingJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("networkInterfaces", targetDepth)) {
                     context.nextToken();
-                    container.setNetworkInterfaces(new ListUnmarshaller<NetworkInterface>(NetworkInterfaceJsonUnmarshaller.getInstance()).unmarshall(context));
+                    container.setNetworkInterfaces(new ListUnmarshaller<NetworkInterface>(NetworkInterfaceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("healthStatus", targetDepth)) {
                     context.nextToken();
@@ -110,7 +114,9 @@ public class ContainerJsonUnmarshaller implements Unmarshaller<Container, JsonUn
                 }
                 if (context.testExpression("gpuIds", targetDepth)) {
                     context.nextToken();
-                    container.setGpuIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    container.setGpuIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

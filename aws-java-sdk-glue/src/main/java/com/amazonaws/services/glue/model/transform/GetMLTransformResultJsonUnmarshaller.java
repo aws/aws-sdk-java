@@ -74,7 +74,9 @@ public class GetMLTransformResultJsonUnmarshaller implements Unmarshaller<GetMLT
                 }
                 if (context.testExpression("InputRecordTables", targetDepth)) {
                     context.nextToken();
-                    getMLTransformResult.setInputRecordTables(new ListUnmarshaller<GlueTable>(GlueTableJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getMLTransformResult.setInputRecordTables(new ListUnmarshaller<GlueTable>(GlueTableJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Parameters", targetDepth)) {
                     context.nextToken();
@@ -90,7 +92,9 @@ public class GetMLTransformResultJsonUnmarshaller implements Unmarshaller<GetMLT
                 }
                 if (context.testExpression("Schema", targetDepth)) {
                     context.nextToken();
-                    getMLTransformResult.setSchema(new ListUnmarshaller<SchemaColumn>(SchemaColumnJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getMLTransformResult.setSchema(new ListUnmarshaller<SchemaColumn>(SchemaColumnJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Role", targetDepth)) {
                     context.nextToken();

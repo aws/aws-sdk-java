@@ -51,7 +51,9 @@ public class DescribeAutomationExecutionsResultJsonUnmarshaller implements Unmar
                 if (context.testExpression("AutomationExecutionMetadataList", targetDepth)) {
                     context.nextToken();
                     describeAutomationExecutionsResult.setAutomationExecutionMetadataList(new ListUnmarshaller<AutomationExecutionMetadata>(
-                            AutomationExecutionMetadataJsonUnmarshaller.getInstance()).unmarshall(context));
+                            AutomationExecutionMetadataJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

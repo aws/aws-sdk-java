@@ -54,7 +54,9 @@ public class AutoScalingPolicyJsonUnmarshaller implements Unmarshaller<AutoScali
                 }
                 if (context.testExpression("Rules", targetDepth)) {
                     context.nextToken();
-                    autoScalingPolicy.setRules(new ListUnmarshaller<ScalingRule>(ScalingRuleJsonUnmarshaller.getInstance()).unmarshall(context));
+                    autoScalingPolicy.setRules(new ListUnmarshaller<ScalingRule>(ScalingRuleJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

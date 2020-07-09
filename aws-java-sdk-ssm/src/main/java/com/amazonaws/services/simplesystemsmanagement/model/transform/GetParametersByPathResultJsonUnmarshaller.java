@@ -50,7 +50,9 @@ public class GetParametersByPathResultJsonUnmarshaller implements Unmarshaller<G
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Parameters", targetDepth)) {
                     context.nextToken();
-                    getParametersByPathResult.setParameters(new ListUnmarshaller<Parameter>(ParameterJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getParametersByPathResult.setParameters(new ListUnmarshaller<Parameter>(ParameterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

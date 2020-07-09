@@ -51,7 +51,9 @@ public class WriteCampaignRequestJsonUnmarshaller implements Unmarshaller<WriteC
                 if (context.testExpression("AdditionalTreatments", targetDepth)) {
                     context.nextToken();
                     writeCampaignRequest.setAdditionalTreatments(new ListUnmarshaller<WriteTreatmentResource>(WriteTreatmentResourceJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("CustomDeliveryConfiguration", targetDepth)) {
                     context.nextToken();

@@ -50,12 +50,15 @@ public class DeleteMembersResultJsonUnmarshaller implements Unmarshaller<DeleteM
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AccountIds", targetDepth)) {
                     context.nextToken();
-                    deleteMembersResult.setAccountIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    deleteMembersResult.setAccountIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("UnprocessedAccounts", targetDepth)) {
                     context.nextToken();
                     deleteMembersResult.setUnprocessedAccounts(new ListUnmarshaller<UnprocessedAccount>(UnprocessedAccountJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

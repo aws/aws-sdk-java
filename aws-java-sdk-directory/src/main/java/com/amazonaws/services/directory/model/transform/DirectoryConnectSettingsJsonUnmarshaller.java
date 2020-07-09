@@ -54,11 +54,15 @@ public class DirectoryConnectSettingsJsonUnmarshaller implements Unmarshaller<Di
                 }
                 if (context.testExpression("SubnetIds", targetDepth)) {
                     context.nextToken();
-                    directoryConnectSettings.setSubnetIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    directoryConnectSettings.setSubnetIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("CustomerDnsIps", targetDepth)) {
                     context.nextToken();
-                    directoryConnectSettings.setCustomerDnsIps(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    directoryConnectSettings.setCustomerDnsIps(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("CustomerUserName", targetDepth)) {
                     context.nextToken();

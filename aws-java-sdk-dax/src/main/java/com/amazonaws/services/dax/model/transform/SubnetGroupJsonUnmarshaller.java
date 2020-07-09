@@ -62,7 +62,9 @@ public class SubnetGroupJsonUnmarshaller implements Unmarshaller<SubnetGroup, Js
                 }
                 if (context.testExpression("Subnets", targetDepth)) {
                     context.nextToken();
-                    subnetGroup.setSubnets(new ListUnmarshaller<Subnet>(SubnetJsonUnmarshaller.getInstance()).unmarshall(context));
+                    subnetGroup.setSubnets(new ListUnmarshaller<Subnet>(SubnetJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

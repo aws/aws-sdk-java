@@ -71,7 +71,9 @@ public class ReservationPurchaseRecommendationJsonUnmarshaller implements Unmars
                 if (context.testExpression("RecommendationDetails", targetDepth)) {
                     context.nextToken();
                     reservationPurchaseRecommendation.setRecommendationDetails(new ListUnmarshaller<ReservationPurchaseRecommendationDetail>(
-                            ReservationPurchaseRecommendationDetailJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ReservationPurchaseRecommendationDetailJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("RecommendationSummary", targetDepth)) {
                     context.nextToken();

@@ -59,7 +59,8 @@ public class VoiceConnectorGroupJsonUnmarshaller implements Unmarshaller<VoiceCo
                 if (context.testExpression("VoiceConnectorItems", targetDepth)) {
                     context.nextToken();
                     voiceConnectorGroup.setVoiceConnectorItems(new ListUnmarshaller<VoiceConnectorItem>(VoiceConnectorItemJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("CreatedTimestamp", targetDepth)) {
                     context.nextToken();

@@ -62,7 +62,9 @@ public class ContainerDatasetActionJsonUnmarshaller implements Unmarshaller<Cont
                 }
                 if (context.testExpression("variables", targetDepth)) {
                     context.nextToken();
-                    containerDatasetAction.setVariables(new ListUnmarshaller<Variable>(VariableJsonUnmarshaller.getInstance()).unmarshall(context));
+                    containerDatasetAction.setVariables(new ListUnmarshaller<Variable>(VariableJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

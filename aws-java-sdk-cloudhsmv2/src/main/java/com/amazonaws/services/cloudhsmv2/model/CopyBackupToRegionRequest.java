@@ -37,7 +37,13 @@ public class CopyBackupToRegionRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private String backupId;
-
+    /**
+     * <p>
+     * Tags to apply to the destination backup during creation. If you specify tags, only these tags will be applied to
+     * the destination backup. If you do not specify tags, the service copies tags from the source backup to the
+     * destination backup.
+     * </p>
+     */
     private java.util.List<Tag> tagList;
 
     /**
@@ -121,7 +127,15 @@ public class CopyBackupToRegionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * @return
+     * <p>
+     * Tags to apply to the destination backup during creation. If you specify tags, only these tags will be applied to
+     * the destination backup. If you do not specify tags, the service copies tags from the source backup to the
+     * destination backup.
+     * </p>
+     * 
+     * @return Tags to apply to the destination backup during creation. If you specify tags, only these tags will be
+     *         applied to the destination backup. If you do not specify tags, the service copies tags from the source
+     *         backup to the destination backup.
      */
 
     public java.util.List<Tag> getTagList() {
@@ -129,7 +143,16 @@ public class CopyBackupToRegionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * Tags to apply to the destination backup during creation. If you specify tags, only these tags will be applied to
+     * the destination backup. If you do not specify tags, the service copies tags from the source backup to the
+     * destination backup.
+     * </p>
+     * 
      * @param tagList
+     *        Tags to apply to the destination backup during creation. If you specify tags, only these tags will be
+     *        applied to the destination backup. If you do not specify tags, the service copies tags from the source
+     *        backup to the destination backup.
      */
 
     public void setTagList(java.util.Collection<Tag> tagList) {
@@ -143,12 +166,20 @@ public class CopyBackupToRegionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
+     * Tags to apply to the destination backup during creation. If you specify tags, only these tags will be applied to
+     * the destination backup. If you do not specify tags, the service copies tags from the source backup to the
+     * destination backup.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override
      * the existing values.
      * </p>
      * 
      * @param tagList
+     *        Tags to apply to the destination backup during creation. If you specify tags, only these tags will be
+     *        applied to the destination backup. If you do not specify tags, the service copies tags from the source
+     *        backup to the destination backup.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -163,7 +194,16 @@ public class CopyBackupToRegionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * Tags to apply to the destination backup during creation. If you specify tags, only these tags will be applied to
+     * the destination backup. If you do not specify tags, the service copies tags from the source backup to the
+     * destination backup.
+     * </p>
+     * 
      * @param tagList
+     *        Tags to apply to the destination backup during creation. If you specify tags, only these tags will be
+     *        applied to the destination backup. If you do not specify tags, the service copies tags from the source
+     *        backup to the destination backup.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

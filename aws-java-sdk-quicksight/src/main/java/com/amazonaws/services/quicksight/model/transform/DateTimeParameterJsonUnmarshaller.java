@@ -55,7 +55,8 @@ public class DateTimeParameterJsonUnmarshaller implements Unmarshaller<DateTimeP
                 if (context.testExpression("Values", targetDepth)) {
                     context.nextToken();
                     dateTimeParameter.setValues(new ListUnmarshaller<java.util.Date>(DateJsonUnmarshallerFactory.getInstance("unixTimestamp"))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

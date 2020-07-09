@@ -82,7 +82,9 @@ public class TransformFilterCriteriaJsonUnmarshaller implements Unmarshaller<Tra
                 }
                 if (context.testExpression("Schema", targetDepth)) {
                     context.nextToken();
-                    transformFilterCriteria.setSchema(new ListUnmarshaller<SchemaColumn>(SchemaColumnJsonUnmarshaller.getInstance()).unmarshall(context));
+                    transformFilterCriteria.setSchema(new ListUnmarshaller<SchemaColumn>(SchemaColumnJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

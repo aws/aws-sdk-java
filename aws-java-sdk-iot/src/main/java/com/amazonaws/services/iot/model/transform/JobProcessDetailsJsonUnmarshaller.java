@@ -50,7 +50,9 @@ public class JobProcessDetailsJsonUnmarshaller implements Unmarshaller<JobProces
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("processingTargets", targetDepth)) {
                     context.nextToken();
-                    jobProcessDetails.setProcessingTargets(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    jobProcessDetails.setProcessingTargets(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("numberOfCanceledThings", targetDepth)) {
                     context.nextToken();

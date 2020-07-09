@@ -58,7 +58,9 @@ public class ServiceJsonUnmarshaller implements Unmarshaller<Service, JsonUnmars
                 }
                 if (context.testExpression("categories", targetDepth)) {
                     context.nextToken();
-                    service.setCategories(new ListUnmarshaller<Category>(CategoryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    service.setCategories(new ListUnmarshaller<Category>(CategoryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

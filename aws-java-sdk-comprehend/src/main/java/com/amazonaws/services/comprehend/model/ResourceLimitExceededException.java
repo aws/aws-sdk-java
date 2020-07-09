@@ -16,8 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The maximum number of recognizers per account has been exceeded. Review the recognizers, perform cleanup, and then
- * try your request again.
+ * The maximum number of resources per account has been exceeded. Review the resources, and then try your request again.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

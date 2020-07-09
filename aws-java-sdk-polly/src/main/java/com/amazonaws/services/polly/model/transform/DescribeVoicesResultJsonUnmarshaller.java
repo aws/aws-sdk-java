@@ -50,7 +50,9 @@ public class DescribeVoicesResultJsonUnmarshaller implements Unmarshaller<Descri
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Voices", targetDepth)) {
                     context.nextToken();
-                    describeVoicesResult.setVoices(new ListUnmarshaller<Voice>(VoiceJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeVoicesResult.setVoices(new ListUnmarshaller<Voice>(VoiceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

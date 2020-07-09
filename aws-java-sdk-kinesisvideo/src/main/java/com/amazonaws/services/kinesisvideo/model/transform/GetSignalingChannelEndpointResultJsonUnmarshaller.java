@@ -51,7 +51,9 @@ public class GetSignalingChannelEndpointResultJsonUnmarshaller implements Unmars
                 if (context.testExpression("ResourceEndpointList", targetDepth)) {
                     context.nextToken();
                     getSignalingChannelEndpointResult.setResourceEndpointList(new ListUnmarshaller<ResourceEndpointListItem>(
-                            ResourceEndpointListItemJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ResourceEndpointListItemJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

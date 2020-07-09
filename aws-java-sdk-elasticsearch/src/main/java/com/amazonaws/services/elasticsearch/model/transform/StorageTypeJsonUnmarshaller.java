@@ -58,8 +58,9 @@ public class StorageTypeJsonUnmarshaller implements Unmarshaller<StorageType, Js
                 }
                 if (context.testExpression("StorageTypeLimits", targetDepth)) {
                     context.nextToken();
-                    storageType
-                            .setStorageTypeLimits(new ListUnmarshaller<StorageTypeLimit>(StorageTypeLimitJsonUnmarshaller.getInstance()).unmarshall(context));
+                    storageType.setStorageTypeLimits(new ListUnmarshaller<StorageTypeLimit>(StorageTypeLimitJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

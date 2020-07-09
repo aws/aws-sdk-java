@@ -51,7 +51,9 @@ public class BatchGetDeploymentGroupsResultJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("deploymentGroupsInfo", targetDepth)) {
                     context.nextToken();
                     batchGetDeploymentGroupsResult.setDeploymentGroupsInfo(new ListUnmarshaller<DeploymentGroupInfo>(DeploymentGroupInfoJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("errorMessage", targetDepth)) {
                     context.nextToken();

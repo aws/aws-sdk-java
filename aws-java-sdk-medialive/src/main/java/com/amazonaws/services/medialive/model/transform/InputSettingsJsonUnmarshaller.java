@@ -50,11 +50,15 @@ public class InputSettingsJsonUnmarshaller implements Unmarshaller<InputSettings
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("audioSelectors", targetDepth)) {
                     context.nextToken();
-                    inputSettings.setAudioSelectors(new ListUnmarshaller<AudioSelector>(AudioSelectorJsonUnmarshaller.getInstance()).unmarshall(context));
+                    inputSettings.setAudioSelectors(new ListUnmarshaller<AudioSelector>(AudioSelectorJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("captionSelectors", targetDepth)) {
                     context.nextToken();
-                    inputSettings.setCaptionSelectors(new ListUnmarshaller<CaptionSelector>(CaptionSelectorJsonUnmarshaller.getInstance()).unmarshall(context));
+                    inputSettings.setCaptionSelectors(new ListUnmarshaller<CaptionSelector>(CaptionSelectorJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("deblockFilter", targetDepth)) {
                     context.nextToken();

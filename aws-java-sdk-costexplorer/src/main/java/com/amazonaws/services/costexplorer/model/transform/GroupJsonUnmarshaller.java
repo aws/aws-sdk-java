@@ -50,7 +50,9 @@ public class GroupJsonUnmarshaller implements Unmarshaller<Group, JsonUnmarshall
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Keys", targetDepth)) {
                     context.nextToken();
-                    group.setKeys(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    group.setKeys(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Metrics", targetDepth)) {
                     context.nextToken();

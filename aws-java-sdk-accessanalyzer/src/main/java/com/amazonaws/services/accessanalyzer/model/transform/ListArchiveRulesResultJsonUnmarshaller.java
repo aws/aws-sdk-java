@@ -51,7 +51,8 @@ public class ListArchiveRulesResultJsonUnmarshaller implements Unmarshaller<List
                 if (context.testExpression("archiveRules", targetDepth)) {
                     context.nextToken();
                     listArchiveRulesResult.setArchiveRules(new ListUnmarshaller<ArchiveRuleSummary>(ArchiveRuleSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

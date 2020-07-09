@@ -66,7 +66,9 @@ public class SourceTableDetailsJsonUnmarshaller implements Unmarshaller<SourceTa
                 }
                 if (context.testExpression("KeySchema", targetDepth)) {
                     context.nextToken();
-                    sourceTableDetails.setKeySchema(new ListUnmarshaller<KeySchemaElement>(KeySchemaElementJsonUnmarshaller.getInstance()).unmarshall(context));
+                    sourceTableDetails.setKeySchema(new ListUnmarshaller<KeySchemaElement>(KeySchemaElementJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("TableCreationDateTime", targetDepth)) {
                     context.nextToken();

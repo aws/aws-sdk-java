@@ -52,7 +52,9 @@ public class DescribeDirectConnectGatewayAttachmentsResultJsonUnmarshaller imple
                 if (context.testExpression("directConnectGatewayAttachments", targetDepth)) {
                     context.nextToken();
                     describeDirectConnectGatewayAttachmentsResult.setDirectConnectGatewayAttachments(new ListUnmarshaller<DirectConnectGatewayAttachment>(
-                            DirectConnectGatewayAttachmentJsonUnmarshaller.getInstance()).unmarshall(context));
+                            DirectConnectGatewayAttachmentJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

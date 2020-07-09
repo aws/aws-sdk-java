@@ -63,7 +63,8 @@ public class ExpectedAttributeValueJsonUnmarshaller implements Unmarshaller<Expe
                 if (context.testExpression("AttributeValueList", targetDepth)) {
                     context.nextToken();
                     expectedAttributeValue.setAttributeValueList(new ListUnmarshaller<AttributeValue>(AttributeValueJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

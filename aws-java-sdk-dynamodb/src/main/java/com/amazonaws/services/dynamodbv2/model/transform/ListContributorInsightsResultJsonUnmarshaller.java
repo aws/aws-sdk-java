@@ -51,7 +51,9 @@ public class ListContributorInsightsResultJsonUnmarshaller implements Unmarshall
                 if (context.testExpression("ContributorInsightsSummaries", targetDepth)) {
                     context.nextToken();
                     listContributorInsightsResult.setContributorInsightsSummaries(new ListUnmarshaller<ContributorInsightsSummary>(
-                            ContributorInsightsSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ContributorInsightsSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

@@ -50,7 +50,9 @@ public class ListSnapshotBlocksResultJsonUnmarshaller implements Unmarshaller<Li
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Blocks", targetDepth)) {
                     context.nextToken();
-                    listSnapshotBlocksResult.setBlocks(new ListUnmarshaller<Block>(BlockJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listSnapshotBlocksResult.setBlocks(new ListUnmarshaller<Block>(BlockJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ExpiryTime", targetDepth)) {
                     context.nextToken();

@@ -66,7 +66,9 @@ public class LayerVersionsListItemJsonUnmarshaller implements Unmarshaller<Layer
                 }
                 if (context.testExpression("CompatibleRuntimes", targetDepth)) {
                     context.nextToken();
-                    layerVersionsListItem.setCompatibleRuntimes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    layerVersionsListItem.setCompatibleRuntimes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("LicenseInfo", targetDepth)) {
                     context.nextToken();

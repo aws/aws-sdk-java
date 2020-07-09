@@ -50,7 +50,9 @@ public class DescribeLogGroupsResultJsonUnmarshaller implements Unmarshaller<Des
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("logGroups", targetDepth)) {
                     context.nextToken();
-                    describeLogGroupsResult.setLogGroups(new ListUnmarshaller<LogGroup>(LogGroupJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeLogGroupsResult.setLogGroups(new ListUnmarshaller<LogGroup>(LogGroupJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

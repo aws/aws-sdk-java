@@ -51,7 +51,8 @@ public class ListMemberAccountsResultJsonUnmarshaller implements Unmarshaller<Li
                 if (context.testExpression("memberAccounts", targetDepth)) {
                     context.nextToken();
                     listMemberAccountsResult.setMemberAccounts(new ListUnmarshaller<MemberAccount>(MemberAccountJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

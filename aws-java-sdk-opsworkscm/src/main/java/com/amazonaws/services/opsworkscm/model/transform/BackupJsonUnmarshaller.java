@@ -114,7 +114,9 @@ public class BackupJsonUnmarshaller implements Unmarshaller<Backup, JsonUnmarsha
                 }
                 if (context.testExpression("SecurityGroupIds", targetDepth)) {
                     context.nextToken();
-                    backup.setSecurityGroupIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    backup.setSecurityGroupIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ServerName", targetDepth)) {
                     context.nextToken();
@@ -134,7 +136,9 @@ public class BackupJsonUnmarshaller implements Unmarshaller<Backup, JsonUnmarsha
                 }
                 if (context.testExpression("SubnetIds", targetDepth)) {
                     context.nextToken();
-                    backup.setSubnetIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    backup.setSubnetIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ToolsVersion", targetDepth)) {
                     context.nextToken();

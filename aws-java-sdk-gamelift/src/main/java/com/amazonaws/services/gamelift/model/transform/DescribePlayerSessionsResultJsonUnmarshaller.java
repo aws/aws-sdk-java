@@ -51,7 +51,8 @@ public class DescribePlayerSessionsResultJsonUnmarshaller implements Unmarshalle
                 if (context.testExpression("PlayerSessions", targetDepth)) {
                     context.nextToken();
                     describePlayerSessionsResult.setPlayerSessions(new ListUnmarshaller<PlayerSession>(PlayerSessionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

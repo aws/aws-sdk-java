@@ -51,7 +51,8 @@ public class BatchCreateVariableResultJsonUnmarshaller implements Unmarshaller<B
                 if (context.testExpression("errors", targetDepth)) {
                     context.nextToken();
                     batchCreateVariableResult.setErrors(new ListUnmarshaller<BatchCreateVariableError>(BatchCreateVariableErrorJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

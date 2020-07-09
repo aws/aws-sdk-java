@@ -51,7 +51,8 @@ public class DescribeFleetAttributesResultJsonUnmarshaller implements Unmarshall
                 if (context.testExpression("FleetAttributes", targetDepth)) {
                     context.nextToken();
                     describeFleetAttributesResult.setFleetAttributes(new ListUnmarshaller<FleetAttributes>(FleetAttributesJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

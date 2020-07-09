@@ -67,7 +67,8 @@ public class ListPackageVersionsResultJsonUnmarshaller implements Unmarshaller<L
                 if (context.testExpression("versions", targetDepth)) {
                     context.nextToken();
                     listPackageVersionsResult.setVersions(new ListUnmarshaller<PackageVersionSummary>(PackageVersionSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

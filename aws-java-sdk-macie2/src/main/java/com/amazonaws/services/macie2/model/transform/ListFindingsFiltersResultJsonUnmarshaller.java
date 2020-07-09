@@ -51,7 +51,9 @@ public class ListFindingsFiltersResultJsonUnmarshaller implements Unmarshaller<L
                 if (context.testExpression("findingsFilterListItems", targetDepth)) {
                     context.nextToken();
                     listFindingsFiltersResult.setFindingsFilterListItems(new ListUnmarshaller<FindingsFilterListItem>(FindingsFilterListItemJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

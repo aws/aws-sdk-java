@@ -55,7 +55,8 @@ public class ThingGroupMetadataJsonUnmarshaller implements Unmarshaller<ThingGro
                 if (context.testExpression("rootToParentThingGroups", targetDepth)) {
                     context.nextToken();
                     thingGroupMetadata.setRootToParentThingGroups(new ListUnmarshaller<GroupNameAndArn>(GroupNameAndArnJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("creationDate", targetDepth)) {
                     context.nextToken();

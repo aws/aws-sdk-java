@@ -51,7 +51,8 @@ public class ListVPCEConfigurationsResultJsonUnmarshaller implements Unmarshalle
                 if (context.testExpression("vpceConfigurations", targetDepth)) {
                     context.nextToken();
                     listVPCEConfigurationsResult.setVpceConfigurations(new ListUnmarshaller<VPCEConfiguration>(VPCEConfigurationJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

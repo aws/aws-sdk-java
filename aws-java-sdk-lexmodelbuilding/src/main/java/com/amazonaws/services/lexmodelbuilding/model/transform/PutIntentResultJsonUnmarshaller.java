@@ -58,11 +58,15 @@ public class PutIntentResultJsonUnmarshaller implements Unmarshaller<PutIntentRe
                 }
                 if (context.testExpression("slots", targetDepth)) {
                     context.nextToken();
-                    putIntentResult.setSlots(new ListUnmarshaller<Slot>(SlotJsonUnmarshaller.getInstance()).unmarshall(context));
+                    putIntentResult.setSlots(new ListUnmarshaller<Slot>(SlotJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("sampleUtterances", targetDepth)) {
                     context.nextToken();
-                    putIntentResult.setSampleUtterances(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    putIntentResult.setSampleUtterances(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("confirmationPrompt", targetDepth)) {
                     context.nextToken();

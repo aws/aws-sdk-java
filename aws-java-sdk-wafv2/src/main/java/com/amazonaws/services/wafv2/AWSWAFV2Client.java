@@ -3195,7 +3195,14 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      * </p>
      * </note>
      * <p>
-     * Retrieves the <a>TagInfoForResource</a> for the specified resource.
+     * Retrieves the <a>TagInfoForResource</a> for the specified resource. Tags are key:value pairs that you can use to
+     * categorize and manage your resources, for purposes like billing. For example, you might set the tag key to
+     * "customer" and the value to the customer name or ID. You can specify one or more tags to add to each AWS
+     * resource, up to 50 tags for a resource.
+     * </p>
+     * <p>
+     * You can tag the AWS resources that you manage through AWS WAF: web ACLs, rule groups, IP sets, and regex pattern
+     * sets. You can't manage or view tags through the AWS WAF console.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -3396,6 +3403,10 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      * Create the data firehose with a PUT source and in the Region that you are operating. If you are capturing logs
      * for Amazon CloudFront, always create the firehose in US East (N. Virginia).
      * </p>
+     * <p>
+     * Give the data firehose a name that starts with the prefix <code>aws-waf-logs-</code>. For example,
+     * <code>aws-waf-logs-us-east-2-analytics</code>.
+     * </p>
      * <note>
      * <p>
      * Do not create the data firehose using a <code>Kinesis stream</code> as your source.
@@ -3460,6 +3471,11 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      *         </li>
      * @throws WAFInvalidOperationException
      *         The operation isn't valid.
+     * @throws WAFLimitsExceededException
+     *         AWS WAF couldn’t perform the operation because you exceeded your resource limit. For example, the maximum
+     *         number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see
+     *         <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
+     *         Developer Guide</i>.
      * @sample AWSWAFV2.PutLoggingConfiguration
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/PutLoggingConfiguration" target="_top">AWS
      *      API Documentation</a>
@@ -3661,9 +3677,14 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      * </p>
      * </note>
      * <p>
-     * Associates tags with the specified AWS resource. Tags are key:value pairs that you can associate with AWS
-     * resources. For example, the tag key might be "customer" and the tag value might be "companyA." You can specify
-     * one or more tags to add to each container. You can add up to 50 tags to each AWS resource.
+     * Associates tags with the specified AWS resource. Tags are key:value pairs that you can use to categorize and
+     * manage your resources, for purposes like billing. For example, you might set the tag key to "customer" and the
+     * value to the customer name or ID. You can specify one or more tags to add to each AWS resource, up to 50 tags for
+     * a resource.
+     * </p>
+     * <p>
+     * You can tag the AWS resources that you manage through AWS WAF: web ACLs, rule groups, IP sets, and regex pattern
+     * sets. You can't manage or view tags through the AWS WAF console.
      * </p>
      * 
      * @param tagResourceRequest

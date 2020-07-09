@@ -51,7 +51,9 @@ public class ListTopicRuleDestinationsResultJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("destinationSummaries", targetDepth)) {
                     context.nextToken();
                     listTopicRuleDestinationsResult.setDestinationSummaries(new ListUnmarshaller<TopicRuleDestinationSummary>(
-                            TopicRuleDestinationSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                            TopicRuleDestinationSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

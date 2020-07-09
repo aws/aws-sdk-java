@@ -50,7 +50,9 @@ public class ListBranchesResultJsonUnmarshaller implements Unmarshaller<ListBran
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("branches", targetDepth)) {
                     context.nextToken();
-                    listBranchesResult.setBranches(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    listBranchesResult.setBranches(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

@@ -54,7 +54,9 @@ public class UntagResultJsonUnmarshaller implements Unmarshaller<UntagResult, Js
                 }
                 if (context.testExpression("Keys", targetDepth)) {
                     context.nextToken();
-                    untagResult.setKeys(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    untagResult.setKeys(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

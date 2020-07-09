@@ -50,7 +50,9 @@ public class BatchUpdateUserResultJsonUnmarshaller implements Unmarshaller<Batch
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("UserErrors", targetDepth)) {
                     context.nextToken();
-                    batchUpdateUserResult.setUserErrors(new ListUnmarshaller<UserError>(UserErrorJsonUnmarshaller.getInstance()).unmarshall(context));
+                    batchUpdateUserResult.setUserErrors(new ListUnmarshaller<UserError>(UserErrorJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

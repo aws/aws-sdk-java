@@ -51,7 +51,9 @@ public class DescribePatchGroupsResultJsonUnmarshaller implements Unmarshaller<D
                 if (context.testExpression("Mappings", targetDepth)) {
                     context.nextToken();
                     describePatchGroupsResult.setMappings(new ListUnmarshaller<PatchGroupPatchBaselineMapping>(PatchGroupPatchBaselineMappingJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

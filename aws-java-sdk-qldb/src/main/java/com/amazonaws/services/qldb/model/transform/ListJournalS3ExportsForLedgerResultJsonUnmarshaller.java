@@ -51,7 +51,9 @@ public class ListJournalS3ExportsForLedgerResultJsonUnmarshaller implements Unma
                 if (context.testExpression("JournalS3Exports", targetDepth)) {
                     context.nextToken();
                     listJournalS3ExportsForLedgerResult.setJournalS3Exports(new ListUnmarshaller<JournalS3ExportDescription>(
-                            JournalS3ExportDescriptionJsonUnmarshaller.getInstance()).unmarshall(context));
+                            JournalS3ExportDescriptionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

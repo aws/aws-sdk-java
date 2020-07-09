@@ -55,7 +55,8 @@ public class SummarizedAttackVectorJsonUnmarshaller implements Unmarshaller<Summ
                 if (context.testExpression("VectorCounters", targetDepth)) {
                     context.nextToken();
                     summarizedAttackVector.setVectorCounters(new ListUnmarshaller<SummarizedCounter>(SummarizedCounterJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

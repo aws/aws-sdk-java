@@ -51,7 +51,8 @@ public class DescribeExportConfigurationsResultJsonUnmarshaller implements Unmar
                 if (context.testExpression("exportsInfo", targetDepth)) {
                     context.nextToken();
                     describeExportConfigurationsResult.setExportsInfo(new ListUnmarshaller<ExportInfo>(ExportInfoJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

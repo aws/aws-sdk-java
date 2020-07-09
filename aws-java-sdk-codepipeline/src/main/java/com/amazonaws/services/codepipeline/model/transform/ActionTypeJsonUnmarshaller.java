@@ -59,7 +59,9 @@ public class ActionTypeJsonUnmarshaller implements Unmarshaller<ActionType, Json
                 if (context.testExpression("actionConfigurationProperties", targetDepth)) {
                     context.nextToken();
                     actionType.setActionConfigurationProperties(new ListUnmarshaller<ActionConfigurationProperty>(ActionConfigurationPropertyJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("inputArtifactDetails", targetDepth)) {
                     context.nextToken();

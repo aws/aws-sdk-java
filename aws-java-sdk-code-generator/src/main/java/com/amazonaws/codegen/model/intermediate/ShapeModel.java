@@ -35,6 +35,8 @@ public class ShapeModel extends DocumentationModel {
     // shapeName might be later modified by the customization.
     private String shapeName;
     // the local variable name inside marshaller/unmarshaller implementation
+    private String fullyQualifiedName;
+    private String packageName;
     private boolean deprecated;
     private String type;
     private List<String> required;
@@ -75,6 +77,22 @@ public class ShapeModel extends DocumentationModel {
 
     public void setShapeName(String shapeName) {
         this.shapeName = shapeName;
+    }
+
+    public String getFullyQualifiedName() {
+        return fullyQualifiedName;
+    }
+
+    public void setFullyQualifiedName(String fullyQualifiedName) {
+        this.fullyQualifiedName = fullyQualifiedName;
+    }
+
+    public String getPackageName() {
+        return packageName;
+    }
+
+    public void setPackageName(String packageName) {
+        this.packageName = packageName;
     }
 
     public boolean isDeprecated() {

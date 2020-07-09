@@ -51,7 +51,8 @@ public class GetSamplingRulesResultJsonUnmarshaller implements Unmarshaller<GetS
                 if (context.testExpression("SamplingRuleRecords", targetDepth)) {
                     context.nextToken();
                     getSamplingRulesResult.setSamplingRuleRecords(new ListUnmarshaller<SamplingRuleRecord>(SamplingRuleRecordJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

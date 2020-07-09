@@ -52,7 +52,9 @@ public class DescribePendingAggregationRequestsResultJsonUnmarshaller implements
                 if (context.testExpression("PendingAggregationRequests", targetDepth)) {
                     context.nextToken();
                     describePendingAggregationRequestsResult.setPendingAggregationRequests(new ListUnmarshaller<PendingAggregationRequest>(
-                            PendingAggregationRequestJsonUnmarshaller.getInstance()).unmarshall(context));
+                            PendingAggregationRequestJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

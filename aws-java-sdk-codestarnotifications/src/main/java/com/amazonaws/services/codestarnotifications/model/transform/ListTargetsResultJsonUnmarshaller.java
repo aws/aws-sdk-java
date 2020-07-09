@@ -50,7 +50,9 @@ public class ListTargetsResultJsonUnmarshaller implements Unmarshaller<ListTarge
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Targets", targetDepth)) {
                     context.nextToken();
-                    listTargetsResult.setTargets(new ListUnmarshaller<TargetSummary>(TargetSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listTargetsResult.setTargets(new ListUnmarshaller<TargetSummary>(TargetSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

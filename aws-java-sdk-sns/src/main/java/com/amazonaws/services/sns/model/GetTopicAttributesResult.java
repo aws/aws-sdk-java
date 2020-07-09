@@ -74,7 +74,7 @@ public class GetTopicAttributesResult extends com.amazonaws.AmazonWebServiceResu
      * </li>
      * <li>
      * <p>
-     * <code>EffectiveDeliveryPolicy</code> – Yhe JSON serialization of the effective delivery policy, taking system
+     * <code>EffectiveDeliveryPolicy</code> – The JSON serialization of the effective delivery policy, taking system
      * defaults into account.
      * </p>
      * </li>
@@ -146,7 +146,7 @@ public class GetTopicAttributesResult extends com.amazonaws.AmazonWebServiceResu
      * </li>
      * <li>
      * <p>
-     * <code>EffectiveDeliveryPolicy</code> – Yhe JSON serialization of the effective delivery policy, taking system
+     * <code>EffectiveDeliveryPolicy</code> – The JSON serialization of the effective delivery policy, taking system
      * defaults into account.
      * </p>
      * </li>
@@ -213,7 +213,7 @@ public class GetTopicAttributesResult extends com.amazonaws.AmazonWebServiceResu
      *         </li>
      *         <li>
      *         <p>
-     *         <code>EffectiveDeliveryPolicy</code> – Yhe JSON serialization of the effective delivery policy, taking
+     *         <code>EffectiveDeliveryPolicy</code> – The JSON serialization of the effective delivery policy, taking
      *         system defaults into account.
      *         </p>
      *         </li>
@@ -291,7 +291,7 @@ public class GetTopicAttributesResult extends com.amazonaws.AmazonWebServiceResu
      * </li>
      * <li>
      * <p>
-     * <code>EffectiveDeliveryPolicy</code> – Yhe JSON serialization of the effective delivery policy, taking system
+     * <code>EffectiveDeliveryPolicy</code> – The JSON serialization of the effective delivery policy, taking system
      * defaults into account.
      * </p>
      * </li>
@@ -359,7 +359,7 @@ public class GetTopicAttributesResult extends com.amazonaws.AmazonWebServiceResu
      *        </li>
      *        <li>
      *        <p>
-     *        <code>EffectiveDeliveryPolicy</code> – Yhe JSON serialization of the effective delivery policy, taking
+     *        <code>EffectiveDeliveryPolicy</code> – The JSON serialization of the effective delivery policy, taking
      *        system defaults into account.
      *        </p>
      *        </li>
@@ -434,7 +434,7 @@ public class GetTopicAttributesResult extends com.amazonaws.AmazonWebServiceResu
      * </li>
      * <li>
      * <p>
-     * <code>EffectiveDeliveryPolicy</code> – Yhe JSON serialization of the effective delivery policy, taking system
+     * <code>EffectiveDeliveryPolicy</code> – The JSON serialization of the effective delivery policy, taking system
      * defaults into account.
      * </p>
      * </li>
@@ -502,7 +502,7 @@ public class GetTopicAttributesResult extends com.amazonaws.AmazonWebServiceResu
      *        </li>
      *        <li>
      *        <p>
-     *        <code>EffectiveDeliveryPolicy</code> – Yhe JSON serialization of the effective delivery policy, taking
+     *        <code>EffectiveDeliveryPolicy</code> – The JSON serialization of the effective delivery policy, taking
      *        system defaults into account.
      *        </p>
      *        </li>

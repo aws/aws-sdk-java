@@ -76,17 +76,21 @@ public class SimulationJobRequestJsonUnmarshaller implements Unmarshaller<Simula
                     context.nextToken();
                     simulationJobRequest
                             .setRobotApplications(new ListUnmarshaller<RobotApplicationConfig>(RobotApplicationConfigJsonUnmarshaller.getInstance())
-                                    .unmarshall(context));
+
+                            .unmarshall(context));
                 }
                 if (context.testExpression("simulationApplications", targetDepth)) {
                     context.nextToken();
                     simulationJobRequest.setSimulationApplications(new ListUnmarshaller<SimulationApplicationConfig>(
-                            SimulationApplicationConfigJsonUnmarshaller.getInstance()).unmarshall(context));
+                            SimulationApplicationConfigJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("dataSources", targetDepth)) {
                     context.nextToken();
                     simulationJobRequest.setDataSources(new ListUnmarshaller<DataSourceConfig>(DataSourceConfigJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("vpcConfig", targetDepth)) {
                     context.nextToken();

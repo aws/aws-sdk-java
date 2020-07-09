@@ -51,17 +51,23 @@ public class DefaultHyperParameterRangesJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("integerHyperParameterRanges", targetDepth)) {
                     context.nextToken();
                     defaultHyperParameterRanges.setIntegerHyperParameterRanges(new ListUnmarshaller<DefaultIntegerHyperParameterRange>(
-                            DefaultIntegerHyperParameterRangeJsonUnmarshaller.getInstance()).unmarshall(context));
+                            DefaultIntegerHyperParameterRangeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("continuousHyperParameterRanges", targetDepth)) {
                     context.nextToken();
                     defaultHyperParameterRanges.setContinuousHyperParameterRanges(new ListUnmarshaller<DefaultContinuousHyperParameterRange>(
-                            DefaultContinuousHyperParameterRangeJsonUnmarshaller.getInstance()).unmarshall(context));
+                            DefaultContinuousHyperParameterRangeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("categoricalHyperParameterRanges", targetDepth)) {
                     context.nextToken();
                     defaultHyperParameterRanges.setCategoricalHyperParameterRanges(new ListUnmarshaller<DefaultCategoricalHyperParameterRange>(
-                            DefaultCategoricalHyperParameterRangeJsonUnmarshaller.getInstance()).unmarshall(context));
+                            DefaultCategoricalHyperParameterRangeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

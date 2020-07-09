@@ -51,7 +51,8 @@ public class ListHumanTaskUisResultJsonUnmarshaller implements Unmarshaller<List
                 if (context.testExpression("HumanTaskUiSummaries", targetDepth)) {
                     context.nextToken();
                     listHumanTaskUisResult.setHumanTaskUiSummaries(new ListUnmarshaller<HumanTaskUiSummary>(HumanTaskUiSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

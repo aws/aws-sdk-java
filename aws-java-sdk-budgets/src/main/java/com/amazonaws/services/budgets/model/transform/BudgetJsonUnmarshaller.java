@@ -64,7 +64,9 @@ public class BudgetJsonUnmarshaller implements Unmarshaller<Budget, JsonUnmarsha
                 if (context.testExpression("CostFilters", targetDepth)) {
                     context.nextToken();
                     budget.setCostFilters(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
-                            new ListUnmarshaller<String>(context.getUnmarshaller(String.class))).unmarshall(context));
+                            new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    ).unmarshall(context));
                 }
                 if (context.testExpression("CostTypes", targetDepth)) {
                     context.nextToken();

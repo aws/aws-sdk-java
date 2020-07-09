@@ -54,7 +54,9 @@ public class TestRoleResultJsonUnmarshaller implements Unmarshaller<TestRoleResu
                 }
                 if (context.testExpression("Messages", targetDepth)) {
                     context.nextToken();
-                    testRoleResult.setMessages(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    testRoleResult.setMessages(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

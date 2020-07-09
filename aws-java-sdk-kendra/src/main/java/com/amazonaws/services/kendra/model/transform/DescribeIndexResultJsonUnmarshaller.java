@@ -88,7 +88,9 @@ public class DescribeIndexResultJsonUnmarshaller implements Unmarshaller<Describ
                 if (context.testExpression("DocumentMetadataConfigurations", targetDepth)) {
                     context.nextToken();
                     describeIndexResult.setDocumentMetadataConfigurations(new ListUnmarshaller<DocumentMetadataConfiguration>(
-                            DocumentMetadataConfigurationJsonUnmarshaller.getInstance()).unmarshall(context));
+                            DocumentMetadataConfigurationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("IndexStatistics", targetDepth)) {
                     context.nextToken();

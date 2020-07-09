@@ -66,7 +66,9 @@ public class GetFaceDetectionResultJsonUnmarshaller implements Unmarshaller<GetF
                 }
                 if (context.testExpression("Faces", targetDepth)) {
                     context.nextToken();
-                    getFaceDetectionResult.setFaces(new ListUnmarshaller<FaceDetection>(FaceDetectionJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getFaceDetectionResult.setFaces(new ListUnmarshaller<FaceDetection>(FaceDetectionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

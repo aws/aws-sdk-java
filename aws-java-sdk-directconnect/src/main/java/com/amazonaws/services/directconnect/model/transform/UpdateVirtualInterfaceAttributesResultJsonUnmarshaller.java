@@ -127,12 +127,15 @@ public class UpdateVirtualInterfaceAttributesResultJsonUnmarshaller implements U
                 if (context.testExpression("routeFilterPrefixes", targetDepth)) {
                     context.nextToken();
                     updateVirtualInterfaceAttributesResult.setRouteFilterPrefixes(new ListUnmarshaller<RouteFilterPrefix>(RouteFilterPrefixJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("bgpPeers", targetDepth)) {
                     context.nextToken();
-                    updateVirtualInterfaceAttributesResult
-                            .setBgpPeers(new ListUnmarshaller<BGPPeer>(BGPPeerJsonUnmarshaller.getInstance()).unmarshall(context));
+                    updateVirtualInterfaceAttributesResult.setBgpPeers(new ListUnmarshaller<BGPPeer>(BGPPeerJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("region", targetDepth)) {
                     context.nextToken();
@@ -144,7 +147,9 @@ public class UpdateVirtualInterfaceAttributesResultJsonUnmarshaller implements U
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
-                    updateVirtualInterfaceAttributesResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    updateVirtualInterfaceAttributesResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

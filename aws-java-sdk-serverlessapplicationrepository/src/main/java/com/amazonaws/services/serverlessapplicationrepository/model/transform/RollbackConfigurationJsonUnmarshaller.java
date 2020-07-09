@@ -55,7 +55,8 @@ public class RollbackConfigurationJsonUnmarshaller implements Unmarshaller<Rollb
                 if (context.testExpression("rollbackTriggers", targetDepth)) {
                     context.nextToken();
                     rollbackConfiguration.setRollbackTriggers(new ListUnmarshaller<RollbackTrigger>(RollbackTriggerJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

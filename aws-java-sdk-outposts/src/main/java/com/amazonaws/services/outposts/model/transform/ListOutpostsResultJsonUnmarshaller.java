@@ -50,7 +50,9 @@ public class ListOutpostsResultJsonUnmarshaller implements Unmarshaller<ListOutp
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Outposts", targetDepth)) {
                     context.nextToken();
-                    listOutpostsResult.setOutposts(new ListUnmarshaller<Outpost>(OutpostJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listOutpostsResult.setOutposts(new ListUnmarshaller<Outpost>(OutpostJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

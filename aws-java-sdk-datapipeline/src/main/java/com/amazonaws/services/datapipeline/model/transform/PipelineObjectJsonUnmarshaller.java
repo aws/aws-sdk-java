@@ -58,7 +58,9 @@ public class PipelineObjectJsonUnmarshaller implements Unmarshaller<PipelineObje
                 }
                 if (context.testExpression("fields", targetDepth)) {
                     context.nextToken();
-                    pipelineObject.setFields(new ListUnmarshaller<Field>(FieldJsonUnmarshaller.getInstance()).unmarshall(context));
+                    pipelineObject.setFields(new ListUnmarshaller<Field>(FieldJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

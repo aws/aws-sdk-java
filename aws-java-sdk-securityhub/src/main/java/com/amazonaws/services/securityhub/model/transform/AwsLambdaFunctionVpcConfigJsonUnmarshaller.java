@@ -50,11 +50,15 @@ public class AwsLambdaFunctionVpcConfigJsonUnmarshaller implements Unmarshaller<
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SecurityGroupIds", targetDepth)) {
                     context.nextToken();
-                    awsLambdaFunctionVpcConfig.setSecurityGroupIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    awsLambdaFunctionVpcConfig.setSecurityGroupIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("SubnetIds", targetDepth)) {
                     context.nextToken();
-                    awsLambdaFunctionVpcConfig.setSubnetIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    awsLambdaFunctionVpcConfig.setSubnetIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("VpcId", targetDepth)) {
                     context.nextToken();

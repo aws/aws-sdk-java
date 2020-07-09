@@ -50,7 +50,9 @@ public class TrainingDataJsonUnmarshaller implements Unmarshaller<TrainingData, 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Assets", targetDepth)) {
                     context.nextToken();
-                    trainingData.setAssets(new ListUnmarshaller<Asset>(AssetJsonUnmarshaller.getInstance()).unmarshall(context));
+                    trainingData.setAssets(new ListUnmarshaller<Asset>(AssetJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -50,7 +50,9 @@ public class ListTapesResultJsonUnmarshaller implements Unmarshaller<ListTapesRe
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TapeInfos", targetDepth)) {
                     context.nextToken();
-                    listTapesResult.setTapeInfos(new ListUnmarshaller<TapeInfo>(TapeInfoJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listTapesResult.setTapeInfos(new ListUnmarshaller<TapeInfo>(TapeInfoJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Marker", targetDepth)) {
                     context.nextToken();

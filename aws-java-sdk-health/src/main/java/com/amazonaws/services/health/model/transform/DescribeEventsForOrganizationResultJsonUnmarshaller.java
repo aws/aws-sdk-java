@@ -51,7 +51,8 @@ public class DescribeEventsForOrganizationResultJsonUnmarshaller implements Unma
                 if (context.testExpression("events", targetDepth)) {
                     context.nextToken();
                     describeEventsForOrganizationResult.setEvents(new ListUnmarshaller<OrganizationEvent>(OrganizationEventJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

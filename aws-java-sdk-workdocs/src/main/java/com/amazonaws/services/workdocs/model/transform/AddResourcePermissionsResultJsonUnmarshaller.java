@@ -51,7 +51,8 @@ public class AddResourcePermissionsResultJsonUnmarshaller implements Unmarshalle
                 if (context.testExpression("ShareResults", targetDepth)) {
                     context.nextToken();
                     addResourcePermissionsResult.setShareResults(new ListUnmarshaller<ShareResult>(ShareResultJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

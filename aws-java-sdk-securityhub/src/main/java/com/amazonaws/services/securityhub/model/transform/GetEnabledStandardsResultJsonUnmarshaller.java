@@ -51,7 +51,9 @@ public class GetEnabledStandardsResultJsonUnmarshaller implements Unmarshaller<G
                 if (context.testExpression("StandardsSubscriptions", targetDepth)) {
                     context.nextToken();
                     getEnabledStandardsResult.setStandardsSubscriptions(new ListUnmarshaller<StandardsSubscription>(StandardsSubscriptionJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

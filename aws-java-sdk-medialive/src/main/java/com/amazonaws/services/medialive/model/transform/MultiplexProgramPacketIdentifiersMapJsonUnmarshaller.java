@@ -50,13 +50,15 @@ public class MultiplexProgramPacketIdentifiersMapJsonUnmarshaller implements Unm
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("audioPids", targetDepth)) {
                     context.nextToken();
-                    multiplexProgramPacketIdentifiersMap
-                            .setAudioPids(new ListUnmarshaller<Integer>(context.getUnmarshaller(Integer.class)).unmarshall(context));
+                    multiplexProgramPacketIdentifiersMap.setAudioPids(new ListUnmarshaller<Integer>(context.getUnmarshaller(Integer.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("dvbSubPids", targetDepth)) {
                     context.nextToken();
                     multiplexProgramPacketIdentifiersMap.setDvbSubPids(new ListUnmarshaller<Integer>(context.getUnmarshaller(Integer.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("dvbTeletextPid", targetDepth)) {
                     context.nextToken();
@@ -73,7 +75,8 @@ public class MultiplexProgramPacketIdentifiersMapJsonUnmarshaller implements Unm
                 if (context.testExpression("klvDataPids", targetDepth)) {
                     context.nextToken();
                     multiplexProgramPacketIdentifiersMap.setKlvDataPids(new ListUnmarshaller<Integer>(context.getUnmarshaller(Integer.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("pcrPid", targetDepth)) {
                     context.nextToken();
@@ -90,7 +93,8 @@ public class MultiplexProgramPacketIdentifiersMapJsonUnmarshaller implements Unm
                 if (context.testExpression("scte27Pids", targetDepth)) {
                     context.nextToken();
                     multiplexProgramPacketIdentifiersMap.setScte27Pids(new ListUnmarshaller<Integer>(context.getUnmarshaller(Integer.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("scte35Pid", targetDepth)) {
                     context.nextToken();

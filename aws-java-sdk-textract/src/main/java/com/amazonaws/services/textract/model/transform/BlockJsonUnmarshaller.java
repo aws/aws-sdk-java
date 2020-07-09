@@ -86,11 +86,15 @@ public class BlockJsonUnmarshaller implements Unmarshaller<Block, JsonUnmarshall
                 }
                 if (context.testExpression("Relationships", targetDepth)) {
                     context.nextToken();
-                    block.setRelationships(new ListUnmarshaller<Relationship>(RelationshipJsonUnmarshaller.getInstance()).unmarshall(context));
+                    block.setRelationships(new ListUnmarshaller<Relationship>(RelationshipJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("EntityTypes", targetDepth)) {
                     context.nextToken();
-                    block.setEntityTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    block.setEntityTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("SelectionStatus", targetDepth)) {
                     context.nextToken();

@@ -54,7 +54,9 @@ public class ValidationWarningJsonUnmarshaller implements Unmarshaller<Validatio
                 }
                 if (context.testExpression("warnings", targetDepth)) {
                     context.nextToken();
-                    validationWarning.setWarnings(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    validationWarning.setWarnings(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

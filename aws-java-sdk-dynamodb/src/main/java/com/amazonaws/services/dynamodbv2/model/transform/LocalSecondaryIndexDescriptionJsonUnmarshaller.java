@@ -55,7 +55,8 @@ public class LocalSecondaryIndexDescriptionJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("KeySchema", targetDepth)) {
                     context.nextToken();
                     localSecondaryIndexDescription.setKeySchema(new ListUnmarshaller<KeySchemaElement>(KeySchemaElementJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Projection", targetDepth)) {
                     context.nextToken();

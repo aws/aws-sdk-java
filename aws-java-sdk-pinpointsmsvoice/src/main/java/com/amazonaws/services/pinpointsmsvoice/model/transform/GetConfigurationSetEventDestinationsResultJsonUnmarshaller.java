@@ -52,7 +52,9 @@ public class GetConfigurationSetEventDestinationsResultJsonUnmarshaller implemen
                 if (context.testExpression("EventDestinations", targetDepth)) {
                     context.nextToken();
                     getConfigurationSetEventDestinationsResult.setEventDestinations(new ListUnmarshaller<EventDestination>(EventDestinationJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

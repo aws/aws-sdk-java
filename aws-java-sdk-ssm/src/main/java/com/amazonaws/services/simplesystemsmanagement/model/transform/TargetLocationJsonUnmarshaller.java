@@ -50,11 +50,15 @@ public class TargetLocationJsonUnmarshaller implements Unmarshaller<TargetLocati
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Accounts", targetDepth)) {
                     context.nextToken();
-                    targetLocation.setAccounts(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    targetLocation.setAccounts(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Regions", targetDepth)) {
                     context.nextToken();
-                    targetLocation.setRegions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    targetLocation.setRegions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("TargetLocationMaxConcurrency", targetDepth)) {
                     context.nextToken();

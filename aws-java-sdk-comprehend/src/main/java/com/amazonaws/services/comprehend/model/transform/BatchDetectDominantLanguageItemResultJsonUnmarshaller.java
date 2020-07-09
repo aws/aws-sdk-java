@@ -55,7 +55,8 @@ public class BatchDetectDominantLanguageItemResultJsonUnmarshaller implements Un
                 if (context.testExpression("Languages", targetDepth)) {
                     context.nextToken();
                     batchDetectDominantLanguageItemResult.setLanguages(new ListUnmarshaller<DominantLanguage>(DominantLanguageJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

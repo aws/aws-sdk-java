@@ -54,7 +54,9 @@ public class ListWebACLsResultJsonUnmarshaller implements Unmarshaller<ListWebAC
                 }
                 if (context.testExpression("WebACLs", targetDepth)) {
                     context.nextToken();
-                    listWebACLsResult.setWebACLs(new ListUnmarshaller<WebACLSummary>(WebACLSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listWebACLsResult.setWebACLs(new ListUnmarshaller<WebACLSummary>(WebACLSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

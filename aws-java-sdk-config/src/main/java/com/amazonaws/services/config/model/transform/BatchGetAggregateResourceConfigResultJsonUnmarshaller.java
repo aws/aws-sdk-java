@@ -51,12 +51,16 @@ public class BatchGetAggregateResourceConfigResultJsonUnmarshaller implements Un
                 if (context.testExpression("BaseConfigurationItems", targetDepth)) {
                     context.nextToken();
                     batchGetAggregateResourceConfigResult.setBaseConfigurationItems(new ListUnmarshaller<BaseConfigurationItem>(
-                            BaseConfigurationItemJsonUnmarshaller.getInstance()).unmarshall(context));
+                            BaseConfigurationItemJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("UnprocessedResourceIdentifiers", targetDepth)) {
                     context.nextToken();
                     batchGetAggregateResourceConfigResult.setUnprocessedResourceIdentifiers(new ListUnmarshaller<AggregateResourceIdentifier>(
-                            AggregateResourceIdentifierJsonUnmarshaller.getInstance()).unmarshall(context));
+                            AggregateResourceIdentifierJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

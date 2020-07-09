@@ -51,7 +51,8 @@ public class DescribeWorkspaceImagesResultJsonUnmarshaller implements Unmarshall
                 if (context.testExpression("Images", targetDepth)) {
                     context.nextToken();
                     describeWorkspaceImagesResult.setImages(new ListUnmarshaller<WorkspaceImage>(WorkspaceImageJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

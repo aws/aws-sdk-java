@@ -62,7 +62,9 @@ public class CreateRobotApplicationResultJsonUnmarshaller implements Unmarshalle
                 }
                 if (context.testExpression("sources", targetDepth)) {
                     context.nextToken();
-                    createRobotApplicationResult.setSources(new ListUnmarshaller<Source>(SourceJsonUnmarshaller.getInstance()).unmarshall(context));
+                    createRobotApplicationResult.setSources(new ListUnmarshaller<Source>(SourceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("robotSoftwareSuite", targetDepth)) {
                     context.nextToken();

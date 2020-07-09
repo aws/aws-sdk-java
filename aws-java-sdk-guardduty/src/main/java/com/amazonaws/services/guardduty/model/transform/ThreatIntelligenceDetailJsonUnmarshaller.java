@@ -54,7 +54,9 @@ public class ThreatIntelligenceDetailJsonUnmarshaller implements Unmarshaller<Th
                 }
                 if (context.testExpression("threatNames", targetDepth)) {
                     context.nextToken();
-                    threatIntelligenceDetail.setThreatNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    threatIntelligenceDetail.setThreatNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

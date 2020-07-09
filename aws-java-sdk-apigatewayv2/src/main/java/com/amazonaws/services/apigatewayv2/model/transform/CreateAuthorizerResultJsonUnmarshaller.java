@@ -70,7 +70,9 @@ public class CreateAuthorizerResultJsonUnmarshaller implements Unmarshaller<Crea
                 }
                 if (context.testExpression("identitySource", targetDepth)) {
                     context.nextToken();
-                    createAuthorizerResult.setIdentitySource(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    createAuthorizerResult.setIdentitySource(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("identityValidationExpression", targetDepth)) {
                     context.nextToken();

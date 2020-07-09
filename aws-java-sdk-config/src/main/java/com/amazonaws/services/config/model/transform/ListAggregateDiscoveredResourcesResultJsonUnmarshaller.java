@@ -51,7 +51,9 @@ public class ListAggregateDiscoveredResourcesResultJsonUnmarshaller implements U
                 if (context.testExpression("ResourceIdentifiers", targetDepth)) {
                     context.nextToken();
                     listAggregateDiscoveredResourcesResult.setResourceIdentifiers(new ListUnmarshaller<AggregateResourceIdentifier>(
-                            AggregateResourceIdentifierJsonUnmarshaller.getInstance()).unmarshall(context));
+                            AggregateResourceIdentifierJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

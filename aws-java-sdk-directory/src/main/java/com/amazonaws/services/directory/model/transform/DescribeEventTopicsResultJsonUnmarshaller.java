@@ -50,7 +50,9 @@ public class DescribeEventTopicsResultJsonUnmarshaller implements Unmarshaller<D
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EventTopics", targetDepth)) {
                     context.nextToken();
-                    describeEventTopicsResult.setEventTopics(new ListUnmarshaller<EventTopic>(EventTopicJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeEventTopicsResult.setEventTopics(new ListUnmarshaller<EventTopic>(EventTopicJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

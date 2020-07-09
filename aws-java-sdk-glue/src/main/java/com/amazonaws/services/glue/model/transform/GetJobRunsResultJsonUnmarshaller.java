@@ -50,7 +50,9 @@ public class GetJobRunsResultJsonUnmarshaller implements Unmarshaller<GetJobRuns
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("JobRuns", targetDepth)) {
                     context.nextToken();
-                    getJobRunsResult.setJobRuns(new ListUnmarshaller<JobRun>(JobRunJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getJobRunsResult.setJobRuns(new ListUnmarshaller<JobRun>(JobRunJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

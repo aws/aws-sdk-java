@@ -54,11 +54,15 @@ public class MetricValueJsonUnmarshaller implements Unmarshaller<MetricValue, Js
                 }
                 if (context.testExpression("cidrs", targetDepth)) {
                     context.nextToken();
-                    metricValue.setCidrs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    metricValue.setCidrs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ports", targetDepth)) {
                     context.nextToken();
-                    metricValue.setPorts(new ListUnmarshaller<Integer>(context.getUnmarshaller(Integer.class)).unmarshall(context));
+                    metricValue.setPorts(new ListUnmarshaller<Integer>(context.getUnmarshaller(Integer.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

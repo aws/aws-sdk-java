@@ -51,7 +51,9 @@ public class ListComplianceStatusResultJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("PolicyComplianceStatusList", targetDepth)) {
                     context.nextToken();
                     listComplianceStatusResult.setPolicyComplianceStatusList(new ListUnmarshaller<PolicyComplianceStatus>(
-                            PolicyComplianceStatusJsonUnmarshaller.getInstance()).unmarshall(context));
+                            PolicyComplianceStatusJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

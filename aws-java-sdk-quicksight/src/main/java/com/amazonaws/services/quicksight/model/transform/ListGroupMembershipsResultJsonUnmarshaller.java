@@ -53,7 +53,8 @@ public class ListGroupMembershipsResultJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("GroupMemberList", targetDepth)) {
                     context.nextToken();
                     listGroupMembershipsResult.setGroupMemberList(new ListUnmarshaller<GroupMember>(GroupMemberJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

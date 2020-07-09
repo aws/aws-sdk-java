@@ -51,7 +51,8 @@ public class DescribeDomainControllersResultJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("DomainControllers", targetDepth)) {
                     context.nextToken();
                     describeDomainControllersResult.setDomainControllers(new ListUnmarshaller<DomainController>(DomainControllerJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

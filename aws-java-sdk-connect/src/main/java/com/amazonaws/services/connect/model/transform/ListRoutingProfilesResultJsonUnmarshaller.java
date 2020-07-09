@@ -51,7 +51,9 @@ public class ListRoutingProfilesResultJsonUnmarshaller implements Unmarshaller<L
                 if (context.testExpression("RoutingProfileSummaryList", targetDepth)) {
                     context.nextToken();
                     listRoutingProfilesResult.setRoutingProfileSummaryList(new ListUnmarshaller<RoutingProfileSummary>(RoutingProfileSummaryJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

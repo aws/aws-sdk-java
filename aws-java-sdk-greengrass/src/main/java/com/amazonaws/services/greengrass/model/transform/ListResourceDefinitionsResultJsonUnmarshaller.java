@@ -51,7 +51,9 @@ public class ListResourceDefinitionsResultJsonUnmarshaller implements Unmarshall
                 if (context.testExpression("Definitions", targetDepth)) {
                     context.nextToken();
                     listResourceDefinitionsResult.setDefinitions(new ListUnmarshaller<DefinitionInformation>(DefinitionInformationJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

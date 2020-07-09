@@ -98,7 +98,9 @@ public class DescribeDomainResultJsonUnmarshaller implements Unmarshaller<Descri
                 }
                 if (context.testExpression("SubnetIds", targetDepth)) {
                     context.nextToken();
-                    describeDomainResult.setSubnetIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    describeDomainResult.setSubnetIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Url", targetDepth)) {
                     context.nextToken();

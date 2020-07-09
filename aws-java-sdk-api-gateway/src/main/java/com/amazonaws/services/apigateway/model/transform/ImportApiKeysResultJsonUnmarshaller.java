@@ -50,11 +50,15 @@ public class ImportApiKeysResultJsonUnmarshaller implements Unmarshaller<ImportA
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ids", targetDepth)) {
                     context.nextToken();
-                    importApiKeysResult.setIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    importApiKeysResult.setIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("warnings", targetDepth)) {
                     context.nextToken();
-                    importApiKeysResult.setWarnings(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    importApiKeysResult.setWarnings(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

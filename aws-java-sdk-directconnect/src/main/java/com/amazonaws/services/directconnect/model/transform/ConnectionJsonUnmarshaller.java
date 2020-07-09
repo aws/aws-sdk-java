@@ -110,7 +110,9 @@ public class ConnectionJsonUnmarshaller implements Unmarshaller<Connection, Json
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
-                    connection.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    connection.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("providerName", targetDepth)) {
                     context.nextToken();

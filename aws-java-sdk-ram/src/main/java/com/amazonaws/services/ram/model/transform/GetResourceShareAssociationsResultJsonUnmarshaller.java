@@ -51,7 +51,9 @@ public class GetResourceShareAssociationsResultJsonUnmarshaller implements Unmar
                 if (context.testExpression("resourceShareAssociations", targetDepth)) {
                     context.nextToken();
                     getResourceShareAssociationsResult.setResourceShareAssociations(new ListUnmarshaller<ResourceShareAssociation>(
-                            ResourceShareAssociationJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ResourceShareAssociationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

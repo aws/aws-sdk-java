@@ -55,7 +55,8 @@ public class RenewalSummaryJsonUnmarshaller implements Unmarshaller<RenewalSumma
                 if (context.testExpression("DomainValidationOptions", targetDepth)) {
                     context.nextToken();
                     renewalSummary.setDomainValidationOptions(new ListUnmarshaller<DomainValidation>(DomainValidationJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("RenewalStatusReason", targetDepth)) {
                     context.nextToken();

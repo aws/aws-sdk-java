@@ -58,7 +58,9 @@ public class PutBotResultJsonUnmarshaller implements Unmarshaller<PutBotResult, 
                 }
                 if (context.testExpression("intents", targetDepth)) {
                     context.nextToken();
-                    putBotResult.setIntents(new ListUnmarshaller<Intent>(IntentJsonUnmarshaller.getInstance()).unmarshall(context));
+                    putBotResult.setIntents(new ListUnmarshaller<Intent>(IntentJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("clarificationPrompt", targetDepth)) {
                     context.nextToken();
@@ -118,7 +120,9 @@ public class PutBotResultJsonUnmarshaller implements Unmarshaller<PutBotResult, 
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
-                    putBotResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    putBotResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

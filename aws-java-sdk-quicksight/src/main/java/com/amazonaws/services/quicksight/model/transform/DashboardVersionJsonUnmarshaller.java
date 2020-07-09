@@ -54,7 +54,9 @@ public class DashboardVersionJsonUnmarshaller implements Unmarshaller<DashboardV
                 }
                 if (context.testExpression("Errors", targetDepth)) {
                     context.nextToken();
-                    dashboardVersion.setErrors(new ListUnmarshaller<DashboardError>(DashboardErrorJsonUnmarshaller.getInstance()).unmarshall(context));
+                    dashboardVersion.setErrors(new ListUnmarshaller<DashboardError>(DashboardErrorJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("VersionNumber", targetDepth)) {
                     context.nextToken();
@@ -74,7 +76,9 @@ public class DashboardVersionJsonUnmarshaller implements Unmarshaller<DashboardV
                 }
                 if (context.testExpression("DataSetArns", targetDepth)) {
                     context.nextToken();
-                    dashboardVersion.setDataSetArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    dashboardVersion.setDataSetArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
                     context.nextToken();

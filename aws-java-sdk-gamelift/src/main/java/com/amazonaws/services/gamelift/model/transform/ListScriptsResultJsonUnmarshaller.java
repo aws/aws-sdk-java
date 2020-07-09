@@ -50,7 +50,9 @@ public class ListScriptsResultJsonUnmarshaller implements Unmarshaller<ListScrip
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Scripts", targetDepth)) {
                     context.nextToken();
-                    listScriptsResult.setScripts(new ListUnmarshaller<Script>(ScriptJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listScriptsResult.setScripts(new ListUnmarshaller<Script>(ScriptJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

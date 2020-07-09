@@ -50,7 +50,9 @@ public class ConditionJsonUnmarshaller implements Unmarshaller<Condition, JsonUn
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AttributeValueList", targetDepth)) {
                     context.nextToken();
-                    condition.setAttributeValueList(new ListUnmarshaller<AttributeValue>(AttributeValueJsonUnmarshaller.getInstance()).unmarshall(context));
+                    condition.setAttributeValueList(new ListUnmarshaller<AttributeValue>(AttributeValueJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ComparisonOperator", targetDepth)) {
                     context.nextToken();

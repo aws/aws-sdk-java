@@ -58,7 +58,9 @@ public class ImageScanFindingsJsonUnmarshaller implements Unmarshaller<ImageScan
                 }
                 if (context.testExpression("findings", targetDepth)) {
                     context.nextToken();
-                    imageScanFindings.setFindings(new ListUnmarshaller<ImageScanFinding>(ImageScanFindingJsonUnmarshaller.getInstance()).unmarshall(context));
+                    imageScanFindings.setFindings(new ListUnmarshaller<ImageScanFinding>(ImageScanFindingJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("findingSeverityCounts", targetDepth)) {
                     context.nextToken();

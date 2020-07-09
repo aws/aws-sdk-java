@@ -70,7 +70,9 @@ public class ResourceJsonUnmarshaller implements Unmarshaller<Resource, JsonUnma
                 }
                 if (context.testExpression("stringSetValue", targetDepth)) {
                     context.nextToken();
-                    resource.setStringSetValue(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    resource.setStringSetValue(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

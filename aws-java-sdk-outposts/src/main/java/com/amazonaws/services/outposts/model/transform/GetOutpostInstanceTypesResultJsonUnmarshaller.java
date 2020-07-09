@@ -51,7 +51,8 @@ public class GetOutpostInstanceTypesResultJsonUnmarshaller implements Unmarshall
                 if (context.testExpression("InstanceTypes", targetDepth)) {
                     context.nextToken();
                     getOutpostInstanceTypesResult.setInstanceTypes(new ListUnmarshaller<InstanceTypeItem>(InstanceTypeItemJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

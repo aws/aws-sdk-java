@@ -51,7 +51,8 @@ public class GetRelationalDatabaseLogEventsResultJsonUnmarshaller implements Unm
                 if (context.testExpression("resourceLogEvents", targetDepth)) {
                     context.nextToken();
                     getRelationalDatabaseLogEventsResult.setResourceLogEvents(new ListUnmarshaller<LogEvent>(LogEventJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextBackwardToken", targetDepth)) {
                     context.nextToken();

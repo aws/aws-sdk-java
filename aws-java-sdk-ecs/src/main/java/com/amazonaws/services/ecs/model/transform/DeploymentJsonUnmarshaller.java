@@ -83,7 +83,9 @@ public class DeploymentJsonUnmarshaller implements Unmarshaller<Deployment, Json
                 if (context.testExpression("capacityProviderStrategy", targetDepth)) {
                     context.nextToken();
                     deployment.setCapacityProviderStrategy(new ListUnmarshaller<CapacityProviderStrategyItem>(CapacityProviderStrategyItemJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("launchType", targetDepth)) {
                     context.nextToken();

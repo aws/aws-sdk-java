@@ -51,7 +51,8 @@ public class ListConfigurationHistoryResultJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("EventList", targetDepth)) {
                     context.nextToken();
                     listConfigurationHistoryResult.setEventList(new ListUnmarshaller<ConfigurationEvent>(ConfigurationEventJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

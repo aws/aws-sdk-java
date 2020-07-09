@@ -51,7 +51,9 @@ public class DescribePipelinesResultJsonUnmarshaller implements Unmarshaller<Des
                 if (context.testExpression("pipelineDescriptionList", targetDepth)) {
                     context.nextToken();
                     describePipelinesResult.setPipelineDescriptionList(new ListUnmarshaller<PipelineDescription>(PipelineDescriptionJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

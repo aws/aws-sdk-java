@@ -1317,6 +1317,39 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteHumanTaskUiResult> deleteHumanTaskUiAsync(DeleteHumanTaskUiRequest request) {
+
+        return deleteHumanTaskUiAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteHumanTaskUiResult> deleteHumanTaskUiAsync(final DeleteHumanTaskUiRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteHumanTaskUiRequest, DeleteHumanTaskUiResult> asyncHandler) {
+        final DeleteHumanTaskUiRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteHumanTaskUiResult>() {
+            @Override
+            public DeleteHumanTaskUiResult call() throws Exception {
+                DeleteHumanTaskUiResult result = null;
+
+                try {
+                    result = executeDeleteHumanTaskUi(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteModelResult> deleteModelAsync(DeleteModelRequest request) {
 
         return deleteModelAsync(request, null);

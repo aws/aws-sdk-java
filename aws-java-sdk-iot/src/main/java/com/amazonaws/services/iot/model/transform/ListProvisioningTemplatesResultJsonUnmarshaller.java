@@ -51,7 +51,9 @@ public class ListProvisioningTemplatesResultJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("templates", targetDepth)) {
                     context.nextToken();
                     listProvisioningTemplatesResult.setTemplates(new ListUnmarshaller<ProvisioningTemplateSummary>(ProvisioningTemplateSummaryJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

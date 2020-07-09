@@ -53,7 +53,9 @@ public class ListDashboardVersionsResultJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("DashboardVersionSummaryList", targetDepth)) {
                     context.nextToken();
                     listDashboardVersionsResult.setDashboardVersionSummaryList(new ListUnmarshaller<DashboardVersionSummary>(
-                            DashboardVersionSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                            DashboardVersionSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

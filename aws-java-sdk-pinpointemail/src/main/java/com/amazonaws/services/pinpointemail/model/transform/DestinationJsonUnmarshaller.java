@@ -50,15 +50,21 @@ public class DestinationJsonUnmarshaller implements Unmarshaller<Destination, Js
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ToAddresses", targetDepth)) {
                     context.nextToken();
-                    destination.setToAddresses(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    destination.setToAddresses(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("CcAddresses", targetDepth)) {
                     context.nextToken();
-                    destination.setCcAddresses(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    destination.setCcAddresses(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("BccAddresses", targetDepth)) {
                     context.nextToken();
-                    destination.setBccAddresses(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    destination.setBccAddresses(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

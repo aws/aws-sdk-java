@@ -51,7 +51,9 @@ public class DescribeMaintenanceWindowTargetsResultJsonUnmarshaller implements U
                 if (context.testExpression("Targets", targetDepth)) {
                     context.nextToken();
                     describeMaintenanceWindowTargetsResult.setTargets(new ListUnmarshaller<MaintenanceWindowTarget>(MaintenanceWindowTargetJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

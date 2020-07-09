@@ -51,7 +51,8 @@ public class DescribeProjectsResultJsonUnmarshaller implements Unmarshaller<Desc
                 if (context.testExpression("ProjectDescriptions", targetDepth)) {
                     context.nextToken();
                     describeProjectsResult.setProjectDescriptions(new ListUnmarshaller<ProjectDescription>(ProjectDescriptionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

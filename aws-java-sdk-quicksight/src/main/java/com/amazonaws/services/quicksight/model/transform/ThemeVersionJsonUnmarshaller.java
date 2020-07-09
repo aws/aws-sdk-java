@@ -74,7 +74,9 @@ public class ThemeVersionJsonUnmarshaller implements Unmarshaller<ThemeVersion, 
                 }
                 if (context.testExpression("Errors", targetDepth)) {
                     context.nextToken();
-                    themeVersion.setErrors(new ListUnmarshaller<ThemeError>(ThemeErrorJsonUnmarshaller.getInstance()).unmarshall(context));
+                    themeVersion.setErrors(new ListUnmarshaller<ThemeError>(ThemeErrorJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();

@@ -50,7 +50,9 @@ public class ListNodesResultJsonUnmarshaller implements Unmarshaller<ListNodesRe
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Nodes", targetDepth)) {
                     context.nextToken();
-                    listNodesResult.setNodes(new ListUnmarshaller<NodeSummary>(NodeSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listNodesResult.setNodes(new ListUnmarshaller<NodeSummary>(NodeSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

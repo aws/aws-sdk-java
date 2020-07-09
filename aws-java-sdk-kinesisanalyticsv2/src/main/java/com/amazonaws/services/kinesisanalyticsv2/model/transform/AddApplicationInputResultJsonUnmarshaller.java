@@ -59,7 +59,8 @@ public class AddApplicationInputResultJsonUnmarshaller implements Unmarshaller<A
                 if (context.testExpression("InputDescriptions", targetDepth)) {
                     context.nextToken();
                     addApplicationInputResult.setInputDescriptions(new ListUnmarshaller<InputDescription>(InputDescriptionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

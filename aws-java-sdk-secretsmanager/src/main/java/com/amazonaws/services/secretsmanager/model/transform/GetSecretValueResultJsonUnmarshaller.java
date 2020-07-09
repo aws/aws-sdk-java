@@ -70,7 +70,9 @@ public class GetSecretValueResultJsonUnmarshaller implements Unmarshaller<GetSec
                 }
                 if (context.testExpression("VersionStages", targetDepth)) {
                     context.nextToken();
-                    getSecretValueResult.setVersionStages(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    getSecretValueResult.setVersionStages(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("CreatedDate", targetDepth)) {
                     context.nextToken();

@@ -74,7 +74,9 @@ public class UpdateBrokerResultJsonUnmarshaller implements Unmarshaller<UpdateBr
                 }
                 if (context.testExpression("securityGroups", targetDepth)) {
                     context.nextToken();
-                    updateBrokerResult.setSecurityGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    updateBrokerResult.setSecurityGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -51,7 +51,8 @@ public class DeleteDeploymentGroupResultJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("hooksNotCleanedUp", targetDepth)) {
                     context.nextToken();
                     deleteDeploymentGroupResult.setHooksNotCleanedUp(new ListUnmarshaller<AutoScalingGroup>(AutoScalingGroupJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -51,7 +51,9 @@ public class ListResourceSharePermissionsResultJsonUnmarshaller implements Unmar
                 if (context.testExpression("permissions", targetDepth)) {
                     context.nextToken();
                     listResourceSharePermissionsResult.setPermissions(new ListUnmarshaller<ResourceSharePermissionSummary>(
-                            ResourceSharePermissionSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ResourceSharePermissionSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

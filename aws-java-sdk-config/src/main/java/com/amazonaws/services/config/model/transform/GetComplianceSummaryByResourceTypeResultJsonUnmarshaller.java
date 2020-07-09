@@ -52,7 +52,9 @@ public class GetComplianceSummaryByResourceTypeResultJsonUnmarshaller implements
                 if (context.testExpression("ComplianceSummariesByResourceType", targetDepth)) {
                     context.nextToken();
                     getComplianceSummaryByResourceTypeResult.setComplianceSummariesByResourceType(new ListUnmarshaller<ComplianceSummaryByResourceType>(
-                            ComplianceSummaryByResourceTypeJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ComplianceSummaryByResourceTypeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

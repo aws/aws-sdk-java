@@ -73,12 +73,16 @@ public class DescribeAuditMitigationActionsTaskResultJsonUnmarshaller implements
                 if (context.testExpression("auditCheckToActionsMapping", targetDepth)) {
                     context.nextToken();
                     describeAuditMitigationActionsTaskResult.setAuditCheckToActionsMapping(new MapUnmarshaller<String, java.util.List<String>>(context
-                            .getUnmarshaller(String.class), new ListUnmarshaller<String>(context.getUnmarshaller(String.class))).unmarshall(context));
+                            .getUnmarshaller(String.class), new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    ).unmarshall(context));
                 }
                 if (context.testExpression("actionsDefinition", targetDepth)) {
                     context.nextToken();
                     describeAuditMitigationActionsTaskResult.setActionsDefinition(new ListUnmarshaller<MitigationAction>(MitigationActionJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

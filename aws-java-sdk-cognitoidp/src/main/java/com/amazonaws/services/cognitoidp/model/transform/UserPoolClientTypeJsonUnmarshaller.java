@@ -78,27 +78,39 @@ public class UserPoolClientTypeJsonUnmarshaller implements Unmarshaller<UserPool
                 }
                 if (context.testExpression("ReadAttributes", targetDepth)) {
                     context.nextToken();
-                    userPoolClientType.setReadAttributes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    userPoolClientType.setReadAttributes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("WriteAttributes", targetDepth)) {
                     context.nextToken();
-                    userPoolClientType.setWriteAttributes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    userPoolClientType.setWriteAttributes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ExplicitAuthFlows", targetDepth)) {
                     context.nextToken();
-                    userPoolClientType.setExplicitAuthFlows(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    userPoolClientType.setExplicitAuthFlows(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("SupportedIdentityProviders", targetDepth)) {
                     context.nextToken();
-                    userPoolClientType.setSupportedIdentityProviders(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    userPoolClientType.setSupportedIdentityProviders(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("CallbackURLs", targetDepth)) {
                     context.nextToken();
-                    userPoolClientType.setCallbackURLs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    userPoolClientType.setCallbackURLs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("LogoutURLs", targetDepth)) {
                     context.nextToken();
-                    userPoolClientType.setLogoutURLs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    userPoolClientType.setLogoutURLs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("DefaultRedirectURI", targetDepth)) {
                     context.nextToken();
@@ -106,11 +118,15 @@ public class UserPoolClientTypeJsonUnmarshaller implements Unmarshaller<UserPool
                 }
                 if (context.testExpression("AllowedOAuthFlows", targetDepth)) {
                     context.nextToken();
-                    userPoolClientType.setAllowedOAuthFlows(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    userPoolClientType.setAllowedOAuthFlows(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("AllowedOAuthScopes", targetDepth)) {
                     context.nextToken();
-                    userPoolClientType.setAllowedOAuthScopes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    userPoolClientType.setAllowedOAuthScopes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("AllowedOAuthFlowsUserPoolClient", targetDepth)) {
                     context.nextToken();

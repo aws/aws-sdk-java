@@ -50,7 +50,9 @@ public class LabelParameterVersionResultJsonUnmarshaller implements Unmarshaller
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("InvalidLabels", targetDepth)) {
                     context.nextToken();
-                    labelParameterVersionResult.setInvalidLabels(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    labelParameterVersionResult.setInvalidLabels(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ParameterVersion", targetDepth)) {
                     context.nextToken();

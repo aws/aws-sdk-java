@@ -51,7 +51,9 @@ public class DescribeConfigurationRecordersResultJsonUnmarshaller implements Unm
                 if (context.testExpression("ConfigurationRecorders", targetDepth)) {
                     context.nextToken();
                     describeConfigurationRecordersResult.setConfigurationRecorders(new ListUnmarshaller<ConfigurationRecorder>(
-                            ConfigurationRecorderJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ConfigurationRecorderJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

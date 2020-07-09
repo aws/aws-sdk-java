@@ -51,7 +51,9 @@ public class DescribeConformancePacksResultJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("ConformancePackDetails", targetDepth)) {
                     context.nextToken();
                     describeConformancePacksResult.setConformancePackDetails(new ListUnmarshaller<ConformancePackDetail>(ConformancePackDetailJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

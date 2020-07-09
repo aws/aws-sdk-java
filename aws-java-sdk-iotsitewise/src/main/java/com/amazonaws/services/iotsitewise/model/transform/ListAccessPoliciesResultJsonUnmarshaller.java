@@ -51,7 +51,9 @@ public class ListAccessPoliciesResultJsonUnmarshaller implements Unmarshaller<Li
                 if (context.testExpression("accessPolicySummaries", targetDepth)) {
                     context.nextToken();
                     listAccessPoliciesResult.setAccessPolicySummaries(new ListUnmarshaller<AccessPolicySummary>(AccessPolicySummaryJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

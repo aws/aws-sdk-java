@@ -51,7 +51,9 @@ public class DescribeAssessmentTemplatesResultJsonUnmarshaller implements Unmars
                 if (context.testExpression("assessmentTemplates", targetDepth)) {
                     context.nextToken();
                     describeAssessmentTemplatesResult.setAssessmentTemplates(new ListUnmarshaller<AssessmentTemplate>(AssessmentTemplateJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("failedItems", targetDepth)) {
                     context.nextToken();

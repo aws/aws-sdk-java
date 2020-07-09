@@ -50,7 +50,9 @@ public class DescribeAgentsResultJsonUnmarshaller implements Unmarshaller<Descri
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("agentsInfo", targetDepth)) {
                     context.nextToken();
-                    describeAgentsResult.setAgentsInfo(new ListUnmarshaller<AgentInfo>(AgentInfoJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeAgentsResult.setAgentsInfo(new ListUnmarshaller<AgentInfo>(AgentInfoJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

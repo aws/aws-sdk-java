@@ -54,15 +54,21 @@ public class PolicyDetailsJsonUnmarshaller implements Unmarshaller<PolicyDetails
                 }
                 if (context.testExpression("ResourceTypes", targetDepth)) {
                     context.nextToken();
-                    policyDetails.setResourceTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    policyDetails.setResourceTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("TargetTags", targetDepth)) {
                     context.nextToken();
-                    policyDetails.setTargetTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    policyDetails.setTargetTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Schedules", targetDepth)) {
                     context.nextToken();
-                    policyDetails.setSchedules(new ListUnmarshaller<Schedule>(ScheduleJsonUnmarshaller.getInstance()).unmarshall(context));
+                    policyDetails.setSchedules(new ListUnmarshaller<Schedule>(ScheduleJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Parameters", targetDepth)) {
                     context.nextToken();

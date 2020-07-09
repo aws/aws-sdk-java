@@ -50,7 +50,9 @@ public class CampaignsResponseJsonUnmarshaller implements Unmarshaller<Campaigns
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Item", targetDepth)) {
                     context.nextToken();
-                    campaignsResponse.setItem(new ListUnmarshaller<CampaignResponse>(CampaignResponseJsonUnmarshaller.getInstance()).unmarshall(context));
+                    campaignsResponse.setItem(new ListUnmarshaller<CampaignResponse>(CampaignResponseJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

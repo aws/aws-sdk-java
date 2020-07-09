@@ -51,13 +51,16 @@ public class SearchProductsResultJsonUnmarshaller implements Unmarshaller<Search
                 if (context.testExpression("ProductViewSummaries", targetDepth)) {
                     context.nextToken();
                     searchProductsResult.setProductViewSummaries(new ListUnmarshaller<ProductViewSummary>(ProductViewSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ProductViewAggregations", targetDepth)) {
                     context.nextToken();
                     searchProductsResult.setProductViewAggregations(new MapUnmarshaller<String, java.util.List<ProductViewAggregationValue>>(context
                             .getUnmarshaller(String.class), new ListUnmarshaller<ProductViewAggregationValue>(ProductViewAggregationValueJsonUnmarshaller
-                            .getInstance())).unmarshall(context));
+                            .getInstance())
+
+                    ).unmarshall(context));
                 }
                 if (context.testExpression("NextPageToken", targetDepth)) {
                     context.nextToken();

@@ -82,7 +82,9 @@ public class MatchmakingTicketJsonUnmarshaller implements Unmarshaller<Matchmaki
                 }
                 if (context.testExpression("Players", targetDepth)) {
                     context.nextToken();
-                    matchmakingTicket.setPlayers(new ListUnmarshaller<Player>(PlayerJsonUnmarshaller.getInstance()).unmarshall(context));
+                    matchmakingTicket.setPlayers(new ListUnmarshaller<Player>(PlayerJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("GameSessionConnectionInfo", targetDepth)) {
                     context.nextToken();

@@ -62,7 +62,9 @@ public class S3DataSourceJsonUnmarshaller implements Unmarshaller<S3DataSource, 
                 }
                 if (context.testExpression("AttributeNames", targetDepth)) {
                     context.nextToken();
-                    s3DataSource.setAttributeNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    s3DataSource.setAttributeNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -70,7 +70,9 @@ public class GetEnvironmentResultJsonUnmarshaller implements Unmarshaller<GetEnv
                 }
                 if (context.testExpression("Monitors", targetDepth)) {
                     context.nextToken();
-                    getEnvironmentResult.setMonitors(new ListUnmarshaller<Monitor>(MonitorJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getEnvironmentResult.setMonitors(new ListUnmarshaller<Monitor>(MonitorJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

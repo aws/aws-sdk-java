@@ -51,7 +51,8 @@ public class ListContainerInstancesResultJsonUnmarshaller implements Unmarshalle
                 if (context.testExpression("containerInstanceArns", targetDepth)) {
                     context.nextToken();
                     listContainerInstancesResult.setContainerInstanceArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

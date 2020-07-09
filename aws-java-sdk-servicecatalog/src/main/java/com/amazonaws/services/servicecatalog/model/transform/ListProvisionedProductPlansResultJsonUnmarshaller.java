@@ -51,7 +51,9 @@ public class ListProvisionedProductPlansResultJsonUnmarshaller implements Unmars
                 if (context.testExpression("ProvisionedProductPlans", targetDepth)) {
                     context.nextToken();
                     listProvisionedProductPlansResult.setProvisionedProductPlans(new ListUnmarshaller<ProvisionedProductPlanSummary>(
-                            ProvisionedProductPlanSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ProvisionedProductPlanSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextPageToken", targetDepth)) {
                     context.nextToken();

@@ -51,7 +51,8 @@ public class ListEmailIdentitiesResultJsonUnmarshaller implements Unmarshaller<L
                 if (context.testExpression("EmailIdentities", targetDepth)) {
                     context.nextToken();
                     listEmailIdentitiesResult.setEmailIdentities(new ListUnmarshaller<IdentityInfo>(IdentityInfoJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

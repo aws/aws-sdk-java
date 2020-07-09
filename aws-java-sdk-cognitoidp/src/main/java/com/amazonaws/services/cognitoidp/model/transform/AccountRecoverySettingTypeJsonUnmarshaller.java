@@ -51,7 +51,8 @@ public class AccountRecoverySettingTypeJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("RecoveryMechanisms", targetDepth)) {
                     context.nextToken();
                     accountRecoverySettingType.setRecoveryMechanisms(new ListUnmarshaller<RecoveryOptionType>(RecoveryOptionTypeJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

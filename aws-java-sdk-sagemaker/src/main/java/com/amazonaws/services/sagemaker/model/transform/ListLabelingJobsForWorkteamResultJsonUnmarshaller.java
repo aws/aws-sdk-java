@@ -51,7 +51,9 @@ public class ListLabelingJobsForWorkteamResultJsonUnmarshaller implements Unmars
                 if (context.testExpression("LabelingJobSummaryList", targetDepth)) {
                     context.nextToken();
                     listLabelingJobsForWorkteamResult.setLabelingJobSummaryList(new ListUnmarshaller<LabelingJobForWorkteamSummary>(
-                            LabelingJobForWorkteamSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                            LabelingJobForWorkteamSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

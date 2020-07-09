@@ -50,7 +50,9 @@ public class ListActionTypesResultJsonUnmarshaller implements Unmarshaller<ListA
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("actionTypes", targetDepth)) {
                     context.nextToken();
-                    listActionTypesResult.setActionTypes(new ListUnmarshaller<ActionType>(ActionTypeJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listActionTypesResult.setActionTypes(new ListUnmarshaller<ActionType>(ActionTypeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

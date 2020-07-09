@@ -58,11 +58,15 @@ public class QualificationRequirementJsonUnmarshaller implements Unmarshaller<Qu
                 }
                 if (context.testExpression("IntegerValues", targetDepth)) {
                     context.nextToken();
-                    qualificationRequirement.setIntegerValues(new ListUnmarshaller<Integer>(context.getUnmarshaller(Integer.class)).unmarshall(context));
+                    qualificationRequirement.setIntegerValues(new ListUnmarshaller<Integer>(context.getUnmarshaller(Integer.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("LocaleValues", targetDepth)) {
                     context.nextToken();
-                    qualificationRequirement.setLocaleValues(new ListUnmarshaller<Locale>(LocaleJsonUnmarshaller.getInstance()).unmarshall(context));
+                    qualificationRequirement.setLocaleValues(new ListUnmarshaller<Locale>(LocaleJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("RequiredToPreview", targetDepth)) {
                     context.nextToken();

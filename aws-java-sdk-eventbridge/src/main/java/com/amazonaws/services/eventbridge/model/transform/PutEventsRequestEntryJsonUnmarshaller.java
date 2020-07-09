@@ -58,7 +58,9 @@ public class PutEventsRequestEntryJsonUnmarshaller implements Unmarshaller<PutEv
                 }
                 if (context.testExpression("Resources", targetDepth)) {
                     context.nextToken();
-                    putEventsRequestEntry.setResources(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    putEventsRequestEntry.setResources(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("DetailType", targetDepth)) {
                     context.nextToken();

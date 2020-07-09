@@ -54,7 +54,9 @@ public class FunctionDefinitionVersionJsonUnmarshaller implements Unmarshaller<F
                 }
                 if (context.testExpression("Functions", targetDepth)) {
                     context.nextToken();
-                    functionDefinitionVersion.setFunctions(new ListUnmarshaller<Function>(FunctionJsonUnmarshaller.getInstance()).unmarshall(context));
+                    functionDefinitionVersion.setFunctions(new ListUnmarshaller<Function>(FunctionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -495,6 +495,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "AlreadyExistsException",
+      "fullyQualifiedName" : "com.amazonaws.services.pinpointsmsvoice.exception.AlreadyExistsException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -503,6 +504,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.pinpointsmsvoice.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -534,6 +536,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "BadRequestException",
+      "fullyQualifiedName" : "com.amazonaws.services.pinpointsmsvoice.exception.BadRequestException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -542,6 +545,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.pinpointsmsvoice.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -573,6 +577,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.pinpointsmsvoice.model.CallInstructionsMessageType",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -634,6 +639,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The language to use when delivering the message. For a complete list of supported languages, see the Amazon Polly Developer Guide.\n@param text The language to use when delivering the message. For a complete list of supported languages, see the Amazon Polly Developer Guide.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -704,6 +710,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The language to use when delivering the message. For a complete list of supported languages, see the Amazon Polly Developer Guide.\n@param text The language to use when delivering the message. For a complete list of supported languages, see the Amazon Polly Developer Guide.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -719,6 +726,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.pinpointsmsvoice.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ ],
@@ -753,6 +761,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.pinpointsmsvoice.model.CloudWatchLogsDestination",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -814,6 +823,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The Amazon Resource Name (ARN) of an Amazon Identity and Access Management (IAM) role that is able to write event data to an Amazon CloudWatch destination.\n@param iamRoleArn The Amazon Resource Name (ARN) of an Amazon Identity and Access Management (IAM) role that is able to write event data to an Amazon CloudWatch destination.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -882,6 +892,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The name of the Amazon CloudWatch Log Group that you want to record events in.\n@param logGroupArn The name of the Amazon CloudWatch Log Group that you want to record events in.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -952,6 +963,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The Amazon Resource Name (ARN) of an Amazon Identity and Access Management (IAM) role that is able to write event data to an Amazon CloudWatch destination.\n@param iamRoleArn The Amazon Resource Name (ARN) of an Amazon Identity and Access Management (IAM) role that is able to write event data to an Amazon CloudWatch destination.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1021,6 +1033,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The name of the Amazon CloudWatch Log Group that you want to record events in.\n@param logGroupArn The name of the Amazon CloudWatch Log Group that you want to record events in.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1036,6 +1049,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.pinpointsmsvoice.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ ],
@@ -1070,6 +1084,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.pinpointsmsvoice.request.CreateConfigurationSetEventDestinationRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1138,6 +1153,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**ConfigurationSetName\n@param configurationSetName ConfigurationSetName\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1206,6 +1222,7 @@
           "variableSetterType" : "EventDestinationDefinition"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param eventDestination \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1274,6 +1291,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A name that identifies the event destination.\n@param eventDestinationName A name that identifies the event destination.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1344,6 +1362,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**ConfigurationSetName\n@param configurationSetName ConfigurationSetName\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1413,6 +1432,7 @@
             "variableSetterType" : "EventDestinationDefinition"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param eventDestination \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1482,6 +1502,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A name that identifies the event destination.\n@param eventDestinationName A name that identifies the event destination.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1497,6 +1518,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.pinpointsmsvoice.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ConfigurationSetName" ],
@@ -1528,6 +1550,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.pinpointsmsvoice.response.CreateConfigurationSetEventDestinationResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1536,6 +1559,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.pinpointsmsvoice.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1570,6 +1594,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.pinpointsmsvoice.request.CreateConfigurationSetRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1638,6 +1663,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The name that you want to give the configuration set.\n@param configurationSetName The name that you want to give the configuration set.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1708,6 +1734,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The name that you want to give the configuration set.\n@param configurationSetName The name that you want to give the configuration set.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1723,6 +1750,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.pinpointsmsvoice.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1754,6 +1782,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.pinpointsmsvoice.response.CreateConfigurationSetResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1762,6 +1791,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.pinpointsmsvoice.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1796,6 +1826,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.pinpointsmsvoice.request.DeleteConfigurationSetEventDestinationRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1864,6 +1895,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**ConfigurationSetName\n@param configurationSetName ConfigurationSetName\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1932,6 +1964,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**EventDestinationName\n@param eventDestinationName EventDestinationName\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2002,6 +2035,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**ConfigurationSetName\n@param configurationSetName ConfigurationSetName\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2071,6 +2105,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**EventDestinationName\n@param eventDestinationName EventDestinationName\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2086,6 +2121,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.pinpointsmsvoice.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "EventDestinationName", "ConfigurationSetName" ],
@@ -2117,6 +2153,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.pinpointsmsvoice.response.DeleteConfigurationSetEventDestinationResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2125,6 +2162,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.pinpointsmsvoice.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2159,6 +2197,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.pinpointsmsvoice.request.DeleteConfigurationSetRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2227,6 +2266,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**ConfigurationSetName\n@param configurationSetName ConfigurationSetName\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2297,6 +2337,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**ConfigurationSetName\n@param configurationSetName ConfigurationSetName\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2312,6 +2353,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.pinpointsmsvoice.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ConfigurationSetName" ],
@@ -2343,6 +2385,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.pinpointsmsvoice.response.DeleteConfigurationSetResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2351,6 +2394,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.pinpointsmsvoice.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2385,6 +2429,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.pinpointsmsvoice.model.EventDestination",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2446,6 +2491,7 @@
           "variableSetterType" : "CloudWatchLogsDestination"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param cloudWatchLogsDestination \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2514,6 +2560,7 @@
           "variableSetterType" : "Boolean"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**Indicates whether or not the event destination is enabled. If the event destination is enabled, then Amazon Pinpoint sends response data to the specified event destination.\n@param enabled Indicates whether or not the event destination is enabled. If the event destination is enabled, then Amazon Pinpoint sends response data to the specified event destination.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2582,6 +2629,7 @@
           "variableSetterType" : "KinesisFirehoseDestination"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param kinesisFirehoseDestination \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2689,6 +2737,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see EventType*/",
@@ -2733,6 +2782,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setMatchingEventTypes(java.util.Collection)} or {@link #withMatchingEventTypes(java.util.Collection)} if you want to override the existing values.</p>\n@param matchingEventTypes \n@return Returns a reference to this object so that method calls can be chained together.\n@see EventType*/",
@@ -2801,6 +2851,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A name that identifies the event destination configuration.\n@param name A name that identifies the event destination configuration.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2869,6 +2920,7 @@
           "variableSetterType" : "SnsDestination"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param snsDestination \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2939,6 +2991,7 @@
             "variableSetterType" : "CloudWatchLogsDestination"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param cloudWatchLogsDestination \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3008,6 +3061,7 @@
             "variableSetterType" : "Boolean"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**Indicates whether or not the event destination is enabled. If the event destination is enabled, then Amazon Pinpoint sends response data to the specified event destination.\n@param enabled Indicates whether or not the event destination is enabled. If the event destination is enabled, then Amazon Pinpoint sends response data to the specified event destination.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3077,6 +3131,7 @@
             "variableSetterType" : "KinesisFirehoseDestination"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param kinesisFirehoseDestination \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3185,6 +3240,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see EventType*/",
@@ -3229,6 +3285,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setMatchingEventTypes(java.util.Collection)} or {@link #withMatchingEventTypes(java.util.Collection)} if you want to override the existing values.</p>\n@param matchingEventTypes \n@return Returns a reference to this object so that method calls can be chained together.\n@see EventType*/",
@@ -3298,6 +3355,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A name that identifies the event destination configuration.\n@param name A name that identifies the event destination configuration.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3367,6 +3425,7 @@
             "variableSetterType" : "SnsDestination"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param snsDestination \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3382,6 +3441,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.pinpointsmsvoice.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3416,6 +3476,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.pinpointsmsvoice.model.EventDestinationDefinition",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3477,6 +3538,7 @@
           "variableSetterType" : "CloudWatchLogsDestination"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param cloudWatchLogsDestination \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3545,6 +3607,7 @@
           "variableSetterType" : "Boolean"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**Indicates whether or not the event destination is enabled. If the event destination is enabled, then Amazon Pinpoint sends response data to the specified event destination.\n@param enabled Indicates whether or not the event destination is enabled. If the event destination is enabled, then Amazon Pinpoint sends response data to the specified event destination.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3613,6 +3676,7 @@
           "variableSetterType" : "KinesisFirehoseDestination"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param kinesisFirehoseDestination \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3720,6 +3784,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see EventType*/",
@@ -3764,6 +3829,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setMatchingEventTypes(java.util.Collection)} or {@link #withMatchingEventTypes(java.util.Collection)} if you want to override the existing values.</p>\n@param matchingEventTypes \n@return Returns a reference to this object so that method calls can be chained together.\n@see EventType*/",
@@ -3832,6 +3898,7 @@
           "variableSetterType" : "SnsDestination"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param snsDestination \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3902,6 +3969,7 @@
             "variableSetterType" : "CloudWatchLogsDestination"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param cloudWatchLogsDestination \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3971,6 +4039,7 @@
             "variableSetterType" : "Boolean"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**Indicates whether or not the event destination is enabled. If the event destination is enabled, then Amazon Pinpoint sends response data to the specified event destination.\n@param enabled Indicates whether or not the event destination is enabled. If the event destination is enabled, then Amazon Pinpoint sends response data to the specified event destination.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4040,6 +4109,7 @@
             "variableSetterType" : "KinesisFirehoseDestination"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param kinesisFirehoseDestination \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4148,6 +4218,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see EventType*/",
@@ -4192,6 +4263,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setMatchingEventTypes(java.util.Collection)} or {@link #withMatchingEventTypes(java.util.Collection)} if you want to override the existing values.</p>\n@param matchingEventTypes \n@return Returns a reference to this object so that method calls can be chained together.\n@see EventType*/",
@@ -4261,6 +4333,7 @@
             "variableSetterType" : "SnsDestination"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param snsDestination \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4276,6 +4349,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.pinpointsmsvoice.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ ],
@@ -4331,6 +4405,7 @@
         "value" : "NO_ANSWER"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.pinpointsmsvoice.enum.EventType",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4339,6 +4414,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.pinpointsmsvoice.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4373,6 +4449,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.pinpointsmsvoice.request.GetConfigurationSetEventDestinationsRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4441,6 +4518,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**ConfigurationSetName\n@param configurationSetName ConfigurationSetName\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4511,6 +4589,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**ConfigurationSetName\n@param configurationSetName ConfigurationSetName\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4526,6 +4605,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.pinpointsmsvoice.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ConfigurationSetName" ],
@@ -4557,6 +4637,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.pinpointsmsvoice.response.GetConfigurationSetEventDestinationsResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4657,6 +4738,7 @@
               "variableSetterType" : "EventDestination"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4701,6 +4783,7 @@
           "variableSetterType" : "java.util.Collection<EventDestination>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEventDestinations(java.util.Collection)} or {@link #withEventDestinations(java.util.Collection)} if you want to override the existing values.</p>\n@param eventDestinations \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4810,6 +4893,7 @@
                 "variableSetterType" : "EventDestination"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4854,6 +4938,7 @@
             "variableSetterType" : "java.util.Collection<EventDestination>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEventDestinations(java.util.Collection)} or {@link #withEventDestinations(java.util.Collection)} if you want to override the existing values.</p>\n@param eventDestinations \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4869,6 +4954,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.pinpointsmsvoice.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4903,6 +4989,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InternalServiceErrorException",
+      "fullyQualifiedName" : "com.amazonaws.services.pinpointsmsvoice.exception.InternalServiceErrorException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4911,6 +4998,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.pinpointsmsvoice.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4942,6 +5030,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.pinpointsmsvoice.model.KinesisFirehoseDestination",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5003,6 +5092,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The Amazon Resource Name (ARN) of an IAM role that can write data to an Amazon Kinesis Data Firehose stream.\n@param deliveryStreamArn The Amazon Resource Name (ARN) of an IAM role that can write data to an Amazon Kinesis Data Firehose stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5071,6 +5161,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The Amazon Resource Name (ARN) of the Amazon Kinesis Data Firehose destination that you want to use in the event destination.\n@param iamRoleArn The Amazon Resource Name (ARN) of the Amazon Kinesis Data Firehose destination that you want to use in the event destination.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5141,6 +5232,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The Amazon Resource Name (ARN) of an IAM role that can write data to an Amazon Kinesis Data Firehose stream.\n@param deliveryStreamArn The Amazon Resource Name (ARN) of an IAM role that can write data to an Amazon Kinesis Data Firehose stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5210,6 +5302,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The Amazon Resource Name (ARN) of the Amazon Kinesis Data Firehose destination that you want to use in the event destination.\n@param iamRoleArn The Amazon Resource Name (ARN) of the Amazon Kinesis Data Firehose destination that you want to use in the event destination.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5225,6 +5318,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.pinpointsmsvoice.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ ],
@@ -5259,6 +5353,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "LimitExceededException",
+      "fullyQualifiedName" : "com.amazonaws.services.pinpointsmsvoice.exception.LimitExceededException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5267,6 +5362,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.pinpointsmsvoice.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -5298,6 +5394,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.pinpointsmsvoice.request.ListConfigurationSetsRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5366,6 +5463,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A token returned from a previous call to the API that indicates the position in the list of results.\n@param nextToken A token returned from a previous call to the API that indicates the position in the list of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5434,6 +5532,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**Used to specify the number of items that should be returned in the response.\n@param pageSize Used to specify the number of items that should be returned in the response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5504,6 +5603,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A token returned from a previous call to the API that indicates the position in the list of results.\n@param nextToken A token returned from a previous call to the API that indicates the position in the list of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5573,6 +5673,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**Used to specify the number of items that should be returned in the response.\n@param pageSize Used to specify the number of items that should be returned in the response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5588,6 +5689,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.pinpointsmsvoice.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -5619,6 +5721,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.pinpointsmsvoice.response.ListConfigurationSetsResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5719,6 +5822,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5763,6 +5867,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**An object that contains a list of configuration sets for your account in the current region.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setConfigurationSets(java.util.Collection)} or {@link #withConfigurationSets(java.util.Collection)} if you want to override the existing values.</p>\n@param configurationSets An object that contains a list of configuration sets for your account in the current region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5831,6 +5936,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A token returned from a previous call to ListConfigurationSets to indicate the position in the list of configuration sets.\n@param nextToken A token returned from a previous call to ListConfigurationSets to indicate the position in the list of configuration sets.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5940,6 +6046,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5984,6 +6091,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**An object that contains a list of configuration sets for your account in the current region.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setConfigurationSets(java.util.Collection)} or {@link #withConfigurationSets(java.util.Collection)} if you want to override the existing values.</p>\n@param configurationSets An object that contains a list of configuration sets for your account in the current region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6053,6 +6161,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A token returned from a previous call to ListConfigurationSets to indicate the position in the list of configuration sets.\n@param nextToken A token returned from a previous call to ListConfigurationSets to indicate the position in the list of configuration sets.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6068,6 +6177,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.pinpointsmsvoice.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6102,6 +6212,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "NotFoundException",
+      "fullyQualifiedName" : "com.amazonaws.services.pinpointsmsvoice.exception.NotFoundException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6110,6 +6221,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.pinpointsmsvoice.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6141,6 +6253,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.pinpointsmsvoice.model.PlainTextMessageType",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6202,6 +6315,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The language to use when delivering the message. For a complete list of supported languages, see the Amazon Polly Developer Guide.\n@param languageCode The language to use when delivering the message. For a complete list of supported languages, see the Amazon Polly Developer Guide.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6270,6 +6384,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The plain (not SSML-formatted) text to deliver to the recipient.\n@param text The plain (not SSML-formatted) text to deliver to the recipient.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6338,6 +6453,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The name of the voice that you want to use to deliver the message. For a complete list of supported voices, see the Amazon Polly Developer Guide.\n@param voiceId The name of the voice that you want to use to deliver the message. For a complete list of supported voices, see the Amazon Polly Developer Guide.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6408,6 +6524,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The language to use when delivering the message. For a complete list of supported languages, see the Amazon Polly Developer Guide.\n@param languageCode The language to use when delivering the message. For a complete list of supported languages, see the Amazon Polly Developer Guide.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6477,6 +6594,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The plain (not SSML-formatted) text to deliver to the recipient.\n@param text The plain (not SSML-formatted) text to deliver to the recipient.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6546,6 +6664,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The name of the voice that you want to use to deliver the message. For a complete list of supported voices, see the Amazon Polly Developer Guide.\n@param voiceId The name of the voice that you want to use to deliver the message. For a complete list of supported voices, see the Amazon Polly Developer Guide.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6561,6 +6680,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.pinpointsmsvoice.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ ],
@@ -6595,6 +6715,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.pinpointsmsvoice.model.SSMLMessageType",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6656,6 +6777,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The language to use when delivering the message. For a complete list of supported languages, see the Amazon Polly Developer Guide.\n@param languageCode The language to use when delivering the message. For a complete list of supported languages, see the Amazon Polly Developer Guide.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6724,6 +6846,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The SSML-formatted text to deliver to the recipient.\n@param text The SSML-formatted text to deliver to the recipient.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6792,6 +6915,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The name of the voice that you want to use to deliver the message. For a complete list of supported voices, see the Amazon Polly Developer Guide.\n@param voiceId The name of the voice that you want to use to deliver the message. For a complete list of supported voices, see the Amazon Polly Developer Guide.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6862,6 +6986,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The language to use when delivering the message. For a complete list of supported languages, see the Amazon Polly Developer Guide.\n@param languageCode The language to use when delivering the message. For a complete list of supported languages, see the Amazon Polly Developer Guide.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6931,6 +7056,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The SSML-formatted text to deliver to the recipient.\n@param text The SSML-formatted text to deliver to the recipient.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7000,6 +7126,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The name of the voice that you want to use to deliver the message. For a complete list of supported voices, see the Amazon Polly Developer Guide.\n@param voiceId The name of the voice that you want to use to deliver the message. For a complete list of supported voices, see the Amazon Polly Developer Guide.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7015,6 +7142,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.pinpointsmsvoice.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ ],
@@ -7049,6 +7177,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.pinpointsmsvoice.request.SendVoiceMessageRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7117,6 +7246,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The phone number that appears on recipients' devices when they receive the message.\n@param callerId The phone number that appears on recipients' devices when they receive the message.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7185,6 +7315,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The name of the configuration set that you want to use to send the message.\n@param configurationSetName The name of the configuration set that you want to use to send the message.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7253,6 +7384,7 @@
           "variableSetterType" : "VoiceMessageContent"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param content \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7321,6 +7453,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The phone number that you want to send the voice message to.\n@param destinationPhoneNumber The phone number that you want to send the voice message to.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7389,6 +7522,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The phone number that Amazon Pinpoint should use to send the voice message. This isn't necessarily the phone number that appears on recipients' devices when they receive the message, because you can specify a CallerId parameter in the request.\n@param originationPhoneNumber The phone number that Amazon Pinpoint should use to send the voice message. This isn't necessarily the phone number that appears on recipients' devices when they receive the message, because you can specify a CallerId parameter in the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7459,6 +7593,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The phone number that appears on recipients' devices when they receive the message.\n@param callerId The phone number that appears on recipients' devices when they receive the message.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7528,6 +7663,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The name of the configuration set that you want to use to send the message.\n@param configurationSetName The name of the configuration set that you want to use to send the message.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7597,6 +7733,7 @@
             "variableSetterType" : "VoiceMessageContent"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param content \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7666,6 +7803,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The phone number that you want to send the voice message to.\n@param destinationPhoneNumber The phone number that you want to send the voice message to.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7735,6 +7873,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The phone number that Amazon Pinpoint should use to send the voice message. This isn't necessarily the phone number that appears on recipients' devices when they receive the message, because you can specify a CallerId parameter in the request.\n@param originationPhoneNumber The phone number that Amazon Pinpoint should use to send the voice message. This isn't necessarily the phone number that appears on recipients' devices when they receive the message, because you can specify a CallerId parameter in the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7750,6 +7889,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.pinpointsmsvoice.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -7781,6 +7921,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.pinpointsmsvoice.response.SendVoiceMessageResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7842,6 +7983,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A unique identifier for the voice message.\n@param messageId A unique identifier for the voice message.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7912,6 +8054,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A unique identifier for the voice message.\n@param messageId A unique identifier for the voice message.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7927,6 +8070,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.pinpointsmsvoice.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -7961,6 +8105,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.pinpointsmsvoice.model.SnsDestination",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8022,6 +8167,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The Amazon Resource Name (ARN) of the Amazon SNS topic that you want to publish events to.\n@param topicArn The Amazon Resource Name (ARN) of the Amazon SNS topic that you want to publish events to.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8092,6 +8238,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The Amazon Resource Name (ARN) of the Amazon SNS topic that you want to publish events to.\n@param topicArn The Amazon Resource Name (ARN) of the Amazon SNS topic that you want to publish events to.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8107,6 +8254,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.pinpointsmsvoice.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ ],
@@ -8141,6 +8289,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "TooManyRequestsException",
+      "fullyQualifiedName" : "com.amazonaws.services.pinpointsmsvoice.exception.TooManyRequestsException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8149,6 +8298,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.pinpointsmsvoice.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -8180,6 +8330,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.pinpointsmsvoice.request.UpdateConfigurationSetEventDestinationRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8248,6 +8399,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**ConfigurationSetName\n@param configurationSetName ConfigurationSetName\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8316,6 +8468,7 @@
           "variableSetterType" : "EventDestinationDefinition"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param eventDestination \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8384,6 +8537,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**EventDestinationName\n@param eventDestinationName EventDestinationName\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8454,6 +8608,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**ConfigurationSetName\n@param configurationSetName ConfigurationSetName\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8523,6 +8678,7 @@
             "variableSetterType" : "EventDestinationDefinition"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param eventDestination \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8592,6 +8748,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**EventDestinationName\n@param eventDestinationName EventDestinationName\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8607,6 +8764,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.pinpointsmsvoice.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "EventDestinationName", "ConfigurationSetName" ],
@@ -8638,6 +8796,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.pinpointsmsvoice.response.UpdateConfigurationSetEventDestinationResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8646,6 +8805,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.pinpointsmsvoice.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -8680,6 +8840,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.pinpointsmsvoice.model.VoiceMessageContent",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8741,6 +8902,7 @@
           "variableSetterType" : "CallInstructionsMessageType"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param callInstructionsMessage \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8809,6 +8971,7 @@
           "variableSetterType" : "PlainTextMessageType"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param plainTextMessage \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8877,6 +9040,7 @@
           "variableSetterType" : "SSMLMessageType"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param sSMLMessage \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8947,6 +9111,7 @@
             "variableSetterType" : "CallInstructionsMessageType"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param callInstructionsMessage \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9016,6 +9181,7 @@
             "variableSetterType" : "PlainTextMessageType"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param plainTextMessage \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9085,6 +9251,7 @@
             "variableSetterType" : "SSMLMessageType"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param sSMLMessage \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9100,6 +9267,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.pinpointsmsvoice.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,

@@ -74,7 +74,9 @@ public class UserDefinedFunctionJsonUnmarshaller implements Unmarshaller<UserDef
                 }
                 if (context.testExpression("ResourceUris", targetDepth)) {
                     context.nextToken();
-                    userDefinedFunction.setResourceUris(new ListUnmarshaller<ResourceUri>(ResourceUriJsonUnmarshaller.getInstance()).unmarshall(context));
+                    userDefinedFunction.setResourceUris(new ListUnmarshaller<ResourceUri>(ResourceUriJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("CatalogId", targetDepth)) {
                     context.nextToken();

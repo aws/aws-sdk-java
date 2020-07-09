@@ -70,7 +70,9 @@ public class LambdaTargetJsonUnmarshaller implements Unmarshaller<LambdaTarget, 
                 }
                 if (context.testExpression("lifecycleEvents", targetDepth)) {
                     context.nextToken();
-                    lambdaTarget.setLifecycleEvents(new ListUnmarshaller<LifecycleEvent>(LifecycleEventJsonUnmarshaller.getInstance()).unmarshall(context));
+                    lambdaTarget.setLifecycleEvents(new ListUnmarshaller<LifecycleEvent>(LifecycleEventJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("lambdaFunctionInfo", targetDepth)) {
                     context.nextToken();

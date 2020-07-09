@@ -62,11 +62,15 @@ public class GetDocumentAnalysisResultJsonUnmarshaller implements Unmarshaller<G
                 }
                 if (context.testExpression("Blocks", targetDepth)) {
                     context.nextToken();
-                    getDocumentAnalysisResult.setBlocks(new ListUnmarshaller<Block>(BlockJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getDocumentAnalysisResult.setBlocks(new ListUnmarshaller<Block>(BlockJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Warnings", targetDepth)) {
                     context.nextToken();
-                    getDocumentAnalysisResult.setWarnings(new ListUnmarshaller<Warning>(WarningJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getDocumentAnalysisResult.setWarnings(new ListUnmarshaller<Warning>(WarningJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("StatusMessage", targetDepth)) {
                     context.nextToken();

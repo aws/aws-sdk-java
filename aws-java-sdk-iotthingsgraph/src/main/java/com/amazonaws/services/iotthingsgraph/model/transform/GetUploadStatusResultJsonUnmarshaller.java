@@ -70,7 +70,9 @@ public class GetUploadStatusResultJsonUnmarshaller implements Unmarshaller<GetUp
                 }
                 if (context.testExpression("failureReason", targetDepth)) {
                     context.nextToken();
-                    getUploadStatusResult.setFailureReason(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    getUploadStatusResult.setFailureReason(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("createdDate", targetDepth)) {
                     context.nextToken();

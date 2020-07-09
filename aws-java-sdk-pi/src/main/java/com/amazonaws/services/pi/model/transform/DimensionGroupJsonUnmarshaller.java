@@ -54,7 +54,9 @@ public class DimensionGroupJsonUnmarshaller implements Unmarshaller<DimensionGro
                 }
                 if (context.testExpression("Dimensions", targetDepth)) {
                     context.nextToken();
-                    dimensionGroup.setDimensions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    dimensionGroup.setDimensions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Limit", targetDepth)) {
                     context.nextToken();

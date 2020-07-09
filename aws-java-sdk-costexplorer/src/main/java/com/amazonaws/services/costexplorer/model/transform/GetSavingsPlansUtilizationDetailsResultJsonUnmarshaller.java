@@ -51,7 +51,9 @@ public class GetSavingsPlansUtilizationDetailsResultJsonUnmarshaller implements 
                 if (context.testExpression("SavingsPlansUtilizationDetails", targetDepth)) {
                     context.nextToken();
                     getSavingsPlansUtilizationDetailsResult.setSavingsPlansUtilizationDetails(new ListUnmarshaller<SavingsPlansUtilizationDetail>(
-                            SavingsPlansUtilizationDetailJsonUnmarshaller.getInstance()).unmarshall(context));
+                            SavingsPlansUtilizationDetailJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Total", targetDepth)) {
                     context.nextToken();

@@ -50,7 +50,9 @@ public class ListSuitesResultJsonUnmarshaller implements Unmarshaller<ListSuites
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("suites", targetDepth)) {
                     context.nextToken();
-                    listSuitesResult.setSuites(new ListUnmarshaller<Suite>(SuiteJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listSuitesResult.setSuites(new ListUnmarshaller<Suite>(SuiteJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

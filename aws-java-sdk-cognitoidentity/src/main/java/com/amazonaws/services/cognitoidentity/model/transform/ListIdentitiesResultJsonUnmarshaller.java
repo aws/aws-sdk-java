@@ -55,7 +55,8 @@ public class ListIdentitiesResultJsonUnmarshaller implements Unmarshaller<ListId
                 if (context.testExpression("Identities", targetDepth)) {
                     context.nextToken();
                     listIdentitiesResult.setIdentities(new ListUnmarshaller<IdentityDescription>(IdentityDescriptionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

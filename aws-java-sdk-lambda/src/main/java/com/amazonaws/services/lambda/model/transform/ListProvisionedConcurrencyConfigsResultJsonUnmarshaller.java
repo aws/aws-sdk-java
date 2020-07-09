@@ -51,7 +51,9 @@ public class ListProvisionedConcurrencyConfigsResultJsonUnmarshaller implements 
                 if (context.testExpression("ProvisionedConcurrencyConfigs", targetDepth)) {
                     context.nextToken();
                     listProvisionedConcurrencyConfigsResult.setProvisionedConcurrencyConfigs(new ListUnmarshaller<ProvisionedConcurrencyConfigListItem>(
-                            ProvisionedConcurrencyConfigListItemJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ProvisionedConcurrencyConfigListItemJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextMarker", targetDepth)) {
                     context.nextToken();

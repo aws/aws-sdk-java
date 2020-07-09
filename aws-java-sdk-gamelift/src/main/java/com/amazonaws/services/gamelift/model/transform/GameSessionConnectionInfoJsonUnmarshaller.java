@@ -67,7 +67,9 @@ public class GameSessionConnectionInfoJsonUnmarshaller implements Unmarshaller<G
                 if (context.testExpression("MatchedPlayerSessions", targetDepth)) {
                     context.nextToken();
                     gameSessionConnectionInfo.setMatchedPlayerSessions(new ListUnmarshaller<MatchedPlayerSession>(MatchedPlayerSessionJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

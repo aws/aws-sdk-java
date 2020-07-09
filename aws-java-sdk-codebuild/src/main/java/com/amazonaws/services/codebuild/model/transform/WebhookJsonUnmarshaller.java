@@ -67,7 +67,11 @@ public class WebhookJsonUnmarshaller implements Unmarshaller<Webhook, JsonUnmars
                 if (context.testExpression("filterGroups", targetDepth)) {
                     context.nextToken();
                     webhook.setFilterGroups(new ListUnmarshaller<java.util.List<WebhookFilter>>(new ListUnmarshaller<WebhookFilter>(
-                            WebhookFilterJsonUnmarshaller.getInstance())).unmarshall(context));
+                            WebhookFilterJsonUnmarshaller.getInstance())
+
+                    )
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("lastModifiedSecret", targetDepth)) {
                     context.nextToken();

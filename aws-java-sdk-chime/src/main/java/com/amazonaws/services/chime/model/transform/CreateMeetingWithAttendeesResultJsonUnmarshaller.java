@@ -54,12 +54,15 @@ public class CreateMeetingWithAttendeesResultJsonUnmarshaller implements Unmarsh
                 }
                 if (context.testExpression("Attendees", targetDepth)) {
                     context.nextToken();
-                    createMeetingWithAttendeesResult.setAttendees(new ListUnmarshaller<Attendee>(AttendeeJsonUnmarshaller.getInstance()).unmarshall(context));
+                    createMeetingWithAttendeesResult.setAttendees(new ListUnmarshaller<Attendee>(AttendeeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Errors", targetDepth)) {
                     context.nextToken();
                     createMeetingWithAttendeesResult.setErrors(new ListUnmarshaller<CreateAttendeeError>(CreateAttendeeErrorJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

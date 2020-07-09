@@ -51,7 +51,9 @@ public class DescribeSubscriptionFiltersResultJsonUnmarshaller implements Unmars
                 if (context.testExpression("subscriptionFilters", targetDepth)) {
                     context.nextToken();
                     describeSubscriptionFiltersResult.setSubscriptionFilters(new ListUnmarshaller<SubscriptionFilter>(SubscriptionFilterJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

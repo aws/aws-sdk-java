@@ -59,7 +59,9 @@ public class ListResolverRuleAssociationsResultJsonUnmarshaller implements Unmar
                 if (context.testExpression("ResolverRuleAssociations", targetDepth)) {
                     context.nextToken();
                     listResolverRuleAssociationsResult.setResolverRuleAssociations(new ListUnmarshaller<ResolverRuleAssociation>(
-                            ResolverRuleAssociationJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ResolverRuleAssociationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

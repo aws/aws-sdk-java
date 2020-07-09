@@ -58,7 +58,9 @@ public class DescribeTagsResultJsonUnmarshaller implements Unmarshaller<Describe
                 }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
-                    describeTagsResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeTagsResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

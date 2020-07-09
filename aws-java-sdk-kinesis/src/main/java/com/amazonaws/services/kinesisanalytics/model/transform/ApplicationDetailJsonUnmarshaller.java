@@ -75,22 +75,28 @@ public class ApplicationDetailJsonUnmarshaller implements Unmarshaller<Applicati
                 if (context.testExpression("InputDescriptions", targetDepth)) {
                     context.nextToken();
                     applicationDetail.setInputDescriptions(new ListUnmarshaller<InputDescription>(InputDescriptionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("OutputDescriptions", targetDepth)) {
                     context.nextToken();
                     applicationDetail.setOutputDescriptions(new ListUnmarshaller<OutputDescription>(OutputDescriptionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ReferenceDataSourceDescriptions", targetDepth)) {
                     context.nextToken();
                     applicationDetail.setReferenceDataSourceDescriptions(new ListUnmarshaller<ReferenceDataSourceDescription>(
-                            ReferenceDataSourceDescriptionJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ReferenceDataSourceDescriptionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("CloudWatchLoggingOptionDescriptions", targetDepth)) {
                     context.nextToken();
                     applicationDetail.setCloudWatchLoggingOptionDescriptions(new ListUnmarshaller<CloudWatchLoggingOptionDescription>(
-                            CloudWatchLoggingOptionDescriptionJsonUnmarshaller.getInstance()).unmarshall(context));
+                            CloudWatchLoggingOptionDescriptionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ApplicationCode", targetDepth)) {
                     context.nextToken();

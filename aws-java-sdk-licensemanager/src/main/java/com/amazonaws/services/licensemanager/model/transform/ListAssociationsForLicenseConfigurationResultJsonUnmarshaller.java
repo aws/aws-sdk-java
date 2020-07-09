@@ -52,7 +52,9 @@ public class ListAssociationsForLicenseConfigurationResultJsonUnmarshaller imple
                 if (context.testExpression("LicenseConfigurationAssociations", targetDepth)) {
                     context.nextToken();
                     listAssociationsForLicenseConfigurationResult.setLicenseConfigurationAssociations(new ListUnmarshaller<LicenseConfigurationAssociation>(
-                            LicenseConfigurationAssociationJsonUnmarshaller.getInstance()).unmarshall(context));
+                            LicenseConfigurationAssociationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

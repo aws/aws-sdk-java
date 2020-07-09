@@ -74,7 +74,9 @@ public class InstanceJsonUnmarshaller implements Unmarshaller<Instance, JsonUnma
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
-                    instance.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    instance.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("blueprintId", targetDepth)) {
                     context.nextToken();
@@ -90,7 +92,9 @@ public class InstanceJsonUnmarshaller implements Unmarshaller<Instance, JsonUnma
                 }
                 if (context.testExpression("addOns", targetDepth)) {
                     context.nextToken();
-                    instance.setAddOns(new ListUnmarshaller<AddOn>(AddOnJsonUnmarshaller.getInstance()).unmarshall(context));
+                    instance.setAddOns(new ListUnmarshaller<AddOn>(AddOnJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("isStaticIp", targetDepth)) {
                     context.nextToken();

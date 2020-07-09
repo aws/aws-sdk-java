@@ -50,7 +50,9 @@ public class ListFacetNamesResultJsonUnmarshaller implements Unmarshaller<ListFa
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FacetNames", targetDepth)) {
                     context.nextToken();
-                    listFacetNamesResult.setFacetNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    listFacetNamesResult.setFacetNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

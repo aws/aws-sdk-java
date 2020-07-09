@@ -58,12 +58,15 @@ public class PipelineJsonUnmarshaller implements Unmarshaller<Pipeline, JsonUnma
                 }
                 if (context.testExpression("activities", targetDepth)) {
                     context.nextToken();
-                    pipeline.setActivities(new ListUnmarshaller<PipelineActivity>(PipelineActivityJsonUnmarshaller.getInstance()).unmarshall(context));
+                    pipeline.setActivities(new ListUnmarshaller<PipelineActivity>(PipelineActivityJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("reprocessingSummaries", targetDepth)) {
                     context.nextToken();
                     pipeline.setReprocessingSummaries(new ListUnmarshaller<ReprocessingSummary>(ReprocessingSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("creationTime", targetDepth)) {
                     context.nextToken();

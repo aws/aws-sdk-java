@@ -51,7 +51,9 @@ public class DescribeConditionalForwardersResultJsonUnmarshaller implements Unma
                 if (context.testExpression("ConditionalForwarders", targetDepth)) {
                     context.nextToken();
                     describeConditionalForwardersResult.setConditionalForwarders(new ListUnmarshaller<ConditionalForwarder>(
-                            ConditionalForwarderJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ConditionalForwarderJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

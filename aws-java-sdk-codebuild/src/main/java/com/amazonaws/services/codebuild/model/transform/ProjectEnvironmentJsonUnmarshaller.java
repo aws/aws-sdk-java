@@ -63,7 +63,8 @@ public class ProjectEnvironmentJsonUnmarshaller implements Unmarshaller<ProjectE
                 if (context.testExpression("environmentVariables", targetDepth)) {
                     context.nextToken();
                     projectEnvironment.setEnvironmentVariables(new ListUnmarshaller<EnvironmentVariable>(EnvironmentVariableJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("privilegedMode", targetDepth)) {
                     context.nextToken();

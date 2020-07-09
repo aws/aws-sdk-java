@@ -50,7 +50,9 @@ public class DetectorModelDefinitionJsonUnmarshaller implements Unmarshaller<Det
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("states", targetDepth)) {
                     context.nextToken();
-                    detectorModelDefinition.setStates(new ListUnmarshaller<State>(StateJsonUnmarshaller.getInstance()).unmarshall(context));
+                    detectorModelDefinition.setStates(new ListUnmarshaller<State>(StateJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("initialStateName", targetDepth)) {
                     context.nextToken();

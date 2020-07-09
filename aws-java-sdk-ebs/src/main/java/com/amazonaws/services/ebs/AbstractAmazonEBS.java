@@ -28,6 +28,11 @@ public class AbstractAmazonEBS implements AmazonEBS {
     }
 
     @Override
+    public CompleteSnapshotResult completeSnapshot(CompleteSnapshotRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetSnapshotBlockResult getSnapshotBlock(GetSnapshotBlockRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -39,6 +44,16 @@ public class AbstractAmazonEBS implements AmazonEBS {
 
     @Override
     public ListSnapshotBlocksResult listSnapshotBlocks(ListSnapshotBlocksRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutSnapshotBlockResult putSnapshotBlock(PutSnapshotBlockRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartSnapshotResult startSnapshot(StartSnapshotRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

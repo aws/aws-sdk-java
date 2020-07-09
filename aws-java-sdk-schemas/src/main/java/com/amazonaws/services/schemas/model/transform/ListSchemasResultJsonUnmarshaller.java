@@ -54,7 +54,9 @@ public class ListSchemasResultJsonUnmarshaller implements Unmarshaller<ListSchem
                 }
                 if (context.testExpression("Schemas", targetDepth)) {
                     context.nextToken();
-                    listSchemasResult.setSchemas(new ListUnmarshaller<SchemaSummary>(SchemaSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listSchemasResult.setSchemas(new ListUnmarshaller<SchemaSummary>(SchemaSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

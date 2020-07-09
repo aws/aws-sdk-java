@@ -51,7 +51,8 @@ public class GetEffectivePoliciesResultJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("effectivePolicies", targetDepth)) {
                     context.nextToken();
                     getEffectivePoliciesResult.setEffectivePolicies(new ListUnmarshaller<EffectivePolicy>(EffectivePolicyJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

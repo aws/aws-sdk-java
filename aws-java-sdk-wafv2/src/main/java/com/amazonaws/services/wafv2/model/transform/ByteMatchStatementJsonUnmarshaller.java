@@ -59,7 +59,8 @@ public class ByteMatchStatementJsonUnmarshaller implements Unmarshaller<ByteMatc
                 if (context.testExpression("TextTransformations", targetDepth)) {
                     context.nextToken();
                     byteMatchStatement.setTextTransformations(new ListUnmarshaller<TextTransformation>(TextTransformationJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("PositionalConstraint", targetDepth)) {
                     context.nextToken();

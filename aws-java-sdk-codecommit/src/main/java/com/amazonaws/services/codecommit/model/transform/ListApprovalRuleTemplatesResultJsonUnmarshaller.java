@@ -51,7 +51,8 @@ public class ListApprovalRuleTemplatesResultJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("approvalRuleTemplateNames", targetDepth)) {
                     context.nextToken();
                     listApprovalRuleTemplatesResult.setApprovalRuleTemplateNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

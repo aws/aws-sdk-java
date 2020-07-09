@@ -51,18 +51,22 @@ public class BatchWriteItemResultJsonUnmarshaller implements Unmarshaller<BatchW
                 if (context.testExpression("UnprocessedItems", targetDepth)) {
                     context.nextToken();
                     batchWriteItemResult.setUnprocessedItems(new MapUnmarshaller<String, java.util.List<WriteRequest>>(context.getUnmarshaller(String.class),
-                            new ListUnmarshaller<WriteRequest>(WriteRequestJsonUnmarshaller.getInstance())).unmarshall(context));
+                            new ListUnmarshaller<WriteRequest>(WriteRequestJsonUnmarshaller.getInstance())
+
+                    ).unmarshall(context));
                 }
                 if (context.testExpression("ItemCollectionMetrics", targetDepth)) {
                     context.nextToken();
                     batchWriteItemResult.setItemCollectionMetrics(new MapUnmarshaller<String, java.util.List<ItemCollectionMetrics>>(context
-                            .getUnmarshaller(String.class), new ListUnmarshaller<ItemCollectionMetrics>(ItemCollectionMetricsJsonUnmarshaller.getInstance()))
-                            .unmarshall(context));
+                            .getUnmarshaller(String.class), new ListUnmarshaller<ItemCollectionMetrics>(ItemCollectionMetricsJsonUnmarshaller.getInstance())
+
+                    ).unmarshall(context));
                 }
                 if (context.testExpression("ConsumedCapacity", targetDepth)) {
                     context.nextToken();
                     batchWriteItemResult.setConsumedCapacity(new ListUnmarshaller<ConsumedCapacity>(ConsumedCapacityJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -100,7 +100,9 @@ public class PutIntegrationResultJsonUnmarshaller implements Unmarshaller<PutInt
                 }
                 if (context.testExpression("cacheKeyParameters", targetDepth)) {
                     context.nextToken();
-                    putIntegrationResult.setCacheKeyParameters(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    putIntegrationResult.setCacheKeyParameters(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("integrationResponses", targetDepth)) {
                     context.nextToken();

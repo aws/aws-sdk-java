@@ -70,11 +70,15 @@ public class ContactJsonUnmarshaller implements Unmarshaller<Contact, JsonUnmars
                 }
                 if (context.testExpression("PhoneNumbers", targetDepth)) {
                     context.nextToken();
-                    contact.setPhoneNumbers(new ListUnmarshaller<PhoneNumber>(PhoneNumberJsonUnmarshaller.getInstance()).unmarshall(context));
+                    contact.setPhoneNumbers(new ListUnmarshaller<PhoneNumber>(PhoneNumberJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("SipAddresses", targetDepth)) {
                     context.nextToken();
-                    contact.setSipAddresses(new ListUnmarshaller<SipAddress>(SipAddressJsonUnmarshaller.getInstance()).unmarshall(context));
+                    contact.setSipAddresses(new ListUnmarshaller<SipAddress>(SipAddressJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

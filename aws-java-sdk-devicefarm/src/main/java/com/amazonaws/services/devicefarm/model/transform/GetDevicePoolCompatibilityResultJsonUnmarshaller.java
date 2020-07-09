@@ -51,12 +51,16 @@ public class GetDevicePoolCompatibilityResultJsonUnmarshaller implements Unmarsh
                 if (context.testExpression("compatibleDevices", targetDepth)) {
                     context.nextToken();
                     getDevicePoolCompatibilityResult.setCompatibleDevices(new ListUnmarshaller<DevicePoolCompatibilityResult>(
-                            DevicePoolCompatibilityResultJsonUnmarshaller.getInstance()).unmarshall(context));
+                            DevicePoolCompatibilityResultJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("incompatibleDevices", targetDepth)) {
                     context.nextToken();
                     getDevicePoolCompatibilityResult.setIncompatibleDevices(new ListUnmarshaller<DevicePoolCompatibilityResult>(
-                            DevicePoolCompatibilityResultJsonUnmarshaller.getInstance()).unmarshall(context));
+                            DevicePoolCompatibilityResultJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

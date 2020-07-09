@@ -54,11 +54,15 @@ public class ThingGroupIndexingConfigurationJsonUnmarshaller implements Unmarsha
                 }
                 if (context.testExpression("managedFields", targetDepth)) {
                     context.nextToken();
-                    thingGroupIndexingConfiguration.setManagedFields(new ListUnmarshaller<Field>(FieldJsonUnmarshaller.getInstance()).unmarshall(context));
+                    thingGroupIndexingConfiguration.setManagedFields(new ListUnmarshaller<Field>(FieldJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("customFields", targetDepth)) {
                     context.nextToken();
-                    thingGroupIndexingConfiguration.setCustomFields(new ListUnmarshaller<Field>(FieldJsonUnmarshaller.getInstance()).unmarshall(context));
+                    thingGroupIndexingConfiguration.setCustomFields(new ListUnmarshaller<Field>(FieldJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

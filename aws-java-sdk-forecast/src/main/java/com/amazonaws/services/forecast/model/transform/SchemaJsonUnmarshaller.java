@@ -50,7 +50,9 @@ public class SchemaJsonUnmarshaller implements Unmarshaller<Schema, JsonUnmarsha
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Attributes", targetDepth)) {
                     context.nextToken();
-                    schema.setAttributes(new ListUnmarshaller<SchemaAttribute>(SchemaAttributeJsonUnmarshaller.getInstance()).unmarshall(context));
+                    schema.setAttributes(new ListUnmarshaller<SchemaAttribute>(SchemaAttributeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

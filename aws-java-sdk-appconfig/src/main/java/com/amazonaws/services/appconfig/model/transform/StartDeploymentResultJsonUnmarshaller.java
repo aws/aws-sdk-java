@@ -106,7 +106,9 @@ public class StartDeploymentResultJsonUnmarshaller implements Unmarshaller<Start
                 }
                 if (context.testExpression("EventLog", targetDepth)) {
                     context.nextToken();
-                    startDeploymentResult.setEventLog(new ListUnmarshaller<DeploymentEvent>(DeploymentEventJsonUnmarshaller.getInstance()).unmarshall(context));
+                    startDeploymentResult.setEventLog(new ListUnmarshaller<DeploymentEvent>(DeploymentEventJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("PercentageComplete", targetDepth)) {
                     context.nextToken();

@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.secretsmanager.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +32,10 @@ public class ListSecretsRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("NextToken").build();
+    private static final MarshallingInfo<List> FILTERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Filters").build();
+    private static final MarshallingInfo<String> SORTORDER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SortOrder").build();
 
     private static final ListSecretsRequestMarshaller instance = new ListSecretsRequestMarshaller();
 
@@ -50,6 +55,8 @@ public class ListSecretsRequestMarshaller {
         try {
             protocolMarshaller.marshall(listSecretsRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listSecretsRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(listSecretsRequest.getFilters(), FILTERS_BINDING);
+            protocolMarshaller.marshall(listSecretsRequest.getSortOrder(), SORTORDER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

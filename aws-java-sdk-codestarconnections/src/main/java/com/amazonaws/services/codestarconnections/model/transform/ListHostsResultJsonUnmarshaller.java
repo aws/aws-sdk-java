@@ -50,7 +50,9 @@ public class ListHostsResultJsonUnmarshaller implements Unmarshaller<ListHostsRe
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Hosts", targetDepth)) {
                     context.nextToken();
-                    listHostsResult.setHosts(new ListUnmarshaller<Host>(HostJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listHostsResult.setHosts(new ListUnmarshaller<Host>(HostJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

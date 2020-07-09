@@ -50,7 +50,9 @@ public class AddOutputRequestJsonUnmarshaller implements Unmarshaller<AddOutputR
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("cidrAllowList", targetDepth)) {
                     context.nextToken();
-                    addOutputRequest.setCidrAllowList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    addOutputRequest.setCidrAllowList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();

@@ -51,7 +51,8 @@ public class DescribeResourceGroupsResultJsonUnmarshaller implements Unmarshalle
                 if (context.testExpression("resourceGroups", targetDepth)) {
                     context.nextToken();
                     describeResourceGroupsResult.setResourceGroups(new ListUnmarshaller<ResourceGroup>(ResourceGroupJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("failedItems", targetDepth)) {
                     context.nextToken();

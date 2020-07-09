@@ -55,12 +55,16 @@ public class ServiceNowKnowledgeArticleConfigurationJsonUnmarshaller implements 
                 if (context.testExpression("IncludeAttachmentFilePatterns", targetDepth)) {
                     context.nextToken();
                     serviceNowKnowledgeArticleConfiguration
-                            .setIncludeAttachmentFilePatterns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                            .setIncludeAttachmentFilePatterns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                            .unmarshall(context));
                 }
                 if (context.testExpression("ExcludeAttachmentFilePatterns", targetDepth)) {
                     context.nextToken();
                     serviceNowKnowledgeArticleConfiguration
-                            .setExcludeAttachmentFilePatterns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                            .setExcludeAttachmentFilePatterns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                            .unmarshall(context));
                 }
                 if (context.testExpression("DocumentDataFieldName", targetDepth)) {
                     context.nextToken();
@@ -73,7 +77,9 @@ public class ServiceNowKnowledgeArticleConfigurationJsonUnmarshaller implements 
                 if (context.testExpression("FieldMappings", targetDepth)) {
                     context.nextToken();
                     serviceNowKnowledgeArticleConfiguration.setFieldMappings(new ListUnmarshaller<DataSourceToIndexFieldMapping>(
-                            DataSourceToIndexFieldMappingJsonUnmarshaller.getInstance()).unmarshall(context));
+                            DataSourceToIndexFieldMappingJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

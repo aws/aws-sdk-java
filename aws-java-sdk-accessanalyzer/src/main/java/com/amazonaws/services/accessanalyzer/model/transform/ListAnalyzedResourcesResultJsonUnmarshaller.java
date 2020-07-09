@@ -51,7 +51,9 @@ public class ListAnalyzedResourcesResultJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("analyzedResources", targetDepth)) {
                     context.nextToken();
                     listAnalyzedResourcesResult.setAnalyzedResources(new ListUnmarshaller<AnalyzedResourceSummary>(AnalyzedResourceSummaryJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

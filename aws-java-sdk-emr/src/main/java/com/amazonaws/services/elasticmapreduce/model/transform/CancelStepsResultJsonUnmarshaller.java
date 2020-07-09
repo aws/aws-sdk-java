@@ -51,7 +51,8 @@ public class CancelStepsResultJsonUnmarshaller implements Unmarshaller<CancelSte
                 if (context.testExpression("CancelStepsInfoList", targetDepth)) {
                     context.nextToken();
                     cancelStepsResult.setCancelStepsInfoList(new ListUnmarshaller<CancelStepsInfo>(CancelStepsInfoJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

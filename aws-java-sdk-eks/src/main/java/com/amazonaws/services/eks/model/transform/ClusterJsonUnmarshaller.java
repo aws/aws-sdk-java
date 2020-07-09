@@ -107,7 +107,9 @@ public class ClusterJsonUnmarshaller implements Unmarshaller<Cluster, JsonUnmars
                 }
                 if (context.testExpression("encryptionConfig", targetDepth)) {
                     context.nextToken();
-                    cluster.setEncryptionConfig(new ListUnmarshaller<EncryptionConfig>(EncryptionConfigJsonUnmarshaller.getInstance()).unmarshall(context));
+                    cluster.setEncryptionConfig(new ListUnmarshaller<EncryptionConfig>(EncryptionConfigJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

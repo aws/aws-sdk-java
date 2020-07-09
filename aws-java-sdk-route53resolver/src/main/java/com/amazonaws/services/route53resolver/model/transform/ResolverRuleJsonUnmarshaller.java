@@ -82,7 +82,9 @@ public class ResolverRuleJsonUnmarshaller implements Unmarshaller<ResolverRule, 
                 }
                 if (context.testExpression("TargetIps", targetDepth)) {
                     context.nextToken();
-                    resolverRule.setTargetIps(new ListUnmarshaller<TargetAddress>(TargetAddressJsonUnmarshaller.getInstance()).unmarshall(context));
+                    resolverRule.setTargetIps(new ListUnmarshaller<TargetAddress>(TargetAddressJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ResolverEndpointId", targetDepth)) {
                     context.nextToken();

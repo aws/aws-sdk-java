@@ -52,7 +52,8 @@ public class ListRepositoriesForApprovalRuleTemplateResultJsonUnmarshaller imple
                 if (context.testExpression("repositoryNames", targetDepth)) {
                     context.nextToken();
                     listRepositoriesForApprovalRuleTemplateResult.setRepositoryNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

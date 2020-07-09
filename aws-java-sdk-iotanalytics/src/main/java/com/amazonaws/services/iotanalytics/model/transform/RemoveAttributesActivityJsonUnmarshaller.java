@@ -54,7 +54,9 @@ public class RemoveAttributesActivityJsonUnmarshaller implements Unmarshaller<Re
                 }
                 if (context.testExpression("attributes", targetDepth)) {
                     context.nextToken();
-                    removeAttributesActivity.setAttributes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    removeAttributesActivity.setAttributes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("next", targetDepth)) {
                     context.nextToken();

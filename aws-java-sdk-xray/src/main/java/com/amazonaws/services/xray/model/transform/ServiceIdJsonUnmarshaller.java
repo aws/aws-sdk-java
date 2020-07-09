@@ -54,7 +54,9 @@ public class ServiceIdJsonUnmarshaller implements Unmarshaller<ServiceId, JsonUn
                 }
                 if (context.testExpression("Names", targetDepth)) {
                     context.nextToken();
-                    serviceId.setNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    serviceId.setNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("AccountId", targetDepth)) {
                     context.nextToken();

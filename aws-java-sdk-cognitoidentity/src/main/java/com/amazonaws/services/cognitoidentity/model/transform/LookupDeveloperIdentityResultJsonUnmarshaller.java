@@ -55,7 +55,8 @@ public class LookupDeveloperIdentityResultJsonUnmarshaller implements Unmarshall
                 if (context.testExpression("DeveloperUserIdentifierList", targetDepth)) {
                     context.nextToken();
                     lookupDeveloperIdentityResult.setDeveloperUserIdentifierList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

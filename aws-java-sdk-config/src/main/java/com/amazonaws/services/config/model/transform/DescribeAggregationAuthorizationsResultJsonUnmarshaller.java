@@ -51,7 +51,9 @@ public class DescribeAggregationAuthorizationsResultJsonUnmarshaller implements 
                 if (context.testExpression("AggregationAuthorizations", targetDepth)) {
                     context.nextToken();
                     describeAggregationAuthorizationsResult.setAggregationAuthorizations(new ListUnmarshaller<AggregationAuthorization>(
-                            AggregationAuthorizationJsonUnmarshaller.getInstance()).unmarshall(context));
+                            AggregationAuthorizationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

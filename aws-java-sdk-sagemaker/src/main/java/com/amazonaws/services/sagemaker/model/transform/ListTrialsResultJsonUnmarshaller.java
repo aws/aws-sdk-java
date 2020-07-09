@@ -50,7 +50,9 @@ public class ListTrialsResultJsonUnmarshaller implements Unmarshaller<ListTrials
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TrialSummaries", targetDepth)) {
                     context.nextToken();
-                    listTrialsResult.setTrialSummaries(new ListUnmarshaller<TrialSummary>(TrialSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listTrialsResult.setTrialSummaries(new ListUnmarshaller<TrialSummary>(TrialSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

@@ -58,16 +58,21 @@ public class DatasetJsonUnmarshaller implements Unmarshaller<Dataset, JsonUnmars
                 }
                 if (context.testExpression("actions", targetDepth)) {
                     context.nextToken();
-                    dataset.setActions(new ListUnmarshaller<DatasetAction>(DatasetActionJsonUnmarshaller.getInstance()).unmarshall(context));
+                    dataset.setActions(new ListUnmarshaller<DatasetAction>(DatasetActionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("triggers", targetDepth)) {
                     context.nextToken();
-                    dataset.setTriggers(new ListUnmarshaller<DatasetTrigger>(DatasetTriggerJsonUnmarshaller.getInstance()).unmarshall(context));
+                    dataset.setTriggers(new ListUnmarshaller<DatasetTrigger>(DatasetTriggerJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("contentDeliveryRules", targetDepth)) {
                     context.nextToken();
                     dataset.setContentDeliveryRules(new ListUnmarshaller<DatasetContentDeliveryRule>(DatasetContentDeliveryRuleJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();

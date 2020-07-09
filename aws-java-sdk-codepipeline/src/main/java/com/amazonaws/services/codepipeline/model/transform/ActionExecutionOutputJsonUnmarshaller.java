@@ -51,7 +51,8 @@ public class ActionExecutionOutputJsonUnmarshaller implements Unmarshaller<Actio
                 if (context.testExpression("outputArtifacts", targetDepth)) {
                     context.nextToken();
                     actionExecutionOutput.setOutputArtifacts(new ListUnmarshaller<ArtifactDetail>(ArtifactDetailJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("executionResult", targetDepth)) {
                     context.nextToken();

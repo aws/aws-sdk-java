@@ -51,7 +51,8 @@ public class DescribeCanariesLastRunResultJsonUnmarshaller implements Unmarshall
                 if (context.testExpression("CanariesLastRun", targetDepth)) {
                     context.nextToken();
                     describeCanariesLastRunResult.setCanariesLastRun(new ListUnmarshaller<CanaryLastRun>(CanaryLastRunJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

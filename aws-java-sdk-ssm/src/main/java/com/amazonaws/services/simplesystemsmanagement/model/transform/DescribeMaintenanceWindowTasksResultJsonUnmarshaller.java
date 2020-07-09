@@ -51,7 +51,9 @@ public class DescribeMaintenanceWindowTasksResultJsonUnmarshaller implements Unm
                 if (context.testExpression("Tasks", targetDepth)) {
                     context.nextToken();
                     describeMaintenanceWindowTasksResult.setTasks(new ListUnmarshaller<MaintenanceWindowTask>(MaintenanceWindowTaskJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

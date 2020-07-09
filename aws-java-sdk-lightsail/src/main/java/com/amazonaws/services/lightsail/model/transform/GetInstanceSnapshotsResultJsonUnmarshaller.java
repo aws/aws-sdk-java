@@ -51,7 +51,8 @@ public class GetInstanceSnapshotsResultJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("instanceSnapshots", targetDepth)) {
                     context.nextToken();
                     getInstanceSnapshotsResult.setInstanceSnapshots(new ListUnmarshaller<InstanceSnapshot>(InstanceSnapshotJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextPageToken", targetDepth)) {
                     context.nextToken();

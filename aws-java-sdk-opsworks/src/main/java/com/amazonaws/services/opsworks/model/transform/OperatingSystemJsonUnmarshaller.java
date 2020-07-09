@@ -63,7 +63,9 @@ public class OperatingSystemJsonUnmarshaller implements Unmarshaller<OperatingSy
                 if (context.testExpression("ConfigurationManagers", targetDepth)) {
                     context.nextToken();
                     operatingSystem.setConfigurationManagers(new ListUnmarshaller<OperatingSystemConfigurationManager>(
-                            OperatingSystemConfigurationManagerJsonUnmarshaller.getInstance()).unmarshall(context));
+                            OperatingSystemConfigurationManagerJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ReportedName", targetDepth)) {
                     context.nextToken();

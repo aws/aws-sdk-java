@@ -51,7 +51,8 @@ public class DescribeDirectoryConfigsResultJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("DirectoryConfigs", targetDepth)) {
                     context.nextToken();
                     describeDirectoryConfigsResult.setDirectoryConfigs(new ListUnmarshaller<DirectoryConfig>(DirectoryConfigJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

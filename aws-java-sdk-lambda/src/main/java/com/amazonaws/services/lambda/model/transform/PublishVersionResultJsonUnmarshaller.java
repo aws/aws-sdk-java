@@ -126,7 +126,9 @@ public class PublishVersionResultJsonUnmarshaller implements Unmarshaller<Publis
                 }
                 if (context.testExpression("Layers", targetDepth)) {
                     context.nextToken();
-                    publishVersionResult.setLayers(new ListUnmarshaller<Layer>(LayerJsonUnmarshaller.getInstance()).unmarshall(context));
+                    publishVersionResult.setLayers(new ListUnmarshaller<Layer>(LayerJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
                     context.nextToken();
@@ -155,7 +157,8 @@ public class PublishVersionResultJsonUnmarshaller implements Unmarshaller<Publis
                 if (context.testExpression("FileSystemConfigs", targetDepth)) {
                     context.nextToken();
                     publishVersionResult.setFileSystemConfigs(new ListUnmarshaller<FileSystemConfig>(FileSystemConfigJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

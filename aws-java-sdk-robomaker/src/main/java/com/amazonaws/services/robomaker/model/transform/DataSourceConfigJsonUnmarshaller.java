@@ -58,7 +58,9 @@ public class DataSourceConfigJsonUnmarshaller implements Unmarshaller<DataSource
                 }
                 if (context.testExpression("s3Keys", targetDepth)) {
                     context.nextToken();
-                    dataSourceConfig.setS3Keys(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    dataSourceConfig.setS3Keys(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

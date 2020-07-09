@@ -51,7 +51,9 @@ public class DescribeAcceleratorsResultJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("acceleratorSet", targetDepth)) {
                     context.nextToken();
                     describeAcceleratorsResult.setAcceleratorSet(new ListUnmarshaller<ElasticInferenceAccelerator>(ElasticInferenceAcceleratorJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

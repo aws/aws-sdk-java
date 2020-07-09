@@ -50,7 +50,9 @@ public class GetMLTaskRunsResultJsonUnmarshaller implements Unmarshaller<GetMLTa
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TaskRuns", targetDepth)) {
                     context.nextToken();
-                    getMLTaskRunsResult.setTaskRuns(new ListUnmarshaller<TaskRun>(TaskRunJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getMLTaskRunsResult.setTaskRuns(new ListUnmarshaller<TaskRun>(TaskRunJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

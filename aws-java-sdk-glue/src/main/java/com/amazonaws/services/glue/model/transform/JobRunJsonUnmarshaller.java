@@ -95,7 +95,9 @@ public class JobRunJsonUnmarshaller implements Unmarshaller<JobRun, JsonUnmarsha
                 }
                 if (context.testExpression("PredecessorRuns", targetDepth)) {
                     context.nextToken();
-                    jobRun.setPredecessorRuns(new ListUnmarshaller<Predecessor>(PredecessorJsonUnmarshaller.getInstance()).unmarshall(context));
+                    jobRun.setPredecessorRuns(new ListUnmarshaller<Predecessor>(PredecessorJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("AllocatedCapacity", targetDepth)) {
                     context.nextToken();

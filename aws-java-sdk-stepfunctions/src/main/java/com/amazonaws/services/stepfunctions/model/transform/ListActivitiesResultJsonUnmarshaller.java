@@ -51,7 +51,8 @@ public class ListActivitiesResultJsonUnmarshaller implements Unmarshaller<ListAc
                 if (context.testExpression("activities", targetDepth)) {
                     context.nextToken();
                     listActivitiesResult.setActivities(new ListUnmarshaller<ActivityListItem>(ActivityListItemJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

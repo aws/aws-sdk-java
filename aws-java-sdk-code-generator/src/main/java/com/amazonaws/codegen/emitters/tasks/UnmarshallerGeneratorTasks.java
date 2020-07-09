@@ -17,6 +17,7 @@ package com.amazonaws.codegen.emitters.tasks;
 import com.amazonaws.codegen.emitters.FreemarkerGeneratorTask;
 import com.amazonaws.codegen.emitters.GeneratorTask;
 import com.amazonaws.codegen.emitters.GeneratorTaskParams;
+import com.amazonaws.codegen.internal.TypeUtils;
 import com.amazonaws.codegen.model.intermediate.Metadata;
 import com.amazonaws.codegen.model.intermediate.Protocol;
 import com.amazonaws.codegen.model.intermediate.ShapeModel;
@@ -54,9 +55,17 @@ public class UnmarshallerGeneratorTasks extends BaseGeneratorTasks {
     private GeneratorTask createTask(String javaShapeName, ShapeModel shapeModel) throws Exception {
         final Template template = freemarker.getModelUnmarshallerTemplate();
         final ShapeType shapeType = shapeModel.getShapeType();
+
+        String shapeFqcn = shapeModel.getShapeName();
+        if (TypeUtils.isReserved(shapeFqcn)) {
+            shapeFqcn = shapeModel.getFullyQualifiedName();
+        }
+
         Map<String, Object> dataModel = ImmutableMapParameter.<String, Object>builder()
                 .put("fileHeader", model.getFileHeader())
                 .put("shape", shapeModel)
+                .put("shapeFqcn", shapeFqcn)
+                .put("packageName", shapeModel.getPackageName())
                 .put("metadata", metadata)
                 .put("transformPackage", model.getTransformPackage())
                 .put("exceptionUnmarshallerImpl", model.getExceptionUnmarshallerImpl())

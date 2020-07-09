@@ -51,7 +51,8 @@ public class MonitoringOutputConfigJsonUnmarshaller implements Unmarshaller<Moni
                 if (context.testExpression("MonitoringOutputs", targetDepth)) {
                     context.nextToken();
                     monitoringOutputConfig.setMonitoringOutputs(new ListUnmarshaller<MonitoringOutput>(MonitoringOutputJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("KmsKeyId", targetDepth)) {
                     context.nextToken();

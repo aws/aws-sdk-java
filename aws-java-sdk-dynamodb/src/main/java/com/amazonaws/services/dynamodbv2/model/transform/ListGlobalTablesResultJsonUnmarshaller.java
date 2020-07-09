@@ -50,7 +50,9 @@ public class ListGlobalTablesResultJsonUnmarshaller implements Unmarshaller<List
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("GlobalTables", targetDepth)) {
                     context.nextToken();
-                    listGlobalTablesResult.setGlobalTables(new ListUnmarshaller<GlobalTable>(GlobalTableJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listGlobalTablesResult.setGlobalTables(new ListUnmarshaller<GlobalTable>(GlobalTableJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("LastEvaluatedGlobalTableName", targetDepth)) {
                     context.nextToken();

@@ -55,7 +55,9 @@ public class ListDistributionConfigurationsResultJsonUnmarshaller implements Unm
                 if (context.testExpression("distributionConfigurationSummaryList", targetDepth)) {
                     context.nextToken();
                     listDistributionConfigurationsResult.setDistributionConfigurationSummaryList(new ListUnmarshaller<DistributionConfigurationSummary>(
-                            DistributionConfigurationSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                            DistributionConfigurationSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

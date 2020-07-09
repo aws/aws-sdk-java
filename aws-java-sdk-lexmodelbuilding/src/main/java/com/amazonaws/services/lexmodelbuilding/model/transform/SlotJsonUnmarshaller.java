@@ -78,7 +78,9 @@ public class SlotJsonUnmarshaller implements Unmarshaller<Slot, JsonUnmarshaller
                 }
                 if (context.testExpression("sampleUtterances", targetDepth)) {
                     context.nextToken();
-                    slot.setSampleUtterances(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    slot.setSampleUtterances(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("responseCard", targetDepth)) {
                     context.nextToken();

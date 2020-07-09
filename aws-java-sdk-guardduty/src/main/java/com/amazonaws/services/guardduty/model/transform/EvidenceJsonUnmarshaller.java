@@ -51,7 +51,8 @@ public class EvidenceJsonUnmarshaller implements Unmarshaller<Evidence, JsonUnma
                 if (context.testExpression("threatIntelligenceDetails", targetDepth)) {
                     context.nextToken();
                     evidence.setThreatIntelligenceDetails(new ListUnmarshaller<ThreatIntelligenceDetail>(ThreatIntelligenceDetailJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

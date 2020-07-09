@@ -51,7 +51,8 @@ public class ListFunctionsResultJsonUnmarshaller implements Unmarshaller<ListFun
                 if (context.testExpression("functions", targetDepth)) {
                     context.nextToken();
                     listFunctionsResult.setFunctions(new ListUnmarshaller<FunctionConfiguration>(FunctionConfigurationJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

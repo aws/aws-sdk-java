@@ -58,11 +58,15 @@ public class ThingIndexingConfigurationJsonUnmarshaller implements Unmarshaller<
                 }
                 if (context.testExpression("managedFields", targetDepth)) {
                     context.nextToken();
-                    thingIndexingConfiguration.setManagedFields(new ListUnmarshaller<Field>(FieldJsonUnmarshaller.getInstance()).unmarshall(context));
+                    thingIndexingConfiguration.setManagedFields(new ListUnmarshaller<Field>(FieldJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("customFields", targetDepth)) {
                     context.nextToken();
-                    thingIndexingConfiguration.setCustomFields(new ListUnmarshaller<Field>(FieldJsonUnmarshaller.getInstance()).unmarshall(context));
+                    thingIndexingConfiguration.setCustomFields(new ListUnmarshaller<Field>(FieldJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

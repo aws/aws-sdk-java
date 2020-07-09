@@ -52,7 +52,9 @@ public class ListProvisioningArtifactsForServiceActionResultJsonUnmarshaller imp
                 if (context.testExpression("ProvisioningArtifactViews", targetDepth)) {
                     context.nextToken();
                     listProvisioningArtifactsForServiceActionResult.setProvisioningArtifactViews(new ListUnmarshaller<ProvisioningArtifactView>(
-                            ProvisioningArtifactViewJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ProvisioningArtifactViewJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextPageToken", targetDepth)) {
                     context.nextToken();

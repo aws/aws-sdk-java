@@ -60,6 +60,10 @@ public class RateBasedStatementJsonUnmarshaller implements Unmarshaller<RateBase
                     context.nextToken();
                     rateBasedStatement.setScopeDownStatement(StatementJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ForwardedIPConfig", targetDepth)) {
+                    context.nextToken();
+                    rateBasedStatement.setForwardedIPConfig(ForwardedIPConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

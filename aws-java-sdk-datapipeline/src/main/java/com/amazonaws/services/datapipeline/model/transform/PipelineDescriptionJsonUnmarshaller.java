@@ -58,7 +58,9 @@ public class PipelineDescriptionJsonUnmarshaller implements Unmarshaller<Pipelin
                 }
                 if (context.testExpression("fields", targetDepth)) {
                     context.nextToken();
-                    pipelineDescription.setFields(new ListUnmarshaller<Field>(FieldJsonUnmarshaller.getInstance()).unmarshall(context));
+                    pipelineDescription.setFields(new ListUnmarshaller<Field>(FieldJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();
@@ -66,7 +68,9 @@ public class PipelineDescriptionJsonUnmarshaller implements Unmarshaller<Pipelin
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
-                    pipelineDescription.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    pipelineDescription.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

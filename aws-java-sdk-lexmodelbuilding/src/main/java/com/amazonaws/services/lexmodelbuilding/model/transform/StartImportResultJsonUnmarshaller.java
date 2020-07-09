@@ -70,7 +70,9 @@ public class StartImportResultJsonUnmarshaller implements Unmarshaller<StartImpo
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
-                    startImportResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    startImportResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("createdDate", targetDepth)) {
                     context.nextToken();

@@ -51,7 +51,8 @@ public class GetAuthorizationTokenResultJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("authorizationData", targetDepth)) {
                     context.nextToken();
                     getAuthorizationTokenResult.setAuthorizationData(new ListUnmarshaller<AuthorizationData>(AuthorizationDataJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

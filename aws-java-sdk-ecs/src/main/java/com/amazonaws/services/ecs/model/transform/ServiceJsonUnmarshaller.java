@@ -62,11 +62,15 @@ public class ServiceJsonUnmarshaller implements Unmarshaller<Service, JsonUnmars
                 }
                 if (context.testExpression("loadBalancers", targetDepth)) {
                     context.nextToken();
-                    service.setLoadBalancers(new ListUnmarshaller<LoadBalancer>(LoadBalancerJsonUnmarshaller.getInstance()).unmarshall(context));
+                    service.setLoadBalancers(new ListUnmarshaller<LoadBalancer>(LoadBalancerJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("serviceRegistries", targetDepth)) {
                     context.nextToken();
-                    service.setServiceRegistries(new ListUnmarshaller<ServiceRegistry>(ServiceRegistryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    service.setServiceRegistries(new ListUnmarshaller<ServiceRegistry>(ServiceRegistryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
@@ -91,7 +95,9 @@ public class ServiceJsonUnmarshaller implements Unmarshaller<Service, JsonUnmars
                 if (context.testExpression("capacityProviderStrategy", targetDepth)) {
                     context.nextToken();
                     service.setCapacityProviderStrategy(new ListUnmarshaller<CapacityProviderStrategyItem>(CapacityProviderStrategyItemJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("platformVersion", targetDepth)) {
                     context.nextToken();
@@ -107,11 +113,15 @@ public class ServiceJsonUnmarshaller implements Unmarshaller<Service, JsonUnmars
                 }
                 if (context.testExpression("taskSets", targetDepth)) {
                     context.nextToken();
-                    service.setTaskSets(new ListUnmarshaller<TaskSet>(TaskSetJsonUnmarshaller.getInstance()).unmarshall(context));
+                    service.setTaskSets(new ListUnmarshaller<TaskSet>(TaskSetJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("deployments", targetDepth)) {
                     context.nextToken();
-                    service.setDeployments(new ListUnmarshaller<Deployment>(DeploymentJsonUnmarshaller.getInstance()).unmarshall(context));
+                    service.setDeployments(new ListUnmarshaller<Deployment>(DeploymentJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("roleArn", targetDepth)) {
                     context.nextToken();
@@ -119,7 +129,9 @@ public class ServiceJsonUnmarshaller implements Unmarshaller<Service, JsonUnmars
                 }
                 if (context.testExpression("events", targetDepth)) {
                     context.nextToken();
-                    service.setEvents(new ListUnmarshaller<ServiceEvent>(ServiceEventJsonUnmarshaller.getInstance()).unmarshall(context));
+                    service.setEvents(new ListUnmarshaller<ServiceEvent>(ServiceEventJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
@@ -128,11 +140,14 @@ public class ServiceJsonUnmarshaller implements Unmarshaller<Service, JsonUnmars
                 if (context.testExpression("placementConstraints", targetDepth)) {
                     context.nextToken();
                     service.setPlacementConstraints(new ListUnmarshaller<PlacementConstraint>(PlacementConstraintJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("placementStrategy", targetDepth)) {
                     context.nextToken();
-                    service.setPlacementStrategy(new ListUnmarshaller<PlacementStrategy>(PlacementStrategyJsonUnmarshaller.getInstance()).unmarshall(context));
+                    service.setPlacementStrategy(new ListUnmarshaller<PlacementStrategy>(PlacementStrategyJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("networkConfiguration", targetDepth)) {
                     context.nextToken();
@@ -152,7 +167,9 @@ public class ServiceJsonUnmarshaller implements Unmarshaller<Service, JsonUnmars
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
-                    service.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    service.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("createdBy", targetDepth)) {
                     context.nextToken();

@@ -50,7 +50,9 @@ public class GetIntentVersionsResultJsonUnmarshaller implements Unmarshaller<Get
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("intents", targetDepth)) {
                     context.nextToken();
-                    getIntentVersionsResult.setIntents(new ListUnmarshaller<IntentMetadata>(IntentMetadataJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getIntentVersionsResult.setIntents(new ListUnmarshaller<IntentMetadata>(IntentMetadataJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

@@ -51,7 +51,8 @@ public class ListDatastoresResultJsonUnmarshaller implements Unmarshaller<ListDa
                 if (context.testExpression("datastoreSummaries", targetDepth)) {
                     context.nextToken();
                     listDatastoresResult.setDatastoreSummaries(new ListUnmarshaller<DatastoreSummary>(DatastoreSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

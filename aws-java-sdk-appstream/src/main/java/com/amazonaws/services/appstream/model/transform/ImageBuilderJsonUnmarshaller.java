@@ -110,7 +110,9 @@ public class ImageBuilderJsonUnmarshaller implements Unmarshaller<ImageBuilder, 
                 }
                 if (context.testExpression("ImageBuilderErrors", targetDepth)) {
                     context.nextToken();
-                    imageBuilder.setImageBuilderErrors(new ListUnmarshaller<ResourceError>(ResourceErrorJsonUnmarshaller.getInstance()).unmarshall(context));
+                    imageBuilder.setImageBuilderErrors(new ListUnmarshaller<ResourceError>(ResourceErrorJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("AppstreamAgentVersion", targetDepth)) {
                     context.nextToken();
@@ -118,7 +120,9 @@ public class ImageBuilderJsonUnmarshaller implements Unmarshaller<ImageBuilder, 
                 }
                 if (context.testExpression("AccessEndpoints", targetDepth)) {
                     context.nextToken();
-                    imageBuilder.setAccessEndpoints(new ListUnmarshaller<AccessEndpoint>(AccessEndpointJsonUnmarshaller.getInstance()).unmarshall(context));
+                    imageBuilder.setAccessEndpoints(new ListUnmarshaller<AccessEndpoint>(AccessEndpointJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

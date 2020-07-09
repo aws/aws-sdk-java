@@ -55,7 +55,8 @@ public class ListApplicationVersionsResultJsonUnmarshaller implements Unmarshall
                 if (context.testExpression("versions", targetDepth)) {
                     context.nextToken();
                     listApplicationVersionsResult.setVersions(new ListUnmarshaller<VersionSummary>(VersionSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

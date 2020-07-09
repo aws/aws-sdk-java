@@ -50,7 +50,9 @@ public class GetIceServerConfigResultJsonUnmarshaller implements Unmarshaller<Ge
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("IceServerList", targetDepth)) {
                     context.nextToken();
-                    getIceServerConfigResult.setIceServerList(new ListUnmarshaller<IceServer>(IceServerJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getIceServerConfigResult.setIceServerList(new ListUnmarshaller<IceServer>(IceServerJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

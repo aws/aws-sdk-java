@@ -50,7 +50,9 @@ public class DescribeJobFlowsResultJsonUnmarshaller implements Unmarshaller<Desc
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("JobFlows", targetDepth)) {
                     context.nextToken();
-                    describeJobFlowsResult.setJobFlows(new ListUnmarshaller<JobFlowDetail>(JobFlowDetailJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeJobFlowsResult.setJobFlows(new ListUnmarshaller<JobFlowDetail>(JobFlowDetailJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

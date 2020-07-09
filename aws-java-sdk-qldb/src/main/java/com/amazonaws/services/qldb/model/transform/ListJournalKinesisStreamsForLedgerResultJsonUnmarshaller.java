@@ -52,7 +52,9 @@ public class ListJournalKinesisStreamsForLedgerResultJsonUnmarshaller implements
                 if (context.testExpression("Streams", targetDepth)) {
                     context.nextToken();
                     listJournalKinesisStreamsForLedgerResult.setStreams(new ListUnmarshaller<JournalKinesisStreamDescription>(
-                            JournalKinesisStreamDescriptionJsonUnmarshaller.getInstance()).unmarshall(context));
+                            JournalKinesisStreamDescriptionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

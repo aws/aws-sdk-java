@@ -74,8 +74,9 @@ public class ListPackageVersionAssetsResultJsonUnmarshaller implements Unmarshal
                 }
                 if (context.testExpression("assets", targetDepth)) {
                     context.nextToken();
-                    listPackageVersionAssetsResult
-                            .setAssets(new ListUnmarshaller<AssetSummary>(AssetSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listPackageVersionAssetsResult.setAssets(new ListUnmarshaller<AssetSummary>(AssetSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

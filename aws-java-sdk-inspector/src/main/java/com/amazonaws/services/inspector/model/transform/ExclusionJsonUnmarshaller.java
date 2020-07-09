@@ -66,11 +66,15 @@ public class ExclusionJsonUnmarshaller implements Unmarshaller<Exclusion, JsonUn
                 }
                 if (context.testExpression("scopes", targetDepth)) {
                     context.nextToken();
-                    exclusion.setScopes(new ListUnmarshaller<Scope>(ScopeJsonUnmarshaller.getInstance()).unmarshall(context));
+                    exclusion.setScopes(new ListUnmarshaller<Scope>(ScopeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("attributes", targetDepth)) {
                     context.nextToken();
-                    exclusion.setAttributes(new ListUnmarshaller<Attribute>(AttributeJsonUnmarshaller.getInstance()).unmarshall(context));
+                    exclusion.setAttributes(new ListUnmarshaller<Attribute>(AttributeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

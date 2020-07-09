@@ -51,7 +51,8 @@ public class GetLinkAttributesResultJsonUnmarshaller implements Unmarshaller<Get
                 if (context.testExpression("Attributes", targetDepth)) {
                     context.nextToken();
                     getLinkAttributesResult.setAttributes(new ListUnmarshaller<AttributeKeyAndValue>(AttributeKeyAndValueJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

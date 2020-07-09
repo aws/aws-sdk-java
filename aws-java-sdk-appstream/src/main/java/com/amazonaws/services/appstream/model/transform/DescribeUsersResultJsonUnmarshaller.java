@@ -50,7 +50,9 @@ public class DescribeUsersResultJsonUnmarshaller implements Unmarshaller<Describ
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Users", targetDepth)) {
                     context.nextToken();
-                    describeUsersResult.setUsers(new ListUnmarshaller<User>(UserJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeUsersResult.setUsers(new ListUnmarshaller<User>(UserJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

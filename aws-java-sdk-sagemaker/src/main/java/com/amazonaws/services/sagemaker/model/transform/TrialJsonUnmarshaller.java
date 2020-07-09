@@ -86,12 +86,16 @@ public class TrialJsonUnmarshaller implements Unmarshaller<Trial, JsonUnmarshall
                 }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
-                    trial.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    trial.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("TrialComponentSummaries", targetDepth)) {
                     context.nextToken();
                     trial.setTrialComponentSummaries(new ListUnmarshaller<TrialComponentSimpleSummary>(TrialComponentSimpleSummaryJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

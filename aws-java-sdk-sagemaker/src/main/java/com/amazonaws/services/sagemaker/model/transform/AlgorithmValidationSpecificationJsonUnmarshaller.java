@@ -55,7 +55,9 @@ public class AlgorithmValidationSpecificationJsonUnmarshaller implements Unmarsh
                 if (context.testExpression("ValidationProfiles", targetDepth)) {
                     context.nextToken();
                     algorithmValidationSpecification.setValidationProfiles(new ListUnmarshaller<AlgorithmValidationProfile>(
-                            AlgorithmValidationProfileJsonUnmarshaller.getInstance()).unmarshall(context));
+                            AlgorithmValidationProfileJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

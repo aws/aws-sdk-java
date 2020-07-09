@@ -50,7 +50,9 @@ public class ListEnvironmentsResultJsonUnmarshaller implements Unmarshaller<List
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Items", targetDepth)) {
                     context.nextToken();
-                    listEnvironmentsResult.setItems(new ListUnmarshaller<Environment>(EnvironmentJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listEnvironmentsResult.setItems(new ListUnmarshaller<Environment>(EnvironmentJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

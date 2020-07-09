@@ -51,12 +51,16 @@ public class SourceTableFeatureDetailsJsonUnmarshaller implements Unmarshaller<S
                 if (context.testExpression("LocalSecondaryIndexes", targetDepth)) {
                     context.nextToken();
                     sourceTableFeatureDetails.setLocalSecondaryIndexes(new ListUnmarshaller<LocalSecondaryIndexInfo>(LocalSecondaryIndexInfoJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("GlobalSecondaryIndexes", targetDepth)) {
                     context.nextToken();
                     sourceTableFeatureDetails.setGlobalSecondaryIndexes(new ListUnmarshaller<GlobalSecondaryIndexInfo>(GlobalSecondaryIndexInfoJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("StreamDescription", targetDepth)) {
                     context.nextToken();

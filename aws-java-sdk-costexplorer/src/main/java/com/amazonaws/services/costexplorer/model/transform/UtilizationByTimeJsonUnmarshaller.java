@@ -55,7 +55,8 @@ public class UtilizationByTimeJsonUnmarshaller implements Unmarshaller<Utilizati
                 if (context.testExpression("Groups", targetDepth)) {
                     context.nextToken();
                     utilizationByTime.setGroups(new ListUnmarshaller<ReservationUtilizationGroup>(ReservationUtilizationGroupJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Total", targetDepth)) {
                     context.nextToken();

@@ -51,7 +51,8 @@ public class GrantFlowEntitlementsResultJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("entitlements", targetDepth)) {
                     context.nextToken();
                     grantFlowEntitlementsResult.setEntitlements(new ListUnmarshaller<Entitlement>(EntitlementJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("flowArn", targetDepth)) {
                     context.nextToken();

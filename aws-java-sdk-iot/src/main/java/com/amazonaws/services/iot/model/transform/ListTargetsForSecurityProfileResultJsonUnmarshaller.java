@@ -51,7 +51,9 @@ public class ListTargetsForSecurityProfileResultJsonUnmarshaller implements Unma
                 if (context.testExpression("securityProfileTargets", targetDepth)) {
                     context.nextToken();
                     listTargetsForSecurityProfileResult.setSecurityProfileTargets(new ListUnmarshaller<SecurityProfileTarget>(
-                            SecurityProfileTargetJsonUnmarshaller.getInstance()).unmarshall(context));
+                            SecurityProfileTargetJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

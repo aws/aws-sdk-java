@@ -58,11 +58,15 @@ public class CreateIntentVersionResultJsonUnmarshaller implements Unmarshaller<C
                 }
                 if (context.testExpression("slots", targetDepth)) {
                     context.nextToken();
-                    createIntentVersionResult.setSlots(new ListUnmarshaller<Slot>(SlotJsonUnmarshaller.getInstance()).unmarshall(context));
+                    createIntentVersionResult.setSlots(new ListUnmarshaller<Slot>(SlotJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("sampleUtterances", targetDepth)) {
                     context.nextToken();
-                    createIntentVersionResult.setSampleUtterances(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    createIntentVersionResult.setSampleUtterances(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("confirmationPrompt", targetDepth)) {
                     context.nextToken();

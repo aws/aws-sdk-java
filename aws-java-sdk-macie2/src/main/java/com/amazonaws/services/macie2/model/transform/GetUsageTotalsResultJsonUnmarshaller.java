@@ -50,7 +50,9 @@ public class GetUsageTotalsResultJsonUnmarshaller implements Unmarshaller<GetUsa
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("usageTotals", targetDepth)) {
                     context.nextToken();
-                    getUsageTotalsResult.setUsageTotals(new ListUnmarshaller<UsageTotal>(UsageTotalJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getUsageTotalsResult.setUsageTotals(new ListUnmarshaller<UsageTotal>(UsageTotalJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

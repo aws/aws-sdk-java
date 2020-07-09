@@ -51,7 +51,9 @@ public class DescribeRecommendationExportJobsResultJsonUnmarshaller implements U
                 if (context.testExpression("recommendationExportJobs", targetDepth)) {
                     context.nextToken();
                     describeRecommendationExportJobsResult.setRecommendationExportJobs(new ListUnmarshaller<RecommendationExportJob>(
-                            RecommendationExportJobJsonUnmarshaller.getInstance()).unmarshall(context));
+                            RecommendationExportJobJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

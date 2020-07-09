@@ -55,11 +55,14 @@ public class CompareFacesResultJsonUnmarshaller implements Unmarshaller<CompareF
                 if (context.testExpression("FaceMatches", targetDepth)) {
                     context.nextToken();
                     compareFacesResult.setFaceMatches(new ListUnmarshaller<CompareFacesMatch>(CompareFacesMatchJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("UnmatchedFaces", targetDepth)) {
                     context.nextToken();
-                    compareFacesResult.setUnmatchedFaces(new ListUnmarshaller<ComparedFace>(ComparedFaceJsonUnmarshaller.getInstance()).unmarshall(context));
+                    compareFacesResult.setUnmatchedFaces(new ListUnmarshaller<ComparedFace>(ComparedFaceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("SourceImageOrientationCorrection", targetDepth)) {
                     context.nextToken();

@@ -50,7 +50,9 @@ public class ListGameServersResultJsonUnmarshaller implements Unmarshaller<ListG
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("GameServers", targetDepth)) {
                     context.nextToken();
-                    listGameServersResult.setGameServers(new ListUnmarshaller<GameServer>(GameServerJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listGameServersResult.setGameServers(new ListUnmarshaller<GameServer>(GameServerJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

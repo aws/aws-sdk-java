@@ -1220,6 +1220,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "AccessDeniedException",
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhub.exception.AccessDeniedException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1228,6 +1229,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.migrationhub.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1259,6 +1261,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhub.model.ApplicationState",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1320,6 +1323,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The configurationId from the Application Discovery Service that uniquely identifies an application.</p>\n@param applicationId The configurationId from the Application Discovery Service that uniquely identifies an application.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1388,6 +1392,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The current status of an application.</p>\n@param applicationStatus The current status of an application.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ApplicationStatus*/",
@@ -1456,6 +1461,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The timestamp when the application status was last updated.</p>\n@param lastUpdatedTime The timestamp when the application status was last updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1526,6 +1532,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The configurationId from the Application Discovery Service that uniquely identifies an application.</p>\n@param applicationId The configurationId from the Application Discovery Service that uniquely identifies an application.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1595,6 +1602,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The current status of an application.</p>\n@param applicationStatus The current status of an application.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ApplicationStatus*/",
@@ -1664,6 +1672,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The timestamp when the application status was last updated.</p>\n@param lastUpdatedTime The timestamp when the application status was last updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1679,6 +1688,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.migrationhub.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1722,6 +1732,7 @@
         "value" : "COMPLETED"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhub.enum.ApplicationStatus",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1730,6 +1741,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.migrationhub.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1764,6 +1776,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhub.request.AssociateCreatedArtifactRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1832,6 +1845,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the ProgressUpdateStream. </p>\n@param progressUpdateStream The name of the ProgressUpdateStream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1900,6 +1914,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>\n@param migrationTaskName Unique identifier that references the migration task. <i>Do not store personal data in this field.</i>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1968,6 +1983,7 @@
           "variableSetterType" : "CreatedArtifact"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.) </p>\n@param createdArtifact An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.)\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2036,6 +2052,7 @@
           "variableSetterType" : "Boolean"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>\n@param dryRun Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2106,6 +2123,7 @@
             "variableSetterType" : "CreatedArtifact"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.) </p>\n@param createdArtifact An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.)\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2175,6 +2193,7 @@
             "variableSetterType" : "Boolean"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>\n@param dryRun Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2244,6 +2263,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>\n@param migrationTaskName Unique identifier that references the migration task. <i>Do not store personal data in this field.</i>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2313,6 +2333,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the ProgressUpdateStream. </p>\n@param progressUpdateStream The name of the ProgressUpdateStream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2328,6 +2349,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.migrationhub.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ProgressUpdateStream", "MigrationTaskName", "CreatedArtifact" ],
@@ -2359,6 +2381,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhub.response.AssociateCreatedArtifactResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2367,6 +2390,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.migrationhub.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2401,6 +2425,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhub.request.AssociateDiscoveredResourceRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2469,6 +2494,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the ProgressUpdateStream.</p>\n@param progressUpdateStream The name of the ProgressUpdateStream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2537,6 +2563,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>\n@param migrationTaskName The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2605,6 +2632,7 @@
           "variableSetterType" : "DiscoveredResource"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Object representing a Resource.</p>\n@param discoveredResource Object representing a Resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2673,6 +2701,7 @@
           "variableSetterType" : "Boolean"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>\n@param dryRun Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2743,6 +2772,7 @@
             "variableSetterType" : "DiscoveredResource"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Object representing a Resource.</p>\n@param discoveredResource Object representing a Resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2812,6 +2842,7 @@
             "variableSetterType" : "Boolean"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>\n@param dryRun Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2881,6 +2912,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>\n@param migrationTaskName The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2950,6 +2982,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the ProgressUpdateStream.</p>\n@param progressUpdateStream The name of the ProgressUpdateStream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2965,6 +2998,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.migrationhub.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ProgressUpdateStream", "MigrationTaskName", "DiscoveredResource" ],
@@ -2996,6 +3030,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhub.response.AssociateDiscoveredResourceResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3004,6 +3039,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.migrationhub.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3038,6 +3074,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhub.request.CreateProgressUpdateStreamRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3106,6 +3143,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>\n@param progressUpdateStreamName The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3174,6 +3212,7 @@
           "variableSetterType" : "Boolean"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>\n@param dryRun Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3244,6 +3283,7 @@
             "variableSetterType" : "Boolean"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>\n@param dryRun Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3313,6 +3353,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>\n@param progressUpdateStreamName The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3328,6 +3369,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.migrationhub.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ProgressUpdateStreamName" ],
@@ -3359,6 +3401,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhub.response.CreateProgressUpdateStreamResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3367,6 +3410,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.migrationhub.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3401,6 +3445,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhub.model.CreatedArtifact",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3462,6 +3507,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An ARN that uniquely identifies the result of a migration task.</p>\n@param name An ARN that uniquely identifies the result of a migration task.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3530,6 +3576,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A description that can be free-form text to record additional detail about the artifact for clarity or for later reference.</p>\n@param description A description that can be free-form text to record additional detail about the artifact for clarity or for later reference.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3600,6 +3647,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A description that can be free-form text to record additional detail about the artifact for clarity or for later reference.</p>\n@param description A description that can be free-form text to record additional detail about the artifact for clarity or for later reference.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3669,6 +3717,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An ARN that uniquely identifies the result of a migration task.</p>\n@param name An ARN that uniquely identifies the result of a migration task.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3684,6 +3733,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.migrationhub.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Name" ],
@@ -3718,6 +3768,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhub.request.DeleteProgressUpdateStreamRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3786,6 +3837,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>\n@param progressUpdateStreamName The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3854,6 +3906,7 @@
           "variableSetterType" : "Boolean"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>\n@param dryRun Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3924,6 +3977,7 @@
             "variableSetterType" : "Boolean"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>\n@param dryRun Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3993,6 +4047,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>\n@param progressUpdateStreamName The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4008,6 +4063,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.migrationhub.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ProgressUpdateStreamName" ],
@@ -4039,6 +4095,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhub.response.DeleteProgressUpdateStreamResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4047,6 +4104,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.migrationhub.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4081,6 +4139,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhub.request.DescribeApplicationStateRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4149,6 +4208,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The configurationId in Application Discovery Service that uniquely identifies the grouped application.</p>\n@param applicationId The configurationId in Application Discovery Service that uniquely identifies the grouped application.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4219,6 +4279,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The configurationId in Application Discovery Service that uniquely identifies the grouped application.</p>\n@param applicationId The configurationId in Application Discovery Service that uniquely identifies the grouped application.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4234,6 +4295,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.migrationhub.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ApplicationId" ],
@@ -4265,6 +4327,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhub.response.DescribeApplicationStateResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4326,6 +4389,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Status of the application - Not Started, In-Progress, Complete.</p>\n@param applicationStatus Status of the application - Not Started, In-Progress, Complete.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ApplicationStatus*/",
@@ -4394,6 +4458,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The timestamp when the application status was last updated.</p>\n@param lastUpdatedTime The timestamp when the application status was last updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4464,6 +4529,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Status of the application - Not Started, In-Progress, Complete.</p>\n@param applicationStatus Status of the application - Not Started, In-Progress, Complete.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ApplicationStatus*/",
@@ -4533,6 +4599,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The timestamp when the application status was last updated.</p>\n@param lastUpdatedTime The timestamp when the application status was last updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4548,6 +4615,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.migrationhub.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4582,6 +4650,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhub.request.DescribeMigrationTaskRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4650,6 +4719,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the ProgressUpdateStream. </p>\n@param progressUpdateStream The name of the ProgressUpdateStream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4718,6 +4788,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>\n@param migrationTaskName The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4788,6 +4859,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>\n@param migrationTaskName The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4857,6 +4929,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the ProgressUpdateStream. </p>\n@param progressUpdateStream The name of the ProgressUpdateStream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4872,6 +4945,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.migrationhub.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ProgressUpdateStream", "MigrationTaskName" ],
@@ -4903,6 +4977,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhub.response.DescribeMigrationTaskResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4964,6 +5039,7 @@
           "variableSetterType" : "MigrationTask"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Object encapsulating information about the migration task.</p>\n@param migrationTask Object encapsulating information about the migration task.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5034,6 +5110,7 @@
             "variableSetterType" : "MigrationTask"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Object encapsulating information about the migration task.</p>\n@param migrationTask Object encapsulating information about the migration task.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5049,6 +5126,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.migrationhub.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -5083,6 +5161,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhub.request.DisassociateCreatedArtifactRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5151,6 +5230,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the ProgressUpdateStream. </p>\n@param progressUpdateStream The name of the ProgressUpdateStream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5219,6 +5299,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Unique identifier that references the migration task to be disassociated with the artifact. <i>Do not store personal data in this field.</i> </p>\n@param migrationTaskName Unique identifier that references the migration task to be disassociated with the artifact. <i>Do not store personal data in this field.</i>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5287,6 +5368,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.)</p>\n@param createdArtifactName An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.)\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5355,6 +5437,7 @@
           "variableSetterType" : "Boolean"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>\n@param dryRun Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5425,6 +5508,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.)</p>\n@param createdArtifactName An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.)\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5494,6 +5578,7 @@
             "variableSetterType" : "Boolean"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>\n@param dryRun Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5563,6 +5648,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Unique identifier that references the migration task to be disassociated with the artifact. <i>Do not store personal data in this field.</i> </p>\n@param migrationTaskName Unique identifier that references the migration task to be disassociated with the artifact. <i>Do not store personal data in this field.</i>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5632,6 +5718,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the ProgressUpdateStream. </p>\n@param progressUpdateStream The name of the ProgressUpdateStream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5647,6 +5734,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.migrationhub.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ProgressUpdateStream", "MigrationTaskName", "CreatedArtifactName" ],
@@ -5678,6 +5766,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhub.response.DisassociateCreatedArtifactResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5686,6 +5775,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.migrationhub.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -5720,6 +5810,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhub.request.DisassociateDiscoveredResourceRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5788,6 +5879,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the ProgressUpdateStream.</p>\n@param progressUpdateStream The name of the ProgressUpdateStream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5856,6 +5948,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>\n@param migrationTaskName The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5924,6 +6017,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>ConfigurationId of the Application Discovery Service resource to be disassociated.</p>\n@param configurationId ConfigurationId of the Application Discovery Service resource to be disassociated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5992,6 +6086,7 @@
           "variableSetterType" : "Boolean"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>\n@param dryRun Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6062,6 +6157,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>ConfigurationId of the Application Discovery Service resource to be disassociated.</p>\n@param configurationId ConfigurationId of the Application Discovery Service resource to be disassociated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6131,6 +6227,7 @@
             "variableSetterType" : "Boolean"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>\n@param dryRun Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6200,6 +6297,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>\n@param migrationTaskName The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6269,6 +6367,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the ProgressUpdateStream.</p>\n@param progressUpdateStream The name of the ProgressUpdateStream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6284,6 +6383,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.migrationhub.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ProgressUpdateStream", "MigrationTaskName", "ConfigurationId" ],
@@ -6315,6 +6415,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhub.response.DisassociateDiscoveredResourceResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6323,6 +6424,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.migrationhub.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6357,6 +6459,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhub.model.DiscoveredResource",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6418,6 +6521,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The configurationId in Application Discovery Service that uniquely identifies the on-premise resource.</p>\n@param configurationId The configurationId in Application Discovery Service that uniquely identifies the on-premise resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6486,6 +6590,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A description that can be free-form text to record additional detail about the discovered resource for clarity or later reference.</p>\n@param description A description that can be free-form text to record additional detail about the discovered resource for clarity or later reference.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6556,6 +6661,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The configurationId in Application Discovery Service that uniquely identifies the on-premise resource.</p>\n@param configurationId The configurationId in Application Discovery Service that uniquely identifies the on-premise resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6625,6 +6731,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A description that can be free-form text to record additional detail about the discovered resource for clarity or later reference.</p>\n@param description A description that can be free-form text to record additional detail about the discovered resource for clarity or later reference.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6640,6 +6747,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.migrationhub.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ConfigurationId" ],
@@ -6674,6 +6782,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "DryRunOperation",
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhub.exception.DryRunOperationException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6682,6 +6791,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.migrationhub.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6713,6 +6823,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "HomeRegionNotSetException",
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhub.exception.HomeRegionNotSetException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6721,6 +6832,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.migrationhub.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6752,6 +6864,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhub.request.ImportMigrationTaskRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6820,6 +6933,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the ProgressUpdateStream. &gt;</p>\n@param progressUpdateStream The name of the ProgressUpdateStream. &gt;\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6888,6 +7002,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>\n@param migrationTaskName Unique identifier that references the migration task. <i>Do not store personal data in this field.</i>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6956,6 +7071,7 @@
           "variableSetterType" : "Boolean"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>\n@param dryRun Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7026,6 +7142,7 @@
             "variableSetterType" : "Boolean"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>\n@param dryRun Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7095,6 +7212,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>\n@param migrationTaskName Unique identifier that references the migration task. <i>Do not store personal data in this field.</i>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7164,6 +7282,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the ProgressUpdateStream. &gt;</p>\n@param progressUpdateStream The name of the ProgressUpdateStream. &gt;\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7179,6 +7298,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.migrationhub.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ProgressUpdateStream", "MigrationTaskName" ],
@@ -7210,6 +7330,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhub.response.ImportMigrationTaskResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7218,6 +7339,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.migrationhub.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -7252,6 +7374,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InternalServerError",
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhub.exception.InternalServerErrorException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7260,6 +7383,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.migrationhub.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -7291,6 +7415,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InvalidInputException",
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhub.exception.InvalidInputException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7299,6 +7424,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.migrationhub.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -7330,6 +7456,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhub.request.ListApplicationStatesRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7437,6 +7564,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7481,6 +7609,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The configurationIds from the Application Discovery Service that uniquely identifies your applications.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setApplicationIds(java.util.Collection)} or {@link #withApplicationIds(java.util.Collection)} if you want to override the existing values.</p>\n@param applicationIds The configurationIds from the Application Discovery Service that uniquely identifies your applications.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7549,6 +7678,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>\n@param nextToken If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7617,6 +7747,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Maximum number of results to be returned per page.</p>\n@param maxResults Maximum number of results to be returned per page.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7726,6 +7857,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7770,6 +7902,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The configurationIds from the Application Discovery Service that uniquely identifies your applications.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setApplicationIds(java.util.Collection)} or {@link #withApplicationIds(java.util.Collection)} if you want to override the existing values.</p>\n@param applicationIds The configurationIds from the Application Discovery Service that uniquely identifies your applications.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7839,6 +7972,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Maximum number of results to be returned per page.</p>\n@param maxResults Maximum number of results to be returned per page.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7908,6 +8042,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>\n@param nextToken If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7923,6 +8058,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.migrationhub.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -7954,6 +8090,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhub.response.ListApplicationStatesResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8054,6 +8191,7 @@
               "variableSetterType" : "ApplicationState"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8098,6 +8236,7 @@
           "variableSetterType" : "java.util.Collection<ApplicationState>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of Applications that exist in Application Discovery Service.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setApplicationStateList(java.util.Collection)} or {@link #withApplicationStateList(java.util.Collection)} if you want to override the existing values.</p>\n@param applicationStateList A list of Applications that exist in Application Discovery Service.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8166,6 +8305,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>\n@param nextToken If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8275,6 +8415,7 @@
                 "variableSetterType" : "ApplicationState"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8319,6 +8460,7 @@
             "variableSetterType" : "java.util.Collection<ApplicationState>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of Applications that exist in Application Discovery Service.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setApplicationStateList(java.util.Collection)} or {@link #withApplicationStateList(java.util.Collection)} if you want to override the existing values.</p>\n@param applicationStateList A list of Applications that exist in Application Discovery Service.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8388,6 +8530,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>\n@param nextToken If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8403,6 +8546,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.migrationhub.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -8437,6 +8581,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhub.request.ListCreatedArtifactsRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8505,6 +8650,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the ProgressUpdateStream. </p>\n@param progressUpdateStream The name of the ProgressUpdateStream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8573,6 +8719,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>\n@param migrationTaskName Unique identifier that references the migration task. <i>Do not store personal data in this field.</i>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8641,6 +8788,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>\n@param nextToken If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8709,6 +8857,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Maximum number of results to be returned per page.</p>\n@param maxResults Maximum number of results to be returned per page.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8779,6 +8928,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Maximum number of results to be returned per page.</p>\n@param maxResults Maximum number of results to be returned per page.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8848,6 +8998,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>\n@param migrationTaskName Unique identifier that references the migration task. <i>Do not store personal data in this field.</i>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8917,6 +9068,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>\n@param nextToken If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8986,6 +9138,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the ProgressUpdateStream. </p>\n@param progressUpdateStream The name of the ProgressUpdateStream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9001,6 +9154,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.migrationhub.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ProgressUpdateStream", "MigrationTaskName" ],
@@ -9032,6 +9186,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhub.response.ListCreatedArtifactsResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -9093,6 +9248,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If there are more created artifacts than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>\n@param nextToken If there are more created artifacts than the max result, return the next token to be passed to the next call as a bookmark of where to start from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9200,6 +9356,7 @@
               "variableSetterType" : "CreatedArtifact"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9244,6 +9401,7 @@
           "variableSetterType" : "java.util.Collection<CreatedArtifact>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>List of created artifacts up to the maximum number of results specified in the request.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCreatedArtifactList(java.util.Collection)} or {@link #withCreatedArtifactList(java.util.Collection)} if you want to override the existing values.</p>\n@param createdArtifactList List of created artifacts up to the maximum number of results specified in the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9353,6 +9511,7 @@
                 "variableSetterType" : "CreatedArtifact"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9397,6 +9556,7 @@
             "variableSetterType" : "java.util.Collection<CreatedArtifact>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>List of created artifacts up to the maximum number of results specified in the request.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCreatedArtifactList(java.util.Collection)} or {@link #withCreatedArtifactList(java.util.Collection)} if you want to override the existing values.</p>\n@param createdArtifactList List of created artifacts up to the maximum number of results specified in the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9466,6 +9626,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If there are more created artifacts than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>\n@param nextToken If there are more created artifacts than the max result, return the next token to be passed to the next call as a bookmark of where to start from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9481,6 +9642,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.migrationhub.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -9515,6 +9677,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhub.request.ListDiscoveredResourcesRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -9583,6 +9746,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the ProgressUpdateStream.</p>\n@param progressUpdateStream The name of the ProgressUpdateStream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9651,6 +9815,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the MigrationTask. <i>Do not store personal data in this field.</i> </p>\n@param migrationTaskName The name of the MigrationTask. <i>Do not store personal data in this field.</i>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9719,6 +9884,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>\n@param nextToken If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9787,6 +9953,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of results returned per page.</p>\n@param maxResults The maximum number of results returned per page.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9857,6 +10024,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of results returned per page.</p>\n@param maxResults The maximum number of results returned per page.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9926,6 +10094,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the MigrationTask. <i>Do not store personal data in this field.</i> </p>\n@param migrationTaskName The name of the MigrationTask. <i>Do not store personal data in this field.</i>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9995,6 +10164,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>\n@param nextToken If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10064,6 +10234,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the ProgressUpdateStream.</p>\n@param progressUpdateStream The name of the ProgressUpdateStream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10079,6 +10250,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.migrationhub.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ProgressUpdateStream", "MigrationTaskName" ],
@@ -10110,6 +10282,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhub.response.ListDiscoveredResourcesResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -10171,6 +10344,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If there are more discovered resources than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>\n@param nextToken If there are more discovered resources than the max result, return the next token to be passed to the next call as a bookmark of where to start from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10278,6 +10452,7 @@
               "variableSetterType" : "DiscoveredResource"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10322,6 +10497,7 @@
           "variableSetterType" : "java.util.Collection<DiscoveredResource>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Returned list of discovered resources associated with the given MigrationTask.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDiscoveredResourceList(java.util.Collection)} or {@link #withDiscoveredResourceList(java.util.Collection)} if you want to override the existing values.</p>\n@param discoveredResourceList Returned list of discovered resources associated with the given MigrationTask.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10431,6 +10607,7 @@
                 "variableSetterType" : "DiscoveredResource"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10475,6 +10652,7 @@
             "variableSetterType" : "java.util.Collection<DiscoveredResource>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Returned list of discovered resources associated with the given MigrationTask.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDiscoveredResourceList(java.util.Collection)} or {@link #withDiscoveredResourceList(java.util.Collection)} if you want to override the existing values.</p>\n@param discoveredResourceList Returned list of discovered resources associated with the given MigrationTask.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10544,6 +10722,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If there are more discovered resources than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>\n@param nextToken If there are more discovered resources than the max result, return the next token to be passed to the next call as a bookmark of where to start from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10559,6 +10738,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.migrationhub.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -10593,6 +10773,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhub.request.ListMigrationTasksRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -10661,6 +10842,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>\n@param nextToken If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10729,6 +10911,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Value to specify how many results are returned per page.</p>\n@param maxResults Value to specify how many results are returned per page.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10797,6 +10980,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Filter migration tasks by discovered resource name.</p>\n@param resourceName Filter migration tasks by discovered resource name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10867,6 +11051,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Value to specify how many results are returned per page.</p>\n@param maxResults Value to specify how many results are returned per page.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10936,6 +11121,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>\n@param nextToken If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11005,6 +11191,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Filter migration tasks by discovered resource name.</p>\n@param resourceName Filter migration tasks by discovered resource name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11020,6 +11207,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.migrationhub.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -11051,6 +11239,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhub.response.ListMigrationTasksResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -11112,6 +11301,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If there are more migration tasks than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>\n@param nextToken If there are more migration tasks than the max result, return the next token to be passed to the next call as a bookmark of where to start from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11219,6 +11409,7 @@
               "variableSetterType" : "MigrationTaskSummary"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11263,6 +11454,7 @@
           "variableSetterType" : "java.util.Collection<MigrationTaskSummary>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Lists the migration task's summary which includes: <code>MigrationTaskName</code>, <code>ProgressPercent</code>, <code>ProgressUpdateStream</code>, <code>Status</code>, and the <code>UpdateDateTime</code> for each task.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setMigrationTaskSummaryList(java.util.Collection)} or {@link #withMigrationTaskSummaryList(java.util.Collection)} if you want to override the existing values.</p>\n@param migrationTaskSummaryList Lists the migration task's summary which includes: <code>MigrationTaskName</code>, <code>ProgressPercent</code>, <code>ProgressUpdateStream</code>, <code>Status</code>, and the <code>UpdateDateTime</code> for each task.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11372,6 +11564,7 @@
                 "variableSetterType" : "MigrationTaskSummary"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11416,6 +11609,7 @@
             "variableSetterType" : "java.util.Collection<MigrationTaskSummary>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Lists the migration task's summary which includes: <code>MigrationTaskName</code>, <code>ProgressPercent</code>, <code>ProgressUpdateStream</code>, <code>Status</code>, and the <code>UpdateDateTime</code> for each task.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setMigrationTaskSummaryList(java.util.Collection)} or {@link #withMigrationTaskSummaryList(java.util.Collection)} if you want to override the existing values.</p>\n@param migrationTaskSummaryList Lists the migration task's summary which includes: <code>MigrationTaskName</code>, <code>ProgressPercent</code>, <code>ProgressUpdateStream</code>, <code>Status</code>, and the <code>UpdateDateTime</code> for each task.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11485,6 +11679,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If there are more migration tasks than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>\n@param nextToken If there are more migration tasks than the max result, return the next token to be passed to the next call as a bookmark of where to start from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11500,6 +11695,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.migrationhub.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -11534,6 +11730,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhub.request.ListProgressUpdateStreamsRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -11602,6 +11799,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>\n@param nextToken If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11670,6 +11868,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Filter to limit the maximum number of results to list per page.</p>\n@param maxResults Filter to limit the maximum number of results to list per page.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11740,6 +11939,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Filter to limit the maximum number of results to list per page.</p>\n@param maxResults Filter to limit the maximum number of results to list per page.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11809,6 +12009,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>\n@param nextToken If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11824,6 +12025,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.migrationhub.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -11855,6 +12057,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhub.response.ListProgressUpdateStreamsResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -11955,6 +12158,7 @@
               "variableSetterType" : "ProgressUpdateStreamSummary"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11999,6 +12203,7 @@
           "variableSetterType" : "java.util.Collection<ProgressUpdateStreamSummary>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>List of progress update streams up to the max number of results passed in the input.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setProgressUpdateStreamSummaryList(java.util.Collection)} or {@link #withProgressUpdateStreamSummaryList(java.util.Collection)} if you want to override the existing values.</p>\n@param progressUpdateStreamSummaryList List of progress update streams up to the max number of results passed in the input.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12067,6 +12272,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If there are more streams created than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>\n@param nextToken If there are more streams created than the max result, return the next token to be passed to the next call as a bookmark of where to start from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12137,6 +12343,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If there are more streams created than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>\n@param nextToken If there are more streams created than the max result, return the next token to be passed to the next call as a bookmark of where to start from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12245,6 +12452,7 @@
                 "variableSetterType" : "ProgressUpdateStreamSummary"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12289,6 +12497,7 @@
             "variableSetterType" : "java.util.Collection<ProgressUpdateStreamSummary>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>List of progress update streams up to the max number of results passed in the input.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setProgressUpdateStreamSummaryList(java.util.Collection)} or {@link #withProgressUpdateStreamSummaryList(java.util.Collection)} if you want to override the existing values.</p>\n@param progressUpdateStreamSummaryList List of progress update streams up to the max number of results passed in the input.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12304,6 +12513,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.migrationhub.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -12338,6 +12548,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhub.model.MigrationTask",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -12399,6 +12610,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A name that identifies the vendor of the migration tool being used.</p>\n@param progressUpdateStream A name that identifies the vendor of the migration tool being used.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12467,6 +12679,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>\n@param migrationTaskName Unique identifier that references the migration task. <i>Do not store personal data in this field.</i>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12535,6 +12748,7 @@
           "variableSetterType" : "Task"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Task object encapsulating task information.</p>\n@param task Task object encapsulating task information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12603,6 +12817,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The timestamp when the task was gathered.</p>\n@param updateDateTime The timestamp when the task was gathered.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12710,6 +12925,7 @@
               "variableSetterType" : "ResourceAttribute"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12754,6 +12970,7 @@
           "variableSetterType" : "java.util.Collection<ResourceAttribute>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Information about the resource that is being migrated. This data will be used to map the task to a resource in the Application Discovery Service repository.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setResourceAttributeList(java.util.Collection)} or {@link #withResourceAttributeList(java.util.Collection)} if you want to override the existing values.</p>\n@param resourceAttributeList Information about the resource that is being migrated. This data will be used to map the task to a resource in the Application Discovery Service repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12824,6 +13041,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>\n@param migrationTaskName Unique identifier that references the migration task. <i>Do not store personal data in this field.</i>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12893,6 +13111,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A name that identifies the vendor of the migration tool being used.</p>\n@param progressUpdateStream A name that identifies the vendor of the migration tool being used.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13001,6 +13220,7 @@
                 "variableSetterType" : "ResourceAttribute"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13045,6 +13265,7 @@
             "variableSetterType" : "java.util.Collection<ResourceAttribute>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Information about the resource that is being migrated. This data will be used to map the task to a resource in the Application Discovery Service repository.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setResourceAttributeList(java.util.Collection)} or {@link #withResourceAttributeList(java.util.Collection)} if you want to override the existing values.</p>\n@param resourceAttributeList Information about the resource that is being migrated. This data will be used to map the task to a resource in the Application Discovery Service repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13114,6 +13335,7 @@
             "variableSetterType" : "Task"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Task object encapsulating task information.</p>\n@param task Task object encapsulating task information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13183,6 +13405,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The timestamp when the task was gathered.</p>\n@param updateDateTime The timestamp when the task was gathered.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13198,6 +13421,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.migrationhub.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -13232,6 +13456,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhub.model.MigrationTaskSummary",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -13293,6 +13518,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An AWS resource used for access control. It should uniquely identify the migration tool as it is used for all updates made by the tool.</p>\n@param progressUpdateStream An AWS resource used for access control. It should uniquely identify the migration tool as it is used for all updates made by the tool.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13361,6 +13587,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>\n@param migrationTaskName Unique identifier that references the migration task. <i>Do not store personal data in this field.</i>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13429,6 +13656,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Status of the task.</p>\n@param status Status of the task.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Status*/",
@@ -13497,6 +13725,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Indication of the percentage completion of the task.</p>\n@param progressPercent Indication of the percentage completion of the task.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13565,6 +13794,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Detail information of what is being done within the overall status state.</p>\n@param statusDetail Detail information of what is being done within the overall status state.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13633,6 +13863,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The timestamp when the task was gathered.</p>\n@param updateDateTime The timestamp when the task was gathered.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13703,6 +13934,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>\n@param migrationTaskName Unique identifier that references the migration task. <i>Do not store personal data in this field.</i>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13772,6 +14004,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Indication of the percentage completion of the task.</p>\n@param progressPercent Indication of the percentage completion of the task.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13841,6 +14074,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An AWS resource used for access control. It should uniquely identify the migration tool as it is used for all updates made by the tool.</p>\n@param progressUpdateStream An AWS resource used for access control. It should uniquely identify the migration tool as it is used for all updates made by the tool.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13910,6 +14144,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Status of the task.</p>\n@param status Status of the task.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Status*/",
@@ -13979,6 +14214,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Detail information of what is being done within the overall status state.</p>\n@param statusDetail Detail information of what is being done within the overall status state.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14048,6 +14284,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The timestamp when the task was gathered.</p>\n@param updateDateTime The timestamp when the task was gathered.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14063,6 +14300,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.migrationhub.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -14097,6 +14335,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhub.request.NotifyApplicationStateRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -14165,6 +14404,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The configurationId in Application Discovery Service that uniquely identifies the grouped application.</p>\n@param applicationId The configurationId in Application Discovery Service that uniquely identifies the grouped application.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14233,6 +14473,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Status of the application - Not Started, In-Progress, Complete.</p>\n@param status Status of the application - Not Started, In-Progress, Complete.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ApplicationStatus*/",
@@ -14301,6 +14542,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The timestamp when the application state changed.</p>\n@param updateDateTime The timestamp when the application state changed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14369,6 +14611,7 @@
           "variableSetterType" : "Boolean"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>\n@param dryRun Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14439,6 +14682,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The configurationId in Application Discovery Service that uniquely identifies the grouped application.</p>\n@param applicationId The configurationId in Application Discovery Service that uniquely identifies the grouped application.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14508,6 +14752,7 @@
             "variableSetterType" : "Boolean"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>\n@param dryRun Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14577,6 +14822,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Status of the application - Not Started, In-Progress, Complete.</p>\n@param status Status of the application - Not Started, In-Progress, Complete.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ApplicationStatus*/",
@@ -14646,6 +14892,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The timestamp when the application state changed.</p>\n@param updateDateTime The timestamp when the application state changed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14661,6 +14908,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.migrationhub.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ApplicationId", "Status" ],
@@ -14692,6 +14940,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhub.response.NotifyApplicationStateResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -14700,6 +14949,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.migrationhub.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -14734,6 +14984,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhub.request.NotifyMigrationTaskStateRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -14802,6 +15053,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the ProgressUpdateStream. </p>\n@param progressUpdateStream The name of the ProgressUpdateStream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14870,6 +15122,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>\n@param migrationTaskName Unique identifier that references the migration task. <i>Do not store personal data in this field.</i>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14938,6 +15191,7 @@
           "variableSetterType" : "Task"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Information about the task's progress and status.</p>\n@param task Information about the task's progress and status.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15006,6 +15260,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The timestamp when the task was gathered.</p>\n@param updateDateTime The timestamp when the task was gathered.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15074,6 +15329,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Number of seconds after the UpdateDateTime within which the Migration Hub can expect an update. If Migration Hub does not receive an update within the specified interval, then the migration task will be considered stale.</p>\n@param nextUpdateSeconds Number of seconds after the UpdateDateTime within which the Migration Hub can expect an update. If Migration Hub does not receive an update within the specified interval, then the migration task will be considered stale.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15142,6 +15398,7 @@
           "variableSetterType" : "Boolean"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>\n@param dryRun Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15212,6 +15469,7 @@
             "variableSetterType" : "Boolean"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>\n@param dryRun Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15281,6 +15539,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>\n@param migrationTaskName Unique identifier that references the migration task. <i>Do not store personal data in this field.</i>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15350,6 +15609,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Number of seconds after the UpdateDateTime within which the Migration Hub can expect an update. If Migration Hub does not receive an update within the specified interval, then the migration task will be considered stale.</p>\n@param nextUpdateSeconds Number of seconds after the UpdateDateTime within which the Migration Hub can expect an update. If Migration Hub does not receive an update within the specified interval, then the migration task will be considered stale.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15419,6 +15679,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the ProgressUpdateStream. </p>\n@param progressUpdateStream The name of the ProgressUpdateStream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15488,6 +15749,7 @@
             "variableSetterType" : "Task"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Information about the task's progress and status.</p>\n@param task Information about the task's progress and status.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15557,6 +15819,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The timestamp when the task was gathered.</p>\n@param updateDateTime The timestamp when the task was gathered.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15572,6 +15835,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.migrationhub.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ProgressUpdateStream", "MigrationTaskName", "Task", "UpdateDateTime", "NextUpdateSeconds" ],
@@ -15603,6 +15867,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhub.response.NotifyMigrationTaskStateResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -15611,6 +15876,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.migrationhub.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -15645,6 +15911,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "PolicyErrorException",
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhub.exception.PolicyErrorException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -15653,6 +15920,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.migrationhub.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -15684,6 +15952,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhub.model.ProgressUpdateStreamSummary",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -15745,6 +16014,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>\n@param progressUpdateStreamName The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15815,6 +16085,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>\n@param progressUpdateStreamName The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15830,6 +16101,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.migrationhub.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -15864,6 +16136,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhub.request.PutResourceAttributesRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -15932,6 +16205,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the ProgressUpdateStream. </p>\n@param progressUpdateStream The name of the ProgressUpdateStream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16000,6 +16274,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>\n@param migrationTaskName Unique identifier that references the migration task. <i>Do not store personal data in this field.</i>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16107,6 +16382,7 @@
               "variableSetterType" : "ResourceAttribute"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16151,6 +16427,7 @@
           "variableSetterType" : "java.util.Collection<ResourceAttribute>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Information about the resource that is being migrated. This data will be used to map the task to a resource in the Application Discovery Service repository.</p> <note> <p>Takes the object array of <code>ResourceAttribute</code> where the <code>Type</code> field is reserved for the following values: <code>IPV4_ADDRESS | IPV6_ADDRESS | MAC_ADDRESS | FQDN | VM_MANAGER_ID | VM_MANAGED_OBJECT_REFERENCE | VM_NAME | VM_PATH | BIOS_ID | MOTHERBOARD_SERIAL_NUMBER</code> where the identifying value can be a string up to 256 characters.</p> </note> <important> <ul> <li> <p>If any \"VM\" related value is set for a <code>ResourceAttribute</code> object, it is required that <code>VM_MANAGER_ID</code>, as a minimum, is always set. If <code>VM_MANAGER_ID</code> is not set, then all \"VM\" fields will be discarded and \"VM\" fields will not be used for matching the migration task to a server in Application Discovery Service repository. See the <a href=\"https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#API_PutResourceAttributes_Examples\">Example</a> section below for a use case of specifying \"VM\" related values.</p> </li> <li> <p> If a server you are trying to match has multiple IP or MAC addresses, you should provide as many as you know in separate type/value pairs passed to the <code>ResourceAttributeList</code> parameter to maximize the chances of matching.</p> </li> </ul> </important>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setResourceAttributeList(java.util.Collection)} or {@link #withResourceAttributeList(java.util.Collection)} if you want to override the existing values.</p>\n@param resourceAttributeList Information about the resource that is being migrated. This data will be used to map the task to a resource in the Application Discovery Service repository.</p> <note> <p>Takes the object array of <code>ResourceAttribute</code> where the <code>Type</code> field is reserved for the following values: <code>IPV4_ADDRESS | IPV6_ADDRESS | MAC_ADDRESS | FQDN | VM_MANAGER_ID | VM_MANAGED_OBJECT_REFERENCE | VM_NAME | VM_PATH | BIOS_ID | MOTHERBOARD_SERIAL_NUMBER</code> where the identifying value can be a string up to 256 characters.</p> </note> <important> <ul> <li> <p>If any \"VM\" related value is set for a <code>ResourceAttribute</code> object, it is required that <code>VM_MANAGER_ID</code>, as a minimum, is always set. If <code>VM_MANAGER_ID</code> is not set, then all \"VM\" fields will be discarded and \"VM\" fields will not be used for matching the migration task to a server in Application Discovery Service repository. See the <a href=\"https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#API_PutResourceAttributes_Examples\">Example</a> section below for a use case of specifying \"VM\" related values.</p> </li> <li> <p> If a server you are trying to match has multiple IP or MAC addresses, you should provide as many as you know in separate type/value pairs passed to the <code>ResourceAttributeList</code> parameter to maximize the chances of matching.</p> </li> </ul>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16219,6 +16496,7 @@
           "variableSetterType" : "Boolean"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>\n@param dryRun Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16289,6 +16567,7 @@
             "variableSetterType" : "Boolean"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>\n@param dryRun Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16358,6 +16637,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>\n@param migrationTaskName Unique identifier that references the migration task. <i>Do not store personal data in this field.</i>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16427,6 +16707,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the ProgressUpdateStream. </p>\n@param progressUpdateStream The name of the ProgressUpdateStream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16535,6 +16816,7 @@
                 "variableSetterType" : "ResourceAttribute"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16579,6 +16861,7 @@
             "variableSetterType" : "java.util.Collection<ResourceAttribute>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Information about the resource that is being migrated. This data will be used to map the task to a resource in the Application Discovery Service repository.</p> <note> <p>Takes the object array of <code>ResourceAttribute</code> where the <code>Type</code> field is reserved for the following values: <code>IPV4_ADDRESS | IPV6_ADDRESS | MAC_ADDRESS | FQDN | VM_MANAGER_ID | VM_MANAGED_OBJECT_REFERENCE | VM_NAME | VM_PATH | BIOS_ID | MOTHERBOARD_SERIAL_NUMBER</code> where the identifying value can be a string up to 256 characters.</p> </note> <important> <ul> <li> <p>If any \"VM\" related value is set for a <code>ResourceAttribute</code> object, it is required that <code>VM_MANAGER_ID</code>, as a minimum, is always set. If <code>VM_MANAGER_ID</code> is not set, then all \"VM\" fields will be discarded and \"VM\" fields will not be used for matching the migration task to a server in Application Discovery Service repository. See the <a href=\"https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#API_PutResourceAttributes_Examples\">Example</a> section below for a use case of specifying \"VM\" related values.</p> </li> <li> <p> If a server you are trying to match has multiple IP or MAC addresses, you should provide as many as you know in separate type/value pairs passed to the <code>ResourceAttributeList</code> parameter to maximize the chances of matching.</p> </li> </ul> </important>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setResourceAttributeList(java.util.Collection)} or {@link #withResourceAttributeList(java.util.Collection)} if you want to override the existing values.</p>\n@param resourceAttributeList Information about the resource that is being migrated. This data will be used to map the task to a resource in the Application Discovery Service repository.</p> <note> <p>Takes the object array of <code>ResourceAttribute</code> where the <code>Type</code> field is reserved for the following values: <code>IPV4_ADDRESS | IPV6_ADDRESS | MAC_ADDRESS | FQDN | VM_MANAGER_ID | VM_MANAGED_OBJECT_REFERENCE | VM_NAME | VM_PATH | BIOS_ID | MOTHERBOARD_SERIAL_NUMBER</code> where the identifying value can be a string up to 256 characters.</p> </note> <important> <ul> <li> <p>If any \"VM\" related value is set for a <code>ResourceAttribute</code> object, it is required that <code>VM_MANAGER_ID</code>, as a minimum, is always set. If <code>VM_MANAGER_ID</code> is not set, then all \"VM\" fields will be discarded and \"VM\" fields will not be used for matching the migration task to a server in Application Discovery Service repository. See the <a href=\"https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#API_PutResourceAttributes_Examples\">Example</a> section below for a use case of specifying \"VM\" related values.</p> </li> <li> <p> If a server you are trying to match has multiple IP or MAC addresses, you should provide as many as you know in separate type/value pairs passed to the <code>ResourceAttributeList</code> parameter to maximize the chances of matching.</p> </li> </ul>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16594,6 +16877,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.migrationhub.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ProgressUpdateStream", "MigrationTaskName", "ResourceAttributeList" ],
@@ -16625,6 +16909,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhub.response.PutResourceAttributesResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -16633,6 +16918,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.migrationhub.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -16667,6 +16953,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhub.model.ResourceAttribute",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -16728,6 +17015,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Type of resource.</p>\n@param type Type of resource.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ResourceAttributeType*/",
@@ -16796,6 +17084,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Value of the resource type.</p>\n@param value Value of the resource type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16866,6 +17155,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Type of resource.</p>\n@param type Type of resource.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ResourceAttributeType*/",
@@ -16935,6 +17225,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Value of the resource type.</p>\n@param value Value of the resource type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16950,6 +17241,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.migrationhub.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Type", "Value" ],
@@ -17014,6 +17306,7 @@
         "value" : "MOTHERBOARD_SERIAL_NUMBER"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhub.enum.ResourceAttributeType",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -17022,6 +17315,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.migrationhub.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -17056,6 +17350,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ResourceNotFoundException",
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhub.exception.ResourceNotFoundException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -17064,6 +17359,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.migrationhub.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -17095,6 +17391,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ServiceUnavailableException",
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhub.exception.ServiceUnavailableException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -17103,6 +17400,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.migrationhub.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -17146,6 +17444,7 @@
         "value" : "COMPLETED"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhub.enum.Status",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -17154,6 +17453,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.migrationhub.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -17188,6 +17488,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhub.model.Task",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -17249,6 +17550,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Status of the task - Not Started, In-Progress, Complete.</p>\n@param status Status of the task - Not Started, In-Progress, Complete.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Status*/",
@@ -17317,6 +17619,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Details of task status as notified by a migration tool. A tool might use this field to provide clarifying information about the status that is unique to that tool or that explains an error state.</p>\n@param statusDetail Details of task status as notified by a migration tool. A tool might use this field to provide clarifying information about the status that is unique to that tool or that explains an error state.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17385,6 +17688,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Indication of the percentage completion of the task.</p>\n@param progressPercent Indication of the percentage completion of the task.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17455,6 +17759,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Indication of the percentage completion of the task.</p>\n@param progressPercent Indication of the percentage completion of the task.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17524,6 +17829,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Status of the task - Not Started, In-Progress, Complete.</p>\n@param status Status of the task - Not Started, In-Progress, Complete.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Status*/",
@@ -17593,6 +17899,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Details of task status as notified by a migration tool. A tool might use this field to provide clarifying information about the status that is unique to that tool or that explains an error state.</p>\n@param statusDetail Details of task status as notified by a migration tool. A tool might use this field to provide clarifying information about the status that is unique to that tool or that explains an error state.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17608,6 +17915,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.migrationhub.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Status" ],
@@ -17642,6 +17950,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ThrottlingException",
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhub.exception.ThrottlingException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -17703,6 +18012,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The number of seconds the caller should wait before retrying.</p>\n@param retryAfterSeconds The number of seconds the caller should wait before retrying.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17773,6 +18083,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The number of seconds the caller should wait before retrying.</p>\n@param retryAfterSeconds The number of seconds the caller should wait before retrying.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17788,6 +18099,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.migrationhub.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Message" ],
@@ -17819,6 +18131,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "UnauthorizedOperation",
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhub.exception.UnauthorizedOperationException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -17827,6 +18140,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.migrationhub.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,

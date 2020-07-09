@@ -72,7 +72,8 @@ public class DatabaseJsonUnmarshaller implements Unmarshaller<Database, JsonUnma
                 if (context.testExpression("CreateTableDefaultPermissions", targetDepth)) {
                     context.nextToken();
                     database.setCreateTableDefaultPermissions(new ListUnmarshaller<PrincipalPermissions>(PrincipalPermissionsJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("TargetDatabase", targetDepth)) {
                     context.nextToken();

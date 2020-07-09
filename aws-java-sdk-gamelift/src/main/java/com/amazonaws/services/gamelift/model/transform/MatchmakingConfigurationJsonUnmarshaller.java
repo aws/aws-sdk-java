@@ -62,7 +62,9 @@ public class MatchmakingConfigurationJsonUnmarshaller implements Unmarshaller<Ma
                 }
                 if (context.testExpression("GameSessionQueueArns", targetDepth)) {
                     context.nextToken();
-                    matchmakingConfiguration.setGameSessionQueueArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    matchmakingConfiguration.setGameSessionQueueArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("RequestTimeoutSeconds", targetDepth)) {
                     context.nextToken();
@@ -103,7 +105,8 @@ public class MatchmakingConfigurationJsonUnmarshaller implements Unmarshaller<Ma
                 if (context.testExpression("GameProperties", targetDepth)) {
                     context.nextToken();
                     matchmakingConfiguration.setGameProperties(new ListUnmarshaller<GameProperty>(GamePropertyJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("GameSessionData", targetDepth)) {
                     context.nextToken();

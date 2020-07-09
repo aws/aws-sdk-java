@@ -54,7 +54,9 @@ public class ListAccountsResultJsonUnmarshaller implements Unmarshaller<ListAcco
                 }
                 if (context.testExpression("accountList", targetDepth)) {
                     context.nextToken();
-                    listAccountsResult.setAccountList(new ListUnmarshaller<AccountInfo>(AccountInfoJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listAccountsResult.setAccountList(new ListUnmarshaller<AccountInfo>(AccountInfoJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

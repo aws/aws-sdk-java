@@ -63,7 +63,8 @@ public class GetResourceMetricsResultJsonUnmarshaller implements Unmarshaller<Ge
                 if (context.testExpression("MetricList", targetDepth)) {
                     context.nextToken();
                     getResourceMetricsResult.setMetricList(new ListUnmarshaller<MetricKeyDataPoints>(MetricKeyDataPointsJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

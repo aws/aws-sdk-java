@@ -51,7 +51,8 @@ public class ListInstanceFleetsResultJsonUnmarshaller implements Unmarshaller<Li
                 if (context.testExpression("InstanceFleets", targetDepth)) {
                     context.nextToken();
                     listInstanceFleetsResult.setInstanceFleets(new ListUnmarshaller<InstanceFleet>(InstanceFleetJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Marker", targetDepth)) {
                     context.nextToken();

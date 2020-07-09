@@ -51,7 +51,8 @@ public class ListResourceServersResultJsonUnmarshaller implements Unmarshaller<L
                 if (context.testExpression("ResourceServers", targetDepth)) {
                     context.nextToken();
                     listResourceServersResult.setResourceServers(new ListUnmarshaller<ResourceServerType>(ResourceServerTypeJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

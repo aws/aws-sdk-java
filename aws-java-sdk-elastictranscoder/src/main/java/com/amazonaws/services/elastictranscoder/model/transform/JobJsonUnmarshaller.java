@@ -66,7 +66,9 @@ public class JobJsonUnmarshaller implements Unmarshaller<Job, JsonUnmarshallerCo
                 }
                 if (context.testExpression("Inputs", targetDepth)) {
                     context.nextToken();
-                    job.setInputs(new ListUnmarshaller<JobInput>(JobInputJsonUnmarshaller.getInstance()).unmarshall(context));
+                    job.setInputs(new ListUnmarshaller<JobInput>(JobInputJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Output", targetDepth)) {
                     context.nextToken();
@@ -74,7 +76,9 @@ public class JobJsonUnmarshaller implements Unmarshaller<Job, JsonUnmarshallerCo
                 }
                 if (context.testExpression("Outputs", targetDepth)) {
                     context.nextToken();
-                    job.setOutputs(new ListUnmarshaller<JobOutput>(JobOutputJsonUnmarshaller.getInstance()).unmarshall(context));
+                    job.setOutputs(new ListUnmarshaller<JobOutput>(JobOutputJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("OutputKeyPrefix", targetDepth)) {
                     context.nextToken();
@@ -82,7 +86,9 @@ public class JobJsonUnmarshaller implements Unmarshaller<Job, JsonUnmarshallerCo
                 }
                 if (context.testExpression("Playlists", targetDepth)) {
                     context.nextToken();
-                    job.setPlaylists(new ListUnmarshaller<Playlist>(PlaylistJsonUnmarshaller.getInstance()).unmarshall(context));
+                    job.setPlaylists(new ListUnmarshaller<Playlist>(PlaylistJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();

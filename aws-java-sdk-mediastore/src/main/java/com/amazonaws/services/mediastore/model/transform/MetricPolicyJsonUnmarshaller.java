@@ -55,7 +55,8 @@ public class MetricPolicyJsonUnmarshaller implements Unmarshaller<MetricPolicy, 
                 if (context.testExpression("MetricPolicyRules", targetDepth)) {
                     context.nextToken();
                     metricPolicy.setMetricPolicyRules(new ListUnmarshaller<MetricPolicyRule>(MetricPolicyRuleJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

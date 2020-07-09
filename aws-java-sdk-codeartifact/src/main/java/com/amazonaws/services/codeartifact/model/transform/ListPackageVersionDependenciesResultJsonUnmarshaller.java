@@ -75,7 +75,9 @@ public class ListPackageVersionDependenciesResultJsonUnmarshaller implements Unm
                 if (context.testExpression("dependencies", targetDepth)) {
                     context.nextToken();
                     listPackageVersionDependenciesResult.setDependencies(new ListUnmarshaller<PackageDependency>(PackageDependencyJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

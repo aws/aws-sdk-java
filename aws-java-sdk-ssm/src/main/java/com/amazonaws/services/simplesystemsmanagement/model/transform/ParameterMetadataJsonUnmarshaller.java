@@ -87,7 +87,8 @@ public class ParameterMetadataJsonUnmarshaller implements Unmarshaller<Parameter
                 if (context.testExpression("Policies", targetDepth)) {
                     context.nextToken();
                     parameterMetadata.setPolicies(new ListUnmarshaller<ParameterInlinePolicy>(ParameterInlinePolicyJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("DataType", targetDepth)) {
                     context.nextToken();

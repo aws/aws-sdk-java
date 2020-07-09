@@ -51,7 +51,9 @@ public class ResponseTimeRootCauseJsonUnmarshaller implements Unmarshaller<Respo
                 if (context.testExpression("Services", targetDepth)) {
                     context.nextToken();
                     responseTimeRootCause.setServices(new ListUnmarshaller<ResponseTimeRootCauseService>(ResponseTimeRootCauseServiceJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ClientImpacting", targetDepth)) {
                     context.nextToken();

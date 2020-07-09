@@ -51,7 +51,8 @@ public class DescribeGlobalNetworksResultJsonUnmarshaller implements Unmarshalle
                 if (context.testExpression("GlobalNetworks", targetDepth)) {
                     context.nextToken();
                     describeGlobalNetworksResult.setGlobalNetworks(new ListUnmarshaller<GlobalNetwork>(GlobalNetworkJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

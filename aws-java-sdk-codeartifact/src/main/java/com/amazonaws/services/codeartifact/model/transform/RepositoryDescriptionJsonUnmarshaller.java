@@ -75,12 +75,15 @@ public class RepositoryDescriptionJsonUnmarshaller implements Unmarshaller<Repos
                 if (context.testExpression("upstreams", targetDepth)) {
                     context.nextToken();
                     repositoryDescription.setUpstreams(new ListUnmarshaller<UpstreamRepositoryInfo>(UpstreamRepositoryInfoJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("externalConnections", targetDepth)) {
                     context.nextToken();
                     repositoryDescription.setExternalConnections(new ListUnmarshaller<RepositoryExternalConnectionInfo>(
-                            RepositoryExternalConnectionInfoJsonUnmarshaller.getInstance()).unmarshall(context));
+                            RepositoryExternalConnectionInfoJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

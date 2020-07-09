@@ -107,7 +107,11 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Certificates certificates;
-
+    /**
+     * <p>
+     * The list of tags for the cluster.
+     * </p>
+     */
     private java.util.List<Tag> tagList;
 
     /**
@@ -733,7 +737,11 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The list of tags for the cluster.
+     * </p>
+     * 
+     * @return The list of tags for the cluster.
      */
 
     public java.util.List<Tag> getTagList() {
@@ -741,7 +749,12 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The list of tags for the cluster.
+     * </p>
+     * 
      * @param tagList
+     *        The list of tags for the cluster.
      */
 
     public void setTagList(java.util.Collection<Tag> tagList) {
@@ -755,12 +768,16 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The list of tags for the cluster.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override
      * the existing values.
      * </p>
      * 
      * @param tagList
+     *        The list of tags for the cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -775,7 +792,12 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The list of tags for the cluster.
+     * </p>
+     * 
      * @param tagList
+     *        The list of tags for the cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

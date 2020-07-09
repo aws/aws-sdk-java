@@ -51,7 +51,8 @@ public class ListPendingInvitationResourcesResultJsonUnmarshaller implements Unm
                 if (context.testExpression("resources", targetDepth)) {
                     context.nextToken();
                     listPendingInvitationResourcesResult.setResources(new ListUnmarshaller<Resource>(ResourceJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

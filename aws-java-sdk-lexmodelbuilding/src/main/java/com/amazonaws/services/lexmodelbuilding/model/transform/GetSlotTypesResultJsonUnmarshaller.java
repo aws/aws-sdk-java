@@ -50,7 +50,9 @@ public class GetSlotTypesResultJsonUnmarshaller implements Unmarshaller<GetSlotT
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("slotTypes", targetDepth)) {
                     context.nextToken();
-                    getSlotTypesResult.setSlotTypes(new ListUnmarshaller<SlotTypeMetadata>(SlotTypeMetadataJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getSlotTypesResult.setSlotTypes(new ListUnmarshaller<SlotTypeMetadata>(SlotTypeMetadataJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

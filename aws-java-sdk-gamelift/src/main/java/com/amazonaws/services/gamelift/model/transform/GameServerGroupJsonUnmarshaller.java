@@ -63,7 +63,8 @@ public class GameServerGroupJsonUnmarshaller implements Unmarshaller<GameServerG
                 if (context.testExpression("InstanceDefinitions", targetDepth)) {
                     context.nextToken();
                     gameServerGroup.setInstanceDefinitions(new ListUnmarshaller<InstanceDefinition>(InstanceDefinitionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("BalancingStrategy", targetDepth)) {
                     context.nextToken();
@@ -87,7 +88,9 @@ public class GameServerGroupJsonUnmarshaller implements Unmarshaller<GameServerG
                 }
                 if (context.testExpression("SuspendedActions", targetDepth)) {
                     context.nextToken();
-                    gameServerGroup.setSuspendedActions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    gameServerGroup.setSuspendedActions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();

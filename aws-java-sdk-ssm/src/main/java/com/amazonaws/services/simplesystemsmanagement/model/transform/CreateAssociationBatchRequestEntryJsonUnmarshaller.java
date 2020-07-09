@@ -59,7 +59,9 @@ public class CreateAssociationBatchRequestEntryJsonUnmarshaller implements Unmar
                 if (context.testExpression("Parameters", targetDepth)) {
                     context.nextToken();
                     createAssociationBatchRequestEntry.setParameters(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
-                            new ListUnmarshaller<String>(context.getUnmarshaller(String.class))).unmarshall(context));
+                            new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    ).unmarshall(context));
                 }
                 if (context.testExpression("AutomationTargetParameterName", targetDepth)) {
                     context.nextToken();
@@ -71,7 +73,9 @@ public class CreateAssociationBatchRequestEntryJsonUnmarshaller implements Unmar
                 }
                 if (context.testExpression("Targets", targetDepth)) {
                     context.nextToken();
-                    createAssociationBatchRequestEntry.setTargets(new ListUnmarshaller<Target>(TargetJsonUnmarshaller.getInstance()).unmarshall(context));
+                    createAssociationBatchRequestEntry.setTargets(new ListUnmarshaller<Target>(TargetJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ScheduleExpression", targetDepth)) {
                     context.nextToken();

@@ -51,12 +51,15 @@ public class BatchStopJobRunResultJsonUnmarshaller implements Unmarshaller<Batch
                 if (context.testExpression("SuccessfulSubmissions", targetDepth)) {
                     context.nextToken();
                     batchStopJobRunResult.setSuccessfulSubmissions(new ListUnmarshaller<BatchStopJobRunSuccessfulSubmission>(
-                            BatchStopJobRunSuccessfulSubmissionJsonUnmarshaller.getInstance()).unmarshall(context));
+                            BatchStopJobRunSuccessfulSubmissionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Errors", targetDepth)) {
                     context.nextToken();
                     batchStopJobRunResult.setErrors(new ListUnmarshaller<BatchStopJobRunError>(BatchStopJobRunErrorJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

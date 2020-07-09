@@ -55,7 +55,8 @@ public class DescribeParameterGroupsResultJsonUnmarshaller implements Unmarshall
                 if (context.testExpression("ParameterGroups", targetDepth)) {
                     context.nextToken();
                     describeParameterGroupsResult.setParameterGroups(new ListUnmarshaller<ParameterGroup>(ParameterGroupJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

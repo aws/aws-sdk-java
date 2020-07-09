@@ -55,7 +55,9 @@ public class ListSizeConstraintSetsResultJsonUnmarshaller implements Unmarshalle
                 if (context.testExpression("SizeConstraintSets", targetDepth)) {
                     context.nextToken();
                     listSizeConstraintSetsResult.setSizeConstraintSets(new ListUnmarshaller<SizeConstraintSetSummary>(SizeConstraintSetSummaryJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

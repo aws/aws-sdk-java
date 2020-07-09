@@ -58,7 +58,9 @@ public class OwnerDirectoryDescriptionJsonUnmarshaller implements Unmarshaller<O
                 }
                 if (context.testExpression("DnsIpAddrs", targetDepth)) {
                     context.nextToken();
-                    ownerDirectoryDescription.setDnsIpAddrs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    ownerDirectoryDescription.setDnsIpAddrs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("VpcSettings", targetDepth)) {
                     context.nextToken();

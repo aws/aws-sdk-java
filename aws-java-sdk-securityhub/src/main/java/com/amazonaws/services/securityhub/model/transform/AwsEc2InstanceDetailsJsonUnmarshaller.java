@@ -58,11 +58,15 @@ public class AwsEc2InstanceDetailsJsonUnmarshaller implements Unmarshaller<AwsEc
                 }
                 if (context.testExpression("IpV4Addresses", targetDepth)) {
                     context.nextToken();
-                    awsEc2InstanceDetails.setIpV4Addresses(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    awsEc2InstanceDetails.setIpV4Addresses(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("IpV6Addresses", targetDepth)) {
                     context.nextToken();
-                    awsEc2InstanceDetails.setIpV6Addresses(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    awsEc2InstanceDetails.setIpV6Addresses(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("KeyName", targetDepth)) {
                     context.nextToken();

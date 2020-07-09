@@ -59,7 +59,8 @@ public class DescribeNotificationRuleResultJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("EventTypes", targetDepth)) {
                     context.nextToken();
                     describeNotificationRuleResult.setEventTypes(new ListUnmarshaller<EventTypeSummary>(EventTypeSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Resource", targetDepth)) {
                     context.nextToken();
@@ -68,7 +69,8 @@ public class DescribeNotificationRuleResultJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("Targets", targetDepth)) {
                     context.nextToken();
                     describeNotificationRuleResult.setTargets(new ListUnmarshaller<TargetSummary>(TargetSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("DetailType", targetDepth)) {
                     context.nextToken();

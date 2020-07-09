@@ -61,7 +61,9 @@ public class DescribeDashboardPermissionsResultJsonUnmarshaller implements Unmar
                 if (context.testExpression("Permissions", targetDepth)) {
                     context.nextToken();
                     describeDashboardPermissionsResult
-                            .setPermissions(new ListUnmarshaller<ResourcePermission>(ResourcePermissionJsonUnmarshaller.getInstance()).unmarshall(context));
+                            .setPermissions(new ListUnmarshaller<ResourcePermission>(ResourcePermissionJsonUnmarshaller.getInstance())
+
+                            .unmarshall(context));
                 }
                 if (context.testExpression("RequestId", targetDepth)) {
                     context.nextToken();

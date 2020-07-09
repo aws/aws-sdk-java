@@ -50,7 +50,9 @@ public class GetConnectionsFilterJsonUnmarshaller implements Unmarshaller<GetCon
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MatchCriteria", targetDepth)) {
                     context.nextToken();
-                    getConnectionsFilter.setMatchCriteria(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    getConnectionsFilter.setMatchCriteria(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ConnectionType", targetDepth)) {
                     context.nextToken();

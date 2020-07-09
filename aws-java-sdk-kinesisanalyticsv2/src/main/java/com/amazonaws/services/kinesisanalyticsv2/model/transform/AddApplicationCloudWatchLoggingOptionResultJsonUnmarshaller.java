@@ -61,7 +61,9 @@ public class AddApplicationCloudWatchLoggingOptionResultJsonUnmarshaller impleme
                     context.nextToken();
                     addApplicationCloudWatchLoggingOptionResult
                             .setCloudWatchLoggingOptionDescriptions(new ListUnmarshaller<CloudWatchLoggingOptionDescription>(
-                                    CloudWatchLoggingOptionDescriptionJsonUnmarshaller.getInstance()).unmarshall(context));
+                                    CloudWatchLoggingOptionDescriptionJsonUnmarshaller.getInstance())
+
+                            .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

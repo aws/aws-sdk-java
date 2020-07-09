@@ -72,15 +72,27 @@ public class RateBasedStatement implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The limit on requests per 5-minute period for a single originating IP address. If the statement includes a
-     * <code>ScopDownStatement</code>, this limit is applied only to the requests that match the statement.
+     * <code>ScopeDownStatement</code>, this limit is applied only to the requests that match the statement.
      * </p>
      */
     private Long limit;
     /**
      * <p>
-     * Setting that indicates how to aggregate the request counts. Currently, you must set this to <code>IP</code>. The
-     * request counts are aggregated on IP addresses.
+     * Setting that indicates how to aggregate the request counts. The options are the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * IP - Aggregate the request counts on the IP address from the web request origin.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FORWARDED_IP - Aggregate the request counts on the first IP address in an HTTP header. If you use this, configure
+     * the <code>ForwardedIPConfig</code>, to specify the header to use.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String aggregateKeyType;
     /**
@@ -90,16 +102,32 @@ public class RateBasedStatement implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private Statement scopeDownStatement;
+    /**
+     * <p>
+     * The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address
+     * that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can
+     * specify any header name.
+     * </p>
+     * <note>
+     * <p>
+     * If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request at all.
+     * </p>
+     * </note>
+     * <p>
+     * This is required if <code>AggregateKeyType</code> is set to <code>FORWARDED_IP</code>.
+     * </p>
+     */
+    private ForwardedIPConfig forwardedIPConfig;
 
     /**
      * <p>
      * The limit on requests per 5-minute period for a single originating IP address. If the statement includes a
-     * <code>ScopDownStatement</code>, this limit is applied only to the requests that match the statement.
+     * <code>ScopeDownStatement</code>, this limit is applied only to the requests that match the statement.
      * </p>
      * 
      * @param limit
      *        The limit on requests per 5-minute period for a single originating IP address. If the statement includes a
-     *        <code>ScopDownStatement</code>, this limit is applied only to the requests that match the statement.
+     *        <code>ScopeDownStatement</code>, this limit is applied only to the requests that match the statement.
      */
 
     public void setLimit(Long limit) {
@@ -109,11 +137,11 @@ public class RateBasedStatement implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The limit on requests per 5-minute period for a single originating IP address. If the statement includes a
-     * <code>ScopDownStatement</code>, this limit is applied only to the requests that match the statement.
+     * <code>ScopeDownStatement</code>, this limit is applied only to the requests that match the statement.
      * </p>
      * 
      * @return The limit on requests per 5-minute period for a single originating IP address. If the statement includes
-     *         a <code>ScopDownStatement</code>, this limit is applied only to the requests that match the statement.
+     *         a <code>ScopeDownStatement</code>, this limit is applied only to the requests that match the statement.
      */
 
     public Long getLimit() {
@@ -123,12 +151,12 @@ public class RateBasedStatement implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The limit on requests per 5-minute period for a single originating IP address. If the statement includes a
-     * <code>ScopDownStatement</code>, this limit is applied only to the requests that match the statement.
+     * <code>ScopeDownStatement</code>, this limit is applied only to the requests that match the statement.
      * </p>
      * 
      * @param limit
      *        The limit on requests per 5-minute period for a single originating IP address. If the statement includes a
-     *        <code>ScopDownStatement</code>, this limit is applied only to the requests that match the statement.
+     *        <code>ScopeDownStatement</code>, this limit is applied only to the requests that match the statement.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -139,13 +167,36 @@ public class RateBasedStatement implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Setting that indicates how to aggregate the request counts. Currently, you must set this to <code>IP</code>. The
-     * request counts are aggregated on IP addresses.
+     * Setting that indicates how to aggregate the request counts. The options are the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * IP - Aggregate the request counts on the IP address from the web request origin.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FORWARDED_IP - Aggregate the request counts on the first IP address in an HTTP header. If you use this, configure
+     * the <code>ForwardedIPConfig</code>, to specify the header to use.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param aggregateKeyType
-     *        Setting that indicates how to aggregate the request counts. Currently, you must set this to
-     *        <code>IP</code>. The request counts are aggregated on IP addresses.
+     *        Setting that indicates how to aggregate the request counts. The options are the following:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        IP - Aggregate the request counts on the IP address from the web request origin.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        FORWARDED_IP - Aggregate the request counts on the first IP address in an HTTP header. If you use this,
+     *        configure the <code>ForwardedIPConfig</code>, to specify the header to use.
+     *        </p>
+     *        </li>
      * @see RateBasedStatementAggregateKeyType
      */
 
@@ -155,12 +206,35 @@ public class RateBasedStatement implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Setting that indicates how to aggregate the request counts. Currently, you must set this to <code>IP</code>. The
-     * request counts are aggregated on IP addresses.
+     * Setting that indicates how to aggregate the request counts. The options are the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * IP - Aggregate the request counts on the IP address from the web request origin.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FORWARDED_IP - Aggregate the request counts on the first IP address in an HTTP header. If you use this, configure
+     * the <code>ForwardedIPConfig</code>, to specify the header to use.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return Setting that indicates how to aggregate the request counts. Currently, you must set this to
-     *         <code>IP</code>. The request counts are aggregated on IP addresses.
+     * @return Setting that indicates how to aggregate the request counts. The options are the following:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         IP - Aggregate the request counts on the IP address from the web request origin.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         FORWARDED_IP - Aggregate the request counts on the first IP address in an HTTP header. If you use this,
+     *         configure the <code>ForwardedIPConfig</code>, to specify the header to use.
+     *         </p>
+     *         </li>
      * @see RateBasedStatementAggregateKeyType
      */
 
@@ -170,13 +244,36 @@ public class RateBasedStatement implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Setting that indicates how to aggregate the request counts. Currently, you must set this to <code>IP</code>. The
-     * request counts are aggregated on IP addresses.
+     * Setting that indicates how to aggregate the request counts. The options are the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * IP - Aggregate the request counts on the IP address from the web request origin.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FORWARDED_IP - Aggregate the request counts on the first IP address in an HTTP header. If you use this, configure
+     * the <code>ForwardedIPConfig</code>, to specify the header to use.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param aggregateKeyType
-     *        Setting that indicates how to aggregate the request counts. Currently, you must set this to
-     *        <code>IP</code>. The request counts are aggregated on IP addresses.
+     *        Setting that indicates how to aggregate the request counts. The options are the following:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        IP - Aggregate the request counts on the IP address from the web request origin.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        FORWARDED_IP - Aggregate the request counts on the first IP address in an HTTP header. If you use this,
+     *        configure the <code>ForwardedIPConfig</code>, to specify the header to use.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RateBasedStatementAggregateKeyType
      */
@@ -188,13 +285,36 @@ public class RateBasedStatement implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Setting that indicates how to aggregate the request counts. Currently, you must set this to <code>IP</code>. The
-     * request counts are aggregated on IP addresses.
+     * Setting that indicates how to aggregate the request counts. The options are the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * IP - Aggregate the request counts on the IP address from the web request origin.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FORWARDED_IP - Aggregate the request counts on the first IP address in an HTTP header. If you use this, configure
+     * the <code>ForwardedIPConfig</code>, to specify the header to use.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param aggregateKeyType
-     *        Setting that indicates how to aggregate the request counts. Currently, you must set this to
-     *        <code>IP</code>. The request counts are aggregated on IP addresses.
+     *        Setting that indicates how to aggregate the request counts. The options are the following:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        IP - Aggregate the request counts on the IP address from the web request origin.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        FORWARDED_IP - Aggregate the request counts on the first IP address in an HTTP header. If you use this,
+     *        configure the <code>ForwardedIPConfig</code>, to specify the header to use.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RateBasedStatementAggregateKeyType
      */
@@ -254,6 +374,103 @@ public class RateBasedStatement implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address
+     * that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can
+     * specify any header name.
+     * </p>
+     * <note>
+     * <p>
+     * If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request at all.
+     * </p>
+     * </note>
+     * <p>
+     * This is required if <code>AggregateKeyType</code> is set to <code>FORWARDED_IP</code>.
+     * </p>
+     * 
+     * @param forwardedIPConfig
+     *        The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP
+     *        address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but
+     *        you can specify any header name. </p> <note>
+     *        <p>
+     *        If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request at
+     *        all.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        This is required if <code>AggregateKeyType</code> is set to <code>FORWARDED_IP</code>.
+     */
+
+    public void setForwardedIPConfig(ForwardedIPConfig forwardedIPConfig) {
+        this.forwardedIPConfig = forwardedIPConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address
+     * that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can
+     * specify any header name.
+     * </p>
+     * <note>
+     * <p>
+     * If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request at all.
+     * </p>
+     * </note>
+     * <p>
+     * This is required if <code>AggregateKeyType</code> is set to <code>FORWARDED_IP</code>.
+     * </p>
+     * 
+     * @return The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP
+     *         address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header,
+     *         but you can specify any header name. </p> <note>
+     *         <p>
+     *         If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request
+     *         at all.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         This is required if <code>AggregateKeyType</code> is set to <code>FORWARDED_IP</code>.
+     */
+
+    public ForwardedIPConfig getForwardedIPConfig() {
+        return this.forwardedIPConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address
+     * that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can
+     * specify any header name.
+     * </p>
+     * <note>
+     * <p>
+     * If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request at all.
+     * </p>
+     * </note>
+     * <p>
+     * This is required if <code>AggregateKeyType</code> is set to <code>FORWARDED_IP</code>.
+     * </p>
+     * 
+     * @param forwardedIPConfig
+     *        The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP
+     *        address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but
+     *        you can specify any header name. </p> <note>
+     *        <p>
+     *        If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request at
+     *        all.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        This is required if <code>AggregateKeyType</code> is set to <code>FORWARDED_IP</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RateBasedStatement withForwardedIPConfig(ForwardedIPConfig forwardedIPConfig) {
+        setForwardedIPConfig(forwardedIPConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -270,7 +487,9 @@ public class RateBasedStatement implements Serializable, Cloneable, StructuredPo
         if (getAggregateKeyType() != null)
             sb.append("AggregateKeyType: ").append(getAggregateKeyType()).append(",");
         if (getScopeDownStatement() != null)
-            sb.append("ScopeDownStatement: ").append(getScopeDownStatement());
+            sb.append("ScopeDownStatement: ").append(getScopeDownStatement()).append(",");
+        if (getForwardedIPConfig() != null)
+            sb.append("ForwardedIPConfig: ").append(getForwardedIPConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -297,6 +516,10 @@ public class RateBasedStatement implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getScopeDownStatement() != null && other.getScopeDownStatement().equals(this.getScopeDownStatement()) == false)
             return false;
+        if (other.getForwardedIPConfig() == null ^ this.getForwardedIPConfig() == null)
+            return false;
+        if (other.getForwardedIPConfig() != null && other.getForwardedIPConfig().equals(this.getForwardedIPConfig()) == false)
+            return false;
         return true;
     }
 
@@ -308,6 +531,7 @@ public class RateBasedStatement implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode());
         hashCode = prime * hashCode + ((getAggregateKeyType() == null) ? 0 : getAggregateKeyType().hashCode());
         hashCode = prime * hashCode + ((getScopeDownStatement() == null) ? 0 : getScopeDownStatement().hashCode());
+        hashCode = prime * hashCode + ((getForwardedIPConfig() == null) ? 0 : getForwardedIPConfig().hashCode());
         return hashCode;
     }
 

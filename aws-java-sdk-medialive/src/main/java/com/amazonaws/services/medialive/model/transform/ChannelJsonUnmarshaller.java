@@ -58,12 +58,15 @@ public class ChannelJsonUnmarshaller implements Unmarshaller<Channel, JsonUnmars
                 }
                 if (context.testExpression("destinations", targetDepth)) {
                     context.nextToken();
-                    channel.setDestinations(new ListUnmarshaller<OutputDestination>(OutputDestinationJsonUnmarshaller.getInstance()).unmarshall(context));
+                    channel.setDestinations(new ListUnmarshaller<OutputDestination>(OutputDestinationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("egressEndpoints", targetDepth)) {
                     context.nextToken();
                     channel.setEgressEndpoints(new ListUnmarshaller<ChannelEgressEndpoint>(ChannelEgressEndpointJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("encoderSettings", targetDepth)) {
                     context.nextToken();
@@ -75,7 +78,9 @@ public class ChannelJsonUnmarshaller implements Unmarshaller<Channel, JsonUnmars
                 }
                 if (context.testExpression("inputAttachments", targetDepth)) {
                     context.nextToken();
-                    channel.setInputAttachments(new ListUnmarshaller<InputAttachment>(InputAttachmentJsonUnmarshaller.getInstance()).unmarshall(context));
+                    channel.setInputAttachments(new ListUnmarshaller<InputAttachment>(InputAttachmentJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("inputSpecification", targetDepth)) {
                     context.nextToken();
@@ -91,7 +96,9 @@ public class ChannelJsonUnmarshaller implements Unmarshaller<Channel, JsonUnmars
                 }
                 if (context.testExpression("pipelineDetails", targetDepth)) {
                     context.nextToken();
-                    channel.setPipelineDetails(new ListUnmarshaller<PipelineDetail>(PipelineDetailJsonUnmarshaller.getInstance()).unmarshall(context));
+                    channel.setPipelineDetails(new ListUnmarshaller<PipelineDetail>(PipelineDetailJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("pipelinesRunningCount", targetDepth)) {
                     context.nextToken();

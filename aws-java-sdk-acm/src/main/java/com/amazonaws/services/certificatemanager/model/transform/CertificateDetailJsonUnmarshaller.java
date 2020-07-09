@@ -58,12 +58,15 @@ public class CertificateDetailJsonUnmarshaller implements Unmarshaller<Certifica
                 }
                 if (context.testExpression("SubjectAlternativeNames", targetDepth)) {
                     context.nextToken();
-                    certificateDetail.setSubjectAlternativeNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    certificateDetail.setSubjectAlternativeNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("DomainValidationOptions", targetDepth)) {
                     context.nextToken();
                     certificateDetail.setDomainValidationOptions(new ListUnmarshaller<DomainValidation>(DomainValidationJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Serial", targetDepth)) {
                     context.nextToken();
@@ -119,7 +122,9 @@ public class CertificateDetailJsonUnmarshaller implements Unmarshaller<Certifica
                 }
                 if (context.testExpression("InUseBy", targetDepth)) {
                     context.nextToken();
-                    certificateDetail.setInUseBy(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    certificateDetail.setInUseBy(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("FailureReason", targetDepth)) {
                     context.nextToken();
@@ -135,12 +140,15 @@ public class CertificateDetailJsonUnmarshaller implements Unmarshaller<Certifica
                 }
                 if (context.testExpression("KeyUsages", targetDepth)) {
                     context.nextToken();
-                    certificateDetail.setKeyUsages(new ListUnmarshaller<KeyUsage>(KeyUsageJsonUnmarshaller.getInstance()).unmarshall(context));
+                    certificateDetail.setKeyUsages(new ListUnmarshaller<KeyUsage>(KeyUsageJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ExtendedKeyUsages", targetDepth)) {
                     context.nextToken();
                     certificateDetail.setExtendedKeyUsages(new ListUnmarshaller<ExtendedKeyUsage>(ExtendedKeyUsageJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("CertificateAuthorityArn", targetDepth)) {
                     context.nextToken();

@@ -51,7 +51,9 @@ public class ListCuratedEnvironmentImagesResultJsonUnmarshaller implements Unmar
                 if (context.testExpression("platforms", targetDepth)) {
                     context.nextToken();
                     listCuratedEnvironmentImagesResult
-                            .setPlatforms(new ListUnmarshaller<EnvironmentPlatform>(EnvironmentPlatformJsonUnmarshaller.getInstance()).unmarshall(context));
+                            .setPlatforms(new ListUnmarshaller<EnvironmentPlatform>(EnvironmentPlatformJsonUnmarshaller.getInstance())
+
+                            .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

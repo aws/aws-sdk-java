@@ -66,7 +66,9 @@ public class InstanceSummaryJsonUnmarshaller implements Unmarshaller<InstanceSum
                 }
                 if (context.testExpression("lifecycleEvents", targetDepth)) {
                     context.nextToken();
-                    instanceSummary.setLifecycleEvents(new ListUnmarshaller<LifecycleEvent>(LifecycleEventJsonUnmarshaller.getInstance()).unmarshall(context));
+                    instanceSummary.setLifecycleEvents(new ListUnmarshaller<LifecycleEvent>(LifecycleEventJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("instanceType", targetDepth)) {
                     context.nextToken();

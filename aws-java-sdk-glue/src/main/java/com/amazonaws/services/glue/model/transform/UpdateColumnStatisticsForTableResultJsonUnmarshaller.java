@@ -51,7 +51,9 @@ public class UpdateColumnStatisticsForTableResultJsonUnmarshaller implements Unm
                 if (context.testExpression("Errors", targetDepth)) {
                     context.nextToken();
                     updateColumnStatisticsForTableResult.setErrors(new ListUnmarshaller<ColumnStatisticsError>(ColumnStatisticsErrorJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

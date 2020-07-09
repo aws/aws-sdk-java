@@ -92,7 +92,9 @@ public class BaiduMessageJsonUnmarshaller implements Unmarshaller<BaiduMessage, 
                 if (context.testExpression("Substitutions", targetDepth)) {
                     context.nextToken();
                     baiduMessage.setSubstitutions(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
-                            new ListUnmarshaller<String>(context.getUnmarshaller(String.class))).unmarshall(context));
+                            new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    ).unmarshall(context));
                 }
                 if (context.testExpression("TimeToLive", targetDepth)) {
                     context.nextToken();

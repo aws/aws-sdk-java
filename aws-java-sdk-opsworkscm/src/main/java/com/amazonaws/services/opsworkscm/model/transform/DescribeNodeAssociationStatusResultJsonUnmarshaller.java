@@ -55,7 +55,9 @@ public class DescribeNodeAssociationStatusResultJsonUnmarshaller implements Unma
                 if (context.testExpression("EngineAttributes", targetDepth)) {
                     context.nextToken();
                     describeNodeAssociationStatusResult
-                            .setEngineAttributes(new ListUnmarshaller<EngineAttribute>(EngineAttributeJsonUnmarshaller.getInstance()).unmarshall(context));
+                            .setEngineAttributes(new ListUnmarshaller<EngineAttribute>(EngineAttributeJsonUnmarshaller.getInstance())
+
+                            .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

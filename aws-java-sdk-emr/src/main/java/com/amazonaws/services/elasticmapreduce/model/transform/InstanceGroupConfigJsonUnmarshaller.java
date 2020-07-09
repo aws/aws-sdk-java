@@ -74,7 +74,9 @@ public class InstanceGroupConfigJsonUnmarshaller implements Unmarshaller<Instanc
                 }
                 if (context.testExpression("Configurations", targetDepth)) {
                     context.nextToken();
-                    instanceGroupConfig.setConfigurations(new ListUnmarshaller<Configuration>(ConfigurationJsonUnmarshaller.getInstance()).unmarshall(context));
+                    instanceGroupConfig.setConfigurations(new ListUnmarshaller<Configuration>(ConfigurationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("EbsConfiguration", targetDepth)) {
                     context.nextToken();

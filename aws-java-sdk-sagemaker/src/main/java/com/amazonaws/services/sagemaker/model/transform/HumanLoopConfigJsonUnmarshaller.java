@@ -78,7 +78,9 @@ public class HumanLoopConfigJsonUnmarshaller implements Unmarshaller<HumanLoopCo
                 }
                 if (context.testExpression("TaskKeywords", targetDepth)) {
                     context.nextToken();
-                    humanLoopConfig.setTaskKeywords(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    humanLoopConfig.setTaskKeywords(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("PublicWorkforceTaskPrice", targetDepth)) {
                     context.nextToken();

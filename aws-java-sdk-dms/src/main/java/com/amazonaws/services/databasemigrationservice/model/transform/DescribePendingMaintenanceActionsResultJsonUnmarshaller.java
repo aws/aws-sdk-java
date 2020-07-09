@@ -51,7 +51,9 @@ public class DescribePendingMaintenanceActionsResultJsonUnmarshaller implements 
                 if (context.testExpression("PendingMaintenanceActions", targetDepth)) {
                     context.nextToken();
                     describePendingMaintenanceActionsResult.setPendingMaintenanceActions(new ListUnmarshaller<ResourcePendingMaintenanceActions>(
-                            ResourcePendingMaintenanceActionsJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ResourcePendingMaintenanceActionsJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Marker", targetDepth)) {
                     context.nextToken();

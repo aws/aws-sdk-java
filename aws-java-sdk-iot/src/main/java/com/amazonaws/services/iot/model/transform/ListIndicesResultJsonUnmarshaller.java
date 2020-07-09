@@ -50,7 +50,9 @@ public class ListIndicesResultJsonUnmarshaller implements Unmarshaller<ListIndic
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("indexNames", targetDepth)) {
                     context.nextToken();
-                    listIndicesResult.setIndexNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    listIndicesResult.setIndexNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

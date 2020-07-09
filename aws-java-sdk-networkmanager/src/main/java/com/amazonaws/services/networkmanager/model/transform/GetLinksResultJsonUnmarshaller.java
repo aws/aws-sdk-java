@@ -50,7 +50,9 @@ public class GetLinksResultJsonUnmarshaller implements Unmarshaller<GetLinksResu
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Links", targetDepth)) {
                     context.nextToken();
-                    getLinksResult.setLinks(new ListUnmarshaller<Link>(LinkJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getLinksResult.setLinks(new ListUnmarshaller<Link>(LinkJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

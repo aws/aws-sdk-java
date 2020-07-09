@@ -55,7 +55,8 @@ public class HistoricalMetricResultJsonUnmarshaller implements Unmarshaller<Hist
                 if (context.testExpression("Collections", targetDepth)) {
                     context.nextToken();
                     historicalMetricResult.setCollections(new ListUnmarshaller<HistoricalMetricData>(HistoricalMetricDataJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

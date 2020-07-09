@@ -53,10 +53,10 @@ public class VisibilityConfig implements Serializable, Cloneable, StructuredPojo
     private Boolean cloudWatchMetricsEnabled;
     /**
      * <p>
-     * A name of the CloudWatch metric. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with length
-     * from one to 128 characters. It can't contain whitespace or metric names reserved for AWS WAF, for example "All"
-     * and "Default_Action." You can't change a <code>MetricName</code> after you create a <code>VisibilityConfig</code>
-     * .
+     * A name of the CloudWatch metric. The name can contain only the characters: A-Z, a-z, 0-9, - (hyphen), and _
+     * (underscore). The name can be from one to 128 characters long. It can't contain whitespace or metric names
+     * reserved for AWS WAF, for example "All" and "Default_Action." You can't change a <code>MetricName</code> after
+     * you create a <code>VisibilityConfig</code>.
      * </p>
      */
     private String metricName;
@@ -199,17 +199,17 @@ public class VisibilityConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A name of the CloudWatch metric. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with length
-     * from one to 128 characters. It can't contain whitespace or metric names reserved for AWS WAF, for example "All"
-     * and "Default_Action." You can't change a <code>MetricName</code> after you create a <code>VisibilityConfig</code>
-     * .
+     * A name of the CloudWatch metric. The name can contain only the characters: A-Z, a-z, 0-9, - (hyphen), and _
+     * (underscore). The name can be from one to 128 characters long. It can't contain whitespace or metric names
+     * reserved for AWS WAF, for example "All" and "Default_Action." You can't change a <code>MetricName</code> after
+     * you create a <code>VisibilityConfig</code>.
      * </p>
      * 
      * @param metricName
-     *        A name of the CloudWatch metric. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with
-     *        length from one to 128 characters. It can't contain whitespace or metric names reserved for AWS WAF, for
-     *        example "All" and "Default_Action." You can't change a <code>MetricName</code> after you create a
-     *        <code>VisibilityConfig</code>.
+     *        A name of the CloudWatch metric. The name can contain only the characters: A-Z, a-z, 0-9, - (hyphen), and
+     *        _ (underscore). The name can be from one to 128 characters long. It can't contain whitespace or metric
+     *        names reserved for AWS WAF, for example "All" and "Default_Action." You can't change a
+     *        <code>MetricName</code> after you create a <code>VisibilityConfig</code>.
      */
 
     public void setMetricName(String metricName) {
@@ -218,16 +218,16 @@ public class VisibilityConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A name of the CloudWatch metric. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with length
-     * from one to 128 characters. It can't contain whitespace or metric names reserved for AWS WAF, for example "All"
-     * and "Default_Action." You can't change a <code>MetricName</code> after you create a <code>VisibilityConfig</code>
-     * .
+     * A name of the CloudWatch metric. The name can contain only the characters: A-Z, a-z, 0-9, - (hyphen), and _
+     * (underscore). The name can be from one to 128 characters long. It can't contain whitespace or metric names
+     * reserved for AWS WAF, for example "All" and "Default_Action." You can't change a <code>MetricName</code> after
+     * you create a <code>VisibilityConfig</code>.
      * </p>
      * 
-     * @return A name of the CloudWatch metric. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with
-     *         length from one to 128 characters. It can't contain whitespace or metric names reserved for AWS WAF, for
-     *         example "All" and "Default_Action." You can't change a <code>MetricName</code> after you create a
-     *         <code>VisibilityConfig</code>.
+     * @return A name of the CloudWatch metric. The name can contain only the characters: A-Z, a-z, 0-9, - (hyphen), and
+     *         _ (underscore). The name can be from one to 128 characters long. It can't contain whitespace or metric
+     *         names reserved for AWS WAF, for example "All" and "Default_Action." You can't change a
+     *         <code>MetricName</code> after you create a <code>VisibilityConfig</code>.
      */
 
     public String getMetricName() {
@@ -236,17 +236,17 @@ public class VisibilityConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A name of the CloudWatch metric. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with length
-     * from one to 128 characters. It can't contain whitespace or metric names reserved for AWS WAF, for example "All"
-     * and "Default_Action." You can't change a <code>MetricName</code> after you create a <code>VisibilityConfig</code>
-     * .
+     * A name of the CloudWatch metric. The name can contain only the characters: A-Z, a-z, 0-9, - (hyphen), and _
+     * (underscore). The name can be from one to 128 characters long. It can't contain whitespace or metric names
+     * reserved for AWS WAF, for example "All" and "Default_Action." You can't change a <code>MetricName</code> after
+     * you create a <code>VisibilityConfig</code>.
      * </p>
      * 
      * @param metricName
-     *        A name of the CloudWatch metric. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with
-     *        length from one to 128 characters. It can't contain whitespace or metric names reserved for AWS WAF, for
-     *        example "All" and "Default_Action." You can't change a <code>MetricName</code> after you create a
-     *        <code>VisibilityConfig</code>.
+     *        A name of the CloudWatch metric. The name can contain only the characters: A-Z, a-z, 0-9, - (hyphen), and
+     *        _ (underscore). The name can be from one to 128 characters long. It can't contain whitespace or metric
+     *        names reserved for AWS WAF, for example "All" and "Default_Action." You can't change a
+     *        <code>MetricName</code> after you create a <code>VisibilityConfig</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

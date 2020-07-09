@@ -51,7 +51,9 @@ public class ListBusinessReportSchedulesResultJsonUnmarshaller implements Unmars
                 if (context.testExpression("BusinessReportSchedules", targetDepth)) {
                     context.nextToken();
                     listBusinessReportSchedulesResult.setBusinessReportSchedules(new ListUnmarshaller<BusinessReportSchedule>(
-                            BusinessReportScheduleJsonUnmarshaller.getInstance()).unmarshall(context));
+                            BusinessReportScheduleJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

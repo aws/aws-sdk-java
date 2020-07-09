@@ -50,7 +50,9 @@ public class ResultSetMetadataJsonUnmarshaller implements Unmarshaller<ResultSet
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ColumnInfo", targetDepth)) {
                     context.nextToken();
-                    resultSetMetadata.setColumnInfo(new ListUnmarshaller<ColumnInfo>(ColumnInfoJsonUnmarshaller.getInstance()).unmarshall(context));
+                    resultSetMetadata.setColumnInfo(new ListUnmarshaller<ColumnInfo>(ColumnInfoJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

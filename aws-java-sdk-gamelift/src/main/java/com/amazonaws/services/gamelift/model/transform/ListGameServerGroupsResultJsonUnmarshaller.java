@@ -51,7 +51,8 @@ public class ListGameServerGroupsResultJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("GameServerGroups", targetDepth)) {
                     context.nextToken();
                     listGameServerGroupsResult.setGameServerGroups(new ListUnmarshaller<GameServerGroup>(GameServerGroupJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

@@ -51,12 +51,15 @@ public class AwsEc2VpcDetailsJsonUnmarshaller implements Unmarshaller<AwsEc2VpcD
                 if (context.testExpression("CidrBlockAssociationSet", targetDepth)) {
                     context.nextToken();
                     awsEc2VpcDetails.setCidrBlockAssociationSet(new ListUnmarshaller<CidrBlockAssociation>(CidrBlockAssociationJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Ipv6CidrBlockAssociationSet", targetDepth)) {
                     context.nextToken();
                     awsEc2VpcDetails.setIpv6CidrBlockAssociationSet(new ListUnmarshaller<Ipv6CidrBlockAssociation>(Ipv6CidrBlockAssociationJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("DhcpOptionsId", targetDepth)) {
                     context.nextToken();

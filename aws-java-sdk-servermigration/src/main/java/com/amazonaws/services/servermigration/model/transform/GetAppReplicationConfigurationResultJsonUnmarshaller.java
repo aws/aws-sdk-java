@@ -51,7 +51,9 @@ public class GetAppReplicationConfigurationResultJsonUnmarshaller implements Unm
                 if (context.testExpression("serverGroupReplicationConfigurations", targetDepth)) {
                     context.nextToken();
                     getAppReplicationConfigurationResult.setServerGroupReplicationConfigurations(new ListUnmarshaller<ServerGroupReplicationConfiguration>(
-                            ServerGroupReplicationConfigurationJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ServerGroupReplicationConfigurationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

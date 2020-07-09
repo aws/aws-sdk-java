@@ -55,7 +55,8 @@ public class ListGeoMatchSetsResultJsonUnmarshaller implements Unmarshaller<List
                 if (context.testExpression("GeoMatchSets", targetDepth)) {
                     context.nextToken();
                     listGeoMatchSetsResult.setGeoMatchSets(new ListUnmarshaller<GeoMatchSetSummary>(GeoMatchSetSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

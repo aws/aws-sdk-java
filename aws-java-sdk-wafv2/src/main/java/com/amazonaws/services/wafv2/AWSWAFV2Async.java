@@ -1567,7 +1567,14 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
      * </p>
      * </note>
      * <p>
-     * Retrieves the <a>TagInfoForResource</a> for the specified resource.
+     * Retrieves the <a>TagInfoForResource</a> for the specified resource. Tags are key:value pairs that you can use to
+     * categorize and manage your resources, for purposes like billing. For example, you might set the tag key to
+     * "customer" and the value to the customer name or ID. You can specify one or more tags to add to each AWS
+     * resource, up to 50 tags for a resource.
+     * </p>
+     * <p>
+     * You can tag the AWS resources that you manage through AWS WAF: web ACLs, rule groups, IP sets, and regex pattern
+     * sets. You can't manage or view tags through the AWS WAF console.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -1587,7 +1594,14 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
      * </p>
      * </note>
      * <p>
-     * Retrieves the <a>TagInfoForResource</a> for the specified resource.
+     * Retrieves the <a>TagInfoForResource</a> for the specified resource. Tags are key:value pairs that you can use to
+     * categorize and manage your resources, for purposes like billing. For example, you might set the tag key to
+     * "customer" and the value to the customer name or ID. You can specify one or more tags to add to each AWS
+     * resource, up to 50 tags for a resource.
+     * </p>
+     * <p>
+     * You can tag the AWS resources that you manage through AWS WAF: web ACLs, rule groups, IP sets, and regex pattern
+     * sets. You can't manage or view tags through the AWS WAF console.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -1672,6 +1686,10 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
      * Create the data firehose with a PUT source and in the Region that you are operating. If you are capturing logs
      * for Amazon CloudFront, always create the firehose in US East (N. Virginia).
      * </p>
+     * <p>
+     * Give the data firehose a name that starts with the prefix <code>aws-waf-logs-</code>. For example,
+     * <code>aws-waf-logs-us-east-2-analytics</code>.
+     * </p>
      * <note>
      * <p>
      * Do not create the data firehose using a <code>Kinesis stream</code> as your source.
@@ -1721,6 +1739,10 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
      * <p>
      * Create the data firehose with a PUT source and in the Region that you are operating. If you are capturing logs
      * for Amazon CloudFront, always create the firehose in US East (N. Virginia).
+     * </p>
+     * <p>
+     * Give the data firehose a name that starts with the prefix <code>aws-waf-logs-</code>. For example,
+     * <code>aws-waf-logs-us-east-2-analytics</code>.
      * </p>
      * <note>
      * <p>
@@ -1839,9 +1861,14 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
      * </p>
      * </note>
      * <p>
-     * Associates tags with the specified AWS resource. Tags are key:value pairs that you can associate with AWS
-     * resources. For example, the tag key might be "customer" and the tag value might be "companyA." You can specify
-     * one or more tags to add to each container. You can add up to 50 tags to each AWS resource.
+     * Associates tags with the specified AWS resource. Tags are key:value pairs that you can use to categorize and
+     * manage your resources, for purposes like billing. For example, you might set the tag key to "customer" and the
+     * value to the customer name or ID. You can specify one or more tags to add to each AWS resource, up to 50 tags for
+     * a resource.
+     * </p>
+     * <p>
+     * You can tag the AWS resources that you manage through AWS WAF: web ACLs, rule groups, IP sets, and regex pattern
+     * sets. You can't manage or view tags through the AWS WAF console.
      * </p>
      * 
      * @param tagResourceRequest
@@ -1861,9 +1888,14 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
      * </p>
      * </note>
      * <p>
-     * Associates tags with the specified AWS resource. Tags are key:value pairs that you can associate with AWS
-     * resources. For example, the tag key might be "customer" and the tag value might be "companyA." You can specify
-     * one or more tags to add to each container. You can add up to 50 tags to each AWS resource.
+     * Associates tags with the specified AWS resource. Tags are key:value pairs that you can use to categorize and
+     * manage your resources, for purposes like billing. For example, you might set the tag key to "customer" and the
+     * value to the customer name or ID. You can specify one or more tags to add to each AWS resource, up to 50 tags for
+     * a resource.
+     * </p>
+     * <p>
+     * You can tag the AWS resources that you manage through AWS WAF: web ACLs, rule groups, IP sets, and regex pattern
+     * sets. You can't manage or view tags through the AWS WAF console.
      * </p>
      * 
      * @param tagResourceRequest

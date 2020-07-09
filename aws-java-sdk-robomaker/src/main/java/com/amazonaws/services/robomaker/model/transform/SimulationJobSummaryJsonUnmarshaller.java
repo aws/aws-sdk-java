@@ -66,15 +66,21 @@ public class SimulationJobSummaryJsonUnmarshaller implements Unmarshaller<Simula
                 }
                 if (context.testExpression("simulationApplicationNames", targetDepth)) {
                     context.nextToken();
-                    simulationJobSummary.setSimulationApplicationNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    simulationJobSummary.setSimulationApplicationNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("robotApplicationNames", targetDepth)) {
                     context.nextToken();
-                    simulationJobSummary.setRobotApplicationNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    simulationJobSummary.setRobotApplicationNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("dataSourceNames", targetDepth)) {
                     context.nextToken();
-                    simulationJobSummary.setDataSourceNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    simulationJobSummary.setDataSourceNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

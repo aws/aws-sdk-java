@@ -54,7 +54,9 @@ public class ListSharedProjectsResultJsonUnmarshaller implements Unmarshaller<Li
                 }
                 if (context.testExpression("projects", targetDepth)) {
                     context.nextToken();
-                    listSharedProjectsResult.setProjects(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    listSharedProjectsResult.setProjects(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

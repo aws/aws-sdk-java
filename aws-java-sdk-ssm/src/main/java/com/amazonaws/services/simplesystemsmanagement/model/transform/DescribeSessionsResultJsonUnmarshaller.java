@@ -50,7 +50,9 @@ public class DescribeSessionsResultJsonUnmarshaller implements Unmarshaller<Desc
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Sessions", targetDepth)) {
                     context.nextToken();
-                    describeSessionsResult.setSessions(new ListUnmarshaller<Session>(SessionJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeSessionsResult.setSessions(new ListUnmarshaller<Session>(SessionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

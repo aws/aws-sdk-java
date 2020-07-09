@@ -70,7 +70,9 @@ public class GetLicenseConfigurationResultJsonUnmarshaller implements Unmarshall
                 }
                 if (context.testExpression("LicenseRules", targetDepth)) {
                     context.nextToken();
-                    getLicenseConfigurationResult.setLicenseRules(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    getLicenseConfigurationResult.setLicenseRules(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("LicenseCount", targetDepth)) {
                     context.nextToken();
@@ -95,21 +97,29 @@ public class GetLicenseConfigurationResultJsonUnmarshaller implements Unmarshall
                 if (context.testExpression("ConsumedLicenseSummaryList", targetDepth)) {
                     context.nextToken();
                     getLicenseConfigurationResult.setConsumedLicenseSummaryList(new ListUnmarshaller<ConsumedLicenseSummary>(
-                            ConsumedLicenseSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ConsumedLicenseSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ManagedResourceSummaryList", targetDepth)) {
                     context.nextToken();
                     getLicenseConfigurationResult.setManagedResourceSummaryList(new ListUnmarshaller<ManagedResourceSummary>(
-                            ManagedResourceSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ManagedResourceSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
-                    getLicenseConfigurationResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getLicenseConfigurationResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ProductInformationList", targetDepth)) {
                     context.nextToken();
                     getLicenseConfigurationResult.setProductInformationList(new ListUnmarshaller<ProductInformation>(ProductInformationJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("AutomatedDiscoveryInformation", targetDepth)) {
                     context.nextToken();

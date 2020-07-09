@@ -62,8 +62,9 @@ public class AutoSnapshotDetailsJsonUnmarshaller implements Unmarshaller<AutoSna
                 }
                 if (context.testExpression("fromAttachedDisks", targetDepth)) {
                     context.nextToken();
-                    autoSnapshotDetails
-                            .setFromAttachedDisks(new ListUnmarshaller<AttachedDisk>(AttachedDiskJsonUnmarshaller.getInstance()).unmarshall(context));
+                    autoSnapshotDetails.setFromAttachedDisks(new ListUnmarshaller<AttachedDisk>(AttachedDiskJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

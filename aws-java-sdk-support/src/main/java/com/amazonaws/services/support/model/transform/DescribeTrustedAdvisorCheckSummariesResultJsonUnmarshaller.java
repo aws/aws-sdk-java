@@ -52,7 +52,9 @@ public class DescribeTrustedAdvisorCheckSummariesResultJsonUnmarshaller implemen
                 if (context.testExpression("summaries", targetDepth)) {
                     context.nextToken();
                     describeTrustedAdvisorCheckSummariesResult.setSummaries(new ListUnmarshaller<TrustedAdvisorCheckSummary>(
-                            TrustedAdvisorCheckSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                            TrustedAdvisorCheckSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

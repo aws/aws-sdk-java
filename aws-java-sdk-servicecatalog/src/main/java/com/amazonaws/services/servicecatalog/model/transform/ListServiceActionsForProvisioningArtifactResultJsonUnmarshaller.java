@@ -52,7 +52,9 @@ public class ListServiceActionsForProvisioningArtifactResultJsonUnmarshaller imp
                 if (context.testExpression("ServiceActionSummaries", targetDepth)) {
                     context.nextToken();
                     listServiceActionsForProvisioningArtifactResult.setServiceActionSummaries(new ListUnmarshaller<ServiceActionSummary>(
-                            ServiceActionSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ServiceActionSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextPageToken", targetDepth)) {
                     context.nextToken();

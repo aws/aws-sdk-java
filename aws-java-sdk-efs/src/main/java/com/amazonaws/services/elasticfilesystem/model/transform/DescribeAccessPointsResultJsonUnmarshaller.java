@@ -51,7 +51,9 @@ public class DescribeAccessPointsResultJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("AccessPoints", targetDepth)) {
                     context.nextToken();
                     describeAccessPointsResult.setAccessPoints(new ListUnmarshaller<AccessPointDescription>(AccessPointDescriptionJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

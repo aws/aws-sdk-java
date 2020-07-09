@@ -58,7 +58,9 @@ public class ProxyConfigurationJsonUnmarshaller implements Unmarshaller<ProxyCon
                 }
                 if (context.testExpression("properties", targetDepth)) {
                     context.nextToken();
-                    proxyConfiguration.setProperties(new ListUnmarshaller<KeyValuePair>(KeyValuePairJsonUnmarshaller.getInstance()).unmarshall(context));
+                    proxyConfiguration.setProperties(new ListUnmarshaller<KeyValuePair>(KeyValuePairJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

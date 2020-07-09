@@ -51,7 +51,8 @@ public class BatchGetOnPremisesInstancesResultJsonUnmarshaller implements Unmars
                 if (context.testExpression("instanceInfos", targetDepth)) {
                     context.nextToken();
                     batchGetOnPremisesInstancesResult.setInstanceInfos(new ListUnmarshaller<InstanceInfo>(InstanceInfoJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

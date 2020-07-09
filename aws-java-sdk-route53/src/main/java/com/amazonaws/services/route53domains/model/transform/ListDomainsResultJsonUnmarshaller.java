@@ -50,7 +50,9 @@ public class ListDomainsResultJsonUnmarshaller implements Unmarshaller<ListDomai
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Domains", targetDepth)) {
                     context.nextToken();
-                    listDomainsResult.setDomains(new ListUnmarshaller<DomainSummary>(DomainSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listDomainsResult.setDomains(new ListUnmarshaller<DomainSummary>(DomainSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextPageMarker", targetDepth)) {
                     context.nextToken();

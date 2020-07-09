@@ -51,7 +51,9 @@ public class ListMonitoringExecutionsResultJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("MonitoringExecutionSummaries", targetDepth)) {
                     context.nextToken();
                     listMonitoringExecutionsResult.setMonitoringExecutionSummaries(new ListUnmarshaller<MonitoringExecutionSummary>(
-                            MonitoringExecutionSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                            MonitoringExecutionSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

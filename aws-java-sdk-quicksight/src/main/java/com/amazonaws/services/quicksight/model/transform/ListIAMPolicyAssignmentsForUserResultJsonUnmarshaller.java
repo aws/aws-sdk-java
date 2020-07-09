@@ -53,7 +53,9 @@ public class ListIAMPolicyAssignmentsForUserResultJsonUnmarshaller implements Un
                 if (context.testExpression("ActiveAssignments", targetDepth)) {
                     context.nextToken();
                     listIAMPolicyAssignmentsForUserResult.setActiveAssignments(new ListUnmarshaller<ActiveIAMPolicyAssignment>(
-                            ActiveIAMPolicyAssignmentJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ActiveIAMPolicyAssignmentJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("RequestId", targetDepth)) {
                     context.nextToken();

@@ -54,11 +54,15 @@ public class VirtualNodeSpecJsonUnmarshaller implements Unmarshaller<VirtualNode
                 }
                 if (context.testExpression("backends", targetDepth)) {
                     context.nextToken();
-                    virtualNodeSpec.setBackends(new ListUnmarshaller<Backend>(BackendJsonUnmarshaller.getInstance()).unmarshall(context));
+                    virtualNodeSpec.setBackends(new ListUnmarshaller<Backend>(BackendJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("listeners", targetDepth)) {
                     context.nextToken();
-                    virtualNodeSpec.setListeners(new ListUnmarshaller<Listener>(ListenerJsonUnmarshaller.getInstance()).unmarshall(context));
+                    virtualNodeSpec.setListeners(new ListUnmarshaller<Listener>(ListenerJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("logging", targetDepth)) {
                     context.nextToken();

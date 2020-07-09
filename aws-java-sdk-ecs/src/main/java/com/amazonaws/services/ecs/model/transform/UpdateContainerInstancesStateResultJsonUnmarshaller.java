@@ -51,11 +51,15 @@ public class UpdateContainerInstancesStateResultJsonUnmarshaller implements Unma
                 if (context.testExpression("containerInstances", targetDepth)) {
                     context.nextToken();
                     updateContainerInstancesStateResult.setContainerInstances(new ListUnmarshaller<ContainerInstance>(ContainerInstanceJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("failures", targetDepth)) {
                     context.nextToken();
-                    updateContainerInstancesStateResult.setFailures(new ListUnmarshaller<Failure>(FailureJsonUnmarshaller.getInstance()).unmarshall(context));
+                    updateContainerInstancesStateResult.setFailures(new ListUnmarshaller<Failure>(FailureJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

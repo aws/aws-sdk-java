@@ -51,7 +51,8 @@ public class ListDocumentsResultJsonUnmarshaller implements Unmarshaller<ListDoc
                 if (context.testExpression("DocumentIdentifiers", targetDepth)) {
                     context.nextToken();
                     listDocumentsResult.setDocumentIdentifiers(new ListUnmarshaller<DocumentIdentifier>(DocumentIdentifierJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

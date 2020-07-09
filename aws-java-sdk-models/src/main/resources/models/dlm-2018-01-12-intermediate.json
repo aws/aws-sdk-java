@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientMutationMethods", "ClientConstructors" ],
+    "deprecatedSuppressions" : [ "ClientConstructors", "ClientMutationMethods", "EnumSetterOverload" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -467,6 +467,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.dlm.request.CreateLifecyclePolicyRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -535,6 +536,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>\n@param executionRoleArn The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -603,6 +605,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are supported.</p>\n@param description A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are supported.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -671,6 +674,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The desired activation state of the lifecycle policy after creation.</p>\n@param state The desired activation state of the lifecycle policy after creation.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SettablePolicyStateValues*/",
@@ -739,6 +743,7 @@
           "variableSetterType" : "PolicyDetails"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The configuration details of the lifecycle policy.</p>\n@param policyDetails The configuration details of the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -852,6 +857,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -890,6 +896,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The tags to apply to the lifecycle policy during creation.</p>\n@param tags The tags to apply to the lifecycle policy during creation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -960,6 +967,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are supported.</p>\n@param description A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are supported.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1029,6 +1037,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>\n@param executionRoleArn The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1098,6 +1107,7 @@
             "variableSetterType" : "PolicyDetails"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The configuration details of the lifecycle policy.</p>\n@param policyDetails The configuration details of the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1167,6 +1177,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The desired activation state of the lifecycle policy after creation.</p>\n@param state The desired activation state of the lifecycle policy after creation.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SettablePolicyStateValues*/",
@@ -1281,6 +1292,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1319,6 +1331,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The tags to apply to the lifecycle policy during creation.</p>\n@param tags The tags to apply to the lifecycle policy during creation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1334,6 +1347,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.dlm.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ExecutionRoleArn", "Description", "State", "PolicyDetails" ],
@@ -1365,6 +1379,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.dlm.response.CreateLifecyclePolicyResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1426,6 +1441,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier of the lifecycle policy.</p>\n@param policyId The identifier of the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1496,6 +1512,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier of the lifecycle policy.</p>\n@param policyId The identifier of the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1511,6 +1528,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.dlm.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1545,6 +1563,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.dlm.model.CreateRule",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1606,6 +1625,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The interval between snapshots. The supported values are 1, 2, 3, 4, 6, 8, 12, and 24.</p>\n@param interval The interval between snapshots. The supported values are 1, 2, 3, 4, 6, 8, 12, and 24.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1674,6 +1694,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The interval unit.</p>\n@param intervalUnit The interval unit.\n@return Returns a reference to this object so that method calls can be chained together.\n@see IntervalUnitValues*/",
@@ -1781,6 +1802,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1825,6 +1847,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The time, in UTC, to start the operation. The supported format is hh:mm.</p> <p>The operation occurs within a one-hour window following the specified time. If you do not specify a time, Amazon DLM selects a time within the next 24 hours.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTimes(java.util.Collection)} or {@link #withTimes(java.util.Collection)} if you want to override the existing values.</p>\n@param times The time, in UTC, to start the operation. The supported format is hh:mm.</p> <p>The operation occurs within a one-hour window following the specified time. If you do not specify a time, Amazon DLM selects a time within the next 24 hours.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1893,6 +1916,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The schedule, as a Cron expression. The schedule interval must be between 1 hour and 1 year. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions\">Cron expressions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>\n@param cronExpression The schedule, as a Cron expression. The schedule interval must be between 1 hour and 1 year. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions\">Cron expressions</a> in the <i>Amazon CloudWatch User Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1963,6 +1987,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The schedule, as a Cron expression. The schedule interval must be between 1 hour and 1 year. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions\">Cron expressions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>\n@param cronExpression The schedule, as a Cron expression. The schedule interval must be between 1 hour and 1 year. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions\">Cron expressions</a> in the <i>Amazon CloudWatch User Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2032,6 +2057,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The interval between snapshots. The supported values are 1, 2, 3, 4, 6, 8, 12, and 24.</p>\n@param interval The interval between snapshots. The supported values are 1, 2, 3, 4, 6, 8, 12, and 24.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2101,6 +2127,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The interval unit.</p>\n@param intervalUnit The interval unit.\n@return Returns a reference to this object so that method calls can be chained together.\n@see IntervalUnitValues*/",
@@ -2209,6 +2236,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2253,6 +2281,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The time, in UTC, to start the operation. The supported format is hh:mm.</p> <p>The operation occurs within a one-hour window following the specified time. If you do not specify a time, Amazon DLM selects a time within the next 24 hours.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTimes(java.util.Collection)} or {@link #withTimes(java.util.Collection)} if you want to override the existing values.</p>\n@param times The time, in UTC, to start the operation. The supported format is hh:mm.</p> <p>The operation occurs within a one-hour window following the specified time. If you do not specify a time, Amazon DLM selects a time within the next 24 hours.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2268,6 +2297,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.dlm.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2302,6 +2332,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.dlm.model.CrossRegionCopyRetainRule",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2363,6 +2394,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The amount of time to retain each snapshot. The maximum is 100 years. This is equivalent to 1200 months, 5200 weeks, or 36500 days.</p>\n@param interval The amount of time to retain each snapshot. The maximum is 100 years. This is equivalent to 1200 months, 5200 weeks, or 36500 days.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2431,6 +2463,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unit of time for time-based retention.</p>\n@param intervalUnit The unit of time for time-based retention.\n@return Returns a reference to this object so that method calls can be chained together.\n@see RetentionIntervalUnitValues*/",
@@ -2501,6 +2534,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The amount of time to retain each snapshot. The maximum is 100 years. This is equivalent to 1200 months, 5200 weeks, or 36500 days.</p>\n@param interval The amount of time to retain each snapshot. The maximum is 100 years. This is equivalent to 1200 months, 5200 weeks, or 36500 days.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2570,6 +2604,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unit of time for time-based retention.</p>\n@param intervalUnit The unit of time for time-based retention.\n@return Returns a reference to this object so that method calls can be chained together.\n@see RetentionIntervalUnitValues*/",
@@ -2585,6 +2620,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.dlm.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2619,6 +2655,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.dlm.model.CrossRegionCopyRule",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2680,6 +2717,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The target Region.</p>\n@param targetRegion The target Region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2748,6 +2786,7 @@
           "variableSetterType" : "Boolean"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>To encrypt a copy of an unencrypted snapshot if encryption by default is not enabled, enable encryption using this parameter. Copies of encrypted snapshots are encrypted, even if this parameter is false or if encryption by default is not enabled.</p>\n@param encrypted To encrypt a copy of an unencrypted snapshot if encryption by default is not enabled, enable encryption using this parameter. Copies of encrypted snapshots are encrypted, even if this parameter is false or if encryption by default is not enabled.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2816,6 +2855,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the AWS KMS customer master key (CMK) to use for EBS encryption. If this parameter is not specified, your AWS managed CMK for EBS is used.</p>\n@param cmkArn The Amazon Resource Name (ARN) of the AWS KMS customer master key (CMK) to use for EBS encryption. If this parameter is not specified, your AWS managed CMK for EBS is used.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2884,6 +2924,7 @@
           "variableSetterType" : "Boolean"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Copy all user-defined tags from the source snapshot to the copied snapshot.</p>\n@param copyTags Copy all user-defined tags from the source snapshot to the copied snapshot.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2952,6 +2993,7 @@
           "variableSetterType" : "CrossRegionCopyRetainRule"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The retention rule.</p>\n@param retainRule The retention rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3022,6 +3064,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the AWS KMS customer master key (CMK) to use for EBS encryption. If this parameter is not specified, your AWS managed CMK for EBS is used.</p>\n@param cmkArn The Amazon Resource Name (ARN) of the AWS KMS customer master key (CMK) to use for EBS encryption. If this parameter is not specified, your AWS managed CMK for EBS is used.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3091,6 +3134,7 @@
             "variableSetterType" : "Boolean"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Copy all user-defined tags from the source snapshot to the copied snapshot.</p>\n@param copyTags Copy all user-defined tags from the source snapshot to the copied snapshot.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3160,6 +3204,7 @@
             "variableSetterType" : "Boolean"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>To encrypt a copy of an unencrypted snapshot if encryption by default is not enabled, enable encryption using this parameter. Copies of encrypted snapshots are encrypted, even if this parameter is false or if encryption by default is not enabled.</p>\n@param encrypted To encrypt a copy of an unencrypted snapshot if encryption by default is not enabled, enable encryption using this parameter. Copies of encrypted snapshots are encrypted, even if this parameter is false or if encryption by default is not enabled.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3229,6 +3274,7 @@
             "variableSetterType" : "CrossRegionCopyRetainRule"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The retention rule.</p>\n@param retainRule The retention rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3298,6 +3344,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The target Region.</p>\n@param targetRegion The target Region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3313,6 +3360,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.dlm.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "TargetRegion", "Encrypted" ],
@@ -3347,6 +3395,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.dlm.request.DeleteLifecyclePolicyRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3415,6 +3464,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier of the lifecycle policy.</p>\n@param policyId The identifier of the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3485,6 +3535,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier of the lifecycle policy.</p>\n@param policyId The identifier of the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3500,6 +3551,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.dlm.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "PolicyId" ],
@@ -3531,6 +3583,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.dlm.response.DeleteLifecyclePolicyResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3539,6 +3592,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.dlm.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3573,6 +3627,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.dlm.model.FastRestoreRule",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3634,6 +3689,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The number of snapshots to be enabled with fast snapshot restore.</p>\n@param count The number of snapshots to be enabled with fast snapshot restore.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3702,6 +3758,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The amount of time to enable fast snapshot restore. The maximum is 100 years. This is equivalent to 1200 months, 5200 weeks, or 36500 days.</p>\n@param interval The amount of time to enable fast snapshot restore. The maximum is 100 years. This is equivalent to 1200 months, 5200 weeks, or 36500 days.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3770,6 +3827,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unit of time for enabling fast snapshot restore.</p>\n@param intervalUnit The unit of time for enabling fast snapshot restore.\n@return Returns a reference to this object so that method calls can be chained together.\n@see RetentionIntervalUnitValues*/",
@@ -3877,6 +3935,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3921,6 +3980,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Availability Zones in which to enable fast snapshot restore.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAvailabilityZones(java.util.Collection)} or {@link #withAvailabilityZones(java.util.Collection)} if you want to override the existing values.</p>\n@param availabilityZones The Availability Zones in which to enable fast snapshot restore.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4030,6 +4090,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4074,6 +4135,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Availability Zones in which to enable fast snapshot restore.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAvailabilityZones(java.util.Collection)} or {@link #withAvailabilityZones(java.util.Collection)} if you want to override the existing values.</p>\n@param availabilityZones The Availability Zones in which to enable fast snapshot restore.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4143,6 +4205,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The number of snapshots to be enabled with fast snapshot restore.</p>\n@param count The number of snapshots to be enabled with fast snapshot restore.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4212,6 +4275,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The amount of time to enable fast snapshot restore. The maximum is 100 years. This is equivalent to 1200 months, 5200 weeks, or 36500 days.</p>\n@param interval The amount of time to enable fast snapshot restore. The maximum is 100 years. This is equivalent to 1200 months, 5200 weeks, or 36500 days.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4281,6 +4345,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unit of time for enabling fast snapshot restore.</p>\n@param intervalUnit The unit of time for enabling fast snapshot restore.\n@return Returns a reference to this object so that method calls can be chained together.\n@see RetentionIntervalUnitValues*/",
@@ -4296,6 +4361,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.dlm.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "AvailabilityZones" ],
@@ -4330,6 +4396,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.dlm.request.GetLifecyclePoliciesRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4437,6 +4504,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4481,6 +4549,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifiers of the data lifecycle policies.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPolicyIds(java.util.Collection)} or {@link #withPolicyIds(java.util.Collection)} if you want to override the existing values.</p>\n@param policyIds The identifiers of the data lifecycle policies.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4549,6 +4618,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The activation state.</p>\n@param state The activation state.\n@return Returns a reference to this object so that method calls can be chained together.\n@see GettablePolicyStateValues*/",
@@ -4656,6 +4726,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see ResourceTypeValues*/",
@@ -4700,6 +4771,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The resource type.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setResourceTypes(java.util.Collection)} or {@link #withResourceTypes(java.util.Collection)} if you want to override the existing values.</p>\n@param resourceTypes The resource type.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ResourceTypeValues*/",
@@ -4807,6 +4879,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4851,6 +4924,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The target tag for a policy.</p> <p>Tags are strings in the format <code>key=value</code>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTargetTags(java.util.Collection)} or {@link #withTargetTags(java.util.Collection)} if you want to override the existing values.</p>\n@param targetTags The target tag for a policy.</p> <p>Tags are strings in the format <code>key=value</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4958,6 +5032,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5002,6 +5077,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The tags to add to objects created by the policy.</p> <p>Tags are strings in the format <code>key=value</code>.</p> <p>These user-defined tags are added in addition to the AWS-added lifecycle tags.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagsToAdd(java.util.Collection)} or {@link #withTagsToAdd(java.util.Collection)} if you want to override the existing values.</p>\n@param tagsToAdd The tags to add to objects created by the policy.</p> <p>Tags are strings in the format <code>key=value</code>.</p> <p>These user-defined tags are added in addition to the AWS-added lifecycle tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5111,6 +5187,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5155,6 +5232,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifiers of the data lifecycle policies.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPolicyIds(java.util.Collection)} or {@link #withPolicyIds(java.util.Collection)} if you want to override the existing values.</p>\n@param policyIds The identifiers of the data lifecycle policies.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5263,6 +5341,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see ResourceTypeValues*/",
@@ -5307,6 +5386,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The resource type.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setResourceTypes(java.util.Collection)} or {@link #withResourceTypes(java.util.Collection)} if you want to override the existing values.</p>\n@param resourceTypes The resource type.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ResourceTypeValues*/",
@@ -5376,6 +5456,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The activation state.</p>\n@param state The activation state.\n@return Returns a reference to this object so that method calls can be chained together.\n@see GettablePolicyStateValues*/",
@@ -5484,6 +5565,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5528,6 +5610,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The tags to add to objects created by the policy.</p> <p>Tags are strings in the format <code>key=value</code>.</p> <p>These user-defined tags are added in addition to the AWS-added lifecycle tags.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagsToAdd(java.util.Collection)} or {@link #withTagsToAdd(java.util.Collection)} if you want to override the existing values.</p>\n@param tagsToAdd The tags to add to objects created by the policy.</p> <p>Tags are strings in the format <code>key=value</code>.</p> <p>These user-defined tags are added in addition to the AWS-added lifecycle tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5636,6 +5719,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5680,6 +5764,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The target tag for a policy.</p> <p>Tags are strings in the format <code>key=value</code>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTargetTags(java.util.Collection)} or {@link #withTargetTags(java.util.Collection)} if you want to override the existing values.</p>\n@param targetTags The target tag for a policy.</p> <p>Tags are strings in the format <code>key=value</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5695,6 +5780,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.dlm.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -5726,6 +5812,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.dlm.response.GetLifecyclePoliciesResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5826,6 +5913,7 @@
               "variableSetterType" : "LifecyclePolicySummary"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5870,6 +5958,7 @@
           "variableSetterType" : "java.util.Collection<LifecyclePolicySummary>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Summary information about the lifecycle policies.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPolicies(java.util.Collection)} or {@link #withPolicies(java.util.Collection)} if you want to override the existing values.</p>\n@param policies Summary information about the lifecycle policies.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5979,6 +6068,7 @@
                 "variableSetterType" : "LifecyclePolicySummary"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6023,6 +6113,7 @@
             "variableSetterType" : "java.util.Collection<LifecyclePolicySummary>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Summary information about the lifecycle policies.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPolicies(java.util.Collection)} or {@link #withPolicies(java.util.Collection)} if you want to override the existing values.</p>\n@param policies Summary information about the lifecycle policies.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6038,6 +6129,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.dlm.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6072,6 +6164,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.dlm.request.GetLifecyclePolicyRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6140,6 +6233,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier of the lifecycle policy.</p>\n@param policyId The identifier of the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6210,6 +6304,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier of the lifecycle policy.</p>\n@param policyId The identifier of the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6225,6 +6320,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.dlm.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "PolicyId" ],
@@ -6256,6 +6352,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.dlm.response.GetLifecyclePolicyResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6317,6 +6414,7 @@
           "variableSetterType" : "LifecyclePolicy"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Detailed information about the lifecycle policy.</p>\n@param policy Detailed information about the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6387,6 +6485,7 @@
             "variableSetterType" : "LifecyclePolicy"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Detailed information about the lifecycle policy.</p>\n@param policy Detailed information about the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6402,6 +6501,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.dlm.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6445,6 +6545,7 @@
         "value" : "ERROR"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.dlm.enum.GettablePolicyStateValues",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6453,6 +6554,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.dlm.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6487,6 +6589,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InternalServerException",
+      "fullyQualifiedName" : "com.amazonaws.services.dlm.exception.InternalServerException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6548,6 +6651,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param code \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6618,6 +6722,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param code \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6633,6 +6738,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.dlm.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6667,6 +6773,7 @@
         "value" : "HOURS"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.dlm.enum.IntervalUnitValues",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6675,6 +6782,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.dlm.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6709,6 +6817,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InvalidRequestException",
+      "fullyQualifiedName" : "com.amazonaws.services.dlm.exception.InvalidRequestException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6770,6 +6879,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param code \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6877,6 +6987,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6921,6 +7032,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The request omitted one or more required parameters.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRequiredParameters(java.util.Collection)} or {@link #withRequiredParameters(java.util.Collection)} if you want to override the existing values.</p>\n@param requiredParameters The request omitted one or more required parameters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7028,6 +7140,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7072,6 +7185,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The request included parameters that cannot be provided together.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setMutuallyExclusiveParameters(java.util.Collection)} or {@link #withMutuallyExclusiveParameters(java.util.Collection)} if you want to override the existing values.</p>\n@param mutuallyExclusiveParameters The request included parameters that cannot be provided together.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7142,6 +7256,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param code \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7250,6 +7365,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7294,6 +7410,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The request included parameters that cannot be provided together.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setMutuallyExclusiveParameters(java.util.Collection)} or {@link #withMutuallyExclusiveParameters(java.util.Collection)} if you want to override the existing values.</p>\n@param mutuallyExclusiveParameters The request included parameters that cannot be provided together.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7402,6 +7519,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7446,6 +7564,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The request omitted one or more required parameters.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRequiredParameters(java.util.Collection)} or {@link #withRequiredParameters(java.util.Collection)} if you want to override the existing values.</p>\n@param requiredParameters The request omitted one or more required parameters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7461,6 +7580,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.dlm.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -7492,6 +7612,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.dlm.model.LifecyclePolicy",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7553,6 +7674,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier of the lifecycle policy.</p>\n@param policyId The identifier of the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7621,6 +7743,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The description of the lifecycle policy.</p>\n@param description The description of the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7689,6 +7812,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The activation state of the lifecycle policy.</p>\n@param state The activation state of the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.\n@see GettablePolicyStateValues*/",
@@ -7757,6 +7881,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The description of the status.</p>\n@param statusMessage The description of the status.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7825,6 +7950,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>\n@param executionRoleArn The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7893,6 +8019,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The local date and time when the lifecycle policy was created.</p>\n@param dateCreated The local date and time when the lifecycle policy was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7961,6 +8088,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The local date and time when the lifecycle policy was last modified.</p>\n@param dateModified The local date and time when the lifecycle policy was last modified.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8029,6 +8157,7 @@
           "variableSetterType" : "PolicyDetails"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The configuration of the lifecycle policy</p>\n@param policyDetails The configuration of the lifecycle policy\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8142,6 +8271,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8180,6 +8310,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The tags.</p>\n@param tags The tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8248,6 +8379,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the policy.</p>\n@param policyArn The Amazon Resource Name (ARN) of the policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8318,6 +8450,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The local date and time when the lifecycle policy was created.</p>\n@param dateCreated The local date and time when the lifecycle policy was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8387,6 +8520,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The local date and time when the lifecycle policy was last modified.</p>\n@param dateModified The local date and time when the lifecycle policy was last modified.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8456,6 +8590,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The description of the lifecycle policy.</p>\n@param description The description of the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8525,6 +8660,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>\n@param executionRoleArn The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8594,6 +8730,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the policy.</p>\n@param policyArn The Amazon Resource Name (ARN) of the policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8663,6 +8800,7 @@
             "variableSetterType" : "PolicyDetails"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The configuration of the lifecycle policy</p>\n@param policyDetails The configuration of the lifecycle policy\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8732,6 +8870,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier of the lifecycle policy.</p>\n@param policyId The identifier of the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8801,6 +8940,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The activation state of the lifecycle policy.</p>\n@param state The activation state of the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.\n@see GettablePolicyStateValues*/",
@@ -8870,6 +9010,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The description of the status.</p>\n@param statusMessage The description of the status.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8984,6 +9125,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9022,6 +9164,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The tags.</p>\n@param tags The tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9037,6 +9180,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.dlm.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -9071,6 +9215,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.dlm.model.LifecyclePolicySummary",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -9132,6 +9277,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier of the lifecycle policy.</p>\n@param policyId The identifier of the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9200,6 +9346,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The description of the lifecycle policy.</p>\n@param description The description of the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9268,6 +9415,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The activation state of the lifecycle policy.</p>\n@param state The activation state of the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.\n@see GettablePolicyStateValues*/",
@@ -9381,6 +9529,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9419,6 +9568,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The tags.</p>\n@param tags The tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9489,6 +9639,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The description of the lifecycle policy.</p>\n@param description The description of the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9558,6 +9709,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier of the lifecycle policy.</p>\n@param policyId The identifier of the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9627,6 +9779,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The activation state of the lifecycle policy.</p>\n@param state The activation state of the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.\n@see GettablePolicyStateValues*/",
@@ -9741,6 +9894,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9779,6 +9933,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The tags.</p>\n@param tags The tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9794,6 +9949,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.dlm.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -9828,6 +9984,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "LimitExceededException",
+      "fullyQualifiedName" : "com.amazonaws.services.dlm.exception.LimitExceededException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -9889,6 +10046,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param code \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9957,6 +10115,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Value is the type of resource for which a limit was exceeded.</p>\n@param resourceType Value is the type of resource for which a limit was exceeded.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10027,6 +10186,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param code \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10096,6 +10256,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Value is the type of resource for which a limit was exceeded.</p>\n@param resourceType Value is the type of resource for which a limit was exceeded.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10111,6 +10272,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.dlm.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -10142,6 +10304,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.dlm.request.ListTagsForResourceRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -10210,6 +10373,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10280,6 +10444,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10295,6 +10460,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.dlm.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ResourceArn" ],
@@ -10326,6 +10492,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.dlm.response.ListTagsForResourceResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -10432,6 +10599,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10470,6 +10638,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Information about the tags.</p>\n@param tags Information about the tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10585,6 +10754,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10623,6 +10793,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Information about the tags.</p>\n@param tags Information about the tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10638,6 +10809,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.dlm.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -10672,6 +10844,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.dlm.model.Parameters",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -10733,6 +10906,7 @@
           "variableSetterType" : "Boolean"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>[EBS Snapshot Management – Instance policies only] Indicates whether to exclude the root volume from snapshots created using <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSnapshots.html\">CreateSnapshots</a>. The default is false.</p>\n@param excludeBootVolume [EBS Snapshot Management – Instance policies only] Indicates whether to exclude the root volume from snapshots created using <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSnapshots.html\">CreateSnapshots</a>. The default is false.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10803,6 +10977,7 @@
             "variableSetterType" : "Boolean"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>[EBS Snapshot Management – Instance policies only] Indicates whether to exclude the root volume from snapshots created using <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSnapshots.html\">CreateSnapshots</a>. The default is false.</p>\n@param excludeBootVolume [EBS Snapshot Management – Instance policies only] Indicates whether to exclude the root volume from snapshots created using <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSnapshots.html\">CreateSnapshots</a>. The default is false.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10818,6 +10993,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.dlm.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -10852,6 +11028,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.dlm.model.PolicyDetails",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -10913,6 +11090,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The valid target resource types and actions a policy can manage. The default is EBS_SNAPSHOT_MANAGEMENT.</p>\n@param policyType The valid target resource types and actions a policy can manage. The default is EBS_SNAPSHOT_MANAGEMENT.\n@return Returns a reference to this object so that method calls can be chained together.\n@see PolicyTypeValues*/",
@@ -11020,6 +11198,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see ResourceTypeValues*/",
@@ -11064,6 +11243,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The resource type. Use VOLUME to create snapshots of individual volumes or use INSTANCE to create multi-volume snapshots from the volumes for an instance.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setResourceTypes(java.util.Collection)} or {@link #withResourceTypes(java.util.Collection)} if you want to override the existing values.</p>\n@param resourceTypes The resource type. Use VOLUME to create snapshots of individual volumes or use INSTANCE to create multi-volume snapshots from the volumes for an instance.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ResourceTypeValues*/",
@@ -11171,6 +11351,7 @@
               "variableSetterType" : "Tag"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11215,6 +11396,7 @@
           "variableSetterType" : "java.util.Collection<Tag>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The single tag that identifies targeted resources for this policy.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTargetTags(java.util.Collection)} or {@link #withTargetTags(java.util.Collection)} if you want to override the existing values.</p>\n@param targetTags The single tag that identifies targeted resources for this policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11322,6 +11504,7 @@
               "variableSetterType" : "Schedule"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11366,6 +11549,7 @@
           "variableSetterType" : "java.util.Collection<Schedule>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The schedule of policy-defined actions.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSchedules(java.util.Collection)} or {@link #withSchedules(java.util.Collection)} if you want to override the existing values.</p>\n@param schedules The schedule of policy-defined actions.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11434,6 +11618,7 @@
           "variableSetterType" : "Parameters"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A set of optional parameters for the policy. </p>\n@param parameters A set of optional parameters for the policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11504,6 +11689,7 @@
             "variableSetterType" : "Parameters"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A set of optional parameters for the policy. </p>\n@param parameters A set of optional parameters for the policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11573,6 +11759,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The valid target resource types and actions a policy can manage. The default is EBS_SNAPSHOT_MANAGEMENT.</p>\n@param policyType The valid target resource types and actions a policy can manage. The default is EBS_SNAPSHOT_MANAGEMENT.\n@return Returns a reference to this object so that method calls can be chained together.\n@see PolicyTypeValues*/",
@@ -11681,6 +11868,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see ResourceTypeValues*/",
@@ -11725,6 +11913,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The resource type. Use VOLUME to create snapshots of individual volumes or use INSTANCE to create multi-volume snapshots from the volumes for an instance.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setResourceTypes(java.util.Collection)} or {@link #withResourceTypes(java.util.Collection)} if you want to override the existing values.</p>\n@param resourceTypes The resource type. Use VOLUME to create snapshots of individual volumes or use INSTANCE to create multi-volume snapshots from the volumes for an instance.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ResourceTypeValues*/",
@@ -11833,6 +12022,7 @@
                 "variableSetterType" : "Schedule"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11877,6 +12067,7 @@
             "variableSetterType" : "java.util.Collection<Schedule>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The schedule of policy-defined actions.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSchedules(java.util.Collection)} or {@link #withSchedules(java.util.Collection)} if you want to override the existing values.</p>\n@param schedules The schedule of policy-defined actions.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11985,6 +12176,7 @@
                 "variableSetterType" : "Tag"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12029,6 +12221,7 @@
             "variableSetterType" : "java.util.Collection<Tag>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The single tag that identifies targeted resources for this policy.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTargetTags(java.util.Collection)} or {@link #withTargetTags(java.util.Collection)} if you want to override the existing values.</p>\n@param targetTags The single tag that identifies targeted resources for this policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12044,6 +12237,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.dlm.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -12081,6 +12275,7 @@
         "value" : "EBS_SNAPSHOT_MANAGEMENT"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.dlm.enum.PolicyTypeValues",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -12089,6 +12284,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.dlm.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -12123,6 +12319,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ResourceNotFoundException",
+      "fullyQualifiedName" : "com.amazonaws.services.dlm.exception.ResourceNotFoundException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -12184,6 +12381,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param code \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12252,6 +12450,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Value is the type of resource that was not found.</p>\n@param resourceType Value is the type of resource that was not found.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12359,6 +12558,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12403,6 +12603,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Value is a list of resource IDs that were not found.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setResourceIds(java.util.Collection)} or {@link #withResourceIds(java.util.Collection)} if you want to override the existing values.</p>\n@param resourceIds Value is a list of resource IDs that were not found.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12473,6 +12674,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param code \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12581,6 +12783,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12625,6 +12828,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Value is a list of resource IDs that were not found.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setResourceIds(java.util.Collection)} or {@link #withResourceIds(java.util.Collection)} if you want to override the existing values.</p>\n@param resourceIds Value is a list of resource IDs that were not found.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12694,6 +12898,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Value is the type of resource that was not found.</p>\n@param resourceType Value is the type of resource that was not found.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12709,6 +12914,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.dlm.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -12746,6 +12952,7 @@
         "value" : "INSTANCE"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.dlm.enum.ResourceTypeValues",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -12754,6 +12961,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.dlm.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -12788,6 +12996,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.dlm.model.RetainRule",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -12849,6 +13058,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The number of snapshots to retain for each volume, up to a maximum of 1000.</p>\n@param count The number of snapshots to retain for each volume, up to a maximum of 1000.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12917,6 +13127,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The amount of time to retain each snapshot. The maximum is 100 years. This is equivalent to 1200 months, 5200 weeks, or 36500 days.</p>\n@param interval The amount of time to retain each snapshot. The maximum is 100 years. This is equivalent to 1200 months, 5200 weeks, or 36500 days.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12985,6 +13196,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unit of time for time-based retention.</p>\n@param intervalUnit The unit of time for time-based retention.\n@return Returns a reference to this object so that method calls can be chained together.\n@see RetentionIntervalUnitValues*/",
@@ -13055,6 +13267,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The number of snapshots to retain for each volume, up to a maximum of 1000.</p>\n@param count The number of snapshots to retain for each volume, up to a maximum of 1000.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13124,6 +13337,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The amount of time to retain each snapshot. The maximum is 100 years. This is equivalent to 1200 months, 5200 weeks, or 36500 days.</p>\n@param interval The amount of time to retain each snapshot. The maximum is 100 years. This is equivalent to 1200 months, 5200 weeks, or 36500 days.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13193,6 +13407,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unit of time for time-based retention.</p>\n@param intervalUnit The unit of time for time-based retention.\n@return Returns a reference to this object so that method calls can be chained together.\n@see RetentionIntervalUnitValues*/",
@@ -13208,6 +13423,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.dlm.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -13254,6 +13470,7 @@
         "value" : "YEARS"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.dlm.enum.RetentionIntervalUnitValues",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -13262,6 +13479,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.dlm.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -13296,6 +13514,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.dlm.model.Schedule",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -13357,6 +13576,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the schedule.</p>\n@param name The name of the schedule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13425,6 +13645,7 @@
           "variableSetterType" : "Boolean"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Copy all user-defined tags on a source volume to snapshots of the volume created by this policy.</p>\n@param copyTags Copy all user-defined tags on a source volume to snapshots of the volume created by this policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13532,6 +13753,7 @@
               "variableSetterType" : "Tag"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13576,6 +13798,7 @@
           "variableSetterType" : "java.util.Collection<Tag>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The tags to apply to policy-created resources. These user-defined tags are in addition to the AWS-added lifecycle tags.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagsToAdd(java.util.Collection)} or {@link #withTagsToAdd(java.util.Collection)} if you want to override the existing values.</p>\n@param tagsToAdd The tags to apply to policy-created resources. These user-defined tags are in addition to the AWS-added lifecycle tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13683,6 +13906,7 @@
               "variableSetterType" : "Tag"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13727,6 +13951,7 @@
           "variableSetterType" : "java.util.Collection<Tag>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A collection of key/value pairs with values determined dynamically when the policy is executed. Keys may be any valid Amazon EC2 tag key. Values must be in one of the two following formats: <code>$(instance-id)</code> or <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot Management – Instance policies.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setVariableTags(java.util.Collection)} or {@link #withVariableTags(java.util.Collection)} if you want to override the existing values.</p>\n@param variableTags A collection of key/value pairs with values determined dynamically when the policy is executed. Keys may be any valid Amazon EC2 tag key. Values must be in one of the two following formats: <code>$(instance-id)</code> or <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot Management – Instance policies.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13795,6 +14020,7 @@
           "variableSetterType" : "CreateRule"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The creation rule.</p>\n@param createRule The creation rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13863,6 +14089,7 @@
           "variableSetterType" : "RetainRule"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The retention rule.</p>\n@param retainRule The retention rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13931,6 +14158,7 @@
           "variableSetterType" : "FastRestoreRule"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The rule for enabling fast snapshot restore.</p>\n@param fastRestoreRule The rule for enabling fast snapshot restore.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14038,6 +14266,7 @@
               "variableSetterType" : "CrossRegionCopyRule"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14082,6 +14311,7 @@
           "variableSetterType" : "java.util.Collection<CrossRegionCopyRule>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The rule for cross-Region snapshot copies.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCrossRegionCopyRules(java.util.Collection)} or {@link #withCrossRegionCopyRules(java.util.Collection)} if you want to override the existing values.</p>\n@param crossRegionCopyRules The rule for cross-Region snapshot copies.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14152,6 +14382,7 @@
             "variableSetterType" : "Boolean"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Copy all user-defined tags on a source volume to snapshots of the volume created by this policy.</p>\n@param copyTags Copy all user-defined tags on a source volume to snapshots of the volume created by this policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14221,6 +14452,7 @@
             "variableSetterType" : "CreateRule"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The creation rule.</p>\n@param createRule The creation rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14329,6 +14561,7 @@
                 "variableSetterType" : "CrossRegionCopyRule"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14373,6 +14606,7 @@
             "variableSetterType" : "java.util.Collection<CrossRegionCopyRule>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The rule for cross-Region snapshot copies.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCrossRegionCopyRules(java.util.Collection)} or {@link #withCrossRegionCopyRules(java.util.Collection)} if you want to override the existing values.</p>\n@param crossRegionCopyRules The rule for cross-Region snapshot copies.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14442,6 +14676,7 @@
             "variableSetterType" : "FastRestoreRule"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The rule for enabling fast snapshot restore.</p>\n@param fastRestoreRule The rule for enabling fast snapshot restore.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14511,6 +14746,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the schedule.</p>\n@param name The name of the schedule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14580,6 +14816,7 @@
             "variableSetterType" : "RetainRule"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The retention rule.</p>\n@param retainRule The retention rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14688,6 +14925,7 @@
                 "variableSetterType" : "Tag"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14732,6 +14970,7 @@
             "variableSetterType" : "java.util.Collection<Tag>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The tags to apply to policy-created resources. These user-defined tags are in addition to the AWS-added lifecycle tags.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagsToAdd(java.util.Collection)} or {@link #withTagsToAdd(java.util.Collection)} if you want to override the existing values.</p>\n@param tagsToAdd The tags to apply to policy-created resources. These user-defined tags are in addition to the AWS-added lifecycle tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14840,6 +15079,7 @@
                 "variableSetterType" : "Tag"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14884,6 +15124,7 @@
             "variableSetterType" : "java.util.Collection<Tag>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A collection of key/value pairs with values determined dynamically when the policy is executed. Keys may be any valid Amazon EC2 tag key. Values must be in one of the two following formats: <code>$(instance-id)</code> or <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot Management – Instance policies.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setVariableTags(java.util.Collection)} or {@link #withVariableTags(java.util.Collection)} if you want to override the existing values.</p>\n@param variableTags A collection of key/value pairs with values determined dynamically when the policy is executed. Keys may be any valid Amazon EC2 tag key. Values must be in one of the two following formats: <code>$(instance-id)</code> or <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot Management – Instance policies.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14899,6 +15140,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.dlm.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -14939,6 +15181,7 @@
         "value" : "DISABLED"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.dlm.enum.SettablePolicyStateValues",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -14947,6 +15190,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.dlm.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -14981,6 +15225,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.dlm.model.Tag",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -15042,6 +15287,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The tag key.</p>\n@param key The tag key.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15110,6 +15356,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The tag value.</p>\n@param value The tag value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15180,6 +15427,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The tag key.</p>\n@param key The tag key.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15249,6 +15497,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The tag value.</p>\n@param value The tag value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15264,6 +15513,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.dlm.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Key", "Value" ],
@@ -15298,6 +15548,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.dlm.request.TagResourceRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -15366,6 +15617,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15479,6 +15731,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15517,6 +15770,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>One or more tags.</p>\n@param tags One or more tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15587,6 +15841,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15701,6 +15956,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15739,6 +15995,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>One or more tags.</p>\n@param tags One or more tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15754,6 +16011,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.dlm.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ResourceArn", "Tags" ],
@@ -15785,6 +16043,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.dlm.response.TagResourceResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -15793,6 +16052,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.dlm.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -15827,6 +16087,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.dlm.request.UntagResourceRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -15895,6 +16156,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16002,6 +16264,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16046,6 +16309,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The tag keys.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagKeys(java.util.Collection)} or {@link #withTagKeys(java.util.Collection)} if you want to override the existing values.</p>\n@param tagKeys The tag keys.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16116,6 +16380,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16224,6 +16489,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16268,6 +16534,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The tag keys.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagKeys(java.util.Collection)} or {@link #withTagKeys(java.util.Collection)} if you want to override the existing values.</p>\n@param tagKeys The tag keys.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16283,6 +16550,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.dlm.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ResourceArn", "TagKeys" ],
@@ -16314,6 +16582,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.dlm.response.UntagResourceResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -16322,6 +16591,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.dlm.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -16356,6 +16626,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.dlm.request.UpdateLifecyclePolicyRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -16424,6 +16695,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier of the lifecycle policy.</p>\n@param policyId The identifier of the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16492,6 +16764,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>\n@param executionRoleArn The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16560,6 +16833,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The desired activation state of the lifecycle policy after creation.</p>\n@param state The desired activation state of the lifecycle policy after creation.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SettablePolicyStateValues*/",
@@ -16628,6 +16902,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A description of the lifecycle policy.</p>\n@param description A description of the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16696,6 +16971,7 @@
           "variableSetterType" : "PolicyDetails"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The configuration of the lifecycle policy. You cannot update the policy type or the resource type.</p>\n@param policyDetails The configuration of the lifecycle policy. You cannot update the policy type or the resource type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16766,6 +17042,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A description of the lifecycle policy.</p>\n@param description A description of the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16835,6 +17112,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>\n@param executionRoleArn The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16904,6 +17182,7 @@
             "variableSetterType" : "PolicyDetails"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The configuration of the lifecycle policy. You cannot update the policy type or the resource type.</p>\n@param policyDetails The configuration of the lifecycle policy. You cannot update the policy type or the resource type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16973,6 +17252,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier of the lifecycle policy.</p>\n@param policyId The identifier of the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17042,6 +17322,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The desired activation state of the lifecycle policy after creation.</p>\n@param state The desired activation state of the lifecycle policy after creation.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SettablePolicyStateValues*/",
@@ -17057,6 +17338,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.dlm.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "PolicyId" ],
@@ -17088,6 +17370,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.dlm.response.UpdateLifecyclePolicyResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -17096,6 +17379,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.dlm.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,

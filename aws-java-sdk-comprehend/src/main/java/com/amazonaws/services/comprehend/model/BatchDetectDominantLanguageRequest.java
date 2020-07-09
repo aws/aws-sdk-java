@@ -128,7 +128,7 @@ public class BatchDetectDominantLanguageRequest extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTextList() != null)
-            sb.append("TextList: ").append(getTextList());
+            sb.append("TextList: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

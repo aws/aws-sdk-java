@@ -59,12 +59,14 @@ public class StopChannelResultJsonUnmarshaller implements Unmarshaller<StopChann
                 if (context.testExpression("destinations", targetDepth)) {
                     context.nextToken();
                     stopChannelResult.setDestinations(new ListUnmarshaller<OutputDestination>(OutputDestinationJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("egressEndpoints", targetDepth)) {
                     context.nextToken();
                     stopChannelResult.setEgressEndpoints(new ListUnmarshaller<ChannelEgressEndpoint>(ChannelEgressEndpointJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("encoderSettings", targetDepth)) {
                     context.nextToken();
@@ -77,7 +79,8 @@ public class StopChannelResultJsonUnmarshaller implements Unmarshaller<StopChann
                 if (context.testExpression("inputAttachments", targetDepth)) {
                     context.nextToken();
                     stopChannelResult.setInputAttachments(new ListUnmarshaller<InputAttachment>(InputAttachmentJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("inputSpecification", targetDepth)) {
                     context.nextToken();
@@ -93,8 +96,9 @@ public class StopChannelResultJsonUnmarshaller implements Unmarshaller<StopChann
                 }
                 if (context.testExpression("pipelineDetails", targetDepth)) {
                     context.nextToken();
-                    stopChannelResult
-                            .setPipelineDetails(new ListUnmarshaller<PipelineDetail>(PipelineDetailJsonUnmarshaller.getInstance()).unmarshall(context));
+                    stopChannelResult.setPipelineDetails(new ListUnmarshaller<PipelineDetail>(PipelineDetailJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("pipelinesRunningCount", targetDepth)) {
                     context.nextToken();

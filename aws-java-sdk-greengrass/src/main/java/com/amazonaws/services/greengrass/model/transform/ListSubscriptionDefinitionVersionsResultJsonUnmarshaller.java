@@ -56,7 +56,9 @@ public class ListSubscriptionDefinitionVersionsResultJsonUnmarshaller implements
                 if (context.testExpression("Versions", targetDepth)) {
                     context.nextToken();
                     listSubscriptionDefinitionVersionsResult.setVersions(new ListUnmarshaller<VersionInformation>(VersionInformationJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

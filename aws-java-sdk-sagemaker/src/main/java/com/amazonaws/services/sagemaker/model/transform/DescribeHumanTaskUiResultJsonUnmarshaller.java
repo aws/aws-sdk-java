@@ -56,6 +56,10 @@ public class DescribeHumanTaskUiResultJsonUnmarshaller implements Unmarshaller<D
                     context.nextToken();
                     describeHumanTaskUiResult.setHumanTaskUiName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("HumanTaskUiStatus", targetDepth)) {
+                    context.nextToken();
+                    describeHumanTaskUiResult.setHumanTaskUiStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
                     describeHumanTaskUiResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));

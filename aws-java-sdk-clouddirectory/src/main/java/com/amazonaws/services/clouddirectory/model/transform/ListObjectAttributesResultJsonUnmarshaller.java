@@ -51,7 +51,8 @@ public class ListObjectAttributesResultJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("Attributes", targetDepth)) {
                     context.nextToken();
                     listObjectAttributesResult.setAttributes(new ListUnmarshaller<AttributeKeyAndValue>(AttributeKeyAndValueJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

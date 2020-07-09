@@ -50,7 +50,9 @@ public class GetVpcLinksResultJsonUnmarshaller implements Unmarshaller<GetVpcLin
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("items", targetDepth)) {
                     context.nextToken();
-                    getVpcLinksResult.setItems(new ListUnmarshaller<VpcLink>(VpcLinkJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getVpcLinksResult.setItems(new ListUnmarshaller<VpcLink>(VpcLinkJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

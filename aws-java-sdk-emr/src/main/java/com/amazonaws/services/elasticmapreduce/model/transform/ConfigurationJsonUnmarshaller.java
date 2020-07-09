@@ -54,7 +54,9 @@ public class ConfigurationJsonUnmarshaller implements Unmarshaller<Configuration
                 }
                 if (context.testExpression("Configurations", targetDepth)) {
                     context.nextToken();
-                    configuration.setConfigurations(new ListUnmarshaller<Configuration>(ConfigurationJsonUnmarshaller.getInstance()).unmarshall(context));
+                    configuration.setConfigurations(new ListUnmarshaller<Configuration>(ConfigurationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Properties", targetDepth)) {
                     context.nextToken();

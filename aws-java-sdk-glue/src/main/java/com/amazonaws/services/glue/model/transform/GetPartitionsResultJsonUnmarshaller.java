@@ -50,7 +50,9 @@ public class GetPartitionsResultJsonUnmarshaller implements Unmarshaller<GetPart
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Partitions", targetDepth)) {
                     context.nextToken();
-                    getPartitionsResult.setPartitions(new ListUnmarshaller<Partition>(PartitionJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getPartitionsResult.setPartitions(new ListUnmarshaller<Partition>(PartitionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

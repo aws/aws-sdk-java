@@ -51,7 +51,8 @@ public class ListGatewayGroupsResultJsonUnmarshaller implements Unmarshaller<Lis
                 if (context.testExpression("GatewayGroups", targetDepth)) {
                     context.nextToken();
                     listGatewayGroupsResult.setGatewayGroups(new ListUnmarshaller<GatewayGroupSummary>(GatewayGroupSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

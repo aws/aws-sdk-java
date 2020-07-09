@@ -55,7 +55,8 @@ public class AwsSnsTopicDetailsJsonUnmarshaller implements Unmarshaller<AwsSnsTo
                 if (context.testExpression("Subscription", targetDepth)) {
                     context.nextToken();
                     awsSnsTopicDetails.setSubscription(new ListUnmarshaller<AwsSnsTopicSubscription>(AwsSnsTopicSubscriptionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("TopicName", targetDepth)) {
                     context.nextToken();

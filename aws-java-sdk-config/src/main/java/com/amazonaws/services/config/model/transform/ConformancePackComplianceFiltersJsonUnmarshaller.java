@@ -50,8 +50,9 @@ public class ConformancePackComplianceFiltersJsonUnmarshaller implements Unmarsh
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ConfigRuleNames", targetDepth)) {
                     context.nextToken();
-                    conformancePackComplianceFilters
-                            .setConfigRuleNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    conformancePackComplianceFilters.setConfigRuleNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ComplianceType", targetDepth)) {
                     context.nextToken();

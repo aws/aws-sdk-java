@@ -55,7 +55,9 @@ public class CmafPackageCreateOrUpdateParametersJsonUnmarshaller implements Unma
                 if (context.testExpression("hlsManifests", targetDepth)) {
                     context.nextToken();
                     cmafPackageCreateOrUpdateParameters.setHlsManifests(new ListUnmarshaller<HlsManifestCreateOrUpdateParameters>(
-                            HlsManifestCreateOrUpdateParametersJsonUnmarshaller.getInstance()).unmarshall(context));
+                            HlsManifestCreateOrUpdateParametersJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("segmentDurationSeconds", targetDepth)) {
                     context.nextToken();

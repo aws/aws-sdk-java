@@ -51,7 +51,9 @@ public class ListLicenseConfigurationsResultJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("LicenseConfigurations", targetDepth)) {
                     context.nextToken();
                     listLicenseConfigurationsResult.setLicenseConfigurations(new ListUnmarshaller<LicenseConfiguration>(LicenseConfigurationJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

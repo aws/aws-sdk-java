@@ -117,6 +117,16 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private SqsParameters sqsParameters;
+    /**
+     * <p>
+     * Contains the HTTP parameters to use when the target is a API Gateway REST endpoint.
+     * </p>
+     * <p>
+     * If you specify an API Gateway REST API as a target, you can use this parameter to specify headers, path
+     * parameter, query string keys/values as part of your target invoking request.
+     * </p>
+     */
+    private HttpParameters httpParameters;
 
     /**
      * <p>
@@ -650,6 +660,67 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Contains the HTTP parameters to use when the target is a API Gateway REST endpoint.
+     * </p>
+     * <p>
+     * If you specify an API Gateway REST API as a target, you can use this parameter to specify headers, path
+     * parameter, query string keys/values as part of your target invoking request.
+     * </p>
+     * 
+     * @param httpParameters
+     *        Contains the HTTP parameters to use when the target is a API Gateway REST endpoint.</p>
+     *        <p>
+     *        If you specify an API Gateway REST API as a target, you can use this parameter to specify headers, path
+     *        parameter, query string keys/values as part of your target invoking request.
+     */
+
+    public void setHttpParameters(HttpParameters httpParameters) {
+        this.httpParameters = httpParameters;
+    }
+
+    /**
+     * <p>
+     * Contains the HTTP parameters to use when the target is a API Gateway REST endpoint.
+     * </p>
+     * <p>
+     * If you specify an API Gateway REST API as a target, you can use this parameter to specify headers, path
+     * parameter, query string keys/values as part of your target invoking request.
+     * </p>
+     * 
+     * @return Contains the HTTP parameters to use when the target is a API Gateway REST endpoint.</p>
+     *         <p>
+     *         If you specify an API Gateway REST API as a target, you can use this parameter to specify headers, path
+     *         parameter, query string keys/values as part of your target invoking request.
+     */
+
+    public HttpParameters getHttpParameters() {
+        return this.httpParameters;
+    }
+
+    /**
+     * <p>
+     * Contains the HTTP parameters to use when the target is a API Gateway REST endpoint.
+     * </p>
+     * <p>
+     * If you specify an API Gateway REST API as a target, you can use this parameter to specify headers, path
+     * parameter, query string keys/values as part of your target invoking request.
+     * </p>
+     * 
+     * @param httpParameters
+     *        Contains the HTTP parameters to use when the target is a API Gateway REST endpoint.</p>
+     *        <p>
+     *        If you specify an API Gateway REST API as a target, you can use this parameter to specify headers, path
+     *        parameter, query string keys/values as part of your target invoking request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Target withHttpParameters(HttpParameters httpParameters) {
+        setHttpParameters(httpParameters);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -682,7 +753,9 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
         if (getBatchParameters() != null)
             sb.append("BatchParameters: ").append(getBatchParameters()).append(",");
         if (getSqsParameters() != null)
-            sb.append("SqsParameters: ").append(getSqsParameters());
+            sb.append("SqsParameters: ").append(getSqsParameters()).append(",");
+        if (getHttpParameters() != null)
+            sb.append("HttpParameters: ").append(getHttpParameters());
         sb.append("}");
         return sb.toString();
     }
@@ -741,6 +814,10 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSqsParameters() != null && other.getSqsParameters().equals(this.getSqsParameters()) == false)
             return false;
+        if (other.getHttpParameters() == null ^ this.getHttpParameters() == null)
+            return false;
+        if (other.getHttpParameters() != null && other.getHttpParameters().equals(this.getHttpParameters()) == false)
+            return false;
         return true;
     }
 
@@ -760,6 +837,7 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getEcsParameters() == null) ? 0 : getEcsParameters().hashCode());
         hashCode = prime * hashCode + ((getBatchParameters() == null) ? 0 : getBatchParameters().hashCode());
         hashCode = prime * hashCode + ((getSqsParameters() == null) ? 0 : getSqsParameters().hashCode());
+        hashCode = prime * hashCode + ((getHttpParameters() == null) ? 0 : getHttpParameters().hashCode());
         return hashCode;
     }
 

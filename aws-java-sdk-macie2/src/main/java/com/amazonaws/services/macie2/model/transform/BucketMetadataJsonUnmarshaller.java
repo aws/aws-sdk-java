@@ -106,7 +106,9 @@ public class BucketMetadataJsonUnmarshaller implements Unmarshaller<BucketMetada
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
-                    bucketMetadata.setTags(new ListUnmarshaller<KeyValuePair>(KeyValuePairJsonUnmarshaller.getInstance()).unmarshall(context));
+                    bucketMetadata.setTags(new ListUnmarshaller<KeyValuePair>(KeyValuePairJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("versioning", targetDepth)) {
                     context.nextToken();

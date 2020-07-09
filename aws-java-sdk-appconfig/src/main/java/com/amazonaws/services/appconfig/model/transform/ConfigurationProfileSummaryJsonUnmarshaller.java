@@ -66,7 +66,9 @@ public class ConfigurationProfileSummaryJsonUnmarshaller implements Unmarshaller
                 }
                 if (context.testExpression("ValidatorTypes", targetDepth)) {
                     context.nextToken();
-                    configurationProfileSummary.setValidatorTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    configurationProfileSummary.setValidatorTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

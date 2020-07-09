@@ -55,7 +55,8 @@ public class RemoveFlowVpcInterfaceResultJsonUnmarshaller implements Unmarshalle
                 if (context.testExpression("nonDeletedNetworkInterfaceIds", targetDepth)) {
                     context.nextToken();
                     removeFlowVpcInterfaceResult.setNonDeletedNetworkInterfaceIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("vpcInterfaceName", targetDepth)) {
                     context.nextToken();

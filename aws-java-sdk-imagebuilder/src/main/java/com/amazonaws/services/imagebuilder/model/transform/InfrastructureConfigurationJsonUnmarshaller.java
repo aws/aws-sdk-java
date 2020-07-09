@@ -62,7 +62,9 @@ public class InfrastructureConfigurationJsonUnmarshaller implements Unmarshaller
                 }
                 if (context.testExpression("instanceTypes", targetDepth)) {
                     context.nextToken();
-                    infrastructureConfiguration.setInstanceTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    infrastructureConfiguration.setInstanceTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("instanceProfileName", targetDepth)) {
                     context.nextToken();
@@ -70,7 +72,9 @@ public class InfrastructureConfigurationJsonUnmarshaller implements Unmarshaller
                 }
                 if (context.testExpression("securityGroupIds", targetDepth)) {
                     context.nextToken();
-                    infrastructureConfiguration.setSecurityGroupIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    infrastructureConfiguration.setSecurityGroupIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("subnetId", targetDepth)) {
                     context.nextToken();

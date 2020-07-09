@@ -94,7 +94,9 @@ public class DeleteLagResultJsonUnmarshaller implements Unmarshaller<DeleteLagRe
                 }
                 if (context.testExpression("connections", targetDepth)) {
                     context.nextToken();
-                    deleteLagResult.setConnections(new ListUnmarshaller<Connection>(ConnectionJsonUnmarshaller.getInstance()).unmarshall(context));
+                    deleteLagResult.setConnections(new ListUnmarshaller<Connection>(ConnectionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("allowsHostedConnections", targetDepth)) {
                     context.nextToken();
@@ -110,7 +112,9 @@ public class DeleteLagResultJsonUnmarshaller implements Unmarshaller<DeleteLagRe
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
-                    deleteLagResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    deleteLagResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("providerName", targetDepth)) {
                     context.nextToken();

@@ -110,7 +110,9 @@ public class CreateConnectionResultJsonUnmarshaller implements Unmarshaller<Crea
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
-                    createConnectionResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    createConnectionResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("providerName", targetDepth)) {
                     context.nextToken();

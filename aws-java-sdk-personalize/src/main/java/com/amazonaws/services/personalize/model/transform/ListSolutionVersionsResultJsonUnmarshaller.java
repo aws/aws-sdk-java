@@ -51,7 +51,9 @@ public class ListSolutionVersionsResultJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("solutionVersions", targetDepth)) {
                     context.nextToken();
                     listSolutionVersionsResult.setSolutionVersions(new ListUnmarshaller<SolutionVersionSummary>(SolutionVersionSummaryJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

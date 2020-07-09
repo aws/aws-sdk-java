@@ -58,7 +58,9 @@ public class S3SourceJsonUnmarshaller implements Unmarshaller<S3Source, JsonUnma
                 }
                 if (context.testExpression("InputColumns", targetDepth)) {
                     context.nextToken();
-                    s3Source.setInputColumns(new ListUnmarshaller<InputColumn>(InputColumnJsonUnmarshaller.getInstance()).unmarshall(context));
+                    s3Source.setInputColumns(new ListUnmarshaller<InputColumn>(InputColumnJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

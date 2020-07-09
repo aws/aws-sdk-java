@@ -64,7 +64,9 @@ public class TestInvokeMethodResultJsonUnmarshaller implements Unmarshaller<Test
                 if (context.testExpression("multiValueHeaders", targetDepth)) {
                     context.nextToken();
                     testInvokeMethodResult.setMultiValueHeaders(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
-                            new ListUnmarshaller<String>(context.getUnmarshaller(String.class))).unmarshall(context));
+                            new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    ).unmarshall(context));
                 }
                 if (context.testExpression("log", targetDepth)) {
                     context.nextToken();

@@ -54,7 +54,9 @@ public class RecommendationFeedbackSummaryJsonUnmarshaller implements Unmarshall
                 }
                 if (context.testExpression("Reactions", targetDepth)) {
                     context.nextToken();
-                    recommendationFeedbackSummary.setReactions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    recommendationFeedbackSummary.setReactions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("UserId", targetDepth)) {
                     context.nextToken();

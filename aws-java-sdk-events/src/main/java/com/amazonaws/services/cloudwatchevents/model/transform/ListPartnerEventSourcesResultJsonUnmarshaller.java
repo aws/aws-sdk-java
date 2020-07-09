@@ -51,7 +51,9 @@ public class ListPartnerEventSourcesResultJsonUnmarshaller implements Unmarshall
                 if (context.testExpression("PartnerEventSources", targetDepth)) {
                     context.nextToken();
                     listPartnerEventSourcesResult.setPartnerEventSources(new ListUnmarshaller<PartnerEventSource>(PartnerEventSourceJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

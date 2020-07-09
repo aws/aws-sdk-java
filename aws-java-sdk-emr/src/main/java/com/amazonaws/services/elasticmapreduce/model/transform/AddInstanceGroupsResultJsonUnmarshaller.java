@@ -54,7 +54,9 @@ public class AddInstanceGroupsResultJsonUnmarshaller implements Unmarshaller<Add
                 }
                 if (context.testExpression("InstanceGroupIds", targetDepth)) {
                     context.nextToken();
-                    addInstanceGroupsResult.setInstanceGroupIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    addInstanceGroupsResult.setInstanceGroupIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ClusterArn", targetDepth)) {
                     context.nextToken();

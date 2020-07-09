@@ -50,7 +50,9 @@ public class ListChildrenResultJsonUnmarshaller implements Unmarshaller<ListChil
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Children", targetDepth)) {
                     context.nextToken();
-                    listChildrenResult.setChildren(new ListUnmarshaller<Child>(ChildJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listChildrenResult.setChildren(new ListUnmarshaller<Child>(ChildJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

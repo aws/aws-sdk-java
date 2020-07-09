@@ -54,7 +54,9 @@ public class WorkteamJsonUnmarshaller implements Unmarshaller<Workteam, JsonUnma
                 }
                 if (context.testExpression("MemberDefinitions", targetDepth)) {
                     context.nextToken();
-                    workteam.setMemberDefinitions(new ListUnmarshaller<MemberDefinition>(MemberDefinitionJsonUnmarshaller.getInstance()).unmarshall(context));
+                    workteam.setMemberDefinitions(new ListUnmarshaller<MemberDefinition>(MemberDefinitionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("WorkteamArn", targetDepth)) {
                     context.nextToken();
@@ -62,7 +64,9 @@ public class WorkteamJsonUnmarshaller implements Unmarshaller<Workteam, JsonUnma
                 }
                 if (context.testExpression("ProductListingIds", targetDepth)) {
                     context.nextToken();
-                    workteam.setProductListingIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    workteam.setProductListingIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
                     context.nextToken();

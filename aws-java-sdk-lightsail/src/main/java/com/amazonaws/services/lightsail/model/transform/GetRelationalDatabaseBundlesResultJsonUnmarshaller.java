@@ -51,7 +51,9 @@ public class GetRelationalDatabaseBundlesResultJsonUnmarshaller implements Unmar
                 if (context.testExpression("bundles", targetDepth)) {
                     context.nextToken();
                     getRelationalDatabaseBundlesResult.setBundles(new ListUnmarshaller<RelationalDatabaseBundle>(RelationalDatabaseBundleJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextPageToken", targetDepth)) {
                     context.nextToken();

@@ -58,7 +58,9 @@ public class BatchPutAssetPropertyErrorJsonUnmarshaller implements Unmarshaller<
                 }
                 if (context.testExpression("timestamps", targetDepth)) {
                     context.nextToken();
-                    batchPutAssetPropertyError.setTimestamps(new ListUnmarshaller<TimeInNanos>(TimeInNanosJsonUnmarshaller.getInstance()).unmarshall(context));
+                    batchPutAssetPropertyError.setTimestamps(new ListUnmarshaller<TimeInNanos>(TimeInNanosJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

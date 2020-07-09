@@ -50,7 +50,9 @@ public class DescribeTrustsResultJsonUnmarshaller implements Unmarshaller<Descri
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Trusts", targetDepth)) {
                     context.nextToken();
-                    describeTrustsResult.setTrusts(new ListUnmarshaller<Trust>(TrustJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeTrustsResult.setTrusts(new ListUnmarshaller<Trust>(TrustJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

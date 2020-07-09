@@ -51,7 +51,8 @@ public class DescribeAutomationStepExecutionsResultJsonUnmarshaller implements U
                 if (context.testExpression("StepExecutions", targetDepth)) {
                     context.nextToken();
                     describeAutomationStepExecutionsResult.setStepExecutions(new ListUnmarshaller<StepExecution>(StepExecutionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

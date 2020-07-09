@@ -62,7 +62,9 @@ public class JobEntryJsonUnmarshaller implements Unmarshaller<JobEntry, JsonUnma
                 }
                 if (context.testExpression("Errors", targetDepth)) {
                     context.nextToken();
-                    jobEntry.setErrors(new ListUnmarshaller<JobError>(JobErrorJsonUnmarshaller.getInstance()).unmarshall(context));
+                    jobEntry.setErrors(new ListUnmarshaller<JobError>(JobErrorJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Id", targetDepth)) {
                     context.nextToken();

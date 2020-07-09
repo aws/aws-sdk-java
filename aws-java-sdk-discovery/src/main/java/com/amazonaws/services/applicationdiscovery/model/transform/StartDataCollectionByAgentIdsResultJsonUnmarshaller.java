@@ -51,7 +51,9 @@ public class StartDataCollectionByAgentIdsResultJsonUnmarshaller implements Unma
                 if (context.testExpression("agentsConfigurationStatus", targetDepth)) {
                     context.nextToken();
                     startDataCollectionByAgentIdsResult.setAgentsConfigurationStatus(new ListUnmarshaller<AgentConfigurationStatus>(
-                            AgentConfigurationStatusJsonUnmarshaller.getInstance()).unmarshall(context));
+                            AgentConfigurationStatusJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

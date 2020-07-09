@@ -52,7 +52,9 @@ public class DescribeInstancePatchStatesForPatchGroupResultJsonUnmarshaller impl
                 if (context.testExpression("InstancePatchStates", targetDepth)) {
                     context.nextToken();
                     describeInstancePatchStatesForPatchGroupResult.setInstancePatchStates(new ListUnmarshaller<InstancePatchState>(
-                            InstancePatchStateJsonUnmarshaller.getInstance()).unmarshall(context));
+                            InstancePatchStateJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

@@ -50,12 +50,15 @@ public class BatchGetVariableResultJsonUnmarshaller implements Unmarshaller<Batc
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("variables", targetDepth)) {
                     context.nextToken();
-                    batchGetVariableResult.setVariables(new ListUnmarshaller<Variable>(VariableJsonUnmarshaller.getInstance()).unmarshall(context));
+                    batchGetVariableResult.setVariables(new ListUnmarshaller<Variable>(VariableJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("errors", targetDepth)) {
                     context.nextToken();
                     batchGetVariableResult.setErrors(new ListUnmarshaller<BatchGetVariableError>(BatchGetVariableErrorJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

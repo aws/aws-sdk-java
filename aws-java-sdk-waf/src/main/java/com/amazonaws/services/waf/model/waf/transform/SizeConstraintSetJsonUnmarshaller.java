@@ -58,8 +58,9 @@ public class SizeConstraintSetJsonUnmarshaller implements Unmarshaller<SizeConst
                 }
                 if (context.testExpression("SizeConstraints", targetDepth)) {
                     context.nextToken();
-                    sizeConstraintSet
-                            .setSizeConstraints(new ListUnmarshaller<SizeConstraint>(SizeConstraintJsonUnmarshaller.getInstance()).unmarshall(context));
+                    sizeConstraintSet.setSizeConstraints(new ListUnmarshaller<SizeConstraint>(SizeConstraintJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

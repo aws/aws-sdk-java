@@ -54,7 +54,9 @@ public class AddFlowSourcesResultJsonUnmarshaller implements Unmarshaller<AddFlo
                 }
                 if (context.testExpression("sources", targetDepth)) {
                     context.nextToken();
-                    addFlowSourcesResult.setSources(new ListUnmarshaller<Source>(SourceJsonUnmarshaller.getInstance()).unmarshall(context));
+                    addFlowSourcesResult.setSources(new ListUnmarshaller<Source>(SourceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

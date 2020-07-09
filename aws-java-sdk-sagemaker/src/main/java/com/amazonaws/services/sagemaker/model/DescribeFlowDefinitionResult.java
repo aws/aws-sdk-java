@@ -79,7 +79,11 @@ public class DescribeFlowDefinitionResult extends com.amazonaws.AmazonWebService
      * </p>
      */
     private String roleArn;
-    /** <p/> */
+    /**
+     * <p>
+     * The reason your flow definition failed.
+     * </p>
+     */
     private String failureReason;
 
     /**
@@ -477,9 +481,12 @@ public class DescribeFlowDefinitionResult extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * <p/>
+     * <p>
+     * The reason your flow definition failed.
+     * </p>
      * 
      * @param failureReason
+     *        The reason your flow definition failed.
      */
 
     public void setFailureReason(String failureReason) {
@@ -487,9 +494,11 @@ public class DescribeFlowDefinitionResult extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * <p/>
+     * <p>
+     * The reason your flow definition failed.
+     * </p>
      * 
-     * @return
+     * @return The reason your flow definition failed.
      */
 
     public String getFailureReason() {
@@ -497,9 +506,12 @@ public class DescribeFlowDefinitionResult extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * <p/>
+     * <p>
+     * The reason your flow definition failed.
+     * </p>
      * 
      * @param failureReason
+     *        The reason your flow definition failed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -51,7 +51,8 @@ public class SearchSystemTemplatesResultJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("summaries", targetDepth)) {
                     context.nextToken();
                     searchSystemTemplatesResult.setSummaries(new ListUnmarshaller<SystemTemplateSummary>(SystemTemplateSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

@@ -50,12 +50,15 @@ public class BatchCheckLayerAvailabilityResultJsonUnmarshaller implements Unmars
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("layers", targetDepth)) {
                     context.nextToken();
-                    batchCheckLayerAvailabilityResult.setLayers(new ListUnmarshaller<Layer>(LayerJsonUnmarshaller.getInstance()).unmarshall(context));
+                    batchCheckLayerAvailabilityResult.setLayers(new ListUnmarshaller<Layer>(LayerJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("failures", targetDepth)) {
                     context.nextToken();
                     batchCheckLayerAvailabilityResult.setFailures(new ListUnmarshaller<LayerFailure>(LayerFailureJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

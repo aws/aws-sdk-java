@@ -66,7 +66,9 @@ public class JobDetailJsonUnmarshaller implements Unmarshaller<JobDetail, JsonUn
                 }
                 if (context.testExpression("attempts", targetDepth)) {
                     context.nextToken();
-                    jobDetail.setAttempts(new ListUnmarshaller<AttemptDetail>(AttemptDetailJsonUnmarshaller.getInstance()).unmarshall(context));
+                    jobDetail.setAttempts(new ListUnmarshaller<AttemptDetail>(AttemptDetailJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("statusReason", targetDepth)) {
                     context.nextToken();
@@ -90,7 +92,9 @@ public class JobDetailJsonUnmarshaller implements Unmarshaller<JobDetail, JsonUn
                 }
                 if (context.testExpression("dependsOn", targetDepth)) {
                     context.nextToken();
-                    jobDetail.setDependsOn(new ListUnmarshaller<JobDependency>(JobDependencyJsonUnmarshaller.getInstance()).unmarshall(context));
+                    jobDetail.setDependsOn(new ListUnmarshaller<JobDependency>(JobDependencyJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("jobDefinition", targetDepth)) {
                     context.nextToken();

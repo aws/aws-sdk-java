@@ -70,7 +70,9 @@ public class UpdatePatchBaselineResultJsonUnmarshaller implements Unmarshaller<U
                 }
                 if (context.testExpression("ApprovedPatches", targetDepth)) {
                     context.nextToken();
-                    updatePatchBaselineResult.setApprovedPatches(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    updatePatchBaselineResult.setApprovedPatches(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ApprovedPatchesComplianceLevel", targetDepth)) {
                     context.nextToken();
@@ -82,7 +84,9 @@ public class UpdatePatchBaselineResultJsonUnmarshaller implements Unmarshaller<U
                 }
                 if (context.testExpression("RejectedPatches", targetDepth)) {
                     context.nextToken();
-                    updatePatchBaselineResult.setRejectedPatches(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    updatePatchBaselineResult.setRejectedPatches(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("RejectedPatchesAction", targetDepth)) {
                     context.nextToken();
@@ -102,7 +106,9 @@ public class UpdatePatchBaselineResultJsonUnmarshaller implements Unmarshaller<U
                 }
                 if (context.testExpression("Sources", targetDepth)) {
                     context.nextToken();
-                    updatePatchBaselineResult.setSources(new ListUnmarshaller<PatchSource>(PatchSourceJsonUnmarshaller.getInstance()).unmarshall(context));
+                    updatePatchBaselineResult.setSources(new ListUnmarshaller<PatchSource>(PatchSourceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

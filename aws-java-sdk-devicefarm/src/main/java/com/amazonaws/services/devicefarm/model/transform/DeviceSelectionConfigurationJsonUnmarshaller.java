@@ -50,7 +50,9 @@ public class DeviceSelectionConfigurationJsonUnmarshaller implements Unmarshalle
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("filters", targetDepth)) {
                     context.nextToken();
-                    deviceSelectionConfiguration.setFilters(new ListUnmarshaller<DeviceFilter>(DeviceFilterJsonUnmarshaller.getInstance()).unmarshall(context));
+                    deviceSelectionConfiguration.setFilters(new ListUnmarshaller<DeviceFilter>(DeviceFilterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("maxDevices", targetDepth)) {
                     context.nextToken();

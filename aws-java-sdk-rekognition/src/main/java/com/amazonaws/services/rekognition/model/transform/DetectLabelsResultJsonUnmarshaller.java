@@ -50,7 +50,9 @@ public class DetectLabelsResultJsonUnmarshaller implements Unmarshaller<DetectLa
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Labels", targetDepth)) {
                     context.nextToken();
-                    detectLabelsResult.setLabels(new ListUnmarshaller<Label>(LabelJsonUnmarshaller.getInstance()).unmarshall(context));
+                    detectLabelsResult.setLabels(new ListUnmarshaller<Label>(LabelJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("OrientationCorrection", targetDepth)) {
                     context.nextToken();

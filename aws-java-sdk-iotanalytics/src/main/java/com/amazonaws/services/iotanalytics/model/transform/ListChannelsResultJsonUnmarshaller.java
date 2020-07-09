@@ -51,7 +51,8 @@ public class ListChannelsResultJsonUnmarshaller implements Unmarshaller<ListChan
                 if (context.testExpression("channelSummaries", targetDepth)) {
                     context.nextToken();
                     listChannelsResult.setChannelSummaries(new ListUnmarshaller<ChannelSummary>(ChannelSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

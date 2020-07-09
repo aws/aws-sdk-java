@@ -51,7 +51,9 @@ public class GetAssetPropertyValueHistoryResultJsonUnmarshaller implements Unmar
                 if (context.testExpression("assetPropertyValueHistory", targetDepth)) {
                     context.nextToken();
                     getAssetPropertyValueHistoryResult.setAssetPropertyValueHistory(new ListUnmarshaller<AssetPropertyValue>(AssetPropertyValueJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

@@ -54,7 +54,9 @@ public class ListImagesResultJsonUnmarshaller implements Unmarshaller<ListImages
                 }
                 if (context.testExpression("imageVersionList", targetDepth)) {
                     context.nextToken();
-                    listImagesResult.setImageVersionList(new ListUnmarshaller<ImageVersion>(ImageVersionJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listImagesResult.setImageVersionList(new ListUnmarshaller<ImageVersion>(ImageVersionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

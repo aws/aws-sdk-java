@@ -55,7 +55,9 @@ public class DeploymentCommandJsonUnmarshaller implements Unmarshaller<Deploymen
                 if (context.testExpression("Args", targetDepth)) {
                     context.nextToken();
                     deploymentCommand.setArgs(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
-                            new ListUnmarshaller<String>(context.getUnmarshaller(String.class))).unmarshall(context));
+                            new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    ).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -54,7 +54,9 @@ public class TemplateVersionJsonUnmarshaller implements Unmarshaller<TemplateVer
                 }
                 if (context.testExpression("Errors", targetDepth)) {
                     context.nextToken();
-                    templateVersion.setErrors(new ListUnmarshaller<TemplateError>(TemplateErrorJsonUnmarshaller.getInstance()).unmarshall(context));
+                    templateVersion.setErrors(new ListUnmarshaller<TemplateError>(TemplateErrorJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("VersionNumber", targetDepth)) {
                     context.nextToken();
@@ -67,7 +69,8 @@ public class TemplateVersionJsonUnmarshaller implements Unmarshaller<TemplateVer
                 if (context.testExpression("DataSetConfigurations", targetDepth)) {
                     context.nextToken();
                     templateVersion.setDataSetConfigurations(new ListUnmarshaller<DataSetConfiguration>(DataSetConfigurationJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
                     context.nextToken();

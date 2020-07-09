@@ -51,7 +51,8 @@ public class ListTestGridSessionsResultJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("testGridSessions", targetDepth)) {
                     context.nextToken();
                     listTestGridSessionsResult.setTestGridSessions(new ListUnmarshaller<TestGridSession>(TestGridSessionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

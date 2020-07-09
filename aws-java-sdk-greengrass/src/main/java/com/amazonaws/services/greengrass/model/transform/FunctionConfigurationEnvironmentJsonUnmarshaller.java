@@ -59,7 +59,9 @@ public class FunctionConfigurationEnvironmentJsonUnmarshaller implements Unmarsh
                 if (context.testExpression("ResourceAccessPolicies", targetDepth)) {
                     context.nextToken();
                     functionConfigurationEnvironment.setResourceAccessPolicies(new ListUnmarshaller<ResourceAccessPolicy>(ResourceAccessPolicyJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Variables", targetDepth)) {
                     context.nextToken();

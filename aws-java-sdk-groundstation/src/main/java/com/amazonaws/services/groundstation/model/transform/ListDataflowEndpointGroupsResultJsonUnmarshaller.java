@@ -51,7 +51,9 @@ public class ListDataflowEndpointGroupsResultJsonUnmarshaller implements Unmarsh
                 if (context.testExpression("dataflowEndpointGroupList", targetDepth)) {
                     context.nextToken();
                     listDataflowEndpointGroupsResult.setDataflowEndpointGroupList(new ListUnmarshaller<DataflowEndpointListItem>(
-                            DataflowEndpointListItemJsonUnmarshaller.getInstance()).unmarshall(context));
+                            DataflowEndpointListItemJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

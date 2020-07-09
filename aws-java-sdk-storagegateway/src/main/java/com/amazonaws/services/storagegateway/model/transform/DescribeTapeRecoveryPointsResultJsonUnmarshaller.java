@@ -55,7 +55,9 @@ public class DescribeTapeRecoveryPointsResultJsonUnmarshaller implements Unmarsh
                 if (context.testExpression("TapeRecoveryPointInfos", targetDepth)) {
                     context.nextToken();
                     describeTapeRecoveryPointsResult.setTapeRecoveryPointInfos(new ListUnmarshaller<TapeRecoveryPointInfo>(
-                            TapeRecoveryPointInfoJsonUnmarshaller.getInstance()).unmarshall(context));
+                            TapeRecoveryPointInfoJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Marker", targetDepth)) {
                     context.nextToken();

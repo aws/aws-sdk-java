@@ -51,7 +51,8 @@ public class ListConfigurationsResultJsonUnmarshaller implements Unmarshaller<Li
                 if (context.testExpression("configurations", targetDepth)) {
                     context.nextToken();
                     listConfigurationsResult.setConfigurations(new ListUnmarshaller<Configuration>(ConfigurationJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("maxResults", targetDepth)) {
                     context.nextToken();

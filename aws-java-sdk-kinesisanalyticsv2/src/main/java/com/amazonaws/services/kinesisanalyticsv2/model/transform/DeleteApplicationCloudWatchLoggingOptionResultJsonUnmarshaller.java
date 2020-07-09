@@ -61,7 +61,9 @@ public class DeleteApplicationCloudWatchLoggingOptionResultJsonUnmarshaller impl
                     context.nextToken();
                     deleteApplicationCloudWatchLoggingOptionResult
                             .setCloudWatchLoggingOptionDescriptions(new ListUnmarshaller<CloudWatchLoggingOptionDescription>(
-                                    CloudWatchLoggingOptionDescriptionJsonUnmarshaller.getInstance()).unmarshall(context));
+                                    CloudWatchLoggingOptionDescriptionJsonUnmarshaller.getInstance())
+
+                            .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

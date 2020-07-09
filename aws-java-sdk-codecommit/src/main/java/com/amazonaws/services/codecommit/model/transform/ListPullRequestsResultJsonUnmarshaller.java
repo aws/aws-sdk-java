@@ -50,7 +50,9 @@ public class ListPullRequestsResultJsonUnmarshaller implements Unmarshaller<List
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("pullRequestIds", targetDepth)) {
                     context.nextToken();
-                    listPullRequestsResult.setPullRequestIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    listPullRequestsResult.setPullRequestIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

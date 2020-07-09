@@ -53,7 +53,9 @@ public class ListServiceQuotaIncreaseRequestsInTemplateResultJsonUnmarshaller im
                     context.nextToken();
                     listServiceQuotaIncreaseRequestsInTemplateResult
                             .setServiceQuotaIncreaseRequestInTemplateList(new ListUnmarshaller<ServiceQuotaIncreaseRequestInTemplate>(
-                                    ServiceQuotaIncreaseRequestInTemplateJsonUnmarshaller.getInstance()).unmarshall(context));
+                                    ServiceQuotaIncreaseRequestInTemplateJsonUnmarshaller.getInstance())
+
+                            .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

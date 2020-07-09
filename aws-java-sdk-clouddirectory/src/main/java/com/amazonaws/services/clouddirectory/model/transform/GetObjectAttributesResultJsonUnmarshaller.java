@@ -51,7 +51,8 @@ public class GetObjectAttributesResultJsonUnmarshaller implements Unmarshaller<G
                 if (context.testExpression("Attributes", targetDepth)) {
                     context.nextToken();
                     getObjectAttributesResult.setAttributes(new ListUnmarshaller<AttributeKeyAndValue>(AttributeKeyAndValueJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

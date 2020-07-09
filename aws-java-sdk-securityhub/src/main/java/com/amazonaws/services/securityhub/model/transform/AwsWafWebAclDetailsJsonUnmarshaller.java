@@ -58,7 +58,9 @@ public class AwsWafWebAclDetailsJsonUnmarshaller implements Unmarshaller<AwsWafW
                 }
                 if (context.testExpression("Rules", targetDepth)) {
                     context.nextToken();
-                    awsWafWebAclDetails.setRules(new ListUnmarshaller<AwsWafWebAclRule>(AwsWafWebAclRuleJsonUnmarshaller.getInstance()).unmarshall(context));
+                    awsWafWebAclDetails.setRules(new ListUnmarshaller<AwsWafWebAclRule>(AwsWafWebAclRuleJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("WebAclId", targetDepth)) {
                     context.nextToken();

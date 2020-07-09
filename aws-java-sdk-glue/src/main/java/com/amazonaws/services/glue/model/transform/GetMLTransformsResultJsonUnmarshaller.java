@@ -50,7 +50,9 @@ public class GetMLTransformsResultJsonUnmarshaller implements Unmarshaller<GetML
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Transforms", targetDepth)) {
                     context.nextToken();
-                    getMLTransformsResult.setTransforms(new ListUnmarshaller<MLTransform>(MLTransformJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getMLTransformsResult.setTransforms(new ListUnmarshaller<MLTransform>(MLTransformJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

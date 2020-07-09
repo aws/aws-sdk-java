@@ -55,7 +55,8 @@ public class GetDiscoveredResourceCountsResultJsonUnmarshaller implements Unmars
                 if (context.testExpression("resourceCounts", targetDepth)) {
                     context.nextToken();
                     getDiscoveredResourceCountsResult.setResourceCounts(new ListUnmarshaller<ResourceCount>(ResourceCountJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

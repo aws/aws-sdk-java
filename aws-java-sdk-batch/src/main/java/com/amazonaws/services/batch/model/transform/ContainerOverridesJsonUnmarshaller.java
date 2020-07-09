@@ -58,7 +58,9 @@ public class ContainerOverridesJsonUnmarshaller implements Unmarshaller<Containe
                 }
                 if (context.testExpression("command", targetDepth)) {
                     context.nextToken();
-                    containerOverrides.setCommand(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    containerOverrides.setCommand(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("instanceType", targetDepth)) {
                     context.nextToken();
@@ -66,12 +68,15 @@ public class ContainerOverridesJsonUnmarshaller implements Unmarshaller<Containe
                 }
                 if (context.testExpression("environment", targetDepth)) {
                     context.nextToken();
-                    containerOverrides.setEnvironment(new ListUnmarshaller<KeyValuePair>(KeyValuePairJsonUnmarshaller.getInstance()).unmarshall(context));
+                    containerOverrides.setEnvironment(new ListUnmarshaller<KeyValuePair>(KeyValuePairJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("resourceRequirements", targetDepth)) {
                     context.nextToken();
                     containerOverrides.setResourceRequirements(new ListUnmarshaller<ResourceRequirement>(ResourceRequirementJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

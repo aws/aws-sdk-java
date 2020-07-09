@@ -50,7 +50,9 @@ public class ListUploadsResultJsonUnmarshaller implements Unmarshaller<ListUploa
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("uploads", targetDepth)) {
                     context.nextToken();
-                    listUploadsResult.setUploads(new ListUnmarshaller<Upload>(UploadJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listUploadsResult.setUploads(new ListUnmarshaller<Upload>(UploadJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

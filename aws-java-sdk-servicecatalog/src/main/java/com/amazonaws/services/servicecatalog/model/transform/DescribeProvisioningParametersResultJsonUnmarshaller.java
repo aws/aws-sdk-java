@@ -51,22 +51,29 @@ public class DescribeProvisioningParametersResultJsonUnmarshaller implements Unm
                 if (context.testExpression("ProvisioningArtifactParameters", targetDepth)) {
                     context.nextToken();
                     describeProvisioningParametersResult.setProvisioningArtifactParameters(new ListUnmarshaller<ProvisioningArtifactParameter>(
-                            ProvisioningArtifactParameterJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ProvisioningArtifactParameterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ConstraintSummaries", targetDepth)) {
                     context.nextToken();
                     describeProvisioningParametersResult.setConstraintSummaries(new ListUnmarshaller<ConstraintSummary>(ConstraintSummaryJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("UsageInstructions", targetDepth)) {
                     context.nextToken();
                     describeProvisioningParametersResult.setUsageInstructions(new ListUnmarshaller<UsageInstruction>(UsageInstructionJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("TagOptions", targetDepth)) {
                     context.nextToken();
                     describeProvisioningParametersResult.setTagOptions(new ListUnmarshaller<TagOptionSummary>(TagOptionSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ProvisioningArtifactPreferences", targetDepth)) {
                     context.nextToken();

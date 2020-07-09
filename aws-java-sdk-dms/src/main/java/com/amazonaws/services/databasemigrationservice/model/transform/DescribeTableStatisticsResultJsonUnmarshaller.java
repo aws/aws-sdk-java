@@ -55,7 +55,8 @@ public class DescribeTableStatisticsResultJsonUnmarshaller implements Unmarshall
                 if (context.testExpression("TableStatistics", targetDepth)) {
                     context.nextToken();
                     describeTableStatisticsResult.setTableStatistics(new ListUnmarshaller<TableStatistics>(TableStatisticsJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Marker", targetDepth)) {
                     context.nextToken();

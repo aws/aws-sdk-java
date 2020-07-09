@@ -55,7 +55,9 @@ public class ListSqlInjectionMatchSetsResultJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("SqlInjectionMatchSets", targetDepth)) {
                     context.nextToken();
                     listSqlInjectionMatchSetsResult.setSqlInjectionMatchSets(new ListUnmarshaller<SqlInjectionMatchSetSummary>(
-                            SqlInjectionMatchSetSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                            SqlInjectionMatchSetSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

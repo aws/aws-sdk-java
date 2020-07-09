@@ -51,7 +51,9 @@ public class DescribeConfigurationAggregatorsResultJsonUnmarshaller implements U
                 if (context.testExpression("ConfigurationAggregators", targetDepth)) {
                     context.nextToken();
                     describeConfigurationAggregatorsResult.setConfigurationAggregators(new ListUnmarshaller<ConfigurationAggregator>(
-                            ConfigurationAggregatorJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ConfigurationAggregatorJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

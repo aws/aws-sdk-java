@@ -54,7 +54,9 @@ public class DescribeMergeConflictsResultJsonUnmarshaller implements Unmarshalle
                 }
                 if (context.testExpression("mergeHunks", targetDepth)) {
                     context.nextToken();
-                    describeMergeConflictsResult.setMergeHunks(new ListUnmarshaller<MergeHunk>(MergeHunkJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeMergeConflictsResult.setMergeHunks(new ListUnmarshaller<MergeHunk>(MergeHunkJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

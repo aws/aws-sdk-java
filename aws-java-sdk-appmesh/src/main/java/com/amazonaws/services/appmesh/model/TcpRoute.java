@@ -34,7 +34,11 @@ public class TcpRoute implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private TcpRouteAction action;
-
+    /**
+     * <p>
+     * An object that represents types of timeouts.
+     * </p>
+     */
     private TcpTimeout timeout;
 
     /**
@@ -78,7 +82,12 @@ public class TcpRoute implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * An object that represents types of timeouts.
+     * </p>
+     * 
      * @param timeout
+     *        An object that represents types of timeouts.
      */
 
     public void setTimeout(TcpTimeout timeout) {
@@ -86,7 +95,11 @@ public class TcpRoute implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * An object that represents types of timeouts.
+     * </p>
+     * 
+     * @return An object that represents types of timeouts.
      */
 
     public TcpTimeout getTimeout() {
@@ -94,7 +107,12 @@ public class TcpRoute implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * An object that represents types of timeouts.
+     * </p>
+     * 
      * @param timeout
+     *        An object that represents types of timeouts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

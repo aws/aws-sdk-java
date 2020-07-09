@@ -61,7 +61,8 @@ public class DescribeDataSetPermissionsResultJsonUnmarshaller implements Unmarsh
                 if (context.testExpression("Permissions", targetDepth)) {
                     context.nextToken();
                     describeDataSetPermissionsResult.setPermissions(new ListUnmarshaller<ResourcePermission>(ResourcePermissionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("RequestId", targetDepth)) {
                     context.nextToken();

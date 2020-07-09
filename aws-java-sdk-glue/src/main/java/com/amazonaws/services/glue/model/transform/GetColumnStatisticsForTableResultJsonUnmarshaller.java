@@ -51,12 +51,15 @@ public class GetColumnStatisticsForTableResultJsonUnmarshaller implements Unmars
                 if (context.testExpression("ColumnStatisticsList", targetDepth)) {
                     context.nextToken();
                     getColumnStatisticsForTableResult.setColumnStatisticsList(new ListUnmarshaller<ColumnStatistics>(ColumnStatisticsJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Errors", targetDepth)) {
                     context.nextToken();
                     getColumnStatisticsForTableResult.setErrors(new ListUnmarshaller<ColumnError>(ColumnErrorJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

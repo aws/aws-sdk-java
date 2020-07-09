@@ -207,7 +207,7 @@ public class BatchDetectSyntaxRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTextList() != null)
-            sb.append("TextList: ").append(getTextList()).append(",");
+            sb.append("TextList: ").append("***Sensitive Data Redacted***").append(",");
         if (getLanguageCode() != null)
             sb.append("LanguageCode: ").append(getLanguageCode());
         sb.append("}");

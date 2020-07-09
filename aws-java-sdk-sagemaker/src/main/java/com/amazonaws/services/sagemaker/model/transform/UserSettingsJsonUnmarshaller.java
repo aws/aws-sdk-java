@@ -54,7 +54,9 @@ public class UserSettingsJsonUnmarshaller implements Unmarshaller<UserSettings, 
                 }
                 if (context.testExpression("SecurityGroups", targetDepth)) {
                     context.nextToken();
-                    userSettings.setSecurityGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    userSettings.setSecurityGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("SharingSettings", targetDepth)) {
                     context.nextToken();

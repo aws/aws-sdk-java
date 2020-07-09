@@ -50,11 +50,15 @@ public class ResultSetJsonUnmarshaller implements Unmarshaller<ResultSet, JsonUn
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("headers", targetDepth)) {
                     context.nextToken();
-                    resultSet.setHeaders(new ListUnmarshaller<ColumnMetadata>(ColumnMetadataJsonUnmarshaller.getInstance()).unmarshall(context));
+                    resultSet.setHeaders(new ListUnmarshaller<ColumnMetadata>(ColumnMetadataJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("rows", targetDepth)) {
                     context.nextToken();
-                    resultSet.setRows(new ListUnmarshaller<ResultRow>(ResultRowJsonUnmarshaller.getInstance()).unmarshall(context));
+                    resultSet.setRows(new ListUnmarshaller<ResultRow>(ResultRowJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

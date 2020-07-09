@@ -54,7 +54,9 @@ public class ProcessingConfigurationJsonUnmarshaller implements Unmarshaller<Pro
                 }
                 if (context.testExpression("Processors", targetDepth)) {
                     context.nextToken();
-                    processingConfiguration.setProcessors(new ListUnmarshaller<Processor>(ProcessorJsonUnmarshaller.getInstance()).unmarshall(context));
+                    processingConfiguration.setProcessors(new ListUnmarshaller<Processor>(ProcessorJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

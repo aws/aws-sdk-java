@@ -78,12 +78,15 @@ public class DescribeTaskResultJsonUnmarshaller implements Unmarshaller<Describe
                 }
                 if (context.testExpression("SourceNetworkInterfaceArns", targetDepth)) {
                     context.nextToken();
-                    describeTaskResult.setSourceNetworkInterfaceArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    describeTaskResult.setSourceNetworkInterfaceArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("DestinationNetworkInterfaceArns", targetDepth)) {
                     context.nextToken();
                     describeTaskResult.setDestinationNetworkInterfaceArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Options", targetDepth)) {
                     context.nextToken();
@@ -91,7 +94,9 @@ public class DescribeTaskResultJsonUnmarshaller implements Unmarshaller<Describe
                 }
                 if (context.testExpression("Excludes", targetDepth)) {
                     context.nextToken();
-                    describeTaskResult.setExcludes(new ListUnmarshaller<FilterRule>(FilterRuleJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeTaskResult.setExcludes(new ListUnmarshaller<FilterRule>(FilterRuleJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Schedule", targetDepth)) {
                     context.nextToken();

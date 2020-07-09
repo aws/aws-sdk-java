@@ -51,7 +51,9 @@ public class GetLoadBalancerTlsCertificatesResultJsonUnmarshaller implements Unm
                 if (context.testExpression("tlsCertificates", targetDepth)) {
                     context.nextToken();
                     getLoadBalancerTlsCertificatesResult.setTlsCertificates(new ListUnmarshaller<LoadBalancerTlsCertificate>(
-                            LoadBalancerTlsCertificateJsonUnmarshaller.getInstance()).unmarshall(context));
+                            LoadBalancerTlsCertificateJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -51,7 +51,8 @@ public class GetParameterHistoryResultJsonUnmarshaller implements Unmarshaller<G
                 if (context.testExpression("Parameters", targetDepth)) {
                     context.nextToken();
                     getParameterHistoryResult.setParameters(new ListUnmarshaller<ParameterHistory>(ParameterHistoryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

@@ -50,7 +50,9 @@ public class CoreDefinitionVersionJsonUnmarshaller implements Unmarshaller<CoreD
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Cores", targetDepth)) {
                     context.nextToken();
-                    coreDefinitionVersion.setCores(new ListUnmarshaller<Core>(CoreJsonUnmarshaller.getInstance()).unmarshall(context));
+                    coreDefinitionVersion.setCores(new ListUnmarshaller<Core>(CoreJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

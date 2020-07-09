@@ -51,7 +51,8 @@ public class ListMultiplexesResultJsonUnmarshaller implements Unmarshaller<ListM
                 if (context.testExpression("multiplexes", targetDepth)) {
                     context.nextToken();
                     listMultiplexesResult.setMultiplexes(new ListUnmarshaller<MultiplexSummary>(MultiplexSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

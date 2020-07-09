@@ -78,7 +78,9 @@ public class TriggerJsonUnmarshaller implements Unmarshaller<Trigger, JsonUnmars
                 }
                 if (context.testExpression("Actions", targetDepth)) {
                     context.nextToken();
-                    trigger.setActions(new ListUnmarshaller<Action>(ActionJsonUnmarshaller.getInstance()).unmarshall(context));
+                    trigger.setActions(new ListUnmarshaller<Action>(ActionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Predicate", targetDepth)) {
                     context.nextToken();

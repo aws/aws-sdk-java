@@ -70,7 +70,9 @@ public class GetImportResultJsonUnmarshaller implements Unmarshaller<GetImportRe
                 }
                 if (context.testExpression("failureReason", targetDepth)) {
                     context.nextToken();
-                    getImportResult.setFailureReason(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    getImportResult.setFailureReason(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("createdDate", targetDepth)) {
                     context.nextToken();

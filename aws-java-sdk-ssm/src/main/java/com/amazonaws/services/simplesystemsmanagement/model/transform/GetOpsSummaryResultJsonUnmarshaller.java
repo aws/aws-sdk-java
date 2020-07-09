@@ -50,7 +50,9 @@ public class GetOpsSummaryResultJsonUnmarshaller implements Unmarshaller<GetOpsS
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Entities", targetDepth)) {
                     context.nextToken();
-                    getOpsSummaryResult.setEntities(new ListUnmarshaller<OpsEntity>(OpsEntityJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getOpsSummaryResult.setEntities(new ListUnmarshaller<OpsEntity>(OpsEntityJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

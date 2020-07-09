@@ -51,7 +51,9 @@ public class DescribeDataRepositoryTasksResultJsonUnmarshaller implements Unmars
                 if (context.testExpression("DataRepositoryTasks", targetDepth)) {
                     context.nextToken();
                     describeDataRepositoryTasksResult.setDataRepositoryTasks(new ListUnmarshaller<DataRepositoryTask>(DataRepositoryTaskJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

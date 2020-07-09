@@ -51,7 +51,9 @@ public class BatchPutAssetPropertyValueResultJsonUnmarshaller implements Unmarsh
                 if (context.testExpression("errorEntries", targetDepth)) {
                     context.nextToken();
                     batchPutAssetPropertyValueResult.setErrorEntries(new ListUnmarshaller<BatchPutAssetPropertyErrorEntry>(
-                            BatchPutAssetPropertyErrorEntryJsonUnmarshaller.getInstance()).unmarshall(context));
+                            BatchPutAssetPropertyErrorEntryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

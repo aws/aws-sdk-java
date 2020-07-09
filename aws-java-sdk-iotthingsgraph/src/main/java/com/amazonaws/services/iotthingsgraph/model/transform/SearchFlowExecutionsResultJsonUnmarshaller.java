@@ -51,7 +51,8 @@ public class SearchFlowExecutionsResultJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("summaries", targetDepth)) {
                     context.nextToken();
                     searchFlowExecutionsResult.setSummaries(new ListUnmarshaller<FlowExecutionSummary>(FlowExecutionSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

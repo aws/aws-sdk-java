@@ -82,7 +82,9 @@ public class BackupJsonUnmarshaller implements Unmarshaller<Backup, JsonUnmarsha
                 }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
-                    backup.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    backup.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("FileSystem", targetDepth)) {
                     context.nextToken();

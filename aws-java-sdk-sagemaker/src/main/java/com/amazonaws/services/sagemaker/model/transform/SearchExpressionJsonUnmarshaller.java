@@ -50,16 +50,21 @@ public class SearchExpressionJsonUnmarshaller implements Unmarshaller<SearchExpr
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Filters", targetDepth)) {
                     context.nextToken();
-                    searchExpression.setFilters(new ListUnmarshaller<Filter>(FilterJsonUnmarshaller.getInstance()).unmarshall(context));
+                    searchExpression.setFilters(new ListUnmarshaller<Filter>(FilterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NestedFilters", targetDepth)) {
                     context.nextToken();
-                    searchExpression.setNestedFilters(new ListUnmarshaller<NestedFilters>(NestedFiltersJsonUnmarshaller.getInstance()).unmarshall(context));
+                    searchExpression.setNestedFilters(new ListUnmarshaller<NestedFilters>(NestedFiltersJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("SubExpressions", targetDepth)) {
                     context.nextToken();
                     searchExpression.setSubExpressions(new ListUnmarshaller<SearchExpression>(SearchExpressionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Operator", targetDepth)) {
                     context.nextToken();

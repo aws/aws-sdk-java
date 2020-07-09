@@ -51,7 +51,8 @@ public class WorkflowExecutionInfosJsonUnmarshaller implements Unmarshaller<Work
                 if (context.testExpression("executionInfos", targetDepth)) {
                     context.nextToken();
                     workflowExecutionInfos.setExecutionInfos(new ListUnmarshaller<WorkflowExecutionInfo>(WorkflowExecutionInfoJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextPageToken", targetDepth)) {
                     context.nextToken();

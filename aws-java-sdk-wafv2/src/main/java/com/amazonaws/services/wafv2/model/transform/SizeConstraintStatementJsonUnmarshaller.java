@@ -63,7 +63,8 @@ public class SizeConstraintStatementJsonUnmarshaller implements Unmarshaller<Siz
                 if (context.testExpression("TextTransformations", targetDepth)) {
                     context.nextToken();
                     sizeConstraintStatement.setTextTransformations(new ListUnmarshaller<TextTransformation>(TextTransformationJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

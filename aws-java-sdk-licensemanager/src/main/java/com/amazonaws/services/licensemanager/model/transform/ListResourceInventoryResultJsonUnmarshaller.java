@@ -51,7 +51,9 @@ public class ListResourceInventoryResultJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("ResourceInventoryList", targetDepth)) {
                     context.nextToken();
                     listResourceInventoryResult.setResourceInventoryList(new ListUnmarshaller<ResourceInventory>(ResourceInventoryJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

@@ -51,7 +51,9 @@ public class ExportAssetsToS3RequestDetailsJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("AssetDestinations", targetDepth)) {
                     context.nextToken();
                     exportAssetsToS3RequestDetails.setAssetDestinations(new ListUnmarshaller<AssetDestinationEntry>(AssetDestinationEntryJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("DataSetId", targetDepth)) {
                     context.nextToken();

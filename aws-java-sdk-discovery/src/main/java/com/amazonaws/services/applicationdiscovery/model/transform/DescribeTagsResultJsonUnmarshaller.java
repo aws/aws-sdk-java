@@ -50,7 +50,9 @@ public class DescribeTagsResultJsonUnmarshaller implements Unmarshaller<Describe
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
-                    describeTagsResult.setTags(new ListUnmarshaller<ConfigurationTag>(ConfigurationTagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeTagsResult.setTags(new ListUnmarshaller<ConfigurationTag>(ConfigurationTagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

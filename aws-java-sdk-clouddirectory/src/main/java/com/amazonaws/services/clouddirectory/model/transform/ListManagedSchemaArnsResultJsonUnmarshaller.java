@@ -50,7 +50,9 @@ public class ListManagedSchemaArnsResultJsonUnmarshaller implements Unmarshaller
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SchemaArns", targetDepth)) {
                     context.nextToken();
-                    listManagedSchemaArnsResult.setSchemaArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    listManagedSchemaArnsResult.setSchemaArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

@@ -57,7 +57,9 @@ public class AgentsAlreadyRunningAssessmentExceptionUnmarshaller extends Enhance
                 if (context.testExpression("agents", targetDepth)) {
                     context.nextToken();
                     agentsAlreadyRunningAssessmentException.setAgents(new ListUnmarshaller<AgentAlreadyRunningAssessment>(
-                            AgentAlreadyRunningAssessmentJsonUnmarshaller.getInstance()).unmarshall(context));
+                            AgentAlreadyRunningAssessmentJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("agentsTruncated", targetDepth)) {
                     context.nextToken();

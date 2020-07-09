@@ -58,7 +58,9 @@ public class HandshakeJsonUnmarshaller implements Unmarshaller<Handshake, JsonUn
                 }
                 if (context.testExpression("Parties", targetDepth)) {
                     context.nextToken();
-                    handshake.setParties(new ListUnmarshaller<HandshakeParty>(HandshakePartyJsonUnmarshaller.getInstance()).unmarshall(context));
+                    handshake.setParties(new ListUnmarshaller<HandshakeParty>(HandshakePartyJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
                     context.nextToken();
@@ -78,7 +80,9 @@ public class HandshakeJsonUnmarshaller implements Unmarshaller<Handshake, JsonUn
                 }
                 if (context.testExpression("Resources", targetDepth)) {
                     context.nextToken();
-                    handshake.setResources(new ListUnmarshaller<HandshakeResource>(HandshakeResourceJsonUnmarshaller.getInstance()).unmarshall(context));
+                    handshake.setResources(new ListUnmarshaller<HandshakeResource>(HandshakeResourceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

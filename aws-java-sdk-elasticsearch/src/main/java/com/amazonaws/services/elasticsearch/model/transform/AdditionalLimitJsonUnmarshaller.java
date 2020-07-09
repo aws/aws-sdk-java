@@ -54,7 +54,9 @@ public class AdditionalLimitJsonUnmarshaller implements Unmarshaller<AdditionalL
                 }
                 if (context.testExpression("LimitValues", targetDepth)) {
                     context.nextToken();
-                    additionalLimit.setLimitValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    additionalLimit.setLimitValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

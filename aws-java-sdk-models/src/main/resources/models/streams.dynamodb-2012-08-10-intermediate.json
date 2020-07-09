@@ -335,6 +335,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.dynamodbv2.model.AttributeValue",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -396,6 +397,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A String data type.</p>\n@param s A String data type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -464,6 +466,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A Number data type.</p>\n@param n A Number data type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -532,6 +535,7 @@
           "variableSetterType" : "java.nio.ByteBuffer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A Binary data type.</p>\n@param b A Binary data type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -639,6 +643,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -683,6 +688,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A String Set data type.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSS(java.util.Collection)} or {@link #withSS(java.util.Collection)} if you want to override the existing values.</p>\n@param sS A String Set data type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -790,6 +796,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -834,6 +841,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A Number Set data type.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setNS(java.util.Collection)} or {@link #withNS(java.util.Collection)} if you want to override the existing values.</p>\n@param nS A Number Set data type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -941,6 +949,7 @@
               "variableSetterType" : "java.nio.ByteBuffer"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -985,6 +994,7 @@
           "variableSetterType" : "java.util.Collection<java.nio.ByteBuffer>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A Binary Set data type.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setBS(java.util.Collection)} or {@link #withBS(java.util.Collection)} if you want to override the existing values.</p>\n@param bS A Binary Set data type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1098,6 +1108,7 @@
               "variableSetterType" : "AttributeValue"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1136,6 +1147,7 @@
           "variableSetterType" : "java.util.Map<String,AttributeValue>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A Map data type.</p>\n@param m A Map data type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1243,6 +1255,7 @@
               "variableSetterType" : "AttributeValue"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1287,6 +1300,7 @@
           "variableSetterType" : "java.util.Collection<AttributeValue>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A List data type.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setL(java.util.Collection)} or {@link #withL(java.util.Collection)} if you want to override the existing values.</p>\n@param l A List data type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1355,6 +1369,7 @@
           "variableSetterType" : "Boolean"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A Null data type.</p>\n@param nULLValue A Null data type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1423,6 +1438,7 @@
           "variableSetterType" : "Boolean"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A Boolean data type.</p>\n@param bOOL A Boolean data type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1493,6 +1509,7 @@
             "variableSetterType" : "java.nio.ByteBuffer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A Binary data type.</p>\n@param b A Binary data type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1562,6 +1579,7 @@
             "variableSetterType" : "Boolean"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A Boolean data type.</p>\n@param bOOL A Boolean data type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1670,6 +1688,7 @@
                 "variableSetterType" : "java.nio.ByteBuffer"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1714,6 +1733,7 @@
             "variableSetterType" : "java.util.Collection<java.nio.ByteBuffer>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A Binary Set data type.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setBS(java.util.Collection)} or {@link #withBS(java.util.Collection)} if you want to override the existing values.</p>\n@param bS A Binary Set data type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1822,6 +1842,7 @@
                 "variableSetterType" : "AttributeValue"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1866,6 +1887,7 @@
             "variableSetterType" : "java.util.Collection<AttributeValue>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A List data type.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setL(java.util.Collection)} or {@link #withL(java.util.Collection)} if you want to override the existing values.</p>\n@param l A List data type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1980,6 +2002,7 @@
                 "variableSetterType" : "AttributeValue"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2018,6 +2041,7 @@
             "variableSetterType" : "java.util.Map<String,AttributeValue>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A Map data type.</p>\n@param m A Map data type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2087,6 +2111,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A Number data type.</p>\n@param n A Number data type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2195,6 +2220,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2239,6 +2265,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A Number Set data type.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setNS(java.util.Collection)} or {@link #withNS(java.util.Collection)} if you want to override the existing values.</p>\n@param nS A Number Set data type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2308,6 +2335,7 @@
             "variableSetterType" : "Boolean"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A Null data type.</p>\n@param nULLValue A Null data type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2377,6 +2405,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A String data type.</p>\n@param s A String data type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2485,6 +2514,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2529,6 +2559,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A String Set data type.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSS(java.util.Collection)} or {@link #withSS(java.util.Collection)} if you want to override the existing values.</p>\n@param sS A String Set data type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2544,6 +2575,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.dynamodbv2.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2578,6 +2610,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.dynamodbv2.request.DescribeStreamRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2646,6 +2679,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) for the stream.</p>\n@param streamArn The Amazon Resource Name (ARN) for the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2714,6 +2748,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of shard objects to return. The upper limit is 100.</p>\n@param limit The maximum number of shard objects to return. The upper limit is 100.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2782,6 +2817,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The shard ID of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedShardId</code> in the previous operation. </p>\n@param exclusiveStartShardId The shard ID of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedShardId</code> in the previous operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2852,6 +2888,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The shard ID of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedShardId</code> in the previous operation. </p>\n@param exclusiveStartShardId The shard ID of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedShardId</code> in the previous operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2921,6 +2958,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of shard objects to return. The upper limit is 100.</p>\n@param limit The maximum number of shard objects to return. The upper limit is 100.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2990,6 +3028,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) for the stream.</p>\n@param streamArn The Amazon Resource Name (ARN) for the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3005,6 +3044,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.dynamodbv2.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "StreamArn" ],
@@ -3036,6 +3076,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.dynamodbv2.response.DescribeStreamResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3097,6 +3138,7 @@
           "variableSetterType" : "StreamDescription"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A complete description of the stream, including its creation date and time, the DynamoDB table associated with the stream, the shard IDs within the stream, and the beginning and ending sequence numbers of stream records within the shards.</p>\n@param streamDescription A complete description of the stream, including its creation date and time, the DynamoDB table associated with the stream, the shard IDs within the stream, and the beginning and ending sequence numbers of stream records within the shards.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3167,6 +3209,7 @@
             "variableSetterType" : "StreamDescription"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A complete description of the stream, including its creation date and time, the DynamoDB table associated with the stream, the shard IDs within the stream, and the beginning and ending sequence numbers of stream records within the shards.</p>\n@param streamDescription A complete description of the stream, including its creation date and time, the DynamoDB table associated with the stream, the shard IDs within the stream, and the beginning and ending sequence numbers of stream records within the shards.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3182,6 +3225,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.dynamodbv2.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3216,6 +3260,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ExpiredIteratorException",
+      "fullyQualifiedName" : "com.amazonaws.services.dynamodbv2.exception.ExpiredIteratorException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3224,6 +3269,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.dynamodbv2.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3255,6 +3301,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.dynamodbv2.request.GetRecordsRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3323,6 +3370,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A shard iterator that was retrieved from a previous GetShardIterator operation. This iterator can be used to access the stream records in this shard.</p>\n@param shardIterator A shard iterator that was retrieved from a previous GetShardIterator operation. This iterator can be used to access the stream records in this shard.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3391,6 +3439,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of records to return from the shard. The upper limit is 1000.</p>\n@param limit The maximum number of records to return from the shard. The upper limit is 1000.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3461,6 +3510,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of records to return from the shard. The upper limit is 1000.</p>\n@param limit The maximum number of records to return from the shard. The upper limit is 1000.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3530,6 +3580,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A shard iterator that was retrieved from a previous GetShardIterator operation. This iterator can be used to access the stream records in this shard.</p>\n@param shardIterator A shard iterator that was retrieved from a previous GetShardIterator operation. This iterator can be used to access the stream records in this shard.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3545,6 +3596,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.dynamodbv2.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ShardIterator" ],
@@ -3576,6 +3628,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.dynamodbv2.response.GetRecordsResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3676,6 +3729,7 @@
               "variableSetterType" : "Record"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3720,6 +3774,7 @@
           "variableSetterType" : "java.util.Collection<Record>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The stream records from the shard, which were retrieved using the shard iterator.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRecords(java.util.Collection)} or {@link #withRecords(java.util.Collection)} if you want to override the existing values.</p>\n@param records The stream records from the shard, which were retrieved using the shard iterator.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3788,6 +3843,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The next position in the shard from which to start sequentially reading stream records. If set to <code>null</code>, the shard has been closed and the requested iterator will not return any more data.</p>\n@param nextShardIterator The next position in the shard from which to start sequentially reading stream records. If set to <code>null</code>, the shard has been closed and the requested iterator will not return any more data.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3858,6 +3914,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The next position in the shard from which to start sequentially reading stream records. If set to <code>null</code>, the shard has been closed and the requested iterator will not return any more data.</p>\n@param nextShardIterator The next position in the shard from which to start sequentially reading stream records. If set to <code>null</code>, the shard has been closed and the requested iterator will not return any more data.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3966,6 +4023,7 @@
                 "variableSetterType" : "Record"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4010,6 +4068,7 @@
             "variableSetterType" : "java.util.Collection<Record>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The stream records from the shard, which were retrieved using the shard iterator.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRecords(java.util.Collection)} or {@link #withRecords(java.util.Collection)} if you want to override the existing values.</p>\n@param records The stream records from the shard, which were retrieved using the shard iterator.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4025,6 +4084,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.dynamodbv2.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4059,6 +4119,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.dynamodbv2.request.GetShardIteratorRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4127,6 +4188,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) for the stream.</p>\n@param streamArn The Amazon Resource Name (ARN) for the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4195,6 +4257,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier of the shard. The iterator will be returned for this shard ID.</p>\n@param shardId The identifier of the shard. The iterator will be returned for this shard ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4263,6 +4326,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Determines how the shard iterator is used to start reading stream records from the shard:</p> <ul> <li> <p> <code>AT_SEQUENCE_NUMBER</code> - Start reading exactly from the position denoted by a specific sequence number.</p> </li> <li> <p> <code>AFTER_SEQUENCE_NUMBER</code> - Start reading right after the position denoted by a specific sequence number.</p> </li> <li> <p> <code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream record, which is the oldest record in the shard. In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream.</p> </li> <li> <p> <code>LATEST</code> - Start reading just after the most recent stream record in the shard, so that you always read the most recent data in the shard.</p> </li> </ul>\n@param shardIteratorType Determines how the shard iterator is used to start reading stream records from the shard:</p> <ul> <li> <p> <code>AT_SEQUENCE_NUMBER</code> - Start reading exactly from the position denoted by a specific sequence number.</p> </li> <li> <p> <code>AFTER_SEQUENCE_NUMBER</code> - Start reading right after the position denoted by a specific sequence number.</p> </li> <li> <p> <code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream record, which is the oldest record in the shard. In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream.</p> </li> <li> <p> <code>LATEST</code> - Start reading just after the most recent stream record in the shard, so that you always read the most recent data in the shard.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see ShardIteratorType*/",
@@ -4331,6 +4395,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The sequence number of a stream record in the shard from which to start reading.</p>\n@param sequenceNumber The sequence number of a stream record in the shard from which to start reading.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4401,6 +4466,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The sequence number of a stream record in the shard from which to start reading.</p>\n@param sequenceNumber The sequence number of a stream record in the shard from which to start reading.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4470,6 +4536,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier of the shard. The iterator will be returned for this shard ID.</p>\n@param shardId The identifier of the shard. The iterator will be returned for this shard ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4539,6 +4606,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Determines how the shard iterator is used to start reading stream records from the shard:</p> <ul> <li> <p> <code>AT_SEQUENCE_NUMBER</code> - Start reading exactly from the position denoted by a specific sequence number.</p> </li> <li> <p> <code>AFTER_SEQUENCE_NUMBER</code> - Start reading right after the position denoted by a specific sequence number.</p> </li> <li> <p> <code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream record, which is the oldest record in the shard. In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream.</p> </li> <li> <p> <code>LATEST</code> - Start reading just after the most recent stream record in the shard, so that you always read the most recent data in the shard.</p> </li> </ul>\n@param shardIteratorType Determines how the shard iterator is used to start reading stream records from the shard:</p> <ul> <li> <p> <code>AT_SEQUENCE_NUMBER</code> - Start reading exactly from the position denoted by a specific sequence number.</p> </li> <li> <p> <code>AFTER_SEQUENCE_NUMBER</code> - Start reading right after the position denoted by a specific sequence number.</p> </li> <li> <p> <code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream record, which is the oldest record in the shard. In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream.</p> </li> <li> <p> <code>LATEST</code> - Start reading just after the most recent stream record in the shard, so that you always read the most recent data in the shard.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see ShardIteratorType*/",
@@ -4608,6 +4676,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) for the stream.</p>\n@param streamArn The Amazon Resource Name (ARN) for the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4623,6 +4692,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.dynamodbv2.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "StreamArn", "ShardId", "ShardIteratorType" ],
@@ -4654,6 +4724,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.dynamodbv2.response.GetShardIteratorResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4715,6 +4786,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The position in the shard from which to start reading stream records sequentially. A shard iterator specifies this position using the sequence number of a stream record in a shard.</p>\n@param shardIterator The position in the shard from which to start reading stream records sequentially. A shard iterator specifies this position using the sequence number of a stream record in a shard.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4785,6 +4857,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The position in the shard from which to start reading stream records sequentially. A shard iterator specifies this position using the sequence number of a stream record in a shard.</p>\n@param shardIterator The position in the shard from which to start reading stream records sequentially. A shard iterator specifies this position using the sequence number of a stream record in a shard.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4800,6 +4873,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.dynamodbv2.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4834,6 +4908,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.dynamodbv2.model.Identity",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4895,6 +4970,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A unique identifier for the entity that made the call. For Time To Live, the principalId is \"dynamodb.amazonaws.com\".</p>\n@param principalId A unique identifier for the entity that made the call. For Time To Live, the principalId is \"dynamodb.amazonaws.com\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4963,6 +5039,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The type of the identity. For Time To Live, the type is \"Service\".</p>\n@param type The type of the identity. For Time To Live, the type is \"Service\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5033,6 +5110,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A unique identifier for the entity that made the call. For Time To Live, the principalId is \"dynamodb.amazonaws.com\".</p>\n@param principalId A unique identifier for the entity that made the call. For Time To Live, the principalId is \"dynamodb.amazonaws.com\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5102,6 +5180,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The type of the identity. For Time To Live, the type is \"Service\".</p>\n@param type The type of the identity. For Time To Live, the type is \"Service\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5117,6 +5196,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.dynamodbv2.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -5151,6 +5231,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InternalServerError",
+      "fullyQualifiedName" : "com.amazonaws.services.dynamodbv2.exception.InternalServerErrorException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5159,6 +5240,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.dynamodbv2.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -5190,6 +5272,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.dynamodbv2.model.KeySchemaElement",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5251,6 +5334,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of a key attribute.</p>\n@param attributeName The name of a key attribute.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5319,6 +5403,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The attribute data, consisting of the data type and the attribute value itself.</p>\n@param keyType The attribute data, consisting of the data type and the attribute value itself.\n@return Returns a reference to this object so that method calls can be chained together.\n@see KeyType*/",
@@ -5389,6 +5474,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of a key attribute.</p>\n@param attributeName The name of a key attribute.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5458,6 +5544,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The attribute data, consisting of the data type and the attribute value itself.</p>\n@param keyType The attribute data, consisting of the data type and the attribute value itself.\n@return Returns a reference to this object so that method calls can be chained together.\n@see KeyType*/",
@@ -5473,6 +5560,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.dynamodbv2.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "AttributeName", "KeyType" ],
@@ -5513,6 +5601,7 @@
         "value" : "RANGE"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.dynamodbv2.enum.KeyType",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5521,6 +5610,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.dynamodbv2.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -5555,6 +5645,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "LimitExceededException",
+      "fullyQualifiedName" : "com.amazonaws.services.dynamodbv2.exception.LimitExceededException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5563,6 +5654,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.dynamodbv2.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -5594,6 +5686,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.dynamodbv2.request.ListStreamsRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5662,6 +5755,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If this parameter is provided, then only the streams associated with this table name are returned.</p>\n@param tableName If this parameter is provided, then only the streams associated with this table name are returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5730,6 +5824,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of streams to return. The upper limit is 100.</p>\n@param limit The maximum number of streams to return. The upper limit is 100.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5798,6 +5893,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN (Amazon Resource Name) of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedStreamArn</code> in the previous operation. </p>\n@param exclusiveStartStreamArn The ARN (Amazon Resource Name) of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedStreamArn</code> in the previous operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5868,6 +5964,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN (Amazon Resource Name) of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedStreamArn</code> in the previous operation. </p>\n@param exclusiveStartStreamArn The ARN (Amazon Resource Name) of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedStreamArn</code> in the previous operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5937,6 +6034,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of streams to return. The upper limit is 100.</p>\n@param limit The maximum number of streams to return. The upper limit is 100.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6006,6 +6104,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If this parameter is provided, then only the streams associated with this table name are returned.</p>\n@param tableName If this parameter is provided, then only the streams associated with this table name are returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6021,6 +6120,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.dynamodbv2.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6052,6 +6152,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.dynamodbv2.response.ListStreamsResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6152,6 +6253,7 @@
               "variableSetterType" : "Stream"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6196,6 +6298,7 @@
           "variableSetterType" : "java.util.Collection<Stream>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of stream descriptors associated with the current account and endpoint.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setStreams(java.util.Collection)} or {@link #withStreams(java.util.Collection)} if you want to override the existing values.</p>\n@param streams A list of stream descriptors associated with the current account and endpoint.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6264,6 +6367,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The stream ARN of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p> <p>If <code>LastEvaluatedStreamArn</code> is empty, then the \"last page\" of results has been processed and there is no more data to be retrieved.</p> <p>If <code>LastEvaluatedStreamArn</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedStreamArn</code> is empty.</p>\n@param lastEvaluatedStreamArn The stream ARN of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p> <p>If <code>LastEvaluatedStreamArn</code> is empty, then the \"last page\" of results has been processed and there is no more data to be retrieved.</p> <p>If <code>LastEvaluatedStreamArn</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedStreamArn</code> is empty.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6334,6 +6438,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The stream ARN of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p> <p>If <code>LastEvaluatedStreamArn</code> is empty, then the \"last page\" of results has been processed and there is no more data to be retrieved.</p> <p>If <code>LastEvaluatedStreamArn</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedStreamArn</code> is empty.</p>\n@param lastEvaluatedStreamArn The stream ARN of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p> <p>If <code>LastEvaluatedStreamArn</code> is empty, then the \"last page\" of results has been processed and there is no more data to be retrieved.</p> <p>If <code>LastEvaluatedStreamArn</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedStreamArn</code> is empty.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6442,6 +6547,7 @@
                 "variableSetterType" : "Stream"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6486,6 +6592,7 @@
             "variableSetterType" : "java.util.Collection<Stream>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of stream descriptors associated with the current account and endpoint.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setStreams(java.util.Collection)} or {@link #withStreams(java.util.Collection)} if you want to override the existing values.</p>\n@param streams A list of stream descriptors associated with the current account and endpoint.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6501,6 +6608,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.dynamodbv2.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6544,6 +6652,7 @@
         "value" : "REMOVE"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.dynamodbv2.enum.OperationType",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6552,6 +6661,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.dynamodbv2.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6586,6 +6696,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.dynamodbv2.model.Record",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6647,6 +6758,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A globally unique identifier for the event that was recorded in this stream record.</p>\n@param eventID A globally unique identifier for the event that was recorded in this stream record.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6715,6 +6827,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The type of data modification that was performed on the DynamoDB table:</p> <ul> <li> <p> <code>INSERT</code> - a new item was added to the table.</p> </li> <li> <p> <code>MODIFY</code> - one or more of an existing item's attributes were modified.</p> </li> <li> <p> <code>REMOVE</code> - the item was deleted from the table</p> </li> </ul>\n@param eventName The type of data modification that was performed on the DynamoDB table:</p> <ul> <li> <p> <code>INSERT</code> - a new item was added to the table.</p> </li> <li> <p> <code>MODIFY</code> - one or more of an existing item's attributes were modified.</p> </li> <li> <p> <code>REMOVE</code> - the item was deleted from the table</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see OperationType*/",
@@ -6783,6 +6896,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The version number of the stream record format. This number is updated whenever the structure of <code>Record</code> is modified.</p> <p>Client applications must not assume that <code>eventVersion</code> will remain at a particular value, as this number is subject to change at any time. In general, <code>eventVersion</code> will only increase as the low-level DynamoDB Streams API evolves.</p>\n@param eventVersion The version number of the stream record format. This number is updated whenever the structure of <code>Record</code> is modified.</p> <p>Client applications must not assume that <code>eventVersion</code> will remain at a particular value, as this number is subject to change at any time. In general, <code>eventVersion</code> will only increase as the low-level DynamoDB Streams API evolves.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6851,6 +6965,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The AWS service from which the stream record originated. For DynamoDB Streams, this is <code>aws:dynamodb</code>.</p>\n@param eventSource The AWS service from which the stream record originated. For DynamoDB Streams, this is <code>aws:dynamodb</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6919,6 +7034,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The region in which the <code>GetRecords</code> request was received.</p>\n@param awsRegion The region in which the <code>GetRecords</code> request was received.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6987,6 +7103,7 @@
           "variableSetterType" : "StreamRecord"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The main body of the stream record, containing all of the DynamoDB-specific fields.</p>\n@param dynamodb The main body of the stream record, containing all of the DynamoDB-specific fields.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7055,6 +7172,7 @@
           "variableSetterType" : "Identity"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Items that are deleted by the Time to Live process after expiration have the following fields: </p> <ul> <li> <p>Records[].userIdentity.type</p> <p>\"Service\"</p> </li> <li> <p>Records[].userIdentity.principalId</p> <p>\"dynamodb.amazonaws.com\"</p> </li> </ul>\n@param userIdentity Items that are deleted by the Time to Live process after expiration have the following fields: </p> <ul> <li> <p>Records[].userIdentity.type</p> <p>\"Service\"</p> </li> <li> <p>Records[].userIdentity.principalId</p> <p>\"dynamodb.amazonaws.com\"</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7125,6 +7243,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The region in which the <code>GetRecords</code> request was received.</p>\n@param awsRegion The region in which the <code>GetRecords</code> request was received.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7194,6 +7313,7 @@
             "variableSetterType" : "StreamRecord"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The main body of the stream record, containing all of the DynamoDB-specific fields.</p>\n@param dynamodb The main body of the stream record, containing all of the DynamoDB-specific fields.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7263,6 +7383,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A globally unique identifier for the event that was recorded in this stream record.</p>\n@param eventID A globally unique identifier for the event that was recorded in this stream record.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7332,6 +7453,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The type of data modification that was performed on the DynamoDB table:</p> <ul> <li> <p> <code>INSERT</code> - a new item was added to the table.</p> </li> <li> <p> <code>MODIFY</code> - one or more of an existing item's attributes were modified.</p> </li> <li> <p> <code>REMOVE</code> - the item was deleted from the table</p> </li> </ul>\n@param eventName The type of data modification that was performed on the DynamoDB table:</p> <ul> <li> <p> <code>INSERT</code> - a new item was added to the table.</p> </li> <li> <p> <code>MODIFY</code> - one or more of an existing item's attributes were modified.</p> </li> <li> <p> <code>REMOVE</code> - the item was deleted from the table</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see OperationType*/",
@@ -7401,6 +7523,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The AWS service from which the stream record originated. For DynamoDB Streams, this is <code>aws:dynamodb</code>.</p>\n@param eventSource The AWS service from which the stream record originated. For DynamoDB Streams, this is <code>aws:dynamodb</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7470,6 +7593,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The version number of the stream record format. This number is updated whenever the structure of <code>Record</code> is modified.</p> <p>Client applications must not assume that <code>eventVersion</code> will remain at a particular value, as this number is subject to change at any time. In general, <code>eventVersion</code> will only increase as the low-level DynamoDB Streams API evolves.</p>\n@param eventVersion The version number of the stream record format. This number is updated whenever the structure of <code>Record</code> is modified.</p> <p>Client applications must not assume that <code>eventVersion</code> will remain at a particular value, as this number is subject to change at any time. In general, <code>eventVersion</code> will only increase as the low-level DynamoDB Streams API evolves.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7539,6 +7663,7 @@
             "variableSetterType" : "Identity"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Items that are deleted by the Time to Live process after expiration have the following fields: </p> <ul> <li> <p>Records[].userIdentity.type</p> <p>\"Service\"</p> </li> <li> <p>Records[].userIdentity.principalId</p> <p>\"dynamodb.amazonaws.com\"</p> </li> </ul>\n@param userIdentity Items that are deleted by the Time to Live process after expiration have the following fields: </p> <ul> <li> <p>Records[].userIdentity.type</p> <p>\"Service\"</p> </li> <li> <p>Records[].userIdentity.principalId</p> <p>\"dynamodb.amazonaws.com\"</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7554,6 +7679,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.dynamodbv2.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -7588,6 +7714,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ResourceNotFoundException",
+      "fullyQualifiedName" : "com.amazonaws.services.dynamodbv2.exception.ResourceNotFoundException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7596,6 +7723,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.dynamodbv2.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -7627,6 +7755,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.dynamodbv2.model.SequenceNumberRange",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7688,6 +7817,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The first sequence number.</p>\n@param startingSequenceNumber The first sequence number.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7756,6 +7886,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The last sequence number.</p>\n@param endingSequenceNumber The last sequence number.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7826,6 +7957,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The last sequence number.</p>\n@param endingSequenceNumber The last sequence number.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7895,6 +8027,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The first sequence number.</p>\n@param startingSequenceNumber The first sequence number.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7910,6 +8043,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.dynamodbv2.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -7944,6 +8078,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.dynamodbv2.model.Shard",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8005,6 +8140,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The system-generated identifier for this shard.</p>\n@param shardId The system-generated identifier for this shard.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8073,6 +8209,7 @@
           "variableSetterType" : "SequenceNumberRange"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The range of possible sequence numbers for the shard.</p>\n@param sequenceNumberRange The range of possible sequence numbers for the shard.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8141,6 +8278,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The shard ID of the current shard's parent.</p>\n@param parentShardId The shard ID of the current shard's parent.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8211,6 +8349,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The shard ID of the current shard's parent.</p>\n@param parentShardId The shard ID of the current shard's parent.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8280,6 +8419,7 @@
             "variableSetterType" : "SequenceNumberRange"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The range of possible sequence numbers for the shard.</p>\n@param sequenceNumberRange The range of possible sequence numbers for the shard.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8349,6 +8489,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The system-generated identifier for this shard.</p>\n@param shardId The system-generated identifier for this shard.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8364,6 +8505,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.dynamodbv2.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -8410,6 +8552,7 @@
         "value" : "AFTER_SEQUENCE_NUMBER"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.dynamodbv2.enum.ShardIteratorType",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8418,6 +8561,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.dynamodbv2.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -8452,6 +8596,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.dynamodbv2.model.Stream",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8513,6 +8658,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) for the stream.</p>\n@param streamArn The Amazon Resource Name (ARN) for the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8581,6 +8727,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The DynamoDB table with which the stream is associated.</p>\n@param tableName The DynamoDB table with which the stream is associated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8649,6 +8796,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A timestamp, in ISO 8601 format, for this stream.</p> <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p> <ul> <li> <p>the AWS customer ID.</p> </li> <li> <p>the table name</p> </li> <li> <p>the <code>StreamLabel</code> </p> </li> </ul>\n@param streamLabel A timestamp, in ISO 8601 format, for this stream.</p> <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p> <ul> <li> <p>the AWS customer ID.</p> </li> <li> <p>the table name</p> </li> <li> <p>the <code>StreamLabel</code> </p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8719,6 +8867,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) for the stream.</p>\n@param streamArn The Amazon Resource Name (ARN) for the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8788,6 +8937,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A timestamp, in ISO 8601 format, for this stream.</p> <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p> <ul> <li> <p>the AWS customer ID.</p> </li> <li> <p>the table name</p> </li> <li> <p>the <code>StreamLabel</code> </p> </li> </ul>\n@param streamLabel A timestamp, in ISO 8601 format, for this stream.</p> <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p> <ul> <li> <p>the AWS customer ID.</p> </li> <li> <p>the table name</p> </li> <li> <p>the <code>StreamLabel</code> </p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8857,6 +9007,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The DynamoDB table with which the stream is associated.</p>\n@param tableName The DynamoDB table with which the stream is associated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8872,6 +9023,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.dynamodbv2.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -8906,6 +9058,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.dynamodbv2.model.StreamDescription",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8967,6 +9120,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) for the stream.</p>\n@param streamArn The Amazon Resource Name (ARN) for the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9035,6 +9189,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A timestamp, in ISO 8601 format, for this stream.</p> <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p> <ul> <li> <p>the AWS customer ID.</p> </li> <li> <p>the table name</p> </li> <li> <p>the <code>StreamLabel</code> </p> </li> </ul>\n@param streamLabel A timestamp, in ISO 8601 format, for this stream.</p> <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p> <ul> <li> <p>the AWS customer ID.</p> </li> <li> <p>the table name</p> </li> <li> <p>the <code>StreamLabel</code> </p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9103,6 +9258,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Indicates the current status of the stream:</p> <ul> <li> <p> <code>ENABLING</code> - Streams is currently being enabled on the DynamoDB table.</p> </li> <li> <p> <code>ENABLED</code> - the stream is enabled.</p> </li> <li> <p> <code>DISABLING</code> - Streams is currently being disabled on the DynamoDB table.</p> </li> <li> <p> <code>DISABLED</code> - the stream is disabled.</p> </li> </ul>\n@param streamStatus Indicates the current status of the stream:</p> <ul> <li> <p> <code>ENABLING</code> - Streams is currently being enabled on the DynamoDB table.</p> </li> <li> <p> <code>ENABLED</code> - the stream is enabled.</p> </li> <li> <p> <code>DISABLING</code> - Streams is currently being disabled on the DynamoDB table.</p> </li> <li> <p> <code>DISABLED</code> - the stream is disabled.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see StreamStatus*/",
@@ -9171,6 +9327,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Indicates the format of the records within this stream:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - only the key attributes of items that were modified in the DynamoDB table.</p> </li> <li> <p> <code>NEW_IMAGE</code> - entire items from the table, as they appeared after they were modified.</p> </li> <li> <p> <code>OLD_IMAGE</code> - entire items from the table, as they appeared before they were modified.</p> </li> <li> <p> <code>NEW_AND_OLD_IMAGES</code> - both the new and the old images of the items from the table.</p> </li> </ul>\n@param streamViewType Indicates the format of the records within this stream:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - only the key attributes of items that were modified in the DynamoDB table.</p> </li> <li> <p> <code>NEW_IMAGE</code> - entire items from the table, as they appeared after they were modified.</p> </li> <li> <p> <code>OLD_IMAGE</code> - entire items from the table, as they appeared before they were modified.</p> </li> <li> <p> <code>NEW_AND_OLD_IMAGES</code> - both the new and the old images of the items from the table.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see StreamViewType*/",
@@ -9239,6 +9396,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date and time when the request to create this stream was issued.</p>\n@param creationRequestDateTime The date and time when the request to create this stream was issued.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9307,6 +9465,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The DynamoDB table with which the stream is associated.</p>\n@param tableName The DynamoDB table with which the stream is associated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9414,6 +9573,7 @@
               "variableSetterType" : "KeySchemaElement"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9458,6 +9618,7 @@
           "variableSetterType" : "java.util.Collection<KeySchemaElement>"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The key attribute(s) of the stream's DynamoDB table.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setKeySchema(java.util.Collection)} or {@link #withKeySchema(java.util.Collection)} if you want to override the existing values.</p>\n@param keySchema The key attribute(s) of the stream's DynamoDB table.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9565,6 +9726,7 @@
               "variableSetterType" : "Shard"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9609,6 +9771,7 @@
           "variableSetterType" : "java.util.Collection<Shard>"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The shards that comprise the stream.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setShards(java.util.Collection)} or {@link #withShards(java.util.Collection)} if you want to override the existing values.</p>\n@param shards The shards that comprise the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9677,6 +9840,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The shard ID of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p> <p>If <code>LastEvaluatedShardId</code> is empty, then the \"last page\" of results has been processed and there is currently no more data to be retrieved.</p> <p>If <code>LastEvaluatedShardId</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedShardId</code> is empty.</p>\n@param lastEvaluatedShardId The shard ID of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p> <p>If <code>LastEvaluatedShardId</code> is empty, then the \"last page\" of results has been processed and there is currently no more data to be retrieved.</p> <p>If <code>LastEvaluatedShardId</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedShardId</code> is empty.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9747,6 +9911,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date and time when the request to create this stream was issued.</p>\n@param creationRequestDateTime The date and time when the request to create this stream was issued.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9855,6 +10020,7 @@
                 "variableSetterType" : "KeySchemaElement"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9899,6 +10065,7 @@
             "variableSetterType" : "java.util.Collection<KeySchemaElement>"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The key attribute(s) of the stream's DynamoDB table.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setKeySchema(java.util.Collection)} or {@link #withKeySchema(java.util.Collection)} if you want to override the existing values.</p>\n@param keySchema The key attribute(s) of the stream's DynamoDB table.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9968,6 +10135,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The shard ID of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p> <p>If <code>LastEvaluatedShardId</code> is empty, then the \"last page\" of results has been processed and there is currently no more data to be retrieved.</p> <p>If <code>LastEvaluatedShardId</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedShardId</code> is empty.</p>\n@param lastEvaluatedShardId The shard ID of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p> <p>If <code>LastEvaluatedShardId</code> is empty, then the \"last page\" of results has been processed and there is currently no more data to be retrieved.</p> <p>If <code>LastEvaluatedShardId</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedShardId</code> is empty.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10076,6 +10244,7 @@
                 "variableSetterType" : "Shard"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10120,6 +10289,7 @@
             "variableSetterType" : "java.util.Collection<Shard>"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The shards that comprise the stream.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setShards(java.util.Collection)} or {@link #withShards(java.util.Collection)} if you want to override the existing values.</p>\n@param shards The shards that comprise the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10189,6 +10359,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) for the stream.</p>\n@param streamArn The Amazon Resource Name (ARN) for the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10258,6 +10429,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A timestamp, in ISO 8601 format, for this stream.</p> <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p> <ul> <li> <p>the AWS customer ID.</p> </li> <li> <p>the table name</p> </li> <li> <p>the <code>StreamLabel</code> </p> </li> </ul>\n@param streamLabel A timestamp, in ISO 8601 format, for this stream.</p> <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p> <ul> <li> <p>the AWS customer ID.</p> </li> <li> <p>the table name</p> </li> <li> <p>the <code>StreamLabel</code> </p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10327,6 +10499,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Indicates the current status of the stream:</p> <ul> <li> <p> <code>ENABLING</code> - Streams is currently being enabled on the DynamoDB table.</p> </li> <li> <p> <code>ENABLED</code> - the stream is enabled.</p> </li> <li> <p> <code>DISABLING</code> - Streams is currently being disabled on the DynamoDB table.</p> </li> <li> <p> <code>DISABLED</code> - the stream is disabled.</p> </li> </ul>\n@param streamStatus Indicates the current status of the stream:</p> <ul> <li> <p> <code>ENABLING</code> - Streams is currently being enabled on the DynamoDB table.</p> </li> <li> <p> <code>ENABLED</code> - the stream is enabled.</p> </li> <li> <p> <code>DISABLING</code> - Streams is currently being disabled on the DynamoDB table.</p> </li> <li> <p> <code>DISABLED</code> - the stream is disabled.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see StreamStatus*/",
@@ -10396,6 +10569,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Indicates the format of the records within this stream:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - only the key attributes of items that were modified in the DynamoDB table.</p> </li> <li> <p> <code>NEW_IMAGE</code> - entire items from the table, as they appeared after they were modified.</p> </li> <li> <p> <code>OLD_IMAGE</code> - entire items from the table, as they appeared before they were modified.</p> </li> <li> <p> <code>NEW_AND_OLD_IMAGES</code> - both the new and the old images of the items from the table.</p> </li> </ul>\n@param streamViewType Indicates the format of the records within this stream:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - only the key attributes of items that were modified in the DynamoDB table.</p> </li> <li> <p> <code>NEW_IMAGE</code> - entire items from the table, as they appeared after they were modified.</p> </li> <li> <p> <code>OLD_IMAGE</code> - entire items from the table, as they appeared before they were modified.</p> </li> <li> <p> <code>NEW_AND_OLD_IMAGES</code> - both the new and the old images of the items from the table.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see StreamViewType*/",
@@ -10465,6 +10639,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The DynamoDB table with which the stream is associated.</p>\n@param tableName The DynamoDB table with which the stream is associated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10480,6 +10655,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.dynamodbv2.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -10514,6 +10690,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.dynamodbv2.model.StreamRecord",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -10575,6 +10752,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The approximate date and time when the stream record was created, in <a href=\"http://www.epochconverter.com/\">UNIX epoch time</a> format.</p>\n@param approximateCreationDateTime The approximate date and time when the stream record was created, in <a href=\"http://www.epochconverter.com/\">UNIX epoch time</a> format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10688,6 +10866,7 @@
               "variableSetterType" : "AttributeValue"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10726,6 +10905,7 @@
           "variableSetterType" : "java.util.Map<String,AttributeValue>"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The primary key attribute(s) for the DynamoDB item that was modified.</p>\n@param keys The primary key attribute(s) for the DynamoDB item that was modified.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10839,6 +11019,7 @@
               "variableSetterType" : "AttributeValue"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10877,6 +11058,7 @@
           "variableSetterType" : "java.util.Map<String,AttributeValue>"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The item in the DynamoDB table as it appeared after it was modified.</p>\n@param newImage The item in the DynamoDB table as it appeared after it was modified.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10990,6 +11172,7 @@
               "variableSetterType" : "AttributeValue"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11028,6 +11211,7 @@
           "variableSetterType" : "java.util.Map<String,AttributeValue>"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The item in the DynamoDB table as it appeared before it was modified.</p>\n@param oldImage The item in the DynamoDB table as it appeared before it was modified.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11096,6 +11280,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The sequence number of the stream record.</p>\n@param sequenceNumber The sequence number of the stream record.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11164,6 +11349,7 @@
           "variableSetterType" : "Long"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The size of the stream record, in bytes.</p>\n@param sizeBytes The size of the stream record, in bytes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11232,6 +11418,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The type of data from the modified DynamoDB item that was captured in this stream record:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - only the key attributes of the modified item.</p> </li> <li> <p> <code>NEW_IMAGE</code> - the entire item, as it appeared after it was modified.</p> </li> <li> <p> <code>OLD_IMAGE</code> - the entire item, as it appeared before it was modified.</p> </li> <li> <p> <code>NEW_AND_OLD_IMAGES</code> - both the new and the old item images of the item.</p> </li> </ul>\n@param streamViewType The type of data from the modified DynamoDB item that was captured in this stream record:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - only the key attributes of the modified item.</p> </li> <li> <p> <code>NEW_IMAGE</code> - the entire item, as it appeared after it was modified.</p> </li> <li> <p> <code>OLD_IMAGE</code> - the entire item, as it appeared before it was modified.</p> </li> <li> <p> <code>NEW_AND_OLD_IMAGES</code> - both the new and the old item images of the item.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see StreamViewType*/",
@@ -11302,6 +11489,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The approximate date and time when the stream record was created, in <a href=\"http://www.epochconverter.com/\">UNIX epoch time</a> format.</p>\n@param approximateCreationDateTime The approximate date and time when the stream record was created, in <a href=\"http://www.epochconverter.com/\">UNIX epoch time</a> format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11416,6 +11604,7 @@
                 "variableSetterType" : "AttributeValue"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11454,6 +11643,7 @@
             "variableSetterType" : "java.util.Map<String,AttributeValue>"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The primary key attribute(s) for the DynamoDB item that was modified.</p>\n@param keys The primary key attribute(s) for the DynamoDB item that was modified.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11568,6 +11758,7 @@
                 "variableSetterType" : "AttributeValue"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11606,6 +11797,7 @@
             "variableSetterType" : "java.util.Map<String,AttributeValue>"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The item in the DynamoDB table as it appeared after it was modified.</p>\n@param newImage The item in the DynamoDB table as it appeared after it was modified.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11720,6 +11912,7 @@
                 "variableSetterType" : "AttributeValue"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11758,6 +11951,7 @@
             "variableSetterType" : "java.util.Map<String,AttributeValue>"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The item in the DynamoDB table as it appeared before it was modified.</p>\n@param oldImage The item in the DynamoDB table as it appeared before it was modified.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11827,6 +12021,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The sequence number of the stream record.</p>\n@param sequenceNumber The sequence number of the stream record.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11896,6 +12091,7 @@
             "variableSetterType" : "Long"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The size of the stream record, in bytes.</p>\n@param sizeBytes The size of the stream record, in bytes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11965,6 +12161,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The type of data from the modified DynamoDB item that was captured in this stream record:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - only the key attributes of the modified item.</p> </li> <li> <p> <code>NEW_IMAGE</code> - the entire item, as it appeared after it was modified.</p> </li> <li> <p> <code>OLD_IMAGE</code> - the entire item, as it appeared before it was modified.</p> </li> <li> <p> <code>NEW_AND_OLD_IMAGES</code> - both the new and the old item images of the item.</p> </li> </ul>\n@param streamViewType The type of data from the modified DynamoDB item that was captured in this stream record:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - only the key attributes of the modified item.</p> </li> <li> <p> <code>NEW_IMAGE</code> - the entire item, as it appeared after it was modified.</p> </li> <li> <p> <code>OLD_IMAGE</code> - the entire item, as it appeared before it was modified.</p> </li> <li> <p> <code>NEW_AND_OLD_IMAGES</code> - both the new and the old item images of the item.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see StreamViewType*/",
@@ -11980,6 +12177,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.dynamodbv2.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -12026,6 +12224,7 @@
         "value" : "DISABLED"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.dynamodbv2.enum.StreamStatus",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -12034,6 +12233,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.dynamodbv2.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -12080,6 +12280,7 @@
         "value" : "KEYS_ONLY"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.dynamodbv2.enum.StreamViewType",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -12088,6 +12289,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.dynamodbv2.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -12122,6 +12324,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "TrimmedDataAccessException",
+      "fullyQualifiedName" : "com.amazonaws.services.dynamodbv2.exception.TrimmedDataAccessException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -12130,6 +12333,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.dynamodbv2.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,

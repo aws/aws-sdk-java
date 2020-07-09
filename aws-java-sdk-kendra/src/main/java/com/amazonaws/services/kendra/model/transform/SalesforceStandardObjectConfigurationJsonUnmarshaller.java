@@ -63,7 +63,9 @@ public class SalesforceStandardObjectConfigurationJsonUnmarshaller implements Un
                 if (context.testExpression("FieldMappings", targetDepth)) {
                     context.nextToken();
                     salesforceStandardObjectConfiguration.setFieldMappings(new ListUnmarshaller<DataSourceToIndexFieldMapping>(
-                            DataSourceToIndexFieldMappingJsonUnmarshaller.getInstance()).unmarshall(context));
+                            DataSourceToIndexFieldMappingJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

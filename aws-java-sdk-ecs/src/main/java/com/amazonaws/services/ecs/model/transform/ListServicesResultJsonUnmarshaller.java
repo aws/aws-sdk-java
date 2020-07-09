@@ -50,7 +50,9 @@ public class ListServicesResultJsonUnmarshaller implements Unmarshaller<ListServ
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("serviceArns", targetDepth)) {
                     context.nextToken();
-                    listServicesResult.setServiceArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    listServicesResult.setServiceArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

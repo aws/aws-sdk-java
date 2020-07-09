@@ -54,7 +54,9 @@ public class ValueWithServiceIdsJsonUnmarshaller implements Unmarshaller<ValueWi
                 }
                 if (context.testExpression("ServiceIds", targetDepth)) {
                     context.nextToken();
-                    valueWithServiceIds.setServiceIds(new ListUnmarshaller<ServiceId>(ServiceIdJsonUnmarshaller.getInstance()).unmarshall(context));
+                    valueWithServiceIds.setServiceIds(new ListUnmarshaller<ServiceId>(ServiceIdJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

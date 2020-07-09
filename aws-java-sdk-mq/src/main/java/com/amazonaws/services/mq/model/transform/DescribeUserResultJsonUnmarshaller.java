@@ -58,7 +58,9 @@ public class DescribeUserResultJsonUnmarshaller implements Unmarshaller<Describe
                 }
                 if (context.testExpression("groups", targetDepth)) {
                     context.nextToken();
-                    describeUserResult.setGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    describeUserResult.setGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("pending", targetDepth)) {
                     context.nextToken();

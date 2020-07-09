@@ -51,7 +51,8 @@ public class BatchCreateIndexJsonUnmarshaller implements Unmarshaller<BatchCreat
                 if (context.testExpression("OrderedIndexedAttributeList", targetDepth)) {
                     context.nextToken();
                     batchCreateIndex.setOrderedIndexedAttributeList(new ListUnmarshaller<AttributeKey>(AttributeKeyJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("IsUnique", targetDepth)) {
                     context.nextToken();

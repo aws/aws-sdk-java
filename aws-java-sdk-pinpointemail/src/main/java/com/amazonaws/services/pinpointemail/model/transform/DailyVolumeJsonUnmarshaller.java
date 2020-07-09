@@ -59,7 +59,8 @@ public class DailyVolumeJsonUnmarshaller implements Unmarshaller<DailyVolume, Js
                 if (context.testExpression("DomainIspPlacements", targetDepth)) {
                     context.nextToken();
                     dailyVolume.setDomainIspPlacements(new ListUnmarshaller<DomainIspPlacement>(DomainIspPlacementJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

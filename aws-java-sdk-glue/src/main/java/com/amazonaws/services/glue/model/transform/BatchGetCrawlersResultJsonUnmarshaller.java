@@ -50,11 +50,15 @@ public class BatchGetCrawlersResultJsonUnmarshaller implements Unmarshaller<Batc
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Crawlers", targetDepth)) {
                     context.nextToken();
-                    batchGetCrawlersResult.setCrawlers(new ListUnmarshaller<Crawler>(CrawlerJsonUnmarshaller.getInstance()).unmarshall(context));
+                    batchGetCrawlersResult.setCrawlers(new ListUnmarshaller<Crawler>(CrawlerJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("CrawlersNotFound", targetDepth)) {
                     context.nextToken();
-                    batchGetCrawlersResult.setCrawlersNotFound(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    batchGetCrawlersResult.setCrawlersNotFound(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

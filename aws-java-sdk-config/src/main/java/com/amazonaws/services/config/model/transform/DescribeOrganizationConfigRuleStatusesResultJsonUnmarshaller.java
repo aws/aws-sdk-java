@@ -52,7 +52,9 @@ public class DescribeOrganizationConfigRuleStatusesResultJsonUnmarshaller implem
                 if (context.testExpression("OrganizationConfigRuleStatuses", targetDepth)) {
                     context.nextToken();
                     describeOrganizationConfigRuleStatusesResult.setOrganizationConfigRuleStatuses(new ListUnmarshaller<OrganizationConfigRuleStatus>(
-                            OrganizationConfigRuleStatusJsonUnmarshaller.getInstance()).unmarshall(context));
+                            OrganizationConfigRuleStatusJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

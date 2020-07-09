@@ -51,7 +51,8 @@ public class ListJobsResultJsonUnmarshaller implements Unmarshaller<ListJobsResu
                 if (context.testExpression("JobList", targetDepth)) {
                     context.nextToken();
                     listJobsResult.setJobList(new ListUnmarshaller<GlacierJobDescription>(GlacierJobDescriptionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Marker", targetDepth)) {
                     context.nextToken();

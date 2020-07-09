@@ -66,7 +66,9 @@ public class PermissionJsonUnmarshaller implements Unmarshaller<Permission, Json
                 }
                 if (context.testExpression("Actions", targetDepth)) {
                     context.nextToken();
-                    permission.setActions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    permission.setActions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Policy", targetDepth)) {
                     context.nextToken();

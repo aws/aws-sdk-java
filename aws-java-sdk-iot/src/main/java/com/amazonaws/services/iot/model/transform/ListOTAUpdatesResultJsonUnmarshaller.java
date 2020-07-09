@@ -51,7 +51,8 @@ public class ListOTAUpdatesResultJsonUnmarshaller implements Unmarshaller<ListOT
                 if (context.testExpression("otaUpdates", targetDepth)) {
                     context.nextToken();
                     listOTAUpdatesResult.setOtaUpdates(new ListUnmarshaller<OTAUpdateSummary>(OTAUpdateSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

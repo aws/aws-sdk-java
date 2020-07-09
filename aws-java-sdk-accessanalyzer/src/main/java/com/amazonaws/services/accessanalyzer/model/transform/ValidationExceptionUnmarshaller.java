@@ -56,7 +56,8 @@ public class ValidationExceptionUnmarshaller extends EnhancedJsonErrorUnmarshall
                 if (context.testExpression("fieldList", targetDepth)) {
                     context.nextToken();
                     validationException.setFieldList(new ListUnmarshaller<ValidationExceptionField>(ValidationExceptionFieldJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("reason", targetDepth)) {
                     context.nextToken();

@@ -50,7 +50,9 @@ public class DescribeStandardsResultJsonUnmarshaller implements Unmarshaller<Des
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Standards", targetDepth)) {
                     context.nextToken();
-                    describeStandardsResult.setStandards(new ListUnmarshaller<Standard>(StandardJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeStandardsResult.setStandards(new ListUnmarshaller<Standard>(StandardJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

@@ -51,7 +51,9 @@ public class ListHostedConfigurationVersionsResultJsonUnmarshaller implements Un
                 if (context.testExpression("Items", targetDepth)) {
                     context.nextToken();
                     listHostedConfigurationVersionsResult.setItems(new ListUnmarshaller<HostedConfigurationVersionSummary>(
-                            HostedConfigurationVersionSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                            HostedConfigurationVersionSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

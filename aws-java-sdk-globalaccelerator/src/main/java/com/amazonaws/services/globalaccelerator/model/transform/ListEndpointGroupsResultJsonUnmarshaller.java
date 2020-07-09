@@ -51,7 +51,8 @@ public class ListEndpointGroupsResultJsonUnmarshaller implements Unmarshaller<Li
                 if (context.testExpression("EndpointGroups", targetDepth)) {
                     context.nextToken();
                     listEndpointGroupsResult.setEndpointGroups(new ListUnmarshaller<EndpointGroup>(EndpointGroupJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

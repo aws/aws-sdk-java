@@ -98,7 +98,9 @@ public class InterconnectJsonUnmarshaller implements Unmarshaller<Interconnect, 
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
-                    interconnect.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    interconnect.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("providerName", targetDepth)) {
                     context.nextToken();

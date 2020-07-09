@@ -50,7 +50,9 @@ public class ListNetworksResultJsonUnmarshaller implements Unmarshaller<ListNetw
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Networks", targetDepth)) {
                     context.nextToken();
-                    listNetworksResult.setNetworks(new ListUnmarshaller<NetworkSummary>(NetworkSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listNetworksResult.setNetworks(new ListUnmarshaller<NetworkSummary>(NetworkSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

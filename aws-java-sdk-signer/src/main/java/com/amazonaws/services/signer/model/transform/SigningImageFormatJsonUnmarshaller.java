@@ -50,7 +50,9 @@ public class SigningImageFormatJsonUnmarshaller implements Unmarshaller<SigningI
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("supportedFormats", targetDepth)) {
                     context.nextToken();
-                    signingImageFormat.setSupportedFormats(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    signingImageFormat.setSupportedFormats(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("defaultFormat", targetDepth)) {
                     context.nextToken();

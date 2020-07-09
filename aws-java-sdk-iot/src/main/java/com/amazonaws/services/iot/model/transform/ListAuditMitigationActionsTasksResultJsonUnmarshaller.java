@@ -51,7 +51,9 @@ public class ListAuditMitigationActionsTasksResultJsonUnmarshaller implements Un
                 if (context.testExpression("tasks", targetDepth)) {
                     context.nextToken();
                     listAuditMitigationActionsTasksResult.setTasks(new ListUnmarshaller<AuditMitigationActionsTaskMetadata>(
-                            AuditMitigationActionsTaskMetadataJsonUnmarshaller.getInstance()).unmarshall(context));
+                            AuditMitigationActionsTaskMetadataJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

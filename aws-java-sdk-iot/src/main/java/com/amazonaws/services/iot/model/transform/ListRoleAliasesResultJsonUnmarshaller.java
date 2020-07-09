@@ -50,7 +50,9 @@ public class ListRoleAliasesResultJsonUnmarshaller implements Unmarshaller<ListR
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("roleAliases", targetDepth)) {
                     context.nextToken();
-                    listRoleAliasesResult.setRoleAliases(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    listRoleAliasesResult.setRoleAliases(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextMarker", targetDepth)) {
                     context.nextToken();

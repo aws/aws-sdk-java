@@ -50,7 +50,9 @@ public class ListPortalsResultJsonUnmarshaller implements Unmarshaller<ListPorta
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("portalSummaries", targetDepth)) {
                     context.nextToken();
-                    listPortalsResult.setPortalSummaries(new ListUnmarshaller<PortalSummary>(PortalSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listPortalsResult.setPortalSummaries(new ListUnmarshaller<PortalSummary>(PortalSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

@@ -50,7 +50,9 @@ public class PollForThirdPartyJobsResultJsonUnmarshaller implements Unmarshaller
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("jobs", targetDepth)) {
                     context.nextToken();
-                    pollForThirdPartyJobsResult.setJobs(new ListUnmarshaller<ThirdPartyJob>(ThirdPartyJobJsonUnmarshaller.getInstance()).unmarshall(context));
+                    pollForThirdPartyJobsResult.setJobs(new ListUnmarshaller<ThirdPartyJob>(ThirdPartyJobJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

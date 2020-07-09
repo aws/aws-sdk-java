@@ -51,7 +51,9 @@ public class ListProvisioningTemplateVersionsResultJsonUnmarshaller implements U
                 if (context.testExpression("versions", targetDepth)) {
                     context.nextToken();
                     listProvisioningTemplateVersionsResult.setVersions(new ListUnmarshaller<ProvisioningTemplateVersionSummary>(
-                            ProvisioningTemplateVersionSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ProvisioningTemplateVersionSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

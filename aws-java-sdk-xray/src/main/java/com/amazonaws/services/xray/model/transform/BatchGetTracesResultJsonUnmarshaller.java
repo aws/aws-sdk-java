@@ -50,11 +50,15 @@ public class BatchGetTracesResultJsonUnmarshaller implements Unmarshaller<BatchG
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Traces", targetDepth)) {
                     context.nextToken();
-                    batchGetTracesResult.setTraces(new ListUnmarshaller<Trace>(TraceJsonUnmarshaller.getInstance()).unmarshall(context));
+                    batchGetTracesResult.setTraces(new ListUnmarshaller<Trace>(TraceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("UnprocessedTraceIds", targetDepth)) {
                     context.nextToken();
-                    batchGetTracesResult.setUnprocessedTraceIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    batchGetTracesResult.setUnprocessedTraceIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

@@ -52,7 +52,9 @@ public class DescribeOrganizationConformancePacksResultJsonUnmarshaller implemen
                 if (context.testExpression("OrganizationConformancePacks", targetDepth)) {
                     context.nextToken();
                     describeOrganizationConformancePacksResult.setOrganizationConformancePacks(new ListUnmarshaller<OrganizationConformancePack>(
-                            OrganizationConformancePackJsonUnmarshaller.getInstance()).unmarshall(context));
+                            OrganizationConformancePackJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

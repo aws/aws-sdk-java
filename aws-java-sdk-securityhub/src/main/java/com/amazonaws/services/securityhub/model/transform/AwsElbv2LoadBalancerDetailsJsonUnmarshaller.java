@@ -51,7 +51,8 @@ public class AwsElbv2LoadBalancerDetailsJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("AvailabilityZones", targetDepth)) {
                     context.nextToken();
                     awsElbv2LoadBalancerDetails.setAvailabilityZones(new ListUnmarshaller<AvailabilityZone>(AvailabilityZoneJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("CanonicalHostedZoneId", targetDepth)) {
                     context.nextToken();
@@ -75,7 +76,9 @@ public class AwsElbv2LoadBalancerDetailsJsonUnmarshaller implements Unmarshaller
                 }
                 if (context.testExpression("SecurityGroups", targetDepth)) {
                     context.nextToken();
-                    awsElbv2LoadBalancerDetails.setSecurityGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    awsElbv2LoadBalancerDetails.setSecurityGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
                     context.nextToken();

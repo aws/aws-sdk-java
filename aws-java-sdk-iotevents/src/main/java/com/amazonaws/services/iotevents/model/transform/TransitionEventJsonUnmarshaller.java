@@ -58,7 +58,9 @@ public class TransitionEventJsonUnmarshaller implements Unmarshaller<TransitionE
                 }
                 if (context.testExpression("actions", targetDepth)) {
                     context.nextToken();
-                    transitionEvent.setActions(new ListUnmarshaller<Action>(ActionJsonUnmarshaller.getInstance()).unmarshall(context));
+                    transitionEvent.setActions(new ListUnmarshaller<Action>(ActionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextState", targetDepth)) {
                     context.nextToken();

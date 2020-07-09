@@ -54,11 +54,15 @@ public class SpekeKeyProviderCmafJsonUnmarshaller implements Unmarshaller<SpekeK
                 }
                 if (context.testExpression("dashSignaledSystemIds", targetDepth)) {
                     context.nextToken();
-                    spekeKeyProviderCmaf.setDashSignaledSystemIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    spekeKeyProviderCmaf.setDashSignaledSystemIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("hlsSignaledSystemIds", targetDepth)) {
                     context.nextToken();
-                    spekeKeyProviderCmaf.setHlsSignaledSystemIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    spekeKeyProviderCmaf.setHlsSignaledSystemIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("resourceId", targetDepth)) {
                     context.nextToken();

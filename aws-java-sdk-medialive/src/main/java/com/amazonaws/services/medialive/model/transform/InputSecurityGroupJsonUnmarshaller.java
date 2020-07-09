@@ -58,7 +58,9 @@ public class InputSecurityGroupJsonUnmarshaller implements Unmarshaller<InputSec
                 }
                 if (context.testExpression("inputs", targetDepth)) {
                     context.nextToken();
-                    inputSecurityGroup.setInputs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    inputSecurityGroup.setInputs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("state", targetDepth)) {
                     context.nextToken();
@@ -73,7 +75,8 @@ public class InputSecurityGroupJsonUnmarshaller implements Unmarshaller<InputSec
                 if (context.testExpression("whitelistRules", targetDepth)) {
                     context.nextToken();
                     inputSecurityGroup.setWhitelistRules(new ListUnmarshaller<InputWhitelistRule>(InputWhitelistRuleJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

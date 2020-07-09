@@ -50,7 +50,9 @@ public class GetCrawlersResultJsonUnmarshaller implements Unmarshaller<GetCrawle
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Crawlers", targetDepth)) {
                     context.nextToken();
-                    getCrawlersResult.setCrawlers(new ListUnmarshaller<Crawler>(CrawlerJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getCrawlersResult.setCrawlers(new ListUnmarshaller<Crawler>(CrawlerJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

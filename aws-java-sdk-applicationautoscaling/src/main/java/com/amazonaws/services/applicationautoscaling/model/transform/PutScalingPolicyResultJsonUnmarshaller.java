@@ -54,7 +54,9 @@ public class PutScalingPolicyResultJsonUnmarshaller implements Unmarshaller<PutS
                 }
                 if (context.testExpression("Alarms", targetDepth)) {
                     context.nextToken();
-                    putScalingPolicyResult.setAlarms(new ListUnmarshaller<Alarm>(AlarmJsonUnmarshaller.getInstance()).unmarshall(context));
+                    putScalingPolicyResult.setAlarms(new ListUnmarshaller<Alarm>(AlarmJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -51,7 +51,8 @@ public class RunCommandParametersJsonUnmarshaller implements Unmarshaller<RunCom
                 if (context.testExpression("RunCommandTargets", targetDepth)) {
                     context.nextToken();
                     runCommandParameters.setRunCommandTargets(new ListUnmarshaller<RunCommandTarget>(RunCommandTargetJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -72,7 +72,9 @@ public class IdentityProviderTypeJsonUnmarshaller implements Unmarshaller<Identi
                 }
                 if (context.testExpression("IdpIdentifiers", targetDepth)) {
                     context.nextToken();
-                    identityProviderType.setIdpIdentifiers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    identityProviderType.setIdpIdentifiers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedDate", targetDepth)) {
                     context.nextToken();

@@ -67,7 +67,8 @@ public class MigrationTaskJsonUnmarshaller implements Unmarshaller<MigrationTask
                 if (context.testExpression("ResourceAttributeList", targetDepth)) {
                     context.nextToken();
                     migrationTask.setResourceAttributeList(new ListUnmarshaller<ResourceAttribute>(ResourceAttributeJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

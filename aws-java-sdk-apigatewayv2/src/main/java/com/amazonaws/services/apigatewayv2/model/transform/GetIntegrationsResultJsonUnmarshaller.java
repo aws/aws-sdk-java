@@ -50,7 +50,9 @@ public class GetIntegrationsResultJsonUnmarshaller implements Unmarshaller<GetIn
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("items", targetDepth)) {
                     context.nextToken();
-                    getIntegrationsResult.setItems(new ListUnmarshaller<Integration>(IntegrationJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getIntegrationsResult.setItems(new ListUnmarshaller<Integration>(IntegrationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

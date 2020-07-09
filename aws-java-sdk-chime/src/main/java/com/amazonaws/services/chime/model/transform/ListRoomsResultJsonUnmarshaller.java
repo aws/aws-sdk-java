@@ -50,7 +50,9 @@ public class ListRoomsResultJsonUnmarshaller implements Unmarshaller<ListRoomsRe
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Rooms", targetDepth)) {
                     context.nextToken();
-                    listRoomsResult.setRooms(new ListUnmarshaller<Room>(RoomJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listRoomsResult.setRooms(new ListUnmarshaller<Room>(RoomJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

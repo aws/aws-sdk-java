@@ -50,7 +50,9 @@ public class ListNamedShadowsForThingResultJsonUnmarshaller implements Unmarshal
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("results", targetDepth)) {
                     context.nextToken();
-                    listNamedShadowsForThingResult.setResults(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    listNamedShadowsForThingResult.setResults(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

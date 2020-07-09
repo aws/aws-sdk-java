@@ -51,7 +51,9 @@ public class DescribeMaintenanceWindowsResultJsonUnmarshaller implements Unmarsh
                 if (context.testExpression("WindowIdentities", targetDepth)) {
                     context.nextToken();
                     describeMaintenanceWindowsResult.setWindowIdentities(new ListUnmarshaller<MaintenanceWindowIdentity>(
-                            MaintenanceWindowIdentityJsonUnmarshaller.getInstance()).unmarshall(context));
+                            MaintenanceWindowIdentityJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

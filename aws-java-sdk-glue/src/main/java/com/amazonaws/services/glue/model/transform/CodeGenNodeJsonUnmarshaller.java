@@ -58,7 +58,9 @@ public class CodeGenNodeJsonUnmarshaller implements Unmarshaller<CodeGenNode, Js
                 }
                 if (context.testExpression("Args", targetDepth)) {
                     context.nextToken();
-                    codeGenNode.setArgs(new ListUnmarshaller<CodeGenNodeArg>(CodeGenNodeArgJsonUnmarshaller.getInstance()).unmarshall(context));
+                    codeGenNode.setArgs(new ListUnmarshaller<CodeGenNodeArg>(CodeGenNodeArgJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("LineNumber", targetDepth)) {
                     context.nextToken();

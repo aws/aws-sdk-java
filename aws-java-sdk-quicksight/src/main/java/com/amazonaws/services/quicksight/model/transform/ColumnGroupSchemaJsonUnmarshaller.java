@@ -55,7 +55,9 @@ public class ColumnGroupSchemaJsonUnmarshaller implements Unmarshaller<ColumnGro
                 if (context.testExpression("ColumnGroupColumnSchemaList", targetDepth)) {
                     context.nextToken();
                     columnGroupSchema.setColumnGroupColumnSchemaList(new ListUnmarshaller<ColumnGroupColumnSchema>(ColumnGroupColumnSchemaJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

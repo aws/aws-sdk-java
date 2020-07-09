@@ -51,7 +51,8 @@ public class ListIdentityProvidersResultJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("Providers", targetDepth)) {
                     context.nextToken();
                     listIdentityProvidersResult.setProviders(new ListUnmarshaller<ProviderDescription>(ProviderDescriptionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

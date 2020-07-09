@@ -62,7 +62,9 @@ public class UpdateAuthorizerResultJsonUnmarshaller implements Unmarshaller<Upda
                 }
                 if (context.testExpression("providerARNs", targetDepth)) {
                     context.nextToken();
-                    updateAuthorizerResult.setProviderARNs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    updateAuthorizerResult.setProviderARNs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("authType", targetDepth)) {
                     context.nextToken();

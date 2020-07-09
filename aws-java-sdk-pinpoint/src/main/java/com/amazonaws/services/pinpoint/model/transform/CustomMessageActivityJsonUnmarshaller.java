@@ -54,7 +54,9 @@ public class CustomMessageActivityJsonUnmarshaller implements Unmarshaller<Custo
                 }
                 if (context.testExpression("EndpointTypes", targetDepth)) {
                     context.nextToken();
-                    customMessageActivity.setEndpointTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    customMessageActivity.setEndpointTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("MessageConfig", targetDepth)) {
                     context.nextToken();

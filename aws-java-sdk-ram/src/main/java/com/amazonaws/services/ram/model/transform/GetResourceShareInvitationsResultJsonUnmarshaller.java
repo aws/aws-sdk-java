@@ -51,7 +51,9 @@ public class GetResourceShareInvitationsResultJsonUnmarshaller implements Unmars
                 if (context.testExpression("resourceShareInvitations", targetDepth)) {
                     context.nextToken();
                     getResourceShareInvitationsResult.setResourceShareInvitations(new ListUnmarshaller<ResourceShareInvitation>(
-                            ResourceShareInvitationJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ResourceShareInvitationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

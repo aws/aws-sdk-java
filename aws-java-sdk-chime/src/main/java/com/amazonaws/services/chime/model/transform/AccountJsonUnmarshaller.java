@@ -74,12 +74,15 @@ public class AccountJsonUnmarshaller implements Unmarshaller<Account, JsonUnmars
                 }
                 if (context.testExpression("SupportedLicenses", targetDepth)) {
                     context.nextToken();
-                    account.setSupportedLicenses(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    account.setSupportedLicenses(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("SigninDelegateGroups", targetDepth)) {
                     context.nextToken();
                     account.setSigninDelegateGroups(new ListUnmarshaller<SigninDelegateGroup>(SigninDelegateGroupJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

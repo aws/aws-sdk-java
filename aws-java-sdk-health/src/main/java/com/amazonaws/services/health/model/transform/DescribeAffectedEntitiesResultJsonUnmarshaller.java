@@ -51,7 +51,8 @@ public class DescribeAffectedEntitiesResultJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("entities", targetDepth)) {
                     context.nextToken();
                     describeAffectedEntitiesResult.setEntities(new ListUnmarshaller<AffectedEntity>(AffectedEntityJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

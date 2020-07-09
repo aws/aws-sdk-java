@@ -54,7 +54,9 @@ public class DeviceTypeJsonUnmarshaller implements Unmarshaller<DeviceType, Json
                 }
                 if (context.testExpression("DeviceAttributes", targetDepth)) {
                     context.nextToken();
-                    deviceType.setDeviceAttributes(new ListUnmarshaller<AttributeType>(AttributeTypeJsonUnmarshaller.getInstance()).unmarshall(context));
+                    deviceType.setDeviceAttributes(new ListUnmarshaller<AttributeType>(AttributeTypeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("DeviceCreateDate", targetDepth)) {
                     context.nextToken();

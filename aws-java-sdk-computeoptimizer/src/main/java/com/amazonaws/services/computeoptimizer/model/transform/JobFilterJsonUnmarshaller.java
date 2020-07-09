@@ -54,7 +54,9 @@ public class JobFilterJsonUnmarshaller implements Unmarshaller<JobFilter, JsonUn
                 }
                 if (context.testExpression("values", targetDepth)) {
                     context.nextToken();
-                    jobFilter.setValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    jobFilter.setValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

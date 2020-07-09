@@ -52,12 +52,16 @@ public class DescribeAffectedEntitiesForOrganizationResultJsonUnmarshaller imple
                 if (context.testExpression("entities", targetDepth)) {
                     context.nextToken();
                     describeAffectedEntitiesForOrganizationResult
-                            .setEntities(new ListUnmarshaller<AffectedEntity>(AffectedEntityJsonUnmarshaller.getInstance()).unmarshall(context));
+                            .setEntities(new ListUnmarshaller<AffectedEntity>(AffectedEntityJsonUnmarshaller.getInstance())
+
+                            .unmarshall(context));
                 }
                 if (context.testExpression("failedSet", targetDepth)) {
                     context.nextToken();
                     describeAffectedEntitiesForOrganizationResult.setFailedSet(new ListUnmarshaller<OrganizationAffectedEntitiesErrorItem>(
-                            OrganizationAffectedEntitiesErrorItemJsonUnmarshaller.getInstance()).unmarshall(context));
+                            OrganizationAffectedEntitiesErrorItemJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

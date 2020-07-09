@@ -55,7 +55,9 @@ public class BlockPublicAccessConfigurationJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("PermittedPublicSecurityGroupRuleRanges", targetDepth)) {
                     context.nextToken();
                     blockPublicAccessConfiguration.setPermittedPublicSecurityGroupRuleRanges(new ListUnmarshaller<PortRange>(PortRangeJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

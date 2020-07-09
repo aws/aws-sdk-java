@@ -51,7 +51,8 @@ public class SearchAvailablePhoneNumbersResultJsonUnmarshaller implements Unmars
                 if (context.testExpression("E164PhoneNumbers", targetDepth)) {
                     context.nextToken();
                     searchAvailablePhoneNumbersResult.setE164PhoneNumbers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

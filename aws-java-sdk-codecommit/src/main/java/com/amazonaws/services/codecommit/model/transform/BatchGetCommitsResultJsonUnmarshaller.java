@@ -50,12 +50,15 @@ public class BatchGetCommitsResultJsonUnmarshaller implements Unmarshaller<Batch
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("commits", targetDepth)) {
                     context.nextToken();
-                    batchGetCommitsResult.setCommits(new ListUnmarshaller<Commit>(CommitJsonUnmarshaller.getInstance()).unmarshall(context));
+                    batchGetCommitsResult.setCommits(new ListUnmarshaller<Commit>(CommitJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("errors", targetDepth)) {
                     context.nextToken();
                     batchGetCommitsResult.setErrors(new ListUnmarshaller<BatchGetCommitsError>(BatchGetCommitsErrorJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

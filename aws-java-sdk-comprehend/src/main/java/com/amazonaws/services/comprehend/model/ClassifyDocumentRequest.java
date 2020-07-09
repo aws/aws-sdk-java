@@ -131,7 +131,7 @@ public class ClassifyDocumentRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getText() != null)
-            sb.append("Text: ").append(getText()).append(",");
+            sb.append("Text: ").append("***Sensitive Data Redacted***").append(",");
         if (getEndpointArn() != null)
             sb.append("EndpointArn: ").append(getEndpointArn());
         sb.append("}");

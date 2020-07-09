@@ -52,7 +52,9 @@ public class DescribeMaintenanceWindowsForTargetResultJsonUnmarshaller implement
                 if (context.testExpression("WindowIdentities", targetDepth)) {
                     context.nextToken();
                     describeMaintenanceWindowsForTargetResult.setWindowIdentities(new ListUnmarshaller<MaintenanceWindowIdentityForTarget>(
-                            MaintenanceWindowIdentityForTargetJsonUnmarshaller.getInstance()).unmarshall(context));
+                            MaintenanceWindowIdentityForTargetJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

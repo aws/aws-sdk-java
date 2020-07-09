@@ -50,7 +50,9 @@ public class ListCollectionsResultJsonUnmarshaller implements Unmarshaller<ListC
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CollectionIds", targetDepth)) {
                     context.nextToken();
-                    listCollectionsResult.setCollectionIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    listCollectionsResult.setCollectionIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();
@@ -58,7 +60,9 @@ public class ListCollectionsResultJsonUnmarshaller implements Unmarshaller<ListC
                 }
                 if (context.testExpression("FaceModelVersions", targetDepth)) {
                     context.nextToken();
-                    listCollectionsResult.setFaceModelVersions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    listCollectionsResult.setFaceModelVersions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

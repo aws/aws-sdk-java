@@ -66,7 +66,9 @@ public class UserDefinedFunctionInputJsonUnmarshaller implements Unmarshaller<Us
                 }
                 if (context.testExpression("ResourceUris", targetDepth)) {
                     context.nextToken();
-                    userDefinedFunctionInput.setResourceUris(new ListUnmarshaller<ResourceUri>(ResourceUriJsonUnmarshaller.getInstance()).unmarshall(context));
+                    userDefinedFunctionInput.setResourceUris(new ListUnmarshaller<ResourceUri>(ResourceUriJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

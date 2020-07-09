@@ -70,12 +70,15 @@ public class FargateProfileJsonUnmarshaller implements Unmarshaller<FargateProfi
                 }
                 if (context.testExpression("subnets", targetDepth)) {
                     context.nextToken();
-                    fargateProfile.setSubnets(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    fargateProfile.setSubnets(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("selectors", targetDepth)) {
                     context.nextToken();
                     fargateProfile.setSelectors(new ListUnmarshaller<FargateProfileSelector>(FargateProfileSelectorJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();

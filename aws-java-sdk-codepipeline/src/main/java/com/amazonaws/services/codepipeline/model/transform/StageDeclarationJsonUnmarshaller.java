@@ -54,12 +54,15 @@ public class StageDeclarationJsonUnmarshaller implements Unmarshaller<StageDecla
                 }
                 if (context.testExpression("blockers", targetDepth)) {
                     context.nextToken();
-                    stageDeclaration
-                            .setBlockers(new ListUnmarshaller<BlockerDeclaration>(BlockerDeclarationJsonUnmarshaller.getInstance()).unmarshall(context));
+                    stageDeclaration.setBlockers(new ListUnmarshaller<BlockerDeclaration>(BlockerDeclarationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("actions", targetDepth)) {
                     context.nextToken();
-                    stageDeclaration.setActions(new ListUnmarshaller<ActionDeclaration>(ActionDeclarationJsonUnmarshaller.getInstance()).unmarshall(context));
+                    stageDeclaration.setActions(new ListUnmarshaller<ActionDeclaration>(ActionDeclarationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

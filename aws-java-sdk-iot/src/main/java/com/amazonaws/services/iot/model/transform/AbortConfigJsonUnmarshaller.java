@@ -50,7 +50,9 @@ public class AbortConfigJsonUnmarshaller implements Unmarshaller<AbortConfig, Js
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("criteriaList", targetDepth)) {
                     context.nextToken();
-                    abortConfig.setCriteriaList(new ListUnmarshaller<AbortCriteria>(AbortCriteriaJsonUnmarshaller.getInstance()).unmarshall(context));
+                    abortConfig.setCriteriaList(new ListUnmarshaller<AbortCriteria>(AbortCriteriaJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

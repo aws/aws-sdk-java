@@ -51,7 +51,9 @@ public class BatchListObjectParentsResponseJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("ParentLinks", targetDepth)) {
                     context.nextToken();
                     batchListObjectParentsResponse.setParentLinks(new ListUnmarshaller<ObjectIdentifierAndLinkNameTuple>(
-                            ObjectIdentifierAndLinkNameTupleJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ObjectIdentifierAndLinkNameTupleJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

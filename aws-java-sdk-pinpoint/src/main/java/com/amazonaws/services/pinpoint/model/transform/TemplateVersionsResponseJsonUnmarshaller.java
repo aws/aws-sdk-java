@@ -51,7 +51,8 @@ public class TemplateVersionsResponseJsonUnmarshaller implements Unmarshaller<Te
                 if (context.testExpression("Item", targetDepth)) {
                     context.nextToken();
                     templateVersionsResponse.setItem(new ListUnmarshaller<TemplateVersionResponse>(TemplateVersionResponseJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Message", targetDepth)) {
                     context.nextToken();

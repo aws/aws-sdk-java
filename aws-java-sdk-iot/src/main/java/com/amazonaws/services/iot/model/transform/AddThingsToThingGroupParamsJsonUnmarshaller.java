@@ -50,7 +50,9 @@ public class AddThingsToThingGroupParamsJsonUnmarshaller implements Unmarshaller
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("thingGroupNames", targetDepth)) {
                     context.nextToken();
-                    addThingsToThingGroupParams.setThingGroupNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    addThingsToThingGroupParams.setThingGroupNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("overrideDynamicGroups", targetDepth)) {
                     context.nextToken();

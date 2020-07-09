@@ -50,7 +50,9 @@ public class ListBrokersResultJsonUnmarshaller implements Unmarshaller<ListBroke
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("brokerSummaries", targetDepth)) {
                     context.nextToken();
-                    listBrokersResult.setBrokerSummaries(new ListUnmarshaller<BrokerSummary>(BrokerSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listBrokersResult.setBrokerSummaries(new ListUnmarshaller<BrokerSummary>(BrokerSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

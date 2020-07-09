@@ -55,7 +55,9 @@ public class ListInfrastructureConfigurationsResultJsonUnmarshaller implements U
                 if (context.testExpression("infrastructureConfigurationSummaryList", targetDepth)) {
                     context.nextToken();
                     listInfrastructureConfigurationsResult.setInfrastructureConfigurationSummaryList(new ListUnmarshaller<InfrastructureConfigurationSummary>(
-                            InfrastructureConfigurationSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                            InfrastructureConfigurationSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

@@ -74,7 +74,9 @@ public class ExportJobResponseJsonUnmarshaller implements Unmarshaller<ExportJob
                 }
                 if (context.testExpression("Failures", targetDepth)) {
                     context.nextToken();
-                    exportJobResponse.setFailures(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    exportJobResponse.setFailures(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Id", targetDepth)) {
                     context.nextToken();

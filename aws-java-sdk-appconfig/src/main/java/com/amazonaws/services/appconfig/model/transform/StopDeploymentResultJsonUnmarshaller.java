@@ -106,7 +106,9 @@ public class StopDeploymentResultJsonUnmarshaller implements Unmarshaller<StopDe
                 }
                 if (context.testExpression("EventLog", targetDepth)) {
                     context.nextToken();
-                    stopDeploymentResult.setEventLog(new ListUnmarshaller<DeploymentEvent>(DeploymentEventJsonUnmarshaller.getInstance()).unmarshall(context));
+                    stopDeploymentResult.setEventLog(new ListUnmarshaller<DeploymentEvent>(DeploymentEventJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("PercentageComplete", targetDepth)) {
                     context.nextToken();

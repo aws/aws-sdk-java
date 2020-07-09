@@ -55,11 +55,14 @@ public class InventoryAggregatorJsonUnmarshaller implements Unmarshaller<Invento
                 if (context.testExpression("Aggregators", targetDepth)) {
                     context.nextToken();
                     inventoryAggregator.setAggregators(new ListUnmarshaller<InventoryAggregator>(InventoryAggregatorJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Groups", targetDepth)) {
                     context.nextToken();
-                    inventoryAggregator.setGroups(new ListUnmarshaller<InventoryGroup>(InventoryGroupJsonUnmarshaller.getInstance()).unmarshall(context));
+                    inventoryAggregator.setGroups(new ListUnmarshaller<InventoryGroup>(InventoryGroupJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

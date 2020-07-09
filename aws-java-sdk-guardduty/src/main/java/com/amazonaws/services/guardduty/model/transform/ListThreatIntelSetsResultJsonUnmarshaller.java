@@ -50,7 +50,9 @@ public class ListThreatIntelSetsResultJsonUnmarshaller implements Unmarshaller<L
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("threatIntelSetIds", targetDepth)) {
                     context.nextToken();
-                    listThreatIntelSetsResult.setThreatIntelSetIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    listThreatIntelSetsResult.setThreatIntelSetIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

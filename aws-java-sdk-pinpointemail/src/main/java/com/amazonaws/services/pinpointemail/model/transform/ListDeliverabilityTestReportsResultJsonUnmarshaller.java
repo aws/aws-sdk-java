@@ -51,7 +51,9 @@ public class ListDeliverabilityTestReportsResultJsonUnmarshaller implements Unma
                 if (context.testExpression("DeliverabilityTestReports", targetDepth)) {
                     context.nextToken();
                     listDeliverabilityTestReportsResult.setDeliverabilityTestReports(new ListUnmarshaller<DeliverabilityTestReport>(
-                            DeliverabilityTestReportJsonUnmarshaller.getInstance()).unmarshall(context));
+                            DeliverabilityTestReportJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

@@ -59,7 +59,8 @@ public class GetDeliverabilityTestReportResultJsonUnmarshaller implements Unmars
                 if (context.testExpression("IspPlacements", targetDepth)) {
                     context.nextToken();
                     getDeliverabilityTestReportResult.setIspPlacements(new ListUnmarshaller<IspPlacement>(IspPlacementJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Message", targetDepth)) {
                     context.nextToken();
@@ -67,7 +68,9 @@ public class GetDeliverabilityTestReportResultJsonUnmarshaller implements Unmars
                 }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
-                    getDeliverabilityTestReportResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getDeliverabilityTestReportResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

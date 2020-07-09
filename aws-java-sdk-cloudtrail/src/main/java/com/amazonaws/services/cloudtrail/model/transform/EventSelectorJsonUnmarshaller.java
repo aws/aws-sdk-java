@@ -58,11 +58,15 @@ public class EventSelectorJsonUnmarshaller implements Unmarshaller<EventSelector
                 }
                 if (context.testExpression("DataResources", targetDepth)) {
                     context.nextToken();
-                    eventSelector.setDataResources(new ListUnmarshaller<DataResource>(DataResourceJsonUnmarshaller.getInstance()).unmarshall(context));
+                    eventSelector.setDataResources(new ListUnmarshaller<DataResource>(DataResourceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ExcludeManagementEventSources", targetDepth)) {
                     context.nextToken();
-                    eventSelector.setExcludeManagementEventSources(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    eventSelector.setExcludeManagementEventSources(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

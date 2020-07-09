@@ -51,7 +51,8 @@ public class DeclineInvitationsResultJsonUnmarshaller implements Unmarshaller<De
                 if (context.testExpression("unprocessedAccounts", targetDepth)) {
                     context.nextToken();
                     declineInvitationsResult.setUnprocessedAccounts(new ListUnmarshaller<UnprocessedAccount>(UnprocessedAccountJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

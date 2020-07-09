@@ -51,7 +51,9 @@ public class ListHyperParameterTuningJobsResultJsonUnmarshaller implements Unmar
                 if (context.testExpression("HyperParameterTuningJobSummaries", targetDepth)) {
                     context.nextToken();
                     listHyperParameterTuningJobsResult.setHyperParameterTuningJobSummaries(new ListUnmarshaller<HyperParameterTuningJobSummary>(
-                            HyperParameterTuningJobSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                            HyperParameterTuningJobSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

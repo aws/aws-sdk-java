@@ -50,11 +50,15 @@ public class DataColorPaletteJsonUnmarshaller implements Unmarshaller<DataColorP
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Colors", targetDepth)) {
                     context.nextToken();
-                    dataColorPalette.setColors(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    dataColorPalette.setColors(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("MinMaxGradient", targetDepth)) {
                     context.nextToken();
-                    dataColorPalette.setMinMaxGradient(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    dataColorPalette.setMinMaxGradient(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("EmptyFillColor", targetDepth)) {
                     context.nextToken();

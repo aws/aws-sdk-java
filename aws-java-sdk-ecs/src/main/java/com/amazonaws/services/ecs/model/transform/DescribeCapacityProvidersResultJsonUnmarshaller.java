@@ -51,11 +51,14 @@ public class DescribeCapacityProvidersResultJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("capacityProviders", targetDepth)) {
                     context.nextToken();
                     describeCapacityProvidersResult.setCapacityProviders(new ListUnmarshaller<CapacityProvider>(CapacityProviderJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("failures", targetDepth)) {
                     context.nextToken();
-                    describeCapacityProvidersResult.setFailures(new ListUnmarshaller<Failure>(FailureJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeCapacityProvidersResult.setFailures(new ListUnmarshaller<Failure>(FailureJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

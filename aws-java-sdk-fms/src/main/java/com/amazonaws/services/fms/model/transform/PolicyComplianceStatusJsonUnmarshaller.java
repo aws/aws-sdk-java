@@ -67,7 +67,8 @@ public class PolicyComplianceStatusJsonUnmarshaller implements Unmarshaller<Poli
                 if (context.testExpression("EvaluationResults", targetDepth)) {
                     context.nextToken();
                     policyComplianceStatus.setEvaluationResults(new ListUnmarshaller<EvaluationResult>(EvaluationResultJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("LastUpdated", targetDepth)) {
                     context.nextToken();

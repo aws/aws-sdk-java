@@ -51,7 +51,9 @@ public class DescribeRemediationConfigurationsResultJsonUnmarshaller implements 
                 if (context.testExpression("RemediationConfigurations", targetDepth)) {
                     context.nextToken();
                     describeRemediationConfigurationsResult.setRemediationConfigurations(new ListUnmarshaller<RemediationConfiguration>(
-                            RemediationConfigurationJsonUnmarshaller.getInstance()).unmarshall(context));
+                            RemediationConfigurationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

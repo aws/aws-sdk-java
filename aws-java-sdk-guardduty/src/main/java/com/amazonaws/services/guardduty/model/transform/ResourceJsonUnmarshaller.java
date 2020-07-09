@@ -54,7 +54,9 @@ public class ResourceJsonUnmarshaller implements Unmarshaller<Resource, JsonUnma
                 }
                 if (context.testExpression("s3BucketDetails", targetDepth)) {
                     context.nextToken();
-                    resource.setS3BucketDetails(new ListUnmarshaller<S3BucketDetail>(S3BucketDetailJsonUnmarshaller.getInstance()).unmarshall(context));
+                    resource.setS3BucketDetails(new ListUnmarshaller<S3BucketDetail>(S3BucketDetailJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("instanceDetails", targetDepth)) {
                     context.nextToken();

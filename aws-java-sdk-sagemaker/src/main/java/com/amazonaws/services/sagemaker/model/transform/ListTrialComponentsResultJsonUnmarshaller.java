@@ -51,7 +51,9 @@ public class ListTrialComponentsResultJsonUnmarshaller implements Unmarshaller<L
                 if (context.testExpression("TrialComponentSummaries", targetDepth)) {
                     context.nextToken();
                     listTrialComponentsResult.setTrialComponentSummaries(new ListUnmarshaller<TrialComponentSummary>(TrialComponentSummaryJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

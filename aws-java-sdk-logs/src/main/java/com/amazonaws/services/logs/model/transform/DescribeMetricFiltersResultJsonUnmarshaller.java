@@ -51,7 +51,8 @@ public class DescribeMetricFiltersResultJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("metricFilters", targetDepth)) {
                     context.nextToken();
                     describeMetricFiltersResult.setMetricFilters(new ListUnmarshaller<MetricFilter>(MetricFilterJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

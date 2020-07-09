@@ -83,7 +83,8 @@ public class DataSourceJsonUnmarshaller implements Unmarshaller<DataSource, Json
                 if (context.testExpression("AlternateDataSourceParameters", targetDepth)) {
                     context.nextToken();
                     dataSource.setAlternateDataSourceParameters(new ListUnmarshaller<DataSourceParameters>(DataSourceParametersJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("VpcConnectionProperties", targetDepth)) {
                     context.nextToken();

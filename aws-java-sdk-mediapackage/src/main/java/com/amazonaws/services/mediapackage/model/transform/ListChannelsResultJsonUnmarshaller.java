@@ -50,7 +50,9 @@ public class ListChannelsResultJsonUnmarshaller implements Unmarshaller<ListChan
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("channels", targetDepth)) {
                     context.nextToken();
-                    listChannelsResult.setChannels(new ListUnmarshaller<Channel>(ChannelJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listChannelsResult.setChannels(new ListUnmarshaller<Channel>(ChannelJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

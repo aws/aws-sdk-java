@@ -50,7 +50,9 @@ public class AdminListDevicesResultJsonUnmarshaller implements Unmarshaller<Admi
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Devices", targetDepth)) {
                     context.nextToken();
-                    adminListDevicesResult.setDevices(new ListUnmarshaller<DeviceType>(DeviceTypeJsonUnmarshaller.getInstance()).unmarshall(context));
+                    adminListDevicesResult.setDevices(new ListUnmarshaller<DeviceType>(DeviceTypeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("PaginationToken", targetDepth)) {
                     context.nextToken();

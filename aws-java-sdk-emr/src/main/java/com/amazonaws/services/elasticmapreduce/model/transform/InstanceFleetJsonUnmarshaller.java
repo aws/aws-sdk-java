@@ -83,7 +83,9 @@ public class InstanceFleetJsonUnmarshaller implements Unmarshaller<InstanceFleet
                 if (context.testExpression("InstanceTypeSpecifications", targetDepth)) {
                     context.nextToken();
                     instanceFleet.setInstanceTypeSpecifications(new ListUnmarshaller<InstanceTypeSpecification>(InstanceTypeSpecificationJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("LaunchSpecifications", targetDepth)) {
                     context.nextToken();

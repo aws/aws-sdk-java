@@ -51,7 +51,9 @@ public class ForecastJsonUnmarshaller implements Unmarshaller<Forecast, JsonUnma
                 if (context.testExpression("Predictions", targetDepth)) {
                     context.nextToken();
                     forecast.setPredictions(new MapUnmarshaller<String, java.util.List<DataPoint>>(context.getUnmarshaller(String.class),
-                            new ListUnmarshaller<DataPoint>(DataPointJsonUnmarshaller.getInstance())).unmarshall(context));
+                            new ListUnmarshaller<DataPoint>(DataPointJsonUnmarshaller.getInstance())
+
+                    ).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

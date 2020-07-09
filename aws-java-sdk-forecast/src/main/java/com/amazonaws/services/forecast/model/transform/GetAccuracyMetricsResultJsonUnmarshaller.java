@@ -51,7 +51,9 @@ public class GetAccuracyMetricsResultJsonUnmarshaller implements Unmarshaller<Ge
                 if (context.testExpression("PredictorEvaluationResults", targetDepth)) {
                     context.nextToken();
                     getAccuracyMetricsResult.setPredictorEvaluationResults(new ListUnmarshaller<EvaluationResult>(EvaluationResultJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -58,7 +58,9 @@ public class EventJsonUnmarshaller implements Unmarshaller<Event, JsonUnmarshall
                 }
                 if (context.testExpression("actions", targetDepth)) {
                     context.nextToken();
-                    event.setActions(new ListUnmarshaller<Action>(ActionJsonUnmarshaller.getInstance()).unmarshall(context));
+                    event.setActions(new ListUnmarshaller<Action>(ActionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -50,8 +50,9 @@ public class DescribeTapeArchivesResultJsonUnmarshaller implements Unmarshaller<
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TapeArchives", targetDepth)) {
                     context.nextToken();
-                    describeTapeArchivesResult
-                            .setTapeArchives(new ListUnmarshaller<TapeArchive>(TapeArchiveJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeTapeArchivesResult.setTapeArchives(new ListUnmarshaller<TapeArchive>(TapeArchiveJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Marker", targetDepth)) {
                     context.nextToken();

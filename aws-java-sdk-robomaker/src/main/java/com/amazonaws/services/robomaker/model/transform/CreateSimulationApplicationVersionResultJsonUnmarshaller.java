@@ -63,7 +63,9 @@ public class CreateSimulationApplicationVersionResultJsonUnmarshaller implements
                 }
                 if (context.testExpression("sources", targetDepth)) {
                     context.nextToken();
-                    createSimulationApplicationVersionResult.setSources(new ListUnmarshaller<Source>(SourceJsonUnmarshaller.getInstance()).unmarshall(context));
+                    createSimulationApplicationVersionResult.setSources(new ListUnmarshaller<Source>(SourceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("simulationSoftwareSuite", targetDepth)) {
                     context.nextToken();

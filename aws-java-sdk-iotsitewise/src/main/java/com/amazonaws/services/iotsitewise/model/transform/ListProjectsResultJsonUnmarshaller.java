@@ -51,7 +51,8 @@ public class ListProjectsResultJsonUnmarshaller implements Unmarshaller<ListProj
                 if (context.testExpression("projectSummaries", targetDepth)) {
                     context.nextToken();
                     listProjectsResult.setProjectSummaries(new ListUnmarshaller<ProjectSummary>(ProjectSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

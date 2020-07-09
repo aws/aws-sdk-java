@@ -52,7 +52,9 @@ public class DescribeDirectConnectGatewayAssociationsResultJsonUnmarshaller impl
                 if (context.testExpression("directConnectGatewayAssociations", targetDepth)) {
                     context.nextToken();
                     describeDirectConnectGatewayAssociationsResult.setDirectConnectGatewayAssociations(new ListUnmarshaller<DirectConnectGatewayAssociation>(
-                            DirectConnectGatewayAssociationJsonUnmarshaller.getInstance()).unmarshall(context));
+                            DirectConnectGatewayAssociationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

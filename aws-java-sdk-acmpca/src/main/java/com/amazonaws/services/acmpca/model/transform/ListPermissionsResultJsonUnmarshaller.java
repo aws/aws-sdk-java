@@ -50,7 +50,9 @@ public class ListPermissionsResultJsonUnmarshaller implements Unmarshaller<ListP
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Permissions", targetDepth)) {
                     context.nextToken();
-                    listPermissionsResult.setPermissions(new ListUnmarshaller<Permission>(PermissionJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listPermissionsResult.setPermissions(new ListUnmarshaller<Permission>(PermissionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

@@ -54,7 +54,9 @@ public class GetTagValuesResultJsonUnmarshaller implements Unmarshaller<GetTagVa
                 }
                 if (context.testExpression("TagValues", targetDepth)) {
                     context.nextToken();
-                    getTagValuesResult.setTagValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    getTagValuesResult.setTagValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

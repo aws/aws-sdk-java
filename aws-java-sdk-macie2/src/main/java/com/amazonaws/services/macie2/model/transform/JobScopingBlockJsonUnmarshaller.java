@@ -50,7 +50,9 @@ public class JobScopingBlockJsonUnmarshaller implements Unmarshaller<JobScopingB
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("and", targetDepth)) {
                     context.nextToken();
-                    jobScopingBlock.setAnd(new ListUnmarshaller<JobScopeTerm>(JobScopeTermJsonUnmarshaller.getInstance()).unmarshall(context));
+                    jobScopingBlock.setAnd(new ListUnmarshaller<JobScopeTerm>(JobScopeTermJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

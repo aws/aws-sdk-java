@@ -50,7 +50,9 @@ public class HlsIngestJsonUnmarshaller implements Unmarshaller<HlsIngest, JsonUn
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ingestEndpoints", targetDepth)) {
                     context.nextToken();
-                    hlsIngest.setIngestEndpoints(new ListUnmarshaller<IngestEndpoint>(IngestEndpointJsonUnmarshaller.getInstance()).unmarshall(context));
+                    hlsIngest.setIngestEndpoints(new ListUnmarshaller<IngestEndpoint>(IngestEndpointJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

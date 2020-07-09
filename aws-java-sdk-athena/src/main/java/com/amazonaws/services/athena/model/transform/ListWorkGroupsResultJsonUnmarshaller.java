@@ -51,7 +51,8 @@ public class ListWorkGroupsResultJsonUnmarshaller implements Unmarshaller<ListWo
                 if (context.testExpression("WorkGroups", targetDepth)) {
                     context.nextToken();
                     listWorkGroupsResult.setWorkGroups(new ListUnmarshaller<WorkGroupSummary>(WorkGroupSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

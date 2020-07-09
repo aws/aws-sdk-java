@@ -55,7 +55,8 @@ public class ListFunctionsResultJsonUnmarshaller implements Unmarshaller<ListFun
                 if (context.testExpression("Functions", targetDepth)) {
                     context.nextToken();
                     listFunctionsResult.setFunctions(new ListUnmarshaller<FunctionConfiguration>(FunctionConfigurationJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

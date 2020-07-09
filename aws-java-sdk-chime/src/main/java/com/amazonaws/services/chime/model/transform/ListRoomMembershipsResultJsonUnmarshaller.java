@@ -51,7 +51,8 @@ public class ListRoomMembershipsResultJsonUnmarshaller implements Unmarshaller<L
                 if (context.testExpression("RoomMemberships", targetDepth)) {
                     context.nextToken();
                     listRoomMembershipsResult.setRoomMemberships(new ListUnmarshaller<RoomMembership>(RoomMembershipJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

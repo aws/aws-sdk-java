@@ -58,7 +58,9 @@ public class CreateRuleJsonUnmarshaller implements Unmarshaller<CreateRule, Json
                 }
                 if (context.testExpression("Times", targetDepth)) {
                     context.nextToken();
-                    createRule.setTimes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    createRule.setTimes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("CronExpression", targetDepth)) {
                     context.nextToken();

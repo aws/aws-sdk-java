@@ -54,7 +54,9 @@ public class JobAlbumArtJsonUnmarshaller implements Unmarshaller<JobAlbumArt, Js
                 }
                 if (context.testExpression("Artwork", targetDepth)) {
                     context.nextToken();
-                    jobAlbumArt.setArtwork(new ListUnmarshaller<Artwork>(ArtworkJsonUnmarshaller.getInstance()).unmarshall(context));
+                    jobAlbumArt.setArtwork(new ListUnmarshaller<Artwork>(ArtworkJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

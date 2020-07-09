@@ -59,7 +59,8 @@ public class DescribeAssetResultJsonUnmarshaller implements Unmarshaller<Describ
                 if (context.testExpression("egressEndpoints", targetDepth)) {
                     context.nextToken();
                     describeAssetResult.setEgressEndpoints(new ListUnmarshaller<EgressEndpoint>(EgressEndpointJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();

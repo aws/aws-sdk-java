@@ -50,7 +50,9 @@ public class OutputResourcesJsonUnmarshaller implements Unmarshaller<OutputResou
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("amis", targetDepth)) {
                     context.nextToken();
-                    outputResources.setAmis(new ListUnmarshaller<Ami>(AmiJsonUnmarshaller.getInstance()).unmarshall(context));
+                    outputResources.setAmis(new ListUnmarshaller<Ami>(AmiJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

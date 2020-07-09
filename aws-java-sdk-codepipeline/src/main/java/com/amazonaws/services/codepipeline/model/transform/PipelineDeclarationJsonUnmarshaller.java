@@ -67,7 +67,9 @@ public class PipelineDeclarationJsonUnmarshaller implements Unmarshaller<Pipelin
                 }
                 if (context.testExpression("stages", targetDepth)) {
                     context.nextToken();
-                    pipelineDeclaration.setStages(new ListUnmarshaller<StageDeclaration>(StageDeclarationJsonUnmarshaller.getInstance()).unmarshall(context));
+                    pipelineDeclaration.setStages(new ListUnmarshaller<StageDeclaration>(StageDeclarationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("version", targetDepth)) {
                     context.nextToken();

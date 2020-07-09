@@ -51,7 +51,8 @@ public class GetSampledRequestsResultJsonUnmarshaller implements Unmarshaller<Ge
                 if (context.testExpression("SampledRequests", targetDepth)) {
                     context.nextToken();
                     getSampledRequestsResult.setSampledRequests(new ListUnmarshaller<SampledHTTPRequest>(SampledHTTPRequestJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("PopulationSize", targetDepth)) {
                     context.nextToken();

@@ -51,7 +51,8 @@ public class DescribeAccountAttributesResultJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("Attributes", targetDepth)) {
                     context.nextToken();
                     describeAccountAttributesResult.setAttributes(new ListUnmarshaller<AccountAttribute>(AccountAttributeJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

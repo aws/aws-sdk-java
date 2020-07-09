@@ -74,7 +74,9 @@ public class LoadBalancerJsonUnmarshaller implements Unmarshaller<LoadBalancer, 
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
-                    loadBalancer.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    loadBalancer.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("dnsName", targetDepth)) {
                     context.nextToken();
@@ -90,7 +92,9 @@ public class LoadBalancerJsonUnmarshaller implements Unmarshaller<LoadBalancer, 
                 }
                 if (context.testExpression("publicPorts", targetDepth)) {
                     context.nextToken();
-                    loadBalancer.setPublicPorts(new ListUnmarshaller<Integer>(context.getUnmarshaller(Integer.class)).unmarshall(context));
+                    loadBalancer.setPublicPorts(new ListUnmarshaller<Integer>(context.getUnmarshaller(Integer.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("healthCheckPath", targetDepth)) {
                     context.nextToken();
@@ -103,12 +107,15 @@ public class LoadBalancerJsonUnmarshaller implements Unmarshaller<LoadBalancer, 
                 if (context.testExpression("instanceHealthSummary", targetDepth)) {
                     context.nextToken();
                     loadBalancer.setInstanceHealthSummary(new ListUnmarshaller<InstanceHealthSummary>(InstanceHealthSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("tlsCertificateSummaries", targetDepth)) {
                     context.nextToken();
                     loadBalancer.setTlsCertificateSummaries(new ListUnmarshaller<LoadBalancerTlsCertificateSummary>(
-                            LoadBalancerTlsCertificateSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                            LoadBalancerTlsCertificateSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("configurationOptions", targetDepth)) {
                     context.nextToken();

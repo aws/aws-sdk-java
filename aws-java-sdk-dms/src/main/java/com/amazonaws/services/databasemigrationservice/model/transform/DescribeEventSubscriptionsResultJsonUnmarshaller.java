@@ -55,7 +55,9 @@ public class DescribeEventSubscriptionsResultJsonUnmarshaller implements Unmarsh
                 if (context.testExpression("EventSubscriptionsList", targetDepth)) {
                     context.nextToken();
                     describeEventSubscriptionsResult.setEventSubscriptionsList(new ListUnmarshaller<EventSubscription>(EventSubscriptionJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

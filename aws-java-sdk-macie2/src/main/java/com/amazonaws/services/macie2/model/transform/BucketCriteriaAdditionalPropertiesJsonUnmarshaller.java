@@ -50,7 +50,9 @@ public class BucketCriteriaAdditionalPropertiesJsonUnmarshaller implements Unmar
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("eq", targetDepth)) {
                     context.nextToken();
-                    bucketCriteriaAdditionalProperties.setEq(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    bucketCriteriaAdditionalProperties.setEq(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("gt", targetDepth)) {
                     context.nextToken();
@@ -70,7 +72,9 @@ public class BucketCriteriaAdditionalPropertiesJsonUnmarshaller implements Unmar
                 }
                 if (context.testExpression("neq", targetDepth)) {
                     context.nextToken();
-                    bucketCriteriaAdditionalProperties.setNeq(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    bucketCriteriaAdditionalProperties.setNeq(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("prefix", targetDepth)) {
                     context.nextToken();

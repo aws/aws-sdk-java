@@ -54,7 +54,9 @@ public class ConflictJsonUnmarshaller implements Unmarshaller<Conflict, JsonUnma
                 }
                 if (context.testExpression("mergeHunks", targetDepth)) {
                     context.nextToken();
-                    conflict.setMergeHunks(new ListUnmarshaller<MergeHunk>(MergeHunkJsonUnmarshaller.getInstance()).unmarshall(context));
+                    conflict.setMergeHunks(new ListUnmarshaller<MergeHunk>(MergeHunkJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

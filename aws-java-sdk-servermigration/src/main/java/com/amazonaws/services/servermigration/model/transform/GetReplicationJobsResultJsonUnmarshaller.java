@@ -51,7 +51,8 @@ public class GetReplicationJobsResultJsonUnmarshaller implements Unmarshaller<Ge
                 if (context.testExpression("replicationJobList", targetDepth)) {
                     context.nextToken();
                     getReplicationJobsResult.setReplicationJobList(new ListUnmarshaller<ReplicationJob>(ReplicationJobJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

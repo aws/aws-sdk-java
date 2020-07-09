@@ -52,7 +52,9 @@ public class ListFailuresForLicenseConfigurationOperationsResultJsonUnmarshaller
                 if (context.testExpression("LicenseOperationFailureList", targetDepth)) {
                     context.nextToken();
                     listFailuresForLicenseConfigurationOperationsResult.setLicenseOperationFailureList(new ListUnmarshaller<LicenseOperationFailure>(
-                            LicenseOperationFailureJsonUnmarshaller.getInstance()).unmarshall(context));
+                            LicenseOperationFailureJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

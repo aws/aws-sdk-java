@@ -82,7 +82,9 @@ public class DescribedServerJsonUnmarshaller implements Unmarshaller<DescribedSe
                 }
                 if (context.testExpression("Protocols", targetDepth)) {
                     context.nextToken();
-                    describedServer.setProtocols(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    describedServer.setProtocols(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ServerId", targetDepth)) {
                     context.nextToken();
@@ -94,7 +96,9 @@ public class DescribedServerJsonUnmarshaller implements Unmarshaller<DescribedSe
                 }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
-                    describedServer.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describedServer.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("UserCount", targetDepth)) {
                     context.nextToken();

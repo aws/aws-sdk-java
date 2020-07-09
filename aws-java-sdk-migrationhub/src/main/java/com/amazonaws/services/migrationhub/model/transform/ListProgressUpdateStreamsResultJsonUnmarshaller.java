@@ -51,7 +51,9 @@ public class ListProgressUpdateStreamsResultJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("ProgressUpdateStreamSummaryList", targetDepth)) {
                     context.nextToken();
                     listProgressUpdateStreamsResult.setProgressUpdateStreamSummaryList(new ListUnmarshaller<ProgressUpdateStreamSummary>(
-                            ProgressUpdateStreamSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ProgressUpdateStreamSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

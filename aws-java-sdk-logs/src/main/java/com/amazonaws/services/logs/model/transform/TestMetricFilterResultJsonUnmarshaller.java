@@ -51,7 +51,8 @@ public class TestMetricFilterResultJsonUnmarshaller implements Unmarshaller<Test
                 if (context.testExpression("matches", targetDepth)) {
                     context.nextToken();
                     testMetricFilterResult.setMatches(new ListUnmarshaller<MetricFilterMatchRecord>(MetricFilterMatchRecordJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

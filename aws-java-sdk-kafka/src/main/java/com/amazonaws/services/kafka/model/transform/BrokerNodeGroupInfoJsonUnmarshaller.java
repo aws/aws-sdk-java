@@ -54,7 +54,9 @@ public class BrokerNodeGroupInfoJsonUnmarshaller implements Unmarshaller<BrokerN
                 }
                 if (context.testExpression("clientSubnets", targetDepth)) {
                     context.nextToken();
-                    brokerNodeGroupInfo.setClientSubnets(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    brokerNodeGroupInfo.setClientSubnets(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("instanceType", targetDepth)) {
                     context.nextToken();
@@ -62,7 +64,9 @@ public class BrokerNodeGroupInfoJsonUnmarshaller implements Unmarshaller<BrokerN
                 }
                 if (context.testExpression("securityGroups", targetDepth)) {
                     context.nextToken();
-                    brokerNodeGroupInfo.setSecurityGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    brokerNodeGroupInfo.setSecurityGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("storageInfo", targetDepth)) {
                     context.nextToken();

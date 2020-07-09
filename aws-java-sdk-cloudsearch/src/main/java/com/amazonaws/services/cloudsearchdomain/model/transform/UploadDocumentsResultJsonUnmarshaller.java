@@ -63,7 +63,8 @@ public class UploadDocumentsResultJsonUnmarshaller implements Unmarshaller<Uploa
                 if (context.testExpression("warnings", targetDepth)) {
                     context.nextToken();
                     uploadDocumentsResult.setWarnings(new ListUnmarshaller<DocumentServiceWarning>(DocumentServiceWarningJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

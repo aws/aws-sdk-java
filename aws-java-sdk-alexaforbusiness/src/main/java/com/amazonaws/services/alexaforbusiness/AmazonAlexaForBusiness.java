@@ -1112,6 +1112,8 @@ public interface AmazonAlexaForBusiness {
      *         You are performing an action that would put you beyond your account's limits.
      * @throws ConcurrentModificationException
      *         There is a concurrent modification of resources.
+     * @throws NotFoundException
+     *         The resource is not found.
      * @throws InvalidDeviceException
      *         The device is in an invalid state.
      * @sample AmazonAlexaForBusiness.RegisterAVSDevice

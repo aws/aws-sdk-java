@@ -74,7 +74,9 @@ public class CreateApplicationResultJsonUnmarshaller implements Unmarshaller<Cre
                 }
                 if (context.testExpression("labels", targetDepth)) {
                     context.nextToken();
-                    createApplicationResult.setLabels(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    createApplicationResult.setLabels(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("licenseUrl", targetDepth)) {
                     context.nextToken();

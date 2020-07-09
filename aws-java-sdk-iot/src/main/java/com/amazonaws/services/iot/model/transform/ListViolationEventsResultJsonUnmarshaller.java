@@ -51,7 +51,8 @@ public class ListViolationEventsResultJsonUnmarshaller implements Unmarshaller<L
                 if (context.testExpression("violationEvents", targetDepth)) {
                     context.nextToken();
                     listViolationEventsResult.setViolationEvents(new ListUnmarshaller<ViolationEvent>(ViolationEventJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

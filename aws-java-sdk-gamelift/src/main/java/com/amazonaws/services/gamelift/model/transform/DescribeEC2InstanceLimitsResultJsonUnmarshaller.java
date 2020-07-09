@@ -51,7 +51,8 @@ public class DescribeEC2InstanceLimitsResultJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("EC2InstanceLimits", targetDepth)) {
                     context.nextToken();
                     describeEC2InstanceLimitsResult.setEC2InstanceLimits(new ListUnmarshaller<EC2InstanceLimit>(EC2InstanceLimitJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

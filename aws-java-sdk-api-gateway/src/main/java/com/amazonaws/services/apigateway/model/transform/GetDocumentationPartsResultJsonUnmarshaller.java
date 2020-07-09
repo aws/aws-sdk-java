@@ -55,7 +55,8 @@ public class GetDocumentationPartsResultJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("item", targetDepth)) {
                     context.nextToken();
                     getDocumentationPartsResult.setItems(new ListUnmarshaller<DocumentationPart>(DocumentationPartJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

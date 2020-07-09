@@ -51,7 +51,8 @@ public class BatchExecuteStatementResultJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("updateResults", targetDepth)) {
                     context.nextToken();
                     batchExecuteStatementResult.setUpdateResults(new ListUnmarshaller<UpdateResult>(UpdateResultJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

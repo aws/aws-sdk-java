@@ -50,7 +50,9 @@ public class EncryptionConfigurationJsonUnmarshaller implements Unmarshaller<Enc
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("S3Encryption", targetDepth)) {
                     context.nextToken();
-                    encryptionConfiguration.setS3Encryption(new ListUnmarshaller<S3Encryption>(S3EncryptionJsonUnmarshaller.getInstance()).unmarshall(context));
+                    encryptionConfiguration.setS3Encryption(new ListUnmarshaller<S3Encryption>(S3EncryptionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("CloudWatchEncryption", targetDepth)) {
                     context.nextToken();

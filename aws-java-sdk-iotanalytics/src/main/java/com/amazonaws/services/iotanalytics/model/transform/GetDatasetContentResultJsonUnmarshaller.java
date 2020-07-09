@@ -50,7 +50,9 @@ public class GetDatasetContentResultJsonUnmarshaller implements Unmarshaller<Get
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("entries", targetDepth)) {
                     context.nextToken();
-                    getDatasetContentResult.setEntries(new ListUnmarshaller<DatasetEntry>(DatasetEntryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getDatasetContentResult.setEntries(new ListUnmarshaller<DatasetEntry>(DatasetEntryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("timestamp", targetDepth)) {
                     context.nextToken();

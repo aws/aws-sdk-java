@@ -63,7 +63,9 @@ public class DeploymentJobJsonUnmarshaller implements Unmarshaller<DeploymentJob
                 if (context.testExpression("deploymentApplicationConfigs", targetDepth)) {
                     context.nextToken();
                     deploymentJob.setDeploymentApplicationConfigs(new ListUnmarshaller<DeploymentApplicationConfig>(DeploymentApplicationConfigJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("deploymentConfig", targetDepth)) {
                     context.nextToken();

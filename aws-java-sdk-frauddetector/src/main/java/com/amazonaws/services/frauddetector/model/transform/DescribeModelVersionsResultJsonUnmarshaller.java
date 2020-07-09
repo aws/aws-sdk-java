@@ -51,7 +51,9 @@ public class DescribeModelVersionsResultJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("modelVersionDetails", targetDepth)) {
                     context.nextToken();
                     describeModelVersionsResult.setModelVersionDetails(new ListUnmarshaller<ModelVersionDetail>(ModelVersionDetailJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

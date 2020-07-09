@@ -51,7 +51,9 @@ public class ListTestGridSessionArtifactsResultJsonUnmarshaller implements Unmar
                 if (context.testExpression("artifacts", targetDepth)) {
                     context.nextToken();
                     listTestGridSessionArtifactsResult.setArtifacts(new ListUnmarshaller<TestGridSessionArtifact>(TestGridSessionArtifactJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

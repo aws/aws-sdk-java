@@ -51,7 +51,8 @@ public class ListSecretVersionIdsResultJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("Versions", targetDepth)) {
                     context.nextToken();
                     listSecretVersionIdsResult.setVersions(new ListUnmarshaller<SecretVersionsListEntry>(SecretVersionsListEntryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

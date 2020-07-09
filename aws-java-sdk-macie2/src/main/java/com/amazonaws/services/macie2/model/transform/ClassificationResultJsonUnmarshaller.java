@@ -59,7 +59,8 @@ public class ClassificationResultJsonUnmarshaller implements Unmarshaller<Classi
                 if (context.testExpression("sensitiveData", targetDepth)) {
                     context.nextToken();
                     classificationResult.setSensitiveData(new ListUnmarshaller<SensitiveDataItem>(SensitiveDataItemJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("sizeClassified", targetDepth)) {
                     context.nextToken();

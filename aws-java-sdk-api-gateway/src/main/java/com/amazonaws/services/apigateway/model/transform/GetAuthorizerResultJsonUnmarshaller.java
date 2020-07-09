@@ -62,7 +62,9 @@ public class GetAuthorizerResultJsonUnmarshaller implements Unmarshaller<GetAuth
                 }
                 if (context.testExpression("providerARNs", targetDepth)) {
                     context.nextToken();
-                    getAuthorizerResult.setProviderARNs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    getAuthorizerResult.setProviderARNs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("authType", targetDepth)) {
                     context.nextToken();

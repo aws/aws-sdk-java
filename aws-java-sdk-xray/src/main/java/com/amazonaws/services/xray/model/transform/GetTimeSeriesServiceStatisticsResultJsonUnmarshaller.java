@@ -51,7 +51,9 @@ public class GetTimeSeriesServiceStatisticsResultJsonUnmarshaller implements Unm
                 if (context.testExpression("TimeSeriesServiceStatistics", targetDepth)) {
                     context.nextToken();
                     getTimeSeriesServiceStatisticsResult.setTimeSeriesServiceStatistics(new ListUnmarshaller<TimeSeriesServiceStatistics>(
-                            TimeSeriesServiceStatisticsJsonUnmarshaller.getInstance()).unmarshall(context));
+                            TimeSeriesServiceStatisticsJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ContainsOldGroupVersions", targetDepth)) {
                     context.nextToken();

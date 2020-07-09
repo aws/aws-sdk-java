@@ -59,7 +59,9 @@ public class ListQualificationRequestsResultJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("QualificationRequests", targetDepth)) {
                     context.nextToken();
                     listQualificationRequestsResult.setQualificationRequests(new ListUnmarshaller<QualificationRequest>(QualificationRequestJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

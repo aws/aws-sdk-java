@@ -59,7 +59,8 @@ public class ResolveRoomResultJsonUnmarshaller implements Unmarshaller<ResolveRo
                 if (context.testExpression("RoomSkillParameters", targetDepth)) {
                     context.nextToken();
                     resolveRoomResult.setRoomSkillParameters(new ListUnmarshaller<RoomSkillParameter>(RoomSkillParameterJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

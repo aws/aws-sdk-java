@@ -71,12 +71,16 @@ public class DirectConnectGatewayAssociationProposalJsonUnmarshaller implements 
                 if (context.testExpression("existingAllowedPrefixesToDirectConnectGateway", targetDepth)) {
                     context.nextToken();
                     directConnectGatewayAssociationProposal.setExistingAllowedPrefixesToDirectConnectGateway(new ListUnmarshaller<RouteFilterPrefix>(
-                            RouteFilterPrefixJsonUnmarshaller.getInstance()).unmarshall(context));
+                            RouteFilterPrefixJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("requestedAllowedPrefixesToDirectConnectGateway", targetDepth)) {
                     context.nextToken();
                     directConnectGatewayAssociationProposal.setRequestedAllowedPrefixesToDirectConnectGateway(new ListUnmarshaller<RouteFilterPrefix>(
-                            RouteFilterPrefixJsonUnmarshaller.getInstance()).unmarshall(context));
+                            RouteFilterPrefixJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

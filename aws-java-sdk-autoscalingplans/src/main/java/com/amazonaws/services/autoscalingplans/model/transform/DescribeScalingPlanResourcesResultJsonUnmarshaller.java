@@ -51,7 +51,9 @@ public class DescribeScalingPlanResourcesResultJsonUnmarshaller implements Unmar
                 if (context.testExpression("ScalingPlanResources", targetDepth)) {
                     context.nextToken();
                     describeScalingPlanResourcesResult.setScalingPlanResources(new ListUnmarshaller<ScalingPlanResource>(ScalingPlanResourceJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

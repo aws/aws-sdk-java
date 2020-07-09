@@ -54,7 +54,9 @@ public class ListServicesResultJsonUnmarshaller implements Unmarshaller<ListServ
                 }
                 if (context.testExpression("Services", targetDepth)) {
                     context.nextToken();
-                    listServicesResult.setServices(new ListUnmarshaller<ServiceInfo>(ServiceInfoJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listServicesResult.setServices(new ListUnmarshaller<ServiceInfo>(ServiceInfoJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

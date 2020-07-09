@@ -64,7 +64,9 @@ public class EndpointSendConfigurationJsonUnmarshaller implements Unmarshaller<E
                 if (context.testExpression("Substitutions", targetDepth)) {
                     context.nextToken();
                     endpointSendConfiguration.setSubstitutions(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
-                            new ListUnmarshaller<String>(context.getUnmarshaller(String.class))).unmarshall(context));
+                            new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    ).unmarshall(context));
                 }
                 if (context.testExpression("TitleOverride", targetDepth)) {
                     context.nextToken();

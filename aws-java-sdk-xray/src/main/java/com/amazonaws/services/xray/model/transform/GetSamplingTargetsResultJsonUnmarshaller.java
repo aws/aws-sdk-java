@@ -51,7 +51,9 @@ public class GetSamplingTargetsResultJsonUnmarshaller implements Unmarshaller<Ge
                 if (context.testExpression("SamplingTargetDocuments", targetDepth)) {
                     context.nextToken();
                     getSamplingTargetsResult.setSamplingTargetDocuments(new ListUnmarshaller<SamplingTargetDocument>(SamplingTargetDocumentJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("LastRuleModification", targetDepth)) {
                     context.nextToken();
@@ -60,7 +62,9 @@ public class GetSamplingTargetsResultJsonUnmarshaller implements Unmarshaller<Ge
                 if (context.testExpression("UnprocessedStatistics", targetDepth)) {
                     context.nextToken();
                     getSamplingTargetsResult.setUnprocessedStatistics(new ListUnmarshaller<UnprocessedStatistics>(UnprocessedStatisticsJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

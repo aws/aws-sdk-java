@@ -51,7 +51,9 @@ public class ListDiscoveredResourcesResultJsonUnmarshaller implements Unmarshall
                 if (context.testExpression("resourceIdentifiers", targetDepth)) {
                     context.nextToken();
                     listDiscoveredResourcesResult.setResourceIdentifiers(new ListUnmarshaller<ResourceIdentifier>(ResourceIdentifierJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

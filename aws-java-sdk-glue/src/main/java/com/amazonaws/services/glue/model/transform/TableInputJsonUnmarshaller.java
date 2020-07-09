@@ -78,7 +78,9 @@ public class TableInputJsonUnmarshaller implements Unmarshaller<TableInput, Json
                 }
                 if (context.testExpression("PartitionKeys", targetDepth)) {
                     context.nextToken();
-                    tableInput.setPartitionKeys(new ListUnmarshaller<Column>(ColumnJsonUnmarshaller.getInstance()).unmarshall(context));
+                    tableInput.setPartitionKeys(new ListUnmarshaller<Column>(ColumnJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ViewOriginalText", targetDepth)) {
                     context.nextToken();

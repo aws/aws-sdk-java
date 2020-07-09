@@ -55,7 +55,8 @@ public class AddFlowVpcInterfacesResultJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("vpcInterfaces", targetDepth)) {
                     context.nextToken();
                     addFlowVpcInterfacesResult.setVpcInterfaces(new ListUnmarshaller<VpcInterface>(VpcInterfaceJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -55,7 +55,8 @@ public class EnvironmentPlatformJsonUnmarshaller implements Unmarshaller<Environ
                 if (context.testExpression("languages", targetDepth)) {
                     context.nextToken();
                     environmentPlatform.setLanguages(new ListUnmarshaller<EnvironmentLanguage>(EnvironmentLanguageJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

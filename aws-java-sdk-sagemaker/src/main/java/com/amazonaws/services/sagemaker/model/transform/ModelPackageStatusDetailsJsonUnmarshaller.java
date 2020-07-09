@@ -51,12 +51,16 @@ public class ModelPackageStatusDetailsJsonUnmarshaller implements Unmarshaller<M
                 if (context.testExpression("ValidationStatuses", targetDepth)) {
                     context.nextToken();
                     modelPackageStatusDetails.setValidationStatuses(new ListUnmarshaller<ModelPackageStatusItem>(ModelPackageStatusItemJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ImageScanStatuses", targetDepth)) {
                     context.nextToken();
                     modelPackageStatusDetails.setImageScanStatuses(new ListUnmarshaller<ModelPackageStatusItem>(ModelPackageStatusItemJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

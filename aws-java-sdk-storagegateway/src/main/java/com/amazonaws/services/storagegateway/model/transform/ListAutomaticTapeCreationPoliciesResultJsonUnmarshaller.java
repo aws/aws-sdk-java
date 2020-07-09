@@ -51,7 +51,9 @@ public class ListAutomaticTapeCreationPoliciesResultJsonUnmarshaller implements 
                 if (context.testExpression("AutomaticTapeCreationPolicyInfos", targetDepth)) {
                     context.nextToken();
                     listAutomaticTapeCreationPoliciesResult.setAutomaticTapeCreationPolicyInfos(new ListUnmarshaller<AutomaticTapeCreationPolicyInfo>(
-                            AutomaticTapeCreationPolicyInfoJsonUnmarshaller.getInstance()).unmarshall(context));
+                            AutomaticTapeCreationPolicyInfoJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

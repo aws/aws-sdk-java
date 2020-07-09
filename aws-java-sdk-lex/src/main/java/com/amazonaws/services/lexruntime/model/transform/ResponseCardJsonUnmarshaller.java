@@ -59,7 +59,8 @@ public class ResponseCardJsonUnmarshaller implements Unmarshaller<ResponseCard, 
                 if (context.testExpression("genericAttachments", targetDepth)) {
                     context.nextToken();
                     responseCard.setGenericAttachments(new ListUnmarshaller<GenericAttachment>(GenericAttachmentJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

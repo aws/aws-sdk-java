@@ -50,11 +50,15 @@ public class InstanceResizePolicyJsonUnmarshaller implements Unmarshaller<Instan
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("InstancesToTerminate", targetDepth)) {
                     context.nextToken();
-                    instanceResizePolicy.setInstancesToTerminate(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    instanceResizePolicy.setInstancesToTerminate(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("InstancesToProtect", targetDepth)) {
                     context.nextToken();
-                    instanceResizePolicy.setInstancesToProtect(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    instanceResizePolicy.setInstancesToProtect(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("InstanceTerminationTimeout", targetDepth)) {
                     context.nextToken();

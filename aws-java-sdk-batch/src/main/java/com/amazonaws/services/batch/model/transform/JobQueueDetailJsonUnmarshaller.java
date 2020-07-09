@@ -75,7 +75,9 @@ public class JobQueueDetailJsonUnmarshaller implements Unmarshaller<JobQueueDeta
                 if (context.testExpression("computeEnvironmentOrder", targetDepth)) {
                     context.nextToken();
                     jobQueueDetail.setComputeEnvironmentOrder(new ListUnmarshaller<ComputeEnvironmentOrder>(ComputeEnvironmentOrderJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

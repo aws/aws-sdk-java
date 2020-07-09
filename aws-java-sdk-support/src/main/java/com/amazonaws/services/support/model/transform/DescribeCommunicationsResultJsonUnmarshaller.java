@@ -51,7 +51,8 @@ public class DescribeCommunicationsResultJsonUnmarshaller implements Unmarshalle
                 if (context.testExpression("communications", targetDepth)) {
                     context.nextToken();
                     describeCommunicationsResult.setCommunications(new ListUnmarshaller<Communication>(CommunicationJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

@@ -50,7 +50,9 @@ public class ListThingRegistrationTasksResultJsonUnmarshaller implements Unmarsh
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("taskIds", targetDepth)) {
                     context.nextToken();
-                    listThingRegistrationTasksResult.setTaskIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    listThingRegistrationTasksResult.setTaskIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

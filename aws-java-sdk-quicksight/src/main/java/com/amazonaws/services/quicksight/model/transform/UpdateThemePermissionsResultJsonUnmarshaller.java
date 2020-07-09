@@ -61,7 +61,8 @@ public class UpdateThemePermissionsResultJsonUnmarshaller implements Unmarshalle
                 if (context.testExpression("Permissions", targetDepth)) {
                     context.nextToken();
                     updateThemePermissionsResult.setPermissions(new ListUnmarshaller<ResourcePermission>(ResourcePermissionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("RequestId", targetDepth)) {
                     context.nextToken();

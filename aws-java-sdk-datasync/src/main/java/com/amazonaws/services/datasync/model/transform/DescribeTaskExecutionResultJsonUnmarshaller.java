@@ -62,11 +62,15 @@ public class DescribeTaskExecutionResultJsonUnmarshaller implements Unmarshaller
                 }
                 if (context.testExpression("Excludes", targetDepth)) {
                     context.nextToken();
-                    describeTaskExecutionResult.setExcludes(new ListUnmarshaller<FilterRule>(FilterRuleJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeTaskExecutionResult.setExcludes(new ListUnmarshaller<FilterRule>(FilterRuleJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Includes", targetDepth)) {
                     context.nextToken();
-                    describeTaskExecutionResult.setIncludes(new ListUnmarshaller<FilterRule>(FilterRuleJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeTaskExecutionResult.setIncludes(new ListUnmarshaller<FilterRule>(FilterRuleJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
                     context.nextToken();

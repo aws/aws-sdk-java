@@ -126,7 +126,9 @@ public class UpdateFunctionConfigurationResultJsonUnmarshaller implements Unmars
                 }
                 if (context.testExpression("Layers", targetDepth)) {
                     context.nextToken();
-                    updateFunctionConfigurationResult.setLayers(new ListUnmarshaller<Layer>(LayerJsonUnmarshaller.getInstance()).unmarshall(context));
+                    updateFunctionConfigurationResult.setLayers(new ListUnmarshaller<Layer>(LayerJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
                     context.nextToken();
@@ -155,7 +157,9 @@ public class UpdateFunctionConfigurationResultJsonUnmarshaller implements Unmars
                 if (context.testExpression("FileSystemConfigs", targetDepth)) {
                     context.nextToken();
                     updateFunctionConfigurationResult.setFileSystemConfigs(new ListUnmarshaller<FileSystemConfig>(FileSystemConfigJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

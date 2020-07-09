@@ -59,7 +59,8 @@ public class GetDataflowEndpointGroupResultJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("endpointsDetails", targetDepth)) {
                     context.nextToken();
                     getDataflowEndpointGroupResult.setEndpointsDetails(new ListUnmarshaller<EndpointDetails>(EndpointDetailsJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();

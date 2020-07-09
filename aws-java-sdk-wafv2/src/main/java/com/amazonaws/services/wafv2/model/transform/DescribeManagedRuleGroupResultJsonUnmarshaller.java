@@ -54,7 +54,9 @@ public class DescribeManagedRuleGroupResultJsonUnmarshaller implements Unmarshal
                 }
                 if (context.testExpression("Rules", targetDepth)) {
                     context.nextToken();
-                    describeManagedRuleGroupResult.setRules(new ListUnmarshaller<RuleSummary>(RuleSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeManagedRuleGroupResult.setRules(new ListUnmarshaller<RuleSummary>(RuleSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

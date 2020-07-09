@@ -51,7 +51,8 @@ public class GetTraceSummariesResultJsonUnmarshaller implements Unmarshaller<Get
                 if (context.testExpression("TraceSummaries", targetDepth)) {
                     context.nextToken();
                     getTraceSummariesResult.setTraceSummaries(new ListUnmarshaller<TraceSummary>(TraceSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ApproximateTime", targetDepth)) {
                     context.nextToken();

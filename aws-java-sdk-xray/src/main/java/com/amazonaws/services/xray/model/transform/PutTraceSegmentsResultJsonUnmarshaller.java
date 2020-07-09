@@ -51,7 +51,9 @@ public class PutTraceSegmentsResultJsonUnmarshaller implements Unmarshaller<PutT
                 if (context.testExpression("UnprocessedTraceSegments", targetDepth)) {
                     context.nextToken();
                     putTraceSegmentsResult.setUnprocessedTraceSegments(new ListUnmarshaller<UnprocessedTraceSegment>(UnprocessedTraceSegmentJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

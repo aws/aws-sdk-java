@@ -78,7 +78,9 @@ public class RxNormAttributeJsonUnmarshaller implements Unmarshaller<RxNormAttri
                 }
                 if (context.testExpression("Traits", targetDepth)) {
                     context.nextToken();
-                    rxNormAttribute.setTraits(new ListUnmarshaller<RxNormTrait>(RxNormTraitJsonUnmarshaller.getInstance()).unmarshall(context));
+                    rxNormAttribute.setTraits(new ListUnmarshaller<RxNormTrait>(RxNormTraitJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

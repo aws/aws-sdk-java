@@ -51,7 +51,9 @@ public class MultiConditionalSplitActivityJsonUnmarshaller implements Unmarshall
                 if (context.testExpression("Branches", targetDepth)) {
                     context.nextToken();
                     multiConditionalSplitActivity
-                            .setBranches(new ListUnmarshaller<MultiConditionalBranch>(MultiConditionalBranchJsonUnmarshaller.getInstance()).unmarshall(context));
+                            .setBranches(new ListUnmarshaller<MultiConditionalBranch>(MultiConditionalBranchJsonUnmarshaller.getInstance())
+
+                            .unmarshall(context));
                 }
                 if (context.testExpression("DefaultActivity", targetDepth)) {
                     context.nextToken();

@@ -50,7 +50,9 @@ public class OriginationJsonUnmarshaller implements Unmarshaller<Origination, Js
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Routes", targetDepth)) {
                     context.nextToken();
-                    origination.setRoutes(new ListUnmarshaller<OriginationRoute>(OriginationRouteJsonUnmarshaller.getInstance()).unmarshall(context));
+                    origination.setRoutes(new ListUnmarshaller<OriginationRoute>(OriginationRouteJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Disabled", targetDepth)) {
                     context.nextToken();

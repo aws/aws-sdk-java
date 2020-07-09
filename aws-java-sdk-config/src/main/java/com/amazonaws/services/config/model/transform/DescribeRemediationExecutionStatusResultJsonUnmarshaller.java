@@ -52,7 +52,9 @@ public class DescribeRemediationExecutionStatusResultJsonUnmarshaller implements
                 if (context.testExpression("RemediationExecutionStatuses", targetDepth)) {
                     context.nextToken();
                     describeRemediationExecutionStatusResult.setRemediationExecutionStatuses(new ListUnmarshaller<RemediationExecutionStatus>(
-                            RemediationExecutionStatusJsonUnmarshaller.getInstance()).unmarshall(context));
+                            RemediationExecutionStatusJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

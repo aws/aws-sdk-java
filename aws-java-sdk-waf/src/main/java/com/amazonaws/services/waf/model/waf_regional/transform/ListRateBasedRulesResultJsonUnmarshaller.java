@@ -54,7 +54,9 @@ public class ListRateBasedRulesResultJsonUnmarshaller implements Unmarshaller<Li
                 }
                 if (context.testExpression("Rules", targetDepth)) {
                     context.nextToken();
-                    listRateBasedRulesResult.setRules(new ListUnmarshaller<RuleSummary>(RuleSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listRateBasedRulesResult.setRules(new ListUnmarshaller<RuleSummary>(RuleSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

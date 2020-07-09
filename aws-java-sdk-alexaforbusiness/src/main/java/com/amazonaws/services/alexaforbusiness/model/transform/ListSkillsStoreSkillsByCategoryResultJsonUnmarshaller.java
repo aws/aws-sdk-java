@@ -51,7 +51,9 @@ public class ListSkillsStoreSkillsByCategoryResultJsonUnmarshaller implements Un
                 if (context.testExpression("SkillsStoreSkills", targetDepth)) {
                     context.nextToken();
                     listSkillsStoreSkillsByCategoryResult.setSkillsStoreSkills(new ListUnmarshaller<SkillsStoreSkill>(SkillsStoreSkillJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

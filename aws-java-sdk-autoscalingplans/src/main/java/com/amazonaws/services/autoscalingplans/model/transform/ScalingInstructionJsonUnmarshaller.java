@@ -71,7 +71,9 @@ public class ScalingInstructionJsonUnmarshaller implements Unmarshaller<ScalingI
                 if (context.testExpression("TargetTrackingConfigurations", targetDepth)) {
                     context.nextToken();
                     scalingInstruction.setTargetTrackingConfigurations(new ListUnmarshaller<TargetTrackingConfiguration>(
-                            TargetTrackingConfigurationJsonUnmarshaller.getInstance()).unmarshall(context));
+                            TargetTrackingConfigurationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("PredefinedLoadMetricSpecification", targetDepth)) {
                     context.nextToken();

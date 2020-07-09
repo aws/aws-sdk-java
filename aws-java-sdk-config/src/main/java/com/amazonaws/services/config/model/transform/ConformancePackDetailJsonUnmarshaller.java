@@ -71,7 +71,9 @@ public class ConformancePackDetailJsonUnmarshaller implements Unmarshaller<Confo
                 if (context.testExpression("ConformancePackInputParameters", targetDepth)) {
                     context.nextToken();
                     conformancePackDetail.setConformancePackInputParameters(new ListUnmarshaller<ConformancePackInputParameter>(
-                            ConformancePackInputParameterJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ConformancePackInputParameterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("LastUpdateRequestedTime", targetDepth)) {
                     context.nextToken();

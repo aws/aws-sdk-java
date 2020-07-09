@@ -70,7 +70,9 @@ public class ApplicationSummaryJsonUnmarshaller implements Unmarshaller<Applicat
                 }
                 if (context.testExpression("labels", targetDepth)) {
                     context.nextToken();
-                    applicationSummary.setLabels(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    applicationSummary.setLabels(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();

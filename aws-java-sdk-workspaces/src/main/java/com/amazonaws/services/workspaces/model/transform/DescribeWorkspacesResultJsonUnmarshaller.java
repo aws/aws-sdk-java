@@ -50,7 +50,9 @@ public class DescribeWorkspacesResultJsonUnmarshaller implements Unmarshaller<De
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Workspaces", targetDepth)) {
                     context.nextToken();
-                    describeWorkspacesResult.setWorkspaces(new ListUnmarshaller<Workspace>(WorkspaceJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeWorkspacesResult.setWorkspaces(new ListUnmarshaller<Workspace>(WorkspaceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

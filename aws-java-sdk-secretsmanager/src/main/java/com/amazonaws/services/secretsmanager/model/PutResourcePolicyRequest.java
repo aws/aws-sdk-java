@@ -38,8 +38,14 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      * secret. However, if your secret has a name that ends in a hyphen followed by six characters (before Secrets
      * Manager adds the hyphen and six characters to the ARN) and you try to use that as a partial ARN, then those
      * characters cause Secrets Manager to assume that you’re specifying a complete ARN. This confusion can cause
-     * unexpected results. To avoid this situation, we recommend that you don’t create secret names that end with a
-     * hyphen followed by six characters.
+     * unexpected results. To avoid this situation, we recommend that you don’t create secret names ending with a hyphen
+     * followed by six characters.
+     * </p>
+     * <p>
+     * If you specify an incomplete ARN without the random suffix, and instead provide the 'friendly name', you
+     * <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager, you
+     * receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your
+     * permissions.
      * </p>
      * </note>
      */
@@ -54,6 +60,12 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private String resourcePolicy;
+    /**
+     * <p>
+     * Makes an optional API call to Zelkova to validate the Resource Policy to prevent broad access to your secret.
+     * </p>
+     */
+    private Boolean blockPublicPolicy;
 
     /**
      * <p>
@@ -68,8 +80,14 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      * secret. However, if your secret has a name that ends in a hyphen followed by six characters (before Secrets
      * Manager adds the hyphen and six characters to the ARN) and you try to use that as a partial ARN, then those
      * characters cause Secrets Manager to assume that you’re specifying a complete ARN. This confusion can cause
-     * unexpected results. To avoid this situation, we recommend that you don’t create secret names that end with a
-     * hyphen followed by six characters.
+     * unexpected results. To avoid this situation, we recommend that you don’t create secret names ending with a hyphen
+     * followed by six characters.
+     * </p>
+     * <p>
+     * If you specify an incomplete ARN without the random suffix, and instead provide the 'friendly name', you
+     * <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager, you
+     * receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your
+     * permissions.
      * </p>
      * </note>
      * 
@@ -84,7 +102,13 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      *        characters (before Secrets Manager adds the hyphen and six characters to the ARN) and you try to use that
      *        as a partial ARN, then those characters cause Secrets Manager to assume that you’re specifying a complete
      *        ARN. This confusion can cause unexpected results. To avoid this situation, we recommend that you don’t
-     *        create secret names that end with a hyphen followed by six characters.
+     *        create secret names ending with a hyphen followed by six characters.
+     *        </p>
+     *        <p>
+     *        If you specify an incomplete ARN without the random suffix, and instead provide the 'friendly name', you
+     *        <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager,
+     *        you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending
+     *        on your permissions.
      *        </p>
      */
 
@@ -105,8 +129,14 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      * secret. However, if your secret has a name that ends in a hyphen followed by six characters (before Secrets
      * Manager adds the hyphen and six characters to the ARN) and you try to use that as a partial ARN, then those
      * characters cause Secrets Manager to assume that you’re specifying a complete ARN. This confusion can cause
-     * unexpected results. To avoid this situation, we recommend that you don’t create secret names that end with a
-     * hyphen followed by six characters.
+     * unexpected results. To avoid this situation, we recommend that you don’t create secret names ending with a hyphen
+     * followed by six characters.
+     * </p>
+     * <p>
+     * If you specify an incomplete ARN without the random suffix, and instead provide the 'friendly name', you
+     * <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager, you
+     * receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your
+     * permissions.
      * </p>
      * </note>
      * 
@@ -120,7 +150,13 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      *         six characters (before Secrets Manager adds the hyphen and six characters to the ARN) and you try to use
      *         that as a partial ARN, then those characters cause Secrets Manager to assume that you’re specifying a
      *         complete ARN. This confusion can cause unexpected results. To avoid this situation, we recommend that you
-     *         don’t create secret names that end with a hyphen followed by six characters.
+     *         don’t create secret names ending with a hyphen followed by six characters.
+     *         </p>
+     *         <p>
+     *         If you specify an incomplete ARN without the random suffix, and instead provide the 'friendly name', you
+     *         <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager,
+     *         you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending
+     *         on your permissions.
      *         </p>
      */
 
@@ -141,8 +177,14 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      * secret. However, if your secret has a name that ends in a hyphen followed by six characters (before Secrets
      * Manager adds the hyphen and six characters to the ARN) and you try to use that as a partial ARN, then those
      * characters cause Secrets Manager to assume that you’re specifying a complete ARN. This confusion can cause
-     * unexpected results. To avoid this situation, we recommend that you don’t create secret names that end with a
-     * hyphen followed by six characters.
+     * unexpected results. To avoid this situation, we recommend that you don’t create secret names ending with a hyphen
+     * followed by six characters.
+     * </p>
+     * <p>
+     * If you specify an incomplete ARN without the random suffix, and instead provide the 'friendly name', you
+     * <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager, you
+     * receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your
+     * permissions.
      * </p>
      * </note>
      * 
@@ -157,7 +199,13 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      *        characters (before Secrets Manager adds the hyphen and six characters to the ARN) and you try to use that
      *        as a partial ARN, then those characters cause Secrets Manager to assume that you’re specifying a complete
      *        ARN. This confusion can cause unexpected results. To avoid this situation, we recommend that you don’t
-     *        create secret names that end with a hyphen followed by six characters.
+     *        create secret names ending with a hyphen followed by six characters.
+     *        </p>
+     *        <p>
+     *        If you specify an incomplete ARN without the random suffix, and instead provide the 'friendly name', you
+     *        <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager,
+     *        you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending
+     *        on your permissions.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -232,6 +280,62 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * Makes an optional API call to Zelkova to validate the Resource Policy to prevent broad access to your secret.
+     * </p>
+     * 
+     * @param blockPublicPolicy
+     *        Makes an optional API call to Zelkova to validate the Resource Policy to prevent broad access to your
+     *        secret.
+     */
+
+    public void setBlockPublicPolicy(Boolean blockPublicPolicy) {
+        this.blockPublicPolicy = blockPublicPolicy;
+    }
+
+    /**
+     * <p>
+     * Makes an optional API call to Zelkova to validate the Resource Policy to prevent broad access to your secret.
+     * </p>
+     * 
+     * @return Makes an optional API call to Zelkova to validate the Resource Policy to prevent broad access to your
+     *         secret.
+     */
+
+    public Boolean getBlockPublicPolicy() {
+        return this.blockPublicPolicy;
+    }
+
+    /**
+     * <p>
+     * Makes an optional API call to Zelkova to validate the Resource Policy to prevent broad access to your secret.
+     * </p>
+     * 
+     * @param blockPublicPolicy
+     *        Makes an optional API call to Zelkova to validate the Resource Policy to prevent broad access to your
+     *        secret.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutResourcePolicyRequest withBlockPublicPolicy(Boolean blockPublicPolicy) {
+        setBlockPublicPolicy(blockPublicPolicy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Makes an optional API call to Zelkova to validate the Resource Policy to prevent broad access to your secret.
+     * </p>
+     * 
+     * @return Makes an optional API call to Zelkova to validate the Resource Policy to prevent broad access to your
+     *         secret.
+     */
+
+    public Boolean isBlockPublicPolicy() {
+        return this.blockPublicPolicy;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -246,7 +350,9 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getSecretId() != null)
             sb.append("SecretId: ").append(getSecretId()).append(",");
         if (getResourcePolicy() != null)
-            sb.append("ResourcePolicy: ").append(getResourcePolicy());
+            sb.append("ResourcePolicy: ").append(getResourcePolicy()).append(",");
+        if (getBlockPublicPolicy() != null)
+            sb.append("BlockPublicPolicy: ").append(getBlockPublicPolicy());
         sb.append("}");
         return sb.toString();
     }
@@ -269,6 +375,10 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getResourcePolicy() != null && other.getResourcePolicy().equals(this.getResourcePolicy()) == false)
             return false;
+        if (other.getBlockPublicPolicy() == null ^ this.getBlockPublicPolicy() == null)
+            return false;
+        if (other.getBlockPublicPolicy() != null && other.getBlockPublicPolicy().equals(this.getBlockPublicPolicy()) == false)
+            return false;
         return true;
     }
 
@@ -279,6 +389,7 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
         hashCode = prime * hashCode + ((getSecretId() == null) ? 0 : getSecretId().hashCode());
         hashCode = prime * hashCode + ((getResourcePolicy() == null) ? 0 : getResourcePolicy().hashCode());
+        hashCode = prime * hashCode + ((getBlockPublicPolicy() == null) ? 0 : getBlockPublicPolicy().hashCode());
         return hashCode;
     }
 

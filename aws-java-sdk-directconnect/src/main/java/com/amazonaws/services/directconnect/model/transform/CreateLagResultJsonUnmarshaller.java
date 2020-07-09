@@ -94,7 +94,9 @@ public class CreateLagResultJsonUnmarshaller implements Unmarshaller<CreateLagRe
                 }
                 if (context.testExpression("connections", targetDepth)) {
                     context.nextToken();
-                    createLagResult.setConnections(new ListUnmarshaller<Connection>(ConnectionJsonUnmarshaller.getInstance()).unmarshall(context));
+                    createLagResult.setConnections(new ListUnmarshaller<Connection>(ConnectionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("allowsHostedConnections", targetDepth)) {
                     context.nextToken();
@@ -110,7 +112,9 @@ public class CreateLagResultJsonUnmarshaller implements Unmarshaller<CreateLagRe
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
-                    createLagResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    createLagResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("providerName", targetDepth)) {
                     context.nextToken();

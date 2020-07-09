@@ -51,7 +51,9 @@ public class ListSimulationJobsResultJsonUnmarshaller implements Unmarshaller<Li
                 if (context.testExpression("simulationJobSummaries", targetDepth)) {
                     context.nextToken();
                     listSimulationJobsResult.setSimulationJobSummaries(new ListUnmarshaller<SimulationJobSummary>(SimulationJobSummaryJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

@@ -50,7 +50,9 @@ public class DescribeQueriesResultJsonUnmarshaller implements Unmarshaller<Descr
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("queries", targetDepth)) {
                     context.nextToken();
-                    describeQueriesResult.setQueries(new ListUnmarshaller<QueryInfo>(QueryInfoJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeQueriesResult.setQueries(new ListUnmarshaller<QueryInfo>(QueryInfoJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

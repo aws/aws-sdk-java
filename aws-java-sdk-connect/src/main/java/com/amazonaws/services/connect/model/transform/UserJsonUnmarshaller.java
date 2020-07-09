@@ -74,7 +74,9 @@ public class UserJsonUnmarshaller implements Unmarshaller<User, JsonUnmarshaller
                 }
                 if (context.testExpression("SecurityProfileIds", targetDepth)) {
                     context.nextToken();
-                    user.setSecurityProfileIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    user.setSecurityProfileIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("RoutingProfileId", targetDepth)) {
                     context.nextToken();

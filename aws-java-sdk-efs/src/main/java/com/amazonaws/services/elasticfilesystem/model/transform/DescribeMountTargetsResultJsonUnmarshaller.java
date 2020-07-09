@@ -55,7 +55,9 @@ public class DescribeMountTargetsResultJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("MountTargets", targetDepth)) {
                     context.nextToken();
                     describeMountTargetsResult.setMountTargets(new ListUnmarshaller<MountTargetDescription>(MountTargetDescriptionJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextMarker", targetDepth)) {
                     context.nextToken();

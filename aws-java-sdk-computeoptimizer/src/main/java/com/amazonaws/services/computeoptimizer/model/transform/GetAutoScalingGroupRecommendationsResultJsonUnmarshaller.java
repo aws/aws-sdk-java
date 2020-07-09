@@ -56,12 +56,16 @@ public class GetAutoScalingGroupRecommendationsResultJsonUnmarshaller implements
                 if (context.testExpression("autoScalingGroupRecommendations", targetDepth)) {
                     context.nextToken();
                     getAutoScalingGroupRecommendationsResult.setAutoScalingGroupRecommendations(new ListUnmarshaller<AutoScalingGroupRecommendation>(
-                            AutoScalingGroupRecommendationJsonUnmarshaller.getInstance()).unmarshall(context));
+                            AutoScalingGroupRecommendationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("errors", targetDepth)) {
                     context.nextToken();
                     getAutoScalingGroupRecommendationsResult.setErrors(new ListUnmarshaller<GetRecommendationError>(GetRecommendationErrorJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -76,16 +76,21 @@ public class UpdateIdentityPoolResultJsonUnmarshaller implements Unmarshaller<Up
                 if (context.testExpression("OpenIdConnectProviderARNs", targetDepth)) {
                     context.nextToken();
                     updateIdentityPoolResult.setOpenIdConnectProviderARNs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("CognitoIdentityProviders", targetDepth)) {
                     context.nextToken();
                     updateIdentityPoolResult.setCognitoIdentityProviders(new ListUnmarshaller<CognitoIdentityProvider>(CognitoIdentityProviderJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("SamlProviderARNs", targetDepth)) {
                     context.nextToken();
-                    updateIdentityPoolResult.setSamlProviderARNs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    updateIdentityPoolResult.setSamlProviderARNs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("IdentityPoolTags", targetDepth)) {
                     context.nextToken();

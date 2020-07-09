@@ -55,7 +55,8 @@ public class ListSchemaVersionsResultJsonUnmarshaller implements Unmarshaller<Li
                 if (context.testExpression("SchemaVersions", targetDepth)) {
                     context.nextToken();
                     listSchemaVersionsResult.setSchemaVersions(new ListUnmarshaller<SchemaVersionSummary>(SchemaVersionSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

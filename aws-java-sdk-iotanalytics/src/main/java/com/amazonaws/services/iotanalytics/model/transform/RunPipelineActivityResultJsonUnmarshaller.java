@@ -51,7 +51,8 @@ public class RunPipelineActivityResultJsonUnmarshaller implements Unmarshaller<R
                 if (context.testExpression("payloads", targetDepth)) {
                     context.nextToken();
                     runPipelineActivityResult.setPayloads(new ListUnmarshaller<java.nio.ByteBuffer>(context.getUnmarshaller(java.nio.ByteBuffer.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("logResult", targetDepth)) {
                     context.nextToken();

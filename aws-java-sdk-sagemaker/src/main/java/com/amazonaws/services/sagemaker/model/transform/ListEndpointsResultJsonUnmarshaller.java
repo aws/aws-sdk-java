@@ -50,7 +50,9 @@ public class ListEndpointsResultJsonUnmarshaller implements Unmarshaller<ListEnd
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Endpoints", targetDepth)) {
                     context.nextToken();
-                    listEndpointsResult.setEndpoints(new ListUnmarshaller<EndpointSummary>(EndpointSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listEndpointsResult.setEndpoints(new ListUnmarshaller<EndpointSummary>(EndpointSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

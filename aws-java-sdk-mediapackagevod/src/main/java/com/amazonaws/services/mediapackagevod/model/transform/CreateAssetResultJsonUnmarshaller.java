@@ -58,8 +58,9 @@ public class CreateAssetResultJsonUnmarshaller implements Unmarshaller<CreateAss
                 }
                 if (context.testExpression("egressEndpoints", targetDepth)) {
                     context.nextToken();
-                    createAssetResult
-                            .setEgressEndpoints(new ListUnmarshaller<EgressEndpoint>(EgressEndpointJsonUnmarshaller.getInstance()).unmarshall(context));
+                    createAssetResult.setEgressEndpoints(new ListUnmarshaller<EgressEndpoint>(EgressEndpointJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();

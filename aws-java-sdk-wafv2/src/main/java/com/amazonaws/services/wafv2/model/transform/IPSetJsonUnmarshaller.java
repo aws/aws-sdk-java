@@ -70,7 +70,9 @@ public class IPSetJsonUnmarshaller implements Unmarshaller<IPSet, JsonUnmarshall
                 }
                 if (context.testExpression("Addresses", targetDepth)) {
                     context.nextToken();
-                    iPSet.setAddresses(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    iPSet.setAddresses(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

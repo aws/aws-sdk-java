@@ -82,12 +82,15 @@ public class GetDocumentResultJsonUnmarshaller implements Unmarshaller<GetDocume
                 }
                 if (context.testExpression("Requires", targetDepth)) {
                     context.nextToken();
-                    getDocumentResult.setRequires(new ListUnmarshaller<DocumentRequires>(DocumentRequiresJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getDocumentResult.setRequires(new ListUnmarshaller<DocumentRequires>(DocumentRequiresJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("AttachmentsContent", targetDepth)) {
                     context.nextToken();
                     getDocumentResult.setAttachmentsContent(new ListUnmarshaller<AttachmentContent>(AttachmentContentJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

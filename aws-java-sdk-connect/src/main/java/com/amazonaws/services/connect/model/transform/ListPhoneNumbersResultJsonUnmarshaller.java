@@ -51,7 +51,8 @@ public class ListPhoneNumbersResultJsonUnmarshaller implements Unmarshaller<List
                 if (context.testExpression("PhoneNumberSummaryList", targetDepth)) {
                     context.nextToken();
                     listPhoneNumbersResult.setPhoneNumberSummaryList(new ListUnmarshaller<PhoneNumberSummary>(PhoneNumberSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

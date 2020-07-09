@@ -52,7 +52,9 @@ public class ListAWSServiceAccessForOrganizationResultJsonUnmarshaller implement
                 if (context.testExpression("EnabledServicePrincipals", targetDepth)) {
                     context.nextToken();
                     listAWSServiceAccessForOrganizationResult.setEnabledServicePrincipals(new ListUnmarshaller<EnabledServicePrincipal>(
-                            EnabledServicePrincipalJsonUnmarshaller.getInstance()).unmarshall(context));
+                            EnabledServicePrincipalJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

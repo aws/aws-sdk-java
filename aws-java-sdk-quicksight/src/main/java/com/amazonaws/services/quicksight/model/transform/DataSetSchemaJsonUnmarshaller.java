@@ -50,7 +50,9 @@ public class DataSetSchemaJsonUnmarshaller implements Unmarshaller<DataSetSchema
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ColumnSchemaList", targetDepth)) {
                     context.nextToken();
-                    dataSetSchema.setColumnSchemaList(new ListUnmarshaller<ColumnSchema>(ColumnSchemaJsonUnmarshaller.getInstance()).unmarshall(context));
+                    dataSetSchema.setColumnSchemaList(new ListUnmarshaller<ColumnSchema>(ColumnSchemaJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

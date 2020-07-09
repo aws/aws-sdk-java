@@ -66,7 +66,9 @@ public class ReportDefinitionJsonUnmarshaller implements Unmarshaller<ReportDefi
                 }
                 if (context.testExpression("AdditionalSchemaElements", targetDepth)) {
                     context.nextToken();
-                    reportDefinition.setAdditionalSchemaElements(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    reportDefinition.setAdditionalSchemaElements(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("S3Bucket", targetDepth)) {
                     context.nextToken();
@@ -82,7 +84,9 @@ public class ReportDefinitionJsonUnmarshaller implements Unmarshaller<ReportDefi
                 }
                 if (context.testExpression("AdditionalArtifacts", targetDepth)) {
                     context.nextToken();
-                    reportDefinition.setAdditionalArtifacts(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    reportDefinition.setAdditionalArtifacts(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("RefreshClosedReports", targetDepth)) {
                     context.nextToken();

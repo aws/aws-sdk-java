@@ -51,7 +51,8 @@ public class ListEntitlementsResultJsonUnmarshaller implements Unmarshaller<List
                 if (context.testExpression("entitlements", targetDepth)) {
                     context.nextToken();
                     listEntitlementsResult.setEntitlements(new ListUnmarshaller<ListedEntitlement>(ListedEntitlementJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

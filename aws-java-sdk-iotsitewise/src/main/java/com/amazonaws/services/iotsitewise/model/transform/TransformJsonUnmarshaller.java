@@ -54,7 +54,9 @@ public class TransformJsonUnmarshaller implements Unmarshaller<Transform, JsonUn
                 }
                 if (context.testExpression("variables", targetDepth)) {
                     context.nextToken();
-                    transform.setVariables(new ListUnmarshaller<ExpressionVariable>(ExpressionVariableJsonUnmarshaller.getInstance()).unmarshall(context));
+                    transform.setVariables(new ListUnmarshaller<ExpressionVariable>(ExpressionVariableJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

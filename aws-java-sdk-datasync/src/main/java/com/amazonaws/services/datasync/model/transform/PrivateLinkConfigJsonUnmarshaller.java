@@ -58,11 +58,15 @@ public class PrivateLinkConfigJsonUnmarshaller implements Unmarshaller<PrivateLi
                 }
                 if (context.testExpression("SubnetArns", targetDepth)) {
                     context.nextToken();
-                    privateLinkConfig.setSubnetArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    privateLinkConfig.setSubnetArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("SecurityGroupArns", targetDepth)) {
                     context.nextToken();
-                    privateLinkConfig.setSecurityGroupArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    privateLinkConfig.setSecurityGroupArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

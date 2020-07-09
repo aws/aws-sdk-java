@@ -51,7 +51,8 @@ public class ListUserProfilesResultJsonUnmarshaller implements Unmarshaller<List
                 if (context.testExpression("userProfiles", targetDepth)) {
                     context.nextToken();
                     listUserProfilesResult.setUserProfiles(new ListUnmarshaller<UserProfileSummary>(UserProfileSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

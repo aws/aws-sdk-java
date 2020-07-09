@@ -51,7 +51,8 @@ public class SourceAlgorithmSpecificationJsonUnmarshaller implements Unmarshalle
                 if (context.testExpression("SourceAlgorithms", targetDepth)) {
                     context.nextToken();
                     sourceAlgorithmSpecification.setSourceAlgorithms(new ListUnmarshaller<SourceAlgorithm>(SourceAlgorithmJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

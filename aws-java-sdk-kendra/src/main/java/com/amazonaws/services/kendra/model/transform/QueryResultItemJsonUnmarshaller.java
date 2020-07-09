@@ -59,7 +59,9 @@ public class QueryResultItemJsonUnmarshaller implements Unmarshaller<QueryResult
                 if (context.testExpression("AdditionalAttributes", targetDepth)) {
                     context.nextToken();
                     queryResultItem.setAdditionalAttributes(new ListUnmarshaller<AdditionalResultAttribute>(AdditionalResultAttributeJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("DocumentId", targetDepth)) {
                     context.nextToken();
@@ -80,7 +82,8 @@ public class QueryResultItemJsonUnmarshaller implements Unmarshaller<QueryResult
                 if (context.testExpression("DocumentAttributes", targetDepth)) {
                     context.nextToken();
                     queryResultItem.setDocumentAttributes(new ListUnmarshaller<DocumentAttribute>(DocumentAttributeJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

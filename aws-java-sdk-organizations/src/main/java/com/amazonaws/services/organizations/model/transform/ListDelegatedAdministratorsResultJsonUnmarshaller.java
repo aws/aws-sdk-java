@@ -51,7 +51,9 @@ public class ListDelegatedAdministratorsResultJsonUnmarshaller implements Unmars
                 if (context.testExpression("DelegatedAdministrators", targetDepth)) {
                     context.nextToken();
                     listDelegatedAdministratorsResult.setDelegatedAdministrators(new ListUnmarshaller<DelegatedAdministrator>(
-                            DelegatedAdministratorJsonUnmarshaller.getInstance()).unmarshall(context));
+                            DelegatedAdministratorJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

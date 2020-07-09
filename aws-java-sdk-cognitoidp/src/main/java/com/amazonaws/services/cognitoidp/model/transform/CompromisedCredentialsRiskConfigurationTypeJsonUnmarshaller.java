@@ -52,7 +52,8 @@ public class CompromisedCredentialsRiskConfigurationTypeJsonUnmarshaller impleme
                 if (context.testExpression("EventFilter", targetDepth)) {
                     context.nextToken();
                     compromisedCredentialsRiskConfigurationType.setEventFilter(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Actions", targetDepth)) {
                     context.nextToken();

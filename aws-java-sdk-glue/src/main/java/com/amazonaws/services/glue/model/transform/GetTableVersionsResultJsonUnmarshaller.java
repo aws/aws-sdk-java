@@ -50,7 +50,9 @@ public class GetTableVersionsResultJsonUnmarshaller implements Unmarshaller<GetT
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TableVersions", targetDepth)) {
                     context.nextToken();
-                    getTableVersionsResult.setTableVersions(new ListUnmarshaller<TableVersion>(TableVersionJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getTableVersionsResult.setTableVersions(new ListUnmarshaller<TableVersion>(TableVersionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

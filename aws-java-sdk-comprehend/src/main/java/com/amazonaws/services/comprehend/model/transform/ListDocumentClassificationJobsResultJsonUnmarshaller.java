@@ -51,7 +51,9 @@ public class ListDocumentClassificationJobsResultJsonUnmarshaller implements Unm
                 if (context.testExpression("DocumentClassificationJobPropertiesList", targetDepth)) {
                     context.nextToken();
                     listDocumentClassificationJobsResult.setDocumentClassificationJobPropertiesList(new ListUnmarshaller<DocumentClassificationJobProperties>(
-                            DocumentClassificationJobPropertiesJsonUnmarshaller.getInstance()).unmarshall(context));
+                            DocumentClassificationJobPropertiesJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

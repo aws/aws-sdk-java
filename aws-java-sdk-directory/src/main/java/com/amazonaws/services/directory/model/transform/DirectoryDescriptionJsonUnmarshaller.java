@@ -82,7 +82,9 @@ public class DirectoryDescriptionJsonUnmarshaller implements Unmarshaller<Direct
                 }
                 if (context.testExpression("DnsIpAddrs", targetDepth)) {
                     context.nextToken();
-                    directoryDescription.setDnsIpAddrs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    directoryDescription.setDnsIpAddrs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Stage", targetDepth)) {
                     context.nextToken();

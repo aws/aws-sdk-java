@@ -50,7 +50,9 @@ public class ListShardsResultJsonUnmarshaller implements Unmarshaller<ListShards
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Shards", targetDepth)) {
                     context.nextToken();
-                    listShardsResult.setShards(new ListUnmarshaller<Shard>(ShardJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listShardsResult.setShards(new ListUnmarshaller<Shard>(ShardJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

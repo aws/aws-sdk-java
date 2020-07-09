@@ -50,7 +50,9 @@ public class ListAccountSettingsResultJsonUnmarshaller implements Unmarshaller<L
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("settings", targetDepth)) {
                     context.nextToken();
-                    listAccountSettingsResult.setSettings(new ListUnmarshaller<Setting>(SettingJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listAccountSettingsResult.setSettings(new ListUnmarshaller<Setting>(SettingJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

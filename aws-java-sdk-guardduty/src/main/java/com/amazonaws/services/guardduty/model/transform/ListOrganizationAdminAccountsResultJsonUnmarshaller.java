@@ -51,7 +51,8 @@ public class ListOrganizationAdminAccountsResultJsonUnmarshaller implements Unma
                 if (context.testExpression("adminAccounts", targetDepth)) {
                     context.nextToken();
                     listOrganizationAdminAccountsResult.setAdminAccounts(new ListUnmarshaller<AdminAccount>(AdminAccountJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

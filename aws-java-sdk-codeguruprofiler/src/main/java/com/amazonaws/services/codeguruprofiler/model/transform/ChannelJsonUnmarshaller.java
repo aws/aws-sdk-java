@@ -50,7 +50,9 @@ public class ChannelJsonUnmarshaller implements Unmarshaller<Channel, JsonUnmars
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("eventPublishers", targetDepth)) {
                     context.nextToken();
-                    channel.setEventPublishers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    channel.setEventPublishers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();

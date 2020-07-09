@@ -50,7 +50,9 @@ public class ListApiKeysResultJsonUnmarshaller implements Unmarshaller<ListApiKe
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("apiKeys", targetDepth)) {
                     context.nextToken();
-                    listApiKeysResult.setApiKeys(new ListUnmarshaller<ApiKey>(ApiKeyJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listApiKeysResult.setApiKeys(new ListUnmarshaller<ApiKey>(ApiKeyJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

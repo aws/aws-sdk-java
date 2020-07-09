@@ -51,7 +51,8 @@ public class ListDeploymentJobsResultJsonUnmarshaller implements Unmarshaller<Li
                 if (context.testExpression("deploymentJobs", targetDepth)) {
                     context.nextToken();
                     listDeploymentJobsResult.setDeploymentJobs(new ListUnmarshaller<DeploymentJob>(DeploymentJobJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

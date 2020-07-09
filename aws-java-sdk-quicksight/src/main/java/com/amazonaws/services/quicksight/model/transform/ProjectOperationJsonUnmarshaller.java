@@ -50,7 +50,9 @@ public class ProjectOperationJsonUnmarshaller implements Unmarshaller<ProjectOpe
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ProjectedColumns", targetDepth)) {
                     context.nextToken();
-                    projectOperation.setProjectedColumns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    projectOperation.setProjectedColumns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

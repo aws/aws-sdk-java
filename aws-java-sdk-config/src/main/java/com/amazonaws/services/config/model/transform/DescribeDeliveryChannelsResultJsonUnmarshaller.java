@@ -51,7 +51,8 @@ public class DescribeDeliveryChannelsResultJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("DeliveryChannels", targetDepth)) {
                     context.nextToken();
                     describeDeliveryChannelsResult.setDeliveryChannels(new ListUnmarshaller<DeliveryChannel>(DeliveryChannelJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

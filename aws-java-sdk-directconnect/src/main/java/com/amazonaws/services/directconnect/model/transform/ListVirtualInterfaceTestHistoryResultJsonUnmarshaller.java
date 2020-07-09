@@ -51,7 +51,9 @@ public class ListVirtualInterfaceTestHistoryResultJsonUnmarshaller implements Un
                 if (context.testExpression("virtualInterfaceTestHistory", targetDepth)) {
                     context.nextToken();
                     listVirtualInterfaceTestHistoryResult.setVirtualInterfaceTestHistory(new ListUnmarshaller<VirtualInterfaceTestHistory>(
-                            VirtualInterfaceTestHistoryJsonUnmarshaller.getInstance()).unmarshall(context));
+                            VirtualInterfaceTestHistoryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

@@ -828,7 +828,7 @@ public class EntityRecognizerProperties implements Serializable, Cloneable, Stru
         if (getInputDataConfig() != null)
             sb.append("InputDataConfig: ").append(getInputDataConfig()).append(",");
         if (getRecognizerMetadata() != null)
-            sb.append("RecognizerMetadata: ").append(getRecognizerMetadata()).append(",");
+            sb.append("RecognizerMetadata: ").append("***Sensitive Data Redacted***").append(",");
         if (getDataAccessRoleArn() != null)
             sb.append("DataAccessRoleArn: ").append(getDataAccessRoleArn()).append(",");
         if (getVolumeKmsKeyId() != null)

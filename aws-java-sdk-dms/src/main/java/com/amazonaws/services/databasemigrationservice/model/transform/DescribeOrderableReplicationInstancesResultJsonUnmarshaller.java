@@ -52,7 +52,9 @@ public class DescribeOrderableReplicationInstancesResultJsonUnmarshaller impleme
                 if (context.testExpression("OrderableReplicationInstances", targetDepth)) {
                     context.nextToken();
                     describeOrderableReplicationInstancesResult.setOrderableReplicationInstances(new ListUnmarshaller<OrderableReplicationInstance>(
-                            OrderableReplicationInstanceJsonUnmarshaller.getInstance()).unmarshall(context));
+                            OrderableReplicationInstanceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Marker", targetDepth)) {
                     context.nextToken();

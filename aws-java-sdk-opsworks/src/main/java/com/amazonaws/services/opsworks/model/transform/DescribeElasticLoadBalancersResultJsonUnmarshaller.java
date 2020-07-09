@@ -51,7 +51,9 @@ public class DescribeElasticLoadBalancersResultJsonUnmarshaller implements Unmar
                 if (context.testExpression("ElasticLoadBalancers", targetDepth)) {
                     context.nextToken();
                     describeElasticLoadBalancersResult.setElasticLoadBalancers(new ListUnmarshaller<ElasticLoadBalancer>(ElasticLoadBalancerJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

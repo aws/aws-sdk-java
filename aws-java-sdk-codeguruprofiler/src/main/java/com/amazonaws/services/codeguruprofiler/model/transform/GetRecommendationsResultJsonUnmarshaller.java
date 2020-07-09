@@ -50,7 +50,9 @@ public class GetRecommendationsResultJsonUnmarshaller implements Unmarshaller<Ge
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("anomalies", targetDepth)) {
                     context.nextToken();
-                    getRecommendationsResult.setAnomalies(new ListUnmarshaller<Anomaly>(AnomalyJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getRecommendationsResult.setAnomalies(new ListUnmarshaller<Anomaly>(AnomalyJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("profileEndTime", targetDepth)) {
                     context.nextToken();
@@ -67,7 +69,8 @@ public class GetRecommendationsResultJsonUnmarshaller implements Unmarshaller<Ge
                 if (context.testExpression("recommendations", targetDepth)) {
                     context.nextToken();
                     getRecommendationsResult.setRecommendations(new ListUnmarshaller<Recommendation>(RecommendationJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

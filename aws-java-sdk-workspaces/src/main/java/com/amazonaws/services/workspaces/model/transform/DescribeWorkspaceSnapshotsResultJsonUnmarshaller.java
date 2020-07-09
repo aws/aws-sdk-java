@@ -51,12 +51,14 @@ public class DescribeWorkspaceSnapshotsResultJsonUnmarshaller implements Unmarsh
                 if (context.testExpression("RebuildSnapshots", targetDepth)) {
                     context.nextToken();
                     describeWorkspaceSnapshotsResult.setRebuildSnapshots(new ListUnmarshaller<Snapshot>(SnapshotJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("RestoreSnapshots", targetDepth)) {
                     context.nextToken();
                     describeWorkspaceSnapshotsResult.setRestoreSnapshots(new ListUnmarshaller<Snapshot>(SnapshotJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

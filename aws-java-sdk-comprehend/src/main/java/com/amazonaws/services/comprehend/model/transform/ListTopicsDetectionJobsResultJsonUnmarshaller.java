@@ -51,7 +51,9 @@ public class ListTopicsDetectionJobsResultJsonUnmarshaller implements Unmarshall
                 if (context.testExpression("TopicsDetectionJobPropertiesList", targetDepth)) {
                     context.nextToken();
                     listTopicsDetectionJobsResult.setTopicsDetectionJobPropertiesList(new ListUnmarshaller<TopicsDetectionJobProperties>(
-                            TopicsDetectionJobPropertiesJsonUnmarshaller.getInstance()).unmarshall(context));
+                            TopicsDetectionJobPropertiesJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

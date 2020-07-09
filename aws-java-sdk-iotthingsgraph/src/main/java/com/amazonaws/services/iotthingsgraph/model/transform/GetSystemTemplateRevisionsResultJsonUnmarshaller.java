@@ -51,7 +51,9 @@ public class GetSystemTemplateRevisionsResultJsonUnmarshaller implements Unmarsh
                 if (context.testExpression("summaries", targetDepth)) {
                     context.nextToken();
                     getSystemTemplateRevisionsResult.setSummaries(new ListUnmarshaller<SystemTemplateSummary>(SystemTemplateSummaryJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

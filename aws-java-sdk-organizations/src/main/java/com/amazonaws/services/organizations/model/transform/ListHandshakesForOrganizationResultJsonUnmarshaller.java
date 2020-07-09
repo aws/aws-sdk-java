@@ -51,7 +51,8 @@ public class ListHandshakesForOrganizationResultJsonUnmarshaller implements Unma
                 if (context.testExpression("Handshakes", targetDepth)) {
                     context.nextToken();
                     listHandshakesForOrganizationResult.setHandshakes(new ListUnmarshaller<Handshake>(HandshakeJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

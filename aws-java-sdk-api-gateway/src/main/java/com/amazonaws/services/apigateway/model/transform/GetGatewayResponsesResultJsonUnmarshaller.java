@@ -54,8 +54,9 @@ public class GetGatewayResponsesResultJsonUnmarshaller implements Unmarshaller<G
                 }
                 if (context.testExpression("item", targetDepth)) {
                     context.nextToken();
-                    getGatewayResponsesResult
-                            .setItems(new ListUnmarshaller<GatewayResponse>(GatewayResponseJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getGatewayResponsesResult.setItems(new ListUnmarshaller<GatewayResponse>(GatewayResponseJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

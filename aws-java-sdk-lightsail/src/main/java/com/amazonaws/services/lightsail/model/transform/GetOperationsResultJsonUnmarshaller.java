@@ -50,7 +50,9 @@ public class GetOperationsResultJsonUnmarshaller implements Unmarshaller<GetOper
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("operations", targetDepth)) {
                     context.nextToken();
-                    getOperationsResult.setOperations(new ListUnmarshaller<Operation>(OperationJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getOperationsResult.setOperations(new ListUnmarshaller<Operation>(OperationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextPageToken", targetDepth)) {
                     context.nextToken();

@@ -54,7 +54,9 @@ public class DescribeUploadBufferResultJsonUnmarshaller implements Unmarshaller<
                 }
                 if (context.testExpression("DiskIds", targetDepth)) {
                     context.nextToken();
-                    describeUploadBufferResult.setDiskIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    describeUploadBufferResult.setDiskIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("UploadBufferUsedInBytes", targetDepth)) {
                     context.nextToken();

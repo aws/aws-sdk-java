@@ -55,11 +55,14 @@ public class LaunchPathSummaryJsonUnmarshaller implements Unmarshaller<LaunchPat
                 if (context.testExpression("ConstraintSummaries", targetDepth)) {
                     context.nextToken();
                     launchPathSummary.setConstraintSummaries(new ListUnmarshaller<ConstraintSummary>(ConstraintSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
-                    launchPathSummary.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    launchPathSummary.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();

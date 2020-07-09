@@ -59,7 +59,9 @@ public class TableAutoScalingDescriptionJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("Replicas", targetDepth)) {
                     context.nextToken();
                     tableAutoScalingDescription.setReplicas(new ListUnmarshaller<ReplicaAutoScalingDescription>(ReplicaAutoScalingDescriptionJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

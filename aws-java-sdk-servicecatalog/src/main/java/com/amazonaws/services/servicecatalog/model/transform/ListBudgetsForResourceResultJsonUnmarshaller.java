@@ -50,7 +50,9 @@ public class ListBudgetsForResourceResultJsonUnmarshaller implements Unmarshalle
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Budgets", targetDepth)) {
                     context.nextToken();
-                    listBudgetsForResourceResult.setBudgets(new ListUnmarshaller<BudgetDetail>(BudgetDetailJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listBudgetsForResourceResult.setBudgets(new ListUnmarshaller<BudgetDetail>(BudgetDetailJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextPageToken", targetDepth)) {
                     context.nextToken();

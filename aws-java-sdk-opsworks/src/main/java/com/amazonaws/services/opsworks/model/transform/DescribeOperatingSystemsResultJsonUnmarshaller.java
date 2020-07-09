@@ -51,7 +51,8 @@ public class DescribeOperatingSystemsResultJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("OperatingSystems", targetDepth)) {
                     context.nextToken();
                     describeOperatingSystemsResult.setOperatingSystems(new ListUnmarshaller<OperatingSystem>(OperatingSystemJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

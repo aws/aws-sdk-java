@@ -51,11 +51,14 @@ public class ExecuteStatementResultJsonUnmarshaller implements Unmarshaller<Exec
                 if (context.testExpression("columnMetadata", targetDepth)) {
                     context.nextToken();
                     executeStatementResult.setColumnMetadata(new ListUnmarshaller<ColumnMetadata>(ColumnMetadataJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("generatedFields", targetDepth)) {
                     context.nextToken();
-                    executeStatementResult.setGeneratedFields(new ListUnmarshaller<Field>(FieldJsonUnmarshaller.getInstance()).unmarshall(context));
+                    executeStatementResult.setGeneratedFields(new ListUnmarshaller<Field>(FieldJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("numberOfRecordsUpdated", targetDepth)) {
                     context.nextToken();
@@ -64,7 +67,11 @@ public class ExecuteStatementResultJsonUnmarshaller implements Unmarshaller<Exec
                 if (context.testExpression("records", targetDepth)) {
                     context.nextToken();
                     executeStatementResult.setRecords(new ListUnmarshaller<java.util.List<Field>>(new ListUnmarshaller<Field>(FieldJsonUnmarshaller
-                            .getInstance())).unmarshall(context));
+                            .getInstance())
+
+                    )
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

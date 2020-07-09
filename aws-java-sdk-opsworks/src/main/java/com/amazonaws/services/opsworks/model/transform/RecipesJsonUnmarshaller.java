@@ -50,23 +50,33 @@ public class RecipesJsonUnmarshaller implements Unmarshaller<Recipes, JsonUnmars
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Setup", targetDepth)) {
                     context.nextToken();
-                    recipes.setSetup(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    recipes.setSetup(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Configure", targetDepth)) {
                     context.nextToken();
-                    recipes.setConfigure(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    recipes.setConfigure(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Deploy", targetDepth)) {
                     context.nextToken();
-                    recipes.setDeploy(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    recipes.setDeploy(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Undeploy", targetDepth)) {
                     context.nextToken();
-                    recipes.setUndeploy(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    recipes.setUndeploy(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Shutdown", targetDepth)) {
                     context.nextToken();
-                    recipes.setShutdown(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    recipes.setShutdown(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

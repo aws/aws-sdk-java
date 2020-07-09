@@ -51,7 +51,8 @@ public class ListLocationsResultJsonUnmarshaller implements Unmarshaller<ListLoc
                 if (context.testExpression("Locations", targetDepth)) {
                     context.nextToken();
                     listLocationsResult.setLocations(new ListUnmarshaller<LocationListEntry>(LocationListEntryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

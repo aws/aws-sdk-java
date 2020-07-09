@@ -51,7 +51,9 @@ public class GetExportSnapshotRecordsResultJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("exportSnapshotRecords", targetDepth)) {
                     context.nextToken();
                     getExportSnapshotRecordsResult.setExportSnapshotRecords(new ListUnmarshaller<ExportSnapshotRecord>(ExportSnapshotRecordJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextPageToken", targetDepth)) {
                     context.nextToken();

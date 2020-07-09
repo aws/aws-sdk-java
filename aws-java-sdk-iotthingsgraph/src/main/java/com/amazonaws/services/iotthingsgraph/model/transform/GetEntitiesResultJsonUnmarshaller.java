@@ -51,7 +51,8 @@ public class GetEntitiesResultJsonUnmarshaller implements Unmarshaller<GetEntiti
                 if (context.testExpression("descriptions", targetDepth)) {
                     context.nextToken();
                     getEntitiesResult.setDescriptions(new ListUnmarshaller<EntityDescription>(EntityDescriptionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

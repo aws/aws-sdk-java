@@ -54,7 +54,9 @@ public class DescribeCacheResultJsonUnmarshaller implements Unmarshaller<Describ
                 }
                 if (context.testExpression("DiskIds", targetDepth)) {
                     context.nextToken();
-                    describeCacheResult.setDiskIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    describeCacheResult.setDiskIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("CacheAllocatedInBytes", targetDepth)) {
                     context.nextToken();

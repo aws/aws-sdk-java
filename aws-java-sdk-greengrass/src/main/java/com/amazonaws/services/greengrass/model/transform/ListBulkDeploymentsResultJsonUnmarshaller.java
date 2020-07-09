@@ -51,7 +51,8 @@ public class ListBulkDeploymentsResultJsonUnmarshaller implements Unmarshaller<L
                 if (context.testExpression("BulkDeployments", targetDepth)) {
                     context.nextToken();
                     listBulkDeploymentsResult.setBulkDeployments(new ListUnmarshaller<BulkDeployment>(BulkDeploymentJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

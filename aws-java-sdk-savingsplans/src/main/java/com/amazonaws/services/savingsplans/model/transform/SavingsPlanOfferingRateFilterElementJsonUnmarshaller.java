@@ -54,7 +54,9 @@ public class SavingsPlanOfferingRateFilterElementJsonUnmarshaller implements Unm
                 }
                 if (context.testExpression("values", targetDepth)) {
                     context.nextToken();
-                    savingsPlanOfferingRateFilterElement.setValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    savingsPlanOfferingRateFilterElement.setValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

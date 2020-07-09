@@ -51,7 +51,9 @@ public class DescribeMatchmakingConfigurationsResultJsonUnmarshaller implements 
                 if (context.testExpression("Configurations", targetDepth)) {
                     context.nextToken();
                     describeMatchmakingConfigurationsResult.setConfigurations(new ListUnmarshaller<MatchmakingConfiguration>(
-                            MatchmakingConfigurationJsonUnmarshaller.getInstance()).unmarshall(context));
+                            MatchmakingConfigurationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

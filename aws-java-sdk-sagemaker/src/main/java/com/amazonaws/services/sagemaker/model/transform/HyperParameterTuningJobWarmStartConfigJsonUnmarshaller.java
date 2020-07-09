@@ -51,7 +51,9 @@ public class HyperParameterTuningJobWarmStartConfigJsonUnmarshaller implements U
                 if (context.testExpression("ParentHyperParameterTuningJobs", targetDepth)) {
                     context.nextToken();
                     hyperParameterTuningJobWarmStartConfig.setParentHyperParameterTuningJobs(new ListUnmarshaller<ParentHyperParameterTuningJob>(
-                            ParentHyperParameterTuningJobJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ParentHyperParameterTuningJobJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("WarmStartType", targetDepth)) {
                     context.nextToken();

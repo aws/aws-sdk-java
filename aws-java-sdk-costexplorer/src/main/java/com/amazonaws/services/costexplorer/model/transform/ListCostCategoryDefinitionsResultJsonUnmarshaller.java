@@ -51,7 +51,9 @@ public class ListCostCategoryDefinitionsResultJsonUnmarshaller implements Unmars
                 if (context.testExpression("CostCategoryReferences", targetDepth)) {
                     context.nextToken();
                     listCostCategoryDefinitionsResult.setCostCategoryReferences(new ListUnmarshaller<CostCategoryReference>(
-                            CostCategoryReferenceJsonUnmarshaller.getInstance()).unmarshall(context));
+                            CostCategoryReferenceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

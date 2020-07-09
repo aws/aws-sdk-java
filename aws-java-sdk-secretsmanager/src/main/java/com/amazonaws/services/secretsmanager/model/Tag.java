@@ -36,7 +36,7 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
     private String key;
     /**
      * <p>
-     * The string value that's associated with the key of the tag.
+     * The string value associated with the key of the tag.
      * </p>
      */
     private String value;
@@ -83,11 +83,11 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The string value that's associated with the key of the tag.
+     * The string value associated with the key of the tag.
      * </p>
      * 
      * @param value
-     *        The string value that's associated with the key of the tag.
+     *        The string value associated with the key of the tag.
      */
 
     public void setValue(String value) {
@@ -96,10 +96,10 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The string value that's associated with the key of the tag.
+     * The string value associated with the key of the tag.
      * </p>
      * 
-     * @return The string value that's associated with the key of the tag.
+     * @return The string value associated with the key of the tag.
      */
 
     public String getValue() {
@@ -108,11 +108,11 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The string value that's associated with the key of the tag.
+     * The string value associated with the key of the tag.
      * </p>
      * 
      * @param value
-     *        The string value that's associated with the key of the tag.
+     *        The string value associated with the key of the tag.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -54,7 +54,9 @@ public class EventCategoryGroupJsonUnmarshaller implements Unmarshaller<EventCat
                 }
                 if (context.testExpression("EventCategories", targetDepth)) {
                     context.nextToken();
-                    eventCategoryGroup.setEventCategories(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    eventCategoryGroup.setEventCategories(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

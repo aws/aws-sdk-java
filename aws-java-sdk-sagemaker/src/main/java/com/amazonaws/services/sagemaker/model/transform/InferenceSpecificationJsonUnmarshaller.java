@@ -51,26 +51,33 @@ public class InferenceSpecificationJsonUnmarshaller implements Unmarshaller<Infe
                 if (context.testExpression("Containers", targetDepth)) {
                     context.nextToken();
                     inferenceSpecification.setContainers(new ListUnmarshaller<ModelPackageContainerDefinition>(ModelPackageContainerDefinitionJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("SupportedTransformInstanceTypes", targetDepth)) {
                     context.nextToken();
                     inferenceSpecification.setSupportedTransformInstanceTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("SupportedRealtimeInferenceInstanceTypes", targetDepth)) {
                     context.nextToken();
                     inferenceSpecification.setSupportedRealtimeInferenceInstanceTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("SupportedContentTypes", targetDepth)) {
                     context.nextToken();
-                    inferenceSpecification.setSupportedContentTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    inferenceSpecification.setSupportedContentTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("SupportedResponseMIMETypes", targetDepth)) {
                     context.nextToken();
                     inferenceSpecification.setSupportedResponseMIMETypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

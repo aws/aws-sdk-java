@@ -51,7 +51,8 @@ public class PutLifecycleConfigurationResultJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("LifecyclePolicies", targetDepth)) {
                     context.nextToken();
                     putLifecycleConfigurationResult.setLifecyclePolicies(new ListUnmarshaller<LifecyclePolicy>(LifecyclePolicyJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

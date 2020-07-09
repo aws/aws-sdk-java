@@ -50,7 +50,9 @@ public class NetworkInterfaceJsonUnmarshaller implements Unmarshaller<NetworkInt
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ipv6Addresses", targetDepth)) {
                     context.nextToken();
-                    networkInterface.setIpv6Addresses(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    networkInterface.setIpv6Addresses(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("networkInterfaceId", targetDepth)) {
                     context.nextToken();
@@ -67,7 +69,8 @@ public class NetworkInterfaceJsonUnmarshaller implements Unmarshaller<NetworkInt
                 if (context.testExpression("privateIpAddresses", targetDepth)) {
                     context.nextToken();
                     networkInterface.setPrivateIpAddresses(new ListUnmarshaller<PrivateIpAddressDetails>(PrivateIpAddressDetailsJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("publicDnsName", targetDepth)) {
                     context.nextToken();
@@ -79,7 +82,9 @@ public class NetworkInterfaceJsonUnmarshaller implements Unmarshaller<NetworkInt
                 }
                 if (context.testExpression("securityGroups", targetDepth)) {
                     context.nextToken();
-                    networkInterface.setSecurityGroups(new ListUnmarshaller<SecurityGroup>(SecurityGroupJsonUnmarshaller.getInstance()).unmarshall(context));
+                    networkInterface.setSecurityGroups(new ListUnmarshaller<SecurityGroup>(SecurityGroupJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("subnetId", targetDepth)) {
                     context.nextToken();

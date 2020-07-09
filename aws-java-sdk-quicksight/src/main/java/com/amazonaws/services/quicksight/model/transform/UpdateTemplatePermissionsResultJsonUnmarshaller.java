@@ -61,7 +61,8 @@ public class UpdateTemplatePermissionsResultJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("Permissions", targetDepth)) {
                     context.nextToken();
                     updateTemplatePermissionsResult.setPermissions(new ListUnmarshaller<ResourcePermission>(ResourcePermissionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("RequestId", targetDepth)) {
                     context.nextToken();

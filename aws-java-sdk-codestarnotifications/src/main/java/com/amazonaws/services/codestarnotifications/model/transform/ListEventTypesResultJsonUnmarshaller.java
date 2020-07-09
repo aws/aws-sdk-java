@@ -51,7 +51,8 @@ public class ListEventTypesResultJsonUnmarshaller implements Unmarshaller<ListEv
                 if (context.testExpression("EventTypes", targetDepth)) {
                     context.nextToken();
                     listEventTypesResult.setEventTypes(new ListUnmarshaller<EventTypeSummary>(EventTypeSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

@@ -54,7 +54,9 @@ public class ResourceTagMappingJsonUnmarshaller implements Unmarshaller<Resource
                 }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
-                    resourceTagMapping.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    resourceTagMapping.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ComplianceDetails", targetDepth)) {
                     context.nextToken();

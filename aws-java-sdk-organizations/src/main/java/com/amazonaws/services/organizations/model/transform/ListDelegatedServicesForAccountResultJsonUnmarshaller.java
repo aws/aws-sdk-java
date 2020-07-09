@@ -51,7 +51,9 @@ public class ListDelegatedServicesForAccountResultJsonUnmarshaller implements Un
                 if (context.testExpression("DelegatedServices", targetDepth)) {
                     context.nextToken();
                     listDelegatedServicesForAccountResult.setDelegatedServices(new ListUnmarshaller<DelegatedService>(DelegatedServiceJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

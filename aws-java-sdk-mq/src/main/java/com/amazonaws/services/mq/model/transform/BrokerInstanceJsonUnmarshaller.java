@@ -54,7 +54,9 @@ public class BrokerInstanceJsonUnmarshaller implements Unmarshaller<BrokerInstan
                 }
                 if (context.testExpression("endpoints", targetDepth)) {
                     context.nextToken();
-                    brokerInstance.setEndpoints(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    brokerInstance.setEndpoints(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ipAddress", targetDepth)) {
                     context.nextToken();

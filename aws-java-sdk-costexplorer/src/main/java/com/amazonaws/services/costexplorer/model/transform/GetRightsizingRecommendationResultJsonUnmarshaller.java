@@ -59,7 +59,9 @@ public class GetRightsizingRecommendationResultJsonUnmarshaller implements Unmar
                 if (context.testExpression("RightsizingRecommendations", targetDepth)) {
                     context.nextToken();
                     getRightsizingRecommendationResult.setRightsizingRecommendations(new ListUnmarshaller<RightsizingRecommendation>(
-                            RightsizingRecommendationJsonUnmarshaller.getInstance()).unmarshall(context));
+                            RightsizingRecommendationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextPageToken", targetDepth)) {
                     context.nextToken();

@@ -54,7 +54,9 @@ public class GetDomainDetailResultJsonUnmarshaller implements Unmarshaller<GetDo
                 }
                 if (context.testExpression("Nameservers", targetDepth)) {
                     context.nextToken();
-                    getDomainDetailResult.setNameservers(new ListUnmarshaller<Nameserver>(NameserverJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getDomainDetailResult.setNameservers(new ListUnmarshaller<Nameserver>(NameserverJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("AutoRenew", targetDepth)) {
                     context.nextToken();
@@ -130,7 +132,9 @@ public class GetDomainDetailResultJsonUnmarshaller implements Unmarshaller<GetDo
                 }
                 if (context.testExpression("StatusList", targetDepth)) {
                     context.nextToken();
-                    getDomainDetailResult.setStatusList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    getDomainDetailResult.setStatusList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

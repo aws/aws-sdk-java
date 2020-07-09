@@ -860,6 +860,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "AccessDeniedException",
+      "fullyQualifiedName" : "com.amazonaws.services.budgets.exception.AccessDeniedException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -868,6 +869,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.budgets.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -899,6 +901,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.budgets.model.Budget",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -960,6 +963,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of a budget. The name must be unique within an account. The <code>:</code> and <code>\\</code> characters aren't allowed in <code>BudgetName</code>.</p>\n@param budgetName The name of a budget. The name must be unique within an account. The <code>:</code> and <code>\\</code> characters aren't allowed in <code>BudgetName</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1028,6 +1032,7 @@
           "variableSetterType" : "Spend"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The total amount of cost, usage, RI utilization, RI coverage, Savings Plans utilization, or Savings Plans coverage that you want to track with your budget.</p> <p> <code>BudgetLimit</code> is required for cost or usage budgets, but optional for RI or Savings Plans utilization or coverage budgets. RI and Savings Plans utilization or coverage budgets default to <code>100</code>, which is the only valid value for RI or Savings Plans utilization or coverage budgets. You can't use <code>BudgetLimit</code> with <code>PlannedBudgetLimits</code> for <code>CreateBudget</code> and <code>UpdateBudget</code> actions. </p>\n@param budgetLimit The total amount of cost, usage, RI utilization, RI coverage, Savings Plans utilization, or Savings Plans coverage that you want to track with your budget.</p> <p> <code>BudgetLimit</code> is required for cost or usage budgets, but optional for RI or Savings Plans utilization or coverage budgets. RI and Savings Plans utilization or coverage budgets default to <code>100</code>, which is the only valid value for RI or Savings Plans utilization or coverage budgets. You can't use <code>BudgetLimit</code> with <code>PlannedBudgetLimits</code> for <code>CreateBudget</code> and <code>UpdateBudget</code> actions.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1141,6 +1146,7 @@
               "variableSetterType" : "Spend"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1179,6 +1185,7 @@
           "variableSetterType" : "java.util.Map<String,Spend>"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A map containing multiple <code>BudgetLimit</code>, including current or future limits.</p> <p> <code>PlannedBudgetLimits</code> is available for cost or usage budget and supports monthly and quarterly <code>TimeUnit</code>. </p> <p>For monthly budgets, provide 12 months of <code>PlannedBudgetLimits</code> values. This must start from the current month and include the next 11 months. The <code>key</code> is the start of the month, <code>UTC</code> in epoch seconds. </p> <p>For quarterly budgets, provide 4 quarters of <code>PlannedBudgetLimits</code> value entries in standard calendar quarter increments. This must start from the current quarter and include the next 3 quarters. The <code>key</code> is the start of the quarter, <code>UTC</code> in epoch seconds. </p> <p>If the planned budget expires before 12 months for monthly or 4 quarters for quarterly, provide the <code>PlannedBudgetLimits</code> values only for the remaining periods.</p> <p>If the budget begins at a date in the future, provide <code>PlannedBudgetLimits</code> values from the start date of the budget. </p> <p>After all of the <code>BudgetLimit</code> values in <code>PlannedBudgetLimits</code> are used, the budget continues to use the last limit as the <code>BudgetLimit</code>. At that point, the planned budget provides the same experience as a fixed budget. </p> <p> <code>DescribeBudget</code> and <code>DescribeBudgets</code> response along with <code>PlannedBudgetLimits</code> will also contain <code>BudgetLimit</code> representing the current month or quarter limit present in <code>PlannedBudgetLimits</code>. This only applies to budgets created with <code>PlannedBudgetLimits</code>. Budgets created without <code>PlannedBudgetLimits</code> will only contain <code>BudgetLimit</code>, and no <code>PlannedBudgetLimits</code>.</p>\n@param plannedBudgetLimits A map containing multiple <code>BudgetLimit</code>, including current or future limits.</p> <p> <code>PlannedBudgetLimits</code> is available for cost or usage budget and supports monthly and quarterly <code>TimeUnit</code>. </p> <p>For monthly budgets, provide 12 months of <code>PlannedBudgetLimits</code> values. This must start from the current month and include the next 11 months. The <code>key</code> is the start of the month, <code>UTC</code> in epoch seconds. </p> <p>For quarterly budgets, provide 4 quarters of <code>PlannedBudgetLimits</code> value entries in standard calendar quarter increments. This must start from the current quarter and include the next 3 quarters. The <code>key</code> is the start of the quarter, <code>UTC</code> in epoch seconds. </p> <p>If the planned budget expires before 12 months for monthly or 4 quarters for quarterly, provide the <code>PlannedBudgetLimits</code> values only for the remaining periods.</p> <p>If the budget begins at a date in the future, provide <code>PlannedBudgetLimits</code> values from the start date of the budget. </p> <p>After all of the <code>BudgetLimit</code> values in <code>PlannedBudgetLimits</code> are used, the budget continues to use the last limit as the <code>BudgetLimit</code>. At that point, the planned budget provides the same experience as a fixed budget. </p> <p> <code>DescribeBudget</code> and <code>DescribeBudgets</code> response along with <code>PlannedBudgetLimits</code> will also contain <code>BudgetLimit</code> representing the current month or quarter limit present in <code>PlannedBudgetLimits</code>. This only applies to budgets created with <code>PlannedBudgetLimits</code>. Budgets created without <code>PlannedBudgetLimits</code> will only contain <code>BudgetLimit</code>, and no <code>PlannedBudgetLimits</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1331,6 +1338,7 @@
                   "variableSetterType" : "String"
                 },
                 "shouldEmitLegacyEnumSetter" : false,
+                "shouldFullyQualify" : false,
                 "simple" : true,
                 "unmarshallingType" : null,
                 "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1375,6 +1383,7 @@
               "variableSetterType" : "java.util.Collection<String>"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValue(java.util.Collection)} or {@link #withValue(java.util.Collection)} if you want to override the existing values.</p>\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1413,6 +1422,7 @@
           "variableSetterType" : "java.util.Map<String,java.util.List<String>>"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The cost filters, such as service or tag, that are applied to a budget.</p> <p>AWS Budgets supports the following services as a filter for RI budgets:</p> <ul> <li> <p>Amazon Elastic Compute Cloud - Compute</p> </li> <li> <p>Amazon Redshift</p> </li> <li> <p>Amazon Relational Database Service</p> </li> <li> <p>Amazon ElastiCache</p> </li> <li> <p>Amazon Elasticsearch Service</p> </li> </ul>\n@param costFilters The cost filters, such as service or tag, that are applied to a budget.</p> <p>AWS Budgets supports the following services as a filter for RI budgets:</p> <ul> <li> <p>Amazon Elastic Compute Cloud - Compute</p> </li> <li> <p>Amazon Redshift</p> </li> <li> <p>Amazon Relational Database Service</p> </li> <li> <p>Amazon ElastiCache</p> </li> <li> <p>Amazon Elasticsearch Service</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1481,6 +1491,7 @@
           "variableSetterType" : "CostTypes"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The types of costs that are included in this <code>COST</code> budget.</p> <p> <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>Savings_Plans_Utilization</code>, and <code>Savings_Plans_Coverage</code> budgets do not have <code>CostTypes</code>.</p>\n@param costTypes The types of costs that are included in this <code>COST</code> budget.</p> <p> <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>Savings_Plans_Utilization</code>, and <code>Savings_Plans_Coverage</code> budgets do not have <code>CostTypes</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1549,6 +1560,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The length of time until a budget resets the actual and forecasted spend. <code>DAILY</code> is available only for <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>Savings_Plans_Utilization</code>, and <code>Savings_Plans_Coverage</code> budgets.</p>\n@param timeUnit The length of time until a budget resets the actual and forecasted spend. <code>DAILY</code> is available only for <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>Savings_Plans_Utilization</code>, and <code>Savings_Plans_Coverage</code> budgets.\n@return Returns a reference to this object so that method calls can be chained together.\n@see TimeUnit*/",
@@ -1617,6 +1629,7 @@
           "variableSetterType" : "TimePeriod"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The period of time that is covered by a budget. The period has a start date and an end date. The start date must come before the end date. The end date must come before <code>06/15/87 00:00 UTC</code>. </p> <p>If you create your budget and don't specify a start date, AWS defaults to the start of your chosen time period (DAILY, MONTHLY, QUARTERLY, or ANNUALLY). For example, if you created your budget on January 24, 2018, chose <code>DAILY</code>, and didn't set a start date, AWS set your start date to <code>01/24/18 00:00 UTC</code>. If you chose <code>MONTHLY</code>, AWS set your start date to <code>01/01/18 00:00 UTC</code>. If you didn't specify an end date, AWS set your end date to <code>06/15/87 00:00 UTC</code>. The defaults are the same for the AWS Billing and Cost Management console and the API. </p> <p>You can change either date with the <code>UpdateBudget</code> operation.</p> <p>After the end date, AWS deletes the budget and all associated notifications and subscribers.</p>\n@param timePeriod The period of time that is covered by a budget. The period has a start date and an end date. The start date must come before the end date. The end date must come before <code>06/15/87 00:00 UTC</code>. </p> <p>If you create your budget and don't specify a start date, AWS defaults to the start of your chosen time period (DAILY, MONTHLY, QUARTERLY, or ANNUALLY). For example, if you created your budget on January 24, 2018, chose <code>DAILY</code>, and didn't set a start date, AWS set your start date to <code>01/24/18 00:00 UTC</code>. If you chose <code>MONTHLY</code>, AWS set your start date to <code>01/01/18 00:00 UTC</code>. If you didn't specify an end date, AWS set your end date to <code>06/15/87 00:00 UTC</code>. The defaults are the same for the AWS Billing and Cost Management console and the API. </p> <p>You can change either date with the <code>UpdateBudget</code> operation.</p> <p>After the end date, AWS deletes the budget and all associated notifications and subscribers.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1685,6 +1698,7 @@
           "variableSetterType" : "CalculatedSpend"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The actual and forecasted cost or usage that the budget tracks.</p>\n@param calculatedSpend The actual and forecasted cost or usage that the budget tracks.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1753,6 +1767,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Whether this budget tracks costs, usage, RI utilization, RI coverage, Savings Plans utilization, or Savings Plans coverage.</p>\n@param budgetType Whether this budget tracks costs, usage, RI utilization, RI coverage, Savings Plans utilization, or Savings Plans coverage.\n@return Returns a reference to this object so that method calls can be chained together.\n@see BudgetType*/",
@@ -1821,6 +1836,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The last time that you updated this budget.</p>\n@param lastUpdatedTime The last time that you updated this budget.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1891,6 +1907,7 @@
             "variableSetterType" : "Spend"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The total amount of cost, usage, RI utilization, RI coverage, Savings Plans utilization, or Savings Plans coverage that you want to track with your budget.</p> <p> <code>BudgetLimit</code> is required for cost or usage budgets, but optional for RI or Savings Plans utilization or coverage budgets. RI and Savings Plans utilization or coverage budgets default to <code>100</code>, which is the only valid value for RI or Savings Plans utilization or coverage budgets. You can't use <code>BudgetLimit</code> with <code>PlannedBudgetLimits</code> for <code>CreateBudget</code> and <code>UpdateBudget</code> actions. </p>\n@param budgetLimit The total amount of cost, usage, RI utilization, RI coverage, Savings Plans utilization, or Savings Plans coverage that you want to track with your budget.</p> <p> <code>BudgetLimit</code> is required for cost or usage budgets, but optional for RI or Savings Plans utilization or coverage budgets. RI and Savings Plans utilization or coverage budgets default to <code>100</code>, which is the only valid value for RI or Savings Plans utilization or coverage budgets. You can't use <code>BudgetLimit</code> with <code>PlannedBudgetLimits</code> for <code>CreateBudget</code> and <code>UpdateBudget</code> actions.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1960,6 +1977,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of a budget. The name must be unique within an account. The <code>:</code> and <code>\\</code> characters aren't allowed in <code>BudgetName</code>.</p>\n@param budgetName The name of a budget. The name must be unique within an account. The <code>:</code> and <code>\\</code> characters aren't allowed in <code>BudgetName</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2029,6 +2047,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Whether this budget tracks costs, usage, RI utilization, RI coverage, Savings Plans utilization, or Savings Plans coverage.</p>\n@param budgetType Whether this budget tracks costs, usage, RI utilization, RI coverage, Savings Plans utilization, or Savings Plans coverage.\n@return Returns a reference to this object so that method calls can be chained together.\n@see BudgetType*/",
@@ -2098,6 +2117,7 @@
             "variableSetterType" : "CalculatedSpend"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The actual and forecasted cost or usage that the budget tracks.</p>\n@param calculatedSpend The actual and forecasted cost or usage that the budget tracks.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2251,6 +2271,7 @@
                     "variableSetterType" : "String"
                   },
                   "shouldEmitLegacyEnumSetter" : false,
+                  "shouldFullyQualify" : false,
                   "simple" : true,
                   "unmarshallingType" : null,
                   "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2295,6 +2316,7 @@
                 "variableSetterType" : "java.util.Collection<String>"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValue(java.util.Collection)} or {@link #withValue(java.util.Collection)} if you want to override the existing values.</p>\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2333,6 +2355,7 @@
             "variableSetterType" : "java.util.Map<String,java.util.List<String>>"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The cost filters, such as service or tag, that are applied to a budget.</p> <p>AWS Budgets supports the following services as a filter for RI budgets:</p> <ul> <li> <p>Amazon Elastic Compute Cloud - Compute</p> </li> <li> <p>Amazon Redshift</p> </li> <li> <p>Amazon Relational Database Service</p> </li> <li> <p>Amazon ElastiCache</p> </li> <li> <p>Amazon Elasticsearch Service</p> </li> </ul>\n@param costFilters The cost filters, such as service or tag, that are applied to a budget.</p> <p>AWS Budgets supports the following services as a filter for RI budgets:</p> <ul> <li> <p>Amazon Elastic Compute Cloud - Compute</p> </li> <li> <p>Amazon Redshift</p> </li> <li> <p>Amazon Relational Database Service</p> </li> <li> <p>Amazon ElastiCache</p> </li> <li> <p>Amazon Elasticsearch Service</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2402,6 +2425,7 @@
             "variableSetterType" : "CostTypes"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The types of costs that are included in this <code>COST</code> budget.</p> <p> <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>Savings_Plans_Utilization</code>, and <code>Savings_Plans_Coverage</code> budgets do not have <code>CostTypes</code>.</p>\n@param costTypes The types of costs that are included in this <code>COST</code> budget.</p> <p> <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>Savings_Plans_Utilization</code>, and <code>Savings_Plans_Coverage</code> budgets do not have <code>CostTypes</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2471,6 +2495,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The last time that you updated this budget.</p>\n@param lastUpdatedTime The last time that you updated this budget.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2585,6 +2610,7 @@
                 "variableSetterType" : "Spend"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2623,6 +2649,7 @@
             "variableSetterType" : "java.util.Map<String,Spend>"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A map containing multiple <code>BudgetLimit</code>, including current or future limits.</p> <p> <code>PlannedBudgetLimits</code> is available for cost or usage budget and supports monthly and quarterly <code>TimeUnit</code>. </p> <p>For monthly budgets, provide 12 months of <code>PlannedBudgetLimits</code> values. This must start from the current month and include the next 11 months. The <code>key</code> is the start of the month, <code>UTC</code> in epoch seconds. </p> <p>For quarterly budgets, provide 4 quarters of <code>PlannedBudgetLimits</code> value entries in standard calendar quarter increments. This must start from the current quarter and include the next 3 quarters. The <code>key</code> is the start of the quarter, <code>UTC</code> in epoch seconds. </p> <p>If the planned budget expires before 12 months for monthly or 4 quarters for quarterly, provide the <code>PlannedBudgetLimits</code> values only for the remaining periods.</p> <p>If the budget begins at a date in the future, provide <code>PlannedBudgetLimits</code> values from the start date of the budget. </p> <p>After all of the <code>BudgetLimit</code> values in <code>PlannedBudgetLimits</code> are used, the budget continues to use the last limit as the <code>BudgetLimit</code>. At that point, the planned budget provides the same experience as a fixed budget. </p> <p> <code>DescribeBudget</code> and <code>DescribeBudgets</code> response along with <code>PlannedBudgetLimits</code> will also contain <code>BudgetLimit</code> representing the current month or quarter limit present in <code>PlannedBudgetLimits</code>. This only applies to budgets created with <code>PlannedBudgetLimits</code>. Budgets created without <code>PlannedBudgetLimits</code> will only contain <code>BudgetLimit</code>, and no <code>PlannedBudgetLimits</code>.</p>\n@param plannedBudgetLimits A map containing multiple <code>BudgetLimit</code>, including current or future limits.</p> <p> <code>PlannedBudgetLimits</code> is available for cost or usage budget and supports monthly and quarterly <code>TimeUnit</code>. </p> <p>For monthly budgets, provide 12 months of <code>PlannedBudgetLimits</code> values. This must start from the current month and include the next 11 months. The <code>key</code> is the start of the month, <code>UTC</code> in epoch seconds. </p> <p>For quarterly budgets, provide 4 quarters of <code>PlannedBudgetLimits</code> value entries in standard calendar quarter increments. This must start from the current quarter and include the next 3 quarters. The <code>key</code> is the start of the quarter, <code>UTC</code> in epoch seconds. </p> <p>If the planned budget expires before 12 months for monthly or 4 quarters for quarterly, provide the <code>PlannedBudgetLimits</code> values only for the remaining periods.</p> <p>If the budget begins at a date in the future, provide <code>PlannedBudgetLimits</code> values from the start date of the budget. </p> <p>After all of the <code>BudgetLimit</code> values in <code>PlannedBudgetLimits</code> are used, the budget continues to use the last limit as the <code>BudgetLimit</code>. At that point, the planned budget provides the same experience as a fixed budget. </p> <p> <code>DescribeBudget</code> and <code>DescribeBudgets</code> response along with <code>PlannedBudgetLimits</code> will also contain <code>BudgetLimit</code> representing the current month or quarter limit present in <code>PlannedBudgetLimits</code>. This only applies to budgets created with <code>PlannedBudgetLimits</code>. Budgets created without <code>PlannedBudgetLimits</code> will only contain <code>BudgetLimit</code>, and no <code>PlannedBudgetLimits</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2692,6 +2719,7 @@
             "variableSetterType" : "TimePeriod"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The period of time that is covered by a budget. The period has a start date and an end date. The start date must come before the end date. The end date must come before <code>06/15/87 00:00 UTC</code>. </p> <p>If you create your budget and don't specify a start date, AWS defaults to the start of your chosen time period (DAILY, MONTHLY, QUARTERLY, or ANNUALLY). For example, if you created your budget on January 24, 2018, chose <code>DAILY</code>, and didn't set a start date, AWS set your start date to <code>01/24/18 00:00 UTC</code>. If you chose <code>MONTHLY</code>, AWS set your start date to <code>01/01/18 00:00 UTC</code>. If you didn't specify an end date, AWS set your end date to <code>06/15/87 00:00 UTC</code>. The defaults are the same for the AWS Billing and Cost Management console and the API. </p> <p>You can change either date with the <code>UpdateBudget</code> operation.</p> <p>After the end date, AWS deletes the budget and all associated notifications and subscribers.</p>\n@param timePeriod The period of time that is covered by a budget. The period has a start date and an end date. The start date must come before the end date. The end date must come before <code>06/15/87 00:00 UTC</code>. </p> <p>If you create your budget and don't specify a start date, AWS defaults to the start of your chosen time period (DAILY, MONTHLY, QUARTERLY, or ANNUALLY). For example, if you created your budget on January 24, 2018, chose <code>DAILY</code>, and didn't set a start date, AWS set your start date to <code>01/24/18 00:00 UTC</code>. If you chose <code>MONTHLY</code>, AWS set your start date to <code>01/01/18 00:00 UTC</code>. If you didn't specify an end date, AWS set your end date to <code>06/15/87 00:00 UTC</code>. The defaults are the same for the AWS Billing and Cost Management console and the API. </p> <p>You can change either date with the <code>UpdateBudget</code> operation.</p> <p>After the end date, AWS deletes the budget and all associated notifications and subscribers.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2761,6 +2789,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The length of time until a budget resets the actual and forecasted spend. <code>DAILY</code> is available only for <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>Savings_Plans_Utilization</code>, and <code>Savings_Plans_Coverage</code> budgets.</p>\n@param timeUnit The length of time until a budget resets the actual and forecasted spend. <code>DAILY</code> is available only for <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>Savings_Plans_Utilization</code>, and <code>Savings_Plans_Coverage</code> budgets.\n@return Returns a reference to this object so that method calls can be chained together.\n@see TimeUnit*/",
@@ -2776,6 +2805,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.budgets.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "BudgetName", "TimeUnit", "BudgetType" ],
@@ -2810,6 +2840,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.budgets.model.BudgetPerformanceHistory",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2871,6 +2902,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param budgetName \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2939,6 +2971,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param budgetType \n@return Returns a reference to this object so that method calls can be chained together.\n@see BudgetType*/",
@@ -3091,6 +3124,7 @@
                   "variableSetterType" : "String"
                 },
                 "shouldEmitLegacyEnumSetter" : false,
+                "shouldFullyQualify" : false,
                 "simple" : true,
                 "unmarshallingType" : null,
                 "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3135,6 +3169,7 @@
               "variableSetterType" : "java.util.Collection<String>"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValue(java.util.Collection)} or {@link #withValue(java.util.Collection)} if you want to override the existing values.</p>\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3173,6 +3208,7 @@
           "variableSetterType" : "java.util.Map<String,java.util.List<String>>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The history of the cost filters for a budget during the specified time period.</p>\n@param costFilters The history of the cost filters for a budget during the specified time period.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3241,6 +3277,7 @@
           "variableSetterType" : "CostTypes"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The history of the cost types for a budget during the specified time period.</p>\n@param costTypes The history of the cost types for a budget during the specified time period.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3309,6 +3346,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param timeUnit \n@return Returns a reference to this object so that method calls can be chained together.\n@see TimeUnit*/",
@@ -3416,6 +3454,7 @@
               "variableSetterType" : "BudgetedAndActualAmounts"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3460,6 +3499,7 @@
           "variableSetterType" : "java.util.Collection<BudgetedAndActualAmounts>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of amounts of cost or usage that you created budgets for, compared to your actual costs or usage.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setBudgetedAndActualAmountsList(java.util.Collection)} or {@link #withBudgetedAndActualAmountsList(java.util.Collection)} if you want to override the existing values.</p>\n@param budgetedAndActualAmountsList A list of amounts of cost or usage that you created budgets for, compared to your actual costs or usage.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3530,6 +3570,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param budgetName \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3599,6 +3640,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param budgetType \n@return Returns a reference to this object so that method calls can be chained together.\n@see BudgetType*/",
@@ -3707,6 +3749,7 @@
                 "variableSetterType" : "BudgetedAndActualAmounts"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3751,6 +3794,7 @@
             "variableSetterType" : "java.util.Collection<BudgetedAndActualAmounts>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of amounts of cost or usage that you created budgets for, compared to your actual costs or usage.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setBudgetedAndActualAmountsList(java.util.Collection)} or {@link #withBudgetedAndActualAmountsList(java.util.Collection)} if you want to override the existing values.</p>\n@param budgetedAndActualAmountsList A list of amounts of cost or usage that you created budgets for, compared to your actual costs or usage.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3904,6 +3948,7 @@
                     "variableSetterType" : "String"
                   },
                   "shouldEmitLegacyEnumSetter" : false,
+                  "shouldFullyQualify" : false,
                   "simple" : true,
                   "unmarshallingType" : null,
                   "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3948,6 +3993,7 @@
                 "variableSetterType" : "java.util.Collection<String>"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValue(java.util.Collection)} or {@link #withValue(java.util.Collection)} if you want to override the existing values.</p>\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3986,6 +4032,7 @@
             "variableSetterType" : "java.util.Map<String,java.util.List<String>>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The history of the cost filters for a budget during the specified time period.</p>\n@param costFilters The history of the cost filters for a budget during the specified time period.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4055,6 +4102,7 @@
             "variableSetterType" : "CostTypes"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The history of the cost types for a budget during the specified time period.</p>\n@param costTypes The history of the cost types for a budget during the specified time period.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4124,6 +4172,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param timeUnit \n@return Returns a reference to this object so that method calls can be chained together.\n@see TimeUnit*/",
@@ -4139,6 +4188,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.budgets.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4191,6 +4241,7 @@
         "value" : "SAVINGS_PLANS_COVERAGE"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.budgets.enum.BudgetType",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4199,6 +4250,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.budgets.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4233,6 +4285,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.budgets.model.BudgetedAndActualAmounts",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4294,6 +4347,7 @@
           "variableSetterType" : "Spend"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The amount of cost or usage that you created the budget for.</p>\n@param budgetedAmount The amount of cost or usage that you created the budget for.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4362,6 +4416,7 @@
           "variableSetterType" : "Spend"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Your actual costs or usage for a budget period.</p>\n@param actualAmount Your actual costs or usage for a budget period.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4430,6 +4485,7 @@
           "variableSetterType" : "TimePeriod"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The time period covered by this budget comparison.</p>\n@param timePeriod The time period covered by this budget comparison.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4500,6 +4556,7 @@
             "variableSetterType" : "Spend"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Your actual costs or usage for a budget period.</p>\n@param actualAmount Your actual costs or usage for a budget period.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4569,6 +4626,7 @@
             "variableSetterType" : "Spend"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The amount of cost or usage that you created the budget for.</p>\n@param budgetedAmount The amount of cost or usage that you created the budget for.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4638,6 +4696,7 @@
             "variableSetterType" : "TimePeriod"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The time period covered by this budget comparison.</p>\n@param timePeriod The time period covered by this budget comparison.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4653,6 +4712,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.budgets.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4687,6 +4747,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.budgets.model.CalculatedSpend",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4748,6 +4809,7 @@
           "variableSetterType" : "Spend"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The amount of cost, usage, or RI units that you have used.</p>\n@param actualSpend The amount of cost, usage, or RI units that you have used.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4816,6 +4878,7 @@
           "variableSetterType" : "Spend"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The amount of cost, usage, or RI units that you are forecasted to use.</p>\n@param forecastedSpend The amount of cost, usage, or RI units that you are forecasted to use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4886,6 +4949,7 @@
             "variableSetterType" : "Spend"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The amount of cost, usage, or RI units that you have used.</p>\n@param actualSpend The amount of cost, usage, or RI units that you have used.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4955,6 +5019,7 @@
             "variableSetterType" : "Spend"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The amount of cost, usage, or RI units that you are forecasted to use.</p>\n@param forecastedSpend The amount of cost, usage, or RI units that you are forecasted to use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4970,6 +5035,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.budgets.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ActualSpend" ],
@@ -5013,6 +5079,7 @@
         "value" : "EQUAL_TO"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.budgets.enum.ComparisonOperator",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5021,6 +5088,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.budgets.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -5055,6 +5123,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.budgets.model.CostTypes",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5116,6 +5185,7 @@
           "variableSetterType" : "Boolean"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies whether a budget includes taxes.</p> <p>The default value is <code>true</code>.</p>\n@param includeTax Specifies whether a budget includes taxes.</p> <p>The default value is <code>true</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5184,6 +5254,7 @@
           "variableSetterType" : "Boolean"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies whether a budget includes subscriptions.</p> <p>The default value is <code>true</code>.</p>\n@param includeSubscription Specifies whether a budget includes subscriptions.</p> <p>The default value is <code>true</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5252,6 +5323,7 @@
           "variableSetterType" : "Boolean"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies whether a budget uses a blended rate.</p> <p>The default value is <code>false</code>.</p>\n@param useBlended Specifies whether a budget uses a blended rate.</p> <p>The default value is <code>false</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5320,6 +5392,7 @@
           "variableSetterType" : "Boolean"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies whether a budget includes refunds.</p> <p>The default value is <code>true</code>.</p>\n@param includeRefund Specifies whether a budget includes refunds.</p> <p>The default value is <code>true</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5388,6 +5461,7 @@
           "variableSetterType" : "Boolean"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies whether a budget includes credits.</p> <p>The default value is <code>true</code>.</p>\n@param includeCredit Specifies whether a budget includes credits.</p> <p>The default value is <code>true</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5456,6 +5530,7 @@
           "variableSetterType" : "Boolean"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies whether a budget includes upfront RI costs.</p> <p>The default value is <code>true</code>.</p>\n@param includeUpfront Specifies whether a budget includes upfront RI costs.</p> <p>The default value is <code>true</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5524,6 +5599,7 @@
           "variableSetterType" : "Boolean"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies whether a budget includes recurring fees such as monthly RI fees.</p> <p>The default value is <code>true</code>.</p>\n@param includeRecurring Specifies whether a budget includes recurring fees such as monthly RI fees.</p> <p>The default value is <code>true</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5592,6 +5668,7 @@
           "variableSetterType" : "Boolean"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies whether a budget includes non-RI subscription costs.</p> <p>The default value is <code>true</code>.</p>\n@param includeOtherSubscription Specifies whether a budget includes non-RI subscription costs.</p> <p>The default value is <code>true</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5660,6 +5737,7 @@
           "variableSetterType" : "Boolean"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies whether a budget includes support subscription fees.</p> <p>The default value is <code>true</code>.</p>\n@param includeSupport Specifies whether a budget includes support subscription fees.</p> <p>The default value is <code>true</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5728,6 +5806,7 @@
           "variableSetterType" : "Boolean"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies whether a budget includes discounts.</p> <p>The default value is <code>true</code>.</p>\n@param includeDiscount Specifies whether a budget includes discounts.</p> <p>The default value is <code>true</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5796,6 +5875,7 @@
           "variableSetterType" : "Boolean"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies whether a budget uses the amortized rate.</p> <p>The default value is <code>false</code>.</p>\n@param useAmortized Specifies whether a budget uses the amortized rate.</p> <p>The default value is <code>false</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5866,6 +5946,7 @@
             "variableSetterType" : "Boolean"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies whether a budget includes credits.</p> <p>The default value is <code>true</code>.</p>\n@param includeCredit Specifies whether a budget includes credits.</p> <p>The default value is <code>true</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5935,6 +6016,7 @@
             "variableSetterType" : "Boolean"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies whether a budget includes discounts.</p> <p>The default value is <code>true</code>.</p>\n@param includeDiscount Specifies whether a budget includes discounts.</p> <p>The default value is <code>true</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6004,6 +6086,7 @@
             "variableSetterType" : "Boolean"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies whether a budget includes non-RI subscription costs.</p> <p>The default value is <code>true</code>.</p>\n@param includeOtherSubscription Specifies whether a budget includes non-RI subscription costs.</p> <p>The default value is <code>true</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6073,6 +6156,7 @@
             "variableSetterType" : "Boolean"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies whether a budget includes recurring fees such as monthly RI fees.</p> <p>The default value is <code>true</code>.</p>\n@param includeRecurring Specifies whether a budget includes recurring fees such as monthly RI fees.</p> <p>The default value is <code>true</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6142,6 +6226,7 @@
             "variableSetterType" : "Boolean"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies whether a budget includes refunds.</p> <p>The default value is <code>true</code>.</p>\n@param includeRefund Specifies whether a budget includes refunds.</p> <p>The default value is <code>true</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6211,6 +6296,7 @@
             "variableSetterType" : "Boolean"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies whether a budget includes subscriptions.</p> <p>The default value is <code>true</code>.</p>\n@param includeSubscription Specifies whether a budget includes subscriptions.</p> <p>The default value is <code>true</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6280,6 +6366,7 @@
             "variableSetterType" : "Boolean"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies whether a budget includes support subscription fees.</p> <p>The default value is <code>true</code>.</p>\n@param includeSupport Specifies whether a budget includes support subscription fees.</p> <p>The default value is <code>true</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6349,6 +6436,7 @@
             "variableSetterType" : "Boolean"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies whether a budget includes taxes.</p> <p>The default value is <code>true</code>.</p>\n@param includeTax Specifies whether a budget includes taxes.</p> <p>The default value is <code>true</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6418,6 +6506,7 @@
             "variableSetterType" : "Boolean"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies whether a budget includes upfront RI costs.</p> <p>The default value is <code>true</code>.</p>\n@param includeUpfront Specifies whether a budget includes upfront RI costs.</p> <p>The default value is <code>true</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6487,6 +6576,7 @@
             "variableSetterType" : "Boolean"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies whether a budget uses the amortized rate.</p> <p>The default value is <code>false</code>.</p>\n@param useAmortized Specifies whether a budget uses the amortized rate.</p> <p>The default value is <code>false</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6556,6 +6646,7 @@
             "variableSetterType" : "Boolean"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies whether a budget uses a blended rate.</p> <p>The default value is <code>false</code>.</p>\n@param useBlended Specifies whether a budget uses a blended rate.</p> <p>The default value is <code>false</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6571,6 +6662,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.budgets.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6605,6 +6697,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.budgets.request.CreateBudgetRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6673,6 +6766,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The <code>accountId</code> that is associated with the budget.</p>\n@param accountId The <code>accountId</code> that is associated with the budget.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6741,6 +6835,7 @@
           "variableSetterType" : "Budget"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The budget object that you want to create.</p>\n@param budget The budget object that you want to create.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6848,6 +6943,7 @@
               "variableSetterType" : "NotificationWithSubscribers"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6892,6 +6988,7 @@
           "variableSetterType" : "java.util.Collection<NotificationWithSubscribers>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A notification that you want to associate with a budget. A budget can have up to five notifications, and each notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications and subscribers in your <code>CreateBudget</code> call, AWS creates the notifications and subscribers for you.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setNotificationsWithSubscribers(java.util.Collection)} or {@link #withNotificationsWithSubscribers(java.util.Collection)} if you want to override the existing values.</p>\n@param notificationsWithSubscribers A notification that you want to associate with a budget. A budget can have up to five notifications, and each notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications and subscribers in your <code>CreateBudget</code> call, AWS creates the notifications and subscribers for you.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6962,6 +7059,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The <code>accountId</code> that is associated with the budget.</p>\n@param accountId The <code>accountId</code> that is associated with the budget.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7031,6 +7129,7 @@
             "variableSetterType" : "Budget"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The budget object that you want to create.</p>\n@param budget The budget object that you want to create.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7139,6 +7238,7 @@
                 "variableSetterType" : "NotificationWithSubscribers"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7183,6 +7283,7 @@
             "variableSetterType" : "java.util.Collection<NotificationWithSubscribers>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A notification that you want to associate with a budget. A budget can have up to five notifications, and each notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications and subscribers in your <code>CreateBudget</code> call, AWS creates the notifications and subscribers for you.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setNotificationsWithSubscribers(java.util.Collection)} or {@link #withNotificationsWithSubscribers(java.util.Collection)} if you want to override the existing values.</p>\n@param notificationsWithSubscribers A notification that you want to associate with a budget. A budget can have up to five notifications, and each notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications and subscribers in your <code>CreateBudget</code> call, AWS creates the notifications and subscribers for you.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7198,6 +7299,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.budgets.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "AccountId", "Budget" ],
@@ -7229,6 +7331,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.budgets.response.CreateBudgetResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7237,6 +7340,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.budgets.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -7271,6 +7375,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.budgets.request.CreateNotificationRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7339,6 +7444,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The <code>accountId</code> that is associated with the budget that you want to create a notification for.</p>\n@param accountId The <code>accountId</code> that is associated with the budget that you want to create a notification for.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7407,6 +7513,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the budget that you want AWS to notify you about. Budget names must be unique within an account.</p>\n@param budgetName The name of the budget that you want AWS to notify you about. Budget names must be unique within an account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7475,6 +7582,7 @@
           "variableSetterType" : "Notification"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The notification that you want to create.</p>\n@param notification The notification that you want to create.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7582,6 +7690,7 @@
               "variableSetterType" : "Subscriber"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7626,6 +7735,7 @@
           "variableSetterType" : "java.util.Collection<Subscriber>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of subscribers that you want to associate with the notification. Each notification can have one SNS subscriber and up to 10 email subscribers.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSubscribers(java.util.Collection)} or {@link #withSubscribers(java.util.Collection)} if you want to override the existing values.</p>\n@param subscribers A list of subscribers that you want to associate with the notification. Each notification can have one SNS subscriber and up to 10 email subscribers.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7696,6 +7806,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The <code>accountId</code> that is associated with the budget that you want to create a notification for.</p>\n@param accountId The <code>accountId</code> that is associated with the budget that you want to create a notification for.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7765,6 +7876,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the budget that you want AWS to notify you about. Budget names must be unique within an account.</p>\n@param budgetName The name of the budget that you want AWS to notify you about. Budget names must be unique within an account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7834,6 +7946,7 @@
             "variableSetterType" : "Notification"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The notification that you want to create.</p>\n@param notification The notification that you want to create.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7942,6 +8055,7 @@
                 "variableSetterType" : "Subscriber"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7986,6 +8100,7 @@
             "variableSetterType" : "java.util.Collection<Subscriber>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of subscribers that you want to associate with the notification. Each notification can have one SNS subscriber and up to 10 email subscribers.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSubscribers(java.util.Collection)} or {@link #withSubscribers(java.util.Collection)} if you want to override the existing values.</p>\n@param subscribers A list of subscribers that you want to associate with the notification. Each notification can have one SNS subscriber and up to 10 email subscribers.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8001,6 +8116,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.budgets.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "AccountId", "BudgetName", "Notification", "Subscribers" ],
@@ -8032,6 +8148,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.budgets.response.CreateNotificationResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8040,6 +8157,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.budgets.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -8074,6 +8192,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.budgets.request.CreateSubscriberRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8142,6 +8261,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The <code>accountId</code> that is associated with the budget that you want to create a subscriber for.</p>\n@param accountId The <code>accountId</code> that is associated with the budget that you want to create a subscriber for.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8210,6 +8330,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the budget that you want to subscribe to. Budget names must be unique within an account.</p>\n@param budgetName The name of the budget that you want to subscribe to. Budget names must be unique within an account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8278,6 +8399,7 @@
           "variableSetterType" : "Notification"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The notification that you want to create a subscriber for.</p>\n@param notification The notification that you want to create a subscriber for.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8346,6 +8468,7 @@
           "variableSetterType" : "Subscriber"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The subscriber that you want to associate with a budget notification.</p>\n@param subscriber The subscriber that you want to associate with a budget notification.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8416,6 +8539,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The <code>accountId</code> that is associated with the budget that you want to create a subscriber for.</p>\n@param accountId The <code>accountId</code> that is associated with the budget that you want to create a subscriber for.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8485,6 +8609,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the budget that you want to subscribe to. Budget names must be unique within an account.</p>\n@param budgetName The name of the budget that you want to subscribe to. Budget names must be unique within an account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8554,6 +8679,7 @@
             "variableSetterType" : "Notification"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The notification that you want to create a subscriber for.</p>\n@param notification The notification that you want to create a subscriber for.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8623,6 +8749,7 @@
             "variableSetterType" : "Subscriber"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The subscriber that you want to associate with a budget notification.</p>\n@param subscriber The subscriber that you want to associate with a budget notification.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8638,6 +8765,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.budgets.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "AccountId", "BudgetName", "Notification", "Subscriber" ],
@@ -8669,6 +8797,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.budgets.response.CreateSubscriberResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8677,6 +8806,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.budgets.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -8711,6 +8841,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "CreationLimitExceededException",
+      "fullyQualifiedName" : "com.amazonaws.services.budgets.exception.CreationLimitExceededException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8719,6 +8850,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.budgets.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -8750,6 +8882,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.budgets.request.DeleteBudgetRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8818,6 +8951,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The <code>accountId</code> that is associated with the budget that you want to delete.</p>\n@param accountId The <code>accountId</code> that is associated with the budget that you want to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8886,6 +9020,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the budget that you want to delete.</p>\n@param budgetName The name of the budget that you want to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8956,6 +9091,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The <code>accountId</code> that is associated with the budget that you want to delete.</p>\n@param accountId The <code>accountId</code> that is associated with the budget that you want to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9025,6 +9161,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the budget that you want to delete.</p>\n@param budgetName The name of the budget that you want to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9040,6 +9177,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.budgets.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "AccountId", "BudgetName" ],
@@ -9071,6 +9209,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.budgets.response.DeleteBudgetResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -9079,6 +9218,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.budgets.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -9113,6 +9253,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.budgets.request.DeleteNotificationRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -9181,6 +9322,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The <code>accountId</code> that is associated with the budget whose notification you want to delete.</p>\n@param accountId The <code>accountId</code> that is associated with the budget whose notification you want to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9249,6 +9391,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the budget whose notification you want to delete.</p>\n@param budgetName The name of the budget whose notification you want to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9317,6 +9460,7 @@
           "variableSetterType" : "Notification"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The notification that you want to delete.</p>\n@param notification The notification that you want to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9387,6 +9531,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The <code>accountId</code> that is associated with the budget whose notification you want to delete.</p>\n@param accountId The <code>accountId</code> that is associated with the budget whose notification you want to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9456,6 +9601,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the budget whose notification you want to delete.</p>\n@param budgetName The name of the budget whose notification you want to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9525,6 +9671,7 @@
             "variableSetterType" : "Notification"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The notification that you want to delete.</p>\n@param notification The notification that you want to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9540,6 +9687,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.budgets.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "AccountId", "BudgetName", "Notification" ],
@@ -9571,6 +9719,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.budgets.response.DeleteNotificationResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -9579,6 +9728,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.budgets.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -9613,6 +9763,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.budgets.request.DeleteSubscriberRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -9681,6 +9832,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The <code>accountId</code> that is associated with the budget whose subscriber you want to delete.</p>\n@param accountId The <code>accountId</code> that is associated with the budget whose subscriber you want to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9749,6 +9901,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the budget whose subscriber you want to delete.</p>\n@param budgetName The name of the budget whose subscriber you want to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9817,6 +9970,7 @@
           "variableSetterType" : "Notification"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The notification whose subscriber you want to delete.</p>\n@param notification The notification whose subscriber you want to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9885,6 +10039,7 @@
           "variableSetterType" : "Subscriber"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The subscriber that you want to delete.</p>\n@param subscriber The subscriber that you want to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9955,6 +10110,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The <code>accountId</code> that is associated with the budget whose subscriber you want to delete.</p>\n@param accountId The <code>accountId</code> that is associated with the budget whose subscriber you want to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10024,6 +10180,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the budget whose subscriber you want to delete.</p>\n@param budgetName The name of the budget whose subscriber you want to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10093,6 +10250,7 @@
             "variableSetterType" : "Notification"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The notification whose subscriber you want to delete.</p>\n@param notification The notification whose subscriber you want to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10162,6 +10320,7 @@
             "variableSetterType" : "Subscriber"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The subscriber that you want to delete.</p>\n@param subscriber The subscriber that you want to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10177,6 +10336,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.budgets.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "AccountId", "BudgetName", "Notification", "Subscriber" ],
@@ -10208,6 +10368,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.budgets.response.DeleteSubscriberResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -10216,6 +10377,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.budgets.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -10250,6 +10412,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.budgets.request.DescribeBudgetPerformanceHistoryRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -10318,6 +10481,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param accountId \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10386,6 +10550,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param budgetName \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10454,6 +10619,7 @@
           "variableSetterType" : "TimePeriod"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Retrieves how often the budget went into an <code>ALARM</code> state for the specified time period.</p>\n@param timePeriod Retrieves how often the budget went into an <code>ALARM</code> state for the specified time period.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10522,6 +10688,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param maxResults \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10590,6 +10757,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param nextToken \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10660,6 +10828,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param accountId \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10729,6 +10898,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param budgetName \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10798,6 +10968,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param maxResults \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10867,6 +11038,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param nextToken \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10936,6 +11108,7 @@
             "variableSetterType" : "TimePeriod"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Retrieves how often the budget went into an <code>ALARM</code> state for the specified time period.</p>\n@param timePeriod Retrieves how often the budget went into an <code>ALARM</code> state for the specified time period.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10951,6 +11124,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.budgets.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "AccountId", "BudgetName" ],
@@ -10982,6 +11156,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.budgets.response.DescribeBudgetPerformanceHistoryResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -11043,6 +11218,7 @@
           "variableSetterType" : "BudgetPerformanceHistory"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The history of how often the budget has gone into an <code>ALARM</code> state.</p> <p>For <code>DAILY</code> budgets, the history saves the state of the budget for the last 60 days. For <code>MONTHLY</code> budgets, the history saves the state of the budget for the current month plus the last 12 months. For <code>QUARTERLY</code> budgets, the history saves the state of the budget for the last four quarters.</p>\n@param budgetPerformanceHistory The history of how often the budget has gone into an <code>ALARM</code> state.</p> <p>For <code>DAILY</code> budgets, the history saves the state of the budget for the last 60 days. For <code>MONTHLY</code> budgets, the history saves the state of the budget for the current month plus the last 12 months. For <code>QUARTERLY</code> budgets, the history saves the state of the budget for the last four quarters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11111,6 +11287,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param nextToken \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11181,6 +11358,7 @@
             "variableSetterType" : "BudgetPerformanceHistory"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The history of how often the budget has gone into an <code>ALARM</code> state.</p> <p>For <code>DAILY</code> budgets, the history saves the state of the budget for the last 60 days. For <code>MONTHLY</code> budgets, the history saves the state of the budget for the current month plus the last 12 months. For <code>QUARTERLY</code> budgets, the history saves the state of the budget for the last four quarters.</p>\n@param budgetPerformanceHistory The history of how often the budget has gone into an <code>ALARM</code> state.</p> <p>For <code>DAILY</code> budgets, the history saves the state of the budget for the last 60 days. For <code>MONTHLY</code> budgets, the history saves the state of the budget for the current month plus the last 12 months. For <code>QUARTERLY</code> budgets, the history saves the state of the budget for the last four quarters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11250,6 +11428,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param nextToken \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11265,6 +11444,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.budgets.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -11299,6 +11479,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.budgets.request.DescribeBudgetRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -11367,6 +11548,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The <code>accountId</code> that is associated with the budget that you want a description of.</p>\n@param accountId The <code>accountId</code> that is associated with the budget that you want a description of.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11435,6 +11617,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the budget that you want a description of.</p>\n@param budgetName The name of the budget that you want a description of.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11505,6 +11688,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The <code>accountId</code> that is associated with the budget that you want a description of.</p>\n@param accountId The <code>accountId</code> that is associated with the budget that you want a description of.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11574,6 +11758,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the budget that you want a description of.</p>\n@param budgetName The name of the budget that you want a description of.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11589,6 +11774,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.budgets.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "AccountId", "BudgetName" ],
@@ -11620,6 +11806,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.budgets.response.DescribeBudgetResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -11681,6 +11868,7 @@
           "variableSetterType" : "Budget"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The description of the budget.</p>\n@param budget The description of the budget.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11751,6 +11939,7 @@
             "variableSetterType" : "Budget"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The description of the budget.</p>\n@param budget The description of the budget.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11766,6 +11955,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.budgets.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -11800,6 +11990,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.budgets.request.DescribeBudgetsRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -11868,6 +12059,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The <code>accountId</code> that is associated with the budgets that you want descriptions of.</p>\n@param accountId The <code>accountId</code> that is associated with the budgets that you want descriptions of.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11936,6 +12128,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>\n@param maxResults An optional integer that represents how many entries a paginated response contains. The maximum is 100.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12004,6 +12197,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>\n@param nextToken The pagination token that you include in your request to indicate the next set of results that you want to retrieve.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12074,6 +12268,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The <code>accountId</code> that is associated with the budgets that you want descriptions of.</p>\n@param accountId The <code>accountId</code> that is associated with the budgets that you want descriptions of.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12143,6 +12338,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>\n@param maxResults An optional integer that represents how many entries a paginated response contains. The maximum is 100.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12212,6 +12408,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>\n@param nextToken The pagination token that you include in your request to indicate the next set of results that you want to retrieve.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12227,6 +12424,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.budgets.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "AccountId" ],
@@ -12258,6 +12456,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.budgets.response.DescribeBudgetsResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -12358,6 +12557,7 @@
               "variableSetterType" : "Budget"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12402,6 +12602,7 @@
           "variableSetterType" : "java.util.Collection<Budget>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of budgets.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setBudgets(java.util.Collection)} or {@link #withBudgets(java.util.Collection)} if you want to override the existing values.</p>\n@param budgets A list of budgets.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12470,6 +12671,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The pagination token in the service response that indicates the next set of results that you can retrieve.</p>\n@param nextToken The pagination token in the service response that indicates the next set of results that you can retrieve.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12579,6 +12781,7 @@
                 "variableSetterType" : "Budget"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12623,6 +12826,7 @@
             "variableSetterType" : "java.util.Collection<Budget>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of budgets.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setBudgets(java.util.Collection)} or {@link #withBudgets(java.util.Collection)} if you want to override the existing values.</p>\n@param budgets A list of budgets.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12692,6 +12896,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The pagination token in the service response that indicates the next set of results that you can retrieve.</p>\n@param nextToken The pagination token in the service response that indicates the next set of results that you can retrieve.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12707,6 +12912,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.budgets.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -12741,6 +12947,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.budgets.request.DescribeNotificationsForBudgetRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -12809,6 +13016,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The <code>accountId</code> that is associated with the budget whose notifications you want descriptions of.</p>\n@param accountId The <code>accountId</code> that is associated with the budget whose notifications you want descriptions of.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12877,6 +13085,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the budget whose notifications you want descriptions of.</p>\n@param budgetName The name of the budget whose notifications you want descriptions of.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12945,6 +13154,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>\n@param maxResults An optional integer that represents how many entries a paginated response contains. The maximum is 100.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13013,6 +13223,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>\n@param nextToken The pagination token that you include in your request to indicate the next set of results that you want to retrieve.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13083,6 +13294,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The <code>accountId</code> that is associated with the budget whose notifications you want descriptions of.</p>\n@param accountId The <code>accountId</code> that is associated with the budget whose notifications you want descriptions of.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13152,6 +13364,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the budget whose notifications you want descriptions of.</p>\n@param budgetName The name of the budget whose notifications you want descriptions of.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13221,6 +13434,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>\n@param maxResults An optional integer that represents how many entries a paginated response contains. The maximum is 100.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13290,6 +13504,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>\n@param nextToken The pagination token that you include in your request to indicate the next set of results that you want to retrieve.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13305,6 +13520,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.budgets.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "AccountId", "BudgetName" ],
@@ -13336,6 +13552,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.budgets.response.DescribeNotificationsForBudgetResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -13436,6 +13653,7 @@
               "variableSetterType" : "Notification"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13480,6 +13698,7 @@
           "variableSetterType" : "java.util.Collection<Notification>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of notifications that are associated with a budget.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setNotifications(java.util.Collection)} or {@link #withNotifications(java.util.Collection)} if you want to override the existing values.</p>\n@param notifications A list of notifications that are associated with a budget.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13548,6 +13767,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The pagination token in the service response that indicates the next set of results that you can retrieve.</p>\n@param nextToken The pagination token in the service response that indicates the next set of results that you can retrieve.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13618,6 +13838,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The pagination token in the service response that indicates the next set of results that you can retrieve.</p>\n@param nextToken The pagination token in the service response that indicates the next set of results that you can retrieve.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13726,6 +13947,7 @@
                 "variableSetterType" : "Notification"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13770,6 +13992,7 @@
             "variableSetterType" : "java.util.Collection<Notification>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of notifications that are associated with a budget.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setNotifications(java.util.Collection)} or {@link #withNotifications(java.util.Collection)} if you want to override the existing values.</p>\n@param notifications A list of notifications that are associated with a budget.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13785,6 +14008,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.budgets.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -13819,6 +14043,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.budgets.request.DescribeSubscribersForNotificationRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -13887,6 +14112,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The <code>accountId</code> that is associated with the budget whose subscribers you want descriptions of.</p>\n@param accountId The <code>accountId</code> that is associated with the budget whose subscribers you want descriptions of.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13955,6 +14181,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the budget whose subscribers you want descriptions of.</p>\n@param budgetName The name of the budget whose subscribers you want descriptions of.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14023,6 +14250,7 @@
           "variableSetterType" : "Notification"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The notification whose subscribers you want to list.</p>\n@param notification The notification whose subscribers you want to list.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14091,6 +14319,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>\n@param maxResults An optional integer that represents how many entries a paginated response contains. The maximum is 100.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14159,6 +14388,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>\n@param nextToken The pagination token that you include in your request to indicate the next set of results that you want to retrieve.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14229,6 +14459,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The <code>accountId</code> that is associated with the budget whose subscribers you want descriptions of.</p>\n@param accountId The <code>accountId</code> that is associated with the budget whose subscribers you want descriptions of.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14298,6 +14529,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the budget whose subscribers you want descriptions of.</p>\n@param budgetName The name of the budget whose subscribers you want descriptions of.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14367,6 +14599,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>\n@param maxResults An optional integer that represents how many entries a paginated response contains. The maximum is 100.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14436,6 +14669,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>\n@param nextToken The pagination token that you include in your request to indicate the next set of results that you want to retrieve.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14505,6 +14739,7 @@
             "variableSetterType" : "Notification"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The notification whose subscribers you want to list.</p>\n@param notification The notification whose subscribers you want to list.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14520,6 +14755,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.budgets.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "AccountId", "BudgetName", "Notification" ],
@@ -14551,6 +14787,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.budgets.response.DescribeSubscribersForNotificationResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -14651,6 +14888,7 @@
               "variableSetterType" : "Subscriber"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14695,6 +14933,7 @@
           "variableSetterType" : "java.util.Collection<Subscriber>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of subscribers that are associated with a notification.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSubscribers(java.util.Collection)} or {@link #withSubscribers(java.util.Collection)} if you want to override the existing values.</p>\n@param subscribers A list of subscribers that are associated with a notification.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14763,6 +15002,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The pagination token in the service response that indicates the next set of results that you can retrieve.</p>\n@param nextToken The pagination token in the service response that indicates the next set of results that you can retrieve.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14833,6 +15073,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The pagination token in the service response that indicates the next set of results that you can retrieve.</p>\n@param nextToken The pagination token in the service response that indicates the next set of results that you can retrieve.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14941,6 +15182,7 @@
                 "variableSetterType" : "Subscriber"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14985,6 +15227,7 @@
             "variableSetterType" : "java.util.Collection<Subscriber>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of subscribers that are associated with a notification.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSubscribers(java.util.Collection)} or {@link #withSubscribers(java.util.Collection)} if you want to override the existing values.</p>\n@param subscribers A list of subscribers that are associated with a notification.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15000,6 +15243,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.budgets.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -15034,6 +15278,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "DuplicateRecordException",
+      "fullyQualifiedName" : "com.amazonaws.services.budgets.exception.DuplicateRecordException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -15042,6 +15287,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.budgets.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -15073,6 +15319,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ExpiredNextTokenException",
+      "fullyQualifiedName" : "com.amazonaws.services.budgets.exception.ExpiredNextTokenException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -15081,6 +15328,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.budgets.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -15112,6 +15360,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InternalErrorException",
+      "fullyQualifiedName" : "com.amazonaws.services.budgets.exception.InternalErrorException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -15120,6 +15369,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.budgets.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -15151,6 +15401,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InvalidNextTokenException",
+      "fullyQualifiedName" : "com.amazonaws.services.budgets.exception.InvalidNextTokenException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -15159,6 +15410,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.budgets.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -15190,6 +15442,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InvalidParameterException",
+      "fullyQualifiedName" : "com.amazonaws.services.budgets.exception.InvalidParameterException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -15198,6 +15451,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.budgets.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -15229,6 +15483,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "NotFoundException",
+      "fullyQualifiedName" : "com.amazonaws.services.budgets.exception.NotFoundException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -15237,6 +15492,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.budgets.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -15268,6 +15524,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.budgets.model.Notification",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -15329,6 +15586,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Whether the notification is for how much you have spent (<code>ACTUAL</code>) or for how much you're forecasted to spend (<code>FORECASTED</code>).</p>\n@param notificationType Whether the notification is for how much you have spent (<code>ACTUAL</code>) or for how much you're forecasted to spend (<code>FORECASTED</code>).\n@return Returns a reference to this object so that method calls can be chained together.\n@see NotificationType*/",
@@ -15397,6 +15655,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The comparison that is used for this notification.</p>\n@param comparisonOperator The comparison that is used for this notification.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ComparisonOperator*/",
@@ -15465,6 +15724,7 @@
           "variableSetterType" : "Double"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The threshold that is associated with a notification. Thresholds are always a percentage.</p>\n@param threshold The threshold that is associated with a notification. Thresholds are always a percentage.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15533,6 +15793,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The type of threshold for a notification. For <code>ABSOLUTE_VALUE</code> thresholds, AWS notifies you when you go over or are forecasted to go over your total cost threshold. For <code>PERCENTAGE</code> thresholds, AWS notifies you when you go over or are forecasted to go over a certain percentage of your forecasted spend. For example, if you have a budget for 200 dollars and you have a <code>PERCENTAGE</code> threshold of 80%, AWS notifies you when you go over 160 dollars.</p>\n@param thresholdType The type of threshold for a notification. For <code>ABSOLUTE_VALUE</code> thresholds, AWS notifies you when you go over or are forecasted to go over your total cost threshold. For <code>PERCENTAGE</code> thresholds, AWS notifies you when you go over or are forecasted to go over a certain percentage of your forecasted spend. For example, if you have a budget for 200 dollars and you have a <code>PERCENTAGE</code> threshold of 80%, AWS notifies you when you go over 160 dollars.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ThresholdType*/",
@@ -15601,6 +15862,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Whether this notification is in alarm. If a budget notification is in the <code>ALARM</code> state, you have passed the set threshold for the budget.</p>\n@param notificationState Whether this notification is in alarm. If a budget notification is in the <code>ALARM</code> state, you have passed the set threshold for the budget.\n@return Returns a reference to this object so that method calls can be chained together.\n@see NotificationState*/",
@@ -15671,6 +15933,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The comparison that is used for this notification.</p>\n@param comparisonOperator The comparison that is used for this notification.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ComparisonOperator*/",
@@ -15740,6 +16003,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Whether this notification is in alarm. If a budget notification is in the <code>ALARM</code> state, you have passed the set threshold for the budget.</p>\n@param notificationState Whether this notification is in alarm. If a budget notification is in the <code>ALARM</code> state, you have passed the set threshold for the budget.\n@return Returns a reference to this object so that method calls can be chained together.\n@see NotificationState*/",
@@ -15809,6 +16073,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Whether the notification is for how much you have spent (<code>ACTUAL</code>) or for how much you're forecasted to spend (<code>FORECASTED</code>).</p>\n@param notificationType Whether the notification is for how much you have spent (<code>ACTUAL</code>) or for how much you're forecasted to spend (<code>FORECASTED</code>).\n@return Returns a reference to this object so that method calls can be chained together.\n@see NotificationType*/",
@@ -15878,6 +16143,7 @@
             "variableSetterType" : "Double"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The threshold that is associated with a notification. Thresholds are always a percentage.</p>\n@param threshold The threshold that is associated with a notification. Thresholds are always a percentage.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15947,6 +16213,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The type of threshold for a notification. For <code>ABSOLUTE_VALUE</code> thresholds, AWS notifies you when you go over or are forecasted to go over your total cost threshold. For <code>PERCENTAGE</code> thresholds, AWS notifies you when you go over or are forecasted to go over a certain percentage of your forecasted spend. For example, if you have a budget for 200 dollars and you have a <code>PERCENTAGE</code> threshold of 80%, AWS notifies you when you go over 160 dollars.</p>\n@param thresholdType The type of threshold for a notification. For <code>ABSOLUTE_VALUE</code> thresholds, AWS notifies you when you go over or are forecasted to go over your total cost threshold. For <code>PERCENTAGE</code> thresholds, AWS notifies you when you go over or are forecasted to go over a certain percentage of your forecasted spend. For example, if you have a budget for 200 dollars and you have a <code>PERCENTAGE</code> threshold of 80%, AWS notifies you when you go over 160 dollars.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ThresholdType*/",
@@ -15962,6 +16229,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.budgets.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "NotificationType", "ComparisonOperator", "Threshold" ],
@@ -16002,6 +16270,7 @@
         "value" : "ALARM"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.budgets.enum.NotificationState",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -16010,6 +16279,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.budgets.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -16050,6 +16320,7 @@
         "value" : "FORECASTED"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.budgets.enum.NotificationType",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -16058,6 +16329,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.budgets.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -16092,6 +16364,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.budgets.model.NotificationWithSubscribers",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -16153,6 +16426,7 @@
           "variableSetterType" : "Notification"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The notification that is associated with a budget.</p>\n@param notification The notification that is associated with a budget.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16260,6 +16534,7 @@
               "variableSetterType" : "Subscriber"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16304,6 +16579,7 @@
           "variableSetterType" : "java.util.Collection<Subscriber>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of subscribers who are subscribed to this notification.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSubscribers(java.util.Collection)} or {@link #withSubscribers(java.util.Collection)} if you want to override the existing values.</p>\n@param subscribers A list of subscribers who are subscribed to this notification.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16374,6 +16650,7 @@
             "variableSetterType" : "Notification"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The notification that is associated with a budget.</p>\n@param notification The notification that is associated with a budget.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16482,6 +16759,7 @@
                 "variableSetterType" : "Subscriber"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16526,6 +16804,7 @@
             "variableSetterType" : "java.util.Collection<Subscriber>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of subscribers who are subscribed to this notification.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSubscribers(java.util.Collection)} or {@link #withSubscribers(java.util.Collection)} if you want to override the existing values.</p>\n@param subscribers A list of subscribers who are subscribed to this notification.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16541,6 +16820,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.budgets.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Notification", "Subscribers" ],
@@ -16575,6 +16855,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.budgets.model.Spend",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -16636,6 +16917,7 @@
           "variableSetterType" : "java.math.BigDecimal"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The cost or usage amount that is associated with a budget forecast, actual spend, or budget threshold.</p>\n@param amount The cost or usage amount that is associated with a budget forecast, actual spend, or budget threshold.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16704,6 +16986,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unit of measurement that is used for the budget forecast, actual spend, or budget threshold, such as dollars or GB.</p>\n@param unit The unit of measurement that is used for the budget forecast, actual spend, or budget threshold, such as dollars or GB.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16774,6 +17057,7 @@
             "variableSetterType" : "java.math.BigDecimal"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The cost or usage amount that is associated with a budget forecast, actual spend, or budget threshold.</p>\n@param amount The cost or usage amount that is associated with a budget forecast, actual spend, or budget threshold.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16843,6 +17127,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unit of measurement that is used for the budget forecast, actual spend, or budget threshold, such as dollars or GB.</p>\n@param unit The unit of measurement that is used for the budget forecast, actual spend, or budget threshold, such as dollars or GB.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16858,6 +17143,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.budgets.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Amount", "Unit" ],
@@ -16892,6 +17178,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.budgets.model.Subscriber",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -16953,6 +17240,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The type of notification that AWS sends to a subscriber.</p>\n@param subscriptionType The type of notification that AWS sends to a subscriber.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SubscriptionType*/",
@@ -17021,6 +17309,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The address that AWS sends budget notifications to, either an SNS topic or an email.</p> <p>When you create a subscriber, the value of <code>Address</code> can't contain line breaks.</p>\n@param address The address that AWS sends budget notifications to, either an SNS topic or an email.</p> <p>When you create a subscriber, the value of <code>Address</code> can't contain line breaks.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17091,6 +17380,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The address that AWS sends budget notifications to, either an SNS topic or an email.</p> <p>When you create a subscriber, the value of <code>Address</code> can't contain line breaks.</p>\n@param address The address that AWS sends budget notifications to, either an SNS topic or an email.</p> <p>When you create a subscriber, the value of <code>Address</code> can't contain line breaks.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17160,6 +17450,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The type of notification that AWS sends to a subscriber.</p>\n@param subscriptionType The type of notification that AWS sends to a subscriber.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SubscriptionType*/",
@@ -17175,6 +17466,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.budgets.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "SubscriptionType", "Address" ],
@@ -17215,6 +17507,7 @@
         "value" : "EMAIL"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.budgets.enum.SubscriptionType",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -17223,6 +17516,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.budgets.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -17263,6 +17557,7 @@
         "value" : "ABSOLUTE_VALUE"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.budgets.enum.ThresholdType",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -17271,6 +17566,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.budgets.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -17305,6 +17601,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.budgets.model.TimePeriod",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -17366,6 +17663,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The start date for a budget. If you created your budget and didn't specify a start date, AWS defaults to the start of your chosen time period (DAILY, MONTHLY, QUARTERLY, or ANNUALLY). For example, if you created your budget on January 24, 2018, chose <code>DAILY</code>, and didn't set a start date, AWS set your start date to <code>01/24/18 00:00 UTC</code>. If you chose <code>MONTHLY</code>, AWS set your start date to <code>01/01/18 00:00 UTC</code>. The defaults are the same for the AWS Billing and Cost Management console and the API.</p> <p>You can change your start date with the <code>UpdateBudget</code> operation.</p>\n@param start The start date for a budget. If you created your budget and didn't specify a start date, AWS defaults to the start of your chosen time period (DAILY, MONTHLY, QUARTERLY, or ANNUALLY). For example, if you created your budget on January 24, 2018, chose <code>DAILY</code>, and didn't set a start date, AWS set your start date to <code>01/24/18 00:00 UTC</code>. If you chose <code>MONTHLY</code>, AWS set your start date to <code>01/01/18 00:00 UTC</code>. The defaults are the same for the AWS Billing and Cost Management console and the API.</p> <p>You can change your start date with the <code>UpdateBudget</code> operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17434,6 +17732,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The end date for a budget. If you didn't specify an end date, AWS set your end date to <code>06/15/87 00:00 UTC</code>. The defaults are the same for the AWS Billing and Cost Management console and the API.</p> <p>After the end date, AWS deletes the budget and all associated notifications and subscribers. You can change your end date with the <code>UpdateBudget</code> operation.</p>\n@param end The end date for a budget. If you didn't specify an end date, AWS set your end date to <code>06/15/87 00:00 UTC</code>. The defaults are the same for the AWS Billing and Cost Management console and the API.</p> <p>After the end date, AWS deletes the budget and all associated notifications and subscribers. You can change your end date with the <code>UpdateBudget</code> operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17504,6 +17803,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The end date for a budget. If you didn't specify an end date, AWS set your end date to <code>06/15/87 00:00 UTC</code>. The defaults are the same for the AWS Billing and Cost Management console and the API.</p> <p>After the end date, AWS deletes the budget and all associated notifications and subscribers. You can change your end date with the <code>UpdateBudget</code> operation.</p>\n@param end The end date for a budget. If you didn't specify an end date, AWS set your end date to <code>06/15/87 00:00 UTC</code>. The defaults are the same for the AWS Billing and Cost Management console and the API.</p> <p>After the end date, AWS deletes the budget and all associated notifications and subscribers. You can change your end date with the <code>UpdateBudget</code> operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17573,6 +17873,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The start date for a budget. If you created your budget and didn't specify a start date, AWS defaults to the start of your chosen time period (DAILY, MONTHLY, QUARTERLY, or ANNUALLY). For example, if you created your budget on January 24, 2018, chose <code>DAILY</code>, and didn't set a start date, AWS set your start date to <code>01/24/18 00:00 UTC</code>. If you chose <code>MONTHLY</code>, AWS set your start date to <code>01/01/18 00:00 UTC</code>. The defaults are the same for the AWS Billing and Cost Management console and the API.</p> <p>You can change your start date with the <code>UpdateBudget</code> operation.</p>\n@param start The start date for a budget. If you created your budget and didn't specify a start date, AWS defaults to the start of your chosen time period (DAILY, MONTHLY, QUARTERLY, or ANNUALLY). For example, if you created your budget on January 24, 2018, chose <code>DAILY</code>, and didn't set a start date, AWS set your start date to <code>01/24/18 00:00 UTC</code>. If you chose <code>MONTHLY</code>, AWS set your start date to <code>01/01/18 00:00 UTC</code>. The defaults are the same for the AWS Billing and Cost Management console and the API.</p> <p>You can change your start date with the <code>UpdateBudget</code> operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17588,6 +17889,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.budgets.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -17634,6 +17936,7 @@
         "value" : "ANNUALLY"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.budgets.enum.TimeUnit",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -17642,6 +17945,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.budgets.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -17676,6 +17980,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.budgets.request.UpdateBudgetRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -17744,6 +18049,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The <code>accountId</code> that is associated with the budget that you want to update.</p>\n@param accountId The <code>accountId</code> that is associated with the budget that you want to update.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17812,6 +18118,7 @@
           "variableSetterType" : "Budget"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The budget that you want to update your budget to.</p>\n@param newBudget The budget that you want to update your budget to.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17882,6 +18189,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The <code>accountId</code> that is associated with the budget that you want to update.</p>\n@param accountId The <code>accountId</code> that is associated with the budget that you want to update.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17951,6 +18259,7 @@
             "variableSetterType" : "Budget"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The budget that you want to update your budget to.</p>\n@param newBudget The budget that you want to update your budget to.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17966,6 +18275,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.budgets.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "AccountId", "NewBudget" ],
@@ -17997,6 +18307,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.budgets.response.UpdateBudgetResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -18005,6 +18316,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.budgets.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -18039,6 +18351,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.budgets.request.UpdateNotificationRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -18107,6 +18420,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The <code>accountId</code> that is associated with the budget whose notification you want to update.</p>\n@param accountId The <code>accountId</code> that is associated with the budget whose notification you want to update.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18175,6 +18489,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the budget whose notification you want to update.</p>\n@param budgetName The name of the budget whose notification you want to update.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18243,6 +18558,7 @@
           "variableSetterType" : "Notification"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The previous notification that is associated with a budget.</p>\n@param oldNotification The previous notification that is associated with a budget.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18311,6 +18627,7 @@
           "variableSetterType" : "Notification"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The updated notification to be associated with a budget.</p>\n@param newNotification The updated notification to be associated with a budget.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18381,6 +18698,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The <code>accountId</code> that is associated with the budget whose notification you want to update.</p>\n@param accountId The <code>accountId</code> that is associated with the budget whose notification you want to update.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18450,6 +18768,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the budget whose notification you want to update.</p>\n@param budgetName The name of the budget whose notification you want to update.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18519,6 +18838,7 @@
             "variableSetterType" : "Notification"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The updated notification to be associated with a budget.</p>\n@param newNotification The updated notification to be associated with a budget.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18588,6 +18908,7 @@
             "variableSetterType" : "Notification"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The previous notification that is associated with a budget.</p>\n@param oldNotification The previous notification that is associated with a budget.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18603,6 +18924,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.budgets.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "AccountId", "BudgetName", "OldNotification", "NewNotification" ],
@@ -18634,6 +18956,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.budgets.response.UpdateNotificationResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -18642,6 +18965,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.budgets.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -18676,6 +19000,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.budgets.request.UpdateSubscriberRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -18744,6 +19069,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The <code>accountId</code> that is associated with the budget whose subscriber you want to update.</p>\n@param accountId The <code>accountId</code> that is associated with the budget whose subscriber you want to update.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18812,6 +19138,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the budget whose subscriber you want to update.</p>\n@param budgetName The name of the budget whose subscriber you want to update.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18880,6 +19207,7 @@
           "variableSetterType" : "Notification"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The notification whose subscriber you want to update.</p>\n@param notification The notification whose subscriber you want to update.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18948,6 +19276,7 @@
           "variableSetterType" : "Subscriber"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The previous subscriber that is associated with a budget notification.</p>\n@param oldSubscriber The previous subscriber that is associated with a budget notification.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19016,6 +19345,7 @@
           "variableSetterType" : "Subscriber"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The updated subscriber that is associated with a budget notification.</p>\n@param newSubscriber The updated subscriber that is associated with a budget notification.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19086,6 +19416,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The <code>accountId</code> that is associated with the budget whose subscriber you want to update.</p>\n@param accountId The <code>accountId</code> that is associated with the budget whose subscriber you want to update.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19155,6 +19486,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the budget whose subscriber you want to update.</p>\n@param budgetName The name of the budget whose subscriber you want to update.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19224,6 +19556,7 @@
             "variableSetterType" : "Subscriber"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The updated subscriber that is associated with a budget notification.</p>\n@param newSubscriber The updated subscriber that is associated with a budget notification.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19293,6 +19626,7 @@
             "variableSetterType" : "Notification"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The notification whose subscriber you want to update.</p>\n@param notification The notification whose subscriber you want to update.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19362,6 +19696,7 @@
             "variableSetterType" : "Subscriber"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The previous subscriber that is associated with a budget notification.</p>\n@param oldSubscriber The previous subscriber that is associated with a budget notification.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19377,6 +19712,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.budgets.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "AccountId", "BudgetName", "Notification", "OldSubscriber", "NewSubscriber" ],
@@ -19408,6 +19744,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.budgets.response.UpdateSubscriberResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -19416,6 +19753,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.budgets.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,

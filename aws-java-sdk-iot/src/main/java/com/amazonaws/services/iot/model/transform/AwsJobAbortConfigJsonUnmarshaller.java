@@ -51,7 +51,8 @@ public class AwsJobAbortConfigJsonUnmarshaller implements Unmarshaller<AwsJobAbo
                 if (context.testExpression("abortCriteriaList", targetDepth)) {
                     context.nextToken();
                     awsJobAbortConfig.setAbortCriteriaList(new ListUnmarshaller<AwsJobAbortCriteria>(AwsJobAbortCriteriaJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

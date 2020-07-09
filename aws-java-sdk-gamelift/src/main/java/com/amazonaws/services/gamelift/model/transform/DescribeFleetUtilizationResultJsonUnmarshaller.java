@@ -51,7 +51,8 @@ public class DescribeFleetUtilizationResultJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("FleetUtilization", targetDepth)) {
                     context.nextToken();
                     describeFleetUtilizationResult.setFleetUtilization(new ListUnmarshaller<FleetUtilization>(FleetUtilizationJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

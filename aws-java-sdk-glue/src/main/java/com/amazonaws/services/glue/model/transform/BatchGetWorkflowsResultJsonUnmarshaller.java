@@ -50,11 +50,15 @@ public class BatchGetWorkflowsResultJsonUnmarshaller implements Unmarshaller<Bat
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Workflows", targetDepth)) {
                     context.nextToken();
-                    batchGetWorkflowsResult.setWorkflows(new ListUnmarshaller<Workflow>(WorkflowJsonUnmarshaller.getInstance()).unmarshall(context));
+                    batchGetWorkflowsResult.setWorkflows(new ListUnmarshaller<Workflow>(WorkflowJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("MissingWorkflows", targetDepth)) {
                     context.nextToken();
-                    batchGetWorkflowsResult.setMissingWorkflows(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    batchGetWorkflowsResult.setMissingWorkflows(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

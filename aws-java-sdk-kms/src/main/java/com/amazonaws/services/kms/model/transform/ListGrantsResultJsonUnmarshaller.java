@@ -50,7 +50,9 @@ public class ListGrantsResultJsonUnmarshaller implements Unmarshaller<ListGrants
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Grants", targetDepth)) {
                     context.nextToken();
-                    listGrantsResult.setGrants(new ListUnmarshaller<GrantListEntry>(GrantListEntryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listGrantsResult.setGrants(new ListUnmarshaller<GrantListEntry>(GrantListEntryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextMarker", targetDepth)) {
                     context.nextToken();

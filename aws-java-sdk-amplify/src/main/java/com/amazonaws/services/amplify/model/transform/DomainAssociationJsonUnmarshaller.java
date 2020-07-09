@@ -62,7 +62,9 @@ public class DomainAssociationJsonUnmarshaller implements Unmarshaller<DomainAss
                 }
                 if (context.testExpression("autoSubDomainCreationPatterns", targetDepth)) {
                     context.nextToken();
-                    domainAssociation.setAutoSubDomainCreationPatterns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    domainAssociation.setAutoSubDomainCreationPatterns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("autoSubDomainIAMRole", targetDepth)) {
                     context.nextToken();
@@ -82,7 +84,9 @@ public class DomainAssociationJsonUnmarshaller implements Unmarshaller<DomainAss
                 }
                 if (context.testExpression("subDomains", targetDepth)) {
                     context.nextToken();
-                    domainAssociation.setSubDomains(new ListUnmarshaller<SubDomain>(SubDomainJsonUnmarshaller.getInstance()).unmarshall(context));
+                    domainAssociation.setSubDomains(new ListUnmarshaller<SubDomain>(SubDomainJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -52,7 +52,9 @@ public class GetEC2RecommendationProjectedMetricsResultJsonUnmarshaller implemen
                 if (context.testExpression("recommendedOptionProjectedMetrics", targetDepth)) {
                     context.nextToken();
                     getEC2RecommendationProjectedMetricsResult.setRecommendedOptionProjectedMetrics(new ListUnmarshaller<RecommendedOptionProjectedMetric>(
-                            RecommendedOptionProjectedMetricJsonUnmarshaller.getInstance()).unmarshall(context));
+                            RecommendedOptionProjectedMetricJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

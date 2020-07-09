@@ -50,7 +50,9 @@ public class BaseKpiResultJsonUnmarshaller implements Unmarshaller<BaseKpiResult
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Rows", targetDepth)) {
                     context.nextToken();
-                    baseKpiResult.setRows(new ListUnmarshaller<ResultRow>(ResultRowJsonUnmarshaller.getInstance()).unmarshall(context));
+                    baseKpiResult.setRows(new ListUnmarshaller<ResultRow>(ResultRowJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

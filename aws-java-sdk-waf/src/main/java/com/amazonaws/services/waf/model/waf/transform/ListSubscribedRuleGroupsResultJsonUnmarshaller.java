@@ -55,7 +55,9 @@ public class ListSubscribedRuleGroupsResultJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("RuleGroups", targetDepth)) {
                     context.nextToken();
                     listSubscribedRuleGroupsResult.setRuleGroups(new ListUnmarshaller<SubscribedRuleGroupSummary>(SubscribedRuleGroupSummaryJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

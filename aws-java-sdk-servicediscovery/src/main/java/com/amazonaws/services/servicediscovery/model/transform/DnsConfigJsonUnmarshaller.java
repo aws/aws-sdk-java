@@ -58,7 +58,9 @@ public class DnsConfigJsonUnmarshaller implements Unmarshaller<DnsConfig, JsonUn
                 }
                 if (context.testExpression("DnsRecords", targetDepth)) {
                     context.nextToken();
-                    dnsConfig.setDnsRecords(new ListUnmarshaller<DnsRecord>(DnsRecordJsonUnmarshaller.getInstance()).unmarshall(context));
+                    dnsConfig.setDnsRecords(new ListUnmarshaller<DnsRecord>(DnsRecordJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

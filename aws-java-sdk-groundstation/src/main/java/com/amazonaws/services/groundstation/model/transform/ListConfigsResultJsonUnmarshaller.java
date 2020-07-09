@@ -50,7 +50,9 @@ public class ListConfigsResultJsonUnmarshaller implements Unmarshaller<ListConfi
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("configList", targetDepth)) {
                     context.nextToken();
-                    listConfigsResult.setConfigList(new ListUnmarshaller<ConfigListItem>(ConfigListItemJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listConfigsResult.setConfigList(new ListUnmarshaller<ConfigListItem>(ConfigListItemJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

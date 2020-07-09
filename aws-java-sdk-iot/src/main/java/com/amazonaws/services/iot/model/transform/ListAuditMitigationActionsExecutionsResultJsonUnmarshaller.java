@@ -52,7 +52,9 @@ public class ListAuditMitigationActionsExecutionsResultJsonUnmarshaller implemen
                 if (context.testExpression("actionsExecutions", targetDepth)) {
                     context.nextToken();
                     listAuditMitigationActionsExecutionsResult.setActionsExecutions(new ListUnmarshaller<AuditMitigationActionExecutionMetadata>(
-                            AuditMitigationActionExecutionMetadataJsonUnmarshaller.getInstance()).unmarshall(context));
+                            AuditMitigationActionExecutionMetadataJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

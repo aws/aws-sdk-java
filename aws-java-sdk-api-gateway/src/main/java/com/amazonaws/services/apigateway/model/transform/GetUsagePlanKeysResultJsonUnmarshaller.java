@@ -54,7 +54,9 @@ public class GetUsagePlanKeysResultJsonUnmarshaller implements Unmarshaller<GetU
                 }
                 if (context.testExpression("item", targetDepth)) {
                     context.nextToken();
-                    getUsagePlanKeysResult.setItems(new ListUnmarshaller<UsagePlanKey>(UsagePlanKeyJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getUsagePlanKeysResult.setItems(new ListUnmarshaller<UsagePlanKey>(UsagePlanKeyJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

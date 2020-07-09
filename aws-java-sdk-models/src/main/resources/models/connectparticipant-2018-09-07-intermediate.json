@@ -344,6 +344,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "AccessDeniedException",
+      "fullyQualifiedName" : "com.amazonaws.services.connectparticipant.exception.AccessDeniedException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -352,6 +353,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.connectparticipant.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Message" ],
@@ -392,6 +394,7 @@
         "value" : "CONNECTION_ACK"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.connectparticipant.enum.ChatItemType",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -400,6 +403,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.connectparticipant.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -434,6 +438,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.connectparticipant.model.ConnectionCredentials",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -495,6 +500,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The connection token.</p>\n@param connectionToken The connection token.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -563,6 +569,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The expiration of the token.</p> <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>\n@param expiry The expiration of the token.</p> <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -633,6 +640,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The connection token.</p>\n@param connectionToken The connection token.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -702,6 +710,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The expiration of the token.</p> <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>\n@param expiry The expiration of the token.</p> <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -717,6 +726,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.connectparticipant.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -757,6 +767,7 @@
         "value" : "CONNECTION_CREDENTIALS"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.connectparticipant.enum.ConnectionType",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -765,6 +776,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.connectparticipant.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -799,6 +811,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.connectparticipant.request.CreateParticipantConnectionRequest",
       "hasHeaderMember" : true,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -906,6 +919,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see ConnectionType*/",
@@ -950,6 +964,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Type of connection information required.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setType(java.util.Collection)} or {@link #withType(java.util.Collection)} if you want to override the existing values.</p>\n@param type Type of connection information required.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ConnectionType*/",
@@ -1018,6 +1033,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Participant Token as obtained from <a href=\"https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContactResponse.html\">StartChatContact</a> API response.</p>\n@param participantToken Participant Token as obtained from <a href=\"https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContactResponse.html\">StartChatContact</a> API response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1088,6 +1104,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Participant Token as obtained from <a href=\"https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContactResponse.html\">StartChatContact</a> API response.</p>\n@param participantToken Participant Token as obtained from <a href=\"https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContactResponse.html\">StartChatContact</a> API response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1196,6 +1213,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see ConnectionType*/",
@@ -1240,6 +1258,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Type of connection information required.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setType(java.util.Collection)} or {@link #withType(java.util.Collection)} if you want to override the existing values.</p>\n@param type Type of connection information required.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ConnectionType*/",
@@ -1255,6 +1274,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.connectparticipant.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Type", "ParticipantToken" ],
@@ -1286,6 +1306,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.connectparticipant.response.CreateParticipantConnectionResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1347,6 +1368,7 @@
           "variableSetterType" : "Websocket"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Creates the participant's websocket connection.</p>\n@param websocket Creates the participant's websocket connection.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1415,6 +1437,7 @@
           "variableSetterType" : "ConnectionCredentials"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Creates the participant's connection credentials. The authentication token associated with the participant's connection.</p>\n@param connectionCredentials Creates the participant's connection credentials. The authentication token associated with the participant's connection.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1485,6 +1508,7 @@
             "variableSetterType" : "ConnectionCredentials"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Creates the participant's connection credentials. The authentication token associated with the participant's connection.</p>\n@param connectionCredentials Creates the participant's connection credentials. The authentication token associated with the participant's connection.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1554,6 +1578,7 @@
             "variableSetterType" : "Websocket"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Creates the participant's websocket connection.</p>\n@param websocket Creates the participant's websocket connection.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1569,6 +1594,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.connectparticipant.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1603,6 +1629,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.connectparticipant.request.DisconnectParticipantRequest",
       "hasHeaderMember" : true,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1671,6 +1698,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>\n@param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1739,6 +1767,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The authentication token associated with the participant's connection.</p>\n@param connectionToken The authentication token associated with the participant's connection.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1809,6 +1838,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>\n@param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1878,6 +1908,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The authentication token associated with the participant's connection.</p>\n@param connectionToken The authentication token associated with the participant's connection.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1893,6 +1924,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.connectparticipant.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ConnectionToken" ],
@@ -1924,6 +1956,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.connectparticipant.response.DisconnectParticipantResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1932,6 +1965,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.connectparticipant.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1966,6 +2000,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.connectparticipant.request.GetTranscriptRequest",
       "hasHeaderMember" : true,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2034,6 +2069,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The contactId from the current contact chain for which transcript is needed.</p>\n@param contactId The contactId from the current contact chain for which transcript is needed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2102,6 +2138,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of results to return in the page. Default: 10. </p>\n@param maxResults The maximum number of results to return in the page. Default: 10.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2170,6 +2207,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The pagination token. Use the value returned previously in the next subsequent request to retrieve the next set of results.</p>\n@param nextToken The pagination token. Use the value returned previously in the next subsequent request to retrieve the next set of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2238,6 +2276,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The direction from StartPosition from which to retrieve message. Default: BACKWARD when no StartPosition is provided, FORWARD with StartPosition. </p>\n@param scanDirection The direction from StartPosition from which to retrieve message. Default: BACKWARD when no StartPosition is provided, FORWARD with StartPosition.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ScanDirection*/",
@@ -2306,6 +2345,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The sort order for the records. Default: DESCENDING.</p>\n@param sortOrder The sort order for the records. Default: DESCENDING.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SortKey*/",
@@ -2374,6 +2414,7 @@
           "variableSetterType" : "StartPosition"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A filtering option for where to start.</p>\n@param startPosition A filtering option for where to start.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2442,6 +2483,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The authentication token associated with the participant's connection.</p>\n@param connectionToken The authentication token associated with the participant's connection.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2512,6 +2554,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The authentication token associated with the participant's connection.</p>\n@param connectionToken The authentication token associated with the participant's connection.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2581,6 +2624,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The contactId from the current contact chain for which transcript is needed.</p>\n@param contactId The contactId from the current contact chain for which transcript is needed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2650,6 +2694,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of results to return in the page. Default: 10. </p>\n@param maxResults The maximum number of results to return in the page. Default: 10.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2719,6 +2764,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The pagination token. Use the value returned previously in the next subsequent request to retrieve the next set of results.</p>\n@param nextToken The pagination token. Use the value returned previously in the next subsequent request to retrieve the next set of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2788,6 +2834,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The direction from StartPosition from which to retrieve message. Default: BACKWARD when no StartPosition is provided, FORWARD with StartPosition. </p>\n@param scanDirection The direction from StartPosition from which to retrieve message. Default: BACKWARD when no StartPosition is provided, FORWARD with StartPosition.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ScanDirection*/",
@@ -2857,6 +2904,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The sort order for the records. Default: DESCENDING.</p>\n@param sortOrder The sort order for the records. Default: DESCENDING.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SortKey*/",
@@ -2926,6 +2974,7 @@
             "variableSetterType" : "StartPosition"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A filtering option for where to start.</p>\n@param startPosition A filtering option for where to start.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2941,6 +2990,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.connectparticipant.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ConnectionToken" ],
@@ -2972,6 +3022,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.connectparticipant.response.GetTranscriptResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3033,6 +3084,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The initial contact ID for the contact. </p>\n@param initialContactId The initial contact ID for the contact.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3140,6 +3192,7 @@
               "variableSetterType" : "Item"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3184,6 +3237,7 @@
           "variableSetterType" : "java.util.Collection<Item>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The list of messages in the session.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTranscript(java.util.Collection)} or {@link #withTranscript(java.util.Collection)} if you want to override the existing values.</p>\n@param transcript The list of messages in the session.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3252,6 +3306,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The pagination token. Use the value returned previously in the next subsequent request to retrieve the next set of results.</p>\n@param nextToken The pagination token. Use the value returned previously in the next subsequent request to retrieve the next set of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3322,6 +3377,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The initial contact ID for the contact. </p>\n@param initialContactId The initial contact ID for the contact.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3391,6 +3447,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The pagination token. Use the value returned previously in the next subsequent request to retrieve the next set of results.</p>\n@param nextToken The pagination token. Use the value returned previously in the next subsequent request to retrieve the next set of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3499,6 +3556,7 @@
                 "variableSetterType" : "Item"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3543,6 +3601,7 @@
             "variableSetterType" : "java.util.Collection<Item>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The list of messages in the session.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTranscript(java.util.Collection)} or {@link #withTranscript(java.util.Collection)} if you want to override the existing values.</p>\n@param transcript The list of messages in the session.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3558,6 +3617,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.connectparticipant.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3592,6 +3652,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InternalServerException",
+      "fullyQualifiedName" : "com.amazonaws.services.connectparticipant.exception.InternalServerException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3600,6 +3661,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.connectparticipant.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Message" ],
@@ -3631,6 +3693,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.connectparticipant.model.Item",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3692,6 +3755,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The time when the message or event was sent.</p> <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>\n@param absoluteTime The time when the message or event was sent.</p> <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3760,6 +3824,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The content of the message or event.</p>\n@param content The content of the message or event.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3828,6 +3893,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The type of content of the item.</p>\n@param contentType The type of content of the item.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3896,6 +3962,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the item.</p>\n@param id The ID of the item.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3964,6 +4031,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Type of the item: message or event. </p>\n@param type Type of the item: message or event.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ChatItemType*/",
@@ -4032,6 +4100,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the sender in the session.</p>\n@param participantId The ID of the sender in the session.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4100,6 +4169,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The chat display name of the sender.</p>\n@param displayName The chat display name of the sender.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4168,6 +4238,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The role of the sender. For example, is it a customer, agent, or system.</p>\n@param participantRole The role of the sender. For example, is it a customer, agent, or system.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ParticipantRole*/",
@@ -4238,6 +4309,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The time when the message or event was sent.</p> <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>\n@param absoluteTime The time when the message or event was sent.</p> <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4307,6 +4379,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The content of the message or event.</p>\n@param content The content of the message or event.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4376,6 +4449,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The type of content of the item.</p>\n@param contentType The type of content of the item.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4445,6 +4519,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The chat display name of the sender.</p>\n@param displayName The chat display name of the sender.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4514,6 +4589,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the item.</p>\n@param id The ID of the item.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4583,6 +4659,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the sender in the session.</p>\n@param participantId The ID of the sender in the session.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4652,6 +4729,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The role of the sender. For example, is it a customer, agent, or system.</p>\n@param participantRole The role of the sender. For example, is it a customer, agent, or system.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ParticipantRole*/",
@@ -4721,6 +4799,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Type of the item: message or event. </p>\n@param type Type of the item: message or event.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ChatItemType*/",
@@ -4736,6 +4815,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.connectparticipant.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4779,6 +4859,7 @@
         "value" : "SYSTEM"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.connectparticipant.enum.ParticipantRole",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4787,6 +4868,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.connectparticipant.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4827,6 +4909,7 @@
         "value" : "BACKWARD"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.connectparticipant.enum.ScanDirection",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4835,6 +4918,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.connectparticipant.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4869,6 +4953,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.connectparticipant.request.SendEventRequest",
       "hasHeaderMember" : true,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4937,6 +5022,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The content type of the request. Supported types are:</p> <ul> <li> <p>application/vnd.amazonaws.connect.event.typing</p> </li> <li> <p>application/vnd.amazonaws.connect.event.connection.acknowledged</p> </li> </ul>\n@param contentType The content type of the request. Supported types are:</p> <ul> <li> <p>application/vnd.amazonaws.connect.event.typing</p> </li> <li> <p>application/vnd.amazonaws.connect.event.connection.acknowledged</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5005,6 +5091,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The content of the event to be sent (for example, message text). This is not yet supported.</p>\n@param content The content of the event to be sent (for example, message text). This is not yet supported.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5073,6 +5160,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>\n@param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5141,6 +5229,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The authentication token associated with the participant's connection.</p>\n@param connectionToken The authentication token associated with the participant's connection.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5211,6 +5300,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>\n@param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5280,6 +5370,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The authentication token associated with the participant's connection.</p>\n@param connectionToken The authentication token associated with the participant's connection.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5349,6 +5440,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The content of the event to be sent (for example, message text). This is not yet supported.</p>\n@param content The content of the event to be sent (for example, message text). This is not yet supported.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5418,6 +5510,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The content type of the request. Supported types are:</p> <ul> <li> <p>application/vnd.amazonaws.connect.event.typing</p> </li> <li> <p>application/vnd.amazonaws.connect.event.connection.acknowledged</p> </li> </ul>\n@param contentType The content type of the request. Supported types are:</p> <ul> <li> <p>application/vnd.amazonaws.connect.event.typing</p> </li> <li> <p>application/vnd.amazonaws.connect.event.connection.acknowledged</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5433,6 +5526,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.connectparticipant.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ContentType", "ConnectionToken" ],
@@ -5464,6 +5558,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.connectparticipant.response.SendEventResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5525,6 +5620,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the response.</p>\n@param id The ID of the response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5593,6 +5689,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The time when the event was sent.</p> <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>\n@param absoluteTime The time when the event was sent.</p> <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5663,6 +5760,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The time when the event was sent.</p> <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>\n@param absoluteTime The time when the event was sent.</p> <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5732,6 +5830,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the response.</p>\n@param id The ID of the response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5747,6 +5846,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.connectparticipant.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -5781,6 +5881,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.connectparticipant.request.SendMessageRequest",
       "hasHeaderMember" : true,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5849,6 +5950,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The type of the content. Supported types are text/plain.</p>\n@param contentType The type of the content. Supported types are text/plain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5917,6 +6019,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The content of the message.</p>\n@param content The content of the message.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5985,6 +6088,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>\n@param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6053,6 +6157,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The authentication token associated with the connection.</p>\n@param connectionToken The authentication token associated with the connection.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6123,6 +6228,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>\n@param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6192,6 +6298,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The authentication token associated with the connection.</p>\n@param connectionToken The authentication token associated with the connection.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6261,6 +6368,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The content of the message.</p>\n@param content The content of the message.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6330,6 +6438,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The type of the content. Supported types are text/plain.</p>\n@param contentType The type of the content. Supported types are text/plain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6345,6 +6454,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.connectparticipant.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ContentType", "Content", "ConnectionToken" ],
@@ -6376,6 +6486,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.connectparticipant.response.SendMessageResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6437,6 +6548,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the message.</p>\n@param id The ID of the message.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6505,6 +6617,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The time when the message was sent.</p> <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>\n@param absoluteTime The time when the message was sent.</p> <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6575,6 +6688,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The time when the message was sent.</p> <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>\n@param absoluteTime The time when the message was sent.</p> <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6644,6 +6758,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the message.</p>\n@param id The ID of the message.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6659,6 +6774,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.connectparticipant.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6699,6 +6815,7 @@
         "value" : "ASCENDING"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.connectparticipant.enum.SortKey",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6707,6 +6824,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.connectparticipant.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6741,6 +6859,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.connectparticipant.model.StartPosition",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6802,6 +6921,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the message or event where to start. </p>\n@param id The ID of the message or event where to start.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6870,6 +6990,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The time in ISO format where to start.</p> <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>\n@param absoluteTime The time in ISO format where to start.</p> <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6938,6 +7059,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The start position of the most recent message where you want to start. </p>\n@param mostRecent The start position of the most recent message where you want to start.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7008,6 +7130,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The time in ISO format where to start.</p> <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>\n@param absoluteTime The time in ISO format where to start.</p> <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7077,6 +7200,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the message or event where to start. </p>\n@param id The ID of the message or event where to start.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7146,6 +7270,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The start position of the most recent message where you want to start. </p>\n@param mostRecent The start position of the most recent message where you want to start.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7161,6 +7286,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.connectparticipant.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -7195,6 +7321,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ThrottlingException",
+      "fullyQualifiedName" : "com.amazonaws.services.connectparticipant.exception.ThrottlingException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7203,6 +7330,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.connectparticipant.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Message" ],
@@ -7234,6 +7362,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ValidationException",
+      "fullyQualifiedName" : "com.amazonaws.services.connectparticipant.exception.ValidationException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7242,6 +7371,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.connectparticipant.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Message" ],
@@ -7273,6 +7403,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.connectparticipant.model.Websocket",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7334,6 +7465,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The URL of the websocket.</p>\n@param url The URL of the websocket.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7402,6 +7534,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The URL expiration timestamp in ISO date format.</p> <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>\n@param connectionExpiry The URL expiration timestamp in ISO date format.</p> <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7472,6 +7605,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The URL expiration timestamp in ISO date format.</p> <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>\n@param connectionExpiry The URL expiration timestamp in ISO date format.</p> <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7541,6 +7675,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The URL of the websocket.</p>\n@param url The URL of the websocket.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7556,6 +7691,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.connectparticipant.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,

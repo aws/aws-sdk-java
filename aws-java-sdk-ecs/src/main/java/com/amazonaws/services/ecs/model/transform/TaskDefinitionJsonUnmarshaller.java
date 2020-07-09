@@ -55,7 +55,8 @@ public class TaskDefinitionJsonUnmarshaller implements Unmarshaller<TaskDefiniti
                 if (context.testExpression("containerDefinitions", targetDepth)) {
                     context.nextToken();
                     taskDefinition.setContainerDefinitions(new ListUnmarshaller<ContainerDefinition>(ContainerDefinitionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("family", targetDepth)) {
                     context.nextToken();
@@ -79,7 +80,9 @@ public class TaskDefinitionJsonUnmarshaller implements Unmarshaller<TaskDefiniti
                 }
                 if (context.testExpression("volumes", targetDepth)) {
                     context.nextToken();
-                    taskDefinition.setVolumes(new ListUnmarshaller<Volume>(VolumeJsonUnmarshaller.getInstance()).unmarshall(context));
+                    taskDefinition.setVolumes(new ListUnmarshaller<Volume>(VolumeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
@@ -87,20 +90,28 @@ public class TaskDefinitionJsonUnmarshaller implements Unmarshaller<TaskDefiniti
                 }
                 if (context.testExpression("requiresAttributes", targetDepth)) {
                     context.nextToken();
-                    taskDefinition.setRequiresAttributes(new ListUnmarshaller<Attribute>(AttributeJsonUnmarshaller.getInstance()).unmarshall(context));
+                    taskDefinition.setRequiresAttributes(new ListUnmarshaller<Attribute>(AttributeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("placementConstraints", targetDepth)) {
                     context.nextToken();
                     taskDefinition.setPlacementConstraints(new ListUnmarshaller<TaskDefinitionPlacementConstraint>(
-                            TaskDefinitionPlacementConstraintJsonUnmarshaller.getInstance()).unmarshall(context));
+                            TaskDefinitionPlacementConstraintJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("compatibilities", targetDepth)) {
                     context.nextToken();
-                    taskDefinition.setCompatibilities(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    taskDefinition.setCompatibilities(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("requiresCompatibilities", targetDepth)) {
                     context.nextToken();
-                    taskDefinition.setRequiresCompatibilities(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    taskDefinition.setRequiresCompatibilities(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("cpu", targetDepth)) {
                     context.nextToken();
@@ -113,7 +124,8 @@ public class TaskDefinitionJsonUnmarshaller implements Unmarshaller<TaskDefiniti
                 if (context.testExpression("inferenceAccelerators", targetDepth)) {
                     context.nextToken();
                     taskDefinition.setInferenceAccelerators(new ListUnmarshaller<InferenceAccelerator>(InferenceAcceleratorJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("pidMode", targetDepth)) {
                     context.nextToken();

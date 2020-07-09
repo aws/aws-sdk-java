@@ -996,7 +996,7 @@ public class DocumentClassifierProperties implements Serializable, Cloneable, St
         if (getOutputDataConfig() != null)
             sb.append("OutputDataConfig: ").append(getOutputDataConfig()).append(",");
         if (getClassifierMetadata() != null)
-            sb.append("ClassifierMetadata: ").append(getClassifierMetadata()).append(",");
+            sb.append("ClassifierMetadata: ").append("***Sensitive Data Redacted***").append(",");
         if (getDataAccessRoleArn() != null)
             sb.append("DataAccessRoleArn: ").append(getDataAccessRoleArn()).append(",");
         if (getVolumeKmsKeyId() != null)

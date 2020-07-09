@@ -54,7 +54,9 @@ public class DescribeTagsResultJsonUnmarshaller implements Unmarshaller<Describe
                 }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
-                    describeTagsResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeTagsResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextMarker", targetDepth)) {
                     context.nextToken();

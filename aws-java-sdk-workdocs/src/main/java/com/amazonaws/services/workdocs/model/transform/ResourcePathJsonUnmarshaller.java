@@ -51,7 +51,8 @@ public class ResourcePathJsonUnmarshaller implements Unmarshaller<ResourcePath, 
                 if (context.testExpression("Components", targetDepth)) {
                     context.nextToken();
                     resourcePath.setComponents(new ListUnmarshaller<ResourcePathComponent>(ResourcePathComponentJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

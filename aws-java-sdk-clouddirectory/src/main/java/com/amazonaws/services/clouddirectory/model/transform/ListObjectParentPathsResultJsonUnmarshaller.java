@@ -51,7 +51,9 @@ public class ListObjectParentPathsResultJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("PathToObjectIdentifiersList", targetDepth)) {
                     context.nextToken();
                     listObjectParentPathsResult.setPathToObjectIdentifiersList(new ListUnmarshaller<PathToObjectIdentifiers>(
-                            PathToObjectIdentifiersJsonUnmarshaller.getInstance()).unmarshall(context));
+                            PathToObjectIdentifiersJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

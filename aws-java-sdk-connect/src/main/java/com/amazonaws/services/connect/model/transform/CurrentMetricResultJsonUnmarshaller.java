@@ -55,7 +55,8 @@ public class CurrentMetricResultJsonUnmarshaller implements Unmarshaller<Current
                 if (context.testExpression("Collections", targetDepth)) {
                     context.nextToken();
                     currentMetricResult.setCollections(new ListUnmarshaller<CurrentMetricData>(CurrentMetricDataJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

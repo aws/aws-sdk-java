@@ -50,7 +50,9 @@ public class DescribeGroupsResultJsonUnmarshaller implements Unmarshaller<Descri
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Groups", targetDepth)) {
                     context.nextToken();
-                    describeGroupsResult.setGroups(new ListUnmarshaller<GroupMetadata>(GroupMetadataJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeGroupsResult.setGroups(new ListUnmarshaller<GroupMetadata>(GroupMetadataJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Marker", targetDepth)) {
                     context.nextToken();

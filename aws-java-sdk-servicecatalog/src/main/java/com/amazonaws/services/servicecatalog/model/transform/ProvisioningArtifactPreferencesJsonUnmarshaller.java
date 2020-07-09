@@ -50,12 +50,15 @@ public class ProvisioningArtifactPreferencesJsonUnmarshaller implements Unmarsha
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StackSetAccounts", targetDepth)) {
                     context.nextToken();
-                    provisioningArtifactPreferences
-                            .setStackSetAccounts(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    provisioningArtifactPreferences.setStackSetAccounts(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("StackSetRegions", targetDepth)) {
                     context.nextToken();
-                    provisioningArtifactPreferences.setStackSetRegions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    provisioningArtifactPreferences.setStackSetRegions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

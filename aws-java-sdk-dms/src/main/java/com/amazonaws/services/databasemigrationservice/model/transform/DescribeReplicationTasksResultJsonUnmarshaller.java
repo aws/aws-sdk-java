@@ -55,7 +55,8 @@ public class DescribeReplicationTasksResultJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("ReplicationTasks", targetDepth)) {
                     context.nextToken();
                     describeReplicationTasksResult.setReplicationTasks(new ListUnmarshaller<ReplicationTask>(ReplicationTaskJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -51,7 +51,8 @@ public class ListStateMachinesResultJsonUnmarshaller implements Unmarshaller<Lis
                 if (context.testExpression("stateMachines", targetDepth)) {
                     context.nextToken();
                     listStateMachinesResult.setStateMachines(new ListUnmarshaller<StateMachineListItem>(StateMachineListItemJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

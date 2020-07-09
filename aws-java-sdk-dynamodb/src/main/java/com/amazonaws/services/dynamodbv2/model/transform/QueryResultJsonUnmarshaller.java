@@ -52,7 +52,9 @@ public class QueryResultJsonUnmarshaller implements Unmarshaller<QueryResult, Js
                 if (context.testExpression("Items", targetDepth)) {
                     context.nextToken();
                     queryResult.setItems(new ListUnmarshaller<java.util.Map<String, AttributeValue>>(new MapUnmarshaller<String, AttributeValue>(context
-                            .getUnmarshaller(String.class), AttributeValueJsonUnmarshaller.getInstance())).unmarshall(context));
+                            .getUnmarshaller(String.class), AttributeValueJsonUnmarshaller.getInstance()))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Count", targetDepth)) {
                     context.nextToken();

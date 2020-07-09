@@ -70,7 +70,9 @@ public class GetAuthorizerResultJsonUnmarshaller implements Unmarshaller<GetAuth
                 }
                 if (context.testExpression("identitySource", targetDepth)) {
                     context.nextToken();
-                    getAuthorizerResult.setIdentitySource(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    getAuthorizerResult.setIdentitySource(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("identityValidationExpression", targetDepth)) {
                     context.nextToken();

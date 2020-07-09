@@ -51,7 +51,9 @@ public class ListTypedLinkFacetAttributesResultJsonUnmarshaller implements Unmar
                 if (context.testExpression("Attributes", targetDepth)) {
                     context.nextToken();
                     listTypedLinkFacetAttributesResult.setAttributes(new ListUnmarshaller<TypedLinkAttributeDefinition>(
-                            TypedLinkAttributeDefinitionJsonUnmarshaller.getInstance()).unmarshall(context));
+                            TypedLinkAttributeDefinitionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

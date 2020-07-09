@@ -50,7 +50,9 @@ public class ShareErrorJsonUnmarshaller implements Unmarshaller<ShareError, Json
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Accounts", targetDepth)) {
                     context.nextToken();
-                    shareError.setAccounts(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    shareError.setAccounts(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Message", targetDepth)) {
                     context.nextToken();

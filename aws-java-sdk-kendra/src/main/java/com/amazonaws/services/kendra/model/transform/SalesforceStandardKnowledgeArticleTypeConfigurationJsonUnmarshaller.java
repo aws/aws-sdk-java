@@ -60,7 +60,9 @@ public class SalesforceStandardKnowledgeArticleTypeConfigurationJsonUnmarshaller
                 if (context.testExpression("FieldMappings", targetDepth)) {
                     context.nextToken();
                     salesforceStandardKnowledgeArticleTypeConfiguration.setFieldMappings(new ListUnmarshaller<DataSourceToIndexFieldMapping>(
-                            DataSourceToIndexFieldMappingJsonUnmarshaller.getInstance()).unmarshall(context));
+                            DataSourceToIndexFieldMappingJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

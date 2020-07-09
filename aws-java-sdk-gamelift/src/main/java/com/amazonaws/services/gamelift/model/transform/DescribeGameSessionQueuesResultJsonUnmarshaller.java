@@ -51,7 +51,8 @@ public class DescribeGameSessionQueuesResultJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("GameSessionQueues", targetDepth)) {
                     context.nextToken();
                     describeGameSessionQueuesResult.setGameSessionQueues(new ListUnmarshaller<GameSessionQueue>(GameSessionQueueJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

@@ -74,7 +74,9 @@ public class RelationalDatabaseSnapshotJsonUnmarshaller implements Unmarshaller<
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
-                    relationalDatabaseSnapshot.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    relationalDatabaseSnapshot.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("engine", targetDepth)) {
                     context.nextToken();

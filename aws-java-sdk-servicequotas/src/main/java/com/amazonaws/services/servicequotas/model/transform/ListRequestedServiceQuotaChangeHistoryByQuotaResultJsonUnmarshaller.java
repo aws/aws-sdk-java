@@ -56,7 +56,9 @@ public class ListRequestedServiceQuotaChangeHistoryByQuotaResultJsonUnmarshaller
                 if (context.testExpression("RequestedQuotas", targetDepth)) {
                     context.nextToken();
                     listRequestedServiceQuotaChangeHistoryByQuotaResult.setRequestedQuotas(new ListUnmarshaller<RequestedServiceQuotaChange>(
-                            RequestedServiceQuotaChangeJsonUnmarshaller.getInstance()).unmarshall(context));
+                            RequestedServiceQuotaChangeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

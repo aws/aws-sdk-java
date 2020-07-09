@@ -51,7 +51,9 @@ public class EndpointUserJsonUnmarshaller implements Unmarshaller<EndpointUser, 
                 if (context.testExpression("UserAttributes", targetDepth)) {
                     context.nextToken();
                     endpointUser.setUserAttributes(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
-                            new ListUnmarshaller<String>(context.getUnmarshaller(String.class))).unmarshall(context));
+                            new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    ).unmarshall(context));
                 }
                 if (context.testExpression("UserId", targetDepth)) {
                     context.nextToken();

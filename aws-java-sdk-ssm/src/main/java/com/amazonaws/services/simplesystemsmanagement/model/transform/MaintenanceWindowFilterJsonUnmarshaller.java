@@ -54,7 +54,9 @@ public class MaintenanceWindowFilterJsonUnmarshaller implements Unmarshaller<Mai
                 }
                 if (context.testExpression("Values", targetDepth)) {
                     context.nextToken();
-                    maintenanceWindowFilter.setValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    maintenanceWindowFilter.setValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

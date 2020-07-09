@@ -55,7 +55,9 @@ public class ListConfigurationRevisionsResultJsonUnmarshaller implements Unmarsh
                 if (context.testExpression("revisions", targetDepth)) {
                     context.nextToken();
                     listConfigurationRevisionsResult.setRevisions(new ListUnmarshaller<ConfigurationRevision>(ConfigurationRevisionJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -51,7 +51,9 @@ public class ListAssociatedAssetsResultJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("assetSummaries", targetDepth)) {
                     context.nextToken();
                     listAssociatedAssetsResult.setAssetSummaries(new ListUnmarshaller<AssociatedAssetsSummary>(AssociatedAssetsSummaryJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

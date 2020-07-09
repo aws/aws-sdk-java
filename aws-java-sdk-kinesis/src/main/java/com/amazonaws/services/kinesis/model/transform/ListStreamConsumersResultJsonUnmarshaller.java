@@ -50,7 +50,9 @@ public class ListStreamConsumersResultJsonUnmarshaller implements Unmarshaller<L
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Consumers", targetDepth)) {
                     context.nextToken();
-                    listStreamConsumersResult.setConsumers(new ListUnmarshaller<Consumer>(ConsumerJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listStreamConsumersResult.setConsumers(new ListUnmarshaller<Consumer>(ConsumerJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

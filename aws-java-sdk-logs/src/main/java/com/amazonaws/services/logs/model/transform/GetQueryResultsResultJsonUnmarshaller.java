@@ -51,7 +51,11 @@ public class GetQueryResultsResultJsonUnmarshaller implements Unmarshaller<GetQu
                 if (context.testExpression("results", targetDepth)) {
                     context.nextToken();
                     getQueryResultsResult.setResults(new ListUnmarshaller<java.util.List<ResultField>>(new ListUnmarshaller<ResultField>(
-                            ResultFieldJsonUnmarshaller.getInstance())).unmarshall(context));
+                            ResultFieldJsonUnmarshaller.getInstance())
+
+                    )
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("statistics", targetDepth)) {
                     context.nextToken();

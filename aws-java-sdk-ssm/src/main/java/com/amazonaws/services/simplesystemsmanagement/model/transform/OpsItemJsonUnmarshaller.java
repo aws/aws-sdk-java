@@ -70,7 +70,9 @@ public class OpsItemJsonUnmarshaller implements Unmarshaller<OpsItem, JsonUnmars
                 }
                 if (context.testExpression("Notifications", targetDepth)) {
                     context.nextToken();
-                    opsItem.setNotifications(new ListUnmarshaller<OpsItemNotification>(OpsItemNotificationJsonUnmarshaller.getInstance()).unmarshall(context));
+                    opsItem.setNotifications(new ListUnmarshaller<OpsItemNotification>(OpsItemNotificationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Priority", targetDepth)) {
                     context.nextToken();
@@ -78,7 +80,9 @@ public class OpsItemJsonUnmarshaller implements Unmarshaller<OpsItem, JsonUnmars
                 }
                 if (context.testExpression("RelatedOpsItems", targetDepth)) {
                     context.nextToken();
-                    opsItem.setRelatedOpsItems(new ListUnmarshaller<RelatedOpsItem>(RelatedOpsItemJsonUnmarshaller.getInstance()).unmarshall(context));
+                    opsItem.setRelatedOpsItems(new ListUnmarshaller<RelatedOpsItem>(RelatedOpsItemJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();

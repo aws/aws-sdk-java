@@ -55,7 +55,9 @@ public class ListMigrationTasksResultJsonUnmarshaller implements Unmarshaller<Li
                 if (context.testExpression("MigrationTaskSummaryList", targetDepth)) {
                     context.nextToken();
                     listMigrationTasksResult.setMigrationTaskSummaryList(new ListUnmarshaller<MigrationTaskSummary>(MigrationTaskSummaryJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

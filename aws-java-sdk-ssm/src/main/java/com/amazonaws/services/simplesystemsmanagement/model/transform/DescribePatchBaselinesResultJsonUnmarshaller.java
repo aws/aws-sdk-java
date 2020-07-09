@@ -51,7 +51,9 @@ public class DescribePatchBaselinesResultJsonUnmarshaller implements Unmarshalle
                 if (context.testExpression("BaselineIdentities", targetDepth)) {
                     context.nextToken();
                     describePatchBaselinesResult.setBaselineIdentities(new ListUnmarshaller<PatchBaselineIdentity>(PatchBaselineIdentityJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

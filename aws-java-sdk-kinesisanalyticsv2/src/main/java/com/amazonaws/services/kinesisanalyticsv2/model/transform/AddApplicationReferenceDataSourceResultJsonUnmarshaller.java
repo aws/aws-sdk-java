@@ -59,7 +59,9 @@ public class AddApplicationReferenceDataSourceResultJsonUnmarshaller implements 
                 if (context.testExpression("ReferenceDataSourceDescriptions", targetDepth)) {
                     context.nextToken();
                     addApplicationReferenceDataSourceResult.setReferenceDataSourceDescriptions(new ListUnmarshaller<ReferenceDataSourceDescription>(
-                            ReferenceDataSourceDescriptionJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ReferenceDataSourceDescriptionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

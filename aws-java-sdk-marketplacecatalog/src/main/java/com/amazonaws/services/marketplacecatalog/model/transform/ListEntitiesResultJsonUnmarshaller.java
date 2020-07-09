@@ -51,7 +51,8 @@ public class ListEntitiesResultJsonUnmarshaller implements Unmarshaller<ListEnti
                 if (context.testExpression("EntitySummaryList", targetDepth)) {
                     context.nextToken();
                     listEntitiesResult.setEntitySummaryList(new ListUnmarshaller<EntitySummary>(EntitySummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

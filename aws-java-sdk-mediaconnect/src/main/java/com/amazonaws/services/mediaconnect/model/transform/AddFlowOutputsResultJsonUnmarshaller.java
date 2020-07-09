@@ -54,7 +54,9 @@ public class AddFlowOutputsResultJsonUnmarshaller implements Unmarshaller<AddFlo
                 }
                 if (context.testExpression("outputs", targetDepth)) {
                     context.nextToken();
-                    addFlowOutputsResult.setOutputs(new ListUnmarshaller<Output>(OutputJsonUnmarshaller.getInstance()).unmarshall(context));
+                    addFlowOutputsResult.setOutputs(new ListUnmarshaller<Output>(OutputJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

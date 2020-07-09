@@ -51,7 +51,8 @@ public class GetUpgradeHistoryResultJsonUnmarshaller implements Unmarshaller<Get
                 if (context.testExpression("UpgradeHistories", targetDepth)) {
                     context.nextToken();
                     getUpgradeHistoryResult.setUpgradeHistories(new ListUnmarshaller<UpgradeHistory>(UpgradeHistoryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

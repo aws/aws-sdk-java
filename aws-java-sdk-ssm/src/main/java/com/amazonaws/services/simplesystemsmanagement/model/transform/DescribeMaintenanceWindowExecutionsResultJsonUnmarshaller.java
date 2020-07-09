@@ -52,7 +52,9 @@ public class DescribeMaintenanceWindowExecutionsResultJsonUnmarshaller implement
                 if (context.testExpression("WindowExecutions", targetDepth)) {
                     context.nextToken();
                     describeMaintenanceWindowExecutionsResult.setWindowExecutions(new ListUnmarshaller<MaintenanceWindowExecution>(
-                            MaintenanceWindowExecutionJsonUnmarshaller.getInstance()).unmarshall(context));
+                            MaintenanceWindowExecutionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

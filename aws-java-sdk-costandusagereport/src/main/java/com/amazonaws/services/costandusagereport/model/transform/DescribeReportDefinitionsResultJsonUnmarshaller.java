@@ -51,7 +51,8 @@ public class DescribeReportDefinitionsResultJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("ReportDefinitions", targetDepth)) {
                     context.nextToken();
                     describeReportDefinitionsResult.setReportDefinitions(new ListUnmarshaller<ReportDefinition>(ReportDefinitionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

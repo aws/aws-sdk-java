@@ -31,11 +31,11 @@ public class ListSecretsResult extends com.amazonaws.AmazonWebServiceResult<com.
     private java.util.List<SecretListEntry> secretList;
     /**
      * <p>
-     * If present in the response, this value indicates that there's more output available than what's included in the
-     * current response. This can occur even when the response includes no values at all, such as when you ask for a
-     * filtered view of a very long list. Use this value in the <code>NextToken</code> request parameter in a subsequent
-     * call to the operation to continue processing and get the next part of the output. You should repeat this until
-     * the <code>NextToken</code> response element comes back empty (as <code>null</code>).
+     * If present in the response, this value indicates that there's more output available than included in the current
+     * response. This can occur even when the response includes no values at all, such as when you ask for a filtered
+     * view of a very long list. Use this value in the <code>NextToken</code> request parameter in a subsequent call to
+     * the operation to continue processing and get the next part of the output. You should repeat this until the
+     * <code>NextToken</code> response element comes back empty (as <code>null</code>).
      * </p>
      */
     private String nextToken;
@@ -112,20 +112,19 @@ public class ListSecretsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * If present in the response, this value indicates that there's more output available than what's included in the
-     * current response. This can occur even when the response includes no values at all, such as when you ask for a
-     * filtered view of a very long list. Use this value in the <code>NextToken</code> request parameter in a subsequent
-     * call to the operation to continue processing and get the next part of the output. You should repeat this until
-     * the <code>NextToken</code> response element comes back empty (as <code>null</code>).
+     * If present in the response, this value indicates that there's more output available than included in the current
+     * response. This can occur even when the response includes no values at all, such as when you ask for a filtered
+     * view of a very long list. Use this value in the <code>NextToken</code> request parameter in a subsequent call to
+     * the operation to continue processing and get the next part of the output. You should repeat this until the
+     * <code>NextToken</code> response element comes back empty (as <code>null</code>).
      * </p>
      * 
      * @param nextToken
-     *        If present in the response, this value indicates that there's more output available than what's included
-     *        in the current response. This can occur even when the response includes no values at all, such as when you
-     *        ask for a filtered view of a very long list. Use this value in the <code>NextToken</code> request
-     *        parameter in a subsequent call to the operation to continue processing and get the next part of the
-     *        output. You should repeat this until the <code>NextToken</code> response element comes back empty (as
-     *        <code>null</code>).
+     *        If present in the response, this value indicates that there's more output available than included in the
+     *        current response. This can occur even when the response includes no values at all, such as when you ask
+     *        for a filtered view of a very long list. Use this value in the <code>NextToken</code> request parameter in
+     *        a subsequent call to the operation to continue processing and get the next part of the output. You should
+     *        repeat this until the <code>NextToken</code> response element comes back empty (as <code>null</code>).
      */
 
     public void setNextToken(String nextToken) {
@@ -134,18 +133,18 @@ public class ListSecretsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * If present in the response, this value indicates that there's more output available than what's included in the
-     * current response. This can occur even when the response includes no values at all, such as when you ask for a
-     * filtered view of a very long list. Use this value in the <code>NextToken</code> request parameter in a subsequent
-     * call to the operation to continue processing and get the next part of the output. You should repeat this until
-     * the <code>NextToken</code> response element comes back empty (as <code>null</code>).
+     * If present in the response, this value indicates that there's more output available than included in the current
+     * response. This can occur even when the response includes no values at all, such as when you ask for a filtered
+     * view of a very long list. Use this value in the <code>NextToken</code> request parameter in a subsequent call to
+     * the operation to continue processing and get the next part of the output. You should repeat this until the
+     * <code>NextToken</code> response element comes back empty (as <code>null</code>).
      * </p>
      * 
-     * @return If present in the response, this value indicates that there's more output available than what's included
-     *         in the current response. This can occur even when the response includes no values at all, such as when
-     *         you ask for a filtered view of a very long list. Use this value in the <code>NextToken</code> request
-     *         parameter in a subsequent call to the operation to continue processing and get the next part of the
-     *         output. You should repeat this until the <code>NextToken</code> response element comes back empty (as
+     * @return If present in the response, this value indicates that there's more output available than included in the
+     *         current response. This can occur even when the response includes no values at all, such as when you ask
+     *         for a filtered view of a very long list. Use this value in the <code>NextToken</code> request parameter
+     *         in a subsequent call to the operation to continue processing and get the next part of the output. You
+     *         should repeat this until the <code>NextToken</code> response element comes back empty (as
      *         <code>null</code>).
      */
 
@@ -155,20 +154,19 @@ public class ListSecretsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * If present in the response, this value indicates that there's more output available than what's included in the
-     * current response. This can occur even when the response includes no values at all, such as when you ask for a
-     * filtered view of a very long list. Use this value in the <code>NextToken</code> request parameter in a subsequent
-     * call to the operation to continue processing and get the next part of the output. You should repeat this until
-     * the <code>NextToken</code> response element comes back empty (as <code>null</code>).
+     * If present in the response, this value indicates that there's more output available than included in the current
+     * response. This can occur even when the response includes no values at all, such as when you ask for a filtered
+     * view of a very long list. Use this value in the <code>NextToken</code> request parameter in a subsequent call to
+     * the operation to continue processing and get the next part of the output. You should repeat this until the
+     * <code>NextToken</code> response element comes back empty (as <code>null</code>).
      * </p>
      * 
      * @param nextToken
-     *        If present in the response, this value indicates that there's more output available than what's included
-     *        in the current response. This can occur even when the response includes no values at all, such as when you
-     *        ask for a filtered view of a very long list. Use this value in the <code>NextToken</code> request
-     *        parameter in a subsequent call to the operation to continue processing and get the next part of the
-     *        output. You should repeat this until the <code>NextToken</code> response element comes back empty (as
-     *        <code>null</code>).
+     *        If present in the response, this value indicates that there's more output available than included in the
+     *        current response. This can occur even when the response includes no values at all, such as when you ask
+     *        for a filtered view of a very long list. Use this value in the <code>NextToken</code> request parameter in
+     *        a subsequent call to the operation to continue processing and get the next part of the output. You should
+     *        repeat this until the <code>NextToken</code> response element comes back empty (as <code>null</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

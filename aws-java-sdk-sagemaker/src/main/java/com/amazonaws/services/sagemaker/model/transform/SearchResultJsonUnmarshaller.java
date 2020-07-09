@@ -50,7 +50,9 @@ public class SearchResultJsonUnmarshaller implements Unmarshaller<SearchResult, 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Results", targetDepth)) {
                     context.nextToken();
-                    searchResult.setResults(new ListUnmarshaller<SearchRecord>(SearchRecordJsonUnmarshaller.getInstance()).unmarshall(context));
+                    searchResult.setResults(new ListUnmarshaller<SearchRecord>(SearchRecordJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

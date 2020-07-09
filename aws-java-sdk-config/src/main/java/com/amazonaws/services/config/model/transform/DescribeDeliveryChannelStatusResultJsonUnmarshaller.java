@@ -51,7 +51,9 @@ public class DescribeDeliveryChannelStatusResultJsonUnmarshaller implements Unma
                 if (context.testExpression("DeliveryChannelsStatus", targetDepth)) {
                     context.nextToken();
                     describeDeliveryChannelStatusResult.setDeliveryChannelsStatus(new ListUnmarshaller<DeliveryChannelStatus>(
-                            DeliveryChannelStatusJsonUnmarshaller.getInstance()).unmarshall(context));
+                            DeliveryChannelStatusJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

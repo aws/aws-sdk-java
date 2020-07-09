@@ -58,7 +58,9 @@ public class ParameterGroupStatusJsonUnmarshaller implements Unmarshaller<Parame
                 }
                 if (context.testExpression("NodeIdsToReboot", targetDepth)) {
                     context.nextToken();
-                    parameterGroupStatus.setNodeIdsToReboot(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    parameterGroupStatus.setNodeIdsToReboot(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

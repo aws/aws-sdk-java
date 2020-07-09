@@ -51,16 +51,20 @@ public class ConflictResolutionJsonUnmarshaller implements Unmarshaller<Conflict
                 if (context.testExpression("replaceContents", targetDepth)) {
                     context.nextToken();
                     conflictResolution.setReplaceContents(new ListUnmarshaller<ReplaceContentEntry>(ReplaceContentEntryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("deleteFiles", targetDepth)) {
                     context.nextToken();
-                    conflictResolution.setDeleteFiles(new ListUnmarshaller<DeleteFileEntry>(DeleteFileEntryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    conflictResolution.setDeleteFiles(new ListUnmarshaller<DeleteFileEntry>(DeleteFileEntryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("setFileModes", targetDepth)) {
                     context.nextToken();
                     conflictResolution.setSetFileModes(new ListUnmarshaller<SetFileModeEntry>(SetFileModeEntryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

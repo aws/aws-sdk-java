@@ -51,7 +51,9 @@ public class ListRemoteAccessSessionsResultJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("remoteAccessSessions", targetDepth)) {
                     context.nextToken();
                     listRemoteAccessSessionsResult.setRemoteAccessSessions(new ListUnmarshaller<RemoteAccessSession>(RemoteAccessSessionJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

@@ -54,7 +54,9 @@ public class VpcInterfaceJsonUnmarshaller implements Unmarshaller<VpcInterface, 
                 }
                 if (context.testExpression("networkInterfaceIds", targetDepth)) {
                     context.nextToken();
-                    vpcInterface.setNetworkInterfaceIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    vpcInterface.setNetworkInterfaceIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("roleArn", targetDepth)) {
                     context.nextToken();
@@ -62,7 +64,9 @@ public class VpcInterfaceJsonUnmarshaller implements Unmarshaller<VpcInterface, 
                 }
                 if (context.testExpression("securityGroupIds", targetDepth)) {
                     context.nextToken();
-                    vpcInterface.setSecurityGroupIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    vpcInterface.setSecurityGroupIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("subnetId", targetDepth)) {
                     context.nextToken();

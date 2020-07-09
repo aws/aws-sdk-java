@@ -51,7 +51,8 @@ public class BatchLookupPolicyResponseJsonUnmarshaller implements Unmarshaller<B
                 if (context.testExpression("PolicyToPathList", targetDepth)) {
                     context.nextToken();
                     batchLookupPolicyResponse.setPolicyToPathList(new ListUnmarshaller<PolicyToPath>(PolicyToPathJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

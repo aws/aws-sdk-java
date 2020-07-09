@@ -58,8 +58,9 @@ public class AttackDetailJsonUnmarshaller implements Unmarshaller<AttackDetail, 
                 }
                 if (context.testExpression("SubResources", targetDepth)) {
                     context.nextToken();
-                    attackDetail
-                            .setSubResources(new ListUnmarshaller<SubResourceSummary>(SubResourceSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    attackDetail.setSubResources(new ListUnmarshaller<SubResourceSummary>(SubResourceSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
                     context.nextToken();
@@ -71,16 +72,21 @@ public class AttackDetailJsonUnmarshaller implements Unmarshaller<AttackDetail, 
                 }
                 if (context.testExpression("AttackCounters", targetDepth)) {
                     context.nextToken();
-                    attackDetail
-                            .setAttackCounters(new ListUnmarshaller<SummarizedCounter>(SummarizedCounterJsonUnmarshaller.getInstance()).unmarshall(context));
+                    attackDetail.setAttackCounters(new ListUnmarshaller<SummarizedCounter>(SummarizedCounterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("AttackProperties", targetDepth)) {
                     context.nextToken();
-                    attackDetail.setAttackProperties(new ListUnmarshaller<AttackProperty>(AttackPropertyJsonUnmarshaller.getInstance()).unmarshall(context));
+                    attackDetail.setAttackProperties(new ListUnmarshaller<AttackProperty>(AttackPropertyJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Mitigations", targetDepth)) {
                     context.nextToken();
-                    attackDetail.setMitigations(new ListUnmarshaller<Mitigation>(MitigationJsonUnmarshaller.getInstance()).unmarshall(context));
+                    attackDetail.setMitigations(new ListUnmarshaller<Mitigation>(MitigationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

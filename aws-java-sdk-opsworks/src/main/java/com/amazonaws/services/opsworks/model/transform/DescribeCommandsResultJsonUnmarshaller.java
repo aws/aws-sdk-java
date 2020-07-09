@@ -50,7 +50,9 @@ public class DescribeCommandsResultJsonUnmarshaller implements Unmarshaller<Desc
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Commands", targetDepth)) {
                     context.nextToken();
-                    describeCommandsResult.setCommands(new ListUnmarshaller<Command>(CommandJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeCommandsResult.setCommands(new ListUnmarshaller<Command>(CommandJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

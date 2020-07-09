@@ -51,7 +51,9 @@ public class DescribeContinuousExportsResultJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("descriptions", targetDepth)) {
                     context.nextToken();
                     describeContinuousExportsResult.setDescriptions(new ListUnmarshaller<ContinuousExportDescription>(
-                            ContinuousExportDescriptionJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ContinuousExportDescriptionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

@@ -98,7 +98,9 @@ public class CommandInvocationJsonUnmarshaller implements Unmarshaller<CommandIn
                 }
                 if (context.testExpression("CommandPlugins", targetDepth)) {
                     context.nextToken();
-                    commandInvocation.setCommandPlugins(new ListUnmarshaller<CommandPlugin>(CommandPluginJsonUnmarshaller.getInstance()).unmarshall(context));
+                    commandInvocation.setCommandPlugins(new ListUnmarshaller<CommandPlugin>(CommandPluginJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ServiceRole", targetDepth)) {
                     context.nextToken();

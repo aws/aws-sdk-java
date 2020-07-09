@@ -451,6 +451,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.savingsplans.request.CreateSavingsPlanRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -519,6 +520,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the offering.</p>\n@param savingsPlanOfferingId The ID of the offering.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -587,6 +589,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The hourly commitment, in USD. This is a value between 0.001 and 1 million. You cannot specify more than three digits after the decimal point.</p>\n@param commitment The hourly commitment, in USD. This is a value between 0.001 and 1 million. You cannot specify more than three digits after the decimal point.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -655,6 +658,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The up-front payment amount. This is a whole number between 50 and 99 percent of the total value of the Savings Plan. This parameter is supported only if the payment option is <code>Partial Upfront</code>.</p>\n@param upfrontPaymentAmount The up-front payment amount. This is a whole number between 50 and 99 percent of the total value of the Savings Plan. This parameter is supported only if the payment option is <code>Partial Upfront</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -723,6 +727,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>\n@param clientToken Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -836,6 +841,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -874,6 +880,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>One or more tags.</p>\n@param tags One or more tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -944,6 +951,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>\n@param clientToken Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1013,6 +1021,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The hourly commitment, in USD. This is a value between 0.001 and 1 million. You cannot specify more than three digits after the decimal point.</p>\n@param commitment The hourly commitment, in USD. This is a value between 0.001 and 1 million. You cannot specify more than three digits after the decimal point.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1082,6 +1091,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the offering.</p>\n@param savingsPlanOfferingId The ID of the offering.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1196,6 +1206,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1234,6 +1245,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>One or more tags.</p>\n@param tags One or more tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1303,6 +1315,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The up-front payment amount. This is a whole number between 50 and 99 percent of the total value of the Savings Plan. This parameter is supported only if the payment option is <code>Partial Upfront</code>.</p>\n@param upfrontPaymentAmount The up-front payment amount. This is a whole number between 50 and 99 percent of the total value of the Savings Plan. This parameter is supported only if the payment option is <code>Partial Upfront</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1318,6 +1331,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.savingsplans.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "savingsPlanOfferingId", "commitment" ],
@@ -1349,6 +1363,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.savingsplans.response.CreateSavingsPlanResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1410,6 +1425,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the Savings Plan.</p>\n@param savingsPlanId The ID of the Savings Plan.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1480,6 +1496,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the Savings Plan.</p>\n@param savingsPlanId The ID of the Savings Plan.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1495,6 +1512,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.savingsplans.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1535,6 +1553,7 @@
         "value" : "USD"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.savingsplans.enum.CurrencyCode",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1543,6 +1562,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.savingsplans.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1577,6 +1597,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.savingsplans.request.DescribeSavingsPlanRatesRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1645,6 +1666,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the Savings Plan.</p>\n@param savingsPlanId The ID of the Savings Plan.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1752,6 +1774,7 @@
               "variableSetterType" : "SavingsPlanRateFilter"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1796,6 +1819,7 @@
           "variableSetterType" : "java.util.Collection<SavingsPlanRateFilter>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The filters.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override the existing values.</p>\n@param filters The filters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1864,6 +1888,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The token for the next page of results.</p>\n@param nextToken The token for the next page of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1932,6 +1957,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>\n@param maxResults The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2041,6 +2067,7 @@
                 "variableSetterType" : "SavingsPlanRateFilter"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2085,6 +2112,7 @@
             "variableSetterType" : "java.util.Collection<SavingsPlanRateFilter>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The filters.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override the existing values.</p>\n@param filters The filters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2154,6 +2182,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>\n@param maxResults The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2223,6 +2252,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The token for the next page of results.</p>\n@param nextToken The token for the next page of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2292,6 +2322,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the Savings Plan.</p>\n@param savingsPlanId The ID of the Savings Plan.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2307,6 +2338,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.savingsplans.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "savingsPlanId" ],
@@ -2338,6 +2370,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.savingsplans.response.DescribeSavingsPlanRatesResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2399,6 +2432,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the Savings Plan.</p>\n@param savingsPlanId The ID of the Savings Plan.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2506,6 +2540,7 @@
               "variableSetterType" : "SavingsPlanRate"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2550,6 +2585,7 @@
           "variableSetterType" : "java.util.Collection<SavingsPlanRate>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Information about the Savings Plans rates.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSearchResults(java.util.Collection)} or {@link #withSearchResults(java.util.Collection)} if you want to override the existing values.</p>\n@param searchResults Information about the Savings Plans rates.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2618,6 +2654,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>\n@param nextToken The token to use to retrieve the next page of results. This value is null when there are no more results to return.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2688,6 +2725,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>\n@param nextToken The token to use to retrieve the next page of results. This value is null when there are no more results to return.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2757,6 +2795,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the Savings Plan.</p>\n@param savingsPlanId The ID of the Savings Plan.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2865,6 +2904,7 @@
                 "variableSetterType" : "SavingsPlanRate"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2909,6 +2949,7 @@
             "variableSetterType" : "java.util.Collection<SavingsPlanRate>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Information about the Savings Plans rates.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSearchResults(java.util.Collection)} or {@link #withSearchResults(java.util.Collection)} if you want to override the existing values.</p>\n@param searchResults Information about the Savings Plans rates.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2924,6 +2965,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.savingsplans.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2958,6 +3000,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.savingsplans.request.DescribeSavingsPlansOfferingRatesRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3065,6 +3108,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3109,6 +3153,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The IDs of the offerings.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSavingsPlanOfferingIds(java.util.Collection)} or {@link #withSavingsPlanOfferingIds(java.util.Collection)} if you want to override the existing values.</p>\n@param savingsPlanOfferingIds The IDs of the offerings.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3216,6 +3261,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanPaymentOption*/",
@@ -3260,6 +3306,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The payment options.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSavingsPlanPaymentOptions(java.util.Collection)} or {@link #withSavingsPlanPaymentOptions(java.util.Collection)} if you want to override the existing values.</p>\n@param savingsPlanPaymentOptions The payment options.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanPaymentOption*/",
@@ -3367,6 +3414,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanType*/",
@@ -3411,6 +3459,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The plan types.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSavingsPlanTypes(java.util.Collection)} or {@link #withSavingsPlanTypes(java.util.Collection)} if you want to override the existing values.</p>\n@param savingsPlanTypes The plan types.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanType*/",
@@ -3518,6 +3567,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanProductType*/",
@@ -3562,6 +3612,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The AWS products.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setProducts(java.util.Collection)} or {@link #withProducts(java.util.Collection)} if you want to override the existing values.</p>\n@param products The AWS products.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanProductType*/",
@@ -3669,6 +3720,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanRateServiceCode*/",
@@ -3713,6 +3765,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The services.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setServiceCodes(java.util.Collection)} or {@link #withServiceCodes(java.util.Collection)} if you want to override the existing values.</p>\n@param serviceCodes The services.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanRateServiceCode*/",
@@ -3820,6 +3873,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3864,6 +3918,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The usage details of the line item in the billing report.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setUsageTypes(java.util.Collection)} or {@link #withUsageTypes(java.util.Collection)} if you want to override the existing values.</p>\n@param usageTypes The usage details of the line item in the billing report.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3971,6 +4026,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4015,6 +4071,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The specific AWS operation for the line item in the billing report.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setOperations(java.util.Collection)} or {@link #withOperations(java.util.Collection)} if you want to override the existing values.</p>\n@param operations The specific AWS operation for the line item in the billing report.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4122,6 +4179,7 @@
               "variableSetterType" : "SavingsPlanOfferingRateFilterElement"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4166,6 +4224,7 @@
           "variableSetterType" : "java.util.Collection<SavingsPlanOfferingRateFilterElement>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The filters.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override the existing values.</p>\n@param filters The filters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4234,6 +4293,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The token for the next page of results.</p>\n@param nextToken The token for the next page of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4302,6 +4362,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>\n@param maxResults The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4411,6 +4472,7 @@
                 "variableSetterType" : "SavingsPlanOfferingRateFilterElement"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4455,6 +4517,7 @@
             "variableSetterType" : "java.util.Collection<SavingsPlanOfferingRateFilterElement>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The filters.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override the existing values.</p>\n@param filters The filters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4524,6 +4587,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>\n@param maxResults The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4593,6 +4657,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The token for the next page of results.</p>\n@param nextToken The token for the next page of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4701,6 +4766,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4745,6 +4811,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The specific AWS operation for the line item in the billing report.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setOperations(java.util.Collection)} or {@link #withOperations(java.util.Collection)} if you want to override the existing values.</p>\n@param operations The specific AWS operation for the line item in the billing report.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4853,6 +4920,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanProductType*/",
@@ -4897,6 +4965,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The AWS products.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setProducts(java.util.Collection)} or {@link #withProducts(java.util.Collection)} if you want to override the existing values.</p>\n@param products The AWS products.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanProductType*/",
@@ -5005,6 +5074,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5049,6 +5119,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The IDs of the offerings.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSavingsPlanOfferingIds(java.util.Collection)} or {@link #withSavingsPlanOfferingIds(java.util.Collection)} if you want to override the existing values.</p>\n@param savingsPlanOfferingIds The IDs of the offerings.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5157,6 +5228,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanPaymentOption*/",
@@ -5201,6 +5273,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The payment options.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSavingsPlanPaymentOptions(java.util.Collection)} or {@link #withSavingsPlanPaymentOptions(java.util.Collection)} if you want to override the existing values.</p>\n@param savingsPlanPaymentOptions The payment options.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanPaymentOption*/",
@@ -5309,6 +5382,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanType*/",
@@ -5353,6 +5427,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The plan types.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSavingsPlanTypes(java.util.Collection)} or {@link #withSavingsPlanTypes(java.util.Collection)} if you want to override the existing values.</p>\n@param savingsPlanTypes The plan types.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanType*/",
@@ -5461,6 +5536,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanRateServiceCode*/",
@@ -5505,6 +5581,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The services.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setServiceCodes(java.util.Collection)} or {@link #withServiceCodes(java.util.Collection)} if you want to override the existing values.</p>\n@param serviceCodes The services.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanRateServiceCode*/",
@@ -5613,6 +5690,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5657,6 +5735,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The usage details of the line item in the billing report.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setUsageTypes(java.util.Collection)} or {@link #withUsageTypes(java.util.Collection)} if you want to override the existing values.</p>\n@param usageTypes The usage details of the line item in the billing report.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5672,6 +5751,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.savingsplans.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -5703,6 +5783,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.savingsplans.response.DescribeSavingsPlansOfferingRatesResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5803,6 +5884,7 @@
               "variableSetterType" : "SavingsPlanOfferingRate"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5847,6 +5929,7 @@
           "variableSetterType" : "java.util.Collection<SavingsPlanOfferingRate>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Information about the Savings Plans offering rates.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSearchResults(java.util.Collection)} or {@link #withSearchResults(java.util.Collection)} if you want to override the existing values.</p>\n@param searchResults Information about the Savings Plans offering rates.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5915,6 +5998,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>\n@param nextToken The token to use to retrieve the next page of results. This value is null when there are no more results to return.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5985,6 +6069,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>\n@param nextToken The token to use to retrieve the next page of results. This value is null when there are no more results to return.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6093,6 +6178,7 @@
                 "variableSetterType" : "SavingsPlanOfferingRate"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6137,6 +6223,7 @@
             "variableSetterType" : "java.util.Collection<SavingsPlanOfferingRate>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Information about the Savings Plans offering rates.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSearchResults(java.util.Collection)} or {@link #withSearchResults(java.util.Collection)} if you want to override the existing values.</p>\n@param searchResults Information about the Savings Plans offering rates.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6152,6 +6239,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.savingsplans.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6186,6 +6274,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.savingsplans.request.DescribeSavingsPlansOfferingsRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6293,6 +6382,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6337,6 +6427,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The IDs of the offerings.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setOfferingIds(java.util.Collection)} or {@link #withOfferingIds(java.util.Collection)} if you want to override the existing values.</p>\n@param offeringIds The IDs of the offerings.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6444,6 +6535,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanPaymentOption*/",
@@ -6488,6 +6580,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The payment options.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPaymentOptions(java.util.Collection)} or {@link #withPaymentOptions(java.util.Collection)} if you want to override the existing values.</p>\n@param paymentOptions The payment options.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanPaymentOption*/",
@@ -6556,6 +6649,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The product type.</p>\n@param productType The product type.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanProductType*/",
@@ -6663,6 +6757,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanType*/",
@@ -6707,6 +6802,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The plan type.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPlanTypes(java.util.Collection)} or {@link #withPlanTypes(java.util.Collection)} if you want to override the existing values.</p>\n@param planTypes The plan type.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanType*/",
@@ -6814,6 +6910,7 @@
               "variableSetterType" : "Long"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6858,6 +6955,7 @@
           "variableSetterType" : "java.util.Collection<Long>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The durations, in seconds.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDurations(java.util.Collection)} or {@link #withDurations(java.util.Collection)} if you want to override the existing values.</p>\n@param durations The durations, in seconds.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6965,6 +7063,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see CurrencyCode*/",
@@ -7009,6 +7108,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The currencies.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCurrencies(java.util.Collection)} or {@link #withCurrencies(java.util.Collection)} if you want to override the existing values.</p>\n@param currencies The currencies.\n@return Returns a reference to this object so that method calls can be chained together.\n@see CurrencyCode*/",
@@ -7116,6 +7216,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7160,6 +7261,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The descriptions.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDescriptions(java.util.Collection)} or {@link #withDescriptions(java.util.Collection)} if you want to override the existing values.</p>\n@param descriptions The descriptions.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7267,6 +7369,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7311,6 +7414,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The services.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setServiceCodes(java.util.Collection)} or {@link #withServiceCodes(java.util.Collection)} if you want to override the existing values.</p>\n@param serviceCodes The services.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7418,6 +7522,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7462,6 +7567,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The usage details of the line item in the billing report.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setUsageTypes(java.util.Collection)} or {@link #withUsageTypes(java.util.Collection)} if you want to override the existing values.</p>\n@param usageTypes The usage details of the line item in the billing report.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7569,6 +7675,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7613,6 +7720,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The specific AWS operation for the line item in the billing report.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setOperations(java.util.Collection)} or {@link #withOperations(java.util.Collection)} if you want to override the existing values.</p>\n@param operations The specific AWS operation for the line item in the billing report.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7720,6 +7828,7 @@
               "variableSetterType" : "SavingsPlanOfferingFilterElement"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7764,6 +7873,7 @@
           "variableSetterType" : "java.util.Collection<SavingsPlanOfferingFilterElement>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The filters.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override the existing values.</p>\n@param filters The filters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7832,6 +7942,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The token for the next page of results.</p>\n@param nextToken The token for the next page of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7900,6 +8011,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>\n@param maxResults The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8009,6 +8121,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see CurrencyCode*/",
@@ -8053,6 +8166,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The currencies.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCurrencies(java.util.Collection)} or {@link #withCurrencies(java.util.Collection)} if you want to override the existing values.</p>\n@param currencies The currencies.\n@return Returns a reference to this object so that method calls can be chained together.\n@see CurrencyCode*/",
@@ -8161,6 +8275,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8205,6 +8320,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The descriptions.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDescriptions(java.util.Collection)} or {@link #withDescriptions(java.util.Collection)} if you want to override the existing values.</p>\n@param descriptions The descriptions.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8313,6 +8429,7 @@
                 "variableSetterType" : "Long"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8357,6 +8474,7 @@
             "variableSetterType" : "java.util.Collection<Long>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The durations, in seconds.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDurations(java.util.Collection)} or {@link #withDurations(java.util.Collection)} if you want to override the existing values.</p>\n@param durations The durations, in seconds.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8465,6 +8583,7 @@
                 "variableSetterType" : "SavingsPlanOfferingFilterElement"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8509,6 +8628,7 @@
             "variableSetterType" : "java.util.Collection<SavingsPlanOfferingFilterElement>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The filters.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override the existing values.</p>\n@param filters The filters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8578,6 +8698,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>\n@param maxResults The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8647,6 +8768,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The token for the next page of results.</p>\n@param nextToken The token for the next page of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8755,6 +8877,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8799,6 +8922,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The IDs of the offerings.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setOfferingIds(java.util.Collection)} or {@link #withOfferingIds(java.util.Collection)} if you want to override the existing values.</p>\n@param offeringIds The IDs of the offerings.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8907,6 +9031,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8951,6 +9076,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The specific AWS operation for the line item in the billing report.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setOperations(java.util.Collection)} or {@link #withOperations(java.util.Collection)} if you want to override the existing values.</p>\n@param operations The specific AWS operation for the line item in the billing report.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9059,6 +9185,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanPaymentOption*/",
@@ -9103,6 +9230,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The payment options.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPaymentOptions(java.util.Collection)} or {@link #withPaymentOptions(java.util.Collection)} if you want to override the existing values.</p>\n@param paymentOptions The payment options.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanPaymentOption*/",
@@ -9211,6 +9339,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanType*/",
@@ -9255,6 +9384,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The plan type.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPlanTypes(java.util.Collection)} or {@link #withPlanTypes(java.util.Collection)} if you want to override the existing values.</p>\n@param planTypes The plan type.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanType*/",
@@ -9324,6 +9454,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The product type.</p>\n@param productType The product type.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanProductType*/",
@@ -9432,6 +9563,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9476,6 +9608,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The services.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setServiceCodes(java.util.Collection)} or {@link #withServiceCodes(java.util.Collection)} if you want to override the existing values.</p>\n@param serviceCodes The services.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9584,6 +9717,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9628,6 +9762,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The usage details of the line item in the billing report.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setUsageTypes(java.util.Collection)} or {@link #withUsageTypes(java.util.Collection)} if you want to override the existing values.</p>\n@param usageTypes The usage details of the line item in the billing report.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9643,6 +9778,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.savingsplans.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -9674,6 +9810,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.savingsplans.response.DescribeSavingsPlansOfferingsResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -9774,6 +9911,7 @@
               "variableSetterType" : "SavingsPlanOffering"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9818,6 +9956,7 @@
           "variableSetterType" : "java.util.Collection<SavingsPlanOffering>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Information about the Savings Plans offerings.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSearchResults(java.util.Collection)} or {@link #withSearchResults(java.util.Collection)} if you want to override the existing values.</p>\n@param searchResults Information about the Savings Plans offerings.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9886,6 +10025,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>\n@param nextToken The token to use to retrieve the next page of results. This value is null when there are no more results to return.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9956,6 +10096,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>\n@param nextToken The token to use to retrieve the next page of results. This value is null when there are no more results to return.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10064,6 +10205,7 @@
                 "variableSetterType" : "SavingsPlanOffering"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10108,6 +10250,7 @@
             "variableSetterType" : "java.util.Collection<SavingsPlanOffering>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Information about the Savings Plans offerings.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSearchResults(java.util.Collection)} or {@link #withSearchResults(java.util.Collection)} if you want to override the existing values.</p>\n@param searchResults Information about the Savings Plans offerings.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10123,6 +10266,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.savingsplans.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -10157,6 +10301,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.savingsplans.request.DescribeSavingsPlansRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -10264,6 +10409,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10308,6 +10454,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Names (ARN) of the Savings Plans.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSavingsPlanArns(java.util.Collection)} or {@link #withSavingsPlanArns(java.util.Collection)} if you want to override the existing values.</p>\n@param savingsPlanArns The Amazon Resource Names (ARN) of the Savings Plans.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10415,6 +10562,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10459,6 +10607,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The IDs of the Savings Plans.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSavingsPlanIds(java.util.Collection)} or {@link #withSavingsPlanIds(java.util.Collection)} if you want to override the existing values.</p>\n@param savingsPlanIds The IDs of the Savings Plans.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10527,6 +10676,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The token for the next page of results.</p>\n@param nextToken The token for the next page of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10595,6 +10745,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>\n@param maxResults The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10702,6 +10853,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanState*/",
@@ -10746,6 +10898,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The states.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setStates(java.util.Collection)} or {@link #withStates(java.util.Collection)} if you want to override the existing values.</p>\n@param states The states.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanState*/",
@@ -10853,6 +11006,7 @@
               "variableSetterType" : "SavingsPlanFilter"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10897,6 +11051,7 @@
           "variableSetterType" : "java.util.Collection<SavingsPlanFilter>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The filters.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override the existing values.</p>\n@param filters The filters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11006,6 +11161,7 @@
                 "variableSetterType" : "SavingsPlanFilter"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11050,6 +11206,7 @@
             "variableSetterType" : "java.util.Collection<SavingsPlanFilter>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The filters.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override the existing values.</p>\n@param filters The filters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11119,6 +11276,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>\n@param maxResults The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11188,6 +11346,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The token for the next page of results.</p>\n@param nextToken The token for the next page of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11296,6 +11455,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11340,6 +11500,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Names (ARN) of the Savings Plans.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSavingsPlanArns(java.util.Collection)} or {@link #withSavingsPlanArns(java.util.Collection)} if you want to override the existing values.</p>\n@param savingsPlanArns The Amazon Resource Names (ARN) of the Savings Plans.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11448,6 +11609,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11492,6 +11654,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The IDs of the Savings Plans.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSavingsPlanIds(java.util.Collection)} or {@link #withSavingsPlanIds(java.util.Collection)} if you want to override the existing values.</p>\n@param savingsPlanIds The IDs of the Savings Plans.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11600,6 +11763,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanState*/",
@@ -11644,6 +11808,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The states.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setStates(java.util.Collection)} or {@link #withStates(java.util.Collection)} if you want to override the existing values.</p>\n@param states The states.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanState*/",
@@ -11659,6 +11824,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.savingsplans.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -11690,6 +11856,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.savingsplans.response.DescribeSavingsPlansResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -11790,6 +11957,7 @@
               "variableSetterType" : "SavingsPlan"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11834,6 +12002,7 @@
           "variableSetterType" : "java.util.Collection<SavingsPlan>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Information about the Savings Plans.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSavingsPlans(java.util.Collection)} or {@link #withSavingsPlans(java.util.Collection)} if you want to override the existing values.</p>\n@param savingsPlans Information about the Savings Plans.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11902,6 +12071,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>\n@param nextToken The token to use to retrieve the next page of results. This value is null when there are no more results to return.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11972,6 +12142,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>\n@param nextToken The token to use to retrieve the next page of results. This value is null when there are no more results to return.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12080,6 +12251,7 @@
                 "variableSetterType" : "SavingsPlan"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12124,6 +12296,7 @@
             "variableSetterType" : "java.util.Collection<SavingsPlan>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Information about the Savings Plans.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSavingsPlans(java.util.Collection)} or {@link #withSavingsPlans(java.util.Collection)} if you want to override the existing values.</p>\n@param savingsPlans Information about the Savings Plans.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12139,6 +12312,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.savingsplans.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -12173,6 +12347,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InternalServerException",
+      "fullyQualifiedName" : "com.amazonaws.services.savingsplans.exception.InternalServerException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -12181,6 +12356,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.savingsplans.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "message" ],
@@ -12212,6 +12388,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.savingsplans.request.ListTagsForResourceRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -12280,6 +12457,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12350,6 +12528,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12365,6 +12544,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.savingsplans.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "resourceArn" ],
@@ -12396,6 +12576,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.savingsplans.response.ListTagsForResourceResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -12502,6 +12683,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12540,6 +12722,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Information about the tags.</p>\n@param tags Information about the tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12655,6 +12838,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12693,6 +12877,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Information about the tags.</p>\n@param tags Information about the tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12708,6 +12893,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.savingsplans.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -12742,6 +12928,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.savingsplans.model.ParentSavingsPlanOffering",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -12803,6 +12990,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the offering.</p>\n@param offeringId The ID of the offering.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12871,6 +13059,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The payment option.</p>\n@param paymentOption The payment option.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanPaymentOption*/",
@@ -12939,6 +13128,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The plan type.</p>\n@param planType The plan type.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanType*/",
@@ -13007,6 +13197,7 @@
           "variableSetterType" : "Long"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The duration, in seconds.</p>\n@param durationSeconds The duration, in seconds.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13075,6 +13266,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The currency.</p>\n@param currency The currency.\n@return Returns a reference to this object so that method calls can be chained together.\n@see CurrencyCode*/",
@@ -13143,6 +13335,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The description.</p>\n@param planDescription The description.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13213,6 +13406,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The currency.</p>\n@param currency The currency.\n@return Returns a reference to this object so that method calls can be chained together.\n@see CurrencyCode*/",
@@ -13282,6 +13476,7 @@
             "variableSetterType" : "Long"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The duration, in seconds.</p>\n@param durationSeconds The duration, in seconds.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13351,6 +13546,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the offering.</p>\n@param offeringId The ID of the offering.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13420,6 +13616,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The payment option.</p>\n@param paymentOption The payment option.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanPaymentOption*/",
@@ -13489,6 +13686,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The description.</p>\n@param planDescription The description.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13558,6 +13756,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The plan type.</p>\n@param planType The plan type.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanType*/",
@@ -13573,6 +13772,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.savingsplans.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -13607,6 +13807,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ResourceNotFoundException",
+      "fullyQualifiedName" : "com.amazonaws.services.savingsplans.exception.ResourceNotFoundException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -13615,6 +13816,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.savingsplans.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "message" ],
@@ -13646,6 +13848,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.savingsplans.model.SavingsPlan",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -13707,6 +13910,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the offering.</p>\n@param offeringId The ID of the offering.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13775,6 +13979,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the Savings Plan.</p>\n@param savingsPlanId The ID of the Savings Plan.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13843,6 +14048,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the Savings Plan.</p>\n@param savingsPlanArn The Amazon Resource Name (ARN) of the Savings Plan.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13911,6 +14117,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The description.</p>\n@param description The description.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13979,6 +14186,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The start time.</p>\n@param start The start time.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14047,6 +14255,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The end time.</p>\n@param end The end time.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14115,6 +14324,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The state.</p>\n@param state The state.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanState*/",
@@ -14183,6 +14393,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The AWS Region.</p>\n@param region The AWS Region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14251,6 +14462,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The EC2 instance family.</p>\n@param ec2InstanceFamily The EC2 instance family.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14319,6 +14531,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The plan type.</p>\n@param savingsPlanType The plan type.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanType*/",
@@ -14387,6 +14600,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The payment option.</p>\n@param paymentOption The payment option.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanPaymentOption*/",
@@ -14494,6 +14708,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanProductType*/",
@@ -14538,6 +14753,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The product types.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setProductTypes(java.util.Collection)} or {@link #withProductTypes(java.util.Collection)} if you want to override the existing values.</p>\n@param productTypes The product types.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanProductType*/",
@@ -14606,6 +14822,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The currency.</p>\n@param currency The currency.\n@return Returns a reference to this object so that method calls can be chained together.\n@see CurrencyCode*/",
@@ -14674,6 +14891,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The hourly commitment, in USD.</p>\n@param commitment The hourly commitment, in USD.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14742,6 +14960,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The up-front payment amount.</p>\n@param upfrontPaymentAmount The up-front payment amount.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14810,6 +15029,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The recurring payment amount.</p>\n@param recurringPaymentAmount The recurring payment amount.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14878,6 +15098,7 @@
           "variableSetterType" : "Long"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The duration of the term, in seconds.</p>\n@param termDurationInSeconds The duration of the term, in seconds.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14991,6 +15212,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15029,6 +15251,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>One or more tags.</p>\n@param tags One or more tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15099,6 +15322,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The hourly commitment, in USD.</p>\n@param commitment The hourly commitment, in USD.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15168,6 +15392,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The currency.</p>\n@param currency The currency.\n@return Returns a reference to this object so that method calls can be chained together.\n@see CurrencyCode*/",
@@ -15237,6 +15462,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The description.</p>\n@param description The description.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15306,6 +15532,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The EC2 instance family.</p>\n@param ec2InstanceFamily The EC2 instance family.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15375,6 +15602,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The end time.</p>\n@param end The end time.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15444,6 +15672,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the offering.</p>\n@param offeringId The ID of the offering.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15513,6 +15742,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The payment option.</p>\n@param paymentOption The payment option.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanPaymentOption*/",
@@ -15621,6 +15851,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanProductType*/",
@@ -15665,6 +15896,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The product types.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setProductTypes(java.util.Collection)} or {@link #withProductTypes(java.util.Collection)} if you want to override the existing values.</p>\n@param productTypes The product types.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanProductType*/",
@@ -15734,6 +15966,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The recurring payment amount.</p>\n@param recurringPaymentAmount The recurring payment amount.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15803,6 +16036,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The AWS Region.</p>\n@param region The AWS Region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15872,6 +16106,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the Savings Plan.</p>\n@param savingsPlanArn The Amazon Resource Name (ARN) of the Savings Plan.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15941,6 +16176,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the Savings Plan.</p>\n@param savingsPlanId The ID of the Savings Plan.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16010,6 +16246,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The plan type.</p>\n@param savingsPlanType The plan type.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanType*/",
@@ -16079,6 +16316,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The start time.</p>\n@param start The start time.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16148,6 +16386,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The state.</p>\n@param state The state.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanState*/",
@@ -16262,6 +16501,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16300,6 +16540,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>One or more tags.</p>\n@param tags One or more tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16369,6 +16610,7 @@
             "variableSetterType" : "Long"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The duration of the term, in seconds.</p>\n@param termDurationInSeconds The duration of the term, in seconds.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16438,6 +16680,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The up-front payment amount.</p>\n@param upfrontPaymentAmount The up-front payment amount.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16453,6 +16696,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.savingsplans.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -16487,6 +16731,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.savingsplans.model.SavingsPlanFilter",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -16548,6 +16793,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The filter name.</p>\n@param name The filter name.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlansFilterName*/",
@@ -16655,6 +16901,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16699,6 +16946,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The filter value.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValues(java.util.Collection)} or {@link #withValues(java.util.Collection)} if you want to override the existing values.</p>\n@param values The filter value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16769,6 +17017,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The filter name.</p>\n@param name The filter name.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlansFilterName*/",
@@ -16877,6 +17126,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16921,6 +17171,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The filter value.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValues(java.util.Collection)} or {@link #withValues(java.util.Collection)} if you want to override the existing values.</p>\n@param values The filter value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16936,6 +17187,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.savingsplans.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -16970,6 +17222,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.savingsplans.model.SavingsPlanOffering",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -17031,6 +17284,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the offering.</p>\n@param offeringId The ID of the offering.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17138,6 +17392,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanProductType*/",
@@ -17182,6 +17437,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The product type.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setProductTypes(java.util.Collection)} or {@link #withProductTypes(java.util.Collection)} if you want to override the existing values.</p>\n@param productTypes The product type.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanProductType*/",
@@ -17250,6 +17506,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The plan type.</p>\n@param planType The plan type.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanType*/",
@@ -17318,6 +17575,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The description.</p>\n@param description The description.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17386,6 +17644,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The payment option.</p>\n@param paymentOption The payment option.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanPaymentOption*/",
@@ -17454,6 +17713,7 @@
           "variableSetterType" : "Long"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The duration, in seconds.</p>\n@param durationSeconds The duration, in seconds.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17522,6 +17782,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The currency.</p>\n@param currency The currency.\n@return Returns a reference to this object so that method calls can be chained together.\n@see CurrencyCode*/",
@@ -17590,6 +17851,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The service.</p>\n@param serviceCode The service.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17658,6 +17920,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The usage details of the line item in the billing report.</p>\n@param usageType The usage details of the line item in the billing report.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17726,6 +17989,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The specific AWS operation for the line item in the billing report.</p>\n@param operation The specific AWS operation for the line item in the billing report.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17833,6 +18097,7 @@
               "variableSetterType" : "SavingsPlanOfferingProperty"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17877,6 +18142,7 @@
           "variableSetterType" : "java.util.Collection<SavingsPlanOfferingProperty>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The properties.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setProperties(java.util.Collection)} or {@link #withProperties(java.util.Collection)} if you want to override the existing values.</p>\n@param properties The properties.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17947,6 +18213,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The currency.</p>\n@param currency The currency.\n@return Returns a reference to this object so that method calls can be chained together.\n@see CurrencyCode*/",
@@ -18016,6 +18283,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The description.</p>\n@param description The description.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18085,6 +18353,7 @@
             "variableSetterType" : "Long"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The duration, in seconds.</p>\n@param durationSeconds The duration, in seconds.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18154,6 +18423,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the offering.</p>\n@param offeringId The ID of the offering.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18223,6 +18493,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The specific AWS operation for the line item in the billing report.</p>\n@param operation The specific AWS operation for the line item in the billing report.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18292,6 +18563,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The payment option.</p>\n@param paymentOption The payment option.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanPaymentOption*/",
@@ -18361,6 +18633,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The plan type.</p>\n@param planType The plan type.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanType*/",
@@ -18469,6 +18742,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanProductType*/",
@@ -18513,6 +18787,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The product type.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setProductTypes(java.util.Collection)} or {@link #withProductTypes(java.util.Collection)} if you want to override the existing values.</p>\n@param productTypes The product type.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanProductType*/",
@@ -18621,6 +18896,7 @@
                 "variableSetterType" : "SavingsPlanOfferingProperty"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18665,6 +18941,7 @@
             "variableSetterType" : "java.util.Collection<SavingsPlanOfferingProperty>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The properties.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setProperties(java.util.Collection)} or {@link #withProperties(java.util.Collection)} if you want to override the existing values.</p>\n@param properties The properties.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18734,6 +19011,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The service.</p>\n@param serviceCode The service.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18803,6 +19081,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The usage details of the line item in the billing report.</p>\n@param usageType The usage details of the line item in the billing report.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18818,6 +19097,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.savingsplans.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -18858,6 +19138,7 @@
         "value" : "instanceFamily"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.savingsplans.enum.SavingsPlanOfferingFilterAttribute",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -18866,6 +19147,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.savingsplans.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -18900,6 +19182,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.savingsplans.model.SavingsPlanOfferingFilterElement",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -18961,6 +19244,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The filter name.</p>\n@param name The filter name.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanOfferingFilterAttribute*/",
@@ -19068,6 +19352,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19112,6 +19397,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The filter values.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValues(java.util.Collection)} or {@link #withValues(java.util.Collection)} if you want to override the existing values.</p>\n@param values The filter values.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19182,6 +19468,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The filter name.</p>\n@param name The filter name.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanOfferingFilterAttribute*/",
@@ -19290,6 +19577,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19334,6 +19622,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The filter values.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValues(java.util.Collection)} or {@link #withValues(java.util.Collection)} if you want to override the existing values.</p>\n@param values The filter values.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19349,6 +19638,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.savingsplans.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -19383,6 +19673,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.savingsplans.model.SavingsPlanOfferingProperty",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -19444,6 +19735,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The property name.</p>\n@param name The property name.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanOfferingPropertyKey*/",
@@ -19512,6 +19804,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The property value.</p>\n@param value The property value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19582,6 +19875,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The property name.</p>\n@param name The property name.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanOfferingPropertyKey*/",
@@ -19651,6 +19945,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The property value.</p>\n@param value The property value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19666,6 +19961,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.savingsplans.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -19706,6 +20002,7 @@
         "value" : "instanceFamily"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.savingsplans.enum.SavingsPlanOfferingPropertyKey",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -19714,6 +20011,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.savingsplans.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -19748,6 +20046,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.savingsplans.model.SavingsPlanOfferingRate",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -19809,6 +20108,7 @@
           "variableSetterType" : "ParentSavingsPlanOffering"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Savings Plan offering.</p>\n@param savingsPlanOffering The Savings Plan offering.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19877,6 +20177,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Savings Plan rate.</p>\n@param rate The Savings Plan rate.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19945,6 +20246,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unit.</p>\n@param unit The unit.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanRateUnit*/",
@@ -20013,6 +20315,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The product type.</p>\n@param productType The product type.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanProductType*/",
@@ -20081,6 +20384,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The service.</p>\n@param serviceCode The service.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanRateServiceCode*/",
@@ -20149,6 +20453,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The usage details of the line item in the billing report.</p>\n@param usageType The usage details of the line item in the billing report.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20217,6 +20522,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The specific AWS operation for the line item in the billing report.</p>\n@param operation The specific AWS operation for the line item in the billing report.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20324,6 +20630,7 @@
               "variableSetterType" : "SavingsPlanOfferingRateProperty"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20368,6 +20675,7 @@
           "variableSetterType" : "java.util.Collection<SavingsPlanOfferingRateProperty>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The properties.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setProperties(java.util.Collection)} or {@link #withProperties(java.util.Collection)} if you want to override the existing values.</p>\n@param properties The properties.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20438,6 +20746,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The specific AWS operation for the line item in the billing report.</p>\n@param operation The specific AWS operation for the line item in the billing report.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20507,6 +20816,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The product type.</p>\n@param productType The product type.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanProductType*/",
@@ -20615,6 +20925,7 @@
                 "variableSetterType" : "SavingsPlanOfferingRateProperty"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20659,6 +20970,7 @@
             "variableSetterType" : "java.util.Collection<SavingsPlanOfferingRateProperty>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The properties.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setProperties(java.util.Collection)} or {@link #withProperties(java.util.Collection)} if you want to override the existing values.</p>\n@param properties The properties.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20728,6 +21040,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Savings Plan rate.</p>\n@param rate The Savings Plan rate.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20797,6 +21110,7 @@
             "variableSetterType" : "ParentSavingsPlanOffering"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Savings Plan offering.</p>\n@param savingsPlanOffering The Savings Plan offering.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20866,6 +21180,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The service.</p>\n@param serviceCode The service.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanRateServiceCode*/",
@@ -20935,6 +21250,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unit.</p>\n@param unit The unit.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanRateUnit*/",
@@ -21004,6 +21320,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The usage details of the line item in the billing report.</p>\n@param usageType The usage details of the line item in the billing report.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -21019,6 +21336,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.savingsplans.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -21053,6 +21371,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.savingsplans.model.SavingsPlanOfferingRateFilterElement",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -21114,6 +21433,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The filter name.</p>\n@param name The filter name.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanRateFilterAttribute*/",
@@ -21221,6 +21541,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -21265,6 +21586,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The filter values.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValues(java.util.Collection)} or {@link #withValues(java.util.Collection)} if you want to override the existing values.</p>\n@param values The filter values.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -21335,6 +21657,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The filter name.</p>\n@param name The filter name.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanRateFilterAttribute*/",
@@ -21443,6 +21766,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -21487,6 +21811,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The filter values.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValues(java.util.Collection)} or {@link #withValues(java.util.Collection)} if you want to override the existing values.</p>\n@param values The filter values.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -21502,6 +21827,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.savingsplans.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -21536,6 +21862,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.savingsplans.model.SavingsPlanOfferingRateProperty",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -21597,6 +21924,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The property name.</p>\n@param name The property name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -21665,6 +21993,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The property value.</p>\n@param value The property value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -21735,6 +22064,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The property name.</p>\n@param name The property name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -21804,6 +22134,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The property value.</p>\n@param value The property value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -21819,6 +22150,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.savingsplans.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -21862,6 +22194,7 @@
         "value" : "No Upfront"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.savingsplans.enum.SavingsPlanPaymentOption",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -21870,6 +22203,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.savingsplans.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -21913,6 +22247,7 @@
         "value" : "Lambda"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.savingsplans.enum.SavingsPlanProductType",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -21921,6 +22256,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.savingsplans.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -21955,6 +22291,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.savingsplans.model.SavingsPlanRate",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -22016,6 +22353,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The rate.</p>\n@param rate The rate.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -22084,6 +22422,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The currency.</p>\n@param currency The currency.\n@return Returns a reference to this object so that method calls can be chained together.\n@see CurrencyCode*/",
@@ -22152,6 +22491,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unit.</p>\n@param unit The unit.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanRateUnit*/",
@@ -22220,6 +22560,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The product type.</p>\n@param productType The product type.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanProductType*/",
@@ -22288,6 +22629,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The service.</p>\n@param serviceCode The service.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanRateServiceCode*/",
@@ -22356,6 +22698,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The usage details of the line item in the billing report.</p>\n@param usageType The usage details of the line item in the billing report.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -22424,6 +22767,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The specific AWS operation for the line item in the billing report.</p>\n@param operation The specific AWS operation for the line item in the billing report.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -22531,6 +22875,7 @@
               "variableSetterType" : "SavingsPlanRateProperty"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -22575,6 +22920,7 @@
           "variableSetterType" : "java.util.Collection<SavingsPlanRateProperty>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The properties.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setProperties(java.util.Collection)} or {@link #withProperties(java.util.Collection)} if you want to override the existing values.</p>\n@param properties The properties.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -22645,6 +22991,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The currency.</p>\n@param currency The currency.\n@return Returns a reference to this object so that method calls can be chained together.\n@see CurrencyCode*/",
@@ -22714,6 +23061,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The specific AWS operation for the line item in the billing report.</p>\n@param operation The specific AWS operation for the line item in the billing report.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -22783,6 +23131,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The product type.</p>\n@param productType The product type.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanProductType*/",
@@ -22891,6 +23240,7 @@
                 "variableSetterType" : "SavingsPlanRateProperty"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -22935,6 +23285,7 @@
             "variableSetterType" : "java.util.Collection<SavingsPlanRateProperty>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The properties.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setProperties(java.util.Collection)} or {@link #withProperties(java.util.Collection)} if you want to override the existing values.</p>\n@param properties The properties.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -23004,6 +23355,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The rate.</p>\n@param rate The rate.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -23073,6 +23425,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The service.</p>\n@param serviceCode The service.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanRateServiceCode*/",
@@ -23142,6 +23495,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unit.</p>\n@param unit The unit.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanRateUnit*/",
@@ -23211,6 +23565,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The usage details of the line item in the billing report.</p>\n@param usageType The usage details of the line item in the billing report.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -23226,6 +23581,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.savingsplans.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -23260,6 +23616,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.savingsplans.model.SavingsPlanRateFilter",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -23321,6 +23678,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The filter name.</p>\n@param name The filter name.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanRateFilterName*/",
@@ -23428,6 +23786,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -23472,6 +23831,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The filter values.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValues(java.util.Collection)} or {@link #withValues(java.util.Collection)} if you want to override the existing values.</p>\n@param values The filter values.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -23542,6 +23902,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The filter name.</p>\n@param name The filter name.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanRateFilterName*/",
@@ -23650,6 +24011,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -23694,6 +24056,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The filter values.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValues(java.util.Collection)} or {@link #withValues(java.util.Collection)} if you want to override the existing values.</p>\n@param values The filter values.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -23709,6 +24072,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.savingsplans.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -23761,6 +24125,7 @@
         "value" : "productId"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.savingsplans.enum.SavingsPlanRateFilterAttribute",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -23769,6 +24134,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.savingsplans.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -23827,6 +24193,7 @@
         "value" : "operation"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.savingsplans.enum.SavingsPlanRateFilterName",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -23835,6 +24202,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.savingsplans.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -23869,6 +24237,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.savingsplans.model.SavingsPlanRateProperty",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -23930,6 +24299,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The property name.</p>\n@param name The property name.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanRatePropertyKey*/",
@@ -23998,6 +24368,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The property value.</p>\n@param value The property value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -24068,6 +24439,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The property name.</p>\n@param name The property name.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SavingsPlanRatePropertyKey*/",
@@ -24137,6 +24509,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The property value.</p>\n@param value The property value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -24152,6 +24525,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.savingsplans.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -24201,6 +24575,7 @@
         "value" : "tenancy"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.savingsplans.enum.SavingsPlanRatePropertyKey",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -24209,6 +24584,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.savingsplans.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -24252,6 +24628,7 @@
         "value" : "AWSLambda"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.savingsplans.enum.SavingsPlanRateServiceCode",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -24260,6 +24637,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.savingsplans.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -24303,6 +24681,7 @@
         "value" : "Request"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.savingsplans.enum.SavingsPlanRateUnit",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -24311,6 +24690,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.savingsplans.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -24357,6 +24737,7 @@
         "value" : "retired"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.savingsplans.enum.SavingsPlanState",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -24365,6 +24746,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.savingsplans.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -24405,6 +24787,7 @@
         "value" : "EC2Instance"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.savingsplans.enum.SavingsPlanType",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -24413,6 +24796,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.savingsplans.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -24474,6 +24858,7 @@
         "value" : "end"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.savingsplans.enum.SavingsPlansFilterName",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -24482,6 +24867,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.savingsplans.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -24516,6 +24902,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ServiceQuotaExceededException",
+      "fullyQualifiedName" : "com.amazonaws.services.savingsplans.exception.ServiceQuotaExceededException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -24524,6 +24911,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.savingsplans.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "message" ],
@@ -24555,6 +24943,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.savingsplans.request.TagResourceRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -24623,6 +25012,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -24736,6 +25126,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -24774,6 +25165,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>One or more tags. For example, { \"tags\": {\"key1\":\"value1\", \"key2\":\"value2\"} }.</p>\n@param tags One or more tags. For example, { \"tags\": {\"key1\":\"value1\", \"key2\":\"value2\"} }.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -24844,6 +25236,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -24958,6 +25351,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -24996,6 +25390,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>One or more tags. For example, { \"tags\": {\"key1\":\"value1\", \"key2\":\"value2\"} }.</p>\n@param tags One or more tags. For example, { \"tags\": {\"key1\":\"value1\", \"key2\":\"value2\"} }.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -25011,6 +25406,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.savingsplans.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "resourceArn", "tags" ],
@@ -25042,6 +25438,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.savingsplans.response.TagResourceResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -25050,6 +25447,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.savingsplans.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -25084,6 +25482,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.savingsplans.request.UntagResourceRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -25152,6 +25551,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -25259,6 +25659,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -25303,6 +25704,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The tag keys.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagKeys(java.util.Collection)} or {@link #withTagKeys(java.util.Collection)} if you want to override the existing values.</p>\n@param tagKeys The tag keys.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -25373,6 +25775,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -25481,6 +25884,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -25525,6 +25929,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The tag keys.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagKeys(java.util.Collection)} or {@link #withTagKeys(java.util.Collection)} if you want to override the existing values.</p>\n@param tagKeys The tag keys.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -25540,6 +25945,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.savingsplans.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "resourceArn", "tagKeys" ],
@@ -25571,6 +25977,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.savingsplans.response.UntagResourceResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -25579,6 +25986,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.savingsplans.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -25613,6 +26021,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ValidationException",
+      "fullyQualifiedName" : "com.amazonaws.services.savingsplans.exception.ValidationException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -25621,6 +26030,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.savingsplans.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "message" ],

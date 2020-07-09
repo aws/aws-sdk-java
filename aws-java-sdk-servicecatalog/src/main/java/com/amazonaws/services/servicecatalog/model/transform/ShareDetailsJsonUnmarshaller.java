@@ -50,11 +50,15 @@ public class ShareDetailsJsonUnmarshaller implements Unmarshaller<ShareDetails, 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SuccessfulShares", targetDepth)) {
                     context.nextToken();
-                    shareDetails.setSuccessfulShares(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    shareDetails.setSuccessfulShares(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ShareErrors", targetDepth)) {
                     context.nextToken();
-                    shareDetails.setShareErrors(new ListUnmarshaller<ShareError>(ShareErrorJsonUnmarshaller.getInstance()).unmarshall(context));
+                    shareDetails.setShareErrors(new ListUnmarshaller<ShareError>(ShareErrorJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

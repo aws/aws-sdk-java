@@ -50,7 +50,9 @@ public class ListHsmsResultJsonUnmarshaller implements Unmarshaller<ListHsmsResu
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("HsmList", targetDepth)) {
                     context.nextToken();
-                    listHsmsResult.setHsmList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    listHsmsResult.setHsmList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

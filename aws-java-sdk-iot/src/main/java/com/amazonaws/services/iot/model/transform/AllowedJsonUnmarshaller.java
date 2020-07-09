@@ -50,7 +50,9 @@ public class AllowedJsonUnmarshaller implements Unmarshaller<Allowed, JsonUnmars
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("policies", targetDepth)) {
                     context.nextToken();
-                    allowed.setPolicies(new ListUnmarshaller<Policy>(PolicyJsonUnmarshaller.getInstance()).unmarshall(context));
+                    allowed.setPolicies(new ListUnmarshaller<Policy>(PolicyJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

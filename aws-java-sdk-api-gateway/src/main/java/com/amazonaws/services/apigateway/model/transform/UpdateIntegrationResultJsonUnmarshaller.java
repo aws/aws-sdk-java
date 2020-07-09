@@ -100,7 +100,9 @@ public class UpdateIntegrationResultJsonUnmarshaller implements Unmarshaller<Upd
                 }
                 if (context.testExpression("cacheKeyParameters", targetDepth)) {
                     context.nextToken();
-                    updateIntegrationResult.setCacheKeyParameters(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    updateIntegrationResult.setCacheKeyParameters(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("integrationResponses", targetDepth)) {
                     context.nextToken();

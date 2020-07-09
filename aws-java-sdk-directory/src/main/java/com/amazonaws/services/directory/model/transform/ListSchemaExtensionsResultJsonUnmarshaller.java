@@ -51,7 +51,9 @@ public class ListSchemaExtensionsResultJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("SchemaExtensionsInfo", targetDepth)) {
                     context.nextToken();
                     listSchemaExtensionsResult.setSchemaExtensionsInfo(new ListUnmarshaller<SchemaExtensionInfo>(SchemaExtensionInfoJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

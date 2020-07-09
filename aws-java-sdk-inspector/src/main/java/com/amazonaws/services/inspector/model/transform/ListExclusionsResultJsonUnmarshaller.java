@@ -50,7 +50,9 @@ public class ListExclusionsResultJsonUnmarshaller implements Unmarshaller<ListEx
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("exclusionArns", targetDepth)) {
                     context.nextToken();
-                    listExclusionsResult.setExclusionArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    listExclusionsResult.setExclusionArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

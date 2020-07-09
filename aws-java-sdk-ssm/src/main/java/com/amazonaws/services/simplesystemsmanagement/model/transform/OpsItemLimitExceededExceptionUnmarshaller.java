@@ -56,7 +56,9 @@ public class OpsItemLimitExceededExceptionUnmarshaller extends EnhancedJsonError
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ResourceTypes", targetDepth)) {
                     context.nextToken();
-                    opsItemLimitExceededException.setResourceTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    opsItemLimitExceededException.setResourceTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Limit", targetDepth)) {
                     context.nextToken();

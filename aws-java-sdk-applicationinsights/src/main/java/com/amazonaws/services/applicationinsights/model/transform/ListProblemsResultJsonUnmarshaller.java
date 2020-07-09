@@ -50,7 +50,9 @@ public class ListProblemsResultJsonUnmarshaller implements Unmarshaller<ListProb
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ProblemList", targetDepth)) {
                     context.nextToken();
-                    listProblemsResult.setProblemList(new ListUnmarshaller<Problem>(ProblemJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listProblemsResult.setProblemList(new ListUnmarshaller<Problem>(ProblemJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

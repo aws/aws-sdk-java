@@ -54,7 +54,9 @@ public class AuthInfoJsonUnmarshaller implements Unmarshaller<AuthInfo, JsonUnma
                 }
                 if (context.testExpression("resources", targetDepth)) {
                     context.nextToken();
-                    authInfo.setResources(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    authInfo.setResources(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

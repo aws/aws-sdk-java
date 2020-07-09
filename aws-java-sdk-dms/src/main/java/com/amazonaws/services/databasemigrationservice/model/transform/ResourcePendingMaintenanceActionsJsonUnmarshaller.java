@@ -55,7 +55,9 @@ public class ResourcePendingMaintenanceActionsJsonUnmarshaller implements Unmars
                 if (context.testExpression("PendingMaintenanceActionDetails", targetDepth)) {
                     context.nextToken();
                     resourcePendingMaintenanceActions.setPendingMaintenanceActionDetails(new ListUnmarshaller<PendingMaintenanceAction>(
-                            PendingMaintenanceActionJsonUnmarshaller.getInstance()).unmarshall(context));
+                            PendingMaintenanceActionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

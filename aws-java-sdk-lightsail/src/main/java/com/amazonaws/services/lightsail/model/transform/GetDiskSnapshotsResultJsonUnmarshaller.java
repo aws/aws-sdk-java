@@ -50,7 +50,9 @@ public class GetDiskSnapshotsResultJsonUnmarshaller implements Unmarshaller<GetD
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("diskSnapshots", targetDepth)) {
                     context.nextToken();
-                    getDiskSnapshotsResult.setDiskSnapshots(new ListUnmarshaller<DiskSnapshot>(DiskSnapshotJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getDiskSnapshotsResult.setDiskSnapshots(new ListUnmarshaller<DiskSnapshot>(DiskSnapshotJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextPageToken", targetDepth)) {
                     context.nextToken();

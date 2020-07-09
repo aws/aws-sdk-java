@@ -48,6 +48,19 @@ public class IPSetReferenceStatement implements Serializable, Cloneable, Structu
      * </p>
      */
     private String aRN;
+    /**
+     * <p>
+     * The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address
+     * that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can
+     * specify any header name.
+     * </p>
+     * <note>
+     * <p>
+     * If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request at all.
+     * </p>
+     * </note>
+     */
+    private IPSetForwardedIPConfig iPSetForwardedIPConfig;
 
     /**
      * <p>
@@ -90,6 +103,85 @@ public class IPSetReferenceStatement implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address
+     * that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can
+     * specify any header name.
+     * </p>
+     * <note>
+     * <p>
+     * If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request at all.
+     * </p>
+     * </note>
+     * 
+     * @param iPSetForwardedIPConfig
+     *        The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP
+     *        address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but
+     *        you can specify any header name. </p> <note>
+     *        <p>
+     *        If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request at
+     *        all.
+     *        </p>
+     */
+
+    public void setIPSetForwardedIPConfig(IPSetForwardedIPConfig iPSetForwardedIPConfig) {
+        this.iPSetForwardedIPConfig = iPSetForwardedIPConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address
+     * that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can
+     * specify any header name.
+     * </p>
+     * <note>
+     * <p>
+     * If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request at all.
+     * </p>
+     * </note>
+     * 
+     * @return The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP
+     *         address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header,
+     *         but you can specify any header name. </p> <note>
+     *         <p>
+     *         If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request
+     *         at all.
+     *         </p>
+     */
+
+    public IPSetForwardedIPConfig getIPSetForwardedIPConfig() {
+        return this.iPSetForwardedIPConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address
+     * that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can
+     * specify any header name.
+     * </p>
+     * <note>
+     * <p>
+     * If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request at all.
+     * </p>
+     * </note>
+     * 
+     * @param iPSetForwardedIPConfig
+     *        The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP
+     *        address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but
+     *        you can specify any header name. </p> <note>
+     *        <p>
+     *        If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request at
+     *        all.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public IPSetReferenceStatement withIPSetForwardedIPConfig(IPSetForwardedIPConfig iPSetForwardedIPConfig) {
+        setIPSetForwardedIPConfig(iPSetForwardedIPConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -102,7 +194,9 @@ public class IPSetReferenceStatement implements Serializable, Cloneable, Structu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getARN() != null)
-            sb.append("ARN: ").append(getARN());
+            sb.append("ARN: ").append(getARN()).append(",");
+        if (getIPSetForwardedIPConfig() != null)
+            sb.append("IPSetForwardedIPConfig: ").append(getIPSetForwardedIPConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -121,6 +215,10 @@ public class IPSetReferenceStatement implements Serializable, Cloneable, Structu
             return false;
         if (other.getARN() != null && other.getARN().equals(this.getARN()) == false)
             return false;
+        if (other.getIPSetForwardedIPConfig() == null ^ this.getIPSetForwardedIPConfig() == null)
+            return false;
+        if (other.getIPSetForwardedIPConfig() != null && other.getIPSetForwardedIPConfig().equals(this.getIPSetForwardedIPConfig()) == false)
+            return false;
         return true;
     }
 
@@ -130,6 +228,7 @@ public class IPSetReferenceStatement implements Serializable, Cloneable, Structu
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getARN() == null) ? 0 : getARN().hashCode());
+        hashCode = prime * hashCode + ((getIPSetForwardedIPConfig() == null) ? 0 : getIPSetForwardedIPConfig().hashCode());
         return hashCode;
     }
 

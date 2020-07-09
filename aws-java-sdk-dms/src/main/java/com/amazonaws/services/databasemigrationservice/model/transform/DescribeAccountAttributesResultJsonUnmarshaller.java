@@ -51,7 +51,8 @@ public class DescribeAccountAttributesResultJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("AccountQuotas", targetDepth)) {
                     context.nextToken();
                     describeAccountAttributesResult.setAccountQuotas(new ListUnmarshaller<AccountQuota>(AccountQuotaJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("UniqueAccountIdentifier", targetDepth)) {
                     context.nextToken();

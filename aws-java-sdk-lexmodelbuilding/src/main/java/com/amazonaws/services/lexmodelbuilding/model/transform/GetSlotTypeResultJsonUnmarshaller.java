@@ -59,7 +59,8 @@ public class GetSlotTypeResultJsonUnmarshaller implements Unmarshaller<GetSlotTy
                 if (context.testExpression("enumerationValues", targetDepth)) {
                     context.nextToken();
                     getSlotTypeResult.setEnumerationValues(new ListUnmarshaller<EnumerationValue>(EnumerationValueJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedDate", targetDepth)) {
                     context.nextToken();
@@ -89,7 +90,8 @@ public class GetSlotTypeResultJsonUnmarshaller implements Unmarshaller<GetSlotTy
                     context.nextToken();
                     getSlotTypeResult
                             .setSlotTypeConfigurations(new ListUnmarshaller<SlotTypeConfiguration>(SlotTypeConfigurationJsonUnmarshaller.getInstance())
-                                    .unmarshall(context));
+
+                            .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

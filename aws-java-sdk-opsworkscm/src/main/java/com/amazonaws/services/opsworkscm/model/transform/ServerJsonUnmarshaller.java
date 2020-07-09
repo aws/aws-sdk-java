@@ -90,7 +90,9 @@ public class ServerJsonUnmarshaller implements Unmarshaller<Server, JsonUnmarsha
                 }
                 if (context.testExpression("EngineAttributes", targetDepth)) {
                     context.nextToken();
-                    server.setEngineAttributes(new ListUnmarshaller<EngineAttribute>(EngineAttributeJsonUnmarshaller.getInstance()).unmarshall(context));
+                    server.setEngineAttributes(new ListUnmarshaller<EngineAttribute>(EngineAttributeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("EngineVersion", targetDepth)) {
                     context.nextToken();
@@ -122,7 +124,9 @@ public class ServerJsonUnmarshaller implements Unmarshaller<Server, JsonUnmarsha
                 }
                 if (context.testExpression("SecurityGroupIds", targetDepth)) {
                     context.nextToken();
-                    server.setSecurityGroupIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    server.setSecurityGroupIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ServiceRoleArn", targetDepth)) {
                     context.nextToken();
@@ -138,7 +142,9 @@ public class ServerJsonUnmarshaller implements Unmarshaller<Server, JsonUnmarsha
                 }
                 if (context.testExpression("SubnetIds", targetDepth)) {
                     context.nextToken();
-                    server.setSubnetIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    server.setSubnetIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ServerArn", targetDepth)) {
                     context.nextToken();

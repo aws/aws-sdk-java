@@ -51,7 +51,9 @@ public class DescribeUsageReportSubscriptionsResultJsonUnmarshaller implements U
                 if (context.testExpression("UsageReportSubscriptions", targetDepth)) {
                     context.nextToken();
                     describeUsageReportSubscriptionsResult.setUsageReportSubscriptions(new ListUnmarshaller<UsageReportSubscription>(
-                            UsageReportSubscriptionJsonUnmarshaller.getInstance()).unmarshall(context));
+                            UsageReportSubscriptionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

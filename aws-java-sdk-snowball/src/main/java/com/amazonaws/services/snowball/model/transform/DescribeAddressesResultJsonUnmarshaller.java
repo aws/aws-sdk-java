@@ -50,7 +50,9 @@ public class DescribeAddressesResultJsonUnmarshaller implements Unmarshaller<Des
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Addresses", targetDepth)) {
                     context.nextToken();
-                    describeAddressesResult.setAddresses(new ListUnmarshaller<Address>(AddressJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeAddressesResult.setAddresses(new ListUnmarshaller<Address>(AddressJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

@@ -51,12 +51,14 @@ public class BatchMeterUsageResultJsonUnmarshaller implements Unmarshaller<Batch
                 if (context.testExpression("Results", targetDepth)) {
                     context.nextToken();
                     batchMeterUsageResult.setResults(new ListUnmarshaller<UsageRecordResult>(UsageRecordResultJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("UnprocessedRecords", targetDepth)) {
                     context.nextToken();
                     batchMeterUsageResult.setUnprocessedRecords(new ListUnmarshaller<UsageRecord>(UsageRecordJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

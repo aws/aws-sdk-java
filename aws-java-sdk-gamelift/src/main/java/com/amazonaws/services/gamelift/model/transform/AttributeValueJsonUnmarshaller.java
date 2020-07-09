@@ -58,7 +58,9 @@ public class AttributeValueJsonUnmarshaller implements Unmarshaller<AttributeVal
                 }
                 if (context.testExpression("SL", targetDepth)) {
                     context.nextToken();
-                    attributeValue.setSL(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    attributeValue.setSL(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("SDM", targetDepth)) {
                     context.nextToken();

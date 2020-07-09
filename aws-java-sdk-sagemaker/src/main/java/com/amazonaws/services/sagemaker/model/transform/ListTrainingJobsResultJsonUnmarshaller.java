@@ -51,7 +51,8 @@ public class ListTrainingJobsResultJsonUnmarshaller implements Unmarshaller<List
                 if (context.testExpression("TrainingJobSummaries", targetDepth)) {
                     context.nextToken();
                     listTrainingJobsResult.setTrainingJobSummaries(new ListUnmarshaller<TrainingJobSummary>(TrainingJobSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

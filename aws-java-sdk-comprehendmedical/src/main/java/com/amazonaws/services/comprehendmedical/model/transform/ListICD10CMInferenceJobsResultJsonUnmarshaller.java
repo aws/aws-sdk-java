@@ -51,7 +51,9 @@ public class ListICD10CMInferenceJobsResultJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("ComprehendMedicalAsyncJobPropertiesList", targetDepth)) {
                     context.nextToken();
                     listICD10CMInferenceJobsResult.setComprehendMedicalAsyncJobPropertiesList(new ListUnmarshaller<ComprehendMedicalAsyncJobProperties>(
-                            ComprehendMedicalAsyncJobPropertiesJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ComprehendMedicalAsyncJobPropertiesJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

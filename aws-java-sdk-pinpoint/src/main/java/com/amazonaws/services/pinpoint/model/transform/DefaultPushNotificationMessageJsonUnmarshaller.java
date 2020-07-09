@@ -68,7 +68,9 @@ public class DefaultPushNotificationMessageJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("Substitutions", targetDepth)) {
                     context.nextToken();
                     defaultPushNotificationMessage.setSubstitutions(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
-                            new ListUnmarshaller<String>(context.getUnmarshaller(String.class))).unmarshall(context));
+                            new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    ).unmarshall(context));
                 }
                 if (context.testExpression("Title", targetDepth)) {
                     context.nextToken();

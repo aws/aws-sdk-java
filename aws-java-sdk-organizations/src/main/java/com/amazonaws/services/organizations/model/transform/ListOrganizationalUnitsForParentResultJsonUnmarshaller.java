@@ -51,7 +51,9 @@ public class ListOrganizationalUnitsForParentResultJsonUnmarshaller implements U
                 if (context.testExpression("OrganizationalUnits", targetDepth)) {
                     context.nextToken();
                     listOrganizationalUnitsForParentResult.setOrganizationalUnits(new ListUnmarshaller<OrganizationalUnit>(OrganizationalUnitJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

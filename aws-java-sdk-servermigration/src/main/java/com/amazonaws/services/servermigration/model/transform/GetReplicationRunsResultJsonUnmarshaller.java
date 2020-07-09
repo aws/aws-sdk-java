@@ -55,7 +55,8 @@ public class GetReplicationRunsResultJsonUnmarshaller implements Unmarshaller<Ge
                 if (context.testExpression("replicationRunList", targetDepth)) {
                     context.nextToken();
                     getReplicationRunsResult.setReplicationRunList(new ListUnmarshaller<ReplicationRun>(ReplicationRunJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

@@ -62,7 +62,9 @@ public class RuleJsonUnmarshaller implements Unmarshaller<Rule, JsonUnmarshaller
                 }
                 if (context.testExpression("Predicates", targetDepth)) {
                     context.nextToken();
-                    rule.setPredicates(new ListUnmarshaller<Predicate>(PredicateJsonUnmarshaller.getInstance()).unmarshall(context));
+                    rule.setPredicates(new ListUnmarshaller<Predicate>(PredicateJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

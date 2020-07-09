@@ -54,7 +54,9 @@ public class ExportFilterJsonUnmarshaller implements Unmarshaller<ExportFilter, 
                 }
                 if (context.testExpression("values", targetDepth)) {
                     context.nextToken();
-                    exportFilter.setValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    exportFilter.setValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("condition", targetDepth)) {
                     context.nextToken();

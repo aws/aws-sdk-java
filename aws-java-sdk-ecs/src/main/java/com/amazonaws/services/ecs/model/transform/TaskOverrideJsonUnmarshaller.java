@@ -51,7 +51,8 @@ public class TaskOverrideJsonUnmarshaller implements Unmarshaller<TaskOverride, 
                 if (context.testExpression("containerOverrides", targetDepth)) {
                     context.nextToken();
                     taskOverride.setContainerOverrides(new ListUnmarshaller<ContainerOverride>(ContainerOverrideJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("cpu", targetDepth)) {
                     context.nextToken();
@@ -60,7 +61,9 @@ public class TaskOverrideJsonUnmarshaller implements Unmarshaller<TaskOverride, 
                 if (context.testExpression("inferenceAcceleratorOverrides", targetDepth)) {
                     context.nextToken();
                     taskOverride.setInferenceAcceleratorOverrides(new ListUnmarshaller<InferenceAcceleratorOverride>(
-                            InferenceAcceleratorOverrideJsonUnmarshaller.getInstance()).unmarshall(context));
+                            InferenceAcceleratorOverrideJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("executionRoleArn", targetDepth)) {
                     context.nextToken();

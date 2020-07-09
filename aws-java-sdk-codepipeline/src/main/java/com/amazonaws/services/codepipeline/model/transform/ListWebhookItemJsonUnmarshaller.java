@@ -74,7 +74,9 @@ public class ListWebhookItemJsonUnmarshaller implements Unmarshaller<ListWebhook
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
-                    listWebhookItem.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listWebhookItem.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

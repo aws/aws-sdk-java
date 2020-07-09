@@ -50,15 +50,21 @@ public class LocationJsonUnmarshaller implements Unmarshaller<Location, JsonUnma
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Jdbc", targetDepth)) {
                     context.nextToken();
-                    location.setJdbc(new ListUnmarshaller<CodeGenNodeArg>(CodeGenNodeArgJsonUnmarshaller.getInstance()).unmarshall(context));
+                    location.setJdbc(new ListUnmarshaller<CodeGenNodeArg>(CodeGenNodeArgJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("S3", targetDepth)) {
                     context.nextToken();
-                    location.setS3(new ListUnmarshaller<CodeGenNodeArg>(CodeGenNodeArgJsonUnmarshaller.getInstance()).unmarshall(context));
+                    location.setS3(new ListUnmarshaller<CodeGenNodeArg>(CodeGenNodeArgJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("DynamoDB", targetDepth)) {
                     context.nextToken();
-                    location.setDynamoDB(new ListUnmarshaller<CodeGenNodeArg>(CodeGenNodeArgJsonUnmarshaller.getInstance()).unmarshall(context));
+                    location.setDynamoDB(new ListUnmarshaller<CodeGenNodeArg>(CodeGenNodeArgJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -50,7 +50,9 @@ public class DescribeEvaluationsResultJsonUnmarshaller implements Unmarshaller<D
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Results", targetDepth)) {
                     context.nextToken();
-                    describeEvaluationsResult.setResults(new ListUnmarshaller<Evaluation>(EvaluationJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeEvaluationsResult.setResults(new ListUnmarshaller<Evaluation>(EvaluationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

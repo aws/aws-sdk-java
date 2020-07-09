@@ -62,7 +62,9 @@ public class FastRestoreRuleJsonUnmarshaller implements Unmarshaller<FastRestore
                 }
                 if (context.testExpression("AvailabilityZones", targetDepth)) {
                     context.nextToken();
-                    fastRestoreRule.setAvailabilityZones(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    fastRestoreRule.setAvailabilityZones(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

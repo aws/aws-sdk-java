@@ -55,12 +55,16 @@ public class GetEC2InstanceRecommendationsResultJsonUnmarshaller implements Unma
                 if (context.testExpression("instanceRecommendations", targetDepth)) {
                     context.nextToken();
                     getEC2InstanceRecommendationsResult.setInstanceRecommendations(new ListUnmarshaller<InstanceRecommendation>(
-                            InstanceRecommendationJsonUnmarshaller.getInstance()).unmarshall(context));
+                            InstanceRecommendationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("errors", targetDepth)) {
                     context.nextToken();
                     getEC2InstanceRecommendationsResult.setErrors(new ListUnmarshaller<GetRecommendationError>(GetRecommendationErrorJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

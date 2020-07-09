@@ -50,7 +50,9 @@ public class GetKeyPairsResultJsonUnmarshaller implements Unmarshaller<GetKeyPai
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("keyPairs", targetDepth)) {
                     context.nextToken();
-                    getKeyPairsResult.setKeyPairs(new ListUnmarshaller<KeyPair>(KeyPairJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getKeyPairsResult.setKeyPairs(new ListUnmarshaller<KeyPair>(KeyPairJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextPageToken", targetDepth)) {
                     context.nextToken();

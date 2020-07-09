@@ -50,7 +50,9 @@ public class GetSitesResultJsonUnmarshaller implements Unmarshaller<GetSitesResu
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Sites", targetDepth)) {
                     context.nextToken();
-                    getSitesResult.setSites(new ListUnmarshaller<Site>(SiteJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getSitesResult.setSites(new ListUnmarshaller<Site>(SiteJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

@@ -68,7 +68,9 @@ public class DatabaseInputJsonUnmarshaller implements Unmarshaller<DatabaseInput
                 if (context.testExpression("CreateTableDefaultPermissions", targetDepth)) {
                     context.nextToken();
                     databaseInput.setCreateTableDefaultPermissions(new ListUnmarshaller<PrincipalPermissions>(PrincipalPermissionsJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("TargetDatabase", targetDepth)) {
                     context.nextToken();

@@ -50,11 +50,15 @@ public class AgentFilterJsonUnmarshaller implements Unmarshaller<AgentFilter, Js
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("agentHealths", targetDepth)) {
                     context.nextToken();
-                    agentFilter.setAgentHealths(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    agentFilter.setAgentHealths(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("agentHealthCodes", targetDepth)) {
                     context.nextToken();
-                    agentFilter.setAgentHealthCodes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    agentFilter.setAgentHealthCodes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

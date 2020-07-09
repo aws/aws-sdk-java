@@ -51,7 +51,8 @@ public class ListVoiceConnectorsResultJsonUnmarshaller implements Unmarshaller<L
                 if (context.testExpression("VoiceConnectors", targetDepth)) {
                     context.nextToken();
                     listVoiceConnectorsResult.setVoiceConnectors(new ListUnmarshaller<VoiceConnector>(VoiceConnectorJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

@@ -50,7 +50,9 @@ public class DescribeMLModelsResultJsonUnmarshaller implements Unmarshaller<Desc
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Results", targetDepth)) {
                     context.nextToken();
-                    describeMLModelsResult.setResults(new ListUnmarshaller<MLModel>(MLModelJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeMLModelsResult.setResults(new ListUnmarshaller<MLModel>(MLModelJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

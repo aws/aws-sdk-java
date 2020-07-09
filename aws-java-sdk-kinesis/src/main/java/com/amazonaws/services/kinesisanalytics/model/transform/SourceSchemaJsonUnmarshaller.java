@@ -58,7 +58,9 @@ public class SourceSchemaJsonUnmarshaller implements Unmarshaller<SourceSchema, 
                 }
                 if (context.testExpression("RecordColumns", targetDepth)) {
                     context.nextToken();
-                    sourceSchema.setRecordColumns(new ListUnmarshaller<RecordColumn>(RecordColumnJsonUnmarshaller.getInstance()).unmarshall(context));
+                    sourceSchema.setRecordColumns(new ListUnmarshaller<RecordColumn>(RecordColumnJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

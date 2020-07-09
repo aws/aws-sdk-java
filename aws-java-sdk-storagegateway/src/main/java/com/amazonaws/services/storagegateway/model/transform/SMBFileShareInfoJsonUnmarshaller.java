@@ -110,15 +110,21 @@ public class SMBFileShareInfoJsonUnmarshaller implements Unmarshaller<SMBFileSha
                 }
                 if (context.testExpression("AdminUserList", targetDepth)) {
                     context.nextToken();
-                    sMBFileShareInfo.setAdminUserList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    sMBFileShareInfo.setAdminUserList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ValidUserList", targetDepth)) {
                     context.nextToken();
-                    sMBFileShareInfo.setValidUserList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    sMBFileShareInfo.setValidUserList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("InvalidUserList", targetDepth)) {
                     context.nextToken();
-                    sMBFileShareInfo.setInvalidUserList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    sMBFileShareInfo.setInvalidUserList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("AuditDestinationARN", targetDepth)) {
                     context.nextToken();
@@ -134,7 +140,9 @@ public class SMBFileShareInfoJsonUnmarshaller implements Unmarshaller<SMBFileSha
                 }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
-                    sMBFileShareInfo.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    sMBFileShareInfo.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("FileShareName", targetDepth)) {
                     context.nextToken();

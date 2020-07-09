@@ -50,7 +50,9 @@ public class ListEventSourcesResultJsonUnmarshaller implements Unmarshaller<List
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EventSources", targetDepth)) {
                     context.nextToken();
-                    listEventSourcesResult.setEventSources(new ListUnmarshaller<EventSource>(EventSourceJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listEventSourcesResult.setEventSources(new ListUnmarshaller<EventSource>(EventSourceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

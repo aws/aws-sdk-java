@@ -59,12 +59,14 @@ public class StartChannelResultJsonUnmarshaller implements Unmarshaller<StartCha
                 if (context.testExpression("destinations", targetDepth)) {
                     context.nextToken();
                     startChannelResult.setDestinations(new ListUnmarshaller<OutputDestination>(OutputDestinationJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("egressEndpoints", targetDepth)) {
                     context.nextToken();
                     startChannelResult.setEgressEndpoints(new ListUnmarshaller<ChannelEgressEndpoint>(ChannelEgressEndpointJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("encoderSettings", targetDepth)) {
                     context.nextToken();
@@ -77,7 +79,8 @@ public class StartChannelResultJsonUnmarshaller implements Unmarshaller<StartCha
                 if (context.testExpression("inputAttachments", targetDepth)) {
                     context.nextToken();
                     startChannelResult.setInputAttachments(new ListUnmarshaller<InputAttachment>(InputAttachmentJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("inputSpecification", targetDepth)) {
                     context.nextToken();
@@ -94,7 +97,8 @@ public class StartChannelResultJsonUnmarshaller implements Unmarshaller<StartCha
                 if (context.testExpression("pipelineDetails", targetDepth)) {
                     context.nextToken();
                     startChannelResult.setPipelineDetails(new ListUnmarshaller<PipelineDetail>(PipelineDetailJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("pipelinesRunningCount", targetDepth)) {
                     context.nextToken();

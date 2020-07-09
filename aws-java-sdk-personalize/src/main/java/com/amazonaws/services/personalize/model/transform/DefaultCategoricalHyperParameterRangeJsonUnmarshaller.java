@@ -54,7 +54,9 @@ public class DefaultCategoricalHyperParameterRangeJsonUnmarshaller implements Un
                 }
                 if (context.testExpression("values", targetDepth)) {
                     context.nextToken();
-                    defaultCategoricalHyperParameterRange.setValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    defaultCategoricalHyperParameterRange.setValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("isTunable", targetDepth)) {
                     context.nextToken();

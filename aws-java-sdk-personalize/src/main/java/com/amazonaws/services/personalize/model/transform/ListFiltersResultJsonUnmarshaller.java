@@ -50,7 +50,9 @@ public class ListFiltersResultJsonUnmarshaller implements Unmarshaller<ListFilte
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Filters", targetDepth)) {
                     context.nextToken();
-                    listFiltersResult.setFilters(new ListUnmarshaller<FilterSummary>(FilterSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listFiltersResult.setFilters(new ListUnmarshaller<FilterSummary>(FilterSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

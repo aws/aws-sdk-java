@@ -77,7 +77,8 @@ public class HyperParameterTrainingJobDefinitionJsonUnmarshaller implements Unma
                 if (context.testExpression("InputDataConfig", targetDepth)) {
                     context.nextToken();
                     hyperParameterTrainingJobDefinition.setInputDataConfig(new ListUnmarshaller<Channel>(ChannelJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("VpcConfig", targetDepth)) {
                     context.nextToken();

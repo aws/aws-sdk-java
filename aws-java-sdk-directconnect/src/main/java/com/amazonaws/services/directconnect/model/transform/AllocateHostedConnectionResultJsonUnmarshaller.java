@@ -110,7 +110,9 @@ public class AllocateHostedConnectionResultJsonUnmarshaller implements Unmarshal
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
-                    allocateHostedConnectionResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    allocateHostedConnectionResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("providerName", targetDepth)) {
                     context.nextToken();

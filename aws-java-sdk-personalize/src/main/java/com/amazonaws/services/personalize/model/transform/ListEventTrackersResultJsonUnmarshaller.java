@@ -51,7 +51,8 @@ public class ListEventTrackersResultJsonUnmarshaller implements Unmarshaller<Lis
                 if (context.testExpression("eventTrackers", targetDepth)) {
                     context.nextToken();
                     listEventTrackersResult.setEventTrackers(new ListUnmarshaller<EventTrackerSummary>(EventTrackerSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

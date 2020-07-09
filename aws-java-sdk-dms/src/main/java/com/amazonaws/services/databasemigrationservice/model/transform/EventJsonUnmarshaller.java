@@ -62,7 +62,9 @@ public class EventJsonUnmarshaller implements Unmarshaller<Event, JsonUnmarshall
                 }
                 if (context.testExpression("EventCategories", targetDepth)) {
                     context.nextToken();
-                    event.setEventCategories(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    event.setEventCategories(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Date", targetDepth)) {
                     context.nextToken();

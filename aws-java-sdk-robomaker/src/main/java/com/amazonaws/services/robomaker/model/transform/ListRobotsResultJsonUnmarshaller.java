@@ -50,7 +50,9 @@ public class ListRobotsResultJsonUnmarshaller implements Unmarshaller<ListRobots
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("robots", targetDepth)) {
                     context.nextToken();
-                    listRobotsResult.setRobots(new ListUnmarshaller<Robot>(RobotJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listRobotsResult.setRobots(new ListUnmarshaller<Robot>(RobotJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

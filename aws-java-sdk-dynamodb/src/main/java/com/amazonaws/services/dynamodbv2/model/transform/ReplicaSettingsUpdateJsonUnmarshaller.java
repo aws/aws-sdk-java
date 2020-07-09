@@ -64,7 +64,9 @@ public class ReplicaSettingsUpdateJsonUnmarshaller implements Unmarshaller<Repli
                 if (context.testExpression("ReplicaGlobalSecondaryIndexSettingsUpdate", targetDepth)) {
                     context.nextToken();
                     replicaSettingsUpdate.setReplicaGlobalSecondaryIndexSettingsUpdate(new ListUnmarshaller<ReplicaGlobalSecondaryIndexSettingsUpdate>(
-                            ReplicaGlobalSecondaryIndexSettingsUpdateJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ReplicaGlobalSecondaryIndexSettingsUpdateJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -51,7 +51,9 @@ public class ListScheduledAuditsResultJsonUnmarshaller implements Unmarshaller<L
                 if (context.testExpression("scheduledAudits", targetDepth)) {
                     context.nextToken();
                     listScheduledAuditsResult.setScheduledAudits(new ListUnmarshaller<ScheduledAuditMetadata>(ScheduledAuditMetadataJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

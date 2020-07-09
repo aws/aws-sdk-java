@@ -51,12 +51,15 @@ public class BatchDetectDominantLanguageResultJsonUnmarshaller implements Unmars
                 if (context.testExpression("ResultList", targetDepth)) {
                     context.nextToken();
                     batchDetectDominantLanguageResult.setResultList(new ListUnmarshaller<BatchDetectDominantLanguageItemResult>(
-                            BatchDetectDominantLanguageItemResultJsonUnmarshaller.getInstance()).unmarshall(context));
+                            BatchDetectDominantLanguageItemResultJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ErrorList", targetDepth)) {
                     context.nextToken();
                     batchDetectDominantLanguageResult.setErrorList(new ListUnmarshaller<BatchItemError>(BatchItemErrorJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

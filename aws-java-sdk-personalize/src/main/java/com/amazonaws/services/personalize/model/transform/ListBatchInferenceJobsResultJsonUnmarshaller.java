@@ -51,7 +51,9 @@ public class ListBatchInferenceJobsResultJsonUnmarshaller implements Unmarshalle
                 if (context.testExpression("batchInferenceJobs", targetDepth)) {
                     context.nextToken();
                     listBatchInferenceJobsResult.setBatchInferenceJobs(new ListUnmarshaller<BatchInferenceJobSummary>(BatchInferenceJobSummaryJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

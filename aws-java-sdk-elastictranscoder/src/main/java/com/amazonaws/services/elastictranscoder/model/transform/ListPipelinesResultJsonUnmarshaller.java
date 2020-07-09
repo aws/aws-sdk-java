@@ -50,7 +50,9 @@ public class ListPipelinesResultJsonUnmarshaller implements Unmarshaller<ListPip
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Pipelines", targetDepth)) {
                     context.nextToken();
-                    listPipelinesResult.setPipelines(new ListUnmarshaller<Pipeline>(PipelineJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listPipelinesResult.setPipelines(new ListUnmarshaller<Pipeline>(PipelineJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextPageToken", targetDepth)) {
                     context.nextToken();

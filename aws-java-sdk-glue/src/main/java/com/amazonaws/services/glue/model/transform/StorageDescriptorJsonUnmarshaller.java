@@ -50,7 +50,9 @@ public class StorageDescriptorJsonUnmarshaller implements Unmarshaller<StorageDe
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Columns", targetDepth)) {
                     context.nextToken();
-                    storageDescriptor.setColumns(new ListUnmarshaller<Column>(ColumnJsonUnmarshaller.getInstance()).unmarshall(context));
+                    storageDescriptor.setColumns(new ListUnmarshaller<Column>(ColumnJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Location", targetDepth)) {
                     context.nextToken();
@@ -78,11 +80,15 @@ public class StorageDescriptorJsonUnmarshaller implements Unmarshaller<StorageDe
                 }
                 if (context.testExpression("BucketColumns", targetDepth)) {
                     context.nextToken();
-                    storageDescriptor.setBucketColumns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    storageDescriptor.setBucketColumns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("SortColumns", targetDepth)) {
                     context.nextToken();
-                    storageDescriptor.setSortColumns(new ListUnmarshaller<Order>(OrderJsonUnmarshaller.getInstance()).unmarshall(context));
+                    storageDescriptor.setSortColumns(new ListUnmarshaller<Order>(OrderJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Parameters", targetDepth)) {
                     context.nextToken();

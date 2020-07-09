@@ -51,7 +51,9 @@ public class DescribeAccountModificationsResultJsonUnmarshaller implements Unmar
                 if (context.testExpression("AccountModifications", targetDepth)) {
                     context.nextToken();
                     describeAccountModificationsResult.setAccountModifications(new ListUnmarshaller<AccountModification>(AccountModificationJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

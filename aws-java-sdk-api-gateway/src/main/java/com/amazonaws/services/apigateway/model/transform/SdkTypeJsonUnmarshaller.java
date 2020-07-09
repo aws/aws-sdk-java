@@ -63,7 +63,8 @@ public class SdkTypeJsonUnmarshaller implements Unmarshaller<SdkType, JsonUnmars
                 if (context.testExpression("configurationProperties", targetDepth)) {
                     context.nextToken();
                     sdkType.setConfigurationProperties(new ListUnmarshaller<SdkConfigurationProperty>(SdkConfigurationPropertyJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

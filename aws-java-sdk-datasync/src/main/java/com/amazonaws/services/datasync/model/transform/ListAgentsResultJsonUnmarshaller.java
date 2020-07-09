@@ -50,7 +50,9 @@ public class ListAgentsResultJsonUnmarshaller implements Unmarshaller<ListAgents
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Agents", targetDepth)) {
                     context.nextToken();
-                    listAgentsResult.setAgents(new ListUnmarshaller<AgentListEntry>(AgentListEntryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listAgentsResult.setAgents(new ListUnmarshaller<AgentListEntry>(AgentListEntryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

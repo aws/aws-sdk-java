@@ -55,7 +55,8 @@ public class TemplateSourceAnalysisJsonUnmarshaller implements Unmarshaller<Temp
                 if (context.testExpression("DataSetReferences", targetDepth)) {
                     context.nextToken();
                     templateSourceAnalysis.setDataSetReferences(new ListUnmarshaller<DataSetReference>(DataSetReferenceJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

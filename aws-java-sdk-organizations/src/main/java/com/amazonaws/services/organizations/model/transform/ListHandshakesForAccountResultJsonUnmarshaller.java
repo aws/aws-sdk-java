@@ -50,7 +50,9 @@ public class ListHandshakesForAccountResultJsonUnmarshaller implements Unmarshal
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Handshakes", targetDepth)) {
                     context.nextToken();
-                    listHandshakesForAccountResult.setHandshakes(new ListUnmarshaller<Handshake>(HandshakeJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listHandshakesForAccountResult.setHandshakes(new ListUnmarshaller<Handshake>(HandshakeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

@@ -59,7 +59,8 @@ public class RecommendedOptionProjectedMetricJsonUnmarshaller implements Unmarsh
                 if (context.testExpression("projectedMetrics", targetDepth)) {
                     context.nextToken();
                     recommendedOptionProjectedMetric.setProjectedMetrics(new ListUnmarshaller<ProjectedMetric>(ProjectedMetricJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

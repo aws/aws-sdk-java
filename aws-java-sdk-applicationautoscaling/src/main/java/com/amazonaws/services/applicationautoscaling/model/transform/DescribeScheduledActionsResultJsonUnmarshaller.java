@@ -51,7 +51,8 @@ public class DescribeScheduledActionsResultJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("ScheduledActions", targetDepth)) {
                     context.nextToken();
                     describeScheduledActionsResult.setScheduledActions(new ListUnmarshaller<ScheduledAction>(ScheduledActionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

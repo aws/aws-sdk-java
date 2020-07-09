@@ -70,7 +70,9 @@ public class AwsSecurityFindingJsonUnmarshaller implements Unmarshaller<AwsSecur
                 }
                 if (context.testExpression("Types", targetDepth)) {
                     context.nextToken();
-                    awsSecurityFinding.setTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    awsSecurityFinding.setTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("FirstObservedAt", targetDepth)) {
                     context.nextToken();
@@ -128,7 +130,9 @@ public class AwsSecurityFindingJsonUnmarshaller implements Unmarshaller<AwsSecur
                 }
                 if (context.testExpression("Malware", targetDepth)) {
                     context.nextToken();
-                    awsSecurityFinding.setMalware(new ListUnmarshaller<Malware>(MalwareJsonUnmarshaller.getInstance()).unmarshall(context));
+                    awsSecurityFinding.setMalware(new ListUnmarshaller<Malware>(MalwareJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Network", targetDepth)) {
                     context.nextToken();
@@ -137,7 +141,8 @@ public class AwsSecurityFindingJsonUnmarshaller implements Unmarshaller<AwsSecur
                 if (context.testExpression("NetworkPath", targetDepth)) {
                     context.nextToken();
                     awsSecurityFinding.setNetworkPath(new ListUnmarshaller<NetworkPathComponent>(NetworkPathComponentJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Process", targetDepth)) {
                     context.nextToken();
@@ -146,11 +151,14 @@ public class AwsSecurityFindingJsonUnmarshaller implements Unmarshaller<AwsSecur
                 if (context.testExpression("ThreatIntelIndicators", targetDepth)) {
                     context.nextToken();
                     awsSecurityFinding.setThreatIntelIndicators(new ListUnmarshaller<ThreatIntelIndicator>(ThreatIntelIndicatorJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Resources", targetDepth)) {
                     context.nextToken();
-                    awsSecurityFinding.setResources(new ListUnmarshaller<Resource>(ResourceJsonUnmarshaller.getInstance()).unmarshall(context));
+                    awsSecurityFinding.setResources(new ListUnmarshaller<Resource>(ResourceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Compliance", targetDepth)) {
                     context.nextToken();
@@ -175,7 +183,8 @@ public class AwsSecurityFindingJsonUnmarshaller implements Unmarshaller<AwsSecur
                 if (context.testExpression("RelatedFindings", targetDepth)) {
                     context.nextToken();
                     awsSecurityFinding.setRelatedFindings(new ListUnmarshaller<RelatedFinding>(RelatedFindingJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Note", targetDepth)) {
                     context.nextToken();
@@ -183,7 +192,9 @@ public class AwsSecurityFindingJsonUnmarshaller implements Unmarshaller<AwsSecur
                 }
                 if (context.testExpression("Vulnerabilities", targetDepth)) {
                     context.nextToken();
-                    awsSecurityFinding.setVulnerabilities(new ListUnmarshaller<Vulnerability>(VulnerabilityJsonUnmarshaller.getInstance()).unmarshall(context));
+                    awsSecurityFinding.setVulnerabilities(new ListUnmarshaller<Vulnerability>(VulnerabilityJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

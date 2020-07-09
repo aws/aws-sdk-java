@@ -58,7 +58,9 @@ public class DkimAttributesJsonUnmarshaller implements Unmarshaller<DkimAttribut
                 }
                 if (context.testExpression("Tokens", targetDepth)) {
                     context.nextToken();
-                    dkimAttributes.setTokens(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    dkimAttributes.setTokens(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("SigningAttributesOrigin", targetDepth)) {
                     context.nextToken();

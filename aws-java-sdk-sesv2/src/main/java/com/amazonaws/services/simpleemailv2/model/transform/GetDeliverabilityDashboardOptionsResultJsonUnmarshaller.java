@@ -64,12 +64,16 @@ public class GetDeliverabilityDashboardOptionsResultJsonUnmarshaller implements 
                 if (context.testExpression("ActiveSubscribedDomains", targetDepth)) {
                     context.nextToken();
                     getDeliverabilityDashboardOptionsResult.setActiveSubscribedDomains(new ListUnmarshaller<DomainDeliverabilityTrackingOption>(
-                            DomainDeliverabilityTrackingOptionJsonUnmarshaller.getInstance()).unmarshall(context));
+                            DomainDeliverabilityTrackingOptionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("PendingExpirationSubscribedDomains", targetDepth)) {
                     context.nextToken();
                     getDeliverabilityDashboardOptionsResult.setPendingExpirationSubscribedDomains(new ListUnmarshaller<DomainDeliverabilityTrackingOption>(
-                            DomainDeliverabilityTrackingOptionJsonUnmarshaller.getInstance()).unmarshall(context));
+                            DomainDeliverabilityTrackingOptionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

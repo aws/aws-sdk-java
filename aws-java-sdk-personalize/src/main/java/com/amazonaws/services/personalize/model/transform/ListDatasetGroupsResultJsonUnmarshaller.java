@@ -51,7 +51,8 @@ public class ListDatasetGroupsResultJsonUnmarshaller implements Unmarshaller<Lis
                 if (context.testExpression("datasetGroups", targetDepth)) {
                     context.nextToken();
                     listDatasetGroupsResult.setDatasetGroups(new ListUnmarshaller<DatasetGroupSummary>(DatasetGroupSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

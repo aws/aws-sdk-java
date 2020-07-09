@@ -64,7 +64,9 @@ public class CreateReplicationGroupMemberActionJsonUnmarshaller implements Unmar
                 if (context.testExpression("GlobalSecondaryIndexes", targetDepth)) {
                     context.nextToken();
                     createReplicationGroupMemberAction.setGlobalSecondaryIndexes(new ListUnmarshaller<ReplicaGlobalSecondaryIndex>(
-                            ReplicaGlobalSecondaryIndexJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ReplicaGlobalSecondaryIndexJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

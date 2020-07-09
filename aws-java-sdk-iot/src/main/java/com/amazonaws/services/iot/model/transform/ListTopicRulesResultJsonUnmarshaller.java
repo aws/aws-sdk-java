@@ -50,7 +50,9 @@ public class ListTopicRulesResultJsonUnmarshaller implements Unmarshaller<ListTo
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("rules", targetDepth)) {
                     context.nextToken();
-                    listTopicRulesResult.setRules(new ListUnmarshaller<TopicRuleListItem>(TopicRuleListItemJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listTopicRulesResult.setRules(new ListUnmarshaller<TopicRuleListItem>(TopicRuleListItemJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

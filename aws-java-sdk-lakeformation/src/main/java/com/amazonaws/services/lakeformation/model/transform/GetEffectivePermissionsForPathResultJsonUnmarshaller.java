@@ -51,7 +51,9 @@ public class GetEffectivePermissionsForPathResultJsonUnmarshaller implements Unm
                 if (context.testExpression("Permissions", targetDepth)) {
                     context.nextToken();
                     getEffectivePermissionsForPathResult.setPermissions(new ListUnmarshaller<PrincipalResourcePermissions>(
-                            PrincipalResourcePermissionsJsonUnmarshaller.getInstance()).unmarshall(context));
+                            PrincipalResourcePermissionsJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

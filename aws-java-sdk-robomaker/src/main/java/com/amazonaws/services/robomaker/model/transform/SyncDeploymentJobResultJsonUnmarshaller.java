@@ -67,7 +67,9 @@ public class SyncDeploymentJobResultJsonUnmarshaller implements Unmarshaller<Syn
                 if (context.testExpression("deploymentApplicationConfigs", targetDepth)) {
                     context.nextToken();
                     syncDeploymentJobResult.setDeploymentApplicationConfigs(new ListUnmarshaller<DeploymentApplicationConfig>(
-                            DeploymentApplicationConfigJsonUnmarshaller.getInstance()).unmarshall(context));
+                            DeploymentApplicationConfigJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("failureReason", targetDepth)) {
                     context.nextToken();

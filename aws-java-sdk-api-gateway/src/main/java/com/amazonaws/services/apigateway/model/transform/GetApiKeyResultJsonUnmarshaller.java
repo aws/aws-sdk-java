@@ -82,7 +82,9 @@ public class GetApiKeyResultJsonUnmarshaller implements Unmarshaller<GetApiKeyRe
                 }
                 if (context.testExpression("stageKeys", targetDepth)) {
                     context.nextToken();
-                    getApiKeyResult.setStageKeys(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    getApiKeyResult.setStageKeys(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();

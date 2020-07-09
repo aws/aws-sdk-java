@@ -79,7 +79,9 @@ public class SavingsPlanOfferingRateJsonUnmarshaller implements Unmarshaller<Sav
                 if (context.testExpression("properties", targetDepth)) {
                     context.nextToken();
                     savingsPlanOfferingRate.setProperties(new ListUnmarshaller<SavingsPlanOfferingRateProperty>(SavingsPlanOfferingRatePropertyJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

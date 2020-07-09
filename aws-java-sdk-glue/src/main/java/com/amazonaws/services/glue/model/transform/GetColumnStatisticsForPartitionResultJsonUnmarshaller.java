@@ -51,12 +51,15 @@ public class GetColumnStatisticsForPartitionResultJsonUnmarshaller implements Un
                 if (context.testExpression("ColumnStatisticsList", targetDepth)) {
                     context.nextToken();
                     getColumnStatisticsForPartitionResult.setColumnStatisticsList(new ListUnmarshaller<ColumnStatistics>(ColumnStatisticsJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Errors", targetDepth)) {
                     context.nextToken();
                     getColumnStatisticsForPartitionResult.setErrors(new ListUnmarshaller<ColumnError>(ColumnErrorJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

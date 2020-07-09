@@ -58,7 +58,9 @@ public class StageStateJsonUnmarshaller implements Unmarshaller<StageState, Json
                 }
                 if (context.testExpression("actionStates", targetDepth)) {
                     context.nextToken();
-                    stageState.setActionStates(new ListUnmarshaller<ActionState>(ActionStateJsonUnmarshaller.getInstance()).unmarshall(context));
+                    stageState.setActionStates(new ListUnmarshaller<ActionState>(ActionStateJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("latestExecution", targetDepth)) {
                     context.nextToken();

@@ -50,7 +50,9 @@ public class ListOnPremisesInstancesResultJsonUnmarshaller implements Unmarshall
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("instanceNames", targetDepth)) {
                     context.nextToken();
-                    listOnPremisesInstancesResult.setInstanceNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    listOnPremisesInstancesResult.setInstanceNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

@@ -50,7 +50,9 @@ public class ListAttacksResultJsonUnmarshaller implements Unmarshaller<ListAttac
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AttackSummaries", targetDepth)) {
                     context.nextToken();
-                    listAttacksResult.setAttackSummaries(new ListUnmarshaller<AttackSummary>(AttackSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listAttacksResult.setAttackSummaries(new ListUnmarshaller<AttackSummary>(AttackSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

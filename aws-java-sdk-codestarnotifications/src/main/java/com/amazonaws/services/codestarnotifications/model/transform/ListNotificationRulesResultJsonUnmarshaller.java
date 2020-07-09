@@ -55,7 +55,9 @@ public class ListNotificationRulesResultJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("NotificationRules", targetDepth)) {
                     context.nextToken();
                     listNotificationRulesResult.setNotificationRules(new ListUnmarshaller<NotificationRuleSummary>(NotificationRuleSummaryJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -50,7 +50,9 @@ public class CreateLoadBalancerResultJsonUnmarshaller implements Unmarshaller<Cr
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("operations", targetDepth)) {
                     context.nextToken();
-                    createLoadBalancerResult.setOperations(new ListUnmarshaller<Operation>(OperationJsonUnmarshaller.getInstance()).unmarshall(context));
+                    createLoadBalancerResult.setOperations(new ListUnmarshaller<Operation>(OperationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

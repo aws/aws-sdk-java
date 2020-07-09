@@ -59,12 +59,14 @@ public class SubResourceSummaryJsonUnmarshaller implements Unmarshaller<SubResou
                 if (context.testExpression("AttackVectors", targetDepth)) {
                     context.nextToken();
                     subResourceSummary.setAttackVectors(new ListUnmarshaller<SummarizedAttackVector>(SummarizedAttackVectorJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Counters", targetDepth)) {
                     context.nextToken();
-                    subResourceSummary
-                            .setCounters(new ListUnmarshaller<SummarizedCounter>(SummarizedCounterJsonUnmarshaller.getInstance()).unmarshall(context));
+                    subResourceSummary.setCounters(new ListUnmarshaller<SummarizedCounter>(SummarizedCounterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -56,7 +56,8 @@ public class DetailsJsonUnmarshaller implements Unmarshaller<Details, JsonUnmars
                 if (context.testExpression("ImportAssetsFromS3JobErrorDetails", targetDepth)) {
                     context.nextToken();
                     details.setImportAssetsFromS3JobErrorDetails(new ListUnmarshaller<AssetSourceEntry>(AssetSourceEntryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

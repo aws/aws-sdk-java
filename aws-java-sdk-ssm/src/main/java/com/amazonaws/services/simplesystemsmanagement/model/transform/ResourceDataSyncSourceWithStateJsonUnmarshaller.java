@@ -59,7 +59,9 @@ public class ResourceDataSyncSourceWithStateJsonUnmarshaller implements Unmarsha
                 }
                 if (context.testExpression("SourceRegions", targetDepth)) {
                     context.nextToken();
-                    resourceDataSyncSourceWithState.setSourceRegions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    resourceDataSyncSourceWithState.setSourceRegions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("IncludeFutureRegions", targetDepth)) {
                     context.nextToken();

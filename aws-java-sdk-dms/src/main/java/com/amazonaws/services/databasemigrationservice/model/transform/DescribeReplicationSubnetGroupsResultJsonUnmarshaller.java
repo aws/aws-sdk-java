@@ -55,7 +55,9 @@ public class DescribeReplicationSubnetGroupsResultJsonUnmarshaller implements Un
                 if (context.testExpression("ReplicationSubnetGroups", targetDepth)) {
                     context.nextToken();
                     describeReplicationSubnetGroupsResult.setReplicationSubnetGroups(new ListUnmarshaller<ReplicationSubnetGroup>(
-                            ReplicationSubnetGroupJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ReplicationSubnetGroupJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

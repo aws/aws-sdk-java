@@ -50,12 +50,15 @@ public class BatchDeleteImageResultJsonUnmarshaller implements Unmarshaller<Batc
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("imageIds", targetDepth)) {
                     context.nextToken();
-                    batchDeleteImageResult
-                            .setImageIds(new ListUnmarshaller<ImageIdentifier>(ImageIdentifierJsonUnmarshaller.getInstance()).unmarshall(context));
+                    batchDeleteImageResult.setImageIds(new ListUnmarshaller<ImageIdentifier>(ImageIdentifierJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("failures", targetDepth)) {
                     context.nextToken();
-                    batchDeleteImageResult.setFailures(new ListUnmarshaller<ImageFailure>(ImageFailureJsonUnmarshaller.getInstance()).unmarshall(context));
+                    batchDeleteImageResult.setFailures(new ListUnmarshaller<ImageFailure>(ImageFailureJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

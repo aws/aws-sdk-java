@@ -50,8 +50,9 @@ public class DescribeRootFoldersResultJsonUnmarshaller implements Unmarshaller<D
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Folders", targetDepth)) {
                     context.nextToken();
-                    describeRootFoldersResult
-                            .setFolders(new ListUnmarshaller<FolderMetadata>(FolderMetadataJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeRootFoldersResult.setFolders(new ListUnmarshaller<FolderMetadata>(FolderMetadataJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Marker", targetDepth)) {
                     context.nextToken();

@@ -59,7 +59,8 @@ public class ListFileSharesResultJsonUnmarshaller implements Unmarshaller<ListFi
                 if (context.testExpression("FileShareInfoList", targetDepth)) {
                     context.nextToken();
                     listFileSharesResult.setFileShareInfoList(new ListUnmarshaller<FileShareInfo>(FileShareInfoJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

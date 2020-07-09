@@ -51,7 +51,8 @@ public class DescribeSMBFileSharesResultJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("SMBFileShareInfoList", targetDepth)) {
                     context.nextToken();
                     describeSMBFileSharesResult.setSMBFileShareInfoList(new ListUnmarshaller<SMBFileShareInfo>(SMBFileShareInfoJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -51,7 +51,8 @@ public class GetInstancePortStatesResultJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("portStates", targetDepth)) {
                     context.nextToken();
                     getInstancePortStatesResult.setPortStates(new ListUnmarshaller<InstancePortState>(InstancePortStateJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

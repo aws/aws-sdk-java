@@ -50,7 +50,9 @@ public class GrpcRouteActionJsonUnmarshaller implements Unmarshaller<GrpcRouteAc
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("weightedTargets", targetDepth)) {
                     context.nextToken();
-                    grpcRouteAction.setWeightedTargets(new ListUnmarshaller<WeightedTarget>(WeightedTargetJsonUnmarshaller.getInstance()).unmarshall(context));
+                    grpcRouteAction.setWeightedTargets(new ListUnmarshaller<WeightedTarget>(WeightedTargetJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -71,7 +71,8 @@ public class InstanceRecommendationJsonUnmarshaller implements Unmarshaller<Inst
                 if (context.testExpression("utilizationMetrics", targetDepth)) {
                     context.nextToken();
                     instanceRecommendation.setUtilizationMetrics(new ListUnmarshaller<UtilizationMetric>(UtilizationMetricJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("lookBackPeriodInDays", targetDepth)) {
                     context.nextToken();
@@ -80,12 +81,16 @@ public class InstanceRecommendationJsonUnmarshaller implements Unmarshaller<Inst
                 if (context.testExpression("recommendationOptions", targetDepth)) {
                     context.nextToken();
                     instanceRecommendation.setRecommendationOptions(new ListUnmarshaller<InstanceRecommendationOption>(
-                            InstanceRecommendationOptionJsonUnmarshaller.getInstance()).unmarshall(context));
+                            InstanceRecommendationOptionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("recommendationSources", targetDepth)) {
                     context.nextToken();
                     instanceRecommendation.setRecommendationSources(new ListUnmarshaller<RecommendationSource>(RecommendationSourceJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("lastRefreshTimestamp", targetDepth)) {
                     context.nextToken();

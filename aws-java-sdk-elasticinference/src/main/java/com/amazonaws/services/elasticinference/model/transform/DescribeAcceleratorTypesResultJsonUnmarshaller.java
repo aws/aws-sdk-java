@@ -51,7 +51,8 @@ public class DescribeAcceleratorTypesResultJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("acceleratorTypes", targetDepth)) {
                     context.nextToken();
                     describeAcceleratorTypesResult.setAcceleratorTypes(new ListUnmarshaller<AcceleratorType>(AcceleratorTypeJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

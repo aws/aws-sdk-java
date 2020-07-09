@@ -62,7 +62,9 @@ public class ChangeSummaryJsonUnmarshaller implements Unmarshaller<ChangeSummary
                 }
                 if (context.testExpression("ErrorDetailList", targetDepth)) {
                     context.nextToken();
-                    changeSummary.setErrorDetailList(new ListUnmarshaller<ErrorDetail>(ErrorDetailJsonUnmarshaller.getInstance()).unmarshall(context));
+                    changeSummary.setErrorDetailList(new ListUnmarshaller<ErrorDetail>(ErrorDetailJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

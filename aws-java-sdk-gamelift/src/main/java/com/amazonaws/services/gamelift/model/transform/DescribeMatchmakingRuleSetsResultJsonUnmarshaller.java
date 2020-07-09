@@ -51,7 +51,8 @@ public class DescribeMatchmakingRuleSetsResultJsonUnmarshaller implements Unmars
                 if (context.testExpression("RuleSets", targetDepth)) {
                     context.nextToken();
                     describeMatchmakingRuleSetsResult.setRuleSets(new ListUnmarshaller<MatchmakingRuleSet>(MatchmakingRuleSetJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

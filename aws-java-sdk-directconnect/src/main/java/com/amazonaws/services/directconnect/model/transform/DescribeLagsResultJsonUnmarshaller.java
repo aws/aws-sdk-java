@@ -50,7 +50,9 @@ public class DescribeLagsResultJsonUnmarshaller implements Unmarshaller<Describe
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("lags", targetDepth)) {
                     context.nextToken();
-                    describeLagsResult.setLags(new ListUnmarshaller<Lag>(LagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeLagsResult.setLags(new ListUnmarshaller<Lag>(LagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

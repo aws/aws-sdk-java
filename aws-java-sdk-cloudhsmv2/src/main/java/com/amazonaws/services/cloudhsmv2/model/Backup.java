@@ -63,7 +63,7 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date copyTimestamp;
     /**
      * <p>
-     * The AWS region that contains the source backup from which the new backup was copied.
+     * The AWS Region that contains the source backup from which the new backup was copied.
      * </p>
      */
     private String sourceRegion;
@@ -75,7 +75,7 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
     private String sourceBackup;
     /**
      * <p>
-     * The identifier (ID) of the cluster containing the source backup from which the new backup was copied. .
+     * The identifier (ID) of the cluster containing the source backup from which the new backup was copied.
      * </p>
      */
     private String sourceCluster;
@@ -85,7 +85,11 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Date deleteTimestamp;
-
+    /**
+     * <p>
+     * The list of tags for the backup.
+     * </p>
+     */
     private java.util.List<Tag> tagList;
 
     /**
@@ -309,11 +313,11 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS region that contains the source backup from which the new backup was copied.
+     * The AWS Region that contains the source backup from which the new backup was copied.
      * </p>
      * 
      * @param sourceRegion
-     *        The AWS region that contains the source backup from which the new backup was copied.
+     *        The AWS Region that contains the source backup from which the new backup was copied.
      */
 
     public void setSourceRegion(String sourceRegion) {
@@ -322,10 +326,10 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS region that contains the source backup from which the new backup was copied.
+     * The AWS Region that contains the source backup from which the new backup was copied.
      * </p>
      * 
-     * @return The AWS region that contains the source backup from which the new backup was copied.
+     * @return The AWS Region that contains the source backup from which the new backup was copied.
      */
 
     public String getSourceRegion() {
@@ -334,11 +338,11 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS region that contains the source backup from which the new backup was copied.
+     * The AWS Region that contains the source backup from which the new backup was copied.
      * </p>
      * 
      * @param sourceRegion
-     *        The AWS region that contains the source backup from which the new backup was copied.
+     *        The AWS Region that contains the source backup from which the new backup was copied.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -389,11 +393,11 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier (ID) of the cluster containing the source backup from which the new backup was copied. .
+     * The identifier (ID) of the cluster containing the source backup from which the new backup was copied.
      * </p>
      * 
      * @param sourceCluster
-     *        The identifier (ID) of the cluster containing the source backup from which the new backup was copied. .
+     *        The identifier (ID) of the cluster containing the source backup from which the new backup was copied.
      */
 
     public void setSourceCluster(String sourceCluster) {
@@ -402,10 +406,10 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier (ID) of the cluster containing the source backup from which the new backup was copied. .
+     * The identifier (ID) of the cluster containing the source backup from which the new backup was copied.
      * </p>
      * 
-     * @return The identifier (ID) of the cluster containing the source backup from which the new backup was copied. .
+     * @return The identifier (ID) of the cluster containing the source backup from which the new backup was copied.
      */
 
     public String getSourceCluster() {
@@ -414,11 +418,11 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier (ID) of the cluster containing the source backup from which the new backup was copied. .
+     * The identifier (ID) of the cluster containing the source backup from which the new backup was copied.
      * </p>
      * 
      * @param sourceCluster
-     *        The identifier (ID) of the cluster containing the source backup from which the new backup was copied. .
+     *        The identifier (ID) of the cluster containing the source backup from which the new backup was copied.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -468,7 +472,11 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The list of tags for the backup.
+     * </p>
+     * 
+     * @return The list of tags for the backup.
      */
 
     public java.util.List<Tag> getTagList() {
@@ -476,7 +484,12 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The list of tags for the backup.
+     * </p>
+     * 
      * @param tagList
+     *        The list of tags for the backup.
      */
 
     public void setTagList(java.util.Collection<Tag> tagList) {
@@ -490,12 +503,16 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The list of tags for the backup.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override
      * the existing values.
      * </p>
      * 
      * @param tagList
+     *        The list of tags for the backup.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -510,7 +527,12 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The list of tags for the backup.
+     * </p>
+     * 
      * @param tagList
+     *        The list of tags for the backup.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

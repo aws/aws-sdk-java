@@ -51,7 +51,8 @@ public class ListEventSubscriptionsResultJsonUnmarshaller implements Unmarshalle
                 if (context.testExpression("subscriptions", targetDepth)) {
                     context.nextToken();
                     listEventSubscriptionsResult.setSubscriptions(new ListUnmarshaller<Subscription>(SubscriptionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

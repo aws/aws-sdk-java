@@ -67,7 +67,8 @@ public class InstanceFleetConfigJsonUnmarshaller implements Unmarshaller<Instanc
                 if (context.testExpression("InstanceTypeConfigs", targetDepth)) {
                     context.nextToken();
                     instanceFleetConfig.setInstanceTypeConfigs(new ListUnmarshaller<InstanceTypeConfig>(InstanceTypeConfigJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("LaunchSpecifications", targetDepth)) {
                     context.nextToken();

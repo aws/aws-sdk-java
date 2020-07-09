@@ -51,12 +51,15 @@ public class BatchGetCustomDataIdentifiersResultJsonUnmarshaller implements Unma
                 if (context.testExpression("customDataIdentifiers", targetDepth)) {
                     context.nextToken();
                     batchGetCustomDataIdentifiersResult.setCustomDataIdentifiers(new ListUnmarshaller<BatchGetCustomDataIdentifierSummary>(
-                            BatchGetCustomDataIdentifierSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                            BatchGetCustomDataIdentifierSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("notFoundIdentifierIds", targetDepth)) {
                     context.nextToken();
                     batchGetCustomDataIdentifiersResult.setNotFoundIdentifierIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

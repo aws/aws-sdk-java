@@ -54,7 +54,9 @@ public class UtteranceListJsonUnmarshaller implements Unmarshaller<UtteranceList
                 }
                 if (context.testExpression("utterances", targetDepth)) {
                     context.nextToken();
-                    utteranceList.setUtterances(new ListUnmarshaller<UtteranceData>(UtteranceDataJsonUnmarshaller.getInstance()).unmarshall(context));
+                    utteranceList.setUtterances(new ListUnmarshaller<UtteranceData>(UtteranceDataJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

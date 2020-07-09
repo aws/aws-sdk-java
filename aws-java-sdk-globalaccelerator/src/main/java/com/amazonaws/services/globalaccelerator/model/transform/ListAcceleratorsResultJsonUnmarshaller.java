@@ -50,7 +50,9 @@ public class ListAcceleratorsResultJsonUnmarshaller implements Unmarshaller<List
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Accelerators", targetDepth)) {
                     context.nextToken();
-                    listAcceleratorsResult.setAccelerators(new ListUnmarshaller<Accelerator>(AcceleratorJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listAcceleratorsResult.setAccelerators(new ListUnmarshaller<Accelerator>(AcceleratorJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

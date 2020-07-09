@@ -51,7 +51,8 @@ public class ListDetectorsResultJsonUnmarshaller implements Unmarshaller<ListDet
                 if (context.testExpression("detectorSummaries", targetDepth)) {
                     context.nextToken();
                     listDetectorsResult.setDetectorSummaries(new ListUnmarshaller<DetectorSummary>(DetectorSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

@@ -54,7 +54,9 @@ public class ListRulesResultJsonUnmarshaller implements Unmarshaller<ListRulesRe
                 }
                 if (context.testExpression("Rules", targetDepth)) {
                     context.nextToken();
-                    listRulesResult.setRules(new ListUnmarshaller<RuleSummary>(RuleSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listRulesResult.setRules(new ListUnmarshaller<RuleSummary>(RuleSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

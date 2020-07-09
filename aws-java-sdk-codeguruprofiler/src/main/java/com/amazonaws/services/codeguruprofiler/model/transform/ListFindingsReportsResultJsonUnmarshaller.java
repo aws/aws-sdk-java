@@ -51,7 +51,9 @@ public class ListFindingsReportsResultJsonUnmarshaller implements Unmarshaller<L
                 if (context.testExpression("findingsReportSummaries", targetDepth)) {
                     context.nextToken();
                     listFindingsReportsResult.setFindingsReportSummaries(new ListUnmarshaller<FindingsReportSummary>(FindingsReportSummaryJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

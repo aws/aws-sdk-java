@@ -79,7 +79,8 @@ public class PullRequestJsonUnmarshaller implements Unmarshaller<PullRequest, Js
                 if (context.testExpression("pullRequestTargets", targetDepth)) {
                     context.nextToken();
                     pullRequest.setPullRequestTargets(new ListUnmarshaller<PullRequestTarget>(PullRequestTargetJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("clientRequestToken", targetDepth)) {
                     context.nextToken();
@@ -91,7 +92,9 @@ public class PullRequestJsonUnmarshaller implements Unmarshaller<PullRequest, Js
                 }
                 if (context.testExpression("approvalRules", targetDepth)) {
                     context.nextToken();
-                    pullRequest.setApprovalRules(new ListUnmarshaller<ApprovalRule>(ApprovalRuleJsonUnmarshaller.getInstance()).unmarshall(context));
+                    pullRequest.setApprovalRules(new ListUnmarshaller<ApprovalRule>(ApprovalRuleJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

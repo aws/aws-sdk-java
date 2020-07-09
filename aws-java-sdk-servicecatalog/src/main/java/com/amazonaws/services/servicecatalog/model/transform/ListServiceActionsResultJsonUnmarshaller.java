@@ -51,7 +51,9 @@ public class ListServiceActionsResultJsonUnmarshaller implements Unmarshaller<Li
                 if (context.testExpression("ServiceActionSummaries", targetDepth)) {
                     context.nextToken();
                     listServiceActionsResult.setServiceActionSummaries(new ListUnmarshaller<ServiceActionSummary>(ServiceActionSummaryJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextPageToken", targetDepth)) {
                     context.nextToken();

@@ -58,7 +58,9 @@ public class DevEndpointJsonUnmarshaller implements Unmarshaller<DevEndpoint, Js
                 }
                 if (context.testExpression("SecurityGroupIds", targetDepth)) {
                     context.nextToken();
-                    devEndpoint.setSecurityGroupIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    devEndpoint.setSecurityGroupIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("SubnetId", targetDepth)) {
                     context.nextToken();
@@ -138,7 +140,9 @@ public class DevEndpointJsonUnmarshaller implements Unmarshaller<DevEndpoint, Js
                 }
                 if (context.testExpression("PublicKeys", targetDepth)) {
                     context.nextToken();
-                    devEndpoint.setPublicKeys(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    devEndpoint.setPublicKeys(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("SecurityConfiguration", targetDepth)) {
                     context.nextToken();

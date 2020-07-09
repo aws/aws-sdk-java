@@ -74,7 +74,9 @@ public class ModelVersionDetailJsonUnmarshaller implements Unmarshaller<ModelVer
                 }
                 if (context.testExpression("modelVariables", targetDepth)) {
                     context.nextToken();
-                    modelVersionDetail.setModelVariables(new ListUnmarshaller<ModelVariable>(ModelVariableJsonUnmarshaller.getInstance()).unmarshall(context));
+                    modelVersionDetail.setModelVariables(new ListUnmarshaller<ModelVariable>(ModelVariableJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("labelSchema", targetDepth)) {
                     context.nextToken();

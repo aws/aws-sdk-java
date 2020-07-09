@@ -51,7 +51,8 @@ public class BatchScheduleActionCreateRequestJsonUnmarshaller implements Unmarsh
                 if (context.testExpression("scheduleActions", targetDepth)) {
                     context.nextToken();
                     batchScheduleActionCreateRequest.setScheduleActions(new ListUnmarshaller<ScheduleAction>(ScheduleActionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

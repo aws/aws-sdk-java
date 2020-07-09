@@ -54,7 +54,9 @@ public class HlsPackageJsonUnmarshaller implements Unmarshaller<HlsPackage, Json
                 }
                 if (context.testExpression("adTriggers", targetDepth)) {
                     context.nextToken();
-                    hlsPackage.setAdTriggers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    hlsPackage.setAdTriggers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("adsOnDeliveryRestrictions", targetDepth)) {
                     context.nextToken();

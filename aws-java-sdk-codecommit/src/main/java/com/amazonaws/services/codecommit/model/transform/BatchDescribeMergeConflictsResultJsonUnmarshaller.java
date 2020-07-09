@@ -50,7 +50,9 @@ public class BatchDescribeMergeConflictsResultJsonUnmarshaller implements Unmars
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("conflicts", targetDepth)) {
                     context.nextToken();
-                    batchDescribeMergeConflictsResult.setConflicts(new ListUnmarshaller<Conflict>(ConflictJsonUnmarshaller.getInstance()).unmarshall(context));
+                    batchDescribeMergeConflictsResult.setConflicts(new ListUnmarshaller<Conflict>(ConflictJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();
@@ -59,7 +61,9 @@ public class BatchDescribeMergeConflictsResultJsonUnmarshaller implements Unmars
                 if (context.testExpression("errors", targetDepth)) {
                     context.nextToken();
                     batchDescribeMergeConflictsResult.setErrors(new ListUnmarshaller<BatchDescribeMergeConflictsError>(
-                            BatchDescribeMergeConflictsErrorJsonUnmarshaller.getInstance()).unmarshall(context));
+                            BatchDescribeMergeConflictsErrorJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("destinationCommitId", targetDepth)) {
                     context.nextToken();

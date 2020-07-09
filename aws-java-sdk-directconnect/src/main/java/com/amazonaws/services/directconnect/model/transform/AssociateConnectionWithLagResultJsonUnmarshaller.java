@@ -110,7 +110,9 @@ public class AssociateConnectionWithLagResultJsonUnmarshaller implements Unmarsh
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
-                    associateConnectionWithLagResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    associateConnectionWithLagResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("providerName", targetDepth)) {
                     context.nextToken();

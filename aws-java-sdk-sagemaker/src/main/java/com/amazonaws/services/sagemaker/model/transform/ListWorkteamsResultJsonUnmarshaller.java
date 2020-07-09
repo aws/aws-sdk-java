@@ -50,7 +50,9 @@ public class ListWorkteamsResultJsonUnmarshaller implements Unmarshaller<ListWor
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Workteams", targetDepth)) {
                     context.nextToken();
-                    listWorkteamsResult.setWorkteams(new ListUnmarshaller<Workteam>(WorkteamJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listWorkteamsResult.setWorkteams(new ListUnmarshaller<Workteam>(WorkteamJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

@@ -50,7 +50,9 @@ public class ListTagsForDeliveryStreamResultJsonUnmarshaller implements Unmarsha
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
-                    listTagsForDeliveryStreamResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listTagsForDeliveryStreamResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("HasMoreTags", targetDepth)) {
                     context.nextToken();

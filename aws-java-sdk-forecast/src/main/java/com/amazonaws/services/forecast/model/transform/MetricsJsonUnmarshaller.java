@@ -55,7 +55,8 @@ public class MetricsJsonUnmarshaller implements Unmarshaller<Metrics, JsonUnmars
                 if (context.testExpression("WeightedQuantileLosses", targetDepth)) {
                     context.nextToken();
                     metrics.setWeightedQuantileLosses(new ListUnmarshaller<WeightedQuantileLoss>(WeightedQuantileLossJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

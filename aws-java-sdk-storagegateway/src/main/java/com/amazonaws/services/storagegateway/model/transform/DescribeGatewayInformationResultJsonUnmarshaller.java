@@ -71,7 +71,9 @@ public class DescribeGatewayInformationResultJsonUnmarshaller implements Unmarsh
                 if (context.testExpression("GatewayNetworkInterfaces", targetDepth)) {
                     context.nextToken();
                     describeGatewayInformationResult.setGatewayNetworkInterfaces(new ListUnmarshaller<NetworkInterface>(NetworkInterfaceJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("GatewayType", targetDepth)) {
                     context.nextToken();
@@ -95,7 +97,9 @@ public class DescribeGatewayInformationResultJsonUnmarshaller implements Unmarsh
                 }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
-                    describeGatewayInformationResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeGatewayInformationResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("VPCEndpoint", targetDepth)) {
                     context.nextToken();

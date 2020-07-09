@@ -51,7 +51,8 @@ public class CampaignResponseJsonUnmarshaller implements Unmarshaller<CampaignRe
                 if (context.testExpression("AdditionalTreatments", targetDepth)) {
                     context.nextToken();
                     campaignResponse.setAdditionalTreatments(new ListUnmarshaller<TreatmentResource>(TreatmentResourceJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ApplicationId", targetDepth)) {
                     context.nextToken();

@@ -55,7 +55,8 @@ public class GetCurrentMetricDataResultJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("MetricResults", targetDepth)) {
                     context.nextToken();
                     getCurrentMetricDataResult.setMetricResults(new ListUnmarshaller<CurrentMetricResult>(CurrentMetricResultJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("DataSnapshotTime", targetDepth)) {
                     context.nextToken();

@@ -50,7 +50,9 @@ public class JobNodeDetailsJsonUnmarshaller implements Unmarshaller<JobNodeDetai
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("JobRuns", targetDepth)) {
                     context.nextToken();
-                    jobNodeDetails.setJobRuns(new ListUnmarshaller<JobRun>(JobRunJsonUnmarshaller.getInstance()).unmarshall(context));
+                    jobNodeDetails.setJobRuns(new ListUnmarshaller<JobRun>(JobRunJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -15,7 +15,10 @@ package com.amazonaws.services.cloudhsmv2.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * The request was rejected because of a tagging failure. Verify the tag conditions in all applicable policies, and then
+ * retry the request.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CloudHsmTagException extends com.amazonaws.services.cloudhsmv2.model.AWSCloudHSMV2Exception {

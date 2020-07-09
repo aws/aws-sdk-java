@@ -50,7 +50,9 @@ public class ScopeJsonUnmarshaller implements Unmarshaller<Scope, JsonUnmarshall
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ComplianceResourceTypes", targetDepth)) {
                     context.nextToken();
-                    scope.setComplianceResourceTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    scope.setComplianceResourceTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("TagKey", targetDepth)) {
                     context.nextToken();

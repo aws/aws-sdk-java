@@ -51,7 +51,9 @@ public class ListResourceTypesResultJsonUnmarshaller implements Unmarshaller<Lis
                 if (context.testExpression("resourceTypes", targetDepth)) {
                     context.nextToken();
                     listResourceTypesResult.setResourceTypes(new ListUnmarshaller<ServiceNameAndResourceType>(ServiceNameAndResourceTypeJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

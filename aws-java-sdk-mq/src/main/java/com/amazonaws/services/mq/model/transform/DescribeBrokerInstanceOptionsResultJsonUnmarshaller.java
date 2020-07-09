@@ -51,7 +51,9 @@ public class DescribeBrokerInstanceOptionsResultJsonUnmarshaller implements Unma
                 if (context.testExpression("brokerInstanceOptions", targetDepth)) {
                     context.nextToken();
                     describeBrokerInstanceOptionsResult.setBrokerInstanceOptions(new ListUnmarshaller<BrokerInstanceOption>(
-                            BrokerInstanceOptionJsonUnmarshaller.getInstance()).unmarshall(context));
+                            BrokerInstanceOptionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("maxResults", targetDepth)) {
                     context.nextToken();

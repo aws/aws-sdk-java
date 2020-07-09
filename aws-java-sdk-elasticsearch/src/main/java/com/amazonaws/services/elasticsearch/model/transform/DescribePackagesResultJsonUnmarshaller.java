@@ -51,7 +51,8 @@ public class DescribePackagesResultJsonUnmarshaller implements Unmarshaller<Desc
                 if (context.testExpression("PackageDetailsList", targetDepth)) {
                     context.nextToken();
                     describePackagesResult.setPackageDetailsList(new ListUnmarshaller<PackageDetails>(PackageDetailsJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

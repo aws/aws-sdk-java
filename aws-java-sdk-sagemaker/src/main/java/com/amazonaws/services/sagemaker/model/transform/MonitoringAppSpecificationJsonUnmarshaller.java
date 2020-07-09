@@ -54,11 +54,15 @@ public class MonitoringAppSpecificationJsonUnmarshaller implements Unmarshaller<
                 }
                 if (context.testExpression("ContainerEntrypoint", targetDepth)) {
                     context.nextToken();
-                    monitoringAppSpecification.setContainerEntrypoint(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    monitoringAppSpecification.setContainerEntrypoint(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ContainerArguments", targetDepth)) {
                     context.nextToken();
-                    monitoringAppSpecification.setContainerArguments(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    monitoringAppSpecification.setContainerArguments(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("RecordPreprocessorSourceUri", targetDepth)) {
                     context.nextToken();

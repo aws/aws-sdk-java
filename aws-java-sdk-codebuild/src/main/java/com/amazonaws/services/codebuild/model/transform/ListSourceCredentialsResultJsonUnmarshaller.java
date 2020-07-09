@@ -51,7 +51,9 @@ public class ListSourceCredentialsResultJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("sourceCredentialsInfos", targetDepth)) {
                     context.nextToken();
                     listSourceCredentialsResult.setSourceCredentialsInfos(new ListUnmarshaller<SourceCredentialsInfo>(SourceCredentialsInfoJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

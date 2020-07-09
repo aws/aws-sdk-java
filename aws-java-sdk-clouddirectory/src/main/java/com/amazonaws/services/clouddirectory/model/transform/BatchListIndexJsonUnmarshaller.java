@@ -51,7 +51,8 @@ public class BatchListIndexJsonUnmarshaller implements Unmarshaller<BatchListInd
                 if (context.testExpression("RangesOnIndexedValues", targetDepth)) {
                     context.nextToken();
                     batchListIndex.setRangesOnIndexedValues(new ListUnmarshaller<ObjectAttributeRange>(ObjectAttributeRangeJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("IndexReference", targetDepth)) {
                     context.nextToken();

@@ -50,7 +50,9 @@ public class BatchCreateRoomMembershipResultJsonUnmarshaller implements Unmarsha
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Errors", targetDepth)) {
                     context.nextToken();
-                    batchCreateRoomMembershipResult.setErrors(new ListUnmarshaller<MemberError>(MemberErrorJsonUnmarshaller.getInstance()).unmarshall(context));
+                    batchCreateRoomMembershipResult.setErrors(new ListUnmarshaller<MemberError>(MemberErrorJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

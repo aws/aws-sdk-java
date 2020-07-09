@@ -70,7 +70,9 @@ public class BulkDeploymentResultJsonUnmarshaller implements Unmarshaller<BulkDe
                 }
                 if (context.testExpression("ErrorDetails", targetDepth)) {
                     context.nextToken();
-                    bulkDeploymentResult.setErrorDetails(new ListUnmarshaller<ErrorDetail>(ErrorDetailJsonUnmarshaller.getInstance()).unmarshall(context));
+                    bulkDeploymentResult.setErrorDetails(new ListUnmarshaller<ErrorDetail>(ErrorDetailJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ErrorMessage", targetDepth)) {
                     context.nextToken();

@@ -50,7 +50,9 @@ public class CategoricalParameterRangeSpecificationJsonUnmarshaller implements U
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Values", targetDepth)) {
                     context.nextToken();
-                    categoricalParameterRangeSpecification.setValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    categoricalParameterRangeSpecification.setValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

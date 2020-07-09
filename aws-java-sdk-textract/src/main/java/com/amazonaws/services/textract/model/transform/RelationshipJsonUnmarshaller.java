@@ -54,7 +54,9 @@ public class RelationshipJsonUnmarshaller implements Unmarshaller<Relationship, 
                 }
                 if (context.testExpression("Ids", targetDepth)) {
                     context.nextToken();
-                    relationship.setIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    relationship.setIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

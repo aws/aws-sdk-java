@@ -50,7 +50,9 @@ public class AddJobFlowStepsResultJsonUnmarshaller implements Unmarshaller<AddJo
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StepIds", targetDepth)) {
                     context.nextToken();
-                    addJobFlowStepsResult.setStepIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    addJobFlowStepsResult.setStepIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

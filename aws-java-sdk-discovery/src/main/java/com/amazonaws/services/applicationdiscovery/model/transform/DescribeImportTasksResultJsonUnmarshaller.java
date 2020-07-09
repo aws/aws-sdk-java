@@ -54,7 +54,9 @@ public class DescribeImportTasksResultJsonUnmarshaller implements Unmarshaller<D
                 }
                 if (context.testExpression("tasks", targetDepth)) {
                     context.nextToken();
-                    describeImportTasksResult.setTasks(new ListUnmarshaller<ImportTask>(ImportTaskJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeImportTasksResult.setTasks(new ListUnmarshaller<ImportTask>(ImportTaskJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

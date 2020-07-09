@@ -52,7 +52,9 @@ public class DescribeEffectiveInstanceAssociationsResultJsonUnmarshaller impleme
                 if (context.testExpression("Associations", targetDepth)) {
                     context.nextToken();
                     describeEffectiveInstanceAssociationsResult.setAssociations(new ListUnmarshaller<InstanceAssociation>(InstanceAssociationJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

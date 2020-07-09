@@ -50,12 +50,15 @@ public class BatchDeleteBuildsResultJsonUnmarshaller implements Unmarshaller<Bat
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("buildsDeleted", targetDepth)) {
                     context.nextToken();
-                    batchDeleteBuildsResult.setBuildsDeleted(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    batchDeleteBuildsResult.setBuildsDeleted(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("buildsNotDeleted", targetDepth)) {
                     context.nextToken();
                     batchDeleteBuildsResult.setBuildsNotDeleted(new ListUnmarshaller<BuildNotDeleted>(BuildNotDeletedJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

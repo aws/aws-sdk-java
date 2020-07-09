@@ -50,7 +50,9 @@ public class ListAccountsForParentResultJsonUnmarshaller implements Unmarshaller
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Accounts", targetDepth)) {
                     context.nextToken();
-                    listAccountsForParentResult.setAccounts(new ListUnmarshaller<Account>(AccountJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listAccountsForParentResult.setAccounts(new ListUnmarshaller<Account>(AccountJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

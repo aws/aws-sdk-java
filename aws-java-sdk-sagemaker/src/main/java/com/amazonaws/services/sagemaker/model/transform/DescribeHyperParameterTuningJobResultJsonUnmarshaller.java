@@ -69,7 +69,9 @@ public class DescribeHyperParameterTuningJobResultJsonUnmarshaller implements Un
                 if (context.testExpression("TrainingJobDefinitions", targetDepth)) {
                     context.nextToken();
                     describeHyperParameterTuningJobResult.setTrainingJobDefinitions(new ListUnmarshaller<HyperParameterTrainingJobDefinition>(
-                            HyperParameterTrainingJobDefinitionJsonUnmarshaller.getInstance()).unmarshall(context));
+                            HyperParameterTrainingJobDefinitionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("HyperParameterTuningJobStatus", targetDepth)) {
                     context.nextToken();

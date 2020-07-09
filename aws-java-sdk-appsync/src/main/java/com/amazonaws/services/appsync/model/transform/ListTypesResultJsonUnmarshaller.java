@@ -50,7 +50,9 @@ public class ListTypesResultJsonUnmarshaller implements Unmarshaller<ListTypesRe
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("types", targetDepth)) {
                     context.nextToken();
-                    listTypesResult.setTypes(new ListUnmarshaller<Type>(TypeJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listTypesResult.setTypes(new ListUnmarshaller<Type>(TypeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

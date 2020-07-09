@@ -53,7 +53,8 @@ public class SearchDashboardsResultJsonUnmarshaller implements Unmarshaller<Sear
                 if (context.testExpression("DashboardSummaryList", targetDepth)) {
                     context.nextToken();
                     searchDashboardsResult.setDashboardSummaryList(new ListUnmarshaller<DashboardSummary>(DashboardSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

@@ -51,7 +51,9 @@ public class DescribeRemediationExceptionsResultJsonUnmarshaller implements Unma
                 if (context.testExpression("RemediationExceptions", targetDepth)) {
                     context.nextToken();
                     describeRemediationExceptionsResult.setRemediationExceptions(new ListUnmarshaller<RemediationException>(
-                            RemediationExceptionJsonUnmarshaller.getInstance()).unmarshall(context));
+                            RemediationExceptionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

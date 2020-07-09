@@ -66,7 +66,9 @@ public class TerminologyPropertiesJsonUnmarshaller implements Unmarshaller<Termi
                 }
                 if (context.testExpression("TargetLanguageCodes", targetDepth)) {
                     context.nextToken();
-                    terminologyProperties.setTargetLanguageCodes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    terminologyProperties.setTargetLanguageCodes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("EncryptionKey", targetDepth)) {
                     context.nextToken();

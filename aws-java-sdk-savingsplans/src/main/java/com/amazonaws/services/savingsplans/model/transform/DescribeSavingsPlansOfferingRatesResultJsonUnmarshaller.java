@@ -51,7 +51,9 @@ public class DescribeSavingsPlansOfferingRatesResultJsonUnmarshaller implements 
                 if (context.testExpression("searchResults", targetDepth)) {
                     context.nextToken();
                     describeSavingsPlansOfferingRatesResult.setSearchResults(new ListUnmarshaller<SavingsPlanOfferingRate>(
-                            SavingsPlanOfferingRateJsonUnmarshaller.getInstance()).unmarshall(context));
+                            SavingsPlanOfferingRateJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

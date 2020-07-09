@@ -51,7 +51,9 @@ public class ListPipelineExecutionsResultJsonUnmarshaller implements Unmarshalle
                 if (context.testExpression("pipelineExecutionSummaries", targetDepth)) {
                     context.nextToken();
                     listPipelineExecutionsResult.setPipelineExecutionSummaries(new ListUnmarshaller<PipelineExecutionSummary>(
-                            PipelineExecutionSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                            PipelineExecutionSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

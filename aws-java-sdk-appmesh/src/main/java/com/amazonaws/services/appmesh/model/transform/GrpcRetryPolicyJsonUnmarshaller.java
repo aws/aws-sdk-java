@@ -50,11 +50,15 @@ public class GrpcRetryPolicyJsonUnmarshaller implements Unmarshaller<GrpcRetryPo
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("grpcRetryEvents", targetDepth)) {
                     context.nextToken();
-                    grpcRetryPolicy.setGrpcRetryEvents(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    grpcRetryPolicy.setGrpcRetryEvents(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("httpRetryEvents", targetDepth)) {
                     context.nextToken();
-                    grpcRetryPolicy.setHttpRetryEvents(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    grpcRetryPolicy.setHttpRetryEvents(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("maxRetries", targetDepth)) {
                     context.nextToken();
@@ -66,7 +70,9 @@ public class GrpcRetryPolicyJsonUnmarshaller implements Unmarshaller<GrpcRetryPo
                 }
                 if (context.testExpression("tcpRetryEvents", targetDepth)) {
                     context.nextToken();
-                    grpcRetryPolicy.setTcpRetryEvents(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    grpcRetryPolicy.setTcpRetryEvents(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

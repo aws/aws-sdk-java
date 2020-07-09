@@ -74,7 +74,9 @@ public class OrcSerDeJsonUnmarshaller implements Unmarshaller<OrcSerDe, JsonUnma
                 }
                 if (context.testExpression("BloomFilterColumns", targetDepth)) {
                     context.nextToken();
-                    orcSerDe.setBloomFilterColumns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    orcSerDe.setBloomFilterColumns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("BloomFilterFalsePositiveProbability", targetDepth)) {
                     context.nextToken();

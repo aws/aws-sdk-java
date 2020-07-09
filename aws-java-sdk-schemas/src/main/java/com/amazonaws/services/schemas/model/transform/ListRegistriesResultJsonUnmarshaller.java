@@ -54,8 +54,9 @@ public class ListRegistriesResultJsonUnmarshaller implements Unmarshaller<ListRe
                 }
                 if (context.testExpression("Registries", targetDepth)) {
                     context.nextToken();
-                    listRegistriesResult
-                            .setRegistries(new ListUnmarshaller<RegistrySummary>(RegistrySummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listRegistriesResult.setRegistries(new ListUnmarshaller<RegistrySummary>(RegistrySummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

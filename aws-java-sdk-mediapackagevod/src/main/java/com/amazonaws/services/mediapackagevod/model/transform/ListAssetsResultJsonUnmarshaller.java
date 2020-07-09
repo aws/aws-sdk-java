@@ -50,7 +50,9 @@ public class ListAssetsResultJsonUnmarshaller implements Unmarshaller<ListAssets
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("assets", targetDepth)) {
                     context.nextToken();
-                    listAssetsResult.setAssets(new ListUnmarshaller<AssetShallow>(AssetShallowJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listAssetsResult.setAssets(new ListUnmarshaller<AssetShallow>(AssetShallowJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

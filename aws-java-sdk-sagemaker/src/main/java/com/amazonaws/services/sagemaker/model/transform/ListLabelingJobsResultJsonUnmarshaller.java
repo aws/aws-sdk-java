@@ -51,7 +51,8 @@ public class ListLabelingJobsResultJsonUnmarshaller implements Unmarshaller<List
                 if (context.testExpression("LabelingJobSummaryList", targetDepth)) {
                     context.nextToken();
                     listLabelingJobsResult.setLabelingJobSummaryList(new ListUnmarshaller<LabelingJobSummary>(LabelingJobSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

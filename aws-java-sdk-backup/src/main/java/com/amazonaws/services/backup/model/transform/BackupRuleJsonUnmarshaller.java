@@ -83,7 +83,9 @@ public class BackupRuleJsonUnmarshaller implements Unmarshaller<BackupRule, Json
                 }
                 if (context.testExpression("CopyActions", targetDepth)) {
                     context.nextToken();
-                    backupRule.setCopyActions(new ListUnmarshaller<CopyAction>(CopyActionJsonUnmarshaller.getInstance()).unmarshall(context));
+                    backupRule.setCopyActions(new ListUnmarshaller<CopyAction>(CopyActionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

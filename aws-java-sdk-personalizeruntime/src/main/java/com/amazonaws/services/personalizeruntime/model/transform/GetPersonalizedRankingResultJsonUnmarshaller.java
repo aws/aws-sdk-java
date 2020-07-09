@@ -51,7 +51,8 @@ public class GetPersonalizedRankingResultJsonUnmarshaller implements Unmarshalle
                 if (context.testExpression("personalizedRanking", targetDepth)) {
                     context.nextToken();
                     getPersonalizedRankingResult.setPersonalizedRanking(new ListUnmarshaller<PredictedItem>(PredictedItemJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

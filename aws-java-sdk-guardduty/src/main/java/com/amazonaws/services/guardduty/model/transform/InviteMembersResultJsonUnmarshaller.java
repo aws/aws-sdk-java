@@ -51,7 +51,8 @@ public class InviteMembersResultJsonUnmarshaller implements Unmarshaller<InviteM
                 if (context.testExpression("unprocessedAccounts", targetDepth)) {
                     context.nextToken();
                     inviteMembersResult.setUnprocessedAccounts(new ListUnmarshaller<UnprocessedAccount>(UnprocessedAccountJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -63,7 +63,8 @@ public class AutoMLCandidateJsonUnmarshaller implements Unmarshaller<AutoMLCandi
                 if (context.testExpression("CandidateSteps", targetDepth)) {
                     context.nextToken();
                     autoMLCandidate.setCandidateSteps(new ListUnmarshaller<AutoMLCandidateStep>(AutoMLCandidateStepJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("CandidateStatus", targetDepth)) {
                     context.nextToken();
@@ -72,7 +73,9 @@ public class AutoMLCandidateJsonUnmarshaller implements Unmarshaller<AutoMLCandi
                 if (context.testExpression("InferenceContainers", targetDepth)) {
                     context.nextToken();
                     autoMLCandidate.setInferenceContainers(new ListUnmarshaller<AutoMLContainerDefinition>(AutoMLContainerDefinitionJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();

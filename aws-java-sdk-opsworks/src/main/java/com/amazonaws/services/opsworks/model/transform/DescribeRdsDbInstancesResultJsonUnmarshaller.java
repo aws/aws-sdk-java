@@ -51,7 +51,8 @@ public class DescribeRdsDbInstancesResultJsonUnmarshaller implements Unmarshalle
                 if (context.testExpression("RdsDbInstances", targetDepth)) {
                     context.nextToken();
                     describeRdsDbInstancesResult.setRdsDbInstances(new ListUnmarshaller<RdsDbInstance>(RdsDbInstanceJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

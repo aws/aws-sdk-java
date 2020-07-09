@@ -51,7 +51,8 @@ public class ListDashboardsResultJsonUnmarshaller implements Unmarshaller<ListDa
                 if (context.testExpression("dashboardSummaries", targetDepth)) {
                     context.nextToken();
                     listDashboardsResult.setDashboardSummaries(new ListUnmarshaller<DashboardSummary>(DashboardSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

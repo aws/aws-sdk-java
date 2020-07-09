@@ -67,7 +67,8 @@ public class AttackSummaryJsonUnmarshaller implements Unmarshaller<AttackSummary
                 if (context.testExpression("AttackVectors", targetDepth)) {
                     context.nextToken();
                     attackSummary.setAttackVectors(new ListUnmarshaller<AttackVectorDescription>(AttackVectorDescriptionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -51,8 +51,9 @@ public class GetBlacklistReportsResultJsonUnmarshaller implements Unmarshaller<G
                 if (context.testExpression("BlacklistReport", targetDepth)) {
                     context.nextToken();
                     getBlacklistReportsResult.setBlacklistReport(new MapUnmarshaller<String, java.util.List<BlacklistEntry>>(context
-                            .getUnmarshaller(String.class), new ListUnmarshaller<BlacklistEntry>(BlacklistEntryJsonUnmarshaller.getInstance()))
-                            .unmarshall(context));
+                            .getUnmarshaller(String.class), new ListUnmarshaller<BlacklistEntry>(BlacklistEntryJsonUnmarshaller.getInstance())
+
+                    ).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -50,7 +50,9 @@ public class ListMeetingsResultJsonUnmarshaller implements Unmarshaller<ListMeet
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Meetings", targetDepth)) {
                     context.nextToken();
-                    listMeetingsResult.setMeetings(new ListUnmarshaller<Meeting>(MeetingJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listMeetingsResult.setMeetings(new ListUnmarshaller<Meeting>(MeetingJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

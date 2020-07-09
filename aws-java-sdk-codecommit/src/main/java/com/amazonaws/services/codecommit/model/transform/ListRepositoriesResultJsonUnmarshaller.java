@@ -51,7 +51,8 @@ public class ListRepositoriesResultJsonUnmarshaller implements Unmarshaller<List
                 if (context.testExpression("repositories", targetDepth)) {
                     context.nextToken();
                     listRepositoriesResult.setRepositories(new ListUnmarshaller<RepositoryNameIdPair>(RepositoryNameIdPairJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

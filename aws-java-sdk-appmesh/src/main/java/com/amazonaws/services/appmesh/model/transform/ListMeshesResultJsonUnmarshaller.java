@@ -50,7 +50,9 @@ public class ListMeshesResultJsonUnmarshaller implements Unmarshaller<ListMeshes
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("meshes", targetDepth)) {
                     context.nextToken();
-                    listMeshesResult.setMeshes(new ListUnmarshaller<MeshRef>(MeshRefJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listMeshesResult.setMeshes(new ListUnmarshaller<MeshRef>(MeshRefJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

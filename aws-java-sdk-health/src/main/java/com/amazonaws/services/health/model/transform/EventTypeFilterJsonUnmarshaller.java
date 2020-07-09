@@ -50,15 +50,21 @@ public class EventTypeFilterJsonUnmarshaller implements Unmarshaller<EventTypeFi
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("eventTypeCodes", targetDepth)) {
                     context.nextToken();
-                    eventTypeFilter.setEventTypeCodes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    eventTypeFilter.setEventTypeCodes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("services", targetDepth)) {
                     context.nextToken();
-                    eventTypeFilter.setServices(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    eventTypeFilter.setServices(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("eventTypeCategories", targetDepth)) {
                     context.nextToken();
-                    eventTypeFilter.setEventTypeCategories(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    eventTypeFilter.setEventTypeCategories(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

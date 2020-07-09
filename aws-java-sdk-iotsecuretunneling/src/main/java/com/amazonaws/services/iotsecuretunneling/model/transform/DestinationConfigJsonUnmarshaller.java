@@ -54,7 +54,9 @@ public class DestinationConfigJsonUnmarshaller implements Unmarshaller<Destinati
                 }
                 if (context.testExpression("services", targetDepth)) {
                     context.nextToken();
-                    destinationConfig.setServices(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    destinationConfig.setServices(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

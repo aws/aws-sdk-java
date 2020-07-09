@@ -62,7 +62,9 @@ public class TableWithColumnsResourceJsonUnmarshaller implements Unmarshaller<Ta
                 }
                 if (context.testExpression("ColumnNames", targetDepth)) {
                     context.nextToken();
-                    tableWithColumnsResource.setColumnNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    tableWithColumnsResource.setColumnNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ColumnWildcard", targetDepth)) {
                     context.nextToken();

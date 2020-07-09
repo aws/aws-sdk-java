@@ -70,11 +70,15 @@ public class VoiceJsonUnmarshaller implements Unmarshaller<Voice, JsonUnmarshall
                 }
                 if (context.testExpression("AdditionalLanguageCodes", targetDepth)) {
                     context.nextToken();
-                    voice.setAdditionalLanguageCodes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    voice.setAdditionalLanguageCodes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("SupportedEngines", targetDepth)) {
                     context.nextToken();
-                    voice.setSupportedEngines(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    voice.setSupportedEngines(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

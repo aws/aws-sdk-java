@@ -92,7 +92,7 @@ public class DetectDominantLanguageRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getText() != null)
-            sb.append("Text: ").append(getText());
+            sb.append("Text: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

@@ -50,7 +50,9 @@ public class DetectFacesResultJsonUnmarshaller implements Unmarshaller<DetectFac
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FaceDetails", targetDepth)) {
                     context.nextToken();
-                    detectFacesResult.setFaceDetails(new ListUnmarshaller<FaceDetail>(FaceDetailJsonUnmarshaller.getInstance()).unmarshall(context));
+                    detectFacesResult.setFaceDetails(new ListUnmarshaller<FaceDetail>(FaceDetailJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("OrientationCorrection", targetDepth)) {
                     context.nextToken();

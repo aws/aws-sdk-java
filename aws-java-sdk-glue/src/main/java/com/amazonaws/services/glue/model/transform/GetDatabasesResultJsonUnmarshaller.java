@@ -50,7 +50,9 @@ public class GetDatabasesResultJsonUnmarshaller implements Unmarshaller<GetDatab
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DatabaseList", targetDepth)) {
                     context.nextToken();
-                    getDatabasesResult.setDatabaseList(new ListUnmarshaller<Database>(DatabaseJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getDatabasesResult.setDatabaseList(new ListUnmarshaller<Database>(DatabaseJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

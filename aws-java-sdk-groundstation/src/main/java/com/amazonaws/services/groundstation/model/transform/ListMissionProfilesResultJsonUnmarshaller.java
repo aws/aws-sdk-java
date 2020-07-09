@@ -51,7 +51,9 @@ public class ListMissionProfilesResultJsonUnmarshaller implements Unmarshaller<L
                 if (context.testExpression("missionProfileList", targetDepth)) {
                     context.nextToken();
                     listMissionProfilesResult.setMissionProfileList(new ListUnmarshaller<MissionProfileListItem>(MissionProfileListItemJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

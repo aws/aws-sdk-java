@@ -51,7 +51,8 @@ public class ExecuteSqlResultJsonUnmarshaller implements Unmarshaller<ExecuteSql
                 if (context.testExpression("sqlStatementResults", targetDepth)) {
                     context.nextToken();
                     executeSqlResult.setSqlStatementResults(new ListUnmarshaller<SqlStatementResult>(SqlStatementResultJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

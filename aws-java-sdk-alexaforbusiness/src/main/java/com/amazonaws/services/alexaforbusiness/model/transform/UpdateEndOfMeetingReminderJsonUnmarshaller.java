@@ -50,7 +50,9 @@ public class UpdateEndOfMeetingReminderJsonUnmarshaller implements Unmarshaller<
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ReminderAtMinutes", targetDepth)) {
                     context.nextToken();
-                    updateEndOfMeetingReminder.setReminderAtMinutes(new ListUnmarshaller<Integer>(context.getUnmarshaller(Integer.class)).unmarshall(context));
+                    updateEndOfMeetingReminder.setReminderAtMinutes(new ListUnmarshaller<Integer>(context.getUnmarshaller(Integer.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ReminderType", targetDepth)) {
                     context.nextToken();

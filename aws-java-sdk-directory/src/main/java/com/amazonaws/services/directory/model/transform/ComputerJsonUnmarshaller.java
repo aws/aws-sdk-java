@@ -58,7 +58,9 @@ public class ComputerJsonUnmarshaller implements Unmarshaller<Computer, JsonUnma
                 }
                 if (context.testExpression("ComputerAttributes", targetDepth)) {
                     context.nextToken();
-                    computer.setComputerAttributes(new ListUnmarshaller<Attribute>(AttributeJsonUnmarshaller.getInstance()).unmarshall(context));
+                    computer.setComputerAttributes(new ListUnmarshaller<Attribute>(AttributeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

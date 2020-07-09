@@ -50,7 +50,9 @@ public class ListImagesResultJsonUnmarshaller implements Unmarshaller<ListImages
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("imageIds", targetDepth)) {
                     context.nextToken();
-                    listImagesResult.setImageIds(new ListUnmarshaller<ImageIdentifier>(ImageIdentifierJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listImagesResult.setImageIds(new ListUnmarshaller<ImageIdentifier>(ImageIdentifierJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

@@ -50,7 +50,9 @@ public class TimedMetadataInsertionJsonUnmarshaller implements Unmarshaller<Time
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("id3Insertions", targetDepth)) {
                     context.nextToken();
-                    timedMetadataInsertion.setId3Insertions(new ListUnmarshaller<Id3Insertion>(Id3InsertionJsonUnmarshaller.getInstance()).unmarshall(context));
+                    timedMetadataInsertion.setId3Insertions(new ListUnmarshaller<Id3Insertion>(Id3InsertionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

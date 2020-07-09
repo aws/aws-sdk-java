@@ -54,7 +54,9 @@ public class CmafPackageJsonUnmarshaller implements Unmarshaller<CmafPackage, Js
                 }
                 if (context.testExpression("hlsManifests", targetDepth)) {
                     context.nextToken();
-                    cmafPackage.setHlsManifests(new ListUnmarshaller<HlsManifest>(HlsManifestJsonUnmarshaller.getInstance()).unmarshall(context));
+                    cmafPackage.setHlsManifests(new ListUnmarshaller<HlsManifest>(HlsManifestJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("segmentDurationSeconds", targetDepth)) {
                     context.nextToken();

@@ -59,7 +59,8 @@ public class DescribeClassificationJobResultJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("customDataIdentifierIds", targetDepth)) {
                     context.nextToken();
                     describeClassificationJobResult.setCustomDataIdentifierIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();

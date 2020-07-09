@@ -50,11 +50,15 @@ public class ImportDocumentationPartsResultJsonUnmarshaller implements Unmarshal
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ids", targetDepth)) {
                     context.nextToken();
-                    importDocumentationPartsResult.setIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    importDocumentationPartsResult.setIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("warnings", targetDepth)) {
                     context.nextToken();
-                    importDocumentationPartsResult.setWarnings(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    importDocumentationPartsResult.setWarnings(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

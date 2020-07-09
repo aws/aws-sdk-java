@@ -54,7 +54,9 @@ public class ResultSetMetadataJsonUnmarshaller implements Unmarshaller<ResultSet
                 }
                 if (context.testExpression("columnMetadata", targetDepth)) {
                     context.nextToken();
-                    resultSetMetadata.setColumnMetadata(new ListUnmarshaller<ColumnMetadata>(ColumnMetadataJsonUnmarshaller.getInstance()).unmarshall(context));
+                    resultSetMetadata.setColumnMetadata(new ListUnmarshaller<ColumnMetadata>(ColumnMetadataJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

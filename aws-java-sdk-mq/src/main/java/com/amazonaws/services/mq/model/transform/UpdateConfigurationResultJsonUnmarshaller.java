@@ -71,7 +71,8 @@ public class UpdateConfigurationResultJsonUnmarshaller implements Unmarshaller<U
                 if (context.testExpression("warnings", targetDepth)) {
                     context.nextToken();
                     updateConfigurationResult.setWarnings(new ListUnmarshaller<SanitizationWarning>(SanitizationWarningJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

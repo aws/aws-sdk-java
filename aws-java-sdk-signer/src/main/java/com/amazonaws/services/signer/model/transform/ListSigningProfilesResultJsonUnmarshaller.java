@@ -51,7 +51,8 @@ public class ListSigningProfilesResultJsonUnmarshaller implements Unmarshaller<L
                 if (context.testExpression("profiles", targetDepth)) {
                     context.nextToken();
                     listSigningProfilesResult.setProfiles(new ListUnmarshaller<SigningProfile>(SigningProfileJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

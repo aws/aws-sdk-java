@@ -50,7 +50,9 @@ public class SelectAggregateResourceConfigResultJsonUnmarshaller implements Unma
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Results", targetDepth)) {
                     context.nextToken();
-                    selectAggregateResourceConfigResult.setResults(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    selectAggregateResourceConfigResult.setResults(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("QueryInfo", targetDepth)) {
                     context.nextToken();

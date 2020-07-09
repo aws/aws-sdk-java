@@ -58,8 +58,9 @@ public class ListBonusPaymentsResultJsonUnmarshaller implements Unmarshaller<Lis
                 }
                 if (context.testExpression("BonusPayments", targetDepth)) {
                     context.nextToken();
-                    listBonusPaymentsResult
-                            .setBonusPayments(new ListUnmarshaller<BonusPayment>(BonusPaymentJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listBonusPaymentsResult.setBonusPayments(new ListUnmarshaller<BonusPayment>(BonusPaymentJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

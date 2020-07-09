@@ -54,7 +54,9 @@ public class ListServiceQuotasResultJsonUnmarshaller implements Unmarshaller<Lis
                 }
                 if (context.testExpression("Quotas", targetDepth)) {
                     context.nextToken();
-                    listServiceQuotasResult.setQuotas(new ListUnmarshaller<ServiceQuota>(ServiceQuotaJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listServiceQuotasResult.setQuotas(new ListUnmarshaller<ServiceQuota>(ServiceQuotaJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

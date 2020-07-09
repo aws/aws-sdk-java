@@ -51,11 +51,14 @@ public class ListGroupsResultJsonUnmarshaller implements Unmarshaller<ListGroups
                 if (context.testExpression("GroupIdentifiers", targetDepth)) {
                     context.nextToken();
                     listGroupsResult.setGroupIdentifiers(new ListUnmarshaller<GroupIdentifier>(GroupIdentifierJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Groups", targetDepth)) {
                     context.nextToken();
-                    listGroupsResult.setGroups(new ListUnmarshaller<Group>(GroupJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listGroupsResult.setGroups(new ListUnmarshaller<Group>(GroupJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

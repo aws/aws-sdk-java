@@ -50,7 +50,9 @@ public class ListWebhooksResultJsonUnmarshaller implements Unmarshaller<ListWebh
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("webhooks", targetDepth)) {
                     context.nextToken();
-                    listWebhooksResult.setWebhooks(new ListUnmarshaller<ListWebhookItem>(ListWebhookItemJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listWebhooksResult.setWebhooks(new ListUnmarshaller<ListWebhookItem>(ListWebhookItemJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

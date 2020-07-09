@@ -51,7 +51,9 @@ public class BatchListObjectAttributesResponseJsonUnmarshaller implements Unmars
                 if (context.testExpression("Attributes", targetDepth)) {
                     context.nextToken();
                     batchListObjectAttributesResponse.setAttributes(new ListUnmarshaller<AttributeKeyAndValue>(AttributeKeyAndValueJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

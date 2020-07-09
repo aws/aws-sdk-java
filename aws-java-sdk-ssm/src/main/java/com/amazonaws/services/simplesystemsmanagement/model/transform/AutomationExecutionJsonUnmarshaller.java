@@ -75,7 +75,9 @@ public class AutomationExecutionJsonUnmarshaller implements Unmarshaller<Automat
                 }
                 if (context.testExpression("StepExecutions", targetDepth)) {
                     context.nextToken();
-                    automationExecution.setStepExecutions(new ListUnmarshaller<StepExecution>(StepExecutionJsonUnmarshaller.getInstance()).unmarshall(context));
+                    automationExecution.setStepExecutions(new ListUnmarshaller<StepExecution>(StepExecutionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("StepExecutionsTruncated", targetDepth)) {
                     context.nextToken();
@@ -84,12 +86,16 @@ public class AutomationExecutionJsonUnmarshaller implements Unmarshaller<Automat
                 if (context.testExpression("Parameters", targetDepth)) {
                     context.nextToken();
                     automationExecution.setParameters(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
-                            new ListUnmarshaller<String>(context.getUnmarshaller(String.class))).unmarshall(context));
+                            new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    ).unmarshall(context));
                 }
                 if (context.testExpression("Outputs", targetDepth)) {
                     context.nextToken();
                     automationExecution.setOutputs(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
-                            new ListUnmarshaller<String>(context.getUnmarshaller(String.class))).unmarshall(context));
+                            new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    ).unmarshall(context));
                 }
                 if (context.testExpression("FailureMessage", targetDepth)) {
                     context.nextToken();
@@ -121,13 +127,19 @@ public class AutomationExecutionJsonUnmarshaller implements Unmarshaller<Automat
                 }
                 if (context.testExpression("Targets", targetDepth)) {
                     context.nextToken();
-                    automationExecution.setTargets(new ListUnmarshaller<Target>(TargetJsonUnmarshaller.getInstance()).unmarshall(context));
+                    automationExecution.setTargets(new ListUnmarshaller<Target>(TargetJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("TargetMaps", targetDepth)) {
                     context.nextToken();
                     automationExecution.setTargetMaps(new ListUnmarshaller<java.util.Map<String, java.util.List<String>>>(
                             new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class), new ListUnmarshaller<String>(context
-                                    .getUnmarshaller(String.class)))).unmarshall(context));
+                                    .getUnmarshaller(String.class))
+
+                            ))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ResolvedTargets", targetDepth)) {
                     context.nextToken();
@@ -148,7 +160,8 @@ public class AutomationExecutionJsonUnmarshaller implements Unmarshaller<Automat
                 if (context.testExpression("TargetLocations", targetDepth)) {
                     context.nextToken();
                     automationExecution.setTargetLocations(new ListUnmarshaller<TargetLocation>(TargetLocationJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ProgressCounters", targetDepth)) {
                     context.nextToken();

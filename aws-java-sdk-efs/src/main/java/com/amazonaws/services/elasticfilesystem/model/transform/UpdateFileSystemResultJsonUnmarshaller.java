@@ -106,7 +106,9 @@ public class UpdateFileSystemResultJsonUnmarshaller implements Unmarshaller<Upda
                 }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
-                    updateFileSystemResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    updateFileSystemResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -51,7 +51,8 @@ public class GetBotAliasesResultJsonUnmarshaller implements Unmarshaller<GetBotA
                 if (context.testExpression("BotAliases", targetDepth)) {
                     context.nextToken();
                     getBotAliasesResult.setBotAliases(new ListUnmarshaller<BotAliasMetadata>(BotAliasMetadataJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

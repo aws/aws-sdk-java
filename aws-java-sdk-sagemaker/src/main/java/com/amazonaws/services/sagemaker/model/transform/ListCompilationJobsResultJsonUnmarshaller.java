@@ -51,7 +51,9 @@ public class ListCompilationJobsResultJsonUnmarshaller implements Unmarshaller<L
                 if (context.testExpression("CompilationJobSummaries", targetDepth)) {
                     context.nextToken();
                     listCompilationJobsResult.setCompilationJobSummaries(new ListUnmarshaller<CompilationJobSummary>(CompilationJobSummaryJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

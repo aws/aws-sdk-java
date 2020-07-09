@@ -51,7 +51,9 @@ public class ListTransformJobsResultJsonUnmarshaller implements Unmarshaller<Lis
                 if (context.testExpression("TransformJobSummaries", targetDepth)) {
                     context.nextToken();
                     listTransformJobsResult.setTransformJobSummaries(new ListUnmarshaller<TransformJobSummary>(TransformJobSummaryJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

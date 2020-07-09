@@ -51,7 +51,9 @@ public class DescribeAssociationExecutionsResultJsonUnmarshaller implements Unma
                 if (context.testExpression("AssociationExecutions", targetDepth)) {
                     context.nextToken();
                     describeAssociationExecutionsResult.setAssociationExecutions(new ListUnmarshaller<AssociationExecution>(
-                            AssociationExecutionJsonUnmarshaller.getInstance()).unmarshall(context));
+                            AssociationExecutionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

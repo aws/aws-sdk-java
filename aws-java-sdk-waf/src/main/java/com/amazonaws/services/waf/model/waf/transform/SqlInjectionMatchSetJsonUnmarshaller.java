@@ -59,7 +59,9 @@ public class SqlInjectionMatchSetJsonUnmarshaller implements Unmarshaller<SqlInj
                 if (context.testExpression("SqlInjectionMatchTuples", targetDepth)) {
                     context.nextToken();
                     sqlInjectionMatchSet.setSqlInjectionMatchTuples(new ListUnmarshaller<SqlInjectionMatchTuple>(SqlInjectionMatchTupleJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

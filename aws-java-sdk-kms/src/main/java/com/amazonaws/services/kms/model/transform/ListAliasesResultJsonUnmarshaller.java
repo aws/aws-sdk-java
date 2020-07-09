@@ -50,7 +50,9 @@ public class ListAliasesResultJsonUnmarshaller implements Unmarshaller<ListAlias
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Aliases", targetDepth)) {
                     context.nextToken();
-                    listAliasesResult.setAliases(new ListUnmarshaller<AliasListEntry>(AliasListEntryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listAliasesResult.setAliases(new ListUnmarshaller<AliasListEntry>(AliasListEntryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextMarker", targetDepth)) {
                     context.nextToken();

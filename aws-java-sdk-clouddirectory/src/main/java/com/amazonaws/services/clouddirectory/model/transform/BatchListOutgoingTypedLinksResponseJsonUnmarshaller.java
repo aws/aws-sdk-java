@@ -51,7 +51,9 @@ public class BatchListOutgoingTypedLinksResponseJsonUnmarshaller implements Unma
                 if (context.testExpression("TypedLinkSpecifiers", targetDepth)) {
                     context.nextToken();
                     batchListOutgoingTypedLinksResponse.setTypedLinkSpecifiers(new ListUnmarshaller<TypedLinkSpecifier>(TypedLinkSpecifierJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

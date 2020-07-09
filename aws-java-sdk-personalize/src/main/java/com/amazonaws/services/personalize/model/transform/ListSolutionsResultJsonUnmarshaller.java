@@ -50,7 +50,9 @@ public class ListSolutionsResultJsonUnmarshaller implements Unmarshaller<ListSol
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("solutions", targetDepth)) {
                     context.nextToken();
-                    listSolutionsResult.setSolutions(new ListUnmarshaller<SolutionSummary>(SolutionSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listSolutionsResult.setSolutions(new ListUnmarshaller<SolutionSummary>(SolutionSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

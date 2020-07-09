@@ -52,7 +52,7 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * A key name prefix might look like this: <code>s3://bucketname/exampleprefix</code>.
+     * A key name prefix might look like this: <code>s3://bucketname/exampleprefix</code>
      * </p>
      * </li>
      * <li>
@@ -60,31 +60,34 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      * A manifest might look like this: <code>s3://bucketname/example.manifest</code>
      * </p>
      * <p>
-     * The manifest is an S3 object which is a JSON file with the following format:
+     * A manifest is an S3 object which is a JSON file consisting of an array of elements. The first element is a prefix
+     * which is followed by one or more suffixes. SageMaker appends the suffix elements to the prefix to get a full set
+     * of <code>S3Uri</code>. Note that the prefix must be a valid non-empty <code>S3Uri</code> that precludes users
+     * from specifying a manifest whose individual <code>S3Uri</code> is sourced from different S3 buckets.
      * </p>
      * <p>
-     * The preceding JSON matches the following <code>s3Uris</code>:
+     * The following code example shows a valid manifest format:
      * </p>
      * <p>
      * <code>[ {"prefix": "s3://customer_bucket/some/prefix/"},</code>
      * </p>
      * <p>
-     * <code>"relative/path/to/custdata-1",</code>
+     * <code> "relative/path/to/custdata-1",</code>
      * </p>
      * <p>
-     * <code>"relative/path/custdata-2",</code>
+     * <code> "relative/path/custdata-2",</code>
      * </p>
      * <p>
-     * <code>...</code>
+     * <code> ...</code>
      * </p>
      * <p>
-     * <code>"relative/path/custdata-N"</code>
+     * <code> "relative/path/custdata-N"</code>
      * </p>
      * <p>
      * <code>]</code>
      * </p>
      * <p>
-     * The preceding JSON matches the following <code>s3Uris</code>:
+     * This JSON is equivalent to the following <code>S3Uri</code> list:
      * </p>
      * <p>
      * <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code>
@@ -99,8 +102,8 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      * <code>s3://customer_bucket/some/prefix/relative/path/custdata-N</code>
      * </p>
      * <p>
-     * The complete set of <code>s3uris</code> in this manifest is the input data for the channel for this datasource.
-     * The object that each <code>s3uris</code> points to must be readable by the IAM role that Amazon SageMaker uses to
+     * The complete set of <code>S3Uri</code> in this manifest is the input data for the channel for this data source.
+     * The object that each <code>S3Uri</code> points to must be readable by the IAM role that Amazon SageMaker uses to
      * perform tasks on your behalf.
      * </p>
      * </li>
@@ -280,7 +283,7 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * A key name prefix might look like this: <code>s3://bucketname/exampleprefix</code>.
+     * A key name prefix might look like this: <code>s3://bucketname/exampleprefix</code>
      * </p>
      * </li>
      * <li>
@@ -288,31 +291,34 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      * A manifest might look like this: <code>s3://bucketname/example.manifest</code>
      * </p>
      * <p>
-     * The manifest is an S3 object which is a JSON file with the following format:
+     * A manifest is an S3 object which is a JSON file consisting of an array of elements. The first element is a prefix
+     * which is followed by one or more suffixes. SageMaker appends the suffix elements to the prefix to get a full set
+     * of <code>S3Uri</code>. Note that the prefix must be a valid non-empty <code>S3Uri</code> that precludes users
+     * from specifying a manifest whose individual <code>S3Uri</code> is sourced from different S3 buckets.
      * </p>
      * <p>
-     * The preceding JSON matches the following <code>s3Uris</code>:
+     * The following code example shows a valid manifest format:
      * </p>
      * <p>
      * <code>[ {"prefix": "s3://customer_bucket/some/prefix/"},</code>
      * </p>
      * <p>
-     * <code>"relative/path/to/custdata-1",</code>
+     * <code> "relative/path/to/custdata-1",</code>
      * </p>
      * <p>
-     * <code>"relative/path/custdata-2",</code>
+     * <code> "relative/path/custdata-2",</code>
      * </p>
      * <p>
-     * <code>...</code>
+     * <code> ...</code>
      * </p>
      * <p>
-     * <code>"relative/path/custdata-N"</code>
+     * <code> "relative/path/custdata-N"</code>
      * </p>
      * <p>
      * <code>]</code>
      * </p>
      * <p>
-     * The preceding JSON matches the following <code>s3Uris</code>:
+     * This JSON is equivalent to the following <code>S3Uri</code> list:
      * </p>
      * <p>
      * <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code>
@@ -327,8 +333,8 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      * <code>s3://customer_bucket/some/prefix/relative/path/custdata-N</code>
      * </p>
      * <p>
-     * The complete set of <code>s3uris</code> in this manifest is the input data for the channel for this datasource.
-     * The object that each <code>s3uris</code> points to must be readable by the IAM role that Amazon SageMaker uses to
+     * The complete set of <code>S3Uri</code> in this manifest is the input data for the channel for this data source.
+     * The object that each <code>S3Uri</code> points to must be readable by the IAM role that Amazon SageMaker uses to
      * perform tasks on your behalf.
      * </p>
      * </li>
@@ -340,7 +346,7 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        A key name prefix might look like this: <code>s3://bucketname/exampleprefix</code>.
+     *        A key name prefix might look like this: <code>s3://bucketname/exampleprefix</code>
      *        </p>
      *        </li>
      *        <li>
@@ -348,31 +354,35 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      *        A manifest might look like this: <code>s3://bucketname/example.manifest</code>
      *        </p>
      *        <p>
-     *        The manifest is an S3 object which is a JSON file with the following format:
+     *        A manifest is an S3 object which is a JSON file consisting of an array of elements. The first element is a
+     *        prefix which is followed by one or more suffixes. SageMaker appends the suffix elements to the prefix to
+     *        get a full set of <code>S3Uri</code>. Note that the prefix must be a valid non-empty <code>S3Uri</code>
+     *        that precludes users from specifying a manifest whose individual <code>S3Uri</code> is sourced from
+     *        different S3 buckets.
      *        </p>
      *        <p>
-     *        The preceding JSON matches the following <code>s3Uris</code>:
+     *        The following code example shows a valid manifest format:
      *        </p>
      *        <p>
      *        <code>[ {"prefix": "s3://customer_bucket/some/prefix/"},</code>
      *        </p>
      *        <p>
-     *        <code>"relative/path/to/custdata-1",</code>
+     *        <code> "relative/path/to/custdata-1",</code>
      *        </p>
      *        <p>
-     *        <code>"relative/path/custdata-2",</code>
+     *        <code> "relative/path/custdata-2",</code>
      *        </p>
      *        <p>
-     *        <code>...</code>
+     *        <code> ...</code>
      *        </p>
      *        <p>
-     *        <code>"relative/path/custdata-N"</code>
+     *        <code> "relative/path/custdata-N"</code>
      *        </p>
      *        <p>
      *        <code>]</code>
      *        </p>
      *        <p>
-     *        The preceding JSON matches the following <code>s3Uris</code>:
+     *        This JSON is equivalent to the following <code>S3Uri</code> list:
      *        </p>
      *        <p>
      *        <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code>
@@ -387,9 +397,9 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      *        <code>s3://customer_bucket/some/prefix/relative/path/custdata-N</code>
      *        </p>
      *        <p>
-     *        The complete set of <code>s3uris</code> in this manifest is the input data for the channel for this
-     *        datasource. The object that each <code>s3uris</code> points to must be readable by the IAM role that
-     *        Amazon SageMaker uses to perform tasks on your behalf.
+     *        The complete set of <code>S3Uri</code> in this manifest is the input data for the channel for this data
+     *        source. The object that each <code>S3Uri</code> points to must be readable by the IAM role that Amazon
+     *        SageMaker uses to perform tasks on your behalf.
      *        </p>
      *        </li>
      */
@@ -406,7 +416,7 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * A key name prefix might look like this: <code>s3://bucketname/exampleprefix</code>.
+     * A key name prefix might look like this: <code>s3://bucketname/exampleprefix</code>
      * </p>
      * </li>
      * <li>
@@ -414,31 +424,34 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      * A manifest might look like this: <code>s3://bucketname/example.manifest</code>
      * </p>
      * <p>
-     * The manifest is an S3 object which is a JSON file with the following format:
+     * A manifest is an S3 object which is a JSON file consisting of an array of elements. The first element is a prefix
+     * which is followed by one or more suffixes. SageMaker appends the suffix elements to the prefix to get a full set
+     * of <code>S3Uri</code>. Note that the prefix must be a valid non-empty <code>S3Uri</code> that precludes users
+     * from specifying a manifest whose individual <code>S3Uri</code> is sourced from different S3 buckets.
      * </p>
      * <p>
-     * The preceding JSON matches the following <code>s3Uris</code>:
+     * The following code example shows a valid manifest format:
      * </p>
      * <p>
      * <code>[ {"prefix": "s3://customer_bucket/some/prefix/"},</code>
      * </p>
      * <p>
-     * <code>"relative/path/to/custdata-1",</code>
+     * <code> "relative/path/to/custdata-1",</code>
      * </p>
      * <p>
-     * <code>"relative/path/custdata-2",</code>
+     * <code> "relative/path/custdata-2",</code>
      * </p>
      * <p>
-     * <code>...</code>
+     * <code> ...</code>
      * </p>
      * <p>
-     * <code>"relative/path/custdata-N"</code>
+     * <code> "relative/path/custdata-N"</code>
      * </p>
      * <p>
      * <code>]</code>
      * </p>
      * <p>
-     * The preceding JSON matches the following <code>s3Uris</code>:
+     * This JSON is equivalent to the following <code>S3Uri</code> list:
      * </p>
      * <p>
      * <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code>
@@ -453,8 +466,8 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      * <code>s3://customer_bucket/some/prefix/relative/path/custdata-N</code>
      * </p>
      * <p>
-     * The complete set of <code>s3uris</code> in this manifest is the input data for the channel for this datasource.
-     * The object that each <code>s3uris</code> points to must be readable by the IAM role that Amazon SageMaker uses to
+     * The complete set of <code>S3Uri</code> in this manifest is the input data for the channel for this data source.
+     * The object that each <code>S3Uri</code> points to must be readable by the IAM role that Amazon SageMaker uses to
      * perform tasks on your behalf.
      * </p>
      * </li>
@@ -465,7 +478,7 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         A key name prefix might look like this: <code>s3://bucketname/exampleprefix</code>.
+     *         A key name prefix might look like this: <code>s3://bucketname/exampleprefix</code>
      *         </p>
      *         </li>
      *         <li>
@@ -473,31 +486,35 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      *         A manifest might look like this: <code>s3://bucketname/example.manifest</code>
      *         </p>
      *         <p>
-     *         The manifest is an S3 object which is a JSON file with the following format:
+     *         A manifest is an S3 object which is a JSON file consisting of an array of elements. The first element is
+     *         a prefix which is followed by one or more suffixes. SageMaker appends the suffix elements to the prefix
+     *         to get a full set of <code>S3Uri</code>. Note that the prefix must be a valid non-empty
+     *         <code>S3Uri</code> that precludes users from specifying a manifest whose individual <code>S3Uri</code> is
+     *         sourced from different S3 buckets.
      *         </p>
      *         <p>
-     *         The preceding JSON matches the following <code>s3Uris</code>:
+     *         The following code example shows a valid manifest format:
      *         </p>
      *         <p>
      *         <code>[ {"prefix": "s3://customer_bucket/some/prefix/"},</code>
      *         </p>
      *         <p>
-     *         <code>"relative/path/to/custdata-1",</code>
+     *         <code> "relative/path/to/custdata-1",</code>
      *         </p>
      *         <p>
-     *         <code>"relative/path/custdata-2",</code>
+     *         <code> "relative/path/custdata-2",</code>
      *         </p>
      *         <p>
-     *         <code>...</code>
+     *         <code> ...</code>
      *         </p>
      *         <p>
-     *         <code>"relative/path/custdata-N"</code>
+     *         <code> "relative/path/custdata-N"</code>
      *         </p>
      *         <p>
      *         <code>]</code>
      *         </p>
      *         <p>
-     *         The preceding JSON matches the following <code>s3Uris</code>:
+     *         This JSON is equivalent to the following <code>S3Uri</code> list:
      *         </p>
      *         <p>
      *         <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code>
@@ -512,9 +529,9 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      *         <code>s3://customer_bucket/some/prefix/relative/path/custdata-N</code>
      *         </p>
      *         <p>
-     *         The complete set of <code>s3uris</code> in this manifest is the input data for the channel for this
-     *         datasource. The object that each <code>s3uris</code> points to must be readable by the IAM role that
-     *         Amazon SageMaker uses to perform tasks on your behalf.
+     *         The complete set of <code>S3Uri</code> in this manifest is the input data for the channel for this data
+     *         source. The object that each <code>S3Uri</code> points to must be readable by the IAM role that Amazon
+     *         SageMaker uses to perform tasks on your behalf.
      *         </p>
      *         </li>
      */
@@ -531,7 +548,7 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * A key name prefix might look like this: <code>s3://bucketname/exampleprefix</code>.
+     * A key name prefix might look like this: <code>s3://bucketname/exampleprefix</code>
      * </p>
      * </li>
      * <li>
@@ -539,31 +556,34 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      * A manifest might look like this: <code>s3://bucketname/example.manifest</code>
      * </p>
      * <p>
-     * The manifest is an S3 object which is a JSON file with the following format:
+     * A manifest is an S3 object which is a JSON file consisting of an array of elements. The first element is a prefix
+     * which is followed by one or more suffixes. SageMaker appends the suffix elements to the prefix to get a full set
+     * of <code>S3Uri</code>. Note that the prefix must be a valid non-empty <code>S3Uri</code> that precludes users
+     * from specifying a manifest whose individual <code>S3Uri</code> is sourced from different S3 buckets.
      * </p>
      * <p>
-     * The preceding JSON matches the following <code>s3Uris</code>:
+     * The following code example shows a valid manifest format:
      * </p>
      * <p>
      * <code>[ {"prefix": "s3://customer_bucket/some/prefix/"},</code>
      * </p>
      * <p>
-     * <code>"relative/path/to/custdata-1",</code>
+     * <code> "relative/path/to/custdata-1",</code>
      * </p>
      * <p>
-     * <code>"relative/path/custdata-2",</code>
+     * <code> "relative/path/custdata-2",</code>
      * </p>
      * <p>
-     * <code>...</code>
+     * <code> ...</code>
      * </p>
      * <p>
-     * <code>"relative/path/custdata-N"</code>
+     * <code> "relative/path/custdata-N"</code>
      * </p>
      * <p>
      * <code>]</code>
      * </p>
      * <p>
-     * The preceding JSON matches the following <code>s3Uris</code>:
+     * This JSON is equivalent to the following <code>S3Uri</code> list:
      * </p>
      * <p>
      * <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code>
@@ -578,8 +598,8 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      * <code>s3://customer_bucket/some/prefix/relative/path/custdata-N</code>
      * </p>
      * <p>
-     * The complete set of <code>s3uris</code> in this manifest is the input data for the channel for this datasource.
-     * The object that each <code>s3uris</code> points to must be readable by the IAM role that Amazon SageMaker uses to
+     * The complete set of <code>S3Uri</code> in this manifest is the input data for the channel for this data source.
+     * The object that each <code>S3Uri</code> points to must be readable by the IAM role that Amazon SageMaker uses to
      * perform tasks on your behalf.
      * </p>
      * </li>
@@ -591,7 +611,7 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        A key name prefix might look like this: <code>s3://bucketname/exampleprefix</code>.
+     *        A key name prefix might look like this: <code>s3://bucketname/exampleprefix</code>
      *        </p>
      *        </li>
      *        <li>
@@ -599,31 +619,35 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      *        A manifest might look like this: <code>s3://bucketname/example.manifest</code>
      *        </p>
      *        <p>
-     *        The manifest is an S3 object which is a JSON file with the following format:
+     *        A manifest is an S3 object which is a JSON file consisting of an array of elements. The first element is a
+     *        prefix which is followed by one or more suffixes. SageMaker appends the suffix elements to the prefix to
+     *        get a full set of <code>S3Uri</code>. Note that the prefix must be a valid non-empty <code>S3Uri</code>
+     *        that precludes users from specifying a manifest whose individual <code>S3Uri</code> is sourced from
+     *        different S3 buckets.
      *        </p>
      *        <p>
-     *        The preceding JSON matches the following <code>s3Uris</code>:
+     *        The following code example shows a valid manifest format:
      *        </p>
      *        <p>
      *        <code>[ {"prefix": "s3://customer_bucket/some/prefix/"},</code>
      *        </p>
      *        <p>
-     *        <code>"relative/path/to/custdata-1",</code>
+     *        <code> "relative/path/to/custdata-1",</code>
      *        </p>
      *        <p>
-     *        <code>"relative/path/custdata-2",</code>
+     *        <code> "relative/path/custdata-2",</code>
      *        </p>
      *        <p>
-     *        <code>...</code>
+     *        <code> ...</code>
      *        </p>
      *        <p>
-     *        <code>"relative/path/custdata-N"</code>
+     *        <code> "relative/path/custdata-N"</code>
      *        </p>
      *        <p>
      *        <code>]</code>
      *        </p>
      *        <p>
-     *        The preceding JSON matches the following <code>s3Uris</code>:
+     *        This JSON is equivalent to the following <code>S3Uri</code> list:
      *        </p>
      *        <p>
      *        <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code>
@@ -638,9 +662,9 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      *        <code>s3://customer_bucket/some/prefix/relative/path/custdata-N</code>
      *        </p>
      *        <p>
-     *        The complete set of <code>s3uris</code> in this manifest is the input data for the channel for this
-     *        datasource. The object that each <code>s3uris</code> points to must be readable by the IAM role that
-     *        Amazon SageMaker uses to perform tasks on your behalf.
+     *        The complete set of <code>S3Uri</code> in this manifest is the input data for the channel for this data
+     *        source. The object that each <code>S3Uri</code> points to must be readable by the IAM role that Amazon
+     *        SageMaker uses to perform tasks on your behalf.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

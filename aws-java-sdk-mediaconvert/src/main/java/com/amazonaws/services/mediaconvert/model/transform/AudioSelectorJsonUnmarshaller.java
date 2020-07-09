@@ -70,7 +70,9 @@ public class AudioSelectorJsonUnmarshaller implements Unmarshaller<AudioSelector
                 }
                 if (context.testExpression("pids", targetDepth)) {
                     context.nextToken();
-                    audioSelector.setPids(new ListUnmarshaller<Integer>(context.getUnmarshaller(Integer.class)).unmarshall(context));
+                    audioSelector.setPids(new ListUnmarshaller<Integer>(context.getUnmarshaller(Integer.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("programSelection", targetDepth)) {
                     context.nextToken();
@@ -86,7 +88,9 @@ public class AudioSelectorJsonUnmarshaller implements Unmarshaller<AudioSelector
                 }
                 if (context.testExpression("tracks", targetDepth)) {
                     context.nextToken();
-                    audioSelector.setTracks(new ListUnmarshaller<Integer>(context.getUnmarshaller(Integer.class)).unmarshall(context));
+                    audioSelector.setTracks(new ListUnmarshaller<Integer>(context.getUnmarshaller(Integer.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

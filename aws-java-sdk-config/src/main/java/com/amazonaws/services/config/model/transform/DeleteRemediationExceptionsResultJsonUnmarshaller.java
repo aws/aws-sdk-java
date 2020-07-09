@@ -51,7 +51,9 @@ public class DeleteRemediationExceptionsResultJsonUnmarshaller implements Unmars
                 if (context.testExpression("FailedBatches", targetDepth)) {
                     context.nextToken();
                     deleteRemediationExceptionsResult.setFailedBatches(new ListUnmarshaller<FailedDeleteRemediationExceptionsBatch>(
-                            FailedDeleteRemediationExceptionsBatchJsonUnmarshaller.getInstance()).unmarshall(context));
+                            FailedDeleteRemediationExceptionsBatchJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

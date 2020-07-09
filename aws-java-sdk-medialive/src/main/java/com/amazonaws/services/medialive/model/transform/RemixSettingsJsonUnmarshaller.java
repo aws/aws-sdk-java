@@ -51,7 +51,8 @@ public class RemixSettingsJsonUnmarshaller implements Unmarshaller<RemixSettings
                 if (context.testExpression("channelMappings", targetDepth)) {
                     context.nextToken();
                     remixSettings.setChannelMappings(new ListUnmarshaller<AudioChannelMapping>(AudioChannelMappingJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("channelsIn", targetDepth)) {
                     context.nextToken();

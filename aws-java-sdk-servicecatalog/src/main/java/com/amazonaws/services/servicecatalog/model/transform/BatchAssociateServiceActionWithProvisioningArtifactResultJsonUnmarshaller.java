@@ -53,7 +53,9 @@ public class BatchAssociateServiceActionWithProvisioningArtifactResultJsonUnmars
                     context.nextToken();
                     batchAssociateServiceActionWithProvisioningArtifactResult
                             .setFailedServiceActionAssociations(new ListUnmarshaller<FailedServiceActionAssociation>(
-                                    FailedServiceActionAssociationJsonUnmarshaller.getInstance()).unmarshall(context));
+                                    FailedServiceActionAssociationJsonUnmarshaller.getInstance())
+
+                            .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

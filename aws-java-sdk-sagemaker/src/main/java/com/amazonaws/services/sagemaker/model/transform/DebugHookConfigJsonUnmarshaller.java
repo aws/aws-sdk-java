@@ -64,7 +64,9 @@ public class DebugHookConfigJsonUnmarshaller implements Unmarshaller<DebugHookCo
                 if (context.testExpression("CollectionConfigurations", targetDepth)) {
                     context.nextToken();
                     debugHookConfig.setCollectionConfigurations(new ListUnmarshaller<CollectionConfiguration>(CollectionConfigurationJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

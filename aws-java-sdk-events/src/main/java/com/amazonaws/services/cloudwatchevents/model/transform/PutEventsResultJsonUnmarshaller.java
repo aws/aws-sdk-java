@@ -55,7 +55,8 @@ public class PutEventsResultJsonUnmarshaller implements Unmarshaller<PutEventsRe
                 if (context.testExpression("Entries", targetDepth)) {
                     context.nextToken();
                     putEventsResult.setEntries(new ListUnmarshaller<PutEventsResultEntry>(PutEventsResultEntryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

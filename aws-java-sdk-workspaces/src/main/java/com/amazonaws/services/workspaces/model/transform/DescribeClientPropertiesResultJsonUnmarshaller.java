@@ -51,7 +51,9 @@ public class DescribeClientPropertiesResultJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("ClientPropertiesList", targetDepth)) {
                     context.nextToken();
                     describeClientPropertiesResult.setClientPropertiesList(new ListUnmarshaller<ClientPropertiesResult>(ClientPropertiesResultJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

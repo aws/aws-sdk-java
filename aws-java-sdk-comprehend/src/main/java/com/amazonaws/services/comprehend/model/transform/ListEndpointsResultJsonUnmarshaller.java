@@ -51,7 +51,8 @@ public class ListEndpointsResultJsonUnmarshaller implements Unmarshaller<ListEnd
                 if (context.testExpression("EndpointPropertiesList", targetDepth)) {
                     context.nextToken();
                     listEndpointsResult.setEndpointPropertiesList(new ListUnmarshaller<EndpointProperties>(EndpointPropertiesJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

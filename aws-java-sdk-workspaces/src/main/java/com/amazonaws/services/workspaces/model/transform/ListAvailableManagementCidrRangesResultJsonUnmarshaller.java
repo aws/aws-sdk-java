@@ -51,7 +51,8 @@ public class ListAvailableManagementCidrRangesResultJsonUnmarshaller implements 
                 if (context.testExpression("ManagementCidrRanges", targetDepth)) {
                     context.nextToken();
                     listAvailableManagementCidrRangesResult.setManagementCidrRanges(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

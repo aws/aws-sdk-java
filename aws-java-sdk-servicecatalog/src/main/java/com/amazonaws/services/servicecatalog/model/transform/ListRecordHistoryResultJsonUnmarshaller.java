@@ -50,8 +50,9 @@ public class ListRecordHistoryResultJsonUnmarshaller implements Unmarshaller<Lis
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RecordDetails", targetDepth)) {
                     context.nextToken();
-                    listRecordHistoryResult
-                            .setRecordDetails(new ListUnmarshaller<RecordDetail>(RecordDetailJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listRecordHistoryResult.setRecordDetails(new ListUnmarshaller<RecordDetail>(RecordDetailJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextPageToken", targetDepth)) {
                     context.nextToken();

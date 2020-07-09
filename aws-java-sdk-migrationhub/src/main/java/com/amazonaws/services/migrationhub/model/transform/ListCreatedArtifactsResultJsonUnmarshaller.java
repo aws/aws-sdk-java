@@ -55,7 +55,8 @@ public class ListCreatedArtifactsResultJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("CreatedArtifactList", targetDepth)) {
                     context.nextToken();
                     listCreatedArtifactsResult.setCreatedArtifactList(new ListUnmarshaller<CreatedArtifact>(CreatedArtifactJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

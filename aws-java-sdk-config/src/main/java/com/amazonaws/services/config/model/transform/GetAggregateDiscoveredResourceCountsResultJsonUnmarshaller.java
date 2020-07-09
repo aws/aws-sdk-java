@@ -60,7 +60,9 @@ public class GetAggregateDiscoveredResourceCountsResultJsonUnmarshaller implemen
                 if (context.testExpression("GroupedResourceCounts", targetDepth)) {
                     context.nextToken();
                     getAggregateDiscoveredResourceCountsResult.setGroupedResourceCounts(new ListUnmarshaller<GroupedResourceCount>(
-                            GroupedResourceCountJsonUnmarshaller.getInstance()).unmarshall(context));
+                            GroupedResourceCountJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

@@ -62,7 +62,9 @@ public class StreamDescriptionJsonUnmarshaller implements Unmarshaller<StreamDes
                 }
                 if (context.testExpression("Shards", targetDepth)) {
                     context.nextToken();
-                    streamDescription.setShards(new ListUnmarshaller<Shard>(ShardJsonUnmarshaller.getInstance()).unmarshall(context));
+                    streamDescription.setShards(new ListUnmarshaller<Shard>(ShardJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("HasMoreShards", targetDepth)) {
                     context.nextToken();
@@ -79,7 +81,8 @@ public class StreamDescriptionJsonUnmarshaller implements Unmarshaller<StreamDes
                 if (context.testExpression("EnhancedMonitoring", targetDepth)) {
                     context.nextToken();
                     streamDescription.setEnhancedMonitoring(new ListUnmarshaller<EnhancedMetrics>(EnhancedMetricsJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("EncryptionType", targetDepth)) {
                     context.nextToken();

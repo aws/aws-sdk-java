@@ -50,7 +50,9 @@ public class CriterionAdditionalPropertiesJsonUnmarshaller implements Unmarshall
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("eq", targetDepth)) {
                     context.nextToken();
-                    criterionAdditionalProperties.setEq(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    criterionAdditionalProperties.setEq(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("gt", targetDepth)) {
                     context.nextToken();
@@ -70,7 +72,9 @@ public class CriterionAdditionalPropertiesJsonUnmarshaller implements Unmarshall
                 }
                 if (context.testExpression("neq", targetDepth)) {
                     context.nextToken();
-                    criterionAdditionalProperties.setNeq(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    criterionAdditionalProperties.setNeq(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

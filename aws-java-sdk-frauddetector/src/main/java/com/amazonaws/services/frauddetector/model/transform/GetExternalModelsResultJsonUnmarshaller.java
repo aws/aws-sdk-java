@@ -51,7 +51,8 @@ public class GetExternalModelsResultJsonUnmarshaller implements Unmarshaller<Get
                 if (context.testExpression("externalModels", targetDepth)) {
                     context.nextToken();
                     getExternalModelsResult.setExternalModels(new ListUnmarshaller<ExternalModel>(ExternalModelJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

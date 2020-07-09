@@ -150,7 +150,9 @@ public class DeploymentInfoJsonUnmarshaller implements Unmarshaller<DeploymentIn
                 }
                 if (context.testExpression("deploymentStatusMessages", targetDepth)) {
                     context.nextToken();
-                    deploymentInfo.setDeploymentStatusMessages(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    deploymentInfo.setDeploymentStatusMessages(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("computePlatform", targetDepth)) {
                     context.nextToken();

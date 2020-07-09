@@ -70,7 +70,9 @@ public class ListPartsResultJsonUnmarshaller implements Unmarshaller<ListPartsRe
                 }
                 if (context.testExpression("Parts", targetDepth)) {
                     context.nextToken();
-                    listPartsResult.setParts(new ListUnmarshaller<PartListElement>(PartListElementJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listPartsResult.setParts(new ListUnmarshaller<PartListElement>(PartListElementJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Marker", targetDepth)) {
                     context.nextToken();

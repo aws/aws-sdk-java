@@ -51,7 +51,8 @@ public class BatchWriteResultJsonUnmarshaller implements Unmarshaller<BatchWrite
                 if (context.testExpression("Responses", targetDepth)) {
                     context.nextToken();
                     batchWriteResult.setResponses(new ListUnmarshaller<BatchWriteOperationResponse>(BatchWriteOperationResponseJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -51,7 +51,8 @@ public class AdminListUserAuthEventsResultJsonUnmarshaller implements Unmarshall
                 if (context.testExpression("AuthEvents", targetDepth)) {
                     context.nextToken();
                     adminListUserAuthEventsResult.setAuthEvents(new ListUnmarshaller<AuthEventType>(AuthEventTypeJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

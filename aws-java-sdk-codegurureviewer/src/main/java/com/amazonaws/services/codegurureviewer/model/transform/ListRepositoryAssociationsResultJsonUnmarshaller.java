@@ -51,7 +51,9 @@ public class ListRepositoryAssociationsResultJsonUnmarshaller implements Unmarsh
                 if (context.testExpression("RepositoryAssociationSummaries", targetDepth)) {
                     context.nextToken();
                     listRepositoryAssociationsResult.setRepositoryAssociationSummaries(new ListUnmarshaller<RepositoryAssociationSummary>(
-                            RepositoryAssociationSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                            RepositoryAssociationSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

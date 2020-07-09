@@ -55,7 +55,9 @@ public class ReplicaAutoScalingUpdateJsonUnmarshaller implements Unmarshaller<Re
                 if (context.testExpression("ReplicaGlobalSecondaryIndexUpdates", targetDepth)) {
                     context.nextToken();
                     replicaAutoScalingUpdate.setReplicaGlobalSecondaryIndexUpdates(new ListUnmarshaller<ReplicaGlobalSecondaryIndexAutoScalingUpdate>(
-                            ReplicaGlobalSecondaryIndexAutoScalingUpdateJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ReplicaGlobalSecondaryIndexAutoScalingUpdateJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ReplicaProvisionedReadCapacityAutoScalingUpdate", targetDepth)) {
                     context.nextToken();

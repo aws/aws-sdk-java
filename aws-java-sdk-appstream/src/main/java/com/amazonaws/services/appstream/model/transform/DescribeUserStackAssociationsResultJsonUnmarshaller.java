@@ -51,7 +51,9 @@ public class DescribeUserStackAssociationsResultJsonUnmarshaller implements Unma
                 if (context.testExpression("UserStackAssociations", targetDepth)) {
                     context.nextToken();
                     describeUserStackAssociationsResult.setUserStackAssociations(new ListUnmarshaller<UserStackAssociation>(
-                            UserStackAssociationJsonUnmarshaller.getInstance()).unmarshall(context));
+                            UserStackAssociationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

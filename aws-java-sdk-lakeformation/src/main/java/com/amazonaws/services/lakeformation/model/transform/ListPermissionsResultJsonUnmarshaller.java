@@ -51,7 +51,9 @@ public class ListPermissionsResultJsonUnmarshaller implements Unmarshaller<ListP
                 if (context.testExpression("PrincipalResourcePermissions", targetDepth)) {
                     context.nextToken();
                     listPermissionsResult.setPrincipalResourcePermissions(new ListUnmarshaller<PrincipalResourcePermissions>(
-                            PrincipalResourcePermissionsJsonUnmarshaller.getInstance()).unmarshall(context));
+                            PrincipalResourcePermissionsJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

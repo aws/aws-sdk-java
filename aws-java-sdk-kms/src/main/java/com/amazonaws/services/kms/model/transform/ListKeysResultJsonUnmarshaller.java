@@ -50,7 +50,9 @@ public class ListKeysResultJsonUnmarshaller implements Unmarshaller<ListKeysResu
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Keys", targetDepth)) {
                     context.nextToken();
-                    listKeysResult.setKeys(new ListUnmarshaller<KeyListEntry>(KeyListEntryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listKeysResult.setKeys(new ListUnmarshaller<KeyListEntry>(KeyListEntryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextMarker", targetDepth)) {
                     context.nextToken();

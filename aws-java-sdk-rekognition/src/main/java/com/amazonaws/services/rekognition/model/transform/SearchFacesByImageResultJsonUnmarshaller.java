@@ -58,7 +58,9 @@ public class SearchFacesByImageResultJsonUnmarshaller implements Unmarshaller<Se
                 }
                 if (context.testExpression("FaceMatches", targetDepth)) {
                     context.nextToken();
-                    searchFacesByImageResult.setFaceMatches(new ListUnmarshaller<FaceMatch>(FaceMatchJsonUnmarshaller.getInstance()).unmarshall(context));
+                    searchFacesByImageResult.setFaceMatches(new ListUnmarshaller<FaceMatch>(FaceMatchJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("FaceModelVersion", targetDepth)) {
                     context.nextToken();

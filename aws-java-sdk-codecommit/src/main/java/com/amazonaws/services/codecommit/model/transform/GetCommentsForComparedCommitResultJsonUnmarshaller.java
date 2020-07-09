@@ -51,7 +51,9 @@ public class GetCommentsForComparedCommitResultJsonUnmarshaller implements Unmar
                 if (context.testExpression("commentsForComparedCommitData", targetDepth)) {
                     context.nextToken();
                     getCommentsForComparedCommitResult.setCommentsForComparedCommitData(new ListUnmarshaller<CommentsForComparedCommit>(
-                            CommentsForComparedCommitJsonUnmarshaller.getInstance()).unmarshall(context));
+                            CommentsForComparedCommitJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

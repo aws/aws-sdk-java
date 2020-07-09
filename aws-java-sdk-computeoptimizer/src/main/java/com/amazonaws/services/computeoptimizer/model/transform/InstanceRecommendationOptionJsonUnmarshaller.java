@@ -55,7 +55,9 @@ public class InstanceRecommendationOptionJsonUnmarshaller implements Unmarshalle
                 if (context.testExpression("projectedUtilizationMetrics", targetDepth)) {
                     context.nextToken();
                     instanceRecommendationOption.setProjectedUtilizationMetrics(new ListUnmarshaller<UtilizationMetric>(UtilizationMetricJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("performanceRisk", targetDepth)) {
                     context.nextToken();

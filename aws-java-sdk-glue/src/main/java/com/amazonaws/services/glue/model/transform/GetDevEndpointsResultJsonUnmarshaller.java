@@ -50,7 +50,9 @@ public class GetDevEndpointsResultJsonUnmarshaller implements Unmarshaller<GetDe
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DevEndpoints", targetDepth)) {
                     context.nextToken();
-                    getDevEndpointsResult.setDevEndpoints(new ListUnmarshaller<DevEndpoint>(DevEndpointJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getDevEndpointsResult.setDevEndpoints(new ListUnmarshaller<DevEndpoint>(DevEndpointJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

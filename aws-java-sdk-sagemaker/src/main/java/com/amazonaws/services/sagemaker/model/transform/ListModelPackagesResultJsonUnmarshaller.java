@@ -51,7 +51,9 @@ public class ListModelPackagesResultJsonUnmarshaller implements Unmarshaller<Lis
                 if (context.testExpression("ModelPackageSummaryList", targetDepth)) {
                     context.nextToken();
                     listModelPackagesResult.setModelPackageSummaryList(new ListUnmarshaller<ModelPackageSummary>(ModelPackageSummaryJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

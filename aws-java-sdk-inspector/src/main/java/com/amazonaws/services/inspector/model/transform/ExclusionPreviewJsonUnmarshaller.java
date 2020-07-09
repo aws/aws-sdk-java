@@ -62,11 +62,15 @@ public class ExclusionPreviewJsonUnmarshaller implements Unmarshaller<ExclusionP
                 }
                 if (context.testExpression("scopes", targetDepth)) {
                     context.nextToken();
-                    exclusionPreview.setScopes(new ListUnmarshaller<Scope>(ScopeJsonUnmarshaller.getInstance()).unmarshall(context));
+                    exclusionPreview.setScopes(new ListUnmarshaller<Scope>(ScopeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("attributes", targetDepth)) {
                     context.nextToken();
-                    exclusionPreview.setAttributes(new ListUnmarshaller<Attribute>(AttributeJsonUnmarshaller.getInstance()).unmarshall(context));
+                    exclusionPreview.setAttributes(new ListUnmarshaller<Attribute>(AttributeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

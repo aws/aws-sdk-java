@@ -50,7 +50,9 @@ public class ListAppsResultJsonUnmarshaller implements Unmarshaller<ListAppsResu
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("apps", targetDepth)) {
                     context.nextToken();
-                    listAppsResult.setApps(new ListUnmarshaller<AppSummary>(AppSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listAppsResult.setApps(new ListUnmarshaller<AppSummary>(AppSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

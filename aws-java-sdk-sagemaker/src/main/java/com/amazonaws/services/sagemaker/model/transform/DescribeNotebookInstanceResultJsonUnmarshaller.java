@@ -78,7 +78,9 @@ public class DescribeNotebookInstanceResultJsonUnmarshaller implements Unmarshal
                 }
                 if (context.testExpression("SecurityGroups", targetDepth)) {
                     context.nextToken();
-                    describeNotebookInstanceResult.setSecurityGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    describeNotebookInstanceResult.setSecurityGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("RoleArn", targetDepth)) {
                     context.nextToken();
@@ -114,7 +116,9 @@ public class DescribeNotebookInstanceResultJsonUnmarshaller implements Unmarshal
                 }
                 if (context.testExpression("AcceleratorTypes", targetDepth)) {
                     context.nextToken();
-                    describeNotebookInstanceResult.setAcceleratorTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    describeNotebookInstanceResult.setAcceleratorTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("DefaultCodeRepository", targetDepth)) {
                     context.nextToken();
@@ -123,7 +127,8 @@ public class DescribeNotebookInstanceResultJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("AdditionalCodeRepositories", targetDepth)) {
                     context.nextToken();
                     describeNotebookInstanceResult.setAdditionalCodeRepositories(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("RootAccess", targetDepth)) {
                     context.nextToken();

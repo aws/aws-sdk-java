@@ -58,7 +58,9 @@ public class M2tsSettingsJsonUnmarshaller implements Unmarshaller<M2tsSettings, 
                 }
                 if (context.testExpression("audioPids", targetDepth)) {
                     context.nextToken();
-                    m2tsSettings.setAudioPids(new ListUnmarshaller<Integer>(context.getUnmarshaller(Integer.class)).unmarshall(context));
+                    m2tsSettings.setAudioPids(new ListUnmarshaller<Integer>(context.getUnmarshaller(Integer.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("bitrate", targetDepth)) {
                     context.nextToken();
@@ -78,7 +80,9 @@ public class M2tsSettingsJsonUnmarshaller implements Unmarshaller<M2tsSettings, 
                 }
                 if (context.testExpression("dvbSubPids", targetDepth)) {
                     context.nextToken();
-                    m2tsSettings.setDvbSubPids(new ListUnmarshaller<Integer>(context.getUnmarshaller(Integer.class)).unmarshall(context));
+                    m2tsSettings.setDvbSubPids(new ListUnmarshaller<Integer>(context.getUnmarshaller(Integer.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("dvbTdtSettings", targetDepth)) {
                     context.nextToken();

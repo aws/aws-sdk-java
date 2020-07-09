@@ -84,7 +84,9 @@ public class AutomationExecutionMetadataJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("Outputs", targetDepth)) {
                     context.nextToken();
                     automationExecutionMetadata.setOutputs(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
-                            new ListUnmarshaller<String>(context.getUnmarshaller(String.class))).unmarshall(context));
+                            new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    ).unmarshall(context));
                 }
                 if (context.testExpression("Mode", targetDepth)) {
                     context.nextToken();
@@ -112,13 +114,19 @@ public class AutomationExecutionMetadataJsonUnmarshaller implements Unmarshaller
                 }
                 if (context.testExpression("Targets", targetDepth)) {
                     context.nextToken();
-                    automationExecutionMetadata.setTargets(new ListUnmarshaller<Target>(TargetJsonUnmarshaller.getInstance()).unmarshall(context));
+                    automationExecutionMetadata.setTargets(new ListUnmarshaller<Target>(TargetJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("TargetMaps", targetDepth)) {
                     context.nextToken();
                     automationExecutionMetadata.setTargetMaps(new ListUnmarshaller<java.util.Map<String, java.util.List<String>>>(
                             new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class), new ListUnmarshaller<String>(context
-                                    .getUnmarshaller(String.class)))).unmarshall(context));
+                                    .getUnmarshaller(String.class))
+
+                            ))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ResolvedTargets", targetDepth)) {
                     context.nextToken();

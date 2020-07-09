@@ -50,7 +50,9 @@ public class ListClassificationJobsResultJsonUnmarshaller implements Unmarshalle
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("items", targetDepth)) {
                     context.nextToken();
-                    listClassificationJobsResult.setItems(new ListUnmarshaller<JobSummary>(JobSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listClassificationJobsResult.setItems(new ListUnmarshaller<JobSummary>(JobSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

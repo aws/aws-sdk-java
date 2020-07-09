@@ -51,7 +51,9 @@ public class GetDimensionValuesResultJsonUnmarshaller implements Unmarshaller<Ge
                 if (context.testExpression("DimensionValues", targetDepth)) {
                     context.nextToken();
                     getDimensionValuesResult.setDimensionValues(new ListUnmarshaller<DimensionValuesWithAttributes>(
-                            DimensionValuesWithAttributesJsonUnmarshaller.getInstance()).unmarshall(context));
+                            DimensionValuesWithAttributesJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ReturnSize", targetDepth)) {
                     context.nextToken();

@@ -58,7 +58,9 @@ public class GetServiceGraphResultJsonUnmarshaller implements Unmarshaller<GetSe
                 }
                 if (context.testExpression("Services", targetDepth)) {
                     context.nextToken();
-                    getServiceGraphResult.setServices(new ListUnmarshaller<Service>(ServiceJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getServiceGraphResult.setServices(new ListUnmarshaller<Service>(ServiceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ContainsOldGroupVersions", targetDepth)) {
                     context.nextToken();

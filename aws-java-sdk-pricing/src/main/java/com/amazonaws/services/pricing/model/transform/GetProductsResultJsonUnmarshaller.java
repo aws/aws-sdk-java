@@ -55,7 +55,9 @@ public class GetProductsResultJsonUnmarshaller implements Unmarshaller<GetProduc
                 if (context.testExpression("PriceList", targetDepth)) {
                     context.nextToken();
                     getProductsResult.setPriceList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class,
-                            JsonUnmarshallerContext.UnmarshallerType.JSON_VALUE)).unmarshall(context));
+                            JsonUnmarshallerContext.UnmarshallerType.JSON_VALUE))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

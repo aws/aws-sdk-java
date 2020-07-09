@@ -1,4 +1,4 @@
-<#macro content shape>
+<#macro content shape packageName="">
     int originalDepth = context.getCurrentDepth();
     String currentParentElement = context.getCurrentParentElement();
     int targetDepth = originalDepth + 1;
@@ -26,7 +26,7 @@
         <#else>
             if (token == FIELD_NAME || token == START_OBJECT) {
                 <#list shape.unboundMembers as payloadMember>
-                    <@MemberUnmarshallerInvocationMacro.content shape.variable.variableName payloadMember />
+                    <@MemberUnmarshallerInvocationMacro.content shape.variable.variableName payloadMember packageName/>
                 </#list>
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -50,7 +50,9 @@ public class GetFindingStatisticsResultJsonUnmarshaller implements Unmarshaller<
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("countsByGroup", targetDepth)) {
                     context.nextToken();
-                    getFindingStatisticsResult.setCountsByGroup(new ListUnmarshaller<GroupCount>(GroupCountJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getFindingStatisticsResult.setCountsByGroup(new ListUnmarshaller<GroupCount>(GroupCountJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

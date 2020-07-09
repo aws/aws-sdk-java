@@ -58,11 +58,15 @@ public class LabelJsonUnmarshaller implements Unmarshaller<Label, JsonUnmarshall
                 }
                 if (context.testExpression("Instances", targetDepth)) {
                     context.nextToken();
-                    label.setInstances(new ListUnmarshaller<Instance>(InstanceJsonUnmarshaller.getInstance()).unmarshall(context));
+                    label.setInstances(new ListUnmarshaller<Instance>(InstanceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Parents", targetDepth)) {
                     context.nextToken();
-                    label.setParents(new ListUnmarshaller<Parent>(ParentJsonUnmarshaller.getInstance()).unmarshall(context));
+                    label.setParents(new ListUnmarshaller<Parent>(ParentJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

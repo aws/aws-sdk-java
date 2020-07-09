@@ -50,7 +50,9 @@ public class DescribeActivitiesResultJsonUnmarshaller implements Unmarshaller<De
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("UserActivities", targetDepth)) {
                     context.nextToken();
-                    describeActivitiesResult.setUserActivities(new ListUnmarshaller<Activity>(ActivityJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeActivitiesResult.setUserActivities(new ListUnmarshaller<Activity>(ActivityJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Marker", targetDepth)) {
                     context.nextToken();

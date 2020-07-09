@@ -51,7 +51,8 @@ public class BatchDisassociateProjectAssetsResultJsonUnmarshaller implements Unm
                 if (context.testExpression("errors", targetDepth)) {
                     context.nextToken();
                     batchDisassociateProjectAssetsResult.setErrors(new ListUnmarshaller<AssetErrorDetails>(AssetErrorDetailsJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

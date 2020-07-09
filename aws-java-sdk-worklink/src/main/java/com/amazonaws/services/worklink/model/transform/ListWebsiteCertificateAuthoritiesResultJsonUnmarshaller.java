@@ -51,7 +51,9 @@ public class ListWebsiteCertificateAuthoritiesResultJsonUnmarshaller implements 
                 if (context.testExpression("WebsiteCertificateAuthorities", targetDepth)) {
                     context.nextToken();
                     listWebsiteCertificateAuthoritiesResult.setWebsiteCertificateAuthorities(new ListUnmarshaller<WebsiteCaSummary>(
-                            WebsiteCaSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                            WebsiteCaSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

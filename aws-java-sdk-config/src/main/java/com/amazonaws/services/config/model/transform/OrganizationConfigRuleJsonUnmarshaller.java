@@ -67,7 +67,9 @@ public class OrganizationConfigRuleJsonUnmarshaller implements Unmarshaller<Orga
                 }
                 if (context.testExpression("ExcludedAccounts", targetDepth)) {
                     context.nextToken();
-                    organizationConfigRule.setExcludedAccounts(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    organizationConfigRule.setExcludedAccounts(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("LastUpdateTime", targetDepth)) {
                     context.nextToken();

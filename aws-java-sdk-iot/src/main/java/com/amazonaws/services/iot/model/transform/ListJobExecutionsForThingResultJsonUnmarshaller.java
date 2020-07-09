@@ -51,7 +51,9 @@ public class ListJobExecutionsForThingResultJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("executionSummaries", targetDepth)) {
                     context.nextToken();
                     listJobExecutionsForThingResult.setExecutionSummaries(new ListUnmarshaller<JobExecutionSummaryForThing>(
-                            JobExecutionSummaryForThingJsonUnmarshaller.getInstance()).unmarshall(context));
+                            JobExecutionSummaryForThingJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

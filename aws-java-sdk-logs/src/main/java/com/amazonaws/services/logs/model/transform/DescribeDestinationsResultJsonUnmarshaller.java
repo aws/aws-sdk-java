@@ -50,8 +50,9 @@ public class DescribeDestinationsResultJsonUnmarshaller implements Unmarshaller<
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("destinations", targetDepth)) {
                     context.nextToken();
-                    describeDestinationsResult
-                            .setDestinations(new ListUnmarshaller<Destination>(DestinationJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeDestinationsResult.setDestinations(new ListUnmarshaller<Destination>(DestinationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

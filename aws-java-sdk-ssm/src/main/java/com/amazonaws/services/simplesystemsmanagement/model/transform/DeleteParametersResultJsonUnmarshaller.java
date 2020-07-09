@@ -50,11 +50,15 @@ public class DeleteParametersResultJsonUnmarshaller implements Unmarshaller<Dele
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DeletedParameters", targetDepth)) {
                     context.nextToken();
-                    deleteParametersResult.setDeletedParameters(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    deleteParametersResult.setDeletedParameters(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("InvalidParameters", targetDepth)) {
                     context.nextToken();
-                    deleteParametersResult.setInvalidParameters(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    deleteParametersResult.setInvalidParameters(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

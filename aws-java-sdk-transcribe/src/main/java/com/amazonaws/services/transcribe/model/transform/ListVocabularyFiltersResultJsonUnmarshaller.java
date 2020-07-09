@@ -55,7 +55,9 @@ public class ListVocabularyFiltersResultJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("VocabularyFilters", targetDepth)) {
                     context.nextToken();
                     listVocabularyFiltersResult.setVocabularyFilters(new ListUnmarshaller<VocabularyFilterInfo>(VocabularyFilterInfoJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

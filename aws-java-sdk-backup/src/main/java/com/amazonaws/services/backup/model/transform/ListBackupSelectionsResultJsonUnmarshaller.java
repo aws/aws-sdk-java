@@ -55,7 +55,9 @@ public class ListBackupSelectionsResultJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("BackupSelectionsList", targetDepth)) {
                     context.nextToken();
                     listBackupSelectionsResult.setBackupSelectionsList(new ListUnmarshaller<BackupSelectionsListMember>(
-                            BackupSelectionsListMemberJsonUnmarshaller.getInstance()).unmarshall(context));
+                            BackupSelectionsListMemberJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

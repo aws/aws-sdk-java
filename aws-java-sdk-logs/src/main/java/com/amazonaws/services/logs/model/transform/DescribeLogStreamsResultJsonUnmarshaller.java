@@ -50,7 +50,9 @@ public class DescribeLogStreamsResultJsonUnmarshaller implements Unmarshaller<De
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("logStreams", targetDepth)) {
                     context.nextToken();
-                    describeLogStreamsResult.setLogStreams(new ListUnmarshaller<LogStream>(LogStreamJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeLogStreamsResult.setLogStreams(new ListUnmarshaller<LogStream>(LogStreamJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

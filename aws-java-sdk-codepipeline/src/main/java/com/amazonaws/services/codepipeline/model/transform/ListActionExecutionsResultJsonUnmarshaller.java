@@ -51,7 +51,9 @@ public class ListActionExecutionsResultJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("actionExecutionDetails", targetDepth)) {
                     context.nextToken();
                     listActionExecutionsResult.setActionExecutionDetails(new ListUnmarshaller<ActionExecutionDetail>(ActionExecutionDetailJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

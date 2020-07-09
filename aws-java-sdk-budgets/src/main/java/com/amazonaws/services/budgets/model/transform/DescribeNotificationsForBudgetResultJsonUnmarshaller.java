@@ -51,7 +51,8 @@ public class DescribeNotificationsForBudgetResultJsonUnmarshaller implements Unm
                 if (context.testExpression("Notifications", targetDepth)) {
                     context.nextToken();
                     describeNotificationsForBudgetResult.setNotifications(new ListUnmarshaller<Notification>(NotificationJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

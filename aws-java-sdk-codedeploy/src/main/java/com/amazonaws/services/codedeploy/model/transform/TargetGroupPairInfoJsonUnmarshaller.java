@@ -51,7 +51,8 @@ public class TargetGroupPairInfoJsonUnmarshaller implements Unmarshaller<TargetG
                 if (context.testExpression("targetGroups", targetDepth)) {
                     context.nextToken();
                     targetGroupPairInfo.setTargetGroups(new ListUnmarshaller<TargetGroupInfo>(TargetGroupInfoJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("prodTrafficRoute", targetDepth)) {
                     context.nextToken();

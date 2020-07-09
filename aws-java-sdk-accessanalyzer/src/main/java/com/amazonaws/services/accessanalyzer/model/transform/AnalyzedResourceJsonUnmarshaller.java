@@ -50,7 +50,9 @@ public class AnalyzedResourceJsonUnmarshaller implements Unmarshaller<AnalyzedRe
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("actions", targetDepth)) {
                     context.nextToken();
-                    analyzedResource.setActions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    analyzedResource.setActions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("analyzedAt", targetDepth)) {
                     context.nextToken();
@@ -82,7 +84,9 @@ public class AnalyzedResourceJsonUnmarshaller implements Unmarshaller<AnalyzedRe
                 }
                 if (context.testExpression("sharedVia", targetDepth)) {
                     context.nextToken();
-                    analyzedResource.setSharedVia(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    analyzedResource.setSharedVia(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();

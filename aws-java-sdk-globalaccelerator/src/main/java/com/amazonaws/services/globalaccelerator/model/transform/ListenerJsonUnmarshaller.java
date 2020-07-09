@@ -54,7 +54,9 @@ public class ListenerJsonUnmarshaller implements Unmarshaller<Listener, JsonUnma
                 }
                 if (context.testExpression("PortRanges", targetDepth)) {
                     context.nextToken();
-                    listener.setPortRanges(new ListUnmarshaller<PortRange>(PortRangeJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listener.setPortRanges(new ListUnmarshaller<PortRange>(PortRangeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Protocol", targetDepth)) {
                     context.nextToken();

@@ -62,7 +62,9 @@ public class ContextDataTypeJsonUnmarshaller implements Unmarshaller<ContextData
                 }
                 if (context.testExpression("HttpHeaders", targetDepth)) {
                     context.nextToken();
-                    contextDataType.setHttpHeaders(new ListUnmarshaller<HttpHeader>(HttpHeaderJsonUnmarshaller.getInstance()).unmarshall(context));
+                    contextDataType.setHttpHeaders(new ListUnmarshaller<HttpHeader>(HttpHeaderJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("EncodedData", targetDepth)) {
                     context.nextToken();

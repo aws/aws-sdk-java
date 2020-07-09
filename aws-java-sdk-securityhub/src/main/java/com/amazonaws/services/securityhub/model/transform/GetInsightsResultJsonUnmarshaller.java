@@ -50,7 +50,9 @@ public class GetInsightsResultJsonUnmarshaller implements Unmarshaller<GetInsigh
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Insights", targetDepth)) {
                     context.nextToken();
-                    getInsightsResult.setInsights(new ListUnmarshaller<Insight>(InsightJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getInsightsResult.setInsights(new ListUnmarshaller<Insight>(InsightJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

@@ -75,7 +75,8 @@ public class AwsEc2VolumeDetailsJsonUnmarshaller implements Unmarshaller<AwsEc2V
                 if (context.testExpression("Attachments", targetDepth)) {
                     context.nextToken();
                     awsEc2VolumeDetails.setAttachments(new ListUnmarshaller<AwsEc2VolumeAttachment>(AwsEc2VolumeAttachmentJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

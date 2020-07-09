@@ -55,7 +55,9 @@ public class ItemCollectionMetricsJsonUnmarshaller implements Unmarshaller<ItemC
                 }
                 if (context.testExpression("SizeEstimateRangeGB", targetDepth)) {
                     context.nextToken();
-                    itemCollectionMetrics.setSizeEstimateRangeGB(new ListUnmarshaller<Double>(context.getUnmarshaller(Double.class)).unmarshall(context));
+                    itemCollectionMetrics.setSizeEstimateRangeGB(new ListUnmarshaller<Double>(context.getUnmarshaller(Double.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

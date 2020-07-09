@@ -78,7 +78,9 @@ public class ICD10CMAttributeJsonUnmarshaller implements Unmarshaller<ICD10CMAtt
                 }
                 if (context.testExpression("Traits", targetDepth)) {
                     context.nextToken();
-                    iCD10CMAttribute.setTraits(new ListUnmarshaller<ICD10CMTrait>(ICD10CMTraitJsonUnmarshaller.getInstance()).unmarshall(context));
+                    iCD10CMAttribute.setTraits(new ListUnmarshaller<ICD10CMTrait>(ICD10CMTraitJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -51,7 +51,9 @@ public class ListUserPoolClientsResultJsonUnmarshaller implements Unmarshaller<L
                 if (context.testExpression("UserPoolClients", targetDepth)) {
                     context.nextToken();
                     listUserPoolClientsResult.setUserPoolClients(new ListUnmarshaller<UserPoolClientDescription>(UserPoolClientDescriptionJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

@@ -62,7 +62,9 @@ public class UpdateDimensionResultJsonUnmarshaller implements Unmarshaller<Updat
                 }
                 if (context.testExpression("stringValues", targetDepth)) {
                     context.nextToken();
-                    updateDimensionResult.setStringValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    updateDimensionResult.setStringValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("creationDate", targetDepth)) {
                     context.nextToken();

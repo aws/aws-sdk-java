@@ -40,7 +40,11 @@ public class Listener implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private PortMapping portMapping;
-
+    /**
+     * <p>
+     * An object that represents timeouts for different protocols.
+     * </p>
+     */
     private ListenerTimeout timeout;
     /**
      * <p>
@@ -130,7 +134,12 @@ public class Listener implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * An object that represents timeouts for different protocols.
+     * </p>
+     * 
      * @param timeout
+     *        An object that represents timeouts for different protocols.
      */
 
     public void setTimeout(ListenerTimeout timeout) {
@@ -138,7 +147,11 @@ public class Listener implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * An object that represents timeouts for different protocols.
+     * </p>
+     * 
+     * @return An object that represents timeouts for different protocols.
      */
 
     public ListenerTimeout getTimeout() {
@@ -146,7 +159,12 @@ public class Listener implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * An object that represents timeouts for different protocols.
+     * </p>
+     * 
      * @param timeout
+     *        An object that represents timeouts for different protocols.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

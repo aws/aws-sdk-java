@@ -50,7 +50,9 @@ public class ListArtifactsResultJsonUnmarshaller implements Unmarshaller<ListArt
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("artifacts", targetDepth)) {
                     context.nextToken();
-                    listArtifactsResult.setArtifacts(new ListUnmarshaller<Artifact>(ArtifactJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listArtifactsResult.setArtifacts(new ListUnmarshaller<Artifact>(ArtifactJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

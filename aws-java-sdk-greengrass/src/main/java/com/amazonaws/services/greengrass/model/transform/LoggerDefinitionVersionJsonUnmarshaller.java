@@ -50,7 +50,9 @@ public class LoggerDefinitionVersionJsonUnmarshaller implements Unmarshaller<Log
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Loggers", targetDepth)) {
                     context.nextToken();
-                    loggerDefinitionVersion.setLoggers(new ListUnmarshaller<Logger>(LoggerJsonUnmarshaller.getInstance()).unmarshall(context));
+                    loggerDefinitionVersion.setLoggers(new ListUnmarshaller<Logger>(LoggerJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

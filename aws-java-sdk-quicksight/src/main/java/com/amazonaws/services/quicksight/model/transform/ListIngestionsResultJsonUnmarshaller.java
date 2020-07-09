@@ -52,7 +52,9 @@ public class ListIngestionsResultJsonUnmarshaller implements Unmarshaller<ListIn
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Ingestions", targetDepth)) {
                     context.nextToken();
-                    listIngestionsResult.setIngestions(new ListUnmarshaller<Ingestion>(IngestionJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listIngestionsResult.setIngestions(new ListUnmarshaller<Ingestion>(IngestionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

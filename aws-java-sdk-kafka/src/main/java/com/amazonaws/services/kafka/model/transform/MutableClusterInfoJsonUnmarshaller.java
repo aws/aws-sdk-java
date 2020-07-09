@@ -51,7 +51,8 @@ public class MutableClusterInfoJsonUnmarshaller implements Unmarshaller<MutableC
                 if (context.testExpression("brokerEBSVolumeInfo", targetDepth)) {
                     context.nextToken();
                     mutableClusterInfo.setBrokerEBSVolumeInfo(new ListUnmarshaller<BrokerEBSVolumeInfo>(BrokerEBSVolumeInfoJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("configurationInfo", targetDepth)) {
                     context.nextToken();

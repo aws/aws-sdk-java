@@ -50,7 +50,9 @@ public class ListFacesResultJsonUnmarshaller implements Unmarshaller<ListFacesRe
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Faces", targetDepth)) {
                     context.nextToken();
-                    listFacesResult.setFaces(new ListUnmarshaller<Face>(FaceJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listFacesResult.setFaces(new ListUnmarshaller<Face>(FaceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

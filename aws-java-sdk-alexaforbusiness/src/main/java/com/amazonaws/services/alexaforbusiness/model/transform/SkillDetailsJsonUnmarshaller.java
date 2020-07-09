@@ -66,19 +66,27 @@ public class SkillDetailsJsonUnmarshaller implements Unmarshaller<SkillDetails, 
                 }
                 if (context.testExpression("GenericKeywords", targetDepth)) {
                     context.nextToken();
-                    skillDetails.setGenericKeywords(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    skillDetails.setGenericKeywords(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("BulletPoints", targetDepth)) {
                     context.nextToken();
-                    skillDetails.setBulletPoints(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    skillDetails.setBulletPoints(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NewInThisVersionBulletPoints", targetDepth)) {
                     context.nextToken();
-                    skillDetails.setNewInThisVersionBulletPoints(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    skillDetails.setNewInThisVersionBulletPoints(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("SkillTypes", targetDepth)) {
                     context.nextToken();
-                    skillDetails.setSkillTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    skillDetails.setSkillTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Reviews", targetDepth)) {
                     context.nextToken();

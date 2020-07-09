@@ -55,7 +55,9 @@ public class ListNotebookInstancesResultJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("NotebookInstances", targetDepth)) {
                     context.nextToken();
                     listNotebookInstancesResult.setNotebookInstances(new ListUnmarshaller<NotebookInstanceSummary>(NotebookInstanceSummaryJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

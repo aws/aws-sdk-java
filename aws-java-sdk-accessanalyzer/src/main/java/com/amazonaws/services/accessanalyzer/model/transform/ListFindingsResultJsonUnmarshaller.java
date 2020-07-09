@@ -50,7 +50,9 @@ public class ListFindingsResultJsonUnmarshaller implements Unmarshaller<ListFind
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("findings", targetDepth)) {
                     context.nextToken();
-                    listFindingsResult.setFindings(new ListUnmarshaller<FindingSummary>(FindingSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listFindingsResult.setFindings(new ListUnmarshaller<FindingSummary>(FindingSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

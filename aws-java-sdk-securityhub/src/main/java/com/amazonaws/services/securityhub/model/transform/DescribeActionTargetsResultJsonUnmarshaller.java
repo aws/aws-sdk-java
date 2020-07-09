@@ -51,7 +51,8 @@ public class DescribeActionTargetsResultJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("ActionTargets", targetDepth)) {
                     context.nextToken();
                     describeActionTargetsResult.setActionTargets(new ListUnmarshaller<ActionTarget>(ActionTargetJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

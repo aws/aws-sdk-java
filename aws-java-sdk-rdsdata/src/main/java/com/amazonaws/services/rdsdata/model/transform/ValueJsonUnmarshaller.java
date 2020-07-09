@@ -50,7 +50,9 @@ public class ValueJsonUnmarshaller implements Unmarshaller<Value, JsonUnmarshall
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arrayValues", targetDepth)) {
                     context.nextToken();
-                    value.setArrayValues(new ListUnmarshaller<Value>(ValueJsonUnmarshaller.getInstance()).unmarshall(context));
+                    value.setArrayValues(new ListUnmarshaller<Value>(ValueJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("bigIntValue", targetDepth)) {
                     context.nextToken();

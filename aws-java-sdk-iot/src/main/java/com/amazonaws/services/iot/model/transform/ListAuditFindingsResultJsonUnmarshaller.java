@@ -50,7 +50,9 @@ public class ListAuditFindingsResultJsonUnmarshaller implements Unmarshaller<Lis
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("findings", targetDepth)) {
                     context.nextToken();
-                    listAuditFindingsResult.setFindings(new ListUnmarshaller<AuditFinding>(AuditFindingJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listAuditFindingsResult.setFindings(new ListUnmarshaller<AuditFinding>(AuditFindingJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

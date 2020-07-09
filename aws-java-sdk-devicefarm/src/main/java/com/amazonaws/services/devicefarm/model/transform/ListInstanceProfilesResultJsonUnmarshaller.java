@@ -51,7 +51,8 @@ public class ListInstanceProfilesResultJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("instanceProfiles", targetDepth)) {
                     context.nextToken();
                     listInstanceProfilesResult.setInstanceProfiles(new ListUnmarshaller<InstanceProfile>(InstanceProfileJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

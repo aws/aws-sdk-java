@@ -51,7 +51,8 @@ public class DeviceStatusInfoJsonUnmarshaller implements Unmarshaller<DeviceStat
                 if (context.testExpression("DeviceStatusDetails", targetDepth)) {
                     context.nextToken();
                     deviceStatusInfo.setDeviceStatusDetails(new ListUnmarshaller<DeviceStatusDetail>(DeviceStatusDetailJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ConnectionStatus", targetDepth)) {
                     context.nextToken();

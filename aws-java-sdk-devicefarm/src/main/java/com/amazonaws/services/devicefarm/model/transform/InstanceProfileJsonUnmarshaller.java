@@ -58,7 +58,9 @@ public class InstanceProfileJsonUnmarshaller implements Unmarshaller<InstancePro
                 }
                 if (context.testExpression("excludeAppPackagesFromCleanup", targetDepth)) {
                     context.nextToken();
-                    instanceProfile.setExcludeAppPackagesFromCleanup(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    instanceProfile.setExcludeAppPackagesFromCleanup(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("rebootAfterUse", targetDepth)) {
                     context.nextToken();

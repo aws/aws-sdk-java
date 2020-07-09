@@ -136,6 +136,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.personalizeevents.model.Event",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -197,6 +198,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An ID associated with the event. If an event ID is not provided, Amazon Personalize generates a unique ID for the event. An event ID is not used as an input to the model. Amazon Personalize uses the event ID to distinquish unique events. Any subsequent events after the first with the same event ID are not used in model training.</p>\n@param eventId An ID associated with the event. If an event ID is not provided, Amazon Personalize generates a unique ID for the event. An event ID is not used as an input to the model. Amazon Personalize uses the event ID to distinquish unique events. Any subsequent events after the first with the same event ID are not used in model training.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -265,6 +267,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The type of event. This property corresponds to the <code>EVENT_TYPE</code> field of the Interactions schema.</p>\n@param eventType The type of event. This property corresponds to the <code>EVENT_TYPE</code> field of the Interactions schema.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -333,6 +336,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : "JSON_VALUE",
         "varargSetterDocumentation" : "/**<p>A string map of event-specific data that you might choose to record. For example, if a user rates a movie on your site, you might send the movie ID and rating, and the number of movie ratings made by the user.</p> <p>Each item in the map consists of a key-value pair. For example,</p> <p> <code>{\"itemId\": \"movie1\"}</code> </p> <p> <code>{\"itemId\": \"movie2\", \"eventValue\": \"4.5\"}</code> </p> <p> <code>{\"itemId\": \"movie3\", \"eventValue\": \"3\", \"numberOfRatings\": \"12\"}</code> </p> <p>The keys use camel case names that match the fields in the Interactions schema. The <code>itemId</code> and <code>eventValue</code> keys correspond to the <code>ITEM_ID</code> and <code>EVENT_VALUE</code> fields. In the above example, the <code>eventType</code> might be 'MovieRating' with <code>eventValue</code> being the rating. The <code>numberOfRatings</code> would match the 'NUMBER_OF_RATINGS' field defined in the Interactions schema.</p>\n@param properties A string map of event-specific data that you might choose to record. For example, if a user rates a movie on your site, you might send the movie ID and rating, and the number of movie ratings made by the user.</p> <p>Each item in the map consists of a key-value pair. For example,</p> <p> <code>{\"itemId\": \"movie1\"}</code> </p> <p> <code>{\"itemId\": \"movie2\", \"eventValue\": \"4.5\"}</code> </p> <p> <code>{\"itemId\": \"movie3\", \"eventValue\": \"3\", \"numberOfRatings\": \"12\"}</code> </p> <p>The keys use camel case names that match the fields in the Interactions schema. The <code>itemId</code> and <code>eventValue</code> keys correspond to the <code>ITEM_ID</code> and <code>EVENT_VALUE</code> fields. In the above example, the <code>eventType</code> might be 'MovieRating' with <code>eventValue</code> being the rating. The <code>numberOfRatings</code> would match the 'NUMBER_OF_RATINGS' field defined in the Interactions schema.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -401,6 +405,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The timestamp on the client side when the event occurred.</p>\n@param sentAt The timestamp on the client side when the event occurred.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -471,6 +476,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An ID associated with the event. If an event ID is not provided, Amazon Personalize generates a unique ID for the event. An event ID is not used as an input to the model. Amazon Personalize uses the event ID to distinquish unique events. Any subsequent events after the first with the same event ID are not used in model training.</p>\n@param eventId An ID associated with the event. If an event ID is not provided, Amazon Personalize generates a unique ID for the event. An event ID is not used as an input to the model. Amazon Personalize uses the event ID to distinquish unique events. Any subsequent events after the first with the same event ID are not used in model training.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -540,6 +546,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The type of event. This property corresponds to the <code>EVENT_TYPE</code> field of the Interactions schema.</p>\n@param eventType The type of event. This property corresponds to the <code>EVENT_TYPE</code> field of the Interactions schema.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -609,6 +616,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : "JSON_VALUE",
           "varargSetterDocumentation" : "/**<p>A string map of event-specific data that you might choose to record. For example, if a user rates a movie on your site, you might send the movie ID and rating, and the number of movie ratings made by the user.</p> <p>Each item in the map consists of a key-value pair. For example,</p> <p> <code>{\"itemId\": \"movie1\"}</code> </p> <p> <code>{\"itemId\": \"movie2\", \"eventValue\": \"4.5\"}</code> </p> <p> <code>{\"itemId\": \"movie3\", \"eventValue\": \"3\", \"numberOfRatings\": \"12\"}</code> </p> <p>The keys use camel case names that match the fields in the Interactions schema. The <code>itemId</code> and <code>eventValue</code> keys correspond to the <code>ITEM_ID</code> and <code>EVENT_VALUE</code> fields. In the above example, the <code>eventType</code> might be 'MovieRating' with <code>eventValue</code> being the rating. The <code>numberOfRatings</code> would match the 'NUMBER_OF_RATINGS' field defined in the Interactions schema.</p>\n@param properties A string map of event-specific data that you might choose to record. For example, if a user rates a movie on your site, you might send the movie ID and rating, and the number of movie ratings made by the user.</p> <p>Each item in the map consists of a key-value pair. For example,</p> <p> <code>{\"itemId\": \"movie1\"}</code> </p> <p> <code>{\"itemId\": \"movie2\", \"eventValue\": \"4.5\"}</code> </p> <p> <code>{\"itemId\": \"movie3\", \"eventValue\": \"3\", \"numberOfRatings\": \"12\"}</code> </p> <p>The keys use camel case names that match the fields in the Interactions schema. The <code>itemId</code> and <code>eventValue</code> keys correspond to the <code>ITEM_ID</code> and <code>EVENT_VALUE</code> fields. In the above example, the <code>eventType</code> might be 'MovieRating' with <code>eventValue</code> being the rating. The <code>numberOfRatings</code> would match the 'NUMBER_OF_RATINGS' field defined in the Interactions schema.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -678,6 +686,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The timestamp on the client side when the event occurred.</p>\n@param sentAt The timestamp on the client side when the event occurred.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -693,6 +702,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.personalizeevents.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "eventType", "properties", "sentAt" ],
@@ -727,6 +737,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InvalidInputException",
+      "fullyQualifiedName" : "com.amazonaws.services.personalizeevents.exception.InvalidInputException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -735,6 +746,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.personalizeevents.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -766,6 +778,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.personalizeevents.request.PutEventsRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -834,6 +847,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The tracking ID for the event. The ID is generated by a call to the <a href=\"https://docs.aws.amazon.com/personalize/latest/dg/API_CreateEventTracker.html\">CreateEventTracker</a> API.</p>\n@param trackingId The tracking ID for the event. The ID is generated by a call to the <a href=\"https://docs.aws.amazon.com/personalize/latest/dg/API_CreateEventTracker.html\">CreateEventTracker</a> API.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -902,6 +916,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The user associated with the event.</p>\n@param userId The user associated with the event.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -970,6 +985,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The session ID associated with the user's visit.</p>\n@param sessionId The session ID associated with the user's visit.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1077,6 +1093,7 @@
               "variableSetterType" : "Event"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1121,6 +1138,7 @@
           "variableSetterType" : "java.util.Collection<Event>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of event data from the session.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEventList(java.util.Collection)} or {@link #withEventList(java.util.Collection)} if you want to override the existing values.</p>\n@param eventList A list of event data from the session.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1230,6 +1248,7 @@
                 "variableSetterType" : "Event"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1274,6 +1293,7 @@
             "variableSetterType" : "java.util.Collection<Event>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of event data from the session.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEventList(java.util.Collection)} or {@link #withEventList(java.util.Collection)} if you want to override the existing values.</p>\n@param eventList A list of event data from the session.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1343,6 +1363,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The session ID associated with the user's visit.</p>\n@param sessionId The session ID associated with the user's visit.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1412,6 +1433,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The tracking ID for the event. The ID is generated by a call to the <a href=\"https://docs.aws.amazon.com/personalize/latest/dg/API_CreateEventTracker.html\">CreateEventTracker</a> API.</p>\n@param trackingId The tracking ID for the event. The ID is generated by a call to the <a href=\"https://docs.aws.amazon.com/personalize/latest/dg/API_CreateEventTracker.html\">CreateEventTracker</a> API.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1481,6 +1503,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The user associated with the event.</p>\n@param userId The user associated with the event.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1496,6 +1519,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.personalizeevents.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "trackingId", "sessionId", "eventList" ],
@@ -1527,6 +1551,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.personalizeevents.response.PutEventsResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1535,6 +1560,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.personalizeevents.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,

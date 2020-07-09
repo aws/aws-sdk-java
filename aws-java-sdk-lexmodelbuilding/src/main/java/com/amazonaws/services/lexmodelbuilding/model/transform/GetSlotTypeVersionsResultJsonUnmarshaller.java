@@ -51,7 +51,8 @@ public class GetSlotTypeVersionsResultJsonUnmarshaller implements Unmarshaller<G
                 if (context.testExpression("slotTypes", targetDepth)) {
                     context.nextToken();
                     getSlotTypeVersionsResult.setSlotTypes(new ListUnmarshaller<SlotTypeMetadata>(SlotTypeMetadataJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

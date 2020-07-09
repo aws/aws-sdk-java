@@ -67,7 +67,9 @@ public class DescribeDeploymentJobResultJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("deploymentApplicationConfigs", targetDepth)) {
                     context.nextToken();
                     describeDeploymentJobResult.setDeploymentApplicationConfigs(new ListUnmarshaller<DeploymentApplicationConfig>(
-                            DeploymentApplicationConfigJsonUnmarshaller.getInstance()).unmarshall(context));
+                            DeploymentApplicationConfigJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("failureReason", targetDepth)) {
                     context.nextToken();
@@ -84,7 +86,8 @@ public class DescribeDeploymentJobResultJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("robotDeploymentSummary", targetDepth)) {
                     context.nextToken();
                     describeDeploymentJobResult.setRobotDeploymentSummary(new ListUnmarshaller<RobotDeployment>(RobotDeploymentJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();

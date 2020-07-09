@@ -54,7 +54,9 @@ public class TraceUserJsonUnmarshaller implements Unmarshaller<TraceUser, JsonUn
                 }
                 if (context.testExpression("ServiceIds", targetDepth)) {
                     context.nextToken();
-                    traceUser.setServiceIds(new ListUnmarshaller<ServiceId>(ServiceIdJsonUnmarshaller.getInstance()).unmarshall(context));
+                    traceUser.setServiceIds(new ListUnmarshaller<ServiceId>(ServiceIdJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -51,7 +51,9 @@ public class GetComplianceDetailsByResourceResultJsonUnmarshaller implements Unm
                 if (context.testExpression("EvaluationResults", targetDepth)) {
                     context.nextToken();
                     getComplianceDetailsByResourceResult.setEvaluationResults(new ListUnmarshaller<EvaluationResult>(EvaluationResultJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

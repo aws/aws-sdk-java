@@ -59,7 +59,8 @@ public class GetAutoSnapshotsResultJsonUnmarshaller implements Unmarshaller<GetA
                 if (context.testExpression("autoSnapshots", targetDepth)) {
                     context.nextToken();
                     getAutoSnapshotsResult.setAutoSnapshots(new ListUnmarshaller<AutoSnapshotDetails>(AutoSnapshotDetailsJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

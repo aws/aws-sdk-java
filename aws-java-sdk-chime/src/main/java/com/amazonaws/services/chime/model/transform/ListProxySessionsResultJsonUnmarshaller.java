@@ -50,8 +50,9 @@ public class ListProxySessionsResultJsonUnmarshaller implements Unmarshaller<Lis
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ProxySessions", targetDepth)) {
                     context.nextToken();
-                    listProxySessionsResult
-                            .setProxySessions(new ListUnmarshaller<ProxySession>(ProxySessionJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listProxySessionsResult.setProxySessions(new ListUnmarshaller<ProxySession>(ProxySessionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

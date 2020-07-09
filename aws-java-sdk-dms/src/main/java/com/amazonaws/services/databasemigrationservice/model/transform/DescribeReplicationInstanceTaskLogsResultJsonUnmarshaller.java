@@ -56,7 +56,9 @@ public class DescribeReplicationInstanceTaskLogsResultJsonUnmarshaller implement
                 if (context.testExpression("ReplicationInstanceTaskLogs", targetDepth)) {
                     context.nextToken();
                     describeReplicationInstanceTaskLogsResult.setReplicationInstanceTaskLogs(new ListUnmarshaller<ReplicationInstanceTaskLog>(
-                            ReplicationInstanceTaskLogJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ReplicationInstanceTaskLogJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Marker", targetDepth)) {
                     context.nextToken();

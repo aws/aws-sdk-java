@@ -51,28 +51,40 @@ public class EntityFilterJsonUnmarshaller implements Unmarshaller<EntityFilter, 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("eventArns", targetDepth)) {
                     context.nextToken();
-                    entityFilter.setEventArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    entityFilter.setEventArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("entityArns", targetDepth)) {
                     context.nextToken();
-                    entityFilter.setEntityArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    entityFilter.setEntityArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("entityValues", targetDepth)) {
                     context.nextToken();
-                    entityFilter.setEntityValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    entityFilter.setEntityValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedTimes", targetDepth)) {
                     context.nextToken();
-                    entityFilter.setLastUpdatedTimes(new ListUnmarshaller<DateTimeRange>(DateTimeRangeJsonUnmarshaller.getInstance()).unmarshall(context));
+                    entityFilter.setLastUpdatedTimes(new ListUnmarshaller<DateTimeRange>(DateTimeRangeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
                     entityFilter.setTags(new ListUnmarshaller<java.util.Map<String, String>>(new MapUnmarshaller<String, String>(context
-                            .getUnmarshaller(String.class), context.getUnmarshaller(String.class))).unmarshall(context));
+                            .getUnmarshaller(String.class), context.getUnmarshaller(String.class)))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("statusCodes", targetDepth)) {
                     context.nextToken();
-                    entityFilter.setStatusCodes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    entityFilter.setStatusCodes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

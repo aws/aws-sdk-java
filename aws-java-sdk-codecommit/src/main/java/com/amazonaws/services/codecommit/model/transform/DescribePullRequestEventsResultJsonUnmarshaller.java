@@ -51,7 +51,8 @@ public class DescribePullRequestEventsResultJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("pullRequestEvents", targetDepth)) {
                     context.nextToken();
                     describePullRequestEventsResult.setPullRequestEvents(new ListUnmarshaller<PullRequestEvent>(PullRequestEventJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

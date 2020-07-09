@@ -56,7 +56,9 @@ public class GetAggregateConfigRuleComplianceSummaryResultJsonUnmarshaller imple
                 if (context.testExpression("AggregateComplianceCounts", targetDepth)) {
                     context.nextToken();
                     getAggregateConfigRuleComplianceSummaryResult.setAggregateComplianceCounts(new ListUnmarshaller<AggregateComplianceCount>(
-                            AggregateComplianceCountJsonUnmarshaller.getInstance()).unmarshall(context));
+                            AggregateComplianceCountJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

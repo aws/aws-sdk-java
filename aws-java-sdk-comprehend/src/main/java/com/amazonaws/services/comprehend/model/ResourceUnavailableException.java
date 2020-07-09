@@ -16,8 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified resource is not available. Check to see if the resource is in the <code>TRAINED</code> state and try
- * your request again.
+ * The specified resource is not available. Check the resource and try your request again.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -51,7 +51,9 @@ public class ListTaskExecutionsResultJsonUnmarshaller implements Unmarshaller<Li
                 if (context.testExpression("TaskExecutions", targetDepth)) {
                     context.nextToken();
                     listTaskExecutionsResult.setTaskExecutions(new ListUnmarshaller<TaskExecutionListEntry>(TaskExecutionListEntryJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

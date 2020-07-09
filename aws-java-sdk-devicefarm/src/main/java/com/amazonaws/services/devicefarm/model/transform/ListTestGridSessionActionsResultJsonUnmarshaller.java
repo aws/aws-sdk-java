@@ -51,7 +51,9 @@ public class ListTestGridSessionActionsResultJsonUnmarshaller implements Unmarsh
                 if (context.testExpression("actions", targetDepth)) {
                     context.nextToken();
                     listTestGridSessionActionsResult
-                            .setActions(new ListUnmarshaller<TestGridSessionAction>(TestGridSessionActionJsonUnmarshaller.getInstance()).unmarshall(context));
+                            .setActions(new ListUnmarshaller<TestGridSessionAction>(TestGridSessionActionJsonUnmarshaller.getInstance())
+
+                            .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

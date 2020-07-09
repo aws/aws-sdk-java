@@ -70,12 +70,15 @@ public class TextTranslationJobPropertiesJsonUnmarshaller implements Unmarshalle
                 }
                 if (context.testExpression("TargetLanguageCodes", targetDepth)) {
                     context.nextToken();
-                    textTranslationJobProperties
-                            .setTargetLanguageCodes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    textTranslationJobProperties.setTargetLanguageCodes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("TerminologyNames", targetDepth)) {
                     context.nextToken();
-                    textTranslationJobProperties.setTerminologyNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    textTranslationJobProperties.setTerminologyNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Message", targetDepth)) {
                     context.nextToken();

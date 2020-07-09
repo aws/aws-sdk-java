@@ -58,7 +58,9 @@ public class CreateAccessPointResultJsonUnmarshaller implements Unmarshaller<Cre
                 }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
-                    createAccessPointResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    createAccessPointResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("AccessPointId", targetDepth)) {
                     context.nextToken();

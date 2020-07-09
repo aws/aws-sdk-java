@@ -82,11 +82,15 @@ public class ClusterJsonUnmarshaller implements Unmarshaller<Cluster, JsonUnmars
                 }
                 if (context.testExpression("NodeIdsToRemove", targetDepth)) {
                     context.nextToken();
-                    cluster.setNodeIdsToRemove(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    cluster.setNodeIdsToRemove(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Nodes", targetDepth)) {
                     context.nextToken();
-                    cluster.setNodes(new ListUnmarshaller<Node>(NodeJsonUnmarshaller.getInstance()).unmarshall(context));
+                    cluster.setNodes(new ListUnmarshaller<Node>(NodeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("PreferredMaintenanceWindow", targetDepth)) {
                     context.nextToken();
@@ -103,7 +107,8 @@ public class ClusterJsonUnmarshaller implements Unmarshaller<Cluster, JsonUnmars
                 if (context.testExpression("SecurityGroups", targetDepth)) {
                     context.nextToken();
                     cluster.setSecurityGroups(new ListUnmarshaller<SecurityGroupMembership>(SecurityGroupMembershipJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("IamRoleArn", targetDepth)) {
                     context.nextToken();

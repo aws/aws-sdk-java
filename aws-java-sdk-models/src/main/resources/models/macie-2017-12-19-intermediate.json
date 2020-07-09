@@ -410,6 +410,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "AccessDeniedException",
+      "fullyQualifiedName" : "com.amazonaws.services.macie.exception.AccessDeniedException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -471,6 +472,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param resourceType \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -541,6 +543,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param resourceType \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -556,6 +559,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.macie.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -587,6 +591,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.macie.request.AssociateMemberAccountRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -655,6 +660,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the AWS account that you want to associate with Amazon Macie Classic as a member account.</p>\n@param memberAccountId The ID of the AWS account that you want to associate with Amazon Macie Classic as a member account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -725,6 +731,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the AWS account that you want to associate with Amazon Macie Classic as a member account.</p>\n@param memberAccountId The ID of the AWS account that you want to associate with Amazon Macie Classic as a member account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -740,6 +747,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.macie.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "memberAccountId" ],
@@ -771,6 +779,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.macie.response.AssociateMemberAccountResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -779,6 +788,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.macie.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -813,6 +823,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.macie.request.AssociateS3ResourcesRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -881,6 +892,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the Amazon Macie Classic member account whose resources you want to associate with Macie Classic. </p>\n@param memberAccountId The ID of the Amazon Macie Classic member account whose resources you want to associate with Macie Classic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -988,6 +1000,7 @@
               "variableSetterType" : "S3ResourceClassification"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1032,6 +1045,7 @@
           "variableSetterType" : "java.util.Collection<S3ResourceClassification>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The S3 resources that you want to associate with Amazon Macie Classic for monitoring and data classification. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setS3Resources(java.util.Collection)} or {@link #withS3Resources(java.util.Collection)} if you want to override the existing values.</p>\n@param s3Resources The S3 resources that you want to associate with Amazon Macie Classic for monitoring and data classification.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1102,6 +1116,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the Amazon Macie Classic member account whose resources you want to associate with Macie Classic. </p>\n@param memberAccountId The ID of the Amazon Macie Classic member account whose resources you want to associate with Macie Classic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1210,6 +1225,7 @@
                 "variableSetterType" : "S3ResourceClassification"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1254,6 +1270,7 @@
             "variableSetterType" : "java.util.Collection<S3ResourceClassification>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The S3 resources that you want to associate with Amazon Macie Classic for monitoring and data classification. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setS3Resources(java.util.Collection)} or {@link #withS3Resources(java.util.Collection)} if you want to override the existing values.</p>\n@param s3Resources The S3 resources that you want to associate with Amazon Macie Classic for monitoring and data classification.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1269,6 +1286,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.macie.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "s3Resources" ],
@@ -1300,6 +1318,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.macie.response.AssociateS3ResourcesResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1400,6 +1419,7 @@
               "variableSetterType" : "FailedS3Resource"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1444,6 +1464,7 @@
           "variableSetterType" : "java.util.Collection<FailedS3Resource>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>S3 resources that couldn't be associated with Amazon Macie Classic. An error code and an error message are provided for each failed item. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFailedS3Resources(java.util.Collection)} or {@link #withFailedS3Resources(java.util.Collection)} if you want to override the existing values.</p>\n@param failedS3Resources S3 resources that couldn't be associated with Amazon Macie Classic. An error code and an error message are provided for each failed item.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1553,6 +1574,7 @@
                 "variableSetterType" : "FailedS3Resource"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1597,6 +1619,7 @@
             "variableSetterType" : "java.util.Collection<FailedS3Resource>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>S3 resources that couldn't be associated with Amazon Macie Classic. An error code and an error message are provided for each failed item. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFailedS3Resources(java.util.Collection)} or {@link #withFailedS3Resources(java.util.Collection)} if you want to override the existing values.</p>\n@param failedS3Resources S3 resources that couldn't be associated with Amazon Macie Classic. An error code and an error message are provided for each failed item.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1612,6 +1635,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.macie.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1646,6 +1670,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.macie.model.ClassificationType",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1707,6 +1732,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A one-time classification of all of the existing objects in a specified S3 bucket. </p>\n@param oneTime A one-time classification of all of the existing objects in a specified S3 bucket.\n@return Returns a reference to this object so that method calls can be chained together.\n@see S3OneTimeClassificationType*/",
@@ -1775,6 +1801,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie Classic begins performing continuous classification after a bucket is successfully associated with Amazon Macie Classic. </p>\n@param continuous A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie Classic begins performing continuous classification after a bucket is successfully associated with Amazon Macie Classic.\n@return Returns a reference to this object so that method calls can be chained together.\n@see S3ContinuousClassificationType*/",
@@ -1845,6 +1872,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie Classic begins performing continuous classification after a bucket is successfully associated with Amazon Macie Classic. </p>\n@param continuous A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie Classic begins performing continuous classification after a bucket is successfully associated with Amazon Macie Classic.\n@return Returns a reference to this object so that method calls can be chained together.\n@see S3ContinuousClassificationType*/",
@@ -1914,6 +1942,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A one-time classification of all of the existing objects in a specified S3 bucket. </p>\n@param oneTime A one-time classification of all of the existing objects in a specified S3 bucket.\n@return Returns a reference to this object so that method calls can be chained together.\n@see S3OneTimeClassificationType*/",
@@ -1929,6 +1958,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.macie.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "oneTime", "continuous" ],
@@ -1963,6 +1993,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.macie.model.ClassificationTypeUpdate",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2024,6 +2055,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A one-time classification of all of the existing objects in a specified S3 bucket. </p>\n@param oneTime A one-time classification of all of the existing objects in a specified S3 bucket.\n@return Returns a reference to this object so that method calls can be chained together.\n@see S3OneTimeClassificationType*/",
@@ -2092,6 +2124,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie Classic begins performing continuous classification after a bucket is successfully associated with Amazon Macie Classic. </p>\n@param continuous A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie Classic begins performing continuous classification after a bucket is successfully associated with Amazon Macie Classic.\n@return Returns a reference to this object so that method calls can be chained together.\n@see S3ContinuousClassificationType*/",
@@ -2162,6 +2195,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie Classic begins performing continuous classification after a bucket is successfully associated with Amazon Macie Classic. </p>\n@param continuous A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie Classic begins performing continuous classification after a bucket is successfully associated with Amazon Macie Classic.\n@return Returns a reference to this object so that method calls can be chained together.\n@see S3ContinuousClassificationType*/",
@@ -2231,6 +2265,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A one-time classification of all of the existing objects in a specified S3 bucket. </p>\n@param oneTime A one-time classification of all of the existing objects in a specified S3 bucket.\n@return Returns a reference to this object so that method calls can be chained together.\n@see S3OneTimeClassificationType*/",
@@ -2246,6 +2281,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.macie.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2280,6 +2316,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.macie.request.DisassociateMemberAccountRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2348,6 +2385,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the member account that you want to remove from Amazon Macie Classic.</p>\n@param memberAccountId The ID of the member account that you want to remove from Amazon Macie Classic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2418,6 +2456,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the member account that you want to remove from Amazon Macie Classic.</p>\n@param memberAccountId The ID of the member account that you want to remove from Amazon Macie Classic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2433,6 +2472,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.macie.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "memberAccountId" ],
@@ -2464,6 +2504,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.macie.response.DisassociateMemberAccountResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2472,6 +2513,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.macie.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2506,6 +2548,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.macie.request.DisassociateS3ResourcesRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2574,6 +2617,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the Amazon Macie Classic member account whose resources you want to remove from being monitored by Amazon Macie Classic. </p>\n@param memberAccountId The ID of the Amazon Macie Classic member account whose resources you want to remove from being monitored by Amazon Macie Classic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2681,6 +2725,7 @@
               "variableSetterType" : "S3Resource"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2725,6 +2770,7 @@
           "variableSetterType" : "java.util.Collection<S3Resource>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The S3 resources (buckets or prefixes) that you want to remove from being monitored and classified by Amazon Macie Classic. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAssociatedS3Resources(java.util.Collection)} or {@link #withAssociatedS3Resources(java.util.Collection)} if you want to override the existing values.</p>\n@param associatedS3Resources The S3 resources (buckets or prefixes) that you want to remove from being monitored and classified by Amazon Macie Classic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2834,6 +2880,7 @@
                 "variableSetterType" : "S3Resource"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2878,6 +2925,7 @@
             "variableSetterType" : "java.util.Collection<S3Resource>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The S3 resources (buckets or prefixes) that you want to remove from being monitored and classified by Amazon Macie Classic. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAssociatedS3Resources(java.util.Collection)} or {@link #withAssociatedS3Resources(java.util.Collection)} if you want to override the existing values.</p>\n@param associatedS3Resources The S3 resources (buckets or prefixes) that you want to remove from being monitored and classified by Amazon Macie Classic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2947,6 +2995,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the Amazon Macie Classic member account whose resources you want to remove from being monitored by Amazon Macie Classic. </p>\n@param memberAccountId The ID of the Amazon Macie Classic member account whose resources you want to remove from being monitored by Amazon Macie Classic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2962,6 +3011,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.macie.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "associatedS3Resources" ],
@@ -2993,6 +3043,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.macie.response.DisassociateS3ResourcesResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3093,6 +3144,7 @@
               "variableSetterType" : "FailedS3Resource"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3137,6 +3189,7 @@
           "variableSetterType" : "java.util.Collection<FailedS3Resource>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>S3 resources that couldn't be removed from being monitored and classified by Amazon Macie Classic. An error code and an error message are provided for each failed item. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFailedS3Resources(java.util.Collection)} or {@link #withFailedS3Resources(java.util.Collection)} if you want to override the existing values.</p>\n@param failedS3Resources S3 resources that couldn't be removed from being monitored and classified by Amazon Macie Classic. An error code and an error message are provided for each failed item.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3246,6 +3299,7 @@
                 "variableSetterType" : "FailedS3Resource"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3290,6 +3344,7 @@
             "variableSetterType" : "java.util.Collection<FailedS3Resource>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>S3 resources that couldn't be removed from being monitored and classified by Amazon Macie Classic. An error code and an error message are provided for each failed item. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFailedS3Resources(java.util.Collection)} or {@link #withFailedS3Resources(java.util.Collection)} if you want to override the existing values.</p>\n@param failedS3Resources S3 resources that couldn't be removed from being monitored and classified by Amazon Macie Classic. An error code and an error message are provided for each failed item.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3305,6 +3360,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.macie.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3339,6 +3395,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.macie.model.FailedS3Resource",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3400,6 +3457,7 @@
           "variableSetterType" : "S3Resource"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The failed S3 resources.</p>\n@param failedItem The failed S3 resources.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3468,6 +3526,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The status code of a failed item.</p>\n@param errorCode The status code of a failed item.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3536,6 +3595,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The error message of a failed item.</p>\n@param errorMessage The error message of a failed item.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3606,6 +3666,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The status code of a failed item.</p>\n@param errorCode The status code of a failed item.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3675,6 +3736,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The error message of a failed item.</p>\n@param errorMessage The error message of a failed item.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3744,6 +3806,7 @@
             "variableSetterType" : "S3Resource"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The failed S3 resources.</p>\n@param failedItem The failed S3 resources.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3759,6 +3822,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.macie.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3793,6 +3857,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InternalException",
+      "fullyQualifiedName" : "com.amazonaws.services.macie.exception.InternalException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3854,6 +3919,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param errorCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3924,6 +3990,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param errorCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3939,6 +4006,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.macie.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3970,6 +4038,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InvalidInputException",
+      "fullyQualifiedName" : "com.amazonaws.services.macie.exception.InvalidInputException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4031,6 +4100,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param errorCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4099,6 +4169,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param fieldName \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4169,6 +4240,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param errorCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4238,6 +4310,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param fieldName \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4253,6 +4326,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.macie.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4284,6 +4358,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "LimitExceededException",
+      "fullyQualifiedName" : "com.amazonaws.services.macie.exception.LimitExceededException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4345,6 +4420,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param errorCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4413,6 +4489,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param resourceType \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4483,6 +4560,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param errorCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4552,6 +4630,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param resourceType \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4567,6 +4646,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.macie.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4598,6 +4678,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.macie.request.ListMemberAccountsRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4666,6 +4747,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Use this parameter when paginating results. Set the value of this parameter to null on your first call to the ListMemberAccounts action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data. </p>\n@param nextToken Use this parameter when paginating results. Set the value of this parameter to null on your first call to the ListMemberAccounts action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4734,6 +4816,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250. </p>\n@param maxResults Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4804,6 +4887,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250. </p>\n@param maxResults Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4873,6 +4957,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Use this parameter when paginating results. Set the value of this parameter to null on your first call to the ListMemberAccounts action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data. </p>\n@param nextToken Use this parameter when paginating results. Set the value of this parameter to null on your first call to the ListMemberAccounts action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4888,6 +4973,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.macie.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4919,6 +5005,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.macie.response.ListMemberAccountsResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5019,6 +5106,7 @@
               "variableSetterType" : "MemberAccount"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5063,6 +5151,7 @@
           "variableSetterType" : "java.util.Collection<MemberAccount>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of the Amazon Macie Classic member accounts returned by the action. The current master account is also included in this list. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setMemberAccounts(java.util.Collection)} or {@link #withMemberAccounts(java.util.Collection)} if you want to override the existing values.</p>\n@param memberAccounts A list of the Amazon Macie Classic member accounts returned by the action. The current master account is also included in this list.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5131,6 +5220,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null. </p>\n@param nextToken When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5240,6 +5330,7 @@
                 "variableSetterType" : "MemberAccount"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5284,6 +5375,7 @@
             "variableSetterType" : "java.util.Collection<MemberAccount>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of the Amazon Macie Classic member accounts returned by the action. The current master account is also included in this list. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setMemberAccounts(java.util.Collection)} or {@link #withMemberAccounts(java.util.Collection)} if you want to override the existing values.</p>\n@param memberAccounts A list of the Amazon Macie Classic member accounts returned by the action. The current master account is also included in this list.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5353,6 +5445,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null. </p>\n@param nextToken When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5368,6 +5461,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.macie.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -5402,6 +5496,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.macie.request.ListS3ResourcesRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5470,6 +5565,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Macie Classic member account ID whose associated S3 resources you want to list. </p>\n@param memberAccountId The Amazon Macie Classic member account ID whose associated S3 resources you want to list.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5538,6 +5634,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Use this parameter when paginating results. Set its value to null on your first call to the ListS3Resources action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data. </p>\n@param nextToken Use this parameter when paginating results. Set its value to null on your first call to the ListS3Resources action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5606,6 +5703,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250. </p>\n@param maxResults Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5676,6 +5774,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250. </p>\n@param maxResults Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5745,6 +5844,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Macie Classic member account ID whose associated S3 resources you want to list. </p>\n@param memberAccountId The Amazon Macie Classic member account ID whose associated S3 resources you want to list.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5814,6 +5914,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Use this parameter when paginating results. Set its value to null on your first call to the ListS3Resources action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data. </p>\n@param nextToken Use this parameter when paginating results. Set its value to null on your first call to the ListS3Resources action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5829,6 +5930,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.macie.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -5860,6 +5962,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.macie.response.ListS3ResourcesResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5960,6 +6063,7 @@
               "variableSetterType" : "S3ResourceClassification"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6004,6 +6108,7 @@
           "variableSetterType" : "java.util.Collection<S3ResourceClassification>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of the associated S3 resources returned by the action.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setS3Resources(java.util.Collection)} or {@link #withS3Resources(java.util.Collection)} if you want to override the existing values.</p>\n@param s3Resources A list of the associated S3 resources returned by the action.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6072,6 +6177,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null. </p>\n@param nextToken When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6142,6 +6248,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null. </p>\n@param nextToken When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6250,6 +6357,7 @@
                 "variableSetterType" : "S3ResourceClassification"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6294,6 +6402,7 @@
             "variableSetterType" : "java.util.Collection<S3ResourceClassification>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of the associated S3 resources returned by the action.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setS3Resources(java.util.Collection)} or {@link #withS3Resources(java.util.Collection)} if you want to override the existing values.</p>\n@param s3Resources A list of the associated S3 resources returned by the action.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6309,6 +6418,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.macie.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6343,6 +6453,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.macie.model.MemberAccount",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6404,6 +6515,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The AWS account ID of the Amazon Macie Classic member account.</p>\n@param accountId The AWS account ID of the Amazon Macie Classic member account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6474,6 +6586,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The AWS account ID of the Amazon Macie Classic member account.</p>\n@param accountId The AWS account ID of the Amazon Macie Classic member account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6489,6 +6602,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.macie.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6526,6 +6640,7 @@
         "value" : "FULL"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.macie.enum.S3ContinuousClassificationType",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6534,6 +6649,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.macie.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6574,6 +6690,7 @@
         "value" : "NONE"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.macie.enum.S3OneTimeClassificationType",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6582,6 +6699,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.macie.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6616,6 +6734,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.macie.model.S3Resource",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6677,6 +6796,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the S3 bucket.</p>\n@param bucketName The name of the S3 bucket.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6745,6 +6865,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The prefix of the S3 bucket. </p>\n@param prefix The prefix of the S3 bucket.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6815,6 +6936,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the S3 bucket.</p>\n@param bucketName The name of the S3 bucket.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6884,6 +7006,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The prefix of the S3 bucket. </p>\n@param prefix The prefix of the S3 bucket.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6899,6 +7022,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.macie.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "bucketName" ],
@@ -6933,6 +7057,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.macie.model.S3ResourceClassification",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6994,6 +7119,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the S3 bucket that you want to associate with Amazon Macie Classic.</p>\n@param bucketName The name of the S3 bucket that you want to associate with Amazon Macie Classic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7062,6 +7188,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The prefix of the S3 bucket that you want to associate with Amazon Macie Classic.</p>\n@param prefix The prefix of the S3 bucket that you want to associate with Amazon Macie Classic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7130,6 +7257,7 @@
           "variableSetterType" : "ClassificationType"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The classification type that you want to specify for the resource associated with Amazon Macie Classic. </p>\n@param classificationType The classification type that you want to specify for the resource associated with Amazon Macie Classic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7200,6 +7328,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the S3 bucket that you want to associate with Amazon Macie Classic.</p>\n@param bucketName The name of the S3 bucket that you want to associate with Amazon Macie Classic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7269,6 +7398,7 @@
             "variableSetterType" : "ClassificationType"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The classification type that you want to specify for the resource associated with Amazon Macie Classic. </p>\n@param classificationType The classification type that you want to specify for the resource associated with Amazon Macie Classic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7338,6 +7468,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The prefix of the S3 bucket that you want to associate with Amazon Macie Classic.</p>\n@param prefix The prefix of the S3 bucket that you want to associate with Amazon Macie Classic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7353,6 +7484,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.macie.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "bucketName", "classificationType" ],
@@ -7387,6 +7519,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.macie.model.S3ResourceClassificationUpdate",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7448,6 +7581,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the S3 bucket whose classification types you want to update.</p>\n@param bucketName The name of the S3 bucket whose classification types you want to update.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7516,6 +7650,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The prefix of the S3 bucket whose classification types you want to update.</p>\n@param prefix The prefix of the S3 bucket whose classification types you want to update.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7584,6 +7719,7 @@
           "variableSetterType" : "ClassificationTypeUpdate"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The classification type that you want to update for the resource associated with Amazon Macie Classic. </p>\n@param classificationTypeUpdate The classification type that you want to update for the resource associated with Amazon Macie Classic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7654,6 +7790,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the S3 bucket whose classification types you want to update.</p>\n@param bucketName The name of the S3 bucket whose classification types you want to update.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7723,6 +7860,7 @@
             "variableSetterType" : "ClassificationTypeUpdate"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The classification type that you want to update for the resource associated with Amazon Macie Classic. </p>\n@param classificationTypeUpdate The classification type that you want to update for the resource associated with Amazon Macie Classic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7792,6 +7930,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The prefix of the S3 bucket whose classification types you want to update.</p>\n@param prefix The prefix of the S3 bucket whose classification types you want to update.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7807,6 +7946,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.macie.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "bucketName", "classificationTypeUpdate" ],
@@ -7841,6 +7981,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.macie.request.UpdateS3ResourcesRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7909,6 +8050,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The AWS ID of the Amazon Macie Classic member account whose S3 resources' classification types you want to update. </p>\n@param memberAccountId The AWS ID of the Amazon Macie Classic member account whose S3 resources' classification types you want to update.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8016,6 +8158,7 @@
               "variableSetterType" : "S3ResourceClassificationUpdate"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8060,6 +8203,7 @@
           "variableSetterType" : "java.util.Collection<S3ResourceClassificationUpdate>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The S3 resources whose classification types you want to update.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setS3ResourcesUpdate(java.util.Collection)} or {@link #withS3ResourcesUpdate(java.util.Collection)} if you want to override the existing values.</p>\n@param s3ResourcesUpdate The S3 resources whose classification types you want to update.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8130,6 +8274,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The AWS ID of the Amazon Macie Classic member account whose S3 resources' classification types you want to update. </p>\n@param memberAccountId The AWS ID of the Amazon Macie Classic member account whose S3 resources' classification types you want to update.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8238,6 +8383,7 @@
                 "variableSetterType" : "S3ResourceClassificationUpdate"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8282,6 +8428,7 @@
             "variableSetterType" : "java.util.Collection<S3ResourceClassificationUpdate>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The S3 resources whose classification types you want to update.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setS3ResourcesUpdate(java.util.Collection)} or {@link #withS3ResourcesUpdate(java.util.Collection)} if you want to override the existing values.</p>\n@param s3ResourcesUpdate The S3 resources whose classification types you want to update.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8297,6 +8444,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.macie.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "s3ResourcesUpdate" ],
@@ -8328,6 +8476,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.macie.response.UpdateS3ResourcesResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8428,6 +8577,7 @@
               "variableSetterType" : "FailedS3Resource"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8472,6 +8622,7 @@
           "variableSetterType" : "java.util.Collection<FailedS3Resource>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The S3 resources whose classification types can't be updated. An error code and an error message are provided for each failed item. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFailedS3Resources(java.util.Collection)} or {@link #withFailedS3Resources(java.util.Collection)} if you want to override the existing values.</p>\n@param failedS3Resources The S3 resources whose classification types can't be updated. An error code and an error message are provided for each failed item.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8581,6 +8732,7 @@
                 "variableSetterType" : "FailedS3Resource"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8625,6 +8777,7 @@
             "variableSetterType" : "java.util.Collection<FailedS3Resource>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The S3 resources whose classification types can't be updated. An error code and an error message are provided for each failed item. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFailedS3Resources(java.util.Collection)} or {@link #withFailedS3Resources(java.util.Collection)} if you want to override the existing values.</p>\n@param failedS3Resources The S3 resources whose classification types can't be updated. An error code and an error message are provided for each failed item.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8640,6 +8793,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.macie.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,

@@ -54,11 +54,15 @@ public class LoggingConfigurationJsonUnmarshaller implements Unmarshaller<Loggin
                 }
                 if (context.testExpression("LogDestinationConfigs", targetDepth)) {
                     context.nextToken();
-                    loggingConfiguration.setLogDestinationConfigs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    loggingConfiguration.setLogDestinationConfigs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("RedactedFields", targetDepth)) {
                     context.nextToken();
-                    loggingConfiguration.setRedactedFields(new ListUnmarshaller<FieldToMatch>(FieldToMatchJsonUnmarshaller.getInstance()).unmarshall(context));
+                    loggingConfiguration.setRedactedFields(new ListUnmarshaller<FieldToMatch>(FieldToMatchJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

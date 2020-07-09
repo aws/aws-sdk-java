@@ -51,7 +51,8 @@ public class RuntimeConfigurationJsonUnmarshaller implements Unmarshaller<Runtim
                 if (context.testExpression("ServerProcesses", targetDepth)) {
                     context.nextToken();
                     runtimeConfiguration.setServerProcesses(new ListUnmarshaller<ServerProcess>(ServerProcessJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("MaxConcurrentGameSessionActivations", targetDepth)) {
                     context.nextToken();

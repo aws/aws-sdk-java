@@ -50,7 +50,9 @@ public class PartitionJsonUnmarshaller implements Unmarshaller<Partition, JsonUn
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Values", targetDepth)) {
                     context.nextToken();
-                    partition.setValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    partition.setValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("DatabaseName", targetDepth)) {
                     context.nextToken();

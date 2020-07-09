@@ -67,7 +67,8 @@ public class OrganizationManagedRuleMetadataJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("ResourceTypesScope", targetDepth)) {
                     context.nextToken();
                     organizationManagedRuleMetadata.setResourceTypesScope(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ResourceIdScope", targetDepth)) {
                     context.nextToken();

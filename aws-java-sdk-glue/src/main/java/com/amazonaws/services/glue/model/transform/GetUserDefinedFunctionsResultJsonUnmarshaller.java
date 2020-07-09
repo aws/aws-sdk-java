@@ -51,7 +51,9 @@ public class GetUserDefinedFunctionsResultJsonUnmarshaller implements Unmarshall
                 if (context.testExpression("UserDefinedFunctions", targetDepth)) {
                     context.nextToken();
                     getUserDefinedFunctionsResult.setUserDefinedFunctions(new ListUnmarshaller<UserDefinedFunction>(UserDefinedFunctionJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

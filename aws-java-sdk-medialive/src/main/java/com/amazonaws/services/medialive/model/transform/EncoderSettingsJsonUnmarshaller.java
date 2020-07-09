@@ -51,7 +51,8 @@ public class EncoderSettingsJsonUnmarshaller implements Unmarshaller<EncoderSett
                 if (context.testExpression("audioDescriptions", targetDepth)) {
                     context.nextToken();
                     encoderSettings.setAudioDescriptions(new ListUnmarshaller<AudioDescription>(AudioDescriptionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("availBlanking", targetDepth)) {
                     context.nextToken();
@@ -68,7 +69,8 @@ public class EncoderSettingsJsonUnmarshaller implements Unmarshaller<EncoderSett
                 if (context.testExpression("captionDescriptions", targetDepth)) {
                     context.nextToken();
                     encoderSettings.setCaptionDescriptions(new ListUnmarshaller<CaptionDescription>(CaptionDescriptionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("featureActivations", targetDepth)) {
                     context.nextToken();
@@ -84,7 +86,9 @@ public class EncoderSettingsJsonUnmarshaller implements Unmarshaller<EncoderSett
                 }
                 if (context.testExpression("outputGroups", targetDepth)) {
                     context.nextToken();
-                    encoderSettings.setOutputGroups(new ListUnmarshaller<OutputGroup>(OutputGroupJsonUnmarshaller.getInstance()).unmarshall(context));
+                    encoderSettings.setOutputGroups(new ListUnmarshaller<OutputGroup>(OutputGroupJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("timecodeConfig", targetDepth)) {
                     context.nextToken();
@@ -93,7 +97,8 @@ public class EncoderSettingsJsonUnmarshaller implements Unmarshaller<EncoderSett
                 if (context.testExpression("videoDescriptions", targetDepth)) {
                     context.nextToken();
                     encoderSettings.setVideoDescriptions(new ListUnmarshaller<VideoDescription>(VideoDescriptionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

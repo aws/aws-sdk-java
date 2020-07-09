@@ -66,7 +66,9 @@ public class AcceleratorJsonUnmarshaller implements Unmarshaller<Accelerator, Js
                 }
                 if (context.testExpression("IpSets", targetDepth)) {
                     context.nextToken();
-                    accelerator.setIpSets(new ListUnmarshaller<IpSet>(IpSetJsonUnmarshaller.getInstance()).unmarshall(context));
+                    accelerator.setIpSets(new ListUnmarshaller<IpSet>(IpSetJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("DnsName", targetDepth)) {
                     context.nextToken();

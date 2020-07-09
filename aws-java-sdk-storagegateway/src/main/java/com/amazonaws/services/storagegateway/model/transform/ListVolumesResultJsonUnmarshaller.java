@@ -58,7 +58,9 @@ public class ListVolumesResultJsonUnmarshaller implements Unmarshaller<ListVolum
                 }
                 if (context.testExpression("VolumeInfos", targetDepth)) {
                     context.nextToken();
-                    listVolumesResult.setVolumeInfos(new ListUnmarshaller<VolumeInfo>(VolumeInfoJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listVolumesResult.setVolumeInfos(new ListUnmarshaller<VolumeInfo>(VolumeInfoJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -107,16 +107,22 @@ public class DescribeSimulationJobResultJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("robotApplications", targetDepth)) {
                     context.nextToken();
                     describeSimulationJobResult.setRobotApplications(new ListUnmarshaller<RobotApplicationConfig>(RobotApplicationConfigJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("simulationApplications", targetDepth)) {
                     context.nextToken();
                     describeSimulationJobResult.setSimulationApplications(new ListUnmarshaller<SimulationApplicationConfig>(
-                            SimulationApplicationConfigJsonUnmarshaller.getInstance()).unmarshall(context));
+                            SimulationApplicationConfigJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("dataSources", targetDepth)) {
                     context.nextToken();
-                    describeSimulationJobResult.setDataSources(new ListUnmarshaller<DataSource>(DataSourceJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeSimulationJobResult.setDataSources(new ListUnmarshaller<DataSource>(DataSourceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();

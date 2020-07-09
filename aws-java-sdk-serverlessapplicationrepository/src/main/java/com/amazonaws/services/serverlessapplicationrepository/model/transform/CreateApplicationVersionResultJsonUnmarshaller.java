@@ -59,12 +59,15 @@ public class CreateApplicationVersionResultJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("parameterDefinitions", targetDepth)) {
                     context.nextToken();
                     createApplicationVersionResult.setParameterDefinitions(new ListUnmarshaller<ParameterDefinition>(ParameterDefinitionJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("requiredCapabilities", targetDepth)) {
                     context.nextToken();
                     createApplicationVersionResult.setRequiredCapabilities(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("resourcesSupported", targetDepth)) {
                     context.nextToken();

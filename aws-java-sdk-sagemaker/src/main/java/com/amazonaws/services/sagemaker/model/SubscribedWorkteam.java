@@ -52,7 +52,11 @@ public class SubscribedWorkteam implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private String marketplaceDescription;
-    /** <p/> */
+    /**
+     * <p>
+     * Marketplace product listing ID.
+     * </p>
+     */
     private String listingId;
 
     /**
@@ -216,9 +220,12 @@ public class SubscribedWorkteam implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * <p/>
+     * <p>
+     * Marketplace product listing ID.
+     * </p>
      * 
      * @param listingId
+     *        Marketplace product listing ID.
      */
 
     public void setListingId(String listingId) {
@@ -226,9 +233,11 @@ public class SubscribedWorkteam implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * <p/>
+     * <p>
+     * Marketplace product listing ID.
+     * </p>
      * 
-     * @return
+     * @return Marketplace product listing ID.
      */
 
     public String getListingId() {
@@ -236,9 +245,12 @@ public class SubscribedWorkteam implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * <p/>
+     * <p>
+     * Marketplace product listing ID.
+     * </p>
      * 
      * @param listingId
+     *        Marketplace product listing ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

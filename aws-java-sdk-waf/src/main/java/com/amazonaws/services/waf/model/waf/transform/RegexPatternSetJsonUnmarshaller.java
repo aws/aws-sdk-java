@@ -58,7 +58,9 @@ public class RegexPatternSetJsonUnmarshaller implements Unmarshaller<RegexPatter
                 }
                 if (context.testExpression("RegexPatternStrings", targetDepth)) {
                     context.nextToken();
-                    regexPatternSet.setRegexPatternStrings(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    regexPatternSet.setRegexPatternStrings(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

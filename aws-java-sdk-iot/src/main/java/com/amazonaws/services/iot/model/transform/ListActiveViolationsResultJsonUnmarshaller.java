@@ -51,7 +51,8 @@ public class ListActiveViolationsResultJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("activeViolations", targetDepth)) {
                     context.nextToken();
                     listActiveViolationsResult.setActiveViolations(new ListUnmarshaller<ActiveViolation>(ActiveViolationJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

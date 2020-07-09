@@ -50,7 +50,9 @@ public class AccountAggregationSourceJsonUnmarshaller implements Unmarshaller<Ac
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AccountIds", targetDepth)) {
                     context.nextToken();
-                    accountAggregationSource.setAccountIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    accountAggregationSource.setAccountIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("AllAwsRegions", targetDepth)) {
                     context.nextToken();
@@ -58,7 +60,9 @@ public class AccountAggregationSourceJsonUnmarshaller implements Unmarshaller<Ac
                 }
                 if (context.testExpression("AwsRegions", targetDepth)) {
                     context.nextToken();
-                    accountAggregationSource.setAwsRegions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    accountAggregationSource.setAwsRegions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

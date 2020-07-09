@@ -56,7 +56,8 @@ public class AssessmentRunInProgressExceptionUnmarshaller extends EnhancedJsonEr
                 if (context.testExpression("assessmentRunArns", targetDepth)) {
                     context.nextToken();
                     assessmentRunInProgressException.setAssessmentRunArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("assessmentRunArnsTruncated", targetDepth)) {
                     context.nextToken();

@@ -54,7 +54,9 @@ public class ListFaqsResultJsonUnmarshaller implements Unmarshaller<ListFaqsResu
                 }
                 if (context.testExpression("FaqSummaryItems", targetDepth)) {
                     context.nextToken();
-                    listFaqsResult.setFaqSummaryItems(new ListUnmarshaller<FaqSummary>(FaqSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listFaqsResult.setFaqSummaryItems(new ListUnmarshaller<FaqSummary>(FaqSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

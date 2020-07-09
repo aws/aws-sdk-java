@@ -55,11 +55,14 @@ public class TypedLinkFacetJsonUnmarshaller implements Unmarshaller<TypedLinkFac
                 if (context.testExpression("Attributes", targetDepth)) {
                     context.nextToken();
                     typedLinkFacet.setAttributes(new ListUnmarshaller<TypedLinkAttributeDefinition>(TypedLinkAttributeDefinitionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("IdentityAttributeOrder", targetDepth)) {
                     context.nextToken();
-                    typedLinkFacet.setIdentityAttributeOrder(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    typedLinkFacet.setIdentityAttributeOrder(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

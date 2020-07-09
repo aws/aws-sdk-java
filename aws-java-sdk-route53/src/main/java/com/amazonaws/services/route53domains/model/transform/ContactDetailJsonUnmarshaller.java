@@ -102,7 +102,9 @@ public class ContactDetailJsonUnmarshaller implements Unmarshaller<ContactDetail
                 }
                 if (context.testExpression("ExtraParams", targetDepth)) {
                     context.nextToken();
-                    contactDetail.setExtraParams(new ListUnmarshaller<ExtraParam>(ExtraParamJsonUnmarshaller.getInstance()).unmarshall(context));
+                    contactDetail.setExtraParams(new ListUnmarshaller<ExtraParam>(ExtraParamJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

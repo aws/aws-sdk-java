@@ -52,7 +52,9 @@ public class ListStackInstancesForProvisionedProductResultJsonUnmarshaller imple
                 if (context.testExpression("StackInstances", targetDepth)) {
                     context.nextToken();
                     listStackInstancesForProvisionedProductResult.setStackInstances(new ListUnmarshaller<StackInstance>(StackInstanceJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextPageToken", targetDepth)) {
                     context.nextToken();

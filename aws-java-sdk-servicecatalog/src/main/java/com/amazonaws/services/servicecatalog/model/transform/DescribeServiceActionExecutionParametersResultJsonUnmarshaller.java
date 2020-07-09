@@ -52,7 +52,9 @@ public class DescribeServiceActionExecutionParametersResultJsonUnmarshaller impl
                 if (context.testExpression("ServiceActionParameters", targetDepth)) {
                     context.nextToken();
                     describeServiceActionExecutionParametersResult.setServiceActionParameters(new ListUnmarshaller<ExecutionParameter>(
-                            ExecutionParameterJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ExecutionParameterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

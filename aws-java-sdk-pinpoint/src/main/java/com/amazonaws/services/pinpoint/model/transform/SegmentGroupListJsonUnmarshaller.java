@@ -50,7 +50,9 @@ public class SegmentGroupListJsonUnmarshaller implements Unmarshaller<SegmentGro
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Groups", targetDepth)) {
                     context.nextToken();
-                    segmentGroupList.setGroups(new ListUnmarshaller<SegmentGroup>(SegmentGroupJsonUnmarshaller.getInstance()).unmarshall(context));
+                    segmentGroupList.setGroups(new ListUnmarshaller<SegmentGroup>(SegmentGroupJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Include", targetDepth)) {
                     context.nextToken();

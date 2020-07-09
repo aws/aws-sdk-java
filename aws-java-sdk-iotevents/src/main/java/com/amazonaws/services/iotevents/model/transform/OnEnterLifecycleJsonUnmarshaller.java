@@ -50,7 +50,9 @@ public class OnEnterLifecycleJsonUnmarshaller implements Unmarshaller<OnEnterLif
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("events", targetDepth)) {
                     context.nextToken();
-                    onEnterLifecycle.setEvents(new ListUnmarshaller<Event>(EventJsonUnmarshaller.getInstance()).unmarshall(context));
+                    onEnterLifecycle.setEvents(new ListUnmarshaller<Event>(EventJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

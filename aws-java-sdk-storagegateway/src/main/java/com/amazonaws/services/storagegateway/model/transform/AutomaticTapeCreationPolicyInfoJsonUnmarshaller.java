@@ -51,7 +51,9 @@ public class AutomaticTapeCreationPolicyInfoJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("AutomaticTapeCreationRules", targetDepth)) {
                     context.nextToken();
                     automaticTapeCreationPolicyInfo.setAutomaticTapeCreationRules(new ListUnmarshaller<AutomaticTapeCreationRule>(
-                            AutomaticTapeCreationRuleJsonUnmarshaller.getInstance()).unmarshall(context));
+                            AutomaticTapeCreationRuleJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("GatewayARN", targetDepth)) {
                     context.nextToken();

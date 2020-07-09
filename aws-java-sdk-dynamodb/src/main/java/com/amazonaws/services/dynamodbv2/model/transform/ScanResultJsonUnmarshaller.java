@@ -52,7 +52,9 @@ public class ScanResultJsonUnmarshaller implements Unmarshaller<ScanResult, Json
                 if (context.testExpression("Items", targetDepth)) {
                     context.nextToken();
                     scanResult.setItems(new ListUnmarshaller<java.util.Map<String, AttributeValue>>(new MapUnmarshaller<String, AttributeValue>(context
-                            .getUnmarshaller(String.class), AttributeValueJsonUnmarshaller.getInstance())).unmarshall(context));
+                            .getUnmarshaller(String.class), AttributeValueJsonUnmarshaller.getInstance()))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Count", targetDepth)) {
                     context.nextToken();

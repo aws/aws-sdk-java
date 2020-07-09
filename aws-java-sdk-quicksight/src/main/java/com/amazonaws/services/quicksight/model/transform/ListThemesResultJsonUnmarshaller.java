@@ -52,7 +52,9 @@ public class ListThemesResultJsonUnmarshaller implements Unmarshaller<ListThemes
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ThemeSummaryList", targetDepth)) {
                     context.nextToken();
-                    listThemesResult.setThemeSummaryList(new ListUnmarshaller<ThemeSummary>(ThemeSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listThemesResult.setThemeSummaryList(new ListUnmarshaller<ThemeSummary>(ThemeSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

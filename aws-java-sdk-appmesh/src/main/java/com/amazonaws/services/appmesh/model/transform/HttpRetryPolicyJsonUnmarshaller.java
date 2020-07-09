@@ -50,7 +50,9 @@ public class HttpRetryPolicyJsonUnmarshaller implements Unmarshaller<HttpRetryPo
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("httpRetryEvents", targetDepth)) {
                     context.nextToken();
-                    httpRetryPolicy.setHttpRetryEvents(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    httpRetryPolicy.setHttpRetryEvents(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("maxRetries", targetDepth)) {
                     context.nextToken();
@@ -62,7 +64,9 @@ public class HttpRetryPolicyJsonUnmarshaller implements Unmarshaller<HttpRetryPo
                 }
                 if (context.testExpression("tcpRetryEvents", targetDepth)) {
                     context.nextToken();
-                    httpRetryPolicy.setTcpRetryEvents(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    httpRetryPolicy.setTcpRetryEvents(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

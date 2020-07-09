@@ -50,7 +50,9 @@ public class ResolvedTargetsJsonUnmarshaller implements Unmarshaller<ResolvedTar
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ParameterValues", targetDepth)) {
                     context.nextToken();
-                    resolvedTargets.setParameterValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    resolvedTargets.setParameterValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Truncated", targetDepth)) {
                     context.nextToken();

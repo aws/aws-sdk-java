@@ -59,7 +59,11 @@ public class GetMissionProfileResultJsonUnmarshaller implements Unmarshaller<Get
                 if (context.testExpression("dataflowEdges", targetDepth)) {
                     context.nextToken();
                     getMissionProfileResult.setDataflowEdges(new ListUnmarshaller<java.util.List<String>>(new ListUnmarshaller<String>(context
-                            .getUnmarshaller(String.class))).unmarshall(context));
+                            .getUnmarshaller(String.class))
+
+                    )
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("minimumViableContactDurationSeconds", targetDepth)) {
                     context.nextToken();

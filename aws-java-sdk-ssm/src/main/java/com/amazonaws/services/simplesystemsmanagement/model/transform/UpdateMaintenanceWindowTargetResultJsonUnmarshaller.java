@@ -58,7 +58,9 @@ public class UpdateMaintenanceWindowTargetResultJsonUnmarshaller implements Unma
                 }
                 if (context.testExpression("Targets", targetDepth)) {
                     context.nextToken();
-                    updateMaintenanceWindowTargetResult.setTargets(new ListUnmarshaller<Target>(TargetJsonUnmarshaller.getInstance()).unmarshall(context));
+                    updateMaintenanceWindowTargetResult.setTargets(new ListUnmarshaller<Target>(TargetJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("OwnerInformation", targetDepth)) {
                     context.nextToken();

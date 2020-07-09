@@ -70,11 +70,15 @@ public class GetCustomDataIdentifierResultJsonUnmarshaller implements Unmarshall
                 }
                 if (context.testExpression("ignoreWords", targetDepth)) {
                     context.nextToken();
-                    getCustomDataIdentifierResult.setIgnoreWords(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    getCustomDataIdentifierResult.setIgnoreWords(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("keywords", targetDepth)) {
                     context.nextToken();
-                    getCustomDataIdentifierResult.setKeywords(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    getCustomDataIdentifierResult.setKeywords(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("maximumMatchDistance", targetDepth)) {
                     context.nextToken();

@@ -51,7 +51,9 @@ public class GetSavingsPlansUtilizationResultJsonUnmarshaller implements Unmarsh
                 if (context.testExpression("SavingsPlansUtilizationsByTime", targetDepth)) {
                     context.nextToken();
                     getSavingsPlansUtilizationResult.setSavingsPlansUtilizationsByTime(new ListUnmarshaller<SavingsPlansUtilizationByTime>(
-                            SavingsPlansUtilizationByTimeJsonUnmarshaller.getInstance()).unmarshall(context));
+                            SavingsPlansUtilizationByTimeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Total", targetDepth)) {
                     context.nextToken();

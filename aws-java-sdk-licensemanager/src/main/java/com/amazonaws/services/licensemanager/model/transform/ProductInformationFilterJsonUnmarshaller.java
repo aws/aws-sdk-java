@@ -55,7 +55,8 @@ public class ProductInformationFilterJsonUnmarshaller implements Unmarshaller<Pr
                 if (context.testExpression("ProductInformationFilterValue", targetDepth)) {
                     context.nextToken();
                     productInformationFilter.setProductInformationFilterValue(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ProductInformationFilterComparator", targetDepth)) {
                     context.nextToken();

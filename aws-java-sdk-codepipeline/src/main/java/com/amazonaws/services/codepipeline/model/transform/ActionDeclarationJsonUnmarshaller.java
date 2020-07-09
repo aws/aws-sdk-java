@@ -67,12 +67,15 @@ public class ActionDeclarationJsonUnmarshaller implements Unmarshaller<ActionDec
                 }
                 if (context.testExpression("outputArtifacts", targetDepth)) {
                     context.nextToken();
-                    actionDeclaration
-                            .setOutputArtifacts(new ListUnmarshaller<OutputArtifact>(OutputArtifactJsonUnmarshaller.getInstance()).unmarshall(context));
+                    actionDeclaration.setOutputArtifacts(new ListUnmarshaller<OutputArtifact>(OutputArtifactJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("inputArtifacts", targetDepth)) {
                     context.nextToken();
-                    actionDeclaration.setInputArtifacts(new ListUnmarshaller<InputArtifact>(InputArtifactJsonUnmarshaller.getInstance()).unmarshall(context));
+                    actionDeclaration.setInputArtifacts(new ListUnmarshaller<InputArtifact>(InputArtifactJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("roleArn", targetDepth)) {
                     context.nextToken();

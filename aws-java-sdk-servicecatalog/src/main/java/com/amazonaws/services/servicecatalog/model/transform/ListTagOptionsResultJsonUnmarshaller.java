@@ -51,7 +51,8 @@ public class ListTagOptionsResultJsonUnmarshaller implements Unmarshaller<ListTa
                 if (context.testExpression("TagOptionDetails", targetDepth)) {
                     context.nextToken();
                     listTagOptionsResult.setTagOptionDetails(new ListUnmarshaller<TagOptionDetail>(TagOptionDetailJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("PageToken", targetDepth)) {
                     context.nextToken();

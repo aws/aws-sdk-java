@@ -51,7 +51,8 @@ public class ListSignalingChannelsResultJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("ChannelInfoList", targetDepth)) {
                     context.nextToken();
                     listSignalingChannelsResult.setChannelInfoList(new ListUnmarshaller<ChannelInfo>(ChannelInfoJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

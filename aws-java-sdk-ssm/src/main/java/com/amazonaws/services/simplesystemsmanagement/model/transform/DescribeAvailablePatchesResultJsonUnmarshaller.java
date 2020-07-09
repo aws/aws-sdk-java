@@ -50,7 +50,9 @@ public class DescribeAvailablePatchesResultJsonUnmarshaller implements Unmarshal
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Patches", targetDepth)) {
                     context.nextToken();
-                    describeAvailablePatchesResult.setPatches(new ListUnmarshaller<Patch>(PatchJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeAvailablePatchesResult.setPatches(new ListUnmarshaller<Patch>(PatchJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

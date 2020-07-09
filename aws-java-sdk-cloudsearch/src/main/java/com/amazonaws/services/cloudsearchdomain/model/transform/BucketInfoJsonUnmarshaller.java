@@ -50,7 +50,9 @@ public class BucketInfoJsonUnmarshaller implements Unmarshaller<BucketInfo, Json
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("buckets", targetDepth)) {
                     context.nextToken();
-                    bucketInfo.setBuckets(new ListUnmarshaller<Bucket>(BucketJsonUnmarshaller.getInstance()).unmarshall(context));
+                    bucketInfo.setBuckets(new ListUnmarshaller<Bucket>(BucketJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

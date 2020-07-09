@@ -116,7 +116,9 @@ public class AppJsonUnmarshaller implements Unmarshaller<App, JsonUnmarshallerCo
                 }
                 if (context.testExpression("customRules", targetDepth)) {
                     context.nextToken();
-                    app.setCustomRules(new ListUnmarshaller<CustomRule>(CustomRuleJsonUnmarshaller.getInstance()).unmarshall(context));
+                    app.setCustomRules(new ListUnmarshaller<CustomRule>(CustomRuleJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("productionBranch", targetDepth)) {
                     context.nextToken();
@@ -132,7 +134,9 @@ public class AppJsonUnmarshaller implements Unmarshaller<App, JsonUnmarshallerCo
                 }
                 if (context.testExpression("autoBranchCreationPatterns", targetDepth)) {
                     context.nextToken();
-                    app.setAutoBranchCreationPatterns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    app.setAutoBranchCreationPatterns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("autoBranchCreationConfig", targetDepth)) {
                     context.nextToken();

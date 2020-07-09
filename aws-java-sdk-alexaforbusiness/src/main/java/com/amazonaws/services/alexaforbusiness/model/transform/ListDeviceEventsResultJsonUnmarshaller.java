@@ -50,7 +50,9 @@ public class ListDeviceEventsResultJsonUnmarshaller implements Unmarshaller<List
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DeviceEvents", targetDepth)) {
                     context.nextToken();
-                    listDeviceEventsResult.setDeviceEvents(new ListUnmarshaller<DeviceEvent>(DeviceEventJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listDeviceEventsResult.setDeviceEvents(new ListUnmarshaller<DeviceEvent>(DeviceEventJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

@@ -63,7 +63,9 @@ public class DescribeDomainConfigurationResultJsonUnmarshaller implements Unmars
                 if (context.testExpression("serverCertificates", targetDepth)) {
                     context.nextToken();
                     describeDomainConfigurationResult.setServerCertificates(new ListUnmarshaller<ServerCertificateSummary>(
-                            ServerCertificateSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ServerCertificateSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("authorizerConfig", targetDepth)) {
                     context.nextToken();

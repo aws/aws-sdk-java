@@ -58,7 +58,9 @@ public class ServerGroupJsonUnmarshaller implements Unmarshaller<ServerGroup, Js
                 }
                 if (context.testExpression("serverList", targetDepth)) {
                     context.nextToken();
-                    serverGroup.setServerList(new ListUnmarshaller<Server>(ServerJsonUnmarshaller.getInstance()).unmarshall(context));
+                    serverGroup.setServerList(new ListUnmarshaller<Server>(ServerJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

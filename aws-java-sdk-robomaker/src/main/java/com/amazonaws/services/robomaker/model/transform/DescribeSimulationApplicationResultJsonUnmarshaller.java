@@ -62,7 +62,9 @@ public class DescribeSimulationApplicationResultJsonUnmarshaller implements Unma
                 }
                 if (context.testExpression("sources", targetDepth)) {
                     context.nextToken();
-                    describeSimulationApplicationResult.setSources(new ListUnmarshaller<Source>(SourceJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeSimulationApplicationResult.setSources(new ListUnmarshaller<Source>(SourceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("simulationSoftwareSuite", targetDepth)) {
                     context.nextToken();

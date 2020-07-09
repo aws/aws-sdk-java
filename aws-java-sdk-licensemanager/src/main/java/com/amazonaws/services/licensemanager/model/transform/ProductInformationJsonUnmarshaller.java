@@ -55,7 +55,9 @@ public class ProductInformationJsonUnmarshaller implements Unmarshaller<ProductI
                 if (context.testExpression("ProductInformationFilterList", targetDepth)) {
                     context.nextToken();
                     productInformation.setProductInformationFilterList(new ListUnmarshaller<ProductInformationFilter>(ProductInformationFilterJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

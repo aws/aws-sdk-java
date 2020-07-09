@@ -55,7 +55,8 @@ public class ListActivatedRulesInRuleGroupResultJsonUnmarshaller implements Unma
                 if (context.testExpression("ActivatedRules", targetDepth)) {
                     context.nextToken();
                     listActivatedRulesInRuleGroupResult.setActivatedRules(new ListUnmarshaller<ActivatedRule>(ActivatedRuleJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

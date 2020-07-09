@@ -55,7 +55,8 @@ public class PutTargetsResultJsonUnmarshaller implements Unmarshaller<PutTargets
                 if (context.testExpression("FailedEntries", targetDepth)) {
                     context.nextToken();
                     putTargetsResult.setFailedEntries(new ListUnmarshaller<PutTargetsResultEntry>(PutTargetsResultEntryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

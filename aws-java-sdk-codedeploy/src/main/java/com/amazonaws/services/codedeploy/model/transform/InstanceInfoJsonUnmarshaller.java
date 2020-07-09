@@ -74,7 +74,9 @@ public class InstanceInfoJsonUnmarshaller implements Unmarshaller<InstanceInfo, 
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
-                    instanceInfo.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    instanceInfo.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

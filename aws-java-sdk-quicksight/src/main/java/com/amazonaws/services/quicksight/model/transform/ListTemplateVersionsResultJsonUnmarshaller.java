@@ -53,7 +53,9 @@ public class ListTemplateVersionsResultJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("TemplateVersionSummaryList", targetDepth)) {
                     context.nextToken();
                     listTemplateVersionsResult.setTemplateVersionSummaryList(new ListUnmarshaller<TemplateVersionSummary>(
-                            TemplateVersionSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                            TemplateVersionSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

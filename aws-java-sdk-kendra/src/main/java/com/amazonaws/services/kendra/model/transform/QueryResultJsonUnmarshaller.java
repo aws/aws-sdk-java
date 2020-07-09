@@ -54,11 +54,15 @@ public class QueryResultJsonUnmarshaller implements Unmarshaller<QueryResult, Js
                 }
                 if (context.testExpression("ResultItems", targetDepth)) {
                     context.nextToken();
-                    queryResult.setResultItems(new ListUnmarshaller<QueryResultItem>(QueryResultItemJsonUnmarshaller.getInstance()).unmarshall(context));
+                    queryResult.setResultItems(new ListUnmarshaller<QueryResultItem>(QueryResultItemJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("FacetResults", targetDepth)) {
                     context.nextToken();
-                    queryResult.setFacetResults(new ListUnmarshaller<FacetResult>(FacetResultJsonUnmarshaller.getInstance()).unmarshall(context));
+                    queryResult.setFacetResults(new ListUnmarshaller<FacetResult>(FacetResultJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("TotalNumberOfResults", targetDepth)) {
                     context.nextToken();

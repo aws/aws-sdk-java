@@ -51,7 +51,9 @@ public class AwsCloudMapServiceDiscoveryJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("attributes", targetDepth)) {
                     context.nextToken();
                     awsCloudMapServiceDiscovery.setAttributes(new ListUnmarshaller<AwsCloudMapInstanceAttribute>(AwsCloudMapInstanceAttributeJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("namespaceName", targetDepth)) {
                     context.nextToken();

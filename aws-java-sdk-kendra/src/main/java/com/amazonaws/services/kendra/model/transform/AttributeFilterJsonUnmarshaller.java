@@ -50,11 +50,15 @@ public class AttributeFilterJsonUnmarshaller implements Unmarshaller<AttributeFi
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AndAllFilters", targetDepth)) {
                     context.nextToken();
-                    attributeFilter.setAndAllFilters(new ListUnmarshaller<AttributeFilter>(AttributeFilterJsonUnmarshaller.getInstance()).unmarshall(context));
+                    attributeFilter.setAndAllFilters(new ListUnmarshaller<AttributeFilter>(AttributeFilterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("OrAllFilters", targetDepth)) {
                     context.nextToken();
-                    attributeFilter.setOrAllFilters(new ListUnmarshaller<AttributeFilter>(AttributeFilterJsonUnmarshaller.getInstance()).unmarshall(context));
+                    attributeFilter.setOrAllFilters(new ListUnmarshaller<AttributeFilter>(AttributeFilterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NotFilter", targetDepth)) {
                     context.nextToken();

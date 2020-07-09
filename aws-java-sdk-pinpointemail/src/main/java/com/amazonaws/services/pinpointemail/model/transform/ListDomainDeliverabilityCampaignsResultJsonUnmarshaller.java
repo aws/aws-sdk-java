@@ -51,7 +51,9 @@ public class ListDomainDeliverabilityCampaignsResultJsonUnmarshaller implements 
                 if (context.testExpression("DomainDeliverabilityCampaigns", targetDepth)) {
                     context.nextToken();
                     listDomainDeliverabilityCampaignsResult.setDomainDeliverabilityCampaigns(new ListUnmarshaller<DomainDeliverabilityCampaign>(
-                            DomainDeliverabilityCampaignJsonUnmarshaller.getInstance()).unmarshall(context));
+                            DomainDeliverabilityCampaignJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

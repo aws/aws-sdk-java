@@ -51,7 +51,8 @@ public class ListNetworkProfilesResultJsonUnmarshaller implements Unmarshaller<L
                 if (context.testExpression("networkProfiles", targetDepth)) {
                     context.nextToken();
                     listNetworkProfilesResult.setNetworkProfiles(new ListUnmarshaller<NetworkProfile>(NetworkProfileJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

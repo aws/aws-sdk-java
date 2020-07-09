@@ -126,7 +126,9 @@ public class UpdateFunctionCodeResultJsonUnmarshaller implements Unmarshaller<Up
                 }
                 if (context.testExpression("Layers", targetDepth)) {
                     context.nextToken();
-                    updateFunctionCodeResult.setLayers(new ListUnmarshaller<Layer>(LayerJsonUnmarshaller.getInstance()).unmarshall(context));
+                    updateFunctionCodeResult.setLayers(new ListUnmarshaller<Layer>(LayerJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
                     context.nextToken();
@@ -155,7 +157,8 @@ public class UpdateFunctionCodeResultJsonUnmarshaller implements Unmarshaller<Up
                 if (context.testExpression("FileSystemConfigs", targetDepth)) {
                     context.nextToken();
                     updateFunctionCodeResult.setFileSystemConfigs(new ListUnmarshaller<FileSystemConfig>(FileSystemConfigJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

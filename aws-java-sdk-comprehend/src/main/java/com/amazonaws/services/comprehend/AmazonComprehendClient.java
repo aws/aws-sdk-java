@@ -523,8 +523,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
      * @throws InvalidRequestException
      *         The request is invalid.
      * @throws ResourceUnavailableException
-     *         The specified resource is not available. Check to see if the resource is in the <code>TRAINED</code>
-     *         state and try your request again.
+     *         The specified resource is not available. Check the resource and try your request again.
      * @throws TextSizeLimitExceededException
      *         The size of the input text exceeds the limit. Use a smaller document.
      * @throws InternalServerException
@@ -577,7 +576,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Creates a new document classifier that you can use to categorize documents. To create a classifier you provide a
+     * Creates a new document classifier that you can use to categorize documents. To create a classifier, you provide a
      * set of training documents that labeled with the categories that you want to use. After the classifier is trained
      * you can use it to categorize a set of labeled documents into the categories. For more information, see
      * <a>how-document-classification</a>.
@@ -588,15 +587,15 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
      * @throws InvalidRequestException
      *         The request is invalid.
      * @throws ResourceInUseException
-     *         The specified name is already in use. Use a different name and try your request again.
+     *         The specified resource name is already in use. Use a different name and try your request again.
      * @throws TooManyTagsException
      *         The request contains more tags than can be associated with a resource (50 tags per resource). The maximum
      *         number of tags includes both existing tags and those included in your current request.
      * @throws TooManyRequestsException
      *         The number of requests exceeds the limit. Resubmit your request later.
      * @throws ResourceLimitExceededException
-     *         The maximum number of recognizers per account has been exceeded. Review the recognizers, perform cleanup,
-     *         and then try your request again.
+     *         The maximum number of resources per account has been exceeded. Review the resources, and then try your
+     *         request again.
      * @throws UnsupportedLanguageException
      *         Amazon Comprehend can't process the language of the input text. For all custom entity recognition APIs
      *         (such as <code>CreateEntityRecognizer</code>), only English is accepted. For most other APIs, such as
@@ -664,15 +663,14 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
      * @throws InvalidRequestException
      *         The request is invalid.
      * @throws ResourceInUseException
-     *         The specified name is already in use. Use a different name and try your request again.
+     *         The specified resource name is already in use. Use a different name and try your request again.
      * @throws ResourceLimitExceededException
-     *         The maximum number of recognizers per account has been exceeded. Review the recognizers, perform cleanup,
-     *         and then try your request again.
+     *         The maximum number of resources per account has been exceeded. Review the resources, and then try your
+     *         request again.
      * @throws ResourceNotFoundException
      *         The specified resource ARN was not found. Check the ARN and try your request again.
      * @throws ResourceUnavailableException
-     *         The specified resource is not available. Check to see if the resource is in the <code>TRAINED</code>
-     *         state and try your request again.
+     *         The specified resource is not available. Check the resource and try your request again.
      * @throws TooManyRequestsException
      *         The number of requests exceeds the limit. Resubmit your request later.
      * @throws TooManyTagsException
@@ -737,15 +735,15 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
      * @throws InvalidRequestException
      *         The request is invalid.
      * @throws ResourceInUseException
-     *         The specified name is already in use. Use a different name and try your request again.
+     *         The specified resource name is already in use. Use a different name and try your request again.
      * @throws TooManyTagsException
      *         The request contains more tags than can be associated with a resource (50 tags per resource). The maximum
      *         number of tags includes both existing tags and those included in your current request.
      * @throws TooManyRequestsException
      *         The number of requests exceeds the limit. Resubmit your request later.
      * @throws ResourceLimitExceededException
-     *         The maximum number of recognizers per account has been exceeded. Review the recognizers, perform cleanup,
-     *         and then try your request again.
+     *         The maximum number of resources per account has been exceeded. Review the resources, and then try your
+     *         request again.
      * @throws UnsupportedLanguageException
      *         Amazon Comprehend can't process the language of the input text. For all custom entity recognition APIs
      *         (such as <code>CreateEntityRecognizer</code>), only English is accepted. For most other APIs, such as
@@ -824,10 +822,9 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
      * @throws ResourceNotFoundException
      *         The specified resource ARN was not found. Check the ARN and try your request again.
      * @throws ResourceUnavailableException
-     *         The specified resource is not available. Check to see if the resource is in the <code>TRAINED</code>
-     *         state and try your request again.
+     *         The specified resource is not available. Check the resource and try your request again.
      * @throws ResourceInUseException
-     *         The specified name is already in use. Use a different name and try your request again.
+     *         The specified resource name is already in use. Use a different name and try your request again.
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
      * @sample AmazonComprehend.DeleteDocumentClassifier
@@ -889,7 +886,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
      * @throws InvalidRequestException
      *         The request is invalid.
      * @throws ResourceInUseException
-     *         The specified name is already in use. Use a different name and try your request again.
+     *         The specified resource name is already in use. Use a different name and try your request again.
      * @throws ResourceNotFoundException
      *         The specified resource ARN was not found. Check the ARN and try your request again.
      * @throws TooManyRequestsException
@@ -964,10 +961,9 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
      * @throws ResourceNotFoundException
      *         The specified resource ARN was not found. Check the ARN and try your request again.
      * @throws ResourceUnavailableException
-     *         The specified resource is not available. Check to see if the resource is in the <code>TRAINED</code>
-     *         state and try your request again.
+     *         The specified resource is not available. Check the resource and try your request again.
      * @throws ResourceInUseException
-     *         The specified name is already in use. Use a different name and try your request again.
+     *         The specified resource name is already in use. Use a different name and try your request again.
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
      * @sample AmazonComprehend.DeleteEntityRecognizer
@@ -1663,6 +1659,8 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
      * @return Result of the DetectEntities operation returned by the service.
      * @throws InvalidRequestException
      *         The request is invalid.
+     * @throws ResourceUnavailableException
+     *         The specified resource is not available. Check the resource and try your request again.
      * @throws TextSizeLimitExceededException
      *         The size of the input text exceeds the limit. Use a smaller document.
      * @throws UnsupportedLanguageException
@@ -2553,8 +2551,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
      * @throws ResourceNotFoundException
      *         The specified resource ARN was not found. Check the ARN and try your request again.
      * @throws ResourceUnavailableException
-     *         The specified resource is not available. Check to see if the resource is in the <code>TRAINED</code>
-     *         state and try your request again.
+     *         The specified resource is not available. Check the resource and try your request again.
      * @throws KmsKeyValidationException
      *         The KMS customer managed key (CMK) entered cannot be validated. Verify the key and re-enter it.
      * @throws InternalServerException
@@ -2692,8 +2689,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
      * @throws ResourceNotFoundException
      *         The specified resource ARN was not found. Check the ARN and try your request again.
      * @throws ResourceUnavailableException
-     *         The specified resource is not available. Check to see if the resource is in the <code>TRAINED</code>
-     *         state and try your request again.
+     *         The specified resource is not available. Check the resource and try your request again.
      * @throws KmsKeyValidationException
      *         The KMS customer managed key (CMK) entered cannot be validated. Verify the key and re-enter it.
      * @throws InternalServerException
@@ -3510,15 +3506,14 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
      * @throws TooManyRequestsException
      *         The number of requests exceeds the limit. Resubmit your request later.
      * @throws ResourceInUseException
-     *         The specified name is already in use. Use a different name and try your request again.
+     *         The specified resource name is already in use. Use a different name and try your request again.
      * @throws ResourceLimitExceededException
-     *         The maximum number of recognizers per account has been exceeded. Review the recognizers, perform cleanup,
-     *         and then try your request again.
+     *         The maximum number of resources per account has been exceeded. Review the resources, and then try your
+     *         request again.
      * @throws ResourceNotFoundException
      *         The specified resource ARN was not found. Check the ARN and try your request again.
      * @throws ResourceUnavailableException
-     *         The specified resource is not available. Check to see if the resource is in the <code>TRAINED</code>
-     *         state and try your request again.
+     *         The specified resource is not available. Check the resource and try your request again.
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
      * @sample AmazonComprehend.UpdateEndpoint

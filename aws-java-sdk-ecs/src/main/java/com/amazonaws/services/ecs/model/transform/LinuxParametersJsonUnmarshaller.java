@@ -54,7 +54,9 @@ public class LinuxParametersJsonUnmarshaller implements Unmarshaller<LinuxParame
                 }
                 if (context.testExpression("devices", targetDepth)) {
                     context.nextToken();
-                    linuxParameters.setDevices(new ListUnmarshaller<Device>(DeviceJsonUnmarshaller.getInstance()).unmarshall(context));
+                    linuxParameters.setDevices(new ListUnmarshaller<Device>(DeviceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("initProcessEnabled", targetDepth)) {
                     context.nextToken();
@@ -66,7 +68,9 @@ public class LinuxParametersJsonUnmarshaller implements Unmarshaller<LinuxParame
                 }
                 if (context.testExpression("tmpfs", targetDepth)) {
                     context.nextToken();
-                    linuxParameters.setTmpfs(new ListUnmarshaller<Tmpfs>(TmpfsJsonUnmarshaller.getInstance()).unmarshall(context));
+                    linuxParameters.setTmpfs(new ListUnmarshaller<Tmpfs>(TmpfsJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("maxSwap", targetDepth)) {
                     context.nextToken();

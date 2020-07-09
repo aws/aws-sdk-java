@@ -50,7 +50,9 @@ public class ListConnectionsResultJsonUnmarshaller implements Unmarshaller<ListC
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Connections", targetDepth)) {
                     context.nextToken();
-                    listConnectionsResult.setConnections(new ListUnmarshaller<Connection>(ConnectionJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listConnectionsResult.setConnections(new ListUnmarshaller<Connection>(ConnectionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

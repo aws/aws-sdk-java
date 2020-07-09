@@ -54,7 +54,9 @@ public class ConditionalForwarderJsonUnmarshaller implements Unmarshaller<Condit
                 }
                 if (context.testExpression("DnsIpAddrs", targetDepth)) {
                     context.nextToken();
-                    conditionalForwarder.setDnsIpAddrs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    conditionalForwarder.setDnsIpAddrs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ReplicationScope", targetDepth)) {
                     context.nextToken();

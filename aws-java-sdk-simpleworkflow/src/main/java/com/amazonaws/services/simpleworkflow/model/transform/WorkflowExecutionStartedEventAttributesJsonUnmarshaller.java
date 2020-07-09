@@ -78,7 +78,9 @@ public class WorkflowExecutionStartedEventAttributesJsonUnmarshaller implements 
                 }
                 if (context.testExpression("tagList", targetDepth)) {
                     context.nextToken();
-                    workflowExecutionStartedEventAttributes.setTagList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    workflowExecutionStartedEventAttributes.setTagList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("continuedExecutionRunId", targetDepth)) {
                     context.nextToken();

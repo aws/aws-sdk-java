@@ -50,7 +50,9 @@ public class DataRetrievalPolicyJsonUnmarshaller implements Unmarshaller<DataRet
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Rules", targetDepth)) {
                     context.nextToken();
-                    dataRetrievalPolicy.setRules(new ListUnmarshaller<DataRetrievalRule>(DataRetrievalRuleJsonUnmarshaller.getInstance()).unmarshall(context));
+                    dataRetrievalPolicy.setRules(new ListUnmarshaller<DataRetrievalRule>(DataRetrievalRuleJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

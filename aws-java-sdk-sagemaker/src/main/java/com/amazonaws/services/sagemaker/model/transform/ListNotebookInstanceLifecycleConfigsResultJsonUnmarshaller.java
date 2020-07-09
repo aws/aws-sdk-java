@@ -57,7 +57,9 @@ public class ListNotebookInstanceLifecycleConfigsResultJsonUnmarshaller implemen
                     context.nextToken();
                     listNotebookInstanceLifecycleConfigsResult
                             .setNotebookInstanceLifecycleConfigs(new ListUnmarshaller<NotebookInstanceLifecycleConfigSummary>(
-                                    NotebookInstanceLifecycleConfigSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                                    NotebookInstanceLifecycleConfigSummaryJsonUnmarshaller.getInstance())
+
+                            .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

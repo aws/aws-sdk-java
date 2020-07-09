@@ -50,7 +50,9 @@ public class JWTConfigurationJsonUnmarshaller implements Unmarshaller<JWTConfigu
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("audience", targetDepth)) {
                     context.nextToken();
-                    jWTConfiguration.setAudience(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    jWTConfiguration.setAudience(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("issuer", targetDepth)) {
                     context.nextToken();

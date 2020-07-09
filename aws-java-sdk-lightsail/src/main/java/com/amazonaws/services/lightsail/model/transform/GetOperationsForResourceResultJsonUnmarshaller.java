@@ -50,7 +50,9 @@ public class GetOperationsForResourceResultJsonUnmarshaller implements Unmarshal
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("operations", targetDepth)) {
                     context.nextToken();
-                    getOperationsForResourceResult.setOperations(new ListUnmarshaller<Operation>(OperationJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getOperationsForResourceResult.setOperations(new ListUnmarshaller<Operation>(OperationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextPageCount", targetDepth)) {
                     context.nextToken();

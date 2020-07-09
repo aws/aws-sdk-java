@@ -51,7 +51,9 @@ public class ListUserHierarchyGroupsResultJsonUnmarshaller implements Unmarshall
                 if (context.testExpression("UserHierarchyGroupSummaryList", targetDepth)) {
                     context.nextToken();
                     listUserHierarchyGroupsResult.setUserHierarchyGroupSummaryList(new ListUnmarshaller<HierarchyGroupSummary>(
-                            HierarchyGroupSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                            HierarchyGroupSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

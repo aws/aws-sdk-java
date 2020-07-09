@@ -54,7 +54,9 @@ public class ResourceGroupJsonUnmarshaller implements Unmarshaller<ResourceGroup
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
-                    resourceGroup.setTags(new ListUnmarshaller<ResourceGroupTag>(ResourceGroupTagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    resourceGroup.setTags(new ListUnmarshaller<ResourceGroupTag>(ResourceGroupTagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();

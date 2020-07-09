@@ -66,7 +66,9 @@ public class MaintenanceWindowTaskJsonUnmarshaller implements Unmarshaller<Maint
                 }
                 if (context.testExpression("Targets", targetDepth)) {
                     context.nextToken();
-                    maintenanceWindowTask.setTargets(new ListUnmarshaller<Target>(TargetJsonUnmarshaller.getInstance()).unmarshall(context));
+                    maintenanceWindowTask.setTargets(new ListUnmarshaller<Target>(TargetJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("TaskParameters", targetDepth)) {
                     context.nextToken();

@@ -51,7 +51,8 @@ public class ListBackupVaultsResultJsonUnmarshaller implements Unmarshaller<List
                 if (context.testExpression("BackupVaultList", targetDepth)) {
                     context.nextToken();
                     listBackupVaultsResult.setBackupVaultList(new ListUnmarshaller<BackupVaultListMember>(BackupVaultListMemberJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

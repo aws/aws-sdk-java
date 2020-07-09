@@ -52,7 +52,9 @@ public class AssociatePhoneNumbersWithVoiceConnectorResultJsonUnmarshaller imple
                 if (context.testExpression("PhoneNumberErrors", targetDepth)) {
                     context.nextToken();
                     associatePhoneNumbersWithVoiceConnectorResult.setPhoneNumberErrors(new ListUnmarshaller<PhoneNumberError>(PhoneNumberErrorJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

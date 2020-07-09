@@ -51,7 +51,9 @@ public class GetSecurityConfigurationsResultJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("SecurityConfigurations", targetDepth)) {
                     context.nextToken();
                     getSecurityConfigurationsResult.setSecurityConfigurations(new ListUnmarshaller<SecurityConfiguration>(SecurityConfigurationJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

@@ -50,7 +50,9 @@ public class ListTrailsResultJsonUnmarshaller implements Unmarshaller<ListTrails
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Trails", targetDepth)) {
                     context.nextToken();
-                    listTrailsResult.setTrails(new ListUnmarshaller<TrailInfo>(TrailInfoJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listTrailsResult.setTrails(new ListUnmarshaller<TrailInfo>(TrailInfoJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

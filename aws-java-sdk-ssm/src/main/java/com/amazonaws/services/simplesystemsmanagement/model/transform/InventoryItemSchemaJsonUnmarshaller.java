@@ -59,7 +59,8 @@ public class InventoryItemSchemaJsonUnmarshaller implements Unmarshaller<Invento
                 if (context.testExpression("Attributes", targetDepth)) {
                     context.nextToken();
                     inventoryItemSchema.setAttributes(new ListUnmarshaller<InventoryItemAttribute>(InventoryItemAttributeJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("DisplayName", targetDepth)) {
                     context.nextToken();

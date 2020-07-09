@@ -51,7 +51,8 @@ public class DescribeBatchPredictionsResultJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("Results", targetDepth)) {
                     context.nextToken();
                     describeBatchPredictionsResult.setResults(new ListUnmarshaller<BatchPrediction>(BatchPredictionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

@@ -51,7 +51,9 @@ public class DescribeElasticsearchDomainsResultJsonUnmarshaller implements Unmar
                 if (context.testExpression("DomainStatusList", targetDepth)) {
                     context.nextToken();
                     describeElasticsearchDomainsResult.setDomainStatusList(new ListUnmarshaller<ElasticsearchDomainStatus>(
-                            ElasticsearchDomainStatusJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ElasticsearchDomainStatusJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

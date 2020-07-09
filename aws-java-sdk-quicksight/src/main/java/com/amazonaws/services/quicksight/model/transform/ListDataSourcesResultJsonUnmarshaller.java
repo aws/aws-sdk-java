@@ -52,7 +52,9 @@ public class ListDataSourcesResultJsonUnmarshaller implements Unmarshaller<ListD
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DataSources", targetDepth)) {
                     context.nextToken();
-                    listDataSourcesResult.setDataSources(new ListUnmarshaller<DataSource>(DataSourceJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listDataSourcesResult.setDataSources(new ListUnmarshaller<DataSource>(DataSourceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

@@ -55,7 +55,8 @@ public class ParameterObjectJsonUnmarshaller implements Unmarshaller<ParameterOb
                 if (context.testExpression("attributes", targetDepth)) {
                     context.nextToken();
                     parameterObject.setAttributes(new ListUnmarshaller<ParameterAttribute>(ParameterAttributeJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

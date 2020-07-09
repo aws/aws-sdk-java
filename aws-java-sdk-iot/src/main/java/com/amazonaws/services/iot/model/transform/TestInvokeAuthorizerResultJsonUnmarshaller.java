@@ -58,7 +58,9 @@ public class TestInvokeAuthorizerResultJsonUnmarshaller implements Unmarshaller<
                 }
                 if (context.testExpression("policyDocuments", targetDepth)) {
                     context.nextToken();
-                    testInvokeAuthorizerResult.setPolicyDocuments(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    testInvokeAuthorizerResult.setPolicyDocuments(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("refreshAfterInSeconds", targetDepth)) {
                     context.nextToken();

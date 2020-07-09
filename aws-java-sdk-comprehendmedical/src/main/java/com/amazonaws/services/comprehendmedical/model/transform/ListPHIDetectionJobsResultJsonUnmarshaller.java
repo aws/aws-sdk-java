@@ -51,7 +51,9 @@ public class ListPHIDetectionJobsResultJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("ComprehendMedicalAsyncJobPropertiesList", targetDepth)) {
                     context.nextToken();
                     listPHIDetectionJobsResult.setComprehendMedicalAsyncJobPropertiesList(new ListUnmarshaller<ComprehendMedicalAsyncJobProperties>(
-                            ComprehendMedicalAsyncJobPropertiesJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ComprehendMedicalAsyncJobPropertiesJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

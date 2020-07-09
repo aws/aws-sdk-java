@@ -54,8 +54,9 @@ public class ListAliasesResultJsonUnmarshaller implements Unmarshaller<ListAlias
                 }
                 if (context.testExpression("Aliases", targetDepth)) {
                     context.nextToken();
-                    listAliasesResult
-                            .setAliases(new ListUnmarshaller<AliasConfiguration>(AliasConfigurationJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listAliasesResult.setAliases(new ListUnmarshaller<AliasConfiguration>(AliasConfigurationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

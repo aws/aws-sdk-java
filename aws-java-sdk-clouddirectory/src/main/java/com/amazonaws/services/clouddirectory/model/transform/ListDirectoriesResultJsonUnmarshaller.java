@@ -50,7 +50,9 @@ public class ListDirectoriesResultJsonUnmarshaller implements Unmarshaller<ListD
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Directories", targetDepth)) {
                     context.nextToken();
-                    listDirectoriesResult.setDirectories(new ListUnmarshaller<Directory>(DirectoryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listDirectoriesResult.setDirectories(new ListUnmarshaller<Directory>(DirectoryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

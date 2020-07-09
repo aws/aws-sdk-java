@@ -214,6 +214,11 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
     }
 
     @Override
+    public DeleteHumanTaskUiResult deleteHumanTaskUi(DeleteHumanTaskUiRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteModelResult deleteModel(DeleteModelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

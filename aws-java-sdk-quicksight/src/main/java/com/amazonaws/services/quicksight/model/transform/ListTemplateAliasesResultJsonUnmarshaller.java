@@ -53,7 +53,8 @@ public class ListTemplateAliasesResultJsonUnmarshaller implements Unmarshaller<L
                 if (context.testExpression("TemplateAliasList", targetDepth)) {
                     context.nextToken();
                     listTemplateAliasesResult.setTemplateAliasList(new ListUnmarshaller<TemplateAlias>(TemplateAliasJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("RequestId", targetDepth)) {
                     context.nextToken();

@@ -50,7 +50,9 @@ public class GetRateBasedRuleManagedKeysResultJsonUnmarshaller implements Unmars
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ManagedKeys", targetDepth)) {
                     context.nextToken();
-                    getRateBasedRuleManagedKeysResult.setManagedKeys(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    getRateBasedRuleManagedKeysResult.setManagedKeys(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextMarker", targetDepth)) {
                     context.nextToken();

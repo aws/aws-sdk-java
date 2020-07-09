@@ -51,7 +51,8 @@ public class SearchAddressBooksResultJsonUnmarshaller implements Unmarshaller<Se
                 if (context.testExpression("AddressBooks", targetDepth)) {
                     context.nextToken();
                     searchAddressBooksResult.setAddressBooks(new ListUnmarshaller<AddressBookData>(AddressBookDataJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

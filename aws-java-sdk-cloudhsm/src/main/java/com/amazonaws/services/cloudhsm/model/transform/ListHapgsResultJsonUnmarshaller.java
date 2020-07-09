@@ -50,7 +50,9 @@ public class ListHapgsResultJsonUnmarshaller implements Unmarshaller<ListHapgsRe
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("HapgList", targetDepth)) {
                     context.nextToken();
-                    listHapgsResult.setHapgList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    listHapgsResult.setHapgList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

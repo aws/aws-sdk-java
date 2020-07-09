@@ -50,7 +50,9 @@ public class ImportJobsResponseJsonUnmarshaller implements Unmarshaller<ImportJo
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Item", targetDepth)) {
                     context.nextToken();
-                    importJobsResponse.setItem(new ListUnmarshaller<ImportJobResponse>(ImportJobResponseJsonUnmarshaller.getInstance()).unmarshall(context));
+                    importJobsResponse.setItem(new ListUnmarshaller<ImportJobResponse>(ImportJobResponseJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

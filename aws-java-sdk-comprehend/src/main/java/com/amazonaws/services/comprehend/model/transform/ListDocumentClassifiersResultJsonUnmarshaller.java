@@ -51,7 +51,9 @@ public class ListDocumentClassifiersResultJsonUnmarshaller implements Unmarshall
                 if (context.testExpression("DocumentClassifierPropertiesList", targetDepth)) {
                     context.nextToken();
                     listDocumentClassifiersResult.setDocumentClassifierPropertiesList(new ListUnmarshaller<DocumentClassifierProperties>(
-                            DocumentClassifierPropertiesJsonUnmarshaller.getInstance()).unmarshall(context));
+                            DocumentClassifierPropertiesJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

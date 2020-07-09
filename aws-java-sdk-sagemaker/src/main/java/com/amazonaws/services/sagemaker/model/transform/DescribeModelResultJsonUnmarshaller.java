@@ -59,7 +59,8 @@ public class DescribeModelResultJsonUnmarshaller implements Unmarshaller<Describ
                 if (context.testExpression("Containers", targetDepth)) {
                     context.nextToken();
                     describeModelResult.setContainers(new ListUnmarshaller<ContainerDefinition>(ContainerDefinitionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ExecutionRoleArn", targetDepth)) {
                     context.nextToken();

@@ -50,12 +50,15 @@ public class BatchCreateObjectJsonUnmarshaller implements Unmarshaller<BatchCrea
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SchemaFacet", targetDepth)) {
                     context.nextToken();
-                    batchCreateObject.setSchemaFacet(new ListUnmarshaller<SchemaFacet>(SchemaFacetJsonUnmarshaller.getInstance()).unmarshall(context));
+                    batchCreateObject.setSchemaFacet(new ListUnmarshaller<SchemaFacet>(SchemaFacetJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ObjectAttributeList", targetDepth)) {
                     context.nextToken();
                     batchCreateObject.setObjectAttributeList(new ListUnmarshaller<AttributeKeyAndValue>(AttributeKeyAndValueJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ParentReference", targetDepth)) {
                     context.nextToken();

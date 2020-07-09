@@ -50,11 +50,15 @@ public class KernelCapabilitiesJsonUnmarshaller implements Unmarshaller<KernelCa
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("add", targetDepth)) {
                     context.nextToken();
-                    kernelCapabilities.setAdd(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    kernelCapabilities.setAdd(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("drop", targetDepth)) {
                     context.nextToken();
-                    kernelCapabilities.setDrop(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    kernelCapabilities.setDrop(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

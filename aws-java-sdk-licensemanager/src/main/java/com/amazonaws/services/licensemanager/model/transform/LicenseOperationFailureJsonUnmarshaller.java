@@ -78,7 +78,9 @@ public class LicenseOperationFailureJsonUnmarshaller implements Unmarshaller<Lic
                 }
                 if (context.testExpression("MetadataList", targetDepth)) {
                     context.nextToken();
-                    licenseOperationFailure.setMetadataList(new ListUnmarshaller<Metadata>(MetadataJsonUnmarshaller.getInstance()).unmarshall(context));
+                    licenseOperationFailure.setMetadataList(new ListUnmarshaller<Metadata>(MetadataJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

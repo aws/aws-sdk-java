@@ -76,16 +76,21 @@ public class DescribeIdentityPoolResultJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("OpenIdConnectProviderARNs", targetDepth)) {
                     context.nextToken();
                     describeIdentityPoolResult.setOpenIdConnectProviderARNs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("CognitoIdentityProviders", targetDepth)) {
                     context.nextToken();
                     describeIdentityPoolResult.setCognitoIdentityProviders(new ListUnmarshaller<CognitoIdentityProvider>(
-                            CognitoIdentityProviderJsonUnmarshaller.getInstance()).unmarshall(context));
+                            CognitoIdentityProviderJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("SamlProviderARNs", targetDepth)) {
                     context.nextToken();
-                    describeIdentityPoolResult.setSamlProviderARNs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    describeIdentityPoolResult.setSamlProviderARNs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("IdentityPoolTags", targetDepth)) {
                     context.nextToken();

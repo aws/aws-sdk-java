@@ -51,7 +51,9 @@ public class DescribeInstancePatchStatesResultJsonUnmarshaller implements Unmars
                 if (context.testExpression("InstancePatchStates", targetDepth)) {
                     context.nextToken();
                     describeInstancePatchStatesResult.setInstancePatchStates(new ListUnmarshaller<InstancePatchState>(InstancePatchStateJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

@@ -84,7 +84,8 @@ public class WorkflowExecutionContinuedAsNewEventAttributesJsonUnmarshaller impl
                 if (context.testExpression("tagList", targetDepth)) {
                     context.nextToken();
                     workflowExecutionContinuedAsNewEventAttributes.setTagList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("workflowType", targetDepth)) {
                     context.nextToken();

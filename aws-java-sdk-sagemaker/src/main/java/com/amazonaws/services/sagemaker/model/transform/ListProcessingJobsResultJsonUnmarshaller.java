@@ -51,7 +51,9 @@ public class ListProcessingJobsResultJsonUnmarshaller implements Unmarshaller<Li
                 if (context.testExpression("ProcessingJobSummaries", targetDepth)) {
                     context.nextToken();
                     listProcessingJobsResult.setProcessingJobSummaries(new ListUnmarshaller<ProcessingJobSummary>(ProcessingJobSummaryJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

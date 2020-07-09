@@ -51,7 +51,8 @@ public class DescribeIpGroupsResultJsonUnmarshaller implements Unmarshaller<Desc
                 if (context.testExpression("Result", targetDepth)) {
                     context.nextToken();
                     describeIpGroupsResult.setResult(new ListUnmarshaller<WorkspacesIpGroup>(WorkspacesIpGroupJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

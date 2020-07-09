@@ -50,7 +50,13 @@ public class GeoMatchStatementJsonUnmarshaller implements Unmarshaller<GeoMatchS
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CountryCodes", targetDepth)) {
                     context.nextToken();
-                    geoMatchStatement.setCountryCodes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    geoMatchStatement.setCountryCodes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("ForwardedIPConfig", targetDepth)) {
+                    context.nextToken();
+                    geoMatchStatement.setForwardedIPConfig(ForwardedIPConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

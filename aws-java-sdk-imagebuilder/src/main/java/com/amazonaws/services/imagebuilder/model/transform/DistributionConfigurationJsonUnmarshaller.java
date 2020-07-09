@@ -63,7 +63,8 @@ public class DistributionConfigurationJsonUnmarshaller implements Unmarshaller<D
                 if (context.testExpression("distributions", targetDepth)) {
                     context.nextToken();
                     distributionConfiguration.setDistributions(new ListUnmarshaller<Distribution>(DistributionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("timeoutMinutes", targetDepth)) {
                     context.nextToken();

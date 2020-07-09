@@ -51,7 +51,8 @@ public class DescribeParametersResultJsonUnmarshaller implements Unmarshaller<De
                 if (context.testExpression("Parameters", targetDepth)) {
                     context.nextToken();
                     describeParametersResult.setParameters(new ListUnmarshaller<ParameterMetadata>(ParameterMetadataJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

@@ -51,7 +51,9 @@ public class ListCustomDataIdentifiersResultJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("items", targetDepth)) {
                     context.nextToken();
                     listCustomDataIdentifiersResult.setItems(new ListUnmarshaller<CustomDataIdentifierSummary>(CustomDataIdentifierSummaryJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

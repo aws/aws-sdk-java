@@ -55,7 +55,8 @@ public class GetMetricDataResultJsonUnmarshaller implements Unmarshaller<GetMetr
                 if (context.testExpression("MetricResults", targetDepth)) {
                     context.nextToken();
                     getMetricDataResult.setMetricResults(new ListUnmarshaller<HistoricalMetricResult>(HistoricalMetricResultJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

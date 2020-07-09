@@ -51,7 +51,8 @@ public class DescribeJobDefinitionsResultJsonUnmarshaller implements Unmarshalle
                 if (context.testExpression("jobDefinitions", targetDepth)) {
                     context.nextToken();
                     describeJobDefinitionsResult.setJobDefinitions(new ListUnmarshaller<JobDefinition>(JobDefinitionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

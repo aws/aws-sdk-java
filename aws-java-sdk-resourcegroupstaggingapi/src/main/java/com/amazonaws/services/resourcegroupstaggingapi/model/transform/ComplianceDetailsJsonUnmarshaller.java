@@ -50,11 +50,15 @@ public class ComplianceDetailsJsonUnmarshaller implements Unmarshaller<Complianc
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("NoncompliantKeys", targetDepth)) {
                     context.nextToken();
-                    complianceDetails.setNoncompliantKeys(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    complianceDetails.setNoncompliantKeys(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("KeysWithNoncompliantValues", targetDepth)) {
                     context.nextToken();
-                    complianceDetails.setKeysWithNoncompliantValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    complianceDetails.setKeysWithNoncompliantValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ComplianceStatus", targetDepth)) {
                     context.nextToken();

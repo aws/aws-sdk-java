@@ -51,7 +51,9 @@ public class ListDatasetImportJobsResultJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("datasetImportJobs", targetDepth)) {
                     context.nextToken();
                     listDatasetImportJobsResult.setDatasetImportJobs(new ListUnmarshaller<DatasetImportJobSummary>(DatasetImportJobSummaryJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

@@ -51,7 +51,8 @@ public class ListRestoreJobsResultJsonUnmarshaller implements Unmarshaller<ListR
                 if (context.testExpression("RestoreJobs", targetDepth)) {
                     context.nextToken();
                     listRestoreJobsResult.setRestoreJobs(new ListUnmarshaller<RestoreJobsListMember>(RestoreJobsListMemberJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

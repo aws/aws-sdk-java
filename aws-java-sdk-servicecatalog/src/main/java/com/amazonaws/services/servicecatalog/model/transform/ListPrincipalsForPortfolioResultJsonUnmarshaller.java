@@ -50,8 +50,9 @@ public class ListPrincipalsForPortfolioResultJsonUnmarshaller implements Unmarsh
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Principals", targetDepth)) {
                     context.nextToken();
-                    listPrincipalsForPortfolioResult
-                            .setPrincipals(new ListUnmarshaller<Principal>(PrincipalJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listPrincipalsForPortfolioResult.setPrincipals(new ListUnmarshaller<Principal>(PrincipalJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextPageToken", targetDepth)) {
                     context.nextToken();

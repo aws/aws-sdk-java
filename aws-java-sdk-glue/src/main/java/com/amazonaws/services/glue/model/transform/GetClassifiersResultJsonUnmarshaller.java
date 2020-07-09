@@ -50,7 +50,9 @@ public class GetClassifiersResultJsonUnmarshaller implements Unmarshaller<GetCla
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Classifiers", targetDepth)) {
                     context.nextToken();
-                    getClassifiersResult.setClassifiers(new ListUnmarshaller<Classifier>(ClassifierJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getClassifiersResult.setClassifiers(new ListUnmarshaller<Classifier>(ClassifierJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

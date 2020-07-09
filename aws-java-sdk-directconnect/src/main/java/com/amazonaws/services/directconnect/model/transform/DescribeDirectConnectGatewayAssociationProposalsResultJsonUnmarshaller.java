@@ -53,7 +53,9 @@ public class DescribeDirectConnectGatewayAssociationProposalsResultJsonUnmarshal
                     context.nextToken();
                     describeDirectConnectGatewayAssociationProposalsResult
                             .setDirectConnectGatewayAssociationProposals(new ListUnmarshaller<DirectConnectGatewayAssociationProposal>(
-                                    DirectConnectGatewayAssociationProposalJsonUnmarshaller.getInstance()).unmarshall(context));
+                                    DirectConnectGatewayAssociationProposalJsonUnmarshaller.getInstance())
+
+                            .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

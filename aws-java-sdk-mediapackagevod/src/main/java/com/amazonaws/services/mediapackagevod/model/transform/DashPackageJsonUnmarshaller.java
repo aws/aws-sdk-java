@@ -50,7 +50,9 @@ public class DashPackageJsonUnmarshaller implements Unmarshaller<DashPackage, Js
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("dashManifests", targetDepth)) {
                     context.nextToken();
-                    dashPackage.setDashManifests(new ListUnmarshaller<DashManifest>(DashManifestJsonUnmarshaller.getInstance()).unmarshall(context));
+                    dashPackage.setDashManifests(new ListUnmarshaller<DashManifest>(DashManifestJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("encryption", targetDepth)) {
                     context.nextToken();
@@ -58,7 +60,9 @@ public class DashPackageJsonUnmarshaller implements Unmarshaller<DashPackage, Js
                 }
                 if (context.testExpression("periodTriggers", targetDepth)) {
                     context.nextToken();
-                    dashPackage.setPeriodTriggers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    dashPackage.setPeriodTriggers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("segmentDurationSeconds", targetDepth)) {
                     context.nextToken();

@@ -53,7 +53,9 @@ public class DescribeInboundCrossClusterSearchConnectionsResultJsonUnmarshaller 
                     context.nextToken();
                     describeInboundCrossClusterSearchConnectionsResult
                             .setCrossClusterSearchConnections(new ListUnmarshaller<InboundCrossClusterSearchConnection>(
-                                    InboundCrossClusterSearchConnectionJsonUnmarshaller.getInstance()).unmarshall(context));
+                                    InboundCrossClusterSearchConnectionJsonUnmarshaller.getInstance())
+
+                            .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

@@ -62,11 +62,15 @@ public class LocationJsonUnmarshaller implements Unmarshaller<Location, JsonUnma
                 }
                 if (context.testExpression("availablePortSpeeds", targetDepth)) {
                     context.nextToken();
-                    location.setAvailablePortSpeeds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    location.setAvailablePortSpeeds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("availableProviders", targetDepth)) {
                     context.nextToken();
-                    location.setAvailableProviders(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    location.setAvailableProviders(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

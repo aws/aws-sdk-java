@@ -50,7 +50,9 @@ public class PushSyncJsonUnmarshaller implements Unmarshaller<PushSync, JsonUnma
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ApplicationArns", targetDepth)) {
                     context.nextToken();
-                    pushSync.setApplicationArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    pushSync.setApplicationArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("RoleArn", targetDepth)) {
                     context.nextToken();

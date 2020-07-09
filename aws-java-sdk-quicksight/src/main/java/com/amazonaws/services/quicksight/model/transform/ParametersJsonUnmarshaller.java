@@ -50,20 +50,27 @@ public class ParametersJsonUnmarshaller implements Unmarshaller<Parameters, Json
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StringParameters", targetDepth)) {
                     context.nextToken();
-                    parameters.setStringParameters(new ListUnmarshaller<StringParameter>(StringParameterJsonUnmarshaller.getInstance()).unmarshall(context));
+                    parameters.setStringParameters(new ListUnmarshaller<StringParameter>(StringParameterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("IntegerParameters", targetDepth)) {
                     context.nextToken();
-                    parameters.setIntegerParameters(new ListUnmarshaller<IntegerParameter>(IntegerParameterJsonUnmarshaller.getInstance()).unmarshall(context));
+                    parameters.setIntegerParameters(new ListUnmarshaller<IntegerParameter>(IntegerParameterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("DecimalParameters", targetDepth)) {
                     context.nextToken();
-                    parameters.setDecimalParameters(new ListUnmarshaller<DecimalParameter>(DecimalParameterJsonUnmarshaller.getInstance()).unmarshall(context));
+                    parameters.setDecimalParameters(new ListUnmarshaller<DecimalParameter>(DecimalParameterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("DateTimeParameters", targetDepth)) {
                     context.nextToken();
                     parameters.setDateTimeParameters(new ListUnmarshaller<DateTimeParameter>(DateTimeParameterJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

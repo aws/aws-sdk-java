@@ -55,7 +55,9 @@ public class DescribeImagePermissionsResultJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("SharedImagePermissionsList", targetDepth)) {
                     context.nextToken();
                     describeImagePermissionsResult.setSharedImagePermissionsList(new ListUnmarshaller<SharedImagePermissions>(
-                            SharedImagePermissionsJsonUnmarshaller.getInstance()).unmarshall(context));
+                            SharedImagePermissionsJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

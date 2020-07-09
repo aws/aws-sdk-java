@@ -51,7 +51,9 @@ public class DescribeOrganizationConfigRulesResultJsonUnmarshaller implements Un
                 if (context.testExpression("OrganizationConfigRules", targetDepth)) {
                     context.nextToken();
                     describeOrganizationConfigRulesResult.setOrganizationConfigRules(new ListUnmarshaller<OrganizationConfigRule>(
-                            OrganizationConfigRuleJsonUnmarshaller.getInstance()).unmarshall(context));
+                            OrganizationConfigRuleJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

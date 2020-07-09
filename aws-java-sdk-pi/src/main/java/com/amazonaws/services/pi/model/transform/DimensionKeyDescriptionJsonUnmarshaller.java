@@ -59,7 +59,9 @@ public class DimensionKeyDescriptionJsonUnmarshaller implements Unmarshaller<Dim
                 }
                 if (context.testExpression("Partitions", targetDepth)) {
                     context.nextToken();
-                    dimensionKeyDescription.setPartitions(new ListUnmarshaller<Double>(context.getUnmarshaller(Double.class)).unmarshall(context));
+                    dimensionKeyDescription.setPartitions(new ListUnmarshaller<Double>(context.getUnmarshaller(Double.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -51,7 +51,8 @@ public class ListExperimentsResultJsonUnmarshaller implements Unmarshaller<ListE
                 if (context.testExpression("ExperimentSummaries", targetDepth)) {
                     context.nextToken();
                     listExperimentsResult.setExperimentSummaries(new ListUnmarshaller<ExperimentSummary>(ExperimentSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

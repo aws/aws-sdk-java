@@ -58,8 +58,9 @@ public class LoggingConfigurationJsonUnmarshaller implements Unmarshaller<Loggin
                 }
                 if (context.testExpression("destinations", targetDepth)) {
                     context.nextToken();
-                    loggingConfiguration
-                            .setDestinations(new ListUnmarshaller<LogDestination>(LogDestinationJsonUnmarshaller.getInstance()).unmarshall(context));
+                    loggingConfiguration.setDestinations(new ListUnmarshaller<LogDestination>(LogDestinationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -54,7 +54,9 @@ public class GetUsagePlansResultJsonUnmarshaller implements Unmarshaller<GetUsag
                 }
                 if (context.testExpression("item", targetDepth)) {
                     context.nextToken();
-                    getUsagePlansResult.setItems(new ListUnmarshaller<UsagePlan>(UsagePlanJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getUsagePlansResult.setItems(new ListUnmarshaller<UsagePlan>(UsagePlanJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

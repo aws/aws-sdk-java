@@ -63,7 +63,9 @@ public class VoiceMessageJsonUnmarshaller implements Unmarshaller<VoiceMessage, 
                 if (context.testExpression("Substitutions", targetDepth)) {
                     context.nextToken();
                     voiceMessage.setSubstitutions(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
-                            new ListUnmarshaller<String>(context.getUnmarshaller(String.class))).unmarshall(context));
+                            new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    ).unmarshall(context));
                 }
                 if (context.testExpression("VoiceId", targetDepth)) {
                     context.nextToken();

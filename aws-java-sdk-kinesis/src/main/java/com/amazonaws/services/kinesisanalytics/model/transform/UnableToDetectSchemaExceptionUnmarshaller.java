@@ -55,12 +55,15 @@ public class UnableToDetectSchemaExceptionUnmarshaller extends EnhancedJsonError
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RawInputRecords", targetDepth)) {
                     context.nextToken();
-                    unableToDetectSchemaException.setRawInputRecords(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    unableToDetectSchemaException.setRawInputRecords(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ProcessedInputRecords", targetDepth)) {
                     context.nextToken();
                     unableToDetectSchemaException.setProcessedInputRecords(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

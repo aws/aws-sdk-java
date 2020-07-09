@@ -51,7 +51,9 @@ public class ListEntitiesDetectionJobsResultJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("EntitiesDetectionJobPropertiesList", targetDepth)) {
                     context.nextToken();
                     listEntitiesDetectionJobsResult.setEntitiesDetectionJobPropertiesList(new ListUnmarshaller<EntitiesDetectionJobProperties>(
-                            EntitiesDetectionJobPropertiesJsonUnmarshaller.getInstance()).unmarshall(context));
+                            EntitiesDetectionJobPropertiesJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

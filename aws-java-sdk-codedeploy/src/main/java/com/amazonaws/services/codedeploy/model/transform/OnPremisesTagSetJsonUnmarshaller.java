@@ -51,7 +51,11 @@ public class OnPremisesTagSetJsonUnmarshaller implements Unmarshaller<OnPremises
                 if (context.testExpression("onPremisesTagSetList", targetDepth)) {
                     context.nextToken();
                     onPremisesTagSet.setOnPremisesTagSetList(new ListUnmarshaller<java.util.List<TagFilter>>(new ListUnmarshaller<TagFilter>(
-                            TagFilterJsonUnmarshaller.getInstance())).unmarshall(context));
+                            TagFilterJsonUnmarshaller.getInstance())
+
+                    )
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

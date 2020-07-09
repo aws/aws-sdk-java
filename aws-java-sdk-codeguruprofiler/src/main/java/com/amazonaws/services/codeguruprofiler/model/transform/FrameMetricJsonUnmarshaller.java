@@ -54,7 +54,9 @@ public class FrameMetricJsonUnmarshaller implements Unmarshaller<FrameMetric, Js
                 }
                 if (context.testExpression("threadStates", targetDepth)) {
                     context.nextToken();
-                    frameMetric.setThreadStates(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    frameMetric.setThreadStates(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
                     context.nextToken();

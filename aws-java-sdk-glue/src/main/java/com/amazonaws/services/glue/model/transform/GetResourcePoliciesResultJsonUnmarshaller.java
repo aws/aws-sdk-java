@@ -51,7 +51,8 @@ public class GetResourcePoliciesResultJsonUnmarshaller implements Unmarshaller<G
                 if (context.testExpression("GetResourcePoliciesResponseList", targetDepth)) {
                     context.nextToken();
                     getResourcePoliciesResult.setGetResourcePoliciesResponseList(new ListUnmarshaller<GluePolicy>(GluePolicyJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

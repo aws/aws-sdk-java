@@ -51,12 +51,15 @@ public class BatchDetectSyntaxResultJsonUnmarshaller implements Unmarshaller<Bat
                 if (context.testExpression("ResultList", targetDepth)) {
                     context.nextToken();
                     batchDetectSyntaxResult.setResultList(new ListUnmarshaller<BatchDetectSyntaxItemResult>(BatchDetectSyntaxItemResultJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ErrorList", targetDepth)) {
                     context.nextToken();
-                    batchDetectSyntaxResult
-                            .setErrorList(new ListUnmarshaller<BatchItemError>(BatchItemErrorJsonUnmarshaller.getInstance()).unmarshall(context));
+                    batchDetectSyntaxResult.setErrorList(new ListUnmarshaller<BatchItemError>(BatchItemErrorJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

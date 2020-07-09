@@ -50,7 +50,9 @@ public class EncryptionConfigJsonUnmarshaller implements Unmarshaller<Encryption
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("resources", targetDepth)) {
                     context.nextToken();
-                    encryptionConfig.setResources(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    encryptionConfig.setResources(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("provider", targetDepth)) {
                     context.nextToken();

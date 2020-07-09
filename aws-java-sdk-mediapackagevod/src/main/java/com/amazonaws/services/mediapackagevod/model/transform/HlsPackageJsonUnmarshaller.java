@@ -54,7 +54,9 @@ public class HlsPackageJsonUnmarshaller implements Unmarshaller<HlsPackage, Json
                 }
                 if (context.testExpression("hlsManifests", targetDepth)) {
                     context.nextToken();
-                    hlsPackage.setHlsManifests(new ListUnmarshaller<HlsManifest>(HlsManifestJsonUnmarshaller.getInstance()).unmarshall(context));
+                    hlsPackage.setHlsManifests(new ListUnmarshaller<HlsManifest>(HlsManifestJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("segmentDurationSeconds", targetDepth)) {
                     context.nextToken();

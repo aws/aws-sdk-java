@@ -50,7 +50,9 @@ public class ListGraphqlApisResultJsonUnmarshaller implements Unmarshaller<ListG
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("graphqlApis", targetDepth)) {
                     context.nextToken();
-                    listGraphqlApisResult.setGraphqlApis(new ListUnmarshaller<GraphqlApi>(GraphqlApiJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listGraphqlApisResult.setGraphqlApis(new ListUnmarshaller<GraphqlApi>(GraphqlApiJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

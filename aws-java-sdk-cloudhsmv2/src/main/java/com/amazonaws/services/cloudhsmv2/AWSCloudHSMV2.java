@@ -61,6 +61,8 @@ public interface AWSCloudHSMV2 {
      * @throws CloudHsmServiceException
      *         The request was rejected because an error occurred.
      * @throws CloudHsmTagException
+     *         The request was rejected because of a tagging failure. Verify the tag conditions in all applicable
+     *         policies, and then retry the request.
      * @sample AWSCloudHSMV2.CopyBackupToRegion
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/CopyBackupToRegion" target="_top">AWS
      *      API Documentation</a>
@@ -86,6 +88,8 @@ public interface AWSCloudHSMV2 {
      * @throws CloudHsmServiceException
      *         The request was rejected because an error occurred.
      * @throws CloudHsmTagException
+     *         The request was rejected because of a tagging failure. Verify the tag conditions in all applicable
+     *         policies, and then retry the request.
      * @sample AWSCloudHSMV2.CreateCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/CreateCluster" target="_top">AWS API
      *      Documentation</a>
@@ -162,6 +166,8 @@ public interface AWSCloudHSMV2 {
      * @throws CloudHsmServiceException
      *         The request was rejected because an error occurred.
      * @throws CloudHsmTagException
+     *         The request was rejected because of a tagging failure. Verify the tag conditions in all applicable
+     *         policies, and then retry the request.
      * @sample AWSCloudHSMV2.DeleteCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DeleteCluster" target="_top">AWS API
      *      Documentation</a>
@@ -219,6 +225,8 @@ public interface AWSCloudHSMV2 {
      * @throws CloudHsmServiceException
      *         The request was rejected because an error occurred.
      * @throws CloudHsmTagException
+     *         The request was rejected because of a tagging failure. Verify the tag conditions in all applicable
+     *         policies, and then retry the request.
      * @sample AWSCloudHSMV2.DescribeBackups
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DescribeBackups" target="_top">AWS API
      *      Documentation</a>
@@ -248,6 +256,8 @@ public interface AWSCloudHSMV2 {
      * @throws CloudHsmServiceException
      *         The request was rejected because an error occurred.
      * @throws CloudHsmTagException
+     *         The request was rejected because of a tagging failure. Verify the tag conditions in all applicable
+     *         policies, and then retry the request.
      * @sample AWSCloudHSMV2.DescribeClusters
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DescribeClusters" target="_top">AWS
      *      API Documentation</a>
@@ -305,6 +315,8 @@ public interface AWSCloudHSMV2 {
      * @throws CloudHsmServiceException
      *         The request was rejected because an error occurred.
      * @throws CloudHsmTagException
+     *         The request was rejected because of a tagging failure. Verify the tag conditions in all applicable
+     *         policies, and then retry the request.
      * @sample AWSCloudHSMV2.ListTags
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/ListTags" target="_top">AWS API
      *      Documentation</a>
@@ -355,6 +367,8 @@ public interface AWSCloudHSMV2 {
      * @throws CloudHsmServiceException
      *         The request was rejected because an error occurred.
      * @throws CloudHsmTagException
+     *         The request was rejected because of a tagging failure. Verify the tag conditions in all applicable
+     *         policies, and then retry the request.
      * @sample AWSCloudHSMV2.TagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/TagResource" target="_top">AWS API
      *      Documentation</a>
@@ -380,6 +394,8 @@ public interface AWSCloudHSMV2 {
      * @throws CloudHsmServiceException
      *         The request was rejected because an error occurred.
      * @throws CloudHsmTagException
+     *         The request was rejected because of a tagging failure. Verify the tag conditions in all applicable
+     *         policies, and then retry the request.
      * @sample AWSCloudHSMV2.UntagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/UntagResource" target="_top">AWS API
      *      Documentation</a>

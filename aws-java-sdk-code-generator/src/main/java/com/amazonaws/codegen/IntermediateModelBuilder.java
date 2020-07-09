@@ -165,6 +165,8 @@ public class IntermediateModelBuilder {
         linkMembersToShapes(trimmedModel);
         linkOperationsToInputOutputShapes(trimmedModel);
         linkCustomAuthorizationToRequestShapes(trimmedModel);
+        setupPackageName(trimmedShapes, trimmedModel);
+        setupFullyQualifiedNameOfShapes(trimmedShapes, trimmedModel);
 
         return trimmedModel;
     }
@@ -183,6 +185,27 @@ public class IntermediateModelBuilder {
                 }
             }
         }
+    }
+
+    private void setupFullyQualifiedNameOfShapes(Map<String, ShapeModel> shapes, IntermediateModel model) {
+        shapes.keySet()
+              .forEach(shapeName -> {
+                  ShapeModel inputShape = shapes.get(shapeName);
+                  inputShape.setFullyQualifiedName(concatPackageName(inputShape, model)+ "." + inputShape.getShapeName());
+             });
+    }
+
+    private void setupPackageName(Map<String, ShapeModel> shapes, IntermediateModel model) {
+        shapes.keySet()
+              .forEach(shapeName -> {
+                  ShapeModel inputShape = shapes.get(shapeName);
+                  inputShape.setPackageName(concatPackageName(inputShape, model));
+              });
+    }
+
+
+    private String concatPackageName(ShapeModel inputShape, IntermediateModel model) {
+        return model.getMetadata().getPackageName() + "." + inputShape.getType().toLowerCase();
     }
 
     private void linkOperationsToInputOutputShapes(IntermediateModel model) {

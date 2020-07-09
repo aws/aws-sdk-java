@@ -67,7 +67,8 @@ public class PipelineExecutionJsonUnmarshaller implements Unmarshaller<PipelineE
                 if (context.testExpression("artifactRevisions", targetDepth)) {
                     context.nextToken();
                     pipelineExecution.setArtifactRevisions(new ListUnmarshaller<ArtifactRevision>(ArtifactRevisionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

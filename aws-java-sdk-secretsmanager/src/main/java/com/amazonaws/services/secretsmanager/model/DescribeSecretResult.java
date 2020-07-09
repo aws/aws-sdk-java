@@ -131,6 +131,12 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      */
     private String owningService;
+    /**
+     * <p>
+     * The date that the secret was created.
+     * </p>
+     */
+    private java.util.Date createdDate;
 
     /**
      * <p>
@@ -904,6 +910,46 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * <p>
+     * The date that the secret was created.
+     * </p>
+     * 
+     * @param createdDate
+     *        The date that the secret was created.
+     */
+
+    public void setCreatedDate(java.util.Date createdDate) {
+        this.createdDate = createdDate;
+    }
+
+    /**
+     * <p>
+     * The date that the secret was created.
+     * </p>
+     * 
+     * @return The date that the secret was created.
+     */
+
+    public java.util.Date getCreatedDate() {
+        return this.createdDate;
+    }
+
+    /**
+     * <p>
+     * The date that the secret was created.
+     * </p>
+     * 
+     * @param createdDate
+     *        The date that the secret was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeSecretResult withCreatedDate(java.util.Date createdDate) {
+        setCreatedDate(createdDate);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -942,7 +988,9 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
         if (getVersionIdsToStages() != null)
             sb.append("VersionIdsToStages: ").append(getVersionIdsToStages()).append(",");
         if (getOwningService() != null)
-            sb.append("OwningService: ").append(getOwningService());
+            sb.append("OwningService: ").append(getOwningService()).append(",");
+        if (getCreatedDate() != null)
+            sb.append("CreatedDate: ").append(getCreatedDate());
         sb.append("}");
         return sb.toString();
     }
@@ -1013,6 +1061,10 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
             return false;
         if (other.getOwningService() != null && other.getOwningService().equals(this.getOwningService()) == false)
             return false;
+        if (other.getCreatedDate() == null ^ this.getCreatedDate() == null)
+            return false;
+        if (other.getCreatedDate() != null && other.getCreatedDate().equals(this.getCreatedDate()) == false)
+            return false;
         return true;
     }
 
@@ -1035,6 +1087,7 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getVersionIdsToStages() == null) ? 0 : getVersionIdsToStages().hashCode());
         hashCode = prime * hashCode + ((getOwningService() == null) ? 0 : getOwningService().hashCode());
+        hashCode = prime * hashCode + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
         return hashCode;
     }
 

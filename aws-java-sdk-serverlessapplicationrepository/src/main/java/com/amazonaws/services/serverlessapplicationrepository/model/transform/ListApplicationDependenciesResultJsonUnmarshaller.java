@@ -51,7 +51,9 @@ public class ListApplicationDependenciesResultJsonUnmarshaller implements Unmars
                 if (context.testExpression("dependencies", targetDepth)) {
                     context.nextToken();
                     listApplicationDependenciesResult.setDependencies(new ListUnmarshaller<ApplicationDependencySummary>(
-                            ApplicationDependencySummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ApplicationDependencySummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

@@ -58,7 +58,9 @@ public class ListWorkerBlocksResultJsonUnmarshaller implements Unmarshaller<List
                 }
                 if (context.testExpression("WorkerBlocks", targetDepth)) {
                     context.nextToken();
-                    listWorkerBlocksResult.setWorkerBlocks(new ListUnmarshaller<WorkerBlock>(WorkerBlockJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listWorkerBlocksResult.setWorkerBlocks(new ListUnmarshaller<WorkerBlock>(WorkerBlockJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

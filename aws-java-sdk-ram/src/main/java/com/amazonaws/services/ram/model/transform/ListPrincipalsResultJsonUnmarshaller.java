@@ -50,7 +50,9 @@ public class ListPrincipalsResultJsonUnmarshaller implements Unmarshaller<ListPr
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("principals", targetDepth)) {
                     context.nextToken();
-                    listPrincipalsResult.setPrincipals(new ListUnmarshaller<Principal>(PrincipalJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listPrincipalsResult.setPrincipals(new ListUnmarshaller<Principal>(PrincipalJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

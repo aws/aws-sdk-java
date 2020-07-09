@@ -51,7 +51,9 @@ public class ListKeyPhrasesDetectionJobsResultJsonUnmarshaller implements Unmars
                 if (context.testExpression("KeyPhrasesDetectionJobPropertiesList", targetDepth)) {
                     context.nextToken();
                     listKeyPhrasesDetectionJobsResult.setKeyPhrasesDetectionJobPropertiesList(new ListUnmarshaller<KeyPhrasesDetectionJobProperties>(
-                            KeyPhrasesDetectionJobPropertiesJsonUnmarshaller.getInstance()).unmarshall(context));
+                            KeyPhrasesDetectionJobPropertiesJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

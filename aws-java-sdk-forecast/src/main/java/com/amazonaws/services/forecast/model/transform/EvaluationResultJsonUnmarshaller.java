@@ -54,7 +54,9 @@ public class EvaluationResultJsonUnmarshaller implements Unmarshaller<Evaluation
                 }
                 if (context.testExpression("TestWindows", targetDepth)) {
                     context.nextToken();
-                    evaluationResult.setTestWindows(new ListUnmarshaller<WindowSummary>(WindowSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    evaluationResult.setTestWindows(new ListUnmarshaller<WindowSummary>(WindowSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

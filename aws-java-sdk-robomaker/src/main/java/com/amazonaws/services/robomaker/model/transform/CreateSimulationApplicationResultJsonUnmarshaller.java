@@ -62,7 +62,9 @@ public class CreateSimulationApplicationResultJsonUnmarshaller implements Unmars
                 }
                 if (context.testExpression("sources", targetDepth)) {
                     context.nextToken();
-                    createSimulationApplicationResult.setSources(new ListUnmarshaller<Source>(SourceJsonUnmarshaller.getInstance()).unmarshall(context));
+                    createSimulationApplicationResult.setSources(new ListUnmarshaller<Source>(SourceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("simulationSoftwareSuite", targetDepth)) {
                     context.nextToken();

@@ -67,11 +67,15 @@ public class OpsAggregatorJsonUnmarshaller implements Unmarshaller<OpsAggregator
                 }
                 if (context.testExpression("Filters", targetDepth)) {
                     context.nextToken();
-                    opsAggregator.setFilters(new ListUnmarshaller<OpsFilter>(OpsFilterJsonUnmarshaller.getInstance()).unmarshall(context));
+                    opsAggregator.setFilters(new ListUnmarshaller<OpsFilter>(OpsFilterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Aggregators", targetDepth)) {
                     context.nextToken();
-                    opsAggregator.setAggregators(new ListUnmarshaller<OpsAggregator>(OpsAggregatorJsonUnmarshaller.getInstance()).unmarshall(context));
+                    opsAggregator.setAggregators(new ListUnmarshaller<OpsAggregator>(OpsAggregatorJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

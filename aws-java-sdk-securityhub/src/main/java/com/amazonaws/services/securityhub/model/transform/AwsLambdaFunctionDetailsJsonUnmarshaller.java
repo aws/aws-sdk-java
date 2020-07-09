@@ -83,7 +83,8 @@ public class AwsLambdaFunctionDetailsJsonUnmarshaller implements Unmarshaller<Aw
                 if (context.testExpression("Layers", targetDepth)) {
                     context.nextToken();
                     awsLambdaFunctionDetails.setLayers(new ListUnmarshaller<AwsLambdaFunctionLayer>(AwsLambdaFunctionLayerJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("MasterArn", targetDepth)) {
                     context.nextToken();

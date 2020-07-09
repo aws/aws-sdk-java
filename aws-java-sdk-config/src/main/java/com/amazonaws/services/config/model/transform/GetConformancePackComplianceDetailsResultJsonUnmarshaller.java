@@ -56,7 +56,9 @@ public class GetConformancePackComplianceDetailsResultJsonUnmarshaller implement
                 if (context.testExpression("ConformancePackRuleEvaluationResults", targetDepth)) {
                     context.nextToken();
                     getConformancePackComplianceDetailsResult.setConformancePackRuleEvaluationResults(new ListUnmarshaller<ConformancePackEvaluationResult>(
-                            ConformancePackEvaluationResultJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ConformancePackEvaluationResultJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

@@ -51,7 +51,8 @@ public class DescribeScalableTargetsResultJsonUnmarshaller implements Unmarshall
                 if (context.testExpression("ScalableTargets", targetDepth)) {
                     context.nextToken();
                     describeScalableTargetsResult.setScalableTargets(new ListUnmarshaller<ScalableTarget>(ScalableTargetJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

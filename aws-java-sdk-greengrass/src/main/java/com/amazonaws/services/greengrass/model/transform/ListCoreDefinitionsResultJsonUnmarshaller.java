@@ -51,7 +51,8 @@ public class ListCoreDefinitionsResultJsonUnmarshaller implements Unmarshaller<L
                 if (context.testExpression("Definitions", targetDepth)) {
                     context.nextToken();
                     listCoreDefinitionsResult.setDefinitions(new ListUnmarshaller<DefinitionInformation>(DefinitionInformationJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

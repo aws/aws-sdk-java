@@ -50,7 +50,9 @@ public class RowJsonUnmarshaller implements Unmarshaller<Row, JsonUnmarshallerCo
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Data", targetDepth)) {
                     context.nextToken();
-                    row.setData(new ListUnmarshaller<Datum>(DatumJsonUnmarshaller.getInstance()).unmarshall(context));
+                    row.setData(new ListUnmarshaller<Datum>(DatumJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

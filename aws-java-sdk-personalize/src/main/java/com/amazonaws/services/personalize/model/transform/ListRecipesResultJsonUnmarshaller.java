@@ -50,7 +50,9 @@ public class ListRecipesResultJsonUnmarshaller implements Unmarshaller<ListRecip
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("recipes", targetDepth)) {
                     context.nextToken();
-                    listRecipesResult.setRecipes(new ListUnmarshaller<RecipeSummary>(RecipeSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listRecipesResult.setRecipes(new ListUnmarshaller<RecipeSummary>(RecipeSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

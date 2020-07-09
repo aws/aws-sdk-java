@@ -45,7 +45,7 @@ public class CreateSecretResult extends com.amazonaws.AmazonWebServiceResult<com
     private String name;
     /**
      * <p>
-     * The unique identifier that's associated with the version of the secret you just created.
+     * The unique identifier associated with the version of the secret you just created.
      * </p>
      */
     private String versionId;
@@ -177,11 +177,11 @@ public class CreateSecretResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The unique identifier that's associated with the version of the secret you just created.
+     * The unique identifier associated with the version of the secret you just created.
      * </p>
      * 
      * @param versionId
-     *        The unique identifier that's associated with the version of the secret you just created.
+     *        The unique identifier associated with the version of the secret you just created.
      */
 
     public void setVersionId(String versionId) {
@@ -190,10 +190,10 @@ public class CreateSecretResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The unique identifier that's associated with the version of the secret you just created.
+     * The unique identifier associated with the version of the secret you just created.
      * </p>
      * 
-     * @return The unique identifier that's associated with the version of the secret you just created.
+     * @return The unique identifier associated with the version of the secret you just created.
      */
 
     public String getVersionId() {
@@ -202,11 +202,11 @@ public class CreateSecretResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The unique identifier that's associated with the version of the secret you just created.
+     * The unique identifier associated with the version of the secret you just created.
      * </p>
      * 
      * @param versionId
-     *        The unique identifier that's associated with the version of the secret you just created.
+     *        The unique identifier associated with the version of the secret you just created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

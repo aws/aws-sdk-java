@@ -50,7 +50,9 @@ public class GetDifferencesResultJsonUnmarshaller implements Unmarshaller<GetDif
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("differences", targetDepth)) {
                     context.nextToken();
-                    getDifferencesResult.setDifferences(new ListUnmarshaller<Difference>(DifferenceJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getDifferencesResult.setDifferences(new ListUnmarshaller<Difference>(DifferenceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

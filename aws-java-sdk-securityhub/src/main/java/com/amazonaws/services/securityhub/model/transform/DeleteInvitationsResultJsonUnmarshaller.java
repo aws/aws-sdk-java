@@ -50,7 +50,9 @@ public class DeleteInvitationsResultJsonUnmarshaller implements Unmarshaller<Del
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("UnprocessedAccounts", targetDepth)) {
                     context.nextToken();
-                    deleteInvitationsResult.setUnprocessedAccounts(new ListUnmarshaller<Result>(ResultJsonUnmarshaller.getInstance()).unmarshall(context));
+                    deleteInvitationsResult.setUnprocessedAccounts(new ListUnmarshaller<Result>(ResultJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

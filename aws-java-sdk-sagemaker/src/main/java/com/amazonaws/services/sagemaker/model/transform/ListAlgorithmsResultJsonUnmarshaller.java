@@ -51,7 +51,8 @@ public class ListAlgorithmsResultJsonUnmarshaller implements Unmarshaller<ListAl
                 if (context.testExpression("AlgorithmSummaryList", targetDepth)) {
                     context.nextToken();
                     listAlgorithmsResult.setAlgorithmSummaryList(new ListUnmarshaller<AlgorithmSummary>(AlgorithmSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

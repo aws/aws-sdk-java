@@ -67,12 +67,15 @@ public class DescribeAssetModelResultJsonUnmarshaller implements Unmarshaller<De
                 if (context.testExpression("assetModelProperties", targetDepth)) {
                     context.nextToken();
                     describeAssetModelResult.setAssetModelProperties(new ListUnmarshaller<AssetModelProperty>(AssetModelPropertyJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("assetModelHierarchies", targetDepth)) {
                     context.nextToken();
                     describeAssetModelResult.setAssetModelHierarchies(new ListUnmarshaller<AssetModelHierarchy>(AssetModelHierarchyJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("assetModelCreationDate", targetDepth)) {
                     context.nextToken();

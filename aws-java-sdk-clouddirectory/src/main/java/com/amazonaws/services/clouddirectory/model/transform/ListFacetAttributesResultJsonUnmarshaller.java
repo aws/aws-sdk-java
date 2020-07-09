@@ -51,7 +51,8 @@ public class ListFacetAttributesResultJsonUnmarshaller implements Unmarshaller<L
                 if (context.testExpression("Attributes", targetDepth)) {
                     context.nextToken();
                     listFacetAttributesResult.setAttributes(new ListUnmarshaller<FacetAttribute>(FacetAttributeJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

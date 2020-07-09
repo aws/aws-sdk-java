@@ -66,7 +66,9 @@ public class SelfManagedActiveDirectoryAttributesJsonUnmarshaller implements Unm
                 }
                 if (context.testExpression("DnsIps", targetDepth)) {
                     context.nextToken();
-                    selfManagedActiveDirectoryAttributes.setDnsIps(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    selfManagedActiveDirectoryAttributes.setDnsIps(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

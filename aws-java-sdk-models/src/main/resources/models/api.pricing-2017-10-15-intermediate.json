@@ -258,6 +258,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.pricing.model.AttributeValue",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -319,6 +320,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The specific value of an <code>attributeName</code>.</p>\n@param value The specific value of an <code>attributeName</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -389,6 +391,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The specific value of an <code>attributeName</code>.</p>\n@param value The specific value of an <code>attributeName</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -404,6 +407,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.pricing.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -438,6 +442,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.pricing.request.DescribeServicesRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -506,6 +511,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The code for the service whose information you want to retrieve, such as <code>AmazonEC2</code>. You can use the <code>ServiceCode</code> to filter the results in a <code>GetProducts</code> call. To retrieve a list of all services, leave this blank.</p>\n@param serviceCode The code for the service whose information you want to retrieve, such as <code>AmazonEC2</code>. You can use the <code>ServiceCode</code> to filter the results in a <code>GetProducts</code> call. To retrieve a list of all services, leave this blank.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -574,6 +580,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The format version that you want the response to be in.</p> <p>Valid values are: <code>aws_v1</code> </p>\n@param formatVersion The format version that you want the response to be in.</p> <p>Valid values are: <code>aws_v1</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -642,6 +649,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The pagination token that indicates the next set of results that you want to retrieve.</p>\n@param nextToken The pagination token that indicates the next set of results that you want to retrieve.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -710,6 +718,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of results that you want returned in the response.</p>\n@param maxResults The maximum number of results that you want returned in the response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -780,6 +789,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The format version that you want the response to be in.</p> <p>Valid values are: <code>aws_v1</code> </p>\n@param formatVersion The format version that you want the response to be in.</p> <p>Valid values are: <code>aws_v1</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -849,6 +859,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of results that you want returned in the response.</p>\n@param maxResults The maximum number of results that you want returned in the response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -918,6 +929,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The pagination token that indicates the next set of results that you want to retrieve.</p>\n@param nextToken The pagination token that indicates the next set of results that you want to retrieve.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -987,6 +999,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The code for the service whose information you want to retrieve, such as <code>AmazonEC2</code>. You can use the <code>ServiceCode</code> to filter the results in a <code>GetProducts</code> call. To retrieve a list of all services, leave this blank.</p>\n@param serviceCode The code for the service whose information you want to retrieve, such as <code>AmazonEC2</code>. You can use the <code>ServiceCode</code> to filter the results in a <code>GetProducts</code> call. To retrieve a list of all services, leave this blank.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1002,6 +1015,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.pricing.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1033,6 +1047,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.pricing.response.DescribeServicesResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1133,6 +1148,7 @@
               "variableSetterType" : "Service"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1177,6 +1193,7 @@
           "variableSetterType" : "java.util.Collection<Service>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The service metadata for the service or services in the response.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setServices(java.util.Collection)} or {@link #withServices(java.util.Collection)} if you want to override the existing values.</p>\n@param services The service metadata for the service or services in the response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1245,6 +1262,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The format version of the response. For example, <code>aws_v1</code>.</p>\n@param formatVersion The format version of the response. For example, <code>aws_v1</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1313,6 +1331,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The pagination token for the next set of retreivable results.</p>\n@param nextToken The pagination token for the next set of retreivable results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1383,6 +1402,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The format version of the response. For example, <code>aws_v1</code>.</p>\n@param formatVersion The format version of the response. For example, <code>aws_v1</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1452,6 +1472,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The pagination token for the next set of retreivable results.</p>\n@param nextToken The pagination token for the next set of retreivable results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1560,6 +1581,7 @@
                 "variableSetterType" : "Service"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1604,6 +1626,7 @@
             "variableSetterType" : "java.util.Collection<Service>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The service metadata for the service or services in the response.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setServices(java.util.Collection)} or {@link #withServices(java.util.Collection)} if you want to override the existing values.</p>\n@param services The service metadata for the service or services in the response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1619,6 +1642,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.pricing.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1653,6 +1677,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ExpiredNextTokenException",
+      "fullyQualifiedName" : "com.amazonaws.services.pricing.exception.ExpiredNextTokenException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1661,6 +1686,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.pricing.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1692,6 +1718,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.pricing.model.Filter",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1753,6 +1780,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The type of filter that you want to use.</p> <p>Valid values are: <code>TERM_MATCH</code>. <code>TERM_MATCH</code> returns only products that match both the given filter field and the given value.</p>\n@param type The type of filter that you want to use.</p> <p>Valid values are: <code>TERM_MATCH</code>. <code>TERM_MATCH</code> returns only products that match both the given filter field and the given value.\n@return Returns a reference to this object so that method calls can be chained together.\n@see FilterType*/",
@@ -1821,6 +1849,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The product metadata field that you want to filter on. You can filter by just the service code to see all products for a specific service, filter by just the attribute name to see a specific attribute for multiple services, or use both a service code and an attribute name to retrieve only products that match both fields.</p> <p>Valid values include: <code>ServiceCode</code>, and all attribute names</p> <p>For example, you can filter by the <code>AmazonEC2</code> service code and the <code>volumeType</code> attribute name to get the prices for only Amazon EC2 volumes.</p>\n@param field The product metadata field that you want to filter on. You can filter by just the service code to see all products for a specific service, filter by just the attribute name to see a specific attribute for multiple services, or use both a service code and an attribute name to retrieve only products that match both fields.</p> <p>Valid values include: <code>ServiceCode</code>, and all attribute names</p> <p>For example, you can filter by the <code>AmazonEC2</code> service code and the <code>volumeType</code> attribute name to get the prices for only Amazon EC2 volumes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1889,6 +1918,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The service code or attribute value that you want to filter by. If you are filtering by service code this is the actual service code, such as <code>AmazonEC2</code>. If you are filtering by attribute name, this is the attribute value that you want the returned products to match, such as a <code>Provisioned IOPS</code> volume.</p>\n@param value The service code or attribute value that you want to filter by. If you are filtering by service code this is the actual service code, such as <code>AmazonEC2</code>. If you are filtering by attribute name, this is the attribute value that you want the returned products to match, such as a <code>Provisioned IOPS</code> volume.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1959,6 +1989,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The product metadata field that you want to filter on. You can filter by just the service code to see all products for a specific service, filter by just the attribute name to see a specific attribute for multiple services, or use both a service code and an attribute name to retrieve only products that match both fields.</p> <p>Valid values include: <code>ServiceCode</code>, and all attribute names</p> <p>For example, you can filter by the <code>AmazonEC2</code> service code and the <code>volumeType</code> attribute name to get the prices for only Amazon EC2 volumes.</p>\n@param field The product metadata field that you want to filter on. You can filter by just the service code to see all products for a specific service, filter by just the attribute name to see a specific attribute for multiple services, or use both a service code and an attribute name to retrieve only products that match both fields.</p> <p>Valid values include: <code>ServiceCode</code>, and all attribute names</p> <p>For example, you can filter by the <code>AmazonEC2</code> service code and the <code>volumeType</code> attribute name to get the prices for only Amazon EC2 volumes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2028,6 +2059,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The type of filter that you want to use.</p> <p>Valid values are: <code>TERM_MATCH</code>. <code>TERM_MATCH</code> returns only products that match both the given filter field and the given value.</p>\n@param type The type of filter that you want to use.</p> <p>Valid values are: <code>TERM_MATCH</code>. <code>TERM_MATCH</code> returns only products that match both the given filter field and the given value.\n@return Returns a reference to this object so that method calls can be chained together.\n@see FilterType*/",
@@ -2097,6 +2129,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The service code or attribute value that you want to filter by. If you are filtering by service code this is the actual service code, such as <code>AmazonEC2</code>. If you are filtering by attribute name, this is the attribute value that you want the returned products to match, such as a <code>Provisioned IOPS</code> volume.</p>\n@param value The service code or attribute value that you want to filter by. If you are filtering by service code this is the actual service code, such as <code>AmazonEC2</code>. If you are filtering by attribute name, this is the attribute value that you want the returned products to match, such as a <code>Provisioned IOPS</code> volume.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2112,6 +2145,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.pricing.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Type", "Field", "Value" ],
@@ -2149,6 +2183,7 @@
         "value" : "TERM_MATCH"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.pricing.enum.FilterType",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2157,6 +2192,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.pricing.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2191,6 +2227,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.pricing.request.GetAttributeValuesRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2259,6 +2296,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The service code for the service whose attributes you want to retrieve. For example, if you want the retrieve an EC2 attribute, use <code>AmazonEC2</code>.</p>\n@param serviceCode The service code for the service whose attributes you want to retrieve. For example, if you want the retrieve an EC2 attribute, use <code>AmazonEC2</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2327,6 +2365,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the attribute that you want to retrieve the values for, such as <code>volumeType</code>.</p>\n@param attributeName The name of the attribute that you want to retrieve the values for, such as <code>volumeType</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2395,6 +2434,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The pagination token that indicates the next set of results that you want to retrieve.</p>\n@param nextToken The pagination token that indicates the next set of results that you want to retrieve.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2463,6 +2503,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of results to return in response.</p>\n@param maxResults The maximum number of results to return in response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2533,6 +2574,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the attribute that you want to retrieve the values for, such as <code>volumeType</code>.</p>\n@param attributeName The name of the attribute that you want to retrieve the values for, such as <code>volumeType</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2602,6 +2644,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of results to return in response.</p>\n@param maxResults The maximum number of results to return in response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2671,6 +2714,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The pagination token that indicates the next set of results that you want to retrieve.</p>\n@param nextToken The pagination token that indicates the next set of results that you want to retrieve.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2740,6 +2784,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The service code for the service whose attributes you want to retrieve. For example, if you want the retrieve an EC2 attribute, use <code>AmazonEC2</code>.</p>\n@param serviceCode The service code for the service whose attributes you want to retrieve. For example, if you want the retrieve an EC2 attribute, use <code>AmazonEC2</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2755,6 +2800,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.pricing.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ServiceCode", "AttributeName" ],
@@ -2786,6 +2832,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.pricing.response.GetAttributeValuesResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2886,6 +2933,7 @@
               "variableSetterType" : "AttributeValue"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2930,6 +2978,7 @@
           "variableSetterType" : "java.util.Collection<AttributeValue>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The list of values for an attribute. For example, <code>Throughput Optimized HDD</code> and <code>Provisioned IOPS</code> are two available values for the <code>AmazonEC2</code> <code>volumeType</code>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAttributeValues(java.util.Collection)} or {@link #withAttributeValues(java.util.Collection)} if you want to override the existing values.</p>\n@param attributeValues The list of values for an attribute. For example, <code>Throughput Optimized HDD</code> and <code>Provisioned IOPS</code> are two available values for the <code>AmazonEC2</code> <code>volumeType</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2998,6 +3047,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The pagination token that indicates the next set of results to retrieve.</p>\n@param nextToken The pagination token that indicates the next set of results to retrieve.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3107,6 +3157,7 @@
                 "variableSetterType" : "AttributeValue"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3151,6 +3202,7 @@
             "variableSetterType" : "java.util.Collection<AttributeValue>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The list of values for an attribute. For example, <code>Throughput Optimized HDD</code> and <code>Provisioned IOPS</code> are two available values for the <code>AmazonEC2</code> <code>volumeType</code>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAttributeValues(java.util.Collection)} or {@link #withAttributeValues(java.util.Collection)} if you want to override the existing values.</p>\n@param attributeValues The list of values for an attribute. For example, <code>Throughput Optimized HDD</code> and <code>Provisioned IOPS</code> are two available values for the <code>AmazonEC2</code> <code>volumeType</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3220,6 +3272,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The pagination token that indicates the next set of results to retrieve.</p>\n@param nextToken The pagination token that indicates the next set of results to retrieve.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3235,6 +3288,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.pricing.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3269,6 +3323,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.pricing.request.GetProductsRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3337,6 +3392,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The code for the service whose products you want to retrieve. </p>\n@param serviceCode The code for the service whose products you want to retrieve.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3444,6 +3500,7 @@
               "variableSetterType" : "Filter"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3488,6 +3545,7 @@
           "variableSetterType" : "java.util.Collection<Filter>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The list of filters that limit the returned products. only products that match all filters are returned.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override the existing values.</p>\n@param filters The list of filters that limit the returned products. only products that match all filters are returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3556,6 +3614,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The format version that you want the response to be in.</p> <p>Valid values are: <code>aws_v1</code> </p>\n@param formatVersion The format version that you want the response to be in.</p> <p>Valid values are: <code>aws_v1</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3624,6 +3683,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The pagination token that indicates the next set of results that you want to retrieve.</p>\n@param nextToken The pagination token that indicates the next set of results that you want to retrieve.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3692,6 +3752,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of results to return in the response.</p>\n@param maxResults The maximum number of results to return in the response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3801,6 +3862,7 @@
                 "variableSetterType" : "Filter"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3845,6 +3907,7 @@
             "variableSetterType" : "java.util.Collection<Filter>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The list of filters that limit the returned products. only products that match all filters are returned.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override the existing values.</p>\n@param filters The list of filters that limit the returned products. only products that match all filters are returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3914,6 +3977,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The format version that you want the response to be in.</p> <p>Valid values are: <code>aws_v1</code> </p>\n@param formatVersion The format version that you want the response to be in.</p> <p>Valid values are: <code>aws_v1</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3983,6 +4047,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of results to return in the response.</p>\n@param maxResults The maximum number of results to return in the response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4052,6 +4117,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The pagination token that indicates the next set of results that you want to retrieve.</p>\n@param nextToken The pagination token that indicates the next set of results that you want to retrieve.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4121,6 +4187,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The code for the service whose products you want to retrieve. </p>\n@param serviceCode The code for the service whose products you want to retrieve.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4136,6 +4203,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.pricing.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4167,6 +4235,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.pricing.response.GetProductsResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4228,6 +4297,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The format version of the response. For example, aws_v1.</p>\n@param formatVersion The format version of the response. For example, aws_v1.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4335,6 +4405,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : "JSON_VALUE",
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4379,6 +4450,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The list of products that match your filters. The list contains both the product metadata and the price information.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPriceList(java.util.Collection)} or {@link #withPriceList(java.util.Collection)} if you want to override the existing values.</p>\n@param priceList The list of products that match your filters. The list contains both the product metadata and the price information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4447,6 +4519,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The pagination token that indicates the next set of results to retrieve.</p>\n@param nextToken The pagination token that indicates the next set of results to retrieve.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4517,6 +4590,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The format version of the response. For example, aws_v1.</p>\n@param formatVersion The format version of the response. For example, aws_v1.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4586,6 +4660,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The pagination token that indicates the next set of results to retrieve.</p>\n@param nextToken The pagination token that indicates the next set of results to retrieve.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4694,6 +4769,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : "JSON_VALUE",
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4738,6 +4814,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The list of products that match your filters. The list contains both the product metadata and the price information.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPriceList(java.util.Collection)} or {@link #withPriceList(java.util.Collection)} if you want to override the existing values.</p>\n@param priceList The list of products that match your filters. The list contains both the product metadata and the price information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4753,6 +4830,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.pricing.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4787,6 +4865,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InternalErrorException",
+      "fullyQualifiedName" : "com.amazonaws.services.pricing.exception.InternalErrorException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4795,6 +4874,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.pricing.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4826,6 +4906,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InvalidNextTokenException",
+      "fullyQualifiedName" : "com.amazonaws.services.pricing.exception.InvalidNextTokenException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4834,6 +4915,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.pricing.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4865,6 +4947,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InvalidParameterException",
+      "fullyQualifiedName" : "com.amazonaws.services.pricing.exception.InvalidParameterException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4873,6 +4956,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.pricing.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4904,6 +4988,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "NotFoundException",
+      "fullyQualifiedName" : "com.amazonaws.services.pricing.exception.NotFoundException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4912,6 +4997,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.pricing.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4943,6 +5029,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.pricing.model.Service",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5004,6 +5091,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The code for the AWS service.</p>\n@param serviceCode The code for the AWS service.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5111,6 +5199,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5155,6 +5244,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The attributes that are available for this service.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAttributeNames(java.util.Collection)} or {@link #withAttributeNames(java.util.Collection)} if you want to override the existing values.</p>\n@param attributeNames The attributes that are available for this service.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5264,6 +5354,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5308,6 +5399,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The attributes that are available for this service.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAttributeNames(java.util.Collection)} or {@link #withAttributeNames(java.util.Collection)} if you want to override the existing values.</p>\n@param attributeNames The attributes that are available for this service.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5377,6 +5469,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The code for the AWS service.</p>\n@param serviceCode The code for the AWS service.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5392,6 +5485,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.pricing.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,

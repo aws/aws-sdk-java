@@ -51,7 +51,8 @@ public class DescribeNotificationSubscriptionsResultJsonUnmarshaller implements 
                 if (context.testExpression("Subscriptions", targetDepth)) {
                     context.nextToken();
                     describeNotificationSubscriptionsResult.setSubscriptions(new ListUnmarshaller<Subscription>(SubscriptionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Marker", targetDepth)) {
                     context.nextToken();

@@ -118,6 +118,11 @@ public class AbstractAWSSecretsManager implements AWSSecretsManager {
     }
 
     @Override
+    public ValidateResourcePolicyResult validateResourcePolicy(ValidateResourcePolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public void shutdown() {
         throw new java.lang.UnsupportedOperationException();
     }

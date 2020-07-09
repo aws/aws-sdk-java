@@ -58,7 +58,9 @@ public class PosixUserJsonUnmarshaller implements Unmarshaller<PosixUser, JsonUn
                 }
                 if (context.testExpression("SecondaryGids", targetDepth)) {
                     context.nextToken();
-                    posixUser.setSecondaryGids(new ListUnmarshaller<Long>(context.getUnmarshaller(Long.class)).unmarshall(context));
+                    posixUser.setSecondaryGids(new ListUnmarshaller<Long>(context.getUnmarshaller(Long.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

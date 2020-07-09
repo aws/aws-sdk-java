@@ -54,7 +54,9 @@ public class DescribeWorkingStorageResultJsonUnmarshaller implements Unmarshalle
                 }
                 if (context.testExpression("DiskIds", targetDepth)) {
                     context.nextToken();
-                    describeWorkingStorageResult.setDiskIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    describeWorkingStorageResult.setDiskIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("WorkingStorageUsedInBytes", targetDepth)) {
                     context.nextToken();

@@ -58,7 +58,9 @@ public class PlaylistJsonUnmarshaller implements Unmarshaller<Playlist, JsonUnma
                 }
                 if (context.testExpression("OutputKeys", targetDepth)) {
                     context.nextToken();
-                    playlist.setOutputKeys(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    playlist.setOutputKeys(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("HlsContentProtection", targetDepth)) {
                     context.nextToken();

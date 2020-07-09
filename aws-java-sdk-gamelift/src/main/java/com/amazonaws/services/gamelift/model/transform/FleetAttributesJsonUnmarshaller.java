@@ -110,7 +110,9 @@ public class FleetAttributesJsonUnmarshaller implements Unmarshaller<FleetAttrib
                 }
                 if (context.testExpression("LogPaths", targetDepth)) {
                     context.nextToken();
-                    fleetAttributes.setLogPaths(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    fleetAttributes.setLogPaths(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NewGameSessionProtectionPolicy", targetDepth)) {
                     context.nextToken();
@@ -126,11 +128,15 @@ public class FleetAttributesJsonUnmarshaller implements Unmarshaller<FleetAttrib
                 }
                 if (context.testExpression("MetricGroups", targetDepth)) {
                     context.nextToken();
-                    fleetAttributes.setMetricGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    fleetAttributes.setMetricGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("StoppedActions", targetDepth)) {
                     context.nextToken();
-                    fleetAttributes.setStoppedActions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    fleetAttributes.setStoppedActions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("InstanceRoleArn", targetDepth)) {
                     context.nextToken();

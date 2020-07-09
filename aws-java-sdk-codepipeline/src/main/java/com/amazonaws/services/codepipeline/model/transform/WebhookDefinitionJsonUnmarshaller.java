@@ -62,7 +62,9 @@ public class WebhookDefinitionJsonUnmarshaller implements Unmarshaller<WebhookDe
                 }
                 if (context.testExpression("filters", targetDepth)) {
                     context.nextToken();
-                    webhookDefinition.setFilters(new ListUnmarshaller<WebhookFilterRule>(WebhookFilterRuleJsonUnmarshaller.getInstance()).unmarshall(context));
+                    webhookDefinition.setFilters(new ListUnmarshaller<WebhookFilterRule>(WebhookFilterRuleJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("authentication", targetDepth)) {
                     context.nextToken();

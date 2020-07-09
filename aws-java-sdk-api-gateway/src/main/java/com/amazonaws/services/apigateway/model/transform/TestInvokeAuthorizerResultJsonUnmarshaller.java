@@ -71,7 +71,9 @@ public class TestInvokeAuthorizerResultJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("authorization", targetDepth)) {
                     context.nextToken();
                     testInvokeAuthorizerResult.setAuthorization(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
-                            new ListUnmarshaller<String>(context.getUnmarshaller(String.class))).unmarshall(context));
+                            new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    ).unmarshall(context));
                 }
                 if (context.testExpression("claims", targetDepth)) {
                     context.nextToken();

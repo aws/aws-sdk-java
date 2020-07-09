@@ -55,7 +55,9 @@ public class AutoScalingGroupRecommendationOptionJsonUnmarshaller implements Unm
                 if (context.testExpression("projectedUtilizationMetrics", targetDepth)) {
                     context.nextToken();
                     autoScalingGroupRecommendationOption.setProjectedUtilizationMetrics(new ListUnmarshaller<UtilizationMetric>(
-                            UtilizationMetricJsonUnmarshaller.getInstance()).unmarshall(context));
+                            UtilizationMetricJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("performanceRisk", targetDepth)) {
                     context.nextToken();

@@ -54,7 +54,9 @@ public class ComplianceStringFilterJsonUnmarshaller implements Unmarshaller<Comp
                 }
                 if (context.testExpression("Values", targetDepth)) {
                     context.nextToken();
-                    complianceStringFilter.setValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    complianceStringFilter.setValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
                     context.nextToken();

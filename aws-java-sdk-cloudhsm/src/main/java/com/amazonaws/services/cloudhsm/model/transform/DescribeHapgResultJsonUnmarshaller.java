@@ -58,15 +58,21 @@ public class DescribeHapgResultJsonUnmarshaller implements Unmarshaller<Describe
                 }
                 if (context.testExpression("HsmsLastActionFailed", targetDepth)) {
                     context.nextToken();
-                    describeHapgResult.setHsmsLastActionFailed(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    describeHapgResult.setHsmsLastActionFailed(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("HsmsPendingDeletion", targetDepth)) {
                     context.nextToken();
-                    describeHapgResult.setHsmsPendingDeletion(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    describeHapgResult.setHsmsPendingDeletion(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("HsmsPendingRegistration", targetDepth)) {
                     context.nextToken();
-                    describeHapgResult.setHsmsPendingRegistration(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    describeHapgResult.setHsmsPendingRegistration(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Label", targetDepth)) {
                     context.nextToken();
@@ -78,7 +84,9 @@ public class DescribeHapgResultJsonUnmarshaller implements Unmarshaller<Describe
                 }
                 if (context.testExpression("PartitionSerialList", targetDepth)) {
                     context.nextToken();
-                    describeHapgResult.setPartitionSerialList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    describeHapgResult.setPartitionSerialList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
                     context.nextToken();

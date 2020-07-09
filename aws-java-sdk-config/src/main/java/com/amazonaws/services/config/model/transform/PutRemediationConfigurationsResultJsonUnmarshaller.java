@@ -51,7 +51,9 @@ public class PutRemediationConfigurationsResultJsonUnmarshaller implements Unmar
                 if (context.testExpression("FailedBatches", targetDepth)) {
                     context.nextToken();
                     putRemediationConfigurationsResult.setFailedBatches(new ListUnmarshaller<FailedRemediationBatch>(FailedRemediationBatchJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

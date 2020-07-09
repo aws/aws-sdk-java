@@ -51,7 +51,9 @@ public class ListSmartHomeAppliancesResultJsonUnmarshaller implements Unmarshall
                 if (context.testExpression("SmartHomeAppliances", targetDepth)) {
                     context.nextToken();
                     listSmartHomeAppliancesResult.setSmartHomeAppliances(new ListUnmarshaller<SmartHomeAppliance>(SmartHomeApplianceJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

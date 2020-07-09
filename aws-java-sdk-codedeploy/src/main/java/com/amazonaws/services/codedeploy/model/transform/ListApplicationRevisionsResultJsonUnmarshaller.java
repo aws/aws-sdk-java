@@ -51,7 +51,8 @@ public class ListApplicationRevisionsResultJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("revisions", targetDepth)) {
                     context.nextToken();
                     listApplicationRevisionsResult.setRevisions(new ListUnmarshaller<RevisionLocation>(RevisionLocationJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

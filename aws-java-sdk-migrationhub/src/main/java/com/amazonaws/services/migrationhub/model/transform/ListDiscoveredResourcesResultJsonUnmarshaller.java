@@ -55,7 +55,9 @@ public class ListDiscoveredResourcesResultJsonUnmarshaller implements Unmarshall
                 if (context.testExpression("DiscoveredResourceList", targetDepth)) {
                     context.nextToken();
                     listDiscoveredResourcesResult.setDiscoveredResourceList(new ListUnmarshaller<DiscoveredResource>(DiscoveredResourceJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

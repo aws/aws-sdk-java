@@ -28,7 +28,7 @@ import com.amazonaws.services.ebs.model.*;
  * <p>
  * You can use the Amazon Elastic Block Store (EBS) direct APIs to directly read the data on your EBS snapshots, and
  * identify the difference between two snapshots. You can view the details of blocks in an EBS snapshot, compare the
- * block difference between two snapshots, and directly access the data in a snapshot. If you’re an independent software
+ * block difference between two snapshots, and directly access the data in a snapshot. If you're an independent software
  * vendor (ISV) who offers backup services for EBS, the EBS direct APIs make it easier and more cost-effective to track
  * incremental changes on your EBS volumes via EBS snapshots. This can be done without having to create new volumes from
  * EBS snapshots.
@@ -46,6 +46,41 @@ import com.amazonaws.services.ebs.model.*;
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonEBSAsync extends AmazonEBS {
+
+    /**
+     * <p>
+     * Seals and completes the snapshot after all of the required blocks of data have been written to it. Completing the
+     * snapshot changes the status to <code>completed</code>. You cannot write new blocks to a snapshot after it has
+     * been completed.
+     * </p>
+     * 
+     * @param completeSnapshotRequest
+     * @return A Java Future containing the result of the CompleteSnapshot operation returned by the service.
+     * @sample AmazonEBSAsync.CompleteSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ebs-2019-11-02/CompleteSnapshot" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CompleteSnapshotResult> completeSnapshotAsync(CompleteSnapshotRequest completeSnapshotRequest);
+
+    /**
+     * <p>
+     * Seals and completes the snapshot after all of the required blocks of data have been written to it. Completing the
+     * snapshot changes the status to <code>completed</code>. You cannot write new blocks to a snapshot after it has
+     * been completed.
+     * </p>
+     * 
+     * @param completeSnapshotRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CompleteSnapshot operation returned by the service.
+     * @sample AmazonEBSAsyncHandler.CompleteSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ebs-2019-11-02/CompleteSnapshot" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CompleteSnapshotResult> completeSnapshotAsync(CompleteSnapshotRequest completeSnapshotRequest,
+            com.amazonaws.handlers.AsyncHandler<CompleteSnapshotRequest, CompleteSnapshotResult> asyncHandler);
 
     /**
      * <p>
@@ -141,5 +176,87 @@ public interface AmazonEBSAsync extends AmazonEBS {
      */
     java.util.concurrent.Future<ListSnapshotBlocksResult> listSnapshotBlocksAsync(ListSnapshotBlocksRequest listSnapshotBlocksRequest,
             com.amazonaws.handlers.AsyncHandler<ListSnapshotBlocksRequest, ListSnapshotBlocksResult> asyncHandler);
+
+    /**
+     * <p>
+     * Writes a block of data to a block in the snapshot. If the specified block contains data, the existing data is
+     * overwritten. The target snapshot must be in the <code>pending</code> state.
+     * </p>
+     * <p>
+     * Data written to a snapshot must be aligned with 512-byte sectors.
+     * </p>
+     * 
+     * @param putSnapshotBlockRequest
+     * @return A Java Future containing the result of the PutSnapshotBlock operation returned by the service.
+     * @sample AmazonEBSAsync.PutSnapshotBlock
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ebs-2019-11-02/PutSnapshotBlock" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutSnapshotBlockResult> putSnapshotBlockAsync(PutSnapshotBlockRequest putSnapshotBlockRequest);
+
+    /**
+     * <p>
+     * Writes a block of data to a block in the snapshot. If the specified block contains data, the existing data is
+     * overwritten. The target snapshot must be in the <code>pending</code> state.
+     * </p>
+     * <p>
+     * Data written to a snapshot must be aligned with 512-byte sectors.
+     * </p>
+     * 
+     * @param putSnapshotBlockRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutSnapshotBlock operation returned by the service.
+     * @sample AmazonEBSAsyncHandler.PutSnapshotBlock
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ebs-2019-11-02/PutSnapshotBlock" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutSnapshotBlockResult> putSnapshotBlockAsync(PutSnapshotBlockRequest putSnapshotBlockRequest,
+            com.amazonaws.handlers.AsyncHandler<PutSnapshotBlockRequest, PutSnapshotBlockResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a new Amazon EBS snapshot. The new snapshot enters the <code>pending</code> state after the request
+     * completes.
+     * </p>
+     * <p>
+     * After creating the snapshot, use <a
+     * href="https://docs.aws.amazon.com/ebs/latest/APIReference/API_PutSnapshotBlock.html"> PutSnapshotBlock</a> to
+     * write blocks of data to the snapshot.
+     * </p>
+     * 
+     * @param startSnapshotRequest
+     * @return A Java Future containing the result of the StartSnapshot operation returned by the service.
+     * @sample AmazonEBSAsync.StartSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ebs-2019-11-02/StartSnapshot" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartSnapshotResult> startSnapshotAsync(StartSnapshotRequest startSnapshotRequest);
+
+    /**
+     * <p>
+     * Creates a new Amazon EBS snapshot. The new snapshot enters the <code>pending</code> state after the request
+     * completes.
+     * </p>
+     * <p>
+     * After creating the snapshot, use <a
+     * href="https://docs.aws.amazon.com/ebs/latest/APIReference/API_PutSnapshotBlock.html"> PutSnapshotBlock</a> to
+     * write blocks of data to the snapshot.
+     * </p>
+     * 
+     * @param startSnapshotRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartSnapshot operation returned by the service.
+     * @sample AmazonEBSAsyncHandler.StartSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ebs-2019-11-02/StartSnapshot" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartSnapshotResult> startSnapshotAsync(StartSnapshotRequest startSnapshotRequest,
+            com.amazonaws.handlers.AsyncHandler<StartSnapshotRequest, StartSnapshotResult> asyncHandler);
 
 }

@@ -51,7 +51,9 @@ public class SearchProvisionedProductsResultJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("ProvisionedProducts", targetDepth)) {
                     context.nextToken();
                     searchProvisionedProductsResult.setProvisionedProducts(new ListUnmarshaller<ProvisionedProductAttribute>(
-                            ProvisionedProductAttributeJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ProvisionedProductAttributeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("TotalResultsCount", targetDepth)) {
                     context.nextToken();

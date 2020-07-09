@@ -50,7 +50,9 @@ public class JourneysResponseJsonUnmarshaller implements Unmarshaller<JourneysRe
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Item", targetDepth)) {
                     context.nextToken();
-                    journeysResponse.setItem(new ListUnmarshaller<JourneyResponse>(JourneyResponseJsonUnmarshaller.getInstance()).unmarshall(context));
+                    journeysResponse.setItem(new ListUnmarshaller<JourneyResponse>(JourneyResponseJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

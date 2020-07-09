@@ -54,11 +54,15 @@ public class TagValuesJsonUnmarshaller implements Unmarshaller<TagValues, JsonUn
                 }
                 if (context.testExpression("Values", targetDepth)) {
                     context.nextToken();
-                    tagValues.setValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    tagValues.setValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("MatchOptions", targetDepth)) {
                     context.nextToken();
-                    tagValues.setMatchOptions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    tagValues.setMatchOptions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

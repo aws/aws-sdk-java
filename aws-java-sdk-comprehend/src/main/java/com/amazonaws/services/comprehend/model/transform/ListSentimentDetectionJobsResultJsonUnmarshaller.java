@@ -51,7 +51,9 @@ public class ListSentimentDetectionJobsResultJsonUnmarshaller implements Unmarsh
                 if (context.testExpression("SentimentDetectionJobPropertiesList", targetDepth)) {
                     context.nextToken();
                     listSentimentDetectionJobsResult.setSentimentDetectionJobPropertiesList(new ListUnmarshaller<SentimentDetectionJobProperties>(
-                            SentimentDetectionJobPropertiesJsonUnmarshaller.getInstance()).unmarshall(context));
+                            SentimentDetectionJobPropertiesJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

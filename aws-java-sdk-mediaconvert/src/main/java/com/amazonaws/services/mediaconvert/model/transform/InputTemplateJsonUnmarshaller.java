@@ -89,7 +89,9 @@ public class InputTemplateJsonUnmarshaller implements Unmarshaller<InputTemplate
                 }
                 if (context.testExpression("inputClippings", targetDepth)) {
                     context.nextToken();
-                    inputTemplate.setInputClippings(new ListUnmarshaller<InputClipping>(InputClippingJsonUnmarshaller.getInstance()).unmarshall(context));
+                    inputTemplate.setInputClippings(new ListUnmarshaller<InputClipping>(InputClippingJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("position", targetDepth)) {
                     context.nextToken();

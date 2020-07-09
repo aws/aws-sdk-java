@@ -54,7 +54,9 @@ public class AwsWafWebAclRuleJsonUnmarshaller implements Unmarshaller<AwsWafWebA
                 }
                 if (context.testExpression("ExcludedRules", targetDepth)) {
                     context.nextToken();
-                    awsWafWebAclRule.setExcludedRules(new ListUnmarshaller<WafExcludedRule>(WafExcludedRuleJsonUnmarshaller.getInstance()).unmarshall(context));
+                    awsWafWebAclRule.setExcludedRules(new ListUnmarshaller<WafExcludedRule>(WafExcludedRuleJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("OverrideAction", targetDepth)) {
                     context.nextToken();

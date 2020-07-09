@@ -51,7 +51,8 @@ public class ListLoggerDefinitionsResultJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("Definitions", targetDepth)) {
                     context.nextToken();
                     listLoggerDefinitionsResult.setDefinitions(new ListUnmarshaller<DefinitionInformation>(DefinitionInformationJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

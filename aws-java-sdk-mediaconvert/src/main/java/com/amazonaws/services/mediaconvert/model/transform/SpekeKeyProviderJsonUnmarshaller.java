@@ -58,7 +58,9 @@ public class SpekeKeyProviderJsonUnmarshaller implements Unmarshaller<SpekeKeyPr
                 }
                 if (context.testExpression("systemIds", targetDepth)) {
                     context.nextToken();
-                    spekeKeyProvider.setSystemIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    spekeKeyProvider.setSystemIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("url", targetDepth)) {
                     context.nextToken();

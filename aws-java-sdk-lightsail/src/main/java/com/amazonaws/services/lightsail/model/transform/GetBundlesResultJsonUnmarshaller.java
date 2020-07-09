@@ -50,7 +50,9 @@ public class GetBundlesResultJsonUnmarshaller implements Unmarshaller<GetBundles
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("bundles", targetDepth)) {
                     context.nextToken();
-                    getBundlesResult.setBundles(new ListUnmarshaller<Bundle>(BundleJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getBundlesResult.setBundles(new ListUnmarshaller<Bundle>(BundleJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextPageToken", targetDepth)) {
                     context.nextToken();

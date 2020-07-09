@@ -51,7 +51,8 @@ public class ListPolicyVersionsResultJsonUnmarshaller implements Unmarshaller<Li
                 if (context.testExpression("policyVersions", targetDepth)) {
                     context.nextToken();
                     listPolicyVersionsResult.setPolicyVersions(new ListUnmarshaller<PolicyVersion>(PolicyVersionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

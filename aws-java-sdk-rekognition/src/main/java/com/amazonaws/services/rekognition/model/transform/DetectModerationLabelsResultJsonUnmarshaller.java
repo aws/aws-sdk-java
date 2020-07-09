@@ -51,7 +51,8 @@ public class DetectModerationLabelsResultJsonUnmarshaller implements Unmarshalle
                 if (context.testExpression("ModerationLabels", targetDepth)) {
                     context.nextToken();
                     detectModerationLabelsResult.setModerationLabels(new ListUnmarshaller<ModerationLabel>(ModerationLabelJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ModerationModelVersion", targetDepth)) {
                     context.nextToken();

@@ -51,7 +51,8 @@ public class ListDomainAssociationsResultJsonUnmarshaller implements Unmarshalle
                 if (context.testExpression("domainAssociations", targetDepth)) {
                     context.nextToken();
                     listDomainAssociationsResult.setDomainAssociations(new ListUnmarshaller<DomainAssociation>(DomainAssociationJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

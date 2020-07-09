@@ -51,7 +51,8 @@ public class DescribeLDAPSSettingsResultJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("LDAPSSettingsInfo", targetDepth)) {
                     context.nextToken();
                     describeLDAPSSettingsResult.setLDAPSSettingsInfo(new ListUnmarshaller<LDAPSSettingInfo>(LDAPSSettingInfoJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

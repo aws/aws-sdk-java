@@ -28,7 +28,7 @@ import java.util.concurrent.ExecutorService;
  * <p>
  * You can use the Amazon Elastic Block Store (EBS) direct APIs to directly read the data on your EBS snapshots, and
  * identify the difference between two snapshots. You can view the details of blocks in an EBS snapshot, compare the
- * block difference between two snapshots, and directly access the data in a snapshot. If you’re an independent software
+ * block difference between two snapshots, and directly access the data in a snapshot. If you're an independent software
  * vendor (ISV) who offers backup services for EBS, the EBS direct APIs make it easier and more cost-effective to track
  * incremental changes on your EBS volumes via EBS snapshots. This can be done without having to create new volumes from
  * EBS snapshots.
@@ -86,6 +86,39 @@ public class AmazonEBSAsyncClient extends AmazonEBSClient implements AmazonEBSAs
      */
     public ExecutorService getExecutorService() {
         return executorService;
+    }
+
+    @Override
+    public java.util.concurrent.Future<CompleteSnapshotResult> completeSnapshotAsync(CompleteSnapshotRequest request) {
+
+        return completeSnapshotAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CompleteSnapshotResult> completeSnapshotAsync(final CompleteSnapshotRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CompleteSnapshotRequest, CompleteSnapshotResult> asyncHandler) {
+        final CompleteSnapshotRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CompleteSnapshotResult>() {
+            @Override
+            public CompleteSnapshotResult call() throws Exception {
+                CompleteSnapshotResult result = null;
+
+                try {
+                    result = executeCompleteSnapshot(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override
@@ -172,6 +205,72 @@ public class AmazonEBSAsyncClient extends AmazonEBSClient implements AmazonEBSAs
 
                 try {
                     result = executeListSnapshotBlocks(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutSnapshotBlockResult> putSnapshotBlockAsync(PutSnapshotBlockRequest request) {
+
+        return putSnapshotBlockAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutSnapshotBlockResult> putSnapshotBlockAsync(final PutSnapshotBlockRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutSnapshotBlockRequest, PutSnapshotBlockResult> asyncHandler) {
+        final PutSnapshotBlockRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutSnapshotBlockResult>() {
+            @Override
+            public PutSnapshotBlockResult call() throws Exception {
+                PutSnapshotBlockResult result = null;
+
+                try {
+                    result = executePutSnapshotBlock(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartSnapshotResult> startSnapshotAsync(StartSnapshotRequest request) {
+
+        return startSnapshotAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartSnapshotResult> startSnapshotAsync(final StartSnapshotRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartSnapshotRequest, StartSnapshotResult> asyncHandler) {
+        final StartSnapshotRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartSnapshotResult>() {
+            @Override
+            public StartSnapshotResult call() throws Exception {
+                StartSnapshotResult result = null;
+
+                try {
+                    result = executeStartSnapshot(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -58,8 +58,9 @@ public class HandshakeResourceJsonUnmarshaller implements Unmarshaller<Handshake
                 }
                 if (context.testExpression("Resources", targetDepth)) {
                     context.nextToken();
-                    handshakeResource
-                            .setResources(new ListUnmarshaller<HandshakeResource>(HandshakeResourceJsonUnmarshaller.getInstance()).unmarshall(context));
+                    handshakeResource.setResources(new ListUnmarshaller<HandshakeResource>(HandshakeResourceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

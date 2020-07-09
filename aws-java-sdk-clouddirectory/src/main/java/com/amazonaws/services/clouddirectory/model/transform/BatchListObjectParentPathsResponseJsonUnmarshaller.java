@@ -51,7 +51,9 @@ public class BatchListObjectParentPathsResponseJsonUnmarshaller implements Unmar
                 if (context.testExpression("PathToObjectIdentifiersList", targetDepth)) {
                     context.nextToken();
                     batchListObjectParentPathsResponse.setPathToObjectIdentifiersList(new ListUnmarshaller<PathToObjectIdentifiers>(
-                            PathToObjectIdentifiersJsonUnmarshaller.getInstance()).unmarshall(context));
+                            PathToObjectIdentifiersJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

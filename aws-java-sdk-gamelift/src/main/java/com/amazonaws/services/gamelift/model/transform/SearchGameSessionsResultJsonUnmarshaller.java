@@ -50,7 +50,9 @@ public class SearchGameSessionsResultJsonUnmarshaller implements Unmarshaller<Se
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("GameSessions", targetDepth)) {
                     context.nextToken();
-                    searchGameSessionsResult.setGameSessions(new ListUnmarshaller<GameSession>(GameSessionJsonUnmarshaller.getInstance()).unmarshall(context));
+                    searchGameSessionsResult.setGameSessions(new ListUnmarshaller<GameSession>(GameSessionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

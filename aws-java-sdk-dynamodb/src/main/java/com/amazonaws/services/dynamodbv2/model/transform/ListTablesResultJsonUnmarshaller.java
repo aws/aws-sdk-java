@@ -50,7 +50,9 @@ public class ListTablesResultJsonUnmarshaller implements Unmarshaller<ListTables
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TableNames", targetDepth)) {
                     context.nextToken();
-                    listTablesResult.setTableNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    listTablesResult.setTableNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("LastEvaluatedTableName", targetDepth)) {
                     context.nextToken();

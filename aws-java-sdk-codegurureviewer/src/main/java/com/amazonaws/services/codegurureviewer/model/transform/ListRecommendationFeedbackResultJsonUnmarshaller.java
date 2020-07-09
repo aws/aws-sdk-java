@@ -51,7 +51,9 @@ public class ListRecommendationFeedbackResultJsonUnmarshaller implements Unmarsh
                 if (context.testExpression("RecommendationFeedbackSummaries", targetDepth)) {
                     context.nextToken();
                     listRecommendationFeedbackResult.setRecommendationFeedbackSummaries(new ListUnmarshaller<RecommendationFeedbackSummary>(
-                            RecommendationFeedbackSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                            RecommendationFeedbackSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

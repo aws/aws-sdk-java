@@ -51,7 +51,9 @@ public class ListRobotApplicationsResultJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("robotApplicationSummaries", targetDepth)) {
                     context.nextToken();
                     listRobotApplicationsResult.setRobotApplicationSummaries(new ListUnmarshaller<RobotApplicationSummary>(
-                            RobotApplicationSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                            RobotApplicationSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

@@ -50,7 +50,9 @@ public class PartitionErrorJsonUnmarshaller implements Unmarshaller<PartitionErr
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("PartitionValues", targetDepth)) {
                     context.nextToken();
-                    partitionError.setPartitionValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    partitionError.setPartitionValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ErrorDetail", targetDepth)) {
                     context.nextToken();

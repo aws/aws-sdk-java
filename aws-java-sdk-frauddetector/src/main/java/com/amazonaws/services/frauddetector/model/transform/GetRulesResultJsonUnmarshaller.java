@@ -50,7 +50,9 @@ public class GetRulesResultJsonUnmarshaller implements Unmarshaller<GetRulesResu
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ruleDetails", targetDepth)) {
                     context.nextToken();
-                    getRulesResult.setRuleDetails(new ListUnmarshaller<RuleDetail>(RuleDetailJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getRulesResult.setRuleDetails(new ListUnmarshaller<RuleDetail>(RuleDetailJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

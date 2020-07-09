@@ -50,7 +50,9 @@ public class LinuxParametersJsonUnmarshaller implements Unmarshaller<LinuxParame
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("devices", targetDepth)) {
                     context.nextToken();
-                    linuxParameters.setDevices(new ListUnmarshaller<Device>(DeviceJsonUnmarshaller.getInstance()).unmarshall(context));
+                    linuxParameters.setDevices(new ListUnmarshaller<Device>(DeviceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

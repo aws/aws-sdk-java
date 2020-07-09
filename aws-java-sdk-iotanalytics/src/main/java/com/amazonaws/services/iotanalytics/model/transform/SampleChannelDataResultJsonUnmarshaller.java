@@ -51,7 +51,8 @@ public class SampleChannelDataResultJsonUnmarshaller implements Unmarshaller<Sam
                 if (context.testExpression("payloads", targetDepth)) {
                     context.nextToken();
                     sampleChannelDataResult.setPayloads(new ListUnmarshaller<java.nio.ByteBuffer>(context.getUnmarshaller(java.nio.ByteBuffer.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

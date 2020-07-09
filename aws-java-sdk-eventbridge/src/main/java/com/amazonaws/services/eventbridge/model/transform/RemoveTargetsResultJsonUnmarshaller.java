@@ -55,7 +55,8 @@ public class RemoveTargetsResultJsonUnmarshaller implements Unmarshaller<RemoveT
                 if (context.testExpression("FailedEntries", targetDepth)) {
                     context.nextToken();
                     removeTargetsResult.setFailedEntries(new ListUnmarshaller<RemoveTargetsResultEntry>(RemoveTargetsResultEntryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

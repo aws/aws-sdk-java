@@ -51,7 +51,8 @@ public class GetAssetPropertyAggregatesResultJsonUnmarshaller implements Unmarsh
                 if (context.testExpression("aggregatedValues", targetDepth)) {
                     context.nextToken();
                     getAssetPropertyAggregatesResult.setAggregatedValues(new ListUnmarshaller<AggregatedValue>(AggregatedValueJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

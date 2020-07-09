@@ -54,11 +54,15 @@ public class AppSpecificationJsonUnmarshaller implements Unmarshaller<AppSpecifi
                 }
                 if (context.testExpression("ContainerEntrypoint", targetDepth)) {
                     context.nextToken();
-                    appSpecification.setContainerEntrypoint(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    appSpecification.setContainerEntrypoint(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ContainerArguments", targetDepth)) {
                     context.nextToken();
-                    appSpecification.setContainerArguments(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    appSpecification.setContainerArguments(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -66,7 +66,9 @@ public class OfferingJsonUnmarshaller implements Unmarshaller<Offering, JsonUnma
                 }
                 if (context.testExpression("recurringCharges", targetDepth)) {
                     context.nextToken();
-                    offering.setRecurringCharges(new ListUnmarshaller<RecurringCharge>(RecurringChargeJsonUnmarshaller.getInstance()).unmarshall(context));
+                    offering.setRecurringCharges(new ListUnmarshaller<RecurringCharge>(RecurringChargeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

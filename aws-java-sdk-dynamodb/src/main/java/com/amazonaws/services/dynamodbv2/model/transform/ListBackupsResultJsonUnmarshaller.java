@@ -50,7 +50,9 @@ public class ListBackupsResultJsonUnmarshaller implements Unmarshaller<ListBacku
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BackupSummaries", targetDepth)) {
                     context.nextToken();
-                    listBackupsResult.setBackupSummaries(new ListUnmarshaller<BackupSummary>(BackupSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listBackupsResult.setBackupSummaries(new ListUnmarshaller<BackupSummary>(BackupSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("LastEvaluatedBackupArn", targetDepth)) {
                     context.nextToken();

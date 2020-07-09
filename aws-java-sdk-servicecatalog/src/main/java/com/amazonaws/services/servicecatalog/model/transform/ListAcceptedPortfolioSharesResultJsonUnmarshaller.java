@@ -51,7 +51,8 @@ public class ListAcceptedPortfolioSharesResultJsonUnmarshaller implements Unmars
                 if (context.testExpression("PortfolioDetails", targetDepth)) {
                     context.nextToken();
                     listAcceptedPortfolioSharesResult.setPortfolioDetails(new ListUnmarshaller<PortfolioDetail>(PortfolioDetailJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextPageToken", targetDepth)) {
                     context.nextToken();

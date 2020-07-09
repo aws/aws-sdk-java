@@ -51,7 +51,9 @@ public class ListTextTranslationJobsResultJsonUnmarshaller implements Unmarshall
                 if (context.testExpression("TextTranslationJobPropertiesList", targetDepth)) {
                     context.nextToken();
                     listTextTranslationJobsResult.setTextTranslationJobPropertiesList(new ListUnmarshaller<TextTranslationJobProperties>(
-                            TextTranslationJobPropertiesJsonUnmarshaller.getInstance()).unmarshall(context));
+                            TextTranslationJobPropertiesJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

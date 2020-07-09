@@ -51,7 +51,9 @@ public class ListDomainConfigurationsResultJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("domainConfigurations", targetDepth)) {
                     context.nextToken();
                     listDomainConfigurationsResult.setDomainConfigurations(new ListUnmarshaller<DomainConfigurationSummary>(
-                            DomainConfigurationSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                            DomainConfigurationSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextMarker", targetDepth)) {
                     context.nextToken();

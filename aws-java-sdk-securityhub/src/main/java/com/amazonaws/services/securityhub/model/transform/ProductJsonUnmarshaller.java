@@ -66,11 +66,15 @@ public class ProductJsonUnmarshaller implements Unmarshaller<Product, JsonUnmars
                 }
                 if (context.testExpression("Categories", targetDepth)) {
                     context.nextToken();
-                    product.setCategories(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    product.setCategories(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("IntegrationTypes", targetDepth)) {
                     context.nextToken();
-                    product.setIntegrationTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    product.setIntegrationTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("MarketplaceUrl", targetDepth)) {
                     context.nextToken();

@@ -115,7 +115,8 @@ public class HITJsonUnmarshaller implements Unmarshaller<HIT, JsonUnmarshallerCo
                 if (context.testExpression("QualificationRequirements", targetDepth)) {
                     context.nextToken();
                     hIT.setQualificationRequirements(new ListUnmarshaller<QualificationRequirement>(QualificationRequirementJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("HITReviewStatus", targetDepth)) {
                     context.nextToken();

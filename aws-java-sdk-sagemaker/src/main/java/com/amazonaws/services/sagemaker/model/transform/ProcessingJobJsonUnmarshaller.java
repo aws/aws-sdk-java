@@ -50,7 +50,9 @@ public class ProcessingJobJsonUnmarshaller implements Unmarshaller<ProcessingJob
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ProcessingInputs", targetDepth)) {
                     context.nextToken();
-                    processingJob.setProcessingInputs(new ListUnmarshaller<ProcessingInput>(ProcessingInputJsonUnmarshaller.getInstance()).unmarshall(context));
+                    processingJob.setProcessingInputs(new ListUnmarshaller<ProcessingInput>(ProcessingInputJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ProcessingOutputConfig", targetDepth)) {
                     context.nextToken();
@@ -135,7 +137,9 @@ public class ProcessingJobJsonUnmarshaller implements Unmarshaller<ProcessingJob
                 }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
-                    processingJob.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    processingJob.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -34,12 +34,12 @@ public class UpdateWorkforceRequest extends com.amazonaws.AmazonWebServiceReques
     private String workforceName;
     /**
      * <p>
-     * A list of one to four worker IP address ranges (<a
+     * A list of one to ten worker IP address ranges (<a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) that can be used to access
      * tasks assigned to this workforce.
      * </p>
      * <p>
-     * Maximum: Four CIDR values
+     * Maximum: Ten CIDR values
      * </p>
      */
     private SourceIpConfig sourceIpConfig;
@@ -92,20 +92,20 @@ public class UpdateWorkforceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of one to four worker IP address ranges (<a
+     * A list of one to ten worker IP address ranges (<a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) that can be used to access
      * tasks assigned to this workforce.
      * </p>
      * <p>
-     * Maximum: Four CIDR values
+     * Maximum: Ten CIDR values
      * </p>
      * 
      * @param sourceIpConfig
-     *        A list of one to four worker IP address ranges (<a
+     *        A list of one to ten worker IP address ranges (<a
      *        href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) that can be used to
      *        access tasks assigned to this workforce.</p>
      *        <p>
-     *        Maximum: Four CIDR values
+     *        Maximum: Ten CIDR values
      */
 
     public void setSourceIpConfig(SourceIpConfig sourceIpConfig) {
@@ -114,19 +114,19 @@ public class UpdateWorkforceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of one to four worker IP address ranges (<a
+     * A list of one to ten worker IP address ranges (<a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) that can be used to access
      * tasks assigned to this workforce.
      * </p>
      * <p>
-     * Maximum: Four CIDR values
+     * Maximum: Ten CIDR values
      * </p>
      * 
-     * @return A list of one to four worker IP address ranges (<a
+     * @return A list of one to ten worker IP address ranges (<a
      *         href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) that can be used to
      *         access tasks assigned to this workforce.</p>
      *         <p>
-     *         Maximum: Four CIDR values
+     *         Maximum: Ten CIDR values
      */
 
     public SourceIpConfig getSourceIpConfig() {
@@ -135,20 +135,20 @@ public class UpdateWorkforceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of one to four worker IP address ranges (<a
+     * A list of one to ten worker IP address ranges (<a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) that can be used to access
      * tasks assigned to this workforce.
      * </p>
      * <p>
-     * Maximum: Four CIDR values
+     * Maximum: Ten CIDR values
      * </p>
      * 
      * @param sourceIpConfig
-     *        A list of one to four worker IP address ranges (<a
+     *        A list of one to ten worker IP address ranges (<a
      *        href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) that can be used to
      *        access tasks assigned to this workforce.</p>
      *        <p>
-     *        Maximum: Four CIDR values
+     *        Maximum: Ten CIDR values
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

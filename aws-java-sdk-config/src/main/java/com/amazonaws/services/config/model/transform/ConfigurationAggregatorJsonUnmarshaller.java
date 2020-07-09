@@ -59,7 +59,9 @@ public class ConfigurationAggregatorJsonUnmarshaller implements Unmarshaller<Con
                 if (context.testExpression("AccountAggregationSources", targetDepth)) {
                     context.nextToken();
                     configurationAggregator.setAccountAggregationSources(new ListUnmarshaller<AccountAggregationSource>(
-                            AccountAggregationSourceJsonUnmarshaller.getInstance()).unmarshall(context));
+                            AccountAggregationSourceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("OrganizationAggregationSource", targetDepth)) {
                     context.nextToken();

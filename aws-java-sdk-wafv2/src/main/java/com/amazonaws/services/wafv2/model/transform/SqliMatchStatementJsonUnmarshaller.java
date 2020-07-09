@@ -55,7 +55,8 @@ public class SqliMatchStatementJsonUnmarshaller implements Unmarshaller<SqliMatc
                 if (context.testExpression("TextTransformations", targetDepth)) {
                     context.nextToken();
                     sqliMatchStatement.setTextTransformations(new ListUnmarshaller<TextTransformation>(TextTransformationJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

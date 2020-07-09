@@ -58,7 +58,9 @@ public class DeviceInstanceJsonUnmarshaller implements Unmarshaller<DeviceInstan
                 }
                 if (context.testExpression("labels", targetDepth)) {
                     context.nextToken();
-                    deviceInstance.setLabels(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    deviceInstance.setLabels(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();

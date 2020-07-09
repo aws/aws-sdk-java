@@ -58,7 +58,9 @@ public class ListReviewableHITsResultJsonUnmarshaller implements Unmarshaller<Li
                 }
                 if (context.testExpression("HITs", targetDepth)) {
                     context.nextToken();
-                    listReviewableHITsResult.setHITs(new ListUnmarshaller<HIT>(HITJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listReviewableHITsResult.setHITs(new ListUnmarshaller<HIT>(HITJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

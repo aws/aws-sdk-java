@@ -54,7 +54,9 @@ public class GetTagsResultJsonUnmarshaller implements Unmarshaller<GetTagsResult
                 }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
-                    getTagsResult.setTags(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    getTagsResult.setTags(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ReturnSize", targetDepth)) {
                     context.nextToken();

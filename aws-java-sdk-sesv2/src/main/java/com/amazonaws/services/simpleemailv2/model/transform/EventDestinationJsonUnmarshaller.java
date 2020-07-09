@@ -58,7 +58,9 @@ public class EventDestinationJsonUnmarshaller implements Unmarshaller<EventDesti
                 }
                 if (context.testExpression("MatchingEventTypes", targetDepth)) {
                     context.nextToken();
-                    eventDestination.setMatchingEventTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    eventDestination.setMatchingEventTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("KinesisFirehoseDestination", targetDepth)) {
                     context.nextToken();

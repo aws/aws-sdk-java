@@ -66,8 +66,9 @@ public class CommunicationJsonUnmarshaller implements Unmarshaller<Communication
                 }
                 if (context.testExpression("attachmentSet", targetDepth)) {
                     context.nextToken();
-                    communication
-                            .setAttachmentSet(new ListUnmarshaller<AttachmentDetails>(AttachmentDetailsJsonUnmarshaller.getInstance()).unmarshall(context));
+                    communication.setAttachmentSet(new ListUnmarshaller<AttachmentDetails>(AttachmentDetailsJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

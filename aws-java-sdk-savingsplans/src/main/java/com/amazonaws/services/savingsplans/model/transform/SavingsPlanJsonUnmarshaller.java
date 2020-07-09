@@ -94,7 +94,9 @@ public class SavingsPlanJsonUnmarshaller implements Unmarshaller<SavingsPlan, Js
                 }
                 if (context.testExpression("productTypes", targetDepth)) {
                     context.nextToken();
-                    savingsPlan.setProductTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    savingsPlan.setProductTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("currency", targetDepth)) {
                     context.nextToken();

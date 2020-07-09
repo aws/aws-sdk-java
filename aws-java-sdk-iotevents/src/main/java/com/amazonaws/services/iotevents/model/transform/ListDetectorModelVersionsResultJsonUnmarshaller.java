@@ -51,7 +51,9 @@ public class ListDetectorModelVersionsResultJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("detectorModelVersionSummaries", targetDepth)) {
                     context.nextToken();
                     listDetectorModelVersionsResult.setDetectorModelVersionSummaries(new ListUnmarshaller<DetectorModelVersionSummary>(
-                            DetectorModelVersionSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                            DetectorModelVersionSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

@@ -62,11 +62,15 @@ public class RepositoryTriggerJsonUnmarshaller implements Unmarshaller<Repositor
                 }
                 if (context.testExpression("branches", targetDepth)) {
                     context.nextToken();
-                    repositoryTrigger.setBranches(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    repositoryTrigger.setBranches(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("events", targetDepth)) {
                     context.nextToken();
-                    repositoryTrigger.setEvents(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    repositoryTrigger.setEvents(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -59,7 +59,8 @@ public class CustomizedMetricSpecificationJsonUnmarshaller implements Unmarshall
                 if (context.testExpression("Dimensions", targetDepth)) {
                     context.nextToken();
                     customizedMetricSpecification.setDimensions(new ListUnmarshaller<MetricDimension>(MetricDimensionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Statistic", targetDepth)) {
                     context.nextToken();

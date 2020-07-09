@@ -50,7 +50,9 @@ public class ListEventBusesResultJsonUnmarshaller implements Unmarshaller<ListEv
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EventBuses", targetDepth)) {
                     context.nextToken();
-                    listEventBusesResult.setEventBuses(new ListUnmarshaller<EventBus>(EventBusJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listEventBusesResult.setEventBuses(new ListUnmarshaller<EventBus>(EventBusJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

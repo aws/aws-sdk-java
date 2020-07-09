@@ -55,7 +55,8 @@ public class ListDataSetRevisionsResultJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("Revisions", targetDepth)) {
                     context.nextToken();
                     listDataSetRevisionsResult.setRevisions(new ListUnmarshaller<RevisionEntry>(RevisionEntryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

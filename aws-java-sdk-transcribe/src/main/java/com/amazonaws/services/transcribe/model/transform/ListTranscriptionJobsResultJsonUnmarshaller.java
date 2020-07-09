@@ -59,7 +59,9 @@ public class ListTranscriptionJobsResultJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("TranscriptionJobSummaries", targetDepth)) {
                     context.nextToken();
                     listTranscriptionJobsResult.setTranscriptionJobSummaries(new ListUnmarshaller<TranscriptionJobSummary>(
-                            TranscriptionJobSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                            TranscriptionJobSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

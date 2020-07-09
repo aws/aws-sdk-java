@@ -50,7 +50,9 @@ public class SegmentsResponseJsonUnmarshaller implements Unmarshaller<SegmentsRe
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Item", targetDepth)) {
                     context.nextToken();
-                    segmentsResponse.setItem(new ListUnmarshaller<SegmentResponse>(SegmentResponseJsonUnmarshaller.getInstance()).unmarshall(context));
+                    segmentsResponse.setItem(new ListUnmarshaller<SegmentResponse>(SegmentResponseJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

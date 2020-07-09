@@ -58,7 +58,9 @@ public class SuggestModelJsonUnmarshaller implements Unmarshaller<SuggestModel, 
                 }
                 if (context.testExpression("suggestions", targetDepth)) {
                     context.nextToken();
-                    suggestModel.setSuggestions(new ListUnmarshaller<SuggestionMatch>(SuggestionMatchJsonUnmarshaller.getInstance()).unmarshall(context));
+                    suggestModel.setSuggestions(new ListUnmarshaller<SuggestionMatch>(SuggestionMatchJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -59,7 +59,8 @@ public class DomainNameJsonUnmarshaller implements Unmarshaller<DomainName, Json
                 if (context.testExpression("domainNameConfigurations", targetDepth)) {
                     context.nextToken();
                     domainName.setDomainNameConfigurations(new ListUnmarshaller<DomainNameConfiguration>(DomainNameConfigurationJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();

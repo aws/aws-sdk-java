@@ -67,12 +67,16 @@ public class AwsEc2SecurityGroupDetailsJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("IpPermissions", targetDepth)) {
                     context.nextToken();
                     awsEc2SecurityGroupDetails.setIpPermissions(new ListUnmarshaller<AwsEc2SecurityGroupIpPermission>(
-                            AwsEc2SecurityGroupIpPermissionJsonUnmarshaller.getInstance()).unmarshall(context));
+                            AwsEc2SecurityGroupIpPermissionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("IpPermissionsEgress", targetDepth)) {
                     context.nextToken();
                     awsEc2SecurityGroupDetails.setIpPermissionsEgress(new ListUnmarshaller<AwsEc2SecurityGroupIpPermission>(
-                            AwsEc2SecurityGroupIpPermissionJsonUnmarshaller.getInstance()).unmarshall(context));
+                            AwsEc2SecurityGroupIpPermissionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

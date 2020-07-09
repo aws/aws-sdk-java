@@ -51,7 +51,8 @@ public class DescribeQueryDefinitionsResultJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("queryDefinitions", targetDepth)) {
                     context.nextToken();
                     describeQueryDefinitionsResult.setQueryDefinitions(new ListUnmarshaller<QueryDefinition>(QueryDefinitionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

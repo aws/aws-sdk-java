@@ -51,7 +51,8 @@ public class ListComplianceItemsResultJsonUnmarshaller implements Unmarshaller<L
                 if (context.testExpression("ComplianceItems", targetDepth)) {
                     context.nextToken();
                     listComplianceItemsResult.setComplianceItems(new ListUnmarshaller<ComplianceItem>(ComplianceItemJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

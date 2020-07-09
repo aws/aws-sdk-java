@@ -114,7 +114,9 @@ public class DescribeLabelingJobResultJsonUnmarshaller implements Unmarshaller<D
                 }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
-                    describeLabelingJobResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeLabelingJobResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("LabelingJobOutput", targetDepth)) {
                     context.nextToken();

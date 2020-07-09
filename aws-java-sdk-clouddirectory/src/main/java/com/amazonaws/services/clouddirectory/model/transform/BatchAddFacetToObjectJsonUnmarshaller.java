@@ -55,7 +55,8 @@ public class BatchAddFacetToObjectJsonUnmarshaller implements Unmarshaller<Batch
                 if (context.testExpression("ObjectAttributeList", targetDepth)) {
                     context.nextToken();
                     batchAddFacetToObject.setObjectAttributeList(new ListUnmarshaller<AttributeKeyAndValue>(AttributeKeyAndValueJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ObjectReference", targetDepth)) {
                     context.nextToken();

@@ -59,7 +59,9 @@ public class GatewaySummaryJsonUnmarshaller implements Unmarshaller<GatewaySumma
                 if (context.testExpression("gatewayCapabilitySummaries", targetDepth)) {
                     context.nextToken();
                     gatewaySummary.setGatewayCapabilitySummaries(new ListUnmarshaller<GatewayCapabilitySummary>(GatewayCapabilitySummaryJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("creationDate", targetDepth)) {
                     context.nextToken();

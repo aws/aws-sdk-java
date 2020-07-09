@@ -80,7 +80,8 @@ public class WindowsFileSystemConfigurationJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("MaintenanceOperationsInProgress", targetDepth)) {
                     context.nextToken();
                     windowsFileSystemConfiguration.setMaintenanceOperationsInProgress(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("WeeklyMaintenanceStartTime", targetDepth)) {
                     context.nextToken();

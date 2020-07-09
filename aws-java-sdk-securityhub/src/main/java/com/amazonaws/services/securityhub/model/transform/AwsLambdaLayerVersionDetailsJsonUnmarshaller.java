@@ -54,7 +54,9 @@ public class AwsLambdaLayerVersionDetailsJsonUnmarshaller implements Unmarshalle
                 }
                 if (context.testExpression("CompatibleRuntimes", targetDepth)) {
                     context.nextToken();
-                    awsLambdaLayerVersionDetails.setCompatibleRuntimes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    awsLambdaLayerVersionDetails.setCompatibleRuntimes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("CreatedDate", targetDepth)) {
                     context.nextToken();

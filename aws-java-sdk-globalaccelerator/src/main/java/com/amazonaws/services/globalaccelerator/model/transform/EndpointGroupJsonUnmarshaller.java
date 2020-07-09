@@ -59,7 +59,8 @@ public class EndpointGroupJsonUnmarshaller implements Unmarshaller<EndpointGroup
                 if (context.testExpression("EndpointDescriptions", targetDepth)) {
                     context.nextToken();
                     endpointGroup.setEndpointDescriptions(new ListUnmarshaller<EndpointDescription>(EndpointDescriptionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("TrafficDialPercentage", targetDepth)) {
                     context.nextToken();

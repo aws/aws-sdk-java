@@ -51,7 +51,9 @@ public class GetComplianceDetailsByConfigRuleResultJsonUnmarshaller implements U
                 if (context.testExpression("EvaluationResults", targetDepth)) {
                     context.nextToken();
                     getComplianceDetailsByConfigRuleResult.setEvaluationResults(new ListUnmarshaller<EvaluationResult>(EvaluationResultJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

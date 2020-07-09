@@ -29,7 +29,7 @@ import com.amazonaws.services.ebs.model.*;
  * <p>
  * You can use the Amazon Elastic Block Store (EBS) direct APIs to directly read the data on your EBS snapshots, and
  * identify the difference between two snapshots. You can view the details of blocks in an EBS snapshot, compare the
- * block difference between two snapshots, and directly access the data in a snapshot. If you’re an independent software
+ * block difference between two snapshots, and directly access the data in a snapshot. If you're an independent software
  * vendor (ISV) who offers backup services for EBS, the EBS direct APIs make it easier and more cost-effective to track
  * incremental changes on your EBS volumes via EBS snapshots. This can be done without having to create new volumes from
  * EBS snapshots.
@@ -58,15 +58,50 @@ public interface AmazonEBS {
 
     /**
      * <p>
+     * Seals and completes the snapshot after all of the required blocks of data have been written to it. Completing the
+     * snapshot changes the status to <code>completed</code>. You cannot write new blocks to a snapshot after it has
+     * been completed.
+     * </p>
+     * 
+     * @param completeSnapshotRequest
+     * @return Result of the CompleteSnapshot operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints of the EBS direct APIs.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws RequestThrottledException
+     *         The number of API requests has exceed the maximum allowed API request throttling limit.
+     * @throws ServiceQuotaExceededException
+     *         Your current service quotas do not allow you to perform this action.
+     * @throws InternalServerException
+     *         An internal error has occurred.
+     * @sample AmazonEBS.CompleteSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ebs-2019-11-02/CompleteSnapshot" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CompleteSnapshotResult completeSnapshot(CompleteSnapshotRequest completeSnapshotRequest);
+
+    /**
+     * <p>
      * Returns the data in a block in an Amazon Elastic Block Store snapshot.
      * </p>
      * 
      * @param getSnapshotBlockRequest
      * @return Result of the GetSnapshotBlock operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
      * @throws ValidationException
      *         The input fails to satisfy the constraints of the EBS direct APIs.
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
+     * @throws RequestThrottledException
+     *         The number of API requests has exceed the maximum allowed API request throttling limit.
+     * @throws ServiceQuotaExceededException
+     *         Your current service quotas do not allow you to perform this action.
+     * @throws InternalServerException
+     *         An internal error has occurred.
      * @sample AmazonEBS.GetSnapshotBlock
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ebs-2019-11-02/GetSnapshotBlock" target="_top">AWS API
      *      Documentation</a>
@@ -81,10 +116,18 @@ public interface AmazonEBS {
      * 
      * @param listChangedBlocksRequest
      * @return Result of the ListChangedBlocks operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
      * @throws ValidationException
      *         The input fails to satisfy the constraints of the EBS direct APIs.
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
+     * @throws RequestThrottledException
+     *         The number of API requests has exceed the maximum allowed API request throttling limit.
+     * @throws ServiceQuotaExceededException
+     *         Your current service quotas do not allow you to perform this action.
+     * @throws InternalServerException
+     *         An internal error has occurred.
      * @sample AmazonEBS.ListChangedBlocks
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ebs-2019-11-02/ListChangedBlocks" target="_top">AWS API
      *      Documentation</a>
@@ -98,15 +141,89 @@ public interface AmazonEBS {
      * 
      * @param listSnapshotBlocksRequest
      * @return Result of the ListSnapshotBlocks operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
      * @throws ValidationException
      *         The input fails to satisfy the constraints of the EBS direct APIs.
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
+     * @throws RequestThrottledException
+     *         The number of API requests has exceed the maximum allowed API request throttling limit.
+     * @throws ServiceQuotaExceededException
+     *         Your current service quotas do not allow you to perform this action.
+     * @throws InternalServerException
+     *         An internal error has occurred.
      * @sample AmazonEBS.ListSnapshotBlocks
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ebs-2019-11-02/ListSnapshotBlocks" target="_top">AWS API
      *      Documentation</a>
      */
     ListSnapshotBlocksResult listSnapshotBlocks(ListSnapshotBlocksRequest listSnapshotBlocksRequest);
+
+    /**
+     * <p>
+     * Writes a block of data to a block in the snapshot. If the specified block contains data, the existing data is
+     * overwritten. The target snapshot must be in the <code>pending</code> state.
+     * </p>
+     * <p>
+     * Data written to a snapshot must be aligned with 512-byte sectors.
+     * </p>
+     * 
+     * @param putSnapshotBlockRequest
+     * @return Result of the PutSnapshotBlock operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints of the EBS direct APIs.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws RequestThrottledException
+     *         The number of API requests has exceed the maximum allowed API request throttling limit.
+     * @throws ServiceQuotaExceededException
+     *         Your current service quotas do not allow you to perform this action.
+     * @throws InternalServerException
+     *         An internal error has occurred.
+     * @sample AmazonEBS.PutSnapshotBlock
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ebs-2019-11-02/PutSnapshotBlock" target="_top">AWS API
+     *      Documentation</a>
+     */
+    PutSnapshotBlockResult putSnapshotBlock(PutSnapshotBlockRequest putSnapshotBlockRequest);
+
+    /**
+     * <p>
+     * Creates a new Amazon EBS snapshot. The new snapshot enters the <code>pending</code> state after the request
+     * completes.
+     * </p>
+     * <p>
+     * After creating the snapshot, use <a
+     * href="https://docs.aws.amazon.com/ebs/latest/APIReference/API_PutSnapshotBlock.html"> PutSnapshotBlock</a> to
+     * write blocks of data to the snapshot.
+     * </p>
+     * 
+     * @param startSnapshotRequest
+     * @return Result of the StartSnapshot operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints of the EBS direct APIs.
+     * @throws RequestThrottledException
+     *         The number of API requests has exceed the maximum allowed API request throttling limit.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ServiceQuotaExceededException
+     *         Your current service quotas do not allow you to perform this action.
+     * @throws InternalServerException
+     *         An internal error has occurred.
+     * @throws ConcurrentLimitExceededException
+     *         You have reached the limit for concurrent API requests. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-accessing-snapshot.html#ebsapi-performance"
+     *         >Optimizing performance of the EBS direct APIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * @throws ConflictException
+     *         The request uses the same client token as a previous, but non-identical request.
+     * @sample AmazonEBS.StartSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ebs-2019-11-02/StartSnapshot" target="_top">AWS API
+     *      Documentation</a>
+     */
+    StartSnapshotResult startSnapshot(StartSnapshotRequest startSnapshotRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

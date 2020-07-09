@@ -82,7 +82,9 @@ public class SynthesisTaskJsonUnmarshaller implements Unmarshaller<SynthesisTask
                 }
                 if (context.testExpression("LexiconNames", targetDepth)) {
                     context.nextToken();
-                    synthesisTask.setLexiconNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    synthesisTask.setLexiconNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("OutputFormat", targetDepth)) {
                     context.nextToken();
@@ -94,7 +96,9 @@ public class SynthesisTaskJsonUnmarshaller implements Unmarshaller<SynthesisTask
                 }
                 if (context.testExpression("SpeechMarkTypes", targetDepth)) {
                     context.nextToken();
-                    synthesisTask.setSpeechMarkTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    synthesisTask.setSpeechMarkTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("TextType", targetDepth)) {
                     context.nextToken();

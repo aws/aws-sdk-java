@@ -50,7 +50,9 @@ public class DescribeProductsResultJsonUnmarshaller implements Unmarshaller<Desc
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Products", targetDepth)) {
                     context.nextToken();
-                    describeProductsResult.setProducts(new ListUnmarshaller<Product>(ProductJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeProductsResult.setProducts(new ListUnmarshaller<Product>(ProductJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

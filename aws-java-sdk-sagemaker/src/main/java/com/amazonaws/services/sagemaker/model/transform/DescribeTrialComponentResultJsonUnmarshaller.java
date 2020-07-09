@@ -110,7 +110,9 @@ public class DescribeTrialComponentResultJsonUnmarshaller implements Unmarshalle
                 if (context.testExpression("Metrics", targetDepth)) {
                     context.nextToken();
                     describeTrialComponentResult.setMetrics(new ListUnmarshaller<TrialComponentMetricSummary>(TrialComponentMetricSummaryJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

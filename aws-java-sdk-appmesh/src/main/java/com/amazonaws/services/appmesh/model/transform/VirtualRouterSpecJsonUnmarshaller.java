@@ -51,7 +51,8 @@ public class VirtualRouterSpecJsonUnmarshaller implements Unmarshaller<VirtualRo
                 if (context.testExpression("listeners", targetDepth)) {
                     context.nextToken();
                     virtualRouterSpec.setListeners(new ListUnmarshaller<VirtualRouterListener>(VirtualRouterListenerJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

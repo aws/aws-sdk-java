@@ -54,11 +54,15 @@ public class FeaturizationConfigJsonUnmarshaller implements Unmarshaller<Featuri
                 }
                 if (context.testExpression("ForecastDimensions", targetDepth)) {
                     context.nextToken();
-                    featurizationConfig.setForecastDimensions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    featurizationConfig.setForecastDimensions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Featurizations", targetDepth)) {
                     context.nextToken();
-                    featurizationConfig.setFeaturizations(new ListUnmarshaller<Featurization>(FeaturizationJsonUnmarshaller.getInstance()).unmarshall(context));
+                    featurizationConfig.setFeaturizations(new ListUnmarshaller<Featurization>(FeaturizationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

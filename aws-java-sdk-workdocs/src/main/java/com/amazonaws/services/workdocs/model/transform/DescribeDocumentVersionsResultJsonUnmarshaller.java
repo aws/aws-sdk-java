@@ -51,7 +51,9 @@ public class DescribeDocumentVersionsResultJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("DocumentVersions", targetDepth)) {
                     context.nextToken();
                     describeDocumentVersionsResult.setDocumentVersions(new ListUnmarshaller<DocumentVersionMetadata>(DocumentVersionMetadataJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Marker", targetDepth)) {
                     context.nextToken();

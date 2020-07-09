@@ -54,7 +54,9 @@ public class ListIPSetsResultJsonUnmarshaller implements Unmarshaller<ListIPSets
                 }
                 if (context.testExpression("IPSets", targetDepth)) {
                     context.nextToken();
-                    listIPSetsResult.setIPSets(new ListUnmarshaller<IPSetSummary>(IPSetSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listIPSetsResult.setIPSets(new ListUnmarshaller<IPSetSummary>(IPSetSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

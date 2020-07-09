@@ -55,7 +55,8 @@ public class ListImagePipelinesResultJsonUnmarshaller implements Unmarshaller<Li
                 if (context.testExpression("imagePipelineList", targetDepth)) {
                     context.nextToken();
                     listImagePipelinesResult.setImagePipelineList(new ListUnmarshaller<ImagePipeline>(ImagePipelineJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

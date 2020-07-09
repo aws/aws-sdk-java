@@ -56,7 +56,8 @@ public class InternalServerErrorExceptionUnmarshaller extends EnhancedJsonErrorU
                 if (context.testExpression("ErrorDetails", targetDepth)) {
                     context.nextToken();
                     internalServerErrorException.setErrorDetails(new ListUnmarshaller<ErrorDetail>(ErrorDetailJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

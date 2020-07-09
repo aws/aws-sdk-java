@@ -51,12 +51,14 @@ public class DescribeEventDetailsResultJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("successfulSet", targetDepth)) {
                     context.nextToken();
                     describeEventDetailsResult.setSuccessfulSet(new ListUnmarshaller<EventDetails>(EventDetailsJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("failedSet", targetDepth)) {
                     context.nextToken();
                     describeEventDetailsResult.setFailedSet(new ListUnmarshaller<EventDetailsErrorItem>(EventDetailsErrorItemJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

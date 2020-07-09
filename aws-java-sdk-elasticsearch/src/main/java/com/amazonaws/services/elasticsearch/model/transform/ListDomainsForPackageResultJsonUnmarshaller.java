@@ -51,7 +51,9 @@ public class ListDomainsForPackageResultJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("DomainPackageDetailsList", targetDepth)) {
                     context.nextToken();
                     listDomainsForPackageResult.setDomainPackageDetailsList(new ListUnmarshaller<DomainPackageDetails>(DomainPackageDetailsJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

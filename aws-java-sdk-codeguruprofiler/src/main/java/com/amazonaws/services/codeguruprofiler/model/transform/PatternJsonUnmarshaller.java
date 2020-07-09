@@ -50,7 +50,9 @@ public class PatternJsonUnmarshaller implements Unmarshaller<Pattern, JsonUnmars
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("countersToAggregate", targetDepth)) {
                     context.nextToken();
-                    pattern.setCountersToAggregate(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    pattern.setCountersToAggregate(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();
@@ -70,8 +72,11 @@ public class PatternJsonUnmarshaller implements Unmarshaller<Pattern, JsonUnmars
                 }
                 if (context.testExpression("targetFrames", targetDepth)) {
                     context.nextToken();
-                    pattern.setTargetFrames(new ListUnmarshaller<java.util.List<String>>(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)))
-                            .unmarshall(context));
+                    pattern.setTargetFrames(new ListUnmarshaller<java.util.List<String>>(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    )
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("thresholdPercent", targetDepth)) {
                     context.nextToken();

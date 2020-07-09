@@ -50,11 +50,15 @@ public class DeleteProjectResultJsonUnmarshaller implements Unmarshaller<DeleteP
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("deletedResources", targetDepth)) {
                     context.nextToken();
-                    deleteProjectResult.setDeletedResources(new ListUnmarshaller<Resource>(ResourceJsonUnmarshaller.getInstance()).unmarshall(context));
+                    deleteProjectResult.setDeletedResources(new ListUnmarshaller<Resource>(ResourceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("orphanedResources", targetDepth)) {
                     context.nextToken();
-                    deleteProjectResult.setOrphanedResources(new ListUnmarshaller<Resource>(ResourceJsonUnmarshaller.getInstance()).unmarshall(context));
+                    deleteProjectResult.setOrphanedResources(new ListUnmarshaller<Resource>(ResourceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

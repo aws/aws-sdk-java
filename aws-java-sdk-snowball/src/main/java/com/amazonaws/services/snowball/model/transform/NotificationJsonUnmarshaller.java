@@ -54,7 +54,9 @@ public class NotificationJsonUnmarshaller implements Unmarshaller<Notification, 
                 }
                 if (context.testExpression("JobStatesToNotify", targetDepth)) {
                     context.nextToken();
-                    notification.setJobStatesToNotify(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    notification.setJobStatesToNotify(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NotifyAll", targetDepth)) {
                     context.nextToken();

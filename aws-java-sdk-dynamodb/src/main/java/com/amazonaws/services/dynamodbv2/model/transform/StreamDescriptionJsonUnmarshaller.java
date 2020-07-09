@@ -74,11 +74,15 @@ public class StreamDescriptionJsonUnmarshaller implements Unmarshaller<StreamDes
                 }
                 if (context.testExpression("KeySchema", targetDepth)) {
                     context.nextToken();
-                    streamDescription.setKeySchema(new ListUnmarshaller<KeySchemaElement>(KeySchemaElementJsonUnmarshaller.getInstance()).unmarshall(context));
+                    streamDescription.setKeySchema(new ListUnmarshaller<KeySchemaElement>(KeySchemaElementJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Shards", targetDepth)) {
                     context.nextToken();
-                    streamDescription.setShards(new ListUnmarshaller<Shard>(ShardJsonUnmarshaller.getInstance()).unmarshall(context));
+                    streamDescription.setShards(new ListUnmarshaller<Shard>(ShardJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("LastEvaluatedShardId", targetDepth)) {
                     context.nextToken();

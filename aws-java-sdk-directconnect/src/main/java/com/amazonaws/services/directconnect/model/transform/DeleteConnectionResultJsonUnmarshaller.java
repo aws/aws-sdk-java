@@ -110,7 +110,9 @@ public class DeleteConnectionResultJsonUnmarshaller implements Unmarshaller<Dele
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
-                    deleteConnectionResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    deleteConnectionResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("providerName", targetDepth)) {
                     context.nextToken();

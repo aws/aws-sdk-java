@@ -50,7 +50,9 @@ public class AdminListGroupsForUserResultJsonUnmarshaller implements Unmarshalle
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Groups", targetDepth)) {
                     context.nextToken();
-                    adminListGroupsForUserResult.setGroups(new ListUnmarshaller<GroupType>(GroupTypeJsonUnmarshaller.getInstance()).unmarshall(context));
+                    adminListGroupsForUserResult.setGroups(new ListUnmarshaller<GroupType>(GroupTypeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

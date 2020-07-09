@@ -62,7 +62,9 @@ public class DescribeDimensionResultJsonUnmarshaller implements Unmarshaller<Des
                 }
                 if (context.testExpression("stringValues", targetDepth)) {
                     context.nextToken();
-                    describeDimensionResult.setStringValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    describeDimensionResult.setStringValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("creationDate", targetDepth)) {
                     context.nextToken();

@@ -76,7 +76,8 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributesJsonUnmarshaller im
                 if (context.testExpression("tagList", targetDepth)) {
                     context.nextToken();
                     continueAsNewWorkflowExecutionDecisionAttributes.setTagList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("workflowTypeVersion", targetDepth)) {
                     context.nextToken();

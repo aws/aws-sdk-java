@@ -54,7 +54,9 @@ public class SharePointConfigurationJsonUnmarshaller implements Unmarshaller<Sha
                 }
                 if (context.testExpression("Urls", targetDepth)) {
                     context.nextToken();
-                    sharePointConfiguration.setUrls(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    sharePointConfiguration.setUrls(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("SecretArn", targetDepth)) {
                     context.nextToken();
@@ -70,11 +72,15 @@ public class SharePointConfigurationJsonUnmarshaller implements Unmarshaller<Sha
                 }
                 if (context.testExpression("InclusionPatterns", targetDepth)) {
                     context.nextToken();
-                    sharePointConfiguration.setInclusionPatterns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    sharePointConfiguration.setInclusionPatterns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ExclusionPatterns", targetDepth)) {
                     context.nextToken();
-                    sharePointConfiguration.setExclusionPatterns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    sharePointConfiguration.setExclusionPatterns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("VpcConfiguration", targetDepth)) {
                     context.nextToken();
@@ -83,7 +89,9 @@ public class SharePointConfigurationJsonUnmarshaller implements Unmarshaller<Sha
                 if (context.testExpression("FieldMappings", targetDepth)) {
                     context.nextToken();
                     sharePointConfiguration.setFieldMappings(new ListUnmarshaller<DataSourceToIndexFieldMapping>(DataSourceToIndexFieldMappingJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("DocumentTitleFieldName", targetDepth)) {
                     context.nextToken();

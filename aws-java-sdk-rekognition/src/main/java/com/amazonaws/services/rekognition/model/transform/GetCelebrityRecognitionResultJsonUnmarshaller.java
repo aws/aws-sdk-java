@@ -67,7 +67,8 @@ public class GetCelebrityRecognitionResultJsonUnmarshaller implements Unmarshall
                 if (context.testExpression("Celebrities", targetDepth)) {
                     context.nextToken();
                     getCelebrityRecognitionResult.setCelebrities(new ListUnmarshaller<CelebrityRecognition>(CelebrityRecognitionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

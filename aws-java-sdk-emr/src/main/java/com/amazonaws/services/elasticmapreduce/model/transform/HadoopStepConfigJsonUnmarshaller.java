@@ -63,7 +63,9 @@ public class HadoopStepConfigJsonUnmarshaller implements Unmarshaller<HadoopStep
                 }
                 if (context.testExpression("Args", targetDepth)) {
                     context.nextToken();
-                    hadoopStepConfig.setArgs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    hadoopStepConfig.setArgs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -58,7 +58,9 @@ public class CreateRouteResultJsonUnmarshaller implements Unmarshaller<CreateRou
                 }
                 if (context.testExpression("authorizationScopes", targetDepth)) {
                     context.nextToken();
-                    createRouteResult.setAuthorizationScopes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    createRouteResult.setAuthorizationScopes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("authorizationType", targetDepth)) {
                     context.nextToken();

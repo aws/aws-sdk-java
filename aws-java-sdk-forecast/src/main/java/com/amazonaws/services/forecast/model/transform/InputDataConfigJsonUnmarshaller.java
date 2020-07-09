@@ -55,7 +55,8 @@ public class InputDataConfigJsonUnmarshaller implements Unmarshaller<InputDataCo
                 if (context.testExpression("SupplementaryFeatures", targetDepth)) {
                     context.nextToken();
                     inputDataConfig.setSupplementaryFeatures(new ListUnmarshaller<SupplementaryFeature>(SupplementaryFeatureJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

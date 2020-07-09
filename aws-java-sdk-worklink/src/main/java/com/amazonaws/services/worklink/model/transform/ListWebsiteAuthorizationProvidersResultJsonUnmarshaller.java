@@ -51,7 +51,9 @@ public class ListWebsiteAuthorizationProvidersResultJsonUnmarshaller implements 
                 if (context.testExpression("WebsiteAuthorizationProviders", targetDepth)) {
                     context.nextToken();
                     listWebsiteAuthorizationProvidersResult.setWebsiteAuthorizationProviders(new ListUnmarshaller<WebsiteAuthorizationProviderSummary>(
-                            WebsiteAuthorizationProviderSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                            WebsiteAuthorizationProviderSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

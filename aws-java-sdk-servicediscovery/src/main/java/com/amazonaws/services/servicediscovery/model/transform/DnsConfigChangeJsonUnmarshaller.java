@@ -50,7 +50,9 @@ public class DnsConfigChangeJsonUnmarshaller implements Unmarshaller<DnsConfigCh
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DnsRecords", targetDepth)) {
                     context.nextToken();
-                    dnsConfigChange.setDnsRecords(new ListUnmarshaller<DnsRecord>(DnsRecordJsonUnmarshaller.getInstance()).unmarshall(context));
+                    dnsConfigChange.setDnsRecords(new ListUnmarshaller<DnsRecord>(DnsRecordJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

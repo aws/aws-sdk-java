@@ -51,7 +51,8 @@ public class ListSigningPlatformsResultJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("platforms", targetDepth)) {
                     context.nextToken();
                     listSigningPlatformsResult.setPlatforms(new ListUnmarshaller<SigningPlatform>(SigningPlatformJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

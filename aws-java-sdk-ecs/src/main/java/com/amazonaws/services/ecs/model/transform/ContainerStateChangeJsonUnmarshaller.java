@@ -67,7 +67,8 @@ public class ContainerStateChangeJsonUnmarshaller implements Unmarshaller<Contai
                 if (context.testExpression("networkBindings", targetDepth)) {
                     context.nextToken();
                     containerStateChange.setNetworkBindings(new ListUnmarshaller<NetworkBinding>(NetworkBindingJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("reason", targetDepth)) {
                     context.nextToken();

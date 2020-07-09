@@ -50,7 +50,9 @@ public class ConditionJsonUnmarshaller implements Unmarshaller<Condition, JsonUn
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Conditions", targetDepth)) {
                     context.nextToken();
-                    condition.setConditions(new ListUnmarshaller<SimpleCondition>(SimpleConditionJsonUnmarshaller.getInstance()).unmarshall(context));
+                    condition.setConditions(new ListUnmarshaller<SimpleCondition>(SimpleConditionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Operator", targetDepth)) {
                     context.nextToken();

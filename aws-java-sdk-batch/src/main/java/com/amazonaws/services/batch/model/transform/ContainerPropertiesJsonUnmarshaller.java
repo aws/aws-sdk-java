@@ -62,7 +62,9 @@ public class ContainerPropertiesJsonUnmarshaller implements Unmarshaller<Contain
                 }
                 if (context.testExpression("command", targetDepth)) {
                     context.nextToken();
-                    containerProperties.setCommand(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    containerProperties.setCommand(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("jobRoleArn", targetDepth)) {
                     context.nextToken();
@@ -70,15 +72,21 @@ public class ContainerPropertiesJsonUnmarshaller implements Unmarshaller<Contain
                 }
                 if (context.testExpression("volumes", targetDepth)) {
                     context.nextToken();
-                    containerProperties.setVolumes(new ListUnmarshaller<Volume>(VolumeJsonUnmarshaller.getInstance()).unmarshall(context));
+                    containerProperties.setVolumes(new ListUnmarshaller<Volume>(VolumeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("environment", targetDepth)) {
                     context.nextToken();
-                    containerProperties.setEnvironment(new ListUnmarshaller<KeyValuePair>(KeyValuePairJsonUnmarshaller.getInstance()).unmarshall(context));
+                    containerProperties.setEnvironment(new ListUnmarshaller<KeyValuePair>(KeyValuePairJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("mountPoints", targetDepth)) {
                     context.nextToken();
-                    containerProperties.setMountPoints(new ListUnmarshaller<MountPoint>(MountPointJsonUnmarshaller.getInstance()).unmarshall(context));
+                    containerProperties.setMountPoints(new ListUnmarshaller<MountPoint>(MountPointJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("readonlyRootFilesystem", targetDepth)) {
                     context.nextToken();
@@ -90,7 +98,9 @@ public class ContainerPropertiesJsonUnmarshaller implements Unmarshaller<Contain
                 }
                 if (context.testExpression("ulimits", targetDepth)) {
                     context.nextToken();
-                    containerProperties.setUlimits(new ListUnmarshaller<Ulimit>(UlimitJsonUnmarshaller.getInstance()).unmarshall(context));
+                    containerProperties.setUlimits(new ListUnmarshaller<Ulimit>(UlimitJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("user", targetDepth)) {
                     context.nextToken();
@@ -103,7 +113,8 @@ public class ContainerPropertiesJsonUnmarshaller implements Unmarshaller<Contain
                 if (context.testExpression("resourceRequirements", targetDepth)) {
                     context.nextToken();
                     containerProperties.setResourceRequirements(new ListUnmarshaller<ResourceRequirement>(ResourceRequirementJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("linuxParameters", targetDepth)) {
                     context.nextToken();

@@ -50,7 +50,9 @@ public class RandomSplitActivityJsonUnmarshaller implements Unmarshaller<RandomS
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Branches", targetDepth)) {
                     context.nextToken();
-                    randomSplitActivity.setBranches(new ListUnmarshaller<RandomSplitEntry>(RandomSplitEntryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    randomSplitActivity.setBranches(new ListUnmarshaller<RandomSplitEntry>(RandomSplitEntryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

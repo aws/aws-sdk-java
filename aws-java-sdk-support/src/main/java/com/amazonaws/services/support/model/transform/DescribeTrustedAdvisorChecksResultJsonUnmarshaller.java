@@ -51,7 +51,9 @@ public class DescribeTrustedAdvisorChecksResultJsonUnmarshaller implements Unmar
                 if (context.testExpression("checks", targetDepth)) {
                     context.nextToken();
                     describeTrustedAdvisorChecksResult.setChecks(new ListUnmarshaller<TrustedAdvisorCheckDescription>(
-                            TrustedAdvisorCheckDescriptionJsonUnmarshaller.getInstance()).unmarshall(context));
+                            TrustedAdvisorCheckDescriptionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

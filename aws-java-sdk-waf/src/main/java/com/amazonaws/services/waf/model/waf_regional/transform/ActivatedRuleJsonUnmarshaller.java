@@ -70,7 +70,9 @@ public class ActivatedRuleJsonUnmarshaller implements Unmarshaller<ActivatedRule
                 }
                 if (context.testExpression("ExcludedRules", targetDepth)) {
                     context.nextToken();
-                    activatedRule.setExcludedRules(new ListUnmarshaller<ExcludedRule>(ExcludedRuleJsonUnmarshaller.getInstance()).unmarshall(context));
+                    activatedRule.setExcludedRules(new ListUnmarshaller<ExcludedRule>(ExcludedRuleJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

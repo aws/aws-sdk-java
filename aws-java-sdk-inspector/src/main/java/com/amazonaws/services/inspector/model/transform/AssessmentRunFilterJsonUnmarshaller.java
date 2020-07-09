@@ -54,7 +54,9 @@ public class AssessmentRunFilterJsonUnmarshaller implements Unmarshaller<Assessm
                 }
                 if (context.testExpression("states", targetDepth)) {
                     context.nextToken();
-                    assessmentRunFilter.setStates(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    assessmentRunFilter.setStates(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("durationRange", targetDepth)) {
                     context.nextToken();
@@ -62,7 +64,9 @@ public class AssessmentRunFilterJsonUnmarshaller implements Unmarshaller<Assessm
                 }
                 if (context.testExpression("rulesPackageArns", targetDepth)) {
                     context.nextToken();
-                    assessmentRunFilter.setRulesPackageArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    assessmentRunFilter.setRulesPackageArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("startTimeRange", targetDepth)) {
                     context.nextToken();

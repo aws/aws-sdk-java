@@ -50,12 +50,15 @@ public class BatchGetPartitionResultJsonUnmarshaller implements Unmarshaller<Bat
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Partitions", targetDepth)) {
                     context.nextToken();
-                    batchGetPartitionResult.setPartitions(new ListUnmarshaller<Partition>(PartitionJsonUnmarshaller.getInstance()).unmarshall(context));
+                    batchGetPartitionResult.setPartitions(new ListUnmarshaller<Partition>(PartitionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("UnprocessedKeys", targetDepth)) {
                     context.nextToken();
                     batchGetPartitionResult.setUnprocessedKeys(new ListUnmarshaller<PartitionValueList>(PartitionValueListJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

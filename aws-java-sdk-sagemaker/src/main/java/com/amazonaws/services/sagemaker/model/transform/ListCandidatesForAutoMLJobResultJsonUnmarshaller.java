@@ -51,7 +51,8 @@ public class ListCandidatesForAutoMLJobResultJsonUnmarshaller implements Unmarsh
                 if (context.testExpression("Candidates", targetDepth)) {
                     context.nextToken();
                     listCandidatesForAutoMLJobResult.setCandidates(new ListUnmarshaller<AutoMLCandidate>(AutoMLCandidateJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

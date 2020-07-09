@@ -54,7 +54,9 @@ public class InstancePatchStateFilterJsonUnmarshaller implements Unmarshaller<In
                 }
                 if (context.testExpression("Values", targetDepth)) {
                     context.nextToken();
-                    instancePatchStateFilter.setValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    instancePatchStateFilter.setValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
                     context.nextToken();

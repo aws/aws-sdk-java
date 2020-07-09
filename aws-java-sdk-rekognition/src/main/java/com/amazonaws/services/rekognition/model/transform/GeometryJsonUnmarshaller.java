@@ -54,7 +54,9 @@ public class GeometryJsonUnmarshaller implements Unmarshaller<Geometry, JsonUnma
                 }
                 if (context.testExpression("Polygon", targetDepth)) {
                     context.nextToken();
-                    geometry.setPolygon(new ListUnmarshaller<Point>(PointJsonUnmarshaller.getInstance()).unmarshall(context));
+                    geometry.setPolygon(new ListUnmarshaller<Point>(PointJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

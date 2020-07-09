@@ -75,7 +75,8 @@ public class ImageRecipeJsonUnmarshaller implements Unmarshaller<ImageRecipe, Js
                 if (context.testExpression("components", targetDepth)) {
                     context.nextToken();
                     imageRecipe.setComponents(new ListUnmarshaller<ComponentConfiguration>(ComponentConfigurationJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("parentImage", targetDepth)) {
                     context.nextToken();
@@ -84,7 +85,9 @@ public class ImageRecipeJsonUnmarshaller implements Unmarshaller<ImageRecipe, Js
                 if (context.testExpression("blockDeviceMappings", targetDepth)) {
                     context.nextToken();
                     imageRecipe.setBlockDeviceMappings(new ListUnmarshaller<InstanceBlockDeviceMapping>(InstanceBlockDeviceMappingJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("dateCreated", targetDepth)) {
                     context.nextToken();

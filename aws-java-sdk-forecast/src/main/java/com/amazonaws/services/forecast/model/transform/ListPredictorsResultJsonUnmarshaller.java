@@ -51,7 +51,8 @@ public class ListPredictorsResultJsonUnmarshaller implements Unmarshaller<ListPr
                 if (context.testExpression("Predictors", targetDepth)) {
                     context.nextToken();
                     listPredictorsResult.setPredictors(new ListUnmarshaller<PredictorSummary>(PredictorSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

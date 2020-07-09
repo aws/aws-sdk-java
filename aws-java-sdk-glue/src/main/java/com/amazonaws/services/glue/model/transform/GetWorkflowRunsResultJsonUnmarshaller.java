@@ -50,7 +50,9 @@ public class GetWorkflowRunsResultJsonUnmarshaller implements Unmarshaller<GetWo
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Runs", targetDepth)) {
                     context.nextToken();
-                    getWorkflowRunsResult.setRuns(new ListUnmarshaller<WorkflowRun>(WorkflowRunJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getWorkflowRunsResult.setRuns(new ListUnmarshaller<WorkflowRun>(WorkflowRunJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

@@ -79,7 +79,9 @@ public class ResourceShareInvitationJsonUnmarshaller implements Unmarshaller<Res
                 if (context.testExpression("resourceShareAssociations", targetDepth)) {
                     context.nextToken();
                     resourceShareInvitation.setResourceShareAssociations(new ListUnmarshaller<ResourceShareAssociation>(
-                            ResourceShareAssociationJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ResourceShareAssociationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

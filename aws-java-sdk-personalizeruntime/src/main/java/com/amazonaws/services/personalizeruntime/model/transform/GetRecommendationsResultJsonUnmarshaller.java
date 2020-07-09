@@ -50,7 +50,9 @@ public class GetRecommendationsResultJsonUnmarshaller implements Unmarshaller<Ge
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("itemList", targetDepth)) {
                     context.nextToken();
-                    getRecommendationsResult.setItemList(new ListUnmarshaller<PredictedItem>(PredictedItemJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getRecommendationsResult.setItemList(new ListUnmarshaller<PredictedItem>(PredictedItemJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

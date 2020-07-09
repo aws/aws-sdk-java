@@ -55,7 +55,9 @@ public class ListRecoveryPointsByBackupVaultResultJsonUnmarshaller implements Un
                 if (context.testExpression("RecoveryPoints", targetDepth)) {
                     context.nextToken();
                     listRecoveryPointsByBackupVaultResult.setRecoveryPoints(new ListUnmarshaller<RecoveryPointByBackupVault>(
-                            RecoveryPointByBackupVaultJsonUnmarshaller.getInstance()).unmarshall(context));
+                            RecoveryPointByBackupVaultJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

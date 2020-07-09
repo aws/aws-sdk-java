@@ -74,7 +74,9 @@ public class CommentsForComparedCommitJsonUnmarshaller implements Unmarshaller<C
                 }
                 if (context.testExpression("comments", targetDepth)) {
                     context.nextToken();
-                    commentsForComparedCommit.setComments(new ListUnmarshaller<Comment>(CommentJsonUnmarshaller.getInstance()).unmarshall(context));
+                    commentsForComparedCommit.setComments(new ListUnmarshaller<Comment>(CommentJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

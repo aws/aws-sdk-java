@@ -59,7 +59,8 @@ public class DescribeAutoMLJobResultJsonUnmarshaller implements Unmarshaller<Des
                 if (context.testExpression("InputDataConfig", targetDepth)) {
                     context.nextToken();
                     describeAutoMLJobResult.setInputDataConfig(new ListUnmarshaller<AutoMLChannel>(AutoMLChannelJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("OutputDataConfig", targetDepth)) {
                     context.nextToken();

@@ -51,7 +51,8 @@ public class ListAccessControlRulesResultJsonUnmarshaller implements Unmarshalle
                 if (context.testExpression("Rules", targetDepth)) {
                     context.nextToken();
                     listAccessControlRulesResult.setRules(new ListUnmarshaller<AccessControlRule>(AccessControlRuleJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -58,7 +58,9 @@ public class TmpfsJsonUnmarshaller implements Unmarshaller<Tmpfs, JsonUnmarshall
                 }
                 if (context.testExpression("mountOptions", targetDepth)) {
                     context.nextToken();
-                    tmpfs.setMountOptions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    tmpfs.setMountOptions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -97,7 +97,9 @@ public class InputJsonUnmarshaller implements Unmarshaller<Input, JsonUnmarshall
                 }
                 if (context.testExpression("inputClippings", targetDepth)) {
                     context.nextToken();
-                    input.setInputClippings(new ListUnmarshaller<InputClipping>(InputClippingJsonUnmarshaller.getInstance()).unmarshall(context));
+                    input.setInputClippings(new ListUnmarshaller<InputClipping>(InputClippingJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("position", targetDepth)) {
                     context.nextToken();
@@ -113,7 +115,9 @@ public class InputJsonUnmarshaller implements Unmarshaller<Input, JsonUnmarshall
                 }
                 if (context.testExpression("supplementalImps", targetDepth)) {
                     context.nextToken();
-                    input.setSupplementalImps(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    input.setSupplementalImps(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("timecodeSource", targetDepth)) {
                     context.nextToken();

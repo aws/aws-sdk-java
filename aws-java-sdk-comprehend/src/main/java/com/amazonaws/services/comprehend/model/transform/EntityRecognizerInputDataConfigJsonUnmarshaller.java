@@ -51,7 +51,8 @@ public class EntityRecognizerInputDataConfigJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("EntityTypes", targetDepth)) {
                     context.nextToken();
                     entityRecognizerInputDataConfig.setEntityTypes(new ListUnmarshaller<EntityTypesListItem>(EntityTypesListItemJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Documents", targetDepth)) {
                     context.nextToken();

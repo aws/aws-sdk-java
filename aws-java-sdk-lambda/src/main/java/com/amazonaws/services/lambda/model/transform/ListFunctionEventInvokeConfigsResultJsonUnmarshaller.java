@@ -51,7 +51,9 @@ public class ListFunctionEventInvokeConfigsResultJsonUnmarshaller implements Unm
                 if (context.testExpression("FunctionEventInvokeConfigs", targetDepth)) {
                     context.nextToken();
                     listFunctionEventInvokeConfigsResult.setFunctionEventInvokeConfigs(new ListUnmarshaller<FunctionEventInvokeConfig>(
-                            FunctionEventInvokeConfigJsonUnmarshaller.getInstance()).unmarshall(context));
+                            FunctionEventInvokeConfigJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextMarker", targetDepth)) {
                     context.nextToken();

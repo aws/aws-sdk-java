@@ -54,7 +54,9 @@ public class InventoryGroupJsonUnmarshaller implements Unmarshaller<InventoryGro
                 }
                 if (context.testExpression("Filters", targetDepth)) {
                     context.nextToken();
-                    inventoryGroup.setFilters(new ListUnmarshaller<InventoryFilter>(InventoryFilterJsonUnmarshaller.getInstance()).unmarshall(context));
+                    inventoryGroup.setFilters(new ListUnmarshaller<InventoryFilter>(InventoryFilterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

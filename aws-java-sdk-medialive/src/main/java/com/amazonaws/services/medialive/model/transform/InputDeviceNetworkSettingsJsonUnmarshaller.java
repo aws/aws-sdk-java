@@ -50,7 +50,9 @@ public class InputDeviceNetworkSettingsJsonUnmarshaller implements Unmarshaller<
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("dnsAddresses", targetDepth)) {
                     context.nextToken();
-                    inputDeviceNetworkSettings.setDnsAddresses(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    inputDeviceNetworkSettings.setDnsAddresses(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("gateway", targetDepth)) {
                     context.nextToken();

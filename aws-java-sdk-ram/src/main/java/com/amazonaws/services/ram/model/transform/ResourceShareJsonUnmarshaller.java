@@ -74,7 +74,9 @@ public class ResourceShareJsonUnmarshaller implements Unmarshaller<ResourceShare
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
-                    resourceShare.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    resourceShare.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("creationTime", targetDepth)) {
                     context.nextToken();

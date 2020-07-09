@@ -51,7 +51,8 @@ public class ListAuthorizersResultJsonUnmarshaller implements Unmarshaller<ListA
                 if (context.testExpression("authorizers", targetDepth)) {
                     context.nextToken();
                     listAuthorizersResult.setAuthorizers(new ListUnmarshaller<AuthorizerSummary>(AuthorizerSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextMarker", targetDepth)) {
                     context.nextToken();

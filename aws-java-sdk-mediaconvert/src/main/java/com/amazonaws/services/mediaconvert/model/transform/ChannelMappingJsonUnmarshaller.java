@@ -51,7 +51,8 @@ public class ChannelMappingJsonUnmarshaller implements Unmarshaller<ChannelMappi
                 if (context.testExpression("outputChannels", targetDepth)) {
                     context.nextToken();
                     channelMapping.setOutputChannels(new ListUnmarshaller<OutputChannelMapping>(OutputChannelMappingJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

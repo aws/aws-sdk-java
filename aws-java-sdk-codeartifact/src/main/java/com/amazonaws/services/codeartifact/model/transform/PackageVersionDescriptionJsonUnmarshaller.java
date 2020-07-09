@@ -86,7 +86,9 @@ public class PackageVersionDescriptionJsonUnmarshaller implements Unmarshaller<P
                 }
                 if (context.testExpression("licenses", targetDepth)) {
                     context.nextToken();
-                    packageVersionDescription.setLicenses(new ListUnmarshaller<LicenseInfo>(LicenseInfoJsonUnmarshaller.getInstance()).unmarshall(context));
+                    packageVersionDescription.setLicenses(new ListUnmarshaller<LicenseInfo>(LicenseInfoJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("revision", targetDepth)) {
                     context.nextToken();

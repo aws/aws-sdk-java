@@ -51,7 +51,8 @@ public class DescribeImageBuildersResultJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("ImageBuilders", targetDepth)) {
                     context.nextToken();
                     describeImageBuildersResult.setImageBuilders(new ListUnmarshaller<ImageBuilder>(ImageBuilderJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

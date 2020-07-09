@@ -50,12 +50,15 @@ public class HlsGroupSettingsJsonUnmarshaller implements Unmarshaller<HlsGroupSe
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("adMarkers", targetDepth)) {
                     context.nextToken();
-                    hlsGroupSettings.setAdMarkers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    hlsGroupSettings.setAdMarkers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("additionalManifests", targetDepth)) {
                     context.nextToken();
                     hlsGroupSettings.setAdditionalManifests(new ListUnmarshaller<HlsAdditionalManifest>(HlsAdditionalManifestJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("baseUrl", targetDepth)) {
                     context.nextToken();
@@ -64,7 +67,9 @@ public class HlsGroupSettingsJsonUnmarshaller implements Unmarshaller<HlsGroupSe
                 if (context.testExpression("captionLanguageMappings", targetDepth)) {
                     context.nextToken();
                     hlsGroupSettings.setCaptionLanguageMappings(new ListUnmarshaller<HlsCaptionLanguageMapping>(HlsCaptionLanguageMappingJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("captionLanguageSetting", targetDepth)) {
                     context.nextToken();

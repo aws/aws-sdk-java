@@ -55,7 +55,8 @@ public class ListAWSDefaultServiceQuotasResultJsonUnmarshaller implements Unmars
                 if (context.testExpression("Quotas", targetDepth)) {
                     context.nextToken();
                     listAWSDefaultServiceQuotasResult.setQuotas(new ListUnmarshaller<ServiceQuota>(ServiceQuotaJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

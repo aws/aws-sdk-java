@@ -58,15 +58,21 @@ public class CreateCommitResultJsonUnmarshaller implements Unmarshaller<CreateCo
                 }
                 if (context.testExpression("filesAdded", targetDepth)) {
                     context.nextToken();
-                    createCommitResult.setFilesAdded(new ListUnmarshaller<FileMetadata>(FileMetadataJsonUnmarshaller.getInstance()).unmarshall(context));
+                    createCommitResult.setFilesAdded(new ListUnmarshaller<FileMetadata>(FileMetadataJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("filesUpdated", targetDepth)) {
                     context.nextToken();
-                    createCommitResult.setFilesUpdated(new ListUnmarshaller<FileMetadata>(FileMetadataJsonUnmarshaller.getInstance()).unmarshall(context));
+                    createCommitResult.setFilesUpdated(new ListUnmarshaller<FileMetadata>(FileMetadataJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("filesDeleted", targetDepth)) {
                     context.nextToken();
-                    createCommitResult.setFilesDeleted(new ListUnmarshaller<FileMetadata>(FileMetadataJsonUnmarshaller.getInstance()).unmarshall(context));
+                    createCommitResult.setFilesDeleted(new ListUnmarshaller<FileMetadata>(FileMetadataJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -86,7 +86,9 @@ public class ExperimentJsonUnmarshaller implements Unmarshaller<Experiment, Json
                 }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
-                    experiment.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    experiment.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

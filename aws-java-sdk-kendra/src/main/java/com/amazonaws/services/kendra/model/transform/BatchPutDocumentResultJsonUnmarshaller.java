@@ -51,7 +51,9 @@ public class BatchPutDocumentResultJsonUnmarshaller implements Unmarshaller<Batc
                 if (context.testExpression("FailedDocuments", targetDepth)) {
                     context.nextToken();
                     batchPutDocumentResult.setFailedDocuments(new ListUnmarshaller<BatchPutDocumentResponseFailedDocument>(
-                            BatchPutDocumentResponseFailedDocumentJsonUnmarshaller.getInstance()).unmarshall(context));
+                            BatchPutDocumentResponseFailedDocumentJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

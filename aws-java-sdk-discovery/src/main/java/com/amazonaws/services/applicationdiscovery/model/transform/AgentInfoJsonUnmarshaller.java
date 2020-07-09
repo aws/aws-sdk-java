@@ -59,7 +59,8 @@ public class AgentInfoJsonUnmarshaller implements Unmarshaller<AgentInfo, JsonUn
                 if (context.testExpression("agentNetworkInfoList", targetDepth)) {
                     context.nextToken();
                     agentInfo.setAgentNetworkInfoList(new ListUnmarshaller<AgentNetworkInfo>(AgentNetworkInfoJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("connectorId", targetDepth)) {
                     context.nextToken();

@@ -54,7 +54,9 @@ public class PredicateJsonUnmarshaller implements Unmarshaller<Predicate, JsonUn
                 }
                 if (context.testExpression("Conditions", targetDepth)) {
                     context.nextToken();
-                    predicate.setConditions(new ListUnmarshaller<Condition>(ConditionJsonUnmarshaller.getInstance()).unmarshall(context));
+                    predicate.setConditions(new ListUnmarshaller<Condition>(ConditionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

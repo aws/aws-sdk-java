@@ -51,7 +51,9 @@ public class ListConfigurationProfilesResultJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("Items", targetDepth)) {
                     context.nextToken();
                     listConfigurationProfilesResult.setItems(new ListUnmarshaller<ConfigurationProfileSummary>(ConfigurationProfileSummaryJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

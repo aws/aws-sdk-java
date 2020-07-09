@@ -110,7 +110,9 @@ public class JobOutputJsonUnmarshaller implements Unmarshaller<JobOutput, JsonUn
                 }
                 if (context.testExpression("Watermarks", targetDepth)) {
                     context.nextToken();
-                    jobOutput.setWatermarks(new ListUnmarshaller<JobWatermark>(JobWatermarkJsonUnmarshaller.getInstance()).unmarshall(context));
+                    jobOutput.setWatermarks(new ListUnmarshaller<JobWatermark>(JobWatermarkJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("AlbumArt", targetDepth)) {
                     context.nextToken();
@@ -118,7 +120,9 @@ public class JobOutputJsonUnmarshaller implements Unmarshaller<JobOutput, JsonUn
                 }
                 if (context.testExpression("Composition", targetDepth)) {
                     context.nextToken();
-                    jobOutput.setComposition(new ListUnmarshaller<Clip>(ClipJsonUnmarshaller.getInstance()).unmarshall(context));
+                    jobOutput.setComposition(new ListUnmarshaller<Clip>(ClipJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Captions", targetDepth)) {
                     context.nextToken();

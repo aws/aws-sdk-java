@@ -54,7 +54,9 @@ public class GlobalTableJsonUnmarshaller implements Unmarshaller<GlobalTable, Js
                 }
                 if (context.testExpression("ReplicationGroup", targetDepth)) {
                     context.nextToken();
-                    globalTable.setReplicationGroup(new ListUnmarshaller<Replica>(ReplicaJsonUnmarshaller.getInstance()).unmarshall(context));
+                    globalTable.setReplicationGroup(new ListUnmarshaller<Replica>(ReplicaJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

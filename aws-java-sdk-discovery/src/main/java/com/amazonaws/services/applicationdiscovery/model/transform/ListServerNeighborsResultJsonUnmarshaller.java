@@ -51,7 +51,9 @@ public class ListServerNeighborsResultJsonUnmarshaller implements Unmarshaller<L
                 if (context.testExpression("neighbors", targetDepth)) {
                     context.nextToken();
                     listServerNeighborsResult.setNeighbors(new ListUnmarshaller<NeighborConnectionDetail>(NeighborConnectionDetailJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

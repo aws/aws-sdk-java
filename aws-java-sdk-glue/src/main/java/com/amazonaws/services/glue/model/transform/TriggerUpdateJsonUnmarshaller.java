@@ -62,7 +62,9 @@ public class TriggerUpdateJsonUnmarshaller implements Unmarshaller<TriggerUpdate
                 }
                 if (context.testExpression("Actions", targetDepth)) {
                     context.nextToken();
-                    triggerUpdate.setActions(new ListUnmarshaller<Action>(ActionJsonUnmarshaller.getInstance()).unmarshall(context));
+                    triggerUpdate.setActions(new ListUnmarshaller<Action>(ActionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Predicate", targetDepth)) {
                     context.nextToken();

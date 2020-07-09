@@ -54,7 +54,9 @@ public class ListPresetsResultJsonUnmarshaller implements Unmarshaller<ListPrese
                 }
                 if (context.testExpression("presets", targetDepth)) {
                     context.nextToken();
-                    listPresetsResult.setPresets(new ListUnmarshaller<Preset>(PresetJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listPresetsResult.setPresets(new ListUnmarshaller<Preset>(PresetJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

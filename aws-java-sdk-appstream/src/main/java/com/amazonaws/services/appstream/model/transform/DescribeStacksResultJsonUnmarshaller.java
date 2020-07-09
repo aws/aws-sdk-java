@@ -50,7 +50,9 @@ public class DescribeStacksResultJsonUnmarshaller implements Unmarshaller<Descri
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Stacks", targetDepth)) {
                     context.nextToken();
-                    describeStacksResult.setStacks(new ListUnmarshaller<Stack>(StackJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeStacksResult.setStacks(new ListUnmarshaller<Stack>(StackJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

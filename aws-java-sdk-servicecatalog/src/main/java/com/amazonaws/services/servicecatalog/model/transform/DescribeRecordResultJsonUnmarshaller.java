@@ -54,7 +54,9 @@ public class DescribeRecordResultJsonUnmarshaller implements Unmarshaller<Descri
                 }
                 if (context.testExpression("RecordOutputs", targetDepth)) {
                     context.nextToken();
-                    describeRecordResult.setRecordOutputs(new ListUnmarshaller<RecordOutput>(RecordOutputJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeRecordResult.setRecordOutputs(new ListUnmarshaller<RecordOutput>(RecordOutputJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextPageToken", targetDepth)) {
                     context.nextToken();

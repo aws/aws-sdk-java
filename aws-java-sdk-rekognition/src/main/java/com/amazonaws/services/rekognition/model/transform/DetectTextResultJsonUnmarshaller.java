@@ -50,7 +50,9 @@ public class DetectTextResultJsonUnmarshaller implements Unmarshaller<DetectText
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TextDetections", targetDepth)) {
                     context.nextToken();
-                    detectTextResult.setTextDetections(new ListUnmarshaller<TextDetection>(TextDetectionJsonUnmarshaller.getInstance()).unmarshall(context));
+                    detectTextResult.setTextDetections(new ListUnmarshaller<TextDetection>(TextDetectionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("TextModelVersion", targetDepth)) {
                     context.nextToken();

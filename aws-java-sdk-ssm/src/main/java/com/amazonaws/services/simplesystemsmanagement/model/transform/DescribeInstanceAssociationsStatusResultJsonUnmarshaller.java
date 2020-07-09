@@ -52,7 +52,9 @@ public class DescribeInstanceAssociationsStatusResultJsonUnmarshaller implements
                 if (context.testExpression("InstanceAssociationStatusInfos", targetDepth)) {
                     context.nextToken();
                     describeInstanceAssociationsStatusResult.setInstanceAssociationStatusInfos(new ListUnmarshaller<InstanceAssociationStatusInfo>(
-                            InstanceAssociationStatusInfoJsonUnmarshaller.getInstance()).unmarshall(context));
+                            InstanceAssociationStatusInfoJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

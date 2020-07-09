@@ -50,7 +50,9 @@ public class InferRxNormResultJsonUnmarshaller implements Unmarshaller<InferRxNo
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Entities", targetDepth)) {
                     context.nextToken();
-                    inferRxNormResult.setEntities(new ListUnmarshaller<RxNormEntity>(RxNormEntityJsonUnmarshaller.getInstance()).unmarshall(context));
+                    inferRxNormResult.setEntities(new ListUnmarshaller<RxNormEntity>(RxNormEntityJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("PaginationToken", targetDepth)) {
                     context.nextToken();

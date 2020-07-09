@@ -50,7 +50,9 @@ public class StatementJsonUnmarshaller implements Unmarshaller<Statement, JsonUn
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("messages", targetDepth)) {
                     context.nextToken();
-                    statement.setMessages(new ListUnmarshaller<Message>(MessageJsonUnmarshaller.getInstance()).unmarshall(context));
+                    statement.setMessages(new ListUnmarshaller<Message>(MessageJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("responseCard", targetDepth)) {
                     context.nextToken();

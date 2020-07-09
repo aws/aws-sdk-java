@@ -66,11 +66,15 @@ public class DocumentJsonUnmarshaller implements Unmarshaller<Document, JsonUnma
                 }
                 if (context.testExpression("Attributes", targetDepth)) {
                     context.nextToken();
-                    document.setAttributes(new ListUnmarshaller<DocumentAttribute>(DocumentAttributeJsonUnmarshaller.getInstance()).unmarshall(context));
+                    document.setAttributes(new ListUnmarshaller<DocumentAttribute>(DocumentAttributeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("AccessControlList", targetDepth)) {
                     context.nextToken();
-                    document.setAccessControlList(new ListUnmarshaller<Principal>(PrincipalJsonUnmarshaller.getInstance()).unmarshall(context));
+                    document.setAccessControlList(new ListUnmarshaller<Principal>(PrincipalJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ContentType", targetDepth)) {
                     context.nextToken();

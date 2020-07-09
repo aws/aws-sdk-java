@@ -54,7 +54,9 @@ public class GetVpcLinksResultJsonUnmarshaller implements Unmarshaller<GetVpcLin
                 }
                 if (context.testExpression("item", targetDepth)) {
                     context.nextToken();
-                    getVpcLinksResult.setItems(new ListUnmarshaller<VpcLink>(VpcLinkJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getVpcLinksResult.setItems(new ListUnmarshaller<VpcLink>(VpcLinkJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

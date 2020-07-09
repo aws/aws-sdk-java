@@ -55,7 +55,8 @@ public class RunConfigurationJsonUnmarshaller implements Unmarshaller<RunConfigu
                 if (context.testExpression("SqlRunConfigurations", targetDepth)) {
                     context.nextToken();
                     runConfiguration.setSqlRunConfigurations(new ListUnmarshaller<SqlRunConfiguration>(SqlRunConfigurationJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ApplicationRestoreConfiguration", targetDepth)) {
                     context.nextToken();

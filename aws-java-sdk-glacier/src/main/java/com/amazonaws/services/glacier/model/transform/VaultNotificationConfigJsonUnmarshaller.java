@@ -54,7 +54,9 @@ public class VaultNotificationConfigJsonUnmarshaller implements Unmarshaller<Vau
                 }
                 if (context.testExpression("Events", targetDepth)) {
                     context.nextToken();
-                    vaultNotificationConfig.setEvents(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    vaultNotificationConfig.setEvents(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -51,7 +51,8 @@ public class ListGatewaysResultJsonUnmarshaller implements Unmarshaller<ListGate
                 if (context.testExpression("gatewaySummaries", targetDepth)) {
                     context.nextToken();
                     listGatewaysResult.setGatewaySummaries(new ListUnmarshaller<GatewaySummary>(GatewaySummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

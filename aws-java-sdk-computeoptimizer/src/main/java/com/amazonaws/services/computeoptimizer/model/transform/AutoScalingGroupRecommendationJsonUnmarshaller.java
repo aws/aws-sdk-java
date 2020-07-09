@@ -67,7 +67,9 @@ public class AutoScalingGroupRecommendationJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("utilizationMetrics", targetDepth)) {
                     context.nextToken();
                     autoScalingGroupRecommendation.setUtilizationMetrics(new ListUnmarshaller<UtilizationMetric>(UtilizationMetricJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("lookBackPeriodInDays", targetDepth)) {
                     context.nextToken();
@@ -80,7 +82,9 @@ public class AutoScalingGroupRecommendationJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("recommendationOptions", targetDepth)) {
                     context.nextToken();
                     autoScalingGroupRecommendation.setRecommendationOptions(new ListUnmarshaller<AutoScalingGroupRecommendationOption>(
-                            AutoScalingGroupRecommendationOptionJsonUnmarshaller.getInstance()).unmarshall(context));
+                            AutoScalingGroupRecommendationOptionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("lastRefreshTimestamp", targetDepth)) {
                     context.nextToken();

@@ -82,7 +82,9 @@ public class CommentJsonUnmarshaller implements Unmarshaller<Comment, JsonUnmars
                 }
                 if (context.testExpression("callerReactions", targetDepth)) {
                     context.nextToken();
-                    comment.setCallerReactions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    comment.setCallerReactions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("reactionCounts", targetDepth)) {
                     context.nextToken();

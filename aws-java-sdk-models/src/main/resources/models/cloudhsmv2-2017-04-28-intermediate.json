@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientConstructors", "EnumSetterOverload", "ClientMutationMethods" ],
+    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientMutationMethods", "ClientConstructors" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -118,7 +118,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "CloudHsmTagException",
-        "documentation" : null,
+        "documentation" : "<p>The request was rejected because of a tagging failure. Verify the tag conditions in all applicable policies, and then retry the request.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -175,7 +175,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "CloudHsmTagException",
-        "documentation" : null,
+        "documentation" : "<p>The request was rejected because of a tagging failure. Verify the tag conditions in all applicable policies, and then retry the request.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -338,7 +338,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "CloudHsmTagException",
-        "documentation" : null,
+        "documentation" : "<p>The request was rejected because of a tagging failure. Verify the tag conditions in all applicable policies, and then retry the request.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -448,7 +448,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "CloudHsmTagException",
-        "documentation" : null,
+        "documentation" : "<p>The request was rejected because of a tagging failure. Verify the tag conditions in all applicable policies, and then retry the request.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -501,7 +501,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "CloudHsmTagException",
-        "documentation" : null,
+        "documentation" : "<p>The request was rejected because of a tagging failure. Verify the tag conditions in all applicable policies, and then retry the request.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -611,7 +611,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "CloudHsmTagException",
-        "documentation" : null,
+        "documentation" : "<p>The request was rejected because of a tagging failure. Verify the tag conditions in all applicable policies, and then retry the request.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -721,7 +721,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "CloudHsmTagException",
-        "documentation" : null,
+        "documentation" : "<p>The request was rejected because of a tagging failure. Verify the tag conditions in all applicable policies, and then retry the request.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -778,7 +778,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "CloudHsmTagException",
-        "documentation" : null,
+        "documentation" : "<p>The request was rejected because of a tagging failure. Verify the tag conditions in all applicable policies, and then retry the request.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -816,6 +816,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsmv2.model.Backup",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -877,6 +878,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier (ID) of the backup.</p>\n@param backupId The identifier (ID) of the backup.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -945,6 +947,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The state of the backup.</p>\n@param backupState The state of the backup.\n@return Returns a reference to this object so that method calls can be chained together.\n@see BackupState*/",
@@ -1013,6 +1016,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier (ID) of the cluster that was backed up.</p>\n@param clusterId The identifier (ID) of the cluster that was backed up.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1081,6 +1085,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date and time when the backup was created.</p>\n@param createTimestamp The date and time when the backup was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1149,6 +1154,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date and time when the backup was copied from a source backup.</p>\n@param copyTimestamp The date and time when the backup was copied from a source backup.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1166,12 +1172,12 @@
         "c2jName" : "SourceRegion",
         "c2jShape" : "Region",
         "deprecated" : false,
-        "documentation" : "<p>The AWS region that contains the source backup from which the new backup was copied.</p>",
+        "documentation" : "<p>The AWS Region that contains the source backup from which the new backup was copied.</p>",
         "endpointDiscoveryId" : false,
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The AWS region that contains the source backup from which the new backup was copied.</p>\n@param sourceRegion The AWS region that contains the source backup from which the new backup was copied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The AWS Region that contains the source backup from which the new backup was copied.</p>\n@param sourceRegion The AWS Region that contains the source backup from which the new backup was copied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withSourceRegion",
-        "getterDocumentation" : "/**<p>The AWS region that contains the source backup from which the new backup was copied.</p>\n@return The AWS region that contains the source backup from which the new backup was copied.*/",
+        "getterDocumentation" : "/**<p>The AWS Region that contains the source backup from which the new backup was copied.</p>\n@return The AWS Region that contains the source backup from which the new backup was copied.*/",
         "getterMethodName" : "getSourceRegion",
         "getterModel" : {
           "returnType" : "String",
@@ -1205,7 +1211,7 @@
         "marshallingType" : "STRING",
         "name" : "SourceRegion",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>The AWS region that contains the source backup from which the new backup was copied.</p>\n@param sourceRegion The AWS region that contains the source backup from which the new backup was copied.*/",
+        "setterDocumentation" : "/**<p>The AWS Region that contains the source backup from which the new backup was copied.</p>\n@param sourceRegion The AWS Region that contains the source backup from which the new backup was copied.*/",
         "setterMethodName" : "setSourceRegion",
         "setterModel" : {
           "timestampFormat" : null,
@@ -1217,15 +1223,16 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The AWS region that contains the source backup from which the new backup was copied.</p>\n@param sourceRegion The AWS region that contains the source backup from which the new backup was copied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The AWS Region that contains the source backup from which the new backup was copied.</p>\n@param sourceRegion The AWS Region that contains the source backup from which the new backup was copied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "sourceRegion",
           "variableType" : "String",
-          "documentation" : "<p>The AWS region that contains the source backup from which the new backup was copied.</p>",
+          "documentation" : "<p>The AWS Region that contains the source backup from which the new backup was copied.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -1285,6 +1292,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier (ID) of the source backup from which the new backup was copied.</p>\n@param sourceBackup The identifier (ID) of the source backup from which the new backup was copied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1302,12 +1310,12 @@
         "c2jName" : "SourceCluster",
         "c2jShape" : "ClusterId",
         "deprecated" : false,
-        "documentation" : "<p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied. .</p>",
+        "documentation" : "<p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied.</p>",
         "endpointDiscoveryId" : false,
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied. .</p>\n@param sourceCluster The identifier (ID) of the cluster containing the source backup from which the new backup was copied. .\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied.</p>\n@param sourceCluster The identifier (ID) of the cluster containing the source backup from which the new backup was copied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withSourceCluster",
-        "getterDocumentation" : "/**<p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied. .</p>\n@return The identifier (ID) of the cluster containing the source backup from which the new backup was copied. .*/",
+        "getterDocumentation" : "/**<p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied.</p>\n@return The identifier (ID) of the cluster containing the source backup from which the new backup was copied.*/",
         "getterMethodName" : "getSourceCluster",
         "getterModel" : {
           "returnType" : "String",
@@ -1341,7 +1349,7 @@
         "marshallingType" : "STRING",
         "name" : "SourceCluster",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied. .</p>\n@param sourceCluster The identifier (ID) of the cluster containing the source backup from which the new backup was copied. .*/",
+        "setterDocumentation" : "/**<p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied.</p>\n@param sourceCluster The identifier (ID) of the cluster containing the source backup from which the new backup was copied.*/",
         "setterMethodName" : "setSourceCluster",
         "setterModel" : {
           "timestampFormat" : null,
@@ -1353,15 +1361,16 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied. .</p>\n@param sourceCluster The identifier (ID) of the cluster containing the source backup from which the new backup was copied. .\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied.</p>\n@param sourceCluster The identifier (ID) of the cluster containing the source backup from which the new backup was copied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "sourceCluster",
           "variableType" : "String",
-          "documentation" : "<p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied. .</p>",
+          "documentation" : "<p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -1421,6 +1430,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date and time when the backup will be permanently deleted.</p>\n@param deleteTimestamp The date and time when the backup will be permanently deleted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1438,12 +1448,12 @@
         "c2jName" : "TagList",
         "c2jShape" : "TagList",
         "deprecated" : false,
-        "documentation" : "",
+        "documentation" : "<p>The list of tags for the backup.</p>",
         "endpointDiscoveryId" : false,
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**\n@param tagList \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The list of tags for the backup.</p>\n@param tagList The list of tags for the backup.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withTagList",
-        "getterDocumentation" : "/**\n@return */",
+        "getterDocumentation" : "/**<p>The list of tags for the backup.</p>\n@return The list of tags for the backup.*/",
         "getterMethodName" : "getTagList",
         "getterModel" : {
           "returnType" : "java.util.List<Tag>",
@@ -1528,6 +1538,7 @@
               "variableSetterType" : "Tag"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1560,7 +1571,7 @@
         "marshallingType" : "LIST",
         "name" : "TagList",
         "sensitive" : false,
-        "setterDocumentation" : "/**\n@param tagList */",
+        "setterDocumentation" : "/**<p>The list of tags for the backup.</p>\n@param tagList The list of tags for the backup.*/",
         "setterMethodName" : "setTagList",
         "setterModel" : {
           "timestampFormat" : null,
@@ -1572,15 +1583,16 @@
           "variableSetterType" : "java.util.Collection<Tag>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagList \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The list of tags for the backup.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagList The list of tags for the backup.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<Tag>",
           "variableName" : "tagList",
           "variableType" : "java.util.List<Tag>",
-          "documentation" : "",
+          "documentation" : "<p>The list of tags for the backup.</p>",
           "simpleType" : "List<Tag>",
           "variableSetterType" : "java.util.Collection<Tag>"
         },
@@ -1642,6 +1654,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier (ID) of the backup.</p>\n@param backupId The identifier (ID) of the backup.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1711,6 +1724,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The state of the backup.</p>\n@param backupState The state of the backup.\n@return Returns a reference to this object so that method calls can be chained together.\n@see BackupState*/",
@@ -1780,6 +1794,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier (ID) of the cluster that was backed up.</p>\n@param clusterId The identifier (ID) of the cluster that was backed up.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1849,6 +1864,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date and time when the backup was copied from a source backup.</p>\n@param copyTimestamp The date and time when the backup was copied from a source backup.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1918,6 +1934,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date and time when the backup was created.</p>\n@param createTimestamp The date and time when the backup was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1987,6 +2004,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date and time when the backup will be permanently deleted.</p>\n@param deleteTimestamp The date and time when the backup will be permanently deleted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2056,6 +2074,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier (ID) of the source backup from which the new backup was copied.</p>\n@param sourceBackup The identifier (ID) of the source backup from which the new backup was copied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2074,12 +2093,12 @@
           "c2jName" : "SourceCluster",
           "c2jShape" : "ClusterId",
           "deprecated" : false,
-          "documentation" : "<p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied. .</p>",
+          "documentation" : "<p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied.</p>",
           "endpointDiscoveryId" : false,
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied. .</p>\n@param sourceCluster The identifier (ID) of the cluster containing the source backup from which the new backup was copied. .\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied.</p>\n@param sourceCluster The identifier (ID) of the cluster containing the source backup from which the new backup was copied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withSourceCluster",
-          "getterDocumentation" : "/**<p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied. .</p>\n@return The identifier (ID) of the cluster containing the source backup from which the new backup was copied. .*/",
+          "getterDocumentation" : "/**<p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied.</p>\n@return The identifier (ID) of the cluster containing the source backup from which the new backup was copied.*/",
           "getterMethodName" : "getSourceCluster",
           "getterModel" : {
             "returnType" : "String",
@@ -2113,7 +2132,7 @@
           "marshallingType" : "STRING",
           "name" : "SourceCluster",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied. .</p>\n@param sourceCluster The identifier (ID) of the cluster containing the source backup from which the new backup was copied. .*/",
+          "setterDocumentation" : "/**<p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied.</p>\n@param sourceCluster The identifier (ID) of the cluster containing the source backup from which the new backup was copied.*/",
           "setterMethodName" : "setSourceCluster",
           "setterModel" : {
             "timestampFormat" : null,
@@ -2125,15 +2144,16 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied. .</p>\n@param sourceCluster The identifier (ID) of the cluster containing the source backup from which the new backup was copied. .\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied.</p>\n@param sourceCluster The identifier (ID) of the cluster containing the source backup from which the new backup was copied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "sourceCluster",
             "variableType" : "String",
-            "documentation" : "<p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied. .</p>",
+            "documentation" : "<p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -2143,12 +2163,12 @@
           "c2jName" : "SourceRegion",
           "c2jShape" : "Region",
           "deprecated" : false,
-          "documentation" : "<p>The AWS region that contains the source backup from which the new backup was copied.</p>",
+          "documentation" : "<p>The AWS Region that contains the source backup from which the new backup was copied.</p>",
           "endpointDiscoveryId" : false,
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The AWS region that contains the source backup from which the new backup was copied.</p>\n@param sourceRegion The AWS region that contains the source backup from which the new backup was copied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The AWS Region that contains the source backup from which the new backup was copied.</p>\n@param sourceRegion The AWS Region that contains the source backup from which the new backup was copied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withSourceRegion",
-          "getterDocumentation" : "/**<p>The AWS region that contains the source backup from which the new backup was copied.</p>\n@return The AWS region that contains the source backup from which the new backup was copied.*/",
+          "getterDocumentation" : "/**<p>The AWS Region that contains the source backup from which the new backup was copied.</p>\n@return The AWS Region that contains the source backup from which the new backup was copied.*/",
           "getterMethodName" : "getSourceRegion",
           "getterModel" : {
             "returnType" : "String",
@@ -2182,7 +2202,7 @@
           "marshallingType" : "STRING",
           "name" : "SourceRegion",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>The AWS region that contains the source backup from which the new backup was copied.</p>\n@param sourceRegion The AWS region that contains the source backup from which the new backup was copied.*/",
+          "setterDocumentation" : "/**<p>The AWS Region that contains the source backup from which the new backup was copied.</p>\n@param sourceRegion The AWS Region that contains the source backup from which the new backup was copied.*/",
           "setterMethodName" : "setSourceRegion",
           "setterModel" : {
             "timestampFormat" : null,
@@ -2194,15 +2214,16 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The AWS region that contains the source backup from which the new backup was copied.</p>\n@param sourceRegion The AWS region that contains the source backup from which the new backup was copied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The AWS Region that contains the source backup from which the new backup was copied.</p>\n@param sourceRegion The AWS Region that contains the source backup from which the new backup was copied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "sourceRegion",
             "variableType" : "String",
-            "documentation" : "<p>The AWS region that contains the source backup from which the new backup was copied.</p>",
+            "documentation" : "<p>The AWS Region that contains the source backup from which the new backup was copied.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -2212,12 +2233,12 @@
           "c2jName" : "TagList",
           "c2jShape" : "TagList",
           "deprecated" : false,
-          "documentation" : "",
+          "documentation" : "<p>The list of tags for the backup.</p>",
           "endpointDiscoveryId" : false,
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**\n@param tagList \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The list of tags for the backup.</p>\n@param tagList The list of tags for the backup.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withTagList",
-          "getterDocumentation" : "/**\n@return */",
+          "getterDocumentation" : "/**<p>The list of tags for the backup.</p>\n@return The list of tags for the backup.*/",
           "getterMethodName" : "getTagList",
           "getterModel" : {
             "returnType" : "java.util.List<Tag>",
@@ -2302,6 +2323,7 @@
                 "variableSetterType" : "Tag"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2334,7 +2356,7 @@
           "marshallingType" : "LIST",
           "name" : "TagList",
           "sensitive" : false,
-          "setterDocumentation" : "/**\n@param tagList */",
+          "setterDocumentation" : "/**<p>The list of tags for the backup.</p>\n@param tagList The list of tags for the backup.*/",
           "setterMethodName" : "setTagList",
           "setterModel" : {
             "timestampFormat" : null,
@@ -2346,21 +2368,23 @@
             "variableSetterType" : "java.util.Collection<Tag>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagList \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The list of tags for the backup.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagList The list of tags for the backup.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<Tag>",
             "variableName" : "tagList",
             "variableType" : "java.util.List<Tag>",
-            "documentation" : "",
+            "documentation" : "<p>The list of tags for the backup.</p>",
             "simpleType" : "List<Tag>",
             "variableSetterType" : "java.util.Collection<Tag>"
           },
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsmv2.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "BackupId" ],
@@ -2398,6 +2422,7 @@
         "value" : "DEFAULT"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsmv2.enum.BackupPolicy",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2406,6 +2431,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.cloudhsmv2.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2452,6 +2478,7 @@
         "value" : "PENDING_DELETION"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsmv2.enum.BackupState",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2460,6 +2487,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.cloudhsmv2.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2494,6 +2522,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsmv2.model.Certificates",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2555,6 +2584,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The cluster's certificate signing request (CSR). The CSR exists only when the cluster's state is <code>UNINITIALIZED</code>.</p>\n@param clusterCsr The cluster's certificate signing request (CSR). The CSR exists only when the cluster's state is <code>UNINITIALIZED</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2623,6 +2653,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The HSM certificate issued (signed) by the HSM hardware.</p>\n@param hsmCertificate The HSM certificate issued (signed) by the HSM hardware.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2691,6 +2722,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The HSM hardware certificate issued (signed) by AWS CloudHSM.</p>\n@param awsHardwareCertificate The HSM hardware certificate issued (signed) by AWS CloudHSM.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2759,6 +2791,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The HSM hardware certificate issued (signed) by the hardware manufacturer.</p>\n@param manufacturerHardwareCertificate The HSM hardware certificate issued (signed) by the hardware manufacturer.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2827,6 +2860,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The cluster certificate issued (signed) by the issuing certificate authority (CA) of the cluster's owner.</p>\n@param clusterCertificate The cluster certificate issued (signed) by the issuing certificate authority (CA) of the cluster's owner.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2897,6 +2931,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The HSM hardware certificate issued (signed) by AWS CloudHSM.</p>\n@param awsHardwareCertificate The HSM hardware certificate issued (signed) by AWS CloudHSM.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2966,6 +3001,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The cluster certificate issued (signed) by the issuing certificate authority (CA) of the cluster's owner.</p>\n@param clusterCertificate The cluster certificate issued (signed) by the issuing certificate authority (CA) of the cluster's owner.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3035,6 +3071,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The cluster's certificate signing request (CSR). The CSR exists only when the cluster's state is <code>UNINITIALIZED</code>.</p>\n@param clusterCsr The cluster's certificate signing request (CSR). The CSR exists only when the cluster's state is <code>UNINITIALIZED</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3104,6 +3141,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The HSM certificate issued (signed) by the HSM hardware.</p>\n@param hsmCertificate The HSM certificate issued (signed) by the HSM hardware.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3173,6 +3211,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The HSM hardware certificate issued (signed) by the hardware manufacturer.</p>\n@param manufacturerHardwareCertificate The HSM hardware certificate issued (signed) by the hardware manufacturer.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3188,6 +3227,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsmv2.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3222,6 +3262,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "CloudHsmAccessDeniedException",
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsmv2.exception.CloudHsmAccessDeniedException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3230,6 +3271,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.cloudhsmv2.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3261,6 +3303,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "CloudHsmInternalFailureException",
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsmv2.exception.CloudHsmInternalFailureException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3269,6 +3312,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.cloudhsmv2.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3300,6 +3344,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "CloudHsmInvalidRequestException",
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsmv2.exception.CloudHsmInvalidRequestException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3308,6 +3353,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.cloudhsmv2.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3339,6 +3385,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "CloudHsmResourceNotFoundException",
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsmv2.exception.CloudHsmResourceNotFoundException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3347,6 +3394,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.cloudhsmv2.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3378,6 +3426,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "CloudHsmServiceException",
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsmv2.exception.CloudHsmServiceException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3386,6 +3435,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.cloudhsmv2.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3413,10 +3463,11 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "",
+      "documentation" : "<p>The request was rejected because of a tagging failure. Verify the tag conditions in all applicable policies, and then retry the request.</p>",
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "CloudHsmTagException",
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsmv2.exception.CloudHsmTagException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3425,6 +3476,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.cloudhsmv2.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3456,6 +3508,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsmv2.model.Cluster",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3517,6 +3570,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The cluster's backup policy.</p>\n@param backupPolicy The cluster's backup policy.\n@return Returns a reference to this object so that method calls can be chained together.\n@see BackupPolicy*/",
@@ -3585,6 +3639,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The cluster's identifier (ID).</p>\n@param clusterId The cluster's identifier (ID).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3653,6 +3708,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date and time when the cluster was created.</p>\n@param createTimestamp The date and time when the cluster was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3760,6 +3816,7 @@
               "variableSetterType" : "Hsm"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3804,6 +3861,7 @@
           "variableSetterType" : "java.util.Collection<Hsm>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Contains information about the HSMs in the cluster.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setHsms(java.util.Collection)} or {@link #withHsms(java.util.Collection)} if you want to override the existing values.</p>\n@param hsms Contains information about the HSMs in the cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3872,6 +3930,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The type of HSM that the cluster contains.</p>\n@param hsmType The type of HSM that the cluster contains.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3940,6 +3999,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The default password for the cluster's Pre-Crypto Officer (PRECO) user.</p>\n@param preCoPassword The default password for the cluster's Pre-Crypto Officer (PRECO) user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4008,6 +4068,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier (ID) of the cluster's security group.</p>\n@param securityGroup The identifier (ID) of the cluster's security group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4076,6 +4137,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier (ID) of the backup used to create the cluster. This value exists only when the cluster was created from a backup.</p>\n@param sourceBackupId The identifier (ID) of the backup used to create the cluster. This value exists only when the cluster was created from a backup.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4144,6 +4206,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The cluster's state.</p>\n@param state The cluster's state.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ClusterState*/",
@@ -4212,6 +4275,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A description of the cluster's state.</p>\n@param stateMessage A description of the cluster's state.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4325,6 +4389,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4363,6 +4428,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A map from availability zone to the cluster’s subnet in that availability zone.</p>\n@param subnetMapping A map from availability zone to the cluster’s subnet in that availability zone.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4431,6 +4497,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier (ID) of the virtual private cloud (VPC) that contains the cluster.</p>\n@param vpcId The identifier (ID) of the virtual private cloud (VPC) that contains the cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4499,6 +4566,7 @@
           "variableSetterType" : "Certificates"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Contains one or more certificates or a certificate signing request (CSR).</p>\n@param certificates Contains one or more certificates or a certificate signing request (CSR).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4516,12 +4584,12 @@
         "c2jName" : "TagList",
         "c2jShape" : "TagList",
         "deprecated" : false,
-        "documentation" : "",
+        "documentation" : "<p>The list of tags for the cluster.</p>",
         "endpointDiscoveryId" : false,
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**\n@param tagList \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The list of tags for the cluster.</p>\n@param tagList The list of tags for the cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withTagList",
-        "getterDocumentation" : "/**\n@return */",
+        "getterDocumentation" : "/**<p>The list of tags for the cluster.</p>\n@return The list of tags for the cluster.*/",
         "getterMethodName" : "getTagList",
         "getterModel" : {
           "returnType" : "java.util.List<Tag>",
@@ -4606,6 +4674,7 @@
               "variableSetterType" : "Tag"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4638,7 +4707,7 @@
         "marshallingType" : "LIST",
         "name" : "TagList",
         "sensitive" : false,
-        "setterDocumentation" : "/**\n@param tagList */",
+        "setterDocumentation" : "/**<p>The list of tags for the cluster.</p>\n@param tagList The list of tags for the cluster.*/",
         "setterMethodName" : "setTagList",
         "setterModel" : {
           "timestampFormat" : null,
@@ -4650,15 +4719,16 @@
           "variableSetterType" : "java.util.Collection<Tag>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagList \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The list of tags for the cluster.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagList The list of tags for the cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<Tag>",
           "variableName" : "tagList",
           "variableType" : "java.util.List<Tag>",
-          "documentation" : "",
+          "documentation" : "<p>The list of tags for the cluster.</p>",
           "simpleType" : "List<Tag>",
           "variableSetterType" : "java.util.Collection<Tag>"
         },
@@ -4720,6 +4790,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The cluster's backup policy.</p>\n@param backupPolicy The cluster's backup policy.\n@return Returns a reference to this object so that method calls can be chained together.\n@see BackupPolicy*/",
@@ -4789,6 +4860,7 @@
             "variableSetterType" : "Certificates"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Contains one or more certificates or a certificate signing request (CSR).</p>\n@param certificates Contains one or more certificates or a certificate signing request (CSR).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4858,6 +4930,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The cluster's identifier (ID).</p>\n@param clusterId The cluster's identifier (ID).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4927,6 +5000,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date and time when the cluster was created.</p>\n@param createTimestamp The date and time when the cluster was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4996,6 +5070,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The type of HSM that the cluster contains.</p>\n@param hsmType The type of HSM that the cluster contains.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5104,6 +5179,7 @@
                 "variableSetterType" : "Hsm"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5148,6 +5224,7 @@
             "variableSetterType" : "java.util.Collection<Hsm>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Contains information about the HSMs in the cluster.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setHsms(java.util.Collection)} or {@link #withHsms(java.util.Collection)} if you want to override the existing values.</p>\n@param hsms Contains information about the HSMs in the cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5217,6 +5294,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The default password for the cluster's Pre-Crypto Officer (PRECO) user.</p>\n@param preCoPassword The default password for the cluster's Pre-Crypto Officer (PRECO) user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5286,6 +5364,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier (ID) of the cluster's security group.</p>\n@param securityGroup The identifier (ID) of the cluster's security group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5355,6 +5434,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier (ID) of the backup used to create the cluster. This value exists only when the cluster was created from a backup.</p>\n@param sourceBackupId The identifier (ID) of the backup used to create the cluster. This value exists only when the cluster was created from a backup.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5424,6 +5504,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The cluster's state.</p>\n@param state The cluster's state.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ClusterState*/",
@@ -5493,6 +5574,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A description of the cluster's state.</p>\n@param stateMessage A description of the cluster's state.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5607,6 +5689,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5645,6 +5728,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A map from availability zone to the cluster’s subnet in that availability zone.</p>\n@param subnetMapping A map from availability zone to the cluster’s subnet in that availability zone.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5663,12 +5747,12 @@
           "c2jName" : "TagList",
           "c2jShape" : "TagList",
           "deprecated" : false,
-          "documentation" : "",
+          "documentation" : "<p>The list of tags for the cluster.</p>",
           "endpointDiscoveryId" : false,
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**\n@param tagList \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The list of tags for the cluster.</p>\n@param tagList The list of tags for the cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withTagList",
-          "getterDocumentation" : "/**\n@return */",
+          "getterDocumentation" : "/**<p>The list of tags for the cluster.</p>\n@return The list of tags for the cluster.*/",
           "getterMethodName" : "getTagList",
           "getterModel" : {
             "returnType" : "java.util.List<Tag>",
@@ -5753,6 +5837,7 @@
                 "variableSetterType" : "Tag"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5785,7 +5870,7 @@
           "marshallingType" : "LIST",
           "name" : "TagList",
           "sensitive" : false,
-          "setterDocumentation" : "/**\n@param tagList */",
+          "setterDocumentation" : "/**<p>The list of tags for the cluster.</p>\n@param tagList The list of tags for the cluster.*/",
           "setterMethodName" : "setTagList",
           "setterModel" : {
             "timestampFormat" : null,
@@ -5797,15 +5882,16 @@
             "variableSetterType" : "java.util.Collection<Tag>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagList \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The list of tags for the cluster.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagList The list of tags for the cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<Tag>",
             "variableName" : "tagList",
             "variableType" : "java.util.List<Tag>",
-            "documentation" : "",
+            "documentation" : "<p>The list of tags for the cluster.</p>",
             "simpleType" : "List<Tag>",
             "variableSetterType" : "java.util.Collection<Tag>"
           },
@@ -5866,6 +5952,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier (ID) of the virtual private cloud (VPC) that contains the cluster.</p>\n@param vpcId The identifier (ID) of the virtual private cloud (VPC) that contains the cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5881,6 +5968,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsmv2.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -5942,6 +6030,7 @@
         "value" : "DEGRADED"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsmv2.enum.ClusterState",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5950,6 +6039,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.cloudhsmv2.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -5984,6 +6074,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsmv2.request.CopyBackupToRegionRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6052,6 +6143,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The AWS region that will contain your copied CloudHSM cluster backup.</p>\n@param destinationRegion The AWS region that will contain your copied CloudHSM cluster backup.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6120,6 +6212,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the backup that will be copied to the destination region. </p>\n@param backupId The ID of the backup that will be copied to the destination region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6137,12 +6230,12 @@
         "c2jName" : "TagList",
         "c2jShape" : "TagList",
         "deprecated" : false,
-        "documentation" : "",
+        "documentation" : "<p>Tags to apply to the destination backup during creation. If you specify tags, only these tags will be applied to the destination backup. If you do not specify tags, the service copies tags from the source backup to the destination backup.</p>",
         "endpointDiscoveryId" : false,
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**\n@param tagList \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>Tags to apply to the destination backup during creation. If you specify tags, only these tags will be applied to the destination backup. If you do not specify tags, the service copies tags from the source backup to the destination backup.</p>\n@param tagList Tags to apply to the destination backup during creation. If you specify tags, only these tags will be applied to the destination backup. If you do not specify tags, the service copies tags from the source backup to the destination backup.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withTagList",
-        "getterDocumentation" : "/**\n@return */",
+        "getterDocumentation" : "/**<p>Tags to apply to the destination backup during creation. If you specify tags, only these tags will be applied to the destination backup. If you do not specify tags, the service copies tags from the source backup to the destination backup.</p>\n@return Tags to apply to the destination backup during creation. If you specify tags, only these tags will be applied to the destination backup. If you do not specify tags, the service copies tags from the source backup to the destination backup.*/",
         "getterMethodName" : "getTagList",
         "getterModel" : {
           "returnType" : "java.util.List<Tag>",
@@ -6227,6 +6320,7 @@
               "variableSetterType" : "Tag"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6259,7 +6353,7 @@
         "marshallingType" : "LIST",
         "name" : "TagList",
         "sensitive" : false,
-        "setterDocumentation" : "/**\n@param tagList */",
+        "setterDocumentation" : "/**<p>Tags to apply to the destination backup during creation. If you specify tags, only these tags will be applied to the destination backup. If you do not specify tags, the service copies tags from the source backup to the destination backup.</p>\n@param tagList Tags to apply to the destination backup during creation. If you specify tags, only these tags will be applied to the destination backup. If you do not specify tags, the service copies tags from the source backup to the destination backup.*/",
         "setterMethodName" : "setTagList",
         "setterModel" : {
           "timestampFormat" : null,
@@ -6271,15 +6365,16 @@
           "variableSetterType" : "java.util.Collection<Tag>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagList \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Tags to apply to the destination backup during creation. If you specify tags, only these tags will be applied to the destination backup. If you do not specify tags, the service copies tags from the source backup to the destination backup.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagList Tags to apply to the destination backup during creation. If you specify tags, only these tags will be applied to the destination backup. If you do not specify tags, the service copies tags from the source backup to the destination backup.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<Tag>",
           "variableName" : "tagList",
           "variableType" : "java.util.List<Tag>",
-          "documentation" : "",
+          "documentation" : "<p>Tags to apply to the destination backup during creation. If you specify tags, only these tags will be applied to the destination backup. If you do not specify tags, the service copies tags from the source backup to the destination backup.</p>",
           "simpleType" : "List<Tag>",
           "variableSetterType" : "java.util.Collection<Tag>"
         },
@@ -6341,6 +6436,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the backup that will be copied to the destination region. </p>\n@param backupId The ID of the backup that will be copied to the destination region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6410,6 +6506,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The AWS region that will contain your copied CloudHSM cluster backup.</p>\n@param destinationRegion The AWS region that will contain your copied CloudHSM cluster backup.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6428,12 +6525,12 @@
           "c2jName" : "TagList",
           "c2jShape" : "TagList",
           "deprecated" : false,
-          "documentation" : "",
+          "documentation" : "<p>Tags to apply to the destination backup during creation. If you specify tags, only these tags will be applied to the destination backup. If you do not specify tags, the service copies tags from the source backup to the destination backup.</p>",
           "endpointDiscoveryId" : false,
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**\n@param tagList \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>Tags to apply to the destination backup during creation. If you specify tags, only these tags will be applied to the destination backup. If you do not specify tags, the service copies tags from the source backup to the destination backup.</p>\n@param tagList Tags to apply to the destination backup during creation. If you specify tags, only these tags will be applied to the destination backup. If you do not specify tags, the service copies tags from the source backup to the destination backup.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withTagList",
-          "getterDocumentation" : "/**\n@return */",
+          "getterDocumentation" : "/**<p>Tags to apply to the destination backup during creation. If you specify tags, only these tags will be applied to the destination backup. If you do not specify tags, the service copies tags from the source backup to the destination backup.</p>\n@return Tags to apply to the destination backup during creation. If you specify tags, only these tags will be applied to the destination backup. If you do not specify tags, the service copies tags from the source backup to the destination backup.*/",
           "getterMethodName" : "getTagList",
           "getterModel" : {
             "returnType" : "java.util.List<Tag>",
@@ -6518,6 +6615,7 @@
                 "variableSetterType" : "Tag"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6550,7 +6648,7 @@
           "marshallingType" : "LIST",
           "name" : "TagList",
           "sensitive" : false,
-          "setterDocumentation" : "/**\n@param tagList */",
+          "setterDocumentation" : "/**<p>Tags to apply to the destination backup during creation. If you specify tags, only these tags will be applied to the destination backup. If you do not specify tags, the service copies tags from the source backup to the destination backup.</p>\n@param tagList Tags to apply to the destination backup during creation. If you specify tags, only these tags will be applied to the destination backup. If you do not specify tags, the service copies tags from the source backup to the destination backup.*/",
           "setterMethodName" : "setTagList",
           "setterModel" : {
             "timestampFormat" : null,
@@ -6562,21 +6660,23 @@
             "variableSetterType" : "java.util.Collection<Tag>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagList \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Tags to apply to the destination backup during creation. If you specify tags, only these tags will be applied to the destination backup. If you do not specify tags, the service copies tags from the source backup to the destination backup.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagList Tags to apply to the destination backup during creation. If you specify tags, only these tags will be applied to the destination backup. If you do not specify tags, the service copies tags from the source backup to the destination backup.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<Tag>",
             "variableName" : "tagList",
             "variableType" : "java.util.List<Tag>",
-            "documentation" : "",
+            "documentation" : "<p>Tags to apply to the destination backup during creation. If you specify tags, only these tags will be applied to the destination backup. If you do not specify tags, the service copies tags from the source backup to the destination backup.</p>",
             "simpleType" : "List<Tag>",
             "variableSetterType" : "java.util.Collection<Tag>"
           },
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsmv2.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "DestinationRegion", "BackupId" ],
@@ -6608,6 +6708,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsmv2.response.CopyBackupToRegionResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6669,6 +6770,7 @@
           "variableSetterType" : "DestinationBackup"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Information on the backup that will be copied to the destination region, including CreateTimestamp, SourceBackup, SourceCluster, and Source Region. CreateTimestamp of the destination backup will be the same as that of the source backup.</p> <p>You will need to use the <code>sourceBackupID</code> returned in this operation to use the <a>DescribeBackups</a> operation on the backup that will be copied to the destination region.</p>\n@param destinationBackup Information on the backup that will be copied to the destination region, including CreateTimestamp, SourceBackup, SourceCluster, and Source Region. CreateTimestamp of the destination backup will be the same as that of the source backup.</p> <p>You will need to use the <code>sourceBackupID</code> returned in this operation to use the <a>DescribeBackups</a> operation on the backup that will be copied to the destination region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6739,6 +6841,7 @@
             "variableSetterType" : "DestinationBackup"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Information on the backup that will be copied to the destination region, including CreateTimestamp, SourceBackup, SourceCluster, and Source Region. CreateTimestamp of the destination backup will be the same as that of the source backup.</p> <p>You will need to use the <code>sourceBackupID</code> returned in this operation to use the <a>DescribeBackups</a> operation on the backup that will be copied to the destination region.</p>\n@param destinationBackup Information on the backup that will be copied to the destination region, including CreateTimestamp, SourceBackup, SourceCluster, and Source Region. CreateTimestamp of the destination backup will be the same as that of the source backup.</p> <p>You will need to use the <code>sourceBackupID</code> returned in this operation to use the <a>DescribeBackups</a> operation on the backup that will be copied to the destination region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6754,6 +6857,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsmv2.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6788,6 +6892,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsmv2.request.CreateClusterRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6895,6 +7000,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6939,6 +7045,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifiers (IDs) of the subnets where you are creating the cluster. You must specify at least one subnet. If you specify multiple subnets, they must meet the following criteria:</p> <ul> <li> <p>All subnets must be in the same virtual private cloud (VPC).</p> </li> <li> <p>You can specify only one subnet per Availability Zone.</p> </li> </ul>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSubnetIds(java.util.Collection)} or {@link #withSubnetIds(java.util.Collection)} if you want to override the existing values.</p>\n@param subnetIds The identifiers (IDs) of the subnets where you are creating the cluster. You must specify at least one subnet. If you specify multiple subnets, they must meet the following criteria:</p> <ul> <li> <p>All subnets must be in the same virtual private cloud (VPC).</p> </li> <li> <p>You can specify only one subnet per Availability Zone.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7007,6 +7114,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The type of HSM to use in the cluster. Currently the only allowed value is <code>hsm1.medium</code>.</p>\n@param hsmType The type of HSM to use in the cluster. Currently the only allowed value is <code>hsm1.medium</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7075,6 +7183,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier (ID) of the cluster backup to restore. Use this value to restore the cluster from a backup instead of creating a new cluster. To find the backup ID, use <a>DescribeBackups</a>.</p>\n@param sourceBackupId The identifier (ID) of the cluster backup to restore. Use this value to restore the cluster from a backup instead of creating a new cluster. To find the backup ID, use <a>DescribeBackups</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7092,12 +7201,12 @@
         "c2jName" : "TagList",
         "c2jShape" : "TagList",
         "deprecated" : false,
-        "documentation" : "",
+        "documentation" : "<p>Tags to apply to the CloudHSM cluster during creation.</p>",
         "endpointDiscoveryId" : false,
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**\n@param tagList \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>Tags to apply to the CloudHSM cluster during creation.</p>\n@param tagList Tags to apply to the CloudHSM cluster during creation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withTagList",
-        "getterDocumentation" : "/**\n@return */",
+        "getterDocumentation" : "/**<p>Tags to apply to the CloudHSM cluster during creation.</p>\n@return Tags to apply to the CloudHSM cluster during creation.*/",
         "getterMethodName" : "getTagList",
         "getterModel" : {
           "returnType" : "java.util.List<Tag>",
@@ -7182,6 +7291,7 @@
               "variableSetterType" : "Tag"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7214,7 +7324,7 @@
         "marshallingType" : "LIST",
         "name" : "TagList",
         "sensitive" : false,
-        "setterDocumentation" : "/**\n@param tagList */",
+        "setterDocumentation" : "/**<p>Tags to apply to the CloudHSM cluster during creation.</p>\n@param tagList Tags to apply to the CloudHSM cluster during creation.*/",
         "setterMethodName" : "setTagList",
         "setterModel" : {
           "timestampFormat" : null,
@@ -7226,15 +7336,16 @@
           "variableSetterType" : "java.util.Collection<Tag>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagList \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Tags to apply to the CloudHSM cluster during creation.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagList Tags to apply to the CloudHSM cluster during creation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<Tag>",
           "variableName" : "tagList",
           "variableType" : "java.util.List<Tag>",
-          "documentation" : "",
+          "documentation" : "<p>Tags to apply to the CloudHSM cluster during creation.</p>",
           "simpleType" : "List<Tag>",
           "variableSetterType" : "java.util.Collection<Tag>"
         },
@@ -7296,6 +7407,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The type of HSM to use in the cluster. Currently the only allowed value is <code>hsm1.medium</code>.</p>\n@param hsmType The type of HSM to use in the cluster. Currently the only allowed value is <code>hsm1.medium</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7365,6 +7477,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier (ID) of the cluster backup to restore. Use this value to restore the cluster from a backup instead of creating a new cluster. To find the backup ID, use <a>DescribeBackups</a>.</p>\n@param sourceBackupId The identifier (ID) of the cluster backup to restore. Use this value to restore the cluster from a backup instead of creating a new cluster. To find the backup ID, use <a>DescribeBackups</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7473,6 +7586,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7517,6 +7631,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifiers (IDs) of the subnets where you are creating the cluster. You must specify at least one subnet. If you specify multiple subnets, they must meet the following criteria:</p> <ul> <li> <p>All subnets must be in the same virtual private cloud (VPC).</p> </li> <li> <p>You can specify only one subnet per Availability Zone.</p> </li> </ul>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSubnetIds(java.util.Collection)} or {@link #withSubnetIds(java.util.Collection)} if you want to override the existing values.</p>\n@param subnetIds The identifiers (IDs) of the subnets where you are creating the cluster. You must specify at least one subnet. If you specify multiple subnets, they must meet the following criteria:</p> <ul> <li> <p>All subnets must be in the same virtual private cloud (VPC).</p> </li> <li> <p>You can specify only one subnet per Availability Zone.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7535,12 +7650,12 @@
           "c2jName" : "TagList",
           "c2jShape" : "TagList",
           "deprecated" : false,
-          "documentation" : "",
+          "documentation" : "<p>Tags to apply to the CloudHSM cluster during creation.</p>",
           "endpointDiscoveryId" : false,
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**\n@param tagList \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>Tags to apply to the CloudHSM cluster during creation.</p>\n@param tagList Tags to apply to the CloudHSM cluster during creation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withTagList",
-          "getterDocumentation" : "/**\n@return */",
+          "getterDocumentation" : "/**<p>Tags to apply to the CloudHSM cluster during creation.</p>\n@return Tags to apply to the CloudHSM cluster during creation.*/",
           "getterMethodName" : "getTagList",
           "getterModel" : {
             "returnType" : "java.util.List<Tag>",
@@ -7625,6 +7740,7 @@
                 "variableSetterType" : "Tag"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7657,7 +7773,7 @@
           "marshallingType" : "LIST",
           "name" : "TagList",
           "sensitive" : false,
-          "setterDocumentation" : "/**\n@param tagList */",
+          "setterDocumentation" : "/**<p>Tags to apply to the CloudHSM cluster during creation.</p>\n@param tagList Tags to apply to the CloudHSM cluster during creation.*/",
           "setterMethodName" : "setTagList",
           "setterModel" : {
             "timestampFormat" : null,
@@ -7669,21 +7785,23 @@
             "variableSetterType" : "java.util.Collection<Tag>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagList \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Tags to apply to the CloudHSM cluster during creation.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagList Tags to apply to the CloudHSM cluster during creation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<Tag>",
             "variableName" : "tagList",
             "variableType" : "java.util.List<Tag>",
-            "documentation" : "",
+            "documentation" : "<p>Tags to apply to the CloudHSM cluster during creation.</p>",
             "simpleType" : "List<Tag>",
             "variableSetterType" : "java.util.Collection<Tag>"
           },
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsmv2.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "SubnetIds", "HsmType" ],
@@ -7715,6 +7833,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsmv2.response.CreateClusterResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7776,6 +7895,7 @@
           "variableSetterType" : "Cluster"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Information about the cluster that was created.</p>\n@param cluster Information about the cluster that was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7846,6 +7966,7 @@
             "variableSetterType" : "Cluster"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Information about the cluster that was created.</p>\n@param cluster Information about the cluster that was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7861,6 +7982,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsmv2.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -7895,6 +8017,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsmv2.request.CreateHsmRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7963,6 +8086,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier (ID) of the HSM's cluster. To find the cluster ID, use <a>DescribeClusters</a>.</p>\n@param clusterId The identifier (ID) of the HSM's cluster. To find the cluster ID, use <a>DescribeClusters</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8031,6 +8155,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Availability Zone where you are creating the HSM. To find the cluster's Availability Zones, use <a>DescribeClusters</a>.</p>\n@param availabilityZone The Availability Zone where you are creating the HSM. To find the cluster's Availability Zones, use <a>DescribeClusters</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8099,6 +8224,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The HSM's IP address. If you specify an IP address, use an available address from the subnet that maps to the Availability Zone where you are creating the HSM. If you don't specify an IP address, one is chosen for you from that subnet.</p>\n@param ipAddress The HSM's IP address. If you specify an IP address, use an available address from the subnet that maps to the Availability Zone where you are creating the HSM. If you don't specify an IP address, one is chosen for you from that subnet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8169,6 +8295,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Availability Zone where you are creating the HSM. To find the cluster's Availability Zones, use <a>DescribeClusters</a>.</p>\n@param availabilityZone The Availability Zone where you are creating the HSM. To find the cluster's Availability Zones, use <a>DescribeClusters</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8238,6 +8365,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier (ID) of the HSM's cluster. To find the cluster ID, use <a>DescribeClusters</a>.</p>\n@param clusterId The identifier (ID) of the HSM's cluster. To find the cluster ID, use <a>DescribeClusters</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8307,6 +8435,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The HSM's IP address. If you specify an IP address, use an available address from the subnet that maps to the Availability Zone where you are creating the HSM. If you don't specify an IP address, one is chosen for you from that subnet.</p>\n@param ipAddress The HSM's IP address. If you specify an IP address, use an available address from the subnet that maps to the Availability Zone where you are creating the HSM. If you don't specify an IP address, one is chosen for you from that subnet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8322,6 +8451,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsmv2.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ClusterId", "AvailabilityZone" ],
@@ -8353,6 +8483,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsmv2.response.CreateHsmResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8414,6 +8545,7 @@
           "variableSetterType" : "Hsm"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Information about the HSM that was created.</p>\n@param hsm Information about the HSM that was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8484,6 +8616,7 @@
             "variableSetterType" : "Hsm"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Information about the HSM that was created.</p>\n@param hsm Information about the HSM that was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8499,6 +8632,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsmv2.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -8533,6 +8667,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsmv2.request.DeleteBackupRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8601,6 +8736,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the backup to be deleted. To find the ID of a backup, use the <a>DescribeBackups</a> operation.</p>\n@param backupId The ID of the backup to be deleted. To find the ID of a backup, use the <a>DescribeBackups</a> operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8671,6 +8807,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the backup to be deleted. To find the ID of a backup, use the <a>DescribeBackups</a> operation.</p>\n@param backupId The ID of the backup to be deleted. To find the ID of a backup, use the <a>DescribeBackups</a> operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8686,6 +8823,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsmv2.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "BackupId" ],
@@ -8717,6 +8855,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsmv2.response.DeleteBackupResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8778,6 +8917,7 @@
           "variableSetterType" : "Backup"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Information on the <code>Backup</code> object deleted.</p>\n@param backup Information on the <code>Backup</code> object deleted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8848,6 +8988,7 @@
             "variableSetterType" : "Backup"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Information on the <code>Backup</code> object deleted.</p>\n@param backup Information on the <code>Backup</code> object deleted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8863,6 +9004,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsmv2.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -8897,6 +9039,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsmv2.request.DeleteClusterRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8965,6 +9108,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier (ID) of the cluster that you are deleting. To find the cluster ID, use <a>DescribeClusters</a>.</p>\n@param clusterId The identifier (ID) of the cluster that you are deleting. To find the cluster ID, use <a>DescribeClusters</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9035,6 +9179,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier (ID) of the cluster that you are deleting. To find the cluster ID, use <a>DescribeClusters</a>.</p>\n@param clusterId The identifier (ID) of the cluster that you are deleting. To find the cluster ID, use <a>DescribeClusters</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9050,6 +9195,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsmv2.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ClusterId" ],
@@ -9081,6 +9227,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsmv2.response.DeleteClusterResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -9142,6 +9289,7 @@
           "variableSetterType" : "Cluster"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Information about the cluster that was deleted.</p>\n@param cluster Information about the cluster that was deleted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9212,6 +9360,7 @@
             "variableSetterType" : "Cluster"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Information about the cluster that was deleted.</p>\n@param cluster Information about the cluster that was deleted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9227,6 +9376,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsmv2.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -9261,6 +9411,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsmv2.request.DeleteHsmRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -9329,6 +9480,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier (ID) of the cluster that contains the HSM that you are deleting.</p>\n@param clusterId The identifier (ID) of the cluster that contains the HSM that you are deleting.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9397,6 +9549,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier (ID) of the HSM that you are deleting.</p>\n@param hsmId The identifier (ID) of the HSM that you are deleting.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9465,6 +9618,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier (ID) of the elastic network interface (ENI) of the HSM that you are deleting.</p>\n@param eniId The identifier (ID) of the elastic network interface (ENI) of the HSM that you are deleting.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9533,6 +9687,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The IP address of the elastic network interface (ENI) of the HSM that you are deleting.</p>\n@param eniIp The IP address of the elastic network interface (ENI) of the HSM that you are deleting.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9603,6 +9758,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier (ID) of the cluster that contains the HSM that you are deleting.</p>\n@param clusterId The identifier (ID) of the cluster that contains the HSM that you are deleting.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9672,6 +9828,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier (ID) of the elastic network interface (ENI) of the HSM that you are deleting.</p>\n@param eniId The identifier (ID) of the elastic network interface (ENI) of the HSM that you are deleting.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9741,6 +9898,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The IP address of the elastic network interface (ENI) of the HSM that you are deleting.</p>\n@param eniIp The IP address of the elastic network interface (ENI) of the HSM that you are deleting.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9810,6 +9968,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier (ID) of the HSM that you are deleting.</p>\n@param hsmId The identifier (ID) of the HSM that you are deleting.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9825,6 +9984,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsmv2.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ClusterId" ],
@@ -9856,6 +10016,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsmv2.response.DeleteHsmResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -9917,6 +10078,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier (ID) of the HSM that was deleted.</p>\n@param hsmId The identifier (ID) of the HSM that was deleted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9987,6 +10149,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier (ID) of the HSM that was deleted.</p>\n@param hsmId The identifier (ID) of the HSM that was deleted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10002,6 +10165,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsmv2.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -10036,6 +10200,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsmv2.request.DescribeBackupsRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -10104,6 +10269,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The <code>NextToken</code> value that you received in the previous response. Use this value to get more backups.</p>\n@param nextToken The <code>NextToken</code> value that you received in the previous response. Use this value to get more backups.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10172,6 +10338,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of backups to return in the response. When there are more backups than the number you specify, the response contains a <code>NextToken</code> value.</p>\n@param maxResults The maximum number of backups to return in the response. When there are more backups than the number you specify, the response contains a <code>NextToken</code> value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10324,6 +10491,7 @@
                   "variableSetterType" : "String"
                 },
                 "shouldEmitLegacyEnumSetter" : false,
+                "shouldFullyQualify" : false,
                 "simple" : true,
                 "unmarshallingType" : null,
                 "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10368,6 +10536,7 @@
               "variableSetterType" : "java.util.Collection<String>"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValue(java.util.Collection)} or {@link #withValue(java.util.Collection)} if you want to override the existing values.</p>\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10406,6 +10575,7 @@
           "variableSetterType" : "java.util.Map<String,java.util.List<String>>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>One or more filters to limit the items returned in the response.</p> <p>Use the <code>backupIds</code> filter to return only the specified backups. Specify backups by their backup identifier (ID).</p> <p>Use the <code>sourceBackupIds</code> filter to return only the backups created from a source backup. The <code>sourceBackupID</code> of a source backup is returned by the <a>CopyBackupToRegion</a> operation.</p> <p>Use the <code>clusterIds</code> filter to return only the backups for the specified clusters. Specify clusters by their cluster identifier (ID).</p> <p>Use the <code>states</code> filter to return only backups that match the specified state.</p>\n@param filters One or more filters to limit the items returned in the response.</p> <p>Use the <code>backupIds</code> filter to return only the specified backups. Specify backups by their backup identifier (ID).</p> <p>Use the <code>sourceBackupIds</code> filter to return only the backups created from a source backup. The <code>sourceBackupID</code> of a source backup is returned by the <a>CopyBackupToRegion</a> operation.</p> <p>Use the <code>clusterIds</code> filter to return only the backups for the specified clusters. Specify clusters by their cluster identifier (ID).</p> <p>Use the <code>states</code> filter to return only backups that match the specified state.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10474,6 +10644,7 @@
           "variableSetterType" : "Boolean"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Designates whether or not to sort the return backups by ascending chronological order of generation.</p>\n@param sortAscending Designates whether or not to sort the return backups by ascending chronological order of generation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10628,6 +10799,7 @@
                     "variableSetterType" : "String"
                   },
                   "shouldEmitLegacyEnumSetter" : false,
+                  "shouldFullyQualify" : false,
                   "simple" : true,
                   "unmarshallingType" : null,
                   "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10672,6 +10844,7 @@
                 "variableSetterType" : "java.util.Collection<String>"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValue(java.util.Collection)} or {@link #withValue(java.util.Collection)} if you want to override the existing values.</p>\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10710,6 +10883,7 @@
             "variableSetterType" : "java.util.Map<String,java.util.List<String>>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>One or more filters to limit the items returned in the response.</p> <p>Use the <code>backupIds</code> filter to return only the specified backups. Specify backups by their backup identifier (ID).</p> <p>Use the <code>sourceBackupIds</code> filter to return only the backups created from a source backup. The <code>sourceBackupID</code> of a source backup is returned by the <a>CopyBackupToRegion</a> operation.</p> <p>Use the <code>clusterIds</code> filter to return only the backups for the specified clusters. Specify clusters by their cluster identifier (ID).</p> <p>Use the <code>states</code> filter to return only backups that match the specified state.</p>\n@param filters One or more filters to limit the items returned in the response.</p> <p>Use the <code>backupIds</code> filter to return only the specified backups. Specify backups by their backup identifier (ID).</p> <p>Use the <code>sourceBackupIds</code> filter to return only the backups created from a source backup. The <code>sourceBackupID</code> of a source backup is returned by the <a>CopyBackupToRegion</a> operation.</p> <p>Use the <code>clusterIds</code> filter to return only the backups for the specified clusters. Specify clusters by their cluster identifier (ID).</p> <p>Use the <code>states</code> filter to return only backups that match the specified state.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10779,6 +10953,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of backups to return in the response. When there are more backups than the number you specify, the response contains a <code>NextToken</code> value.</p>\n@param maxResults The maximum number of backups to return in the response. When there are more backups than the number you specify, the response contains a <code>NextToken</code> value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10848,6 +11023,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The <code>NextToken</code> value that you received in the previous response. Use this value to get more backups.</p>\n@param nextToken The <code>NextToken</code> value that you received in the previous response. Use this value to get more backups.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10917,6 +11093,7 @@
             "variableSetterType" : "Boolean"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Designates whether or not to sort the return backups by ascending chronological order of generation.</p>\n@param sortAscending Designates whether or not to sort the return backups by ascending chronological order of generation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10932,6 +11109,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsmv2.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -10963,6 +11141,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsmv2.response.DescribeBackupsResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -11063,6 +11242,7 @@
               "variableSetterType" : "Backup"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11107,6 +11287,7 @@
           "variableSetterType" : "java.util.Collection<Backup>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of backups.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setBackups(java.util.Collection)} or {@link #withBackups(java.util.Collection)} if you want to override the existing values.</p>\n@param backups A list of backups.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11175,6 +11356,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An opaque string that indicates that the response contains only a subset of backups. Use this value in a subsequent <code>DescribeBackups</code> request to get more backups.</p>\n@param nextToken An opaque string that indicates that the response contains only a subset of backups. Use this value in a subsequent <code>DescribeBackups</code> request to get more backups.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11284,6 +11466,7 @@
                 "variableSetterType" : "Backup"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11328,6 +11511,7 @@
             "variableSetterType" : "java.util.Collection<Backup>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of backups.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setBackups(java.util.Collection)} or {@link #withBackups(java.util.Collection)} if you want to override the existing values.</p>\n@param backups A list of backups.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11397,6 +11581,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An opaque string that indicates that the response contains only a subset of backups. Use this value in a subsequent <code>DescribeBackups</code> request to get more backups.</p>\n@param nextToken An opaque string that indicates that the response contains only a subset of backups. Use this value in a subsequent <code>DescribeBackups</code> request to get more backups.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11412,6 +11597,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsmv2.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -11446,6 +11632,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsmv2.request.DescribeClustersRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -11598,6 +11785,7 @@
                   "variableSetterType" : "String"
                 },
                 "shouldEmitLegacyEnumSetter" : false,
+                "shouldFullyQualify" : false,
                 "simple" : true,
                 "unmarshallingType" : null,
                 "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11642,6 +11830,7 @@
               "variableSetterType" : "java.util.Collection<String>"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValue(java.util.Collection)} or {@link #withValue(java.util.Collection)} if you want to override the existing values.</p>\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11680,6 +11869,7 @@
           "variableSetterType" : "java.util.Map<String,java.util.List<String>>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>One or more filters to limit the items returned in the response.</p> <p>Use the <code>clusterIds</code> filter to return only the specified clusters. Specify clusters by their cluster identifier (ID).</p> <p>Use the <code>vpcIds</code> filter to return only the clusters in the specified virtual private clouds (VPCs). Specify VPCs by their VPC identifier (ID).</p> <p>Use the <code>states</code> filter to return only clusters that match the specified state.</p>\n@param filters One or more filters to limit the items returned in the response.</p> <p>Use the <code>clusterIds</code> filter to return only the specified clusters. Specify clusters by their cluster identifier (ID).</p> <p>Use the <code>vpcIds</code> filter to return only the clusters in the specified virtual private clouds (VPCs). Specify VPCs by their VPC identifier (ID).</p> <p>Use the <code>states</code> filter to return only clusters that match the specified state.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11748,6 +11938,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The <code>NextToken</code> value that you received in the previous response. Use this value to get more clusters.</p>\n@param nextToken The <code>NextToken</code> value that you received in the previous response. Use this value to get more clusters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11816,6 +12007,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of clusters to return in the response. When there are more clusters than the number you specify, the response contains a <code>NextToken</code> value.</p>\n@param maxResults The maximum number of clusters to return in the response. When there are more clusters than the number you specify, the response contains a <code>NextToken</code> value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11970,6 +12162,7 @@
                     "variableSetterType" : "String"
                   },
                   "shouldEmitLegacyEnumSetter" : false,
+                  "shouldFullyQualify" : false,
                   "simple" : true,
                   "unmarshallingType" : null,
                   "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12014,6 +12207,7 @@
                 "variableSetterType" : "java.util.Collection<String>"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValue(java.util.Collection)} or {@link #withValue(java.util.Collection)} if you want to override the existing values.</p>\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12052,6 +12246,7 @@
             "variableSetterType" : "java.util.Map<String,java.util.List<String>>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>One or more filters to limit the items returned in the response.</p> <p>Use the <code>clusterIds</code> filter to return only the specified clusters. Specify clusters by their cluster identifier (ID).</p> <p>Use the <code>vpcIds</code> filter to return only the clusters in the specified virtual private clouds (VPCs). Specify VPCs by their VPC identifier (ID).</p> <p>Use the <code>states</code> filter to return only clusters that match the specified state.</p>\n@param filters One or more filters to limit the items returned in the response.</p> <p>Use the <code>clusterIds</code> filter to return only the specified clusters. Specify clusters by their cluster identifier (ID).</p> <p>Use the <code>vpcIds</code> filter to return only the clusters in the specified virtual private clouds (VPCs). Specify VPCs by their VPC identifier (ID).</p> <p>Use the <code>states</code> filter to return only clusters that match the specified state.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12121,6 +12316,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of clusters to return in the response. When there are more clusters than the number you specify, the response contains a <code>NextToken</code> value.</p>\n@param maxResults The maximum number of clusters to return in the response. When there are more clusters than the number you specify, the response contains a <code>NextToken</code> value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12190,6 +12386,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The <code>NextToken</code> value that you received in the previous response. Use this value to get more clusters.</p>\n@param nextToken The <code>NextToken</code> value that you received in the previous response. Use this value to get more clusters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12205,6 +12402,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsmv2.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -12236,6 +12434,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsmv2.response.DescribeClustersResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -12336,6 +12535,7 @@
               "variableSetterType" : "Cluster"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12380,6 +12580,7 @@
           "variableSetterType" : "java.util.Collection<Cluster>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of clusters.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setClusters(java.util.Collection)} or {@link #withClusters(java.util.Collection)} if you want to override the existing values.</p>\n@param clusters A list of clusters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12448,6 +12649,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An opaque string that indicates that the response contains only a subset of clusters. Use this value in a subsequent <code>DescribeClusters</code> request to get more clusters.</p>\n@param nextToken An opaque string that indicates that the response contains only a subset of clusters. Use this value in a subsequent <code>DescribeClusters</code> request to get more clusters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12557,6 +12759,7 @@
                 "variableSetterType" : "Cluster"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12601,6 +12804,7 @@
             "variableSetterType" : "java.util.Collection<Cluster>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of clusters.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setClusters(java.util.Collection)} or {@link #withClusters(java.util.Collection)} if you want to override the existing values.</p>\n@param clusters A list of clusters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12670,6 +12874,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An opaque string that indicates that the response contains only a subset of clusters. Use this value in a subsequent <code>DescribeClusters</code> request to get more clusters.</p>\n@param nextToken An opaque string that indicates that the response contains only a subset of clusters. Use this value in a subsequent <code>DescribeClusters</code> request to get more clusters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12685,6 +12890,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsmv2.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -12719,6 +12925,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsmv2.model.DestinationBackup",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -12780,6 +12987,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date and time when both the source backup was created.</p>\n@param createTimestamp The date and time when both the source backup was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12848,6 +13056,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The AWS region that contains the source backup from which the new backup was copied.</p>\n@param sourceRegion The AWS region that contains the source backup from which the new backup was copied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12916,6 +13125,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier (ID) of the source backup from which the new backup was copied.</p>\n@param sourceBackup The identifier (ID) of the source backup from which the new backup was copied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12984,6 +13194,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied.</p>\n@param sourceCluster The identifier (ID) of the cluster containing the source backup from which the new backup was copied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13054,6 +13265,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date and time when both the source backup was created.</p>\n@param createTimestamp The date and time when both the source backup was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13123,6 +13335,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier (ID) of the source backup from which the new backup was copied.</p>\n@param sourceBackup The identifier (ID) of the source backup from which the new backup was copied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13192,6 +13405,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied.</p>\n@param sourceCluster The identifier (ID) of the cluster containing the source backup from which the new backup was copied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13261,6 +13475,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The AWS region that contains the source backup from which the new backup was copied.</p>\n@param sourceRegion The AWS region that contains the source backup from which the new backup was copied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13276,6 +13491,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsmv2.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -13310,6 +13526,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsmv2.model.Hsm",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -13371,6 +13588,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Availability Zone that contains the HSM.</p>\n@param availabilityZone The Availability Zone that contains the HSM.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13439,6 +13657,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier (ID) of the cluster that contains the HSM.</p>\n@param clusterId The identifier (ID) of the cluster that contains the HSM.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13507,6 +13726,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The subnet that contains the HSM's elastic network interface (ENI).</p>\n@param subnetId The subnet that contains the HSM's elastic network interface (ENI).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13575,6 +13795,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier (ID) of the HSM's elastic network interface (ENI).</p>\n@param eniId The identifier (ID) of the HSM's elastic network interface (ENI).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13643,6 +13864,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The IP address of the HSM's elastic network interface (ENI).</p>\n@param eniIp The IP address of the HSM's elastic network interface (ENI).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13711,6 +13933,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The HSM's identifier (ID).</p>\n@param hsmId The HSM's identifier (ID).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13779,6 +14002,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The HSM's state.</p>\n@param state The HSM's state.\n@return Returns a reference to this object so that method calls can be chained together.\n@see HsmState*/",
@@ -13847,6 +14071,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A description of the HSM's state.</p>\n@param stateMessage A description of the HSM's state.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13917,6 +14142,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Availability Zone that contains the HSM.</p>\n@param availabilityZone The Availability Zone that contains the HSM.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13986,6 +14212,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier (ID) of the cluster that contains the HSM.</p>\n@param clusterId The identifier (ID) of the cluster that contains the HSM.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14055,6 +14282,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier (ID) of the HSM's elastic network interface (ENI).</p>\n@param eniId The identifier (ID) of the HSM's elastic network interface (ENI).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14124,6 +14352,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The IP address of the HSM's elastic network interface (ENI).</p>\n@param eniIp The IP address of the HSM's elastic network interface (ENI).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14193,6 +14422,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The HSM's identifier (ID).</p>\n@param hsmId The HSM's identifier (ID).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14262,6 +14492,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The HSM's state.</p>\n@param state The HSM's state.\n@return Returns a reference to this object so that method calls can be chained together.\n@see HsmState*/",
@@ -14331,6 +14562,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A description of the HSM's state.</p>\n@param stateMessage A description of the HSM's state.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14400,6 +14632,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The subnet that contains the HSM's elastic network interface (ENI).</p>\n@param subnetId The subnet that contains the HSM's elastic network interface (ENI).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14415,6 +14648,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsmv2.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "HsmId" ],
@@ -14464,6 +14698,7 @@
         "value" : "DELETED"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsmv2.enum.HsmState",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -14472,6 +14707,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.cloudhsmv2.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -14506,6 +14742,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsmv2.request.InitializeClusterRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -14574,6 +14811,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier (ID) of the cluster that you are claiming. To find the cluster ID, use <a>DescribeClusters</a>.</p>\n@param clusterId The identifier (ID) of the cluster that you are claiming. To find the cluster ID, use <a>DescribeClusters</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14642,6 +14880,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The cluster certificate issued (signed) by your issuing certificate authority (CA). The certificate must be in PEM format and can contain a maximum of 5000 characters.</p>\n@param signedCert The cluster certificate issued (signed) by your issuing certificate authority (CA). The certificate must be in PEM format and can contain a maximum of 5000 characters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14710,6 +14949,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. You must use a self-signed certificate. The certificate used to sign the HSM CSR must be directly available, and thus must be the root certificate. The certificate must be in PEM format and can contain a maximum of 5000 characters.</p>\n@param trustAnchor The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. You must use a self-signed certificate. The certificate used to sign the HSM CSR must be directly available, and thus must be the root certificate. The certificate must be in PEM format and can contain a maximum of 5000 characters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14780,6 +15020,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier (ID) of the cluster that you are claiming. To find the cluster ID, use <a>DescribeClusters</a>.</p>\n@param clusterId The identifier (ID) of the cluster that you are claiming. To find the cluster ID, use <a>DescribeClusters</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14849,6 +15090,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The cluster certificate issued (signed) by your issuing certificate authority (CA). The certificate must be in PEM format and can contain a maximum of 5000 characters.</p>\n@param signedCert The cluster certificate issued (signed) by your issuing certificate authority (CA). The certificate must be in PEM format and can contain a maximum of 5000 characters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14918,6 +15160,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. You must use a self-signed certificate. The certificate used to sign the HSM CSR must be directly available, and thus must be the root certificate. The certificate must be in PEM format and can contain a maximum of 5000 characters.</p>\n@param trustAnchor The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. You must use a self-signed certificate. The certificate used to sign the HSM CSR must be directly available, and thus must be the root certificate. The certificate must be in PEM format and can contain a maximum of 5000 characters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14933,6 +15176,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsmv2.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ClusterId", "SignedCert", "TrustAnchor" ],
@@ -14964,6 +15208,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsmv2.response.InitializeClusterResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -15025,6 +15270,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The cluster's state.</p>\n@param state The cluster's state.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ClusterState*/",
@@ -15093,6 +15339,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A description of the cluster's state.</p>\n@param stateMessage A description of the cluster's state.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15163,6 +15410,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The cluster's state.</p>\n@param state The cluster's state.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ClusterState*/",
@@ -15232,6 +15480,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A description of the cluster's state.</p>\n@param stateMessage A description of the cluster's state.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15247,6 +15496,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsmv2.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -15281,6 +15531,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsmv2.request.ListTagsRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -15349,6 +15600,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The cluster identifier (ID) for the cluster whose tags you are getting. To find the cluster ID, use <a>DescribeClusters</a>.</p>\n@param resourceId The cluster identifier (ID) for the cluster whose tags you are getting. To find the cluster ID, use <a>DescribeClusters</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15417,6 +15669,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The <code>NextToken</code> value that you received in the previous response. Use this value to get more tags.</p>\n@param nextToken The <code>NextToken</code> value that you received in the previous response. Use this value to get more tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15485,6 +15738,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of tags to return in the response. When there are more tags than the number you specify, the response contains a <code>NextToken</code> value.</p>\n@param maxResults The maximum number of tags to return in the response. When there are more tags than the number you specify, the response contains a <code>NextToken</code> value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15555,6 +15809,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of tags to return in the response. When there are more tags than the number you specify, the response contains a <code>NextToken</code> value.</p>\n@param maxResults The maximum number of tags to return in the response. When there are more tags than the number you specify, the response contains a <code>NextToken</code> value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15624,6 +15879,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The <code>NextToken</code> value that you received in the previous response. Use this value to get more tags.</p>\n@param nextToken The <code>NextToken</code> value that you received in the previous response. Use this value to get more tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15693,6 +15949,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The cluster identifier (ID) for the cluster whose tags you are getting. To find the cluster ID, use <a>DescribeClusters</a>.</p>\n@param resourceId The cluster identifier (ID) for the cluster whose tags you are getting. To find the cluster ID, use <a>DescribeClusters</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15708,6 +15965,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsmv2.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ResourceId" ],
@@ -15739,6 +15997,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsmv2.response.ListTagsResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -15839,6 +16098,7 @@
               "variableSetterType" : "Tag"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15883,6 +16143,7 @@
           "variableSetterType" : "java.util.Collection<Tag>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of tags.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagList A list of tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15951,6 +16212,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An opaque string that indicates that the response contains only a subset of tags. Use this value in a subsequent <code>ListTags</code> request to get more tags.</p>\n@param nextToken An opaque string that indicates that the response contains only a subset of tags. Use this value in a subsequent <code>ListTags</code> request to get more tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16021,6 +16283,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An opaque string that indicates that the response contains only a subset of tags. Use this value in a subsequent <code>ListTags</code> request to get more tags.</p>\n@param nextToken An opaque string that indicates that the response contains only a subset of tags. Use this value in a subsequent <code>ListTags</code> request to get more tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16129,6 +16392,7 @@
                 "variableSetterType" : "Tag"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16173,6 +16437,7 @@
             "variableSetterType" : "java.util.Collection<Tag>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of tags.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagList A list of tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16188,6 +16453,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsmv2.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "TagList" ],
@@ -16222,6 +16488,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsmv2.request.RestoreBackupRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -16290,6 +16557,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the backup to be restored. To find the ID of a backup, use the <a>DescribeBackups</a> operation.</p>\n@param backupId The ID of the backup to be restored. To find the ID of a backup, use the <a>DescribeBackups</a> operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16360,6 +16628,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the backup to be restored. To find the ID of a backup, use the <a>DescribeBackups</a> operation.</p>\n@param backupId The ID of the backup to be restored. To find the ID of a backup, use the <a>DescribeBackups</a> operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16375,6 +16644,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsmv2.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "BackupId" ],
@@ -16406,6 +16676,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsmv2.response.RestoreBackupResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -16467,6 +16738,7 @@
           "variableSetterType" : "Backup"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Information on the <code>Backup</code> object created.</p>\n@param backup Information on the <code>Backup</code> object created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16537,6 +16809,7 @@
             "variableSetterType" : "Backup"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Information on the <code>Backup</code> object created.</p>\n@param backup Information on the <code>Backup</code> object created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16552,6 +16825,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsmv2.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -16586,6 +16860,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsmv2.model.Tag",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -16647,6 +16922,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The key of the tag.</p>\n@param key The key of the tag.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16715,6 +16991,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The value of the tag.</p>\n@param value The value of the tag.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16785,6 +17062,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The key of the tag.</p>\n@param key The key of the tag.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16854,6 +17132,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The value of the tag.</p>\n@param value The value of the tag.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16869,6 +17148,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsmv2.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Key", "Value" ],
@@ -16903,6 +17183,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsmv2.request.TagResourceRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -16971,6 +17252,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The cluster identifier (ID) for the cluster that you are tagging. To find the cluster ID, use <a>DescribeClusters</a>.</p>\n@param resourceId The cluster identifier (ID) for the cluster that you are tagging. To find the cluster ID, use <a>DescribeClusters</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17078,6 +17360,7 @@
               "variableSetterType" : "Tag"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17122,6 +17405,7 @@
           "variableSetterType" : "java.util.Collection<Tag>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of one or more tags.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagList A list of one or more tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17192,6 +17476,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The cluster identifier (ID) for the cluster that you are tagging. To find the cluster ID, use <a>DescribeClusters</a>.</p>\n@param resourceId The cluster identifier (ID) for the cluster that you are tagging. To find the cluster ID, use <a>DescribeClusters</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17300,6 +17585,7 @@
                 "variableSetterType" : "Tag"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17344,6 +17630,7 @@
             "variableSetterType" : "java.util.Collection<Tag>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of one or more tags.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagList A list of one or more tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17359,6 +17646,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsmv2.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ResourceId", "TagList" ],
@@ -17390,6 +17678,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsmv2.response.TagResourceResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -17398,6 +17687,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.cloudhsmv2.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -17432,6 +17722,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsmv2.request.UntagResourceRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -17500,6 +17791,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The cluster identifier (ID) for the cluster whose tags you are removing. To find the cluster ID, use <a>DescribeClusters</a>.</p>\n@param resourceId The cluster identifier (ID) for the cluster whose tags you are removing. To find the cluster ID, use <a>DescribeClusters</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17607,6 +17899,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17651,6 +17944,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of one or more tag keys for the tags that you are removing. Specify only the tag keys, not the tag values.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagKeyList(java.util.Collection)} or {@link #withTagKeyList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagKeyList A list of one or more tag keys for the tags that you are removing. Specify only the tag keys, not the tag values.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17721,6 +18015,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The cluster identifier (ID) for the cluster whose tags you are removing. To find the cluster ID, use <a>DescribeClusters</a>.</p>\n@param resourceId The cluster identifier (ID) for the cluster whose tags you are removing. To find the cluster ID, use <a>DescribeClusters</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17829,6 +18124,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17873,6 +18169,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of one or more tag keys for the tags that you are removing. Specify only the tag keys, not the tag values.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagKeyList(java.util.Collection)} or {@link #withTagKeyList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagKeyList A list of one or more tag keys for the tags that you are removing. Specify only the tag keys, not the tag values.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17888,6 +18185,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsmv2.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ResourceId", "TagKeyList" ],
@@ -17919,6 +18217,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsmv2.response.UntagResourceResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -17927,6 +18226,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.cloudhsmv2.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,

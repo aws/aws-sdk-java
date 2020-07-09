@@ -66,7 +66,9 @@ public class DataCaptureConfigJsonUnmarshaller implements Unmarshaller<DataCaptu
                 }
                 if (context.testExpression("CaptureOptions", targetDepth)) {
                     context.nextToken();
-                    dataCaptureConfig.setCaptureOptions(new ListUnmarshaller<CaptureOption>(CaptureOptionJsonUnmarshaller.getInstance()).unmarshall(context));
+                    dataCaptureConfig.setCaptureOptions(new ListUnmarshaller<CaptureOption>(CaptureOptionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("CaptureContentTypeHeader", targetDepth)) {
                     context.nextToken();

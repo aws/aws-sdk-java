@@ -51,7 +51,8 @@ public class DescribeSeverityLevelsResultJsonUnmarshaller implements Unmarshalle
                 if (context.testExpression("severityLevels", targetDepth)) {
                     context.nextToken();
                     describeSeverityLevelsResult.setSeverityLevels(new ListUnmarshaller<SeverityLevel>(SeverityLevelJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

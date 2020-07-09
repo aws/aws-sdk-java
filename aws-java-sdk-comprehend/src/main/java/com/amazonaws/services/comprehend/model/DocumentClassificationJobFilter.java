@@ -44,14 +44,14 @@ public class DocumentClassificationJobFilter implements Serializable, Cloneable,
     /**
      * <p>
      * Filters the list of jobs based on the time that the job was submitted for processing. Returns only jobs submitted
-     * after the specified time. Jobs are returned in ascending order, oldest to newest.
+     * before the specified time. Jobs are returned in ascending order, oldest to newest.
      * </p>
      */
     private java.util.Date submitTimeBefore;
     /**
      * <p>
      * Filters the list of jobs based on the time that the job was submitted for processing. Returns only jobs submitted
-     * before the specified time. Jobs are returned in descending order, newest to oldest.
+     * after the specified time. Jobs are returned in descending order, newest to oldest.
      * </p>
      */
     private java.util.Date submitTimeAfter;
@@ -158,12 +158,12 @@ public class DocumentClassificationJobFilter implements Serializable, Cloneable,
     /**
      * <p>
      * Filters the list of jobs based on the time that the job was submitted for processing. Returns only jobs submitted
-     * after the specified time. Jobs are returned in ascending order, oldest to newest.
+     * before the specified time. Jobs are returned in ascending order, oldest to newest.
      * </p>
      * 
      * @param submitTimeBefore
      *        Filters the list of jobs based on the time that the job was submitted for processing. Returns only jobs
-     *        submitted after the specified time. Jobs are returned in ascending order, oldest to newest.
+     *        submitted before the specified time. Jobs are returned in ascending order, oldest to newest.
      */
 
     public void setSubmitTimeBefore(java.util.Date submitTimeBefore) {
@@ -173,11 +173,11 @@ public class DocumentClassificationJobFilter implements Serializable, Cloneable,
     /**
      * <p>
      * Filters the list of jobs based on the time that the job was submitted for processing. Returns only jobs submitted
-     * after the specified time. Jobs are returned in ascending order, oldest to newest.
+     * before the specified time. Jobs are returned in ascending order, oldest to newest.
      * </p>
      * 
      * @return Filters the list of jobs based on the time that the job was submitted for processing. Returns only jobs
-     *         submitted after the specified time. Jobs are returned in ascending order, oldest to newest.
+     *         submitted before the specified time. Jobs are returned in ascending order, oldest to newest.
      */
 
     public java.util.Date getSubmitTimeBefore() {
@@ -187,12 +187,12 @@ public class DocumentClassificationJobFilter implements Serializable, Cloneable,
     /**
      * <p>
      * Filters the list of jobs based on the time that the job was submitted for processing. Returns only jobs submitted
-     * after the specified time. Jobs are returned in ascending order, oldest to newest.
+     * before the specified time. Jobs are returned in ascending order, oldest to newest.
      * </p>
      * 
      * @param submitTimeBefore
      *        Filters the list of jobs based on the time that the job was submitted for processing. Returns only jobs
-     *        submitted after the specified time. Jobs are returned in ascending order, oldest to newest.
+     *        submitted before the specified time. Jobs are returned in ascending order, oldest to newest.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -204,12 +204,12 @@ public class DocumentClassificationJobFilter implements Serializable, Cloneable,
     /**
      * <p>
      * Filters the list of jobs based on the time that the job was submitted for processing. Returns only jobs submitted
-     * before the specified time. Jobs are returned in descending order, newest to oldest.
+     * after the specified time. Jobs are returned in descending order, newest to oldest.
      * </p>
      * 
      * @param submitTimeAfter
      *        Filters the list of jobs based on the time that the job was submitted for processing. Returns only jobs
-     *        submitted before the specified time. Jobs are returned in descending order, newest to oldest.
+     *        submitted after the specified time. Jobs are returned in descending order, newest to oldest.
      */
 
     public void setSubmitTimeAfter(java.util.Date submitTimeAfter) {
@@ -219,11 +219,11 @@ public class DocumentClassificationJobFilter implements Serializable, Cloneable,
     /**
      * <p>
      * Filters the list of jobs based on the time that the job was submitted for processing. Returns only jobs submitted
-     * before the specified time. Jobs are returned in descending order, newest to oldest.
+     * after the specified time. Jobs are returned in descending order, newest to oldest.
      * </p>
      * 
      * @return Filters the list of jobs based on the time that the job was submitted for processing. Returns only jobs
-     *         submitted before the specified time. Jobs are returned in descending order, newest to oldest.
+     *         submitted after the specified time. Jobs are returned in descending order, newest to oldest.
      */
 
     public java.util.Date getSubmitTimeAfter() {
@@ -233,12 +233,12 @@ public class DocumentClassificationJobFilter implements Serializable, Cloneable,
     /**
      * <p>
      * Filters the list of jobs based on the time that the job was submitted for processing. Returns only jobs submitted
-     * before the specified time. Jobs are returned in descending order, newest to oldest.
+     * after the specified time. Jobs are returned in descending order, newest to oldest.
      * </p>
      * 
      * @param submitTimeAfter
      *        Filters the list of jobs based on the time that the job was submitted for processing. Returns only jobs
-     *        submitted before the specified time. Jobs are returned in descending order, newest to oldest.
+     *        submitted after the specified time. Jobs are returned in descending order, newest to oldest.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

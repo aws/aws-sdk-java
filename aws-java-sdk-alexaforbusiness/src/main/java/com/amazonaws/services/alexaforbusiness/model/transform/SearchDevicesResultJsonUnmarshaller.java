@@ -50,7 +50,9 @@ public class SearchDevicesResultJsonUnmarshaller implements Unmarshaller<SearchD
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Devices", targetDepth)) {
                     context.nextToken();
-                    searchDevicesResult.setDevices(new ListUnmarshaller<DeviceData>(DeviceDataJsonUnmarshaller.getInstance()).unmarshall(context));
+                    searchDevicesResult.setDevices(new ListUnmarshaller<DeviceData>(DeviceDataJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

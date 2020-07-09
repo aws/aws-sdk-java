@@ -51,7 +51,9 @@ public class ListAssessmentRunAgentsResultJsonUnmarshaller implements Unmarshall
                 if (context.testExpression("assessmentRunAgents", targetDepth)) {
                     context.nextToken();
                     listAssessmentRunAgentsResult.setAssessmentRunAgents(new ListUnmarshaller<AssessmentRunAgent>(AssessmentRunAgentJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

@@ -50,11 +50,15 @@ public class ExpressionJsonUnmarshaller implements Unmarshaller<Expression, Json
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Or", targetDepth)) {
                     context.nextToken();
-                    expression.setOr(new ListUnmarshaller<Expression>(ExpressionJsonUnmarshaller.getInstance()).unmarshall(context));
+                    expression.setOr(new ListUnmarshaller<Expression>(ExpressionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("And", targetDepth)) {
                     context.nextToken();
-                    expression.setAnd(new ListUnmarshaller<Expression>(ExpressionJsonUnmarshaller.getInstance()).unmarshall(context));
+                    expression.setAnd(new ListUnmarshaller<Expression>(ExpressionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Not", targetDepth)) {
                     context.nextToken();

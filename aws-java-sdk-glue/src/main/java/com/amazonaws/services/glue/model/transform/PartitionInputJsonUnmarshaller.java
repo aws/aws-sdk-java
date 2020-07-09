@@ -50,7 +50,9 @@ public class PartitionInputJsonUnmarshaller implements Unmarshaller<PartitionInp
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Values", targetDepth)) {
                     context.nextToken();
-                    partitionInput.setValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    partitionInput.setValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("LastAccessTime", targetDepth)) {
                     context.nextToken();

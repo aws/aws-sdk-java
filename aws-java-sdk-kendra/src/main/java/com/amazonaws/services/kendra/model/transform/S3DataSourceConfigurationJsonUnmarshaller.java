@@ -54,11 +54,15 @@ public class S3DataSourceConfigurationJsonUnmarshaller implements Unmarshaller<S
                 }
                 if (context.testExpression("InclusionPrefixes", targetDepth)) {
                     context.nextToken();
-                    s3DataSourceConfiguration.setInclusionPrefixes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    s3DataSourceConfiguration.setInclusionPrefixes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ExclusionPatterns", targetDepth)) {
                     context.nextToken();
-                    s3DataSourceConfiguration.setExclusionPatterns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    s3DataSourceConfiguration.setExclusionPatterns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("DocumentsMetadataConfiguration", targetDepth)) {
                     context.nextToken();

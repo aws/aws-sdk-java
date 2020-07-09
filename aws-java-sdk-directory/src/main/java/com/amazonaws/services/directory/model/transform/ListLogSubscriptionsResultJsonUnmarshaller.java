@@ -51,7 +51,8 @@ public class ListLogSubscriptionsResultJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("LogSubscriptions", targetDepth)) {
                     context.nextToken();
                     listLogSubscriptionsResult.setLogSubscriptions(new ListUnmarshaller<LogSubscription>(LogSubscriptionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

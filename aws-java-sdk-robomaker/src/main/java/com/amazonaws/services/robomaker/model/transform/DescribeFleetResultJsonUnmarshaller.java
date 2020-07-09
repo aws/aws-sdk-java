@@ -58,7 +58,9 @@ public class DescribeFleetResultJsonUnmarshaller implements Unmarshaller<Describ
                 }
                 if (context.testExpression("robots", targetDepth)) {
                     context.nextToken();
-                    describeFleetResult.setRobots(new ListUnmarshaller<Robot>(RobotJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeFleetResult.setRobots(new ListUnmarshaller<Robot>(RobotJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();

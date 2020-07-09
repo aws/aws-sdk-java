@@ -50,7 +50,9 @@ public class PreviewAgentsResultJsonUnmarshaller implements Unmarshaller<Preview
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("agentPreviews", targetDepth)) {
                     context.nextToken();
-                    previewAgentsResult.setAgentPreviews(new ListUnmarshaller<AgentPreview>(AgentPreviewJsonUnmarshaller.getInstance()).unmarshall(context));
+                    previewAgentsResult.setAgentPreviews(new ListUnmarshaller<AgentPreview>(AgentPreviewJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

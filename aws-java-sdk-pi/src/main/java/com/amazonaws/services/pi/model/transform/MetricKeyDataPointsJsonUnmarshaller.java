@@ -54,7 +54,9 @@ public class MetricKeyDataPointsJsonUnmarshaller implements Unmarshaller<MetricK
                 }
                 if (context.testExpression("DataPoints", targetDepth)) {
                     context.nextToken();
-                    metricKeyDataPoints.setDataPoints(new ListUnmarshaller<DataPoint>(DataPointJsonUnmarshaller.getInstance()).unmarshall(context));
+                    metricKeyDataPoints.setDataPoints(new ListUnmarshaller<DataPoint>(DataPointJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

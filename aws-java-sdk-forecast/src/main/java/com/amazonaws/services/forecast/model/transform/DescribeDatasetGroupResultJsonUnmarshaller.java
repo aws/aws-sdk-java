@@ -58,7 +58,9 @@ public class DescribeDatasetGroupResultJsonUnmarshaller implements Unmarshaller<
                 }
                 if (context.testExpression("DatasetArns", targetDepth)) {
                     context.nextToken();
-                    describeDatasetGroupResult.setDatasetArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    describeDatasetGroupResult.setDatasetArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Domain", targetDepth)) {
                     context.nextToken();

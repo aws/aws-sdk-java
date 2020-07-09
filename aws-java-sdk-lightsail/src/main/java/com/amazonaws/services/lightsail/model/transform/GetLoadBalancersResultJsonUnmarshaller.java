@@ -50,7 +50,9 @@ public class GetLoadBalancersResultJsonUnmarshaller implements Unmarshaller<GetL
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("loadBalancers", targetDepth)) {
                     context.nextToken();
-                    getLoadBalancersResult.setLoadBalancers(new ListUnmarshaller<LoadBalancer>(LoadBalancerJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getLoadBalancersResult.setLoadBalancers(new ListUnmarshaller<LoadBalancer>(LoadBalancerJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextPageToken", targetDepth)) {
                     context.nextToken();

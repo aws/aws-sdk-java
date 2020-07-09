@@ -51,7 +51,8 @@ public class ListResourcesForTagOptionResultJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("ResourceDetails", targetDepth)) {
                     context.nextToken();
                     listResourcesForTagOptionResult.setResourceDetails(new ListUnmarshaller<ResourceDetail>(ResourceDetailJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("PageToken", targetDepth)) {
                     context.nextToken();

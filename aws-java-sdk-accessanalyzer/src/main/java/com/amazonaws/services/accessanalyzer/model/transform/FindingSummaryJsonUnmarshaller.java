@@ -50,7 +50,9 @@ public class FindingSummaryJsonUnmarshaller implements Unmarshaller<FindingSumma
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("action", targetDepth)) {
                     context.nextToken();
-                    findingSummary.setAction(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    findingSummary.setAction(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("analyzedAt", targetDepth)) {
                     context.nextToken();
@@ -96,7 +98,9 @@ public class FindingSummaryJsonUnmarshaller implements Unmarshaller<FindingSumma
                 }
                 if (context.testExpression("sources", targetDepth)) {
                     context.nextToken();
-                    findingSummary.setSources(new ListUnmarshaller<FindingSource>(FindingSourceJsonUnmarshaller.getInstance()).unmarshall(context));
+                    findingSummary.setSources(new ListUnmarshaller<FindingSource>(FindingSourceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();

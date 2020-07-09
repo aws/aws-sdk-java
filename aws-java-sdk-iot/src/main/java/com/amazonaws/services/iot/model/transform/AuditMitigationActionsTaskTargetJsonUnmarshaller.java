@@ -54,12 +54,16 @@ public class AuditMitigationActionsTaskTargetJsonUnmarshaller implements Unmarsh
                 }
                 if (context.testExpression("findingIds", targetDepth)) {
                     context.nextToken();
-                    auditMitigationActionsTaskTarget.setFindingIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    auditMitigationActionsTaskTarget.setFindingIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("auditCheckToReasonCodeFilter", targetDepth)) {
                     context.nextToken();
                     auditMitigationActionsTaskTarget.setAuditCheckToReasonCodeFilter(new MapUnmarshaller<String, java.util.List<String>>(context
-                            .getUnmarshaller(String.class), new ListUnmarshaller<String>(context.getUnmarshaller(String.class))).unmarshall(context));
+                            .getUnmarshaller(String.class), new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    ).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

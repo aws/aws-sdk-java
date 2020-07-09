@@ -51,7 +51,9 @@ public class ListIdentityPoolsResultJsonUnmarshaller implements Unmarshaller<Lis
                 if (context.testExpression("IdentityPools", targetDepth)) {
                     context.nextToken();
                     listIdentityPoolsResult.setIdentityPools(new ListUnmarshaller<IdentityPoolShortDescription>(IdentityPoolShortDescriptionJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

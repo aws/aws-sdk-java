@@ -54,7 +54,9 @@ public class InboxPlacementTrackingOptionJsonUnmarshaller implements Unmarshalle
                 }
                 if (context.testExpression("TrackedIsps", targetDepth)) {
                     context.nextToken();
-                    inboxPlacementTrackingOption.setTrackedIsps(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    inboxPlacementTrackingOption.setTrackedIsps(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

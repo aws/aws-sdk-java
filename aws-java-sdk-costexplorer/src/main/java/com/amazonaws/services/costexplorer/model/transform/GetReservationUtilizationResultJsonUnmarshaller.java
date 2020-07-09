@@ -51,7 +51,9 @@ public class GetReservationUtilizationResultJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("UtilizationsByTime", targetDepth)) {
                     context.nextToken();
                     getReservationUtilizationResult.setUtilizationsByTime(new ListUnmarshaller<UtilizationByTime>(UtilizationByTimeJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Total", targetDepth)) {
                     context.nextToken();

@@ -58,7 +58,9 @@ public class GetAccountResultJsonUnmarshaller implements Unmarshaller<GetAccount
                 }
                 if (context.testExpression("features", targetDepth)) {
                     context.nextToken();
-                    getAccountResult.setFeatures(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    getAccountResult.setFeatures(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("apiKeyVersion", targetDepth)) {
                     context.nextToken();

@@ -50,11 +50,15 @@ public class JobMessagesJsonUnmarshaller implements Unmarshaller<JobMessages, Js
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("info", targetDepth)) {
                     context.nextToken();
-                    jobMessages.setInfo(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    jobMessages.setInfo(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("warning", targetDepth)) {
                     context.nextToken();
-                    jobMessages.setWarning(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    jobMessages.setWarning(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

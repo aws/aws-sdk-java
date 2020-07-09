@@ -78,7 +78,9 @@ public class EventJsonUnmarshaller implements Unmarshaller<Event, JsonUnmarshall
                 }
                 if (context.testExpression("Resources", targetDepth)) {
                     context.nextToken();
-                    event.setResources(new ListUnmarshaller<Resource>(ResourceJsonUnmarshaller.getInstance()).unmarshall(context));
+                    event.setResources(new ListUnmarshaller<Resource>(ResourceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("CloudTrailEvent", targetDepth)) {
                     context.nextToken();

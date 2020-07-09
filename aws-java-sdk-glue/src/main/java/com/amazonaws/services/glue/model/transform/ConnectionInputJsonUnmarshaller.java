@@ -62,7 +62,9 @@ public class ConnectionInputJsonUnmarshaller implements Unmarshaller<ConnectionI
                 }
                 if (context.testExpression("MatchCriteria", targetDepth)) {
                     context.nextToken();
-                    connectionInput.setMatchCriteria(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    connectionInput.setMatchCriteria(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ConnectionProperties", targetDepth)) {
                     context.nextToken();

@@ -54,7 +54,9 @@ public class UpdateProductResultJsonUnmarshaller implements Unmarshaller<UpdateP
                 }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
-                    updateProductResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    updateProductResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

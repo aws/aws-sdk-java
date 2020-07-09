@@ -106,11 +106,15 @@ public class FindingJsonUnmarshaller implements Unmarshaller<Finding, JsonUnmars
                 }
                 if (context.testExpression("attributes", targetDepth)) {
                     context.nextToken();
-                    finding.setAttributes(new ListUnmarshaller<Attribute>(AttributeJsonUnmarshaller.getInstance()).unmarshall(context));
+                    finding.setAttributes(new ListUnmarshaller<Attribute>(AttributeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("userAttributes", targetDepth)) {
                     context.nextToken();
-                    finding.setUserAttributes(new ListUnmarshaller<Attribute>(AttributeJsonUnmarshaller.getInstance()).unmarshall(context));
+                    finding.setUserAttributes(new ListUnmarshaller<Attribute>(AttributeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();

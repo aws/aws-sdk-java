@@ -54,7 +54,9 @@ public class ParameterDefinitionJsonUnmarshaller implements Unmarshaller<Paramet
                 }
                 if (context.testExpression("allowedValues", targetDepth)) {
                     context.nextToken();
-                    parameterDefinition.setAllowedValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    parameterDefinition.setAllowedValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("constraintDescription", targetDepth)) {
                     context.nextToken();
@@ -94,7 +96,9 @@ public class ParameterDefinitionJsonUnmarshaller implements Unmarshaller<Paramet
                 }
                 if (context.testExpression("referencedByResources", targetDepth)) {
                     context.nextToken();
-                    parameterDefinition.setReferencedByResources(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    parameterDefinition.setReferencedByResources(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
                     context.nextToken();

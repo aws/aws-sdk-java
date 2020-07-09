@@ -50,7 +50,9 @@ public class ListFleetsResultJsonUnmarshaller implements Unmarshaller<ListFleets
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FleetSummaryList", targetDepth)) {
                     context.nextToken();
-                    listFleetsResult.setFleetSummaryList(new ListUnmarshaller<FleetSummary>(FleetSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listFleetsResult.setFleetSummaryList(new ListUnmarshaller<FleetSummary>(FleetSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

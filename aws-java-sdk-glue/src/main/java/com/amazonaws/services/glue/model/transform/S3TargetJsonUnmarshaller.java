@@ -54,7 +54,9 @@ public class S3TargetJsonUnmarshaller implements Unmarshaller<S3Target, JsonUnma
                 }
                 if (context.testExpression("Exclusions", targetDepth)) {
                     context.nextToken();
-                    s3Target.setExclusions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    s3Target.setExclusions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

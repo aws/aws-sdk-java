@@ -54,7 +54,9 @@ public class ListQueuesResultJsonUnmarshaller implements Unmarshaller<ListQueues
                 }
                 if (context.testExpression("queues", targetDepth)) {
                     context.nextToken();
-                    listQueuesResult.setQueues(new ListUnmarshaller<Queue>(QueueJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listQueuesResult.setQueues(new ListUnmarshaller<Queue>(QueueJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

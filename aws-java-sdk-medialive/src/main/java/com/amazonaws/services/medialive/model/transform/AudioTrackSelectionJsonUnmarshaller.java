@@ -50,7 +50,9 @@ public class AudioTrackSelectionJsonUnmarshaller implements Unmarshaller<AudioTr
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("tracks", targetDepth)) {
                     context.nextToken();
-                    audioTrackSelection.setTracks(new ListUnmarshaller<AudioTrack>(AudioTrackJsonUnmarshaller.getInstance()).unmarshall(context));
+                    audioTrackSelection.setTracks(new ListUnmarshaller<AudioTrack>(AudioTrackJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

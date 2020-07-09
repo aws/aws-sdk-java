@@ -54,7 +54,9 @@ public class ApplicationSourceJsonUnmarshaller implements Unmarshaller<Applicati
                 }
                 if (context.testExpression("TagFilters", targetDepth)) {
                     context.nextToken();
-                    applicationSource.setTagFilters(new ListUnmarshaller<TagFilter>(TagFilterJsonUnmarshaller.getInstance()).unmarshall(context));
+                    applicationSource.setTagFilters(new ListUnmarshaller<TagFilter>(TagFilterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -54,7 +54,9 @@ public class MetricJsonUnmarshaller implements Unmarshaller<Metric, JsonUnmarsha
                 }
                 if (context.testExpression("variables", targetDepth)) {
                     context.nextToken();
-                    metric.setVariables(new ListUnmarshaller<ExpressionVariable>(ExpressionVariableJsonUnmarshaller.getInstance()).unmarshall(context));
+                    metric.setVariables(new ListUnmarshaller<ExpressionVariable>(ExpressionVariableJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("window", targetDepth)) {
                     context.nextToken();

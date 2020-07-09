@@ -51,7 +51,9 @@ public class DescribeTimeBasedAutoScalingResultJsonUnmarshaller implements Unmar
                 if (context.testExpression("TimeBasedAutoScalingConfigurations", targetDepth)) {
                     context.nextToken();
                     describeTimeBasedAutoScalingResult.setTimeBasedAutoScalingConfigurations(new ListUnmarshaller<TimeBasedAutoScalingConfiguration>(
-                            TimeBasedAutoScalingConfigurationJsonUnmarshaller.getInstance()).unmarshall(context));
+                            TimeBasedAutoScalingConfigurationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -54,7 +54,9 @@ public class DocumentAttributeValueJsonUnmarshaller implements Unmarshaller<Docu
                 }
                 if (context.testExpression("StringListValue", targetDepth)) {
                     context.nextToken();
-                    documentAttributeValue.setStringListValue(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    documentAttributeValue.setStringListValue(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("LongValue", targetDepth)) {
                     context.nextToken();

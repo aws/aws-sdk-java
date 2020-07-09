@@ -51,7 +51,9 @@ public class ListResourceComplianceSummariesResultJsonUnmarshaller implements Un
                 if (context.testExpression("ResourceComplianceSummaryItems", targetDepth)) {
                     context.nextToken();
                     listResourceComplianceSummariesResult.setResourceComplianceSummaryItems(new ListUnmarshaller<ResourceComplianceSummaryItem>(
-                            ResourceComplianceSummaryItemJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ResourceComplianceSummaryItemJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

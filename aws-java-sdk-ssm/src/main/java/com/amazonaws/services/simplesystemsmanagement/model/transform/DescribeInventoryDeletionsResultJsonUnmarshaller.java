@@ -51,7 +51,9 @@ public class DescribeInventoryDeletionsResultJsonUnmarshaller implements Unmarsh
                 if (context.testExpression("InventoryDeletions", targetDepth)) {
                     context.nextToken();
                     describeInventoryDeletionsResult.setInventoryDeletions(new ListUnmarshaller<InventoryDeletionStatusItem>(
-                            InventoryDeletionStatusItemJsonUnmarshaller.getInstance()).unmarshall(context));
+                            InventoryDeletionStatusItemJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

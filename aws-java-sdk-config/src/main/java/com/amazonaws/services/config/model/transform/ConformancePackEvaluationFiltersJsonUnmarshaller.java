@@ -50,8 +50,9 @@ public class ConformancePackEvaluationFiltersJsonUnmarshaller implements Unmarsh
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ConfigRuleNames", targetDepth)) {
                     context.nextToken();
-                    conformancePackEvaluationFilters
-                            .setConfigRuleNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    conformancePackEvaluationFilters.setConfigRuleNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ComplianceType", targetDepth)) {
                     context.nextToken();
@@ -63,7 +64,9 @@ public class ConformancePackEvaluationFiltersJsonUnmarshaller implements Unmarsh
                 }
                 if (context.testExpression("ResourceIds", targetDepth)) {
                     context.nextToken();
-                    conformancePackEvaluationFilters.setResourceIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    conformancePackEvaluationFilters.setResourceIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

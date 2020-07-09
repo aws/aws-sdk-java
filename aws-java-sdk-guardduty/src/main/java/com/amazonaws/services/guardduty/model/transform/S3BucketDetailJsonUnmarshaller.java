@@ -70,7 +70,9 @@ public class S3BucketDetailJsonUnmarshaller implements Unmarshaller<S3BucketDeta
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
-                    s3BucketDetail.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    s3BucketDetail.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("defaultServerSideEncryption", targetDepth)) {
                     context.nextToken();

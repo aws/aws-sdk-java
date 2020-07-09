@@ -50,11 +50,15 @@ public class FiltersJsonUnmarshaller implements Unmarshaller<Filters, JsonUnmars
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Queues", targetDepth)) {
                     context.nextToken();
-                    filters.setQueues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    filters.setQueues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Channels", targetDepth)) {
                     context.nextToken();
-                    filters.setChannels(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    filters.setChannels(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

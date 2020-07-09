@@ -50,7 +50,9 @@ public class GetActiveNamesResultJsonUnmarshaller implements Unmarshaller<GetAct
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("activeNames", targetDepth)) {
                     context.nextToken();
-                    getActiveNamesResult.setActiveNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    getActiveNamesResult.setActiveNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextPageToken", targetDepth)) {
                     context.nextToken();

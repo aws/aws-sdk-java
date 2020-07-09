@@ -51,7 +51,8 @@ public class ListPoliciesForTargetResultJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("Policies", targetDepth)) {
                     context.nextToken();
                     listPoliciesForTargetResult.setPolicies(new ListUnmarshaller<PolicySummary>(PolicySummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

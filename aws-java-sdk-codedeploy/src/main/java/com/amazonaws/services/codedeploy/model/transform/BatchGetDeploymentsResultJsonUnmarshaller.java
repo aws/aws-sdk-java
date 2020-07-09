@@ -51,7 +51,8 @@ public class BatchGetDeploymentsResultJsonUnmarshaller implements Unmarshaller<B
                 if (context.testExpression("deploymentsInfo", targetDepth)) {
                     context.nextToken();
                     batchGetDeploymentsResult.setDeploymentsInfo(new ListUnmarshaller<DeploymentInfo>(DeploymentInfoJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

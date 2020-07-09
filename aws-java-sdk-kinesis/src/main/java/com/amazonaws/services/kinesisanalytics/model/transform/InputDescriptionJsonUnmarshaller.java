@@ -58,7 +58,9 @@ public class InputDescriptionJsonUnmarshaller implements Unmarshaller<InputDescr
                 }
                 if (context.testExpression("InAppStreamNames", targetDepth)) {
                     context.nextToken();
-                    inputDescription.setInAppStreamNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    inputDescription.setInAppStreamNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("InputProcessingConfigurationDescription", targetDepth)) {
                     context.nextToken();

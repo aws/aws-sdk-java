@@ -50,11 +50,15 @@ public class BatchGetReportsResultJsonUnmarshaller implements Unmarshaller<Batch
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("reports", targetDepth)) {
                     context.nextToken();
-                    batchGetReportsResult.setReports(new ListUnmarshaller<Report>(ReportJsonUnmarshaller.getInstance()).unmarshall(context));
+                    batchGetReportsResult.setReports(new ListUnmarshaller<Report>(ReportJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("reportsNotFound", targetDepth)) {
                     context.nextToken();
-                    batchGetReportsResult.setReportsNotFound(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    batchGetReportsResult.setReportsNotFound(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientConstructors", "ClientMutationMethods" ],
+    "deprecatedSuppressions" : [ "ClientConstructors", "EnumSetterOverload", "ClientMutationMethods" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -181,6 +181,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.personalizeruntime.request.GetPersonalizedRankingRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -249,6 +250,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the campaign to use for generating the personalized ranking.</p>\n@param campaignArn The Amazon Resource Name (ARN) of the campaign to use for generating the personalized ranking.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -356,6 +358,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -400,6 +403,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of items (itemId's) to rank. If an item was not included in the training dataset, the item is appended to the end of the reranked list. The maximum is 500.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setInputList(java.util.Collection)} or {@link #withInputList(java.util.Collection)} if you want to override the existing values.</p>\n@param inputList A list of items (itemId's) to rank. If an item was not included in the training dataset, the item is appended to the end of the reranked list. The maximum is 500.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -468,6 +472,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The user for which you want the campaign to provide a personalized ranking.</p>\n@param userId The user for which you want the campaign to provide a personalized ranking.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -581,6 +586,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -619,6 +625,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The contextual metadata to use when getting recommendations. Contextual metadata includes any interaction information that might be relevant when getting a user's recommendations, such as the user's current location or device type.</p>\n@param context The contextual metadata to use when getting recommendations. Contextual metadata includes any interaction information that might be relevant when getting a user's recommendations, such as the user's current location or device type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -689,6 +696,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the campaign to use for generating the personalized ranking.</p>\n@param campaignArn The Amazon Resource Name (ARN) of the campaign to use for generating the personalized ranking.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -803,6 +811,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -841,6 +850,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The contextual metadata to use when getting recommendations. Contextual metadata includes any interaction information that might be relevant when getting a user's recommendations, such as the user's current location or device type.</p>\n@param context The contextual metadata to use when getting recommendations. Contextual metadata includes any interaction information that might be relevant when getting a user's recommendations, such as the user's current location or device type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -949,6 +959,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -993,6 +1004,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of items (itemId's) to rank. If an item was not included in the training dataset, the item is appended to the end of the reranked list. The maximum is 500.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setInputList(java.util.Collection)} or {@link #withInputList(java.util.Collection)} if you want to override the existing values.</p>\n@param inputList A list of items (itemId's) to rank. If an item was not included in the training dataset, the item is appended to the end of the reranked list. The maximum is 500.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1062,6 +1074,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The user for which you want the campaign to provide a personalized ranking.</p>\n@param userId The user for which you want the campaign to provide a personalized ranking.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1077,6 +1090,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.personalizeruntime.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "campaignArn", "inputList", "userId" ],
@@ -1108,6 +1122,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.personalizeruntime.response.GetPersonalizedRankingResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1208,6 +1223,7 @@
               "variableSetterType" : "PredictedItem"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1252,6 +1268,7 @@
           "variableSetterType" : "java.util.Collection<PredictedItem>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of items in order of most likely interest to the user. The maximum is 500.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPersonalizedRanking(java.util.Collection)} or {@link #withPersonalizedRanking(java.util.Collection)} if you want to override the existing values.</p>\n@param personalizedRanking A list of items in order of most likely interest to the user. The maximum is 500.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1361,6 +1378,7 @@
                 "variableSetterType" : "PredictedItem"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1405,6 +1423,7 @@
             "variableSetterType" : "java.util.Collection<PredictedItem>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of items in order of most likely interest to the user. The maximum is 500.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPersonalizedRanking(java.util.Collection)} or {@link #withPersonalizedRanking(java.util.Collection)} if you want to override the existing values.</p>\n@param personalizedRanking A list of items in order of most likely interest to the user. The maximum is 500.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1420,6 +1439,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.personalizeruntime.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1454,6 +1474,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.personalizeruntime.request.GetRecommendationsRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1522,6 +1543,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the campaign to use for getting recommendations.</p>\n@param campaignArn The Amazon Resource Name (ARN) of the campaign to use for getting recommendations.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1590,6 +1612,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The item ID to provide recommendations for.</p> <p>Required for <code>RELATED_ITEMS</code> recipe type.</p>\n@param itemId The item ID to provide recommendations for.</p> <p>Required for <code>RELATED_ITEMS</code> recipe type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1658,6 +1681,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The user ID to provide recommendations for.</p> <p>Required for <code>USER_PERSONALIZATION</code> recipe type.</p>\n@param userId The user ID to provide recommendations for.</p> <p>Required for <code>USER_PERSONALIZATION</code> recipe type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1726,6 +1750,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The number of results to return. The default is 25. The maximum is 500.</p>\n@param numResults The number of results to return. The default is 25. The maximum is 500.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1839,6 +1864,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1877,6 +1903,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The contextual metadata to use when getting recommendations. Contextual metadata includes any interaction information that might be relevant when getting a user's recommendations, such as the user's current location or device type.</p>\n@param context The contextual metadata to use when getting recommendations. Contextual metadata includes any interaction information that might be relevant when getting a user's recommendations, such as the user's current location or device type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1945,6 +1972,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the filter to apply to the returned recommendations. For more information, see Using Filters with Amazon Personalize.</p>\n@param filterArn The ARN of the filter to apply to the returned recommendations. For more information, see Using Filters with Amazon Personalize.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2015,6 +2043,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the campaign to use for getting recommendations.</p>\n@param campaignArn The Amazon Resource Name (ARN) of the campaign to use for getting recommendations.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2129,6 +2158,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2167,6 +2197,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The contextual metadata to use when getting recommendations. Contextual metadata includes any interaction information that might be relevant when getting a user's recommendations, such as the user's current location or device type.</p>\n@param context The contextual metadata to use when getting recommendations. Contextual metadata includes any interaction information that might be relevant when getting a user's recommendations, such as the user's current location or device type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2236,6 +2267,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the filter to apply to the returned recommendations. For more information, see Using Filters with Amazon Personalize.</p>\n@param filterArn The ARN of the filter to apply to the returned recommendations. For more information, see Using Filters with Amazon Personalize.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2305,6 +2337,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The item ID to provide recommendations for.</p> <p>Required for <code>RELATED_ITEMS</code> recipe type.</p>\n@param itemId The item ID to provide recommendations for.</p> <p>Required for <code>RELATED_ITEMS</code> recipe type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2374,6 +2407,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The number of results to return. The default is 25. The maximum is 500.</p>\n@param numResults The number of results to return. The default is 25. The maximum is 500.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2443,6 +2477,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The user ID to provide recommendations for.</p> <p>Required for <code>USER_PERSONALIZATION</code> recipe type.</p>\n@param userId The user ID to provide recommendations for.</p> <p>Required for <code>USER_PERSONALIZATION</code> recipe type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2458,6 +2493,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.personalizeruntime.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "campaignArn" ],
@@ -2489,6 +2525,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.personalizeruntime.response.GetRecommendationsResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2589,6 +2626,7 @@
               "variableSetterType" : "PredictedItem"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2633,6 +2671,7 @@
           "variableSetterType" : "java.util.Collection<PredictedItem>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of recommendations sorted in ascending order by prediction score. There can be a maximum of 500 items in the list.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setItemList(java.util.Collection)} or {@link #withItemList(java.util.Collection)} if you want to override the existing values.</p>\n@param itemList A list of recommendations sorted in ascending order by prediction score. There can be a maximum of 500 items in the list.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2742,6 +2781,7 @@
                 "variableSetterType" : "PredictedItem"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2786,6 +2826,7 @@
             "variableSetterType" : "java.util.Collection<PredictedItem>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of recommendations sorted in ascending order by prediction score. There can be a maximum of 500 items in the list.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setItemList(java.util.Collection)} or {@link #withItemList(java.util.Collection)} if you want to override the existing values.</p>\n@param itemList A list of recommendations sorted in ascending order by prediction score. There can be a maximum of 500 items in the list.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2801,6 +2842,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.personalizeruntime.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2835,6 +2877,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InvalidInputException",
+      "fullyQualifiedName" : "com.amazonaws.services.personalizeruntime.exception.InvalidInputException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2843,6 +2886,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.personalizeruntime.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2874,6 +2918,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.personalizeruntime.model.PredictedItem",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2935,6 +2980,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The recommended item ID.</p>\n@param itemId The recommended item ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3003,6 +3049,7 @@
           "variableSetterType" : "Double"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A numeric representation of the model's certainty that the item will be the next user selection. For more information on scoring logic, see <a>how-scores-work</a>.</p>\n@param score A numeric representation of the model's certainty that the item will be the next user selection. For more information on scoring logic, see <a>how-scores-work</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3073,6 +3120,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The recommended item ID.</p>\n@param itemId The recommended item ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3142,6 +3190,7 @@
             "variableSetterType" : "Double"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A numeric representation of the model's certainty that the item will be the next user selection. For more information on scoring logic, see <a>how-scores-work</a>.</p>\n@param score A numeric representation of the model's certainty that the item will be the next user selection. For more information on scoring logic, see <a>how-scores-work</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3157,6 +3206,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.personalizeruntime.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3191,6 +3241,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ResourceNotFoundException",
+      "fullyQualifiedName" : "com.amazonaws.services.personalizeruntime.exception.ResourceNotFoundException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3199,6 +3250,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.personalizeruntime.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,

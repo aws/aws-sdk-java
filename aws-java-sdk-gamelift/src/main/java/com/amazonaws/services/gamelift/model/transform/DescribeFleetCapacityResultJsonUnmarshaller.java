@@ -51,7 +51,8 @@ public class DescribeFleetCapacityResultJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("FleetCapacity", targetDepth)) {
                     context.nextToken();
                     describeFleetCapacityResult.setFleetCapacity(new ListUnmarshaller<FleetCapacity>(FleetCapacityJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

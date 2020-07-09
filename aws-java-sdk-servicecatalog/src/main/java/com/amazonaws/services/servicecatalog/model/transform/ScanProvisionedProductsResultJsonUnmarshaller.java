@@ -51,7 +51,9 @@ public class ScanProvisionedProductsResultJsonUnmarshaller implements Unmarshall
                 if (context.testExpression("ProvisionedProducts", targetDepth)) {
                     context.nextToken();
                     scanProvisionedProductsResult.setProvisionedProducts(new ListUnmarshaller<ProvisionedProductDetail>(
-                            ProvisionedProductDetailJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ProvisionedProductDetailJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextPageToken", targetDepth)) {
                     context.nextToken();

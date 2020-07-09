@@ -55,7 +55,8 @@ public class ListXssMatchSetsResultJsonUnmarshaller implements Unmarshaller<List
                 if (context.testExpression("XssMatchSets", targetDepth)) {
                     context.nextToken();
                     listXssMatchSetsResult.setXssMatchSets(new ListUnmarshaller<XssMatchSetSummary>(XssMatchSetSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

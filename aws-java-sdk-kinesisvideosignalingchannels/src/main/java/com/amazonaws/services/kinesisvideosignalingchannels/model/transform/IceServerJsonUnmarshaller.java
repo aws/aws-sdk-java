@@ -50,7 +50,9 @@ public class IceServerJsonUnmarshaller implements Unmarshaller<IceServer, JsonUn
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Uris", targetDepth)) {
                     context.nextToken();
-                    iceServer.setUris(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    iceServer.setUris(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Username", targetDepth)) {
                     context.nextToken();

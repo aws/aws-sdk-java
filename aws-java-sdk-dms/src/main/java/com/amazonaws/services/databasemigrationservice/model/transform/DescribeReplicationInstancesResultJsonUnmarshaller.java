@@ -55,7 +55,9 @@ public class DescribeReplicationInstancesResultJsonUnmarshaller implements Unmar
                 if (context.testExpression("ReplicationInstances", targetDepth)) {
                     context.nextToken();
                     describeReplicationInstancesResult.setReplicationInstances(new ListUnmarshaller<ReplicationInstance>(ReplicationInstanceJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

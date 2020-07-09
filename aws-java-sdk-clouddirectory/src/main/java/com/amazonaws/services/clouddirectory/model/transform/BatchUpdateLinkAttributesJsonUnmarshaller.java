@@ -55,7 +55,8 @@ public class BatchUpdateLinkAttributesJsonUnmarshaller implements Unmarshaller<B
                 if (context.testExpression("AttributeUpdates", targetDepth)) {
                     context.nextToken();
                     batchUpdateLinkAttributes.setAttributeUpdates(new ListUnmarshaller<LinkAttributeUpdate>(LinkAttributeUpdateJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

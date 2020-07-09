@@ -342,10 +342,9 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Creates a running App for the specified UserProfile. Supported Apps are JupyterServer, KernelGateway, and
-     * TensorBoard. This operation is automatically invoked by Amazon SageMaker Studio upon access to the associated
-     * Domain, and when new kernel configurations are selected by the user. A user may have multiple Apps active
-     * simultaneously. UserProfiles are limited to 5 concurrently running Apps at a time.
+     * Creates a running App for the specified UserProfile. Supported Apps are JupyterServer and KernelGateway. This
+     * operation is automatically invoked by Amazon SageMaker Studio upon access to the associated Domain, and when new
+     * kernel configurations are selected by the user. A user may have multiple Apps active simultaneously.
      * </p>
      * 
      * @param createAppRequest
@@ -2809,6 +2808,65 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Use this operation to delete a worker task template (<code>HumanTaskUi</code>).
+     * </p>
+     * <p>
+     * To see a list of human task user interfaces (work task templates) in your account, use . When you delete a worker
+     * task template, it no longer appears when you call <code>ListHumanTaskUis</code>.
+     * </p>
+     * 
+     * @param deleteHumanTaskUiRequest
+     * @return Result of the DeleteHumanTaskUi operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DeleteHumanTaskUi
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteHumanTaskUi" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteHumanTaskUiResult deleteHumanTaskUi(DeleteHumanTaskUiRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteHumanTaskUi(request);
+    }
+
+    @SdkInternalApi
+    final DeleteHumanTaskUiResult executeDeleteHumanTaskUi(DeleteHumanTaskUiRequest deleteHumanTaskUiRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteHumanTaskUiRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteHumanTaskUiRequest> request = null;
+        Response<DeleteHumanTaskUiResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteHumanTaskUiRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteHumanTaskUiRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteHumanTaskUi");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteHumanTaskUiResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteHumanTaskUiResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes a model. The <code>DeleteModel</code> API deletes only the model entry that was created in Amazon
      * SageMaker when you called the <a>CreateModel</a> API. It does not delete model artifacts, inference code, or the
      * IAM role that you specified when creating the model.
@@ -3935,7 +3993,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Returns information about the requested human task user interface.
+     * Returns information about the requested human task user interface (worker task template).
      * </p>
      * 
      * @param describeHumanTaskUiRequest
@@ -8136,7 +8194,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
     /**
      * <p>
      * Restricts access to tasks assigned to workers in the specified workforce to those within specific ranges of IP
-     * addresses. You specify allowed IP addresses by creating a list of up to four <a
+     * addresses. You specify allowed IP addresses by creating a list of up to ten <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>.
      * </p>
      * <p>

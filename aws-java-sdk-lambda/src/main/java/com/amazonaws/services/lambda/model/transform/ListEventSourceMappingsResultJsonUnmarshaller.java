@@ -55,7 +55,9 @@ public class ListEventSourceMappingsResultJsonUnmarshaller implements Unmarshall
                 if (context.testExpression("EventSourceMappings", targetDepth)) {
                     context.nextToken();
                     listEventSourceMappingsResult.setEventSourceMappings(new ListUnmarshaller<EventSourceMappingConfiguration>(
-                            EventSourceMappingConfigurationJsonUnmarshaller.getInstance()).unmarshall(context));
+                            EventSourceMappingConfigurationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

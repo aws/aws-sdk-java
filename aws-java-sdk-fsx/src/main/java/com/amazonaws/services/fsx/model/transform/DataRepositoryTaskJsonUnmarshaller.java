@@ -78,7 +78,9 @@ public class DataRepositoryTaskJsonUnmarshaller implements Unmarshaller<DataRepo
                 }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
-                    dataRepositoryTask.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    dataRepositoryTask.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("FileSystemId", targetDepth)) {
                     context.nextToken();
@@ -86,7 +88,9 @@ public class DataRepositoryTaskJsonUnmarshaller implements Unmarshaller<DataRepo
                 }
                 if (context.testExpression("Paths", targetDepth)) {
                     context.nextToken();
-                    dataRepositoryTask.setPaths(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    dataRepositoryTask.setPaths(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("FailureDetails", targetDepth)) {
                     context.nextToken();

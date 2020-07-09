@@ -72,7 +72,9 @@ public class TrustedAdvisorCheckResultJsonUnmarshaller implements Unmarshaller<T
                 if (context.testExpression("flaggedResources", targetDepth)) {
                     context.nextToken();
                     trustedAdvisorCheckResult.setFlaggedResources(new ListUnmarshaller<TrustedAdvisorResourceDetail>(
-                            TrustedAdvisorResourceDetailJsonUnmarshaller.getInstance()).unmarshall(context));
+                            TrustedAdvisorResourceDetailJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

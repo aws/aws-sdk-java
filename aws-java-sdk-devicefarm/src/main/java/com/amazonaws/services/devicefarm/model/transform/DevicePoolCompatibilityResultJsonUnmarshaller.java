@@ -59,7 +59,9 @@ public class DevicePoolCompatibilityResultJsonUnmarshaller implements Unmarshall
                 if (context.testExpression("incompatibilityMessages", targetDepth)) {
                     context.nextToken();
                     devicePoolCompatibilityResult.setIncompatibilityMessages(new ListUnmarshaller<IncompatibilityMessage>(
-                            IncompatibilityMessageJsonUnmarshaller.getInstance()).unmarshall(context));
+                            IncompatibilityMessageJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

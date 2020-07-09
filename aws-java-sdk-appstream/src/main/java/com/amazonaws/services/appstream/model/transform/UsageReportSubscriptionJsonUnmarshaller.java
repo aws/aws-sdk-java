@@ -63,7 +63,9 @@ public class UsageReportSubscriptionJsonUnmarshaller implements Unmarshaller<Usa
                 if (context.testExpression("SubscriptionErrors", targetDepth)) {
                     context.nextToken();
                     usageReportSubscription.setSubscriptionErrors(new ListUnmarshaller<LastReportGenerationExecutionError>(
-                            LastReportGenerationExecutionErrorJsonUnmarshaller.getInstance()).unmarshall(context));
+                            LastReportGenerationExecutionErrorJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

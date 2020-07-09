@@ -50,7 +50,9 @@ public class GetAuthorizersResultJsonUnmarshaller implements Unmarshaller<GetAut
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("items", targetDepth)) {
                     context.nextToken();
-                    getAuthorizersResult.setItems(new ListUnmarshaller<Authorizer>(AuthorizerJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getAuthorizersResult.setItems(new ListUnmarshaller<Authorizer>(AuthorizerJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

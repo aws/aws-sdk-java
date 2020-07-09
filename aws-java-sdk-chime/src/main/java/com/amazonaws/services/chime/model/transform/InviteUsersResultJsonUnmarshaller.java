@@ -50,7 +50,9 @@ public class InviteUsersResultJsonUnmarshaller implements Unmarshaller<InviteUse
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Invites", targetDepth)) {
                     context.nextToken();
-                    inviteUsersResult.setInvites(new ListUnmarshaller<Invite>(InviteJsonUnmarshaller.getInstance()).unmarshall(context));
+                    inviteUsersResult.setInvites(new ListUnmarshaller<Invite>(InviteJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

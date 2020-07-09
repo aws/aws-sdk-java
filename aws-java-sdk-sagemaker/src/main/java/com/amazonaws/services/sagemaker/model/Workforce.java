@@ -55,7 +55,7 @@ public class Workforce implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date lastUpdatedDate;
     /**
      * <p>
-     * A list of one to four IP address ranges (<a
+     * A list of one to ten IP address ranges (<a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) to be added to the workforce
      * allow list.
      * </p>
@@ -202,13 +202,13 @@ public class Workforce implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of one to four IP address ranges (<a
+     * A list of one to ten IP address ranges (<a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) to be added to the workforce
      * allow list.
      * </p>
      * 
      * @param sourceIpConfig
-     *        A list of one to four IP address ranges (<a
+     *        A list of one to ten IP address ranges (<a
      *        href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) to be added to the
      *        workforce allow list.
      */
@@ -219,12 +219,12 @@ public class Workforce implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of one to four IP address ranges (<a
+     * A list of one to ten IP address ranges (<a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) to be added to the workforce
      * allow list.
      * </p>
      * 
-     * @return A list of one to four IP address ranges (<a
+     * @return A list of one to ten IP address ranges (<a
      *         href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) to be added to the
      *         workforce allow list.
      */
@@ -235,13 +235,13 @@ public class Workforce implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of one to four IP address ranges (<a
+     * A list of one to ten IP address ranges (<a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) to be added to the workforce
      * allow list.
      * </p>
      * 
      * @param sourceIpConfig
-     *        A list of one to four IP address ranges (<a
+     *        A list of one to ten IP address ranges (<a
      *        href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) to be added to the
      *        workforce allow list.
      * @return Returns a reference to this object so that method calls can be chained together.

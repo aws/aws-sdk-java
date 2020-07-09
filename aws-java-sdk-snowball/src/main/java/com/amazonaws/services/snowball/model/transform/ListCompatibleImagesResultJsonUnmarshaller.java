@@ -51,7 +51,8 @@ public class ListCompatibleImagesResultJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("CompatibleImages", targetDepth)) {
                     context.nextToken();
                     listCompatibleImagesResult.setCompatibleImages(new ListUnmarshaller<CompatibleImage>(CompatibleImageJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

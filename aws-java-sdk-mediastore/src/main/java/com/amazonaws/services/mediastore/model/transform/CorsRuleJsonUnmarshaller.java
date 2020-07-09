@@ -50,15 +50,21 @@ public class CorsRuleJsonUnmarshaller implements Unmarshaller<CorsRule, JsonUnma
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AllowedOrigins", targetDepth)) {
                     context.nextToken();
-                    corsRule.setAllowedOrigins(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    corsRule.setAllowedOrigins(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("AllowedMethods", targetDepth)) {
                     context.nextToken();
-                    corsRule.setAllowedMethods(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    corsRule.setAllowedMethods(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("AllowedHeaders", targetDepth)) {
                     context.nextToken();
-                    corsRule.setAllowedHeaders(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    corsRule.setAllowedHeaders(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("MaxAgeSeconds", targetDepth)) {
                     context.nextToken();
@@ -66,7 +72,9 @@ public class CorsRuleJsonUnmarshaller implements Unmarshaller<CorsRule, JsonUnma
                 }
                 if (context.testExpression("ExposeHeaders", targetDepth)) {
                     context.nextToken();
-                    corsRule.setExposeHeaders(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    corsRule.setExposeHeaders(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

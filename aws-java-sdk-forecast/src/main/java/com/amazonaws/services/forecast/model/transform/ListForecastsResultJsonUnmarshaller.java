@@ -50,7 +50,9 @@ public class ListForecastsResultJsonUnmarshaller implements Unmarshaller<ListFor
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Forecasts", targetDepth)) {
                     context.nextToken();
-                    listForecastsResult.setForecasts(new ListUnmarshaller<ForecastSummary>(ForecastSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listForecastsResult.setForecasts(new ListUnmarshaller<ForecastSummary>(ForecastSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

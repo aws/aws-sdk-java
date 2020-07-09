@@ -56,10 +56,10 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
     private String description;
     /**
      * <p>
-     * The ARN or alias of the AWS KMS customer master key (CMK) that's used to encrypt the <code>SecretString</code>
-     * and <code>SecretBinary</code> fields in each version of the secret. If you don't provide a key, then Secrets
-     * Manager defaults to encrypting the secret fields with the default KMS CMK (the one named
-     * <code>awssecretsmanager</code>) for this account.
+     * The ARN or alias of the AWS KMS customer master key (CMK) used to encrypt the <code>SecretString</code> and
+     * <code>SecretBinary</code> fields in each version of the secret. If you don't provide a key, then Secrets Manager
+     * defaults to encrypting the secret fields with the default KMS CMK, the key named <code>awssecretsmanager</code>,
+     * for this account.
      * </p>
      */
     private String kmsKeyId;
@@ -71,8 +71,8 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
     private Boolean rotationEnabled;
     /**
      * <p>
-     * The ARN of an AWS Lambda function that's invoked by Secrets Manager to rotate and expire the secret either
-     * automatically per the schedule or manually by a call to <a>RotateSecret</a>.
+     * The ARN of an AWS Lambda function invoked by Secrets Manager to rotate and expire the secret either automatically
+     * per the schedule or manually by a call to <a>RotateSecret</a>.
      * </p>
      */
     private String rotationLambdaARN;
@@ -103,7 +103,7 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
     private java.util.Date lastAccessedDate;
     /**
      * <p>
-     * The date and time on which this secret was deleted. Not present on active secrets. The secret can be recovered
+     * The date and time the deletion of the secret occurred. Not present on active secrets. The secret can be recovered
      * until the number of days in the recovery window has passed, as specified in the <code>RecoveryWindowInDays</code>
      * parameter of the <a>DeleteSecret</a> operation.
      * </p>
@@ -111,15 +111,15 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
     private java.util.Date deletedDate;
     /**
      * <p>
-     * The list of user-defined tags that are associated with the secret. To add tags to a secret, use
-     * <a>TagResource</a>. To remove tags, use <a>UntagResource</a>.
+     * The list of user-defined tags associated with the secret. To add tags to a secret, use <a>TagResource</a>. To
+     * remove tags, use <a>UntagResource</a>.
      * </p>
      */
     private java.util.List<Tag> tags;
     /**
      * <p>
      * A list of all of the currently assigned <code>SecretVersionStage</code> staging labels and the
-     * <code>SecretVersionId</code> that each is attached to. Staging labels are used to keep track of the different
+     * <code>SecretVersionId</code> attached to each one. Staging labels are used to keep track of the different
      * versions during the rotation process.
      * </p>
      * <note>
@@ -136,6 +136,12 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private String owningService;
+    /**
+     * <p>
+     * The date and time when a secret was created.
+     * </p>
+     */
+    private java.util.Date createdDate;
 
     /**
      * <p>
@@ -298,17 +304,17 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ARN or alias of the AWS KMS customer master key (CMK) that's used to encrypt the <code>SecretString</code>
-     * and <code>SecretBinary</code> fields in each version of the secret. If you don't provide a key, then Secrets
-     * Manager defaults to encrypting the secret fields with the default KMS CMK (the one named
-     * <code>awssecretsmanager</code>) for this account.
+     * The ARN or alias of the AWS KMS customer master key (CMK) used to encrypt the <code>SecretString</code> and
+     * <code>SecretBinary</code> fields in each version of the secret. If you don't provide a key, then Secrets Manager
+     * defaults to encrypting the secret fields with the default KMS CMK, the key named <code>awssecretsmanager</code>,
+     * for this account.
      * </p>
      * 
      * @param kmsKeyId
-     *        The ARN or alias of the AWS KMS customer master key (CMK) that's used to encrypt the
-     *        <code>SecretString</code> and <code>SecretBinary</code> fields in each version of the secret. If you don't
-     *        provide a key, then Secrets Manager defaults to encrypting the secret fields with the default KMS CMK (the
-     *        one named <code>awssecretsmanager</code>) for this account.
+     *        The ARN or alias of the AWS KMS customer master key (CMK) used to encrypt the <code>SecretString</code>
+     *        and <code>SecretBinary</code> fields in each version of the secret. If you don't provide a key, then
+     *        Secrets Manager defaults to encrypting the secret fields with the default KMS CMK, the key named
+     *        <code>awssecretsmanager</code>, for this account.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -317,16 +323,16 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ARN or alias of the AWS KMS customer master key (CMK) that's used to encrypt the <code>SecretString</code>
-     * and <code>SecretBinary</code> fields in each version of the secret. If you don't provide a key, then Secrets
-     * Manager defaults to encrypting the secret fields with the default KMS CMK (the one named
-     * <code>awssecretsmanager</code>) for this account.
+     * The ARN or alias of the AWS KMS customer master key (CMK) used to encrypt the <code>SecretString</code> and
+     * <code>SecretBinary</code> fields in each version of the secret. If you don't provide a key, then Secrets Manager
+     * defaults to encrypting the secret fields with the default KMS CMK, the key named <code>awssecretsmanager</code>,
+     * for this account.
      * </p>
      * 
-     * @return The ARN or alias of the AWS KMS customer master key (CMK) that's used to encrypt the
-     *         <code>SecretString</code> and <code>SecretBinary</code> fields in each version of the secret. If you
-     *         don't provide a key, then Secrets Manager defaults to encrypting the secret fields with the default KMS
-     *         CMK (the one named <code>awssecretsmanager</code>) for this account.
+     * @return The ARN or alias of the AWS KMS customer master key (CMK) used to encrypt the <code>SecretString</code>
+     *         and <code>SecretBinary</code> fields in each version of the secret. If you don't provide a key, then
+     *         Secrets Manager defaults to encrypting the secret fields with the default KMS CMK, the key named
+     *         <code>awssecretsmanager</code>, for this account.
      */
 
     public String getKmsKeyId() {
@@ -335,17 +341,17 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ARN or alias of the AWS KMS customer master key (CMK) that's used to encrypt the <code>SecretString</code>
-     * and <code>SecretBinary</code> fields in each version of the secret. If you don't provide a key, then Secrets
-     * Manager defaults to encrypting the secret fields with the default KMS CMK (the one named
-     * <code>awssecretsmanager</code>) for this account.
+     * The ARN or alias of the AWS KMS customer master key (CMK) used to encrypt the <code>SecretString</code> and
+     * <code>SecretBinary</code> fields in each version of the secret. If you don't provide a key, then Secrets Manager
+     * defaults to encrypting the secret fields with the default KMS CMK, the key named <code>awssecretsmanager</code>,
+     * for this account.
      * </p>
      * 
      * @param kmsKeyId
-     *        The ARN or alias of the AWS KMS customer master key (CMK) that's used to encrypt the
-     *        <code>SecretString</code> and <code>SecretBinary</code> fields in each version of the secret. If you don't
-     *        provide a key, then Secrets Manager defaults to encrypting the secret fields with the default KMS CMK (the
-     *        one named <code>awssecretsmanager</code>) for this account.
+     *        The ARN or alias of the AWS KMS customer master key (CMK) used to encrypt the <code>SecretString</code>
+     *        and <code>SecretBinary</code> fields in each version of the secret. If you don't provide a key, then
+     *        Secrets Manager defaults to encrypting the secret fields with the default KMS CMK, the key named
+     *        <code>awssecretsmanager</code>, for this account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -408,12 +414,12 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ARN of an AWS Lambda function that's invoked by Secrets Manager to rotate and expire the secret either
-     * automatically per the schedule or manually by a call to <a>RotateSecret</a>.
+     * The ARN of an AWS Lambda function invoked by Secrets Manager to rotate and expire the secret either automatically
+     * per the schedule or manually by a call to <a>RotateSecret</a>.
      * </p>
      * 
      * @param rotationLambdaARN
-     *        The ARN of an AWS Lambda function that's invoked by Secrets Manager to rotate and expire the secret either
+     *        The ARN of an AWS Lambda function invoked by Secrets Manager to rotate and expire the secret either
      *        automatically per the schedule or manually by a call to <a>RotateSecret</a>.
      */
 
@@ -423,12 +429,12 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ARN of an AWS Lambda function that's invoked by Secrets Manager to rotate and expire the secret either
-     * automatically per the schedule or manually by a call to <a>RotateSecret</a>.
+     * The ARN of an AWS Lambda function invoked by Secrets Manager to rotate and expire the secret either automatically
+     * per the schedule or manually by a call to <a>RotateSecret</a>.
      * </p>
      * 
-     * @return The ARN of an AWS Lambda function that's invoked by Secrets Manager to rotate and expire the secret
-     *         either automatically per the schedule or manually by a call to <a>RotateSecret</a>.
+     * @return The ARN of an AWS Lambda function invoked by Secrets Manager to rotate and expire the secret either
+     *         automatically per the schedule or manually by a call to <a>RotateSecret</a>.
      */
 
     public String getRotationLambdaARN() {
@@ -437,12 +443,12 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ARN of an AWS Lambda function that's invoked by Secrets Manager to rotate and expire the secret either
-     * automatically per the schedule or manually by a call to <a>RotateSecret</a>.
+     * The ARN of an AWS Lambda function invoked by Secrets Manager to rotate and expire the secret either automatically
+     * per the schedule or manually by a call to <a>RotateSecret</a>.
      * </p>
      * 
      * @param rotationLambdaARN
-     *        The ARN of an AWS Lambda function that's invoked by Secrets Manager to rotate and expire the secret either
+     *        The ARN of an AWS Lambda function invoked by Secrets Manager to rotate and expire the secret either
      *        automatically per the schedule or manually by a call to <a>RotateSecret</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -620,13 +626,13 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The date and time on which this secret was deleted. Not present on active secrets. The secret can be recovered
+     * The date and time the deletion of the secret occurred. Not present on active secrets. The secret can be recovered
      * until the number of days in the recovery window has passed, as specified in the <code>RecoveryWindowInDays</code>
      * parameter of the <a>DeleteSecret</a> operation.
      * </p>
      * 
      * @param deletedDate
-     *        The date and time on which this secret was deleted. Not present on active secrets. The secret can be
+     *        The date and time the deletion of the secret occurred. Not present on active secrets. The secret can be
      *        recovered until the number of days in the recovery window has passed, as specified in the
      *        <code>RecoveryWindowInDays</code> parameter of the <a>DeleteSecret</a> operation.
      */
@@ -637,12 +643,12 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The date and time on which this secret was deleted. Not present on active secrets. The secret can be recovered
+     * The date and time the deletion of the secret occurred. Not present on active secrets. The secret can be recovered
      * until the number of days in the recovery window has passed, as specified in the <code>RecoveryWindowInDays</code>
      * parameter of the <a>DeleteSecret</a> operation.
      * </p>
      * 
-     * @return The date and time on which this secret was deleted. Not present on active secrets. The secret can be
+     * @return The date and time the deletion of the secret occurred. Not present on active secrets. The secret can be
      *         recovered until the number of days in the recovery window has passed, as specified in the
      *         <code>RecoveryWindowInDays</code> parameter of the <a>DeleteSecret</a> operation.
      */
@@ -653,13 +659,13 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The date and time on which this secret was deleted. Not present on active secrets. The secret can be recovered
+     * The date and time the deletion of the secret occurred. Not present on active secrets. The secret can be recovered
      * until the number of days in the recovery window has passed, as specified in the <code>RecoveryWindowInDays</code>
      * parameter of the <a>DeleteSecret</a> operation.
      * </p>
      * 
      * @param deletedDate
-     *        The date and time on which this secret was deleted. Not present on active secrets. The secret can be
+     *        The date and time the deletion of the secret occurred. Not present on active secrets. The secret can be
      *        recovered until the number of days in the recovery window has passed, as specified in the
      *        <code>RecoveryWindowInDays</code> parameter of the <a>DeleteSecret</a> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -672,11 +678,11 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The list of user-defined tags that are associated with the secret. To add tags to a secret, use
-     * <a>TagResource</a>. To remove tags, use <a>UntagResource</a>.
+     * The list of user-defined tags associated with the secret. To add tags to a secret, use <a>TagResource</a>. To
+     * remove tags, use <a>UntagResource</a>.
      * </p>
      * 
-     * @return The list of user-defined tags that are associated with the secret. To add tags to a secret, use
+     * @return The list of user-defined tags associated with the secret. To add tags to a secret, use
      *         <a>TagResource</a>. To remove tags, use <a>UntagResource</a>.
      */
 
@@ -686,13 +692,13 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The list of user-defined tags that are associated with the secret. To add tags to a secret, use
-     * <a>TagResource</a>. To remove tags, use <a>UntagResource</a>.
+     * The list of user-defined tags associated with the secret. To add tags to a secret, use <a>TagResource</a>. To
+     * remove tags, use <a>UntagResource</a>.
      * </p>
      * 
      * @param tags
-     *        The list of user-defined tags that are associated with the secret. To add tags to a secret, use
-     *        <a>TagResource</a>. To remove tags, use <a>UntagResource</a>.
+     *        The list of user-defined tags associated with the secret. To add tags to a secret, use <a>TagResource</a>.
+     *        To remove tags, use <a>UntagResource</a>.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -706,8 +712,8 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The list of user-defined tags that are associated with the secret. To add tags to a secret, use
-     * <a>TagResource</a>. To remove tags, use <a>UntagResource</a>.
+     * The list of user-defined tags associated with the secret. To add tags to a secret, use <a>TagResource</a>. To
+     * remove tags, use <a>UntagResource</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -716,8 +722,8 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param tags
-     *        The list of user-defined tags that are associated with the secret. To add tags to a secret, use
-     *        <a>TagResource</a>. To remove tags, use <a>UntagResource</a>.
+     *        The list of user-defined tags associated with the secret. To add tags to a secret, use <a>TagResource</a>.
+     *        To remove tags, use <a>UntagResource</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -733,13 +739,13 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The list of user-defined tags that are associated with the secret. To add tags to a secret, use
-     * <a>TagResource</a>. To remove tags, use <a>UntagResource</a>.
+     * The list of user-defined tags associated with the secret. To add tags to a secret, use <a>TagResource</a>. To
+     * remove tags, use <a>UntagResource</a>.
      * </p>
      * 
      * @param tags
-     *        The list of user-defined tags that are associated with the secret. To add tags to a secret, use
-     *        <a>TagResource</a>. To remove tags, use <a>UntagResource</a>.
+     *        The list of user-defined tags associated with the secret. To add tags to a secret, use <a>TagResource</a>.
+     *        To remove tags, use <a>UntagResource</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -751,7 +757,7 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * A list of all of the currently assigned <code>SecretVersionStage</code> staging labels and the
-     * <code>SecretVersionId</code> that each is attached to. Staging labels are used to keep track of the different
+     * <code>SecretVersionId</code> attached to each one. Staging labels are used to keep track of the different
      * versions during the rotation process.
      * </p>
      * <note>
@@ -762,8 +768,8 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
      * </note>
      * 
      * @return A list of all of the currently assigned <code>SecretVersionStage</code> staging labels and the
-     *         <code>SecretVersionId</code> that each is attached to. Staging labels are used to keep track of the
-     *         different versions during the rotation process.</p> <note>
+     *         <code>SecretVersionId</code> attached to each one. Staging labels are used to keep track of the different
+     *         versions during the rotation process.</p> <note>
      *         <p>
      *         A version that does not have any <code>SecretVersionStage</code> is considered deprecated and subject to
      *         deletion. Such versions are not included in this list.
@@ -777,7 +783,7 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * A list of all of the currently assigned <code>SecretVersionStage</code> staging labels and the
-     * <code>SecretVersionId</code> that each is attached to. Staging labels are used to keep track of the different
+     * <code>SecretVersionId</code> attached to each one. Staging labels are used to keep track of the different
      * versions during the rotation process.
      * </p>
      * <note>
@@ -789,8 +795,8 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
      * 
      * @param secretVersionsToStages
      *        A list of all of the currently assigned <code>SecretVersionStage</code> staging labels and the
-     *        <code>SecretVersionId</code> that each is attached to. Staging labels are used to keep track of the
-     *        different versions during the rotation process.</p> <note>
+     *        <code>SecretVersionId</code> attached to each one. Staging labels are used to keep track of the different
+     *        versions during the rotation process.</p> <note>
      *        <p>
      *        A version that does not have any <code>SecretVersionStage</code> is considered deprecated and subject to
      *        deletion. Such versions are not included in this list.
@@ -804,7 +810,7 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * A list of all of the currently assigned <code>SecretVersionStage</code> staging labels and the
-     * <code>SecretVersionId</code> that each is attached to. Staging labels are used to keep track of the different
+     * <code>SecretVersionId</code> attached to each one. Staging labels are used to keep track of the different
      * versions during the rotation process.
      * </p>
      * <note>
@@ -816,8 +822,8 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
      * 
      * @param secretVersionsToStages
      *        A list of all of the currently assigned <code>SecretVersionStage</code> staging labels and the
-     *        <code>SecretVersionId</code> that each is attached to. Staging labels are used to keep track of the
-     *        different versions during the rotation process.</p> <note>
+     *        <code>SecretVersionId</code> attached to each one. Staging labels are used to keep track of the different
+     *        versions during the rotation process.</p> <note>
      *        <p>
      *        A version that does not have any <code>SecretVersionStage</code> is considered deprecated and subject to
      *        deletion. Such versions are not included in this list.
@@ -899,6 +905,46 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The date and time when a secret was created.
+     * </p>
+     * 
+     * @param createdDate
+     *        The date and time when a secret was created.
+     */
+
+    public void setCreatedDate(java.util.Date createdDate) {
+        this.createdDate = createdDate;
+    }
+
+    /**
+     * <p>
+     * The date and time when a secret was created.
+     * </p>
+     * 
+     * @return The date and time when a secret was created.
+     */
+
+    public java.util.Date getCreatedDate() {
+        return this.createdDate;
+    }
+
+    /**
+     * <p>
+     * The date and time when a secret was created.
+     * </p>
+     * 
+     * @param createdDate
+     *        The date and time when a secret was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SecretListEntry withCreatedDate(java.util.Date createdDate) {
+        setCreatedDate(createdDate);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -937,7 +983,9 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
         if (getSecretVersionsToStages() != null)
             sb.append("SecretVersionsToStages: ").append(getSecretVersionsToStages()).append(",");
         if (getOwningService() != null)
-            sb.append("OwningService: ").append(getOwningService());
+            sb.append("OwningService: ").append(getOwningService()).append(",");
+        if (getCreatedDate() != null)
+            sb.append("CreatedDate: ").append(getCreatedDate());
         sb.append("}");
         return sb.toString();
     }
@@ -1008,6 +1056,10 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getOwningService() != null && other.getOwningService().equals(this.getOwningService()) == false)
             return false;
+        if (other.getCreatedDate() == null ^ this.getCreatedDate() == null)
+            return false;
+        if (other.getCreatedDate() != null && other.getCreatedDate().equals(this.getCreatedDate()) == false)
+            return false;
         return true;
     }
 
@@ -1030,6 +1082,7 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getSecretVersionsToStages() == null) ? 0 : getSecretVersionsToStages().hashCode());
         hashCode = prime * hashCode + ((getOwningService() == null) ? 0 : getOwningService().hashCode());
+        hashCode = prime * hashCode + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
         return hashCode;
     }
 

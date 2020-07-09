@@ -51,7 +51,8 @@ public class DescribeMatchmakingResultJsonUnmarshaller implements Unmarshaller<D
                 if (context.testExpression("TicketList", targetDepth)) {
                     context.nextToken();
                     describeMatchmakingResult.setTicketList(new ListUnmarshaller<MatchmakingTicket>(MatchmakingTicketJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

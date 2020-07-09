@@ -53,7 +53,7 @@ import com.amazonaws.services.ebs.model.transform.*;
  * <p>
  * You can use the Amazon Elastic Block Store (EBS) direct APIs to directly read the data on your EBS snapshots, and
  * identify the difference between two snapshots. You can view the details of blocks in an EBS snapshot, compare the
- * block difference between two snapshots, and directly access the data in a snapshot. If you’re an independent software
+ * block difference between two snapshots, and directly access the data in a snapshot. If you're an independent software
  * vendor (ISV) who offers backup services for EBS, the EBS direct APIs make it easier and more cost-effective to track
  * incremental changes on your EBS volumes via EBS snapshots. This can be done without having to create new volumes from
  * EBS snapshots.
@@ -93,11 +93,29 @@ public class AmazonEBSClient extends AmazonWebServiceClient implements AmazonEBS
                     .withSupportsIon(false)
                     .withContentTypeOverride("")
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ebs.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
                                     com.amazonaws.services.ebs.model.transform.ValidationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ebs.model.transform.ConflictExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("RequestThrottledException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ebs.model.transform.RequestThrottledExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.ebs.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceQuotaExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ebs.model.transform.ServiceQuotaExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConcurrentLimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ebs.model.transform.ConcurrentLimitExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ebs.model.transform.InternalServerExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.ebs.model.AmazonEBSException.class));
 
     public static AmazonEBSClientBuilder builder() {
@@ -148,15 +166,90 @@ public class AmazonEBSClient extends AmazonWebServiceClient implements AmazonEBS
 
     /**
      * <p>
+     * Seals and completes the snapshot after all of the required blocks of data have been written to it. Completing the
+     * snapshot changes the status to <code>completed</code>. You cannot write new blocks to a snapshot after it has
+     * been completed.
+     * </p>
+     * 
+     * @param completeSnapshotRequest
+     * @return Result of the CompleteSnapshot operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints of the EBS direct APIs.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws RequestThrottledException
+     *         The number of API requests has exceed the maximum allowed API request throttling limit.
+     * @throws ServiceQuotaExceededException
+     *         Your current service quotas do not allow you to perform this action.
+     * @throws InternalServerException
+     *         An internal error has occurred.
+     * @sample AmazonEBS.CompleteSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ebs-2019-11-02/CompleteSnapshot" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CompleteSnapshotResult completeSnapshot(CompleteSnapshotRequest request) {
+        request = beforeClientExecution(request);
+        return executeCompleteSnapshot(request);
+    }
+
+    @SdkInternalApi
+    final CompleteSnapshotResult executeCompleteSnapshot(CompleteSnapshotRequest completeSnapshotRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(completeSnapshotRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CompleteSnapshotRequest> request = null;
+        Response<CompleteSnapshotResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CompleteSnapshotRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(completeSnapshotRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EBS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CompleteSnapshot");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CompleteSnapshotResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CompleteSnapshotResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns the data in a block in an Amazon Elastic Block Store snapshot.
      * </p>
      * 
      * @param getSnapshotBlockRequest
      * @return Result of the GetSnapshotBlock operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
      * @throws ValidationException
      *         The input fails to satisfy the constraints of the EBS direct APIs.
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
+     * @throws RequestThrottledException
+     *         The number of API requests has exceed the maximum allowed API request throttling limit.
+     * @throws ServiceQuotaExceededException
+     *         Your current service quotas do not allow you to perform this action.
+     * @throws InternalServerException
+     *         An internal error has occurred.
      * @sample AmazonEBS.GetSnapshotBlock
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ebs-2019-11-02/GetSnapshotBlock" target="_top">AWS API
      *      Documentation</a>
@@ -213,10 +306,18 @@ public class AmazonEBSClient extends AmazonWebServiceClient implements AmazonEBS
      * 
      * @param listChangedBlocksRequest
      * @return Result of the ListChangedBlocks operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
      * @throws ValidationException
      *         The input fails to satisfy the constraints of the EBS direct APIs.
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
+     * @throws RequestThrottledException
+     *         The number of API requests has exceed the maximum allowed API request throttling limit.
+     * @throws ServiceQuotaExceededException
+     *         Your current service quotas do not allow you to perform this action.
+     * @throws InternalServerException
+     *         An internal error has occurred.
      * @sample AmazonEBS.ListChangedBlocks
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ebs-2019-11-02/ListChangedBlocks" target="_top">AWS API
      *      Documentation</a>
@@ -270,10 +371,18 @@ public class AmazonEBSClient extends AmazonWebServiceClient implements AmazonEBS
      * 
      * @param listSnapshotBlocksRequest
      * @return Result of the ListSnapshotBlocks operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
      * @throws ValidationException
      *         The input fails to satisfy the constraints of the EBS direct APIs.
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
+     * @throws RequestThrottledException
+     *         The number of API requests has exceed the maximum allowed API request throttling limit.
+     * @throws ServiceQuotaExceededException
+     *         Your current service quotas do not allow you to perform this action.
+     * @throws InternalServerException
+     *         An internal error has occurred.
      * @sample AmazonEBS.ListSnapshotBlocks
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ebs-2019-11-02/ListSnapshotBlocks" target="_top">AWS API
      *      Documentation</a>
@@ -310,6 +419,153 @@ public class AmazonEBSClient extends AmazonWebServiceClient implements AmazonEBS
 
             HttpResponseHandler<AmazonWebServiceResponse<ListSnapshotBlocksResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListSnapshotBlocksResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Writes a block of data to a block in the snapshot. If the specified block contains data, the existing data is
+     * overwritten. The target snapshot must be in the <code>pending</code> state.
+     * </p>
+     * <p>
+     * Data written to a snapshot must be aligned with 512-byte sectors.
+     * </p>
+     * 
+     * @param putSnapshotBlockRequest
+     * @return Result of the PutSnapshotBlock operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints of the EBS direct APIs.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws RequestThrottledException
+     *         The number of API requests has exceed the maximum allowed API request throttling limit.
+     * @throws ServiceQuotaExceededException
+     *         Your current service quotas do not allow you to perform this action.
+     * @throws InternalServerException
+     *         An internal error has occurred.
+     * @sample AmazonEBS.PutSnapshotBlock
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ebs-2019-11-02/PutSnapshotBlock" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public PutSnapshotBlockResult putSnapshotBlock(PutSnapshotBlockRequest request) {
+        request = beforeClientExecution(request);
+        return executePutSnapshotBlock(request);
+    }
+
+    @SdkInternalApi
+    final PutSnapshotBlockResult executePutSnapshotBlock(PutSnapshotBlockRequest putSnapshotBlockRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putSnapshotBlockRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutSnapshotBlockRequest> request = null;
+        Response<PutSnapshotBlockResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutSnapshotBlockRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putSnapshotBlockRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EBS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutSnapshotBlock");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+                request.addHandlerContext(HandlerContextKey.HAS_STREAMING_INPUT, Boolean.TRUE);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutSnapshotBlockResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutSnapshotBlockResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a new Amazon EBS snapshot. The new snapshot enters the <code>pending</code> state after the request
+     * completes.
+     * </p>
+     * <p>
+     * After creating the snapshot, use <a
+     * href="https://docs.aws.amazon.com/ebs/latest/APIReference/API_PutSnapshotBlock.html"> PutSnapshotBlock</a> to
+     * write blocks of data to the snapshot.
+     * </p>
+     * 
+     * @param startSnapshotRequest
+     * @return Result of the StartSnapshot operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints of the EBS direct APIs.
+     * @throws RequestThrottledException
+     *         The number of API requests has exceed the maximum allowed API request throttling limit.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ServiceQuotaExceededException
+     *         Your current service quotas do not allow you to perform this action.
+     * @throws InternalServerException
+     *         An internal error has occurred.
+     * @throws ConcurrentLimitExceededException
+     *         You have reached the limit for concurrent API requests. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-accessing-snapshot.html#ebsapi-performance"
+     *         >Optimizing performance of the EBS direct APIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * @throws ConflictException
+     *         The request uses the same client token as a previous, but non-identical request.
+     * @sample AmazonEBS.StartSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ebs-2019-11-02/StartSnapshot" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public StartSnapshotResult startSnapshot(StartSnapshotRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartSnapshot(request);
+    }
+
+    @SdkInternalApi
+    final StartSnapshotResult executeStartSnapshot(StartSnapshotRequest startSnapshotRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startSnapshotRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartSnapshotRequest> request = null;
+        Response<StartSnapshotResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartSnapshotRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startSnapshotRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EBS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartSnapshot");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartSnapshotResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartSnapshotResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

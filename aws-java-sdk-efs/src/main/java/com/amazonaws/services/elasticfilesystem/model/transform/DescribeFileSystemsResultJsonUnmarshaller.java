@@ -55,7 +55,8 @@ public class DescribeFileSystemsResultJsonUnmarshaller implements Unmarshaller<D
                 if (context.testExpression("FileSystems", targetDepth)) {
                     context.nextToken();
                     describeFileSystemsResult.setFileSystems(new ListUnmarshaller<FileSystemDescription>(FileSystemDescriptionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextMarker", targetDepth)) {
                     context.nextToken();

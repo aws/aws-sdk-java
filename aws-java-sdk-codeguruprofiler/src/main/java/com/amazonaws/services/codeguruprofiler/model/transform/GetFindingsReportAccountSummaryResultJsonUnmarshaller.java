@@ -55,7 +55,9 @@ public class GetFindingsReportAccountSummaryResultJsonUnmarshaller implements Un
                 if (context.testExpression("reportSummaries", targetDepth)) {
                     context.nextToken();
                     getFindingsReportAccountSummaryResult.setReportSummaries(new ListUnmarshaller<FindingsReportSummary>(FindingsReportSummaryJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

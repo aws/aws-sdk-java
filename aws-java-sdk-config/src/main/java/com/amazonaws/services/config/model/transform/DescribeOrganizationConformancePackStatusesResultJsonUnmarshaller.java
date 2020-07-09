@@ -53,7 +53,9 @@ public class DescribeOrganizationConformancePackStatusesResultJsonUnmarshaller i
                     context.nextToken();
                     describeOrganizationConformancePackStatusesResult
                             .setOrganizationConformancePackStatuses(new ListUnmarshaller<OrganizationConformancePackStatus>(
-                                    OrganizationConformancePackStatusJsonUnmarshaller.getInstance()).unmarshall(context));
+                                    OrganizationConformancePackStatusJsonUnmarshaller.getInstance())
+
+                            .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

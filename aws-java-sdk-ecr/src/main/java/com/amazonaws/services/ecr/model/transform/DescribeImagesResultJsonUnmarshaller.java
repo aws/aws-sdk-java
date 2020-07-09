@@ -50,7 +50,9 @@ public class DescribeImagesResultJsonUnmarshaller implements Unmarshaller<Descri
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("imageDetails", targetDepth)) {
                     context.nextToken();
-                    describeImagesResult.setImageDetails(new ListUnmarshaller<ImageDetail>(ImageDetailJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeImagesResult.setImageDetails(new ListUnmarshaller<ImageDetail>(ImageDetailJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

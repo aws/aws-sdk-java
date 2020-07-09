@@ -54,7 +54,9 @@ public class DetectDocumentTextResultJsonUnmarshaller implements Unmarshaller<De
                 }
                 if (context.testExpression("Blocks", targetDepth)) {
                     context.nextToken();
-                    detectDocumentTextResult.setBlocks(new ListUnmarshaller<Block>(BlockJsonUnmarshaller.getInstance()).unmarshall(context));
+                    detectDocumentTextResult.setBlocks(new ListUnmarshaller<Block>(BlockJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("DetectDocumentTextModelVersion", targetDepth)) {
                     context.nextToken();

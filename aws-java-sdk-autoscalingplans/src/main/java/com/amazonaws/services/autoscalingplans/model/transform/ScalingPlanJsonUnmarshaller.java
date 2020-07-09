@@ -63,7 +63,8 @@ public class ScalingPlanJsonUnmarshaller implements Unmarshaller<ScalingPlan, Js
                 if (context.testExpression("ScalingInstructions", targetDepth)) {
                     context.nextToken();
                     scalingPlan.setScalingInstructions(new ListUnmarshaller<ScalingInstruction>(ScalingInstructionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("StatusCode", targetDepth)) {
                     context.nextToken();

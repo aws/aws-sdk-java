@@ -50,7 +50,9 @@ public class GetStaticIpsResultJsonUnmarshaller implements Unmarshaller<GetStati
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("staticIps", targetDepth)) {
                     context.nextToken();
-                    getStaticIpsResult.setStaticIps(new ListUnmarshaller<StaticIp>(StaticIpJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getStaticIpsResult.setStaticIps(new ListUnmarshaller<StaticIp>(StaticIpJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextPageToken", targetDepth)) {
                     context.nextToken();

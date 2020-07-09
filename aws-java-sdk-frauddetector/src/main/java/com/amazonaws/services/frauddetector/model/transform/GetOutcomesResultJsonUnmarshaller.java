@@ -50,7 +50,9 @@ public class GetOutcomesResultJsonUnmarshaller implements Unmarshaller<GetOutcom
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("outcomes", targetDepth)) {
                     context.nextToken();
-                    getOutcomesResult.setOutcomes(new ListUnmarshaller<Outcome>(OutcomeJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getOutcomesResult.setOutcomes(new ListUnmarshaller<Outcome>(OutcomeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

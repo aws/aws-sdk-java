@@ -62,7 +62,9 @@ public class CreateRobotApplicationVersionResultJsonUnmarshaller implements Unma
                 }
                 if (context.testExpression("sources", targetDepth)) {
                     context.nextToken();
-                    createRobotApplicationVersionResult.setSources(new ListUnmarshaller<Source>(SourceJsonUnmarshaller.getInstance()).unmarshall(context));
+                    createRobotApplicationVersionResult.setSources(new ListUnmarshaller<Source>(SourceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("robotSoftwareSuite", targetDepth)) {
                     context.nextToken();

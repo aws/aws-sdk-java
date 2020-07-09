@@ -54,7 +54,9 @@ public class DecimalParameterJsonUnmarshaller implements Unmarshaller<DecimalPar
                 }
                 if (context.testExpression("Values", targetDepth)) {
                     context.nextToken();
-                    decimalParameter.setValues(new ListUnmarshaller<Double>(context.getUnmarshaller(Double.class)).unmarshall(context));
+                    decimalParameter.setValues(new ListUnmarshaller<Double>(context.getUnmarshaller(Double.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

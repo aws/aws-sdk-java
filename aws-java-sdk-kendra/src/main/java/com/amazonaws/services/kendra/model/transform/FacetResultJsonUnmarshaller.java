@@ -55,7 +55,9 @@ public class FacetResultJsonUnmarshaller implements Unmarshaller<FacetResult, Js
                 if (context.testExpression("DocumentAttributeValueCountPairs", targetDepth)) {
                     context.nextToken();
                     facetResult.setDocumentAttributeValueCountPairs(new ListUnmarshaller<DocumentAttributeValueCountPair>(
-                            DocumentAttributeValueCountPairJsonUnmarshaller.getInstance()).unmarshall(context));
+                            DocumentAttributeValueCountPairJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

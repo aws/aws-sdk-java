@@ -58,7 +58,9 @@ public class CommandJsonUnmarshaller implements Unmarshaller<Command, JsonUnmars
                 }
                 if (context.testExpression("Args", targetDepth)) {
                     context.nextToken();
-                    command.setArgs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    command.setArgs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

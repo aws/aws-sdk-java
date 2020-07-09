@@ -96,7 +96,9 @@ public class BranchJsonUnmarshaller implements Unmarshaller<Branch, JsonUnmarsha
                 }
                 if (context.testExpression("customDomains", targetDepth)) {
                     context.nextToken();
-                    branch.setCustomDomains(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    branch.setCustomDomains(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("framework", targetDepth)) {
                     context.nextToken();
@@ -132,7 +134,9 @@ public class BranchJsonUnmarshaller implements Unmarshaller<Branch, JsonUnmarsha
                 }
                 if (context.testExpression("associatedResources", targetDepth)) {
                     context.nextToken();
-                    branch.setAssociatedResources(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    branch.setAssociatedResources(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("enablePullRequestPreview", targetDepth)) {
                     context.nextToken();

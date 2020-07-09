@@ -51,7 +51,8 @@ public class ListContactFlowsResultJsonUnmarshaller implements Unmarshaller<List
                 if (context.testExpression("ContactFlowSummaryList", targetDepth)) {
                     context.nextToken();
                     listContactFlowsResult.setContactFlowSummaryList(new ListUnmarshaller<ContactFlowSummary>(ContactFlowSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

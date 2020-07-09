@@ -51,7 +51,9 @@ public class DescribeVpcPeeringConnectionsResultJsonUnmarshaller implements Unma
                 if (context.testExpression("VpcPeeringConnections", targetDepth)) {
                     context.nextToken();
                     describeVpcPeeringConnectionsResult.setVpcPeeringConnections(new ListUnmarshaller<VpcPeeringConnection>(
-                            VpcPeeringConnectionJsonUnmarshaller.getInstance()).unmarshall(context));
+                            VpcPeeringConnectionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

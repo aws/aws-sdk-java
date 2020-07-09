@@ -58,7 +58,9 @@ public class CreateBotVersionResultJsonUnmarshaller implements Unmarshaller<Crea
                 }
                 if (context.testExpression("intents", targetDepth)) {
                     context.nextToken();
-                    createBotVersionResult.setIntents(new ListUnmarshaller<Intent>(IntentJsonUnmarshaller.getInstance()).unmarshall(context));
+                    createBotVersionResult.setIntents(new ListUnmarshaller<Intent>(IntentJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("clarificationPrompt", targetDepth)) {
                     context.nextToken();

@@ -51,7 +51,9 @@ public class ListMultiplexProgramsResultJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("multiplexPrograms", targetDepth)) {
                     context.nextToken();
                     listMultiplexProgramsResult.setMultiplexPrograms(new ListUnmarshaller<MultiplexProgramSummary>(MultiplexProgramSummaryJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

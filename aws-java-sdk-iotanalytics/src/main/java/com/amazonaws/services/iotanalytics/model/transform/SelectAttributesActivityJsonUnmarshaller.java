@@ -54,7 +54,9 @@ public class SelectAttributesActivityJsonUnmarshaller implements Unmarshaller<Se
                 }
                 if (context.testExpression("attributes", targetDepth)) {
                     context.nextToken();
-                    selectAttributesActivity.setAttributes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    selectAttributesActivity.setAttributes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("next", targetDepth)) {
                     context.nextToken();

@@ -51,7 +51,8 @@ public class ListDiscoverersResultJsonUnmarshaller implements Unmarshaller<ListD
                 if (context.testExpression("Discoverers", targetDepth)) {
                     context.nextToken();
                     listDiscoverersResult.setDiscoverers(new ListUnmarshaller<DiscovererSummary>(DiscovererSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

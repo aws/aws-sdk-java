@@ -54,7 +54,9 @@ public class RenderUiTemplateResultJsonUnmarshaller implements Unmarshaller<Rend
                 }
                 if (context.testExpression("Errors", targetDepth)) {
                     context.nextToken();
-                    renderUiTemplateResult.setErrors(new ListUnmarshaller<RenderingError>(RenderingErrorJsonUnmarshaller.getInstance()).unmarshall(context));
+                    renderUiTemplateResult.setErrors(new ListUnmarshaller<RenderingError>(RenderingErrorJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

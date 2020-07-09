@@ -51,7 +51,8 @@ public class CreateColumnsOperationJsonUnmarshaller implements Unmarshaller<Crea
                 if (context.testExpression("Columns", targetDepth)) {
                     context.nextToken();
                     createColumnsOperation.setColumns(new ListUnmarshaller<CalculatedColumn>(CalculatedColumnJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

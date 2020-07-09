@@ -51,7 +51,8 @@ public class ListSchemasResultJsonUnmarshaller implements Unmarshaller<ListSchem
                 if (context.testExpression("schemas", targetDepth)) {
                     context.nextToken();
                     listSchemasResult.setSchemas(new ListUnmarshaller<DatasetSchemaSummary>(DatasetSchemaSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

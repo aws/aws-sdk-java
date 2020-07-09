@@ -98,7 +98,9 @@ public class CreateInterconnectResultJsonUnmarshaller implements Unmarshaller<Cr
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
-                    createInterconnectResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    createInterconnectResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("providerName", targetDepth)) {
                     context.nextToken();

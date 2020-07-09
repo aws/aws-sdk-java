@@ -78,7 +78,9 @@ public class ReimportApiResultJsonUnmarshaller implements Unmarshaller<ReimportA
                 }
                 if (context.testExpression("importInfo", targetDepth)) {
                     context.nextToken();
-                    reimportApiResult.setImportInfo(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    reimportApiResult.setImportInfo(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
@@ -103,7 +105,9 @@ public class ReimportApiResultJsonUnmarshaller implements Unmarshaller<ReimportA
                 }
                 if (context.testExpression("warnings", targetDepth)) {
                     context.nextToken();
-                    reimportApiResult.setWarnings(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    reimportApiResult.setWarnings(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

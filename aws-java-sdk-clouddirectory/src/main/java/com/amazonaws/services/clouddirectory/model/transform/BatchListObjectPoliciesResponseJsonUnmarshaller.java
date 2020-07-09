@@ -51,7 +51,8 @@ public class BatchListObjectPoliciesResponseJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("AttachedPolicyIds", targetDepth)) {
                     context.nextToken();
                     batchListObjectPoliciesResponse.setAttachedPolicyIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

@@ -52,7 +52,9 @@ public class DescribeAssociationExecutionTargetsResultJsonUnmarshaller implement
                 if (context.testExpression("AssociationExecutionTargets", targetDepth)) {
                     context.nextToken();
                     describeAssociationExecutionTargetsResult.setAssociationExecutionTargets(new ListUnmarshaller<AssociationExecutionTarget>(
-                            AssociationExecutionTargetJsonUnmarshaller.getInstance()).unmarshall(context));
+                            AssociationExecutionTargetJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

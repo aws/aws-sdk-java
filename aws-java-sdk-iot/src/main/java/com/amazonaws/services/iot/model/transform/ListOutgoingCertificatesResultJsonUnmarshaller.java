@@ -51,7 +51,9 @@ public class ListOutgoingCertificatesResultJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("outgoingCertificates", targetDepth)) {
                     context.nextToken();
                     listOutgoingCertificatesResult.setOutgoingCertificates(new ListUnmarshaller<OutgoingCertificate>(OutgoingCertificateJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextMarker", targetDepth)) {
                     context.nextToken();

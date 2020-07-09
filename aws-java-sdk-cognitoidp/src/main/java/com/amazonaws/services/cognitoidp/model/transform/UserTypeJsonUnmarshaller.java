@@ -54,7 +54,9 @@ public class UserTypeJsonUnmarshaller implements Unmarshaller<UserType, JsonUnma
                 }
                 if (context.testExpression("Attributes", targetDepth)) {
                     context.nextToken();
-                    userType.setAttributes(new ListUnmarshaller<AttributeType>(AttributeTypeJsonUnmarshaller.getInstance()).unmarshall(context));
+                    userType.setAttributes(new ListUnmarshaller<AttributeType>(AttributeTypeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("UserCreateDate", targetDepth)) {
                     context.nextToken();
@@ -74,7 +76,9 @@ public class UserTypeJsonUnmarshaller implements Unmarshaller<UserType, JsonUnma
                 }
                 if (context.testExpression("MFAOptions", targetDepth)) {
                     context.nextToken();
-                    userType.setMFAOptions(new ListUnmarshaller<MFAOptionType>(MFAOptionTypeJsonUnmarshaller.getInstance()).unmarshall(context));
+                    userType.setMFAOptions(new ListUnmarshaller<MFAOptionType>(MFAOptionTypeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

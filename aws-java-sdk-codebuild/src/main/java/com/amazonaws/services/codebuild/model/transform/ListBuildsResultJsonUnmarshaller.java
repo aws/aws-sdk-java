@@ -50,7 +50,9 @@ public class ListBuildsResultJsonUnmarshaller implements Unmarshaller<ListBuilds
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ids", targetDepth)) {
                     context.nextToken();
-                    listBuildsResult.setIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    listBuildsResult.setIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();
