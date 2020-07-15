@@ -1,3 +1,8 @@
+# __1.11.821__ __2020-07-15__
+## __Amazon Interactive Video Service__
+  - ### Features
+    - Introducing Amazon Interactive Video Service - a managed live streaming solution that is quick and easy to set up, and ideal for creating interactive video experiences.
+
 # __1.11.820__ __2020-07-09__
 ## __AWS Amplify__
   - ### Features
