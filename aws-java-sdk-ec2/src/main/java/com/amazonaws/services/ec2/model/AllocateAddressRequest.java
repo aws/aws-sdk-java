@@ -27,10 +27,11 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * Set to <code>vpc</code> to allocate the address for use with instances in a VPC.
+     * Indicates whether the Elastic IP address is for use with instances in a VPC or instances in EC2-Classic.
      * </p>
      * <p>
-     * Default: The address is for use with instances in EC2-Classic.
+     * Default: If the Region supports EC2-Classic, the default is <code>standard</code>. Otherwise, the default is
+     * <code>vpc</code>.
      * </p>
      */
     private String domain;
@@ -78,16 +79,19 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * Set to <code>vpc</code> to allocate the address for use with instances in a VPC.
+     * Indicates whether the Elastic IP address is for use with instances in a VPC or instances in EC2-Classic.
      * </p>
      * <p>
-     * Default: The address is for use with instances in EC2-Classic.
+     * Default: If the Region supports EC2-Classic, the default is <code>standard</code>. Otherwise, the default is
+     * <code>vpc</code>.
      * </p>
      * 
      * @param domain
-     *        Set to <code>vpc</code> to allocate the address for use with instances in a VPC.</p>
+     *        Indicates whether the Elastic IP address is for use with instances in a VPC or instances in
+     *        EC2-Classic.</p>
      *        <p>
-     *        Default: The address is for use with instances in EC2-Classic.
+     *        Default: If the Region supports EC2-Classic, the default is <code>standard</code>. Otherwise, the default
+     *        is <code>vpc</code>.
      * @see DomainType
      */
 
@@ -97,15 +101,18 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * Set to <code>vpc</code> to allocate the address for use with instances in a VPC.
+     * Indicates whether the Elastic IP address is for use with instances in a VPC or instances in EC2-Classic.
      * </p>
      * <p>
-     * Default: The address is for use with instances in EC2-Classic.
+     * Default: If the Region supports EC2-Classic, the default is <code>standard</code>. Otherwise, the default is
+     * <code>vpc</code>.
      * </p>
      * 
-     * @return Set to <code>vpc</code> to allocate the address for use with instances in a VPC.</p>
+     * @return Indicates whether the Elastic IP address is for use with instances in a VPC or instances in
+     *         EC2-Classic.</p>
      *         <p>
-     *         Default: The address is for use with instances in EC2-Classic.
+     *         Default: If the Region supports EC2-Classic, the default is <code>standard</code>. Otherwise, the default
+     *         is <code>vpc</code>.
      * @see DomainType
      */
 
@@ -115,16 +122,19 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * Set to <code>vpc</code> to allocate the address for use with instances in a VPC.
+     * Indicates whether the Elastic IP address is for use with instances in a VPC or instances in EC2-Classic.
      * </p>
      * <p>
-     * Default: The address is for use with instances in EC2-Classic.
+     * Default: If the Region supports EC2-Classic, the default is <code>standard</code>. Otherwise, the default is
+     * <code>vpc</code>.
      * </p>
      * 
      * @param domain
-     *        Set to <code>vpc</code> to allocate the address for use with instances in a VPC.</p>
+     *        Indicates whether the Elastic IP address is for use with instances in a VPC or instances in
+     *        EC2-Classic.</p>
      *        <p>
-     *        Default: The address is for use with instances in EC2-Classic.
+     *        Default: If the Region supports EC2-Classic, the default is <code>standard</code>. Otherwise, the default
+     *        is <code>vpc</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DomainType
      */
@@ -136,16 +146,19 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * Set to <code>vpc</code> to allocate the address for use with instances in a VPC.
+     * Indicates whether the Elastic IP address is for use with instances in a VPC or instances in EC2-Classic.
      * </p>
      * <p>
-     * Default: The address is for use with instances in EC2-Classic.
+     * Default: If the Region supports EC2-Classic, the default is <code>standard</code>. Otherwise, the default is
+     * <code>vpc</code>.
      * </p>
      * 
      * @param domain
-     *        Set to <code>vpc</code> to allocate the address for use with instances in a VPC.</p>
+     *        Indicates whether the Elastic IP address is for use with instances in a VPC or instances in
+     *        EC2-Classic.</p>
      *        <p>
-     *        Default: The address is for use with instances in EC2-Classic.
+     *        Default: If the Region supports EC2-Classic, the default is <code>standard</code>. Otherwise, the default
+     *        is <code>vpc</code>.
      * @see DomainType
      */
 
@@ -155,16 +168,19 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * Set to <code>vpc</code> to allocate the address for use with instances in a VPC.
+     * Indicates whether the Elastic IP address is for use with instances in a VPC or instances in EC2-Classic.
      * </p>
      * <p>
-     * Default: The address is for use with instances in EC2-Classic.
+     * Default: If the Region supports EC2-Classic, the default is <code>standard</code>. Otherwise, the default is
+     * <code>vpc</code>.
      * </p>
      * 
      * @param domain
-     *        Set to <code>vpc</code> to allocate the address for use with instances in a VPC.</p>
+     *        Indicates whether the Elastic IP address is for use with instances in a VPC or instances in
+     *        EC2-Classic.</p>
      *        <p>
-     *        Default: The address is for use with instances in EC2-Classic.
+     *        Default: If the Region supports EC2-Classic, the default is <code>standard</code>. Otherwise, the default
+     *        is <code>vpc</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DomainType
      */

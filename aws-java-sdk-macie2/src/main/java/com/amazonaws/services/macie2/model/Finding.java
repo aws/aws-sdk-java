@@ -30,8 +30,8 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier for the AWS account that the finding applies to. This is typically the account that owns the
-     * affected resource.
+     * The unique identifier for the AWS account that the finding applies to. This is typically the account that owns
+     * the affected resource.
      * </p>
      */
     private String accountId;
@@ -144,13 +144,13 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier for the AWS account that the finding applies to. This is typically the account that owns the
-     * affected resource.
+     * The unique identifier for the AWS account that the finding applies to. This is typically the account that owns
+     * the affected resource.
      * </p>
      * 
      * @param accountId
-     *        The identifier for the AWS account that the finding applies to. This is typically the account that owns
-     *        the affected resource.
+     *        The unique identifier for the AWS account that the finding applies to. This is typically the account that
+     *        owns the affected resource.
      */
 
     public void setAccountId(String accountId) {
@@ -159,12 +159,12 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier for the AWS account that the finding applies to. This is typically the account that owns the
-     * affected resource.
+     * The unique identifier for the AWS account that the finding applies to. This is typically the account that owns
+     * the affected resource.
      * </p>
      * 
-     * @return The identifier for the AWS account that the finding applies to. This is typically the account that owns
-     *         the affected resource.
+     * @return The unique identifier for the AWS account that the finding applies to. This is typically the account that
+     *         owns the affected resource.
      */
 
     public String getAccountId() {
@@ -173,13 +173,13 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier for the AWS account that the finding applies to. This is typically the account that owns the
-     * affected resource.
+     * The unique identifier for the AWS account that the finding applies to. This is typically the account that owns
+     * the affected resource.
      * </p>
      * 
      * @param accountId
-     *        The identifier for the AWS account that the finding applies to. This is typically the account that owns
-     *        the affected resource.
+     *        The unique identifier for the AWS account that the finding applies to. This is typically the account that
+     *        owns the affected resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

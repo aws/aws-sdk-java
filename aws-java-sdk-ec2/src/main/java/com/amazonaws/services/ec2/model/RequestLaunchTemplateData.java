@@ -193,7 +193,7 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
     private LaunchTemplateInstanceMarketOptionsRequest instanceMarketOptions;
     /**
      * <p>
-     * The credit option for CPU usage of the instance. Valid for T2 or T3 instances only.
+     * The credit option for CPU usage of the instance. Valid for T2, T3, or T3a instances only.
      * </p>
      */
     private CreditSpecificationRequest creditSpecification;
@@ -1637,11 +1637,11 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The credit option for CPU usage of the instance. Valid for T2 or T3 instances only.
+     * The credit option for CPU usage of the instance. Valid for T2, T3, or T3a instances only.
      * </p>
      * 
      * @param creditSpecification
-     *        The credit option for CPU usage of the instance. Valid for T2 or T3 instances only.
+     *        The credit option for CPU usage of the instance. Valid for T2, T3, or T3a instances only.
      */
 
     public void setCreditSpecification(CreditSpecificationRequest creditSpecification) {
@@ -1650,10 +1650,10 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The credit option for CPU usage of the instance. Valid for T2 or T3 instances only.
+     * The credit option for CPU usage of the instance. Valid for T2, T3, or T3a instances only.
      * </p>
      * 
-     * @return The credit option for CPU usage of the instance. Valid for T2 or T3 instances only.
+     * @return The credit option for CPU usage of the instance. Valid for T2, T3, or T3a instances only.
      */
 
     public CreditSpecificationRequest getCreditSpecification() {
@@ -1662,11 +1662,11 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The credit option for CPU usage of the instance. Valid for T2 or T3 instances only.
+     * The credit option for CPU usage of the instance. Valid for T2, T3, or T3a instances only.
      * </p>
      * 
      * @param creditSpecification
-     *        The credit option for CPU usage of the instance. Valid for T2 or T3 instances only.
+     *        The credit option for CPU usage of the instance. Valid for T2, T3, or T3a instances only.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -30,7 +30,7 @@ public class SessionContextAttributes implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The date and time, in ISO 8601 format, when the credentials were issued.
+     * The date and time, in UTC and ISO 8601 format, when the credentials were issued.
      * </p>
      */
     private java.util.Date creationDate;
@@ -43,11 +43,11 @@ public class SessionContextAttributes implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The date and time, in ISO 8601 format, when the credentials were issued.
+     * The date and time, in UTC and ISO 8601 format, when the credentials were issued.
      * </p>
      * 
      * @param creationDate
-     *        The date and time, in ISO 8601 format, when the credentials were issued.
+     *        The date and time, in UTC and ISO 8601 format, when the credentials were issued.
      */
 
     public void setCreationDate(java.util.Date creationDate) {
@@ -56,10 +56,10 @@ public class SessionContextAttributes implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The date and time, in ISO 8601 format, when the credentials were issued.
+     * The date and time, in UTC and ISO 8601 format, when the credentials were issued.
      * </p>
      * 
-     * @return The date and time, in ISO 8601 format, when the credentials were issued.
+     * @return The date and time, in UTC and ISO 8601 format, when the credentials were issued.
      */
 
     public java.util.Date getCreationDate() {
@@ -68,11 +68,11 @@ public class SessionContextAttributes implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The date and time, in ISO 8601 format, when the credentials were issued.
+     * The date and time, in UTC and ISO 8601 format, when the credentials were issued.
      * </p>
      * 
      * @param creationDate
-     *        The date and time, in ISO 8601 format, when the credentials were issued.
+     *        The date and time, in UTC and ISO 8601 format, when the credentials were issued.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

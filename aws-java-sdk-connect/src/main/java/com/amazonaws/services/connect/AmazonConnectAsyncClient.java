@@ -37,11 +37,7 @@ import java.util.concurrent.ExecutorService;
  * There are limits to the number of Amazon Connect resources that you can create and limits to the number of requests
  * that you can make per second. For more information, see <a
  * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon Connect
- * Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
- * </p>
- * <p>
- * To connect programmatically to an AWS service, you use an endpoint. For a list of Amazon Connect endpoints, see <a
- * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon Connect Endpoints</a>.
+ * Service Limits</a> in the <i>Amazon Connect Administrator Guide</i>.
  * </p>
  */
 @ThreadSafe
@@ -684,6 +680,39 @@ public class AmazonConnectAsyncClient extends AmazonConnectClient implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<ResumeContactRecordingResult> resumeContactRecordingAsync(ResumeContactRecordingRequest request) {
+
+        return resumeContactRecordingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ResumeContactRecordingResult> resumeContactRecordingAsync(final ResumeContactRecordingRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ResumeContactRecordingRequest, ResumeContactRecordingResult> asyncHandler) {
+        final ResumeContactRecordingRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ResumeContactRecordingResult>() {
+            @Override
+            public ResumeContactRecordingResult call() throws Exception {
+                ResumeContactRecordingResult result = null;
+
+                try {
+                    result = executeResumeContactRecording(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<StartChatContactResult> startChatContactAsync(StartChatContactRequest request) {
 
         return startChatContactAsync(request, null);
@@ -701,6 +730,39 @@ public class AmazonConnectAsyncClient extends AmazonConnectClient implements Ama
 
                 try {
                     result = executeStartChatContact(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartContactRecordingResult> startContactRecordingAsync(StartContactRecordingRequest request) {
+
+        return startContactRecordingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartContactRecordingResult> startContactRecordingAsync(final StartContactRecordingRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartContactRecordingRequest, StartContactRecordingResult> asyncHandler) {
+        final StartContactRecordingRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartContactRecordingResult>() {
+            @Override
+            public StartContactRecordingResult call() throws Exception {
+                StartContactRecordingResult result = null;
+
+                try {
+                    result = executeStartContactRecording(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -767,6 +829,72 @@ public class AmazonConnectAsyncClient extends AmazonConnectClient implements Ama
 
                 try {
                     result = executeStopContact(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopContactRecordingResult> stopContactRecordingAsync(StopContactRecordingRequest request) {
+
+        return stopContactRecordingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopContactRecordingResult> stopContactRecordingAsync(final StopContactRecordingRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopContactRecordingRequest, StopContactRecordingResult> asyncHandler) {
+        final StopContactRecordingRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StopContactRecordingResult>() {
+            @Override
+            public StopContactRecordingResult call() throws Exception {
+                StopContactRecordingResult result = null;
+
+                try {
+                    result = executeStopContactRecording(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<SuspendContactRecordingResult> suspendContactRecordingAsync(SuspendContactRecordingRequest request) {
+
+        return suspendContactRecordingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SuspendContactRecordingResult> suspendContactRecordingAsync(final SuspendContactRecordingRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SuspendContactRecordingRequest, SuspendContactRecordingResult> asyncHandler) {
+        final SuspendContactRecordingRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<SuspendContactRecordingResult>() {
+            @Override
+            public SuspendContactRecordingResult call() throws Exception {
+                SuspendContactRecordingResult result = null;
+
+                try {
+                    result = executeSuspendContactRecording(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

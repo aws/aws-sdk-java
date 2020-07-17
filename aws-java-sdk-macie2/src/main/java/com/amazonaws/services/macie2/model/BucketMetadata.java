@@ -54,8 +54,8 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
     private String bucketName;
     /**
      * <p>
-     * The total number of objects that Amazon Macie can monitor and analyze in the bucket. These objects use a file
-     * format, file extension, or content type that Amazon Macie supports.
+     * The total number of objects that Amazon Macie can analyze in the bucket. These objects use a file format, file
+     * extension, or content type that Amazon Macie supports.
      * </p>
      */
     private Long classifiableObjectCount;
@@ -100,18 +100,17 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
     private ReplicationDetails replicationDetails;
     /**
      * <p>
-     * Specifies whether the bucket is shared with another AWS account or configured to support cross-origin resource
-     * sharing (CORS). Valid values are:
+     * Specifies whether the bucket is shared with another AWS account. Valid values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * EXTERNAL - The bucket is shared with an AWS account that isn’t part of the Amazon Macie organization.
+     * EXTERNAL - The bucket is shared with an AWS account that isn’t part of the same Amazon Macie organization.
      * </p>
      * </li>
      * <li>
      * <p>
-     * INTERNAL - The bucket is shared with an AWS account that's part of the Amazon Macie organization.
+     * INTERNAL - The bucket is shared with an AWS account that's part of the same Amazon Macie organization.
      * </p>
      * </li>
      * <li>
@@ -309,13 +308,13 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The total number of objects that Amazon Macie can monitor and analyze in the bucket. These objects use a file
-     * format, file extension, or content type that Amazon Macie supports.
+     * The total number of objects that Amazon Macie can analyze in the bucket. These objects use a file format, file
+     * extension, or content type that Amazon Macie supports.
      * </p>
      * 
      * @param classifiableObjectCount
-     *        The total number of objects that Amazon Macie can monitor and analyze in the bucket. These objects use a
-     *        file format, file extension, or content type that Amazon Macie supports.
+     *        The total number of objects that Amazon Macie can analyze in the bucket. These objects use a file format,
+     *        file extension, or content type that Amazon Macie supports.
      */
 
     public void setClassifiableObjectCount(Long classifiableObjectCount) {
@@ -324,12 +323,12 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The total number of objects that Amazon Macie can monitor and analyze in the bucket. These objects use a file
-     * format, file extension, or content type that Amazon Macie supports.
+     * The total number of objects that Amazon Macie can analyze in the bucket. These objects use a file format, file
+     * extension, or content type that Amazon Macie supports.
      * </p>
      * 
-     * @return The total number of objects that Amazon Macie can monitor and analyze in the bucket. These objects use a
-     *         file format, file extension, or content type that Amazon Macie supports.
+     * @return The total number of objects that Amazon Macie can analyze in the bucket. These objects use a file format,
+     *         file extension, or content type that Amazon Macie supports.
      */
 
     public Long getClassifiableObjectCount() {
@@ -338,13 +337,13 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The total number of objects that Amazon Macie can monitor and analyze in the bucket. These objects use a file
-     * format, file extension, or content type that Amazon Macie supports.
+     * The total number of objects that Amazon Macie can analyze in the bucket. These objects use a file format, file
+     * extension, or content type that Amazon Macie supports.
      * </p>
      * 
      * @param classifiableObjectCount
-     *        The total number of objects that Amazon Macie can monitor and analyze in the bucket. These objects use a
-     *        file format, file extension, or content type that Amazon Macie supports.
+     *        The total number of objects that Amazon Macie can analyze in the bucket. These objects use a file format,
+     *        file extension, or content type that Amazon Macie supports.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -613,18 +612,17 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the bucket is shared with another AWS account or configured to support cross-origin resource
-     * sharing (CORS). Valid values are:
+     * Specifies whether the bucket is shared with another AWS account. Valid values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * EXTERNAL - The bucket is shared with an AWS account that isn’t part of the Amazon Macie organization.
+     * EXTERNAL - The bucket is shared with an AWS account that isn’t part of the same Amazon Macie organization.
      * </p>
      * </li>
      * <li>
      * <p>
-     * INTERNAL - The bucket is shared with an AWS account that's part of the Amazon Macie organization.
+     * INTERNAL - The bucket is shared with an AWS account that's part of the same Amazon Macie organization.
      * </p>
      * </li>
      * <li>
@@ -635,17 +633,16 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param sharedAccess
-     *        Specifies whether the bucket is shared with another AWS account or configured to support cross-origin
-     *        resource sharing (CORS). Valid values are:</p>
+     *        Specifies whether the bucket is shared with another AWS account. Valid values are:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        EXTERNAL - The bucket is shared with an AWS account that isn’t part of the Amazon Macie organization.
+     *        EXTERNAL - The bucket is shared with an AWS account that isn’t part of the same Amazon Macie organization.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        INTERNAL - The bucket is shared with an AWS account that's part of the Amazon Macie organization.
+     *        INTERNAL - The bucket is shared with an AWS account that's part of the same Amazon Macie organization.
      *        </p>
      *        </li>
      *        <li>
@@ -662,18 +659,17 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the bucket is shared with another AWS account or configured to support cross-origin resource
-     * sharing (CORS). Valid values are:
+     * Specifies whether the bucket is shared with another AWS account. Valid values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * EXTERNAL - The bucket is shared with an AWS account that isn’t part of the Amazon Macie organization.
+     * EXTERNAL - The bucket is shared with an AWS account that isn’t part of the same Amazon Macie organization.
      * </p>
      * </li>
      * <li>
      * <p>
-     * INTERNAL - The bucket is shared with an AWS account that's part of the Amazon Macie organization.
+     * INTERNAL - The bucket is shared with an AWS account that's part of the same Amazon Macie organization.
      * </p>
      * </li>
      * <li>
@@ -683,17 +679,17 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * 
-     * @return Specifies whether the bucket is shared with another AWS account or configured to support cross-origin
-     *         resource sharing (CORS). Valid values are:</p>
+     * @return Specifies whether the bucket is shared with another AWS account. Valid values are:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         EXTERNAL - The bucket is shared with an AWS account that isn’t part of the Amazon Macie organization.
+     *         EXTERNAL - The bucket is shared with an AWS account that isn’t part of the same Amazon Macie
+     *         organization.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         INTERNAL - The bucket is shared with an AWS account that's part of the Amazon Macie organization.
+     *         INTERNAL - The bucket is shared with an AWS account that's part of the same Amazon Macie organization.
      *         </p>
      *         </li>
      *         <li>
@@ -710,18 +706,17 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the bucket is shared with another AWS account or configured to support cross-origin resource
-     * sharing (CORS). Valid values are:
+     * Specifies whether the bucket is shared with another AWS account. Valid values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * EXTERNAL - The bucket is shared with an AWS account that isn’t part of the Amazon Macie organization.
+     * EXTERNAL - The bucket is shared with an AWS account that isn’t part of the same Amazon Macie organization.
      * </p>
      * </li>
      * <li>
      * <p>
-     * INTERNAL - The bucket is shared with an AWS account that's part of the Amazon Macie organization.
+     * INTERNAL - The bucket is shared with an AWS account that's part of the same Amazon Macie organization.
      * </p>
      * </li>
      * <li>
@@ -732,17 +727,16 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param sharedAccess
-     *        Specifies whether the bucket is shared with another AWS account or configured to support cross-origin
-     *        resource sharing (CORS). Valid values are:</p>
+     *        Specifies whether the bucket is shared with another AWS account. Valid values are:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        EXTERNAL - The bucket is shared with an AWS account that isn’t part of the Amazon Macie organization.
+     *        EXTERNAL - The bucket is shared with an AWS account that isn’t part of the same Amazon Macie organization.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        INTERNAL - The bucket is shared with an AWS account that's part of the Amazon Macie organization.
+     *        INTERNAL - The bucket is shared with an AWS account that's part of the same Amazon Macie organization.
      *        </p>
      *        </li>
      *        <li>
@@ -761,18 +755,17 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the bucket is shared with another AWS account or configured to support cross-origin resource
-     * sharing (CORS). Valid values are:
+     * Specifies whether the bucket is shared with another AWS account. Valid values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * EXTERNAL - The bucket is shared with an AWS account that isn’t part of the Amazon Macie organization.
+     * EXTERNAL - The bucket is shared with an AWS account that isn’t part of the same Amazon Macie organization.
      * </p>
      * </li>
      * <li>
      * <p>
-     * INTERNAL - The bucket is shared with an AWS account that's part of the Amazon Macie organization.
+     * INTERNAL - The bucket is shared with an AWS account that's part of the same Amazon Macie organization.
      * </p>
      * </li>
      * <li>
@@ -783,17 +776,16 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param sharedAccess
-     *        Specifies whether the bucket is shared with another AWS account or configured to support cross-origin
-     *        resource sharing (CORS). Valid values are:</p>
+     *        Specifies whether the bucket is shared with another AWS account. Valid values are:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        EXTERNAL - The bucket is shared with an AWS account that isn’t part of the Amazon Macie organization.
+     *        EXTERNAL - The bucket is shared with an AWS account that isn’t part of the same Amazon Macie organization.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        INTERNAL - The bucket is shared with an AWS account that's part of the Amazon Macie organization.
+     *        INTERNAL - The bucket is shared with an AWS account that's part of the same Amazon Macie organization.
      *        </p>
      *        </li>
      *        <li>

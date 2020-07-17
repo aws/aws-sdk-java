@@ -34,7 +34,7 @@ public class ConnectionLogOptions implements Serializable, Cloneable {
     private Boolean enabled;
     /**
      * <p>
-     * The name of the CloudWatch Logs log group.
+     * The name of the CloudWatch Logs log group. Required if connection logging is enabled.
      * </p>
      */
     private String cloudwatchLogGroup;
@@ -99,11 +99,11 @@ public class ConnectionLogOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the CloudWatch Logs log group.
+     * The name of the CloudWatch Logs log group. Required if connection logging is enabled.
      * </p>
      * 
      * @param cloudwatchLogGroup
-     *        The name of the CloudWatch Logs log group.
+     *        The name of the CloudWatch Logs log group. Required if connection logging is enabled.
      */
 
     public void setCloudwatchLogGroup(String cloudwatchLogGroup) {
@@ -112,10 +112,10 @@ public class ConnectionLogOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the CloudWatch Logs log group.
+     * The name of the CloudWatch Logs log group. Required if connection logging is enabled.
      * </p>
      * 
-     * @return The name of the CloudWatch Logs log group.
+     * @return The name of the CloudWatch Logs log group. Required if connection logging is enabled.
      */
 
     public String getCloudwatchLogGroup() {
@@ -124,11 +124,11 @@ public class ConnectionLogOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the CloudWatch Logs log group.
+     * The name of the CloudWatch Logs log group. Required if connection logging is enabled.
      * </p>
      * 
      * @param cloudwatchLogGroup
-     *        The name of the CloudWatch Logs log group.
+     *        The name of the CloudWatch Logs log group. Required if connection logging is enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

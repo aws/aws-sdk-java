@@ -34,8 +34,8 @@ public class TagSpecification implements Serializable, Cloneable {
      * <code>fleet</code> | <code>fpga-image</code> | <code>host-reservation</code> | <code>import-image-task</code> |
      * <code>import-snapshot-task</code> | <code>instance</code> | <code>internet-gateway</code> |
      * <code>ipv4pool-ec2</code> | <code>ipv6pool-ec2</code> | <code>key-pair</code> | <code>launch-template</code> |
-     * <code>placement-group</code> | <code>prefix-list</code> | <code>launch-template</code> | <code>natgateway</code>
-     * | <code>network-acl</code> | <code>security-group</code> | <code>spot-fleet-request</code> |
+     * <code>placement-group</code> | <code>prefix-list</code> | <code>natgateway</code> | <code>network-acl</code> |
+     * <code>security-group</code> | <code>spot-fleet-request</code> | <code>spot-instances-request</code> |
      * <code>snapshot</code> | <code>subnet</code> | <code>traffic-mirror-filter</code> |
      * <code>traffic-mirror-session</code> | <code>traffic-mirror-target</code> | <code>transit-gateway</code> |
      * <code>transit-gateway-attachment</code> | <code>transit-gateway-route-table</code> | <code>volume</code> |
@@ -63,8 +63,8 @@ public class TagSpecification implements Serializable, Cloneable {
      * <code>fleet</code> | <code>fpga-image</code> | <code>host-reservation</code> | <code>import-image-task</code> |
      * <code>import-snapshot-task</code> | <code>instance</code> | <code>internet-gateway</code> |
      * <code>ipv4pool-ec2</code> | <code>ipv6pool-ec2</code> | <code>key-pair</code> | <code>launch-template</code> |
-     * <code>placement-group</code> | <code>prefix-list</code> | <code>launch-template</code> | <code>natgateway</code>
-     * | <code>network-acl</code> | <code>security-group</code> | <code>spot-fleet-request</code> |
+     * <code>placement-group</code> | <code>prefix-list</code> | <code>natgateway</code> | <code>network-acl</code> |
+     * <code>security-group</code> | <code>spot-fleet-request</code> | <code>spot-instances-request</code> |
      * <code>snapshot</code> | <code>subnet</code> | <code>traffic-mirror-filter</code> |
      * <code>traffic-mirror-session</code> | <code>traffic-mirror-target</code> | <code>transit-gateway</code> |
      * <code>transit-gateway-attachment</code> | <code>transit-gateway-route-table</code> | <code>volume</code> |
@@ -84,8 +84,8 @@ public class TagSpecification implements Serializable, Cloneable {
      *        <code>import-image-task</code> | <code>import-snapshot-task</code> | <code>instance</code> |
      *        <code>internet-gateway</code> | <code>ipv4pool-ec2</code> | <code>ipv6pool-ec2</code> |
      *        <code>key-pair</code> | <code>launch-template</code> | <code>placement-group</code> |
-     *        <code>prefix-list</code> | <code>launch-template</code> | <code>natgateway</code> |
-     *        <code>network-acl</code> | <code>security-group</code> | <code>spot-fleet-request</code> |
+     *        <code>prefix-list</code> | <code>natgateway</code> | <code>network-acl</code> |
+     *        <code>security-group</code> | <code>spot-fleet-request</code> | <code>spot-instances-request</code> |
      *        <code>snapshot</code> | <code>subnet</code> | <code>traffic-mirror-filter</code> |
      *        <code>traffic-mirror-session</code> | <code>traffic-mirror-target</code> | <code>transit-gateway</code> |
      *        <code>transit-gateway-attachment</code> | <code>transit-gateway-route-table</code> | <code>volume</code> |
@@ -109,8 +109,8 @@ public class TagSpecification implements Serializable, Cloneable {
      * <code>fleet</code> | <code>fpga-image</code> | <code>host-reservation</code> | <code>import-image-task</code> |
      * <code>import-snapshot-task</code> | <code>instance</code> | <code>internet-gateway</code> |
      * <code>ipv4pool-ec2</code> | <code>ipv6pool-ec2</code> | <code>key-pair</code> | <code>launch-template</code> |
-     * <code>placement-group</code> | <code>prefix-list</code> | <code>launch-template</code> | <code>natgateway</code>
-     * | <code>network-acl</code> | <code>security-group</code> | <code>spot-fleet-request</code> |
+     * <code>placement-group</code> | <code>prefix-list</code> | <code>natgateway</code> | <code>network-acl</code> |
+     * <code>security-group</code> | <code>spot-fleet-request</code> | <code>spot-instances-request</code> |
      * <code>snapshot</code> | <code>subnet</code> | <code>traffic-mirror-filter</code> |
      * <code>traffic-mirror-session</code> | <code>traffic-mirror-target</code> | <code>transit-gateway</code> |
      * <code>transit-gateway-attachment</code> | <code>transit-gateway-route-table</code> | <code>volume</code> |
@@ -129,8 +129,8 @@ public class TagSpecification implements Serializable, Cloneable {
      *         <code>import-image-task</code> | <code>import-snapshot-task</code> | <code>instance</code> |
      *         <code>internet-gateway</code> | <code>ipv4pool-ec2</code> | <code>ipv6pool-ec2</code> |
      *         <code>key-pair</code> | <code>launch-template</code> | <code>placement-group</code> |
-     *         <code>prefix-list</code> | <code>launch-template</code> | <code>natgateway</code> |
-     *         <code>network-acl</code> | <code>security-group</code> | <code>spot-fleet-request</code> |
+     *         <code>prefix-list</code> | <code>natgateway</code> | <code>network-acl</code> |
+     *         <code>security-group</code> | <code>spot-fleet-request</code> | <code>spot-instances-request</code> |
      *         <code>snapshot</code> | <code>subnet</code> | <code>traffic-mirror-filter</code> |
      *         <code>traffic-mirror-session</code> | <code>traffic-mirror-target</code> | <code>transit-gateway</code> |
      *         <code>transit-gateway-attachment</code> | <code>transit-gateway-route-table</code> | <code>volume</code>
@@ -154,8 +154,8 @@ public class TagSpecification implements Serializable, Cloneable {
      * <code>fleet</code> | <code>fpga-image</code> | <code>host-reservation</code> | <code>import-image-task</code> |
      * <code>import-snapshot-task</code> | <code>instance</code> | <code>internet-gateway</code> |
      * <code>ipv4pool-ec2</code> | <code>ipv6pool-ec2</code> | <code>key-pair</code> | <code>launch-template</code> |
-     * <code>placement-group</code> | <code>prefix-list</code> | <code>launch-template</code> | <code>natgateway</code>
-     * | <code>network-acl</code> | <code>security-group</code> | <code>spot-fleet-request</code> |
+     * <code>placement-group</code> | <code>prefix-list</code> | <code>natgateway</code> | <code>network-acl</code> |
+     * <code>security-group</code> | <code>spot-fleet-request</code> | <code>spot-instances-request</code> |
      * <code>snapshot</code> | <code>subnet</code> | <code>traffic-mirror-filter</code> |
      * <code>traffic-mirror-session</code> | <code>traffic-mirror-target</code> | <code>transit-gateway</code> |
      * <code>transit-gateway-attachment</code> | <code>transit-gateway-route-table</code> | <code>volume</code> |
@@ -175,8 +175,8 @@ public class TagSpecification implements Serializable, Cloneable {
      *        <code>import-image-task</code> | <code>import-snapshot-task</code> | <code>instance</code> |
      *        <code>internet-gateway</code> | <code>ipv4pool-ec2</code> | <code>ipv6pool-ec2</code> |
      *        <code>key-pair</code> | <code>launch-template</code> | <code>placement-group</code> |
-     *        <code>prefix-list</code> | <code>launch-template</code> | <code>natgateway</code> |
-     *        <code>network-acl</code> | <code>security-group</code> | <code>spot-fleet-request</code> |
+     *        <code>prefix-list</code> | <code>natgateway</code> | <code>network-acl</code> |
+     *        <code>security-group</code> | <code>spot-fleet-request</code> | <code>spot-instances-request</code> |
      *        <code>snapshot</code> | <code>subnet</code> | <code>traffic-mirror-filter</code> |
      *        <code>traffic-mirror-session</code> | <code>traffic-mirror-target</code> | <code>transit-gateway</code> |
      *        <code>transit-gateway-attachment</code> | <code>transit-gateway-route-table</code> | <code>volume</code> |
@@ -202,8 +202,8 @@ public class TagSpecification implements Serializable, Cloneable {
      * <code>fleet</code> | <code>fpga-image</code> | <code>host-reservation</code> | <code>import-image-task</code> |
      * <code>import-snapshot-task</code> | <code>instance</code> | <code>internet-gateway</code> |
      * <code>ipv4pool-ec2</code> | <code>ipv6pool-ec2</code> | <code>key-pair</code> | <code>launch-template</code> |
-     * <code>placement-group</code> | <code>prefix-list</code> | <code>launch-template</code> | <code>natgateway</code>
-     * | <code>network-acl</code> | <code>security-group</code> | <code>spot-fleet-request</code> |
+     * <code>placement-group</code> | <code>prefix-list</code> | <code>natgateway</code> | <code>network-acl</code> |
+     * <code>security-group</code> | <code>spot-fleet-request</code> | <code>spot-instances-request</code> |
      * <code>snapshot</code> | <code>subnet</code> | <code>traffic-mirror-filter</code> |
      * <code>traffic-mirror-session</code> | <code>traffic-mirror-target</code> | <code>transit-gateway</code> |
      * <code>transit-gateway-attachment</code> | <code>transit-gateway-route-table</code> | <code>volume</code> |
@@ -223,8 +223,8 @@ public class TagSpecification implements Serializable, Cloneable {
      *        <code>import-image-task</code> | <code>import-snapshot-task</code> | <code>instance</code> |
      *        <code>internet-gateway</code> | <code>ipv4pool-ec2</code> | <code>ipv6pool-ec2</code> |
      *        <code>key-pair</code> | <code>launch-template</code> | <code>placement-group</code> |
-     *        <code>prefix-list</code> | <code>launch-template</code> | <code>natgateway</code> |
-     *        <code>network-acl</code> | <code>security-group</code> | <code>spot-fleet-request</code> |
+     *        <code>prefix-list</code> | <code>natgateway</code> | <code>network-acl</code> |
+     *        <code>security-group</code> | <code>spot-fleet-request</code> | <code>spot-instances-request</code> |
      *        <code>snapshot</code> | <code>subnet</code> | <code>traffic-mirror-filter</code> |
      *        <code>traffic-mirror-session</code> | <code>traffic-mirror-target</code> | <code>transit-gateway</code> |
      *        <code>transit-gateway-attachment</code> | <code>transit-gateway-route-table</code> | <code>volume</code> |
@@ -248,8 +248,8 @@ public class TagSpecification implements Serializable, Cloneable {
      * <code>fleet</code> | <code>fpga-image</code> | <code>host-reservation</code> | <code>import-image-task</code> |
      * <code>import-snapshot-task</code> | <code>instance</code> | <code>internet-gateway</code> |
      * <code>ipv4pool-ec2</code> | <code>ipv6pool-ec2</code> | <code>key-pair</code> | <code>launch-template</code> |
-     * <code>placement-group</code> | <code>prefix-list</code> | <code>launch-template</code> | <code>natgateway</code>
-     * | <code>network-acl</code> | <code>security-group</code> | <code>spot-fleet-request</code> |
+     * <code>placement-group</code> | <code>prefix-list</code> | <code>natgateway</code> | <code>network-acl</code> |
+     * <code>security-group</code> | <code>spot-fleet-request</code> | <code>spot-instances-request</code> |
      * <code>snapshot</code> | <code>subnet</code> | <code>traffic-mirror-filter</code> |
      * <code>traffic-mirror-session</code> | <code>traffic-mirror-target</code> | <code>transit-gateway</code> |
      * <code>transit-gateway-attachment</code> | <code>transit-gateway-route-table</code> | <code>volume</code> |
@@ -269,8 +269,8 @@ public class TagSpecification implements Serializable, Cloneable {
      *        <code>import-image-task</code> | <code>import-snapshot-task</code> | <code>instance</code> |
      *        <code>internet-gateway</code> | <code>ipv4pool-ec2</code> | <code>ipv6pool-ec2</code> |
      *        <code>key-pair</code> | <code>launch-template</code> | <code>placement-group</code> |
-     *        <code>prefix-list</code> | <code>launch-template</code> | <code>natgateway</code> |
-     *        <code>network-acl</code> | <code>security-group</code> | <code>spot-fleet-request</code> |
+     *        <code>prefix-list</code> | <code>natgateway</code> | <code>network-acl</code> |
+     *        <code>security-group</code> | <code>spot-fleet-request</code> | <code>spot-instances-request</code> |
      *        <code>snapshot</code> | <code>subnet</code> | <code>traffic-mirror-filter</code> |
      *        <code>traffic-mirror-session</code> | <code>traffic-mirror-target</code> | <code>transit-gateway</code> |
      *        <code>transit-gateway-attachment</code> | <code>transit-gateway-route-table</code> | <code>volume</code> |

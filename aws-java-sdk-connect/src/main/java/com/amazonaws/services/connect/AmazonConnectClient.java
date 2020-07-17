@@ -62,11 +62,7 @@ import com.amazonaws.services.connect.model.transform.*;
  * There are limits to the number of Amazon Connect resources that you can create and limits to the number of requests
  * that you can make per second. For more information, see <a
  * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon Connect
- * Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
- * </p>
- * <p>
- * To connect programmatically to an AWS service, you use an endpoint. For a list of Amazon Connect endpoints, see <a
- * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon Connect Endpoints</a>.
+ * Service Limits</a> in the <i>Amazon Connect Administrator Guide</i>.
  * </p>
  */
 @ThreadSafe
@@ -177,11 +173,6 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
      * <p>
      * Creates a user account for the specified Amazon Connect instance.
      * </p>
-     * <p>
-     * For information about how to create user accounts using the Amazon Connect console, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/user-management.html">Add Users</a> in the <i>Amazon
-     * Connect Administrator Guide</i>.
-     * </p>
      * 
      * @param createUserRequest
      * @return Result of the CreateUser operation returned by the service.
@@ -248,11 +239,6 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
     /**
      * <p>
      * Deletes a user account from the specified Amazon Connect instance.
-     * </p>
-     * <p>
-     * For information about what happens to a user's data when their account is deleted, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/delete-users.html">Delete Users from Your Amazon
-     * Connect Instance</a> in the <i>Amazon Connect Administrator Guide</i>.
      * </p>
      * 
      * @param deleteUserRequest
@@ -571,9 +557,9 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
      * Gets the real-time metric data from the specified Amazon Connect instance.
      * </p>
      * <p>
-     * For a description of each metric, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html">Real-time Metrics
-     * Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-reports.html">Real-time Metrics
+     * Reports</a> in the <i>Amazon Connect Administrator Guide</i>.
      * </p>
      * 
      * @param getCurrentMetricDataRequest
@@ -704,9 +690,9 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
      * Gets historical metric data from the specified Amazon Connect instance.
      * </p>
      * <p>
-     * For a description of each historical metric, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
-     * Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics.html">Historical Metrics
+     * Reports</a> in the <i>Amazon Connect Administrator Guide</i>.
      * </p>
      * 
      * @param getMetricDataRequest
@@ -771,11 +757,6 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
      * <p>
      * Provides information about the contact flows for the specified Amazon Connect instance.
      * </p>
-     * <p>
-     * For more information about contact flows, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-contact-flows.html">Contact Flows</a> in the
-     * <i>Amazon Connect Administrator Guide</i>.
-     * </p>
      * 
      * @param listContactFlowsRequest
      * @return Result of the ListContactFlows operation returned by the service.
@@ -838,11 +819,6 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
     /**
      * <p>
      * Provides information about the hours of operation for the specified Amazon Connect instance.
-     * </p>
-     * <p>
-     * For more information about hours of operation, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/set-hours-operation.html">Set the Hours of Operation
-     * for a Queue</a> in the <i>Amazon Connect Administrator Guide</i>.
      * </p>
      * 
      * @param listHoursOfOperationsRequest
@@ -908,11 +884,6 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
      * <p>
      * Provides information about the phone numbers for the specified Amazon Connect instance.
      * </p>
-     * <p>
-     * For more information about phone numbers, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-center-phone-number.html">Set Up Phone
-     * Numbers for Your Contact Center</a> in the <i>Amazon Connect Administrator Guide</i>.
-     * </p>
      * 
      * @param listPhoneNumbersRequest
      * @return Result of the ListPhoneNumbers operation returned by the service.
@@ -975,11 +946,6 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
     /**
      * <p>
      * Provides information about the queues for the specified Amazon Connect instance.
-     * </p>
-     * <p>
-     * For more information about queues, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-queues-standard-and-agent.html">Queues:
-     * Standard and Agent</a> in the <i>Amazon Connect Administrator Guide</i>.
      * </p>
      * 
      * @param listQueuesRequest
@@ -1044,12 +1010,6 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
      * <p>
      * Provides summary information about the routing profiles for the specified Amazon Connect instance.
      * </p>
-     * <p>
-     * For more information about routing profiles, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing.html">Routing Profiles</a> and <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/routing-profiles.html">Create a Routing Profile</a>
-     * in the <i>Amazon Connect Administrator Guide</i>.
-     * </p>
      * 
      * @param listRoutingProfilesRequest
      * @return Result of the ListRoutingProfiles operation returned by the service.
@@ -1112,11 +1072,6 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
     /**
      * <p>
      * Provides summary information about the security profiles for the specified Amazon Connect instance.
-     * </p>
-     * <p>
-     * For more information about security profiles, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-security-profiles.html">Security Profiles</a>
-     * in the <i>Amazon Connect Administrator Guide</i>.
      * </p>
      * 
      * @param listSecurityProfilesRequest
@@ -1181,11 +1136,6 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
      * <p>
      * Lists the tags for the specified resource.
      * </p>
-     * <p>
-     * For sample policies that use tags, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_id-based-policy-examples.html">Amazon
-     * Connect Identity-Based Policy Examples</a> in the <i>Amazon Connect Administrator Guide</i>.
-     * </p>
      * 
      * @param listTagsForResourceRequest
      * @return Result of the ListTagsForResource operation returned by the service.
@@ -1248,11 +1198,6 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
     /**
      * <p>
      * Provides summary information about the hierarchy groups for the specified Amazon Connect instance.
-     * </p>
-     * <p>
-     * For more information about agent hierarchies, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/agent-hierarchy.html">Set Up Agent Hierarchies</a> in
-     * the <i>Amazon Connect Administrator Guide</i>.
      * </p>
      * 
      * @param listUserHierarchyGroupsRequest
@@ -1380,6 +1325,70 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
+     * When a contact is being recorded, and the recording has been suspended using SuspendContactRecording, this API
+     * resumes recording the call.
+     * </p>
+     * <p>
+     * Only voice recordings are supported at this time.
+     * </p>
+     * 
+     * @param resumeContactRecordingRequest
+     * @return Result of the ResumeContactRecording operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @sample AmazonConnect.ResumeContactRecording
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ResumeContactRecording" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ResumeContactRecordingResult resumeContactRecording(ResumeContactRecordingRequest request) {
+        request = beforeClientExecution(request);
+        return executeResumeContactRecording(request);
+    }
+
+    @SdkInternalApi
+    final ResumeContactRecordingResult executeResumeContactRecording(ResumeContactRecordingRequest resumeContactRecordingRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(resumeContactRecordingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ResumeContactRecordingRequest> request = null;
+        Response<ResumeContactRecordingResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ResumeContactRecordingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(resumeContactRecordingRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResumeContactRecording");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ResumeContactRecordingResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ResumeContactRecordingResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Initiates a contact flow to start a new chat for the customer. Response of this API provides a token required to
      * obtain credentials from the <a
      * href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html"
@@ -1390,28 +1399,6 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
      * the created chat within 5 minutes. This is achieved by invoking <a
      * href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html"
      * >CreateParticipantConnection</a> with WEBSOCKET and CONNECTION_CREDENTIALS.
-     * </p>
-     * <p>
-     * A 429 error occurs in two situations:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * API rate limit is exceeded. API TPS throttling returns a <code>TooManyRequests</code> exception from the API
-     * Gateway.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * The <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">quota for
-     * concurrent active chats</a> is exceeded. Active chat throttling returns a <code>LimitExceededException</code>.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * For more information about how chat works, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat.html">Chat</a> in the <i>Amazon Connect
-     * Administrator Guide</i>.
      * </p>
      * 
      * @param startChatContactRequest
@@ -1474,6 +1461,80 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
+     * This API starts recording the contact when the agent joins the call. StartContactRecording is a one-time action.
+     * For example, if you use StopContactRecording to stop recording an ongoing call, you can't use
+     * StartContactRecording to restart it. For scenarios where the recording has started and you want to suspend and
+     * resume it, such as when collecting sensitive information (for example, a credit card number), use
+     * SuspendContactRecording and ResumeContactRecording.
+     * </p>
+     * <p>
+     * You can use this API to override the recording behavior configured in the <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/set-recording-behavior.html">Set recording
+     * behavior</a> block.
+     * </p>
+     * <p>
+     * Only voice recordings are supported at this time.
+     * </p>
+     * 
+     * @param startContactRecordingRequest
+     * @return Result of the StartContactRecording operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @sample AmazonConnect.StartContactRecording
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartContactRecording" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public StartContactRecordingResult startContactRecording(StartContactRecordingRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartContactRecording(request);
+    }
+
+    @SdkInternalApi
+    final StartContactRecordingResult executeStartContactRecording(StartContactRecordingRequest startContactRecordingRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startContactRecordingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartContactRecordingRequest> request = null;
+        Response<StartContactRecordingResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartContactRecordingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startContactRecordingRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartContactRecording");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartContactRecordingResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new StartContactRecordingResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * This API places an outbound call to a contact, and then initiates the contact flow. It performs the actions in
      * the contact flow that's specified (in <code>ContactFlowId</code>).
      * </p>
@@ -1485,14 +1546,6 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
      * <p>
      * There is a 60 second dialing timeout for this operation. If the call is not connected after 60 seconds, it fails.
      * </p>
-     * <note>
-     * <p>
-     * UK numbers with a 447 prefix are not allowed by default. Before you can dial these UK mobile numbers, you must
-     * submit a service quota increase request. For more information, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon Connect
-     * Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
-     * </p>
-     * </note>
      * 
      * @param startOutboundVoiceContactRequest
      * @return Result of the StartOutboundVoiceContact operation returned by the service.
@@ -1623,15 +1676,145 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
+     * When a contact is being recorded, this API stops recording the call. StopContactRecording is a one-time action.
+     * If you use StopContactRecording to stop recording an ongoing call, you can't use StartContactRecording to restart
+     * it. For scenarios where the recording has started and you want to suspend it for sensitive information (for
+     * example, to collect a credit card number), and then restart it, use SuspendContactRecording and
+     * ResumeContactRecording.
+     * </p>
+     * <p>
+     * Only voice recordings are supported at this time.
+     * </p>
+     * 
+     * @param stopContactRecordingRequest
+     * @return Result of the StopContactRecording operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @sample AmazonConnect.StopContactRecording
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StopContactRecording" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public StopContactRecordingResult stopContactRecording(StopContactRecordingRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopContactRecording(request);
+    }
+
+    @SdkInternalApi
+    final StopContactRecordingResult executeStopContactRecording(StopContactRecordingRequest stopContactRecordingRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(stopContactRecordingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StopContactRecordingRequest> request = null;
+        Response<StopContactRecordingResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StopContactRecordingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopContactRecordingRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopContactRecording");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StopContactRecordingResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StopContactRecordingResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * When a contact is being recorded, this API suspends recording the call. For example, you might suspend the call
+     * recording while collecting sensitive information, such as a credit card number. Then use ResumeContactRecording
+     * to restart recording.
+     * </p>
+     * <p>
+     * The period of time that the recording is suspended is filled with silence in the final recording.
+     * </p>
+     * <p>
+     * Only voice recordings are supported at this time.
+     * </p>
+     * 
+     * @param suspendContactRecordingRequest
+     * @return Result of the SuspendContactRecording operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @sample AmazonConnect.SuspendContactRecording
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SuspendContactRecording"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public SuspendContactRecordingResult suspendContactRecording(SuspendContactRecordingRequest request) {
+        request = beforeClientExecution(request);
+        return executeSuspendContactRecording(request);
+    }
+
+    @SdkInternalApi
+    final SuspendContactRecordingResult executeSuspendContactRecording(SuspendContactRecordingRequest suspendContactRecordingRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(suspendContactRecordingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SuspendContactRecordingRequest> request = null;
+        Response<SuspendContactRecordingResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SuspendContactRecordingRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(suspendContactRecordingRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SuspendContactRecording");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<SuspendContactRecordingResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new SuspendContactRecordingResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Adds the specified tags to the specified resource.
      * </p>
      * <p>
      * The supported resource type is users.
-     * </p>
-     * <p>
-     * For sample policies that use tags, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_id-based-policy-examples.html">Amazon
-     * Connect Identity-Based Policy Examples</a> in the <i>Amazon Connect Administrator Guide</i>.
      * </p>
      * 
      * @param tagResourceRequest
@@ -1902,16 +2085,6 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
      * <p>
      * Updates the identity information for the specified user.
      * </p>
-     * <important>
-     * <p>
-     * Someone with the ability to invoke <code>UpdateUserIndentityInfo</code> can change the login credentials of other
-     * users by changing their email address. This poses a security risk to your organization. They can change the email
-     * address of a user to the attacker's email address, and then reset the password through email. We strongly
-     * recommend limiting who has the ability to invoke <code>UpdateUserIndentityInfo</code>. For more information, see
-     * <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-best-practices.html">Best
-     * Practices for Security Profiles</a> in the <i>Amazon Connect Administrator Guide</i>.
-     * </p>
-     * </important>
      * 
      * @param updateUserIdentityInfoRequest
      * @return Result of the UpdateUserIdentityInfo operation returned by the service.

@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies one or more conditions that determine which objects a classification job analyzes.
+ * Specifies a property- or tag-based condition that defines criteria for including or excluding objects from a
+ * classification job.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/JobScopeTerm" target="_top">AWS API
@@ -31,14 +32,14 @@ public class JobScopeTerm implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A property-based condition that defines a property, operator, and one or more values for including or excluding
-     * an object from a job.
+     * an object from the job.
      * </p>
      */
     private SimpleScopeTerm simpleScopeTerm;
     /**
      * <p>
-     * A tag-based condition that defines a property, operator, and one or more values for including or excluding an
-     * object from a job.
+     * A tag-based condition that defines the operator and a tag key or tag keys and values for including or excluding
+     * an object from the job.
      * </p>
      */
     private TagScopeTerm tagScopeTerm;
@@ -46,12 +47,12 @@ public class JobScopeTerm implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A property-based condition that defines a property, operator, and one or more values for including or excluding
-     * an object from a job.
+     * an object from the job.
      * </p>
      * 
      * @param simpleScopeTerm
      *        A property-based condition that defines a property, operator, and one or more values for including or
-     *        excluding an object from a job.
+     *        excluding an object from the job.
      */
 
     public void setSimpleScopeTerm(SimpleScopeTerm simpleScopeTerm) {
@@ -61,11 +62,11 @@ public class JobScopeTerm implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A property-based condition that defines a property, operator, and one or more values for including or excluding
-     * an object from a job.
+     * an object from the job.
      * </p>
      * 
      * @return A property-based condition that defines a property, operator, and one or more values for including or
-     *         excluding an object from a job.
+     *         excluding an object from the job.
      */
 
     public SimpleScopeTerm getSimpleScopeTerm() {
@@ -75,12 +76,12 @@ public class JobScopeTerm implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A property-based condition that defines a property, operator, and one or more values for including or excluding
-     * an object from a job.
+     * an object from the job.
      * </p>
      * 
      * @param simpleScopeTerm
      *        A property-based condition that defines a property, operator, and one or more values for including or
-     *        excluding an object from a job.
+     *        excluding an object from the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -91,13 +92,13 @@ public class JobScopeTerm implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A tag-based condition that defines a property, operator, and one or more values for including or excluding an
-     * object from a job.
+     * A tag-based condition that defines the operator and a tag key or tag keys and values for including or excluding
+     * an object from the job.
      * </p>
      * 
      * @param tagScopeTerm
-     *        A tag-based condition that defines a property, operator, and one or more values for including or excluding
-     *        an object from a job.
+     *        A tag-based condition that defines the operator and a tag key or tag keys and values for including or
+     *        excluding an object from the job.
      */
 
     public void setTagScopeTerm(TagScopeTerm tagScopeTerm) {
@@ -106,12 +107,12 @@ public class JobScopeTerm implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A tag-based condition that defines a property, operator, and one or more values for including or excluding an
-     * object from a job.
+     * A tag-based condition that defines the operator and a tag key or tag keys and values for including or excluding
+     * an object from the job.
      * </p>
      * 
-     * @return A tag-based condition that defines a property, operator, and one or more values for including or
-     *         excluding an object from a job.
+     * @return A tag-based condition that defines the operator and a tag key or tag keys and values for including or
+     *         excluding an object from the job.
      */
 
     public TagScopeTerm getTagScopeTerm() {
@@ -120,13 +121,13 @@ public class JobScopeTerm implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A tag-based condition that defines a property, operator, and one or more values for including or excluding an
-     * object from a job.
+     * A tag-based condition that defines the operator and a tag key or tag keys and values for including or excluding
+     * an object from the job.
      * </p>
      * 
      * @param tagScopeTerm
-     *        A tag-based condition that defines a property, operator, and one or more values for including or excluding
-     *        an object from a job.
+     *        A tag-based condition that defines the operator and a tag key or tag keys and values for including or
+     *        excluding an object from the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

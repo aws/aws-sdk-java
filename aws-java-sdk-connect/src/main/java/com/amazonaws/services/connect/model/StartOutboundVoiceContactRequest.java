@@ -33,14 +33,7 @@ public class StartOutboundVoiceContactRequest extends com.amazonaws.AmazonWebSer
     private String destinationPhoneNumber;
     /**
      * <p>
-     * The identifier of the contact flow for the outbound call. To see the ContactFlowId in the Amazon Connect console
-     * user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On
-     * the contact flow page, under the name of the contact flow, choose <b>Show additional flow information</b>. The
-     * ContactFlowId is the last part of the ARN, shown here in bold:
-     * </p>
-     * <p>
-     * arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>
-     * 846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
+     * The identifier of the contact flow for the outbound call.
      * </p>
      */
     private String contactFlowId;
@@ -127,24 +120,11 @@ public class StartOutboundVoiceContactRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The identifier of the contact flow for the outbound call. To see the ContactFlowId in the Amazon Connect console
-     * user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On
-     * the contact flow page, under the name of the contact flow, choose <b>Show additional flow information</b>. The
-     * ContactFlowId is the last part of the ARN, shown here in bold:
-     * </p>
-     * <p>
-     * arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>
-     * 846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
+     * The identifier of the contact flow for the outbound call.
      * </p>
      * 
      * @param contactFlowId
-     *        The identifier of the contact flow for the outbound call. To see the ContactFlowId in the Amazon Connect
-     *        console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the
-     *        contact flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional flow
-     *        information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
-     *        <p>
-     *        arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>
-     *        846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
+     *        The identifier of the contact flow for the outbound call.
      */
 
     public void setContactFlowId(String contactFlowId) {
@@ -153,23 +133,10 @@ public class StartOutboundVoiceContactRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The identifier of the contact flow for the outbound call. To see the ContactFlowId in the Amazon Connect console
-     * user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On
-     * the contact flow page, under the name of the contact flow, choose <b>Show additional flow information</b>. The
-     * ContactFlowId is the last part of the ARN, shown here in bold:
-     * </p>
-     * <p>
-     * arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>
-     * 846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
+     * The identifier of the contact flow for the outbound call.
      * </p>
      * 
-     * @return The identifier of the contact flow for the outbound call. To see the ContactFlowId in the Amazon Connect
-     *         console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the
-     *         contact flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional
-     *         flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
-     *         <p>
-     *         arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>
-     *         846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
+     * @return The identifier of the contact flow for the outbound call.
      */
 
     public String getContactFlowId() {
@@ -178,24 +145,11 @@ public class StartOutboundVoiceContactRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The identifier of the contact flow for the outbound call. To see the ContactFlowId in the Amazon Connect console
-     * user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On
-     * the contact flow page, under the name of the contact flow, choose <b>Show additional flow information</b>. The
-     * ContactFlowId is the last part of the ARN, shown here in bold:
-     * </p>
-     * <p>
-     * arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>
-     * 846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
+     * The identifier of the contact flow for the outbound call.
      * </p>
      * 
      * @param contactFlowId
-     *        The identifier of the contact flow for the outbound call. To see the ContactFlowId in the Amazon Connect
-     *        console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the
-     *        contact flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional flow
-     *        information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
-     *        <p>
-     *        arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>
-     *        846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
+     *        The identifier of the contact flow for the outbound call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -84,7 +84,7 @@ public class GetCustomDataIdentifierResult extends com.amazonaws.AmazonWebServic
     private String name;
     /**
      * <p>
-     * The regular expression (regex) that defines the pattern to match.
+     * The regular expression (<i>regex</i>) that defines the pattern to match.
      * </p>
      */
     private String regex;
@@ -566,11 +566,11 @@ public class GetCustomDataIdentifierResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The regular expression (regex) that defines the pattern to match.
+     * The regular expression (<i>regex</i>) that defines the pattern to match.
      * </p>
      * 
      * @param regex
-     *        The regular expression (regex) that defines the pattern to match.
+     *        The regular expression (<i>regex</i>) that defines the pattern to match.
      */
 
     public void setRegex(String regex) {
@@ -579,10 +579,10 @@ public class GetCustomDataIdentifierResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The regular expression (regex) that defines the pattern to match.
+     * The regular expression (<i>regex</i>) that defines the pattern to match.
      * </p>
      * 
-     * @return The regular expression (regex) that defines the pattern to match.
+     * @return The regular expression (<i>regex</i>) that defines the pattern to match.
      */
 
     public String getRegex() {
@@ -591,11 +591,11 @@ public class GetCustomDataIdentifierResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The regular expression (regex) that defines the pattern to match.
+     * The regular expression (<i>regex</i>) that defines the pattern to match.
      * </p>
      * 
      * @param regex
-     *        The regular expression (regex) that defines the pattern to match.
+     *        The regular expression (<i>regex</i>) that defines the pattern to match.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

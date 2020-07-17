@@ -50,9 +50,10 @@ public class PredefinedMetricSpecification implements Serializable, Cloneable, S
      * ECS service.
      * </p>
      * <p>
-     * The format is
-     * app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target
-     * -group-id&gt;, where:
+     * Elastic Load Balancing sends data about your load balancers to Amazon CloudWatch. CloudWatch collects the data
+     * and specifies the format to use to access the data. The format is
+     * app/&lt;load-balancer-name&gt;/&lt;load-balancer
+     * -id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;, where:
      * </p>
      * <ul>
      * <li>
@@ -66,6 +67,13 @@ public class PredefinedMetricSpecification implements Serializable, Cloneable, S
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * To find the ARN for an Application Load Balancer, use the <a
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
+     * >DescribeLoadBalancers</a> API operation. To find the ARN for the target group, use the <a
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html"
+     * >DescribeTargetGroups</a> API operation.
+     * </p>
      */
     private String resourceLabel;
 
@@ -159,9 +167,10 @@ public class PredefinedMetricSpecification implements Serializable, Cloneable, S
      * ECS service.
      * </p>
      * <p>
-     * The format is
-     * app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target
-     * -group-id&gt;, where:
+     * Elastic Load Balancing sends data about your load balancers to Amazon CloudWatch. CloudWatch collects the data
+     * and specifies the format to use to access the data. The format is
+     * app/&lt;load-balancer-name&gt;/&lt;load-balancer
+     * -id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;, where:
      * </p>
      * <ul>
      * <li>
@@ -175,15 +184,23 @@ public class PredefinedMetricSpecification implements Serializable, Cloneable, S
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * To find the ARN for an Application Load Balancer, use the <a
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
+     * >DescribeLoadBalancers</a> API operation. To find the ARN for the target group, use the <a
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html"
+     * >DescribeTargetGroups</a> API operation.
+     * </p>
      * 
      * @param resourceLabel
      *        Identifies the resource associated with the metric type. You can't specify a resource label unless the
      *        metric type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Spot
      *        Fleet request or ECS service.</p>
      *        <p>
-     *        The format is
-     *        app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;
-     *        /&lt;target-group-id&gt;, where:
+     *        Elastic Load Balancing sends data about your load balancers to Amazon CloudWatch. CloudWatch collects the
+     *        data and specifies the format to use to access the data. The format is
+     *        app/&lt;load-balancer-name&gt;/&lt;load
+     *        -balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;, where:
      *        </p>
      *        <ul>
      *        <li>
@@ -197,6 +214,13 @@ public class PredefinedMetricSpecification implements Serializable, Cloneable, S
      *        ARN.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        To find the ARN for an Application Load Balancer, use the <a href=
+     *        "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
+     *        >DescribeLoadBalancers</a> API operation. To find the ARN for the target group, use the <a href=
+     *        "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html"
+     *        >DescribeTargetGroups</a> API operation.
      */
 
     public void setResourceLabel(String resourceLabel) {
@@ -210,9 +234,10 @@ public class PredefinedMetricSpecification implements Serializable, Cloneable, S
      * ECS service.
      * </p>
      * <p>
-     * The format is
-     * app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target
-     * -group-id&gt;, where:
+     * Elastic Load Balancing sends data about your load balancers to Amazon CloudWatch. CloudWatch collects the data
+     * and specifies the format to use to access the data. The format is
+     * app/&lt;load-balancer-name&gt;/&lt;load-balancer
+     * -id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;, where:
      * </p>
      * <ul>
      * <li>
@@ -226,14 +251,22 @@ public class PredefinedMetricSpecification implements Serializable, Cloneable, S
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * To find the ARN for an Application Load Balancer, use the <a
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
+     * >DescribeLoadBalancers</a> API operation. To find the ARN for the target group, use the <a
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html"
+     * >DescribeTargetGroups</a> API operation.
+     * </p>
      * 
      * @return Identifies the resource associated with the metric type. You can't specify a resource label unless the
      *         metric type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Spot
      *         Fleet request or ECS service.</p>
      *         <p>
-     *         The format is
-     *         app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt
-     *         ;/&lt;target-group-id&gt;, where:
+     *         Elastic Load Balancing sends data about your load balancers to Amazon CloudWatch. CloudWatch collects the
+     *         data and specifies the format to use to access the data. The format is
+     *         app/&lt;load-balancer-name&gt;/&lt;
+     *         load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;, where:
      *         </p>
      *         <ul>
      *         <li>
@@ -247,6 +280,13 @@ public class PredefinedMetricSpecification implements Serializable, Cloneable, S
      *         ARN.
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         To find the ARN for an Application Load Balancer, use the <a href=
+     *         "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
+     *         >DescribeLoadBalancers</a> API operation. To find the ARN for the target group, use the <a href=
+     *         "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html"
+     *         >DescribeTargetGroups</a> API operation.
      */
 
     public String getResourceLabel() {
@@ -260,9 +300,10 @@ public class PredefinedMetricSpecification implements Serializable, Cloneable, S
      * ECS service.
      * </p>
      * <p>
-     * The format is
-     * app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target
-     * -group-id&gt;, where:
+     * Elastic Load Balancing sends data about your load balancers to Amazon CloudWatch. CloudWatch collects the data
+     * and specifies the format to use to access the data. The format is
+     * app/&lt;load-balancer-name&gt;/&lt;load-balancer
+     * -id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;, where:
      * </p>
      * <ul>
      * <li>
@@ -276,15 +317,23 @@ public class PredefinedMetricSpecification implements Serializable, Cloneable, S
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * To find the ARN for an Application Load Balancer, use the <a
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
+     * >DescribeLoadBalancers</a> API operation. To find the ARN for the target group, use the <a
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html"
+     * >DescribeTargetGroups</a> API operation.
+     * </p>
      * 
      * @param resourceLabel
      *        Identifies the resource associated with the metric type. You can't specify a resource label unless the
      *        metric type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Spot
      *        Fleet request or ECS service.</p>
      *        <p>
-     *        The format is
-     *        app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;
-     *        /&lt;target-group-id&gt;, where:
+     *        Elastic Load Balancing sends data about your load balancers to Amazon CloudWatch. CloudWatch collects the
+     *        data and specifies the format to use to access the data. The format is
+     *        app/&lt;load-balancer-name&gt;/&lt;load
+     *        -balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;, where:
      *        </p>
      *        <ul>
      *        <li>
@@ -298,6 +347,13 @@ public class PredefinedMetricSpecification implements Serializable, Cloneable, S
      *        ARN.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        To find the ARN for an Application Load Balancer, use the <a href=
+     *        "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
+     *        >DescribeLoadBalancers</a> API operation. To find the ARN for the target group, use the <a href=
+     *        "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html"
+     *        >DescribeTargetGroups</a> API operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

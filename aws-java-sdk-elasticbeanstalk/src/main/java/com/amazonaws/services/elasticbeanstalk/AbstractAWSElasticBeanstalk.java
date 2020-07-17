@@ -16,6 +16,7 @@ import javax.annotation.Generated;
 
 import com.amazonaws.services.elasticbeanstalk.model.*;
 import com.amazonaws.*;
+import com.amazonaws.services.elasticbeanstalk.waiters.AWSElasticBeanstalkWaiters;
 
 /**
  * Abstract implementation of {@code AWSElasticBeanstalk}. Convenient method forms pass through to the corresponding
@@ -319,6 +320,11 @@ public class AbstractAWSElasticBeanstalk implements AWSElasticBeanstalk {
 
     @Override
     public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AWSElasticBeanstalkWaiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
 

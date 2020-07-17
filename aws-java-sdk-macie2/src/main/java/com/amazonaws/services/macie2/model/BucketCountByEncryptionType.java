@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The total number of buckets, grouped by server-side encryption type. This object also reports the total number of
- * buckets that aren't encrypted.
+ * Provides information about the number of S3 buckets that use certain types of server-side encryption or don't encrypt
+ * objects by default.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BucketCountByEncryptionType" target="_top">AWS
@@ -31,30 +31,40 @@ public class BucketCountByEncryptionType implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of buckets that use an AWS Key Management Service (AWS KMS) customer master key (CMK) to encrypt
+     * objects. These buckets use AWS KMS AWS-managed (AWS-KMS) encryption or AWS KMS customer-managed (SSE-KMS)
+     * encryption.
      * </p>
      */
     private Long kmsManaged;
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of buckets that use an Amazon S3-managed key to encrypt objects. These buckets use Amazon
+     * S3-managed (SSE-S3) encryption.
      * </p>
      */
     private Long s3Managed;
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of buckets that don't encrypt objects by default. Default encryption is disabled for these
+     * buckets.
      * </p>
      */
     private Long unencrypted;
 
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of buckets that use an AWS Key Management Service (AWS KMS) customer master key (CMK) to encrypt
+     * objects. These buckets use AWS KMS AWS-managed (AWS-KMS) encryption or AWS KMS customer-managed (SSE-KMS)
+     * encryption.
      * </p>
      * 
      * @param kmsManaged
-     *        Reserved for future use.
+     *        <p>
+     *        The total number of buckets that use an AWS Key Management Service (AWS KMS) customer master key (CMK) to
+     *        encrypt objects. These buckets use AWS KMS AWS-managed (AWS-KMS) encryption or AWS KMS customer-managed
+     *        (SSE-KMS) encryption.
+     *        </p>
      */
 
     public void setKmsManaged(Long kmsManaged) {
@@ -63,10 +73,16 @@ public class BucketCountByEncryptionType implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of buckets that use an AWS Key Management Service (AWS KMS) customer master key (CMK) to encrypt
+     * objects. These buckets use AWS KMS AWS-managed (AWS-KMS) encryption or AWS KMS customer-managed (SSE-KMS)
+     * encryption.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return <p>
+     *         The total number of buckets that use an AWS Key Management Service (AWS KMS) customer master key (CMK) to
+     *         encrypt objects. These buckets use AWS KMS AWS-managed (AWS-KMS) encryption or AWS KMS customer-managed
+     *         (SSE-KMS) encryption.
+     *         </p>
      */
 
     public Long getKmsManaged() {
@@ -75,11 +91,17 @@ public class BucketCountByEncryptionType implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of buckets that use an AWS Key Management Service (AWS KMS) customer master key (CMK) to encrypt
+     * objects. These buckets use AWS KMS AWS-managed (AWS-KMS) encryption or AWS KMS customer-managed (SSE-KMS)
+     * encryption.
      * </p>
      * 
      * @param kmsManaged
-     *        Reserved for future use.
+     *        <p>
+     *        The total number of buckets that use an AWS Key Management Service (AWS KMS) customer master key (CMK) to
+     *        encrypt objects. These buckets use AWS KMS AWS-managed (AWS-KMS) encryption or AWS KMS customer-managed
+     *        (SSE-KMS) encryption.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,11 +112,13 @@ public class BucketCountByEncryptionType implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of buckets that use an Amazon S3-managed key to encrypt objects. These buckets use Amazon
+     * S3-managed (SSE-S3) encryption.
      * </p>
      * 
      * @param s3Managed
-     *        Reserved for future use.
+     *        The total number of buckets that use an Amazon S3-managed key to encrypt objects. These buckets use Amazon
+     *        S3-managed (SSE-S3) encryption.
      */
 
     public void setS3Managed(Long s3Managed) {
@@ -103,10 +127,12 @@ public class BucketCountByEncryptionType implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of buckets that use an Amazon S3-managed key to encrypt objects. These buckets use Amazon
+     * S3-managed (SSE-S3) encryption.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return The total number of buckets that use an Amazon S3-managed key to encrypt objects. These buckets use
+     *         Amazon S3-managed (SSE-S3) encryption.
      */
 
     public Long getS3Managed() {
@@ -115,11 +141,13 @@ public class BucketCountByEncryptionType implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of buckets that use an Amazon S3-managed key to encrypt objects. These buckets use Amazon
+     * S3-managed (SSE-S3) encryption.
      * </p>
      * 
      * @param s3Managed
-     *        Reserved for future use.
+     *        The total number of buckets that use an Amazon S3-managed key to encrypt objects. These buckets use Amazon
+     *        S3-managed (SSE-S3) encryption.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,11 +158,13 @@ public class BucketCountByEncryptionType implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of buckets that don't encrypt objects by default. Default encryption is disabled for these
+     * buckets.
      * </p>
      * 
      * @param unencrypted
-     *        Reserved for future use.
+     *        The total number of buckets that don't encrypt objects by default. Default encryption is disabled for
+     *        these buckets.
      */
 
     public void setUnencrypted(Long unencrypted) {
@@ -143,10 +173,12 @@ public class BucketCountByEncryptionType implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of buckets that don't encrypt objects by default. Default encryption is disabled for these
+     * buckets.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return The total number of buckets that don't encrypt objects by default. Default encryption is disabled for
+     *         these buckets.
      */
 
     public Long getUnencrypted() {
@@ -155,11 +187,13 @@ public class BucketCountByEncryptionType implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of buckets that don't encrypt objects by default. Default encryption is disabled for these
+     * buckets.
      * </p>
      * 
      * @param unencrypted
-     *        Reserved for future use.
+     *        The total number of buckets that don't encrypt objects by default. Default encryption is disabled for
+     *        these buckets.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

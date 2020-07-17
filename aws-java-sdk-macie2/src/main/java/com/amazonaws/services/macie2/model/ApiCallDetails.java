@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Reserved for future use.
+ * Provides information about an API operation that an entity invoked for an affected resource.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ApiCallDetails" target="_top">AWS API
@@ -30,36 +30,38 @@ public class ApiCallDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The name of the operation that was invoked most recently and produced the finding.
      * </p>
      */
     private String api;
     /**
      * <p>
-     * Reserved for future use.
+     * The URL of the AWS service that provides the operation, for example: s3.amazonaws.com.
      * </p>
      */
     private String apiServiceName;
     /**
      * <p>
-     * Reserved for future use.
+     * The first date and time, in UTC and extended ISO 8601 format, when any operation was invoked and produced the
+     * finding.
      * </p>
      */
     private java.util.Date firstSeen;
     /**
      * <p>
-     * Reserved for future use.
+     * The most recent date and time, in UTC and extended ISO 8601 format, when the specified operation (api) was
+     * invoked and produced the finding.
      * </p>
      */
     private java.util.Date lastSeen;
 
     /**
      * <p>
-     * Reserved for future use.
+     * The name of the operation that was invoked most recently and produced the finding.
      * </p>
      * 
      * @param api
-     *        Reserved for future use.
+     *        The name of the operation that was invoked most recently and produced the finding.
      */
 
     public void setApi(String api) {
@@ -68,10 +70,10 @@ public class ApiCallDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The name of the operation that was invoked most recently and produced the finding.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return The name of the operation that was invoked most recently and produced the finding.
      */
 
     public String getApi() {
@@ -80,11 +82,11 @@ public class ApiCallDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The name of the operation that was invoked most recently and produced the finding.
      * </p>
      * 
      * @param api
-     *        Reserved for future use.
+     *        The name of the operation that was invoked most recently and produced the finding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +97,11 @@ public class ApiCallDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The URL of the AWS service that provides the operation, for example: s3.amazonaws.com.
      * </p>
      * 
      * @param apiServiceName
-     *        Reserved for future use.
+     *        The URL of the AWS service that provides the operation, for example: s3.amazonaws.com.
      */
 
     public void setApiServiceName(String apiServiceName) {
@@ -108,10 +110,10 @@ public class ApiCallDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The URL of the AWS service that provides the operation, for example: s3.amazonaws.com.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return The URL of the AWS service that provides the operation, for example: s3.amazonaws.com.
      */
 
     public String getApiServiceName() {
@@ -120,11 +122,11 @@ public class ApiCallDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The URL of the AWS service that provides the operation, for example: s3.amazonaws.com.
      * </p>
      * 
      * @param apiServiceName
-     *        Reserved for future use.
+     *        The URL of the AWS service that provides the operation, for example: s3.amazonaws.com.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +137,13 @@ public class ApiCallDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The first date and time, in UTC and extended ISO 8601 format, when any operation was invoked and produced the
+     * finding.
      * </p>
      * 
      * @param firstSeen
-     *        Reserved for future use.
+     *        The first date and time, in UTC and extended ISO 8601 format, when any operation was invoked and produced
+     *        the finding.
      */
 
     public void setFirstSeen(java.util.Date firstSeen) {
@@ -148,10 +152,12 @@ public class ApiCallDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The first date and time, in UTC and extended ISO 8601 format, when any operation was invoked and produced the
+     * finding.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return The first date and time, in UTC and extended ISO 8601 format, when any operation was invoked and produced
+     *         the finding.
      */
 
     public java.util.Date getFirstSeen() {
@@ -160,11 +166,13 @@ public class ApiCallDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The first date and time, in UTC and extended ISO 8601 format, when any operation was invoked and produced the
+     * finding.
      * </p>
      * 
      * @param firstSeen
-     *        Reserved for future use.
+     *        The first date and time, in UTC and extended ISO 8601 format, when any operation was invoked and produced
+     *        the finding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -175,11 +183,13 @@ public class ApiCallDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The most recent date and time, in UTC and extended ISO 8601 format, when the specified operation (api) was
+     * invoked and produced the finding.
      * </p>
      * 
      * @param lastSeen
-     *        Reserved for future use.
+     *        The most recent date and time, in UTC and extended ISO 8601 format, when the specified operation (api) was
+     *        invoked and produced the finding.
      */
 
     public void setLastSeen(java.util.Date lastSeen) {
@@ -188,10 +198,12 @@ public class ApiCallDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The most recent date and time, in UTC and extended ISO 8601 format, when the specified operation (api) was
+     * invoked and produced the finding.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return The most recent date and time, in UTC and extended ISO 8601 format, when the specified operation (api)
+     *         was invoked and produced the finding.
      */
 
     public java.util.Date getLastSeen() {
@@ -200,11 +212,13 @@ public class ApiCallDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The most recent date and time, in UTC and extended ISO 8601 format, when the specified operation (api) was
+     * invoked and produced the finding.
      * </p>
      * 
      * @param lastSeen
-     *        Reserved for future use.
+     *        The most recent date and time, in UTC and extended ISO 8601 format, when the specified operation (api) was
+     *        invoked and produced the finding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

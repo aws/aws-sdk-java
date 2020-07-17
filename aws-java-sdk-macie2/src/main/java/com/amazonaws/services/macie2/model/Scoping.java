@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object that specifies conditions for including or excluding objects from the job.
+ * Specifies one or more property- and tag-based conditions that refine the scope of a classification job. These
+ * conditions define criteria that determine which objects a job analyzes.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/Scoping" target="_top">AWS API
@@ -30,24 +31,24 @@ public class Scoping implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The property- or tag-based conditions that determine which objects to exclude from the analysis.
      * </p>
      */
     private JobScopingBlock excludes;
     /**
      * <p>
-     * Reserved for future use.
+     * The property- or tag-based conditions that determine which objects to include in the analysis.
      * </p>
      */
     private JobScopingBlock includes;
 
     /**
      * <p>
-     * Reserved for future use.
+     * The property- or tag-based conditions that determine which objects to exclude from the analysis.
      * </p>
      * 
      * @param excludes
-     *        Reserved for future use.
+     *        The property- or tag-based conditions that determine which objects to exclude from the analysis.
      */
 
     public void setExcludes(JobScopingBlock excludes) {
@@ -56,10 +57,10 @@ public class Scoping implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The property- or tag-based conditions that determine which objects to exclude from the analysis.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return The property- or tag-based conditions that determine which objects to exclude from the analysis.
      */
 
     public JobScopingBlock getExcludes() {
@@ -68,11 +69,11 @@ public class Scoping implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The property- or tag-based conditions that determine which objects to exclude from the analysis.
      * </p>
      * 
      * @param excludes
-     *        Reserved for future use.
+     *        The property- or tag-based conditions that determine which objects to exclude from the analysis.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +84,11 @@ public class Scoping implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The property- or tag-based conditions that determine which objects to include in the analysis.
      * </p>
      * 
      * @param includes
-     *        Reserved for future use.
+     *        The property- or tag-based conditions that determine which objects to include in the analysis.
      */
 
     public void setIncludes(JobScopingBlock includes) {
@@ -96,10 +97,10 @@ public class Scoping implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The property- or tag-based conditions that determine which objects to include in the analysis.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return The property- or tag-based conditions that determine which objects to include in the analysis.
      */
 
     public JobScopingBlock getIncludes() {
@@ -108,11 +109,11 @@ public class Scoping implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The property- or tag-based conditions that determine which objects to include in the analysis.
      * </p>
      * 
      * @param includes
-     *        Reserved for future use.
+     *        The property- or tag-based conditions that determine which objects to include in the analysis.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

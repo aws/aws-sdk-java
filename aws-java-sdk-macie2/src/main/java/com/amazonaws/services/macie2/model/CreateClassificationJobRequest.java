@@ -39,7 +39,7 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
     private java.util.List<String> customDataIdentifierIds;
     /**
      * <p>
-     * A custom description of the job. The description can contain as many as 512 characters.
+     * A custom description of the job. The description can contain as many as 200 characters.
      * </p>
      */
     private String description;
@@ -71,7 +71,7 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
     private String jobType;
     /**
      * <p>
-     * A custom name for the job. The name must contain at least 3 characters and can contain as many as 64 characters.
+     * A custom name for the job. The name can contain as many as 500 characters.
      * </p>
      */
     private String name;
@@ -219,11 +219,11 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A custom description of the job. The description can contain as many as 512 characters.
+     * A custom description of the job. The description can contain as many as 200 characters.
      * </p>
      * 
      * @param description
-     *        A custom description of the job. The description can contain as many as 512 characters.
+     *        A custom description of the job. The description can contain as many as 200 characters.
      */
 
     public void setDescription(String description) {
@@ -232,10 +232,10 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A custom description of the job. The description can contain as many as 512 characters.
+     * A custom description of the job. The description can contain as many as 200 characters.
      * </p>
      * 
-     * @return A custom description of the job. The description can contain as many as 512 characters.
+     * @return A custom description of the job. The description can contain as many as 200 characters.
      */
 
     public String getDescription() {
@@ -244,11 +244,11 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A custom description of the job. The description can contain as many as 512 characters.
+     * A custom description of the job. The description can contain as many as 200 characters.
      * </p>
      * 
      * @param description
-     *        A custom description of the job. The description can contain as many as 512 characters.
+     *        A custom description of the job. The description can contain as many as 200 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -478,12 +478,11 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A custom name for the job. The name must contain at least 3 characters and can contain as many as 64 characters.
+     * A custom name for the job. The name can contain as many as 500 characters.
      * </p>
      * 
      * @param name
-     *        A custom name for the job. The name must contain at least 3 characters and can contain as many as 64
-     *        characters.
+     *        A custom name for the job. The name can contain as many as 500 characters.
      */
 
     public void setName(String name) {
@@ -492,11 +491,10 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A custom name for the job. The name must contain at least 3 characters and can contain as many as 64 characters.
+     * A custom name for the job. The name can contain as many as 500 characters.
      * </p>
      * 
-     * @return A custom name for the job. The name must contain at least 3 characters and can contain as many as 64
-     *         characters.
+     * @return A custom name for the job. The name can contain as many as 500 characters.
      */
 
     public String getName() {
@@ -505,12 +503,11 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A custom name for the job. The name must contain at least 3 characters and can contain as many as 64 characters.
+     * A custom name for the job. The name can contain as many as 500 characters.
      * </p>
      * 
      * @param name
-     *        A custom name for the job. The name must contain at least 3 characters and can contain as many as 64
-     *        characters.
+     *        A custom name for the job. The name can contain as many as 500 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

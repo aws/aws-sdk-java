@@ -30,7 +30,9 @@ public enum RelationshipStatus {
     Removed("Removed"),
     Resigned("Resigned"),
     EmailVerificationInProgress("EmailVerificationInProgress"),
-    EmailVerificationFailed("EmailVerificationFailed");
+    EmailVerificationFailed("EmailVerificationFailed"),
+    RegionDisabled("RegionDisabled"),
+    AccountSuspended("AccountSuspended");
 
     private String value;
 

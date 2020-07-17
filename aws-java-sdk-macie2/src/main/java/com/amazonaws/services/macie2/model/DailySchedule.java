@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Run the job once a day, every day. If specified, this is an empty object.
+ * Specifies that a classification job runs once a day, every day. This is an empty object.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DailySchedule" target="_top">AWS API

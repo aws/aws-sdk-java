@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies criteria for sorting the results of a query for information about findings.
+ * Specifies criteria for sorting the results of a query that retrieves aggregated statistical data about findings.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/FindingStatisticsSortCriteria"

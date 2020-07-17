@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Reserved for future use.
+ * Provides information about the city that an IP address originated from.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/IpCity" target="_top">AWS API
@@ -30,18 +30,18 @@ public class IpCity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The name of the city.
      * </p>
      */
     private String name;
 
     /**
      * <p>
-     * Reserved for future use.
+     * The name of the city.
      * </p>
      * 
      * @param name
-     *        Reserved for future use.
+     *        The name of the city.
      */
 
     public void setName(String name) {
@@ -50,10 +50,10 @@ public class IpCity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The name of the city.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return The name of the city.
      */
 
     public String getName() {
@@ -62,11 +62,11 @@ public class IpCity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The name of the city.
      * </p>
      * 
      * @param name
-     *        Reserved for future use.
+     *        The name of the city.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

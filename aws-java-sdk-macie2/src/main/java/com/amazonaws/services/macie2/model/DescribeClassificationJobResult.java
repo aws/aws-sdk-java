@@ -67,7 +67,7 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
     private String jobId;
     /**
      * <p>
-     * The current status of the job. Possible value are:
+     * The current status of the job. Possible values are:
      * </p>
      * <ul>
      * <li>
@@ -104,7 +104,7 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
     private String jobStatus;
     /**
      * <p>
-     * The schedule for running the job. Possible value are:
+     * The schedule for running the job. Possible values are:
      * </p>
      * <ul>
      * <li>
@@ -147,8 +147,7 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
     private Integer samplingPercentage;
     /**
      * <p>
-     * The recurrence pattern for running the job. If the job is configured to run every day, this value is an empty
-     * dailySchedule object. If the job is configured to run only once, this value is null.
+     * The recurrence pattern for running the job. If the job is configured to run only once, this value is null.
      * </p>
      */
     private JobScheduleFrequency scheduleFrequency;
@@ -490,7 +489,7 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The current status of the job. Possible value are:
+     * The current status of the job. Possible values are:
      * </p>
      * <ul>
      * <li>
@@ -525,7 +524,7 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
      * </ul>
      * 
      * @param jobStatus
-     *        The current status of the job. Possible value are:</p>
+     *        The current status of the job. Possible values are:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -565,7 +564,7 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The current status of the job. Possible value are:
+     * The current status of the job. Possible values are:
      * </p>
      * <ul>
      * <li>
@@ -599,7 +598,7 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
      * </li>
      * </ul>
      * 
-     * @return The current status of the job. Possible value are:</p>
+     * @return The current status of the job. Possible values are:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -639,7 +638,7 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The current status of the job. Possible value are:
+     * The current status of the job. Possible values are:
      * </p>
      * <ul>
      * <li>
@@ -674,7 +673,7 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
      * </ul>
      * 
      * @param jobStatus
-     *        The current status of the job. Possible value are:</p>
+     *        The current status of the job. Possible values are:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -716,7 +715,7 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The current status of the job. Possible value are:
+     * The current status of the job. Possible values are:
      * </p>
      * <ul>
      * <li>
@@ -751,7 +750,7 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
      * </ul>
      * 
      * @param jobStatus
-     *        The current status of the job. Possible value are:</p>
+     *        The current status of the job. Possible values are:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -793,7 +792,7 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The schedule for running the job. Possible value are:
+     * The schedule for running the job. Possible values are:
      * </p>
      * <ul>
      * <li>
@@ -810,7 +809,7 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
      * </ul>
      * 
      * @param jobType
-     *        The schedule for running the job. Possible value are:</p>
+     *        The schedule for running the job. Possible values are:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -832,7 +831,7 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The schedule for running the job. Possible value are:
+     * The schedule for running the job. Possible values are:
      * </p>
      * <ul>
      * <li>
@@ -848,7 +847,7 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
      * </li>
      * </ul>
      * 
-     * @return The schedule for running the job. Possible value are:</p>
+     * @return The schedule for running the job. Possible values are:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -870,7 +869,7 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The schedule for running the job. Possible value are:
+     * The schedule for running the job. Possible values are:
      * </p>
      * <ul>
      * <li>
@@ -887,7 +886,7 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
      * </ul>
      * 
      * @param jobType
-     *        The schedule for running the job. Possible value are:</p>
+     *        The schedule for running the job. Possible values are:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -911,7 +910,7 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The schedule for running the job. Possible value are:
+     * The schedule for running the job. Possible values are:
      * </p>
      * <ul>
      * <li>
@@ -928,7 +927,7 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
      * </ul>
      * 
      * @param jobType
-     *        The schedule for running the job. Possible value are:</p>
+     *        The schedule for running the job. Possible values are:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1112,13 +1111,11 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The recurrence pattern for running the job. If the job is configured to run every day, this value is an empty
-     * dailySchedule object. If the job is configured to run only once, this value is null.
+     * The recurrence pattern for running the job. If the job is configured to run only once, this value is null.
      * </p>
      * 
      * @param scheduleFrequency
-     *        The recurrence pattern for running the job. If the job is configured to run every day, this value is an
-     *        empty dailySchedule object. If the job is configured to run only once, this value is null.
+     *        The recurrence pattern for running the job. If the job is configured to run only once, this value is null.
      */
 
     public void setScheduleFrequency(JobScheduleFrequency scheduleFrequency) {
@@ -1127,12 +1124,11 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The recurrence pattern for running the job. If the job is configured to run every day, this value is an empty
-     * dailySchedule object. If the job is configured to run only once, this value is null.
+     * The recurrence pattern for running the job. If the job is configured to run only once, this value is null.
      * </p>
      * 
-     * @return The recurrence pattern for running the job. If the job is configured to run every day, this value is an
-     *         empty dailySchedule object. If the job is configured to run only once, this value is null.
+     * @return The recurrence pattern for running the job. If the job is configured to run only once, this value is
+     *         null.
      */
 
     public JobScheduleFrequency getScheduleFrequency() {
@@ -1141,13 +1137,11 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The recurrence pattern for running the job. If the job is configured to run every day, this value is an empty
-     * dailySchedule object. If the job is configured to run only once, this value is null.
+     * The recurrence pattern for running the job. If the job is configured to run only once, this value is null.
      * </p>
      * 
      * @param scheduleFrequency
-     *        The recurrence pattern for running the job. If the job is configured to run every day, this value is an
-     *        empty dailySchedule object. If the job is configured to run only once, this value is null.
+     *        The recurrence pattern for running the job. If the job is configured to run only once, this value is null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

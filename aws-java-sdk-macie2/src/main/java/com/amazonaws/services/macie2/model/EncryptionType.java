@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The server-side encryption algorithm that's used when storing the S3 bucket or object. Valid values are:
+ * The type of server-side encryption that's used to encrypt objects in the S3 bucket. Valid values are:
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

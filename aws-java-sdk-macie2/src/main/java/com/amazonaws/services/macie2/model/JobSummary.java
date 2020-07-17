@@ -48,7 +48,7 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
     private String jobId;
     /**
      * <p>
-     * The current status of the job. Possible value are:
+     * The current status of the job. Possible values are:
      * </p>
      * <ul>
      * <li>
@@ -85,7 +85,7 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
     private String jobStatus;
     /**
      * <p>
-     * The schedule for running the job. Possible value are:
+     * The schedule for running the job. Possible values are:
      * </p>
      * <ul>
      * <li>
@@ -260,7 +260,7 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current status of the job. Possible value are:
+     * The current status of the job. Possible values are:
      * </p>
      * <ul>
      * <li>
@@ -295,7 +295,7 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param jobStatus
-     *        The current status of the job. Possible value are:</p>
+     *        The current status of the job. Possible values are:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -335,7 +335,7 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current status of the job. Possible value are:
+     * The current status of the job. Possible values are:
      * </p>
      * <ul>
      * <li>
@@ -369,7 +369,7 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * 
-     * @return The current status of the job. Possible value are:</p>
+     * @return The current status of the job. Possible values are:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -409,7 +409,7 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current status of the job. Possible value are:
+     * The current status of the job. Possible values are:
      * </p>
      * <ul>
      * <li>
@@ -444,7 +444,7 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param jobStatus
-     *        The current status of the job. Possible value are:</p>
+     *        The current status of the job. Possible values are:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -486,7 +486,7 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current status of the job. Possible value are:
+     * The current status of the job. Possible values are:
      * </p>
      * <ul>
      * <li>
@@ -521,7 +521,7 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param jobStatus
-     *        The current status of the job. Possible value are:</p>
+     *        The current status of the job. Possible values are:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -563,7 +563,7 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The schedule for running the job. Possible value are:
+     * The schedule for running the job. Possible values are:
      * </p>
      * <ul>
      * <li>
@@ -579,7 +579,7 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param jobType
-     *        The schedule for running the job. Possible value are:</p>
+     *        The schedule for running the job. Possible values are:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -600,7 +600,7 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The schedule for running the job. Possible value are:
+     * The schedule for running the job. Possible values are:
      * </p>
      * <ul>
      * <li>
@@ -615,7 +615,7 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * 
-     * @return The schedule for running the job. Possible value are:</p>
+     * @return The schedule for running the job. Possible values are:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -636,7 +636,7 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The schedule for running the job. Possible value are:
+     * The schedule for running the job. Possible values are:
      * </p>
      * <ul>
      * <li>
@@ -652,7 +652,7 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param jobType
-     *        The schedule for running the job. Possible value are:</p>
+     *        The schedule for running the job. Possible values are:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -675,7 +675,7 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The schedule for running the job. Possible value are:
+     * The schedule for running the job. Possible values are:
      * </p>
      * <ul>
      * <li>
@@ -691,7 +691,7 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param jobType
-     *        The schedule for running the job. Possible value are:</p>
+     *        The schedule for running the job. Possible values are:</p>
      *        <ul>
      *        <li>
      *        <p>

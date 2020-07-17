@@ -41,13 +41,15 @@ public class AuthorizeClientVpnIngressRequest extends AmazonWebServiceRequest im
     /**
      * <p>
      * The ID of the group to grant access to, for example, the Active Directory group or identity provider (IdP) group.
+     * Required if <code>AuthorizeAllGroups</code> is <code>false</code> or not specified.
      * </p>
      */
     private String accessGroupId;
     /**
      * <p>
-     * Indicates whether to grant access to all clients. Use <code>true</code> to grant all clients who successfully
-     * establish a VPN connection access to the network.
+     * Indicates whether to grant access to all clients. Specify <code>true</code> to grant all clients who successfully
+     * establish a VPN connection access to the network. Must be set to <code>true</code> if <code>AccessGroupId</code>
+     * is not specified.
      * </p>
      */
     private Boolean authorizeAllGroups;
@@ -150,11 +152,12 @@ public class AuthorizeClientVpnIngressRequest extends AmazonWebServiceRequest im
     /**
      * <p>
      * The ID of the group to grant access to, for example, the Active Directory group or identity provider (IdP) group.
+     * Required if <code>AuthorizeAllGroups</code> is <code>false</code> or not specified.
      * </p>
      * 
      * @param accessGroupId
      *        The ID of the group to grant access to, for example, the Active Directory group or identity provider (IdP)
-     *        group.
+     *        group. Required if <code>AuthorizeAllGroups</code> is <code>false</code> or not specified.
      */
 
     public void setAccessGroupId(String accessGroupId) {
@@ -164,10 +167,11 @@ public class AuthorizeClientVpnIngressRequest extends AmazonWebServiceRequest im
     /**
      * <p>
      * The ID of the group to grant access to, for example, the Active Directory group or identity provider (IdP) group.
+     * Required if <code>AuthorizeAllGroups</code> is <code>false</code> or not specified.
      * </p>
      * 
      * @return The ID of the group to grant access to, for example, the Active Directory group or identity provider
-     *         (IdP) group.
+     *         (IdP) group. Required if <code>AuthorizeAllGroups</code> is <code>false</code> or not specified.
      */
 
     public String getAccessGroupId() {
@@ -177,11 +181,12 @@ public class AuthorizeClientVpnIngressRequest extends AmazonWebServiceRequest im
     /**
      * <p>
      * The ID of the group to grant access to, for example, the Active Directory group or identity provider (IdP) group.
+     * Required if <code>AuthorizeAllGroups</code> is <code>false</code> or not specified.
      * </p>
      * 
      * @param accessGroupId
      *        The ID of the group to grant access to, for example, the Active Directory group or identity provider (IdP)
-     *        group.
+     *        group. Required if <code>AuthorizeAllGroups</code> is <code>false</code> or not specified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -192,13 +197,15 @@ public class AuthorizeClientVpnIngressRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Indicates whether to grant access to all clients. Use <code>true</code> to grant all clients who successfully
-     * establish a VPN connection access to the network.
+     * Indicates whether to grant access to all clients. Specify <code>true</code> to grant all clients who successfully
+     * establish a VPN connection access to the network. Must be set to <code>true</code> if <code>AccessGroupId</code>
+     * is not specified.
      * </p>
      * 
      * @param authorizeAllGroups
-     *        Indicates whether to grant access to all clients. Use <code>true</code> to grant all clients who
-     *        successfully establish a VPN connection access to the network.
+     *        Indicates whether to grant access to all clients. Specify <code>true</code> to grant all clients who
+     *        successfully establish a VPN connection access to the network. Must be set to <code>true</code> if
+     *        <code>AccessGroupId</code> is not specified.
      */
 
     public void setAuthorizeAllGroups(Boolean authorizeAllGroups) {
@@ -207,12 +214,14 @@ public class AuthorizeClientVpnIngressRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Indicates whether to grant access to all clients. Use <code>true</code> to grant all clients who successfully
-     * establish a VPN connection access to the network.
+     * Indicates whether to grant access to all clients. Specify <code>true</code> to grant all clients who successfully
+     * establish a VPN connection access to the network. Must be set to <code>true</code> if <code>AccessGroupId</code>
+     * is not specified.
      * </p>
      * 
-     * @return Indicates whether to grant access to all clients. Use <code>true</code> to grant all clients who
-     *         successfully establish a VPN connection access to the network.
+     * @return Indicates whether to grant access to all clients. Specify <code>true</code> to grant all clients who
+     *         successfully establish a VPN connection access to the network. Must be set to <code>true</code> if
+     *         <code>AccessGroupId</code> is not specified.
      */
 
     public Boolean getAuthorizeAllGroups() {
@@ -221,13 +230,15 @@ public class AuthorizeClientVpnIngressRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Indicates whether to grant access to all clients. Use <code>true</code> to grant all clients who successfully
-     * establish a VPN connection access to the network.
+     * Indicates whether to grant access to all clients. Specify <code>true</code> to grant all clients who successfully
+     * establish a VPN connection access to the network. Must be set to <code>true</code> if <code>AccessGroupId</code>
+     * is not specified.
      * </p>
      * 
      * @param authorizeAllGroups
-     *        Indicates whether to grant access to all clients. Use <code>true</code> to grant all clients who
-     *        successfully establish a VPN connection access to the network.
+     *        Indicates whether to grant access to all clients. Specify <code>true</code> to grant all clients who
+     *        successfully establish a VPN connection access to the network. Must be set to <code>true</code> if
+     *        <code>AccessGroupId</code> is not specified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -238,12 +249,14 @@ public class AuthorizeClientVpnIngressRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Indicates whether to grant access to all clients. Use <code>true</code> to grant all clients who successfully
-     * establish a VPN connection access to the network.
+     * Indicates whether to grant access to all clients. Specify <code>true</code> to grant all clients who successfully
+     * establish a VPN connection access to the network. Must be set to <code>true</code> if <code>AccessGroupId</code>
+     * is not specified.
      * </p>
      * 
-     * @return Indicates whether to grant access to all clients. Use <code>true</code> to grant all clients who
-     *         successfully establish a VPN connection access to the network.
+     * @return Indicates whether to grant access to all clients. Specify <code>true</code> to grant all clients who
+     *         successfully establish a VPN connection access to the network. Must be set to <code>true</code> if
+     *         <code>AccessGroupId</code> is not specified.
      */
 
     public Boolean isAuthorizeAllGroups() {

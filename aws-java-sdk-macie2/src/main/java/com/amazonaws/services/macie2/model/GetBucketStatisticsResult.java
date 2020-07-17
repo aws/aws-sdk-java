@@ -31,7 +31,7 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
     private Long bucketCount;
     /**
      * <p>
-     * The total number of buckets that are publicly accessible, based on a combination of permissions settings for each
+     * The total number of buckets that are publicly accessible based on a combination of permissions settings for each
      * bucket.
      * </p>
      */
@@ -45,15 +45,14 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
     private BucketCountByEncryptionType bucketCountByEncryptionType;
     /**
      * <p>
-     * The total number of buckets that are shared with another AWS account or configured to support cross-origin
-     * resource sharing (CORS).
+     * The total number of buckets that are shared with another AWS account.
      * </p>
      */
     private BucketCountBySharedAccessType bucketCountBySharedAccessType;
     /**
      * <p>
-     * The total number of objects that Amazon Macie can monitor and analyze in all the buckets. These objects use a
-     * file format, file extension, or content type that Amazon Macie supports.
+     * The total number of objects that Amazon Macie can analyze in all the buckets. These objects use a file format,
+     * file extension, or content type that Amazon Macie supports.
      * </p>
      */
     private Long classifiableObjectCount;
@@ -124,12 +123,12 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The total number of buckets that are publicly accessible, based on a combination of permissions settings for each
+     * The total number of buckets that are publicly accessible based on a combination of permissions settings for each
      * bucket.
      * </p>
      * 
      * @param bucketCountByEffectivePermission
-     *        The total number of buckets that are publicly accessible, based on a combination of permissions settings
+     *        The total number of buckets that are publicly accessible based on a combination of permissions settings
      *        for each bucket.
      */
 
@@ -139,11 +138,11 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The total number of buckets that are publicly accessible, based on a combination of permissions settings for each
+     * The total number of buckets that are publicly accessible based on a combination of permissions settings for each
      * bucket.
      * </p>
      * 
-     * @return The total number of buckets that are publicly accessible, based on a combination of permissions settings
+     * @return The total number of buckets that are publicly accessible based on a combination of permissions settings
      *         for each bucket.
      */
 
@@ -153,12 +152,12 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The total number of buckets that are publicly accessible, based on a combination of permissions settings for each
+     * The total number of buckets that are publicly accessible based on a combination of permissions settings for each
      * bucket.
      * </p>
      * 
      * @param bucketCountByEffectivePermission
-     *        The total number of buckets that are publicly accessible, based on a combination of permissions settings
+     *        The total number of buckets that are publicly accessible based on a combination of permissions settings
      *        for each bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -216,13 +215,11 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The total number of buckets that are shared with another AWS account or configured to support cross-origin
-     * resource sharing (CORS).
+     * The total number of buckets that are shared with another AWS account.
      * </p>
      * 
      * @param bucketCountBySharedAccessType
-     *        The total number of buckets that are shared with another AWS account or configured to support cross-origin
-     *        resource sharing (CORS).
+     *        The total number of buckets that are shared with another AWS account.
      */
 
     public void setBucketCountBySharedAccessType(BucketCountBySharedAccessType bucketCountBySharedAccessType) {
@@ -231,12 +228,10 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The total number of buckets that are shared with another AWS account or configured to support cross-origin
-     * resource sharing (CORS).
+     * The total number of buckets that are shared with another AWS account.
      * </p>
      * 
-     * @return The total number of buckets that are shared with another AWS account or configured to support
-     *         cross-origin resource sharing (CORS).
+     * @return The total number of buckets that are shared with another AWS account.
      */
 
     public BucketCountBySharedAccessType getBucketCountBySharedAccessType() {
@@ -245,13 +240,11 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The total number of buckets that are shared with another AWS account or configured to support cross-origin
-     * resource sharing (CORS).
+     * The total number of buckets that are shared with another AWS account.
      * </p>
      * 
      * @param bucketCountBySharedAccessType
-     *        The total number of buckets that are shared with another AWS account or configured to support cross-origin
-     *        resource sharing (CORS).
+     *        The total number of buckets that are shared with another AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -262,13 +255,13 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The total number of objects that Amazon Macie can monitor and analyze in all the buckets. These objects use a
-     * file format, file extension, or content type that Amazon Macie supports.
+     * The total number of objects that Amazon Macie can analyze in all the buckets. These objects use a file format,
+     * file extension, or content type that Amazon Macie supports.
      * </p>
      * 
      * @param classifiableObjectCount
-     *        The total number of objects that Amazon Macie can monitor and analyze in all the buckets. These objects
-     *        use a file format, file extension, or content type that Amazon Macie supports.
+     *        The total number of objects that Amazon Macie can analyze in all the buckets. These objects use a file
+     *        format, file extension, or content type that Amazon Macie supports.
      */
 
     public void setClassifiableObjectCount(Long classifiableObjectCount) {
@@ -277,12 +270,12 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The total number of objects that Amazon Macie can monitor and analyze in all the buckets. These objects use a
-     * file format, file extension, or content type that Amazon Macie supports.
+     * The total number of objects that Amazon Macie can analyze in all the buckets. These objects use a file format,
+     * file extension, or content type that Amazon Macie supports.
      * </p>
      * 
-     * @return The total number of objects that Amazon Macie can monitor and analyze in all the buckets. These objects
-     *         use a file format, file extension, or content type that Amazon Macie supports.
+     * @return The total number of objects that Amazon Macie can analyze in all the buckets. These objects use a file
+     *         format, file extension, or content type that Amazon Macie supports.
      */
 
     public Long getClassifiableObjectCount() {
@@ -291,13 +284,13 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The total number of objects that Amazon Macie can monitor and analyze in all the buckets. These objects use a
-     * file format, file extension, or content type that Amazon Macie supports.
+     * The total number of objects that Amazon Macie can analyze in all the buckets. These objects use a file format,
+     * file extension, or content type that Amazon Macie supports.
      * </p>
      * 
      * @param classifiableObjectCount
-     *        The total number of objects that Amazon Macie can monitor and analyze in all the buckets. These objects
-     *        use a file format, file extension, or content type that Amazon Macie supports.
+     *        The total number of objects that Amazon Macie can analyze in all the buckets. These objects use a file
+     *        format, file extension, or content type that Amazon Macie supports.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Provides detailed information about a sensitive data finding, including the types and number of occurrences of the
- * data that was found.
+ * sensitive data that was found.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ClassificationResult" target="_top">AWS API

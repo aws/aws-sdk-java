@@ -324,7 +324,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Deletes a custom data identifier.
+     * Soft deletes a custom data identifier.
      * </p>
      * 
      * @param deleteCustomDataIdentifierRequest
@@ -338,7 +338,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Deletes a custom data identifier.
+     * Soft deletes a custom data identifier.
      * </p>
      * 
      * @param deleteCustomDataIdentifierRequest
@@ -1125,7 +1125,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Retrieves information about the status and settings for one or more classification jobs.
+     * Retrieves a subset of information about one or more classification jobs.
      * </p>
      * 
      * @param listClassificationJobsRequest
@@ -1138,7 +1138,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Retrieves information about the status and settings for one or more classification jobs.
+     * Retrieves a subset of information about one or more classification jobs.
      * </p>
      * 
      * @param listClassificationJobsRequest

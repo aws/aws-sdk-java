@@ -33,7 +33,7 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
     private String clientToken;
     /**
      * <p>
-     * A custom description of the custom data identifier. The description can contain up to 120 characters.
+     * A custom description of the custom data identifier. The description can contain as many as 512 characters.
      * </p>
      * <p>
      * We strongly recommend that you avoid including any sensitive data in the description of a custom data identifier.
@@ -68,7 +68,7 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
     private Integer maximumMatchDistance;
     /**
      * <p>
-     * A custom name for the custom data identifier. The name can contain as many as 120 characters.
+     * A custom name for the custom data identifier. The name can contain as many as 128 characters.
      * </p>
      * <p>
      * We strongly recommend that you avoid including any sensitive data in the name of a custom data identifier. Other
@@ -79,8 +79,8 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
     private String name;
     /**
      * <p>
-     * The regular expression (regex) that defines the pattern to match. The expression can contain as many as 500
-     * characters.
+     * The regular expression (<i>regex</i>) that defines the pattern to match. The expression can contain as many as
+     * 512 characters.
      * </p>
      */
     private String regex;
@@ -138,7 +138,7 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A custom description of the custom data identifier. The description can contain up to 120 characters.
+     * A custom description of the custom data identifier. The description can contain as many as 512 characters.
      * </p>
      * <p>
      * We strongly recommend that you avoid including any sensitive data in the description of a custom data identifier.
@@ -147,7 +147,8 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
      * </p>
      * 
      * @param description
-     *        A custom description of the custom data identifier. The description can contain up to 120 characters.</p>
+     *        A custom description of the custom data identifier. The description can contain as many as 512
+     *        characters.</p>
      *        <p>
      *        We strongly recommend that you avoid including any sensitive data in the description of a custom data
      *        identifier. Other users of your account might be able to see the identifier's description, depending on
@@ -160,7 +161,7 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A custom description of the custom data identifier. The description can contain up to 120 characters.
+     * A custom description of the custom data identifier. The description can contain as many as 512 characters.
      * </p>
      * <p>
      * We strongly recommend that you avoid including any sensitive data in the description of a custom data identifier.
@@ -168,7 +169,8 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
      * they're allowed to perform in Amazon Macie.
      * </p>
      * 
-     * @return A custom description of the custom data identifier. The description can contain up to 120 characters.</p>
+     * @return A custom description of the custom data identifier. The description can contain as many as 512
+     *         characters.</p>
      *         <p>
      *         We strongly recommend that you avoid including any sensitive data in the description of a custom data
      *         identifier. Other users of your account might be able to see the identifier's description, depending on
@@ -181,7 +183,7 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A custom description of the custom data identifier. The description can contain up to 120 characters.
+     * A custom description of the custom data identifier. The description can contain as many as 512 characters.
      * </p>
      * <p>
      * We strongly recommend that you avoid including any sensitive data in the description of a custom data identifier.
@@ -190,7 +192,8 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
      * </p>
      * 
      * @param description
-     *        A custom description of the custom data identifier. The description can contain up to 120 characters.</p>
+     *        A custom description of the custom data identifier. The description can contain as many as 512
+     *        characters.</p>
      *        <p>
      *        We strongly recommend that you avoid including any sensitive data in the description of a custom data
      *        identifier. Other users of your account might be able to see the identifier's description, depending on
@@ -432,7 +435,7 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A custom name for the custom data identifier. The name can contain as many as 120 characters.
+     * A custom name for the custom data identifier. The name can contain as many as 128 characters.
      * </p>
      * <p>
      * We strongly recommend that you avoid including any sensitive data in the name of a custom data identifier. Other
@@ -441,7 +444,7 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
      * </p>
      * 
      * @param name
-     *        A custom name for the custom data identifier. The name can contain as many as 120 characters.</p>
+     *        A custom name for the custom data identifier. The name can contain as many as 128 characters.</p>
      *        <p>
      *        We strongly recommend that you avoid including any sensitive data in the name of a custom data identifier.
      *        Other users of your account might be able to see the identifier's name, depending on the actions that
@@ -454,7 +457,7 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A custom name for the custom data identifier. The name can contain as many as 120 characters.
+     * A custom name for the custom data identifier. The name can contain as many as 128 characters.
      * </p>
      * <p>
      * We strongly recommend that you avoid including any sensitive data in the name of a custom data identifier. Other
@@ -462,7 +465,7 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
      * to perform in Amazon Macie.
      * </p>
      * 
-     * @return A custom name for the custom data identifier. The name can contain as many as 120 characters.</p>
+     * @return A custom name for the custom data identifier. The name can contain as many as 128 characters.</p>
      *         <p>
      *         We strongly recommend that you avoid including any sensitive data in the name of a custom data
      *         identifier. Other users of your account might be able to see the identifier's name, depending on the
@@ -475,7 +478,7 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A custom name for the custom data identifier. The name can contain as many as 120 characters.
+     * A custom name for the custom data identifier. The name can contain as many as 128 characters.
      * </p>
      * <p>
      * We strongly recommend that you avoid including any sensitive data in the name of a custom data identifier. Other
@@ -484,7 +487,7 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
      * </p>
      * 
      * @param name
-     *        A custom name for the custom data identifier. The name can contain as many as 120 characters.</p>
+     *        A custom name for the custom data identifier. The name can contain as many as 128 characters.</p>
      *        <p>
      *        We strongly recommend that you avoid including any sensitive data in the name of a custom data identifier.
      *        Other users of your account might be able to see the identifier's name, depending on the actions that
@@ -499,13 +502,13 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The regular expression (regex) that defines the pattern to match. The expression can contain as many as 500
-     * characters.
+     * The regular expression (<i>regex</i>) that defines the pattern to match. The expression can contain as many as
+     * 512 characters.
      * </p>
      * 
      * @param regex
-     *        The regular expression (regex) that defines the pattern to match. The expression can contain as many as
-     *        500 characters.
+     *        The regular expression (<i>regex</i>) that defines the pattern to match. The expression can contain as
+     *        many as 512 characters.
      */
 
     public void setRegex(String regex) {
@@ -514,12 +517,12 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The regular expression (regex) that defines the pattern to match. The expression can contain as many as 500
-     * characters.
+     * The regular expression (<i>regex</i>) that defines the pattern to match. The expression can contain as many as
+     * 512 characters.
      * </p>
      * 
-     * @return The regular expression (regex) that defines the pattern to match. The expression can contain as many as
-     *         500 characters.
+     * @return The regular expression (<i>regex</i>) that defines the pattern to match. The expression can contain as
+     *         many as 512 characters.
      */
 
     public String getRegex() {
@@ -528,13 +531,13 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The regular expression (regex) that defines the pattern to match. The expression can contain as many as 500
-     * characters.
+     * The regular expression (<i>regex</i>) that defines the pattern to match. The expression can contain as many as
+     * 512 characters.
      * </p>
      * 
      * @param regex
-     *        The regular expression (regex) that defines the pattern to match. The expression can contain as many as
-     *        500 characters.
+     *        The regular expression (<i>regex</i>) that defines the pattern to match. The expression can contain as
+     *        many as 512 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

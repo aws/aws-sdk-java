@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides information about sensitive data that was detected by managed data identifiers and produced a finding.
+ * Provides information about sensitive data that was detected by managed data identifiers and produced a sensitive data
+ * finding.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DefaultDetection" target="_top">AWS API

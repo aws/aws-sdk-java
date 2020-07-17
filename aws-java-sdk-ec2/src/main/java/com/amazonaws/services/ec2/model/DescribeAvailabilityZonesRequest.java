@@ -50,6 +50,11 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
+     * The ID of the zone that handles some of the Local Zone control plane operations, such as API calls.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>region-name</code> - The name of the Region for the Zone (for example, <code>us-east-1</code>).
      * </p>
      * </li>
@@ -67,8 +72,18 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
+     * <code>zone-type</code> - The type of zone, for example, <code>local-zone</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>zone-name</code> - The name of the Availability Zone (for example, <code>us-east-1a</code>) or the Local
      * Zone (for example, use <code>us-west-2-lax-1a</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>zone-type</code> - The type of zone, for example, <code>local-zone</code>.
      * </p>
      * </li>
      * </ul>
@@ -121,6 +136,11 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
+     * The ID of the zone that handles some of the Local Zone control plane operations, such as API calls.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>region-name</code> - The name of the Region for the Zone (for example, <code>us-east-1</code>).
      * </p>
      * </li>
@@ -138,8 +158,18 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
+     * <code>zone-type</code> - The type of zone, for example, <code>local-zone</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>zone-name</code> - The name of the Availability Zone (for example, <code>us-east-1a</code>) or the Local
      * Zone (for example, use <code>us-west-2-lax-1a</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>zone-type</code> - The type of zone, for example, <code>local-zone</code>.
      * </p>
      * </li>
      * </ul>
@@ -165,6 +195,11 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      *         </li>
      *         <li>
      *         <p>
+     *         The ID of the zone that handles some of the Local Zone control plane operations, such as API calls.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>region-name</code> - The name of the Region for the Zone (for example, <code>us-east-1</code>).
      *         </p>
      *         </li>
@@ -182,8 +217,18 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      *         </li>
      *         <li>
      *         <p>
+     *         <code>zone-type</code> - The type of zone, for example, <code>local-zone</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>zone-name</code> - The name of the Availability Zone (for example, <code>us-east-1a</code>) or the
      *         Local Zone (for example, use <code>us-west-2-lax-1a</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>zone-type</code> - The type of zone, for example, <code>local-zone</code>.
      *         </p>
      *         </li>
      */
@@ -219,6 +264,11 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
+     * The ID of the zone that handles some of the Local Zone control plane operations, such as API calls.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>region-name</code> - The name of the Region for the Zone (for example, <code>us-east-1</code>).
      * </p>
      * </li>
@@ -236,8 +286,18 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
+     * <code>zone-type</code> - The type of zone, for example, <code>local-zone</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>zone-name</code> - The name of the Availability Zone (for example, <code>us-east-1a</code>) or the Local
      * Zone (for example, use <code>us-west-2-lax-1a</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>zone-type</code> - The type of zone, for example, <code>local-zone</code>.
      * </p>
      * </li>
      * </ul>
@@ -264,6 +324,11 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
+     *        The ID of the zone that handles some of the Local Zone control plane operations, such as API calls.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>region-name</code> - The name of the Region for the Zone (for example, <code>us-east-1</code>).
      *        </p>
      *        </li>
@@ -281,8 +346,18 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
+     *        <code>zone-type</code> - The type of zone, for example, <code>local-zone</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>zone-name</code> - The name of the Availability Zone (for example, <code>us-east-1a</code>) or the
      *        Local Zone (for example, use <code>us-west-2-lax-1a</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>zone-type</code> - The type of zone, for example, <code>local-zone</code>.
      *        </p>
      *        </li>
      */
@@ -320,6 +395,11 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
+     * The ID of the zone that handles some of the Local Zone control plane operations, such as API calls.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>region-name</code> - The name of the Region for the Zone (for example, <code>us-east-1</code>).
      * </p>
      * </li>
@@ -337,8 +417,18 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
+     * <code>zone-type</code> - The type of zone, for example, <code>local-zone</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>zone-name</code> - The name of the Availability Zone (for example, <code>us-east-1a</code>) or the Local
      * Zone (for example, use <code>us-west-2-lax-1a</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>zone-type</code> - The type of zone, for example, <code>local-zone</code>.
      * </p>
      * </li>
      * </ul>
@@ -370,6 +460,11 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
+     *        The ID of the zone that handles some of the Local Zone control plane operations, such as API calls.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>region-name</code> - The name of the Region for the Zone (for example, <code>us-east-1</code>).
      *        </p>
      *        </li>
@@ -387,8 +482,18 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
+     *        <code>zone-type</code> - The type of zone, for example, <code>local-zone</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>zone-name</code> - The name of the Availability Zone (for example, <code>us-east-1a</code>) or the
      *        Local Zone (for example, use <code>us-west-2-lax-1a</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>zone-type</code> - The type of zone, for example, <code>local-zone</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -428,6 +533,11 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
+     * The ID of the zone that handles some of the Local Zone control plane operations, such as API calls.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>region-name</code> - The name of the Region for the Zone (for example, <code>us-east-1</code>).
      * </p>
      * </li>
@@ -445,8 +555,18 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
+     * <code>zone-type</code> - The type of zone, for example, <code>local-zone</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>zone-name</code> - The name of the Availability Zone (for example, <code>us-east-1a</code>) or the Local
      * Zone (for example, use <code>us-west-2-lax-1a</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>zone-type</code> - The type of zone, for example, <code>local-zone</code>.
      * </p>
      * </li>
      * </ul>
@@ -473,6 +593,11 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
+     *        The ID of the zone that handles some of the Local Zone control plane operations, such as API calls.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>region-name</code> - The name of the Region for the Zone (for example, <code>us-east-1</code>).
      *        </p>
      *        </li>
@@ -490,8 +615,18 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
+     *        <code>zone-type</code> - The type of zone, for example, <code>local-zone</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>zone-name</code> - The name of the Availability Zone (for example, <code>us-east-1a</code>) or the
      *        Local Zone (for example, use <code>us-west-2-lax-1a</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>zone-type</code> - The type of zone, for example, <code>local-zone</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The DNS name of the entity that performed the action on the affected resource.
+ * Provides information about the domain name of the device that an entity used to perform an action on an affected
+ * resource.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DomainDetails" target="_top">AWS API
@@ -30,18 +31,18 @@ public class DomainDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The name of the domain.
      * </p>
      */
     private String domainName;
 
     /**
      * <p>
-     * Reserved for future use.
+     * The name of the domain.
      * </p>
      * 
      * @param domainName
-     *        Reserved for future use.
+     *        The name of the domain.
      */
 
     public void setDomainName(String domainName) {
@@ -50,10 +51,10 @@ public class DomainDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The name of the domain.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return The name of the domain.
      */
 
     public String getDomainName() {
@@ -62,11 +63,11 @@ public class DomainDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The name of the domain.
      * </p>
      * 
      * @param domainName
-     *        Reserved for future use.
+     *        The name of the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

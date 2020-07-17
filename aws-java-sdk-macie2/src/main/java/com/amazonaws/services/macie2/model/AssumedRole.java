@@ -19,7 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Reserved for future use.
+ * Provides information about an identity that performed an action on an affected resource by using temporary security
+ * credentials. The credentials were obtained using the AssumeRole operation of the AWS Security Token Service (AWS STS)
+ * API.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/AssumedRole" target="_top">AWS API
@@ -30,42 +32,42 @@ public class AssumedRole implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The AWS access key ID that identifies the credentials.
      * </p>
      */
     private String accessKeyId;
     /**
      * <p>
-     * Reserved for future use.
+     * The unique identifier for the AWS account that owns the entity that was used to get the credentials.
      * </p>
      */
     private String accountId;
     /**
      * <p>
-     * Reserved for future use.
+     * The Amazon Resource Name (ARN) of the entity that was used to get the credentials.
      * </p>
      */
     private String arn;
     /**
      * <p>
-     * Reserved for future use.
+     * The unique identifier for the entity that was used to get the credentials.
      * </p>
      */
     private String principalId;
     /**
      * <p>
-     * Reserved for future use.
+     * The details of the session that was created for the credentials, including the entity that issued the session.
      * </p>
      */
     private SessionContext sessionContext;
 
     /**
      * <p>
-     * Reserved for future use.
+     * The AWS access key ID that identifies the credentials.
      * </p>
      * 
      * @param accessKeyId
-     *        Reserved for future use.
+     *        The AWS access key ID that identifies the credentials.
      */
 
     public void setAccessKeyId(String accessKeyId) {
@@ -74,10 +76,10 @@ public class AssumedRole implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The AWS access key ID that identifies the credentials.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return The AWS access key ID that identifies the credentials.
      */
 
     public String getAccessKeyId() {
@@ -86,11 +88,11 @@ public class AssumedRole implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The AWS access key ID that identifies the credentials.
      * </p>
      * 
      * @param accessKeyId
-     *        Reserved for future use.
+     *        The AWS access key ID that identifies the credentials.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,11 +103,11 @@ public class AssumedRole implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The unique identifier for the AWS account that owns the entity that was used to get the credentials.
      * </p>
      * 
      * @param accountId
-     *        Reserved for future use.
+     *        The unique identifier for the AWS account that owns the entity that was used to get the credentials.
      */
 
     public void setAccountId(String accountId) {
@@ -114,10 +116,10 @@ public class AssumedRole implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The unique identifier for the AWS account that owns the entity that was used to get the credentials.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return The unique identifier for the AWS account that owns the entity that was used to get the credentials.
      */
 
     public String getAccountId() {
@@ -126,11 +128,11 @@ public class AssumedRole implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The unique identifier for the AWS account that owns the entity that was used to get the credentials.
      * </p>
      * 
      * @param accountId
-     *        Reserved for future use.
+     *        The unique identifier for the AWS account that owns the entity that was used to get the credentials.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,11 +143,11 @@ public class AssumedRole implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The Amazon Resource Name (ARN) of the entity that was used to get the credentials.
      * </p>
      * 
      * @param arn
-     *        Reserved for future use.
+     *        The Amazon Resource Name (ARN) of the entity that was used to get the credentials.
      */
 
     public void setArn(String arn) {
@@ -154,10 +156,10 @@ public class AssumedRole implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The Amazon Resource Name (ARN) of the entity that was used to get the credentials.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return The Amazon Resource Name (ARN) of the entity that was used to get the credentials.
      */
 
     public String getArn() {
@@ -166,11 +168,11 @@ public class AssumedRole implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The Amazon Resource Name (ARN) of the entity that was used to get the credentials.
      * </p>
      * 
      * @param arn
-     *        Reserved for future use.
+     *        The Amazon Resource Name (ARN) of the entity that was used to get the credentials.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -181,11 +183,11 @@ public class AssumedRole implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The unique identifier for the entity that was used to get the credentials.
      * </p>
      * 
      * @param principalId
-     *        Reserved for future use.
+     *        The unique identifier for the entity that was used to get the credentials.
      */
 
     public void setPrincipalId(String principalId) {
@@ -194,10 +196,10 @@ public class AssumedRole implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The unique identifier for the entity that was used to get the credentials.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return The unique identifier for the entity that was used to get the credentials.
      */
 
     public String getPrincipalId() {
@@ -206,11 +208,11 @@ public class AssumedRole implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The unique identifier for the entity that was used to get the credentials.
      * </p>
      * 
      * @param principalId
-     *        Reserved for future use.
+     *        The unique identifier for the entity that was used to get the credentials.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -221,11 +223,12 @@ public class AssumedRole implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The details of the session that was created for the credentials, including the entity that issued the session.
      * </p>
      * 
      * @param sessionContext
-     *        Reserved for future use.
+     *        The details of the session that was created for the credentials, including the entity that issued the
+     *        session.
      */
 
     public void setSessionContext(SessionContext sessionContext) {
@@ -234,10 +237,11 @@ public class AssumedRole implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The details of the session that was created for the credentials, including the entity that issued the session.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return The details of the session that was created for the credentials, including the entity that issued the
+     *         session.
      */
 
     public SessionContext getSessionContext() {
@@ -246,11 +250,12 @@ public class AssumedRole implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The details of the session that was created for the credentials, including the entity that issued the session.
      * </p>
      * 
      * @param sessionContext
-     *        Reserved for future use.
+     *        The details of the session that was created for the credentials, including the entity that issued the
+     *        session.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

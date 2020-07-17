@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Reserved for future use.
+ * Provides information about an AWS account and entity that performed an action on an affected resource. The action was
+ * performed using the credentials for an AWS account other than your own account.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/AwsAccount" target="_top">AWS API
@@ -30,24 +31,24 @@ public class AwsAccount implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The unique identifier for the AWS account.
      * </p>
      */
     private String accountId;
     /**
      * <p>
-     * Reserved for future use.
+     * The unique identifier for the entity that performed the action.
      * </p>
      */
     private String principalId;
 
     /**
      * <p>
-     * Reserved for future use.
+     * The unique identifier for the AWS account.
      * </p>
      * 
      * @param accountId
-     *        Reserved for future use.
+     *        The unique identifier for the AWS account.
      */
 
     public void setAccountId(String accountId) {
@@ -56,10 +57,10 @@ public class AwsAccount implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The unique identifier for the AWS account.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return The unique identifier for the AWS account.
      */
 
     public String getAccountId() {
@@ -68,11 +69,11 @@ public class AwsAccount implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The unique identifier for the AWS account.
      * </p>
      * 
      * @param accountId
-     *        Reserved for future use.
+     *        The unique identifier for the AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +84,11 @@ public class AwsAccount implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The unique identifier for the entity that performed the action.
      * </p>
      * 
      * @param principalId
-     *        Reserved for future use.
+     *        The unique identifier for the entity that performed the action.
      */
 
     public void setPrincipalId(String principalId) {
@@ -96,10 +97,10 @@ public class AwsAccount implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The unique identifier for the entity that performed the action.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return The unique identifier for the entity that performed the action.
      */
 
     public String getPrincipalId() {
@@ -108,11 +109,11 @@ public class AwsAccount implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The unique identifier for the entity that performed the action.
      * </p>
      * 
      * @param principalId
-     *        Reserved for future use.
+     *        The unique identifier for the entity that performed the action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

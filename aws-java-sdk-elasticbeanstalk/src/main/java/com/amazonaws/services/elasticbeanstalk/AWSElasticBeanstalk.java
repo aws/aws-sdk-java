@@ -18,6 +18,7 @@ import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
 import com.amazonaws.services.elasticbeanstalk.model.*;
+import com.amazonaws.services.elasticbeanstalk.waiters.AWSElasticBeanstalkWaiters;
 
 /**
  * Interface for accessing Elastic Beanstalk.
@@ -1266,5 +1267,7 @@ public interface AWSElasticBeanstalk {
      * @return The response metadata for the specified request, or null if none is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
+    AWSElasticBeanstalkWaiters waiters();
 
 }

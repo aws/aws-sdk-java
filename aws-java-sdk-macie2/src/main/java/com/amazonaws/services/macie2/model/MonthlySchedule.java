@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Run the job once a month, on a specific day of the month. This value can be an integer from 1 through 30.
+ * Specifies a monthly recurrence pattern for running a classification job.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/MonthlySchedule" target="_top">AWS API
@@ -30,18 +30,19 @@ public class MonthlySchedule implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Run the job once a month, on a specific day of the month. This value can be an integer from 1 through 30.
+     * The numeric day of the month when Amazon Macie runs the job. This value can be an integer from 1 through 30.
      * </p>
      */
     private Integer dayOfMonth;
 
     /**
      * <p>
-     * Run the job once a month, on a specific day of the month. This value can be an integer from 1 through 30.
+     * The numeric day of the month when Amazon Macie runs the job. This value can be an integer from 1 through 30.
      * </p>
      * 
      * @param dayOfMonth
-     *        Run the job once a month, on a specific day of the month. This value can be an integer from 1 through 30.
+     *        The numeric day of the month when Amazon Macie runs the job. This value can be an integer from 1 through
+     *        30.
      */
 
     public void setDayOfMonth(Integer dayOfMonth) {
@@ -50,10 +51,11 @@ public class MonthlySchedule implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Run the job once a month, on a specific day of the month. This value can be an integer from 1 through 30.
+     * The numeric day of the month when Amazon Macie runs the job. This value can be an integer from 1 through 30.
      * </p>
      * 
-     * @return Run the job once a month, on a specific day of the month. This value can be an integer from 1 through 30.
+     * @return The numeric day of the month when Amazon Macie runs the job. This value can be an integer from 1 through
+     *         30.
      */
 
     public Integer getDayOfMonth() {
@@ -62,11 +64,12 @@ public class MonthlySchedule implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Run the job once a month, on a specific day of the month. This value can be an integer from 1 through 30.
+     * The numeric day of the month when Amazon Macie runs the job. This value can be an integer from 1 through 30.
      * </p>
      * 
      * @param dayOfMonth
-     *        Run the job once a month, on a specific day of the month. This value can be an integer from 1 through 30.
+     *        The numeric day of the month when Amazon Macie runs the job. This value can be an integer from 1 through
+     *        30.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

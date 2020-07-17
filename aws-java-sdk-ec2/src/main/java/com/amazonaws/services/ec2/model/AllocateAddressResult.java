@@ -50,8 +50,8 @@ public class AllocateAddressResult extends com.amazonaws.AmazonWebServiceResult<
     private String networkBorderGroup;
     /**
      * <p>
-     * Indicates whether this Elastic IP address is for use with instances in EC2-Classic (<code>standard</code>) or
-     * instances in a VPC (<code>vpc</code>).
+     * Indicates whether the Elastic IP address is for use with instances in a VPC (<code>vpc</code>) or instances in
+     * EC2-Classic (<code>standard</code>).
      * </p>
      */
     private String domain;
@@ -236,13 +236,13 @@ public class AllocateAddressResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Indicates whether this Elastic IP address is for use with instances in EC2-Classic (<code>standard</code>) or
-     * instances in a VPC (<code>vpc</code>).
+     * Indicates whether the Elastic IP address is for use with instances in a VPC (<code>vpc</code>) or instances in
+     * EC2-Classic (<code>standard</code>).
      * </p>
      * 
      * @param domain
-     *        Indicates whether this Elastic IP address is for use with instances in EC2-Classic (<code>standard</code>)
-     *        or instances in a VPC (<code>vpc</code>).
+     *        Indicates whether the Elastic IP address is for use with instances in a VPC (<code>vpc</code>) or
+     *        instances in EC2-Classic (<code>standard</code>).
      * @see DomainType
      */
 
@@ -252,12 +252,12 @@ public class AllocateAddressResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Indicates whether this Elastic IP address is for use with instances in EC2-Classic (<code>standard</code>) or
-     * instances in a VPC (<code>vpc</code>).
+     * Indicates whether the Elastic IP address is for use with instances in a VPC (<code>vpc</code>) or instances in
+     * EC2-Classic (<code>standard</code>).
      * </p>
      * 
-     * @return Indicates whether this Elastic IP address is for use with instances in EC2-Classic (<code>standard</code>
-     *         ) or instances in a VPC (<code>vpc</code>).
+     * @return Indicates whether the Elastic IP address is for use with instances in a VPC (<code>vpc</code>) or
+     *         instances in EC2-Classic (<code>standard</code>).
      * @see DomainType
      */
 
@@ -267,13 +267,13 @@ public class AllocateAddressResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Indicates whether this Elastic IP address is for use with instances in EC2-Classic (<code>standard</code>) or
-     * instances in a VPC (<code>vpc</code>).
+     * Indicates whether the Elastic IP address is for use with instances in a VPC (<code>vpc</code>) or instances in
+     * EC2-Classic (<code>standard</code>).
      * </p>
      * 
      * @param domain
-     *        Indicates whether this Elastic IP address is for use with instances in EC2-Classic (<code>standard</code>)
-     *        or instances in a VPC (<code>vpc</code>).
+     *        Indicates whether the Elastic IP address is for use with instances in a VPC (<code>vpc</code>) or
+     *        instances in EC2-Classic (<code>standard</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DomainType
      */
@@ -285,13 +285,13 @@ public class AllocateAddressResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Indicates whether this Elastic IP address is for use with instances in EC2-Classic (<code>standard</code>) or
-     * instances in a VPC (<code>vpc</code>).
+     * Indicates whether the Elastic IP address is for use with instances in a VPC (<code>vpc</code>) or instances in
+     * EC2-Classic (<code>standard</code>).
      * </p>
      * 
      * @param domain
-     *        Indicates whether this Elastic IP address is for use with instances in EC2-Classic (<code>standard</code>)
-     *        or instances in a VPC (<code>vpc</code>).
+     *        Indicates whether the Elastic IP address is for use with instances in a VPC (<code>vpc</code>) or
+     *        instances in EC2-Classic (<code>standard</code>).
      * @see DomainType
      */
 
@@ -301,13 +301,13 @@ public class AllocateAddressResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Indicates whether this Elastic IP address is for use with instances in EC2-Classic (<code>standard</code>) or
-     * instances in a VPC (<code>vpc</code>).
+     * Indicates whether the Elastic IP address is for use with instances in a VPC (<code>vpc</code>) or instances in
+     * EC2-Classic (<code>standard</code>).
      * </p>
      * 
      * @param domain
-     *        Indicates whether this Elastic IP address is for use with instances in EC2-Classic (<code>standard</code>)
-     *        or instances in a VPC (<code>vpc</code>).
+     *        Indicates whether the Elastic IP address is for use with instances in a VPC (<code>vpc</code>) or
+     *        instances in EC2-Classic (<code>standard</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DomainType
      */

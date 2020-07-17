@@ -771,7 +771,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Deletes a custom data identifier.
+     * Soft deletes a custom data identifier.
      * </p>
      * 
      * @param deleteCustomDataIdentifierRequest
@@ -2491,7 +2491,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Retrieves information about the status and settings for one or more classification jobs.
+     * Retrieves a subset of information about one or more classification jobs.
      * </p>
      * 
      * @param listClassificationJobsRequest

@@ -48,6 +48,10 @@ public class FindingsFilterListItemJsonUnmarshaller implements Unmarshaller<Find
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("action", targetDepth)) {
+                    context.nextToken();
+                    findingsFilterListItem.setAction(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("arn", targetDepth)) {
                     context.nextToken();
                     findingsFilterListItem.setArn(context.getUnmarshaller(String.class).unmarshall(context));

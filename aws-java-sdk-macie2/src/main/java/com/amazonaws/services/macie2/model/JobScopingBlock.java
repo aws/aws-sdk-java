@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Reserved for future use.
+ * Specifies one or more property- and tag-based conditions that define criteria for including or excluding objects from
+ * a classification job.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/JobScopingBlock" target="_top">AWS API
@@ -30,17 +31,18 @@ public class JobScopingBlock implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Reserved for future use.
+     * An array of conditions, one for each condition that determines which objects to include or exclude from the job.
      * </p>
      */
     private java.util.List<JobScopeTerm> and;
 
     /**
      * <p>
-     * Reserved for future use.
+     * An array of conditions, one for each condition that determines which objects to include or exclude from the job.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return An array of conditions, one for each condition that determines which objects to include or exclude from
+     *         the job.
      */
 
     public java.util.List<JobScopeTerm> getAnd() {
@@ -49,11 +51,12 @@ public class JobScopingBlock implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Reserved for future use.
+     * An array of conditions, one for each condition that determines which objects to include or exclude from the job.
      * </p>
      * 
      * @param and
-     *        Reserved for future use.
+     *        An array of conditions, one for each condition that determines which objects to include or exclude from
+     *        the job.
      */
 
     public void setAnd(java.util.Collection<JobScopeTerm> and) {
@@ -67,7 +70,7 @@ public class JobScopingBlock implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Reserved for future use.
+     * An array of conditions, one for each condition that determines which objects to include or exclude from the job.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -76,7 +79,8 @@ public class JobScopingBlock implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param and
-     *        Reserved for future use.
+     *        An array of conditions, one for each condition that determines which objects to include or exclude from
+     *        the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,11 +96,12 @@ public class JobScopingBlock implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Reserved for future use.
+     * An array of conditions, one for each condition that determines which objects to include or exclude from the job.
      * </p>
      * 
      * @param and
-     *        Reserved for future use.
+     *        An array of conditions, one for each condition that determines which objects to include or exclude from
+     *        the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

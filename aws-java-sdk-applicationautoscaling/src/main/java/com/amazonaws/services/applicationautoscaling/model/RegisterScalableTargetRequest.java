@@ -213,8 +213,9 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * scale in (contract) as needed to the minimum capacity limit in response to changing demand.
      * </p>
      * <p>
-     * This parameter is required if you are registering a scalable target. For Lambda provisioned concurrency, the
-     * minimum value allowed is 0. For all other resources, the minimum value allowed is 1.
+     * This parameter is required if you are registering a scalable target. For certain resources, the minimum value
+     * allowed is 0. This includes Lambda provisioned concurrency, Spot Fleet, ECS services, Aurora DB clusters, EMR
+     * clusters, and custom resources. For all other resources, the minimum value allowed is 1.
      * </p>
      */
     private Integer minCapacity;
@@ -1798,8 +1799,9 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * scale in (contract) as needed to the minimum capacity limit in response to changing demand.
      * </p>
      * <p>
-     * This parameter is required if you are registering a scalable target. For Lambda provisioned concurrency, the
-     * minimum value allowed is 0. For all other resources, the minimum value allowed is 1.
+     * This parameter is required if you are registering a scalable target. For certain resources, the minimum value
+     * allowed is 0. This includes Lambda provisioned concurrency, Spot Fleet, ECS services, Aurora DB clusters, EMR
+     * clusters, and custom resources. For all other resources, the minimum value allowed is 1.
      * </p>
      * 
      * @param minCapacity
@@ -1807,8 +1809,9 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      *        Scaling can scale in (contract) as needed to the minimum capacity limit in response to changing demand.
      *        </p>
      *        <p>
-     *        This parameter is required if you are registering a scalable target. For Lambda provisioned concurrency,
-     *        the minimum value allowed is 0. For all other resources, the minimum value allowed is 1.
+     *        This parameter is required if you are registering a scalable target. For certain resources, the minimum
+     *        value allowed is 0. This includes Lambda provisioned concurrency, Spot Fleet, ECS services, Aurora DB
+     *        clusters, EMR clusters, and custom resources. For all other resources, the minimum value allowed is 1.
      */
 
     public void setMinCapacity(Integer minCapacity) {
@@ -1821,16 +1824,18 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * scale in (contract) as needed to the minimum capacity limit in response to changing demand.
      * </p>
      * <p>
-     * This parameter is required if you are registering a scalable target. For Lambda provisioned concurrency, the
-     * minimum value allowed is 0. For all other resources, the minimum value allowed is 1.
+     * This parameter is required if you are registering a scalable target. For certain resources, the minimum value
+     * allowed is 0. This includes Lambda provisioned concurrency, Spot Fleet, ECS services, Aurora DB clusters, EMR
+     * clusters, and custom resources. For all other resources, the minimum value allowed is 1.
      * </p>
      * 
      * @return The minimum value that you plan to scale in to. When a scaling policy is in effect, Application Auto
      *         Scaling can scale in (contract) as needed to the minimum capacity limit in response to changing demand.
      *         </p>
      *         <p>
-     *         This parameter is required if you are registering a scalable target. For Lambda provisioned concurrency,
-     *         the minimum value allowed is 0. For all other resources, the minimum value allowed is 1.
+     *         This parameter is required if you are registering a scalable target. For certain resources, the minimum
+     *         value allowed is 0. This includes Lambda provisioned concurrency, Spot Fleet, ECS services, Aurora DB
+     *         clusters, EMR clusters, and custom resources. For all other resources, the minimum value allowed is 1.
      */
 
     public Integer getMinCapacity() {
@@ -1843,8 +1848,9 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * scale in (contract) as needed to the minimum capacity limit in response to changing demand.
      * </p>
      * <p>
-     * This parameter is required if you are registering a scalable target. For Lambda provisioned concurrency, the
-     * minimum value allowed is 0. For all other resources, the minimum value allowed is 1.
+     * This parameter is required if you are registering a scalable target. For certain resources, the minimum value
+     * allowed is 0. This includes Lambda provisioned concurrency, Spot Fleet, ECS services, Aurora DB clusters, EMR
+     * clusters, and custom resources. For all other resources, the minimum value allowed is 1.
      * </p>
      * 
      * @param minCapacity
@@ -1852,8 +1858,9 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      *        Scaling can scale in (contract) as needed to the minimum capacity limit in response to changing demand.
      *        </p>
      *        <p>
-     *        This parameter is required if you are registering a scalable target. For Lambda provisioned concurrency,
-     *        the minimum value allowed is 0. For all other resources, the minimum value allowed is 1.
+     *        This parameter is required if you are registering a scalable target. For certain resources, the minimum
+     *        value allowed is 0. This includes Lambda provisioned concurrency, Spot Fleet, ECS services, Aurora DB
+     *        clusters, EMR clusters, and custom resources. For all other resources, the minimum value allowed is 1.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

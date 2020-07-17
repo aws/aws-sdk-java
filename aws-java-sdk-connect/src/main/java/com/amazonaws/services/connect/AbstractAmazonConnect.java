@@ -118,7 +118,17 @@ public class AbstractAmazonConnect implements AmazonConnect {
     }
 
     @Override
+    public ResumeContactRecordingResult resumeContactRecording(ResumeContactRecordingRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartChatContactResult startChatContact(StartChatContactRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartContactRecordingResult startContactRecording(StartContactRecordingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -129,6 +139,16 @@ public class AbstractAmazonConnect implements AmazonConnect {
 
     @Override
     public StopContactResult stopContact(StopContactRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopContactRecordingResult stopContactRecording(StopContactRecordingRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public SuspendContactRecordingResult suspendContactRecording(SuspendContactRecordingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides a group of results for a query that retrieved information about findings.
+ * Provides a group of results for a query that retrieved aggregated statistical data about findings.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GroupCount" target="_top">AWS API

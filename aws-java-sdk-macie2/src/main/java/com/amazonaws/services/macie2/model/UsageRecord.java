@@ -30,7 +30,7 @@ public class UsageRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account ID for the account that the data applies to.
+     * The unique identifier for the AWS account that the data applies to.
      * </p>
      */
     private String accountId;
@@ -51,11 +51,11 @@ public class UsageRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account ID for the account that the data applies to.
+     * The unique identifier for the AWS account that the data applies to.
      * </p>
      * 
      * @param accountId
-     *        The AWS account ID for the account that the data applies to.
+     *        The unique identifier for the AWS account that the data applies to.
      */
 
     public void setAccountId(String accountId) {
@@ -64,10 +64,10 @@ public class UsageRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account ID for the account that the data applies to.
+     * The unique identifier for the AWS account that the data applies to.
      * </p>
      * 
-     * @return The AWS account ID for the account that the data applies to.
+     * @return The unique identifier for the AWS account that the data applies to.
      */
 
     public String getAccountId() {
@@ -76,11 +76,11 @@ public class UsageRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account ID for the account that the data applies to.
+     * The unique identifier for the AWS account that the data applies to.
      * </p>
      * 
      * @param accountId
-     *        The AWS account ID for the account that the data applies to.
+     *        The unique identifier for the AWS account that the data applies to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

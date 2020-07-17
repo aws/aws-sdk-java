@@ -1,3 +1,28 @@
+# __1.11.822__ __2020-07-17__
+## __AWS AppSync__
+  - ### Features
+    - Documentation update to Cachingconfig.cachingKeys to include $context.source as a valid value.
+
+## __AWS Elastic Beanstalk__
+  - ### Features
+    - Add waiters for `EnvironmentExists`, `EnvironmentUpdated`, and `EnvironmentTerminated`. Add paginators for `DescribeEnvironmentManagedActionHistory` and `ListPlatformVersions`.
+
+## __Amazon Connect Service__
+  - ### Features
+    - This release adds a set of Amazon Connect APIs to programmatically control call recording with start, stop, pause and resume functions.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Documentation updates for EC2
+
+## __Amazon Macie 2__
+  - ### Features
+    - This release of the Amazon Macie API includes miscellaneous updates and improvements to the documentation.
+
+## __Application Auto Scaling__
+  - ### Features
+    - Documentation updates for Application Auto Scaling
+
 # __1.11.821__ __2020-07-15__
 ## __Amazon Interactive Video Service__
   - ### Features

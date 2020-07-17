@@ -37,27 +37,8 @@ public class FindingAction implements Serializable, Cloneable, StructuredPojo {
     private String actionType;
     /**
      * <p>
-     * For the affected resource:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * The name of the operation that was invoked most recently and produced the finding (api).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * The first date and time when any operation was invoked and produced the finding (firstSeen).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * The most recent date and time when the specified operation was invoked and produced the finding (lastSeen).
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * All date and time values are in UTC and extended ISO 8601 format.
+     * The invocation details of the API operation that an entity invoked for the affected resource, if the value for
+     * the actionType property is AWS_API_CALL.
      * </p>
      */
     private ApiCallDetails apiCallDetails;
@@ -131,51 +112,13 @@ public class FindingAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * For the affected resource:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * The name of the operation that was invoked most recently and produced the finding (api).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * The first date and time when any operation was invoked and produced the finding (firstSeen).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * The most recent date and time when the specified operation was invoked and produced the finding (lastSeen).
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * All date and time values are in UTC and extended ISO 8601 format.
+     * The invocation details of the API operation that an entity invoked for the affected resource, if the value for
+     * the actionType property is AWS_API_CALL.
      * </p>
      * 
      * @param apiCallDetails
-     *        For the affected resource:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        The name of the operation that was invoked most recently and produced the finding (api).
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        The first date and time when any operation was invoked and produced the finding (firstSeen).
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        The most recent date and time when the specified operation was invoked and produced the finding
-     *        (lastSeen).
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        All date and time values are in UTC and extended ISO 8601 format.
+     *        The invocation details of the API operation that an entity invoked for the affected resource, if the value
+     *        for the actionType property is AWS_API_CALL.
      */
 
     public void setApiCallDetails(ApiCallDetails apiCallDetails) {
@@ -184,50 +127,12 @@ public class FindingAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * For the affected resource:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * The name of the operation that was invoked most recently and produced the finding (api).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * The first date and time when any operation was invoked and produced the finding (firstSeen).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * The most recent date and time when the specified operation was invoked and produced the finding (lastSeen).
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * All date and time values are in UTC and extended ISO 8601 format.
+     * The invocation details of the API operation that an entity invoked for the affected resource, if the value for
+     * the actionType property is AWS_API_CALL.
      * </p>
      * 
-     * @return For the affected resource:</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         The name of the operation that was invoked most recently and produced the finding (api).
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         The first date and time when any operation was invoked and produced the finding (firstSeen).
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         The most recent date and time when the specified operation was invoked and produced the finding
-     *         (lastSeen).
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         All date and time values are in UTC and extended ISO 8601 format.
+     * @return The invocation details of the API operation that an entity invoked for the affected resource, if the
+     *         value for the actionType property is AWS_API_CALL.
      */
 
     public ApiCallDetails getApiCallDetails() {
@@ -236,51 +141,13 @@ public class FindingAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * For the affected resource:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * The name of the operation that was invoked most recently and produced the finding (api).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * The first date and time when any operation was invoked and produced the finding (firstSeen).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * The most recent date and time when the specified operation was invoked and produced the finding (lastSeen).
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * All date and time values are in UTC and extended ISO 8601 format.
+     * The invocation details of the API operation that an entity invoked for the affected resource, if the value for
+     * the actionType property is AWS_API_CALL.
      * </p>
      * 
      * @param apiCallDetails
-     *        For the affected resource:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        The name of the operation that was invoked most recently and produced the finding (api).
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        The first date and time when any operation was invoked and produced the finding (firstSeen).
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        The most recent date and time when the specified operation was invoked and produced the finding
-     *        (lastSeen).
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        All date and time values are in UTC and extended ISO 8601 format.
+     *        The invocation details of the API operation that an entity invoked for the affected resource, if the value
+     *        for the actionType property is AWS_API_CALL.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

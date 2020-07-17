@@ -38,7 +38,7 @@ public class SessionContext implements Serializable, Cloneable, StructuredPojo {
     private SessionContextAttributes attributes;
     /**
      * <p>
-     * The source and type of credentials that the entity obtained.
+     * The source and type of credentials that were issued to the entity.
      * </p>
      */
     private SessionIssuer sessionIssuer;
@@ -91,11 +91,11 @@ public class SessionContext implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The source and type of credentials that the entity obtained.
+     * The source and type of credentials that were issued to the entity.
      * </p>
      * 
      * @param sessionIssuer
-     *        The source and type of credentials that the entity obtained.
+     *        The source and type of credentials that were issued to the entity.
      */
 
     public void setSessionIssuer(SessionIssuer sessionIssuer) {
@@ -104,10 +104,10 @@ public class SessionContext implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The source and type of credentials that the entity obtained.
+     * The source and type of credentials that were issued to the entity.
      * </p>
      * 
-     * @return The source and type of credentials that the entity obtained.
+     * @return The source and type of credentials that were issued to the entity.
      */
 
     public SessionIssuer getSessionIssuer() {
@@ -116,11 +116,11 @@ public class SessionContext implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The source and type of credentials that the entity obtained.
+     * The source and type of credentials that were issued to the entity.
      * </p>
      * 
      * @param sessionIssuer
-     *        The source and type of credentials that the entity obtained.
+     *        The source and type of credentials that were issued to the entity.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

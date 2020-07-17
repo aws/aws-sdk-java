@@ -30,7 +30,7 @@ public class SessionIssuer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The account that owns the entity that was used to get the credentials.
+     * The unique identifier for the AWS account that owns the entity that was used to get the credentials.
      * </p>
      */
     private String accountId;
@@ -42,7 +42,7 @@ public class SessionIssuer implements Serializable, Cloneable, StructuredPojo {
     private String arn;
     /**
      * <p>
-     * The internal identifier for the entity that was used to get the credentials.
+     * The unique identifier for the entity that was used to get the credentials.
      * </p>
      */
     private String principalId;
@@ -62,11 +62,11 @@ public class SessionIssuer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The account that owns the entity that was used to get the credentials.
+     * The unique identifier for the AWS account that owns the entity that was used to get the credentials.
      * </p>
      * 
      * @param accountId
-     *        The account that owns the entity that was used to get the credentials.
+     *        The unique identifier for the AWS account that owns the entity that was used to get the credentials.
      */
 
     public void setAccountId(String accountId) {
@@ -75,10 +75,10 @@ public class SessionIssuer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The account that owns the entity that was used to get the credentials.
+     * The unique identifier for the AWS account that owns the entity that was used to get the credentials.
      * </p>
      * 
-     * @return The account that owns the entity that was used to get the credentials.
+     * @return The unique identifier for the AWS account that owns the entity that was used to get the credentials.
      */
 
     public String getAccountId() {
@@ -87,11 +87,11 @@ public class SessionIssuer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The account that owns the entity that was used to get the credentials.
+     * The unique identifier for the AWS account that owns the entity that was used to get the credentials.
      * </p>
      * 
      * @param accountId
-     *        The account that owns the entity that was used to get the credentials.
+     *        The unique identifier for the AWS account that owns the entity that was used to get the credentials.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -145,11 +145,11 @@ public class SessionIssuer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The internal identifier for the entity that was used to get the credentials.
+     * The unique identifier for the entity that was used to get the credentials.
      * </p>
      * 
      * @param principalId
-     *        The internal identifier for the entity that was used to get the credentials.
+     *        The unique identifier for the entity that was used to get the credentials.
      */
 
     public void setPrincipalId(String principalId) {
@@ -158,10 +158,10 @@ public class SessionIssuer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The internal identifier for the entity that was used to get the credentials.
+     * The unique identifier for the entity that was used to get the credentials.
      * </p>
      * 
-     * @return The internal identifier for the entity that was used to get the credentials.
+     * @return The unique identifier for the entity that was used to get the credentials.
      */
 
     public String getPrincipalId() {
@@ -170,11 +170,11 @@ public class SessionIssuer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The internal identifier for the entity that was used to get the credentials.
+     * The unique identifier for the entity that was used to get the credentials.
      * </p>
      * 
      * @param principalId
-     *        The internal identifier for the entity that was used to get the credentials.
+     *        The unique identifier for the entity that was used to get the credentials.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

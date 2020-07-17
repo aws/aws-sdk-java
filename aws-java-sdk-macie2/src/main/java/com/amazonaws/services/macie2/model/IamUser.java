@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Reserved for future use.
+ * Provides information about an AWS Identity and Access Management (IAM) user who performed an action on an affected
+ * resource.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/IamUser" target="_top">AWS API
@@ -30,36 +31,37 @@ public class IamUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The unique identifier for the AWS account that's associated with the IAM user who performed the action.
      * </p>
      */
     private String accountId;
     /**
      * <p>
-     * Reserved for future use.
+     * The Amazon Resource Name (ARN) of the principal that performed the action. The last section of the ARN contains
+     * the name of the user who performed the action.
      * </p>
      */
     private String arn;
     /**
      * <p>
-     * Reserved for future use.
+     * The unique identifier for the IAM user who performed the action.
      * </p>
      */
     private String principalId;
     /**
      * <p>
-     * Reserved for future use.
+     * The user name of the IAM user who performed the action.
      * </p>
      */
     private String userName;
 
     /**
      * <p>
-     * Reserved for future use.
+     * The unique identifier for the AWS account that's associated with the IAM user who performed the action.
      * </p>
      * 
      * @param accountId
-     *        Reserved for future use.
+     *        The unique identifier for the AWS account that's associated with the IAM user who performed the action.
      */
 
     public void setAccountId(String accountId) {
@@ -68,10 +70,10 @@ public class IamUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The unique identifier for the AWS account that's associated with the IAM user who performed the action.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return The unique identifier for the AWS account that's associated with the IAM user who performed the action.
      */
 
     public String getAccountId() {
@@ -80,11 +82,11 @@ public class IamUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The unique identifier for the AWS account that's associated with the IAM user who performed the action.
      * </p>
      * 
      * @param accountId
-     *        Reserved for future use.
+     *        The unique identifier for the AWS account that's associated with the IAM user who performed the action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +97,13 @@ public class IamUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The Amazon Resource Name (ARN) of the principal that performed the action. The last section of the ARN contains
+     * the name of the user who performed the action.
      * </p>
      * 
      * @param arn
-     *        Reserved for future use.
+     *        The Amazon Resource Name (ARN) of the principal that performed the action. The last section of the ARN
+     *        contains the name of the user who performed the action.
      */
 
     public void setArn(String arn) {
@@ -108,10 +112,12 @@ public class IamUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The Amazon Resource Name (ARN) of the principal that performed the action. The last section of the ARN contains
+     * the name of the user who performed the action.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return The Amazon Resource Name (ARN) of the principal that performed the action. The last section of the ARN
+     *         contains the name of the user who performed the action.
      */
 
     public String getArn() {
@@ -120,11 +126,13 @@ public class IamUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The Amazon Resource Name (ARN) of the principal that performed the action. The last section of the ARN contains
+     * the name of the user who performed the action.
      * </p>
      * 
      * @param arn
-     *        Reserved for future use.
+     *        The Amazon Resource Name (ARN) of the principal that performed the action. The last section of the ARN
+     *        contains the name of the user who performed the action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +143,11 @@ public class IamUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The unique identifier for the IAM user who performed the action.
      * </p>
      * 
      * @param principalId
-     *        Reserved for future use.
+     *        The unique identifier for the IAM user who performed the action.
      */
 
     public void setPrincipalId(String principalId) {
@@ -148,10 +156,10 @@ public class IamUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The unique identifier for the IAM user who performed the action.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return The unique identifier for the IAM user who performed the action.
      */
 
     public String getPrincipalId() {
@@ -160,11 +168,11 @@ public class IamUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The unique identifier for the IAM user who performed the action.
      * </p>
      * 
      * @param principalId
-     *        Reserved for future use.
+     *        The unique identifier for the IAM user who performed the action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -175,11 +183,11 @@ public class IamUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The user name of the IAM user who performed the action.
      * </p>
      * 
      * @param userName
-     *        Reserved for future use.
+     *        The user name of the IAM user who performed the action.
      */
 
     public void setUserName(String userName) {
@@ -188,10 +196,10 @@ public class IamUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The user name of the IAM user who performed the action.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return The user name of the IAM user who performed the action.
      */
 
     public String getUserName() {
@@ -200,11 +208,11 @@ public class IamUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The user name of the IAM user who performed the action.
      * </p>
      * 
      * @param userName
-     *        Reserved for future use.
+     *        The user name of the IAM user who performed the action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -141,11 +141,6 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      * </li>
      * <li>
      * <p>
-     * <code>transit-gateway-id</code> - The ID of a transit gateway.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>vpc-id</code> - The ID of the VPC for the route table.
      * </p>
      * </li>
@@ -291,11 +286,6 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      * </li>
      * <li>
      * <p>
-     * <code>transit-gateway-id</code> - The ID of a transit gateway.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>vpc-id</code> - The ID of the VPC for the route table.
      * </p>
      * </li>
@@ -412,11 +402,6 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      *         <p>
      *         <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources
      *         assigned a tag with a specific key, regardless of the tag value.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>transit-gateway-id</code> - The ID of a transit gateway.
      *         </p>
      *         </li>
      *         <li>
@@ -549,11 +534,6 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      * </li>
      * <li>
      * <p>
-     * <code>transit-gateway-id</code> - The ID of a transit gateway.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>vpc-id</code> - The ID of the VPC for the route table.
      * </p>
      * </li>
@@ -671,11 +651,6 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      *        <p>
      *        <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources
      *        assigned a tag with a specific key, regardless of the tag value.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>transit-gateway-id</code> - The ID of a transit gateway.
      *        </p>
      *        </li>
      *        <li>
@@ -810,11 +785,6 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      * </li>
      * <li>
      * <p>
-     * <code>transit-gateway-id</code> - The ID of a transit gateway.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>vpc-id</code> - The ID of the VPC for the route table.
      * </p>
      * </li>
@@ -937,11 +907,6 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      *        <p>
      *        <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources
      *        assigned a tag with a specific key, regardless of the tag value.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>transit-gateway-id</code> - The ID of a transit gateway.
      *        </p>
      *        </li>
      *        <li>
@@ -1078,11 +1043,6 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      * </li>
      * <li>
      * <p>
-     * <code>transit-gateway-id</code> - The ID of a transit gateway.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>vpc-id</code> - The ID of the VPC for the route table.
      * </p>
      * </li>
@@ -1200,11 +1160,6 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      *        <p>
      *        <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources
      *        assigned a tag with a specific key, regardless of the tag value.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>transit-gateway-id</code> - The ID of a transit gateway.
      *        </p>
      *        </li>
      *        <li>

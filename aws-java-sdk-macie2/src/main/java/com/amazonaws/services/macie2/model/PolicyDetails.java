@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides detailed information about a policy finding.
+ * Provides the details of a policy finding.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/PolicyDetails" target="_top">AWS API
@@ -30,7 +30,7 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The action that occurred and produced the finding.
+     * The action that produced the finding.
      * </p>
      */
     private FindingAction action;
@@ -43,11 +43,11 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The action that occurred and produced the finding.
+     * The action that produced the finding.
      * </p>
      * 
      * @param action
-     *        The action that occurred and produced the finding.
+     *        The action that produced the finding.
      */
 
     public void setAction(FindingAction action) {
@@ -56,10 +56,10 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The action that occurred and produced the finding.
+     * The action that produced the finding.
      * </p>
      * 
-     * @return The action that occurred and produced the finding.
+     * @return The action that produced the finding.
      */
 
     public FindingAction getAction() {
@@ -68,11 +68,11 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The action that occurred and produced the finding.
+     * The action that produced the finding.
      * </p>
      * 
      * @param action
-     *        The action that occurred and produced the finding.
+     *        The action that produced the finding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

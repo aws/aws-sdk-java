@@ -38,7 +38,7 @@ public class GetMacieSessionResult extends com.amazonaws.AmazonWebServiceResult<
     private String findingPublishingFrequency;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the service-level role that allows Amazon Macie to monitor and analyze data in
+     * The Amazon Resource Name (ARN) of the service-linked role that allows Amazon Macie to monitor and analyze data in
      * AWS resources for the account.
      * </p>
      */
@@ -168,12 +168,12 @@ public class GetMacieSessionResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the service-level role that allows Amazon Macie to monitor and analyze data in
+     * The Amazon Resource Name (ARN) of the service-linked role that allows Amazon Macie to monitor and analyze data in
      * AWS resources for the account.
      * </p>
      * 
      * @param serviceRole
-     *        The Amazon Resource Name (ARN) of the service-level role that allows Amazon Macie to monitor and analyze
+     *        The Amazon Resource Name (ARN) of the service-linked role that allows Amazon Macie to monitor and analyze
      *        data in AWS resources for the account.
      */
 
@@ -183,11 +183,11 @@ public class GetMacieSessionResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the service-level role that allows Amazon Macie to monitor and analyze data in
+     * The Amazon Resource Name (ARN) of the service-linked role that allows Amazon Macie to monitor and analyze data in
      * AWS resources for the account.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the service-level role that allows Amazon Macie to monitor and analyze
+     * @return The Amazon Resource Name (ARN) of the service-linked role that allows Amazon Macie to monitor and analyze
      *         data in AWS resources for the account.
      */
 
@@ -197,12 +197,12 @@ public class GetMacieSessionResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the service-level role that allows Amazon Macie to monitor and analyze data in
+     * The Amazon Resource Name (ARN) of the service-linked role that allows Amazon Macie to monitor and analyze data in
      * AWS resources for the account.
      * </p>
      * 
      * @param serviceRole
-     *        The Amazon Resource Name (ARN) of the service-level role that allows Amazon Macie to monitor and analyze
+     *        The Amazon Resource Name (ARN) of the service-linked role that allows Amazon Macie to monitor and analyze
      *        data in AWS resources for the account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

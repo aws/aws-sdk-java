@@ -36,7 +36,7 @@ public class S3JobDefinition implements Serializable, Cloneable, StructuredPojo 
     private java.util.List<S3BucketDefinitionForJob> bucketDefinitions;
     /**
      * <p>
-     * A JobScopeTerm object that specifies conditions for including or excluding objects from the job.
+     * The property- and tag-based conditions that determine which objects to include or exclude from the analysis.
      * </p>
      */
     private Scoping scoping;
@@ -113,11 +113,12 @@ public class S3JobDefinition implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A JobScopeTerm object that specifies conditions for including or excluding objects from the job.
+     * The property- and tag-based conditions that determine which objects to include or exclude from the analysis.
      * </p>
      * 
      * @param scoping
-     *        A JobScopeTerm object that specifies conditions for including or excluding objects from the job.
+     *        The property- and tag-based conditions that determine which objects to include or exclude from the
+     *        analysis.
      */
 
     public void setScoping(Scoping scoping) {
@@ -126,10 +127,11 @@ public class S3JobDefinition implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A JobScopeTerm object that specifies conditions for including or excluding objects from the job.
+     * The property- and tag-based conditions that determine which objects to include or exclude from the analysis.
      * </p>
      * 
-     * @return A JobScopeTerm object that specifies conditions for including or excluding objects from the job.
+     * @return The property- and tag-based conditions that determine which objects to include or exclude from the
+     *         analysis.
      */
 
     public Scoping getScoping() {
@@ -138,11 +140,12 @@ public class S3JobDefinition implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A JobScopeTerm object that specifies conditions for including or excluding objects from the job.
+     * The property- and tag-based conditions that determine which objects to include or exclude from the analysis.
      * </p>
      * 
      * @param scoping
-     *        A JobScopeTerm object that specifies conditions for including or excluding objects from the job.
+     *        The property- and tag-based conditions that determine which objects to include or exclude from the
+     *        analysis.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The field to use to sort the results of a query for account quotas and usage data.
+ * The field to use to sort the results of a query for account quotas and usage data. Valid values are:
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

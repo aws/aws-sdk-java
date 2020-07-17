@@ -19,8 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The total number of buckets that are shared with another AWS account or configured to support cross-origin resource
- * sharing (CORS).
+ * Provides information about the number of S3 buckets that are shared with other AWS accounts.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BucketCountBySharedAccessType"
@@ -31,30 +30,34 @@ public class BucketCountBySharedAccessType implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of buckets that are shared with an AWS account that isn't part of the same Amazon Macie
+     * organization.
      * </p>
      */
     private Long external;
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of buckets that are shared with an AWS account that's part of the same Amazon Macie
+     * organization.
      * </p>
      */
     private Long internal;
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of buckets that aren't shared with any other AWS accounts.
      * </p>
      */
     private Long notShared;
 
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of buckets that are shared with an AWS account that isn't part of the same Amazon Macie
+     * organization.
      * </p>
      * 
      * @param external
-     *        Reserved for future use.
+     *        The total number of buckets that are shared with an AWS account that isn't part of the same Amazon Macie
+     *        organization.
      */
 
     public void setExternal(Long external) {
@@ -63,10 +66,12 @@ public class BucketCountBySharedAccessType implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of buckets that are shared with an AWS account that isn't part of the same Amazon Macie
+     * organization.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return The total number of buckets that are shared with an AWS account that isn't part of the same Amazon Macie
+     *         organization.
      */
 
     public Long getExternal() {
@@ -75,11 +80,13 @@ public class BucketCountBySharedAccessType implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of buckets that are shared with an AWS account that isn't part of the same Amazon Macie
+     * organization.
      * </p>
      * 
      * @param external
-     *        Reserved for future use.
+     *        The total number of buckets that are shared with an AWS account that isn't part of the same Amazon Macie
+     *        organization.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,11 +97,13 @@ public class BucketCountBySharedAccessType implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of buckets that are shared with an AWS account that's part of the same Amazon Macie
+     * organization.
      * </p>
      * 
      * @param internal
-     *        Reserved for future use.
+     *        The total number of buckets that are shared with an AWS account that's part of the same Amazon Macie
+     *        organization.
      */
 
     public void setInternal(Long internal) {
@@ -103,10 +112,12 @@ public class BucketCountBySharedAccessType implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of buckets that are shared with an AWS account that's part of the same Amazon Macie
+     * organization.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return The total number of buckets that are shared with an AWS account that's part of the same Amazon Macie
+     *         organization.
      */
 
     public Long getInternal() {
@@ -115,11 +126,13 @@ public class BucketCountBySharedAccessType implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of buckets that are shared with an AWS account that's part of the same Amazon Macie
+     * organization.
      * </p>
      * 
      * @param internal
-     *        Reserved for future use.
+     *        The total number of buckets that are shared with an AWS account that's part of the same Amazon Macie
+     *        organization.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,11 +143,11 @@ public class BucketCountBySharedAccessType implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of buckets that aren't shared with any other AWS accounts.
      * </p>
      * 
      * @param notShared
-     *        Reserved for future use.
+     *        The total number of buckets that aren't shared with any other AWS accounts.
      */
 
     public void setNotShared(Long notShared) {
@@ -143,10 +156,10 @@ public class BucketCountBySharedAccessType implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of buckets that aren't shared with any other AWS accounts.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return The total number of buckets that aren't shared with any other AWS accounts.
      */
 
     public Long getNotShared() {
@@ -155,11 +168,11 @@ public class BucketCountBySharedAccessType implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of buckets that aren't shared with any other AWS accounts.
      * </p>
      * 
      * @param notShared
-     *        Reserved for future use.
+     *        The total number of buckets that aren't shared with any other AWS accounts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

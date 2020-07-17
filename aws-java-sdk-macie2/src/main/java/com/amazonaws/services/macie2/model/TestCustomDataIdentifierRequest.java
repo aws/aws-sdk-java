@@ -51,8 +51,8 @@ public class TestCustomDataIdentifierRequest extends com.amazonaws.AmazonWebServ
     private Integer maximumMatchDistance;
     /**
      * <p>
-     * The regular expression (regex) that defines the pattern to match. The expression can contain as many as 500
-     * characters.
+     * The regular expression (<i>regex</i>) that defines the pattern to match. The expression can contain as many as
+     * 512 characters.
      * </p>
      */
     private String regex;
@@ -292,13 +292,13 @@ public class TestCustomDataIdentifierRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The regular expression (regex) that defines the pattern to match. The expression can contain as many as 500
-     * characters.
+     * The regular expression (<i>regex</i>) that defines the pattern to match. The expression can contain as many as
+     * 512 characters.
      * </p>
      * 
      * @param regex
-     *        The regular expression (regex) that defines the pattern to match. The expression can contain as many as
-     *        500 characters.
+     *        The regular expression (<i>regex</i>) that defines the pattern to match. The expression can contain as
+     *        many as 512 characters.
      */
 
     public void setRegex(String regex) {
@@ -307,12 +307,12 @@ public class TestCustomDataIdentifierRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The regular expression (regex) that defines the pattern to match. The expression can contain as many as 500
-     * characters.
+     * The regular expression (<i>regex</i>) that defines the pattern to match. The expression can contain as many as
+     * 512 characters.
      * </p>
      * 
-     * @return The regular expression (regex) that defines the pattern to match. The expression can contain as many as
-     *         500 characters.
+     * @return The regular expression (<i>regex</i>) that defines the pattern to match. The expression can contain as
+     *         many as 512 characters.
      */
 
     public String getRegex() {
@@ -321,13 +321,13 @@ public class TestCustomDataIdentifierRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The regular expression (regex) that defines the pattern to match. The expression can contain as many as 500
-     * characters.
+     * The regular expression (<i>regex</i>) that defines the pattern to match. The expression can contain as many as
+     * 512 characters.
      * </p>
      * 
      * @param regex
-     *        The regular expression (regex) that defines the pattern to match. The expression can contain as many as
-     *        500 characters.
+     *        The regular expression (<i>regex</i>) that defines the pattern to match. The expression can contain as
+     *        many as 512 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
