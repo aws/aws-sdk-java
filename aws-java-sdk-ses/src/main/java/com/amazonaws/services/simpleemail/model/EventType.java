@@ -27,7 +27,8 @@ public enum EventType {
     Delivery("delivery"),
     Open("open"),
     Click("click"),
-    RenderingFailure("renderingFailure");
+    RenderingFailure("renderingFailure"),
+    DeliveryDelay("deliveryDelay");
 
     private String value;
 
